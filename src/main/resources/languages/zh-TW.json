@@ -406,6 +406,9 @@
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
       "description": "撤銷停權指定玩家。"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

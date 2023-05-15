@@ -406,6 +406,9 @@
       "success": "成功しました。",
       "failure": "失敗しました。プレイヤーが見つかりません。",
       "description": "プレイヤーのBANを解除します。"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

@@ -16,9 +16,10 @@ import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.plugin.api.ServerHook;
+import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
-import emu.grasscutter.server.http.dispatch.DispatchHandler;
+import emu.grasscutter.server.http.dispatch.AuthenticationHandler;
 import emu.grasscutter.server.http.dispatch.RegionHandler;
 import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
 import emu.grasscutter.server.http.documentation.HandbookHandler;
@@ -57,9 +58,11 @@ public final class Grasscutter {
 
     @Getter private static int currentDayOfWeek;
     @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
+    @Setter private static boolean noConsole = false;
 
     @Getter private static HttpServer httpServer;
     @Getter private static GameServer gameServer;
+    @Getter private static DispatchServer dispatchServer;
     @Getter private static PluginManager pluginManager;
     @Getter private static CommandMap commandMap;
 
@@ -96,6 +99,9 @@ public final class Grasscutter {
             System.exit(0); // Exit early.
         }
 
+        // Get the server run mode.
+        var runMode = Grasscutter.getRunMode();
+
         // Create command map.
         commandMap = new CommandMap(true);
 
@@ -104,12 +110,14 @@ public final class Grasscutter {
         logger.info(translate("messages.status.game_version", GameConstants.VERSION));
         logger.info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 
-        // Load all resources.
-        Grasscutter.updateDayOfWeek();
-        ResourceLoader.loadAll();
+        if (runMode != ServerRunMode.DISPATCH_ONLY) {
+            // Load all resources.
+            Grasscutter.updateDayOfWeek();
+            ResourceLoader.loadAll();
 
-        // Generate handbooks.
-        Tools.createGmHandbooks(false);
+            // Generate handbooks.
+            Tools.createGmHandbooks(false);
+        }
 
         // Initialize database.
         DatabaseManager.initialize();
@@ -119,8 +127,11 @@ public final class Grasscutter {
         permissionHandler = new DefaultPermissionHandler();
 
         // Create server instances.
-        httpServer = new HttpServer();
-        gameServer = new GameServer();
+        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.GAME_ONLY)
+            Grasscutter.gameServer = new GameServer();
+        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.DISPATCH_ONLY)
+            Grasscutter.httpServer = new HttpServer();
+
         // Create a server hook instance with both servers.
         new ServerHelper(gameServer, httpServer);
         // noinspection removal
@@ -128,25 +139,31 @@ public final class Grasscutter {
 
         // Create plugin manager instance.
         pluginManager = new PluginManager();
-        // Add HTTP routes after loading plugins.
-        httpServer.addRouter(HttpServer.UnhandledRequestRouter.class);
-        httpServer.addRouter(HttpServer.DefaultRequestRouter.class);
-        httpServer.addRouter(RegionHandler.class);
-        httpServer.addRouter(LogHandler.class);
-        httpServer.addRouter(GenericHandler.class);
-        httpServer.addRouter(AnnouncementsHandler.class);
-        httpServer.addRouter(DispatchHandler.class);
-        httpServer.addRouter(GachaHandler.class);
-        httpServer.addRouter(DocumentationServerHandler.class);
-        httpServer.addRouter(HandbookHandler.class);
+
+        if (runMode != ServerRunMode.GAME_ONLY) {
+            // Add HTTP routes after loading plugins.
+            httpServer.addRouter(HttpServer.UnhandledRequestRouter.class);
+            httpServer.addRouter(HttpServer.DefaultRequestRouter.class);
+            httpServer.addRouter(RegionHandler.class);
+            httpServer.addRouter(LogHandler.class);
+            httpServer.addRouter(GenericHandler.class);
+            httpServer.addRouter(AnnouncementsHandler.class);
+            httpServer.addRouter(AuthenticationHandler.class);
+            httpServer.addRouter(GachaHandler.class);
+            httpServer.addRouter(DocumentationServerHandler.class);
+            httpServer.addRouter(HandbookHandler.class);
+        }
 
         // Start servers.
-        var runMode = Grasscutter.getRunMode();
         if (runMode == ServerRunMode.HYBRID) {
             httpServer.start();
             gameServer.start();
         } else if (runMode == ServerRunMode.DISPATCH_ONLY) {
             httpServer.start();
+
+            // Start dispatch server.
+            dispatchServer = new DispatchServer("0.0.0.0", 1111);
+            dispatchServer.start();
         } else if (runMode == ServerRunMode.GAME_ONLY) {
             gameServer.start();
         } else {
@@ -267,7 +284,7 @@ public final class Grasscutter {
 
     public static void startConsole() {
         // Console should not start in dispatch only mode.
-        if (SERVER.runMode == ServerRunMode.DISPATCH_ONLY) {
+        if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY && Grasscutter.noConsole) {
             logger.info(translate("messages.dispatch.no_commands_error"));
             return;
         } else {

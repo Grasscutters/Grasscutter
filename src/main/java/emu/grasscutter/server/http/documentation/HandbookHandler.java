@@ -2,19 +2,13 @@ package emu.grasscutter.server.http.documentation;
 
 import static emu.grasscutter.config.Configuration.HANDBOOK;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityMonster;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
+import emu.grasscutter.utils.objects.HandbookBody.Action;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import java.util.Objects;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -41,13 +35,14 @@ public final class HandbookHandler implements Router {
         javalin.post("/handbook/avatar", this::grantAvatar);
         javalin.post("/handbook/item", this::giveItem);
         javalin.post("/handbook/teleport", this::teleportTo);
+        javalin.post("/handbook/spawn", this::spawnEntity);
     }
 
     /**
      * @return True if the server can execute handbook commands.
      */
     private boolean controlSupported() {
-        return HANDBOOK.enable && Grasscutter.getRunMode() == ServerRunMode.HYBRID;
+        return HANDBOOK.enable;
     }
 
     /**
@@ -78,46 +73,10 @@ public final class HandbookHandler implements Router {
 
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GrantAvatar.class);
-        // Validate the request.
-        if (request.getPlayer() == null || request.getAvatar() == null) {
-            ctx.status(400).result("Invalid request.");
-            return;
-        }
-
-        try {
-            // Parse the requested player.
-            var playerId = Integer.parseInt(request.getPlayer());
-            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
-
-            // Parse the requested avatar.
-            var avatarId = Integer.parseInt(request.getAvatar());
-            var avatarData = GameData.getAvatarDataMap().get(avatarId);
-
-            // Validate the request.
-            if (player == null || avatarData == null) {
-                ctx.status(400).result("Invalid player UID or avatar ID.");
-                return;
-            }
-
-            // Create the new avatar.
-            var avatar = new Avatar(avatarData);
-            avatar.setLevel(request.getLevel());
-            avatar.setPromoteLevel(Avatar.getMinPromoteLevel(avatar.getLevel()));
-            Objects.requireNonNull(avatar.getSkillDepot())
-                    .getSkillsAndEnergySkill()
-                    .forEach(id -> avatar.setSkillLevel(id, request.getTalentLevels()));
-            avatar.forceConstellationLevel(request.getConstellations());
-            avatar.recalcStats(true);
-            avatar.save();
-
-            player.addAvatar(avatar); // Add the avatar.
-            ctx.json(HandbookBody.Response.builder().status(200).message("Avatar granted.").build());
-        } catch (NumberFormatException ignored) {
-            ctx.status(500).result("Invalid player UID or avatar ID.");
-        } catch (Exception exception) {
-            ctx.status(500).result("An error occurred while granting the avatar.");
-            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-        }
+        // Get the response.
+        var response = DispatchUtils.performHandbookAction(Action.GRANT_AVATAR, request);
+        // Send the response.
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -134,39 +93,10 @@ public final class HandbookHandler implements Router {
 
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GiveItem.class);
-        // Validate the request.
-        if (request.getPlayer() == null || request.getItem() == null) {
-            ctx.status(400).result("Invalid request.");
-            return;
-        }
-
-        try {
-            // Parse the requested player.
-            var playerId = Integer.parseInt(request.getPlayer());
-            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
-
-            // Parse the requested item.
-            var itemId = Integer.parseInt(request.getItem());
-            var itemData = GameData.getItemDataMap().get(itemId);
-
-            // Validate the request.
-            if (player == null || itemData == null) {
-                ctx.status(400).result("Invalid player UID or item ID.");
-                return;
-            }
-
-            // Create the new item stack.
-            var itemStack = new GameItem(itemData, request.getAmount());
-            // Add the item to the inventory.
-            player.getInventory().addItem(itemStack, ActionReason.Gm);
-
-            ctx.json(HandbookBody.Response.builder().status(200).message("Item granted.").build());
-        } catch (NumberFormatException ignored) {
-            ctx.status(500).result("Invalid player UID or item ID.");
-        } catch (Exception exception) {
-            ctx.status(500).result("An error occurred while granting the item.");
-            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-        }
+        // Get the response.
+        var response = DispatchUtils.performHandbookAction(Action.GIVE_ITEM, request);
+        // Send the response.
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -183,47 +113,10 @@ public final class HandbookHandler implements Router {
 
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.TeleportTo.class);
-        // Validate the request.
-        if (request.getPlayer() == null || request.getScene() == null) {
-            ctx.status(400).result("Invalid request.");
-            return;
-        }
-
-        try {
-            // Parse the requested player.
-            var playerId = Integer.parseInt(request.getPlayer());
-            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
-
-            // Parse the requested scene.
-            var sceneId = Integer.parseInt(request.getScene());
-
-            // Validate the request.
-            if (player == null) {
-                ctx.status(400).result("Invalid player UID.");
-                return;
-            }
-
-            // Find the scene in the player's world.
-            var scene = player.getWorld().getSceneById(sceneId);
-            if (scene == null) {
-                ctx.status(400).result("Invalid scene ID.");
-                return;
-            }
-
-            // Resolve the correct teleport position.
-            var position = scene.getDefaultLocation(player);
-            var rotation = scene.getDefaultRotation(player);
-            // Teleport the player.
-            scene.getWorld().transferPlayerToScene(player, scene.getId(), position);
-            player.getRotation().set(rotation);
-
-            ctx.json(HandbookBody.Response.builder().status(200).message("Player teleported.").build());
-        } catch (NumberFormatException ignored) {
-            ctx.status(400).result("Invalid player UID or scene ID.");
-        } catch (Exception exception) {
-            ctx.status(500).result("An error occurred while teleporting to the scene.");
-            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-        }
+        // Get the response.
+        var response = DispatchUtils.performHandbookAction(Action.TELEPORT_TO, request);
+        // Send the response.
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -240,47 +133,9 @@ public final class HandbookHandler implements Router {
 
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.SpawnEntity.class);
-        // Validate the request.
-        if (request.getPlayer() == null || request.getEntity() == null) {
-            ctx.status(400).result("Invalid request.");
-            return;
-        }
-
-        try {
-            // Parse the requested player.
-            var playerId = Integer.parseInt(request.getPlayer());
-            var player = Grasscutter.getGameServer().getPlayerByUid(playerId);
-
-            // Parse the requested entity.
-            var entityId = Integer.parseInt(request.getEntity());
-            var entityData = GameData.getMonsterDataMap().get(entityId);
-
-            // Validate the request.
-            if (player == null || entityData == null) {
-                ctx.status(400).result("Invalid player UID or entity ID.");
-                return;
-            }
-
-            // Validate request properties.
-            var scene = player.getScene();
-            var level = request.getLevel();
-            if (scene == null || level > 200 || level < 1) {
-                ctx.status(400).result("Invalid scene or level.");
-                return;
-            }
-
-            // Create the entity.
-            for (var i = 1; i <= request.getAmount(); i++) {
-                var entity = new EntityMonster(scene, entityData, player.getPosition(), level);
-                scene.addEntity(entity);
-            }
-
-            ctx.json(HandbookBody.Response.builder().status(200).message("Entity(s) spawned.").build());
-        } catch (NumberFormatException ignored) {
-            ctx.status(400).result("Invalid player UID or entity ID.");
-        } catch (Exception exception) {
-            ctx.status(500).result("An error occurred while teleporting to the scene.");
-            Grasscutter.getLogger().debug("A handbook command error occurred.", exception);
-        }
+        // Get the response.
+        var response = DispatchUtils.performHandbookAction(Action.SPAWN_ENTITY, request);
+        // Send the response.
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 }

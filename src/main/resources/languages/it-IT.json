@@ -406,6 +406,9 @@
       "success": "Successo.",
       "failure": "Fallito, giocatore non trovato.",
       "description": "Sbanna un giocatore"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

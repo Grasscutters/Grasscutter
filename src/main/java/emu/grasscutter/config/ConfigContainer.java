@@ -6,11 +6,14 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.Grasscutter.ServerRunMode;
+import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.Utils;
 import lombok.NoArgsConstructor;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -27,9 +30,11 @@ public class ConfigContainer {
      *             This field will be removed in future versions.
      * Version 6 - 'questing' has been fully replaced with 'questOptions'.
      *             The field for 'legacyResources' has been removed.
+     * Version 7 - 'regionKey' is being added for authentication
+     *             with the new dispatch server.
      */
     private static int version() {
-        return 6;
+        return 7;
     }
 
     /**
@@ -188,7 +193,16 @@ public class ConfigContainer {
     /* Data containers. */
 
     public static class Dispatch {
-        public Region[] regions = {};
+        /* An array of servers. */
+        public List<Region> regions = List.of();
+
+        /* The URL used to make HTTP requests to the dispatch server. */
+        public String dispatchUrl = "ws://127.0.0.1:1111";
+        /* A unique key used for encryption. */
+        public byte[] encryptionKey = Crypto.createSessionKey(32);
+        /* A unique key used for authentication. */
+        public String dispatchKey = Utils.base64Encode(
+            Crypto.createSessionKey(32));
 
         public String defaultName = "Grasscutter";
 
@@ -231,7 +245,7 @@ public class ConfigContainer {
         public Policies.CORS cors = new Policies.CORS();
 
         public static class CORS {
-            public boolean enabled = false;
+            public boolean enabled = true;
             public String[] allowedOrigins = new String[]{"*"};
         }
     }

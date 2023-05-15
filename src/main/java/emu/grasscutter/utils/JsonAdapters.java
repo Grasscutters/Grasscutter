@@ -77,6 +77,18 @@ public class JsonAdapters {
         }
     }
 
+    public static class ByteArrayAdapter extends TypeAdapter<byte[]> {
+        @Override
+        public void write(JsonWriter out, byte[] value) throws IOException {
+            out.value(Utils.base64Encode(value));
+        }
+
+        @Override
+        public byte[] read(JsonReader in) throws IOException {
+            return Utils.base64Decode(in.nextString());
+        }
+    }
+
     static class GridPositionAdapter extends TypeAdapter<GridPosition> {
         @Override
         public void write(JsonWriter out, GridPosition value) throws IOException {

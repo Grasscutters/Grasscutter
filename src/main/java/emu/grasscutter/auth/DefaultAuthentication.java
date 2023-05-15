@@ -17,6 +17,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     private final Authenticator<LoginResultJson> tokenAuthenticator = new TokenAuthenticator();
     private final Authenticator<ComboTokenResJson> sessionKeyAuthenticator =
             new SessionKeyAuthenticator();
+    private final Authenticator<Account> sessionTokenValidator = new SessionTokenValidator();
     private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
     private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
 
@@ -58,6 +59,11 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     @Override
     public Authenticator<ComboTokenResJson> getSessionKeyAuthenticator() {
         return this.sessionKeyAuthenticator;
+    }
+
+    @Override
+    public Authenticator<Account> getSessionTokenValidator() {
+        return this.sessionTokenValidator;
     }
 
     @Override

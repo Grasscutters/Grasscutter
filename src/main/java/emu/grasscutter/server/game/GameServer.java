@@ -1,10 +1,12 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 import static emu.grasscutter.config.Configuration.GAME_INFO;
 import static emu.grasscutter.utils.Language.translate;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
@@ -32,6 +34,7 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
+import emu.grasscutter.server.dispatch.DispatchClient;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
@@ -39,6 +42,7 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import java.net.InetSocketAddress;
+import java.net.URI;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
@@ -46,6 +50,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import kcp.highway.ChannelConfig;
 import kcp.highway.KcpServer;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.SneakyThrows;
 
 @Getter
 public final class GameServer extends KcpServer {
@@ -54,6 +60,8 @@ public final class GameServer extends KcpServer {
     private final GameServerPacketHandler packetHandler;
     private final Map<Integer, Player> players;
     private final Set<World> worlds;
+
+    @Setter private DispatchClient dispatchClient;
 
     // Server systems
     private final InventorySystem inventorySystem;
@@ -78,12 +86,50 @@ public final class GameServer extends KcpServer {
 
     private ChatSystemHandler chatManager;
 
+    /**
+     * @return The URI for the dispatch server.
+     */
+    @SneakyThrows
+    public static URI getDispatchUrl() {
+        return new URI(DISPATCH_INFO.dispatchUrl);
+    }
+
     public GameServer() {
         this(getAdapterInetSocketAddress());
     }
 
     public GameServer(InetSocketAddress address) {
-        ChannelConfig channelConfig = new ChannelConfig();
+        // Check if we are in dispatch only mode.
+        if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY) {
+            // Set all the systems to null.
+            this.scheduler = null;
+            this.taskMap = null;
+
+            this.address = null;
+            this.packetHandler = null;
+            this.dispatchClient = null;
+            this.players = null;
+            this.worlds = null;
+
+            this.inventorySystem = null;
+            this.gachaSystem = null;
+            this.shopSystem = null;
+            this.multiplayerSystem = null;
+            this.dungeonSystem = null;
+            this.expeditionSystem = null;
+            this.dropSystem = null;
+            this.dropSystemLegacy = null;
+            this.worldDataSystem = null;
+            this.battlePassSystem = null;
+            this.combineSystem = null;
+            this.towerSystem = null;
+            this.announcementSystem = null;
+            this.questSystem = null;
+            this.talkSystem = null;
+            return;
+        }
+
+        var channelConfig = new ChannelConfig();
         channelConfig.nodelay(true, GAME_INFO.kcpInterval, 2, true);
         channelConfig.setMtu(1400);
         channelConfig.setSndwnd(256);
@@ -103,6 +149,7 @@ public final class GameServer extends KcpServer {
         // Game Server base
         this.address = address;
         this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
+        this.dispatchClient = new DispatchClient(GameServer.getDispatchUrl());
         this.players = new ConcurrentHashMap<>();
         this.worlds = Collections.synchronizedSet(new HashSet<>());
 
@@ -248,6 +295,11 @@ public final class GameServer extends KcpServer {
     }
 
     public void start() {
+        if (Grasscutter.getRunMode() == ServerRunMode.GAME_ONLY) {
+            // Connect to dispatch server.
+            this.dispatchClient.connect();
+        }
+
         // Schedule game loop.
         Timer gameLoop = new Timer();
         gameLoop.scheduleAtFixedRate(

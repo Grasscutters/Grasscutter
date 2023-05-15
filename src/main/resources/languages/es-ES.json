@@ -406,6 +406,9 @@
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "description": "Elimina el veto a un jugador"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

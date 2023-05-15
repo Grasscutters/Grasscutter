@@ -8,6 +8,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.server.dispatch.IDispatcher;
+import emu.grasscutter.server.dispatch.PacketIds;
 import emu.grasscutter.server.http.objects.ComboTokenResJson;
 import emu.grasscutter.server.http.objects.LoginResultJson;
 import emu.grasscutter.utils.FileUtils;
@@ -16,6 +18,8 @@ import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 import javax.crypto.Cipher;
 
 /** A class containing default authenticators. */
@@ -29,7 +33,6 @@ public final class DefaultAuthenticators {
 
             var requestData = request.getPasswordRequest();
             assert requestData != null; // This should never be null.
-            int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             boolean successfulLogin = false;
             String address = request.getContext().ip();
@@ -38,37 +41,31 @@ public final class DefaultAuthenticators {
 
             // Get account from database.
             Account account = DatabaseHelper.getAccountByName(requestData.account);
-            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
-                // Check if account exists.
-                if (account == null && ACCOUNT.autoCreate) {
-                    // This account has been created AUTOMATICALLY. There will be no permissions added.
-                    account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
+            // Check if account exists.
+            if (account == null && ACCOUNT.autoCreate) {
+                // This account has been created AUTOMATICALLY. There will be no permissions added.
+                account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
 
-                    // Check if the account was created successfully.
-                    if (account == null) {
-                        responseMessage = translate("messages.dispatch.account.username_create_error");
-                        Grasscutter.getLogger()
-                                .info(translate("messages.dispatch.account.account_login_create_error", address));
-                    } else {
-                        // Continue with login.
-                        successfulLogin = true;
+                // Check if the account was created successfully.
+                if (account == null) {
+                    responseMessage = translate("messages.dispatch.account.username_create_error");
+                    Grasscutter.getLogger()
+                            .info(translate("messages.dispatch.account.account_login_create_error", address));
+                } else {
+                    // Continue with login.
+                    successfulLogin = true;
 
-                        // Log the creation.
-                        Grasscutter.getLogger()
-                                .info(
-                                        translate(
-                                                "messages.dispatch.account.account_login_create_success",
-                                                address,
-                                                response.data.account.uid));
-                    }
-                } else if (account != null) successfulLogin = true;
-                else
-                    loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);
-
-            } else {
-                responseMessage = translate("messages.dispatch.account.server_max_player_limit");
-                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
-            }
+                    // Log the creation.
+                    Grasscutter.getLogger()
+                            .info(
+                                    translate(
+                                            "messages.dispatch.account.account_login_create_success",
+                                            address,
+                                            response.data.account.uid));
+                }
+            } else if (account != null) successfulLogin = true;
+            else
+                loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);
 
             // Set response data.
             if (successfulLogin) {
@@ -96,7 +93,6 @@ public final class DefaultAuthenticators {
 
             var requestData = request.getPasswordRequest();
             assert requestData != null; // This should never be null.
-            int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             boolean successfulLogin = false;
             String address = request.getContext().ip();
@@ -129,61 +125,56 @@ public final class DefaultAuthenticators {
 
             // Get account from database.
             Account account = DatabaseHelper.getAccountByName(requestData.account);
-            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
-                // Check if account exists.
-                if (account == null && ACCOUNT.autoCreate) {
-                    // This account has been created AUTOMATICALLY. There will be no permissions added.
-                    if (decryptedPassword.length() >= 8) {
-                        account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
-                        account.setPassword(
-                                BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
-                        account.save();
+            // Check if account exists.
+            if (account == null && ACCOUNT.autoCreate) {
+                // This account has been created AUTOMATICALLY. There will be no permissions added.
+                if (decryptedPassword.length() >= 8) {
+                    account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
+                    account.setPassword(
+                            BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
+                    account.save();
 
-                        // Check if the account was created successfully.
-                        if (account == null) {
-                            responseMessage = translate("messages.dispatch.account.username_create_error");
-                            loggerMessage =
-                                    translate("messages.dispatch.account.account_login_create_error", address);
-                        } else {
-                            // Continue with login.
-                            successfulLogin = true;
+                    // Check if the account was created successfully.
+                    if (account == null) {
+                        responseMessage = translate("messages.dispatch.account.username_create_error");
+                        loggerMessage =
+                                translate("messages.dispatch.account.account_login_create_error", address);
+                    } else {
+                        // Continue with login.
+                        successfulLogin = true;
 
-                            // Log the creation.
-                            Grasscutter.getLogger()
-                                    .info(
-                                            translate(
-                                                    "messages.dispatch.account.account_login_create_success",
-                                                    address,
-                                                    response.data.account.uid));
-                        }
+                        // Log the creation.
+                        Grasscutter.getLogger()
+                                .info(
+                                        translate(
+                                                "messages.dispatch.account.account_login_create_success",
+                                                address,
+                                                response.data.account.uid));
+                    }
+                } else {
+                    successfulLogin = false;
+                    loggerMessage = translate("messages.dispatch.account.login_password_error", address);
+                    responseMessage = translate("messages.dispatch.account.password_length_error");
+                }
+            } else if (account != null) {
+                if (account.getPassword() != null && !account.getPassword().isEmpty()) {
+                    if (BCrypt.verifyer()
+                            .verify(decryptedPassword.toCharArray(), account.getPassword())
+                            .verified) {
+                        successfulLogin = true;
                     } else {
                         successfulLogin = false;
                         loggerMessage = translate("messages.dispatch.account.login_password_error", address);
-                        responseMessage = translate("messages.dispatch.account.password_length_error");
-                    }
-                } else if (account != null) {
-                    if (account.getPassword() != null && !account.getPassword().isEmpty()) {
-                        if (BCrypt.verifyer()
-                                .verify(decryptedPassword.toCharArray(), account.getPassword())
-                                .verified) {
-                            successfulLogin = true;
-                        } else {
-                            successfulLogin = false;
-                            loggerMessage = translate("messages.dispatch.account.login_password_error", address);
-                            responseMessage = translate("messages.dispatch.account.password_error");
-                        }
-                    } else {
-                        successfulLogin = false;
-                        loggerMessage =
-                                translate("messages.dispatch.account.login_password_storage_error", address);
-                        responseMessage = translate("messages.dispatch.account.password_storage_error");
+                        responseMessage = translate("messages.dispatch.account.password_error");
                     }
                 } else {
-                    loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);
+                    successfulLogin = false;
+                    loggerMessage =
+                            translate("messages.dispatch.account.login_password_storage_error", address);
+                    responseMessage = translate("messages.dispatch.account.password_storage_error");
                 }
             } else {
-                responseMessage = translate("messages.dispatch.account.server_max_player_limit");
-                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+                loggerMessage = translate("messages.dispatch.account.account_login_exist_error", address);
             }
 
             // Set response data.
@@ -217,43 +208,33 @@ public final class DefaultAuthenticators {
             boolean successfulLogin;
             String address = request.getContext().ip();
             String loggerMessage;
-            int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
             // Log the attempt.
             Grasscutter.getLogger()
                     .info(translate("messages.dispatch.account.login_token_attempt", address));
 
-            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
+            // Get account from database.
+            Account account = DatabaseHelper.getAccountById(requestData.uid);
 
-                // Get account from database.
-                Account account = DatabaseHelper.getAccountById(requestData.uid);
+            // Check if account exists/token is valid.
+            successfulLogin = account != null && account.getSessionKey().equals(requestData.token);
 
-                // Check if account exists/token is valid.
-                successfulLogin = account != null && account.getSessionKey().equals(requestData.token);
+            // Set response data.
+            if (successfulLogin) {
+                response.message = "OK";
+                response.data.account.uid = account.getId();
+                response.data.account.token = account.getSessionKey();
+                response.data.account.email = account.getEmail();
 
-                // Set response data.
-                if (successfulLogin) {
-                    response.message = "OK";
-                    response.data.account.uid = account.getId();
-                    response.data.account.token = account.getSessionKey();
-                    response.data.account.email = account.getEmail();
-
-                    // Log the login.
-                    loggerMessage =
-                            translate("messages.dispatch.account.login_token_success", address, requestData.uid);
-                } else {
-                    response.retcode = -201;
-                    response.message = translate("messages.dispatch.account.account_cache_error");
-
-                    // Log the failure.
-                    loggerMessage = translate("messages.dispatch.account.login_token_error", address);
-                }
-
+                // Log the login.
+                loggerMessage =
+                        translate("messages.dispatch.account.login_token_success", address, requestData.uid);
             } else {
                 response.retcode = -201;
-                response.message = translate("messages.dispatch.account.server_max_player_limit");
+                response.message = translate("messages.dispatch.account.account_cache_error");
 
-                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+                // Log the failure.
+                loggerMessage = translate("messages.dispatch.account.login_token_error", address);
             }
 
             Grasscutter.getLogger().info(loggerMessage);
@@ -275,37 +256,29 @@ public final class DefaultAuthenticators {
             boolean successfulLogin;
             String address = request.getContext().ip();
             String loggerMessage;
-            int playerCount = Grasscutter.getGameServer().getPlayers().size();
 
-            if (ACCOUNT.maxPlayer <= -1 || playerCount < ACCOUNT.maxPlayer) {
-                // Get account from database.
-                Account account = DatabaseHelper.getAccountById(loginData.uid);
+            // Get account from database.
+            Account account = DatabaseHelper.getAccountById(loginData.uid);
 
-                // Check if account exists/token is valid.
-                successfulLogin = account != null && account.getSessionKey().equals(loginData.token);
+            // Check if account exists/token is valid.
+            successfulLogin = account != null && account.getSessionKey().equals(loginData.token);
 
-                // Set response data.
-                if (successfulLogin) {
-                    response.message = "OK";
-                    response.data.open_id = account.getId();
-                    response.data.combo_id = "157795300";
-                    response.data.combo_token = account.generateLoginToken();
+            // Set response data.
+            if (successfulLogin) {
+                response.message = "OK";
+                response.data.open_id = account.getId();
+                response.data.combo_id = "157795300";
+                response.data.combo_token = account.generateLoginToken();
 
-                    // Log the login.
-                    loggerMessage = translate("messages.dispatch.account.combo_token_success", address);
+                // Log the login.
+                loggerMessage = translate("messages.dispatch.account.combo_token_success", address);
 
-                } else {
-                    response.retcode = -201;
-                    response.message = translate("messages.dispatch.account.session_key_error");
-
-                    // Log the failure.
-                    loggerMessage = translate("messages.dispatch.account.combo_token_error", address);
-                }
             } else {
                 response.retcode = -201;
-                response.message = translate("messages.dispatch.account.server_max_player_limit");
+                response.message = translate("messages.dispatch.account.session_key_error");
 
-                loggerMessage = translate("messages.dispatch.account.login_max_player_limit", address);
+                // Log the failure.
+                loggerMessage = translate("messages.dispatch.account.combo_token_error", address);
             }
 
             Grasscutter.getLogger().info(loggerMessage);
@@ -358,6 +331,45 @@ public final class DefaultAuthenticators {
             request
                     .getContext()
                     .result("Authentication is not available with the default authentication method.");
+        }
+    }
+
+    /** Validates a session token during game login. */
+    public static class SessionTokenValidator implements Authenticator<Account> {
+        @Override
+        public Account authenticate(AuthenticationRequest request) {
+            var tokenRequest = request.getTokenRequest();
+            if (tokenRequest == null) {
+                Grasscutter.getLogger().warn("Invalid session token validator request.");
+                return null;
+            }
+
+            // Prepare the request.
+            var client = Grasscutter.getGameServer().getDispatchClient();
+            var future = new CompletableFuture<Account>();
+
+            client.registerCallback(
+                    PacketIds.TokenValidateRsp,
+                    packet -> {
+                        var data = IDispatcher.decode(packet);
+
+                        // Check if the token is valid.
+                        var valid = data.get("valid").getAsBoolean();
+                        if (!valid) {
+                            future.complete(null);
+                            return;
+                        }
+
+                        // Return the account data.
+                        future.complete(IDispatcher.decode(data.get("account"), Account.class));
+                    });
+            client.sendMessage(PacketIds.TokenValidateReq, tokenRequest);
+
+            try {
+                return future.get(5, TimeUnit.SECONDS);
+            } catch (Exception ignored) {
+                return null;
+            }
         }
     }
 }

@@ -406,6 +406,9 @@
       "success": "Succes.",
       "failure": "Eșec, jucătorul nu a fost găsit.",
       "description": "Dezbancarea unui jucător"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {

@@ -22,10 +22,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -120,20 +117,20 @@ public final class Language {
     /**
      * Returns the translated value from the key while substituting arguments.
      *
-     * @param player Target player
+     * @param locale The locale to use.
      * @param key The key of the translated value to return.
      * @param args The arguments to substitute.
      * @return A translated value with arguments substituted.
      */
-    public static String translate(Player player, String key, Object... args) {
-        if (player == null) {
+    public static String translate(Locale locale, String key, Object... args) {
+        if (locale == null) {
             return translate(key, args);
         }
 
-        var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
-        String translated = getLanguage(langCode).get(key);
+        var langCode = Utils.getLanguageCode(locale);
+        var translated = getLanguage(langCode).get(key);
 
-        for (int i = 0; i < args.length; i++) {
+        for (var i = 0; i < args.length; i++) {
             args[i] =
                     switch (args[i].getClass().getSimpleName()) {
                         case "String" -> args[i];
@@ -150,6 +147,22 @@ public final class Language {
             Grasscutter.getLogger().error("Failed to format string: " + key, exception);
             return translated;
         }
+    }
+
+    /**
+     * Returns the translated value from the key while substituting arguments.
+     *
+     * @param player Target player
+     * @param key The key of the translated value to return.
+     * @param args The arguments to substitute.
+     * @return A translated value with arguments substituted.
+     */
+    public static String translate(Player player, String key, Object... args) {
+        if (player == null) {
+            return translate(key, args);
+        }
+
+        return translate(player.getAccount().getLocale(), key, args);
     }
 
     /**

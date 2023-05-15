@@ -6,9 +6,9 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.tools.Dumpers;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import org.slf4j.LoggerFactory;
@@ -17,46 +17,62 @@ import org.slf4j.LoggerFactory;
 public final class StartupArguments {
     /* A map of parameter -> argument handler. */
     private static final Map<String, Function<String, Boolean>> argumentHandlers =
-            Map.of(
-                    "-dumppacketids",
-                            parameter -> {
-                                PacketOpcodesUtils.dumpPacketIds();
-                                return true;
-                            },
-                    "-version", StartupArguments::printVersion,
-                    "-debug", StartupArguments::enableDebug,
-                    "-lang",
-                            parameter -> {
-                                Grasscutter.setPreferredLanguage(parameter);
-                                return false;
-                            },
-                    "-game",
-                            parameter -> {
-                                Grasscutter.setRunModeOverride(ServerRunMode.GAME_ONLY);
-                                return false;
-                            },
-                    "-dispatch",
-                            parameter -> {
-                                Grasscutter.setRunModeOverride(ServerRunMode.DISPATCH_ONLY);
-                                return false;
-                            },
-                    "-test",
-                            parameter -> {
-                                // Disable the console.
-                                SERVER.game.enableConsole = false;
-                                // Disable HTTP encryption.
-                                SERVER.http.encryption.useEncryption = false;
-                                return false;
-                            },
-                    "-dump", StartupArguments::dump,
+            new HashMap<>() {
+                {
+                    putAll(
+                            Map.of(
+                                    "-dumppacketids",
+                                    parameter -> {
+                                        PacketOpcodesUtils.dumpPacketIds();
+                                        return true;
+                                    },
+                                    "-version",
+                                    StartupArguments::printVersion,
+                                    "-debug",
+                                    StartupArguments::enableDebug,
+                                    "-lang",
+                                    parameter -> {
+                                        Grasscutter.setPreferredLanguage(parameter);
+                                        return false;
+                                    },
+                                    "-game",
+                                    parameter -> {
+                                        Grasscutter.setRunModeOverride(Grasscutter.ServerRunMode.GAME_ONLY);
+                                        return false;
+                                    },
+                                    "-dispatch",
+                                    parameter -> {
+                                        Grasscutter.setRunModeOverride(Grasscutter.ServerRunMode.DISPATCH_ONLY);
+                                        return false;
+                                    },
+                                    "-noconsole",
+                                    parameter -> {
+                                        Grasscutter.setNoConsole(true);
+                                        return false;
+                                    },
+                                    "-test",
+                                    parameter -> {
+                                        // Disable the console.
+                                        SERVER.game.enableConsole = false;
+                                        // Disable HTTP encryption.
+                                        SERVER.http.encryption.useEncryption = false;
+                                        return false;
+                                    },
+                                    "-dump",
+                                    StartupArguments::dump,
 
-                    // Aliases.
-                    "-v", StartupArguments::printVersion,
-                    "-debugall",
-                            parameter -> {
-                                StartupArguments.enableDebug("all");
-                                return false;
-                            });
+                                    // Aliases.
+                                    "-v",
+                                    StartupArguments::printVersion));
+                    putAll(
+                            Map.of(
+                                    "-debugall",
+                                    parameter -> {
+                                        StartupArguments.enableDebug("all");
+                                        return false;
+                                    }));
+                }
+            };
 
     private StartupArguments() {
         // This class is not meant to be instantiated.

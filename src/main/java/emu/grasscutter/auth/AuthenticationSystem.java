@@ -2,6 +2,7 @@ package emu.grasscutter.auth;
 
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
+import emu.grasscutter.utils.DispatchUtils;
 import io.javalin.http.Context;
 import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
@@ -105,6 +106,17 @@ public interface AuthenticationSystem {
     Authenticator<ComboTokenResJson> getSessionKeyAuthenticator();
 
     /**
+     * This is the authenticator used for validating session tokens. This is a part of the logic in
+     * {@link DispatchUtils#authenticate(String, String)}.
+     *
+     * <p>Plugins can override this authenticator to add support for alternate session authentication
+     * methods.
+     *
+     * @return {@code true} if the session token is valid, {@code false} otherwise.
+     */
+    Authenticator<Account> getSessionTokenValidator();
+
+    /**
      * This is the authenticator used for handling external authentication requests.
      *
      * @return An authenticator.
@@ -123,7 +135,7 @@ public interface AuthenticationSystem {
     @AllArgsConstructor
     @Getter
     class AuthenticationRequest {
-        private final Context context;
+        @Nullable private final Context context;
 
         @Nullable private final LoginAccountRequestJson passwordRequest;
         @Nullable private final LoginTokenRequestJson tokenRequest;

@@ -217,6 +217,20 @@ public final class DatabaseHelper {
                 .first();
     }
 
+    /**
+     * Use {@link DatabaseHelper#getPlayerByAccount(Account, Class)} for creating a real player. This
+     * method is used for fetching the player's data.
+     *
+     * @param accountId The account's ID.
+     * @return The player.
+     */
+    public static Player getPlayerByAccount(String accountId) {
+        return DatabaseManager.getGameDatastore()
+                .find(Player.class)
+                .filter(Filters.eq("accountId", accountId))
+                .first();
+    }
+
     public static boolean checkIfPlayerExists(int uid) {
         return DatabaseManager.getGameDatastore()
                         .find(Player.class)

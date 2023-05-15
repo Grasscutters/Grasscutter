@@ -24,7 +24,8 @@ import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 import org.slf4j.Logger;
@@ -57,8 +58,8 @@ public final class RegionHandler implements Router {
         var servers = new ArrayList<RegionSimpleInfo>();
         var usedNames = new ArrayList<String>(); // List to check for potential naming conflicts.
 
-        var configuredRegions = new ArrayList<>(List.of(DISPATCH_INFO.regions));
-        if (SERVER.runMode != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
+        var configuredRegions = new ArrayList<>(DISPATCH_INFO.regions);
+        if (Grasscutter.getRunMode() != ServerRunMode.HYBRID && configuredRegions.size() == 0) {
             Grasscutter.getLogger()
                     .error(
                             "[Dispatch] There are no game servers available. Exiting due to unplayable state.");
@@ -340,6 +341,8 @@ public final class RegionHandler implements Router {
      * @return A {@link QueryCurrRegionHttpRsp} object.
      */
     public static QueryCurrRegionHttpRsp getCurrentRegion() {
-        return SERVER.runMode == ServerRunMode.HYBRID ? regions.get("os_usa").getRegionQuery() : null;
+        return Grasscutter.getRunMode() == ServerRunMode.HYBRID
+                ? regions.get("os_usa").getRegionQuery()
+                : null;
     }
 }

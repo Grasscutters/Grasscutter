@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.lr;
 
 import com.google.protobuf.ByteString;
 import emu.grasscutter.Grasscutter;
@@ -26,7 +27,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
 
         RegionInfo info;
 
-        if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
+        if (Grasscutter.getRunMode() == ServerRunMode.GAME_ONLY) {
             if (regionCache == null) {
                 try {
                     // todo: we might want to push custom config to client

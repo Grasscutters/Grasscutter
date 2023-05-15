@@ -406,6 +406,9 @@
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
       "description": "Retire le bannissement d'un joueur"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
