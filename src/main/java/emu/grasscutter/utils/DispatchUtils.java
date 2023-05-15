@@ -1,20 +1,24 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.HandbookActions;
 import emu.grasscutter.server.dispatch.IDispatcher;
 import emu.grasscutter.server.dispatch.PacketIds;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
+import emu.grasscutter.utils.objects.HandbookBody;
+import emu.grasscutter.utils.objects.HandbookBody.*;
+
+import javax.annotation.Nullable;
 import java.net.http.HttpClient;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public interface DispatchUtils {
     /** HTTP client used for dispatch queries. */
@@ -110,6 +114,48 @@ public interface DispatchUtils {
 
                 yield response;
             }
+        };
+    }
+
+    /**
+     * Performs a handbook action.
+     *
+     * @param action The action.
+     * @param data The data.
+     * @return The response.
+     */
+    static Response performHandbookAction(HandbookBody.Action action, Object data) {
+        return switch (Grasscutter.getRunMode()) {
+            case DISPATCH_ONLY -> {
+                // Create a request for the 'GM Talk' action.
+                var request = new JsonObject();
+                request.addProperty("action", action.name());
+                request.add("data", JsonUtils.toJson(data));
+
+                // Create a future for the response.
+                var future = new CompletableFuture<Response>();
+                // Listen for the response.
+                var server = Grasscutter.getDispatchServer();
+                server.registerCallback(PacketIds.GmTalkRsp, packet ->
+                    future.complete(IDispatcher.decode(packet, Response.class)));
+
+                // Broadcast the request.
+                server.sendMessage(PacketIds.GmTalkReq, request);
+
+                try {
+                    // Wait for the response.
+                    yield future.get(5L, TimeUnit.SECONDS);
+                } catch (Exception ignored) {
+                    yield Response.builder().status(400)
+                        .message("No response received from any server.").build();
+                }
+            }
+            case HYBRID, GAME_ONLY -> switch (action) {
+                case GRANT_AVATAR -> HandbookActions.grantAvatar((GrantAvatar) data);
+                case GIVE_ITEM -> HandbookActions.giveItem((GiveItem) data);
+                case TELEPORT_TO -> HandbookActions.teleportTo((TeleportTo) data);
+                case SPAWN_ENTITY -> HandbookActions.spawnEntity((SpawnEntity) data);
+            };
         };
     }
 }

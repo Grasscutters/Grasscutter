@@ -7,6 +7,9 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.utils.Crypto;
+import emu.grasscutter.utils.DispatchUtils;
+import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.objects.HandbookBody;
 import lombok.Getter;
 import org.java_websocket.WebSocket;
 import org.java_websocket.client.WebSocketClient;
@@ -38,6 +41,7 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
         this.setAttachment(true);
 
         this.registerHandler(PacketIds.GachaHistoryReq, this::fetchGachaHistory);
+        this.registerHandler(PacketIds.GmTalkReq, this::handleHandbookAction);
     }
 
     /**
@@ -68,6 +72,35 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
 
         // Send the response.
         this.sendMessage(PacketIds.GachaHistoryRsp, response);
+    }
+
+    /**
+     * Handles the handbook action packet sent by the client.
+     *
+     * @param socket The socket the packet was received from.
+     * @param object The packet data.
+     */
+    private void handleHandbookAction(WebSocket socket, JsonElement object) {
+        var message = IDispatcher.decode(object);
+        var actionStr = message.get("action").getAsString();
+        var data = message.getAsJsonObject("data");
+
+        // Parse the action into an enum.
+        var action = HandbookBody.Action.valueOf(actionStr);
+
+        // Produce a handbook response.
+        var response = DispatchUtils.performHandbookAction(action, switch (action) {
+            case GRANT_AVATAR -> JsonUtils.decode(data, HandbookBody.GrantAvatar.class);
+            case GIVE_ITEM -> JsonUtils.decode(data, HandbookBody.GiveItem.class);
+            case TELEPORT_TO -> JsonUtils.decode(data, HandbookBody.TeleportTo.class);
+            case SPAWN_ENTITY -> JsonUtils.decode(data, HandbookBody.SpawnEntity.class);
+        });
+
+        // Check if the response's status is '1'.
+        if (response.getStatus() == 1) return;
+
+        // Send the response to the server.
+        this.sendMessage(PacketIds.GmTalkRsp, response);
     }
 
     /**

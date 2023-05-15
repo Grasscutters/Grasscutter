@@ -1,21 +1,22 @@
 package emu.grasscutter.server.dispatch;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonAdapters.ByteArrayAdapter;
+import org.java_websocket.WebSocket;
+import org.slf4j.Logger;
+
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-import org.java_websocket.WebSocket;
-import org.slf4j.Logger;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public interface IDispatcher {
     Gson JSON =
@@ -53,7 +54,7 @@ public interface IDispatcher {
             }
 
             // Un-escape the data.
-            data = data.replaceAll("\"", "");
+            data = data.replaceAll("\\\\\"", "\"");
             data = data.replaceAll("\\\\", "");
 
             // De-serialize the data.

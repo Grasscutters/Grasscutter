@@ -45,9 +45,11 @@ public final class HttpServer {
             if (HTTP_POLICIES.cors.enabled) {
                 var allowedOrigins = HTTP_POLICIES.cors.allowedOrigins;
                 config.plugins.enableCors(cors -> cors.add(corsConfig -> {
-                    if (allowedOrigins.length > 0)
-                        corsConfig.allowHost(Arrays.toString(allowedOrigins));
-                    else corsConfig.anyHost();
+                    if (allowedOrigins.length > 0) {
+                        if (Arrays.asList(allowedOrigins).contains("*"))
+                            corsConfig.anyHost();
+                        else corsConfig.allowHost(Arrays.toString(allowedOrigins));
+                    } else corsConfig.anyHost();
                 }));
             }
 
