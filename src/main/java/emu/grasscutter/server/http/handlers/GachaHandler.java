@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
+import static emu.grasscutter.utils.Language.translate;
+
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -11,16 +13,13 @@ import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
-import lombok.Getter;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
-
-import static emu.grasscutter.utils.Language.translate;
+import lombok.Getter;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {
@@ -164,7 +163,6 @@ public final class GachaHandler implements Router {
     public void applyRoutes(Javalin javalin) {
         javalin.get("/gacha", GachaHandler::gachaRecords);
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
-        javalin.get("/gacha/mappings", ctx ->
-            ctx.result(FileUtils.read(gachaMappingsPath.toString())));
+        javalin.get("/gacha/mappings", ctx -> ctx.result(FileUtils.read(gachaMappingsPath.toString())));
     }
 }

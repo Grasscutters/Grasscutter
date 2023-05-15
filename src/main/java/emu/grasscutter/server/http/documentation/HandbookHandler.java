@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.HANDBOOK;
+
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.FileUtils;
@@ -7,8 +9,6 @@ import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.Action;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
-import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -74,11 +74,9 @@ public final class HandbookHandler implements Router {
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GrantAvatar.class);
         // Get the response.
-        var response = DispatchUtils.performHandbookAction(
-            Action.GRANT_AVATAR, request);
+        var response = DispatchUtils.performHandbookAction(Action.GRANT_AVATAR, request);
         // Send the response.
-        ctx.status(response.getStatus() > 100 ?
-            response.getStatus() : 500).json(response);
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -96,11 +94,9 @@ public final class HandbookHandler implements Router {
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GiveItem.class);
         // Get the response.
-        var response = DispatchUtils.performHandbookAction(
-            Action.GIVE_ITEM, request);
+        var response = DispatchUtils.performHandbookAction(Action.GIVE_ITEM, request);
         // Send the response.
-        ctx.status(response.getStatus() > 100 ?
-            response.getStatus() : 500).json(response);
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -118,11 +114,9 @@ public final class HandbookHandler implements Router {
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.TeleportTo.class);
         // Get the response.
-        var response = DispatchUtils.performHandbookAction(
-            Action.TELEPORT_TO, request);
+        var response = DispatchUtils.performHandbookAction(Action.TELEPORT_TO, request);
         // Send the response.
-        ctx.status(response.getStatus() > 100 ?
-            response.getStatus() : 500).json(response);
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 
     /**
@@ -138,13 +132,10 @@ public final class HandbookHandler implements Router {
         }
 
         // Parse the request body into a class.
-        var request = ctx.bodyAsClass(
-            HandbookBody.SpawnEntity.class);
+        var request = ctx.bodyAsClass(HandbookBody.SpawnEntity.class);
         // Get the response.
-        var response = DispatchUtils.performHandbookAction(
-            Action.SPAWN_ENTITY, request);
+        var response = DispatchUtils.performHandbookAction(Action.SPAWN_ENTITY, request);
         // Send the response.
-        ctx.status(response.getStatus() > 100 ?
-            response.getStatus() : 500).json(response);
+        ctx.status(response.getStatus() > 100 ? response.getStatus() : 500).json(response);
     }
 }
