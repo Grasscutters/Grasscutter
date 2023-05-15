@@ -38,7 +38,7 @@ export async function grantAvatar(
     avatar: number,
     level = 90,
     constellations = 6,
-    talents = 6
+    talents = 10
 ): Promise<CommandResponse> {
     // Validate the numbers.
     if (invalid(avatar) || invalid(level) || invalid(constellations) || invalid(talents))
