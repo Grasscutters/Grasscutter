@@ -27,7 +27,7 @@ class SideBarButton extends React.PureComponent<IProps> {
     render() {
         return (
             <div className={"SideBarButton"} onClick={() => this.redirect()}>
-                <img className={"SideBarButton_Icon"} src={`/data/assets/${this.props.icon}.webp`} alt={this.props.name} />
+                <img className={"SideBarButton_Icon"} src={this.props.icon} alt={this.props.name} />
 
                 <p className={"SideBarButton_Label"}>{this.props.name}</p>
             </div>
