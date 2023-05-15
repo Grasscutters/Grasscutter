@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.dispatch;
 
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
 import emu.grasscutter.auth.OAuthAuthenticator.ClientType;
@@ -14,8 +12,10 @@ import emu.grasscutter.utils.JsonUtils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
-/** Handles requests related to authentication. (aka dispatch) */
-public final class DispatchHandler implements Router {
+import static emu.grasscutter.utils.Language.translate;
+
+/** Handles requests related to authentication. */
+public final class AuthenticationHandler implements Router {
     /**
      * @route /hk4e_global/mdk/shield/api/login
      */
@@ -92,19 +92,19 @@ public final class DispatchHandler implements Router {
     public void applyRoutes(Javalin javalin) {
         // OS
         // Username & Password login (from client).
-        javalin.post("/hk4e_global/mdk/shield/api/login", DispatchHandler::clientLogin);
+        javalin.post("/hk4e_global/mdk/shield/api/login", AuthenticationHandler::clientLogin);
         // Cached token login (from registry).
-        javalin.post("/hk4e_global/mdk/shield/api/verify", DispatchHandler::tokenLogin);
+        javalin.post("/hk4e_global/mdk/shield/api/verify", AuthenticationHandler::tokenLogin);
         // Combo token login (from session key).
-        javalin.post("/hk4e_global/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
+        javalin.post("/hk4e_global/combo/granter/login/v2/login", AuthenticationHandler::sessionKeyLogin);
 
         // CN
         // Username & Password login (from client).
-        javalin.post("/hk4e_cn/mdk/shield/api/login", DispatchHandler::clientLogin);
+        javalin.post("/hk4e_cn/mdk/shield/api/login", AuthenticationHandler::clientLogin);
         // Cached token login (from registry).
-        javalin.post("/hk4e_cn/mdk/shield/api/verify", DispatchHandler::tokenLogin);
+        javalin.post("/hk4e_cn/mdk/shield/api/verify", AuthenticationHandler::tokenLogin);
         // Combo token login (from session key).
-        javalin.post("/hk4e_cn/combo/granter/login/v2/login", DispatchHandler::sessionKeyLogin);
+        javalin.post("/hk4e_cn/combo/granter/login/v2/login", AuthenticationHandler::sessionKeyLogin);
 
         // External login (from other clients).
         javalin.get(

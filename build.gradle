@@ -113,6 +113,8 @@ dependencies {
 
     // Java HTTP server library.
     implementation group: 'io.javalin', name: 'javalin', version: '5.5.0'
+    // Java WebSocket server & client library.
+    implementation group: 'org.java-websocket', name: 'Java-WebSocket', version: '1.5.2'
 
     // Google Protocol Buffer definitions.
     // These are the raw '.proto' files.

@@ -1,7 +1,5 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -31,11 +29,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import org.greenrobot.eventbus.Subscribe;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
@@ -76,7 +77,7 @@ public class GachaSystem extends BaseGameSystem {
                                 .error(
                                         "A Banner has not been loaded because it contains one or more deprecated fields. Remove the fields mentioned above and reload.");
                     } else if (banner.isDisabled()) {
-                        Grasscutter.getLogger().debug("A Banner has not been loaded because it is disabled.");
+                        Grasscutter.getLogger().trace("A Banner has not been loaded because it is disabled.");
                     } else {
                         if (banner.scheduleId < 0) banner.scheduleId = autoScheduleId++;
                         if (banner.sortId < 0) banner.sortId = autoSortId--;

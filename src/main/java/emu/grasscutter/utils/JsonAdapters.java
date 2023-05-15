@@ -11,12 +11,13 @@ import emu.grasscutter.data.common.DynamicFloat;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.val;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import lombok.val;
 
 public class JsonAdapters {
     static class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -74,6 +75,18 @@ public class JsonAdapters {
             for (val i : l) // .forEach() doesn't appreciate exceptions
             writer.value(i);
             writer.endArray();
+        }
+    }
+
+    public static class ByteArrayAdapter extends TypeAdapter<byte[]> {
+        @Override
+        public void write(JsonWriter out, byte[] value) throws IOException {
+            out.value(Utils.base64Encode(value));
+        }
+
+        @Override
+        public byte[] read(JsonReader in) throws IOException {
+            return Utils.base64Decode(in.nextString());
         }
     }
 

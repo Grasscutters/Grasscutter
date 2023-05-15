@@ -27,6 +27,12 @@ public final class HttpServer {
      * Configures the Javalin application.
      */
     public HttpServer() {
+        // Check if we are in game only mode.
+        if (Grasscutter.getRunMode() == Grasscutter.ServerRunMode.GAME_ONLY) {
+            this.javalin = null;
+            return;
+        }
+
         this.javalin = Javalin.create(config -> {
             // Set the Javalin HTTP server.
             config.jetty.server(HttpServer::createServer);
@@ -50,6 +56,13 @@ public final class HttpServer {
                 config.plugins.enableDevLogging();
 
             // Static files should be added like this https://javalin.io/documentation#static-files
+        });
+
+        this.javalin.exception(Exception.class, (exception, ctx) -> {
+            ctx.status(500).result("Internal server error. %s"
+                .formatted(exception.getMessage()));
+            Grasscutter.getLogger().debug("Exception thrown: " +
+                exception.getMessage(), exception);
         });
     }
 

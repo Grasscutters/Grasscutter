@@ -1,8 +1,5 @@
 package emu.grasscutter.database;
 
-import static emu.grasscutter.config.Configuration.DATABASE;
-import static emu.grasscutter.config.Configuration.SERVER;
-
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -19,6 +16,8 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import org.reflections.Reflections;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 public final class DatabaseManager {
     private static Datastore gameDatastore;
     private static Datastore dispatchDatastore;
@@ -27,18 +26,14 @@ public final class DatabaseManager {
         return gameDatastore;
     }
 
-    public static MongoDatabase getGameDatabase() {
-        return getGameDatastore().getDatabase();
+    public static Datastore getAccountDatastore() {
+        if (Grasscutter.getRunMode() == ServerRunMode.HYBRID)
+            return gameDatastore;
+        else return dispatchDatastore;
     }
 
-    // Yes. I very dislike this method. However, this will be good for now.
-    // TODO: Add dispatch routes for player account management
-    public static Datastore getAccountDatastore() {
-        if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
-            return dispatchDatastore;
-        } else {
-            return gameDatastore;
-        }
+    public static MongoDatabase getGameDatabase() {
+        return getGameDatastore().getDatabase();
     }
 
     public static void initialize() {
@@ -69,7 +64,7 @@ public final class DatabaseManager {
         // Ensure indexes for the game datastore
         ensureIndexes(gameDatastore);
 
-        if (SERVER.runMode == ServerRunMode.GAME_ONLY) {
+        if (Grasscutter.getRunMode() != ServerRunMode.HYBRID) {
             MongoClient dispatchMongoClient = MongoClients.create(DATABASE.server.connectionUri);
 
             dispatchDatastore =

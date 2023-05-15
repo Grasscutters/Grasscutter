@@ -1,9 +1,5 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.getCachePath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -17,21 +13,23 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.EqualsAndHashCode;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import lombok.EqualsAndHashCode;
+
+import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
+import static emu.grasscutter.utils.FileUtils.getCachePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -120,6 +118,41 @@ public final class Language {
     /**
      * Returns the translated value from the key while substituting arguments.
      *
+     * @param locale The locale to use.
+     * @param key The key of the translated value to return.
+     * @param args The arguments to substitute.
+     * @return A translated value with arguments substituted.
+     */
+    public static String translate(Locale locale, String key, Object... args) {
+        if (locale == null) {
+            return translate(key, args);
+        }
+
+        var langCode = Utils.getLanguageCode(locale);
+        var translated = getLanguage(langCode).get(key);
+
+        for (var i = 0; i < args.length; i++) {
+            args[i] =
+                switch (args[i].getClass().getSimpleName()) {
+                    case "String" -> args[i];
+                    case "TextStrings" -> ((TextStrings) args[i])
+                        .getGC(langCode)
+                        .replace("\\\\n", "\n"); // Note that we don't unescape \n for server console
+                    default -> args[i].toString();
+                };
+        }
+
+        try {
+            return translated.formatted(args);
+        } catch (Exception exception) {
+            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
+            return translated;
+        }
+    }
+
+    /**
+     * Returns the translated value from the key while substituting arguments.
+     *
      * @param player Target player
      * @param key The key of the translated value to return.
      * @param args The arguments to substitute.
@@ -130,26 +163,7 @@ public final class Language {
             return translate(key, args);
         }
 
-        var langCode = Utils.getLanguageCode(player.getAccount().getLocale());
-        String translated = getLanguage(langCode).get(key);
-
-        for (int i = 0; i < args.length; i++) {
-            args[i] =
-                    switch (args[i].getClass().getSimpleName()) {
-                        case "String" -> args[i];
-                        case "TextStrings" -> ((TextStrings) args[i])
-                                .getGC(langCode)
-                                .replace("\\\\n", "\n"); // Note that we don't unescape \n for server console
-                        default -> args[i].toString();
-                    };
-        }
-
-        try {
-            return translated.formatted(args);
-        } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to format string: " + key, exception);
-            return translated;
-        }
+        return translate(player.getAccount().getLocale(), key, args);
     }
 
     /**

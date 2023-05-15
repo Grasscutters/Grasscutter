@@ -1,9 +1,6 @@
 package emu.grasscutter.utils;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonSyntaxException;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.utils.JsonAdapters.*;
@@ -27,8 +24,20 @@ public final class JsonUtils {
                     .registerTypeAdapter(IntList.class, new IntListAdapter())
                     .registerTypeAdapter(Position.class, new PositionAdapter())
                     .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
+                    .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
                     .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
+                    .disableHtmlEscaping()
                     .create();
+
+    /**
+     * Converts the given object to a JsonElement.
+     *
+     * @param object The object to convert.
+     * @return The JsonElement.
+     */
+    public static JsonElement toJson(Object object) {
+        return gson.toJsonTree(object);
+    }
 
     /*
      * Encode an object to a JSON string
