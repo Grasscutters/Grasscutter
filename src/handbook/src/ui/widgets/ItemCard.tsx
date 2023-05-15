@@ -163,7 +163,7 @@ class ItemCard extends React.Component<IProps, IState> {
                     </div>
 
                     <button className={"ObjectCard_Submit"} onClick={this.addToInventory.bind(this)}>
-                        <TextState event={"connected"} text1={"Copy Command"} text2={"Add to Inventory"} />
+                        <TextState initial={connected} event={"connected"} text1={"Copy Command"} text2={"Add to Inventory"} />
                     </button>
                 </div>
             </div>

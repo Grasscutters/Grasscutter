@@ -3,6 +3,7 @@ import React from "react";
 import emitter from "@backend/events";
 
 interface IProps {
+    initial: boolean;
     event: string;
     text1: string;
     text2: string;
