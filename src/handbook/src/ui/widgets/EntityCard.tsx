@@ -2,10 +2,10 @@ import React from "react";
 
 import type { Entity as EntityType, EntityInfo } from "@backend/types";
 import { copyToClipboard, entityIcon, notNaN } from "@app/utils";
-
-import "@css/widgets/ObjectCard.scss";
 import { connected, spawnEntity } from "@backend/server";
 import { spawn } from "@backend/commands";
+
+import "@css/widgets/ObjectCard.scss";
 
 /**
  * Converts a description string into a list of paragraphs.

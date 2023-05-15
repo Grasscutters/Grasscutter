@@ -1,7 +1,5 @@
 import React from "react";
 
-import { itemIcon } from "@app/utils";
-
 import "@css/widgets/MiniCard.scss";
 
 interface IProps {
