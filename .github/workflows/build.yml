@@ -38,7 +38,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Download Handbook
-        run: wget https://api.grasscutter.io/static/handbook.html -O src/main/resources/handbook.html
+        uses: suisei-cn/actions-download-file@v1.4.0
+        with:
+          url: https://api.grasscutter.io/static/handbook.html
+          target: src/main/resources/
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build
