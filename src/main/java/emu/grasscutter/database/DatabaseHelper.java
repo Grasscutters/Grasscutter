@@ -1,7 +1,5 @@
 package emu.grasscutter.database;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
@@ -22,8 +20,11 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
+
 import java.util.List;
 import java.util.stream.Stream;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
     public static Account createAccount(String username) {
@@ -214,6 +215,20 @@ public final class DatabaseHelper {
         return DatabaseManager.getGameDatastore()
                 .find(playerClass)
                 .filter(Filters.eq("accountId", account.getId()))
+                .first();
+    }
+
+    /**
+     * Use {@link DatabaseHelper#getPlayerByAccount(Account, Class)} for creating a real player.
+     * This method is used for fetching the player's data.
+     *
+     * @param accountId The account's ID.
+     * @return The player.
+     */
+    public static Player getPlayerByAccount(String accountId) {
+        return DatabaseManager.getGameDatastore()
+                .find(Player.class)
+                .filter(Filters.eq("accountId", accountId))
                 .first();
     }
 

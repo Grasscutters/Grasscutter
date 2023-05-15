@@ -129,7 +129,7 @@ public final class HttpServer {
     @SuppressWarnings("UnusedReturnValue")
     public HttpServer addRouter(Class<? extends Router> router, Object... args) {
         // Get all constructor parameters.
-        Class<?>[] types = new Class<?>[args.length];
+        var types = new Class<?>[args.length];
         for (var argument : args)
             types[args.length - 1] = argument.getClass();
 

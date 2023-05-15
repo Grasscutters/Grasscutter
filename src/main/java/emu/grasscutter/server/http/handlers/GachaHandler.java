@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.utils.Language.translate;
-
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -13,14 +11,16 @@ import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
-import io.javalin.http.staticfiles.Location;
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
-import lombok.Getter;
+
+import static emu.grasscutter.utils.Language.translate;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {
@@ -49,14 +49,14 @@ public final class GachaHandler implements Router {
 
         // Make request to dispatch server.
         var data = DispatchUtils.fetchGachaRecords(account.getId(), page, gachaType);
-        var records = data.get("records").getAsString();
+        var records = data.get("records").getAsJsonArray();
         var maxPage = data.get("maxPage").getAsLong();
 
         var locale = account.getLocale();
         var template =
                 new String(
                                 FileUtils.read(FileUtils.getDataPath("gacha/records.html")), StandardCharsets.UTF_8)
-                        .replace("'{{REPLACE_RECORDS}}'", records)
+                        .replace("'{{REPLACE_RECORDS}}'", records.toString())
                         .replace("'{{REPLACE_MAXPAGE}}'", String.valueOf(maxPage))
                         .replace("{{TITLE}}", translate(locale, "gacha.records.title"))
                         .replace("{{DATE}}", translate(locale, "gacha.records.date"))
@@ -164,12 +164,7 @@ public final class GachaHandler implements Router {
     public void applyRoutes(Javalin javalin) {
         javalin.get("/gacha", GachaHandler::gachaRecords);
         javalin.get("/gacha/details", GachaHandler::gachaDetails);
-
-        javalin.cfg.staticFiles.add(
-                cfg -> {
-                    cfg.hostedPath = "/gacha/mappings";
-                    cfg.directory = gachaMappingsPath.toString();
-                    cfg.location = Location.EXTERNAL;
-                });
+        javalin.get("/gacha/mappings", ctx ->
+            ctx.result(FileUtils.read(gachaMappingsPath.toString())));
     }
 }
