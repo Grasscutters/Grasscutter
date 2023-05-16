@@ -72,10 +72,7 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.DateHelper;
-import emu.grasscutter.utils.MessageHandler;
-import emu.grasscutter.utils.Position;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
@@ -98,6 +95,7 @@ public class Player implements PlayerHook {
     @Getter private String accountId;
     @Setter private transient Account account;
     @Getter @Setter private transient GameSession session;
+    @Transient private String sessionKey;
 
     @Getter private String nickname;
     @Getter private String signature;
@@ -374,6 +372,24 @@ public class Player implements PlayerHook {
         if (this.account == null)
             this.account = DatabaseHelper.getAccountById(this.accountId);
         return this.account;
+    }
+
+    /**
+     * @return The player's session key.
+     */
+    public String getSessionKey() {
+        if (this.sessionKey == null) {
+            // Check if the account is null.
+            if (this.account == null) {
+                this.account = DispatchUtils.getAccountById(this.getAccountId());
+            }
+            if (this.account == null) return "";
+
+            // Get the session key.
+            this.sessionKey = this.getAccount().getSessionKey();
+        }
+
+        return this.sessionKey;
     }
 
     public boolean isOnline() {

@@ -5,6 +5,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.server.packet.send.PacketAddNoGachaAvatarCardNotify;
 import emu.grasscutter.utils.objects.HandbookBody.*;
@@ -12,6 +13,20 @@ import java.util.Objects;
 
 /** Commands executed by the handbook. */
 public interface HandbookActions {
+    /**
+     * Checks if the player is authenticated.
+     *
+     * @param player The player.
+     * @param token The player's unique session token.
+     * @return True if the player is authenticated.
+     */
+    static boolean isAuthenticated(Player player, String token) {
+        // Check properties.
+        if (player == null || token == null) return false;
+        // Compare the session key and token.
+        return player.getSessionKey().equals(token);
+    }
+
     /**
      * Grants an avatar to the player.
      *
@@ -36,6 +51,9 @@ public interface HandbookActions {
             // Validate the request.
             if (player == null) {
                 return Response.builder().status(1).message("Player not found.").build();
+            }
+            if (!HandbookActions.isAuthenticated(player, request.getPlayerToken())) {
+                return Response.builder().status(1).message("Player not authorized.").build();
             }
             if (avatarData == null) {
                 return Response.builder().status(400).message("Invalid avatar ID.").build();
@@ -91,6 +109,9 @@ public interface HandbookActions {
             // Validate the request.
             if (player == null) {
                 return Response.builder().status(1).message("Player not found.").build();
+            }
+            if (!HandbookActions.isAuthenticated(player, request.getPlayerToken())) {
+                return Response.builder().status(1).message("Player not authorized.").build();
             }
             if (itemData == null) {
                 return Response.builder().status(400).message("Invalid player UID or item ID.").build();
@@ -150,6 +171,9 @@ public interface HandbookActions {
             if (player == null) {
                 return Response.builder().status(1).message("Player not found.").build();
             }
+            if (!HandbookActions.isAuthenticated(player, request.getPlayerToken())) {
+                return Response.builder().status(1).message("Player not authorized.").build();
+            }
 
             // Find the scene in the player's world.
             var scene = player.getWorld().getSceneById(sceneId);
@@ -200,6 +224,9 @@ public interface HandbookActions {
             // Validate the request.
             if (player == null) {
                 return Response.builder().status(1).message("Player not found.").build();
+            }
+            if (!HandbookActions.isAuthenticated(player, request.getPlayerToken())) {
+                return Response.builder().status(1).message("Player not authorized.").build();
             }
             if (entityData == null) {
                 return Response.builder().status(400).message("Invalid entity ID.").build();
