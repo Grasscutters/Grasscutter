@@ -1,6 +1,14 @@
 import React from "react";
 
-import { listCommands, listAvatars, getItems, getEntities, getScenes } from "@backend/data";
+import {
+    listCommands,
+    listAvatars,
+    getItems,
+    getEntities,
+    getScenes,
+    listQuests,
+    getMainQuestFor
+} from "@backend/data";
 
 import "@css/views/PlainText.scss";
 
@@ -13,7 +21,7 @@ class PlainText extends React.PureComponent {
         return (
             <>
                 {listCommands().map((command) => (
-                    <p>{`${command.name[0]} : ${command.description}`}</p>
+                    <p key={command.name[0]}>{`${command.name[0]} : ${command.description}`}</p>
                 ))}
             </>
         );
@@ -29,7 +37,7 @@ class PlainText extends React.PureComponent {
                 {listAvatars()
                     .sort((a, b) => a.id - b.id)
                     .map((avatar) => (
-                        <p>{`${avatar.id} : ${avatar.name}`}</p>
+                        <p key={avatar.id}>{`${avatar.id} : ${avatar.name}`}</p>
                     ))}
             </>
         );
@@ -45,7 +53,7 @@ class PlainText extends React.PureComponent {
                 {getItems()
                     .sort((a, b) => a.id - b.id)
                     .map((item) => (
-                        <p>{`${item.id} : ${item.name}`}</p>
+                        <p key={item.id}>{`${item.id} : ${item.name}`}</p>
                     ))}
             </>
         );
@@ -61,7 +69,7 @@ class PlainText extends React.PureComponent {
                 {getEntities()
                     .sort((a, b) => a.id - b.id)
                     .map((entity) => (
-                        <p>{`${entity.id} : ${entity.name}`}</p>
+                        <p key={entity.id}>{`${entity.id} : ${entity.name}`}</p>
                     ))}
             </>
         );
@@ -77,7 +85,23 @@ class PlainText extends React.PureComponent {
                 {getScenes()
                     .sort((a, b) => a.id - b.id)
                     .map((scene) => (
-                        <p>{`${scene.id} : ${scene.identifier} [${scene.type}]`}</p>
+                        <p key={scene.id}>{`${scene.id} : ${scene.identifier} [${scene.type}]`}</p>
+                    ))}
+            </>
+        );
+    }
+
+    /**
+     * Creates a paragraph of quests.
+     * @private
+     */
+    private getQuests(): React.ReactNode {
+        return (
+            <>
+                {listQuests()
+                    .sort((a, b) => a.id - b.id)
+                    .map((quest) => (
+                        <p key={quest.id}>{`${quest.id} : ${getMainQuestFor(quest)?.title ?? "Unknown"} - ${quest.description}`}</p>
                     ))}
             </>
         );
@@ -129,6 +153,14 @@ class PlainText extends React.PureComponent {
                 </p>
 
                 {this.getScenes()}
+
+                <p>
+                    <br />
+                    <br />
+                    // Quests
+                </p>
+
+                {this.getQuests()}
             </div>
         );
     }

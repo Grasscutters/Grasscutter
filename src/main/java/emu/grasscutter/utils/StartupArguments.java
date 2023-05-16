@@ -1,17 +1,18 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.tools.Dumpers;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-import org.slf4j.LoggerFactory;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /** A parser for start-up arguments. */
 public final class StartupArguments {
@@ -167,6 +168,7 @@ public final class StartupArguments {
                 case "items" -> Dumpers.dumpItems(language);
                 case "scenes" -> Dumpers.dumpScenes();
                 case "entities" -> Dumpers.dumpEntities(language);
+                case "quests" -> Dumpers.dumpQuests(language);
             }
 
             Grasscutter.getLogger().info("Finished dumping.");

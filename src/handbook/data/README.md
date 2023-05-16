@@ -2,10 +2,12 @@
 Use Grasscutter's dumpers to generate the data to put here.
 
 ## Files Required
+- `mainquests.csv'
 - `commands.json`
 - `entities.csv`
 - `avatars.csv`
 - `scenes.csv`
+- `quests.csv`
 - `items.csv`
 
 # Item Icon Notes

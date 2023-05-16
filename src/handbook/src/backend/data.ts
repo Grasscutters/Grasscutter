@@ -1,17 +1,21 @@
+import mainQuests from "@data/mainquests.csv";
 import commands from "@data/commands.json";
 import entities from "@data/entities.csv";
 import avatars from "@data/avatars.csv";
 import scenes from "@data/scenes.csv";
+import quests from "@data/quests.csv";
 import items from "@data/items.csv";
 
 import { Quality, ItemType, ItemCategory, SceneType } from "@backend/types";
-import type { Command, Avatar, Item, Scene, Entity } from "@backend/types";
+import type { MainQuest, Command, Avatar, Item, Scene, Entity, Quest } from "@backend/types";
 
 import { inRange } from "@app/utils";
 
 type AvatarDump = { [key: number]: Avatar };
 type CommandDump = { [key: string]: Command };
 type TaggedItems = { [key: number]: Item[] };
+type QuestDump = { [key: number]: Quest };
+type MainQuestDump = { [key: number]: MainQuest };
 
 /**
  * @see {@file src/handbook/data/README.md}
@@ -26,6 +30,8 @@ export const sortedItems: TaggedItems = {
     [ItemCategory.Material]: [],
     [ItemCategory.Miscellaneous]: []
 };
+
+export let allMainQuests: MainQuestDump = {};
 
 /**
  * Setup function for this file.
@@ -57,6 +63,8 @@ export function setup(): void {
             sortedItems[ItemCategory.Avatar].push(item);
         }
     });
+
+    allMainQuests = getMainQuests();
 }
 
 /**
@@ -147,4 +155,57 @@ export function getItems(): Item[] {
             icon: values[4]
         };
     });
+}
+
+/**
+ * Fetches and casts all quests in the file.
+ */
+export function getQuests(): QuestDump {
+    const map: QuestDump = {};
+    quests.forEach((quest: Quest) => {
+        quest.description = quest.description
+            .replaceAll("\\", ",");
+        map[quest.id] = quest;
+    });
+
+    return map;
+}
+
+/**
+ * Fetches and lists all the quests in the file.
+ */
+export function listQuests(): Quest[] {
+    return Object.values(getQuests())
+        .sort((a, b) => a.id - b.id);
+}
+
+/**
+ * Fetches and casts all quests in the file.
+ */
+export function getMainQuests(): MainQuestDump {
+    const map: MainQuestDump = {};
+    mainQuests.forEach((quest: MainQuest) => {
+        quest.title = quest.title
+            .replaceAll("\\", ",");
+        map[quest.id] = quest;
+    });
+
+    return map;
+}
+
+/**
+ * Fetches and lists all the quests in the file.
+ */
+export function listMainQuests(): MainQuestDump[] {
+    return Object.values(allMainQuests)
+        .sort((a, b) => a.id - b.id);
+}
+
+/**
+ * Fetches a quest by its ID.
+ *
+ * @param quest The quest ID.
+ */
+export function getMainQuestFor(quest: Quest): MainQuest {
+    return allMainQuests[quest.mainId];
 }
