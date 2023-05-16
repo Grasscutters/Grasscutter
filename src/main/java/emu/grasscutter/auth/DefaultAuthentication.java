@@ -1,13 +1,13 @@
 package emu.grasscutter.auth;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.DefaultAuthenticators.*;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.ComboTokenResJson;
 import emu.grasscutter.server.http.objects.LoginResultJson;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.Language.translate;
 
 /**
  * The default Grasscutter authentication implementation. Allows all users to access any account.
@@ -20,6 +20,7 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     private final Authenticator<Account> sessionTokenValidator = new SessionTokenValidator();
     private final ExternalAuthenticator externalAuthenticator = new ExternalAuthentication();
     private final OAuthAuthenticator oAuthAuthenticator = new OAuthAuthentication();
+    private final HandbookAuthenticator handbookAuthenticator = new HandbookAuthentication();
 
     public DefaultAuthentication() {
         if (ACCOUNT.EXPERIMENTAL_RealPassword) {
@@ -74,5 +75,10 @@ public final class DefaultAuthentication implements AuthenticationSystem {
     @Override
     public OAuthAuthenticator getOAuthAuthenticator() {
         return this.oAuthAuthenticator;
+    }
+
+    @Override
+    public HandbookAuthenticator getHandbookAuthenticator() {
+        return this.handbookAuthenticator;
     }
 }

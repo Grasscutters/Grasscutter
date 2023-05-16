@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
+import io.javalin.json.JavalinGson;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -56,6 +57,9 @@ public final class HttpServer {
             // Configure debug logging.
             if (DISPATCH_INFO.logRequests == ServerDebugMode.ALL)
                 config.plugins.enableDevLogging();
+
+            // Set the JSON mapper.
+            config.jsonMapper(new JavalinGson());
 
             // Static files should be added like this https://javalin.io/documentation#static-files
         });

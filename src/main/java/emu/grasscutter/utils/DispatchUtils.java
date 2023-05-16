@@ -1,7 +1,6 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -14,10 +13,16 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.*;
+
+import javax.annotation.Nullable;
+import java.lang.reflect.Field;
 import java.net.http.HttpClient;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
 public interface DispatchUtils {
     /** HTTP client used for dispatch queries. */
@@ -58,6 +63,132 @@ public interface DispatchUtils {
 
                 // Check if the token is valid.
                 yield account.getToken().equals(token) ? account : null;
+            }
+        };
+    }
+
+    /**
+     * Fetches the session key for the specified player ID.
+     *
+     * @param playerId The player ID.
+     * @return The session key.
+     */
+    @Nullable static String fetchSessionKey(int playerId) {
+        return switch (Grasscutter.getRunMode()) {
+            case GAME_ONLY -> {
+                // Fetch the player from the game server.
+                var player = DatabaseHelper.getPlayerByUid(playerId);
+                if (player == null) yield null;
+
+                // Fetch the account from the dispatch server.
+                var accountId = player.getAccountId();
+                var account = DispatchUtils.getAccountById(accountId);
+
+                // Return the session key.
+                yield account == null ? null : account.getSessionKey();
+            }
+            case DISPATCH_ONLY -> {
+                // Fetch the player's account ID from the game server.
+                var playerFields = DispatchUtils.getPlayerFields(playerId, "accountId");
+                if (playerFields == null) yield null;
+
+                // Get the account ID.
+                var accountId = playerFields.get("accountId").getAsString();
+                if (accountId == null) yield null;
+
+                // Fetch the account from the dispatch server.
+                var account = DatabaseHelper.getAccountById(accountId);
+                // Return the session key.
+                yield account == null ? null : account.getSessionKey();
+            }
+            case HYBRID -> {
+                // Fetch the player from the game server.
+                var player = DatabaseHelper.getPlayerByUid(playerId);
+                if (player == null) yield null;
+
+                // Fetch the account from the database.
+                var account = player.getAccount();
+                // Return the session key.
+                yield account == null ? null : account.getSessionKey();
+            }
+        };
+    }
+
+    /**
+     * Fetches an account by its ID.
+     *
+     * @param accountId The account ID.
+     * @return The account.
+     */
+    @Nullable static Account getAccountById(String accountId) {
+        return switch (Grasscutter.getRunMode()) {
+            case GAME_ONLY -> {
+                // Create a request for account information.
+                var request = new JsonObject();
+                request.addProperty("accountId", accountId);
+
+                // Wait for the request to complete.
+                yield Grasscutter.getGameServer().getDispatchClient()
+                    .await(request, PacketIds.GetAccountReq, PacketIds.GetAccountRsp,
+                        packet -> IDispatcher.decode(packet, Account.class));
+            }
+            case HYBRID, DISPATCH_ONLY ->
+                DatabaseHelper.getAccountById(accountId);
+        };
+    }
+
+    /**
+     * Fetches the values of fields for a player.
+     *
+     * @param playerId The player's ID.
+     * @param fields The fields to fetch.
+     * @return An object holding the field values.
+     */
+    @Nullable static JsonObject getPlayerFields(int playerId, String... fields) {
+        return switch (Grasscutter.getRunMode()) {
+            case DISPATCH_ONLY -> {
+                // Create a request for player fields.
+                var request = new JsonObject();
+                request.addProperty("playerId", playerId);
+                request.add("fields", IDispatcher.JSON.toJsonTree(fields));
+
+                // Wait for the request to complete.
+                yield Grasscutter.getDispatchServer()
+                    .await(request, PacketIds.GetPlayerFieldsReq, PacketIds.GetPlayerFieldsRsp,
+                        IDispatcher.DEFAULT_PARSER);
+            }
+            case HYBRID, GAME_ONLY -> {
+                // Get the player by ID.
+                var player = Grasscutter.getGameServer()
+                    .getPlayerByUid(playerId, true);
+                if (player == null) yield null;
+
+                // Prepare field properties.
+                var fieldValues = new JsonObject();
+                var fieldMap = new HashMap<String, Field>();
+                Arrays.stream(player.getClass().getDeclaredFields())
+                    .forEach(field -> fieldMap.put(field.getName(), field));
+
+                // Find the values of all requested fields.
+                for (var fieldName : fields) {
+                    try {
+                        var field = fieldMap.get(fieldName);
+                        if (field == null)
+                            fieldValues.add(fieldName, JsonNull.INSTANCE);
+                        else {
+                            var wasAccessible = field.canAccess(player);
+                            field.setAccessible(true);
+                            fieldValues.add(fieldName,
+                                IDispatcher.JSON.toJsonTree(field.get(player)));
+                            field.setAccessible(wasAccessible);
+                        }
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+                }
+
+                // Return the values.
+                yield fieldValues;
             }
         };
     }

@@ -4,10 +4,11 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.server.http.objects.*;
 import emu.grasscutter.utils.DispatchUtils;
 import io.javalin.http.Context;
-import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+
+import javax.annotation.Nullable;
 
 /** Defines an authenticator for the server. Can be changed by plugins. */
 public interface AuthenticationSystem {
@@ -129,6 +130,13 @@ public interface AuthenticationSystem {
      * @return An authenticator.
      */
     OAuthAuthenticator getOAuthAuthenticator();
+
+    /**
+     * This is the authenticator used for handling handbook authentication requests.
+     *
+     * @return An authenticator.
+     */
+    HandbookAuthenticator getHandbookAuthenticator();
 
     /** A data container that holds relevant data for authenticating a client. */
     @Builder

@@ -1,14 +1,17 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.HANDBOOK;
-
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.Action;
 import io.javalin.Javalin;
+import io.javalin.http.ContentType;
 import io.javalin.http.Context;
+
+import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -20,7 +23,7 @@ public final class HandbookHandler implements Router {
      * found.
      */
     public HandbookHandler() {
-        this.handbook = FileUtils.readResource("/handbook.html");
+        this.handbook = FileUtils.readResource("/html/handbook.html");
         this.serve = HANDBOOK.enable && this.handbook.length > 0;
     }
 
@@ -30,6 +33,9 @@ public final class HandbookHandler implements Router {
 
         // The handbook content. (built from src/handbook)
         javalin.get("/handbook", this::serveHandbook);
+        // The handbook authentication page.
+        javalin.get("/handbook/authenticate", this::authenticate);
+        javalin.post("/handbook/authenticate", this::performAuthentication);
 
         // Handbook control routes.
         javalin.post("/handbook/avatar", this::grantAvatar);
@@ -56,6 +62,49 @@ public final class HandbookHandler implements Router {
             ctx.status(500).result("Handbook not found.");
         } else {
             ctx.contentType("text/html").result(this.handbook);
+        }
+    }
+
+    /**
+     * Serves the handbook authentication page.
+     *
+     * @route GET /handbook/authenticate
+     * @param ctx The Javalin request context.
+     */
+    private void authenticate(Context ctx) {
+        if (!this.serve) {
+            ctx.status(500).result("Handbook not found.");
+        } else {
+            // Pass the request to the authenticator.
+            Grasscutter.getAuthenticationSystem()
+                .getHandbookAuthenticator().presentPage(
+                    AuthenticationRequest.builder().context(ctx).build());
+        }
+    }
+
+    /**
+     * Performs authentication for the handbook.
+     *
+     * @route POST /handbook/authenticate
+     * @param ctx The Javalin request context.
+     */
+    private void performAuthentication(Context ctx) {
+        if (!this.serve) {
+            ctx.status(500).result("Handbook not found.");
+        } else {
+            // Pass the request to the authenticator.
+            var result = Grasscutter.getAuthenticationSystem()
+                .getHandbookAuthenticator().authenticate(
+                    AuthenticationRequest.builder().context(ctx).build());
+            if (result == null) {
+                ctx.status(500).result("Authentication failed.");
+            } else {
+                ctx
+                    .status(result.getStatus())
+                    .result(result.getBody())
+                    .contentType(result.getBody().contains("html") ?
+                        ContentType.TEXT_HTML : ContentType.TEXT_PLAIN);
+            }
         }
     }
 

@@ -41,7 +41,7 @@ jobs:
         uses: suisei-cn/actions-download-file@v1.4.0
         with:
           url: https://api.grasscutter.io/static/handbook.html
-          target: src/main/resources/
+          target: src/main/resources/html/
       - name: Run Gradle
         run: ./gradlew && ./gradlew jar
       - name: Upload build

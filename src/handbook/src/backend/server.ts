@@ -1,20 +1,84 @@
 import type { CommandResponse } from "@backend/types";
 import emitter from "@backend/events";
 
-let targetPlayer = 0; // The UID of the target player.
+let playerToken: string | null = null; // The session token for the player.
+export let targetPlayer = 0; // The UID of the target player.
+
+// The server's address and port.
+export let address: string = "127.0.0.1", port: string = "443";
+export let encrypted: boolean = true;
+
+export let lockedPlayer = false; // Whether the UID field is locked.
 export let connected = false; // Whether the server is connected.
+
+/**
+ * Loads the server details from local storage.
+ */
+export function setup(): void {
+    // Load the server details from local storage.
+    const storedAddress = localStorage.getItem("address");
+    const storedPort = localStorage.getItem("port");
+
+    // Set the server details.
+    if (storedAddress) address = storedAddress;
+    if (storedPort) port = storedPort;
+}
+
+/**
+ * Returns the formed URL.
+ * This assumes that the server upgrades to HTTPS.
+ */
+export function url(): string {
+    // noinspection HttpUrlsUsage
+    return `http${window.isSecureContext || encrypted ? "s" : ""}://${address}:${port}`;
+}
 
 /**
  * Sets the target player.
  *
  * @param player The UID of the target player.
+ * @param token The session token for the player.
  */
-export function setTargetPlayer(player: number): void {
+export function setTargetPlayer(player: number, token: string | null = null): void {
+    playerToken = token;
     targetPlayer = player;
+
+    // Determine connected status.
     connected = !isNaN(player) && player > 0;
+    // Determine locked status.
+    lockedPlayer = connected && token != null;
 
     // Emit the connected event.
     emitter.emit("connected", connected);
+}
+
+/**
+ * Sets the server details.
+ *
+ * @param newAddress The server's address.
+ * @param newPort The server's port.
+ */
+export async function setServerDetails(newAddress: string | null, newPort: string | null): Promise<void> {
+    // Apply the new details.
+    if (newAddress != null) {
+        address = newAddress;
+        localStorage.setItem("address", newAddress);
+    }
+    if (newPort != null) {
+        port = newPort;
+        localStorage.setItem("port", newPort);
+    }
+
+    // Check if the server is encrypted.
+    return new Promise((resolve) => {
+        encrypted = true;
+        fetch(`${url()}`)
+            .catch(() => {
+                encrypted = false;
+                resolve();
+            })
+            .then(() => resolve());
+    });
 }
 
 /**
@@ -44,9 +108,10 @@ export async function grantAvatar(
     if (invalid(avatar) || invalid(level) || invalid(constellations) || invalid(talents))
         return { status: -1, message: "Invalid arguments." };
 
-    return await fetch(`https://localhost:443/handbook/avatar`, {
+    return await fetch(`${url()}/handbook/avatar`, {
         method: "POST",
         body: JSON.stringify({
+            playerToken,
             player: targetPlayer.toString(),
             avatar: avatar.toString(),
             level,
@@ -68,9 +133,10 @@ export async function giveItem(item: number, amount = 1): Promise<CommandRespons
     // Validate the number.
     if (isNaN(amount) || amount < 1) return { status: -1, message: "Invalid amount." };
 
-    return await fetch(`https://localhost:443/handbook/item`, {
+    return await fetch(`${url()}/handbook/item`, {
         method: "POST",
         body: JSON.stringify({
+            playerToken,
             player: targetPlayer.toString(),
             item: item.toString(),
             amount
@@ -87,9 +153,10 @@ export async function teleportTo(scene: number): Promise<CommandResponse> {
     // Validate the number.
     if (isNaN(scene) || scene < 1) return { status: -1, message: "Invalid scene." };
 
-    return await fetch(`https://localhost:443/handbook/teleport`, {
+    return await fetch(`${url()}/handbook/teleport`, {
         method: "POST",
         body: JSON.stringify({
+            playerToken,
             player: targetPlayer.toString(),
             scene: scene.toString()
         })
@@ -108,9 +175,10 @@ export async function spawnEntity(entity: number, amount = 1, level = 1): Promis
     if (isNaN(entity) || isNaN(amount) || isNaN(level) || amount < 1 || level < 1 || level > 200)
         return { status: -1, message: "Invalid arguments." };
 
-    return await fetch(`https://localhost:443/handbook/spawn`, {
+    return await fetch(`${url()}/handbook/spawn`, {
         method: "POST",
         body: JSON.stringify({
+            playerToken,
             player: targetPlayer.toString(),
             entity: entity.toString(),
             amount,

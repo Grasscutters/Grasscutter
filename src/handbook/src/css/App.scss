@@ -46,6 +46,12 @@ body {
     height: 100%;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }

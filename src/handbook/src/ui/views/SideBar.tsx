@@ -10,13 +10,14 @@ import Icon_Map from "@assets/Icon_Map.webp";
 import Icon_Quests from "@assets/Icon_Quests.webp";
 import Icon_Achievements from "@assets/Icon_Achievements.webp";
 
-import { navigate } from "@backend/events";
-import { setTargetPlayer } from "@backend/server";
+import events, { navigate } from "@backend/events";
+import { targetPlayer, lockedPlayer, setTargetPlayer } from "@backend/server";
 
 import "@css/views/SideBar.scss";
 
 interface IState {
     uid: string | null;
+    uidLocked: boolean;
 }
 
 class SideBar extends React.Component<{}, IState> {
@@ -24,8 +25,20 @@ class SideBar extends React.Component<{}, IState> {
         super(props);
 
         this.state = {
-            uid: null
+            uid: targetPlayer > 0 ? targetPlayer.toString() : null,
+            uidLocked: lockedPlayer
         };
+    }
+
+    /**
+     * Invoked when the player's UID changes.
+     * @private
+     */
+    private updateUid(): void {
+        this.setState({
+            uid: targetPlayer > 0 ? targetPlayer.toString() : null,
+            uidLocked: lockedPlayer
+        });
     }
 
     /**
@@ -39,8 +52,30 @@ class SideBar extends React.Component<{}, IState> {
         const uid = input == "" ? null : input;
         if (uid && uid.length > 10) return;
 
-        this.setState({ uid });
         setTargetPlayer(parseInt(uid ?? "0"));
+    }
+
+    /**
+     * Invoked when the UID input is right-clicked.
+     *
+     * @param event The event.
+     * @private
+     */
+    private onRightClick(event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+        // Remove focus from the input.
+        event.currentTarget.blur();
+        event.preventDefault();
+
+        // Open the server settings overlay.
+        events.emit("overlay", "ServerSettings");
+    }
+
+    componentDidMount() {
+        events.on("connected", this.updateUid.bind(this));
+    }
+
+    componentWillUnmount() {
+        events.off("connected", this.updateUid.bind(this));
     }
 
     render() {
@@ -74,7 +109,9 @@ class SideBar extends React.Component<{}, IState> {
                             className={"SideBar_Input"}
                             placeholder={"Enter UID..."}
                             value={this.state.uid ?? undefined}
+                            disabled={this.state.uidLocked}
                             onChange={this.onChange.bind(this)}
+                            onContextMenu={this.onRightClick.bind(this)}
                         />
                     </div>
                 </div>

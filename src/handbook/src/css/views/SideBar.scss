@@ -72,3 +72,9 @@
     color: var(--text-secondary-color);
     opacity: 1;
 }
+
+.SideBar_Input:disabled {
+    cursor: not-allowed;
+    border-radius: 10px ;
+    background-color: var(--background-color);
+}

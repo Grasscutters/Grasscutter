@@ -23,6 +23,7 @@ public interface HandbookBody {
     @Getter
     class GrantAvatar {
         private String player; // Parse into online player ID.
+        private String playerToken; // Parse into session token.
         private String avatar; // Parse into avatar ID.
 
         private int level = 90; // Range between 1 - 90.
@@ -33,6 +34,7 @@ public interface HandbookBody {
     @Getter
     class GiveItem {
         private String player; // Parse into online player ID.
+        private String playerToken; // Parse into session token.
         private String item; // Parse into item ID.
 
         private long amount = 1; // Range between 1 - Long.MAX_VALUE.
@@ -41,12 +43,14 @@ public interface HandbookBody {
     @Getter
     class TeleportTo {
         private String player; // Parse into online player ID.
+        private String playerToken; // Parse into session token.
         private String scene; // Parse into a scene ID.
     }
 
     @Getter
     class SpawnEntity {
         private String player; // Parse into online player ID.
+        private String playerToken; // Parse into session token.
         private String entity; // Parse into entity ID.
 
         private long amount = 1; // Range between 1 - Long.MAX_VALUE.

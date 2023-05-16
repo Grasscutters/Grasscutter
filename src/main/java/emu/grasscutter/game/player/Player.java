@@ -94,7 +94,8 @@ import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 @Entity(value = "players", useDiscriminator = false)
 public class Player implements PlayerHook {
     @Id private int id;
-    @Indexed(options = @IndexOptions(unique = true)) private String accountId;
+    @Indexed(options = @IndexOptions(unique = true))
+    @Getter private String accountId;
     @Setter private transient Account account;
     @Getter @Setter private transient GameSession session;
 

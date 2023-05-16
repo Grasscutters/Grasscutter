@@ -66,6 +66,8 @@ tmp/
 /*.sh
 
 GM Handbook*.txt
+handbook.html
+
 config.json
 mitmdump.exe
 mongod.exe
@@ -74,8 +76,6 @@ gacha-mapping.js
 mappings.js
 BuildConfig.java
 data/hk4e/announcement/
-
-src/main/resources/handbook.html
 
 # lombok
 /.apt_generated/

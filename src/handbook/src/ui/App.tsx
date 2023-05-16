@@ -2,6 +2,7 @@ import React from "react";
 
 import SideBar from "@views/SideBar";
 import Content from "@views/Content";
+import Overlay from "@views/Overlay";
 import PlainText from "@views/PlainText";
 
 import type { Page } from "@backend/types";
@@ -25,7 +26,6 @@ class App extends React.Component<{}, IState> {
         // Check if the window's href is a page.
         let targetPage = null;
         const page = window.location.href.split("/").pop();
-        console.log(page);
 
         if (page != undefined && page != "") {
             // Convert the page to a Page type.
@@ -44,7 +44,16 @@ class App extends React.Component<{}, IState> {
         return (
             <div className={"App"}>
                 <SideBar />
-                {this.state.plain ? <PlainText /> : <Content initial={this.state.initial} />}
+
+                {
+                    this.state.plain ?
+                        <PlainText /> :
+                        <Content
+                            initial={this.state.initial}
+                        />
+                }
+
+                <Overlay />
             </div>
         );
     }

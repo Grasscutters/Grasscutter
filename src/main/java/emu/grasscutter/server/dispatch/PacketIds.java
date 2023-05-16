@@ -11,4 +11,8 @@ public interface PacketIds {
     int GachaHistoryRsp = 5;
     int GmTalkReq = PacketOpcodes.GmTalkReq;
     int GmTalkRsp = PacketOpcodes.GmTalkRsp;
+    int GetAccountReq = 6;
+    int GetAccountRsp = 7;
+    int GetPlayerFieldsReq = 8;
+    int GetPlayerFieldsRsp = 9;
 }
