@@ -1,16 +1,12 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.utils.Crypto;
-import lombok.Getter;
-import org.java_websocket.WebSocket;
-import org.java_websocket.handshake.ClientHandshake;
-import org.java_websocket.server.WebSocketServer;
-import org.slf4j.Logger;
-
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -19,8 +15,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import lombok.Getter;
+import org.java_websocket.WebSocket;
+import org.java_websocket.handshake.ClientHandshake;
+import org.java_websocket.server.WebSocketServer;
+import org.slf4j.Logger;
 
 /* Internal communications server. */
 public final class DispatchServer extends WebSocketServer implements IDispatcher {
@@ -99,8 +98,7 @@ public final class DispatchServer extends WebSocketServer implements IDispatcher
         // Get the account from the database.
         var account = DatabaseHelper.getAccountById(accountId);
         // Send the account.
-        this.sendMessage(socket, PacketIds.GetAccountRsp,
-            JSON.toJsonTree(account));
+        this.sendMessage(socket, PacketIds.GetAccountRsp, JSON.toJsonTree(account));
     }
 
     /**

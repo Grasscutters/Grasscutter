@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -13,16 +15,13 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.*;
-
-import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.net.http.HttpClient;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import javax.annotation.Nullable;
 
 public interface DispatchUtils {
     /** HTTP client used for dispatch queries. */
@@ -128,12 +127,15 @@ public interface DispatchUtils {
                 request.addProperty("accountId", accountId);
 
                 // Wait for the request to complete.
-                yield Grasscutter.getGameServer().getDispatchClient()
-                    .await(request, PacketIds.GetAccountReq, PacketIds.GetAccountRsp,
-                        packet -> IDispatcher.decode(packet, Account.class));
+                yield Grasscutter.getGameServer()
+                        .getDispatchClient()
+                        .await(
+                                request,
+                                PacketIds.GetAccountReq,
+                                PacketIds.GetAccountRsp,
+                                packet -> IDispatcher.decode(packet, Account.class));
             }
-            case HYBRID, DISPATCH_ONLY ->
-                DatabaseHelper.getAccountById(accountId);
+            case HYBRID, DISPATCH_ONLY -> DatabaseHelper.getAccountById(accountId);
         };
     }
 
@@ -154,32 +156,32 @@ public interface DispatchUtils {
 
                 // Wait for the request to complete.
                 yield Grasscutter.getDispatchServer()
-                    .await(request, PacketIds.GetPlayerFieldsReq, PacketIds.GetPlayerFieldsRsp,
-                        IDispatcher.DEFAULT_PARSER);
+                        .await(
+                                request,
+                                PacketIds.GetPlayerFieldsReq,
+                                PacketIds.GetPlayerFieldsRsp,
+                                IDispatcher.DEFAULT_PARSER);
             }
             case HYBRID, GAME_ONLY -> {
                 // Get the player by ID.
-                var player = Grasscutter.getGameServer()
-                    .getPlayerByUid(playerId, true);
+                var player = Grasscutter.getGameServer().getPlayerByUid(playerId, true);
                 if (player == null) yield null;
 
                 // Prepare field properties.
                 var fieldValues = new JsonObject();
                 var fieldMap = new HashMap<String, Field>();
                 Arrays.stream(player.getClass().getDeclaredFields())
-                    .forEach(field -> fieldMap.put(field.getName(), field));
+                        .forEach(field -> fieldMap.put(field.getName(), field));
 
                 // Find the values of all requested fields.
                 for (var fieldName : fields) {
                     try {
                         var field = fieldMap.get(fieldName);
-                        if (field == null)
-                            fieldValues.add(fieldName, JsonNull.INSTANCE);
+                        if (field == null) fieldValues.add(fieldName, JsonNull.INSTANCE);
                         else {
                             var wasAccessible = field.canAccess(player);
                             field.setAccessible(true);
-                            fieldValues.add(fieldName,
-                                IDispatcher.JSON.toJsonTree(field.get(player)));
+                            fieldValues.add(fieldName, IDispatcher.JSON.toJsonTree(field.get(player)));
                             field.setAccessible(wasAccessible);
                         }
                     } catch (Exception exception) {

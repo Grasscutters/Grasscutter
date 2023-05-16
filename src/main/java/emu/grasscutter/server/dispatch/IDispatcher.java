@@ -1,14 +1,13 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonAdapters.ByteArrayAdapter;
-import org.java_websocket.WebSocket;
-import org.slf4j.Logger;
-
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,8 +17,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import org.java_websocket.WebSocket;
+import org.slf4j.Logger;
 
 public interface IDispatcher {
     Gson JSON =
@@ -28,8 +27,8 @@ public interface IDispatcher {
                     .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
                     .create();
 
-    Function<JsonElement, JsonObject> DEFAULT_PARSER = (packet) ->
-        IDispatcher.decode(packet, JsonObject.class);
+    Function<JsonElement, JsonObject> DEFAULT_PARSER =
+            (packet) -> IDispatcher.decode(packet, JsonObject.class);
 
     /**
      * Decodes an escaped JSON message.
@@ -78,8 +77,8 @@ public interface IDispatcher {
      * @return The fulfilled data, or null.
      * @param <T> The type of data to be returned.
      */
-    default <T> T await(JsonObject request, int requestId, int responseId,
-                        Function<JsonElement, T> parser) {
+    default <T> T await(
+            JsonObject request, int requestId, int responseId, Function<JsonElement, T> parser) {
         // Perform the setup for the request.
         var future = this.async(request, requestId, responseId, parser);
 
@@ -92,8 +91,7 @@ public interface IDispatcher {
     }
 
     /**
-     * Registers a callback for a packet to be received.
-     * Sends a packet with the provided request.
+     * Registers a callback for a packet to be received. Sends a packet with the provided request.
      *
      * @param request The request object.
      * @param requestId The packet ID of the request packet.
@@ -105,8 +103,7 @@ public interface IDispatcher {
     }
 
     /**
-     * Registers a callback for a packet to be received.
-     * Sends a packet with the provided request.
+     * Registers a callback for a packet to be received. Sends a packet with the provided request.
      *
      * @param request The request object.
      * @param requestId The packet ID of the request packet.
@@ -115,14 +112,11 @@ public interface IDispatcher {
      * @return A promise containing the parsed JSON data.
      */
     default <T> CompletableFuture<T> async(
-        JsonObject request, int requestId, int responseId,
-        Function<JsonElement, T> parser
-    ) {
+            JsonObject request, int requestId, int responseId, Function<JsonElement, T> parser) {
         // Create the future.
         var future = new CompletableFuture<T>();
         // Listen for the response.
-        this.registerCallback(responseId, packet ->
-            future.complete(parser.apply(packet)));
+        this.registerCallback(responseId, packet -> future.complete(parser.apply(packet)));
         // Broadcast the packet.
         this.sendMessage(requestId, request);
 
