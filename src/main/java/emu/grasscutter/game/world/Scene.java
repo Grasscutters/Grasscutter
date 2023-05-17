@@ -41,14 +41,15 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.KahnsSort;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -978,7 +979,7 @@ public final class Scene {
         groups.forEach(
                 g -> scriptManager.callEvent(new ScriptArgs(g.id, EventType.EVENT_GROUP_LOAD, g.id)));
 
-        Grasscutter.getLogger().debug("Scene {} loaded {} group(s)", this.getId(), groups.size());
+        Grasscutter.getLogger().trace("Scene {} loaded {} group(s)", this.getId(), groups.size());
     }
 
     public void unloadGroup(SceneBlock block, int group_id) {

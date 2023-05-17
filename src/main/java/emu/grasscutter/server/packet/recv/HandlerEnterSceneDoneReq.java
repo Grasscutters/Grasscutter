@@ -40,7 +40,7 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 
         session.getPlayer().getScene().loadGroupForQuest(questGroupSuites);
         Grasscutter.getLogger()
-                .debug(
+                .trace(
                         "Loaded Scene {} Quest(s) Groupsuite(s): {}",
                         session.getPlayer().getSceneId(),
                         questGroupSuites);
