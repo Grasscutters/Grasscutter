@@ -1,9 +1,5 @@
 package emu.grasscutter.server.game;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.utils.Language.translate;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -41,17 +37,22 @@ import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
+import kcp.highway.ChannelConfig;
+import kcp.highway.KcpServer;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.SneakyThrows;
+
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import kcp.highway.ChannelConfig;
-import kcp.highway.KcpServer;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.SneakyThrows;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.utils.Language.translate;
 
 @Getter
 public final class GameServer extends KcpServer {
@@ -244,6 +245,21 @@ public final class GameServer extends KcpServer {
                         .filter(player -> player.getAccount().getId().equals(accountId))
                         .findFirst();
         return playerOpt.orElse(null);
+    }
+
+    /**
+     * Tries to find a player with the matching IP address.
+     *
+     * @param ipAddress The IP address. This should just be numbers without a port.
+     * @return The player, or null if one could not be found.
+     */
+    public Player getPlayerByIpAddress(String ipAddress) {
+        return this.getPlayers().values().stream()
+            .map(Player::getSession)
+            .filter(session -> session != null &&
+                session.getAddress().getHostString().equals(ipAddress))
+            .map(GameSession::getPlayer)
+            .findFirst().orElse(null);
     }
 
     public SocialDetail.Builder getSocialDetailByUid(int id) {

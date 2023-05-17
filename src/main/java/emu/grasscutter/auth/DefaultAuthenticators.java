@@ -1,10 +1,8 @@
 package emu.grasscutter.auth;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-import static emu.grasscutter.utils.Language.translate;
-
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
@@ -16,13 +14,17 @@ import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.http.ContentType;
+
+import javax.crypto.Cipher;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-import javax.crypto.Cipher;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.utils.Language.translate;
 
 /** A class containing default authenticators. */
 public final class DefaultAuthenticators {
@@ -391,6 +393,24 @@ public final class DefaultAuthenticators {
         public void presentPage(AuthenticationRequest request) {
             var ctx = request.getContext();
             if (ctx == null) return;
+
+            // Check to see if an IP authentication can be performed.
+            if (Grasscutter.getRunMode() == ServerRunMode.HYBRID) {
+                var player = Grasscutter.getGameServer()
+                    .getPlayerByIpAddress(ctx.ip());
+                if (player != null) {
+                    // Get the player's session token.
+                    var sessionKey = player.getAccount().getSessionKey();
+                    // Respond with the handbook auth page.
+                    ctx.status(200).result(
+                        this.authPage
+                            .replace("{{VALUE}}", "true")
+                            .replace("{{SESSION_TOKEN}}", sessionKey)
+                            .replace("{{PLAYER_ID}}", String.valueOf(player.getUid()))
+                    );
+                    return;
+                }
+            }
 
             // Respond with the handbook auth page.
             ctx.contentType(ContentType.TEXT_HTML).result(this.authPage);
