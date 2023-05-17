@@ -6,7 +6,7 @@
     width: 196px;
     height: 196px;
 
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
     &:hover {
         cursor: pointer;
         transition: 0.1s ease-in-out all;
-        box-shadow: 0 0 10px 5px var(--accent-color);
+        box-shadow: 0 0 10px 5px var(--primary-color);
         scale: 1.01;
     }
 }
@@ -29,7 +29,7 @@
 
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 10px 5px var(--accent-color);
+        box-shadow: 0 0 10px 5px var(--primary-color);
         scale: 1.01;
     }
 }

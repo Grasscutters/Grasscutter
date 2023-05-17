@@ -50,14 +50,14 @@
 
 .HomePage_Box {
     display: flex;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .HomePage_Disclaimer {
     display: flex;
     flex-direction: row;
     gap: 30px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 
     height: 100px;
     align-self: end;
@@ -104,7 +104,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 
     max-width: 300px;
 

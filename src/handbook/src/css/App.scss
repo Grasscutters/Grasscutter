@@ -4,11 +4,13 @@
 }
 
 html {
-    --background-color: #346b77;
-    --secondary-color: #418493;
-    --accent-color: #5abcb9;
+    --background-color: #25294a;
+    --primary-color: #2d325a;
+    --secondary-color: #202442;
 
     --text-primary-color: #FFFFFF;
+    --unselected-color: #c7c8d0;
+    --selected-color: #FFFFFF;
 
     --legendary-color: #926d45;
     --epic-color: #7b5c90;
@@ -61,6 +63,6 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
+    background: var(--primary-color);
     border-radius: 10px;
 }
