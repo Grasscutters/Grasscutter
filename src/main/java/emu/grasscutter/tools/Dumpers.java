@@ -9,8 +9,6 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Language;
-import lombok.AllArgsConstructor;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
 
 public interface Dumpers {
     // See `src/handbook/data/README.md` for attributions.
@@ -284,26 +283,32 @@ public interface Dumpers {
 
         // Convert all known quests to a quest map.
         var dump = new HashMap<Integer, QuestInfo>();
-        GameData.getQuestDataMap().forEach((id, quest) -> {
-            var langHash = quest.getDescTextMapHash();
-            dump.put(id, new QuestInfo(
-                langHash == 0 ? "Unknown" :
-                    Language.getTextMapKey(langHash).get(locale)
-                        .replaceAll(",", "\\\\"),
-                quest.getMainId()
-            ));
-        });
+        GameData.getQuestDataMap()
+                .forEach(
+                        (id, quest) -> {
+                            var langHash = quest.getDescTextMapHash();
+                            dump.put(
+                                    id,
+                                    new QuestInfo(
+                                            langHash == 0
+                                                    ? "Unknown"
+                                                    : Language.getTextMapKey(langHash).get(locale).replaceAll(",", "\\\\"),
+                                            quest.getMainId()));
+                        });
 
         // Convert all known main quests into a quest map.
         var mainDump = new HashMap<Integer, MainQuestInfo>();
-        GameData.getMainQuestDataMap().forEach((id, mainQuest) -> {
-            var langHash = mainQuest.getTitleTextMapHash();
-            mainDump.put(id, new MainQuestInfo(
-                langHash == 0 ? "Unknown" :
-                    Language.getTextMapKey(langHash).get(locale)
-                        .replaceAll(",", "\\\\")
-            ));
-        });
+        GameData.getMainQuestDataMap()
+                .forEach(
+                        (id, mainQuest) -> {
+                            var langHash = mainQuest.getTitleTextMapHash();
+                            mainDump.put(
+                                    id,
+                                    new MainQuestInfo(
+                                            langHash == 0
+                                                    ? "Unknown"
+                                                    : Language.getTextMapKey(langHash).get(locale).replaceAll(",", "\\\\")));
+                        });
 
         try {
             // Create a file for the dump.
@@ -313,8 +318,7 @@ public interface Dumpers {
                 throw new RuntimeException("Failed to create file.");
 
             // Write the dump to the file.
-            Files.writeString(file.toPath(), Dumpers.miniEncode(dump,
-                "id", "description", "mainId"));
+            Files.writeString(file.toPath(), Dumpers.miniEncode(dump, "id", "description", "mainId"));
         } catch (IOException ignored) {
             throw new RuntimeException("Failed to write to file.");
         }
@@ -327,8 +331,7 @@ public interface Dumpers {
                 throw new RuntimeException("Failed to create file.");
 
             // Write the dump to the file.
-            Files.writeString(file.toPath(), Dumpers.miniEncode(mainDump,
-                "id", "title"));
+            Files.writeString(file.toPath(), Dumpers.miniEncode(mainDump, "id", "title"));
         } catch (IOException ignored) {
             throw new RuntimeException("Failed to write to file.");
         }

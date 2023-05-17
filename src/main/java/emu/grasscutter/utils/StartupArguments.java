@@ -1,18 +1,17 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.tools.Dumpers;
-import org.slf4j.LoggerFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
-import static emu.grasscutter.config.Configuration.*;
+import org.slf4j.LoggerFactory;
 
 /** A parser for start-up arguments. */
 public final class StartupArguments {
