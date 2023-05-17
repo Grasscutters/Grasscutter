@@ -1481,14 +1481,19 @@ public class Player implements PlayerHook {
             int currentValue = this.properties.get(prop.getId());
             this.properties.put(prop.getId(), value);
             if (sendPacket) {
-                // Update player with packet
+                // Send property change reasons if needed.
+                switch (prop) {
+                    case PROP_PLAYER_EXP -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                        PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
+                    case PROP_PLAYER_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                        PropChangeReason.PROP_CHANGE_REASON_LEVELUP));
+                    case PROP_PLAYER_WORLD_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                        PropChangeReason.PROP_CHANGE_REASON_MANUAL_ADJUST_WORLD_LEVEL));
+                }
+
+                // Update player with packet.
                 this.sendPacket(new PacketPlayerPropNotify(this, prop));
                 this.sendPacket(new PacketPlayerPropChangeNotify(this, prop, value - currentValue));
-
-                // Make the Adventure EXP pop-up show on screen.
-                if (prop == PlayerProperty.PROP_PLAYER_EXP) {
-                    this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value, PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
-                }
             }
             return true;
         } else {
