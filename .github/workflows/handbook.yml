@@ -44,12 +44,15 @@ jobs:
 
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git stash
+      - run: git checkout unstable && git pull
+      - run: git stash pop || true
       - name: Commit changes
         if: ${{ github.event_name == 'push' }}
         run: git add -u && git commit -m "Lint Code [skip actions]" || true
       - name: Push changes
         if: ${{ github.event_name == 'push' }}
-        run: git push --set-upstream --force origin ${{ github.ref }}
+        run: git push --set-upstream --force origin unstable
 
   Build-Handbook:
     runs-on: ubuntu-latest

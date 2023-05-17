@@ -38,7 +38,7 @@ jobs:
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: git stash
-      - run: git checkout unstable
+      - run: git checkout unstable && git pull
       - run: git stash pop || true
 
       - name: Commit Code Changes
