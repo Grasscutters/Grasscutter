@@ -1,5 +1,7 @@
 package emu.grasscutter.game.world;
 
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.player.Player;
@@ -22,17 +24,14 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-import lombok.val;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
+import lombok.Getter;
+import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 public final class World implements Iterable<Player> {
     @Getter private final GameServer server;
@@ -535,14 +534,10 @@ public final class World implements Iterable<Player> {
                 player -> player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
     }
 
-    /**
-     * Notifies all players of the current world time.
-     */
+    /** Notifies all players of the current world time. */
     public void updateTime() {
-        this.getPlayers().forEach(p ->
-            p.sendPacket(new PacketPlayerGameTimeNotify(p)));
-        this.getPlayers().forEach(p ->
-            p.sendPacket(new PacketSceneTimeNotify(p)));
+        this.getPlayers().forEach(p -> p.sendPacket(new PacketPlayerGameTimeNotify(p)));
+        this.getPlayers().forEach(p -> p.sendPacket(new PacketSceneTimeNotify(p)));
     }
 
     /**
@@ -559,8 +554,7 @@ public final class World implements Iterable<Player> {
                 .forEach(player -> player.setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, locked));
     }
 
-    @NotNull
-    @Override
+    @NotNull @Override
     public Iterator<Player> iterator() {
         return this.getPlayers().iterator();
     }
