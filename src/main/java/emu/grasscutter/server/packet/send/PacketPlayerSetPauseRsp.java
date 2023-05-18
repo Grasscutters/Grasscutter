@@ -7,9 +7,10 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 
 public class PacketPlayerSetPauseRsp extends BasePacket {
 
-    public PacketPlayerSetPauseRsp() {
+    public PacketPlayerSetPauseRsp(Retcode retcode) {
         super(PacketOpcodes.PlayerSetPauseRsp);
 
-        this.setData(PlayerSetPauseRsp.newBuilder().setRetcode(Retcode.RET_SUCC_VALUE));
+        this.setData(PlayerSetPauseRsp.newBuilder()
+            .setRetcode(retcode.getNumber()));
     }
 }

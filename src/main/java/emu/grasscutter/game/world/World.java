@@ -1,7 +1,5 @@
 package emu.grasscutter.game.world;
 
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.player.Player;
@@ -24,13 +22,17 @@ import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMaps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import lombok.Getter;
+import lombok.val;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import lombok.val;
+
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
 
 public final class World implements Iterable<Player> {
     @Getter private final GameServer server;
@@ -477,7 +479,12 @@ public final class World implements Iterable<Player> {
      * @param paused True if the world should be paused.
      */
     public void setPaused(boolean paused) {
-        this.getWorldTime(); // Update the world time.
+        // Check if this world is a multiplayer world.
+        if (this.isMultiplayer) return;
+
+        // Update the world time.
+        this.getWorldTime();
+        this.updateTime();
 
         // If the world is being un-paused, update the last update time.
         if (this.isPaused != paused && !paused) {
@@ -527,6 +534,16 @@ public final class World implements Iterable<Player> {
     }
 
     /**
+     * Notifies all players of the current world time.
+     */
+    public void updateTime() {
+        this.getPlayers().forEach(p ->
+            p.sendPacket(new PacketPlayerGameTimeNotify(p)));
+        this.getPlayers().forEach(p ->
+            p.sendPacket(new PacketSceneTimeNotify(p)));
+    }
+
+    /**
      * Locks the world time.
      *
      * @param locked True if the world time should be locked.
@@ -535,10 +552,12 @@ public final class World implements Iterable<Player> {
         this.timeLocked = locked;
 
         // Notify players of the locking.
+        this.updateTime();
         this.getPlayers()
                 .forEach(player -> player.setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, locked));
     }
 
+    @NotNull
     @Override
     public Iterator<Player> iterator() {
         return this.getPlayers().iterator();

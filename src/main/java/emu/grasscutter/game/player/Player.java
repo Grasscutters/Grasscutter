@@ -771,7 +771,7 @@ public class Player implements PlayerHook {
     }
 
     public void setPaused(boolean newPauseState) {
-        boolean oldPauseState = this.paused;
+        var oldPauseState = this.paused;
         this.paused = newPauseState;
 
         if (newPauseState && !oldPauseState) {
@@ -1498,8 +1498,10 @@ public class Player implements PlayerHook {
                         PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
                     case PROP_PLAYER_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
                         PropChangeReason.PROP_CHANGE_REASON_LEVELUP));
-                    case PROP_PLAYER_WORLD_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
-                        PropChangeReason.PROP_CHANGE_REASON_MANUAL_ADJUST_WORLD_LEVEL));
+
+                    // TODO: Handle world level changing.
+                    // case PROP_PLAYER_WORLD_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                    //     PropChangeReason.PROP_CHANGE_REASON_MANUAL_ADJUST_WORLD_LEVEL));
                 }
 
                 // Update player with packet.
