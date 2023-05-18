@@ -1278,7 +1278,7 @@ public class ScriptLib {
 
     //TODO check
     public int StartPlatform(int configId){
-        logger.info("[LUA] Call StartPlatform {} ", configId);
+        logger.debug("[LUA] Call StartPlatform {} ", configId);
 
         val entity = sceneScriptManager.get().getScene().getEntityByConfigId(configId);
 

@@ -34,14 +34,14 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
                         // handling
                         scriptManager.refreshGroup(groupInstance);
                         Grasscutter.getLogger()
-                                .debug(
+                                .trace(
                                         "group: {} \ncondition: {} \nparamStr {}",
                                         groupInstance.getLuaGroup(),
                                         condition,
                                         paramStr);
                     } else {
                         Grasscutter.getLogger()
-                                .warn(
+                                .debug(
                                         "notify, no group instance for:\n group: {} \ncondition: {} \nparamStr {}",
                                         groupId,
                                         condition,
