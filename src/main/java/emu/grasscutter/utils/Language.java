@@ -1,5 +1,9 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
+import static emu.grasscutter.utils.FileUtils.getCachePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -13,8 +17,6 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lombok.EqualsAndHashCode;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -26,10 +28,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
-import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.getCachePath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import lombok.EqualsAndHashCode;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -345,26 +344,27 @@ public final class Language {
                 long cacheModified = Files.getLastModifiedTime(TEXTMAP_CACHE_PATH).toMillis();
 
                 var stream = Files.list(getResourcePath("TextMap"));
-                var textmapsModified = stream.filter(path ->
-                        path.toString().endsWith(".json"))
-                    .map(
-                        path -> {
-                            try {
-                                return Files.getLastModifiedTime(path).toMillis();
-                            } catch (Exception ignored) {
-                                Grasscutter.getLogger()
-                                    .debug("Exception while checking modified time: {}.", path);
-                                return Long.MAX_VALUE; // Don't use cache, something has gone wrong
-                            }
-                        })
-                    .max(Long::compare)
-                    .get();
+                var textmapsModified =
+                        stream
+                                .filter(path -> path.toString().endsWith(".json"))
+                                .map(
+                                        path -> {
+                                            try {
+                                                return Files.getLastModifiedTime(path).toMillis();
+                                            } catch (Exception ignored) {
+                                                Grasscutter.getLogger()
+                                                        .debug("Exception while checking modified time: {}.", path);
+                                                return Long.MAX_VALUE; // Don't use cache, something has gone wrong
+                                            }
+                                        })
+                                .max(Long::compare)
+                                .get();
                 stream.close();
 
                 Grasscutter.getLogger()
-                    .debug(
-                        "Cache modified %d, textmap modified %d."
-                            .formatted(cacheModified, textmapsModified));
+                        .debug(
+                                "Cache modified %d, textmap modified %d."
+                                        .formatted(cacheModified, textmapsModified));
                 if (textmapsModified < cacheModified) {
                     // Try loading from cache
                     Grasscutter.getLogger().debug("Loading cached 'TextMaps'...");
