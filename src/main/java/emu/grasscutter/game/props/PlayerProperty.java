@@ -2,8 +2,9 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.stream.Stream;
 import lombok.Getter;
+
+import java.util.stream.Stream;
 
 public enum PlayerProperty {
     PROP_NONE(0),
@@ -22,14 +23,14 @@ public enum PlayerProperty {
     PROP_SPRING_AUTO_USE_PERCENT(10005, 0, 100), // Auto HP recovery percentage [0, 100]
     PROP_IS_FLYABLE(
             10006, 0, 1), // Are you in a state that disables your flying ability? e.g. new player [0, 1]
-    PROP_IS_WEATHER_LOCKED(10007, 0, 1),
-    PROP_IS_GAME_TIME_LOCKED(10008, 0, 1),
+    PROP_IS_WEATHER_LOCKED(10007, 0, 1), // Weather will not change in this state.
+    PROP_IS_GAME_TIME_LOCKED(10008, 0, 1), // Game time will not move in this state.
     PROP_IS_TRANSFERABLE(10009, 0, 1),
     PROP_MAX_STAMINA(10010, 0, 24_000), // Maximum stamina of the player (0 - 24000)
     PROP_CUR_PERSIST_STAMINA(10011, true), // Used stamina of the player (0 - PROP_MAX_STAMINA)
     PROP_CUR_TEMPORARY_STAMINA(10012),
-    PROP_PLAYER_LEVEL(10013, 1, 60),
-    PROP_PLAYER_EXP(10014),
+    PROP_PLAYER_LEVEL(10013, 1, 60), // Player level [1, 60]
+    PROP_PLAYER_EXP(10014, 0), // Player EXP (0, +inf)
     PROP_PLAYER_HCOIN(10015), // Primogem (-inf, +inf)
     // It is known that Mihoyo will make Primogem negative in the cases that a player spends
     //   his gems and then got a money refund, so negative is allowed.
@@ -45,16 +46,16 @@ public enum PlayerProperty {
     PROP_IS_ONLY_MP_WITH_PS_PLAYER(10024, 0, 1), // Is only MP with PlayStation players? [0, 1]
     PROP_PLAYER_MCOIN(10025), // Genesis Crystal (-inf, +inf) see 10015
     PROP_PLAYER_WAIT_SUB_MCOIN(10026),
-    PROP_PLAYER_LEGENDARY_KEY(10027, 0),
+    PROP_PLAYER_LEGENDARY_KEY(10027, 0), // Amount of story keys [0, 3]
     PROP_IS_HAS_FIRST_SHARE(10028),
     PROP_PLAYER_FORGE_POINT(10029, 0, 300_000),
     PROP_CUR_CLIMATE_METER(10035),
     PROP_CUR_CLIMATE_TYPE(10036),
     PROP_CUR_CLIMATE_AREA_ID(10037),
     PROP_CUR_CLIMATE_AREA_CLIMATE_TYPE(10038),
-    PROP_PLAYER_WORLD_LEVEL_LIMIT(10039),
-    PROP_PLAYER_WORLD_LEVEL_ADJUST_CD(10040),
-    PROP_PLAYER_LEGENDARY_DAILY_TASK_NUM(10041),
+    PROP_PLAYER_WORLD_LEVEL_LIMIT(10039, 0, 8), // [0, 8] World level limit, up to 8.
+    PROP_PLAYER_WORLD_LEVEL_ADJUST_CD(10040), // Time until world level can be increased/decreased.
+    PROP_PLAYER_LEGENDARY_DAILY_TASK_NUM(10041), // Amount of remaining quests for another story key.
     PROP_PLAYER_HOME_COIN(10042, 0), // Realm currency [0, +inf)
     PROP_PLAYER_WAIT_SUB_HOME_COIN(10043),
     PROP_IS_AUTO_UNLOCK_SPECIFIC_EQUIP(10044), // New; unknown/un-used.
