@@ -723,6 +723,17 @@ public class Player implements PlayerHook {
         return playerProfile;
     }
 
+    /**
+     * Sets a player's property.
+     *
+     * @param prop The property.
+     * @param value The value as a boolean.
+     * @return True if the property was set.
+     */
+    public boolean setProperty(PlayerProperty prop, boolean value) {
+        return setPropertyWithSanityCheck(prop, value ? 1 : 0, true);
+    }
+
     public boolean setProperty(PlayerProperty prop, int value) {
         return setPropertyWithSanityCheck(prop, value, true);
     }
