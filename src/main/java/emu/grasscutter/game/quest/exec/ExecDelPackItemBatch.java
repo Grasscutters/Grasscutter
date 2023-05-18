@@ -17,7 +17,7 @@ public class ExecDelPackItemBatch extends QuestExecHandler {
             var itemFields = itemString.split(":");
             var itemId = Integer.parseInt(itemFields[0]);
             var amount = Integer.parseInt(itemFields[1]);
-            if (!quest.getOwner().getInventory().removeItem(itemId, amount)) {
+            if (!quest.getOwner().getInventory().removeItemById(itemId, amount)) {
                 success = false;
             }
         }

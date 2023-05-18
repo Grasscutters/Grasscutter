@@ -1,7 +1,5 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -22,10 +20,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -437,13 +438,31 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     public synchronized boolean removeItem(long guid, int count) {
-        GameItem item = this.getItemByGuid(guid);
+        var item = this.getItemByGuid(guid);
 
         if (item == null) {
             return false;
         }
 
         return removeItem(item, count);
+    }
+
+    /**
+     * Removes an item by its item ID.
+     *
+     * @param itemId The ID of the item to remove.
+     * @param count The amount of items to remove.
+     * @return True if the item was removed, false otherwise.
+     */
+    public synchronized boolean removeItemById(int itemId, int count) {
+        var item = this.getItems().values().stream()
+            .filter(i -> i.getItemId() == itemId)
+            .findFirst();
+
+        // Check if the item is in the player's inventory.
+        return item.filter(
+            gameItem -> this.removeItem(gameItem, count)
+        ).isPresent();
     }
 
     public synchronized boolean removeItem(GameItem item) {

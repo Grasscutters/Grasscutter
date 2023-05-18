@@ -12,6 +12,6 @@ public class ExecDelPackItem extends QuestExecHandler {
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
         int itemId = Integer.parseInt(paramStr[0]);
         int amount = Integer.parseInt(paramStr[1]);
-        return quest.getOwner().getInventory().removeItem(itemId, amount);
+        return quest.getOwner().getInventory().removeItemById(itemId, amount);
     }
 }

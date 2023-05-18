@@ -26,9 +26,10 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.val;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.val;
 
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
@@ -906,7 +907,7 @@ public class InventorySystem extends BaseGameSystem {
 
         // Use
         var actions = itemData.getItemUseActions();
-        Grasscutter.getLogger().debug("Using - actions - {}", actions);
+        Grasscutter.getLogger().trace("Using - actions - {}", actions);
         if (actions == null) return true; // Maybe returning false would be more appropriate?
         return actions.stream()
                 .map(use -> use.useItem(params))
