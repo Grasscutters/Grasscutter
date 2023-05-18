@@ -485,6 +485,8 @@ public final class World implements Iterable<Player> {
         // Update the world time.
         this.getWorldTime();
         this.updateTime();
+        // Lock the world time.
+        this.lockTime(paused);
 
         // If the world is being un-paused, update the last update time.
         if (this.isPaused != paused && !paused) {
