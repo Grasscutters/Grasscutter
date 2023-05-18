@@ -41,14 +41,15 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.KahnsSort;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -661,7 +662,7 @@ public final class Scene {
 
         if (toUnload.size() > 0) {
             broadcastPacket(new PacketGroupUnloadNotify(toUnload));
-            Grasscutter.getLogger().debug("Unload NPC Group {}", toUnload);
+            Grasscutter.getLogger().trace("Unload NPC Group {}", toUnload);
         }
         // exchange the new npcBornEntry Set
         this.npcBornEntrySet = npcBornEntries;
@@ -1119,7 +1120,7 @@ public final class Scene {
 
         if (sceneNpcBornEntries.size() > 0) {
             this.broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
-            Grasscutter.getLogger().debug("Loaded Npc Group Suite {}", sceneNpcBornEntries);
+            Grasscutter.getLogger().trace("Loaded Npc Group Suite {}", sceneNpcBornEntries);
         }
         return npcList;
     }
