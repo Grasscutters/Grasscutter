@@ -18,7 +18,7 @@ public class ExecUnregisterDynamicGroup extends QuestExecHandler {
                 Integer.parseInt(paramStr[1]); // TODO: Goes from 0 to 1, maybe is a boolean. Investigate
         val scene = quest.getOwner().getScene();
 
-        Grasscutter.getLogger().warn("Unregistering group {}", groupId);
+        Grasscutter.getLogger().debug("Unregistering group {}", groupId);
 
         if (!scene.unregisterDynamicGroup(groupId)) {
             return false;
@@ -30,7 +30,7 @@ public class ExecUnregisterDynamicGroup extends QuestExecHandler {
                 .getQuestGroupSuites()
                 .removeIf(gs -> gs.getGroup() == groupId && gs.getScene() == scene.getId());
 
-        Grasscutter.getLogger().warn("Unregistered group {} in scene {}", groupId, scene.getId());
+        Grasscutter.getLogger().debug("Unregistered group {} in scene {}", groupId, scene.getId());
 
         return true;
     }

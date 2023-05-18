@@ -7,7 +7,6 @@ import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.quest.QuestValueExec;
 import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
-import emu.grasscutter.game.world.Scene;
 
 @QuestValueExec(QuestExec.QUEST_EXEC_REGISTER_DYNAMIC_GROUP)
 public class ExecRegisterDynamicGroup extends QuestExecHandler {
@@ -17,9 +16,9 @@ public class ExecRegisterDynamicGroup extends QuestExecHandler {
         var sceneId = Integer.parseInt(paramStr[0]);
         var groupId = Integer.parseInt(paramStr[1]);
 
-        Grasscutter.getLogger().warn("Registering group {}", groupId);
+        Grasscutter.getLogger().debug("Registering group {}", groupId);
 
-        Scene scene = quest.getOwner().getWorld().getSceneById(sceneId);
+        var scene = quest.getOwner().getWorld().getSceneById(sceneId);
         if (scene == null) return false;
 
         int suiteId = scene.loadDynamicGroup(groupId);
@@ -31,7 +30,7 @@ public class ExecRegisterDynamicGroup extends QuestExecHandler {
                 .add(QuestGroupSuite.of().scene(sceneId).group(groupId).suite(suiteId).build());
 
         Grasscutter.getLogger()
-                .warn("Registered group {}, suite {} in scene {}", groupId, suiteId, scene.getId());
+                .debug("Registered group {}, suite {} in scene {}", groupId, suiteId, scene.getId());
 
         return true;
     }
