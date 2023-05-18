@@ -19,14 +19,10 @@ public final class PlayerCookRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * AIBLNBAFJOL
-     * </pre>
-     *
-     * <code>uint32 qte_quality = 2;</code>
-     * @return The qteQuality.
+     * <code>uint32 cook_count = 2;</code>
+     * @return The cookCount.
      */
-    int getQteQuality();
+    int getCookCount();
 
     /**
      * <code>int32 retcode = 12;</code>
@@ -35,14 +31,10 @@ public final class PlayerCookRspOuterClass {
     int getRetcode();
 
     /**
-     * <pre>
-     * EHPKNEPMOAO
-     * </pre>
-     *
-     * <code>uint32 cook_count = 14;</code>
-     * @return The cookCount.
+     * <code>uint32 qte_quality = 14;</code>
+     * @return The qteQuality.
      */
-    int getCookCount();
+    int getQteQuality();
 
     /**
      * <code>repeated .ItemParam item_list = 8;</code>
@@ -162,7 +154,7 @@ public final class PlayerCookRspOuterClass {
               break;
             case 16: {
 
-              qteQuality_ = input.readUInt32();
+              cookCount_ = input.readUInt32();
               break;
             }
             case 66: {
@@ -194,7 +186,7 @@ public final class PlayerCookRspOuterClass {
             }
             case 112: {
 
-              cookCount_ = input.readUInt32();
+              qteQuality_ = input.readUInt32();
               break;
             }
             case 122: {
@@ -244,19 +236,15 @@ public final class PlayerCookRspOuterClass {
               emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp.class, emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp.Builder.class);
     }
 
-    public static final int QTE_QUALITY_FIELD_NUMBER = 2;
-    private int qteQuality_;
+    public static final int COOK_COUNT_FIELD_NUMBER = 2;
+    private int cookCount_;
     /**
-     * <pre>
-     * AIBLNBAFJOL
-     * </pre>
-     *
-     * <code>uint32 qte_quality = 2;</code>
-     * @return The qteQuality.
+     * <code>uint32 cook_count = 2;</code>
+     * @return The cookCount.
      */
     @java.lang.Override
-    public int getQteQuality() {
-      return qteQuality_;
+    public int getCookCount() {
+      return cookCount_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
@@ -270,19 +258,15 @@ public final class PlayerCookRspOuterClass {
       return retcode_;
     }
 
-    public static final int COOK_COUNT_FIELD_NUMBER = 14;
-    private int cookCount_;
+    public static final int QTE_QUALITY_FIELD_NUMBER = 14;
+    private int qteQuality_;
     /**
-     * <pre>
-     * EHPKNEPMOAO
-     * </pre>
-     *
-     * <code>uint32 cook_count = 14;</code>
-     * @return The cookCount.
+     * <code>uint32 qte_quality = 14;</code>
+     * @return The qteQuality.
      */
     @java.lang.Override
-    public int getCookCount() {
-      return cookCount_;
+    public int getQteQuality() {
+      return qteQuality_;
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 8;
@@ -405,8 +389,8 @@ public final class PlayerCookRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (qteQuality_ != 0) {
-        output.writeUInt32(2, qteQuality_);
+      if (cookCount_ != 0) {
+        output.writeUInt32(2, cookCount_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
         output.writeMessage(8, itemList_.get(i));
@@ -417,8 +401,8 @@ public final class PlayerCookRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
-      if (cookCount_ != 0) {
-        output.writeUInt32(14, cookCount_);
+      if (qteQuality_ != 0) {
+        output.writeUInt32(14, qteQuality_);
       }
       for (int i = 0; i < extralItemList_.size(); i++) {
         output.writeMessage(15, extralItemList_.get(i));
@@ -432,9 +416,9 @@ public final class PlayerCookRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (qteQuality_ != 0) {
+      if (cookCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, qteQuality_);
+          .computeUInt32Size(2, cookCount_);
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -448,9 +432,9 @@ public final class PlayerCookRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
       }
-      if (cookCount_ != 0) {
+      if (qteQuality_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, cookCount_);
+          .computeUInt32Size(14, qteQuality_);
       }
       for (int i = 0; i < extralItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -471,12 +455,12 @@ public final class PlayerCookRspOuterClass {
       }
       emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp other = (emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp) obj;
 
-      if (getQteQuality()
-          != other.getQteQuality()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getCookCount()
           != other.getCookCount()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getQteQuality()
+          != other.getQteQuality()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
       if (!getExtralItemListList()
@@ -497,12 +481,12 @@ public final class PlayerCookRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + QTE_QUALITY_FIELD_NUMBER;
-      hash = (53 * hash) + getQteQuality();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + COOK_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCookCount();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + QTE_QUALITY_FIELD_NUMBER;
+      hash = (53 * hash) + getQteQuality();
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
@@ -655,11 +639,11 @@ public final class PlayerCookRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        qteQuality_ = 0;
+        cookCount_ = 0;
 
         retcode_ = 0;
 
-        cookCount_ = 0;
+        qteQuality_ = 0;
 
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
@@ -706,9 +690,9 @@ public final class PlayerCookRspOuterClass {
       public emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp buildPartial() {
         emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp result = new emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp(this);
         int from_bitField0_ = bitField0_;
-        result.qteQuality_ = qteQuality_;
-        result.retcode_ = retcode_;
         result.cookCount_ = cookCount_;
+        result.retcode_ = retcode_;
+        result.qteQuality_ = qteQuality_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -780,14 +764,14 @@ public final class PlayerCookRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp other) {
         if (other == emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp.getDefaultInstance()) return this;
-        if (other.getQteQuality() != 0) {
-          setQteQuality(other.getQteQuality());
+        if (other.getCookCount() != 0) {
+          setCookCount(other.getCookCount());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        if (other.getCookCount() != 0) {
-          setCookCount(other.getCookCount());
+        if (other.getQteQuality() != 0) {
+          setQteQuality(other.getQteQuality());
         }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
@@ -874,45 +858,33 @@ public final class PlayerCookRspOuterClass {
       }
       private int bitField0_;
 
-      private int qteQuality_ ;
+      private int cookCount_ ;
       /**
-       * <pre>
-       * AIBLNBAFJOL
-       * </pre>
-       *
-       * <code>uint32 qte_quality = 2;</code>
-       * @return The qteQuality.
+       * <code>uint32 cook_count = 2;</code>
+       * @return The cookCount.
        */
       @java.lang.Override
-      public int getQteQuality() {
-        return qteQuality_;
+      public int getCookCount() {
+        return cookCount_;
       }
       /**
-       * <pre>
-       * AIBLNBAFJOL
-       * </pre>
-       *
-       * <code>uint32 qte_quality = 2;</code>
-       * @param value The qteQuality to set.
+       * <code>uint32 cook_count = 2;</code>
+       * @param value The cookCount to set.
        * @return This builder for chaining.
        */
-      public Builder setQteQuality(int value) {
+      public Builder setCookCount(int value) {
         
-        qteQuality_ = value;
+        cookCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * AIBLNBAFJOL
-       * </pre>
-       *
-       * <code>uint32 qte_quality = 2;</code>
+       * <code>uint32 cook_count = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearQteQuality() {
+      public Builder clearCookCount() {
         
-        qteQuality_ = 0;
+        cookCount_ = 0;
         onChanged();
         return this;
       }
@@ -948,45 +920,33 @@ public final class PlayerCookRspOuterClass {
         return this;
       }
 
-      private int cookCount_ ;
+      private int qteQuality_ ;
       /**
-       * <pre>
-       * EHPKNEPMOAO
-       * </pre>
-       *
-       * <code>uint32 cook_count = 14;</code>
-       * @return The cookCount.
+       * <code>uint32 qte_quality = 14;</code>
+       * @return The qteQuality.
        */
       @java.lang.Override
-      public int getCookCount() {
-        return cookCount_;
+      public int getQteQuality() {
+        return qteQuality_;
       }
       /**
-       * <pre>
-       * EHPKNEPMOAO
-       * </pre>
-       *
-       * <code>uint32 cook_count = 14;</code>
-       * @param value The cookCount to set.
+       * <code>uint32 qte_quality = 14;</code>
+       * @param value The qteQuality to set.
        * @return This builder for chaining.
        */
-      public Builder setCookCount(int value) {
+      public Builder setQteQuality(int value) {
         
-        cookCount_ = value;
+        qteQuality_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * EHPKNEPMOAO
-       * </pre>
-       *
-       * <code>uint32 cook_count = 14;</code>
+       * <code>uint32 qte_quality = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCookCount() {
+      public Builder clearQteQuality() {
         
-        cookCount_ = 0;
+        qteQuality_ = 0;
         onChanged();
         return this;
       }
@@ -1657,9 +1617,9 @@ public final class PlayerCookRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023PlayerCookRsp.proto\032\024CookRecipeData.pr" +
-      "oto\032\017ItemParam.proto\"\264\001\n\rPlayerCookRsp\022\023" +
-      "\n\013qte_quality\030\002 \001(\r\022\017\n\007retcode\030\014 \001(\005\022\022\n\n" +
-      "cook_count\030\016 \001(\r\022\035\n\titem_list\030\010 \003(\0132\n.It" +
+      "oto\032\017ItemParam.proto\"\264\001\n\rPlayerCookRsp\022\022" +
+      "\n\ncook_count\030\002 \001(\r\022\017\n\007retcode\030\014 \001(\005\022\023\n\013q" +
+      "te_quality\030\016 \001(\r\022\035\n\titem_list\030\010 \003(\0132\n.It" +
       "emParam\022$\n\020extral_item_list\030\017 \003(\0132\n.Item" +
       "Param\022$\n\013recipe_data\030\t \001(\0132\017.CookRecipeD" +
       "ataB\033\n\031emu.grasscutter.net.protob\006proto3"
@@ -1675,7 +1635,7 @@ public final class PlayerCookRspOuterClass {
     internal_static_PlayerCookRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerCookRsp_descriptor,
-        new java.lang.String[] { "QteQuality", "Retcode", "CookCount", "ItemList", "ExtralItemList", "RecipeData", });
+        new java.lang.String[] { "CookCount", "Retcode", "QteQuality", "ItemList", "ExtralItemList", "RecipeData", });
     emu.grasscutter.net.proto.CookRecipeDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
