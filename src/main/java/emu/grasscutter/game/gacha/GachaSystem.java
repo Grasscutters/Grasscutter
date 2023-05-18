@@ -1,11 +1,10 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -31,11 +30,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import org.greenrobot.eventbus.Subscribe;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
@@ -45,8 +47,9 @@ public class GachaSystem extends BaseGameSystem {
 
     public GachaSystem(GameServer server) {
         super(server);
+
         this.gachaBanners = new Int2ObjectOpenHashMap<>();
-        this.load();
+        ResourceLoader.runAsync(this::load);
         this.startWatcher(server);
     }
 

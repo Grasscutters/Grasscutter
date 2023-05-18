@@ -1,8 +1,5 @@
 package emu.grasscutter.tools;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.getTextMapKey;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandHandler;
@@ -20,6 +17,10 @@ import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.val;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -31,9 +32,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.val;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.getTextMapKey;
 
 public final class Tools {
     /**
@@ -52,6 +53,10 @@ public final class Tools {
      * @throws Exception If an error occurs while generating the handbooks.
      */
     public static void createGmHandbooks(boolean message) throws Exception {
+        // Check if the GM Handbook directory exists.
+        val handbookDir = new File("GM Handbook");
+        if (handbookDir.exists()) return;
+
         val languages = Language.TextStrings.getLanguages();
 
         ResourceLoader.loadAll();

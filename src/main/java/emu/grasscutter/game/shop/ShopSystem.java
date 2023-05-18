@@ -1,10 +1,9 @@
 package emu.grasscutter.game.shop;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
 import emu.grasscutter.server.game.BaseGameSystem;
@@ -12,9 +11,12 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class ShopSystem extends BaseGameSystem {
     private static final int REFRESH_HOUR = 4; // In GMT+8 server
@@ -24,9 +26,10 @@ public class ShopSystem extends BaseGameSystem {
 
     public ShopSystem(GameServer server) {
         super(server);
+
         this.shopData = new Int2ObjectOpenHashMap<>();
         this.shopChestData = new Int2ObjectOpenHashMap<>();
-        this.load();
+        ResourceLoader.runAsync(this::load);
     }
 
     public static int getShopNextRefreshTime(ShopInfo shopInfo) {

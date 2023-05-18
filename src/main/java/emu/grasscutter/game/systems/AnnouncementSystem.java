@@ -2,6 +2,7 @@ package emu.grasscutter.game.systems;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
+import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
@@ -10,11 +11,12 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
 import emu.grasscutter.server.packet.send.PacketServerAnnounceRevokeNotify;
 import emu.grasscutter.utils.Utils;
-import java.util.*;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
+
+import java.util.*;
 
 @Getter
 public class AnnouncementSystem extends BaseGameSystem {
@@ -23,7 +25,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     public AnnouncementSystem(GameServer server) {
         super(server);
         this.announceConfigItemMap = new HashMap<>();
-        loadConfig();
+        ResourceLoader.runAsync(this::loadConfig);
     }
 
     private int loadConfig() {
