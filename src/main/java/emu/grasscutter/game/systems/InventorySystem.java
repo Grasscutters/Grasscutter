@@ -26,10 +26,9 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.val;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.val;
 
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
