@@ -10,6 +10,8 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.scheduler.ServerTaskScheduler;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -43,6 +45,13 @@ public class ServerHelper {
     }
 
     /**
+     * @return The server's current run mode.
+     */
+    public Grasscutter.ServerRunMode getRunMode() {
+        return Grasscutter.getRunMode();
+    }
+
+    /**
      * @return The game server.
      */
     public GameServer getGameServer() {
@@ -61,7 +70,6 @@ public class ServerHelper {
      *
      * @return Players connected to the server.
      */
-    @Deprecated(forRemoval = true)
     public List<Player> getOnlinePlayers() {
         return new ArrayList<>(this.gameServer.getPlayers().values());
     }
@@ -122,5 +130,15 @@ public class ServerHelper {
      */
     public void setPermissionHandler(PermissionHandler permHandler) {
         Grasscutter.setPermissionHandler(permHandler);
+    }
+
+    /**
+     * @return The server's task scheduler.
+     */
+    public ServerTaskScheduler getScheduler() {
+        if (this.getGameServer() == null)
+            return null;
+
+        return this.getGameServer().getScheduler();
     }
 }
