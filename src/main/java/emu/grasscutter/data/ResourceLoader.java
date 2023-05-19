@@ -137,9 +137,6 @@ public final class ResourceLoader {
         var textMaps = ResourceLoader.runAsync(Language::loadTextMaps);
         // Load 'BinOutput'.
         var binOutput = ResourceLoader.loadConfigData();
-        // Load 'ExcelBinOutput'.
-        var errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();
-        var excelBinOutput = ResourceLoader.loadResources(true, errors);
         // Load ability lists.
         var abilities =
                 ResourceLoader.runAsync(
@@ -148,6 +145,9 @@ public final class ResourceLoader {
                             ResourceLoader.loadOpenConfig();
                             ResourceLoader.loadAbilityModifiers();
                         });
+        // Load 'ExcelBinOutput'.
+        var errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();
+        var excelBinOutput = ResourceLoader.loadResources(true, errors);
         // Load spawn data and quests.
         var scene =
                 ResourceLoader.runAsync(
