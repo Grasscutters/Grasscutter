@@ -6,6 +6,8 @@ import scenes from "@data/scenes.csv";
 import quests from "@data/quests.csv";
 import items from "@data/items.csv";
 
+import type { RawNodeDatum } from "react-d3-tree";
+
 import { Quality, ItemType, ItemCategory, SceneType } from "@backend/types";
 import type { MainQuest, Command, Avatar, Item, Scene, Entity, Quest } from "@backend/types";
 
@@ -208,4 +210,42 @@ export function listMainQuests(): MainQuestDump[] {
  */
 export function getMainQuestFor(quest: Quest): MainQuest {
     return allMainQuests[quest.mainId];
+}
+
+/**
+ * Fetches all quests for a main quest.
+ *
+ * @param mainQuest The main quest to fetch quests for.
+ */
+export function listSubQuestsFor(mainQuest: MainQuest): Quest[] {
+    return listQuests()
+        .filter((quest) => quest.mainId == mainQuest.id);
+}
+
+/*
+ * Tree conversion methods.
+ */
+
+/**
+ * Converts a quest to a tree.
+ *
+ * @param mainQuest The main quest to convert.
+ */
+export function questToTree(mainQuest: MainQuest): RawNodeDatum {
+    return {
+        name: mainQuest.title,
+        attributes: {
+            id: mainQuest.id
+        },
+        children: listSubQuestsFor(mainQuest)
+            .map((quest) => {
+                return {
+                    name: quest.id.toString(),
+                    attributes: {
+                        description: quest.description
+                    },
+                    children: []
+                } as RawNodeDatum;
+            })
+    };
 }

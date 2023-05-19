@@ -16,6 +16,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-d3-tree": "^3.6.1",
+    "react-collapsible": "^2.10.0",
     "react-virtualized": "^9.22.3",
 
     "events": "^3.3.0"
