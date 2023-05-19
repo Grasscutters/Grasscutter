@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Poppins';
     src: url('/data/assets/Poppins-Regular.ttf')
@@ -14,6 +18,21 @@ html {
 
     --legendary-color: #926d45;
     --epic-color: #7b5c90;
+
+    // pq = Primary Quest
+    --pq-bg: #333d49;
+    --pq-text: #d3bc8e;
+    --pq-text2: #8c836f;
+
+    --quest-unselected: #4e5765;
+    --quest-selected: #ede5da;
+    --quest-accent: #9b927d;
+
+    // qt = Quest Text
+    --qt-unselected: #ede5da;
+    --qt2-unselected: #8e9295;
+    --qt-selected: #4d5568;
+    --qt2-selected: #a6a5a7;
 
     overflow: hidden;
 }
