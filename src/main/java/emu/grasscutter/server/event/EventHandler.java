@@ -5,6 +5,53 @@ import emu.grasscutter.plugin.Plugin;
 import emu.grasscutter.utils.EventConsumer;
 
 public final class EventHandler<T extends Event> {
+    /**
+     * Create and register a new event handler.
+     * @param plugin The plugin handling the event.
+     * @param eventClass The event class.
+     * @param listener The event handler function.
+     */
+    public static <T extends Event> void newHandler(Plugin plugin,
+                                                    Class<T> eventClass, EventConsumer<T> listener
+    ) {
+        new EventHandler<>(eventClass)
+            .priority(HandlerPriority.NORMAL)
+            .listener(listener).register(plugin);
+    }
+
+    /**
+     * Create and register a new event handler.
+     * @param plugin The plugin handling the event.
+     * @param eventClass The event class.
+     * @param listener The event handler function.
+     * @param priority The handler's priority.
+     */
+    public static <T extends Event> void newHandler(Plugin plugin,
+                                                    Class<T> eventClass, EventConsumer<T> listener,
+                                                    HandlerPriority priority
+    ) {
+        new EventHandler<>(eventClass)
+            .listener(listener).priority(priority)
+            .register(plugin);
+    }
+
+    /**
+     * Create and register a new event handler.
+     * @param plugin The plugin handling the event.
+     * @param eventClass The event class.
+     * @param listener The event handler function.
+     * @param priority The handler's priority.
+     * @param handleCanceled Should this handler execute on canceled events?
+     */
+    public static <T extends Event> void newHandler(Plugin plugin,
+                                                    Class<T> eventClass, EventConsumer<T> listener,
+                                                    HandlerPriority priority, boolean handleCanceled
+    ) {
+        new EventHandler<>(eventClass)
+            .listener(listener).priority(priority)
+            .ignore(handleCanceled).register(plugin);
+    }
+
     private final Class<T> eventClass;
     private EventConsumer<T> listener;
     private HandlerPriority priority;
