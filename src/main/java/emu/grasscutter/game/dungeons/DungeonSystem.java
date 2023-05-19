@@ -18,9 +18,10 @@ import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
 import emu.grasscutter.utils.Position;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.List;
 import lombok.val;
 import org.reflections.Reflections;
+
+import java.util.List;
 
 public class DungeonSystem extends BaseGameSystem {
     private static final BasicDungeonSettleListener basicDungeonSettleObserver =
@@ -106,13 +107,13 @@ public class DungeonSystem extends BaseGameSystem {
             return false;
         }
         Grasscutter.getLogger()
-                .info(
-                        "{}({}) is trying to enter dungeon {}",
+                .debug(
+                        "{} ({}) is trying to enter dungeon {}.",
                         player.getNickname(),
                         player.getUid(),
                         dungeonId);
 
-        int sceneId = data.getSceneId();
+        var sceneId = data.getSceneId();
         var scene = player.getScene();
         scene.setPrevScene(sceneId);
 
