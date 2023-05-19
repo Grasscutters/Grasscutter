@@ -12,8 +12,6 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class PacketOpcodesUtils {
-    public static final Set<Integer> BANNED_PACKETS =
-            Set.of(PacketOpcodes.WindSeedClientNotify, PacketOpcodes.PlayerLuaShellNotify);
     public static final Set<Integer> LOOP_PACKETS =
             Set.of(
                     PacketOpcodes.PingReq,
