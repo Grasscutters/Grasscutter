@@ -6,6 +6,7 @@ import AvatarsPage from "@pages/AvatarsPage";
 import ItemsPage from "@pages/ItemsPage";
 import EntitiesPage from "@pages/EntitiesPage";
 import ScenesPage from "@pages/ScenesPage";
+import QuestsPage from "@pages/QuestsPage";
 
 import type { Page } from "@backend/types";
 import { addNavListener, removeNavListener } from "@backend/events";
@@ -63,6 +64,8 @@ class Content extends React.Component<IProps, IState> {
                 return <EntitiesPage />;
             case "Scenes":
                 return <ScenesPage />;
+            case "Quests":
+                return <QuestsPage />;
         }
     }
 }

@@ -1,4 +1,4 @@
-export type Page = "Home" | "Commands" | "Avatars" | "Items" | "Entities" | "Scenes";
+export type Page = "Home" | "Commands" | "Avatars" | "Items" | "Entities" | "Scenes" | "Quests" | "Achievements";
 export type Overlays = "None" | "ServerSettings";
 export type Days = "Sunday" | "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday";
 

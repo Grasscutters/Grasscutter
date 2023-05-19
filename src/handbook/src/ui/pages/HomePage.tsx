@@ -33,8 +33,8 @@ class HomePage extends React.Component<any, any> {
                         <HomeButton name={"Items"} anchor={"Items"} icon={Icon_Inventory} />
                         <HomeButton name={"Entities"} anchor={"Entities"} icon={Icon_Tutorial_Monster} />
                         <HomeButton name={"Scenes"} anchor={"Scenes"} icon={Icon_Map} />
-                        <HomeButton name={"Quests"} anchor={"Home"} icon={Icon_Quests} />
-                        <HomeButton name={"Achievements"} anchor={"Home"} icon={Icon_Achievements} />
+                        <HomeButton name={"Quests"} anchor={"Quests"} icon={Icon_Quests} />
+                        <HomeButton name={"Achievements"} anchor={"Achievements"} icon={Icon_Achievements} />
                     </div>
                 </div>
 
