@@ -1,5 +1,9 @@
 package emu.grasscutter.data;
 
+import static emu.grasscutter.utils.FileUtils.getDataPath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.Language.translate;
+
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
@@ -30,12 +34,6 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
-import lombok.SneakyThrows;
-import lombok.val;
-import org.reflections.Reflections;
-
-import javax.script.Bindings;
-import javax.script.CompiledScript;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -48,10 +46,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.utils.FileUtils.getDataPath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.translate;
+import javax.script.Bindings;
+import javax.script.CompiledScript;
+import lombok.SneakyThrows;
+import lombok.val;
+import org.reflections.Reflections;
 
 public final class ResourceLoader {
 
@@ -142,36 +141,44 @@ public final class ResourceLoader {
         var errors = new ConcurrentLinkedQueue<Pair<String, Exception>>();
         var excelBinOutput = ResourceLoader.loadResources(true, errors);
         // Load ability lists.
-        var abilities = ResourceLoader.runAsync(() -> {
-            ResourceLoader.loadAbilityEmbryos();
-            ResourceLoader.loadOpenConfig();
-            ResourceLoader.loadAbilityModifiers();
-        });
+        var abilities =
+                ResourceLoader.runAsync(
+                        () -> {
+                            ResourceLoader.loadAbilityEmbryos();
+                            ResourceLoader.loadOpenConfig();
+                            ResourceLoader.loadAbilityModifiers();
+                        });
         // Load spawn data and quests.
-        var scene = ResourceLoader.runAsync(() -> {
-            ResourceLoader.loadSpawnData();
-            ResourceLoader.loadQuests();
-            ResourceLoader.loadScriptSceneData();
-        });
+        var scene =
+                ResourceLoader.runAsync(
+                        () -> {
+                            ResourceLoader.loadSpawnData();
+                            ResourceLoader.loadQuests();
+                            ResourceLoader.loadScriptSceneData();
+                        });
         // Load default home layout
-        var entities = ResourceLoader.runAsync(() -> {
-            ResourceLoader.loadHomeworldDefaultSaveData();
-            ResourceLoader.loadNpcBornData();
-            ResourceLoader.loadBlossomResources();
-            ResourceLoader.cacheTalentLevelSets();
-        });
+        var entities =
+                ResourceLoader.runAsync(
+                        () -> {
+                            ResourceLoader.loadHomeworldDefaultSaveData();
+                            ResourceLoader.loadNpcBornData();
+                            ResourceLoader.loadBlossomResources();
+                            ResourceLoader.cacheTalentLevelSets();
+                        });
 
         // Load custom server resources.
-        var customServer = ResourceLoader.runAsync(() -> {
-            ResourceLoader.loadConfigLevelEntityData();
-            ResourceLoader.loadQuestShareConfig();
-            ResourceLoader.loadGadgetMappings();
-            ResourceLoader.loadActivityCondGroups();
-            ResourceLoader.loadGroupReplacements();
-            ResourceLoader.loadTrialAvatarCustomData();
+        var customServer =
+                ResourceLoader.runAsync(
+                        () -> {
+                            ResourceLoader.loadConfigLevelEntityData();
+                            ResourceLoader.loadQuestShareConfig();
+                            ResourceLoader.loadGadgetMappings();
+                            ResourceLoader.loadActivityCondGroups();
+                            ResourceLoader.loadGroupReplacements();
+                            ResourceLoader.loadTrialAvatarCustomData();
 
-            EntityControllerScriptManager.load();
-        });
+                            EntityControllerScriptManager.load();
+                        });
 
         // Wait for all futures to complete.
         var futures = new ArrayList<>(List.of(textMaps, abilities, scene, entities, customServer));
@@ -181,13 +188,13 @@ public final class ResourceLoader {
 
         // Load dependent-resources.
         GameDepot.load(); // Process into depots
-        ResourceLoader.loadScenePoints();  // Load scene points.
+        ResourceLoader.loadScenePoints(); // Load scene points.
 
         // Log any errors.
         errors.forEach(
-            pair ->
-                Grasscutter.getLogger()
-                    .error("Error loading resource file: " + pair.left(), pair.right() + "."));
+                pair ->
+                        Grasscutter.getLogger()
+                                .error("Error loading resource file: " + pair.left(), pair.right() + "."));
 
         // Calculate the ending time.
         var endTime = System.nanoTime();
@@ -207,29 +214,35 @@ public final class ResourceLoader {
      *
      * @param doReload Whether to reload resources.
      */
-    public static List<CompletableFuture<Boolean>> loadResources(boolean doReload, Queue<Pair<String, Exception>> errors) {
+    public static List<CompletableFuture<Boolean>> loadResources(
+            boolean doReload, Queue<Pair<String, Exception>> errors) {
         // Load all resources in parallel.
         return ResourceLoader.getResourceDefClassesPrioritySets().stream()
-                .map(classes -> classes.stream()
-                    .parallel().unordered()
-                    .map(c -> {
-                        var type = c.getAnnotation(ResourceType.class);
-                        if (type == null) return null;
+                .map(
+                        classes ->
+                                classes.stream()
+                                        .parallel()
+                                        .unordered()
+                                        .map(
+                                                c -> {
+                                                    var type = c.getAnnotation(ResourceType.class);
+                                                    if (type == null) return null;
 
-                        var map = GameData.getMapByResourceDef(c);
-                        if (map == null) return null;
+                                                    var map = GameData.getMapByResourceDef(c);
+                                                    if (map == null) return null;
 
-                        return ResourceLoader.runAsync(() -> {
-                            try {
-                                loadFromResource(c, type, map, doReload);
-                            } catch (Exception e) {
-                                errors.add(Pair.of(Arrays.toString(type.name()), e));
-                            }
-                        });
-                    })
-                    .toList()
-                ).flatMap(Collection::stream)
-            .toList();
+                                                    return ResourceLoader.runAsync(
+                                                            () -> {
+                                                                try {
+                                                                    loadFromResource(c, type, map, doReload);
+                                                                } catch (Exception e) {
+                                                                    errors.add(Pair.of(Arrays.toString(type.name()), e));
+                                                                }
+                                                            });
+                                                })
+                                        .toList())
+                .flatMap(Collection::stream)
+                .toList();
     }
 
     @SuppressWarnings("rawtypes")
@@ -277,35 +290,38 @@ public final class ResourceLoader {
 
     private static void loadScenePoints() {
         val pattern = Pattern.compile("scene([0-9]+)_point\\.json");
-        try (var stream = Files.newDirectoryStream(getResourcePath("BinOutput/Scene/Point"), "scene*_point.json")) {
-            stream.forEach(path -> {
-                var matcher = pattern.matcher(path.getFileName().toString());
-                if (!matcher.find()) return;
-                var sceneId = Integer.parseInt(matcher.group(1));
+        try (var stream =
+                Files.newDirectoryStream(getResourcePath("BinOutput/Scene/Point"), "scene*_point.json")) {
+            stream.forEach(
+                    path -> {
+                        var matcher = pattern.matcher(path.getFileName().toString());
+                        if (!matcher.find()) return;
+                        var sceneId = Integer.parseInt(matcher.group(1));
 
-                ScenePointConfig config; try {
-                    config = JsonUtils.loadToClass(path, ScenePointConfig.class);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return;
-                }
+                        ScenePointConfig config;
+                        try {
+                            config = JsonUtils.loadToClass(path, ScenePointConfig.class);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            return;
+                        }
 
-                if (config.points == null) return;
+                        if (config.points == null) return;
 
-                var scenePoints = new IntArrayList();
-                config.points.forEach(
-                    (pointId, pointData) -> {
-                        var scenePoint = new ScenePointEntry(sceneId, pointData);
-                        scenePoints.add((int) pointId);
-                        pointData.setId(pointId);
+                        var scenePoints = new IntArrayList();
+                        config.points.forEach(
+                                (pointId, pointData) -> {
+                                    var scenePoint = new ScenePointEntry(sceneId, pointData);
+                                    scenePoints.add((int) pointId);
+                                    pointData.setId(pointId);
 
-                        GameData.getScenePointIdList().add((int) pointId);
-                        GameData.getScenePointEntryMap().put((sceneId << 16) + pointId, scenePoint);
+                                    GameData.getScenePointIdList().add((int) pointId);
+                                    GameData.getScenePointEntryMap().put((sceneId << 16) + pointId, scenePoint);
 
-                        pointData.updateDailyDungeon();
+                                    pointData.updateDailyDungeon();
+                                });
+                        GameData.getScenePointsPerScene().put(sceneId, scenePoints);
                     });
-                GameData.getScenePointsPerScene().put(sceneId, scenePoints);
-            });
         } catch (IOException ignored) {
             Grasscutter.getLogger()
                     .error("Scene point files cannot be found, you cannot use teleport waypoints!");
@@ -656,19 +672,32 @@ public final class ResourceLoader {
         }
     }
 
-    /**
-     * Loads data from parsed files.
-     */
+    /** Loads data from parsed files. */
     private static List<CompletableFuture<Boolean>> loadConfigData() {
         var tasks = new ArrayList<CompletableFuture<Boolean>>();
 
         // Load config data.
-        tasks.add(ResourceLoader.runAsync(() ->
-            loadConfigData(GameData.getAvatarConfigData(), "BinOutput/Avatar/", ConfigEntityAvatar.class)));
-        tasks.add(ResourceLoader.runAsync(() ->
-            loadConfigData(GameData.getMonsterConfigData(), "BinOutput/Monster/", ConfigEntityMonster.class)));
-        tasks.add(ResourceLoader.runAsync(() ->
-            loadConfigDataMap(GameData.getGadgetConfigData(), "BinOutput/Gadget/", ConfigEntityGadget.class)));
+        tasks.add(
+                ResourceLoader.runAsync(
+                        () ->
+                                loadConfigData(
+                                        GameData.getAvatarConfigData(),
+                                        "BinOutput/Avatar/",
+                                        ConfigEntityAvatar.class)));
+        tasks.add(
+                ResourceLoader.runAsync(
+                        () ->
+                                loadConfigData(
+                                        GameData.getMonsterConfigData(),
+                                        "BinOutput/Monster/",
+                                        ConfigEntityMonster.class)));
+        tasks.add(
+                ResourceLoader.runAsync(
+                        () ->
+                                loadConfigDataMap(
+                                        GameData.getGadgetConfigData(),
+                                        "BinOutput/Gadget/",
+                                        ConfigEntityGadget.class)));
 
         return tasks;
     }

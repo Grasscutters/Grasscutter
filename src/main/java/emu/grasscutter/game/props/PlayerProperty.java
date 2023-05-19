@@ -2,9 +2,8 @@ package emu.grasscutter.game.props;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-
 import java.util.stream.Stream;
+import lombok.Getter;
 
 public enum PlayerProperty {
     PROP_NONE(0),

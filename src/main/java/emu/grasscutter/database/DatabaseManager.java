@@ -1,5 +1,7 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -15,8 +17,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import org.reflections.Reflections;
-
-import static emu.grasscutter.config.Configuration.DATABASE;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;
@@ -35,18 +35,12 @@ public final class DatabaseManager {
         return getGameDatastore().getDatabase();
     }
 
-    /**
-     * Performs the database initialization process.
-     * This occurs on a separate thread.
-     */
+    /** Performs the database initialization process. This occurs on a separate thread. */
     public static void initializeAsync() {
         new Thread(DatabaseManager::initialize).start();
     }
 
-    /**
-     * Performs the database initialization process.
-     * This method is blocking.
-     */
+    /** Performs the database initialization process. This method is blocking. */
     public static void initialize() {
         // Initialize
         MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);

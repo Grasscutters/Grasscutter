@@ -1,5 +1,7 @@
 package emu.grasscutter.game.managers.energy;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import com.google.protobuf.InvalidProtocolBufferException;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
@@ -28,13 +30,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import lombok.Getter;
 
 public class EnergyManager extends BasePlayerManager {
     private static final Int2ObjectMap<List<EnergyDropInfo>> energyDropData =
