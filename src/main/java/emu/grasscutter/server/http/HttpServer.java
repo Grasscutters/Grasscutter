@@ -101,6 +101,7 @@ public final class HttpServer {
                 try {
                     sslContextFactory.setKeyStorePath(keystoreFile.getPath());
                     sslContextFactory.setKeyStorePassword("123456");
+                    sslContextFactory.setSniRequired(false);
 
                     Grasscutter.getLogger().warn(translate("messages.dispatch.keystore.default_password"));
                 } catch (Exception exception) {
