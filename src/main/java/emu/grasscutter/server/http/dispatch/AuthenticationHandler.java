@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.dispatch;
 
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;

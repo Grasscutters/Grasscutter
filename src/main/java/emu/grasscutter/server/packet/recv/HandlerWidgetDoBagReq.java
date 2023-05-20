@@ -9,7 +9,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketWidgetCoolDownNotify;
 import emu.grasscutter.server.packet.send.PacketWidgetDoBagRsp;
 import emu.grasscutter.server.packet.send.PacketWidgetGadgetDataNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.WidgetDoBagReq)
 public class HandlerWidgetDoBagReq extends PacketHandler {

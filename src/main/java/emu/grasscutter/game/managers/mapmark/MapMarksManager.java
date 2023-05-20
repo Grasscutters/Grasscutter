@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.packet.send.PacketMarkMapRsp;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.Map;
 
 public class MapMarksManager extends BasePlayerManager {

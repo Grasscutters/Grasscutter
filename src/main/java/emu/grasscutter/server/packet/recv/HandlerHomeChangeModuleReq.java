@@ -10,7 +10,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeChangeModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.HomeChangeModuleReq)
 public class HandlerHomeChangeModuleReq extends PacketHandler {

@@ -54,7 +54,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @Getter
 public final class GameServer extends KcpServer implements Iterable<Player> {

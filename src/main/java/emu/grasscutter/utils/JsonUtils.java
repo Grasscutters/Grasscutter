@@ -3,6 +3,8 @@ package emu.grasscutter.utils;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.data.common.DynamicFloat;
+import emu.grasscutter.game.world.GridPosition;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.JsonAdapters.*;
 import it.unimi.dsi.fastutil.ints.IntList;
 import java.io.FileInputStream;

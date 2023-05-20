@@ -11,7 +11,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestCreateEntityRsp;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import lombok.val;
 
 @Opcodes(PacketOpcodes.QuestCreateEntityReq)

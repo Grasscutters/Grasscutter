@@ -47,6 +47,7 @@ import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.talk.TalkManager;
 import emu.grasscutter.game.tower.TowerData;
 import emu.grasscutter.game.tower.TowerManager;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -73,6 +74,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.*;
+import emu.grasscutter.utils.helpers.DateHelper;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import lombok.Getter;
@@ -152,7 +154,6 @@ public class Player implements PlayerHook {
     @Getter private transient Inventory inventory;
     @Getter private transient FriendsList friendsList;
     @Getter private transient MailHandler mailHandler;
-    @Getter @Setter private transient MessageHandler messageHandler;
     @Getter private transient AbilityManager abilityManager;
     @Getter @Setter private transient QuestManager questManager;
     @Getter private transient TowerManager towerManager;
@@ -277,7 +278,6 @@ public class Player implements PlayerHook {
         this.progressManager = new PlayerProgressManager(this);
         this.shopLimit = new ArrayList<>();
         this.expeditionInfo = new HashMap<>();
-        this.messageHandler = null;
         this.mapMarksManager = new MapMarksManager(this);
         this.staminaManager = new StaminaManager(this);
         this.sotsManager = new SotSManager(this);
@@ -309,7 +309,6 @@ public class Player implements PlayerHook {
         this.getFlyCloakList().add(140001);
         this.getNameCardList().add(210001);
 
-        this.messageHandler = null;
         this.mapMarksManager = new MapMarksManager(this);
         this.staminaManager = new StaminaManager(this);
         this.sotsManager = new SotSManager(this);
@@ -954,11 +953,6 @@ public class Player implements PlayerHook {
      * @param message The message to send.
      */
     public void dropMessage(Object message) {
-        if (this.messageHandler != null) {
-            this.messageHandler.append(message.toString());
-            return;
-        }
-
         this.getServer().getChatSystem().sendPrivateMessageFromServer(getUid(), message.toString());
     }
 

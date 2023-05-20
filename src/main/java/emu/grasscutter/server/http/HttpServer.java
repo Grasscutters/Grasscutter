@@ -15,7 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /**
  * Manages all HTTP-related classes.

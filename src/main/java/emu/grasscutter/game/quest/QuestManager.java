@@ -12,7 +12,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestGlobalVarNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;

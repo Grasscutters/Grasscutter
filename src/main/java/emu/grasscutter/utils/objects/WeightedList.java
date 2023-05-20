@@ -1,4 +1,4 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.utils.objects;
 
 import java.util.NavigableMap;
 import java.util.TreeMap;

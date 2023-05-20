@@ -10,7 +10,7 @@ import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 /** Hooks into the {@link Player} class, adding convenient ways to do certain things. */
 public interface PlayerHook {

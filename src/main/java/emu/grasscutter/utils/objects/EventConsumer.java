@@ -1,4 +1,4 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.utils.objects;
 
 import emu.grasscutter.server.event.Event;
 

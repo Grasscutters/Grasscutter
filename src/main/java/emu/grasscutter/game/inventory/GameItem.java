@@ -21,7 +21,7 @@ import emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary;
 import emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
-import emu.grasscutter.utils.WeightedList;
+import emu.grasscutter.utils.objects.WeightedList;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

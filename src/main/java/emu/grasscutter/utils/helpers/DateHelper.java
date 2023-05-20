@@ -1,11 +1,11 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.utils.helpers;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public final class DateHelper {
-    public static Date onlyYearMonthDay(Date now) {
-        Calendar calendar = Calendar.getInstance();
+public interface DateHelper {
+    static Date onlyYearMonthDay(Date now) {
+        var calendar = Calendar.getInstance();
         calendar.setTime(now);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
@@ -14,7 +14,7 @@ public final class DateHelper {
         return calendar.getTime();
     }
 
-    public static int getUnixTime(Date localDateTime) {
+    static int getUnixTime(Date localDateTime) {
         return (int) (localDateTime.getTime() / 1000L);
     }
 }

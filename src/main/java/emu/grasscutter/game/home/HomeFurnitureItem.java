@@ -6,7 +6,7 @@ import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.net.proto.HomeFurnitureDataOuterClass;
 import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;

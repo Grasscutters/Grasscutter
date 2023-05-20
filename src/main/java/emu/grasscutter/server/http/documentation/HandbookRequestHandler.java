@@ -8,7 +8,7 @@ import emu.grasscutter.data.excels.SceneData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Language;
+import emu.grasscutter.utils.lang.Language;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

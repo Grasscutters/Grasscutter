@@ -7,7 +7,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeSceneJumpReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeSceneJumpRsp;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.HomeSceneJumpReq)
 public class HandlerHomeSceneJumpReq extends PacketHandler {

@@ -4,7 +4,7 @@ import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneRegion;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;

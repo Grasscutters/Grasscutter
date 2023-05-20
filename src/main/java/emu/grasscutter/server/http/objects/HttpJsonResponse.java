@@ -1,7 +1,7 @@
 package emu.grasscutter.server.http.objects;
 
 import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;

@@ -1,7 +1,7 @@
 package emu.grasscutter;
 
-import emu.grasscutter.utils.Position;
-import emu.grasscutter.utils.SparseSet;
+import emu.grasscutter.game.world.Position;
+import emu.grasscutter.utils.objects.SparseSet;
 import emu.grasscutter.utils.Utils;
 import java.util.Arrays;
 

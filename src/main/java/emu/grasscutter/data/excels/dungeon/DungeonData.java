@@ -6,7 +6,7 @@ import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.game.dungeons.enums.*;
 import emu.grasscutter.scripts.data.SceneMeta;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.List;
 import lombok.Getter;
 

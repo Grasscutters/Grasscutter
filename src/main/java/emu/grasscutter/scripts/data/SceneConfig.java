@@ -1,6 +1,6 @@
 package emu.grasscutter.scripts.data;
 
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import lombok.Setter;
 import lombok.ToString;
 

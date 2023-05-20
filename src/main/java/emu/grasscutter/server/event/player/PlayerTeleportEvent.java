@@ -4,7 +4,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 public final class PlayerTeleportEvent extends PlayerEvent implements Cancellable {
     private final TeleportProperties properties;

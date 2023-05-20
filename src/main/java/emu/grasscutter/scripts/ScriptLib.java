@@ -23,7 +23,7 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.scripts.data.SceneObject;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import io.netty.util.concurrent.FastThreadLocal;
 import lombok.val;
 import org.luaj.vm2.LuaTable;

@@ -26,7 +26,7 @@ import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGra
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;

@@ -1,4 +1,4 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.utils.objects;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
@@ -6,7 +6,7 @@ import ch.qos.logback.core.encoder.Encoder;
 import emu.grasscutter.server.event.internal.ServerLogEvent;
 import java.nio.charset.StandardCharsets;
 
-public class ServerLogEventAppender<E> extends AppenderBase<E> {
+public final class ServerLogEventAppender<E> extends AppenderBase<E> {
     protected Encoder<E> encoder;
 
     @Override

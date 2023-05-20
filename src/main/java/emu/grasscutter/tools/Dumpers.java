@@ -8,7 +8,7 @@ import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Language;
+import emu.grasscutter.utils.lang.Language;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

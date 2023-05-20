@@ -8,7 +8,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass;
 import emu.grasscutter.net.proto.VehicleMemberOuterClass.VehicleMember;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.List;
 
 public class PacketCreateVehicleRsp extends BasePacket {

@@ -11,7 +11,7 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.SceneBossChest;
 import emu.grasscutter.scripts.data.SceneGadget;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.Utils;
 import java.util.ArrayDeque;
 import java.util.ArrayList;

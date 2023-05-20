@@ -6,7 +6,7 @@ import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
 import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.utils.WeightedList;
+import emu.grasscutter.utils.objects.WeightedList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.ArrayList;

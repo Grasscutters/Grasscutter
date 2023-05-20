@@ -20,7 +20,7 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketDungeonWayPointNotify;
 import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;

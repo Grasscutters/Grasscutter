@@ -22,7 +22,7 @@ import java.nio.file.Path;
 
 import static emu.grasscutter.config.Configuration.GAME_INFO;
 import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 public class GameSession implements GameSessionManager.KcpChannel {
     private final GameServer server;

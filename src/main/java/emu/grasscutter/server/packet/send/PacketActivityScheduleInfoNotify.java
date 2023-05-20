@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ActivityScheduleInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass;
-import emu.grasscutter.utils.DateHelper;
+import emu.grasscutter.utils.helpers.DateHelper;
 import java.util.Collection;
 
 public class PacketActivityScheduleInfoNotify extends BasePacket {

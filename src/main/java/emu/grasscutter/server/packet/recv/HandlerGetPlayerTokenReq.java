@@ -13,7 +13,7 @@ import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
-import emu.grasscutter.utils.ByteHelper;
+import emu.grasscutter.utils.helpers.ByteHelper;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.Utils;

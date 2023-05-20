@@ -11,7 +11,7 @@ import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.TryEnterHomeReq)
 public class HandlerTryEnterHomeReq extends PacketHandler {

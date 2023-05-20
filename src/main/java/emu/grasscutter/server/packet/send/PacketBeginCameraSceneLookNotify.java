@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.BeginCameraSceneLookNotifyOuterClass.BeginCameraSceneLookNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

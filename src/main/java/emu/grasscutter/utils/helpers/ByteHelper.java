@@ -1,16 +1,16 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.utils.helpers;
 
-public class ByteHelper {
-    public static byte[] changeBytes(byte[] a) {
-        byte[] b = new byte[a.length];
-        for (int i = 0; i < a.length; i++) {
+public interface ByteHelper {
+    static byte[] changeBytes(byte[] a) {
+        var b = new byte[a.length];
+        for (var i = 0; i < a.length; i++) {
             b[i] = a[a.length - i - 1];
         }
         return b;
     }
 
-    public static byte[] longToBytes(long x) {
-        byte[] bytes = new byte[8];
+    static byte[] longToBytes(long x) {
+        var bytes = new byte[8];
         bytes[0] = (byte) (x >> 56);
         bytes[1] = (byte) (x >> 48);
         bytes[2] = (byte) (x >> 40);

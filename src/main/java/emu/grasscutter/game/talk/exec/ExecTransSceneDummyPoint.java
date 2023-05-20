@@ -7,7 +7,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.talk.TalkExec;
 import emu.grasscutter.game.talk.TalkExecHandler;
 import emu.grasscutter.game.talk.TalkValueExec;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 @TalkValueExec(TalkExec.TALK_EXEC_TRANS_SCENE_DUMMY_POINT)
 public final class ExecTransSceneDummyPoint extends TalkExecHandler {

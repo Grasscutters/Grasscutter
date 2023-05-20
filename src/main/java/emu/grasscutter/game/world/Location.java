@@ -1,8 +1,7 @@
-package emu.grasscutter.utils;
+package emu.grasscutter.game.world;
 
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
-import emu.grasscutter.game.world.Scene;
 import lombok.Getter;
 import lombok.Setter;
 

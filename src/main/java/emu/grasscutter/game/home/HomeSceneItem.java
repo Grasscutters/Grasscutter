@@ -5,7 +5,7 @@ import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.AccessLevel;

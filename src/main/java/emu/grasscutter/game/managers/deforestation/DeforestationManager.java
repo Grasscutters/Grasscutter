@@ -8,7 +8,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.HitTreeNotifyOuterClass;
 import emu.grasscutter.net.proto.VectorOuterClass;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.ArrayList;
 import java.util.HashMap;
 

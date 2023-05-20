@@ -6,7 +6,7 @@ import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.SceneIndexManager;
 import emu.grasscutter.scripts.ScriptLoader;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.script.Bindings;

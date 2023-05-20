@@ -1,11 +1,12 @@
 package emu.grasscutter.utils;
 
 import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
+import emu.grasscutter.game.world.Position;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;

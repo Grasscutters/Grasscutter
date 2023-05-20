@@ -3,7 +3,7 @@ package emu.grasscutter.game.entity.gadget.platform;
 import emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion;
 import emu.grasscutter.net.proto.MovingPlatformTypeOuterClass;
 import emu.grasscutter.net.proto.PlatformInfoOuterClass;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 /** TODO mostly hardcoded for EntitySolarIsotomaElevatorPlatform, should be more generic */
 public class AbilityRoute extends BaseRoute {

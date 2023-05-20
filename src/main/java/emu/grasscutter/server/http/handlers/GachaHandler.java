@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;

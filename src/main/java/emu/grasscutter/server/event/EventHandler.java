@@ -2,7 +2,7 @@ package emu.grasscutter.server.event;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.Plugin;
-import emu.grasscutter.utils.EventConsumer;
+import emu.grasscutter.utils.objects.EventConsumer;
 
 public final class EventHandler<T extends Event> {
     /**

@@ -8,7 +8,7 @@ import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import lombok.Getter;
 
 public abstract class EntityBaseGadget extends GameEntity {

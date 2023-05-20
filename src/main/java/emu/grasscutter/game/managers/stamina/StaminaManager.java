@@ -22,7 +22,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketVehicleStaminaNotify;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

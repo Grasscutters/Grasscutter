@@ -6,7 +6,7 @@ import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetAbility;
 import emu.grasscutter.game.entity.gadget.platform.AbilityRoute;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 
 public class EntitySolarIsotomaElevatorPlatform extends EntityGadget {
     @SuppressWarnings("removal")

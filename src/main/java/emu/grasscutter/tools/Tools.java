@@ -1,8 +1,5 @@
 package emu.grasscutter.tools;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.Language.getTextMapKey;
-
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandHandler;
@@ -16,10 +13,14 @@ import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.Language.TextStrings;
+import emu.grasscutter.utils.lang.Language;
+import emu.grasscutter.utils.lang.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.val;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -31,9 +32,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.val;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.getTextMapKey;
 
 public final class Tools {
     /**

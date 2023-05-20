@@ -7,7 +7,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.QuestTransmitReqOuterClass.QuestTransmitReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestTransmitRsp;
-import emu.grasscutter.utils.Position;
+import emu.grasscutter.game.world.Position;
 import java.util.ArrayList;
 
 @Opcodes(PacketOpcodes.QuestTransmitReq)

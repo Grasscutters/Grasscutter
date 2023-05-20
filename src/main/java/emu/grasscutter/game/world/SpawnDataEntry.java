@@ -1,7 +1,7 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.utils.Position;
+
 import java.util.List;
 import java.util.Objects;
 import lombok.Getter;

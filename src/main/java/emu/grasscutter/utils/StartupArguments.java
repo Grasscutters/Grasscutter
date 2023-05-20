@@ -1,22 +1,23 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.tools.Dumpers;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-import org.slf4j.LoggerFactory;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /** A parser for start-up arguments. */
-public final class StartupArguments {
+public interface StartupArguments {
     /* A map of parameter -> argument handler. */
-    private static final Map<String, Function<String, Boolean>> argumentHandlers =
+    Map<String, Function<String, Boolean>> argumentHandlers =
             new HashMap<>() {
                 {
                     putAll(
@@ -74,17 +75,13 @@ public final class StartupArguments {
                 }
             };
 
-    private StartupArguments() {
-        // This class is not meant to be instantiated.
-    }
-
     /**
      * Parses the provided start-up arguments.
      *
      * @param args The application start-up arguments.
      * @return If the application should exit.
      */
-    public static boolean parse(String[] args) {
+    static boolean parse(String[] args) {
         boolean exitEarly = false;
 
         // Parse the arguments.
