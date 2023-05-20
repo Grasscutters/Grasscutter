@@ -276,11 +276,19 @@ public class AbilityModifier implements Serializable {
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
         public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
         public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
+        public DynamicFloat healRatio = DynamicFloat.ONE;
 
         @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
         public boolean ignoreAbilityProperty;
 
         public String modifierName;
+
+        public boolean enableLockHP;
+        public boolean disableWhenLoading;
+        public boolean lethal = true;
+
+        public boolean muteHealEffect;
 
         public boolean byServer;
         public boolean lifeByOwnerIsAlive;
@@ -288,6 +296,10 @@ public class AbilityModifier implements Serializable {
         public int campID;
         public int gadgetID;
         public boolean ownerIsTarget;
+
+        public boolean isFromOwner;
+        public String globalValueKey;
+        public String abilityFormula;
 
         public int param1;
         public int param2;

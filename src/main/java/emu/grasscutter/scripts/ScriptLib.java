@@ -1565,6 +1565,15 @@ public class ScriptLib {
         return gadget.getGroupId();
     }
 
+    public int SetGadgetEnableInteract(int groupId, int configId, boolean enable) {
+        EntityGadget gadget = getCurrentEntityGadget();
+        if(gadget.getGroupId() != groupId || gadget.getConfigId() != configId) return -1;
+
+        gadget.setInteractEnabled(enable);
+
+        return 0;
+    }
+
     public int[] GetGatherConfigIdList() {
         EntityGadget gadget = getCurrentEntityGadget();
 

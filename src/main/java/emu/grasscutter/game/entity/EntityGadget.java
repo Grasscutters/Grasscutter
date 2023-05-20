@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
@@ -38,12 +39,13 @@ import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
@@ -72,6 +74,8 @@ public class EntityGadget extends EntityBaseGadget {
     @Getter @Setter private int stopValue = 0; // Controller related, inited to zero
     @Getter @Setter private int startValue = 0; // Controller related, inited to zero
     @Getter @Setter private int ticksSinceChange;
+
+    @Getter private boolean interactEnabled = true;
 
     public EntityGadget(Scene scene, int gadgetId, Position pos) {
         this(scene, gadgetId, pos, null, null);
@@ -105,11 +109,14 @@ public class EntityGadget extends EntityBaseGadget {
         this.fillFightProps(configGadget);
 
         if (GameData.getGadgetMappingMap().containsKey(gadgetId)) {
-            String controllerName = GameData.getGadgetMappingMap().get(gadgetId).getServerController();
+            var controllerName = GameData.getGadgetMappingMap().get(gadgetId).getServerController();
             this.setEntityController(EntityControllerScriptManager.getGadgetController(controllerName));
+            if (this.getEntityController() == null) {
+                Grasscutter.getLogger().warn("Gadget controller {} not found.", controllerName);
+            }
         }
 
-        this.initAbilities(); //TODO: move this
+        this.initAbilities(); // TODO: move this
     }
 
     private void addConfigAbility(ConfigAbilityData abilityData){
@@ -126,6 +133,11 @@ public class EntityGadget extends EntityBaseGadget {
                 this.addConfigAbility(ability);
             }
         }
+    }
+
+    public void setInteractEnabled(boolean enable) {
+        this.interactEnabled = enable;
+        this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, this.getState())); //Update the interact
     }
 
     public void setState(int state) {
@@ -177,6 +189,8 @@ public class EntityGadget extends EntityBaseGadget {
 
     @Override
     public void onInteract(Player player, GadgetInteractReq interactReq) {
+        if (!this.interactEnabled) return;
+
         if (this.getContent() == null) {
             return;
         }
@@ -294,14 +308,13 @@ public class EntityGadget extends EntityBaseGadget {
             addAllFightPropsToEntityInfo(entityInfo);
         }
 
-        SceneGadgetInfo.Builder gadgetInfo =
-                SceneGadgetInfo.newBuilder()
-                        .setGadgetId(this.getGadgetId())
-                        .setGroupId(this.getGroupId())
-                        .setConfigId(this.getConfigId())
-                        .setGadgetState(this.getState())
-                        .setIsEnableInteract(true)
-                        .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+        var gadgetInfo = SceneGadgetInfo.newBuilder()
+                .setGadgetId(this.getGadgetId())
+                .setGroupId(this.getGroupId())
+                .setConfigId(this.getConfigId())
+                .setGadgetState(this.getState())
+                .setIsEnableInteract(this.interactEnabled)
+                .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);

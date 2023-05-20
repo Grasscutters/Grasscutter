@@ -353,6 +353,14 @@ public final class Scene {
         addEntities(entities, VisionType.VISION_TYPE_BORN);
     }
 
+    public void updateEntity(GameEntity entity) {
+        this.broadcastPacket(new PacketSceneEntityUpdateNotify(entity));
+    }
+
+    public void updateEntity(GameEntity entity, VisionType type) {
+        this.broadcastPacket(new PacketSceneEntityUpdateNotify(Arrays.asList(entity), type));
+    }
+
     private static <T> List<List<T>> chopped(List<T> list, final int L) {
         List<List<T>> parts = new ArrayList<List<T>>();
         final int N = list.size();

@@ -243,6 +243,8 @@ public final class GameData {
     private static final Int2ObjectMap<EquipAffixData> equipAffixDataMap =
             new Int2ObjectOpenHashMap<>();
 
+    @Getter private static final Int2ObjectMap<MonsterAffixData> monsterAffixDataMap = new Int2ObjectOpenHashMap<>();
+
     @Getter
     private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap =
             new Int2ObjectOpenHashMap<>();

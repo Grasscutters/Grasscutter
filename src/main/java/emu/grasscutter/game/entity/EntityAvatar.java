@@ -139,7 +139,7 @@ public class EntityAvatar extends GameEntity {
     }
 
     @Override
-    public float heal(float amount) {
+    public float heal(float amount, boolean mute) {
         // Do not heal character if they are dead
         if (!this.isAlive()) {
             return 0f;
@@ -148,17 +148,17 @@ public class EntityAvatar extends GameEntity {
         float healed = super.heal(amount);
 
         if (healed > 0f) {
-            getScene()
-                    .broadcastPacket(
-                            new PacketEntityFightPropChangeReasonNotify(
-                                    this,
-                                    FightProperty.FIGHT_PROP_CUR_HP,
-                                    healed,
-                                    PropChangeReason.PROP_CHANGE_REASON_ABILITY,
-                                    ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY));
+            getScene().broadcastPacket(
+                new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, mute ? PropChangeReason.PROP_CHANGE_REASON_NONE : PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY)
+            );
         }
 
         return healed;
+    }
+
+    @Override
+    public float heal(float amount) {
+        return this.heal(amount, false);
     }
 
     public void clearEnergy(ChangeEnergyReason reason) {

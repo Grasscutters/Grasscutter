@@ -15,6 +15,8 @@ import java.util.Optional;
 @Getter
 public class DynamicFloat {
     public static DynamicFloat ZERO = new DynamicFloat(0f);
+    public static DynamicFloat ONE = new DynamicFloat(1f);
+
     private List<StackOp> ops;
     private boolean dynamic = false;
     private float constant = 0f;
@@ -39,25 +41,28 @@ public class DynamicFloat {
     }
 
     public String toString(boolean nextBoolean) {
-        String key = String.valueOf(nextBoolean);
+        var key = String.valueOf(nextBoolean);
         this.ops = List.of(new StackOp(key));
         return ops.toString();
     }
 
     public float get() {
-        return this.get(new Object2FloatArrayMap<>());
+        return this.get(new Object2FloatArrayMap<String>(), 0);
+    }
+
+    public float get(float defaultValue) {
+        return this.get(new Object2FloatArrayMap<String>(), defaultValue);
+    }
+
+    public float get(Ability ability, float defaultValue) {
+        return this.get(ability.getAbilitySpecials(), defaultValue);
     }
 
     public float get(Ability ability) {
-        return get(ability.getAbilitySpecials());
+        return this.get(ability.getAbilitySpecials(), 0f);
     }
 
-    public float get(ProudSkillData skill) {
-        //Construct the map
-        return get(skill.getParamListMap());
-    }
-
-    public float get(Object2FloatMap<String> props) {
+    public float get(Object2FloatMap<String> props, float defaultValue) {
         if (!this.dynamic) return constant;
 
         val fl = new FloatArrayList();
@@ -75,10 +80,20 @@ public class DynamicFloat {
         }
 
         try {
-            return fl.popFloat(); // well-formed data will always have only one value left at this point
-        } catch (NoSuchElementException ignored) {
-            return 0;
+            return fl.popFloat();  // well-formed data will always have only one value left at this point
+        } catch(NoSuchElementException e) {
+            return defaultValue;
         }
+    }
+
+    public float get(ProudSkillData skill) {
+        //Construct the map
+        return get(skill.getParamListMap(), 0f);
+    }
+
+    public float get(ProudSkillData skill, float defaultValue) {
+        //Construct the map
+        return get(skill.getParamListMap(), defaultValue);
     }
 
     public static class StackOp {

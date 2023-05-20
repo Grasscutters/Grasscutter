@@ -11,6 +11,7 @@ import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -30,13 +31,13 @@ import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.SceneMonster;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
-import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Optional;
 
 import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_MONSTER_HP_CHANGE;
@@ -57,7 +58,8 @@ public class EntityMonster extends GameEntity {
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
-    @Nullable @Getter @Setter private SceneMonster metaMonster;
+    @Nullable
+    @Getter @Setter private SceneMonster metaMonster;
 
     public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
         super(scene);
@@ -95,15 +97,71 @@ public class EntityMonster extends GameEntity {
     @Override
     public void initAbilities() {
         if(configEntityMonster != null) {
-            //TODO: Research if any monster is non humanoid
-            for(var ability : GameData.getConfigGlobalCombat().getDefaultAbilities().getNonHumanoidMoveAbilities()) {
-                addConfigAbility(ability);
+            // Affix abilities
+            var optionalGroup = getScene().getLoadedGroups().stream()
+                .filter(g -> g.id == this.getGroupId())
+                .findAny();
+            List<Integer> affixes = null;
+            if (optionalGroup.isPresent()) {
+                var group = optionalGroup.get();
+
+                SceneMonster monster = group.monsters.get(getConfigId());
+                if(monster != null) affixes = monster.affix;
             }
 
-            if(configEntityMonster.getAbilities() != null)
-                for(var configAbilityData : configEntityMonster.getAbilities()) {
-                    addConfigAbility(configAbilityData.abilityName);
+            if (affixes != null) {
+                for(var affixId : affixes) {
+                    var affix = GameData.getMonsterAffixDataMap().get(affixId.intValue());
+                    if (!affix.isPreAdd()) continue;
+
+                    //Add the ability
+                    for(var name : affix.getAbilityName()) {
+                        this.addConfigAbility(name);
+                    }
                 }
+            }
+
+            //TODO: Research if any monster is non humanoid
+            for(var ability : GameData.getConfigGlobalCombat().getDefaultAbilities().getNonHumanoidMoveAbilities()) {
+                this.addConfigAbility(ability);
+            }
+
+            if (configEntityMonster.getAbilities() != null)
+                for (var configAbilityData : configEntityMonster.getAbilities()) {
+                    this.addConfigAbility(configAbilityData.abilityName);
+                }
+
+            if (optionalGroup.isPresent()) {
+                var group = optionalGroup.get();
+                SceneMonster monster = group.monsters.get(getConfigId());
+                if(monster != null && monster.isElite) {
+                    addConfigAbility(GameData.getConfigGlobalCombat().getDefaultAbilities().getMonterEliteAbilityName());
+                }
+            }
+
+            if (affixes != null) {
+                for (var affixId : affixes) {
+                    var affix = GameData.getMonsterAffixDataMap().get(affixId.intValue());
+                    if(affix.isPreAdd()) continue;
+
+                    //Add the ability
+                    for(var name : affix.getAbilityName()) {
+                        this.addConfigAbility(name);
+                    }
+                }
+            }
+
+            var levelEntityConfig = getScene().getSceneData().getLevelEntityConfig();
+            var config = GameData.getConfigLevelEntityDataMap().get(levelEntityConfig);
+            if (config == null){
+                return;
+            }
+
+            if (config.getMonsterAbilities() != null) {
+                for (var monsterAbility : config.getMonsterAbilities()) {
+                    addConfigAbility(monsterAbility.abilityName);
+                }
+            }
         }
     }
 

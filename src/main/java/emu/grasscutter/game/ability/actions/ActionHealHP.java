@@ -17,8 +17,8 @@ public class ActionHealHP extends AbilityActionHandler {
 
         GameEntity owner = ability.getOwner();
         //handle client gadgets, that the effective caster is the current local avatar
-        if(owner instanceof EntityClientGadget) {
-            owner = (GameEntity)((EntityClientGadget)owner).getOwner().getTeamManager().getCurrentAvatarEntity();
+        if(owner instanceof EntityClientGadget ownerGadget) {
+            owner = ownerGadget.getScene().getEntityById(ownerGadget.getOwnerEntityId()); //Caster for EntityClientGadget
         }
         if(owner == null) return false;
 
@@ -28,30 +28,19 @@ public class ActionHealHP extends AbilityActionHandler {
         float amountByTargetCurrentHPRatio = action.amountByTargetCurrentHPRatio.get(ability);
         float amountByTargetMaxHPRatio = action.amountByTargetMaxHPRatio.get(ability);
         float amount = action.amount.get(ability);
-        String targetType = action.target;
 
         float amountToRegenerate = amount;
         amountToRegenerate += amountByCasterMaxHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
         amountToRegenerate += amountByCasterAttackRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
         amountToRegenerate += amountByCasterCurrentHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
 
-        //GameEntity target = null;
-        //switch(targetType) {
-        //    case "CurLocalAvatar":
-        //        target = (GameEntity)ability.getPlayerOwner().getTeamManager().getCurrentAvatarEntity();
-        //        break;
-        //    case "Self":
-        //        target = owner;
-        //        break;
-        //}
-
-        //TODO: Post an error message
-        if(target == null) return false;
+        float abilityRatio = 1.0f;
+        if(!action.ignoreAbilityProperty) abilityRatio += target.getFightProperty(FightProperty.FIGHT_PROP_HEAL_ADD) + target.getFightProperty(FightProperty.FIGHT_PROP_HEALED_ADD);
 
         amountToRegenerate += amountByTargetCurrentHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
         amountToRegenerate += amountByTargetMaxHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 
-        target.heal(amountToRegenerate);
+        target.heal(amountToRegenerate * abilityRatio * action.healRatio.get(ability, 1f), action.muteHealEffect);
 
         return true;
     }
