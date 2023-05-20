@@ -1,5 +1,9 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
@@ -37,23 +41,18 @@ import emu.grasscutter.server.event.internal.ServerStopEvent;
 import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
-import kcp.highway.ChannelConfig;
-import kcp.highway.KcpServer;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.SneakyThrows;
-import org.jetbrains.annotations.NotNull;
-
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.utils.lang.Language.translate;
+import kcp.highway.ChannelConfig;
+import kcp.highway.KcpServer;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.SneakyThrows;
+import org.jetbrains.annotations.NotNull;
 
 @Getter
 public final class GameServer extends KcpServer implements Iterable<Player> {
@@ -355,8 +354,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         getWorlds().forEach(World::save);
     }
 
-    @NotNull
-    @Override
+    @NotNull @Override
     public Iterator<Player> iterator() {
         return this.getPlayers().values().iterator();
     }

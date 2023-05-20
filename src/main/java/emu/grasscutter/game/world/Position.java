@@ -5,11 +5,10 @@ import com.google.gson.annotations.SerializedName;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.utils.Utils;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Position implements Serializable {

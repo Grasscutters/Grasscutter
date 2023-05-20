@@ -4,6 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -19,7 +20,6 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
 import emu.grasscutter.server.event.entity.EntityMoveEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.CombatInvocationsNotify)
 public class HandlerCombatInvocationsNotify extends PacketHandler {

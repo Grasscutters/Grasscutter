@@ -1,8 +1,8 @@
 package emu.grasscutter.server.event.player;
 
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.types.PlayerEvent;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.server.event.types.PlayerEvent;
 
 public final class PlayerMoveEvent extends PlayerEvent {
     private final MoveType type;

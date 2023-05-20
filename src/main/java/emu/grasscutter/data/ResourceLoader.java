@@ -1,5 +1,9 @@
 package emu.grasscutter.data;
 
+import static emu.grasscutter.utils.FileUtils.getDataPath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
@@ -29,12 +33,6 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntArraySet;
-import lombok.SneakyThrows;
-import lombok.val;
-import org.reflections.Reflections;
-
-import javax.script.Bindings;
-import javax.script.CompiledScript;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -46,10 +44,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.utils.FileUtils.getDataPath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.script.Bindings;
+import javax.script.CompiledScript;
+import lombok.SneakyThrows;
+import lombok.val;
+import org.reflections.Reflections;
 
 public final class ResourceLoader {
 

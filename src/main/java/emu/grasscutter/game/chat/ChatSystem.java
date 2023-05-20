@@ -1,5 +1,7 @@
 package emu.grasscutter.game.chat;
 
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.player.Player;
@@ -11,14 +13,11 @@ import emu.grasscutter.server.packet.send.PacketPrivateChatNotify;
 import emu.grasscutter.server.packet.send.PacketPullPrivateChatRsp;
 import emu.grasscutter.server.packet.send.PacketPullRecentChatRsp;
 import emu.grasscutter.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 public class ChatSystem implements ChatSystemHandler {
     static final String PREFIXES = "[/!]";
@@ -142,7 +141,8 @@ public class ChatSystem implements ChatSystemHandler {
 
         // Invoke the chat event.
         var event = new PlayerChatEvent(player, message, target);
-        event.call(); if (event.isCanceled()) return;
+        event.call();
+        if (event.isCanceled()) return;
 
         // Fetch the new target.
         if (targetUid != GameConstants.SERVER_CONSOLE_UID) {
@@ -179,7 +179,8 @@ public class ChatSystem implements ChatSystemHandler {
 
         // Invoke the chat event.
         var event = new PlayerChatEvent(player, emote, target);
-        event.call(); if (event.isCanceled()) return;
+        event.call();
+        if (event.isCanceled()) return;
 
         // Fetch the new target.
         if (targetUid != GameConstants.SERVER_CONSOLE_UID) {
@@ -216,7 +217,8 @@ public class ChatSystem implements ChatSystemHandler {
 
         // Invoke the chat event.
         var event = new PlayerChatEvent(player, message, channel);
-        event.call(); if (event.isCanceled()) return;
+        event.call();
+        if (event.isCanceled()) return;
 
         // Fetch the new message.
         message = event.getMessage();
@@ -232,7 +234,8 @@ public class ChatSystem implements ChatSystemHandler {
     public void sendTeamMessage(Player player, int channel, int icon) {
         // Invoke the chat event.
         var event = new PlayerChatEvent(player, icon, channel);
-        event.call(); if (event.isCanceled()) return;
+        event.call();
+        if (event.isCanceled()) return;
 
         // Fetch the new icon.
         icon = event.getMessageAsInt();

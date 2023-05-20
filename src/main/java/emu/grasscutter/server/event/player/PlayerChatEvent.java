@@ -3,24 +3,24 @@ package emu.grasscutter.server.event.player;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.annotation.Nullable;
-
-@Getter @Setter
+@Getter
+@Setter
 public final class PlayerChatEvent extends PlayerEvent implements Cancellable {
     private String message;
 
     /**
-     * This field being null signifies a message is being sent to a public chat.
-     * This can include either a global chat or a team chat.
+     * This field being null signifies a message is being sent to a public chat. This can include
+     * either a global chat or a team chat.
      */
     @Nullable private Player to;
 
     /**
-     * This field is not null when the message is being sent to a public chat.
-     * Refer to {@link #to} for more information.
+     * This field is not null when the message is being sent to a public chat. Refer to {@link #to}
+     * for more information.
      */
     @Nullable private Integer channelId;
 

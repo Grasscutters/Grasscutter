@@ -1,8 +1,8 @@
 package emu.grasscutter.server.event.entity;
 
 import emu.grasscutter.game.entity.GameEntity;
-import emu.grasscutter.server.event.types.EntityEvent;
 import emu.grasscutter.game.world.Location;
+import emu.grasscutter.server.event.types.EntityEvent;
 import javax.annotation.Nullable;
 import lombok.Getter;
 

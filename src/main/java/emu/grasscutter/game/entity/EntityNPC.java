@@ -1,10 +1,10 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.data.SceneNPC;
-import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import lombok.Getter;
 

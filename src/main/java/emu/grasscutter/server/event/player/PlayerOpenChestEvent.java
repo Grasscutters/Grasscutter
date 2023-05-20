@@ -10,9 +10,7 @@ public final class PlayerOpenChestEvent extends PlayerEvent implements Cancellab
     private final GadgetChest chest;
     private ChestReward reward;
 
-    public PlayerOpenChestEvent(Player player,
-                                GadgetChest chest, ChestReward reward
-    ) {
+    public PlayerOpenChestEvent(Player player, GadgetChest chest, ChestReward reward) {
         super(player);
 
         this.chest = chest;

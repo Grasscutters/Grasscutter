@@ -11,7 +11,6 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -136,8 +135,7 @@ public class ServerHelper {
      * @return The server's task scheduler.
      */
     public ServerTaskScheduler getScheduler() {
-        if (this.getGameServer() == null)
-            return null;
+        if (this.getGameServer() == null) return null;
 
         return this.getGameServer().getScheduler();
     }

@@ -1,8 +1,8 @@
 package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.scripts.ScriptLoader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

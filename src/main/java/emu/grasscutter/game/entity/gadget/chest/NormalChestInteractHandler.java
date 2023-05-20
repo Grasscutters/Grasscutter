@@ -4,7 +4,6 @@ import emu.grasscutter.game.entity.gadget.GadgetChest;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.ChestReward;
 import emu.grasscutter.server.event.player.PlayerOpenChestEvent;
-
 import java.util.Random;
 
 public class NormalChestInteractHandler implements ChestInteractHandler {
@@ -23,7 +22,8 @@ public class NormalChestInteractHandler implements ChestInteractHandler {
     public boolean onInteract(GadgetChest chest, Player player) {
         // Invoke open chest event.
         var event = new PlayerOpenChestEvent(player, chest, this.chestReward);
-        event.call(); if (event.isCanceled()) return true;
+        event.call();
+        if (event.isCanceled()) return true;
 
         player.earnExp(chestReward.getAdvExp());
         player.getInventory().addItem(201, chestReward.getResin());

@@ -1,11 +1,10 @@
 package emu.grasscutter.utils.objects.text;
 
-import lombok.Builder;
-import lombok.Data;
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
 
 /* Text style container. */
 @Builder

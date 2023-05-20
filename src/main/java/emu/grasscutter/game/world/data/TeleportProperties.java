@@ -1,9 +1,9 @@
 package emu.grasscutter.game.world.data;
 
 import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.EnterTypeOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
-import emu.grasscutter.game.world.Position;
 import lombok.Builder;
 import lombok.Data;
 

@@ -14,6 +14,7 @@ import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
@@ -26,7 +27,6 @@ import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGra
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;

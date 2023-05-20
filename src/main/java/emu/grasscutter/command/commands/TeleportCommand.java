@@ -5,8 +5,8 @@ import static emu.grasscutter.utils.lang.Language.translate;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import java.util.List;
 
 @Command(

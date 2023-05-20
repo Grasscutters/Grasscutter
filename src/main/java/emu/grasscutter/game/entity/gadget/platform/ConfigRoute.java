@@ -1,9 +1,9 @@
 package emu.grasscutter.game.entity.gadget.platform;
 
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.MovingPlatformTypeOuterClass;
 import emu.grasscutter.net.proto.PlatformInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneGadget;
-import emu.grasscutter.game.world.Position;
 import lombok.Getter;
 import lombok.Setter;
 

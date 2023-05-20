@@ -1,7 +1,7 @@
 package emu.grasscutter.data.binout.routes;
 
-import emu.grasscutter.net.proto.RoutePointOuterClass;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.net.proto.RoutePointOuterClass;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;

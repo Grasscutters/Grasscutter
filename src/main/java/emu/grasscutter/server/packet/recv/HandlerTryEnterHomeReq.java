@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.home.GameHome;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -11,7 +12,6 @@ import emu.grasscutter.net.proto.TryEnterHomeReqOuterClass;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTryEnterHomeRsp;
-import emu.grasscutter.game.world.Position;
 
 @Opcodes(PacketOpcodes.TryEnterHomeReq)
 public class HandlerTryEnterHomeReq extends PacketHandler {

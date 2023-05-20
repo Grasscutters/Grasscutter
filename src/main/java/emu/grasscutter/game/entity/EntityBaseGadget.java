@@ -5,10 +5,10 @@ import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_GADGET_
 import emu.grasscutter.data.binout.config.ConfigEntityGadget;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.entity.EntityDamageEvent;
-import emu.grasscutter.game.world.Position;
 import lombok.Getter;
 
 public abstract class EntityBaseGadget extends GameEntity {
