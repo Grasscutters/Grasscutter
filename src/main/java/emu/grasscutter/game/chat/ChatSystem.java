@@ -145,8 +145,11 @@ public class ChatSystem implements ChatSystemHandler {
         event.call(); if (event.isCanceled()) return;
 
         // Fetch the new target.
-        targetUid = event.getTargetUid();
-        if (targetUid == -1) return;
+        if (targetUid != GameConstants.SERVER_CONSOLE_UID) {
+            targetUid = event.getTargetUid();
+            if (targetUid == -1) return;
+        }
+
         // Fetch the new message.
         message = event.getMessage();
         if (message == null || message.length() == 0) return;
@@ -179,8 +182,10 @@ public class ChatSystem implements ChatSystemHandler {
         event.call(); if (event.isCanceled()) return;
 
         // Fetch the new target.
-        targetUid = event.getTargetUid();
-        if (targetUid == -1) return;
+        if (targetUid != GameConstants.SERVER_CONSOLE_UID) {
+            targetUid = event.getTargetUid();
+            if (targetUid == -1) return;
+        }
         // Fetch the new emote.
         emote = event.getMessageAsInt();
         if (emote == -1) return;
