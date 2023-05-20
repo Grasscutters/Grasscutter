@@ -79,7 +79,7 @@ public class PlayerProgress {
     }
 
     public int resetCurrentProgress(int progressId) {
-        return questProgressCountMap.merge(progressId,0,Integer::min);
+        return questProgressCountMap.merge(progressId, 0, Integer::min);
     }
 
     @Entity
