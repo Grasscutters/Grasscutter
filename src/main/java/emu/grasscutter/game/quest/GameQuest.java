@@ -179,6 +179,7 @@ public class GameQuest {
         if (notifyDelete) {
             getOwner().sendPacket(new PacketDelQuestNotify(getSubQuestId()));
         }
+        this.getOwner().getPlayerProgress().resetCurrentProgress(this.subQuestId);
         save();
         return true;
     }
