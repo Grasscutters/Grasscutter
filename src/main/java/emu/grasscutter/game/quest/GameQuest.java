@@ -173,13 +173,13 @@ public class GameQuest {
         finishTime = 0;
         acceptTime = 0;
         startTime = 0;
+        this.getOwner().getPlayerProgress().resetCurrentProgress(this.subQuestId);
         if (oldState == QuestState.QUEST_STATE_UNSTARTED) {
             return false;
         }
         if (notifyDelete) {
             getOwner().sendPacket(new PacketDelQuestNotify(getSubQuestId()));
         }
-        this.getOwner().getPlayerProgress().resetCurrentProgress(this.subQuestId);
         save();
         return true;
     }
