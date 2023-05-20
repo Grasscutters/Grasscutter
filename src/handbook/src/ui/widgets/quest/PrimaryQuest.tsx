@@ -40,11 +40,9 @@ class PrimaryQuest extends React.PureComponent<IProps> {
                 transitionTime={50}
             >
                 <div className={"PrimaryQuest_List"}>
-                    {
-                        listSubQuestsFor(this.props.quest)
-                            .map((quest) => <NormalQuest
-                                key={quest.id} quest={quest} right />)
-                    }
+                    {listSubQuestsFor(this.props.quest).map((quest) => (
+                        <NormalQuest key={quest.id} quest={quest} right />
+                    ))}
                 </div>
             </Collapsible>
         );

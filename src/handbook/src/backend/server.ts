@@ -5,7 +5,8 @@ let playerToken: string | null = null; // The session token for the player.
 export let targetPlayer = 0; // The UID of the target player.
 
 // The server's address and port.
-export let address: string = "127.0.0.1", port: string = "443";
+export let address: string = "127.0.0.1",
+    port: string = "443";
 export let encrypted: boolean = true;
 
 export let lockedPlayer = false; // Whether the UID field is locked.

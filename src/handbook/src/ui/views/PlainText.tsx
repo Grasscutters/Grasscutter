@@ -101,7 +101,9 @@ class PlainText extends React.PureComponent {
                 {listQuests()
                     .sort((a, b) => a.id - b.id)
                     .map((quest) => (
-                        <p key={quest.id}>{`${quest.id} : ${getMainQuestFor(quest)?.title ?? "Unknown"} - ${quest.description}`}</p>
+                        <p key={quest.id}>{`${quest.id} : ${getMainQuestFor(quest)?.title ?? "Unknown"} - ${
+                            quest.description
+                        }`}</p>
                     ))}
             </>
         );

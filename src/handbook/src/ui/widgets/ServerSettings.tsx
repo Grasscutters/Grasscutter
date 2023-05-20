@@ -1,10 +1,7 @@
 import React from "react";
 
 import emitter from "@backend/events";
-import {
-    targetPlayer, address, port,
-    setServerDetails, url, setTargetPlayer
-} from "@backend/server";
+import { targetPlayer, address, port, setServerDetails, url, setTargetPlayer } from "@backend/server";
 
 import "@css/widgets/ServerSettings.scss";
 
@@ -96,22 +93,19 @@ class ServerSettings extends React.Component<{}, IState> {
         emitter.emit("overlay", "None");
 
         // Save the server settings.
-        setServerDetails(
-            this.state.address,
-            this.state.port.toString()
-        );
+        setServerDetails(this.state.address, this.state.port.toString());
     }
 
     render() {
         return (
             <div className={"ServerSettings"}>
-                {
-                    this.state.webview ? (
-                        <iframe
-                            className={"ServerSettings_Frame"}
-                            src={`${url()}/handbook/authenticate?uid=${targetPlayer}`}
-                        />
-                    ) : <>
+                {this.state.webview ? (
+                    <iframe
+                        className={"ServerSettings_Frame"}
+                        src={`${url()}/handbook/authenticate?uid=${targetPlayer}`}
+                    />
+                ) : (
+                    <>
                         <div className={"ServerSettings_Content ServerSettings_Top"}>
                             <h1 className={"ServerSettings_Title"}>Server Settings</h1>
 
@@ -139,8 +133,7 @@ class ServerSettings extends React.Component<{}, IState> {
                                             const target = e.target as HTMLInputElement;
                                             const value = target.value;
 
-                                            if (isNaN(Number(value))
-                                                || value.length > 5) {
+                                            if (isNaN(Number(value)) || value.length > 5) {
                                                 return;
                                             }
 
@@ -150,24 +143,18 @@ class ServerSettings extends React.Component<{}, IState> {
                                 </div>
                             </div>
 
-                            <button
-                                className={"ServerSettings_Authenticate"}
-                                onClick={this.authenticate.bind(this)}
-                            >
+                            <button className={"ServerSettings_Authenticate"} onClick={this.authenticate.bind(this)}>
                                 Authenticate
                             </button>
                         </div>
 
                         <div className={"ServerSettings_Content"}>
-                            <button
-                                className={"ServerSettings_Save"}
-                                onClick={this.save.bind(this)}
-                            >
+                            <button className={"ServerSettings_Save"} onClick={this.save.bind(this)}>
                                 Save
                             </button>
                         </div>
                     </>
-                }
+                )}
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IoLocationSharp } from "react-icons/io5"
+import { IoLocationSharp } from "react-icons/io5";
 
 import type { Quest } from "@backend/types";
 
@@ -20,13 +20,12 @@ class NormalQuest extends React.PureComponent<IProps> {
         const { quest } = this.props;
 
         return (
-            <div
-                className={"NormalQuest"}
-                datatype={this.props.right ? "right" : "left"}
-            >
+            <div className={"NormalQuest"} datatype={this.props.right ? "right" : "left"}>
                 <div className={"NormalQuest_Info"}>
                     <p className={"font-bold"}>{quest.description}</p>
-                    <p>ID: {quest.id} | Main: {quest.mainId}</p>
+                    <p>
+                        ID: {quest.id} | Main: {quest.mainId}
+                    </p>
                 </div>
 
                 <IoLocationSharp className={"NormalQuest_Icon"} />

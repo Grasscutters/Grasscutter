@@ -165,8 +165,7 @@ export function getItems(): Item[] {
 export function getQuests(): QuestDump {
     const map: QuestDump = {};
     quests.forEach((quest: Quest) => {
-        quest.description = quest.description
-            .replaceAll("\\", ",");
+        quest.description = quest.description.replaceAll("\\", ",");
         map[quest.id] = quest;
     });
 
@@ -177,8 +176,7 @@ export function getQuests(): QuestDump {
  * Fetches and lists all the quests in the file.
  */
 export function listQuests(): Quest[] {
-    return Object.values(getQuests())
-        .sort((a, b) => a.id - b.id);
+    return Object.values(getQuests()).sort((a, b) => a.id - b.id);
 }
 
 /**
@@ -187,8 +185,7 @@ export function listQuests(): Quest[] {
 export function getMainQuests(): MainQuestDump {
     const map: MainQuestDump = {};
     mainQuests.forEach((quest: MainQuest) => {
-        quest.title = quest.title
-            .replaceAll("\\", ",");
+        quest.title = quest.title.replaceAll("\\", ",");
         map[quest.id] = quest;
     });
 
@@ -199,8 +196,7 @@ export function getMainQuests(): MainQuestDump {
  * Fetches and lists all the quests in the file.
  */
 export function listMainQuests(): MainQuestDump[] {
-    return Object.values(allMainQuests)
-        .sort((a, b) => a.id - b.id);
+    return Object.values(allMainQuests).sort((a, b) => a.id - b.id);
 }
 
 /**
@@ -218,8 +214,7 @@ export function getMainQuestFor(quest: Quest): MainQuest {
  * @param mainQuest The main quest to fetch quests for.
  */
 export function listSubQuestsFor(mainQuest: MainQuest): Quest[] {
-    return listQuests()
-        .filter((quest) => quest.mainId == mainQuest.id);
+    return listQuests().filter((quest) => quest.mainId == mainQuest.id);
 }
 
 /*
@@ -237,15 +232,14 @@ export function questToTree(mainQuest: MainQuest): RawNodeDatum {
         attributes: {
             id: mainQuest.id
         },
-        children: listSubQuestsFor(mainQuest)
-            .map((quest) => {
-                return {
-                    name: quest.id.toString(),
-                    attributes: {
-                        description: quest.description
-                    },
-                    children: []
-                } as RawNodeDatum;
-            })
+        children: listSubQuestsFor(mainQuest).map((quest) => {
+            return {
+                name: quest.id.toString(),
+                attributes: {
+                    description: quest.description
+                },
+                children: []
+            } as RawNodeDatum;
+        })
     };
 }

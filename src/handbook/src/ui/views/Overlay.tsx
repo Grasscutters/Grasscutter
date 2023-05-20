@@ -50,11 +50,7 @@ class Overlay extends React.Component<{}, IState> {
     }
 
     render() {
-        return this.state.page != "None" ? (
-            <div className={"Overlay"}>
-                {this.getPage()}
-            </div>
-        ) : undefined;
+        return this.state.page != "None" ? <div className={"Overlay"}>{this.getPage()}</div> : undefined;
     }
 }
 

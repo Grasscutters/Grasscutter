@@ -31,10 +31,12 @@ class QuestsPage extends React.Component<{}, IState> {
         return (
             <div className={"QuestsPage"}>
                 <div className={"QuestsPage_Selector"}>
-                    <PrimaryQuest quest={{
-                        id: 351,
-                        title: "Across the Sea"
-                    }} />
+                    <PrimaryQuest
+                        quest={{
+                            id: 351,
+                            title: "Across the Sea"
+                        }}
+                    />
                 </div>
 
                 <div className={"QuestsPage_Tree"}>
