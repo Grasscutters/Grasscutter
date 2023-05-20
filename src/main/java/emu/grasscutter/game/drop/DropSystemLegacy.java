@@ -3,7 +3,6 @@ package emu.grasscutter.game.drop;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -27,8 +26,7 @@ public class DropSystemLegacy extends BaseGameSystem {
     public DropSystemLegacy(GameServer server) {
         super(server);
         this.dropData = new Int2ObjectOpenHashMap<>();
-
-        ResourceLoader.runAsync(this::load);
+        this.load();
     }
 
     public Int2ObjectMap<List<DropData>> getDropData() {

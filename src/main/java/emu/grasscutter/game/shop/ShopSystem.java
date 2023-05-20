@@ -5,7 +5,6 @@ import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ShopGoodsData;
 import emu.grasscutter.server.game.BaseGameSystem;
@@ -25,10 +24,9 @@ public class ShopSystem extends BaseGameSystem {
 
     public ShopSystem(GameServer server) {
         super(server);
-
         this.shopData = new Int2ObjectOpenHashMap<>();
         this.shopChestData = new Int2ObjectOpenHashMap<>();
-        ResourceLoader.runAsync(this::load);
+        this.load();
     }
 
     public static int getShopNextRefreshTime(ShopInfo shopInfo) {

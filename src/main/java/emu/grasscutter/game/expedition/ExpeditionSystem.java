@@ -2,7 +2,6 @@ package emu.grasscutter.game.expedition;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -14,9 +13,8 @@ public class ExpeditionSystem extends BaseGameSystem {
 
     public ExpeditionSystem(GameServer server) {
         super(server);
-
         this.expeditionRewardData = new Int2ObjectOpenHashMap<>();
-        ResourceLoader.runAsync(this::load);
+        this.load();
     }
 
     public Int2ObjectMap<List<ExpeditionRewardDataList>> getExpeditionRewardDataList() {

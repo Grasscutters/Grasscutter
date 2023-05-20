@@ -3,7 +3,6 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.excels.InvestigationMonsterData;
 import emu.grasscutter.data.excels.RewardPreviewData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
@@ -32,7 +31,7 @@ public class WorldDataSystem extends BaseGameSystem {
         this.chestInteractHandlerMap = new HashMap<>();
         this.sceneInvestigationGroupMap = new ConcurrentHashMap<>();
 
-        ResourceLoader.runAsync(this::loadChestConfig);
+        loadChestConfig();
     }
 
     public synchronized void loadChestConfig() {

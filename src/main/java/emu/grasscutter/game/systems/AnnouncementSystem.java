@@ -2,7 +2,6 @@ package emu.grasscutter.game.systems;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
@@ -24,7 +23,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     public AnnouncementSystem(GameServer server) {
         super(server);
         this.announceConfigItemMap = new HashMap<>();
-        ResourceLoader.runAsync(this::loadConfig);
+        loadConfig();
     }
 
     private int loadConfig() {

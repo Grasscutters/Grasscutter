@@ -35,12 +35,6 @@ public final class DatabaseManager {
         return getGameDatastore().getDatabase();
     }
 
-    /** Performs the database initialization process. This occurs on a separate thread. */
-    public static void initializeAsync() {
-        new Thread(DatabaseManager::initialize).start();
-    }
-
-    /** Performs the database initialization process. This method is blocking. */
     public static void initialize() {
         // Initialize
         MongoClient gameMongoClient = MongoClients.create(DATABASE.game.connectionUri);

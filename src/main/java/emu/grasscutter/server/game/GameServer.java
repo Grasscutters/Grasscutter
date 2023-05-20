@@ -3,7 +3,6 @@ package emu.grasscutter.server.game;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
@@ -143,15 +142,11 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
 
         this.init(GameSessionManager.getListener(), channelConfig, address);
 
-        // Load game managers asyncronously.
-        ResourceLoader.runAsync(
-                () -> {
-                    EnergyManager.initialize();
-                    StaminaManager.initialize();
-                    CookingManager.initialize();
-                    CookingCompoundManager.initialize();
-                    CombineManger.initialize();
-                });
+        EnergyManager.initialize();
+        StaminaManager.initialize();
+        CookingManager.initialize();
+        CookingCompoundManager.initialize();
+        CombineManger.initialize();
 
         // Game Server base
         this.address = address;

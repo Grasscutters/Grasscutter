@@ -3,7 +3,6 @@ package emu.grasscutter.game.tower;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.data.excels.tower.TowerScheduleData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
@@ -16,8 +15,7 @@ public class TowerSystem extends BaseGameSystem {
 
     public TowerSystem(GameServer server) {
         super(server);
-
-        ResourceLoader.runAsync(this::load);
+        this.load();
     }
 
     public synchronized void load() {
