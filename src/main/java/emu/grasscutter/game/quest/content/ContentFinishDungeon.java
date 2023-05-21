@@ -14,6 +14,7 @@ public class ContentFinishDungeon extends BaseContent {
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         var dungeonId = condition.getParam()[0];
+        if (dungeonId != params[0]) return false;
         return quest.getOwner().getPlayerProgress().getCompletedDungeons().contains(dungeonId);
     }
 }

@@ -12,6 +12,7 @@ public class ContentTriggerFire extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
+        if(condition.getParam()[0] != params[0]) return false;
         if (quest.getTriggers().containsKey(quest.getTriggerNameById(params[0]))) {
             // We don't want to put a new key here
             return quest.getTriggers().get(quest.getTriggerNameById(params[0]));

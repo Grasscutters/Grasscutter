@@ -12,6 +12,8 @@ public class ContentEnterMyWorld extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
+        var sceneId = condition.getParam()[0];
+        if (sceneId != params[0]) return false;
         return quest.getOwner().getSceneId() == params[0];
     }
 }

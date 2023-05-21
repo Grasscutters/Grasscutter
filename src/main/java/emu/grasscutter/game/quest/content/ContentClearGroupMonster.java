@@ -14,7 +14,7 @@ public class ContentClearGroupMonster extends BaseContent {
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         val groupId = condition.getParam()[0];
-
+        if (groupId != params[0]) return false;
         return quest.getOwner().getScene().getScriptManager().isClearedGroupMonsters(groupId);
     }
 }

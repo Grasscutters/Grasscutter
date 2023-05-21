@@ -19,6 +19,7 @@ public class ContentNotFinishPlot extends BaseContent {
             return true;
         }
         val talkData = checkMainQuest.getTalks().get(talkId);
+        if (talkId != params[0]) return false;
         return talkData == null;
     }
 }
