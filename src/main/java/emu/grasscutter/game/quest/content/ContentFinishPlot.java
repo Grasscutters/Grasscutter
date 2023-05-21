@@ -16,7 +16,7 @@ public class ContentFinishPlot extends BaseContent {
         MainQuestData.TalkData talkData =
                 quest.getMainQuest().getTalks().get(Integer.valueOf(params[0]));
         GameQuest subQuest = quest.getMainQuest().getChildQuestById(params[0]);
-        return talkData != null && subQuest != null
-                || condition.getParamStr().equals(paramStr) && condition.getParam()[0] == params[0];
+        return (talkData != null && subQuest != null || condition.getParamStr().equals(paramStr))
+                && condition.getParam()[0] == params[0];
     }
 }

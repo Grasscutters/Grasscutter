@@ -78,6 +78,10 @@ public class PlayerProgress {
         return questProgressCountMap.merge(progressId, count, Integer::sum);
     }
 
+    public int resetCurrentProgress(int progressId) {
+        return questProgressCountMap.merge(progressId, 0, Integer::min);
+    }
+
     @Entity
     @NoArgsConstructor
     public static class ItemEntry {
