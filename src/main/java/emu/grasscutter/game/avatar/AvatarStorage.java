@@ -8,6 +8,7 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -115,7 +116,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
         // Update entity
         EntityAvatar entity = avatar.getAsEntity();
         if (entity == null) {
-            entity = new EntityAvatar(avatar);
+            entity = EntityCreationEvent.call(EntityAvatar.class,
+                new Class<?>[] {Avatar.class}, new Object[] {avatar});
             getPlayer().sendPacket(new PacketAvatarChangeCostumeNotify(entity));
         } else {
             getPlayer().getScene().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));

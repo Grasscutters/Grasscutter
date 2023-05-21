@@ -7,8 +7,8 @@ import emu.grasscutter.server.event.Event;
 public abstract class EntityEvent extends Event {
     protected final GameEntity entity;
 
-    public EntityEvent(GameEntity player) {
-        this.entity = player;
+    public EntityEvent(GameEntity entity) {
+        this.entity = entity;
     }
 
     public GameEntity getEntity() {

@@ -5,12 +5,15 @@ import com.google.gson.annotations.SerializedName;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.utils.Utils;
-import java.io.Serializable;
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
+@Accessors(chain = true)
 public class Position implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
 
@@ -101,6 +104,13 @@ public class Position implements Serializable {
         this.x = x;
         this.y = y;
         this.z = z;
+        return this;
+    }
+
+    public Position multiply(float value) {
+        this.x *= value;
+        this.y *= value;
+        this.z *= value;
         return this;
     }
 

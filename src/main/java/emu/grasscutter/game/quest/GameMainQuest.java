@@ -24,11 +24,12 @@ import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarNotify;
 import emu.grasscutter.utils.ConversionUtils;
-import java.util.*;
-import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.val;
 import org.bson.types.ObjectId;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
