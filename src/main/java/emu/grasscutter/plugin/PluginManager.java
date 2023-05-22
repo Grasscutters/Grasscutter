@@ -295,8 +295,10 @@ public final class PluginManager {
      * @param event The event to invoke.
      */
     public void invokeEvent(Event event) {
-        this.handlers.get(event.getClass())
-            .forEach(handler -> this.invokeHandler(event, handler));
+        var handlers = this.handlers.get(event.getClass());
+        if (handlers == null) return;
+
+        handlers.forEach(handler -> this.invokeHandler(event, handler));
     }
 
     /**
