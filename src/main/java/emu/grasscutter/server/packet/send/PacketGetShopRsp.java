@@ -48,9 +48,9 @@ public class PacketGetShopRsp extends BasePacket {
                                 .setMinLevel(info.getMinLevel())
                                 .setMaxLevel(info.getMaxLevel())
                                 .setMcoin(info.getMcoin());
-                                // These fields are DEPRECATED.
-                                // .setDisableType(info.getDisableType())
-                                // .setSecondarySheetId(info.getSecondarySheetId());
+                // These fields are DEPRECATED.
+                // .setDisableType(info.getDisableType())
+                // .setSecondarySheetId(info.getSecondarySheetId());
                 if (info.getCostItemList() != null) {
                     goods.addAllCostItemList(
                             info.getCostItemList().stream()

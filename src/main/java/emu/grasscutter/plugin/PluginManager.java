@@ -1,14 +1,12 @@
 package emu.grasscutter.plugin;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.Event;
 import emu.grasscutter.server.event.EventHandler;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-import javax.annotation.Nullable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
@@ -19,15 +17,17 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.annotation.Nullable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
     /* All loaded plugins. */
     private final Map<String, Plugin> plugins = new LinkedHashMap<>();
     /* All currently registered listeners per plugin. */
-    private final Map<Class<? extends Event>, List<EventHandler<? extends Event>>> handlers = new LinkedHashMap<>();
+    private final Map<Class<? extends Event>, List<EventHandler<? extends Event>>> handlers =
+            new LinkedHashMap<>();
 
     public PluginManager() {
         this.loadPlugins(); // Load all plugins from the plugins directory.
@@ -238,22 +238,20 @@ public final class PluginManager {
      * @param plugin The plugin.
      */
     public void removeListeners(Plugin plugin) {
-        var newMap = new HashMap<
-            Class<? extends Event>,
-            List<EventHandler<? extends Event>>
-            >();
+        var newMap = new HashMap<Class<? extends Event>, List<EventHandler<? extends Event>>>();
 
         // Remove the plugin's listeners.
-        this.handlers.forEach((event, handlers) -> {
-            // Add the event to the new map.
-            newMap.put(event, new LinkedList<>());
+        this.handlers.forEach(
+                (event, handlers) -> {
+                    // Add the event to the new map.
+                    newMap.put(event, new LinkedList<>());
 
-            // Remove the plugin's listeners.
-            handlers.forEach(handler -> {
-                if (!handler.registrar().equals(plugin))
-                    newMap.get(event).add(handler);
-            });
-        });
+                    // Remove the plugin's listeners.
+                    handlers.forEach(
+                            handler -> {
+                                if (!handler.registrar().equals(plugin)) newMap.get(event).add(handler);
+                            });
+                });
 
         // Replace the old map with the new one.
         this.handlers.clear();
@@ -261,28 +259,26 @@ public final class PluginManager {
     }
 
     /**
-     * Sorts the event listeners by priority.
-     * This method should be called after a listener has been registered.
+     * Sorts the event listeners by priority. This method should be called after a listener has been
+     * registered.
      */
     private void sortListeners() {
         // Create a new map to store the sorted listeners.
-        var newMap = new HashMap<
-            Class<? extends Event>,
-            List<EventHandler<? extends Event>>
-            >();
+        var newMap = new HashMap<Class<? extends Event>, List<EventHandler<? extends Event>>>();
 
         // Sort the listeners by priority.
-        this.handlers.forEach((event, handlers) -> {
-            // Add the event to the new map.
-            newMap.put(event, new LinkedList<>());
+        this.handlers.forEach(
+                (event, handlers) -> {
+                    // Add the event to the new map.
+                    newMap.put(event, new LinkedList<>());
 
-            // Sort the handlers by priority.
-            var sorted = handlers.stream()
-                .sorted(Comparator.comparingInt(handler ->
-                    handler.getPriority().ordinal()))
-                .toList();
-            newMap.get(event).addAll(sorted);
-        });
+                    // Sort the handlers by priority.
+                    var sorted =
+                            handlers.stream()
+                                    .sorted(Comparator.comparingInt(handler -> handler.getPriority().ordinal()))
+                                    .toList();
+                    newMap.get(event).addAll(sorted);
+                });
 
         // Replace the old map with the new one.
         this.handlers.clear();
