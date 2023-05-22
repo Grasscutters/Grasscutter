@@ -2,28 +2,25 @@ package emu.grasscutter.server.event.entity;
 
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.server.event.Event;
+import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.annotation.Nullable;
 
 /** Invoked when an entity is created. */
 @AllArgsConstructor
 public final class EntityCreationEvent extends Event {
     /**
-     * Helper method to call EntityCreationEvent.
-     * Returns the result of the event call.
+     * Helper method to call EntityCreationEvent. Returns the result of the event call.
      *
      * @param type The type of entity to create.
      * @return The result of the event call.
      * @param <T> The type of entity to create.
      */
-    public static <T extends GameEntity> T call(
-        Class<T> type, Class<?>[] argTypes, Object[] args
-    ) {
+    public static <T extends GameEntity> T call(Class<T> type, Class<?>[] argTypes, Object[] args) {
         var event = new EntityCreationEvent(type, argTypes, args);
-        event.call(); return type.cast(event.getEntity());
+        event.call();
+        return type.cast(event.getEntity());
     }
 
     @Getter @Setter private Class<? extends GameEntity> entityType;
@@ -31,16 +28,15 @@ public final class EntityCreationEvent extends Event {
     @Getter @Setter private Object[] constructorArgs;
 
     /**
-     * Creates a new entity.
-     * Returns null if the entity could not be created.
+     * Creates a new entity. Returns null if the entity could not be created.
      *
      * @return The created entity.
      */
-    @Nullable
-    public GameEntity getEntity() {
+    @Nullable public GameEntity getEntity() {
         try {
-            return this.entityType.getConstructor(this.constructorArgTypes)
-                .newInstance(this.constructorArgs);
+            return this.entityType
+                    .getConstructor(this.constructorArgTypes)
+                    .newInstance(this.constructorArgs);
         } catch (ReflectiveOperationException ignored) {
             return null;
         }

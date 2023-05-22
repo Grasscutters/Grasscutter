@@ -116,8 +116,9 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
         // Update entity
         EntityAvatar entity = avatar.getAsEntity();
         if (entity == null) {
-            entity = EntityCreationEvent.call(EntityAvatar.class,
-                new Class<?>[] {Avatar.class}, new Object[] {avatar});
+            entity =
+                    EntityCreationEvent.call(
+                            EntityAvatar.class, new Class<?>[] {Avatar.class}, new Object[] {avatar});
             getPlayer().sendPacket(new PacketAvatarChangeCostumeNotify(entity));
         } else {
             getPlayer().getScene().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));

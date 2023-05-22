@@ -1,5 +1,7 @@
 package emu.grasscutter.game.player;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
@@ -31,14 +33,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import java.util.*;
+import java.util.stream.Stream;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
-
-import java.util.*;
-import java.util.stream.Stream;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
@@ -356,10 +355,11 @@ public final class TeamManager extends BasePlayerDataManager {
                 }
             } else {
                 var player = this.getPlayer();
-                entity = EntityCreationEvent.call(EntityAvatar.class,
-                    new Class<?>[] {Scene.class, Avatar.class}, new Object[] {
-                        player.getScene(), player.getAvatars().getAvatarById(avatarId)
-                });
+                entity =
+                        EntityCreationEvent.call(
+                                EntityAvatar.class,
+                                new Class<?>[] {Scene.class, Avatar.class},
+                                new Object[] {player.getScene(), player.getAvatars().getAvatarById(avatarId)});
             }
 
             this.getActiveTeam().add(entity);
@@ -498,10 +498,12 @@ public final class TeamManager extends BasePlayerDataManager {
         this.getActiveTeam().removeIf(x -> x.getAvatar().getAvatarId() == trialAvatar.getAvatarId());
         this.getCurrentTeamInfo().getAvatars().removeIf(x -> x == trialAvatar.getAvatarId());
         // Add the avatar to the teams.
-        this.getActiveTeam().add(EntityCreationEvent.call(EntityAvatar.class,
-            new Class<?>[] {Scene.class, Avatar.class}, new Object[] {
-                player.getScene(), trialAvatar
-            }));
+        this.getActiveTeam()
+                .add(
+                        EntityCreationEvent.call(
+                                EntityAvatar.class,
+                                new Class<?>[] {Scene.class, Avatar.class},
+                                new Object[] {player.getScene(), trialAvatar}));
         this.getCurrentTeamInfo().addAvatar(trialAvatar);
         this.getTrialAvatars().put(trialAvatar.getAvatarId(), trialAvatar);
     }
@@ -588,10 +590,11 @@ public final class TeamManager extends BasePlayerDataManager {
                     .forEach(
                             avatarId ->
                                     this.getActiveTeam()
-                                            .add(EntityCreationEvent.call(EntityAvatar.class,
-                                                new Class<?>[] {Scene.class, Avatar.class}, new Object[] {
-                                                    scene, player.getAvatars().getAvatarById(avatarId)
-                                                })));
+                                            .add(
+                                                    EntityCreationEvent.call(
+                                                            EntityAvatar.class,
+                                                            new Class<?>[] {Scene.class, Avatar.class},
+                                                            new Object[] {scene, player.getAvatars().getAvatarById(avatarId)})));
         } else {
             // Restores all avatars from the player's avatar storage.
             // If the avatar is already in the team, it will not be added.
@@ -607,10 +610,13 @@ public final class TeamManager extends BasePlayerDataManager {
                 var avatarData = player.getAvatars().getAvatarById(avatar);
                 if (avatarData == null) continue;
 
-                this.getActiveTeam().add(index, EntityCreationEvent.call(EntityAvatar.class,
-                    new Class<?>[] {Scene.class, Avatar.class}, new Object[] {
-                        scene, avatarData
-                    }));
+                this.getActiveTeam()
+                        .add(
+                                index,
+                                EntityCreationEvent.call(
+                                        EntityAvatar.class,
+                                        new Class<?>[] {Scene.class, Avatar.class},
+                                        new Object[] {scene, avatarData}));
             }
         }
 
@@ -976,9 +982,11 @@ public final class TeamManager extends BasePlayerDataManager {
                     var avatar = avatars.getAvatarById(id);
                     if (avatar == null) continue;
 
-                    specifiedAvatarList.add(EntityCreationEvent.call(EntityAvatar.class,
-                        new Class<?>[] {Scene.class, Avatar.class},
-                        new Object[] {scene, avatar}));
+                    specifiedAvatarList.add(
+                            EntityCreationEvent.call(
+                                    EntityAvatar.class,
+                                    new Class<?>[] {Scene.class, Avatar.class},
+                                    new Object[] {scene, avatar}));
                 }
             }
 

@@ -1,5 +1,8 @@
 package emu.grasscutter;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.auth.AuthenticationSystem;
@@ -30,6 +33,12 @@ import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.StartupArguments;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.lang.Language;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
+import java.util.Calendar;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;
@@ -40,16 +49,6 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nullable;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.util.Calendar;
-
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
