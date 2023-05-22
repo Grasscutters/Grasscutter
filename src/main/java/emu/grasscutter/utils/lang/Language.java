@@ -1,9 +1,5 @@
 package emu.grasscutter.utils.lang;
 
-import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.getCachePath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -19,6 +15,8 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.EqualsAndHashCode;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -30,7 +28,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import lombok.EqualsAndHashCode;
+
+import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
+import static emu.grasscutter.utils.FileUtils.getCachePath;
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -398,6 +399,7 @@ public final class Language {
         GameData.getMonsterDataMap().forEach((k, v) -> usedHashes.add((int) v.getNameTextMapHash()));
         GameData.getMainQuestDataMap().forEach((k, v) -> usedHashes.add((int) v.getTitleTextMapHash()));
         GameData.getQuestDataMap().forEach((k, v) -> usedHashes.add((int) v.getDescTextMapHash()));
+        GameData.getWorldAreaDataMap().forEach((k, v) -> usedHashes.add((int) v.getTextMapHash()));
         // Incidental strings
         usedHashes.add((int) 4233146695L); // Character
         usedHashes.add((int) 4231343903L); // Weapon
