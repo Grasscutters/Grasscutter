@@ -6,6 +6,7 @@ import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
+import lombok.EqualsAndHashCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +15,7 @@ import java.io.InputStream;
 import java.net.URLClassLoader;
 
 /** The base class for all plugins to extend. */
+@EqualsAndHashCode
 @SuppressWarnings("removal")
 public abstract class Plugin {
     private final ServerHelper server = ServerHook.getInstance();

@@ -59,6 +59,7 @@ public final class EventHandler<T extends Event> {
     private EventConsumer<T> listener;
     private HandlerPriority priority;
     private boolean handleCanceled;
+    private Plugin plugin;
 
     public EventHandler(Class<T> eventClass) {
         this.eventClass = eventClass;
@@ -101,6 +102,15 @@ public final class EventHandler<T extends Event> {
     }
 
     /**
+     * Returns the plugin that registered this handler.
+     *
+     * @return The plugin that registered this handler.
+     */
+    public Plugin registrar() {
+        return this.plugin;
+    }
+
+    /**
      * Sets the callback method for when the event is invoked.
      *
      * @param listener An event handler method.
@@ -135,6 +145,7 @@ public final class EventHandler<T extends Event> {
 
     /** Registers the handler into the PluginManager. */
     public void register(Plugin plugin) {
-        Grasscutter.getPluginManager().registerListener(plugin, this);
+        this.plugin = plugin;
+        Grasscutter.getPluginManager().registerListener(this);
     }
 }
