@@ -182,9 +182,9 @@ public class GameMainQuest {
          * of the main quest 353 - the character will not be able to leave place
          * (return again and again)
          */
-        this.getChildQuests().values().stream()
-                .filter(p -> p.state != QuestState.QUEST_STATE_FINISHED)
-                .forEach(GameQuest::finish);
+        // this.getChildQuests().values().stream()
+        //         .filter(p -> p.state != QuestState.QUEST_STATE_FINISHED)
+        //         .forEach(GameQuest::finish);
 
         this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
         this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
