@@ -4,90 +4,576 @@
 package emu.grasscutter.net.proto;
 
 public final class ReliquaryPromoteRspOuterClass {
-    private ReliquaryPromoteRspOuterClass() {}
+  private ReliquaryPromoteRspOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface ReliquaryPromoteRspOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ReliquaryPromoteRsp)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>uint64 target_reliquary_guid = 6;</code>
+     * @return The targetReliquaryGuid.
+     */
+    long getTargetReliquaryGuid();
+
+    /**
+     * <code>uint32 BDLCGNNPHLJ = 9;</code>
+     * @return The bDLCGNNPHLJ.
+     */
+    int getBDLCGNNPHLJ();
+
+    /**
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @return A list containing the fPGACFGKCCK.
+     */
+    java.util.List<java.lang.Integer> getFPGACFGKCCKList();
+    /**
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @return The count of fPGACFGKCCK.
+     */
+    int getFPGACFGKCCKCount();
+    /**
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fPGACFGKCCK at the given index.
+     */
+    int getFPGACFGKCCK(int index);
+
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @return A list containing the pHGKJLPHCBI.
+     */
+    java.util.List<java.lang.Integer> getPHGKJLPHCBIList();
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @return The count of pHGKJLPHCBI.
+     */
+    int getPHGKJLPHCBICount();
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @param index The index of the element to return.
+     * @return The pHGKJLPHCBI at the given index.
+     */
+    int getPHGKJLPHCBI(int index);
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 AKLAKDIDLBE = 14;</code>
+     * @return The aKLAKDIDLBE.
+     */
+    int getAKLAKDIDLBE();
+  }
+  /**
+   * <pre>
+   * CmdId: 650
+   * Name: APPALGKPALK
+   * </pre>
+   *
+   * Protobuf type {@code ReliquaryPromoteRsp}
+   */
+  public static final class ReliquaryPromoteRsp extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ReliquaryPromoteRsp)
+      ReliquaryPromoteRspOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReliquaryPromoteRsp.newBuilder() to construct.
+    private ReliquaryPromoteRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReliquaryPromoteRsp() {
+      fPGACFGKCCK_ = emptyIntList();
+      pHGKJLPHCBI_ = emptyIntList();
     }
 
-    public interface ReliquaryPromoteRspOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:ReliquaryPromoteRsp)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReliquaryPromoteRsp();
+    }
 
-        /**
-         * <code>uint64 target_reliquary_guid = 6;</code>
-         *
-         * @return The targetReliquaryGuid.
-         */
-        long getTargetReliquaryGuid();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReliquaryPromoteRsp(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 48: {
 
-        /**
-         * <code>uint32 BDLCGNNPHLJ = 9;</code>
-         *
-         * @return The bDLCGNNPHLJ.
-         */
-        int getBDLCGNNPHLJ();
+              targetReliquaryGuid_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                pHGKJLPHCBI_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              pHGKJLPHCBI_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                pHGKJLPHCBI_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                pHGKJLPHCBI_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
 
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @return A list containing the fPGACFGKCCK.
-         */
-        java.util.List<java.lang.Integer> getFPGACFGKCCKList();
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @return The count of fPGACFGKCCK.
-         */
-        int getFPGACFGKCCKCount();
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The fPGACFGKCCK at the given index.
-         */
-        int getFPGACFGKCCK(int index);
+              bDLCGNNPHLJ_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                fPGACFGKCCK_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fPGACFGKCCK_.addInt(input.readUInt32());
+              break;
+            }
+            case 82: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                fPGACFGKCCK_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                fPGACFGKCCK_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 104: {
 
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @return A list containing the pHGKJLPHCBI.
-         */
-        java.util.List<java.lang.Integer> getPHGKJLPHCBIList();
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @return The count of pHGKJLPHCBI.
-         */
-        int getPHGKJLPHCBICount();
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The pHGKJLPHCBI at the given index.
-         */
-        int getPHGKJLPHCBI(int index);
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
 
-        /**
-         * <code>int32 retcode = 13;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
+              aKLAKDIDLBE_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          pHGKJLPHCBI_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          fPGACFGKCCK_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.internal_static_ReliquaryPromoteRsp_descriptor;
+    }
 
-        /**
-         * <code>uint32 AKLAKDIDLBE = 14;</code>
-         *
-         * @return The aKLAKDIDLBE.
-         */
-        int getAKLAKDIDLBE();
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.internal_static_ReliquaryPromoteRsp_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.class, emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.Builder.class);
+    }
+
+    public static final int TARGET_RELIQUARY_GUID_FIELD_NUMBER = 6;
+    private long targetReliquaryGuid_;
+    /**
+     * <code>uint64 target_reliquary_guid = 6;</code>
+     * @return The targetReliquaryGuid.
+     */
+    @java.lang.Override
+    public long getTargetReliquaryGuid() {
+      return targetReliquaryGuid_;
+    }
+
+    public static final int BDLCGNNPHLJ_FIELD_NUMBER = 9;
+    private int bDLCGNNPHLJ_;
+    /**
+     * <code>uint32 BDLCGNNPHLJ = 9;</code>
+     * @return The bDLCGNNPHLJ.
+     */
+    @java.lang.Override
+    public int getBDLCGNNPHLJ() {
+      return bDLCGNNPHLJ_;
+    }
+
+    public static final int FPGACFGKCCK_FIELD_NUMBER = 10;
+    private com.google.protobuf.Internal.IntList fPGACFGKCCK_;
+    /**
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @return A list containing the fPGACFGKCCK.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getFPGACFGKCCKList() {
+      return fPGACFGKCCK_;
     }
     /**
-     *
-     *
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @return The count of fPGACFGKCCK.
+     */
+    public int getFPGACFGKCCKCount() {
+      return fPGACFGKCCK_.size();
+    }
+    /**
+     * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+     * @param index The index of the element to return.
+     * @return The fPGACFGKCCK at the given index.
+     */
+    public int getFPGACFGKCCK(int index) {
+      return fPGACFGKCCK_.getInt(index);
+    }
+    private int fPGACFGKCCKMemoizedSerializedSize = -1;
+
+    public static final int PHGKJLPHCBI_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList pHGKJLPHCBI_;
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @return A list containing the pHGKJLPHCBI.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getPHGKJLPHCBIList() {
+      return pHGKJLPHCBI_;
+    }
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @return The count of pHGKJLPHCBI.
+     */
+    public int getPHGKJLPHCBICount() {
+      return pHGKJLPHCBI_.size();
+    }
+    /**
+     * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+     * @param index The index of the element to return.
+     * @return The pHGKJLPHCBI at the given index.
+     */
+    public int getPHGKJLPHCBI(int index) {
+      return pHGKJLPHCBI_.getInt(index);
+    }
+    private int pHGKJLPHCBIMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int AKLAKDIDLBE_FIELD_NUMBER = 14;
+    private int aKLAKDIDLBE_;
+    /**
+     * <code>uint32 AKLAKDIDLBE = 14;</code>
+     * @return The aKLAKDIDLBE.
+     */
+    @java.lang.Override
+    public int getAKLAKDIDLBE() {
+      return aKLAKDIDLBE_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (targetReliquaryGuid_ != 0L) {
+        output.writeUInt64(6, targetReliquaryGuid_);
+      }
+      if (getPHGKJLPHCBIList().size() > 0) {
+        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(pHGKJLPHCBIMemoizedSerializedSize);
+      }
+      for (int i = 0; i < pHGKJLPHCBI_.size(); i++) {
+        output.writeUInt32NoTag(pHGKJLPHCBI_.getInt(i));
+      }
+      if (bDLCGNNPHLJ_ != 0) {
+        output.writeUInt32(9, bDLCGNNPHLJ_);
+      }
+      if (getFPGACFGKCCKList().size() > 0) {
+        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(fPGACFGKCCKMemoizedSerializedSize);
+      }
+      for (int i = 0; i < fPGACFGKCCK_.size(); i++) {
+        output.writeUInt32NoTag(fPGACFGKCCK_.getInt(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
+      }
+      if (aKLAKDIDLBE_ != 0) {
+        output.writeUInt32(14, aKLAKDIDLBE_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (targetReliquaryGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, targetReliquaryGuid_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pHGKJLPHCBI_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(pHGKJLPHCBI_.getInt(i));
+        }
+        size += dataSize;
+        if (!getPHGKJLPHCBIList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        pHGKJLPHCBIMemoizedSerializedSize = dataSize;
+      }
+      if (bDLCGNNPHLJ_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, bDLCGNNPHLJ_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < fPGACFGKCCK_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(fPGACFGKCCK_.getInt(i));
+        }
+        size += dataSize;
+        if (!getFPGACFGKCCKList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        fPGACFGKCCKMemoizedSerializedSize = dataSize;
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
+      }
+      if (aKLAKDIDLBE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, aKLAKDIDLBE_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp other = (emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) obj;
+
+      if (getTargetReliquaryGuid()
+          != other.getTargetReliquaryGuid()) return false;
+      if (getBDLCGNNPHLJ()
+          != other.getBDLCGNNPHLJ()) return false;
+      if (!getFPGACFGKCCKList()
+          .equals(other.getFPGACFGKCCKList())) return false;
+      if (!getPHGKJLPHCBIList()
+          .equals(other.getPHGKJLPHCBIList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getAKLAKDIDLBE()
+          != other.getAKLAKDIDLBE()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TARGET_RELIQUARY_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetReliquaryGuid());
+      hash = (37 * hash) + BDLCGNNPHLJ_FIELD_NUMBER;
+      hash = (53 * hash) + getBDLCGNNPHLJ();
+      if (getFPGACFGKCCKCount() > 0) {
+        hash = (37 * hash) + FPGACFGKCCK_FIELD_NUMBER;
+        hash = (53 * hash) + getFPGACFGKCCKList().hashCode();
+      }
+      if (getPHGKJLPHCBICount() > 0) {
+        hash = (37 * hash) + PHGKJLPHCBI_FIELD_NUMBER;
+        hash = (53 * hash) + getPHGKJLPHCBIList().hashCode();
+      }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + AKLAKDIDLBE_FIELD_NUMBER;
+      hash = (53 * hash) + getAKLAKDIDLBE();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
      * <pre>
      * CmdId: 650
      * Name: APPALGKPALK
@@ -95,1140 +581,570 @@ public final class ReliquaryPromoteRspOuterClass {
      *
      * Protobuf type {@code ReliquaryPromoteRsp}
      */
-    public static final class ReliquaryPromoteRsp extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:ReliquaryPromoteRsp)
-            ReliquaryPromoteRspOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use ReliquaryPromoteRsp.newBuilder() to construct.
-        private ReliquaryPromoteRsp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ReliquaryPromoteRsp)
+        emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRspOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.internal_static_ReliquaryPromoteRsp_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.internal_static_ReliquaryPromoteRsp_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.class, emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        targetReliquaryGuid_ = 0L;
 
-        private ReliquaryPromoteRsp() {
-            fPGACFGKCCK_ = emptyIntList();
-            pHGKJLPHCBI_ = emptyIntList();
+        bDLCGNNPHLJ_ = 0;
+
+        fPGACFGKCCK_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pHGKJLPHCBI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        retcode_ = 0;
+
+        aKLAKDIDLBE_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.internal_static_ReliquaryPromoteRsp_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp build() {
+        emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new ReliquaryPromoteRsp();
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp buildPartial() {
+        emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp result = new emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp(this);
+        int from_bitField0_ = bitField0_;
+        result.targetReliquaryGuid_ = targetReliquaryGuid_;
+        result.bDLCGNNPHLJ_ = bDLCGNNPHLJ_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          fPGACFGKCCK_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+        result.fPGACFGKCCK_ = fPGACFGKCCK_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          pHGKJLPHCBI_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
+        result.pHGKJLPHCBI_ = pHGKJLPHCBI_;
+        result.retcode_ = retcode_;
+        result.aKLAKDIDLBE_ = aKLAKDIDLBE_;
+        onBuilt();
+        return result;
+      }
 
-        private ReliquaryPromoteRsp(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 48:
-                            {
-                                targetReliquaryGuid_ = input.readUInt64();
-                                break;
-                            }
-                        case 56:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                                    pHGKJLPHCBI_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000002;
-                                }
-                                pHGKJLPHCBI_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 58:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                                    pHGKJLPHCBI_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000002;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    pHGKJLPHCBI_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 72:
-                            {
-                                bDLCGNNPHLJ_ = input.readUInt32();
-                                break;
-                            }
-                        case 80:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                                    fPGACFGKCCK_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                fPGACFGKCCK_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 82:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                                    fPGACFGKCCK_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    fPGACFGKCCK_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 104:
-                            {
-                                retcode_ = input.readInt32();
-                                break;
-                            }
-                        case 112:
-                            {
-                                aKLAKDIDLBE_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000002) != 0)) {
-                    pHGKJLPHCBI_.makeImmutable(); // C
-                }
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
-                    fPGACFGKCCK_.makeImmutable(); // C
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) {
+          return mergeFrom((emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass
-                    .internal_static_ReliquaryPromoteRsp_descriptor;
+      public Builder mergeFrom(emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp other) {
+        if (other == emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.getDefaultInstance()) return this;
+        if (other.getTargetReliquaryGuid() != 0L) {
+          setTargetReliquaryGuid(other.getTargetReliquaryGuid());
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass
-                    .internal_static_ReliquaryPromoteRsp_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.class,
-                            emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.Builder
-                                    .class);
+        if (other.getBDLCGNNPHLJ() != 0) {
+          setBDLCGNNPHLJ(other.getBDLCGNNPHLJ());
         }
-
-        public static final int TARGET_RELIQUARY_GUID_FIELD_NUMBER = 6;
-        private long targetReliquaryGuid_;
-        /**
-         * <code>uint64 target_reliquary_guid = 6;</code>
-         *
-         * @return The targetReliquaryGuid.
-         */
-        @java.lang.Override
-        public long getTargetReliquaryGuid() {
-            return targetReliquaryGuid_;
+        if (!other.fPGACFGKCCK_.isEmpty()) {
+          if (fPGACFGKCCK_.isEmpty()) {
+            fPGACFGKCCK_ = other.fPGACFGKCCK_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFPGACFGKCCKIsMutable();
+            fPGACFGKCCK_.addAll(other.fPGACFGKCCK_);
+          }
+          onChanged();
         }
-
-        public static final int BDLCGNNPHLJ_FIELD_NUMBER = 9;
-        private int bDLCGNNPHLJ_;
-        /**
-         * <code>uint32 BDLCGNNPHLJ = 9;</code>
-         *
-         * @return The bDLCGNNPHLJ.
-         */
-        @java.lang.Override
-        public int getBDLCGNNPHLJ() {
-            return bDLCGNNPHLJ_;
+        if (!other.pHGKJLPHCBI_.isEmpty()) {
+          if (pHGKJLPHCBI_.isEmpty()) {
+            pHGKJLPHCBI_ = other.pHGKJLPHCBI_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePHGKJLPHCBIIsMutable();
+            pHGKJLPHCBI_.addAll(other.pHGKJLPHCBI_);
+          }
+          onChanged();
         }
-
-        public static final int FPGACFGKCCK_FIELD_NUMBER = 10;
-        private com.google.protobuf.Internal.IntList fPGACFGKCCK_;
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @return A list containing the fPGACFGKCCK.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getFPGACFGKCCKList() {
-            return fPGACFGKCCK_;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @return The count of fPGACFGKCCK.
-         */
-        public int getFPGACFGKCCKCount() {
-            return fPGACFGKCCK_.size();
+        if (other.getAKLAKDIDLBE() != 0) {
+          setAKLAKDIDLBE(other.getAKLAKDIDLBE());
         }
-        /**
-         * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The fPGACFGKCCK at the given index.
-         */
-        public int getFPGACFGKCCK(int index) {
-            return fPGACFGKCCK_.getInt(index);
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        private int fPGACFGKCCKMemoizedSerializedSize = -1;
-
-        public static final int PHGKJLPHCBI_FIELD_NUMBER = 7;
-        private com.google.protobuf.Internal.IntList pHGKJLPHCBI_;
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @return A list containing the pHGKJLPHCBI.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getPHGKJLPHCBIList() {
-            return pHGKJLPHCBI_;
-        }
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @return The count of pHGKJLPHCBI.
-         */
-        public int getPHGKJLPHCBICount() {
-            return pHGKJLPHCBI_.size();
-        }
-        /**
-         * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The pHGKJLPHCBI at the given index.
-         */
-        public int getPHGKJLPHCBI(int index) {
-            return pHGKJLPHCBI_.getInt(index);
-        }
-
-        private int pHGKJLPHCBIMemoizedSerializedSize = -1;
-
-        public static final int RETCODE_FIELD_NUMBER = 13;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 13;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
-
-        public static final int AKLAKDIDLBE_FIELD_NUMBER = 14;
-        private int aKLAKDIDLBE_;
-        /**
-         * <code>uint32 AKLAKDIDLBE = 14;</code>
-         *
-         * @return The aKLAKDIDLBE.
-         */
-        @java.lang.Override
-        public int getAKLAKDIDLBE() {
-            return aKLAKDIDLBE_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            getSerializedSize();
-            if (targetReliquaryGuid_ != 0L) {
-                output.writeUInt64(6, targetReliquaryGuid_);
-            }
-            if (getPHGKJLPHCBIList().size() > 0) {
-                output.writeUInt32NoTag(58);
-                output.writeUInt32NoTag(pHGKJLPHCBIMemoizedSerializedSize);
-            }
-            for (int i = 0; i < pHGKJLPHCBI_.size(); i++) {
-                output.writeUInt32NoTag(pHGKJLPHCBI_.getInt(i));
-            }
-            if (bDLCGNNPHLJ_ != 0) {
-                output.writeUInt32(9, bDLCGNNPHLJ_);
-            }
-            if (getFPGACFGKCCKList().size() > 0) {
-                output.writeUInt32NoTag(82);
-                output.writeUInt32NoTag(fPGACFGKCCKMemoizedSerializedSize);
-            }
-            for (int i = 0; i < fPGACFGKCCK_.size(); i++) {
-                output.writeUInt32NoTag(fPGACFGKCCK_.getInt(i));
-            }
-            if (retcode_ != 0) {
-                output.writeInt32(13, retcode_);
-            }
-            if (aKLAKDIDLBE_ != 0) {
-                output.writeUInt32(14, aKLAKDIDLBE_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (targetReliquaryGuid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(6, targetReliquaryGuid_);
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < pHGKJLPHCBI_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(pHGKJLPHCBI_.getInt(i));
-                }
-                size += dataSize;
-                if (!getPHGKJLPHCBIList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                pHGKJLPHCBIMemoizedSerializedSize = dataSize;
-            }
-            if (bDLCGNNPHLJ_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, bDLCGNNPHLJ_);
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < fPGACFGKCCK_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(fPGACFGKCCK_.getInt(i));
-                }
-                size += dataSize;
-                if (!getFPGACFGKCCKList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                fPGACFGKCCKMemoizedSerializedSize = dataSize;
-            }
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, retcode_);
-            }
-            if (aKLAKDIDLBE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, aKLAKDIDLBE_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp other =
-                    (emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) obj;
-
-            if (getTargetReliquaryGuid() != other.getTargetReliquaryGuid()) return false;
-            if (getBDLCGNNPHLJ() != other.getBDLCGNNPHLJ()) return false;
-            if (!getFPGACFGKCCKList().equals(other.getFPGACFGKCCKList())) return false;
-            if (!getPHGKJLPHCBIList().equals(other.getPHGKJLPHCBIList())) return false;
-            if (getRetcode() != other.getRetcode()) return false;
-            if (getAKLAKDIDLBE() != other.getAKLAKDIDLBE()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + TARGET_RELIQUARY_GUID_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTargetReliquaryGuid());
-            hash = (37 * hash) + BDLCGNNPHLJ_FIELD_NUMBER;
-            hash = (53 * hash) + getBDLCGNNPHLJ();
-            if (getFPGACFGKCCKCount() > 0) {
-                hash = (37 * hash) + FPGACFGKCCK_FIELD_NUMBER;
-                hash = (53 * hash) + getFPGACFGKCCKList().hashCode();
-            }
-            if (getPHGKJLPHCBICount() > 0) {
-                hash = (37 * hash) + PHGKJLPHCBI_FIELD_NUMBER;
-                hash = (53 * hash) + getPHGKJLPHCBIList().hashCode();
-            }
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
-            hash = (37 * hash) + AKLAKDIDLBE_FIELD_NUMBER;
-            hash = (53 * hash) + getAKLAKDIDLBE();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * CmdId: 650
-         * Name: APPALGKPALK
-         * </pre>
-         *
-         * Protobuf type {@code ReliquaryPromoteRsp}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:ReliquaryPromoteRsp)
-                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRspOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass
-                        .internal_static_ReliquaryPromoteRsp_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass
-                        .internal_static_ReliquaryPromoteRsp_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.class,
-                                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.Builder
-                                        .class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                targetReliquaryGuid_ = 0L;
-
-                bDLCGNNPHLJ_ = 0;
-
-                fPGACFGKCCK_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                pHGKJLPHCBI_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000002);
-                retcode_ = 0;
-
-                aKLAKDIDLBE_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass
-                        .internal_static_ReliquaryPromoteRsp_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                        .getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp build() {
-                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp result =
-                        buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                    buildPartial() {
-                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp result =
-                        new emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp(this);
-                int from_bitField0_ = bitField0_;
-                result.targetReliquaryGuid_ = targetReliquaryGuid_;
-                result.bDLCGNNPHLJ_ = bDLCGNNPHLJ_;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                    fPGACFGKCCK_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                }
-                result.fPGACFGKCCK_ = fPGACFGKCCK_;
-                if (((bitField0_ & 0x00000002) != 0)) {
-                    pHGKJLPHCBI_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000002);
-                }
-                result.pHGKJLPHCBI_ = pHGKJLPHCBI_;
-                result.retcode_ = retcode_;
-                result.aKLAKDIDLBE_ = aKLAKDIDLBE_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp other) {
-                if (other
-                        == emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                                .getDefaultInstance()) return this;
-                if (other.getTargetReliquaryGuid() != 0L) {
-                    setTargetReliquaryGuid(other.getTargetReliquaryGuid());
-                }
-                if (other.getBDLCGNNPHLJ() != 0) {
-                    setBDLCGNNPHLJ(other.getBDLCGNNPHLJ());
-                }
-                if (!other.fPGACFGKCCK_.isEmpty()) {
-                    if (fPGACFGKCCK_.isEmpty()) {
-                        fPGACFGKCCK_ = other.fPGACFGKCCK_;
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    } else {
-                        ensureFPGACFGKCCKIsMutable();
-                        fPGACFGKCCK_.addAll(other.fPGACFGKCCK_);
-                    }
-                    onChanged();
-                }
-                if (!other.pHGKJLPHCBI_.isEmpty()) {
-                    if (pHGKJLPHCBI_.isEmpty()) {
-                        pHGKJLPHCBI_ = other.pHGKJLPHCBI_;
-                        bitField0_ = (bitField0_ & ~0x00000002);
-                    } else {
-                        ensurePHGKJLPHCBIIsMutable();
-                        pHGKJLPHCBI_.addAll(other.pHGKJLPHCBI_);
-                    }
-                    onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
-                if (other.getAKLAKDIDLBE() != 0) {
-                    setAKLAKDIDLBE(other.getAKLAKDIDLBE());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp parsedMessage =
-                        null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private long targetReliquaryGuid_;
-            /**
-             * <code>uint64 target_reliquary_guid = 6;</code>
-             *
-             * @return The targetReliquaryGuid.
-             */
-            @java.lang.Override
-            public long getTargetReliquaryGuid() {
-                return targetReliquaryGuid_;
-            }
-            /**
-             * <code>uint64 target_reliquary_guid = 6;</code>
-             *
-             * @param value The targetReliquaryGuid to set.
-             * @return This builder for chaining.
-             */
-            public Builder setTargetReliquaryGuid(long value) {
-
-                targetReliquaryGuid_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint64 target_reliquary_guid = 6;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearTargetReliquaryGuid() {
-
-                targetReliquaryGuid_ = 0L;
-                onChanged();
-                return this;
-            }
-
-            private int bDLCGNNPHLJ_;
-            /**
-             * <code>uint32 BDLCGNNPHLJ = 9;</code>
-             *
-             * @return The bDLCGNNPHLJ.
-             */
-            @java.lang.Override
-            public int getBDLCGNNPHLJ() {
-                return bDLCGNNPHLJ_;
-            }
-            /**
-             * <code>uint32 BDLCGNNPHLJ = 9;</code>
-             *
-             * @param value The bDLCGNNPHLJ to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBDLCGNNPHLJ(int value) {
-
-                bDLCGNNPHLJ_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 BDLCGNNPHLJ = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBDLCGNNPHLJ() {
-
-                bDLCGNNPHLJ_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.Internal.IntList fPGACFGKCCK_ = emptyIntList();
-
-            private void ensureFPGACFGKCCKIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    fPGACFGKCCK_ = mutableCopy(fPGACFGKCCK_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @return A list containing the fPGACFGKCCK.
-             */
-            public java.util.List<java.lang.Integer> getFPGACFGKCCKList() {
-                return ((bitField0_ & 0x00000001) != 0)
-                        ? java.util.Collections.unmodifiableList(fPGACFGKCCK_)
-                        : fPGACFGKCCK_;
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @return The count of fPGACFGKCCK.
-             */
-            public int getFPGACFGKCCKCount() {
-                return fPGACFGKCCK_.size();
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The fPGACFGKCCK at the given index.
-             */
-            public int getFPGACFGKCCK(int index) {
-                return fPGACFGKCCK_.getInt(index);
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The fPGACFGKCCK to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFPGACFGKCCK(int index, int value) {
-                ensureFPGACFGKCCKIsMutable();
-                fPGACFGKCCK_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @param value The fPGACFGKCCK to add.
-             * @return This builder for chaining.
-             */
-            public Builder addFPGACFGKCCK(int value) {
-                ensureFPGACFGKCCKIsMutable();
-                fPGACFGKCCK_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @param values The fPGACFGKCCK to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllFPGACFGKCCK(java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureFPGACFGKCCKIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fPGACFGKCCK_);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 FPGACFGKCCK = 10;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearFPGACFGKCCK() {
-                fPGACFGKCCK_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.Internal.IntList pHGKJLPHCBI_ = emptyIntList();
-
-            private void ensurePHGKJLPHCBIIsMutable() {
-                if (!((bitField0_ & 0x00000002) != 0)) {
-                    pHGKJLPHCBI_ = mutableCopy(pHGKJLPHCBI_);
-                    bitField0_ |= 0x00000002;
-                }
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @return A list containing the pHGKJLPHCBI.
-             */
-            public java.util.List<java.lang.Integer> getPHGKJLPHCBIList() {
-                return ((bitField0_ & 0x00000002) != 0)
-                        ? java.util.Collections.unmodifiableList(pHGKJLPHCBI_)
-                        : pHGKJLPHCBI_;
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @return The count of pHGKJLPHCBI.
-             */
-            public int getPHGKJLPHCBICount() {
-                return pHGKJLPHCBI_.size();
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The pHGKJLPHCBI at the given index.
-             */
-            public int getPHGKJLPHCBI(int index) {
-                return pHGKJLPHCBI_.getInt(index);
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The pHGKJLPHCBI to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPHGKJLPHCBI(int index, int value) {
-                ensurePHGKJLPHCBIIsMutable();
-                pHGKJLPHCBI_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @param value The pHGKJLPHCBI to add.
-             * @return This builder for chaining.
-             */
-            public Builder addPHGKJLPHCBI(int value) {
-                ensurePHGKJLPHCBIIsMutable();
-                pHGKJLPHCBI_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @param values The pHGKJLPHCBI to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllPHGKJLPHCBI(java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensurePHGKJLPHCBIIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pHGKJLPHCBI_);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearPHGKJLPHCBI() {
-                pHGKJLPHCBI_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000002);
-                onChanged();
-                return this;
-            }
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 13;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 13;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 13;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int aKLAKDIDLBE_;
-            /**
-             * <code>uint32 AKLAKDIDLBE = 14;</code>
-             *
-             * @return The aKLAKDIDLBE.
-             */
-            @java.lang.Override
-            public int getAKLAKDIDLBE() {
-                return aKLAKDIDLBE_;
-            }
-            /**
-             * <code>uint32 AKLAKDIDLBE = 14;</code>
-             *
-             * @param value The aKLAKDIDLBE to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAKLAKDIDLBE(int value) {
-
-                aKLAKDIDLBE_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 AKLAKDIDLBE = 14;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAKLAKDIDLBE() {
-
-                aKLAKDIDLBE_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:ReliquaryPromoteRsp)
-        }
-
-        // @@protoc_insertion_point(class_scope:ReliquaryPromoteRsp)
-        private static final emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp();
-        }
-
-        public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<ReliquaryPromoteRsp> PARSER =
-                new com.google.protobuf.AbstractParser<ReliquaryPromoteRsp>() {
-                    @java.lang.Override
-                    public ReliquaryPromoteRsp parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new ReliquaryPromoteRsp(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<ReliquaryPromoteRsp> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<ReliquaryPromoteRsp> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long targetReliquaryGuid_ ;
+      /**
+       * <code>uint64 target_reliquary_guid = 6;</code>
+       * @return The targetReliquaryGuid.
+       */
+      @java.lang.Override
+      public long getTargetReliquaryGuid() {
+        return targetReliquaryGuid_;
+      }
+      /**
+       * <code>uint64 target_reliquary_guid = 6;</code>
+       * @param value The targetReliquaryGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetReliquaryGuid(long value) {
+        
+        targetReliquaryGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 target_reliquary_guid = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetReliquaryGuid() {
+        
+        targetReliquaryGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int bDLCGNNPHLJ_ ;
+      /**
+       * <code>uint32 BDLCGNNPHLJ = 9;</code>
+       * @return The bDLCGNNPHLJ.
+       */
+      @java.lang.Override
+      public int getBDLCGNNPHLJ() {
+        return bDLCGNNPHLJ_;
+      }
+      /**
+       * <code>uint32 BDLCGNNPHLJ = 9;</code>
+       * @param value The bDLCGNNPHLJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBDLCGNNPHLJ(int value) {
+        
+        bDLCGNNPHLJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BDLCGNNPHLJ = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBDLCGNNPHLJ() {
+        
+        bDLCGNNPHLJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList fPGACFGKCCK_ = emptyIntList();
+      private void ensureFPGACFGKCCKIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          fPGACFGKCCK_ = mutableCopy(fPGACFGKCCK_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @return A list containing the fPGACFGKCCK.
+       */
+      public java.util.List<java.lang.Integer>
+          getFPGACFGKCCKList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(fPGACFGKCCK_) : fPGACFGKCCK_;
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @return The count of fPGACFGKCCK.
+       */
+      public int getFPGACFGKCCKCount() {
+        return fPGACFGKCCK_.size();
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @param index The index of the element to return.
+       * @return The fPGACFGKCCK at the given index.
+       */
+      public int getFPGACFGKCCK(int index) {
+        return fPGACFGKCCK_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The fPGACFGKCCK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFPGACFGKCCK(
+          int index, int value) {
+        ensureFPGACFGKCCKIsMutable();
+        fPGACFGKCCK_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @param value The fPGACFGKCCK to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFPGACFGKCCK(int value) {
+        ensureFPGACFGKCCKIsMutable();
+        fPGACFGKCCK_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @param values The fPGACFGKCCK to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFPGACFGKCCK(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureFPGACFGKCCKIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fPGACFGKCCK_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FPGACFGKCCK = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFPGACFGKCCK() {
+        fPGACFGKCCK_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList pHGKJLPHCBI_ = emptyIntList();
+      private void ensurePHGKJLPHCBIIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          pHGKJLPHCBI_ = mutableCopy(pHGKJLPHCBI_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @return A list containing the pHGKJLPHCBI.
+       */
+      public java.util.List<java.lang.Integer>
+          getPHGKJLPHCBIList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(pHGKJLPHCBI_) : pHGKJLPHCBI_;
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @return The count of pHGKJLPHCBI.
+       */
+      public int getPHGKJLPHCBICount() {
+        return pHGKJLPHCBI_.size();
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @param index The index of the element to return.
+       * @return The pHGKJLPHCBI at the given index.
+       */
+      public int getPHGKJLPHCBI(int index) {
+        return pHGKJLPHCBI_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The pHGKJLPHCBI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPHGKJLPHCBI(
+          int index, int value) {
+        ensurePHGKJLPHCBIIsMutable();
+        pHGKJLPHCBI_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @param value The pHGKJLPHCBI to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPHGKJLPHCBI(int value) {
+        ensurePHGKJLPHCBIIsMutable();
+        pHGKJLPHCBI_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @param values The pHGKJLPHCBI to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPHGKJLPHCBI(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePHGKJLPHCBIIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pHGKJLPHCBI_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PHGKJLPHCBI = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPHGKJLPHCBI() {
+        pHGKJLPHCBI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aKLAKDIDLBE_ ;
+      /**
+       * <code>uint32 AKLAKDIDLBE = 14;</code>
+       * @return The aKLAKDIDLBE.
+       */
+      @java.lang.Override
+      public int getAKLAKDIDLBE() {
+        return aKLAKDIDLBE_;
+      }
+      /**
+       * <code>uint32 AKLAKDIDLBE = 14;</code>
+       * @param value The aKLAKDIDLBE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAKLAKDIDLBE(int value) {
+        
+        aKLAKDIDLBE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 AKLAKDIDLBE = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAKLAKDIDLBE() {
+        
+        aKLAKDIDLBE_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ReliquaryPromoteRsp)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_ReliquaryPromoteRsp_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_ReliquaryPromoteRsp_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:ReliquaryPromoteRsp)
+    private static final emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\031ReliquaryPromoteRsp.proto\"\231\001\n\023Reliquar"
-                    + "yPromoteRsp\022\035\n\025target_reliquary_guid\030\006 \001"
-                    + "(\004\022\023\n\013BDLCGNNPHLJ\030\t \001(\r\022\023\n\013FPGACFGKCCK\030\n"
-                    + " \003(\r\022\023\n\013PHGKJLPHCBI\030\007 \003(\r\022\017\n\007retcode\030\r \001"
-                    + "(\005\022\023\n\013AKLAKDIDLBE\030\016 \001(\rB!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_ReliquaryPromoteRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_ReliquaryPromoteRsp_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_ReliquaryPromoteRsp_descriptor,
-                        new java.lang.String[] {
-                            "TargetReliquaryGuid",
-                            "BDLCGNNPHLJ",
-                            "FPGACFGKCCK",
-                            "PHGKJLPHCBI",
-                            "Retcode",
-                            "AKLAKDIDLBE",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReliquaryPromoteRsp>
+        PARSER = new com.google.protobuf.AbstractParser<ReliquaryPromoteRsp>() {
+      @java.lang.Override
+      public ReliquaryPromoteRsp parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReliquaryPromoteRsp(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReliquaryPromoteRsp> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReliquaryPromoteRsp> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ReliquaryPromoteRspOuterClass.ReliquaryPromoteRsp getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ReliquaryPromoteRsp_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ReliquaryPromoteRsp_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\031ReliquaryPromoteRsp.proto\"\231\001\n\023Reliquar" +
+      "yPromoteRsp\022\035\n\025target_reliquary_guid\030\006 \001" +
+      "(\004\022\023\n\013BDLCGNNPHLJ\030\t \001(\r\022\023\n\013FPGACFGKCCK\030\n" +
+      " \003(\r\022\023\n\013PHGKJLPHCBI\030\007 \003(\r\022\017\n\007retcode\030\r \001" +
+      "(\005\022\023\n\013AKLAKDIDLBE\030\016 \001(\rB!\n\031emu.grasscutt" +
+      "er.net.protoZ\004/genb\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_ReliquaryPromoteRsp_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_ReliquaryPromoteRsp_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ReliquaryPromoteRsp_descriptor,
+        new java.lang.String[] { "TargetReliquaryGuid", "BDLCGNNPHLJ", "FPGACFGKCCK", "PHGKJLPHCBI", "Retcode", "AKLAKDIDLBE", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }
