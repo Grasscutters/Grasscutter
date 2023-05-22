@@ -67,6 +67,7 @@ import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.plugin.api.PlayerHook;
 import emu.grasscutter.scripts.data.SceneRegion;
+import emu.grasscutter.server.event.player.PlayerEnterAreaEvent;
 import emu.grasscutter.server.event.player.PlayerJoinEvent;
 import emu.grasscutter.server.event.player.PlayerQuitEvent;
 import emu.grasscutter.server.game.GameServer;
@@ -148,6 +149,8 @@ public class Player implements PlayerHook {
     @Transient private Scene scene;  // Synchronized getter and setter
     @Transient @Getter private int weatherId = 0;
     @Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
+    @Transient @Getter private int areaId = 0;
+    @Transient @Getter private int areaType = 0;
 
     // Player managers go here
     @Getter private transient AvatarStorage avatars;
@@ -420,11 +423,11 @@ public class Player implements PlayerHook {
         this.session.send(new PacketSceneAreaWeatherNotify(this));
     }
 
-    synchronized public void setWeather(int weather) {
+    public synchronized void setWeather(int weather) {
         this.setWeather(weather, ClimateType.CLIMATE_NONE);
     }
 
-    synchronized public void setWeather(int weatherId, ClimateType climate) {
+    public synchronized void setWeather(int weatherId, ClimateType climate) {
         // Lookup default climate for this weather
         if (climate == ClimateType.CLIMATE_NONE) {
             WeatherData w = GameData.getWeatherDataMap().get(weatherId);
@@ -435,6 +438,21 @@ public class Player implements PlayerHook {
         this.weatherId = weatherId;
         this.climate = climate;
         this.session.send(new PacketSceneAreaWeatherNotify(this));
+    }
+
+    /**
+     * Sets the player's weather and climate.
+     *
+     * @param areaId The area ID.
+     * @param areaType The area type.
+     */
+    public void setArea(int areaId, int areaType) {
+        this.areaId = areaId;
+        this.areaType = areaType;
+
+        // Call the event.
+        var event = new PlayerEnterAreaEvent(this);
+        event.call();
     }
 
     public void setNickname(String nickName) {
