@@ -12,6 +12,8 @@ import lombok.Setter;
 
 public final class PointData {
     @Getter @Setter private int id;
+    @Getter private int areaId;
+
     private String $type;
     @Getter private Position tranPos;
     @Getter private Position pos;
