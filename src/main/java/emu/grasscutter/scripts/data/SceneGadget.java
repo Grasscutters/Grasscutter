@@ -6,9 +6,7 @@ import lombok.ToString;
 @ToString
 @Setter
 public class SceneGadget extends SceneObject {
-    public int config_id;
     public int gadget_id;
-    public int level;
     public int chest_drop_id;
     public int drop_count;
     public String drop_tag;
@@ -28,7 +26,6 @@ public class SceneGadget extends SceneObject {
      */
     public boolean isOneoff;
 
-    public int area_id;
     public int draft_id;
     public int route_id;
     public boolean start_route = true;
