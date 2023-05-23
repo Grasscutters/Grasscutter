@@ -9,8 +9,6 @@ import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.lang.Language;
-import lombok.AllArgsConstructor;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import lombok.AllArgsConstructor;
 
 public interface Dumpers {
     // See `src/handbook/data/README.md` for attributions.
@@ -351,20 +350,15 @@ public interface Dumpers {
         // Convert all known areas to an area map.
         var dump = new HashMap<Integer, AreaInfo>();
         GameData.getWorldAreaDataMap()
-            .forEach(
-                (id, area) -> {
-                    var langHash = area.getTextMapHash();
-                    dump.put(
-                        area.getChildArea() == 0 ?
-                            area.getParentArea() :
-                            area.getChildArea(),
-                        new AreaInfo(
-                            area.getParentArea(),
-                            langHash == 0
-                                ? "Unknown"
-                                : Language.getTextMapKey(langHash).get(locale)
-                        ));
-                });
+                .forEach(
+                        (id, area) -> {
+                            var langHash = area.getTextMapHash();
+                            dump.put(
+                                    area.getChildArea() == 0 ? area.getParentArea() : area.getChildArea(),
+                                    new AreaInfo(
+                                            area.getParentArea(),
+                                            langHash == 0 ? "Unknown" : Language.getTextMapKey(langHash).get(locale)));
+                        });
 
         try {
             // Create a file for the dump.
@@ -374,8 +368,7 @@ public interface Dumpers {
                 throw new RuntimeException("Failed to create file.");
 
             // Write the dump to the file.
-            Files.writeString(file.toPath(), Dumpers.miniEncode(dump,
-                "id", "parent", "name"));
+            Files.writeString(file.toPath(), Dumpers.miniEncode(dump, "id", "parent", "name"));
         } catch (IOException ignored) {
             throw new RuntimeException("Failed to write to file.");
         }
