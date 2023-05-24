@@ -26,8 +26,8 @@ public final class DungeonWayPointActivateReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 972
-   * Name: MJBBKGDBNJF
+   * CmdId: 935
+   * Obf: JAMLIJIPNJJ
    * </pre>
    *
    * Protobuf type {@code DungeonWayPointActivateReq}
@@ -279,8 +279,8 @@ public final class DungeonWayPointActivateReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 972
-     * Name: MJBBKGDBNJF
+     * CmdId: 935
+     * Obf: JAMLIJIPNJJ
      * </pre>
      *
      * Protobuf type {@code DungeonWayPointActivateReq}

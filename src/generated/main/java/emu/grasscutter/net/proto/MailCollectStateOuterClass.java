@@ -16,7 +16,7 @@ public final class MailCollectStateOuterClass {
   }
   /**
    * <pre>
-   * Name: COONHFJFEHG
+   * Obf: DPIHCPLMCID
    * </pre>
    *
    * Protobuf enum {@code MailCollectState}

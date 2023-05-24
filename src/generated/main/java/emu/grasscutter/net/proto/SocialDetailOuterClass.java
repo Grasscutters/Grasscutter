@@ -274,7 +274,7 @@ public final class SocialDetailOuterClass {
   }
   /**
    * <pre>
-   * Name: HKLLEGCFOKN
+   * Obf: JEKKBLBDEFP
    * </pre>
    *
    * Protobuf type {@code SocialDetail}
@@ -1567,7 +1567,7 @@ public final class SocialDetailOuterClass {
     }
     /**
      * <pre>
-     * Name: HKLLEGCFOKN
+     * Obf: JEKKBLBDEFP
      * </pre>
      *
      * Protobuf type {@code SocialDetail}
@@ -3571,10 +3571,10 @@ public final class SocialDetailOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022SocialDetail.proto\032\016Birthday.proto\032\033Fr" +
-      "iendEnterHomeOption.proto\032\027FriendOnlineS" +
-      "tate.proto\032\024ProfilePicture.proto\032\032Social" +
-      "ShowAvatarInfo.proto\"\301\005\n\014SocialDetail\022\013\n" +
+      "\n\022SocialDetail.proto\032\016Birthday.proto\032\027Fr" +
+      "iendOnlineState.proto\032\032SocialShowAvatarI" +
+      "nfo.proto\032\033FriendEnterHomeOption.proto\032\024" +
+      "ProfilePicture.proto\"\301\005\n\014SocialDetail\022\013\n" +
       "\003uid\030\001 \001(\r\022\020\n\010nickname\030\002 \001(\t\022\r\n\005level\030\003 " +
       "\001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\021\n\tsignature\030\005 \001(" +
       "\t\022\033\n\010birthday\030\006 \001(\0132\t.Birthday\022\023\n\013world_" +
@@ -3599,10 +3599,10 @@ public final class SocialDetailOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.BirthdayOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor(),
         });
     internal_static_SocialDetail_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3611,10 +3611,10 @@ public final class SocialDetailOuterClass {
         internal_static_SocialDetail_descriptor,
         new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "Signature", "Birthday", "WorldLevel", "ReservedList", "OnlineState", "Param", "IsFriend", "IsMpModeAvailable", "OnlineId", "NameCardId", "IsInBlacklist", "IsChatNoDisturb", "RemarkName", "FinishAchievementNum", "TowerFloorIndex", "TowerLevelIndex", "IsShowAvatar", "ShowAvatarInfoList", "ShowNameCardIdList", "FriendEnterHomeOption", "ProfilePicture", "IpCode", });
     emu.grasscutter.net.proto.BirthdayOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

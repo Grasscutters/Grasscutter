@@ -261,7 +261,7 @@ public final class SceneMonsterInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: CIBJHBFKKAN
+   * Obf: PILOPKGAHBK
    * </pre>
    *
    * Protobuf type {@code SceneMonsterInfo}
@@ -1511,7 +1511,7 @@ public final class SceneMonsterInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: CIBJHBFKKAN
+     * Obf: PILOPKGAHBK
      * </pre>
      *
      * Protobuf type {@code SceneMonsterInfo}
@@ -3446,10 +3446,10 @@ public final class SceneMonsterInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026SceneMonsterInfo.proto\032\026FishtankFishIn" +
-      "fo.proto\032\025MonsterBornType.proto\032\022Monster" +
-      "Route.proto\032\023SceneFishInfo.proto\032\025SceneW" +
-      "eaponInfo.proto\"\343\005\n\020SceneMonsterInfo\022\022\n\n" +
+      "\n\026SceneMonsterInfo.proto\032\025SceneWeaponInf" +
+      "o.proto\032\025MonsterBornType.proto\032\022MonsterR" +
+      "oute.proto\032\023SceneFishInfo.proto\032\026Fishtan" +
+      "kFishInfo.proto\"\343\005\n\020SceneMonsterInfo\022\022\n\n" +
       "monster_id\030\001 \001(\r\022\020\n\010group_id\030\002 \001(\r\022\021\n\tco" +
       "nfig_id\030\003 \001(\r\022%\n\013weapon_list\030\004 \003(\0132\020.Sce" +
       "neWeaponInfo\022\031\n\021authority_peer_id\030\005 \001(\r\022" +
@@ -3473,11 +3473,11 @@ public final class SceneMonsterInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.FishtankFishInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MonsterBornTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MonsterRouteOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneFishInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FishtankFishInfoOuterClass.getDescriptor(),
         });
     internal_static_SceneMonsterInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3491,11 +3491,11 @@ public final class SceneMonsterInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneMonsterInfo_SummonTagMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.FishtankFishInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MonsterBornTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MonsterRouteOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneFishInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FishtankFishInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

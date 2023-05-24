@@ -26,8 +26,8 @@ public final class DungeonShowReminderNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 965
-   * Name: DPEAFCEFGCN
+   * CmdId: 934
+   * Obf: BIJEIFJHGGO
    * </pre>
    *
    * Protobuf type {@code DungeonShowReminderNotify}
@@ -279,8 +279,8 @@ public final class DungeonShowReminderNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 965
-     * Name: DPEAFCEFGCN
+     * CmdId: 934
+     * Obf: BIJEIFJHGGO
      * </pre>
      *
      * Protobuf type {@code DungeonShowReminderNotify}

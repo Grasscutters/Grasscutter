@@ -154,7 +154,7 @@ public final class PlatformInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: EFNFEPKAAOA
+   * Obf: JIHNBDJFOFI
    * </pre>
    *
    * Protobuf type {@code PlatformInfo}
@@ -908,7 +908,7 @@ public final class PlatformInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: EFNFEPKAAOA
+     * Obf: JIHNBDJFOFI
      * </pre>
      *
      * Protobuf type {@code PlatformInfo}
@@ -2138,9 +2138,9 @@ public final class PlatformInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022PlatformInfo.proto\032\024MathQuaternion.pro" +
-      "to\032\030MovingPlatformType.proto\032\013Route.prot" +
-      "o\032\014Vector.proto\"\207\003\n\014PlatformInfo\022\020\n\010rout" +
+      "\n\022PlatformInfo.proto\032\014Vector.proto\032\024Math" +
+      "Quaternion.proto\032\030MovingPlatformType.pro" +
+      "to\032\013Route.proto\"\207\003\n\014PlatformInfo\022\020\n\010rout" +
       "e_id\030\001 \001(\r\022\023\n\013start_index\030\002 \001(\005\022\030\n\020start" +
       "_route_time\030\003 \001(\r\022\030\n\020start_scene_time\030\004 " +
       "\001(\r\022\032\n\tstart_pos\030\007 \001(\0132\007.Vector\022\022\n\nis_st" +
@@ -2156,10 +2156,10 @@ public final class PlatformInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MovingPlatformTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.RouteOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_PlatformInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2167,10 +2167,10 @@ public final class PlatformInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlatformInfo_descriptor,
         new java.lang.String[] { "RouteId", "StartIndex", "StartRouteTime", "StartSceneTime", "StartPos", "IsStarted", "StartRot", "StopSceneTime", "PosOffset", "RotOffset", "MovingPlatformType", "IsActive", "Route", "PointId", });
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MovingPlatformTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.RouteOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

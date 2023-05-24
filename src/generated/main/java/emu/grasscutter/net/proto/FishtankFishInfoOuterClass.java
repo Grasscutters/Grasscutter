@@ -38,7 +38,7 @@ public final class FishtankFishInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: GNBJGEJCCJN
+   * Obf: EMABGGFKFDB
    * </pre>
    *
    * Protobuf type {@code FishtankFishInfo}
@@ -350,7 +350,7 @@ public final class FishtankFishInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GNBJGEJCCJN
+     * Obf: EMABGGFKFDB
      * </pre>
      *
      * Protobuf type {@code FishtankFishInfo}

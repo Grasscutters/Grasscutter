@@ -654,8 +654,8 @@ public final class AvatarDelNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025AvatarDelNotify.proto\"+\n\017AvatarDelNoti" +
-      "fy\022\030\n\020avatar_guid_list\030\016 \003(\004B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "fy\022\030\n\020avatar_guid_list\030\016 \003(\004B!\n\031emu.gras" +
+      "scutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

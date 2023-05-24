@@ -19,32 +19,32 @@ public final class RockBoardExploreDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData> 
         getStageDataListList();
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData getStageDataList(int index);
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     int getStageDataListCount();
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder> 
         getStageDataListOrBuilderList();
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder getStageDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Name: JIGMDFHAFHK
+   * Obf: DMEICEBDNJD
    * </pre>
    *
    * Protobuf type {@code RockBoardExploreDetailInfo}
@@ -93,7 +93,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 stageDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class RockBoardExploreDetailInfoOuterClass {
               emu.grasscutter.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo.class, emu.grasscutter.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo.Builder.class);
     }
 
-    public static final int STAGE_DATA_LIST_FIELD_NUMBER = 6;
+    public static final int STAGE_DATA_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData> stageDataList_;
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData> getStageDataListList() {
       return stageDataList_;
     }
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder> 
@@ -155,21 +155,21 @@ public final class RockBoardExploreDetailInfoOuterClass {
       return stageDataList_;
     }
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     @java.lang.Override
     public int getStageDataListCount() {
       return stageDataList_.size();
     }
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData getStageDataList(int index) {
       return stageDataList_.get(index);
     }
     /**
-     * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+     * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder getStageDataListOrBuilder(
@@ -192,7 +192,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < stageDataList_.size(); i++) {
-        output.writeMessage(6, stageDataList_.get(i));
+        output.writeMessage(13, stageDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < stageDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, stageDataList_.get(i));
+          .computeMessageSize(13, stageDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: JIGMDFHAFHK
+     * Obf: DMEICEBDNJD
      * </pre>
      *
      * Protobuf type {@code RockBoardExploreDetailInfo}
@@ -536,7 +536,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
           emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder> stageDataListBuilder_;
 
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData> getStageDataListList() {
         if (stageDataListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public int getStageDataListCount() {
         if (stageDataListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData getStageDataList(int index) {
         if (stageDataListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder setStageDataList(
           int index, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData value) {
@@ -583,7 +583,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder setStageDataList(
           int index, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder addStageDataList(emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData value) {
         if (stageDataListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder addStageDataList(
           int index, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData value) {
@@ -630,7 +630,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder addStageDataList(
           emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder addStageDataList(
           int index, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder addAllStageDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData> values) {
@@ -673,7 +673,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder clearStageDataList() {
         if (stageDataListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public Builder removeStageDataList(int index) {
         if (stageDataListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class RockBoardExploreDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder getStageDataListBuilder(
           int index) {
         return getStageDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder getStageDataListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder> 
            getStageDataListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class RockBoardExploreDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder addStageDataListBuilder() {
         return getStageDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.getDefaultInstance());
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder addStageDataListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.getDefaultInstance());
       }
       /**
-       * <code>repeated .RockBoardExploreStageData stage_data_list = 6;</code>
+       * <code>repeated .RockBoardExploreStageData stage_data_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.Builder> 
            getStageDataListBuilderList() {
@@ -831,7 +831,7 @@ public final class RockBoardExploreDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n RockBoardExploreDetailInfo.proto\032\037Rock" +
       "BoardExploreStageData.proto\"Q\n\032RockBoard" +
-      "ExploreDetailInfo\0223\n\017stage_data_list\030\006 \003" +
+      "ExploreDetailInfo\0223\n\017stage_data_list\030\r \003" +
       "(\0132\032.RockBoardExploreStageDataB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };

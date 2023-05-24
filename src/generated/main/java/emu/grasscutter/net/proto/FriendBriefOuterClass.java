@@ -218,7 +218,7 @@ public final class FriendBriefOuterClass {
   }
   /**
    * <pre>
-   * Name: FIBFPHIAJHG
+   * Obf: LOJEJNBFKEA
    * </pre>
    *
    * Protobuf type {@code FriendBrief}
@@ -1248,7 +1248,7 @@ public final class FriendBriefOuterClass {
     }
     /**
      * <pre>
-     * Name: FIBFPHIAJHG
+     * Obf: LOJEJNBFKEA
      * </pre>
      *
      * Protobuf type {@code FriendBrief}
@@ -2867,10 +2867,10 @@ public final class FriendBriefOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FriendBrief.proto\032\033FriendEnterHomeOpti" +
-      "on.proto\032\027FriendOnlineState.proto\032\022Platf" +
-      "ormType.proto\032\024ProfilePicture.proto\032\032Soc" +
-      "ialShowAvatarInfo.proto\"\336\004\n\013FriendBrief\022" +
+      "\n\021FriendBrief.proto\032\027FriendOnlineState.p" +
+      "roto\032\032SocialShowAvatarInfo.proto\032\033Friend" +
+      "EnterHomeOption.proto\032\024ProfilePicture.pr" +
+      "oto\032\022PlatformType.proto\"\336\004\n\013FriendBrief\022" +
       "\013\n\003uid\030\001 \001(\r\022\020\n\010nickname\030\002 \001(\t\022\r\n\005level\030" +
       "\003 \001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\023\n\013world_level\030" +
       "\005 \001(\r\022\021\n\tsignature\030\006 \001(\t\022(\n\014online_state" +
@@ -2891,11 +2891,11 @@ public final class FriendBriefOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.PlatformTypeOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.PlatformTypeOuterClass.getDescriptor(),
         });
     internal_static_FriendBrief_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2903,11 +2903,11 @@ public final class FriendBriefOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FriendBrief_descriptor,
         new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "WorldLevel", "Signature", "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "LastActiveTime", "NameCardId", "MpPlayerNum", "IsChatNoDisturb", "ChatSequence", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "IsGameSource", "IsPsnSource", "PlatformType", });
-    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.PlatformTypeOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.PlatformTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

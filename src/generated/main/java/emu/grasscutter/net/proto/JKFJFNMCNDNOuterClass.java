@@ -596,8 +596,8 @@ public final class JKFJFNMCNDNOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021JKFJFNMCNDN.proto\"0\n\013JKFJFNMCNDN\022\017\n\007is" +
-      "_open\030\014 \001(\010\022\020\n\010stage_id\030\004 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "_open\030\014 \001(\010\022\020\n\010stage_id\030\004 \001(\rB!\n\031emu.gra" +
+      "sscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

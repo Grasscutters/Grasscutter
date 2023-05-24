@@ -1043,8 +1043,8 @@ public final class ScenePlayerSoundNotifyOuterClass {
       "\n\tplay_type\030\017 \001(\0162%.ScenePlayerSoundNoti" +
       "fy.PlaySoundType\"O\n\rPlaySoundType\022\023\n\017PLA" +
       "Y_SOUND_NONE\020\000\022\024\n\020PLAY_SOUND_START\020\001\022\023\n\017" +
-      "PLAY_SOUND_STOP\020\002B\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "PLAY_SOUND_STOP\020\002B!\n\031emu.grasscutter.net" +
+      ".protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

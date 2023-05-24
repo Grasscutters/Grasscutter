@@ -19,35 +19,35 @@ public final class RogueDiaryStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 8;</code>
-     * @return The stageId.
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
+     * @return Whether the bestRecord field is set.
      */
-    int getStageId();
+    boolean hasBestRecord();
+    /**
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
+     * @return The bestRecord.
+     */
+    emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord getBestRecord();
+    /**
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
+     */
+    emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder getBestRecordOrBuilder();
 
     /**
-     * <code>bool is_have_try = 4;</code>
+     * <code>bool is_have_try = 1;</code>
      * @return The isHaveTry.
      */
     boolean getIsHaveTry();
 
     /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
-     * @return Whether the bestRecord field is set.
+     * <code>uint32 stage_id = 7;</code>
+     * @return The stageId.
      */
-    boolean hasBestRecord();
-    /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
-     * @return The bestRecord.
-     */
-    emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord getBestRecord();
-    /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
-     */
-    emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder getBestRecordOrBuilder();
+    int getStageId();
   }
   /**
    * <pre>
-   * Name: JGPINBCEHEH
+   * Obf: NGNOANEIFJJ
    * </pre>
    *
    * Protobuf type {@code RogueDiaryStageInfo}
@@ -94,17 +94,17 @@ public final class RogueDiaryStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
 
               isHaveTry_ = input.readBool();
               break;
             }
-            case 64: {
+            case 56: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 122: {
               emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder subBuilder = null;
               if (bestRecord_ != null) {
                 subBuilder = bestRecord_.toBuilder();
@@ -149,32 +149,10 @@ public final class RogueDiaryStageInfoOuterClass {
               emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo.class, emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 8;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 8;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    public static final int IS_HAVE_TRY_FIELD_NUMBER = 4;
-    private boolean isHaveTry_;
-    /**
-     * <code>bool is_have_try = 4;</code>
-     * @return The isHaveTry.
-     */
-    @java.lang.Override
-    public boolean getIsHaveTry() {
-      return isHaveTry_;
-    }
-
-    public static final int BEST_RECORD_FIELD_NUMBER = 14;
+    public static final int BEST_RECORD_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord bestRecord_;
     /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
      * @return Whether the bestRecord field is set.
      */
     @java.lang.Override
@@ -182,7 +160,7 @@ public final class RogueDiaryStageInfoOuterClass {
       return bestRecord_ != null;
     }
     /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
      * @return The bestRecord.
      */
     @java.lang.Override
@@ -190,11 +168,33 @@ public final class RogueDiaryStageInfoOuterClass {
       return bestRecord_ == null ? emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.getDefaultInstance() : bestRecord_;
     }
     /**
-     * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+     * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder getBestRecordOrBuilder() {
       return getBestRecord();
+    }
+
+    public static final int IS_HAVE_TRY_FIELD_NUMBER = 1;
+    private boolean isHaveTry_;
+    /**
+     * <code>bool is_have_try = 1;</code>
+     * @return The isHaveTry.
+     */
+    @java.lang.Override
+    public boolean getIsHaveTry() {
+      return isHaveTry_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 7;
+    private int stageId_;
+    /**
+     * <code>uint32 stage_id = 7;</code>
+     * @return The stageId.
+     */
+    @java.lang.Override
+    public int getStageId() {
+      return stageId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -212,13 +212,13 @@ public final class RogueDiaryStageInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isHaveTry_ != false) {
-        output.writeBool(4, isHaveTry_);
+        output.writeBool(1, isHaveTry_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(8, stageId_);
+        output.writeUInt32(7, stageId_);
       }
       if (bestRecord_ != null) {
-        output.writeMessage(14, getBestRecord());
+        output.writeMessage(15, getBestRecord());
       }
       unknownFields.writeTo(output);
     }
@@ -231,15 +231,15 @@ public final class RogueDiaryStageInfoOuterClass {
       size = 0;
       if (isHaveTry_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isHaveTry_);
+          .computeBoolSize(1, isHaveTry_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, stageId_);
+          .computeUInt32Size(7, stageId_);
       }
       if (bestRecord_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getBestRecord());
+          .computeMessageSize(15, getBestRecord());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -256,15 +256,15 @@ public final class RogueDiaryStageInfoOuterClass {
       }
       emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo other = (emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo) obj;
 
-      if (getStageId()
-          != other.getStageId()) return false;
-      if (getIsHaveTry()
-          != other.getIsHaveTry()) return false;
       if (hasBestRecord() != other.hasBestRecord()) return false;
       if (hasBestRecord()) {
         if (!getBestRecord()
             .equals(other.getBestRecord())) return false;
       }
+      if (getIsHaveTry()
+          != other.getIsHaveTry()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -276,15 +276,15 @@ public final class RogueDiaryStageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + IS_HAVE_TRY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsHaveTry());
       if (hasBestRecord()) {
         hash = (37 * hash) + BEST_RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getBestRecord().hashCode();
       }
+      hash = (37 * hash) + IS_HAVE_TRY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsHaveTry());
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -382,7 +382,7 @@ public final class RogueDiaryStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: JGPINBCEHEH
+     * Obf: NGNOANEIFJJ
      * </pre>
      *
      * Protobuf type {@code RogueDiaryStageInfo}
@@ -422,16 +422,16 @@ public final class RogueDiaryStageInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        stageId_ = 0;
-
-        isHaveTry_ = false;
-
         if (bestRecordBuilder_ == null) {
           bestRecord_ = null;
         } else {
           bestRecord_ = null;
           bestRecordBuilder_ = null;
         }
+        isHaveTry_ = false;
+
+        stageId_ = 0;
+
         return this;
       }
 
@@ -458,13 +458,13 @@ public final class RogueDiaryStageInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo buildPartial() {
         emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo result = new emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo(this);
-        result.stageId_ = stageId_;
-        result.isHaveTry_ = isHaveTry_;
         if (bestRecordBuilder_ == null) {
           result.bestRecord_ = bestRecord_;
         } else {
           result.bestRecord_ = bestRecordBuilder_.build();
         }
+        result.isHaveTry_ = isHaveTry_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
       }
@@ -513,14 +513,14 @@ public final class RogueDiaryStageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo other) {
         if (other == emu.grasscutter.net.proto.RogueDiaryStageInfoOuterClass.RogueDiaryStageInfo.getDefaultInstance()) return this;
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
+        if (other.hasBestRecord()) {
+          mergeBestRecord(other.getBestRecord());
         }
         if (other.getIsHaveTry() != false) {
           setIsHaveTry(other.getIsHaveTry());
         }
-        if (other.hasBestRecord()) {
-          mergeBestRecord(other.getBestRecord());
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -551,80 +551,18 @@ public final class RogueDiaryStageInfoOuterClass {
         return this;
       }
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 8;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 8;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isHaveTry_ ;
-      /**
-       * <code>bool is_have_try = 4;</code>
-       * @return The isHaveTry.
-       */
-      @java.lang.Override
-      public boolean getIsHaveTry() {
-        return isHaveTry_;
-      }
-      /**
-       * <code>bool is_have_try = 4;</code>
-       * @param value The isHaveTry to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsHaveTry(boolean value) {
-        
-        isHaveTry_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_have_try = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsHaveTry() {
-        
-        isHaveTry_ = false;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord bestRecord_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord, emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder, emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder> bestRecordBuilder_;
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        * @return Whether the bestRecord field is set.
        */
       public boolean hasBestRecord() {
         return bestRecordBuilder_ != null || bestRecord_ != null;
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        * @return The bestRecord.
        */
       public emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord getBestRecord() {
@@ -635,7 +573,7 @@ public final class RogueDiaryStageInfoOuterClass {
         }
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public Builder setBestRecord(emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord value) {
         if (bestRecordBuilder_ == null) {
@@ -651,7 +589,7 @@ public final class RogueDiaryStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public Builder setBestRecord(
           emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder builderForValue) {
@@ -665,7 +603,7 @@ public final class RogueDiaryStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public Builder mergeBestRecord(emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord value) {
         if (bestRecordBuilder_ == null) {
@@ -683,7 +621,7 @@ public final class RogueDiaryStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public Builder clearBestRecord() {
         if (bestRecordBuilder_ == null) {
@@ -697,7 +635,7 @@ public final class RogueDiaryStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder getBestRecordBuilder() {
         
@@ -705,7 +643,7 @@ public final class RogueDiaryStageInfoOuterClass {
         return getBestRecordFieldBuilder().getBuilder();
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder getBestRecordOrBuilder() {
         if (bestRecordBuilder_ != null) {
@@ -716,7 +654,7 @@ public final class RogueDiaryStageInfoOuterClass {
         }
       }
       /**
-       * <code>.RogueDiaryDungeonRecord best_record = 14;</code>
+       * <code>.RogueDiaryDungeonRecord best_record = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord, emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder, emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder> 
@@ -730,6 +668,68 @@ public final class RogueDiaryStageInfoOuterClass {
           bestRecord_ = null;
         }
         return bestRecordBuilder_;
+      }
+
+      private boolean isHaveTry_ ;
+      /**
+       * <code>bool is_have_try = 1;</code>
+       * @return The isHaveTry.
+       */
+      @java.lang.Override
+      public boolean getIsHaveTry() {
+        return isHaveTry_;
+      }
+      /**
+       * <code>bool is_have_try = 1;</code>
+       * @param value The isHaveTry to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsHaveTry(boolean value) {
+        
+        isHaveTry_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_have_try = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsHaveTry() {
+        
+        isHaveTry_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -800,9 +800,9 @@ public final class RogueDiaryStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031RogueDiaryStageInfo.proto\032\035RogueDiaryD" +
       "ungeonRecord.proto\"k\n\023RogueDiaryStageInf" +
-      "o\022\020\n\010stage_id\030\010 \001(\r\022\023\n\013is_have_try\030\004 \001(\010" +
-      "\022-\n\013best_record\030\016 \001(\0132\030.RogueDiaryDungeo" +
-      "nRecordB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "o\022-\n\013best_record\030\017 \001(\0132\030.RogueDiaryDunge" +
+      "onRecord\022\023\n\013is_have_try\030\001 \001(\010\022\020\n\010stage_i" +
+      "d\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -815,7 +815,7 @@ public final class RogueDiaryStageInfoOuterClass {
     internal_static_RogueDiaryStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueDiaryStageInfo_descriptor,
-        new java.lang.String[] { "StageId", "IsHaveTry", "BestRecord", });
+        new java.lang.String[] { "BestRecord", "IsHaveTry", "StageId", });
     emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.getDescriptor();
   }
 

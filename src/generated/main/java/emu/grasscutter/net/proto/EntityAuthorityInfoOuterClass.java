@@ -119,7 +119,7 @@ public final class EntityAuthorityInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: KJIGNLMODHM
+   * Obf: MMDHAIOHCBJ
    * </pre>
    *
    * Protobuf type {@code EntityAuthorityInfo}
@@ -686,7 +686,7 @@ public final class EntityAuthorityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: KJIGNLMODHM
+     * Obf: MMDHAIOHCBJ
      * </pre>
      *
      * Protobuf type {@code EntityAuthorityInfo}
@@ -1845,10 +1845,10 @@ public final class EntityAuthorityInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031EntityAuthorityInfo.proto\032\032AbilitySync" +
-      "StateInfo.proto\032$AnimatorParameterValueI" +
-      "nfoPair.proto\032\033EntityClientExtraInfo.pro" +
-      "to\032\037EntityRendererChangedInfo.proto\032\027Sce" +
-      "neEntityAiInfo.proto\032\014Vector.proto\"\251\002\n\023E" +
+      "StateInfo.proto\032\037EntityRendererChangedIn" +
+      "fo.proto\032\027SceneEntityAiInfo.proto\032\014Vecto" +
+      "r.proto\032$AnimatorParameterValueInfoPair." +
+      "proto\032\033EntityClientExtraInfo.proto\"\251\002\n\023E" +
       "ntityAuthorityInfo\022+\n\014ability_info\030\001 \001(\013" +
       "2\025.AbilitySyncStateInfo\0229\n\025renderer_chan" +
       "ged_info\030\002 \001(\0132\032.EntityRendererChangedIn" +
@@ -1863,11 +1863,11 @@ public final class EntityAuthorityInfoOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor(),
         });
     internal_static_EntityAuthorityInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1876,11 +1876,11 @@ public final class EntityAuthorityInfoOuterClass {
         internal_static_EntityAuthorityInfo_descriptor,
         new java.lang.String[] { "AbilityInfo", "RendererChangedInfo", "AiInfo", "BornPos", "PoseParaList", "ClientExtraInfo", });
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityClientExtraInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

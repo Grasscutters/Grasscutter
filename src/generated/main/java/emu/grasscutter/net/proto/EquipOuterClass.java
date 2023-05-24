@@ -58,7 +58,7 @@ public final class EquipOuterClass {
   }
   /**
    * <pre>
-   * Name: PDGCLANHIJP
+   * Obf: JFNFEJHPPKA
    * </pre>
    *
    * Protobuf type {@code Equip}
@@ -481,7 +481,7 @@ public final class EquipOuterClass {
     }
     /**
      * <pre>
-     * Name: PDGCLANHIJP
+     * Obf: JFNFEJHPPKA
      * </pre>
      *
      * Protobuf type {@code Equip}

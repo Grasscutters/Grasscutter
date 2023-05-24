@@ -20,8 +20,8 @@ public final class EndCameraSceneLookNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 226
-   * Name: LOIPBNHAKOH
+   * CmdId: 218
+   * Obf: AIBPCFKJANH
    * </pre>
    *
    * Protobuf type {@code EndCameraSceneLookNotify}
@@ -246,8 +246,8 @@ public final class EndCameraSceneLookNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 226
-     * Name: LOIPBNHAKOH
+     * CmdId: 218
+     * Obf: AIBPCFKJANH
      * </pre>
      *
      * Protobuf type {@code EndCameraSceneLookNotify}

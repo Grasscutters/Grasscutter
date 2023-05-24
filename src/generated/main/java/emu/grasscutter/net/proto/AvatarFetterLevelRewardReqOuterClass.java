@@ -32,8 +32,8 @@ public final class AvatarFetterLevelRewardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1763
-   * Name: FMBNPHNEMJA
+   * CmdId: 1656
+   * Obf: ELIDOKACJNB
    * </pre>
    *
    * Protobuf type {@code AvatarFetterLevelRewardReq}
@@ -313,8 +313,8 @@ public final class AvatarFetterLevelRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1763
-     * Name: FMBNPHNEMJA
+     * CmdId: 1656
+     * Obf: ELIDOKACJNB
      * </pre>
      *
      * Protobuf type {@code AvatarFetterLevelRewardReq}

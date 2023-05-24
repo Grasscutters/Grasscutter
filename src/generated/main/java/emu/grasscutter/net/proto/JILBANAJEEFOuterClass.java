@@ -831,8 +831,8 @@ public final class JILBANAJEEFOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021JILBANAJEEF.proto\032\021CFFFGFFKINK.proto\"4" +
       "\n\013JILBANAJEEF\022%\n\017level_info_list\030\010 \003(\0132\014" +
-      ".CFFFGFFKINKB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      ".CFFFGFFKINKB!\n\031emu.grasscutter.net.prot" +
+      "oZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

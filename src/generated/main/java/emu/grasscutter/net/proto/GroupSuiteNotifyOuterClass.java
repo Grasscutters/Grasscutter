@@ -54,8 +54,8 @@ public final class GroupSuiteNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3026
-   * Name: EOCLBFJEPNJ
+   * CmdId: 3284
+   * Obf: PICEJIDPMOD
    * </pre>
    *
    * Protobuf type {@code GroupSuiteNotify}
@@ -409,8 +409,8 @@ public final class GroupSuiteNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3026
-     * Name: EOCLBFJEPNJ
+     * CmdId: 3284
+     * Obf: PICEJIDPMOD
      * </pre>
      *
      * Protobuf type {@code GroupSuiteNotify}

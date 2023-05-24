@@ -19,21 +19,21 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 watcher_id = 8;</code>
+     * <code>uint32 watcher_id = 11;</code>
      * @return The watcherId.
      */
     int getWatcherId();
 
     /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 1;</code>
      * @return The activityId.
      */
     int getActivityId();
   }
   /**
    * <pre>
-   * CmdId: 2192
-   * Name: JCHMIGLBFBJ
+   * CmdId: 2085
+   * Obf: LEAMDAPFCIP
    * </pre>
    *
    * Protobuf type {@code ActivityTakeWatcherRewardReq}
@@ -80,14 +80,14 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
-
-              watcherId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 8: {
 
               activityId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              watcherId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
               emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.class, emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.Builder.class);
     }
 
-    public static final int WATCHER_ID_FIELD_NUMBER = 8;
+    public static final int WATCHER_ID_FIELD_NUMBER = 11;
     private int watcherId_;
     /**
-     * <code>uint32 watcher_id = 8;</code>
+     * <code>uint32 watcher_id = 11;</code>
      * @return The watcherId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       return watcherId_;
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 1;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (watcherId_ != 0) {
-        output.writeUInt32(8, watcherId_);
-      }
       if (activityId_ != 0) {
-        output.writeUInt32(9, activityId_);
+        output.writeUInt32(1, activityId_);
+      }
+      if (watcherId_ != 0) {
+        output.writeUInt32(11, watcherId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (watcherId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, watcherId_);
-      }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, activityId_);
+          .computeUInt32Size(1, activityId_);
+      }
+      if (watcherId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, watcherId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2192
-     * Name: JCHMIGLBFBJ
+     * CmdId: 2085
+     * Obf: LEAMDAPFCIP
      * </pre>
      *
      * Protobuf type {@code ActivityTakeWatcherRewardReq}
@@ -470,7 +470,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
 
       private int watcherId_ ;
       /**
-       * <code>uint32 watcher_id = 8;</code>
+       * <code>uint32 watcher_id = 11;</code>
        * @return The watcherId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return watcherId_;
       }
       /**
-       * <code>uint32 watcher_id = 8;</code>
+       * <code>uint32 watcher_id = 11;</code>
        * @param value The watcherId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 watcher_id = 8;</code>
+       * <code>uint32 watcher_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearWatcherId() {
@@ -501,7 +501,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -598,7 +598,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"ActivityTakeWatcherRewardReq.proto\"G\n\034" +
       "ActivityTakeWatcherRewardReq\022\022\n\nwatcher_" +
-      "id\030\010 \001(\r\022\023\n\013activity_id\030\t \001(\rB\033\n\031emu.gra" +
+      "id\030\013 \001(\r\022\023\n\013activity_id\030\001 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

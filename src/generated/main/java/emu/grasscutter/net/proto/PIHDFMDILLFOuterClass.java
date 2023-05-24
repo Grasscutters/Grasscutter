@@ -831,8 +831,8 @@ public final class PIHDFMDILLFOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021PIHDFMDILLF.proto\032\021JKFJFNMCNDN.proto\"4" +
       "\n\013PIHDFMDILLF\022%\n\017stage_info_list\030\007 \003(\0132\014" +
-      ".JKFJFNMCNDNB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      ".JKFJFNMCNDNB!\n\031emu.grasscutter.net.prot" +
+      "oZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

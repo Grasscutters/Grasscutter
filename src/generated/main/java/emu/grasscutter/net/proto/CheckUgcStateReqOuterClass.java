@@ -457,8 +457,8 @@ public final class CheckUgcStateReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026CheckUgcStateReq.proto\"\022\n\020CheckUgcStat" +
-      "eReqB\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      "eReqB!\n\031emu.grasscutter.net.protoZ\004/genb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

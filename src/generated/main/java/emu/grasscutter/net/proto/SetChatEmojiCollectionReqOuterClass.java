@@ -35,8 +35,8 @@ public final class SetChatEmojiCollectionReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4068
-   * Name: MPMEMEBCIAG
+   * CmdId: 4019
+   * Obf: IOLHCMEELHO
    * </pre>
    *
    * Protobuf type {@code SetChatEmojiCollectionReq}
@@ -316,8 +316,8 @@ public final class SetChatEmojiCollectionReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4068
-     * Name: MPMEMEBCIAG
+     * CmdId: 4019
+     * Obf: IOLHCMEELHO
      * </pre>
      *
      * Protobuf type {@code SetChatEmojiCollectionReq}

@@ -19,53 +19,53 @@ public final class WinterCampStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cur_progress = 9;</code>
-     * @return The curProgress.
-     */
-    int getCurProgress();
-
-    /**
-     * <code>uint32 id = 13;</code>
-     * @return The id.
-     */
-    int getId();
-
-    /**
-     * <code>uint32 total_progress = 2;</code>
-     * @return The totalProgress.
-     */
-    int getTotalProgress();
-
-    /**
-     * <code>.Vector pos = 5;</code>
-     * @return Whether the pos field is set.
-     */
-    boolean hasPos();
-    /**
-     * <code>.Vector pos = 5;</code>
-     * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
-    /**
-     * <code>.Vector pos = 5;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
-
-    /**
-     * <code>uint32 open_time = 6;</code>
+     * <code>uint32 open_time = 7;</code>
      * @return The openTime.
      */
     int getOpenTime();
 
     /**
-     * <code>bool is_finished = 3;</code>
+     * <code>.Vector pos = 4;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>.Vector pos = 4;</code>
+     * @return The pos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+    /**
+     * <code>.Vector pos = 4;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+
+    /**
+     * <code>uint32 id = 9;</code>
+     * @return The id.
+     */
+    int getId();
+
+    /**
+     * <code>bool is_finished = 2;</code>
      * @return The isFinished.
      */
     boolean getIsFinished();
+
+    /**
+     * <code>uint32 cur_progress = 14;</code>
+     * @return The curProgress.
+     */
+    int getCurProgress();
+
+    /**
+     * <code>uint32 total_progress = 6;</code>
+     * @return The totalProgress.
+     */
+    int getTotalProgress();
   }
   /**
    * <pre>
-   * Name: KLODNOOCDPE
+   * Obf: IBAACKMBMDC
    * </pre>
    *
    * Protobuf type {@code WinterCampStageInfo}
@@ -114,15 +114,10 @@ public final class WinterCampStageInfoOuterClass {
               break;
             case 16: {
 
-              totalProgress_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
               isFinished_ = input.readBool();
               break;
             }
-            case 42: {
+            case 34: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -137,17 +132,22 @@ public final class WinterCampStageInfoOuterClass {
             }
             case 48: {
 
+              totalProgress_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
               openTime_ = input.readUInt32();
               break;
             }
             case 72: {
 
-              curProgress_ = input.readUInt32();
+              id_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
-              id_ = input.readUInt32();
+              curProgress_ = input.readUInt32();
               break;
             }
             default: {
@@ -182,69 +182,10 @@ public final class WinterCampStageInfoOuterClass {
               emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.class, emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder.class);
     }
 
-    public static final int CUR_PROGRESS_FIELD_NUMBER = 9;
-    private int curProgress_;
-    /**
-     * <code>uint32 cur_progress = 9;</code>
-     * @return The curProgress.
-     */
-    @java.lang.Override
-    public int getCurProgress() {
-      return curProgress_;
-    }
-
-    public static final int ID_FIELD_NUMBER = 13;
-    private int id_;
-    /**
-     * <code>uint32 id = 13;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 2;
-    private int totalProgress_;
-    /**
-     * <code>uint32 total_progress = 2;</code>
-     * @return The totalProgress.
-     */
-    @java.lang.Override
-    public int getTotalProgress() {
-      return totalProgress_;
-    }
-
-    public static final int POS_FIELD_NUMBER = 5;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
-    /**
-     * <code>.Vector pos = 5;</code>
-     * @return Whether the pos field is set.
-     */
-    @java.lang.Override
-    public boolean hasPos() {
-      return pos_ != null;
-    }
-    /**
-     * <code>.Vector pos = 5;</code>
-     * @return The pos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-    }
-    /**
-     * <code>.Vector pos = 5;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
-    }
-
-    public static final int OPEN_TIME_FIELD_NUMBER = 6;
+    public static final int OPEN_TIME_FIELD_NUMBER = 7;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 6;</code>
+     * <code>uint32 open_time = 7;</code>
      * @return The openTime.
      */
     @java.lang.Override
@@ -252,15 +193,74 @@ public final class WinterCampStageInfoOuterClass {
       return openTime_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 3;
+    public static final int POS_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+    /**
+     * <code>.Vector pos = 4;</code>
+     * @return Whether the pos field is set.
+     */
+    @java.lang.Override
+    public boolean hasPos() {
+      return pos_ != null;
+    }
+    /**
+     * <code>.Vector pos = 4;</code>
+     * @return The pos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>.Vector pos = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+      return getPos();
+    }
+
+    public static final int ID_FIELD_NUMBER = 9;
+    private int id_;
+    /**
+     * <code>uint32 id = 9;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
+    }
+
+    public static final int IS_FINISHED_FIELD_NUMBER = 2;
     private boolean isFinished_;
     /**
-     * <code>bool is_finished = 3;</code>
+     * <code>bool is_finished = 2;</code>
      * @return The isFinished.
      */
     @java.lang.Override
     public boolean getIsFinished() {
       return isFinished_;
+    }
+
+    public static final int CUR_PROGRESS_FIELD_NUMBER = 14;
+    private int curProgress_;
+    /**
+     * <code>uint32 cur_progress = 14;</code>
+     * @return The curProgress.
+     */
+    @java.lang.Override
+    public int getCurProgress() {
+      return curProgress_;
+    }
+
+    public static final int TOTAL_PROGRESS_FIELD_NUMBER = 6;
+    private int totalProgress_;
+    /**
+     * <code>uint32 total_progress = 6;</code>
+     * @return The totalProgress.
+     */
+    @java.lang.Override
+    public int getTotalProgress() {
+      return totalProgress_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -277,23 +277,23 @@ public final class WinterCampStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (totalProgress_ != 0) {
-        output.writeUInt32(2, totalProgress_);
-      }
       if (isFinished_ != false) {
-        output.writeBool(3, isFinished_);
+        output.writeBool(2, isFinished_);
       }
       if (pos_ != null) {
-        output.writeMessage(5, getPos());
+        output.writeMessage(4, getPos());
+      }
+      if (totalProgress_ != 0) {
+        output.writeUInt32(6, totalProgress_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(6, openTime_);
-      }
-      if (curProgress_ != 0) {
-        output.writeUInt32(9, curProgress_);
+        output.writeUInt32(7, openTime_);
       }
       if (id_ != 0) {
-        output.writeUInt32(13, id_);
+        output.writeUInt32(9, id_);
+      }
+      if (curProgress_ != 0) {
+        output.writeUInt32(14, curProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -304,29 +304,29 @@ public final class WinterCampStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (totalProgress_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, totalProgress_);
-      }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isFinished_);
+          .computeBoolSize(2, isFinished_);
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getPos());
+          .computeMessageSize(4, getPos());
+      }
+      if (totalProgress_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, totalProgress_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, openTime_);
-      }
-      if (curProgress_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, curProgress_);
+          .computeUInt32Size(7, openTime_);
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, id_);
+          .computeUInt32Size(9, id_);
+      }
+      if (curProgress_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, curProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -343,21 +343,21 @@ public final class WinterCampStageInfoOuterClass {
       }
       emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo other = (emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo) obj;
 
-      if (getCurProgress()
-          != other.getCurProgress()) return false;
-      if (getId()
-          != other.getId()) return false;
-      if (getTotalProgress()
-          != other.getTotalProgress()) return false;
+      if (getOpenTime()
+          != other.getOpenTime()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (getOpenTime()
-          != other.getOpenTime()) return false;
+      if (getId()
+          != other.getId()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
+      if (getCurProgress()
+          != other.getCurProgress()) return false;
+      if (getTotalProgress()
+          != other.getTotalProgress()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -369,21 +369,21 @@ public final class WinterCampStageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CUR_PROGRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getCurProgress();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + TOTAL_PROGRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalProgress();
+      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getOpenTime();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getOpenTime();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
+      hash = (37 * hash) + CUR_PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getCurProgress();
+      hash = (37 * hash) + TOTAL_PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalProgress();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -481,7 +481,7 @@ public final class WinterCampStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: KLODNOOCDPE
+     * Obf: IBAACKMBMDC
      * </pre>
      *
      * Protobuf type {@code WinterCampStageInfo}
@@ -521,11 +521,7 @@ public final class WinterCampStageInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        curProgress_ = 0;
-
-        id_ = 0;
-
-        totalProgress_ = 0;
+        openTime_ = 0;
 
         if (posBuilder_ == null) {
           pos_ = null;
@@ -533,9 +529,13 @@ public final class WinterCampStageInfoOuterClass {
           pos_ = null;
           posBuilder_ = null;
         }
-        openTime_ = 0;
+        id_ = 0;
 
         isFinished_ = false;
+
+        curProgress_ = 0;
+
+        totalProgress_ = 0;
 
         return this;
       }
@@ -563,16 +563,16 @@ public final class WinterCampStageInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo buildPartial() {
         emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo result = new emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo(this);
-        result.curProgress_ = curProgress_;
-        result.id_ = id_;
-        result.totalProgress_ = totalProgress_;
+        result.openTime_ = openTime_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
-        result.openTime_ = openTime_;
+        result.id_ = id_;
         result.isFinished_ = isFinished_;
+        result.curProgress_ = curProgress_;
+        result.totalProgress_ = totalProgress_;
         onBuilt();
         return result;
       }
@@ -621,23 +621,23 @@ public final class WinterCampStageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo other) {
         if (other == emu.grasscutter.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.getDefaultInstance()) return this;
-        if (other.getCurProgress() != 0) {
-          setCurProgress(other.getCurProgress());
-        }
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
-        if (other.getTotalProgress() != 0) {
-          setTotalProgress(other.getTotalProgress());
+        if (other.getOpenTime() != 0) {
+          setOpenTime(other.getOpenTime());
         }
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        if (other.getOpenTime() != 0) {
-          setOpenTime(other.getOpenTime());
+        if (other.getId() != 0) {
+          setId(other.getId());
         }
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
+        }
+        if (other.getCurProgress() != 0) {
+          setCurProgress(other.getCurProgress());
+        }
+        if (other.getTotalProgress() != 0) {
+          setTotalProgress(other.getTotalProgress());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -668,95 +668,33 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
 
-      private int curProgress_ ;
+      private int openTime_ ;
       /**
-       * <code>uint32 cur_progress = 9;</code>
-       * @return The curProgress.
+       * <code>uint32 open_time = 7;</code>
+       * @return The openTime.
        */
       @java.lang.Override
-      public int getCurProgress() {
-        return curProgress_;
+      public int getOpenTime() {
+        return openTime_;
       }
       /**
-       * <code>uint32 cur_progress = 9;</code>
-       * @param value The curProgress to set.
+       * <code>uint32 open_time = 7;</code>
+       * @param value The openTime to set.
        * @return This builder for chaining.
        */
-      public Builder setCurProgress(int value) {
+      public Builder setOpenTime(int value) {
         
-        curProgress_ = value;
+        openTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 cur_progress = 9;</code>
+       * <code>uint32 open_time = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurProgress() {
+      public Builder clearOpenTime() {
         
-        curProgress_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int id_ ;
-      /**
-       * <code>uint32 id = 13;</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>uint32 id = 13;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int totalProgress_ ;
-      /**
-       * <code>uint32 total_progress = 2;</code>
-       * @return The totalProgress.
-       */
-      @java.lang.Override
-      public int getTotalProgress() {
-        return totalProgress_;
-      }
-      /**
-       * <code>uint32 total_progress = 2;</code>
-       * @param value The totalProgress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalProgress(int value) {
-        
-        totalProgress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_progress = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalProgress() {
-        
-        totalProgress_ = 0;
+        openTime_ = 0;
         onChanged();
         return this;
       }
@@ -765,14 +703,14 @@ public final class WinterCampStageInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -783,7 +721,7 @@ public final class WinterCampStageInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -799,7 +737,7 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -813,7 +751,7 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -831,7 +769,7 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public Builder clearPos() {
         if (posBuilder_ == null) {
@@ -845,7 +783,7 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         
@@ -853,7 +791,7 @@ public final class WinterCampStageInfoOuterClass {
         return getPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -864,7 +802,7 @@ public final class WinterCampStageInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -880,40 +818,40 @@ public final class WinterCampStageInfoOuterClass {
         return posBuilder_;
       }
 
-      private int openTime_ ;
+      private int id_ ;
       /**
-       * <code>uint32 open_time = 6;</code>
-       * @return The openTime.
+       * <code>uint32 id = 9;</code>
+       * @return The id.
        */
       @java.lang.Override
-      public int getOpenTime() {
-        return openTime_;
+      public int getId() {
+        return id_;
       }
       /**
-       * <code>uint32 open_time = 6;</code>
-       * @param value The openTime to set.
+       * <code>uint32 id = 9;</code>
+       * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setOpenTime(int value) {
+      public Builder setId(int value) {
         
-        openTime_ = value;
+        id_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 open_time = 6;</code>
+       * <code>uint32 id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOpenTime() {
+      public Builder clearId() {
         
-        openTime_ = 0;
+        id_ = 0;
         onChanged();
         return this;
       }
 
       private boolean isFinished_ ;
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 2;</code>
        * @return The isFinished.
        */
       @java.lang.Override
@@ -921,7 +859,7 @@ public final class WinterCampStageInfoOuterClass {
         return isFinished_;
       }
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 2;</code>
        * @param value The isFinished to set.
        * @return This builder for chaining.
        */
@@ -932,12 +870,74 @@ public final class WinterCampStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
         
         isFinished_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int curProgress_ ;
+      /**
+       * <code>uint32 cur_progress = 14;</code>
+       * @return The curProgress.
+       */
+      @java.lang.Override
+      public int getCurProgress() {
+        return curProgress_;
+      }
+      /**
+       * <code>uint32 cur_progress = 14;</code>
+       * @param value The curProgress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurProgress(int value) {
+        
+        curProgress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_progress = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurProgress() {
+        
+        curProgress_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalProgress_ ;
+      /**
+       * <code>uint32 total_progress = 6;</code>
+       * @return The totalProgress.
+       */
+      @java.lang.Override
+      public int getTotalProgress() {
+        return totalProgress_;
+      }
+      /**
+       * <code>uint32 total_progress = 6;</code>
+       * @param value The totalProgress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalProgress(int value) {
+        
+        totalProgress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 total_progress = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalProgress() {
+        
+        totalProgress_ = 0;
         onChanged();
         return this;
       }
@@ -1009,10 +1009,10 @@ public final class WinterCampStageInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031WinterCampStageInfo.proto\032\014Vector.prot" +
-      "o\"\215\001\n\023WinterCampStageInfo\022\024\n\014cur_progres" +
-      "s\030\t \001(\r\022\n\n\002id\030\r \001(\r\022\026\n\016total_progress\030\002 " +
-      "\001(\r\022\024\n\003pos\030\005 \001(\0132\007.Vector\022\021\n\topen_time\030\006" +
-      " \001(\r\022\023\n\013is_finished\030\003 \001(\010B\033\n\031emu.grasscu" +
+      "o\"\215\001\n\023WinterCampStageInfo\022\021\n\topen_time\030\007" +
+      " \001(\r\022\024\n\003pos\030\004 \001(\0132\007.Vector\022\n\n\002id\030\t \001(\r\022\023" +
+      "\n\013is_finished\030\002 \001(\010\022\024\n\014cur_progress\030\016 \001(" +
+      "\r\022\026\n\016total_progress\030\006 \001(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1025,7 +1025,7 @@ public final class WinterCampStageInfoOuterClass {
     internal_static_WinterCampStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WinterCampStageInfo_descriptor,
-        new java.lang.String[] { "CurProgress", "Id", "TotalProgress", "Pos", "OpenTime", "IsFinished", });
+        new java.lang.String[] { "OpenTime", "Pos", "Id", "IsFinished", "CurProgress", "TotalProgress", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

@@ -255,8 +255,8 @@ public final class GalleryStopReasonOuterClass {
       "_FINISHED\020\t\022\037\n\033GALLERY_STOP_FUNGUS_ALL_D" +
       "IE\020\n\022 \n\034GALLERY_STOP_LIFE_COUNT_ZERO\020\013\022 " +
       "\n\034GALLERY_STOP_ACTIVITY_CLOSED\020\014\022\"\n\036GALL" +
-      "ERY_STOP_LEAVE_REGION_FAIL\020\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "ERY_STOP_LEAVE_REGION_FAIL\020\rB!\n\031emu.gras" +
+      "scutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

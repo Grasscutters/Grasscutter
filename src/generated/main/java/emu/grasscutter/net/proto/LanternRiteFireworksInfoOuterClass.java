@@ -44,7 +44,7 @@ public final class LanternRiteFireworksInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: CKGPIIMDNMJ
+   * Obf: DCFHHMDCJEJ
    * </pre>
    *
    * Protobuf type {@code LanternRiteFireworksInfo}
@@ -336,7 +336,7 @@ public final class LanternRiteFireworksInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: CKGPIIMDNMJ
+     * Obf: DCFHHMDCJEJ
      * </pre>
      *
      * Protobuf type {@code LanternRiteFireworksInfo}

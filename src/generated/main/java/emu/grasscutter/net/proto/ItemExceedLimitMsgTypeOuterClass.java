@@ -154,8 +154,8 @@ public final class ItemExceedLimitMsgTypeOuterClass {
       "SG_TYPE_DEFAULT\020\000\022#\n\037ITEM_EXCEED_LIMIT_M" +
       "SG_TYPE_TEXT\020\001\022%\n!ITEM_EXCEED_LIMIT_MSG_" +
       "TYPE_DIALOG\020\002\022.\n*ITEM_EXCEED_LIMIT_MSG_T" +
-      "YPE_DIALOG_NONBLOCK\020\003B\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "YPE_DIALOG_NONBLOCK\020\003B!\n\031emu.grasscutter" +
+      ".net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

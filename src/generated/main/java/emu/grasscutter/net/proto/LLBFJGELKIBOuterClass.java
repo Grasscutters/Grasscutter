@@ -158,7 +158,8 @@ public final class LLBFJGELKIBOuterClass {
       "LLBFJGELKIB_SANDWORM_LEVEL_PRE_QUEST\020\001\022$" +
       "\n LLBFJGELKIB_SANDWORM_LEVEL_START\020\002\022+\n\'" +
       "LLBFJGELKIB_SANDWORM_LEVEL_SEQUEL_QUEST\020" +
-      "\003B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\003B!\n\031emu.grasscutter.net.protoZ\004/genb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

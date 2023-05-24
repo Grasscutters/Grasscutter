@@ -19,37 +19,37 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 monster_id = 13;</code>
-     * @return The monsterId.
-     */
-    int getMonsterId();
-
-    /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @return A list containing the affixList.
      */
     java.util.List<java.lang.Integer> getAffixListList();
     /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @return The count of affixList.
      */
     int getAffixListCount();
     /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @param index The index of the element to return.
      * @return The affixList at the given index.
      */
     int getAffixList(int index);
 
     /**
-     * <code>uint32 level = 6;</code>
+     * <code>uint32 level = 1;</code>
      * @return The level.
      */
     int getLevel();
+
+    /**
+     * <code>uint32 monster_id = 8;</code>
+     * @return The monsterId.
+     */
+    int getMonsterId();
   }
   /**
    * <pre>
-   * Name: CPFLEKBAPNG
+   * Obf: EELEHAKPGNM
    * </pre>
    *
    * Protobuf type {@code FungusTrainingMonsterPreviewDetail}
@@ -98,17 +98,12 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 8: {
 
               level_ = input.readUInt32();
               break;
             }
-            case 104: {
-
-              monsterId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 affixList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -116,7 +111,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               affixList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -127,6 +122,11 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                 affixList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              monsterId_ = input.readUInt32();
               break;
             }
             default: {
@@ -164,21 +164,10 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail.class, emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail.Builder.class);
     }
 
-    public static final int MONSTER_ID_FIELD_NUMBER = 13;
-    private int monsterId_;
-    /**
-     * <code>uint32 monster_id = 13;</code>
-     * @return The monsterId.
-     */
-    @java.lang.Override
-    public int getMonsterId() {
-      return monsterId_;
-    }
-
-    public static final int AFFIX_LIST_FIELD_NUMBER = 14;
+    public static final int AFFIX_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList affixList_;
     /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @return A list containing the affixList.
      */
     @java.lang.Override
@@ -187,14 +176,14 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       return affixList_;
     }
     /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @return The count of affixList.
      */
     public int getAffixListCount() {
       return affixList_.size();
     }
     /**
-     * <code>repeated uint32 affix_list = 14;</code>
+     * <code>repeated uint32 affix_list = 7;</code>
      * @param index The index of the element to return.
      * @return The affixList at the given index.
      */
@@ -203,15 +192,26 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
     }
     private int affixListMemoizedSerializedSize = -1;
 
-    public static final int LEVEL_FIELD_NUMBER = 6;
+    public static final int LEVEL_FIELD_NUMBER = 1;
     private int level_;
     /**
-     * <code>uint32 level = 6;</code>
+     * <code>uint32 level = 1;</code>
      * @return The level.
      */
     @java.lang.Override
     public int getLevel() {
       return level_;
+    }
+
+    public static final int MONSTER_ID_FIELD_NUMBER = 8;
+    private int monsterId_;
+    /**
+     * <code>uint32 monster_id = 8;</code>
+     * @return The monsterId.
+     */
+    @java.lang.Override
+    public int getMonsterId() {
+      return monsterId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -230,17 +230,17 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (level_ != 0) {
-        output.writeUInt32(6, level_);
-      }
-      if (monsterId_ != 0) {
-        output.writeUInt32(13, monsterId_);
+        output.writeUInt32(1, level_);
       }
       if (getAffixListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(affixListMemoizedSerializedSize);
       }
       for (int i = 0; i < affixList_.size(); i++) {
         output.writeUInt32NoTag(affixList_.getInt(i));
+      }
+      if (monsterId_ != 0) {
+        output.writeUInt32(8, monsterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -253,11 +253,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       size = 0;
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, level_);
-      }
-      if (monsterId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, monsterId_);
+          .computeUInt32Size(1, level_);
       }
       {
         int dataSize = 0;
@@ -272,6 +268,10 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         affixListMemoizedSerializedSize = dataSize;
+      }
+      if (monsterId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, monsterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -288,12 +288,12 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       }
       emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail other = (emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail) obj;
 
-      if (getMonsterId()
-          != other.getMonsterId()) return false;
       if (!getAffixListList()
           .equals(other.getAffixListList())) return false;
       if (getLevel()
           != other.getLevel()) return false;
+      if (getMonsterId()
+          != other.getMonsterId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -305,14 +305,14 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MONSTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMonsterId();
       if (getAffixListCount() > 0) {
         hash = (37 * hash) + AFFIX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAffixListList().hashCode();
       }
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
+      hash = (37 * hash) + MONSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMonsterId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -410,7 +410,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
     }
     /**
      * <pre>
-     * Name: CPFLEKBAPNG
+     * Obf: EELEHAKPGNM
      * </pre>
      *
      * Protobuf type {@code FungusTrainingMonsterPreviewDetail}
@@ -450,11 +450,11 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        monsterId_ = 0;
-
         affixList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         level_ = 0;
+
+        monsterId_ = 0;
 
         return this;
       }
@@ -483,13 +483,13 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       public emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail buildPartial() {
         emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail result = new emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail(this);
         int from_bitField0_ = bitField0_;
-        result.monsterId_ = monsterId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           affixList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.affixList_ = affixList_;
         result.level_ = level_;
+        result.monsterId_ = monsterId_;
         onBuilt();
         return result;
       }
@@ -538,9 +538,6 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail other) {
         if (other == emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetail.getDefaultInstance()) return this;
-        if (other.getMonsterId() != 0) {
-          setMonsterId(other.getMonsterId());
-        }
         if (!other.affixList_.isEmpty()) {
           if (affixList_.isEmpty()) {
             affixList_ = other.affixList_;
@@ -553,6 +550,9 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         }
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
+        }
+        if (other.getMonsterId() != 0) {
+          setMonsterId(other.getMonsterId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -584,37 +584,6 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
       }
       private int bitField0_;
 
-      private int monsterId_ ;
-      /**
-       * <code>uint32 monster_id = 13;</code>
-       * @return The monsterId.
-       */
-      @java.lang.Override
-      public int getMonsterId() {
-        return monsterId_;
-      }
-      /**
-       * <code>uint32 monster_id = 13;</code>
-       * @param value The monsterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMonsterId(int value) {
-        
-        monsterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 monster_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMonsterId() {
-        
-        monsterId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList affixList_ = emptyIntList();
       private void ensureAffixListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -623,7 +592,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @return A list containing the affixList.
        */
       public java.util.List<java.lang.Integer>
@@ -632,14 +601,14 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                  java.util.Collections.unmodifiableList(affixList_) : affixList_;
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @return The count of affixList.
        */
       public int getAffixListCount() {
         return affixList_.size();
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @param index The index of the element to return.
        * @return The affixList at the given index.
        */
@@ -647,7 +616,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return affixList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The affixList to set.
        * @return This builder for chaining.
@@ -660,7 +629,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @param value The affixList to add.
        * @return This builder for chaining.
        */
@@ -671,7 +640,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @param values The affixList to add.
        * @return This builder for chaining.
        */
@@ -684,7 +653,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 affix_list = 14;</code>
+       * <code>repeated uint32 affix_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAffixList() {
@@ -696,7 +665,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
 
       private int level_ ;
       /**
-       * <code>uint32 level = 6;</code>
+       * <code>uint32 level = 1;</code>
        * @return The level.
        */
       @java.lang.Override
@@ -704,7 +673,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return level_;
       }
       /**
-       * <code>uint32 level = 6;</code>
+       * <code>uint32 level = 1;</code>
        * @param value The level to set.
        * @return This builder for chaining.
        */
@@ -715,12 +684,43 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level = 6;</code>
+       * <code>uint32 level = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
         
         level_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int monsterId_ ;
+      /**
+       * <code>uint32 monster_id = 8;</code>
+       * @return The monsterId.
+       */
+      @java.lang.Override
+      public int getMonsterId() {
+        return monsterId_;
+      }
+      /**
+       * <code>uint32 monster_id = 8;</code>
+       * @param value The monsterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonsterId(int value) {
+        
+        monsterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 monster_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonsterId() {
+        
+        monsterId_ = 0;
         onChanged();
         return this;
       }
@@ -793,8 +793,8 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
     java.lang.String[] descriptorData = {
       "\n(FungusTrainingMonsterPreviewDetail.pro" +
       "to\"[\n\"FungusTrainingMonsterPreviewDetail" +
-      "\022\022\n\nmonster_id\030\r \001(\r\022\022\n\naffix_list\030\016 \003(\r" +
-      "\022\r\n\005level\030\006 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "\022\022\n\naffix_list\030\007 \003(\r\022\r\n\005level\030\001 \001(\r\022\022\n\nm" +
+      "onster_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -806,7 +806,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
     internal_static_FungusTrainingMonsterPreviewDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FungusTrainingMonsterPreviewDetail_descriptor,
-        new java.lang.String[] { "MonsterId", "AffixList", "Level", });
+        new java.lang.String[] { "AffixList", "Level", "MonsterId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

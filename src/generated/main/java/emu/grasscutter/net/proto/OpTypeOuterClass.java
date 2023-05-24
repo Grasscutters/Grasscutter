@@ -142,8 +142,8 @@ public final class OpTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\014OpType.proto*H\n\006OpType\022\020\n\014OP_TYPE_NONE" +
       "\020\000\022\024\n\020OP_TYPE_ACTIVATE\020\001\022\026\n\022OP_TYPE_DEAC" +
-      "TIVATE\020\002B\033\n\031emu.grasscutter.net.protob\006p" +
-      "roto3"
+      "TIVATE\020\002B!\n\031emu.grasscutter.net.protoZ\004/" +
+      "genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -36,15 +36,15 @@ public final class TakeBattlePassMissionPointRspOuterClass {
     int getMissionIdList(int index);
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2622
-   * Name: GPFFNOACEFD
+   * CmdId: 2607
+   * Obf: CKIKOLEHENE
    * </pre>
    *
    * Protobuf type {@code TakeBattlePassMissionPointRsp}
@@ -114,7 +114,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 24: {
 
               retcode_ = input.readInt32();
               break;
@@ -182,10 +182,10 @@ public final class TakeBattlePassMissionPointRspOuterClass {
     }
     private int missionIdListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -216,7 +216,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
         output.writeUInt32NoTag(missionIdList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(3, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,7 +243,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,8 +378,8 @@ public final class TakeBattlePassMissionPointRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2622
-     * Name: GPFFNOACEFD
+     * CmdId: 2607
+     * Obf: CKIKOLEHENE
      * </pre>
      *
      * Protobuf type {@code TakeBattlePassMissionPointRsp}
@@ -628,7 +628,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -636,7 +636,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -647,7 +647,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -725,7 +725,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n#TakeBattlePassMissionPointRsp.proto\"I\n" +
       "\035TakeBattlePassMissionPointRsp\022\027\n\017missio" +
-      "n_id_list\030\001 \003(\r\022\017\n\007retcode\030\t \001(\005B\033\n\031emu." +
+      "n_id_list\030\001 \003(\r\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

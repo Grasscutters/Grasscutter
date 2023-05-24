@@ -49,7 +49,7 @@ public final class AvatarSkillInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: PDOJLOOPDDO
+   * Obf: LJGFAMEDAGO
    * </pre>
    *
    * Protobuf type {@code AvatarSkillInfo}
@@ -410,7 +410,7 @@ public final class AvatarSkillInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: PDOJLOOPDDO
+     * Obf: LJGFAMEDAGO
      * </pre>
      *
      * Protobuf type {@code AvatarSkillInfo}

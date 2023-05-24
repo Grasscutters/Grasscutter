@@ -19,23 +19,6 @@ public final class IrodoriFlowerDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @return A list containing the finishedThemeList.
-     */
-    java.util.List<java.lang.Integer> getFinishedThemeListList();
-    /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @return The count of finishedThemeList.
-     */
-    int getFinishedThemeListCount();
-    /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The finishedThemeList at the given index.
-     */
-    int getFinishedThemeList(int index);
-
-    /**
      * <code>repeated .ItemParam used_flower_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
@@ -58,10 +41,27 @@ public final class IrodoriFlowerDataOuterClass {
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getUsedFlowerListOrBuilder(
         int index);
+
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @return A list containing the finishedThemeList.
+     */
+    java.util.List<java.lang.Integer> getFinishedThemeListList();
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @return The count of finishedThemeList.
+     */
+    int getFinishedThemeListCount();
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @param index The index of the element to return.
+     * @return The finishedThemeList at the given index.
+     */
+    int getFinishedThemeList(int index);
   }
   /**
    * <pre>
-   * Name: MPAOCFBKIBK
+   * Obf: CMGJPGHLANB
    * </pre>
    *
    * Protobuf type {@code IrodoriFlowerData}
@@ -76,8 +76,8 @@ public final class IrodoriFlowerDataOuterClass {
       super(builder);
     }
     private IrodoriFlowerData() {
-      finishedThemeList_ = emptyIntList();
       usedFlowerList_ = java.util.Collections.emptyList();
+      finishedThemeList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -111,34 +111,34 @@ public final class IrodoriFlowerDataOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                usedFlowerList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              usedFlowerList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 finishedThemeList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               finishedThemeList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 finishedThemeList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 finishedThemeList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                usedFlowerList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              usedFlowerList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -157,10 +157,10 @@ public final class IrodoriFlowerDataOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          usedFlowerList_ = java.util.Collections.unmodifiableList(usedFlowerList_);
+          finishedThemeList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          finishedThemeList_.makeImmutable(); // C
+          usedFlowerList_ = java.util.Collections.unmodifiableList(usedFlowerList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -178,34 +178,6 @@ public final class IrodoriFlowerDataOuterClass {
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData.class, emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData.Builder.class);
     }
-
-    public static final int FINISHED_THEME_LIST_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList finishedThemeList_;
-    /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @return A list containing the finishedThemeList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getFinishedThemeListList() {
-      return finishedThemeList_;
-    }
-    /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @return The count of finishedThemeList.
-     */
-    public int getFinishedThemeListCount() {
-      return finishedThemeList_.size();
-    }
-    /**
-     * <code>repeated uint32 finished_theme_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The finishedThemeList at the given index.
-     */
-    public int getFinishedThemeList(int index) {
-      return finishedThemeList_.getInt(index);
-    }
-    private int finishedThemeListMemoizedSerializedSize = -1;
 
     public static final int USED_FLOWER_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> usedFlowerList_;
@@ -247,6 +219,34 @@ public final class IrodoriFlowerDataOuterClass {
       return usedFlowerList_.get(index);
     }
 
+    public static final int FINISHED_THEME_LIST_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList finishedThemeList_;
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @return A list containing the finishedThemeList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getFinishedThemeListList() {
+      return finishedThemeList_;
+    }
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @return The count of finishedThemeList.
+     */
+    public int getFinishedThemeListCount() {
+      return finishedThemeList_.size();
+    }
+    /**
+     * <code>repeated uint32 finished_theme_list = 5;</code>
+     * @param index The index of the element to return.
+     * @return The finishedThemeList at the given index.
+     */
+    public int getFinishedThemeList(int index) {
+      return finishedThemeList_.getInt(index);
+    }
+    private int finishedThemeListMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -262,15 +262,15 @@ public final class IrodoriFlowerDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < usedFlowerList_.size(); i++) {
-        output.writeMessage(6, usedFlowerList_.get(i));
-      }
       if (getFinishedThemeListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(finishedThemeListMemoizedSerializedSize);
       }
       for (int i = 0; i < finishedThemeList_.size(); i++) {
         output.writeUInt32NoTag(finishedThemeList_.getInt(i));
+      }
+      for (int i = 0; i < usedFlowerList_.size(); i++) {
+        output.writeMessage(6, usedFlowerList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -281,10 +281,6 @@ public final class IrodoriFlowerDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < usedFlowerList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, usedFlowerList_.get(i));
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < finishedThemeList_.size(); i++) {
@@ -298,6 +294,10 @@ public final class IrodoriFlowerDataOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         finishedThemeListMemoizedSerializedSize = dataSize;
+      }
+      for (int i = 0; i < usedFlowerList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, usedFlowerList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,10 +314,10 @@ public final class IrodoriFlowerDataOuterClass {
       }
       emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData other = (emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData) obj;
 
-      if (!getFinishedThemeListList()
-          .equals(other.getFinishedThemeListList())) return false;
       if (!getUsedFlowerListList()
           .equals(other.getUsedFlowerListList())) return false;
+      if (!getFinishedThemeListList()
+          .equals(other.getFinishedThemeListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -329,13 +329,13 @@ public final class IrodoriFlowerDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getFinishedThemeListCount() > 0) {
-        hash = (37 * hash) + FINISHED_THEME_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getFinishedThemeListList().hashCode();
-      }
       if (getUsedFlowerListCount() > 0) {
         hash = (37 * hash) + USED_FLOWER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUsedFlowerListList().hashCode();
+      }
+      if (getFinishedThemeListCount() > 0) {
+        hash = (37 * hash) + FINISHED_THEME_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getFinishedThemeListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -434,7 +434,7 @@ public final class IrodoriFlowerDataOuterClass {
     }
     /**
      * <pre>
-     * Name: MPAOCFBKIBK
+     * Obf: CMGJPGHLANB
      * </pre>
      *
      * Protobuf type {@code IrodoriFlowerData}
@@ -475,14 +475,14 @@ public final class IrodoriFlowerDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        finishedThemeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (usedFlowerListBuilder_ == null) {
           usedFlowerList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           usedFlowerListBuilder_.clear();
         }
+        finishedThemeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -510,20 +510,20 @@ public final class IrodoriFlowerDataOuterClass {
       public emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData buildPartial() {
         emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData result = new emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          finishedThemeList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.finishedThemeList_ = finishedThemeList_;
         if (usedFlowerListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             usedFlowerList_ = java.util.Collections.unmodifiableList(usedFlowerList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.usedFlowerList_ = usedFlowerList_;
         } else {
           result.usedFlowerList_ = usedFlowerListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          finishedThemeList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.finishedThemeList_ = finishedThemeList_;
         onBuilt();
         return result;
       }
@@ -572,21 +572,11 @@ public final class IrodoriFlowerDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData other) {
         if (other == emu.grasscutter.net.proto.IrodoriFlowerDataOuterClass.IrodoriFlowerData.getDefaultInstance()) return this;
-        if (!other.finishedThemeList_.isEmpty()) {
-          if (finishedThemeList_.isEmpty()) {
-            finishedThemeList_ = other.finishedThemeList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureFinishedThemeListIsMutable();
-            finishedThemeList_.addAll(other.finishedThemeList_);
-          }
-          onChanged();
-        }
         if (usedFlowerListBuilder_ == null) {
           if (!other.usedFlowerList_.isEmpty()) {
             if (usedFlowerList_.isEmpty()) {
               usedFlowerList_ = other.usedFlowerList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureUsedFlowerListIsMutable();
               usedFlowerList_.addAll(other.usedFlowerList_);
@@ -599,7 +589,7 @@ public final class IrodoriFlowerDataOuterClass {
               usedFlowerListBuilder_.dispose();
               usedFlowerListBuilder_ = null;
               usedFlowerList_ = other.usedFlowerList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               usedFlowerListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUsedFlowerListFieldBuilder() : null;
@@ -607,6 +597,16 @@ public final class IrodoriFlowerDataOuterClass {
               usedFlowerListBuilder_.addAllMessages(other.usedFlowerList_);
             }
           }
+        }
+        if (!other.finishedThemeList_.isEmpty()) {
+          if (finishedThemeList_.isEmpty()) {
+            finishedThemeList_ = other.finishedThemeList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFinishedThemeListIsMutable();
+            finishedThemeList_.addAll(other.finishedThemeList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -638,91 +638,12 @@ public final class IrodoriFlowerDataOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList finishedThemeList_ = emptyIntList();
-      private void ensureFinishedThemeListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          finishedThemeList_ = mutableCopy(finishedThemeList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @return A list containing the finishedThemeList.
-       */
-      public java.util.List<java.lang.Integer>
-          getFinishedThemeListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(finishedThemeList_) : finishedThemeList_;
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @return The count of finishedThemeList.
-       */
-      public int getFinishedThemeListCount() {
-        return finishedThemeList_.size();
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @param index The index of the element to return.
-       * @return The finishedThemeList at the given index.
-       */
-      public int getFinishedThemeList(int index) {
-        return finishedThemeList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @param index The index to set the value at.
-       * @param value The finishedThemeList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishedThemeList(
-          int index, int value) {
-        ensureFinishedThemeListIsMutable();
-        finishedThemeList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @param value The finishedThemeList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFinishedThemeList(int value) {
-        ensureFinishedThemeListIsMutable();
-        finishedThemeList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @param values The finishedThemeList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFinishedThemeList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureFinishedThemeListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, finishedThemeList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 finished_theme_list = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishedThemeList() {
-        finishedThemeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> usedFlowerList_ =
         java.util.Collections.emptyList();
       private void ensureUsedFlowerListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           usedFlowerList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(usedFlowerList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -872,7 +793,7 @@ public final class IrodoriFlowerDataOuterClass {
       public Builder clearUsedFlowerList() {
         if (usedFlowerListBuilder_ == null) {
           usedFlowerList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           usedFlowerListBuilder_.clear();
@@ -949,12 +870,91 @@ public final class IrodoriFlowerDataOuterClass {
           usedFlowerListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   usedFlowerList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           usedFlowerList_ = null;
         }
         return usedFlowerListBuilder_;
+      }
+
+      private com.google.protobuf.Internal.IntList finishedThemeList_ = emptyIntList();
+      private void ensureFinishedThemeListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          finishedThemeList_ = mutableCopy(finishedThemeList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @return A list containing the finishedThemeList.
+       */
+      public java.util.List<java.lang.Integer>
+          getFinishedThemeListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(finishedThemeList_) : finishedThemeList_;
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @return The count of finishedThemeList.
+       */
+      public int getFinishedThemeListCount() {
+        return finishedThemeList_.size();
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @param index The index of the element to return.
+       * @return The finishedThemeList at the given index.
+       */
+      public int getFinishedThemeList(int index) {
+        return finishedThemeList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The finishedThemeList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishedThemeList(
+          int index, int value) {
+        ensureFinishedThemeListIsMutable();
+        finishedThemeList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @param value The finishedThemeList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFinishedThemeList(int value) {
+        ensureFinishedThemeListIsMutable();
+        finishedThemeList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @param values The finishedThemeList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFinishedThemeList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureFinishedThemeListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, finishedThemeList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_theme_list = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishedThemeList() {
+        finishedThemeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1024,9 +1024,9 @@ public final class IrodoriFlowerDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027IrodoriFlowerData.proto\032\017ItemParam.pro" +
-      "to\"V\n\021IrodoriFlowerData\022\033\n\023finished_them" +
-      "e_list\030\014 \003(\r\022$\n\020used_flower_list\030\006 \003(\0132\n" +
-      ".ItemParamB\033\n\031emu.grasscutter.net.protob" +
+      "to\"V\n\021IrodoriFlowerData\022$\n\020used_flower_l" +
+      "ist\030\006 \003(\0132\n.ItemParam\022\033\n\023finished_theme_" +
+      "list\030\005 \003(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1039,7 +1039,7 @@ public final class IrodoriFlowerDataOuterClass {
     internal_static_IrodoriFlowerData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IrodoriFlowerData_descriptor,
-        new java.lang.String[] { "FinishedThemeList", "UsedFlowerList", });
+        new java.lang.String[] { "UsedFlowerList", "FinishedThemeList", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

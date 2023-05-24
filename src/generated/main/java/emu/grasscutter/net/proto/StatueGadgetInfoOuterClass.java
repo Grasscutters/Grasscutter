@@ -37,7 +37,7 @@ public final class StatueGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: OFGJAIBKPKJ
+   * Obf: AEGLPKDOHJN
    * </pre>
    *
    * Protobuf type {@code StatueGadgetInfo}
@@ -344,7 +344,7 @@ public final class StatueGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: OFGJAIBKPKJ
+     * Obf: AEGLPKDOHJN
      * </pre>
      *
      * Protobuf type {@code StatueGadgetInfo}

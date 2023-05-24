@@ -19,112 +19,80 @@ public final class AnnounceDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * MLDDOLJCDAM
-     * </pre>
-     *
-     * <code>string dungeon_confirm_text = 9;</code>
-     * @return The dungeonConfirmText.
-     */
-    java.lang.String getDungeonConfirmText();
-    /**
-     * <pre>
-     * MLDDOLJCDAM
-     * </pre>
-     *
-     * <code>string dungeon_confirm_text = 9;</code>
-     * @return The bytes for dungeonConfirmText.
-     */
-    com.google.protobuf.ByteString
-        getDungeonConfirmTextBytes();
-
-    /**
-     * <code>bool is_center_system_last_5_every_minutes = 2;</code>
+     * <code>bool is_center_system_last_5_every_minutes = 14;</code>
      * @return The isCenterSystemLast5EveryMinutes.
      */
     boolean getIsCenterSystemLast5EveryMinutes();
 
     /**
-     * <pre>
-     * HEAKAFCFBHM
-     * </pre>
-     *
-     * <code>string count_down_text = 10;</code>
+     * <code>uint32 end_time = 10;</code>
+     * @return The endTime.
+     */
+    int getEndTime();
+
+    /**
+     * <code>uint32 count_down_frequency = 1;</code>
+     * @return The countDownFrequency.
+     */
+    int getCountDownFrequency();
+
+    /**
+     * <code>string count_down_text = 7;</code>
      * @return The countDownText.
      */
     java.lang.String getCountDownText();
     /**
-     * <pre>
-     * HEAKAFCFBHM
-     * </pre>
-     *
-     * <code>string count_down_text = 10;</code>
+     * <code>string count_down_text = 7;</code>
      * @return The bytes for countDownText.
      */
     com.google.protobuf.ByteString
         getCountDownTextBytes();
 
     /**
-     * <pre>
-     * OMEJDCDMJKH
-     * </pre>
-     *
-     * <code>uint32 center_system_frequency = 12;</code>
+     * <code>uint32 center_system_frequency = 8;</code>
      * @return The centerSystemFrequency.
      */
     int getCenterSystemFrequency();
 
     /**
-     * <code>uint32 config_id = 13;</code>
-     * @return The configId.
-     */
-    int getConfigId();
-
-    /**
-     * <pre>
-     * DLKKCKHJJAC
-     * </pre>
-     *
-     * <code>string center_system_text = 5;</code>
+     * <code>string center_system_text = 15;</code>
      * @return The centerSystemText.
      */
     java.lang.String getCenterSystemText();
     /**
-     * <pre>
-     * DLKKCKHJJAC
-     * </pre>
-     *
-     * <code>string center_system_text = 5;</code>
+     * <code>string center_system_text = 15;</code>
      * @return The bytes for centerSystemText.
      */
     com.google.protobuf.ByteString
         getCenterSystemTextBytes();
 
     /**
-     * <code>uint32 begin_time = 14;</code>
+     * <code>uint32 config_id = 9;</code>
+     * @return The configId.
+     */
+    int getConfigId();
+
+    /**
+     * <code>string dungeon_confirm_text = 11;</code>
+     * @return The dungeonConfirmText.
+     */
+    java.lang.String getDungeonConfirmText();
+    /**
+     * <code>string dungeon_confirm_text = 11;</code>
+     * @return The bytes for dungeonConfirmText.
+     */
+    com.google.protobuf.ByteString
+        getDungeonConfirmTextBytes();
+
+    /**
+     * <code>uint32 begin_time = 3;</code>
      * @return The beginTime.
      */
     int getBeginTime();
-
-    /**
-     * <pre>
-     * GBNNHNDNCPP
-     * </pre>
-     *
-     * <code>uint32 count_down_frequency = 15;</code>
-     * @return The countDownFrequency.
-     */
-    int getCountDownFrequency();
-
-    /**
-     * <code>uint32 end_time = 3;</code>
-     * @return The endTime.
-     */
-    int getEndTime();
   }
   /**
    * <pre>
-   * Name: FOGGKINBMOI
+   * Obf: EJALGEOEIMH
    * </pre>
    *
    * Protobuf type {@code AnnounceData}
@@ -139,9 +107,9 @@ public final class AnnounceDataOuterClass {
       super(builder);
     }
     private AnnounceData() {
-      dungeonConfirmText_ = "";
       countDownText_ = "";
       centerSystemText_ = "";
+      dungeonConfirmText_ = "";
     }
 
     @java.lang.Override
@@ -174,52 +142,52 @@ public final class AnnounceDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
-              isCenterSystemLast5EveryMinutes_ = input.readBool();
+              countDownFrequency_ = input.readUInt32();
               break;
             }
             case 24: {
 
-              endTime_ = input.readUInt32();
+              beginTime_ = input.readUInt32();
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              centerSystemText_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dungeonConfirmText_ = s;
-              break;
-            }
-            case 82: {
+            case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
               countDownText_ = s;
               break;
             }
-            case 96: {
+            case 64: {
 
               centerSystemFrequency_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 72: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
-              beginTime_ = input.readUInt32();
+              endTime_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              countDownFrequency_ = input.readUInt32();
+              dungeonConfirmText_ = s;
+              break;
+            }
+            case 112: {
+
+              isCenterSystemLast5EveryMinutes_ = input.readBool();
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              centerSystemText_ = s;
               break;
             }
             default: {
@@ -254,56 +222,10 @@ public final class AnnounceDataOuterClass {
               emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData.class, emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData.Builder.class);
     }
 
-    public static final int DUNGEON_CONFIRM_TEXT_FIELD_NUMBER = 9;
-    private volatile java.lang.Object dungeonConfirmText_;
-    /**
-     * <pre>
-     * MLDDOLJCDAM
-     * </pre>
-     *
-     * <code>string dungeon_confirm_text = 9;</code>
-     * @return The dungeonConfirmText.
-     */
-    @java.lang.Override
-    public java.lang.String getDungeonConfirmText() {
-      java.lang.Object ref = dungeonConfirmText_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        dungeonConfirmText_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * MLDDOLJCDAM
-     * </pre>
-     *
-     * <code>string dungeon_confirm_text = 9;</code>
-     * @return The bytes for dungeonConfirmText.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDungeonConfirmTextBytes() {
-      java.lang.Object ref = dungeonConfirmText_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        dungeonConfirmText_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_CENTER_SYSTEM_LAST_5_EVERY_MINUTES_FIELD_NUMBER = 2;
+    public static final int IS_CENTER_SYSTEM_LAST_5_EVERY_MINUTES_FIELD_NUMBER = 14;
     private boolean isCenterSystemLast5EveryMinutes_;
     /**
-     * <code>bool is_center_system_last_5_every_minutes = 2;</code>
+     * <code>bool is_center_system_last_5_every_minutes = 14;</code>
      * @return The isCenterSystemLast5EveryMinutes.
      */
     @java.lang.Override
@@ -311,14 +233,32 @@ public final class AnnounceDataOuterClass {
       return isCenterSystemLast5EveryMinutes_;
     }
 
-    public static final int COUNT_DOWN_TEXT_FIELD_NUMBER = 10;
+    public static final int END_TIME_FIELD_NUMBER = 10;
+    private int endTime_;
+    /**
+     * <code>uint32 end_time = 10;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public int getEndTime() {
+      return endTime_;
+    }
+
+    public static final int COUNT_DOWN_FREQUENCY_FIELD_NUMBER = 1;
+    private int countDownFrequency_;
+    /**
+     * <code>uint32 count_down_frequency = 1;</code>
+     * @return The countDownFrequency.
+     */
+    @java.lang.Override
+    public int getCountDownFrequency() {
+      return countDownFrequency_;
+    }
+
+    public static final int COUNT_DOWN_TEXT_FIELD_NUMBER = 7;
     private volatile java.lang.Object countDownText_;
     /**
-     * <pre>
-     * HEAKAFCFBHM
-     * </pre>
-     *
-     * <code>string count_down_text = 10;</code>
+     * <code>string count_down_text = 7;</code>
      * @return The countDownText.
      */
     @java.lang.Override
@@ -335,11 +275,7 @@ public final class AnnounceDataOuterClass {
       }
     }
     /**
-     * <pre>
-     * HEAKAFCFBHM
-     * </pre>
-     *
-     * <code>string count_down_text = 10;</code>
+     * <code>string count_down_text = 7;</code>
      * @return The bytes for countDownText.
      */
     @java.lang.Override
@@ -357,14 +293,10 @@ public final class AnnounceDataOuterClass {
       }
     }
 
-    public static final int CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER = 12;
+    public static final int CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER = 8;
     private int centerSystemFrequency_;
     /**
-     * <pre>
-     * OMEJDCDMJKH
-     * </pre>
-     *
-     * <code>uint32 center_system_frequency = 12;</code>
+     * <code>uint32 center_system_frequency = 8;</code>
      * @return The centerSystemFrequency.
      */
     @java.lang.Override
@@ -372,25 +304,10 @@ public final class AnnounceDataOuterClass {
       return centerSystemFrequency_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 13;
-    private int configId_;
-    /**
-     * <code>uint32 config_id = 13;</code>
-     * @return The configId.
-     */
-    @java.lang.Override
-    public int getConfigId() {
-      return configId_;
-    }
-
-    public static final int CENTER_SYSTEM_TEXT_FIELD_NUMBER = 5;
+    public static final int CENTER_SYSTEM_TEXT_FIELD_NUMBER = 15;
     private volatile java.lang.Object centerSystemText_;
     /**
-     * <pre>
-     * DLKKCKHJJAC
-     * </pre>
-     *
-     * <code>string center_system_text = 5;</code>
+     * <code>string center_system_text = 15;</code>
      * @return The centerSystemText.
      */
     @java.lang.Override
@@ -407,11 +324,7 @@ public final class AnnounceDataOuterClass {
       }
     }
     /**
-     * <pre>
-     * DLKKCKHJJAC
-     * </pre>
-     *
-     * <code>string center_system_text = 5;</code>
+     * <code>string center_system_text = 15;</code>
      * @return The bytes for centerSystemText.
      */
     @java.lang.Override
@@ -429,41 +342,64 @@ public final class AnnounceDataOuterClass {
       }
     }
 
-    public static final int BEGIN_TIME_FIELD_NUMBER = 14;
+    public static final int CONFIG_ID_FIELD_NUMBER = 9;
+    private int configId_;
+    /**
+     * <code>uint32 config_id = 9;</code>
+     * @return The configId.
+     */
+    @java.lang.Override
+    public int getConfigId() {
+      return configId_;
+    }
+
+    public static final int DUNGEON_CONFIRM_TEXT_FIELD_NUMBER = 11;
+    private volatile java.lang.Object dungeonConfirmText_;
+    /**
+     * <code>string dungeon_confirm_text = 11;</code>
+     * @return The dungeonConfirmText.
+     */
+    @java.lang.Override
+    public java.lang.String getDungeonConfirmText() {
+      java.lang.Object ref = dungeonConfirmText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dungeonConfirmText_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string dungeon_confirm_text = 11;</code>
+     * @return The bytes for dungeonConfirmText.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDungeonConfirmTextBytes() {
+      java.lang.Object ref = dungeonConfirmText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dungeonConfirmText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BEGIN_TIME_FIELD_NUMBER = 3;
     private int beginTime_;
     /**
-     * <code>uint32 begin_time = 14;</code>
+     * <code>uint32 begin_time = 3;</code>
      * @return The beginTime.
      */
     @java.lang.Override
     public int getBeginTime() {
       return beginTime_;
-    }
-
-    public static final int COUNT_DOWN_FREQUENCY_FIELD_NUMBER = 15;
-    private int countDownFrequency_;
-    /**
-     * <pre>
-     * GBNNHNDNCPP
-     * </pre>
-     *
-     * <code>uint32 count_down_frequency = 15;</code>
-     * @return The countDownFrequency.
-     */
-    @java.lang.Override
-    public int getCountDownFrequency() {
-      return countDownFrequency_;
-    }
-
-    public static final int END_TIME_FIELD_NUMBER = 3;
-    private int endTime_;
-    /**
-     * <code>uint32 end_time = 3;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -480,32 +416,32 @@ public final class AnnounceDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isCenterSystemLast5EveryMinutes_ != false) {
-        output.writeBool(2, isCenterSystemLast5EveryMinutes_);
-      }
-      if (endTime_ != 0) {
-        output.writeUInt32(3, endTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, centerSystemText_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, dungeonConfirmText_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countDownText_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, countDownText_);
-      }
-      if (centerSystemFrequency_ != 0) {
-        output.writeUInt32(12, centerSystemFrequency_);
-      }
-      if (configId_ != 0) {
-        output.writeUInt32(13, configId_);
+      if (countDownFrequency_ != 0) {
+        output.writeUInt32(1, countDownFrequency_);
       }
       if (beginTime_ != 0) {
-        output.writeUInt32(14, beginTime_);
+        output.writeUInt32(3, beginTime_);
       }
-      if (countDownFrequency_ != 0) {
-        output.writeUInt32(15, countDownFrequency_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countDownText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, countDownText_);
+      }
+      if (centerSystemFrequency_ != 0) {
+        output.writeUInt32(8, centerSystemFrequency_);
+      }
+      if (configId_ != 0) {
+        output.writeUInt32(9, configId_);
+      }
+      if (endTime_ != 0) {
+        output.writeUInt32(10, endTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, dungeonConfirmText_);
+      }
+      if (isCenterSystemLast5EveryMinutes_ != false) {
+        output.writeBool(14, isCenterSystemLast5EveryMinutes_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, centerSystemText_);
       }
       unknownFields.writeTo(output);
     }
@@ -516,38 +452,38 @@ public final class AnnounceDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isCenterSystemLast5EveryMinutes_ != false) {
+      if (countDownFrequency_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isCenterSystemLast5EveryMinutes_);
-      }
-      if (endTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, endTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, centerSystemText_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, dungeonConfirmText_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countDownText_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, countDownText_);
-      }
-      if (centerSystemFrequency_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, centerSystemFrequency_);
-      }
-      if (configId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, configId_);
+          .computeUInt32Size(1, countDownFrequency_);
       }
       if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, beginTime_);
+          .computeUInt32Size(3, beginTime_);
       }
-      if (countDownFrequency_ != 0) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(countDownText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, countDownText_);
+      }
+      if (centerSystemFrequency_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, countDownFrequency_);
+          .computeUInt32Size(8, centerSystemFrequency_);
+      }
+      if (configId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, configId_);
+      }
+      if (endTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, endTime_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dungeonConfirmText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, dungeonConfirmText_);
+      }
+      if (isCenterSystemLast5EveryMinutes_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isCenterSystemLast5EveryMinutes_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(centerSystemText_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, centerSystemText_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -564,24 +500,24 @@ public final class AnnounceDataOuterClass {
       }
       emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData other = (emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData) obj;
 
-      if (!getDungeonConfirmText()
-          .equals(other.getDungeonConfirmText())) return false;
       if (getIsCenterSystemLast5EveryMinutes()
           != other.getIsCenterSystemLast5EveryMinutes()) return false;
+      if (getEndTime()
+          != other.getEndTime()) return false;
+      if (getCountDownFrequency()
+          != other.getCountDownFrequency()) return false;
       if (!getCountDownText()
           .equals(other.getCountDownText())) return false;
       if (getCenterSystemFrequency()
           != other.getCenterSystemFrequency()) return false;
-      if (getConfigId()
-          != other.getConfigId()) return false;
       if (!getCenterSystemText()
           .equals(other.getCenterSystemText())) return false;
+      if (getConfigId()
+          != other.getConfigId()) return false;
+      if (!getDungeonConfirmText()
+          .equals(other.getDungeonConfirmText())) return false;
       if (getBeginTime()
           != other.getBeginTime()) return false;
-      if (getCountDownFrequency()
-          != other.getCountDownFrequency()) return false;
-      if (getEndTime()
-          != other.getEndTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -593,25 +529,25 @@ public final class AnnounceDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DUNGEON_CONFIRM_TEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonConfirmText().hashCode();
       hash = (37 * hash) + IS_CENTER_SYSTEM_LAST_5_EVERY_MINUTES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCenterSystemLast5EveryMinutes());
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
+      hash = (37 * hash) + COUNT_DOWN_FREQUENCY_FIELD_NUMBER;
+      hash = (53 * hash) + getCountDownFrequency();
       hash = (37 * hash) + COUNT_DOWN_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getCountDownText().hashCode();
       hash = (37 * hash) + CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER;
       hash = (53 * hash) + getCenterSystemFrequency();
-      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + CENTER_SYSTEM_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getCenterSystemText().hashCode();
+      hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConfigId();
+      hash = (37 * hash) + DUNGEON_CONFIRM_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonConfirmText().hashCode();
       hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBeginTime();
-      hash = (37 * hash) + COUNT_DOWN_FREQUENCY_FIELD_NUMBER;
-      hash = (53 * hash) + getCountDownFrequency();
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -709,7 +645,7 @@ public final class AnnounceDataOuterClass {
     }
     /**
      * <pre>
-     * Name: FOGGKINBMOI
+     * Obf: EJALGEOEIMH
      * </pre>
      *
      * Protobuf type {@code AnnounceData}
@@ -749,23 +685,23 @@ public final class AnnounceDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dungeonConfirmText_ = "";
-
         isCenterSystemLast5EveryMinutes_ = false;
+
+        endTime_ = 0;
+
+        countDownFrequency_ = 0;
 
         countDownText_ = "";
 
         centerSystemFrequency_ = 0;
 
-        configId_ = 0;
-
         centerSystemText_ = "";
 
+        configId_ = 0;
+
+        dungeonConfirmText_ = "";
+
         beginTime_ = 0;
-
-        countDownFrequency_ = 0;
-
-        endTime_ = 0;
 
         return this;
       }
@@ -793,15 +729,15 @@ public final class AnnounceDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData buildPartial() {
         emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData result = new emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData(this);
-        result.dungeonConfirmText_ = dungeonConfirmText_;
         result.isCenterSystemLast5EveryMinutes_ = isCenterSystemLast5EveryMinutes_;
+        result.endTime_ = endTime_;
+        result.countDownFrequency_ = countDownFrequency_;
         result.countDownText_ = countDownText_;
         result.centerSystemFrequency_ = centerSystemFrequency_;
-        result.configId_ = configId_;
         result.centerSystemText_ = centerSystemText_;
+        result.configId_ = configId_;
+        result.dungeonConfirmText_ = dungeonConfirmText_;
         result.beginTime_ = beginTime_;
-        result.countDownFrequency_ = countDownFrequency_;
-        result.endTime_ = endTime_;
         onBuilt();
         return result;
       }
@@ -850,12 +786,14 @@ public final class AnnounceDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData other) {
         if (other == emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData.getDefaultInstance()) return this;
-        if (!other.getDungeonConfirmText().isEmpty()) {
-          dungeonConfirmText_ = other.dungeonConfirmText_;
-          onChanged();
-        }
         if (other.getIsCenterSystemLast5EveryMinutes() != false) {
           setIsCenterSystemLast5EveryMinutes(other.getIsCenterSystemLast5EveryMinutes());
+        }
+        if (other.getEndTime() != 0) {
+          setEndTime(other.getEndTime());
+        }
+        if (other.getCountDownFrequency() != 0) {
+          setCountDownFrequency(other.getCountDownFrequency());
         }
         if (!other.getCountDownText().isEmpty()) {
           countDownText_ = other.countDownText_;
@@ -864,21 +802,19 @@ public final class AnnounceDataOuterClass {
         if (other.getCenterSystemFrequency() != 0) {
           setCenterSystemFrequency(other.getCenterSystemFrequency());
         }
-        if (other.getConfigId() != 0) {
-          setConfigId(other.getConfigId());
-        }
         if (!other.getCenterSystemText().isEmpty()) {
           centerSystemText_ = other.centerSystemText_;
           onChanged();
         }
+        if (other.getConfigId() != 0) {
+          setConfigId(other.getConfigId());
+        }
+        if (!other.getDungeonConfirmText().isEmpty()) {
+          dungeonConfirmText_ = other.dungeonConfirmText_;
+          onChanged();
+        }
         if (other.getBeginTime() != 0) {
           setBeginTime(other.getBeginTime());
-        }
-        if (other.getCountDownFrequency() != 0) {
-          setCountDownFrequency(other.getCountDownFrequency());
-        }
-        if (other.getEndTime() != 0) {
-          setEndTime(other.getEndTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -909,105 +845,9 @@ public final class AnnounceDataOuterClass {
         return this;
       }
 
-      private java.lang.Object dungeonConfirmText_ = "";
-      /**
-       * <pre>
-       * MLDDOLJCDAM
-       * </pre>
-       *
-       * <code>string dungeon_confirm_text = 9;</code>
-       * @return The dungeonConfirmText.
-       */
-      public java.lang.String getDungeonConfirmText() {
-        java.lang.Object ref = dungeonConfirmText_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          dungeonConfirmText_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * MLDDOLJCDAM
-       * </pre>
-       *
-       * <code>string dungeon_confirm_text = 9;</code>
-       * @return The bytes for dungeonConfirmText.
-       */
-      public com.google.protobuf.ByteString
-          getDungeonConfirmTextBytes() {
-        java.lang.Object ref = dungeonConfirmText_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          dungeonConfirmText_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * MLDDOLJCDAM
-       * </pre>
-       *
-       * <code>string dungeon_confirm_text = 9;</code>
-       * @param value The dungeonConfirmText to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonConfirmText(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        dungeonConfirmText_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * MLDDOLJCDAM
-       * </pre>
-       *
-       * <code>string dungeon_confirm_text = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonConfirmText() {
-        
-        dungeonConfirmText_ = getDefaultInstance().getDungeonConfirmText();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * MLDDOLJCDAM
-       * </pre>
-       *
-       * <code>string dungeon_confirm_text = 9;</code>
-       * @param value The bytes for dungeonConfirmText to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonConfirmTextBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        dungeonConfirmText_ = value;
-        onChanged();
-        return this;
-      }
-
       private boolean isCenterSystemLast5EveryMinutes_ ;
       /**
-       * <code>bool is_center_system_last_5_every_minutes = 2;</code>
+       * <code>bool is_center_system_last_5_every_minutes = 14;</code>
        * @return The isCenterSystemLast5EveryMinutes.
        */
       @java.lang.Override
@@ -1015,7 +855,7 @@ public final class AnnounceDataOuterClass {
         return isCenterSystemLast5EveryMinutes_;
       }
       /**
-       * <code>bool is_center_system_last_5_every_minutes = 2;</code>
+       * <code>bool is_center_system_last_5_every_minutes = 14;</code>
        * @param value The isCenterSystemLast5EveryMinutes to set.
        * @return This builder for chaining.
        */
@@ -1026,7 +866,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <code>bool is_center_system_last_5_every_minutes = 2;</code>
+       * <code>bool is_center_system_last_5_every_minutes = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCenterSystemLast5EveryMinutes() {
@@ -1036,13 +876,71 @@ public final class AnnounceDataOuterClass {
         return this;
       }
 
+      private int endTime_ ;
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public int getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(int value) {
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 end_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int countDownFrequency_ ;
+      /**
+       * <code>uint32 count_down_frequency = 1;</code>
+       * @return The countDownFrequency.
+       */
+      @java.lang.Override
+      public int getCountDownFrequency() {
+        return countDownFrequency_;
+      }
+      /**
+       * <code>uint32 count_down_frequency = 1;</code>
+       * @param value The countDownFrequency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCountDownFrequency(int value) {
+        
+        countDownFrequency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 count_down_frequency = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCountDownFrequency() {
+        
+        countDownFrequency_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object countDownText_ = "";
       /**
-       * <pre>
-       * HEAKAFCFBHM
-       * </pre>
-       *
-       * <code>string count_down_text = 10;</code>
+       * <code>string count_down_text = 7;</code>
        * @return The countDownText.
        */
       public java.lang.String getCountDownText() {
@@ -1058,11 +956,7 @@ public final class AnnounceDataOuterClass {
         }
       }
       /**
-       * <pre>
-       * HEAKAFCFBHM
-       * </pre>
-       *
-       * <code>string count_down_text = 10;</code>
+       * <code>string count_down_text = 7;</code>
        * @return The bytes for countDownText.
        */
       public com.google.protobuf.ByteString
@@ -1079,11 +973,7 @@ public final class AnnounceDataOuterClass {
         }
       }
       /**
-       * <pre>
-       * HEAKAFCFBHM
-       * </pre>
-       *
-       * <code>string count_down_text = 10;</code>
+       * <code>string count_down_text = 7;</code>
        * @param value The countDownText to set.
        * @return This builder for chaining.
        */
@@ -1098,11 +988,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * HEAKAFCFBHM
-       * </pre>
-       *
-       * <code>string count_down_text = 10;</code>
+       * <code>string count_down_text = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCountDownText() {
@@ -1112,11 +998,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * HEAKAFCFBHM
-       * </pre>
-       *
-       * <code>string count_down_text = 10;</code>
+       * <code>string count_down_text = 7;</code>
        * @param value The bytes for countDownText to set.
        * @return This builder for chaining.
        */
@@ -1134,11 +1016,7 @@ public final class AnnounceDataOuterClass {
 
       private int centerSystemFrequency_ ;
       /**
-       * <pre>
-       * OMEJDCDMJKH
-       * </pre>
-       *
-       * <code>uint32 center_system_frequency = 12;</code>
+       * <code>uint32 center_system_frequency = 8;</code>
        * @return The centerSystemFrequency.
        */
       @java.lang.Override
@@ -1146,11 +1024,7 @@ public final class AnnounceDataOuterClass {
         return centerSystemFrequency_;
       }
       /**
-       * <pre>
-       * OMEJDCDMJKH
-       * </pre>
-       *
-       * <code>uint32 center_system_frequency = 12;</code>
+       * <code>uint32 center_system_frequency = 8;</code>
        * @param value The centerSystemFrequency to set.
        * @return This builder for chaining.
        */
@@ -1161,11 +1035,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * OMEJDCDMJKH
-       * </pre>
-       *
-       * <code>uint32 center_system_frequency = 12;</code>
+       * <code>uint32 center_system_frequency = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCenterSystemFrequency() {
@@ -1175,44 +1045,9 @@ public final class AnnounceDataOuterClass {
         return this;
       }
 
-      private int configId_ ;
-      /**
-       * <code>uint32 config_id = 13;</code>
-       * @return The configId.
-       */
-      @java.lang.Override
-      public int getConfigId() {
-        return configId_;
-      }
-      /**
-       * <code>uint32 config_id = 13;</code>
-       * @param value The configId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setConfigId(int value) {
-        
-        configId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 config_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearConfigId() {
-        
-        configId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object centerSystemText_ = "";
       /**
-       * <pre>
-       * DLKKCKHJJAC
-       * </pre>
-       *
-       * <code>string center_system_text = 5;</code>
+       * <code>string center_system_text = 15;</code>
        * @return The centerSystemText.
        */
       public java.lang.String getCenterSystemText() {
@@ -1228,11 +1063,7 @@ public final class AnnounceDataOuterClass {
         }
       }
       /**
-       * <pre>
-       * DLKKCKHJJAC
-       * </pre>
-       *
-       * <code>string center_system_text = 5;</code>
+       * <code>string center_system_text = 15;</code>
        * @return The bytes for centerSystemText.
        */
       public com.google.protobuf.ByteString
@@ -1249,11 +1080,7 @@ public final class AnnounceDataOuterClass {
         }
       }
       /**
-       * <pre>
-       * DLKKCKHJJAC
-       * </pre>
-       *
-       * <code>string center_system_text = 5;</code>
+       * <code>string center_system_text = 15;</code>
        * @param value The centerSystemText to set.
        * @return This builder for chaining.
        */
@@ -1268,11 +1095,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DLKKCKHJJAC
-       * </pre>
-       *
-       * <code>string center_system_text = 5;</code>
+       * <code>string center_system_text = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCenterSystemText() {
@@ -1282,11 +1105,7 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * DLKKCKHJJAC
-       * </pre>
-       *
-       * <code>string center_system_text = 5;</code>
+       * <code>string center_system_text = 15;</code>
        * @param value The bytes for centerSystemText to set.
        * @return This builder for chaining.
        */
@@ -1302,9 +1121,116 @@ public final class AnnounceDataOuterClass {
         return this;
       }
 
+      private int configId_ ;
+      /**
+       * <code>uint32 config_id = 9;</code>
+       * @return The configId.
+       */
+      @java.lang.Override
+      public int getConfigId() {
+        return configId_;
+      }
+      /**
+       * <code>uint32 config_id = 9;</code>
+       * @param value The configId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfigId(int value) {
+        
+        configId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 config_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearConfigId() {
+        
+        configId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dungeonConfirmText_ = "";
+      /**
+       * <code>string dungeon_confirm_text = 11;</code>
+       * @return The dungeonConfirmText.
+       */
+      public java.lang.String getDungeonConfirmText() {
+        java.lang.Object ref = dungeonConfirmText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dungeonConfirmText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string dungeon_confirm_text = 11;</code>
+       * @return The bytes for dungeonConfirmText.
+       */
+      public com.google.protobuf.ByteString
+          getDungeonConfirmTextBytes() {
+        java.lang.Object ref = dungeonConfirmText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dungeonConfirmText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string dungeon_confirm_text = 11;</code>
+       * @param value The dungeonConfirmText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonConfirmText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dungeonConfirmText_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dungeon_confirm_text = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonConfirmText() {
+        
+        dungeonConfirmText_ = getDefaultInstance().getDungeonConfirmText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dungeon_confirm_text = 11;</code>
+       * @param value The bytes for dungeonConfirmText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonConfirmTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dungeonConfirmText_ = value;
+        onChanged();
+        return this;
+      }
+
       private int beginTime_ ;
       /**
-       * <code>uint32 begin_time = 14;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @return The beginTime.
        */
       @java.lang.Override
@@ -1312,7 +1238,7 @@ public final class AnnounceDataOuterClass {
         return beginTime_;
       }
       /**
-       * <code>uint32 begin_time = 14;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @param value The beginTime to set.
        * @return This builder for chaining.
        */
@@ -1323,86 +1249,12 @@ public final class AnnounceDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 begin_time = 14;</code>
+       * <code>uint32 begin_time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
         
         beginTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int countDownFrequency_ ;
-      /**
-       * <pre>
-       * GBNNHNDNCPP
-       * </pre>
-       *
-       * <code>uint32 count_down_frequency = 15;</code>
-       * @return The countDownFrequency.
-       */
-      @java.lang.Override
-      public int getCountDownFrequency() {
-        return countDownFrequency_;
-      }
-      /**
-       * <pre>
-       * GBNNHNDNCPP
-       * </pre>
-       *
-       * <code>uint32 count_down_frequency = 15;</code>
-       * @param value The countDownFrequency to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountDownFrequency(int value) {
-        
-        countDownFrequency_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * GBNNHNDNCPP
-       * </pre>
-       *
-       * <code>uint32 count_down_frequency = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCountDownFrequency() {
-        
-        countDownFrequency_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int endTime_ ;
-      /**
-       * <code>uint32 end_time = 3;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <code>uint32 end_time = 3;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(int value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 end_time = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0;
         onChanged();
         return this;
       }
@@ -1473,13 +1325,13 @@ public final class AnnounceDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022AnnounceData.proto\"\210\002\n\014AnnounceData\022\034\n" +
-      "\024dungeon_confirm_text\030\t \001(\t\022-\n%is_center" +
-      "_system_last_5_every_minutes\030\002 \001(\010\022\027\n\017co" +
-      "unt_down_text\030\n \001(\t\022\037\n\027center_system_fre" +
-      "quency\030\014 \001(\r\022\021\n\tconfig_id\030\r \001(\r\022\032\n\022cente" +
-      "r_system_text\030\005 \001(\t\022\022\n\nbegin_time\030\016 \001(\r\022" +
-      "\034\n\024count_down_frequency\030\017 \001(\r\022\020\n\010end_tim" +
+      "\n\022AnnounceData.proto\"\210\002\n\014AnnounceData\022-\n" +
+      "%is_center_system_last_5_every_minutes\030\016" +
+      " \001(\010\022\020\n\010end_time\030\n \001(\r\022\034\n\024count_down_fre" +
+      "quency\030\001 \001(\r\022\027\n\017count_down_text\030\007 \001(\t\022\037\n" +
+      "\027center_system_frequency\030\010 \001(\r\022\032\n\022center" +
+      "_system_text\030\017 \001(\t\022\021\n\tconfig_id\030\t \001(\r\022\034\n" +
+      "\024dungeon_confirm_text\030\013 \001(\t\022\022\n\nbegin_tim" +
       "e\030\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
@@ -1492,7 +1344,7 @@ public final class AnnounceDataOuterClass {
     internal_static_AnnounceData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AnnounceData_descriptor,
-        new java.lang.String[] { "DungeonConfirmText", "IsCenterSystemLast5EveryMinutes", "CountDownText", "CenterSystemFrequency", "ConfigId", "CenterSystemText", "BeginTime", "CountDownFrequency", "EndTime", });
+        new java.lang.String[] { "IsCenterSystemLast5EveryMinutes", "EndTime", "CountDownFrequency", "CountDownText", "CenterSystemFrequency", "CenterSystemText", "ConfigId", "DungeonConfirmText", "BeginTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

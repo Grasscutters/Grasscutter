@@ -26,8 +26,8 @@ public final class RobotPushPlayerDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 65
-   * Name: LAJIBNCFOMI
+   * CmdId: 34
+   * Obf: NMAMMHHNPKN
    * </pre>
    *
    * Protobuf type {@code RobotPushPlayerDataNotify}
@@ -280,8 +280,8 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 65
-     * Name: LAJIBNCFOMI
+     * CmdId: 34
+     * Obf: NMAMMHHNPKN
      * </pre>
      *
      * Protobuf type {@code RobotPushPlayerDataNotify}

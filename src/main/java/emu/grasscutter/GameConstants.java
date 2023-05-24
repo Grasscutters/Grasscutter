@@ -1,12 +1,12 @@
 package emu.grasscutter;
 
-import java.util.Arrays;
-
 import emu.grasscutter.utils.Position;
 import emu.grasscutter.utils.Utils;
 
+import java.util.Arrays;
+
 public final class GameConstants {
-    public static String VERSION = "3.6.0";
+    public static String VERSION = "3.7.0";
 
     public static final int DEFAULT_TEAMS = 4;
     public static final int MAX_TEAMS = 10;

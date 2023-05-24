@@ -826,8 +826,8 @@ public final class CoopPointOuterClass {
       "\001(\r\022\037\n\005state\030\004 \001(\0162\020.CoopPoint.State\022\027\n\017" +
       "self_confidence\030\010 \001(\r\"C\n\005State\022\023\n\017STATE_" +
       "UNSTARTED\020\000\022\021\n\rSTATE_STARTED\020\001\022\022\n\016STATE_" +
-      "FINISHED\020\002B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "FINISHED\020\002B!\n\031emu.grasscutter.net.protoZ" +
+      "\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

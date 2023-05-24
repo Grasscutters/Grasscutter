@@ -16,7 +16,7 @@ public final class MovingPlatformTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: OKNINCMBNLI
+   * Obf: EKIOLBCKCAO
    * </pre>
    *
    * Protobuf enum {@code MovingPlatformType}

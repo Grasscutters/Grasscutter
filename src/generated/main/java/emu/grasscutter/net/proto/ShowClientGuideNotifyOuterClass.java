@@ -607,8 +607,8 @@ public final class ShowClientGuideNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ShowClientGuideNotify.proto\"+\n\025ShowCli" +
-      "entGuideNotify\022\022\n\nguide_name\030\016 \001(\tB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "entGuideNotify\022\022\n\nguide_name\030\016 \001(\tB!\n\031em" +
+      "u.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

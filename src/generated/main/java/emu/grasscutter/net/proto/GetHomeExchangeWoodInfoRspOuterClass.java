@@ -1618,8 +1618,8 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       "angeWoodInfoRsp.HomeExchangeWoodInfo\032q\n\024" +
       "HomeExchangeWoodInfo\022\026\n\016exchangedCount\030\016" +
       " \001(\r\022\017\n\007wood_id\030\010 \001(\r\022\025\n\rexchangeLimit\030\t" +
-      " \001(\r\022\031\n\021next_refresh_time\030\001 \001(\007B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      " \001(\r\022\031\n\021next_refresh_time\030\001 \001(\007B!\n\031emu.g" +
+      "rasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

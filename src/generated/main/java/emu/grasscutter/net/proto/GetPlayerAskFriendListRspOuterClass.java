@@ -19,7 +19,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -50,8 +50,8 @@ public final class GetPlayerAskFriendListRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4032
-   * Name: ELFBKLJGGFD
+   * CmdId: 4061
+   * Obf: NJHCJBOCBLJ
    * </pre>
    *
    * Protobuf type {@code GetPlayerAskFriendListRsp}
@@ -100,7 +100,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 56: {
 
               retcode_ = input.readInt32();
               break;
@@ -149,10 +149,10 @@ public final class GetPlayerAskFriendListRspOuterClass {
               emu.grasscutter.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp.class, emu.grasscutter.net.proto.GetPlayerAskFriendListRspOuterClass.GetPlayerAskFriendListRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -215,7 +215,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(7, retcode_);
       }
       for (int i = 0; i < askFriendList_.size(); i++) {
         output.writeMessage(11, askFriendList_.get(i));
@@ -231,7 +231,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(7, retcode_);
       }
       for (int i = 0; i < askFriendList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -370,8 +370,8 @@ public final class GetPlayerAskFriendListRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4032
-     * Name: ELFBKLJGGFD
+     * CmdId: 4061
+     * Obf: NJHCJBOCBLJ
      * </pre>
      *
      * Protobuf type {@code GetPlayerAskFriendListRsp}
@@ -566,7 +566,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -574,7 +574,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -585,7 +585,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -903,7 +903,7 @@ public final class GetPlayerAskFriendListRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037GetPlayerAskFriendListRsp.proto\032\021Frien" +
       "dBrief.proto\"S\n\031GetPlayerAskFriendListRs" +
-      "p\022\017\n\007retcode\030\t \001(\005\022%\n\017ask_friend_list\030\013 " +
+      "p\022\017\n\007retcode\030\007 \001(\005\022%\n\017ask_friend_list\030\013 " +
       "\003(\0132\014.FriendBriefB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };

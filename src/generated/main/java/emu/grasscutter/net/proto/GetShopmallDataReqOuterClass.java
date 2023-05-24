@@ -20,8 +20,8 @@ public final class GetShopmallDataReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 716
-   * Name: MFPLDKCEHKF
+   * CmdId: 755
+   * Obf: JDGADILKHCE
    * </pre>
    *
    * Protobuf type {@code GetShopmallDataReq}
@@ -246,8 +246,8 @@ public final class GetShopmallDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 716
-     * Name: MFPLDKCEHKF
+     * CmdId: 755
+     * Obf: JDGADILKHCE
      * </pre>
      *
      * Protobuf type {@code GetShopmallDataReq}

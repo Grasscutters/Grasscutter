@@ -26,8 +26,8 @@ public final class SalesmanDeliverItemReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2120
-   * Name: PMAAFMAEHHG
+   * CmdId: 2172
+   * Obf: MDNOMIGCOMD
    * </pre>
    *
    * Protobuf type {@code SalesmanDeliverItemReq}
@@ -279,8 +279,8 @@ public final class SalesmanDeliverItemReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2120
-     * Name: PMAAFMAEHHG
+     * CmdId: 2172
+     * Obf: MDNOMIGCOMD
      * </pre>
      *
      * Protobuf type {@code SalesmanDeliverItemReq}

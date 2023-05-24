@@ -50,7 +50,7 @@ public final class AbilityStringOuterClass {
   }
   /**
    * <pre>
-   * Name: CPMJBNHKIEA
+   * Obf: KHIKIFCBPKH
    * </pre>
    *
    * Protobuf type {@code AbilityString}
@@ -440,7 +440,7 @@ public final class AbilityStringOuterClass {
     }
     /**
      * <pre>
-     * Name: CPMJBNHKIEA
+     * Obf: KHIKIFCBPKH
      * </pre>
      *
      * Protobuf type {@code AbilityString}

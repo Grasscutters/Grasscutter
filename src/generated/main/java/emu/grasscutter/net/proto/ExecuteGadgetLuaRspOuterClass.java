@@ -527,8 +527,8 @@ public final class ExecuteGadgetLuaRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ExecuteGadgetLuaRsp.proto\"&\n\023ExecuteGa" +
-      "dgetLuaRsp\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "dgetLuaRsp\022\017\n\007retcode\030\010 \001(\005B!\n\031emu.grass" +
+      "cutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

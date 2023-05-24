@@ -74,7 +74,7 @@ public final class ShopConcertProductOuterClass {
   }
   /**
    * <pre>
-   * Name: JAJEHOIAKLD
+   * Obf: CKIBKCAKBNI
    * </pre>
    *
    * Protobuf type {@code ShopConcertProduct}
@@ -544,7 +544,7 @@ public final class ShopConcertProductOuterClass {
     }
     /**
      * <pre>
-     * Name: JAJEHOIAKLD
+     * Obf: CKIBKCAKBNI
      * </pre>
      *
      * Protobuf type {@code ShopConcertProduct}

@@ -565,8 +565,8 @@ public final class CheckUgcUpdateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027CheckUgcUpdateReq.proto\032\rUgcType.proto" +
       "\"/\n\021CheckUgcUpdateReq\022\032\n\010ugc_type\030\006 \001(\0162" +
-      "\010.UgcTypeB\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "\010.UgcTypeB!\n\031emu.grasscutter.net.protoZ\004" +
+      "/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

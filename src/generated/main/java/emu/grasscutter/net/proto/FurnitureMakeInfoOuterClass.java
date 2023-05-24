@@ -588,8 +588,8 @@ public final class FurnitureMakeInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027FurnitureMakeInfo.proto\";\n\021FurnitureMa" +
       "keInfo\022\021\n\tmakeCount\030\t \001(\r\022\023\n\013furnitureId" +
-      "\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "\030\007 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/ge" +
+      "nb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

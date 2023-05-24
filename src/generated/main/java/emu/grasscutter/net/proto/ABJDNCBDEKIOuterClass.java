@@ -831,8 +831,8 @@ public final class ABJDNCBDEKIOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021ABJDNCBDEKI.proto\032\021JAAACKLMLHI.proto\"4" +
       "\n\013ABJDNCBDEKI\022%\n\017level_info_list\030\001 \003(\0132\014" +
-      ".JAAACKLMLHIB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      ".JAAACKLMLHIB!\n\031emu.grasscutter.net.prot" +
+      "oZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

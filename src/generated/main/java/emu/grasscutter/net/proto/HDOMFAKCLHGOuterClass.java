@@ -595,8 +595,8 @@ public final class HDOMFAKCLHGOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HDOMFAKCLHG.proto\"8\n\013HDOMFAKCLHG\022\027\n\017mi" +
-      "n_finish_time\030\n \001(\r\022\020\n\010level_id\030\014 \001(\rB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "n_finish_time\030\n \001(\r\022\020\n\010level_id\030\014 \001(\rB!\n" +
+      "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

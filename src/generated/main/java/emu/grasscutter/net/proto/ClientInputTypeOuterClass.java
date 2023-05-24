@@ -16,7 +16,7 @@ public final class ClientInputTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: NPODOLLHBFD
+   * Obf: DFMBCLCIGOD
    * </pre>
    *
    * Protobuf enum {@code ClientInputType}

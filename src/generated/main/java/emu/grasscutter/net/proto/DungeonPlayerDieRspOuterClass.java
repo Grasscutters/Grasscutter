@@ -527,8 +527,8 @@ public final class DungeonPlayerDieRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031DungeonPlayerDieRsp.proto\"&\n\023DungeonPl" +
-      "ayerDieRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ayerDieRsp\022\017\n\007retcode\030\006 \001(\005B!\n\031emu.grass" +
+      "cutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -141,8 +141,8 @@ public final class ItemGivingTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024ItemGivingType.proto*H\n\016ItemGivingType" +
       "\022\031\n\025ITEM_GIVING_TYPE_NONE\020\000\022\033\n\027ITEM_GIVI" +
-      "NG_TYPE_GADGET\020\001B\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "NG_TYPE_GADGET\020\001B!\n\031emu.grasscutter.net." +
+      "protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

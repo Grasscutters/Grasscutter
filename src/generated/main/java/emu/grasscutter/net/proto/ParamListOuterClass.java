@@ -37,7 +37,7 @@ public final class ParamListOuterClass {
   }
   /**
    * <pre>
-   * Name: BOKAFEOCLAA
+   * Obf: CBCCEMJAHPB
    * </pre>
    *
    * Protobuf type {@code ParamList}
@@ -344,7 +344,7 @@ public final class ParamListOuterClass {
     }
     /**
      * <pre>
-     * Name: BOKAFEOCLAA
+     * Obf: CBCCEMJAHPB
      * </pre>
      *
      * Protobuf type {@code ParamList}

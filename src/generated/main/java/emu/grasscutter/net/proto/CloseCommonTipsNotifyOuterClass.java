@@ -457,8 +457,8 @@ public final class CloseCommonTipsNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033CloseCommonTipsNotify.proto\"\027\n\025CloseCo" +
-      "mmonTipsNotifyB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "mmonTipsNotifyB!\n\031emu.grasscutter.net.pr" +
+      "otoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

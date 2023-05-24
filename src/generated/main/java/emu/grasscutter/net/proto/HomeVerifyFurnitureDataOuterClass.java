@@ -793,8 +793,8 @@ public final class HomeVerifyFurnitureDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035HomeVerifyFurnitureData.proto\"@\n\027HomeV" +
       "erifyFurnitureData\022\014\n\004type\030\006 \003(\r\022\013\n\003num\030" +
-      "\r \001(\r\022\n\n\002id\030\005 \001(\rB\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "\r \001(\r\022\n\n\002id\030\005 \001(\rB!\n\031emu.grasscutter.net" +
+      ".protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

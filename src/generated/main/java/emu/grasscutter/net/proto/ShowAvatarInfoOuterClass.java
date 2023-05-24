@@ -268,7 +268,7 @@ public final class ShowAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: MLOIGBMELIF
+   * Obf: LBFIEJKILCO
    * </pre>
    *
    * Protobuf type {@code ShowAvatarInfo}
@@ -1421,7 +1421,7 @@ public final class ShowAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: MLOIGBMELIF
+     * Obf: LBFIEJKILCO
      * </pre>
      *
      * Protobuf type {@code ShowAvatarInfo}
@@ -3106,9 +3106,9 @@ public final class ShowAvatarInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ShowAvatarInfo.proto\032\025AvatarExcelInfo." +
-      "proto\032\026AvatarFetterInfo.proto\032\017PropValue" +
-      ".proto\032\017ShowEquip.proto\"\372\005\n\016ShowAvatarIn" +
+      "\n\024ShowAvatarInfo.proto\032\017PropValue.proto\032" +
+      "\017ShowEquip.proto\032\026AvatarFetterInfo.proto" +
+      "\032\025AvatarExcelInfo.proto\"\372\005\n\016ShowAvatarIn" +
       "fo\022\021\n\tavatar_id\030\001 \001(\r\022.\n\010prop_map\030\002 \003(\0132" +
       "\034.ShowAvatarInfo.PropMapEntry\022\026\n\016talent_" +
       "id_list\030\003 \003(\r\0229\n\016fight_prop_map\030\004 \003(\0132!." +
@@ -3133,10 +3133,10 @@ public final class ShowAvatarInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AvatarExcelInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.PropValueOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ShowEquipOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AvatarExcelInfoOuterClass.getDescriptor(),
         });
     internal_static_ShowAvatarInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3168,10 +3168,10 @@ public final class ShowAvatarInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ShowAvatarInfo_ProudSkillExtraLevelMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.AvatarExcelInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.PropValueOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ShowEquipOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AvatarExcelInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

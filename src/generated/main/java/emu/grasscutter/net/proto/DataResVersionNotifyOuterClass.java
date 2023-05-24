@@ -1710,8 +1710,8 @@ public final class DataResVersionNotifyOuterClass {
       "version\030\002 \001(\r\022\035\n\025client_version_suffix\030\016" +
       " \001(\t\"U\n\024DataResVersionOpType\022\020\n\014OP_TYPE_" +
       "NONE\020\000\022\023\n\017OP_TYPE_RELOGIN\020\001\022\026\n\022OP_TYPE_M" +
-      "P_RELOGIN\020\002B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "P_RELOGIN\020\002B!\n\031emu.grasscutter.net.proto" +
+      "Z\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

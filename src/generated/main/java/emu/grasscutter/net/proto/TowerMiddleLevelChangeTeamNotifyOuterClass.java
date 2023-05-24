@@ -20,8 +20,8 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2435
-   * Name: LHDCNOCCOPF
+   * CmdId: 2403
+   * Obf: PEPCKKGFJCN
    * </pre>
    *
    * Protobuf type {@code TowerMiddleLevelChangeTeamNotify}
@@ -246,8 +246,8 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2435
-     * Name: LHDCNOCCOPF
+     * CmdId: 2403
+     * Obf: PEPCKKGFJCN
      * </pre>
      *
      * Protobuf type {@code TowerMiddleLevelChangeTeamNotify}

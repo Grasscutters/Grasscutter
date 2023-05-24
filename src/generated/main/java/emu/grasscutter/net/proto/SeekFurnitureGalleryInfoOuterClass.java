@@ -824,8 +824,8 @@ public final class SeekFurnitureGalleryInfoOuterClass {
       "\n\036SeekFurnitureGalleryInfo.proto\032 HomeSe" +
       "ekFurnitureOneRecord.proto\"K\n\030SeekFurnit" +
       "ureGalleryInfo\022/\n\nrecordList\030\005 \003(\0132\033.Hom" +
-      "eSeekFurnitureOneRecordB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "eSeekFurnitureOneRecordB!\n\031emu.grasscutt" +
+      "er.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

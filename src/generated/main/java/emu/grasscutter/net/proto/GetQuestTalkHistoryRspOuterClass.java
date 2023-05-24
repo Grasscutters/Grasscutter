@@ -796,7 +796,8 @@ public final class GetQuestTalkHistoryRspOuterClass {
       "\n\034GetQuestTalkHistoryRsp.proto\"X\n\026GetQue" +
       "stTalkHistoryRsp\022\024\n\014talk_id_list\030\003 \003(\r\022\027" +
       "\n\017parent_quest_id\030\005 \001(\r\022\017\n\007retcode\030\r \001(\005" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "B!\n\031emu.grasscutter.net.protoZ\004/genb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

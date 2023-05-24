@@ -3145,8 +3145,8 @@ public final class WindSeedClientNotifyOuterClass {
       "otify\022\031\n\010seed_pos\030\010 \001(\0132\007.Vector\022\023\n\013JGDL" +
       "MEEEBIM\030\n \001(\r\022\023\n\013ALLPEAAMOLB\030\003 \001(\r\032C\n\nAr" +
       "eaNotify\022\017\n\007area_id\030\003 \001(\r\022\021\n\tarea_type\030\002" +
-      " \001(\r\022\021\n\tarea_code\030\001 \001(\014B\010\n\006notifyB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      " \001(\r\022\021\n\tarea_code\030\001 \001(\014B\010\n\006notifyB!\n\031emu" +
+      ".grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

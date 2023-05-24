@@ -831,8 +831,8 @@ public final class JNMLLBGCBOBOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021JNMLLBGCBOB.proto\032\021CKMJBOGJFMB.proto\"4" +
       "\n\013JNMLLBGCBOB\022%\n\017level_info_list\030\004 \003(\0132\014" +
-      ".CKMJBOGJFMBB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      ".CKMJBOGJFMBB!\n\031emu.grasscutter.net.prot" +
+      "oZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

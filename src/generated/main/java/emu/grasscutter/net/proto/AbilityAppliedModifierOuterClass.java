@@ -134,7 +134,7 @@ public final class AbilityAppliedModifierOuterClass {
   }
   /**
    * <pre>
-   * Name: IMAGPOMIMAG
+   * Obf: DCPBFOKKPFJ
    * </pre>
    *
    * Protobuf type {@code AbilityAppliedModifier}
@@ -826,7 +826,7 @@ public final class AbilityAppliedModifierOuterClass {
     }
     /**
      * <pre>
-     * Name: IMAGPOMIMAG
+     * Obf: DCPBFOKKPFJ
      * </pre>
      *
      * Protobuf type {@code AbilityAppliedModifier}
@@ -1900,8 +1900,8 @@ public final class AbilityAppliedModifierOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034AbilityAppliedModifier.proto\032\035AbilityA" +
-      "ttachedModifier.proto\032\023AbilityString.pro" +
+      "\n\034AbilityAppliedModifier.proto\032\023AbilityS" +
+      "tring.proto\032\035AbilityAttachedModifier.pro" +
       "to\032\030ModifierDurability.proto\"\351\003\n\026Ability" +
       "AppliedModifier\022\031\n\021modifier_local_id\030\001 \001" +
       "(\005\022 \n\030parent_ability_entity_id\030\002 \001(\r\022+\n\023" +
@@ -1920,8 +1920,8 @@ public final class AbilityAppliedModifierOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ModifierDurabilityOuterClass.getDescriptor(),
         });
     internal_static_AbilityAppliedModifier_descriptor =
@@ -1930,8 +1930,8 @@ public final class AbilityAppliedModifierOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityAppliedModifier_descriptor,
         new java.lang.String[] { "ModifierLocalId", "ParentAbilityEntityId", "ParentAbilityName", "ParentAbilityOverride", "InstancedAbilityId", "InstancedModifierId", "ExistDuration", "AttachedInstancedModifier", "ApplyEntityId", "IsAttachedParentAbility", "ModifierDurability", "SbuffUid", "IsServerbuffModifier", });
-    emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ModifierDurabilityOuterClass.getDescriptor();
   }
 

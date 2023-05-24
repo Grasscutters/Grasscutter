@@ -96,7 +96,7 @@ public final class ClientGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: OKBKAFDHDFA
+   * Obf: INJJFHFANAD
    * </pre>
    *
    * Protobuf type {@code ClientGadgetInfo}
@@ -675,7 +675,7 @@ public final class ClientGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: OKBKAFDHDFA
+     * Obf: INJJFHFANAD
      * </pre>
      *
      * Protobuf type {@code ClientGadgetInfo}

@@ -61,7 +61,7 @@ public final class AnimatorParameterValueInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: GGDPCAPPPNF
+   * Obf: OJKLMOMAPKN
    * </pre>
    *
    * Protobuf type {@code AnimatorParameterValueInfo}
@@ -497,7 +497,7 @@ public final class AnimatorParameterValueInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GGDPCAPPPNF
+     * Obf: OJKLMOMAPKN
      * </pre>
      *
      * Protobuf type {@code AnimatorParameterValueInfo}

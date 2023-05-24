@@ -669,8 +669,8 @@ public final class EnterTrialAvatarActivityDungeonReqOuterClass {
       "\n(EnterTrialAvatarActivityDungeonReq.pro" +
       "to\"p\n\"EnterTrialAvatarActivityDungeonReq" +
       "\022\035\n\025trial_avatar_index_id\030\002 \001(\r\022\026\n\016enter" +
-      "_point_id\030\014 \001(\r\022\023\n\013activity_id\030\t \001(\rB\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "_point_id\030\014 \001(\r\022\023\n\013activity_id\030\t \001(\rB!\n\031" +
+      "emu.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

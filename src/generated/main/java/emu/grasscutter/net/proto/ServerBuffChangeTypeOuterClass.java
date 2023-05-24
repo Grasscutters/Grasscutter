@@ -134,8 +134,8 @@ public final class ServerBuffChangeTypeOuterClass {
       "\n\032ServerBuffChangeType.proto*p\n\024ServerBu" +
       "ffChangeType\022+\n\'SERVER_BUFF_CHANGE_TYPE_" +
       "ADD_SERVER_BUFF\020\000\022+\n\'SERVER_BUFF_CHANGE_" +
-      "TYPE_DEL_SERVER_BUFF\020\001B\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "TYPE_DEL_SERVER_BUFF\020\001B!\n\031emu.grasscutte" +
+      "r.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

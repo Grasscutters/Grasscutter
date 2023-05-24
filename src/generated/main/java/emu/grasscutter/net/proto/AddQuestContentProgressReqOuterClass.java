@@ -19,27 +19,27 @@ public final class AddQuestContentProgressReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 add_progress = 10;</code>
+     * <code>uint32 add_progress = 11;</code>
      * @return The addProgress.
      */
     int getAddProgress();
 
     /**
-     * <code>uint32 param = 3;</code>
-     * @return The param.
-     */
-    int getParam();
-
-    /**
-     * <code>uint32 content_type = 9;</code>
+     * <code>uint32 content_type = 15;</code>
      * @return The contentType.
      */
     int getContentType();
+
+    /**
+     * <code>uint32 param = 1;</code>
+     * @return The param.
+     */
+    int getParam();
   }
   /**
    * <pre>
-   * CmdId: 456
-   * Name: DNDFBIMEHCF
+   * CmdId: 448
+   * Obf: JIFDPGDHNAF
    * </pre>
    *
    * Protobuf type {@code AddQuestContentProgressReq}
@@ -86,19 +86,19 @@ public final class AddQuestContentProgressReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               param_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              contentType_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 88: {
 
               addProgress_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              contentType_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class AddQuestContentProgressReqOuterClass {
               emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass.AddQuestContentProgressReq.class, emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass.AddQuestContentProgressReq.Builder.class);
     }
 
-    public static final int ADD_PROGRESS_FIELD_NUMBER = 10;
+    public static final int ADD_PROGRESS_FIELD_NUMBER = 11;
     private int addProgress_;
     /**
-     * <code>uint32 add_progress = 10;</code>
+     * <code>uint32 add_progress = 11;</code>
      * @return The addProgress.
      */
     @java.lang.Override
@@ -144,26 +144,26 @@ public final class AddQuestContentProgressReqOuterClass {
       return addProgress_;
     }
 
-    public static final int PARAM_FIELD_NUMBER = 3;
-    private int param_;
-    /**
-     * <code>uint32 param = 3;</code>
-     * @return The param.
-     */
-    @java.lang.Override
-    public int getParam() {
-      return param_;
-    }
-
-    public static final int CONTENT_TYPE_FIELD_NUMBER = 9;
+    public static final int CONTENT_TYPE_FIELD_NUMBER = 15;
     private int contentType_;
     /**
-     * <code>uint32 content_type = 9;</code>
+     * <code>uint32 content_type = 15;</code>
      * @return The contentType.
      */
     @java.lang.Override
     public int getContentType() {
       return contentType_;
+    }
+
+    public static final int PARAM_FIELD_NUMBER = 1;
+    private int param_;
+    /**
+     * <code>uint32 param = 1;</code>
+     * @return The param.
+     */
+    @java.lang.Override
+    public int getParam() {
+      return param_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,13 +181,13 @@ public final class AddQuestContentProgressReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (param_ != 0) {
-        output.writeUInt32(3, param_);
-      }
-      if (contentType_ != 0) {
-        output.writeUInt32(9, contentType_);
+        output.writeUInt32(1, param_);
       }
       if (addProgress_ != 0) {
-        output.writeUInt32(10, addProgress_);
+        output.writeUInt32(11, addProgress_);
+      }
+      if (contentType_ != 0) {
+        output.writeUInt32(15, contentType_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class AddQuestContentProgressReqOuterClass {
       size = 0;
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, param_);
-      }
-      if (contentType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, contentType_);
+          .computeUInt32Size(1, param_);
       }
       if (addProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, addProgress_);
+          .computeUInt32Size(11, addProgress_);
+      }
+      if (contentType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, contentType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,10 +227,10 @@ public final class AddQuestContentProgressReqOuterClass {
 
       if (getAddProgress()
           != other.getAddProgress()) return false;
-      if (getParam()
-          != other.getParam()) return false;
       if (getContentType()
           != other.getContentType()) return false;
+      if (getParam()
+          != other.getParam()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -244,10 +244,10 @@ public final class AddQuestContentProgressReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ADD_PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddProgress();
-      hash = (37 * hash) + PARAM_FIELD_NUMBER;
-      hash = (53 * hash) + getParam();
       hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getContentType();
+      hash = (37 * hash) + PARAM_FIELD_NUMBER;
+      hash = (53 * hash) + getParam();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class AddQuestContentProgressReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 456
-     * Name: DNDFBIMEHCF
+     * CmdId: 448
+     * Obf: JIFDPGDHNAF
      * </pre>
      *
      * Protobuf type {@code AddQuestContentProgressReq}
@@ -388,9 +388,9 @@ public final class AddQuestContentProgressReqOuterClass {
         super.clear();
         addProgress_ = 0;
 
-        param_ = 0;
-
         contentType_ = 0;
+
+        param_ = 0;
 
         return this;
       }
@@ -419,8 +419,8 @@ public final class AddQuestContentProgressReqOuterClass {
       public emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass.AddQuestContentProgressReq buildPartial() {
         emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass.AddQuestContentProgressReq result = new emu.grasscutter.net.proto.AddQuestContentProgressReqOuterClass.AddQuestContentProgressReq(this);
         result.addProgress_ = addProgress_;
-        result.param_ = param_;
         result.contentType_ = contentType_;
+        result.param_ = param_;
         onBuilt();
         return result;
       }
@@ -472,11 +472,11 @@ public final class AddQuestContentProgressReqOuterClass {
         if (other.getAddProgress() != 0) {
           setAddProgress(other.getAddProgress());
         }
-        if (other.getParam() != 0) {
-          setParam(other.getParam());
-        }
         if (other.getContentType() != 0) {
           setContentType(other.getContentType());
+        }
+        if (other.getParam() != 0) {
+          setParam(other.getParam());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -509,7 +509,7 @@ public final class AddQuestContentProgressReqOuterClass {
 
       private int addProgress_ ;
       /**
-       * <code>uint32 add_progress = 10;</code>
+       * <code>uint32 add_progress = 11;</code>
        * @return The addProgress.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class AddQuestContentProgressReqOuterClass {
         return addProgress_;
       }
       /**
-       * <code>uint32 add_progress = 10;</code>
+       * <code>uint32 add_progress = 11;</code>
        * @param value The addProgress to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class AddQuestContentProgressReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 add_progress = 10;</code>
+       * <code>uint32 add_progress = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearAddProgress() {
@@ -538,40 +538,9 @@ public final class AddQuestContentProgressReqOuterClass {
         return this;
       }
 
-      private int param_ ;
-      /**
-       * <code>uint32 param = 3;</code>
-       * @return The param.
-       */
-      @java.lang.Override
-      public int getParam() {
-        return param_;
-      }
-      /**
-       * <code>uint32 param = 3;</code>
-       * @param value The param to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam(int value) {
-        
-        param_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam() {
-        
-        param_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int contentType_ ;
       /**
-       * <code>uint32 content_type = 9;</code>
+       * <code>uint32 content_type = 15;</code>
        * @return The contentType.
        */
       @java.lang.Override
@@ -579,7 +548,7 @@ public final class AddQuestContentProgressReqOuterClass {
         return contentType_;
       }
       /**
-       * <code>uint32 content_type = 9;</code>
+       * <code>uint32 content_type = 15;</code>
        * @param value The contentType to set.
        * @return This builder for chaining.
        */
@@ -590,12 +559,43 @@ public final class AddQuestContentProgressReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 content_type = 9;</code>
+       * <code>uint32 content_type = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearContentType() {
         
         contentType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int param_ ;
+      /**
+       * <code>uint32 param = 1;</code>
+       * @return The param.
+       */
+      @java.lang.Override
+      public int getParam() {
+        return param_;
+      }
+      /**
+       * <code>uint32 param = 1;</code>
+       * @param value The param to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam(int value) {
+        
+        param_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam() {
+        
+        param_ = 0;
         onChanged();
         return this;
       }
@@ -668,7 +668,7 @@ public final class AddQuestContentProgressReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n AddQuestContentProgressReq.proto\"W\n\032Ad" +
       "dQuestContentProgressReq\022\024\n\014add_progress" +
-      "\030\n \001(\r\022\r\n\005param\030\003 \001(\r\022\024\n\014content_type\030\t " +
+      "\030\013 \001(\r\022\024\n\014content_type\030\017 \001(\r\022\r\n\005param\030\001 " +
       "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class AddQuestContentProgressReqOuterClass {
     internal_static_AddQuestContentProgressReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AddQuestContentProgressReq_descriptor,
-        new java.lang.String[] { "AddProgress", "Param", "ContentType", });
+        new java.lang.String[] { "AddProgress", "ContentType", "Param", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
