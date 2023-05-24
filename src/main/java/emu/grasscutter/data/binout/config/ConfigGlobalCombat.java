@@ -19,5 +19,6 @@ public class ConfigGlobalCombat {
         private List<String> levelSBuffAbilities;
         private List<String> defaultMPLevelAbilities;
         private List<String> defaultAvatarAbilities;
+        private List<String> defaultTeamAbilities;
     }
 }

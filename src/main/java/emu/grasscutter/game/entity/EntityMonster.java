@@ -37,6 +37,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,8 +59,8 @@ public class EntityMonster extends GameEntity {
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
-    @Nullable
-    @Getter @Setter private SceneMonster metaMonster;
+    @Getter private List<Player> playerOnBattle;
+    @Nullable @Getter @Setter private SceneMonster metaMonster;
 
     public EntityMonster(Scene scene, MonsterData monsterData, Position pos, int level) {
         super(scene);
@@ -70,6 +71,7 @@ public class EntityMonster extends GameEntity {
         this.rotation = new Position();
         this.bornPos = getPosition().clone();
         this.level = level;
+        this.playerOnBattle = new ArrayList<>();
 
         if(GameData.getMonsterMappingMap().containsKey(getMonsterId())) {
             this.configEntityMonster = GameData.getMonsterConfigData().get(GameData.getMonsterMappingMap().get(getMonsterId()).getMonsterJson());

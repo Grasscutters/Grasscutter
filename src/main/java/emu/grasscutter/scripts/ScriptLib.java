@@ -491,9 +491,16 @@ public class ScriptLib {
     public int SetMonsterBattleByGroup(int configId, int groupId) {
         logger.debug("[LUA] Call SetMonsterBattleByGroup with {} {}",
             configId,groupId);
-        // TODO implement scene50008_group250008057.lua uses incomplete group numbers
-        return 0;
-    }
+		// TODO implement scene50008_group250008057.lua uses incomplete group numbers
+
+        // -> MonsterForceAlertNotify
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
+        if (entity instanceof EntityMonster monster) {
+            this.getSceneScriptManager().getScene().broadcastPacket(new PacketMonsterForceAlertNotify(monster.getId()));
+        }
+
+		return 0;
+	}
 
     public int CauseDungeonFail(){
         logger.debug("[LUA] Call CauseDungeonFail with");

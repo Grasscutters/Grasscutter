@@ -33,7 +33,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public final class AbilityManager extends BasePlayerManager {
-    HealAbilityManager healAbilityManager;
 
     private final static HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers = new HashMap<>();
     private final static HashMap<AbilityMixinData.Type, AbilityMixinHandler> mixinHandlers = new HashMap<>();
@@ -51,7 +50,6 @@ public final class AbilityManager extends BasePlayerManager {
 
     public AbilityManager(Player player) {
         super(player);
-        this.healAbilityManager = new HealAbilityManager(player);
     }
 
     public static void registerHandlers() {
@@ -119,18 +117,6 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
-        this.healAbilityManager.healHandler(invoke);
-
-        /* Research:
-         * local_id == 0 -> remote invoke
-         * local_id != 0 server invoke -> target_id in same scene.
-         *      maybe target_id == 0 means player creature
-         *      if instanced_modifider_id==0 and instanced_ability_id!=0 -> find ability
-         *      if instanced_modifider_id!= 0 -> find modifier and get parent ability
-         *
-        */
-
-         //Grasscutter.getLogger().info(invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + Utils.bytesToHex(invoke.toByteArray()));
         Grasscutter.getLogger().info("Ability invoke: " + invoke + " " + invoke.getArgumentType() + " (" + invoke.getArgumentTypeValue() + "): " + this.player.getScene().getEntityById(invoke.getEntityId()));
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
         if(entity != null) {
@@ -410,7 +396,31 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     private void handleGlobalFloatValue(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+        var entity = this.player.getScene().getEntityById(invoke.getEntityId());
+        if(entity == null) return;
 
+        var entry = AbilityScalarValueEntry.parseFrom(invoke.getAbilityData());
+        if(entry == null || !entry.hasFloatValue()) return;
+
+        String key = null;
+        if(entry.getKey().hasStr())
+            key = entry.getKey().getStr();
+        else if(entry.getKey().hasHash())
+            key = GameData.getAbilityHashes().get(entry.getKey().getHash());
+
+        if(key == null) return;
+
+        if(key.startsWith("SGV_")) return; //Server does not allow to change this variables I think
+        switch(entry.getValueType().getNumber()) {
+            case AbilityScalarType.ABILITY_SCALAR_TYPE_FLOAT_VALUE:
+                if(!Float.isNaN(entry.getFloatValue())) entity.getGlobalAbilityValues().put(key, entry.getFloatValue());
+                break;
+            case AbilityScalarType.ABILITY_SCALAR_TYPE_UINT_VALUE:
+                entity.getGlobalAbilityValues().put(key, (float)entry.getUintValue());
+                break;
+            default:
+                return;
+        }
     }
 
     private void invokeAction(AbilityModifierAction action, GameEntity target, GameEntity sourceEntity) {

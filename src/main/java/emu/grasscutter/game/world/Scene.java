@@ -118,6 +118,12 @@ public final class Scene {
     public GameEntity getEntityById(int id) {
         // Check if the scene's entity ID is referenced.
         if (id == 0x13800001) return this.sceneEntity;
+        else if (id == this.getWorld().getLevelEntityId())
+            return this.getWorld().getEntity();
+
+        var teamEntityPlayer = players.stream().filter(p -> p.getTeamManager().getEntity().getId() == id).findAny();
+        if(teamEntityPlayer.isPresent())
+            return teamEntityPlayer.get().getTeamManager().getEntity();
 
         var entity = this.entities.get(id);
         if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {

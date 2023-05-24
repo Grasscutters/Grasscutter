@@ -9,17 +9,18 @@ import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 
-public class EntityScene extends GameEntity {
+public class EntityTeam extends GameEntity {
 
-    public EntityScene(Scene scene) {
+    public EntityTeam(Scene scene) {
         super(scene);
         initAbilities();
+        this.id = scene.getWorld().getNextEntityId(EntityIdType.TEAM);
     }
 
     @Override
     public void initAbilities() {
         //Load abilities from levelElementAbilities
-        for(var ability : GameData.getConfigGlobalCombat().getDefaultAbilities().getLevelElementAbilities()) {
+        for(var ability : GameData.getConfigGlobalCombat().getDefaultAbilities().getDefaultTeamAbilities()) {
             AbilityData data =  GameData.getAbilityData(ability);
             if(data != null)
                 getScene().getWorld().getHost().getAbilityManager().addAbilityToEntity(
@@ -29,7 +30,7 @@ public class EntityScene extends GameEntity {
 
     @Override
     public int getEntityTypeId() {
-        return 0x13;
+        return EntityIdType.TEAM.getId();
     }
 
     @Override
