@@ -1,16 +1,15 @@
 package emu.grasscutter.server.game;
 
-import java.net.InetSocketAddress;
-import java.util.concurrent.ConcurrentHashMap;
-
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.DefaultEventLoop;
 import kcp.highway.KcpListener;
 import kcp.highway.Ukcp;
+
+import java.net.InetSocketAddress;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GameSessionManager {
     private static final DefaultEventLoop logicThread = new DefaultEventLoop();
@@ -64,14 +63,14 @@ public class GameSessionManager {
 
         @Override
         public void handleReceive(ByteBuf buf, Ukcp kcp) {
-            byte[] byteData = Utils.byteBufToArray(buf);
+            var byteData = Utils.byteBufToArray(buf);
             logicThread.execute(() -> {
                 try {
                     GameSession conversation = sessions.get(kcp);
-                    if(conversation!=null) {
+                    if(conversation != null) {
                         conversation.handleReceive(byteData);
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
