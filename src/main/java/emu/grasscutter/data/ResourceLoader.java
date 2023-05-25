@@ -401,11 +401,11 @@ public final class ResourceLoader {
         GameData.getAbilityDataMap().put(data.abilityName, data);
         GameData.getAbilityHashes().put(Utils.abilityHash(data.abilityName), data.abilityName);
 
-        val modifiers = data.modifiers;
+        var modifiers = data.modifiers;
         if (modifiers == null || modifiers.size() == 0) return;
 
-        String name = data.abilityName;
-        AbilityModifierEntry modifierEntry = new AbilityModifierEntry(name);
+        var name = data.abilityName;
+        var modifierEntry = new AbilityModifierEntry(name);
         modifiers.forEach(
                 (key, modifier) -> {
                     Stream.ofNullable(modifier.onAdded)
@@ -424,8 +424,6 @@ public final class ResourceLoader {
                             .filter(action -> action.type == AbilityModifierAction.Type.HealHP)
                             .forEach(action -> modifierEntry.getOnRemoved().add(action));
                 });
-
-        GameData.getAbilityModifiers().put(name, modifierEntry);
     }
 
     private static void loadTalents() {
