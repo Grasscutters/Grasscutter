@@ -127,14 +127,16 @@ public final class TsvUtils {
                 default -> false;
             }) {
                 // System.out.println("Enum value field found - " + f.getName());
-                boolean acc = f.canAccess(null);
-                f.setAccessible(true);
                 try {
-                    for (val constant : enumConstants) map.put(String.valueOf(f.getInt(constant)), constant);
+                    for (var constant : enumConstants) {
+                        var accessible = f.canAccess(constant);
+                        f.setAccessible(true);
+                        map.put(String.valueOf(f.getInt(constant)), constant);
+                        f.setAccessible(accessible);
+                    }
                 } catch (IllegalAccessException e) {
                     // System.out.println("Failed to access enum id field.");
                 }
-                f.setAccessible(acc);
                 break;
             }
         }
