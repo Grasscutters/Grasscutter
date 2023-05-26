@@ -39,13 +39,13 @@ class Character extends React.PureComponent<IProps> {
         return (
             <div
                 className={"Character"}
-                style={{ backgroundColor: `var(${qualityColor})` }}
                 onClick={this.props.onClick}
             >
                 <img
                     className={"Character_Icon"}
                     alt={name}
                     src={`https://paimon.moe/images/characters/${formatAvatarName(name, id)}.png`}
+                    style={{ backgroundColor: `var(${qualityColor})` }}
                 />
 
                 <div className={"Character_Label"}>
