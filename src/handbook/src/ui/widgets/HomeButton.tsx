@@ -28,8 +28,7 @@ class HomeButton extends React.PureComponent<IProps> {
      * Checks if this component should be showed.
      */
     private shouldShow(): boolean {
-        return !(((window as any).hide) as string[])
-            .includes(this.props.anchor.toLowerCase());
+        return !((window as any).hide as string[]).includes(this.props.anchor.toLowerCase());
     }
 
     render() {
