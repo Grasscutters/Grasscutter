@@ -2,6 +2,7 @@ package emu.grasscutter.game.world;
 
 import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.player.Player;
@@ -44,7 +45,6 @@ public final class World implements Iterable<Player> {
     private int worldLevel;
 
     @Getter private boolean isMultiplayer, timeLocked = false;
-    @Getter private boolean questTimeLocked;
 
     private long lastUpdateTime;
     @Getter private int tickCount = 0;
@@ -67,7 +67,6 @@ public final class World implements Iterable<Player> {
 
         this.lastUpdateTime = System.currentTimeMillis();
         this.currentWorldTime = host.getPlayerGameTime();
-        this.questTimeLocked = player.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0;
 
         this.host.getServer().registerWorld(this);
     }
@@ -547,21 +546,13 @@ public final class World implements Iterable<Player> {
      * @param locked True if the world time should be locked.
      */
     public void lockTime(boolean locked) {
-        if(questTimeLocked) {
+        if(host.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0) {
             this.timeLocked = true;
         }else{
             this.timeLocked = locked;
         }
         // Notify players of the locking.
         this.updateTime();
-    }
-
-    public void setQuestLockTime(boolean locked) {
-        this.questTimeLocked = locked;
-        this.timeLocked = locked;
-        this.updateTime();
-        this.getPlayers()
-                .forEach(player -> player.setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, locked));
     }
 
     @NotNull @Override
