@@ -17,10 +17,11 @@
 
     &:hover {
         cursor: pointer;
-        transition: 0.1s ease-in-out all;
-        box-shadow: 0 0 10px 5px var(--primary-color);
+        box-shadow: 0 0 10px 5px var(--accent-color);
         scale: 1.01;
     }
+
+    transition: 0.1s ease-in-out all;
 }
 
 .HomeButton:hover {
