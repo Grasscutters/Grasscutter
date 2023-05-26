@@ -355,7 +355,7 @@ tasks.register('generateHandbook') {
         // Copy the handbook from /dist to /src/main/resources.
         copy {
             from 'src/handbook/dist/index.html'
-            into 'src/main/resources'
+            into 'src/main/resources/html'
             rename 'index.html', 'handbook.html'
         }
     }
