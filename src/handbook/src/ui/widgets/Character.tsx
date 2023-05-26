@@ -37,10 +37,7 @@ class Character extends React.PureComponent<IProps> {
         const characterName = nameSwitch[id] ?? name;
 
         return (
-            <div
-                className={"Character"}
-                onClick={this.props.onClick}
-            >
+            <div className={"Character"} onClick={this.props.onClick}>
                 <img
                     className={"Character_Icon"}
                     alt={name}
