@@ -545,9 +545,9 @@ public final class World implements Iterable<Player> {
      * @param locked True if the world time should be locked.
      */
     public void lockTime(boolean locked) {
-        if(host.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0) {
+        if (host.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0) {
             this.timeLocked = true;
-        }else{
+        } else {
             this.timeLocked = locked;
         }
         // Notify players of the locking.
