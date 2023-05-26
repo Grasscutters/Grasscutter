@@ -43,7 +43,8 @@ public final class World implements Iterable<Player> {
     private int nextPeerId = 0;
     private int worldLevel;
 
-    @Getter private boolean isMultiplayer, timeLocked , questTimeLocked = false;
+    @Getter private boolean isMultiplayer, timeLocked = false;
+    @Getter private boolean questTimeLocked;
 
     private long lastUpdateTime;
     @Getter private int tickCount = 0;
@@ -66,6 +67,7 @@ public final class World implements Iterable<Player> {
 
         this.lastUpdateTime = System.currentTimeMillis();
         this.currentWorldTime = host.getPlayerGameTime();
+        this.questTimeLocked = player.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0;
 
         this.host.getServer().registerWorld(this);
     }
@@ -545,7 +547,9 @@ public final class World implements Iterable<Player> {
      * @param locked True if the world time should be locked.
      */
     public void lockTime(boolean locked) {
-        if(!questTimeLocked) {
+        if(questTimeLocked) {
+            this.timeLocked = true;
+        }else{
             this.timeLocked = locked;
         }
         // Notify players of the locking.
