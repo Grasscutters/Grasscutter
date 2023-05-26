@@ -12,7 +12,7 @@ public final class ExecSetGameTimeLocked extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestExecParam condition, String... paramStr) {
         var isLocked = Objects.equals(condition.getParam()[0], "1");
-        quest.getOwner().getWorld().lockTime(isLocked);
+        quest.getOwner().getWorld().setQuestLockTime(isLocked);
 
         return true;
     }

@@ -338,7 +338,6 @@ public class Player implements PlayerHook {
      * @param gameTime The new game time.
      */
     public void updatePlayerGameTime(long gameTime) {
-        if (this.getWorld().isTimeLocked()) return;
         if (this.playerGameTime == gameTime) return;
 
         // Update the game time.
