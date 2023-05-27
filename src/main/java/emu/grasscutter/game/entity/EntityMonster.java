@@ -14,6 +14,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.data.excels.MonsterSpecialNameData;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
@@ -202,12 +203,12 @@ public class EntityMonster extends GameEntity {
                 .addAllAffixList(getMonsterData().getAffix())
                 .setAuthorityPeerId(getWorld().getHostPeerId())
                 .setPoseId(this.getPoseId())
-                .setBlockId(3001)
-                .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT)
-                .setSpecialNameId(40);
+                .setBlockId(getScene().getId())
+                .setBornType(MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
 
         if (getMonsterData().getDescribeData() != null) {
-            monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleID());
+            monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleId())
+                .setSpecialNameId(getMonsterData().getSpecialNameId());
         }
 
         if (this.getMonsterWeaponId() > 0) {
