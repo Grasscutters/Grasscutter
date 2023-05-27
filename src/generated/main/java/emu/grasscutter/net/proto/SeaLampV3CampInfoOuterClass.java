@@ -44,7 +44,7 @@ public final class SeaLampV3CampInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: GAMFHGOFNHP
+   * Obf: NAFCFFFCKIL
    * </pre>
    *
    * Protobuf type {@code SeaLampV3CampInfo}
@@ -336,7 +336,7 @@ public final class SeaLampV3CampInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GAMFHGOFNHP
+     * Obf: NAFCFFFCKIL
      * </pre>
      *
      * Protobuf type {@code SeaLampV3CampInfo}

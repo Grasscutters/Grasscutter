@@ -19,34 +19,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 15;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>.Vector center = 6;</code>
-     * @return Whether the center field is set.
-     */
-    boolean hasCenter();
-    /**
-     * <code>.Vector center = 6;</code>
-     * @return The center.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter();
-    /**
-     * <code>.Vector center = 6;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder();
-
-    /**
-     * <code>uint32 pos_id = 11;</code>
-     * @return The posId.
-     */
-    int getPosId();
-
-    /**
-     * <code>uint32 open_time = 2;</code>
+     * <code>uint32 open_time = 9;</code>
      * @return The openTime.
      */
     int getOpenTime();
@@ -56,10 +29,37 @@ public final class FleurFairV2PhotoPosDataOuterClass {
      * @return The isView.
      */
     boolean getIsView();
+
+    /**
+     * <code>.Vector center = 11;</code>
+     * @return Whether the center field is set.
+     */
+    boolean hasCenter();
+    /**
+     * <code>.Vector center = 11;</code>
+     * @return The center.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter();
+    /**
+     * <code>.Vector center = 11;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder();
+
+    /**
+     * <code>uint32 pos_id = 1;</code>
+     * @return The posId.
+     */
+    int getPosId();
+
+    /**
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
   }
   /**
    * <pre>
-   * Name: MENLENKDBJH
+   * Obf: DMABGAGCFAO
    * </pre>
    *
    * Protobuf type {@code FleurFairV2PhotoPosData}
@@ -106,12 +106,27 @@ public final class FleurFairV2PhotoPosDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
+
+              posId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              isView_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 72: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 50: {
+            case 90: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (center_ != null) {
                 subBuilder = center_.toBuilder();
@@ -122,21 +137,6 @@ public final class FleurFairV2PhotoPosDataOuterClass {
                 center_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 56: {
-
-              isView_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              posId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isOpen_ = input.readBool();
               break;
             }
             default: {
@@ -171,58 +171,10 @@ public final class FleurFairV2PhotoPosDataOuterClass {
               emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData.class, emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 15;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 15;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int CENTER_FIELD_NUMBER = 6;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector center_;
-    /**
-     * <code>.Vector center = 6;</code>
-     * @return Whether the center field is set.
-     */
-    @java.lang.Override
-    public boolean hasCenter() {
-      return center_ != null;
-    }
-    /**
-     * <code>.Vector center = 6;</code>
-     * @return The center.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter() {
-      return center_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
-    }
-    /**
-     * <code>.Vector center = 6;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
-    }
-
-    public static final int POS_ID_FIELD_NUMBER = 11;
-    private int posId_;
-    /**
-     * <code>uint32 pos_id = 11;</code>
-     * @return The posId.
-     */
-    @java.lang.Override
-    public int getPosId() {
-      return posId_;
-    }
-
-    public static final int OPEN_TIME_FIELD_NUMBER = 2;
+    public static final int OPEN_TIME_FIELD_NUMBER = 9;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 2;</code>
+     * <code>uint32 open_time = 9;</code>
      * @return The openTime.
      */
     @java.lang.Override
@@ -241,6 +193,54 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       return isView_;
     }
 
+    public static final int CENTER_FIELD_NUMBER = 11;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector center_;
+    /**
+     * <code>.Vector center = 11;</code>
+     * @return Whether the center field is set.
+     */
+    @java.lang.Override
+    public boolean hasCenter() {
+      return center_ != null;
+    }
+    /**
+     * <code>.Vector center = 11;</code>
+     * @return The center.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter() {
+      return center_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+    }
+    /**
+     * <code>.Vector center = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
+      return getCenter();
+    }
+
+    public static final int POS_ID_FIELD_NUMBER = 1;
+    private int posId_;
+    /**
+     * <code>uint32 pos_id = 1;</code>
+     * @return The posId.
+     */
+    @java.lang.Override
+    public int getPosId() {
+      return posId_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -255,20 +255,20 @@ public final class FleurFairV2PhotoPosDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (openTime_ != 0) {
-        output.writeUInt32(2, openTime_);
-      }
-      if (center_ != null) {
-        output.writeMessage(6, getCenter());
+      if (posId_ != 0) {
+        output.writeUInt32(1, posId_);
       }
       if (isView_ != false) {
         output.writeBool(7, isView_);
       }
-      if (posId_ != 0) {
-        output.writeUInt32(11, posId_);
-      }
       if (isOpen_ != false) {
-        output.writeBool(15, isOpen_);
+        output.writeBool(8, isOpen_);
+      }
+      if (openTime_ != 0) {
+        output.writeUInt32(9, openTime_);
+      }
+      if (center_ != null) {
+        output.writeMessage(11, getCenter());
       }
       unknownFields.writeTo(output);
     }
@@ -279,25 +279,25 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (openTime_ != 0) {
+      if (posId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, openTime_);
-      }
-      if (center_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getCenter());
+          .computeUInt32Size(1, posId_);
       }
       if (isView_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isView_);
       }
-      if (posId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, posId_);
-      }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isOpen_);
+          .computeBoolSize(8, isOpen_);
+      }
+      if (openTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, openTime_);
+      }
+      if (center_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getCenter());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,8 +314,10 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       }
       emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData other = (emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
+      if (getOpenTime()
+          != other.getOpenTime()) return false;
+      if (getIsView()
+          != other.getIsView()) return false;
       if (hasCenter() != other.hasCenter()) return false;
       if (hasCenter()) {
         if (!getCenter()
@@ -323,10 +325,8 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       }
       if (getPosId()
           != other.getPosId()) return false;
-      if (getOpenTime()
-          != other.getOpenTime()) return false;
-      if (getIsView()
-          != other.getIsView()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -338,20 +338,20 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getOpenTime();
+      hash = (37 * hash) + IS_VIEW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
+          getIsView());
       if (hasCenter()) {
         hash = (37 * hash) + CENTER_FIELD_NUMBER;
         hash = (53 * hash) + getCenter().hashCode();
       }
       hash = (37 * hash) + POS_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPosId();
-      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getOpenTime();
-      hash = (37 * hash) + IS_VIEW_FIELD_NUMBER;
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsView());
+          getIsOpen());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -449,7 +449,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
     }
     /**
      * <pre>
-     * Name: MENLENKDBJH
+     * Obf: DMABGAGCFAO
      * </pre>
      *
      * Protobuf type {@code FleurFairV2PhotoPosData}
@@ -489,7 +489,9 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
+        openTime_ = 0;
+
+        isView_ = false;
 
         if (centerBuilder_ == null) {
           center_ = null;
@@ -499,9 +501,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
         }
         posId_ = 0;
 
-        openTime_ = 0;
-
-        isView_ = false;
+        isOpen_ = false;
 
         return this;
       }
@@ -529,15 +529,15 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData buildPartial() {
         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData result = new emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData(this);
-        result.isOpen_ = isOpen_;
+        result.openTime_ = openTime_;
+        result.isView_ = isView_;
         if (centerBuilder_ == null) {
           result.center_ = center_;
         } else {
           result.center_ = centerBuilder_.build();
         }
         result.posId_ = posId_;
-        result.openTime_ = openTime_;
-        result.isView_ = isView_;
+        result.isOpen_ = isOpen_;
         onBuilt();
         return result;
       }
@@ -586,8 +586,11 @@ public final class FleurFairV2PhotoPosDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData other) {
         if (other == emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getOpenTime() != 0) {
+          setOpenTime(other.getOpenTime());
+        }
+        if (other.getIsView() != false) {
+          setIsView(other.getIsView());
         }
         if (other.hasCenter()) {
           mergeCenter(other.getCenter());
@@ -595,11 +598,8 @@ public final class FleurFairV2PhotoPosDataOuterClass {
         if (other.getPosId() != 0) {
           setPosId(other.getPosId());
         }
-        if (other.getOpenTime() != 0) {
-          setOpenTime(other.getOpenTime());
-        }
-        if (other.getIsView() != false) {
-          setIsView(other.getIsView());
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -630,190 +630,9 @@ public final class FleurFairV2PhotoPosDataOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 15;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 15;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector center_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> centerBuilder_;
-      /**
-       * <code>.Vector center = 6;</code>
-       * @return Whether the center field is set.
-       */
-      public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       * @return The center.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter() {
-        if (centerBuilder_ == null) {
-          return center_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
-        } else {
-          return centerBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public Builder setCenter(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (centerBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          center_ = value;
-          onChanged();
-        } else {
-          centerBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public Builder setCenter(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (centerBuilder_ == null) {
-          center_ = builderForValue.build();
-          onChanged();
-        } else {
-          centerBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public Builder mergeCenter(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
-          } else {
-            center_ = value;
-          }
-          onChanged();
-        } else {
-          centerBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
-          centerBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
-        onChanged();
-        return getCenterFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-        if (centerBuilder_ != null) {
-          return centerBuilder_.getMessageOrBuilder();
-        } else {
-          return center_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
-        }
-      }
-      /**
-       * <code>.Vector center = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getCenterFieldBuilder() {
-        if (centerBuilder_ == null) {
-          centerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getCenter(),
-                  getParentForChildren(),
-                  isClean());
-          center_ = null;
-        }
-        return centerBuilder_;
-      }
-
-      private int posId_ ;
-      /**
-       * <code>uint32 pos_id = 11;</code>
-       * @return The posId.
-       */
-      @java.lang.Override
-      public int getPosId() {
-        return posId_;
-      }
-      /**
-       * <code>uint32 pos_id = 11;</code>
-       * @param value The posId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPosId(int value) {
-        
-        posId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 pos_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPosId() {
-        
-        posId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int openTime_ ;
       /**
-       * <code>uint32 open_time = 2;</code>
+       * <code>uint32 open_time = 9;</code>
        * @return The openTime.
        */
       @java.lang.Override
@@ -821,7 +640,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
         return openTime_;
       }
       /**
-       * <code>uint32 open_time = 2;</code>
+       * <code>uint32 open_time = 9;</code>
        * @param value The openTime to set.
        * @return This builder for chaining.
        */
@@ -832,7 +651,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 open_time = 2;</code>
+       * <code>uint32 open_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
@@ -869,6 +688,187 @@ public final class FleurFairV2PhotoPosDataOuterClass {
       public Builder clearIsView() {
         
         isView_ = false;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector center_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> centerBuilder_;
+      /**
+       * <code>.Vector center = 11;</code>
+       * @return Whether the center field is set.
+       */
+      public boolean hasCenter() {
+        return centerBuilder_ != null || center_ != null;
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       * @return The center.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getCenter() {
+        if (centerBuilder_ == null) {
+          return center_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+        } else {
+          return centerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public Builder setCenter(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (centerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          center_ = value;
+          onChanged();
+        } else {
+          centerBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public Builder setCenter(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (centerBuilder_ == null) {
+          center_ = builderForValue.build();
+          onChanged();
+        } else {
+          centerBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public Builder mergeCenter(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (centerBuilder_ == null) {
+          if (center_ != null) {
+            center_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          } else {
+            center_ = value;
+          }
+          onChanged();
+        } else {
+          centerBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public Builder clearCenter() {
+        if (centerBuilder_ == null) {
+          center_ = null;
+          onChanged();
+        } else {
+          center_ = null;
+          centerBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
+        
+        onChanged();
+        return getCenterFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
+        if (centerBuilder_ != null) {
+          return centerBuilder_.getMessageOrBuilder();
+        } else {
+          return center_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
+        }
+      }
+      /**
+       * <code>.Vector center = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getCenterFieldBuilder() {
+        if (centerBuilder_ == null) {
+          centerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getCenter(),
+                  getParentForChildren(),
+                  isClean());
+          center_ = null;
+        }
+        return centerBuilder_;
+      }
+
+      private int posId_ ;
+      /**
+       * <code>uint32 pos_id = 1;</code>
+       * @return The posId.
+       */
+      @java.lang.Override
+      public int getPosId() {
+        return posId_;
+      }
+      /**
+       * <code>uint32 pos_id = 1;</code>
+       * @param value The posId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPosId(int value) {
+        
+        posId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 pos_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPosId() {
+        
+        posId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -940,10 +940,10 @@ public final class FleurFairV2PhotoPosDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035FleurFairV2PhotoPosData.proto\032\014Vector." +
-      "proto\"w\n\027FleurFairV2PhotoPosData\022\017\n\007is_o" +
-      "pen\030\017 \001(\010\022\027\n\006center\030\006 \001(\0132\007.Vector\022\016\n\006po" +
-      "s_id\030\013 \001(\r\022\021\n\topen_time\030\002 \001(\r\022\017\n\007is_view" +
-      "\030\007 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "proto\"w\n\027FleurFairV2PhotoPosData\022\021\n\topen" +
+      "_time\030\t \001(\r\022\017\n\007is_view\030\007 \001(\010\022\027\n\006center\030\013" +
+      " \001(\0132\007.Vector\022\016\n\006pos_id\030\001 \001(\r\022\017\n\007is_open" +
+      "\030\010 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -956,7 +956,7 @@ public final class FleurFairV2PhotoPosDataOuterClass {
     internal_static_FleurFairV2PhotoPosData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FleurFairV2PhotoPosData_descriptor,
-        new java.lang.String[] { "IsOpen", "Center", "PosId", "OpenTime", "IsView", });
+        new java.lang.String[] { "OpenTime", "IsView", "Center", "PosId", "IsOpen", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

@@ -26,8 +26,8 @@ public final class HomeChangeBgmReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4470
-   * Name: CLLEAGFNBFB
+   * CmdId: 4496
+   * Obf: HADMLDEDBLD
    * </pre>
    *
    * Protobuf type {@code HomeChangeBgmReq}
@@ -279,8 +279,8 @@ public final class HomeChangeBgmReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4470
-     * Name: CLLEAGFNBFB
+     * CmdId: 4496
+     * Obf: HADMLDEDBLD
      * </pre>
      *
      * Protobuf type {@code HomeChangeBgmReq}

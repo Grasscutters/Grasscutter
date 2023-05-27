@@ -669,8 +669,8 @@ public final class EnterTrialAvatarActivityDungeonRspOuterClass {
       "\n(EnterTrialAvatarActivityDungeonRsp.pro" +
       "to\"i\n\"EnterTrialAvatarActivityDungeonRsp" +
       "\022\017\n\007retcode\030\014 \001(\005\022\035\n\025trial_avatar_index_" +
-      "id\030\017 \001(\r\022\023\n\013activity_id\030\006 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "id\030\017 \001(\r\022\023\n\013activity_id\030\006 \001(\rB!\n\031emu.gra" +
+      "sscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

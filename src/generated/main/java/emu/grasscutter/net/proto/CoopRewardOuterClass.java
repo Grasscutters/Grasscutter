@@ -755,8 +755,8 @@ public final class CoopRewardOuterClass {
       "\n\020CoopReward.proto\"v\n\nCoopReward\022\n\n\002id\030\t" +
       " \001(\r\022 \n\005state\030\016 \001(\0162\021.CoopReward.State\":" +
       "\n\005State\022\020\n\014STATE_UNLOCK\020\000\022\016\n\nSTATE_LOCK\020" +
-      "\001\022\017\n\013STATE_TAKEN\020\002B\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\001\022\017\n\013STATE_TAKEN\020\002B!\n\031emu.grasscutter.ne" +
+      "t.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

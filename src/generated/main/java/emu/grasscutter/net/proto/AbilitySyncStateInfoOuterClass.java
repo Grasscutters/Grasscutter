@@ -146,7 +146,7 @@ public final class AbilitySyncStateInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: OIEKIGIJIFH
+   * Obf: LKMIECILJCL
    * </pre>
    *
    * Protobuf type {@code AbilitySyncStateInfo}
@@ -730,7 +730,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: OIEKIGIJIFH
+     * Obf: LKMIECILJCL
      * </pre>
      *
      * Protobuf type {@code AbilitySyncStateInfo}
@@ -2388,10 +2388,10 @@ public final class AbilitySyncStateInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032AbilitySyncStateInfo.proto\032\033AbilityApp" +
-      "liedAbility.proto\032\034AbilityAppliedModifie" +
-      "r.proto\032\035AbilityMixinRecoverInfo.proto\032\035" +
-      "AbilityScalarValueEntry.proto\"\265\002\n\024Abilit" +
+      "\n\032AbilitySyncStateInfo.proto\032\035AbilitySca" +
+      "larValueEntry.proto\032\033AbilityAppliedAbili" +
+      "ty.proto\032\034AbilityAppliedModifier.proto\032\035" +
+      "AbilityMixinRecoverInfo.proto\"\265\002\n\024Abilit" +
       "ySyncStateInfo\022\021\n\tis_inited\030\001 \001(\010\0223\n\021dyn" +
       "amic_value_map\030\002 \003(\0132\030.AbilityScalarValu" +
       "eEntry\0221\n\021applied_abilities\030\003 \003(\0132\026.Abil" +
@@ -2405,10 +2405,10 @@ public final class AbilitySyncStateInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityAppliedModifierOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
         });
     internal_static_AbilitySyncStateInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2416,10 +2416,10 @@ public final class AbilitySyncStateInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilitySyncStateInfo_descriptor,
         new java.lang.String[] { "IsInited", "DynamicValueMap", "AppliedAbilities", "AppliedModifiers", "MixinRecoverInfos", "SgvDynamicValueMap", });
+    emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityAppliedModifierOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

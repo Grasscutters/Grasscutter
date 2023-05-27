@@ -19,93 +19,93 @@ public final class SorushTrialDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-     * @return A list containing the jAMGNDKIEAL.
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
+     * @return A list containing the dGELICKACOP.
      */
-    java.util.List<java.lang.Integer> getJAMGNDKIEALList();
+    java.util.List<java.lang.Integer> getDGELICKACOPList();
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-     * @return The count of jAMGNDKIEAL.
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
+     * @return The count of dGELICKACOP.
      */
-    int getJAMGNDKIEALCount();
+    int getDGELICKACOPCount();
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
      * @param index The index of the element to return.
-     * @return The jAMGNDKIEAL at the given index.
+     * @return The dGELICKACOP at the given index.
      */
-    int getJAMGNDKIEAL(int index);
+    int getDGELICKACOP(int index);
 
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @return A list containing the cOOILNKNEEF.
      */
-    int getFFADCNBDFMFCount();
+    java.util.List<java.lang.Integer> getCOOILNKNEEFList();
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @return The count of cOOILNKNEEF.
      */
-    boolean containsFFADCNBDFMF(
+    int getCOOILNKNEEFCount();
+    /**
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @param index The index of the element to return.
+     * @return The cOOILNKNEEF at the given index.
+     */
+    int getCOOILNKNEEF(int index);
+
+    /**
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
+     */
+    int getKFLLEIACPHCCount();
+    /**
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
+     */
+    boolean containsKFLLEIACPHC(
         int key);
     /**
-     * Use {@link #getFFADCNBDFMFMap()} instead.
+     * Use {@link #getKFLLEIACPHCMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getFFADCNBDFMF();
+    getKFLLEIACPHC();
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getFFADCNBDFMFMap();
+    getKFLLEIACPHCMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
 
-    int getFFADCNBDFMFOrDefault(
+    int getKFLLEIACPHCOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
 
-    int getFFADCNBDFMFOrThrow(
+    int getKFLLEIACPHCOrThrow(
         int key);
 
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-     * @return A list containing the pEAGPLNPGNE.
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+     * @return A list containing the eJBPEFKFILC.
      */
-    java.util.List<java.lang.Integer> getPEAGPLNPGNEList();
+    java.util.List<java.lang.Integer> getEJBPEFKFILCList();
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-     * @return The count of pEAGPLNPGNE.
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+     * @return The count of eJBPEFKFILC.
      */
-    int getPEAGPLNPGNECount();
+    int getEJBPEFKFILCCount();
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
      * @param index The index of the element to return.
-     * @return The pEAGPLNPGNE at the given index.
+     * @return The eJBPEFKFILC at the given index.
      */
-    int getPEAGPLNPGNE(int index);
-
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @return A list containing the eEGMCLFOHCL.
-     */
-    java.util.List<java.lang.Integer> getEEGMCLFOHCLList();
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @return The count of eEGMCLFOHCL.
-     */
-    int getEEGMCLFOHCLCount();
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @param index The index of the element to return.
-     * @return The eEGMCLFOHCL at the given index.
-     */
-    int getEEGMCLFOHCL(int index);
+    int getEJBPEFKFILC(int index);
   }
   /**
    * <pre>
-   * Name: KDDEFGEOJJC
+   * Obf: BEBGFDMPMHD
    * </pre>
    *
    * Protobuf type {@code SorushTrialDetailInfo}
@@ -120,9 +120,9 @@ public final class SorushTrialDetailInfoOuterClass {
       super(builder);
     }
     private SorushTrialDetailInfo() {
-      jAMGNDKIEAL_ = emptyIntList();
-      pEAGPLNPGNE_ = emptyIntList();
-      eEGMCLFOHCL_ = emptyIntList();
+      dGELICKACOP_ = emptyIntList();
+      cOOILNKNEEF_ = emptyIntList();
+      eJBPEFKFILC_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -156,80 +156,80 @@ public final class SorushTrialDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                jAMGNDKIEAL_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                cOOILNKNEEF_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
-              jAMGNDKIEAL_.addInt(input.readUInt32());
+              cOOILNKNEEF_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 26: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                cOOILNKNEEF_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                cOOILNKNEEF_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 48: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dGELICKACOP_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dGELICKACOP_.addInt(input.readUInt32());
+              break;
+            }
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                jAMGNDKIEAL_ = newIntList();
+                dGELICKACOP_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                jAMGNDKIEAL_.addInt(input.readUInt32());
+                dGELICKACOP_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                pEAGPLNPGNE_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              pEAGPLNPGNE_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                pEAGPLNPGNE_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                pEAGPLNPGNE_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                eEGMCLFOHCL_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              eEGMCLFOHCL_.addInt(input.readUInt32());
               break;
             }
             case 82: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                kFLLEIACPHC_ = com.google.protobuf.MapField.newMapField(
+                    KFLLEIACPHCDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              kFLLEIACPHC__ = input.readMessage(
+                  KFLLEIACPHCDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              kFLLEIACPHC_.getMutableMap().put(
+                  kFLLEIACPHC__.getKey(), kFLLEIACPHC__.getValue());
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                eJBPEFKFILC_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              eJBPEFKFILC_.addInt(input.readUInt32());
+              break;
+            }
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                eEGMCLFOHCL_ = newIntList();
+                eJBPEFKFILC_ = newIntList();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
-                eEGMCLFOHCL_.addInt(input.readUInt32());
+                eJBPEFKFILC_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                fFADCNBDFMF_ = com.google.protobuf.MapField.newMapField(
-                    FFADCNBDFMFDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              fFADCNBDFMF__ = input.readMessage(
-                  FFADCNBDFMFDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              fFADCNBDFMF_.getMutableMap().put(
-                  fFADCNBDFMF__.getKey(), fFADCNBDFMF__.getValue());
               break;
             }
             default: {
@@ -247,14 +247,14 @@ public final class SorushTrialDetailInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          jAMGNDKIEAL_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          cOOILNKNEEF_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          pEAGPLNPGNE_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dGELICKACOP_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          eEGMCLFOHCL_.makeImmutable(); // C
+          eJBPEFKFILC_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -270,8 +270,8 @@ public final class SorushTrialDetailInfoOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 15:
-          return internalGetFFADCNBDFMF();
+        case 10:
+          return internalGetKFLLEIACPHC();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -285,170 +285,170 @@ public final class SorushTrialDetailInfoOuterClass {
               emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo.class, emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo.Builder.class);
     }
 
-    public static final int JAMGNDKIEAL_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.IntList jAMGNDKIEAL_;
+    public static final int DGELICKACOP_FIELD_NUMBER = 6;
+    private com.google.protobuf.Internal.IntList dGELICKACOP_;
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-     * @return A list containing the jAMGNDKIEAL.
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
+     * @return A list containing the dGELICKACOP.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getJAMGNDKIEALList() {
-      return jAMGNDKIEAL_;
+        getDGELICKACOPList() {
+      return dGELICKACOP_;
     }
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-     * @return The count of jAMGNDKIEAL.
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
+     * @return The count of dGELICKACOP.
      */
-    public int getJAMGNDKIEALCount() {
-      return jAMGNDKIEAL_.size();
+    public int getDGELICKACOPCount() {
+      return dGELICKACOP_.size();
     }
     /**
-     * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
+     * <code>repeated uint32 DGELICKACOP = 6;</code>
      * @param index The index of the element to return.
-     * @return The jAMGNDKIEAL at the given index.
+     * @return The dGELICKACOP at the given index.
      */
-    public int getJAMGNDKIEAL(int index) {
-      return jAMGNDKIEAL_.getInt(index);
+    public int getDGELICKACOP(int index) {
+      return dGELICKACOP_.getInt(index);
     }
-    private int jAMGNDKIEALMemoizedSerializedSize = -1;
+    private int dGELICKACOPMemoizedSerializedSize = -1;
 
-    public static final int FFADCNBDFMF_FIELD_NUMBER = 15;
-    private static final class FFADCNBDFMFDefaultEntryHolder {
+    public static final int COOILNKNEEF_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList cOOILNKNEEF_;
+    /**
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @return A list containing the cOOILNKNEEF.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getCOOILNKNEEFList() {
+      return cOOILNKNEEF_;
+    }
+    /**
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @return The count of cOOILNKNEEF.
+     */
+    public int getCOOILNKNEEFCount() {
+      return cOOILNKNEEF_.size();
+    }
+    /**
+     * <code>repeated uint32 COOILNKNEEF = 3;</code>
+     * @param index The index of the element to return.
+     * @return The cOOILNKNEEF at the given index.
+     */
+    public int getCOOILNKNEEF(int index) {
+      return cOOILNKNEEF_.getInt(index);
+    }
+    private int cOOILNKNEEFMemoizedSerializedSize = -1;
+
+    public static final int KFLLEIACPHC_FIELD_NUMBER = 10;
+    private static final class KFLLEIACPHCDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_descriptor, 
+                  emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> fFADCNBDFMF_;
+        java.lang.Integer, java.lang.Integer> kFLLEIACPHC_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetFFADCNBDFMF() {
-      if (fFADCNBDFMF_ == null) {
+    internalGetKFLLEIACPHC() {
+      if (kFLLEIACPHC_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            FFADCNBDFMFDefaultEntryHolder.defaultEntry);
+            KFLLEIACPHCDefaultEntryHolder.defaultEntry);
       }
-      return fFADCNBDFMF_;
+      return kFLLEIACPHC_;
     }
 
-    public int getFFADCNBDFMFCount() {
-      return internalGetFFADCNBDFMF().getMap().size();
+    public int getKFLLEIACPHCCount() {
+      return internalGetKFLLEIACPHC().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
 
     @java.lang.Override
-    public boolean containsFFADCNBDFMF(
+    public boolean containsKFLLEIACPHC(
         int key) {
       
-      return internalGetFFADCNBDFMF().getMap().containsKey(key);
+      return internalGetKFLLEIACPHC().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getFFADCNBDFMFMap()} instead.
+     * Use {@link #getKFLLEIACPHCMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getFFADCNBDFMF() {
-      return getFFADCNBDFMFMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getKFLLEIACPHC() {
+      return getKFLLEIACPHCMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getFFADCNBDFMFMap() {
-      return internalGetFFADCNBDFMF().getMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getKFLLEIACPHCMap() {
+      return internalGetKFLLEIACPHC().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
     @java.lang.Override
 
-    public int getFFADCNBDFMFOrDefault(
+    public int getKFLLEIACPHCOrDefault(
         int key,
         int defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetFFADCNBDFMF().getMap();
+          internalGetKFLLEIACPHC().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+     * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
      */
     @java.lang.Override
 
-    public int getFFADCNBDFMFOrThrow(
+    public int getKFLLEIACPHCOrThrow(
         int key) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetFFADCNBDFMF().getMap();
+          internalGetKFLLEIACPHC().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public static final int PEAGPLNPGNE_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.IntList pEAGPLNPGNE_;
+    public static final int EJBPEFKFILC_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList eJBPEFKFILC_;
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-     * @return A list containing the pEAGPLNPGNE.
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+     * @return A list containing the eJBPEFKFILC.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getPEAGPLNPGNEList() {
-      return pEAGPLNPGNE_;
+        getEJBPEFKFILCList() {
+      return eJBPEFKFILC_;
     }
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-     * @return The count of pEAGPLNPGNE.
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+     * @return The count of eJBPEFKFILC.
      */
-    public int getPEAGPLNPGNECount() {
-      return pEAGPLNPGNE_.size();
+    public int getEJBPEFKFILCCount() {
+      return eJBPEFKFILC_.size();
     }
     /**
-     * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
+     * <code>repeated uint32 EJBPEFKFILC = 13;</code>
      * @param index The index of the element to return.
-     * @return The pEAGPLNPGNE at the given index.
+     * @return The eJBPEFKFILC at the given index.
      */
-    public int getPEAGPLNPGNE(int index) {
-      return pEAGPLNPGNE_.getInt(index);
+    public int getEJBPEFKFILC(int index) {
+      return eJBPEFKFILC_.getInt(index);
     }
-    private int pEAGPLNPGNEMemoizedSerializedSize = -1;
-
-    public static final int EEGMCLFOHCL_FIELD_NUMBER = 10;
-    private com.google.protobuf.Internal.IntList eEGMCLFOHCL_;
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @return A list containing the eEGMCLFOHCL.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getEEGMCLFOHCLList() {
-      return eEGMCLFOHCL_;
-    }
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @return The count of eEGMCLFOHCL.
-     */
-    public int getEEGMCLFOHCLCount() {
-      return eEGMCLFOHCL_.size();
-    }
-    /**
-     * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-     * @param index The index of the element to return.
-     * @return The eEGMCLFOHCL at the given index.
-     */
-    public int getEEGMCLFOHCL(int index) {
-      return eEGMCLFOHCL_.getInt(index);
-    }
-    private int eEGMCLFOHCLMemoizedSerializedSize = -1;
+    private int eJBPEFKFILCMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -465,33 +465,33 @@ public final class SorushTrialDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getJAMGNDKIEALList().size() > 0) {
-        output.writeUInt32NoTag(42);
-        output.writeUInt32NoTag(jAMGNDKIEALMemoizedSerializedSize);
+      if (getCOOILNKNEEFList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(cOOILNKNEEFMemoizedSerializedSize);
       }
-      for (int i = 0; i < jAMGNDKIEAL_.size(); i++) {
-        output.writeUInt32NoTag(jAMGNDKIEAL_.getInt(i));
+      for (int i = 0; i < cOOILNKNEEF_.size(); i++) {
+        output.writeUInt32NoTag(cOOILNKNEEF_.getInt(i));
       }
-      if (getPEAGPLNPGNEList().size() > 0) {
-        output.writeUInt32NoTag(58);
-        output.writeUInt32NoTag(pEAGPLNPGNEMemoizedSerializedSize);
+      if (getDGELICKACOPList().size() > 0) {
+        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(dGELICKACOPMemoizedSerializedSize);
       }
-      for (int i = 0; i < pEAGPLNPGNE_.size(); i++) {
-        output.writeUInt32NoTag(pEAGPLNPGNE_.getInt(i));
-      }
-      if (getEEGMCLFOHCLList().size() > 0) {
-        output.writeUInt32NoTag(82);
-        output.writeUInt32NoTag(eEGMCLFOHCLMemoizedSerializedSize);
-      }
-      for (int i = 0; i < eEGMCLFOHCL_.size(); i++) {
-        output.writeUInt32NoTag(eEGMCLFOHCL_.getInt(i));
+      for (int i = 0; i < dGELICKACOP_.size(); i++) {
+        output.writeUInt32NoTag(dGELICKACOP_.getInt(i));
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetFFADCNBDFMF(),
-          FFADCNBDFMFDefaultEntryHolder.defaultEntry,
-          15);
+          internalGetKFLLEIACPHC(),
+          KFLLEIACPHCDefaultEntryHolder.defaultEntry,
+          10);
+      if (getEJBPEFKFILCList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(eJBPEFKFILCMemoizedSerializedSize);
+      }
+      for (int i = 0; i < eJBPEFKFILC_.size(); i++) {
+        output.writeUInt32NoTag(eJBPEFKFILC_.getInt(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -503,55 +503,55 @@ public final class SorushTrialDetailInfoOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < jAMGNDKIEAL_.size(); i++) {
+        for (int i = 0; i < cOOILNKNEEF_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(jAMGNDKIEAL_.getInt(i));
+            .computeUInt32SizeNoTag(cOOILNKNEEF_.getInt(i));
         }
         size += dataSize;
-        if (!getJAMGNDKIEALList().isEmpty()) {
+        if (!getCOOILNKNEEFList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        jAMGNDKIEALMemoizedSerializedSize = dataSize;
+        cOOILNKNEEFMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < pEAGPLNPGNE_.size(); i++) {
+        for (int i = 0; i < dGELICKACOP_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(pEAGPLNPGNE_.getInt(i));
+            .computeUInt32SizeNoTag(dGELICKACOP_.getInt(i));
         }
         size += dataSize;
-        if (!getPEAGPLNPGNEList().isEmpty()) {
+        if (!getDGELICKACOPList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        pEAGPLNPGNEMemoizedSerializedSize = dataSize;
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < eEGMCLFOHCL_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(eEGMCLFOHCL_.getInt(i));
-        }
-        size += dataSize;
-        if (!getEEGMCLFOHCLList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        eEGMCLFOHCLMemoizedSerializedSize = dataSize;
+        dGELICKACOPMemoizedSerializedSize = dataSize;
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetFFADCNBDFMF().getMap().entrySet()) {
+           : internalGetKFLLEIACPHC().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        fFADCNBDFMF__ = FFADCNBDFMFDefaultEntryHolder.defaultEntry.newBuilderForType()
+        kFLLEIACPHC__ = KFLLEIACPHCDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, fFADCNBDFMF__);
+            .computeMessageSize(10, kFLLEIACPHC__);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < eJBPEFKFILC_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(eJBPEFKFILC_.getInt(i));
+        }
+        size += dataSize;
+        if (!getEJBPEFKFILCList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        eJBPEFKFILCMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -568,14 +568,14 @@ public final class SorushTrialDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo other = (emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo) obj;
 
-      if (!getJAMGNDKIEALList()
-          .equals(other.getJAMGNDKIEALList())) return false;
-      if (!internalGetFFADCNBDFMF().equals(
-          other.internalGetFFADCNBDFMF())) return false;
-      if (!getPEAGPLNPGNEList()
-          .equals(other.getPEAGPLNPGNEList())) return false;
-      if (!getEEGMCLFOHCLList()
-          .equals(other.getEEGMCLFOHCLList())) return false;
+      if (!getDGELICKACOPList()
+          .equals(other.getDGELICKACOPList())) return false;
+      if (!getCOOILNKNEEFList()
+          .equals(other.getCOOILNKNEEFList())) return false;
+      if (!internalGetKFLLEIACPHC().equals(
+          other.internalGetKFLLEIACPHC())) return false;
+      if (!getEJBPEFKFILCList()
+          .equals(other.getEJBPEFKFILCList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -587,21 +587,21 @@ public final class SorushTrialDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getJAMGNDKIEALCount() > 0) {
-        hash = (37 * hash) + JAMGNDKIEAL_FIELD_NUMBER;
-        hash = (53 * hash) + getJAMGNDKIEALList().hashCode();
+      if (getDGELICKACOPCount() > 0) {
+        hash = (37 * hash) + DGELICKACOP_FIELD_NUMBER;
+        hash = (53 * hash) + getDGELICKACOPList().hashCode();
       }
-      if (!internalGetFFADCNBDFMF().getMap().isEmpty()) {
-        hash = (37 * hash) + FFADCNBDFMF_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetFFADCNBDFMF().hashCode();
+      if (getCOOILNKNEEFCount() > 0) {
+        hash = (37 * hash) + COOILNKNEEF_FIELD_NUMBER;
+        hash = (53 * hash) + getCOOILNKNEEFList().hashCode();
       }
-      if (getPEAGPLNPGNECount() > 0) {
-        hash = (37 * hash) + PEAGPLNPGNE_FIELD_NUMBER;
-        hash = (53 * hash) + getPEAGPLNPGNEList().hashCode();
+      if (!internalGetKFLLEIACPHC().getMap().isEmpty()) {
+        hash = (37 * hash) + KFLLEIACPHC_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetKFLLEIACPHC().hashCode();
       }
-      if (getEEGMCLFOHCLCount() > 0) {
-        hash = (37 * hash) + EEGMCLFOHCL_FIELD_NUMBER;
-        hash = (53 * hash) + getEEGMCLFOHCLList().hashCode();
+      if (getEJBPEFKFILCCount() > 0) {
+        hash = (37 * hash) + EJBPEFKFILC_FIELD_NUMBER;
+        hash = (53 * hash) + getEJBPEFKFILCList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -700,7 +700,7 @@ public final class SorushTrialDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: KDDEFGEOJJC
+     * Obf: BEBGFDMPMHD
      * </pre>
      *
      * Protobuf type {@code SorushTrialDetailInfo}
@@ -718,8 +718,8 @@ public final class SorushTrialDetailInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 15:
-            return internalGetFFADCNBDFMF();
+          case 10:
+            return internalGetKFLLEIACPHC();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -729,8 +729,8 @@ public final class SorushTrialDetailInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 15:
-            return internalGetMutableFFADCNBDFMF();
+          case 10:
+            return internalGetMutableKFLLEIACPHC();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -762,12 +762,12 @@ public final class SorushTrialDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        jAMGNDKIEAL_ = emptyIntList();
+        dGELICKACOP_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableFFADCNBDFMF().clear();
-        pEAGPLNPGNE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        eEGMCLFOHCL_ = emptyIntList();
+        cOOILNKNEEF_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableKFLLEIACPHC().clear();
+        eJBPEFKFILC_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
@@ -797,22 +797,22 @@ public final class SorushTrialDetailInfoOuterClass {
         emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo result = new emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          jAMGNDKIEAL_.makeImmutable();
+          dGELICKACOP_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.jAMGNDKIEAL_ = jAMGNDKIEAL_;
-        result.fFADCNBDFMF_ = internalGetFFADCNBDFMF();
-        result.fFADCNBDFMF_.makeImmutable();
-        if (((bitField0_ & 0x00000004) != 0)) {
-          pEAGPLNPGNE_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+        result.dGELICKACOP_ = dGELICKACOP_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          cOOILNKNEEF_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.pEAGPLNPGNE_ = pEAGPLNPGNE_;
+        result.cOOILNKNEEF_ = cOOILNKNEEF_;
+        result.kFLLEIACPHC_ = internalGetKFLLEIACPHC();
+        result.kFLLEIACPHC_.makeImmutable();
         if (((bitField0_ & 0x00000008) != 0)) {
-          eEGMCLFOHCL_.makeImmutable();
+          eJBPEFKFILC_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
-        result.eEGMCLFOHCL_ = eEGMCLFOHCL_;
+        result.eJBPEFKFILC_ = eJBPEFKFILC_;
         onBuilt();
         return result;
       }
@@ -861,35 +861,35 @@ public final class SorushTrialDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo other) {
         if (other == emu.grasscutter.net.proto.SorushTrialDetailInfoOuterClass.SorushTrialDetailInfo.getDefaultInstance()) return this;
-        if (!other.jAMGNDKIEAL_.isEmpty()) {
-          if (jAMGNDKIEAL_.isEmpty()) {
-            jAMGNDKIEAL_ = other.jAMGNDKIEAL_;
+        if (!other.dGELICKACOP_.isEmpty()) {
+          if (dGELICKACOP_.isEmpty()) {
+            dGELICKACOP_ = other.dGELICKACOP_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureJAMGNDKIEALIsMutable();
-            jAMGNDKIEAL_.addAll(other.jAMGNDKIEAL_);
+            ensureDGELICKACOPIsMutable();
+            dGELICKACOP_.addAll(other.dGELICKACOP_);
           }
           onChanged();
         }
-        internalGetMutableFFADCNBDFMF().mergeFrom(
-            other.internalGetFFADCNBDFMF());
-        if (!other.pEAGPLNPGNE_.isEmpty()) {
-          if (pEAGPLNPGNE_.isEmpty()) {
-            pEAGPLNPGNE_ = other.pEAGPLNPGNE_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+        if (!other.cOOILNKNEEF_.isEmpty()) {
+          if (cOOILNKNEEF_.isEmpty()) {
+            cOOILNKNEEF_ = other.cOOILNKNEEF_;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensurePEAGPLNPGNEIsMutable();
-            pEAGPLNPGNE_.addAll(other.pEAGPLNPGNE_);
+            ensureCOOILNKNEEFIsMutable();
+            cOOILNKNEEF_.addAll(other.cOOILNKNEEF_);
           }
           onChanged();
         }
-        if (!other.eEGMCLFOHCL_.isEmpty()) {
-          if (eEGMCLFOHCL_.isEmpty()) {
-            eEGMCLFOHCL_ = other.eEGMCLFOHCL_;
+        internalGetMutableKFLLEIACPHC().mergeFrom(
+            other.internalGetKFLLEIACPHC());
+        if (!other.eJBPEFKFILC_.isEmpty()) {
+          if (eJBPEFKFILC_.isEmpty()) {
+            eJBPEFKFILC_ = other.eJBPEFKFILC_;
             bitField0_ = (bitField0_ & ~0x00000008);
           } else {
-            ensureEEGMCLFOHCLIsMutable();
-            eEGMCLFOHCL_.addAll(other.eEGMCLFOHCL_);
+            ensureEJBPEFKFILCIsMutable();
+            eJBPEFKFILC_.addAll(other.eJBPEFKFILC_);
           }
           onChanged();
         }
@@ -923,179 +923,258 @@ public final class SorushTrialDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList jAMGNDKIEAL_ = emptyIntList();
-      private void ensureJAMGNDKIEALIsMutable() {
+      private com.google.protobuf.Internal.IntList dGELICKACOP_ = emptyIntList();
+      private void ensureDGELICKACOPIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          jAMGNDKIEAL_ = mutableCopy(jAMGNDKIEAL_);
+          dGELICKACOP_ = mutableCopy(dGELICKACOP_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-       * @return A list containing the jAMGNDKIEAL.
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
+       * @return A list containing the dGELICKACOP.
        */
       public java.util.List<java.lang.Integer>
-          getJAMGNDKIEALList() {
+          getDGELICKACOPList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(jAMGNDKIEAL_) : jAMGNDKIEAL_;
+                 java.util.Collections.unmodifiableList(dGELICKACOP_) : dGELICKACOP_;
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-       * @return The count of jAMGNDKIEAL.
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
+       * @return The count of dGELICKACOP.
        */
-      public int getJAMGNDKIEALCount() {
-        return jAMGNDKIEAL_.size();
+      public int getDGELICKACOPCount() {
+        return dGELICKACOP_.size();
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
        * @param index The index of the element to return.
-       * @return The jAMGNDKIEAL at the given index.
+       * @return The dGELICKACOP at the given index.
        */
-      public int getJAMGNDKIEAL(int index) {
-        return jAMGNDKIEAL_.getInt(index);
+      public int getDGELICKACOP(int index) {
+        return dGELICKACOP_.getInt(index);
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
        * @param index The index to set the value at.
-       * @param value The jAMGNDKIEAL to set.
+       * @param value The dGELICKACOP to set.
        * @return This builder for chaining.
        */
-      public Builder setJAMGNDKIEAL(
+      public Builder setDGELICKACOP(
           int index, int value) {
-        ensureJAMGNDKIEALIsMutable();
-        jAMGNDKIEAL_.setInt(index, value);
+        ensureDGELICKACOPIsMutable();
+        dGELICKACOP_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-       * @param value The jAMGNDKIEAL to add.
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
+       * @param value The dGELICKACOP to add.
        * @return This builder for chaining.
        */
-      public Builder addJAMGNDKIEAL(int value) {
-        ensureJAMGNDKIEALIsMutable();
-        jAMGNDKIEAL_.addInt(value);
+      public Builder addDGELICKACOP(int value) {
+        ensureDGELICKACOPIsMutable();
+        dGELICKACOP_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
-       * @param values The jAMGNDKIEAL to add.
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
+       * @param values The dGELICKACOP to add.
        * @return This builder for chaining.
        */
-      public Builder addAllJAMGNDKIEAL(
+      public Builder addAllDGELICKACOP(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureJAMGNDKIEALIsMutable();
+        ensureDGELICKACOPIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jAMGNDKIEAL_);
+            values, dGELICKACOP_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 JAMGNDKIEAL = 5;</code>
+       * <code>repeated uint32 DGELICKACOP = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJAMGNDKIEAL() {
-        jAMGNDKIEAL_ = emptyIntList();
+      public Builder clearDGELICKACOP() {
+        dGELICKACOP_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> fFADCNBDFMF_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetFFADCNBDFMF() {
-        if (fFADCNBDFMF_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              FFADCNBDFMFDefaultEntryHolder.defaultEntry);
-        }
-        return fFADCNBDFMF_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableFFADCNBDFMF() {
-        onChanged();;
-        if (fFADCNBDFMF_ == null) {
-          fFADCNBDFMF_ = com.google.protobuf.MapField.newMapField(
-              FFADCNBDFMFDefaultEntryHolder.defaultEntry);
-        }
-        if (!fFADCNBDFMF_.isMutable()) {
-          fFADCNBDFMF_ = fFADCNBDFMF_.copy();
-        }
-        return fFADCNBDFMF_;
-      }
-
-      public int getFFADCNBDFMFCount() {
-        return internalGetFFADCNBDFMF().getMap().size();
+      private com.google.protobuf.Internal.IntList cOOILNKNEEF_ = emptyIntList();
+      private void ensureCOOILNKNEEFIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          cOOILNKNEEF_ = mutableCopy(cOOILNKNEEF_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @return A list containing the cOOILNKNEEF.
+       */
+      public java.util.List<java.lang.Integer>
+          getCOOILNKNEEFList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(cOOILNKNEEF_) : cOOILNKNEEF_;
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @return The count of cOOILNKNEEF.
+       */
+      public int getCOOILNKNEEFCount() {
+        return cOOILNKNEEF_.size();
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @param index The index of the element to return.
+       * @return The cOOILNKNEEF at the given index.
+       */
+      public int getCOOILNKNEEF(int index) {
+        return cOOILNKNEEF_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The cOOILNKNEEF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCOOILNKNEEF(
+          int index, int value) {
+        ensureCOOILNKNEEFIsMutable();
+        cOOILNKNEEF_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @param value The cOOILNKNEEF to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCOOILNKNEEF(int value) {
+        ensureCOOILNKNEEFIsMutable();
+        cOOILNKNEEF_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @param values The cOOILNKNEEF to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCOOILNKNEEF(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCOOILNKNEEFIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cOOILNKNEEF_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 COOILNKNEEF = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCOOILNKNEEF() {
+        cOOILNKNEEF_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Integer> kFLLEIACPHC_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetKFLLEIACPHC() {
+        if (kFLLEIACPHC_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              KFLLEIACPHCDefaultEntryHolder.defaultEntry);
+        }
+        return kFLLEIACPHC_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetMutableKFLLEIACPHC() {
+        onChanged();;
+        if (kFLLEIACPHC_ == null) {
+          kFLLEIACPHC_ = com.google.protobuf.MapField.newMapField(
+              KFLLEIACPHCDefaultEntryHolder.defaultEntry);
+        }
+        if (!kFLLEIACPHC_.isMutable()) {
+          kFLLEIACPHC_ = kFLLEIACPHC_.copy();
+        }
+        return kFLLEIACPHC_;
+      }
+
+      public int getKFLLEIACPHCCount() {
+        return internalGetKFLLEIACPHC().getMap().size();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
 
       @java.lang.Override
-      public boolean containsFFADCNBDFMF(
+      public boolean containsKFLLEIACPHC(
           int key) {
         
-        return internalGetFFADCNBDFMF().getMap().containsKey(key);
+        return internalGetKFLLEIACPHC().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getFFADCNBDFMFMap()} instead.
+       * Use {@link #getKFLLEIACPHCMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getFFADCNBDFMF() {
-        return getFFADCNBDFMFMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getKFLLEIACPHC() {
+        return getKFLLEIACPHCMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getFFADCNBDFMFMap() {
-        return internalGetFFADCNBDFMF().getMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getKFLLEIACPHCMap() {
+        return internalGetKFLLEIACPHC().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
       @java.lang.Override
 
-      public int getFFADCNBDFMFOrDefault(
+      public int getKFLLEIACPHCOrDefault(
           int key,
           int defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetFFADCNBDFMF().getMap();
+            internalGetKFLLEIACPHC().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
       @java.lang.Override
 
-      public int getFFADCNBDFMFOrThrow(
+      public int getKFLLEIACPHCOrThrow(
           int key) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetFFADCNBDFMF().getMap();
+            internalGetKFLLEIACPHC().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearFFADCNBDFMF() {
-        internalGetMutableFFADCNBDFMF().getMutableMap()
+      public Builder clearKFLLEIACPHC() {
+        internalGetMutableKFLLEIACPHC().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
 
-      public Builder removeFFADCNBDFMF(
+      public Builder removeKFLLEIACPHC(
           int key) {
         
-        internalGetMutableFFADCNBDFMF().getMutableMap()
+        internalGetMutableKFLLEIACPHC().getMutableMap()
             .remove(key);
         return this;
       }
@@ -1104,185 +1183,106 @@ public final class SorushTrialDetailInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableFFADCNBDFMF() {
-        return internalGetMutableFFADCNBDFMF().getMutableMap();
+      getMutableKFLLEIACPHC() {
+        return internalGetMutableKFLLEIACPHC().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
-      public Builder putFFADCNBDFMF(
+      public Builder putKFLLEIACPHC(
           int key,
           int value) {
         
         
-        internalGetMutableFFADCNBDFMF().getMutableMap()
+        internalGetMutableKFLLEIACPHC().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; FFADCNBDFMF = 15;</code>
+       * <code>map&lt;uint32, uint32&gt; KFLLEIACPHC = 10;</code>
        */
 
-      public Builder putAllFFADCNBDFMF(
+      public Builder putAllKFLLEIACPHC(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableFFADCNBDFMF().getMutableMap()
+        internalGetMutableKFLLEIACPHC().getMutableMap()
             .putAll(values);
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList pEAGPLNPGNE_ = emptyIntList();
-      private void ensurePEAGPLNPGNEIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          pEAGPLNPGNE_ = mutableCopy(pEAGPLNPGNE_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @return A list containing the pEAGPLNPGNE.
-       */
-      public java.util.List<java.lang.Integer>
-          getPEAGPLNPGNEList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(pEAGPLNPGNE_) : pEAGPLNPGNE_;
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @return The count of pEAGPLNPGNE.
-       */
-      public int getPEAGPLNPGNECount() {
-        return pEAGPLNPGNE_.size();
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @param index The index of the element to return.
-       * @return The pEAGPLNPGNE at the given index.
-       */
-      public int getPEAGPLNPGNE(int index) {
-        return pEAGPLNPGNE_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The pEAGPLNPGNE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPEAGPLNPGNE(
-          int index, int value) {
-        ensurePEAGPLNPGNEIsMutable();
-        pEAGPLNPGNE_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @param value The pEAGPLNPGNE to add.
-       * @return This builder for chaining.
-       */
-      public Builder addPEAGPLNPGNE(int value) {
-        ensurePEAGPLNPGNEIsMutable();
-        pEAGPLNPGNE_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @param values The pEAGPLNPGNE to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPEAGPLNPGNE(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensurePEAGPLNPGNEIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, pEAGPLNPGNE_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PEAGPLNPGNE = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPEAGPLNPGNE() {
-        pEAGPLNPGNE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList eEGMCLFOHCL_ = emptyIntList();
-      private void ensureEEGMCLFOHCLIsMutable() {
+      private com.google.protobuf.Internal.IntList eJBPEFKFILC_ = emptyIntList();
+      private void ensureEJBPEFKFILCIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          eEGMCLFOHCL_ = mutableCopy(eEGMCLFOHCL_);
+          eJBPEFKFILC_ = mutableCopy(eJBPEFKFILC_);
           bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-       * @return A list containing the eEGMCLFOHCL.
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+       * @return A list containing the eJBPEFKFILC.
        */
       public java.util.List<java.lang.Integer>
-          getEEGMCLFOHCLList() {
+          getEJBPEFKFILCList() {
         return ((bitField0_ & 0x00000008) != 0) ?
-                 java.util.Collections.unmodifiableList(eEGMCLFOHCL_) : eEGMCLFOHCL_;
+                 java.util.Collections.unmodifiableList(eJBPEFKFILC_) : eJBPEFKFILC_;
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-       * @return The count of eEGMCLFOHCL.
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+       * @return The count of eJBPEFKFILC.
        */
-      public int getEEGMCLFOHCLCount() {
-        return eEGMCLFOHCL_.size();
+      public int getEJBPEFKFILCCount() {
+        return eJBPEFKFILC_.size();
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
        * @param index The index of the element to return.
-       * @return The eEGMCLFOHCL at the given index.
+       * @return The eJBPEFKFILC at the given index.
        */
-      public int getEEGMCLFOHCL(int index) {
-        return eEGMCLFOHCL_.getInt(index);
+      public int getEJBPEFKFILC(int index) {
+        return eJBPEFKFILC_.getInt(index);
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
        * @param index The index to set the value at.
-       * @param value The eEGMCLFOHCL to set.
+       * @param value The eJBPEFKFILC to set.
        * @return This builder for chaining.
        */
-      public Builder setEEGMCLFOHCL(
+      public Builder setEJBPEFKFILC(
           int index, int value) {
-        ensureEEGMCLFOHCLIsMutable();
-        eEGMCLFOHCL_.setInt(index, value);
+        ensureEJBPEFKFILCIsMutable();
+        eJBPEFKFILC_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-       * @param value The eEGMCLFOHCL to add.
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+       * @param value The eJBPEFKFILC to add.
        * @return This builder for chaining.
        */
-      public Builder addEEGMCLFOHCL(int value) {
-        ensureEEGMCLFOHCLIsMutable();
-        eEGMCLFOHCL_.addInt(value);
+      public Builder addEJBPEFKFILC(int value) {
+        ensureEJBPEFKFILCIsMutable();
+        eJBPEFKFILC_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
-       * @param values The eEGMCLFOHCL to add.
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
+       * @param values The eJBPEFKFILC to add.
        * @return This builder for chaining.
        */
-      public Builder addAllEEGMCLFOHCL(
+      public Builder addAllEJBPEFKFILC(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureEEGMCLFOHCLIsMutable();
+        ensureEJBPEFKFILCIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, eEGMCLFOHCL_);
+            values, eJBPEFKFILC_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 EEGMCLFOHCL = 10;</code>
+       * <code>repeated uint32 EJBPEFKFILC = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEEGMCLFOHCL() {
-        eEGMCLFOHCL_ = emptyIntList();
+      public Builder clearEJBPEFKFILC() {
+        eJBPEFKFILC_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
@@ -1346,10 +1346,10 @@ public final class SorushTrialDetailInfoOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SorushTrialDetailInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_descriptor;
+    internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_fieldAccessorTable;
+      internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1360,10 +1360,10 @@ public final class SorushTrialDetailInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SorushTrialDetailInfo.proto\"\310\001\n\025Sorush" +
-      "TrialDetailInfo\022\023\n\013JAMGNDKIEAL\030\005 \003(\r\022<\n\013" +
-      "FFADCNBDFMF\030\017 \003(\0132\'.SorushTrialDetailInf" +
-      "o.FFADCNBDFMFEntry\022\023\n\013PEAGPLNPGNE\030\007 \003(\r\022" +
-      "\023\n\013EEGMCLFOHCL\030\n \003(\r\0322\n\020FFADCNBDFMFEntry" +
+      "TrialDetailInfo\022\023\n\013DGELICKACOP\030\006 \003(\r\022\023\n\013" +
+      "COOILNKNEEF\030\003 \003(\r\022<\n\013KFLLEIACPHC\030\n \003(\0132\'" +
+      ".SorushTrialDetailInfo.KFLLEIACPHCEntry\022" +
+      "\023\n\013EJBPEFKFILC\030\r \003(\r\0322\n\020KFLLEIACPHCEntry" +
       "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
@@ -1376,12 +1376,12 @@ public final class SorushTrialDetailInfoOuterClass {
     internal_static_SorushTrialDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SorushTrialDetailInfo_descriptor,
-        new java.lang.String[] { "JAMGNDKIEAL", "FFADCNBDFMF", "PEAGPLNPGNE", "EEGMCLFOHCL", });
-    internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_descriptor =
+        new java.lang.String[] { "DGELICKACOP", "COOILNKNEEF", "KFLLEIACPHC", "EJBPEFKFILC", });
+    internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_descriptor =
       internal_static_SorushTrialDetailInfo_descriptor.getNestedTypes().get(0);
-    internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_fieldAccessorTable = new
+    internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SorushTrialDetailInfo_FFADCNBDFMFEntry_descriptor,
+        internal_static_SorushTrialDetailInfo_KFLLEIACPHCEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
   }
 

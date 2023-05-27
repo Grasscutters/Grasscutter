@@ -19,16 +19,22 @@ public final class VintagePresentStageDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>bool is_open = 10;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool is_open = 11;</code>
-     * @return The isOpen.
+     * <code>bool is_finish = 14;</code>
+     * @return The isFinish.
      */
-    boolean getIsOpen();
+    boolean getIsFinish();
 
     /**
      * <code>uint32 open_time = 15;</code>
@@ -69,16 +75,10 @@ public final class VintagePresentStageDataOuterClass {
 
     emu.grasscutter.net.proto.VintagePresentLevelDataOuterClass.VintagePresentLevelData getPresentLevelMapOrThrow(
         int key);
-
-    /**
-     * <code>bool is_finish = 4;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
   }
   /**
    * <pre>
-   * Name: LAFPNNGPPME
+   * Obf: GCJFMLKOFKM
    * </pre>
    *
    * Protobuf type {@code VintagePresentStageData}
@@ -141,17 +141,17 @@ public final class VintagePresentStageDataOuterClass {
             }
             case 32: {
 
-              isFinish_ = input.readBool();
+              stageId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 80: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 96: {
+            case 112: {
 
-              stageId_ = input.readUInt32();
+              isFinish_ = input.readBool();
               break;
             }
             case 120: {
@@ -203,10 +203,21 @@ public final class VintagePresentStageDataOuterClass {
               emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData.class, emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    public static final int IS_OPEN_FIELD_NUMBER = 10;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 10;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 4;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -214,15 +225,15 @@ public final class VintagePresentStageDataOuterClass {
       return stageId_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 11;
-    private boolean isOpen_;
+    public static final int IS_FINISH_FIELD_NUMBER = 14;
+    private boolean isFinish_;
     /**
-     * <code>bool is_open = 11;</code>
-     * @return The isOpen.
+     * <code>bool is_finish = 14;</code>
+     * @return The isFinish.
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
+    public boolean getIsFinish() {
+      return isFinish_;
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 15;
@@ -317,17 +328,6 @@ public final class VintagePresentStageDataOuterClass {
       return map.get(key);
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 4;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 4;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -348,14 +348,14 @@ public final class VintagePresentStageDataOuterClass {
           internalGetPresentLevelMap(),
           PresentLevelMapDefaultEntryHolder.defaultEntry,
           3);
-      if (isFinish_ != false) {
-        output.writeBool(4, isFinish_);
+      if (stageId_ != 0) {
+        output.writeUInt32(4, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(11, isOpen_);
+        output.writeBool(10, isOpen_);
       }
-      if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
+      if (isFinish_ != false) {
+        output.writeBool(14, isFinish_);
       }
       if (openTime_ != 0) {
         output.writeUInt32(15, openTime_);
@@ -379,17 +379,17 @@ public final class VintagePresentStageDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, presentLevelMap__);
       }
-      if (isFinish_ != false) {
+      if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isFinish_);
+          .computeUInt32Size(4, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isOpen_);
+          .computeBoolSize(10, isOpen_);
       }
-      if (stageId_ != 0) {
+      if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
+          .computeBoolSize(14, isFinish_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -410,16 +410,16 @@ public final class VintagePresentStageDataOuterClass {
       }
       emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData other = (emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData) obj;
 
-      if (getStageId()
-          != other.getStageId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
       if (getOpenTime()
           != other.getOpenTime()) return false;
       if (!internalGetPresentLevelMap().equals(
           other.internalGetPresentLevelMap())) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -431,20 +431,20 @@ public final class VintagePresentStageDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
       hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOpenTime();
       if (!internalGetPresentLevelMap().getMap().isEmpty()) {
         hash = (37 * hash) + PRESENT_LEVEL_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetPresentLevelMap().hashCode();
       }
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -542,7 +542,7 @@ public final class VintagePresentStageDataOuterClass {
     }
     /**
      * <pre>
-     * Name: LAFPNNGPPME
+     * Obf: GCJFMLKOFKM
      * </pre>
      *
      * Protobuf type {@code VintagePresentStageData}
@@ -604,15 +604,15 @@ public final class VintagePresentStageDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isOpen_ = false;
+
         stageId_ = 0;
 
-        isOpen_ = false;
+        isFinish_ = false;
 
         openTime_ = 0;
 
         internalGetMutablePresentLevelMap().clear();
-        isFinish_ = false;
-
         return this;
       }
 
@@ -640,12 +640,12 @@ public final class VintagePresentStageDataOuterClass {
       public emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData buildPartial() {
         emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData result = new emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData(this);
         int from_bitField0_ = bitField0_;
-        result.stageId_ = stageId_;
         result.isOpen_ = isOpen_;
+        result.stageId_ = stageId_;
+        result.isFinish_ = isFinish_;
         result.openTime_ = openTime_;
         result.presentLevelMap_ = internalGetPresentLevelMap();
         result.presentLevelMap_.makeImmutable();
-        result.isFinish_ = isFinish_;
         onBuilt();
         return result;
       }
@@ -694,20 +694,20 @@ public final class VintagePresentStageDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData other) {
         if (other == emu.grasscutter.net.proto.VintagePresentStageDataOuterClass.VintagePresentStageData.getDefaultInstance()) return this;
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
         }
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
         }
         internalGetMutablePresentLevelMap().mergeFrom(
             other.internalGetPresentLevelMap());
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -738,40 +738,9 @@ public final class VintagePresentStageDataOuterClass {
       }
       private int bitField0_;
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 11;</code>
+       * <code>bool is_open = 10;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -779,7 +748,7 @@ public final class VintagePresentStageDataOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 11;</code>
+       * <code>bool is_open = 10;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -790,12 +759,74 @@ public final class VintagePresentStageDataOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 11;</code>
+       * <code>bool is_open = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 4;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 4;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 14;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 14;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
         onChanged();
         return this;
       }
@@ -958,37 +989,6 @@ public final class VintagePresentStageDataOuterClass {
             .putAll(values);
         return this;
       }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1063,10 +1063,10 @@ public final class VintagePresentStageDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035VintagePresentStageData.proto\032\035Vintage" +
       "PresentLevelData.proto\"\376\001\n\027VintagePresen" +
-      "tStageData\022\020\n\010stage_id\030\014 \001(\r\022\017\n\007is_open\030" +
-      "\013 \001(\010\022\021\n\topen_time\030\017 \001(\r\022H\n\021present_leve" +
-      "l_map\030\003 \003(\0132-.VintagePresentStageData.Pr" +
-      "esentLevelMapEntry\022\021\n\tis_finish\030\004 \001(\010\032P\n" +
+      "tStageData\022\017\n\007is_open\030\n \001(\010\022\020\n\010stage_id\030" +
+      "\004 \001(\r\022\021\n\tis_finish\030\016 \001(\010\022\021\n\topen_time\030\017 " +
+      "\001(\r\022H\n\021present_level_map\030\003 \003(\0132-.Vintage" +
+      "PresentStageData.PresentLevelMapEntry\032P\n" +
       "\024PresentLevelMapEntry\022\013\n\003key\030\001 \001(\r\022\'\n\005va" +
       "lue\030\002 \001(\0132\030.VintagePresentLevelData:\0028\001B" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
@@ -1081,7 +1081,7 @@ public final class VintagePresentStageDataOuterClass {
     internal_static_VintagePresentStageData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintagePresentStageData_descriptor,
-        new java.lang.String[] { "StageId", "IsOpen", "OpenTime", "PresentLevelMap", "IsFinish", });
+        new java.lang.String[] { "IsOpen", "StageId", "IsFinish", "OpenTime", "PresentLevelMap", });
     internal_static_VintagePresentStageData_PresentLevelMapEntry_descriptor =
       internal_static_VintagePresentStageData_descriptor.getNestedTypes().get(0);
     internal_static_VintagePresentStageData_PresentLevelMapEntry_fieldAccessorTable = new

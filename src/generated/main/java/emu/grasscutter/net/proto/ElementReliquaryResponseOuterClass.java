@@ -966,8 +966,8 @@ public final class ElementReliquaryResponseOuterClass {
       "oto\"\205\001\n\030ElementReliquaryResponse\022\023\n\013elem" +
       "entType\030\004 \001(\r\022A\n\013nbbpegfkpac\030\003 \003(\0132,.Gam" +
       "eplayRecommendationReliquaryMainPropData" +
-      "\022\021\n\tequipType\030\007 \001(\rB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "\022\021\n\tequipType\030\007 \001(\rB!\n\031emu.grasscutter.n" +
+      "et.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -598,8 +598,8 @@ public final class GachaOpenWishNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031GachaOpenWishNotify.proto\"A\n\023GachaOpen" +
       "WishNotify\022\027\n\017gachaScheduleId\030\016 \001(\r\022\021\n\tg" +
-      "achaType\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "achaType\030\002 \001(\rB!\n\031emu.grasscutter.net.pr" +
+      "otoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

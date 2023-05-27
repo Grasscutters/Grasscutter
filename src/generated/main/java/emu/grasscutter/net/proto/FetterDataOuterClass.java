@@ -49,7 +49,7 @@ public final class FetterDataOuterClass {
   }
   /**
    * <pre>
-   * Name: IIANFLLDLFO
+   * Obf: KDDPKLNAMGL
    * </pre>
    *
    * Protobuf type {@code FetterData}
@@ -410,7 +410,7 @@ public final class FetterDataOuterClass {
     }
     /**
      * <pre>
-     * Name: IIANFLLDLFO
+     * Obf: KDDPKLNAMGL
      * </pre>
      *
      * Protobuf type {@code FetterData}

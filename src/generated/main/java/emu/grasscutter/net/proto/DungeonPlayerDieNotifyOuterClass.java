@@ -1458,8 +1458,8 @@ public final class DungeonPlayerDieNotifyOuterClass {
       "monster_id\030\016 \001(\rH\000\022\023\n\tgadget_id\030\t \001(\rH\000\032" +
       "S\n\033StrengthenPointDataMapEntry\022\013\n\003key\030\001 " +
       "\001(\r\022#\n\005value\030\002 \001(\0132\024.StrengthenPointData" +
-      ":\0028\001B\010\n\006entityB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      ":\0028\001B\010\n\006entityB!\n\031emu.grasscutter.net.pr" +
+      "otoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

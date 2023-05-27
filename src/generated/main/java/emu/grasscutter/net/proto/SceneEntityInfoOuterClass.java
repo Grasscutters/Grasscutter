@@ -319,7 +319,7 @@ public final class SceneEntityInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: HLAAMJAKIEJ
+   * Obf: LMOBCIGGDEA
    * </pre>
    *
    * Protobuf type {@code SceneEntityInfo}
@@ -1598,7 +1598,7 @@ public final class SceneEntityInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: HLAAMJAKIEJ
+     * Obf: LMOBCIGGDEA
      * </pre>
      *
      * Protobuf type {@code SceneEntityInfo}
@@ -4667,14 +4667,14 @@ public final class SceneEntityInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025SceneEntityInfo.proto\032$AnimatorParamet" +
-      "erValueInfoPair.proto\032\031EntityAuthorityIn" +
-      "fo.proto\032\026EntityClientData.proto\032\033Entity" +
-      "EnvironmentInfo.proto\032\023FightPropPair.pro" +
-      "to\032\020MotionInfo.proto\032\016PropPair.proto\032\024Pr" +
-      "otEntityType.proto\032\025SceneAvatarInfo.prot" +
-      "o\032\025SceneGadgetInfo.proto\032\026SceneMonsterIn" +
-      "fo.proto\032\022SceneNpcInfo.proto\032\020ServerBuff" +
+      "\n\025SceneEntityInfo.proto\032\024ProtEntityType." +
+      "proto\032\020MotionInfo.proto\032\016PropPair.proto\032" +
+      "\023FightPropPair.proto\032$AnimatorParameterV" +
+      "alueInfoPair.proto\032\026EntityClientData.pro" +
+      "to\032\033EntityEnvironmentInfo.proto\032\031EntityA" +
+      "uthorityInfo.proto\032\020ServerBuff.proto\032\025Sc" +
+      "eneAvatarInfo.proto\032\026SceneMonsterInfo.pr" +
+      "oto\032\022SceneNpcInfo.proto\032\025SceneGadgetInfo" +
       ".proto\"\304\005\n\017SceneEntityInfo\022$\n\013entity_typ" +
       "e\030\001 \001(\0162\017.ProtEntityType\022\021\n\tentity_id\030\002 " +
       "\001(\r\022\014\n\004name\030\003 \001(\t\022 \n\013motion_info\030\004 \001(\0132\013" +
@@ -4698,19 +4698,19 @@ public final class SceneEntityInfoOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ProtEntityTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MotionInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.PropPairOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ProtEntityTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SceneNpcInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor(),
         });
     internal_static_SceneEntityInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4718,19 +4718,19 @@ public final class SceneEntityInfoOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityInfo_descriptor,
         new java.lang.String[] { "EntityType", "EntityId", "Name", "MotionInfo", "PropList", "FightPropList", "LifeState", "AnimatorParaList", "LastMoveSceneTimeMs", "LastMoveReliableSeq", "EntityClientData", "EntityEnvironmentInfoList", "EntityAuthorityInfo", "TagList", "ServerBuffList", "Avatar", "Monster", "Npc", "Gadget", "Entity", });
-    emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ProtEntityTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MotionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.PropPairOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ProtEntityTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FightPropPairOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityClientDataOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneMonsterInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SceneNpcInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

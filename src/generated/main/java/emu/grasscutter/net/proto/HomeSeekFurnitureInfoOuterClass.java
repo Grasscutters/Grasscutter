@@ -987,8 +987,8 @@ public final class HomeSeekFurnitureInfoOuterClass {
       "3300_ENKOGPIEHFD\030\010 \001(\r\022B\n\016playerScoreMap" +
       "\030\014 \003(\0132*.HomeSeekFurnitureInfo.PlayerSco" +
       "reMapEntry\0325\n\023PlayerScoreMapEntry\022\013\n\003key" +
-      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B!\n\031emu.grasscu" +
+      "tter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

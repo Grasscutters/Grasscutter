@@ -16,7 +16,7 @@ public final class AvatarTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: FDOECABHIEL
+   * Obf: GEAOCPFMLEP
    * </pre>
    *
    * Protobuf enum {@code AvatarType}

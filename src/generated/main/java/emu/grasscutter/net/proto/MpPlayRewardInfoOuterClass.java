@@ -60,7 +60,7 @@ public final class MpPlayRewardInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: DCPIKCIDILK
+   * Obf: OACEIOAILNE
    * </pre>
    *
    * Protobuf type {@code MpPlayRewardInfo}
@@ -474,7 +474,7 @@ public final class MpPlayRewardInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: DCPIKCIDILK
+     * Obf: OACEIOAILNE
      * </pre>
      *
      * Protobuf type {@code MpPlayRewardInfo}

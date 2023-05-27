@@ -19,7 +19,7 @@ public final class SetEntityClientDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     int getEntityId();
@@ -41,8 +41,8 @@ public final class SetEntityClientDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3424
-   * Name: GMCOAPLLLOG
+   * CmdId: 3172
+   * Obf: IADECFHIJAH
    * </pre>
    *
    * Protobuf type {@code SetEntityClientDataNotify}
@@ -102,7 +102,7 @@ public final class SetEntityClientDataNotifyOuterClass {
 
               break;
             }
-            case 56: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -139,10 +139,10 @@ public final class SetEntityClientDataNotifyOuterClass {
               emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify.class, emu.grasscutter.net.proto.SetEntityClientDataNotifyOuterClass.SetEntityClientDataNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -194,7 +194,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         output.writeMessage(6, getEntityClientData());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(7, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -211,7 +211,7 @@ public final class SetEntityClientDataNotifyOuterClass {
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class SetEntityClientDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3424
-     * Name: GMCOAPLLLOG
+     * CmdId: 3172
+     * Obf: IADECFHIJAH
      * </pre>
      *
      * Protobuf type {@code SetEntityClientDataNotify}
@@ -515,7 +515,7 @@ public final class SetEntityClientDataNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -731,7 +731,7 @@ public final class SetEntityClientDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037SetEntityClientDataNotify.proto\032\026Entit" +
       "yClientData.proto\"]\n\031SetEntityClientData" +
-      "Notify\022\021\n\tentity_id\030\007 \001(\r\022-\n\022entity_clie" +
+      "Notify\022\021\n\tentity_id\030\013 \001(\r\022-\n\022entity_clie" +
       "nt_data\030\006 \001(\0132\021.EntityClientDataB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };

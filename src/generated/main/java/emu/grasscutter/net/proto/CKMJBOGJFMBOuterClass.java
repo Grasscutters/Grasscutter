@@ -738,8 +738,8 @@ public final class CKMJBOGJFMBOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021CKMJBOGJFMB.proto\"W\n\013CKMJBOGJFMB\022\020\n\010le" +
       "vel_id\030\007 \001(\r\022\017\n\007is_open\030\r \001(\010\022\021\n\tis_fini" +
-      "sh\030\017 \001(\010\022\022\n\nbest_score\030\003 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "sh\030\017 \001(\010\022\022\n\nbest_score\030\003 \001(\rB!\n\031emu.gras" +
+      "scutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

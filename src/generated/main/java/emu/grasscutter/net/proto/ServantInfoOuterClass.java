@@ -19,20 +19,20 @@ public final class ServantInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 LEIGNAKFGHF = 1;</code>
-     * @return The lEIGNAKFGHF.
+     * <code>uint32 master_entity_id = 1;</code>
+     * @return The masterEntityId.
      */
-    int getLEIGNAKFGHF();
+    int getMasterEntityId();
 
     /**
-     * <code>uint32 IMHGJAOKPNI = 2;</code>
-     * @return The iMHGJAOKPNI.
+     * <code>uint32 born_slot_index = 2;</code>
+     * @return The bornSlotIndex.
      */
-    int getIMHGJAOKPNI();
+    int getBornSlotIndex();
   }
   /**
    * <pre>
-   * Name: JAOECAEBGJO
+   * Obf: KJENNHPPHLL
    * </pre>
    *
    * Protobuf type {@code ServantInfo}
@@ -81,12 +81,12 @@ public final class ServantInfoOuterClass {
               break;
             case 8: {
 
-              lEIGNAKFGHF_ = input.readUInt32();
+              masterEntityId_ = input.readUInt32();
               break;
             }
             case 16: {
 
-              iMHGJAOKPNI_ = input.readUInt32();
+              bornSlotIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class ServantInfoOuterClass {
               emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.class, emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.Builder.class);
     }
 
-    public static final int LEIGNAKFGHF_FIELD_NUMBER = 1;
-    private int lEIGNAKFGHF_;
+    public static final int MASTER_ENTITY_ID_FIELD_NUMBER = 1;
+    private int masterEntityId_;
     /**
-     * <code>uint32 LEIGNAKFGHF = 1;</code>
-     * @return The lEIGNAKFGHF.
+     * <code>uint32 master_entity_id = 1;</code>
+     * @return The masterEntityId.
      */
     @java.lang.Override
-    public int getLEIGNAKFGHF() {
-      return lEIGNAKFGHF_;
+    public int getMasterEntityId() {
+      return masterEntityId_;
     }
 
-    public static final int IMHGJAOKPNI_FIELD_NUMBER = 2;
-    private int iMHGJAOKPNI_;
+    public static final int BORN_SLOT_INDEX_FIELD_NUMBER = 2;
+    private int bornSlotIndex_;
     /**
-     * <code>uint32 IMHGJAOKPNI = 2;</code>
-     * @return The iMHGJAOKPNI.
+     * <code>uint32 born_slot_index = 2;</code>
+     * @return The bornSlotIndex.
      */
     @java.lang.Override
-    public int getIMHGJAOKPNI() {
-      return iMHGJAOKPNI_;
+    public int getBornSlotIndex() {
+      return bornSlotIndex_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class ServantInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (lEIGNAKFGHF_ != 0) {
-        output.writeUInt32(1, lEIGNAKFGHF_);
+      if (masterEntityId_ != 0) {
+        output.writeUInt32(1, masterEntityId_);
       }
-      if (iMHGJAOKPNI_ != 0) {
-        output.writeUInt32(2, iMHGJAOKPNI_);
+      if (bornSlotIndex_ != 0) {
+        output.writeUInt32(2, bornSlotIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class ServantInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lEIGNAKFGHF_ != 0) {
+      if (masterEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, lEIGNAKFGHF_);
+          .computeUInt32Size(1, masterEntityId_);
       }
-      if (iMHGJAOKPNI_ != 0) {
+      if (bornSlotIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, iMHGJAOKPNI_);
+          .computeUInt32Size(2, bornSlotIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class ServantInfoOuterClass {
       }
       emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo other = (emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo) obj;
 
-      if (getLEIGNAKFGHF()
-          != other.getLEIGNAKFGHF()) return false;
-      if (getIMHGJAOKPNI()
-          != other.getIMHGJAOKPNI()) return false;
+      if (getMasterEntityId()
+          != other.getMasterEntityId()) return false;
+      if (getBornSlotIndex()
+          != other.getBornSlotIndex()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class ServantInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEIGNAKFGHF_FIELD_NUMBER;
-      hash = (53 * hash) + getLEIGNAKFGHF();
-      hash = (37 * hash) + IMHGJAOKPNI_FIELD_NUMBER;
-      hash = (53 * hash) + getIMHGJAOKPNI();
+      hash = (37 * hash) + MASTER_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterEntityId();
+      hash = (37 * hash) + BORN_SLOT_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getBornSlotIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class ServantInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: JAOECAEBGJO
+     * Obf: KJENNHPPHLL
      * </pre>
      *
      * Protobuf type {@code ServantInfo}
@@ -351,9 +351,9 @@ public final class ServantInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lEIGNAKFGHF_ = 0;
+        masterEntityId_ = 0;
 
-        iMHGJAOKPNI_ = 0;
+        bornSlotIndex_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class ServantInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo buildPartial() {
         emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo result = new emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo(this);
-        result.lEIGNAKFGHF_ = lEIGNAKFGHF_;
-        result.iMHGJAOKPNI_ = iMHGJAOKPNI_;
+        result.masterEntityId_ = masterEntityId_;
+        result.bornSlotIndex_ = bornSlotIndex_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class ServantInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo other) {
         if (other == emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo.getDefaultInstance()) return this;
-        if (other.getLEIGNAKFGHF() != 0) {
-          setLEIGNAKFGHF(other.getLEIGNAKFGHF());
+        if (other.getMasterEntityId() != 0) {
+          setMasterEntityId(other.getMasterEntityId());
         }
-        if (other.getIMHGJAOKPNI() != 0) {
-          setIMHGJAOKPNI(other.getIMHGJAOKPNI());
+        if (other.getBornSlotIndex() != 0) {
+          setBornSlotIndex(other.getBornSlotIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class ServantInfoOuterClass {
         return this;
       }
 
-      private int lEIGNAKFGHF_ ;
+      private int masterEntityId_ ;
       /**
-       * <code>uint32 LEIGNAKFGHF = 1;</code>
-       * @return The lEIGNAKFGHF.
+       * <code>uint32 master_entity_id = 1;</code>
+       * @return The masterEntityId.
        */
       @java.lang.Override
-      public int getLEIGNAKFGHF() {
-        return lEIGNAKFGHF_;
+      public int getMasterEntityId() {
+        return masterEntityId_;
       }
       /**
-       * <code>uint32 LEIGNAKFGHF = 1;</code>
-       * @param value The lEIGNAKFGHF to set.
+       * <code>uint32 master_entity_id = 1;</code>
+       * @param value The masterEntityId to set.
        * @return This builder for chaining.
        */
-      public Builder setLEIGNAKFGHF(int value) {
+      public Builder setMasterEntityId(int value) {
         
-        lEIGNAKFGHF_ = value;
+        masterEntityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LEIGNAKFGHF = 1;</code>
+       * <code>uint32 master_entity_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLEIGNAKFGHF() {
+      public Builder clearMasterEntityId() {
         
-        lEIGNAKFGHF_ = 0;
+        masterEntityId_ = 0;
         onChanged();
         return this;
       }
 
-      private int iMHGJAOKPNI_ ;
+      private int bornSlotIndex_ ;
       /**
-       * <code>uint32 IMHGJAOKPNI = 2;</code>
-       * @return The iMHGJAOKPNI.
+       * <code>uint32 born_slot_index = 2;</code>
+       * @return The bornSlotIndex.
        */
       @java.lang.Override
-      public int getIMHGJAOKPNI() {
-        return iMHGJAOKPNI_;
+      public int getBornSlotIndex() {
+        return bornSlotIndex_;
       }
       /**
-       * <code>uint32 IMHGJAOKPNI = 2;</code>
-       * @param value The iMHGJAOKPNI to set.
+       * <code>uint32 born_slot_index = 2;</code>
+       * @param value The bornSlotIndex to set.
        * @return This builder for chaining.
        */
-      public Builder setIMHGJAOKPNI(int value) {
+      public Builder setBornSlotIndex(int value) {
         
-        iMHGJAOKPNI_ = value;
+        bornSlotIndex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IMHGJAOKPNI = 2;</code>
+       * <code>uint32 born_slot_index = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIMHGJAOKPNI() {
+      public Builder clearBornSlotIndex() {
         
-        iMHGJAOKPNI_ = 0;
+        bornSlotIndex_ = 0;
         onChanged();
         return this;
       }
@@ -594,9 +594,10 @@ public final class ServantInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ServantInfo.proto\"7\n\013ServantInfo\022\023\n\013LE" +
-      "IGNAKFGHF\030\001 \001(\r\022\023\n\013IMHGJAOKPNI\030\002 \001(\rB\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "\n\021ServantInfo.proto\"@\n\013ServantInfo\022\030\n\020ma" +
+      "ster_entity_id\030\001 \001(\r\022\027\n\017born_slot_index\030" +
+      "\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -607,7 +608,7 @@ public final class ServantInfoOuterClass {
     internal_static_ServantInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ServantInfo_descriptor,
-        new java.lang.String[] { "LEIGNAKFGHF", "IMHGJAOKPNI", });
+        new java.lang.String[] { "MasterEntityId", "BornSlotIndex", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

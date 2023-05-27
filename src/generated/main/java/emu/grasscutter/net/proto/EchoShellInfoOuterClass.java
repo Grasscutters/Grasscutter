@@ -26,7 +26,7 @@ public final class EchoShellInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: EMEGCNJLBOD
+   * Obf: ODKKHMAMPOH
    * </pre>
    *
    * Protobuf type {@code EchoShellInfo}
@@ -278,7 +278,7 @@ public final class EchoShellInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: EMEGCNJLBOD
+     * Obf: ODKKHMAMPOH
      * </pre>
      *
      * Protobuf type {@code EchoShellInfo}

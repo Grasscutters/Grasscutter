@@ -116,7 +116,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
   }
   /**
    * <pre>
-   * Name: DHHHNMEKJHP
+   * Obf: MJJIHNCKJAL
    * </pre>
    *
    * Protobuf type {@code BreakoutPhysicalObjectModifier}
@@ -774,7 +774,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
     /**
      * <pre>
-     * Name: DHHHNMEKJHP
+     * Obf: MJJIHNCKJAL
      * </pre>
      *
      * Protobuf type {@code BreakoutPhysicalObjectModifier}

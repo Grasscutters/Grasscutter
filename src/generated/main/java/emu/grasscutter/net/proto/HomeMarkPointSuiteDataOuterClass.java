@@ -26,7 +26,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
   }
   /**
    * <pre>
-   * Name: CCLIIIOLMDN
+   * Obf: MFJNHGLKNGA
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointSuiteData}
@@ -278,7 +278,7 @@ public final class HomeMarkPointSuiteDataOuterClass {
     }
     /**
      * <pre>
-     * Name: CCLIIIOLMDN
+     * Obf: MFJNHGLKNGA
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointSuiteData}

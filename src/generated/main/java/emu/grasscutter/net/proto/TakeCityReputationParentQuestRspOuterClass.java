@@ -19,62 +19,62 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @return A list containing the parentQuestList.
      */
     java.util.List<java.lang.Integer> getParentQuestListList();
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @return The count of parentQuestList.
      */
     int getParentQuestListCount();
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @param index The index of the element to return.
      * @return The parentQuestList at the given index.
      */
     int getParentQuestList(int index);
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>uint32 city_id = 2;</code>
+     * @return The cityId.
+     */
+    int getCityId();
+
+    /**
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getItemListList();
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     int getItemListCount();
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 city_id = 11;</code>
-     * @return The cityId.
-     */
-    int getCityId();
   }
   /**
    * <pre>
-   * CmdId: 2841
-   * Name: LEIJECOECHD
+   * CmdId: 2858
+   * Obf: LHMECCFNKID
    * </pre>
    *
    * Protobuf type {@code TakeCityReputationParentQuestRsp}
@@ -124,7 +124,12 @@ public final class TakeCityReputationParentQuestRspOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 16: {
+
+              cityId_ = input.readUInt32();
+              break;
+            }
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
                 mutable_bitField0_ |= 0x00000002;
@@ -133,17 +138,12 @@ public final class TakeCityReputationParentQuestRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 88: {
-
-              cityId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 32: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 112: {
+            case 64: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 parentQuestList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -151,7 +151,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
               parentQuestList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 66: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -202,10 +202,10 @@ public final class TakeCityReputationParentQuestRspOuterClass {
               emu.grasscutter.net.proto.TakeCityReputationParentQuestRspOuterClass.TakeCityReputationParentQuestRsp.class, emu.grasscutter.net.proto.TakeCityReputationParentQuestRspOuterClass.TakeCityReputationParentQuestRsp.Builder.class);
     }
 
-    public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 14;
+    public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 8;
     private com.google.protobuf.Internal.IntList parentQuestList_;
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @return A list containing the parentQuestList.
      */
     @java.lang.Override
@@ -214,14 +214,14 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       return parentQuestList_;
     }
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @return The count of parentQuestList.
      */
     public int getParentQuestListCount() {
       return parentQuestList_.size();
     }
     /**
-     * <code>repeated uint32 parent_quest_list = 14;</code>
+     * <code>repeated uint32 parent_quest_list = 8;</code>
      * @param index The index of the element to return.
      * @return The parentQuestList at the given index.
      */
@@ -230,10 +230,10 @@ public final class TakeCityReputationParentQuestRspOuterClass {
     }
     private int parentQuestListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -241,17 +241,28 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       return retcode_;
     }
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 7;
+    public static final int CITY_ID_FIELD_NUMBER = 2;
+    private int cityId_;
+    /**
+     * <code>uint32 city_id = 2;</code>
+     * @return The cityId.
+     */
+    @java.lang.Override
+    public int getCityId() {
+      return cityId_;
+    }
+
+    public static final int ITEM_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -259,37 +270,26 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       return itemList_;
     }
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     @java.lang.Override
     public int getItemListCount() {
       return itemList_.size();
     }
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
       return itemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam item_list = 7;</code>
+     * <code>repeated .ItemParam item_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index) {
       return itemList_.get(index);
-    }
-
-    public static final int CITY_ID_FIELD_NUMBER = 11;
-    private int cityId_;
-    /**
-     * <code>uint32 city_id = 11;</code>
-     * @return The cityId.
-     */
-    @java.lang.Override
-    public int getCityId() {
-      return cityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -307,17 +307,17 @@ public final class TakeCityReputationParentQuestRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(7, itemList_.get(i));
-      }
       if (cityId_ != 0) {
-        output.writeUInt32(11, cityId_);
+        output.writeUInt32(2, cityId_);
+      }
+      for (int i = 0; i < itemList_.size(); i++) {
+        output.writeMessage(3, itemList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(4, retcode_);
       }
       if (getParentQuestListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(66);
         output.writeUInt32NoTag(parentQuestListMemoizedSerializedSize);
       }
       for (int i = 0; i < parentQuestList_.size(); i++) {
@@ -332,17 +332,17 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < itemList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, itemList_.get(i));
-      }
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, cityId_);
+          .computeUInt32Size(2, cityId_);
+      }
+      for (int i = 0; i < itemList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, itemList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(4, retcode_);
       }
       {
         int dataSize = 0;
@@ -377,10 +377,10 @@ public final class TakeCityReputationParentQuestRspOuterClass {
           .equals(other.getParentQuestListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getItemListList()
-          .equals(other.getItemListList())) return false;
       if (getCityId()
           != other.getCityId()) return false;
+      if (!getItemListList()
+          .equals(other.getItemListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -398,12 +398,12 @@ public final class TakeCityReputationParentQuestRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + CITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCityId();
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
-      hash = (37 * hash) + CITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -501,8 +501,8 @@ public final class TakeCityReputationParentQuestRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2841
-     * Name: LEIJECOECHD
+     * CmdId: 2858
+     * Obf: LHMECCFNKID
      * </pre>
      *
      * Protobuf type {@code TakeCityReputationParentQuestRsp}
@@ -547,14 +547,14 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
 
+        cityId_ = 0;
+
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           itemListBuilder_.clear();
         }
-        cityId_ = 0;
-
         return this;
       }
 
@@ -588,6 +588,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
         result.parentQuestList_ = parentQuestList_;
         result.retcode_ = retcode_;
+        result.cityId_ = cityId_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -597,7 +598,6 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-        result.cityId_ = cityId_;
         onBuilt();
         return result;
       }
@@ -659,6 +659,9 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
+        if (other.getCityId() != 0) {
+          setCityId(other.getCityId());
+        }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
@@ -684,9 +687,6 @@ public final class TakeCityReputationParentQuestRspOuterClass {
               itemListBuilder_.addAllMessages(other.itemList_);
             }
           }
-        }
-        if (other.getCityId() != 0) {
-          setCityId(other.getCityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -726,7 +726,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @return A list containing the parentQuestList.
        */
       public java.util.List<java.lang.Integer>
@@ -735,14 +735,14 @@ public final class TakeCityReputationParentQuestRspOuterClass {
                  java.util.Collections.unmodifiableList(parentQuestList_) : parentQuestList_;
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @return The count of parentQuestList.
        */
       public int getParentQuestListCount() {
         return parentQuestList_.size();
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @param index The index of the element to return.
        * @return The parentQuestList at the given index.
        */
@@ -750,7 +750,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return parentQuestList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @param index The index to set the value at.
        * @param value The parentQuestList to set.
        * @return This builder for chaining.
@@ -763,7 +763,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @param value The parentQuestList to add.
        * @return This builder for chaining.
        */
@@ -774,7 +774,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @param values The parentQuestList to add.
        * @return This builder for chaining.
        */
@@ -787,7 +787,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 parent_quest_list = 14;</code>
+       * <code>repeated uint32 parent_quest_list = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearParentQuestList() {
@@ -799,7 +799,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -807,7 +807,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -818,12 +818,43 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cityId_ ;
+      /**
+       * <code>uint32 city_id = 2;</code>
+       * @return The cityId.
+       */
+      @java.lang.Override
+      public int getCityId() {
+        return cityId_;
+      }
+      /**
+       * <code>uint32 city_id = 2;</code>
+       * @param value The cityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCityId(int value) {
+        
+        cityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 city_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCityId() {
+        
+        cityId_ = 0;
         onChanged();
         return this;
       }
@@ -841,7 +872,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -851,7 +882,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -861,7 +892,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -871,7 +902,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -888,7 +919,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -902,7 +933,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -918,7 +949,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -935,7 +966,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -949,7 +980,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -963,7 +994,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -978,7 +1009,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
@@ -991,7 +1022,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -1004,14 +1035,14 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -1021,7 +1052,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -1032,14 +1063,14 @@ public final class TakeCityReputationParentQuestRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -1047,7 +1078,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 7;</code>
+       * <code>repeated .ItemParam item_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -1066,37 +1097,6 @@ public final class TakeCityReputationParentQuestRspOuterClass {
           itemList_ = null;
         }
         return itemListBuilder_;
-      }
-
-      private int cityId_ ;
-      /**
-       * <code>uint32 city_id = 11;</code>
-       * @return The cityId.
-       */
-      @java.lang.Override
-      public int getCityId() {
-        return cityId_;
-      }
-      /**
-       * <code>uint32 city_id = 11;</code>
-       * @param value The cityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCityId(int value) {
-        
-        cityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 city_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCityId() {
-        
-        cityId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1167,9 +1167,9 @@ public final class TakeCityReputationParentQuestRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n&TakeCityReputationParentQuestRsp.proto" +
       "\032\017ItemParam.proto\"~\n TakeCityReputationP" +
-      "arentQuestRsp\022\031\n\021parent_quest_list\030\016 \003(\r" +
-      "\022\017\n\007retcode\030\014 \001(\005\022\035\n\titem_list\030\007 \003(\0132\n.I" +
-      "temParam\022\017\n\007city_id\030\013 \001(\rB\033\n\031emu.grasscu" +
+      "arentQuestRsp\022\031\n\021parent_quest_list\030\010 \003(\r" +
+      "\022\017\n\007retcode\030\004 \001(\005\022\017\n\007city_id\030\002 \001(\r\022\035\n\tit" +
+      "em_list\030\003 \003(\0132\n.ItemParamB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1182,7 +1182,7 @@ public final class TakeCityReputationParentQuestRspOuterClass {
     internal_static_TakeCityReputationParentQuestRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeCityReputationParentQuestRsp_descriptor,
-        new java.lang.String[] { "ParentQuestList", "Retcode", "ItemList", "CityId", });
+        new java.lang.String[] { "ParentQuestList", "Retcode", "CityId", "ItemList", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

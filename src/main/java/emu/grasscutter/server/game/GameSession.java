@@ -1,9 +1,5 @@
 package emu.grasscutter.server.game;
 
-import java.io.File;
-import java.net.InetSocketAddress;
-import java.nio.file.Path;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
@@ -20,7 +16,12 @@ import io.netty.buffer.Unpooled;
 import lombok.Getter;
 import lombok.Setter;
 
-import static emu.grasscutter.config.Configuration.*;
+import java.io.File;
+import java.net.InetSocketAddress;
+import java.nio.file.Path;
+
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.SERVER;
 import static emu.grasscutter.utils.Language.translate;
 
 public class GameSession implements GameSessionManager.KcpChannel {
@@ -158,7 +159,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Override
     public void handleReceive(byte[] bytes) {
         // Decrypt and turn back into a packet
-        Crypto.xor(bytes, useSecretKey() ? Crypto.ENCRYPT_KEY : Crypto.DISPATCH_KEY);
+        if (this.getState() != SessionState.WAITING_FOR_TOKEN)
+            Crypto.xor(bytes, useSecretKey() ?
+                Crypto.ENCRYPT_KEY :
+                Crypto.DISPATCH_KEY);
         ByteBuf packet = Unpooled.wrappedBuffer(bytes);
 
         // Log

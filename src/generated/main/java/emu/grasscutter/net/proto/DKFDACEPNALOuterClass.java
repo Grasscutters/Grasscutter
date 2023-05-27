@@ -986,8 +986,8 @@ public final class DKFDACEPNALOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021DKFDACEPNAL.proto\"^\n\013DKFDACEPNAL\022\023\n\013PJ" +
       "IFOALHIHM\030\010 \003(\r\022\020\n\010level_id\030\005 \001(\r\022\023\n\013FKP" +
-      "ECBDMBFD\030\017 \001(\r\022\023\n\013PLPFFBIBHPB\030\016 \003(\rB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "ECBDMBFD\030\017 \001(\r\022\023\n\013PLPFFBIBHPB\030\016 \003(\rB!\n\031e" +
+      "mu.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

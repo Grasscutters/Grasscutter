@@ -669,8 +669,8 @@ public final class ReceivedTrialAvatarActivityRewardRspOuterClass {
       "\n*ReceivedTrialAvatarActivityRewardRsp.p" +
       "roto\"k\n$ReceivedTrialAvatarActivityRewar" +
       "dRsp\022\023\n\013activity_id\030\001 \001(\r\022\035\n\025trial_avata" +
-      "r_index_id\030\014 \001(\r\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
+      "r_index_id\030\014 \001(\r\022\017\n\007retcode\030\016 \001(\005B!\n\031emu" +
+      ".grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -739,8 +739,8 @@ public final class ExecuteGadgetLuaReqOuterClass {
       "\n\031ExecuteGadgetLuaReq.proto\"_\n\023ExecuteGa" +
       "dgetLuaReq\022\030\n\020source_entity_id\030\014 \001(\r\022\016\n\006" +
       "param2\030\010 \001(\005\022\016\n\006param1\030\017 \001(\005\022\016\n\006param3\030\004" +
-      " \001(\005B\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      " \001(\005B!\n\031emu.grasscutter.net.protoZ\004/genb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

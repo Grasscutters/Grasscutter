@@ -19,10 +19,10 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cost_time = 5;</code>
-     * @return The costTime.
+     * <code>bool is_open = 12;</code>
+     * @return The isOpen.
      */
-    int getCostTime();
+    boolean getIsOpen();
 
     /**
      * <code>uint32 difficulty = 11;</code>
@@ -31,14 +31,14 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
     int getDifficulty();
 
     /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
+     * <code>uint32 cost_time = 13;</code>
+     * @return The costTime.
      */
-    boolean getIsOpen();
+    int getCostTime();
   }
   /**
    * <pre>
-   * Name: MCHGLACJIHO
+   * Obf: ODLHFHHKAJL
    * </pre>
    *
    * Protobuf type {@code DuelHeartLevelDifficultyInfo}
@@ -85,19 +85,19 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 88: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 40: {
+            case 104: {
 
               costTime_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              difficulty_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,15 +132,15 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
               emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo.class, emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo.Builder.class);
     }
 
-    public static final int COST_TIME_FIELD_NUMBER = 5;
-    private int costTime_;
+    public static final int IS_OPEN_FIELD_NUMBER = 12;
+    private boolean isOpen_;
     /**
-     * <code>uint32 cost_time = 5;</code>
-     * @return The costTime.
+     * <code>bool is_open = 12;</code>
+     * @return The isOpen.
      */
     @java.lang.Override
-    public int getCostTime() {
-      return costTime_;
+    public boolean getIsOpen() {
+      return isOpen_;
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 11;
@@ -154,15 +154,15 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       return difficulty_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 3;
-    private boolean isOpen_;
+    public static final int COST_TIME_FIELD_NUMBER = 13;
+    private int costTime_;
     /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
+     * <code>uint32 cost_time = 13;</code>
+     * @return The costTime.
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
+    public int getCostTime() {
+      return costTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(3, isOpen_);
-      }
-      if (costTime_ != 0) {
-        output.writeUInt32(5, costTime_);
-      }
       if (difficulty_ != 0) {
         output.writeUInt32(11, difficulty_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(12, isOpen_);
+      }
+      if (costTime_ != 0) {
+        output.writeUInt32(13, costTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isOpen_);
-      }
-      if (costTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, costTime_);
-      }
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, difficulty_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isOpen_);
+      }
+      if (costTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, costTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       }
       emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo other = (emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo) obj;
 
-      if (getCostTime()
-          != other.getCostTime()) return false;
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
+      if (getCostTime()
+          != other.getCostTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,13 +241,13 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCostTime();
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
+      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCostTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,7 +345,7 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: MCHGLACJIHO
+     * Obf: ODLHFHHKAJL
      * </pre>
      *
      * Protobuf type {@code DuelHeartLevelDifficultyInfo}
@@ -385,11 +385,11 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        costTime_ = 0;
+        isOpen_ = false;
 
         difficulty_ = 0;
 
-        isOpen_ = false;
+        costTime_ = 0;
 
         return this;
       }
@@ -417,9 +417,9 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo buildPartial() {
         emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo result = new emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo(this);
-        result.costTime_ = costTime_;
-        result.difficulty_ = difficulty_;
         result.isOpen_ = isOpen_;
+        result.difficulty_ = difficulty_;
+        result.costTime_ = costTime_;
         onBuilt();
         return result;
       }
@@ -468,14 +468,14 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo other) {
         if (other == emu.grasscutter.net.proto.DuelHeartLevelDifficultyInfoOuterClass.DuelHeartLevelDifficultyInfo.getDefaultInstance()) return this;
-        if (other.getCostTime() != 0) {
-          setCostTime(other.getCostTime());
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         if (other.getDifficulty() != 0) {
           setDifficulty(other.getDifficulty());
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getCostTime() != 0) {
+          setCostTime(other.getCostTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -506,33 +506,33 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
         return this;
       }
 
-      private int costTime_ ;
+      private boolean isOpen_ ;
       /**
-       * <code>uint32 cost_time = 5;</code>
-       * @return The costTime.
+       * <code>bool is_open = 12;</code>
+       * @return The isOpen.
        */
       @java.lang.Override
-      public int getCostTime() {
-        return costTime_;
+      public boolean getIsOpen() {
+        return isOpen_;
       }
       /**
-       * <code>uint32 cost_time = 5;</code>
-       * @param value The costTime to set.
+       * <code>bool is_open = 12;</code>
+       * @param value The isOpen to set.
        * @return This builder for chaining.
        */
-      public Builder setCostTime(int value) {
+      public Builder setIsOpen(boolean value) {
         
-        costTime_ = value;
+        isOpen_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 cost_time = 5;</code>
+       * <code>bool is_open = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCostTime() {
+      public Builder clearIsOpen() {
         
-        costTime_ = 0;
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -568,33 +568,33 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
+      private int costTime_ ;
       /**
-       * <code>bool is_open = 3;</code>
-       * @return The isOpen.
+       * <code>uint32 cost_time = 13;</code>
+       * @return The costTime.
        */
       @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
+      public int getCostTime() {
+        return costTime_;
       }
       /**
-       * <code>bool is_open = 3;</code>
-       * @param value The isOpen to set.
+       * <code>uint32 cost_time = 13;</code>
+       * @param value The costTime to set.
        * @return This builder for chaining.
        */
-      public Builder setIsOpen(boolean value) {
+      public Builder setCostTime(int value) {
         
-        isOpen_ = value;
+        costTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_open = 3;</code>
+       * <code>uint32 cost_time = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsOpen() {
+      public Builder clearCostTime() {
         
-        isOpen_ = false;
+        costTime_ = 0;
         onChanged();
         return this;
       }
@@ -666,9 +666,9 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"DuelHeartLevelDifficultyInfo.proto\"V\n\034" +
-      "DuelHeartLevelDifficultyInfo\022\021\n\tcost_tim" +
-      "e\030\005 \001(\r\022\022\n\ndifficulty\030\013 \001(\r\022\017\n\007is_open\030\003" +
-      " \001(\010B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "DuelHeartLevelDifficultyInfo\022\017\n\007is_open\030" +
+      "\014 \001(\010\022\022\n\ndifficulty\030\013 \001(\r\022\021\n\tcost_time\030\r" +
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class DuelHeartLevelDifficultyInfoOuterClass {
     internal_static_DuelHeartLevelDifficultyInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DuelHeartLevelDifficultyInfo_descriptor,
-        new java.lang.String[] { "CostTime", "Difficulty", "IsOpen", });
+        new java.lang.String[] { "IsOpen", "Difficulty", "CostTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

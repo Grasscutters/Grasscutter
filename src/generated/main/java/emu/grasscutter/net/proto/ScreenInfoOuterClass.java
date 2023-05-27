@@ -32,7 +32,7 @@ public final class ScreenInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: CJACJEAEACK
+   * Obf: BPBJHFCAEEA
    * </pre>
    *
    * Protobuf type {@code ScreenInfo}
@@ -311,7 +311,7 @@ public final class ScreenInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: CJACJEAEACK
+     * Obf: BPBJHFCAEEA
      * </pre>
      *
      * Protobuf type {@code ScreenInfo}

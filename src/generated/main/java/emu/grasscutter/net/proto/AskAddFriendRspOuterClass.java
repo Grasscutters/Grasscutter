@@ -19,27 +19,27 @@ public final class AskAddFriendRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 3;</code>
-     * @return The targetUid.
-     */
-    int getTargetUid();
-
-    /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 param = 15;</code>
+     * <code>uint32 target_uid = 4;</code>
+     * @return The targetUid.
+     */
+    int getTargetUid();
+
+    /**
+     * <code>uint32 param = 11;</code>
      * @return The param.
      */
     int getParam();
   }
   /**
    * <pre>
-   * CmdId: 4056
-   * Name: HIKJADDBLEJ
+   * CmdId: 4048
+   * Obf: HLILMLBMHLG
    * </pre>
    *
    * Protobuf type {@code AskAddFriendRsp}
@@ -88,15 +88,15 @@ public final class AskAddFriendRspOuterClass {
               break;
             case 24: {
 
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
               retcode_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 32: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            case 88: {
 
               param_ = input.readUInt32();
               break;
@@ -133,21 +133,10 @@ public final class AskAddFriendRspOuterClass {
               emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp.class, emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 3;
-    private int targetUid_;
-    /**
-     * <code>uint32 target_uid = 3;</code>
-     * @return The targetUid.
-     */
-    @java.lang.Override
-    public int getTargetUid() {
-      return targetUid_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class AskAddFriendRspOuterClass {
       return retcode_;
     }
 
-    public static final int PARAM_FIELD_NUMBER = 15;
+    public static final int TARGET_UID_FIELD_NUMBER = 4;
+    private int targetUid_;
+    /**
+     * <code>uint32 target_uid = 4;</code>
+     * @return The targetUid.
+     */
+    @java.lang.Override
+    public int getTargetUid() {
+      return targetUid_;
+    }
+
+    public static final int PARAM_FIELD_NUMBER = 11;
     private int param_;
     /**
-     * <code>uint32 param = 15;</code>
+     * <code>uint32 param = 11;</code>
      * @return The param.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class AskAddFriendRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (targetUid_ != 0) {
-        output.writeUInt32(3, targetUid_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
+        output.writeInt32(3, retcode_);
+      }
+      if (targetUid_ != 0) {
+        output.writeUInt32(4, targetUid_);
       }
       if (param_ != 0) {
-        output.writeUInt32(15, param_);
+        output.writeUInt32(11, param_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class AskAddFriendRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (targetUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, targetUid_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
+          .computeInt32Size(3, retcode_);
+      }
+      if (targetUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, targetUid_);
       }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, param_);
+          .computeUInt32Size(11, param_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class AskAddFriendRspOuterClass {
       }
       emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp other = (emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp) obj;
 
-      if (getTargetUid()
-          != other.getTargetUid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getTargetUid()
+          != other.getTargetUid()) return false;
       if (getParam()
           != other.getParam()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class AskAddFriendRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUid();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUid();
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class AskAddFriendRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4056
-     * Name: HIKJADDBLEJ
+     * CmdId: 4048
+     * Obf: HLILMLBMHLG
      * </pre>
      *
      * Protobuf type {@code AskAddFriendRsp}
@@ -386,9 +386,9 @@ public final class AskAddFriendRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        targetUid_ = 0;
-
         retcode_ = 0;
+
+        targetUid_ = 0;
 
         param_ = 0;
 
@@ -418,8 +418,8 @@ public final class AskAddFriendRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp buildPartial() {
         emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp result = new emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp(this);
-        result.targetUid_ = targetUid_;
         result.retcode_ = retcode_;
+        result.targetUid_ = targetUid_;
         result.param_ = param_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class AskAddFriendRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp other) {
         if (other == emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp.getDefaultInstance()) return this;
-        if (other.getTargetUid() != 0) {
-          setTargetUid(other.getTargetUid());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getTargetUid() != 0) {
+          setTargetUid(other.getTargetUid());
         }
         if (other.getParam() != 0) {
           setParam(other.getParam());
@@ -507,40 +507,9 @@ public final class AskAddFriendRspOuterClass {
         return this;
       }
 
-      private int targetUid_ ;
-      /**
-       * <code>uint32 target_uid = 3;</code>
-       * @return The targetUid.
-       */
-      @java.lang.Override
-      public int getTargetUid() {
-        return targetUid_;
-      }
-      /**
-       * <code>uint32 target_uid = 3;</code>
-       * @param value The targetUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetUid(int value) {
-        
-        targetUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 target_uid = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetUid() {
-        
-        targetUid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -548,7 +517,7 @@ public final class AskAddFriendRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -559,7 +528,7 @@ public final class AskAddFriendRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -569,9 +538,40 @@ public final class AskAddFriendRspOuterClass {
         return this;
       }
 
+      private int targetUid_ ;
+      /**
+       * <code>uint32 target_uid = 4;</code>
+       * @return The targetUid.
+       */
+      @java.lang.Override
+      public int getTargetUid() {
+        return targetUid_;
+      }
+      /**
+       * <code>uint32 target_uid = 4;</code>
+       * @param value The targetUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetUid(int value) {
+        
+        targetUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 target_uid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetUid() {
+        
+        targetUid_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int param_ ;
       /**
-       * <code>uint32 param = 15;</code>
+       * <code>uint32 param = 11;</code>
        * @return The param.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class AskAddFriendRspOuterClass {
         return param_;
       }
       /**
-       * <code>uint32 param = 15;</code>
+       * <code>uint32 param = 11;</code>
        * @param value The param to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class AskAddFriendRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param = 15;</code>
+       * <code>uint32 param = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam() {
@@ -667,8 +667,8 @@ public final class AskAddFriendRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025AskAddFriendRsp.proto\"E\n\017AskAddFriendR" +
-      "sp\022\022\n\ntarget_uid\030\003 \001(\r\022\017\n\007retcode\030\r \001(\005\022" +
-      "\r\n\005param\030\017 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "sp\022\017\n\007retcode\030\003 \001(\005\022\022\n\ntarget_uid\030\004 \001(\r\022" +
+      "\r\n\005param\030\013 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class AskAddFriendRspOuterClass {
     internal_static_AskAddFriendRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AskAddFriendRsp_descriptor,
-        new java.lang.String[] { "TargetUid", "Retcode", "Param", });
+        new java.lang.String[] { "Retcode", "TargetUid", "Param", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

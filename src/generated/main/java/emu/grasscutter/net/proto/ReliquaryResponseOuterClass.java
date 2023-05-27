@@ -895,8 +895,8 @@ public final class ReliquaryResponseOuterClass {
       "mendationReliquaryMainPropData.proto\"i\n\021" +
       "ReliquaryResponse\022A\n\013nbbpegfkpac\030\014 \003(\0132," +
       ".GameplayRecommendationReliquaryMainProp" +
-      "Data\022\021\n\tequipType\030\017 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "Data\022\021\n\tequipType\030\017 \001(\rB!\n\031emu.grasscutt" +
+      "er.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

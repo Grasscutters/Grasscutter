@@ -26,8 +26,8 @@ public final class BackMyWorldRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 209
-   * Name: AEDBACJCGMB
+   * CmdId: 213
+   * Obf: GGOPGGHJKAH
    * </pre>
    *
    * Protobuf type {@code BackMyWorldRsp}
@@ -279,8 +279,8 @@ public final class BackMyWorldRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 209
-     * Name: AEDBACJCGMB
+     * CmdId: 213
+     * Obf: GGOPGGHJKAH
      * </pre>
      *
      * Protobuf type {@code BackMyWorldRsp}

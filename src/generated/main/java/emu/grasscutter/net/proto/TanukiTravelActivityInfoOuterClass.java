@@ -967,7 +967,8 @@ public final class TanukiTravelActivityInfoOuterClass {
       "tivityInfo\022\032\n\022finishedLevelIndex\030\013 \001(\r\022\024" +
       "\n\014leftMonsters\030\002 \001(\010\0229\n\031tanukiTravelLeve" +
       "lDataList\030\006 \003(\0132\026.TanukiTravelLevelDataB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "!\n\031emu.grasscutter.net.protoZ\004/genb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,7 +19,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_trial = 13;</code>
+     * <code>bool is_trial = 10;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
@@ -32,7 +32,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: KKGDPNEEALG
+   * Obf: MEOEEOOKNAA
    * </pre>
    *
    * Protobuf type {@code CrystalLinkDungeonAvatarInfo}
@@ -79,7 +79,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 80: {
 
               isTrial_ = input.readBool();
               break;
@@ -121,10 +121,10 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
               emu.grasscutter.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo.class, emu.grasscutter.net.proto.CrystalLinkDungeonAvatarInfoOuterClass.CrystalLinkDungeonAvatarInfo.Builder.class);
     }
 
-    public static final int IS_TRIAL_FIELD_NUMBER = 13;
+    public static final int IS_TRIAL_FIELD_NUMBER = 10;
     private boolean isTrial_;
     /**
-     * <code>bool is_trial = 13;</code>
+     * <code>bool is_trial = 10;</code>
      * @return The isTrial.
      */
     @java.lang.Override
@@ -158,7 +158,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isTrial_ != false) {
-        output.writeBool(13, isTrial_);
+        output.writeBool(10, isTrial_);
       }
       if (avatarGuid_ != 0L) {
         output.writeUInt64(14, avatarGuid_);
@@ -174,7 +174,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
       size = 0;
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isTrial_);
+          .computeBoolSize(10, isTrial_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -313,7 +313,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: KKGDPNEEALG
+     * Obf: MEOEEOOKNAA
      * </pre>
      *
      * Protobuf type {@code CrystalLinkDungeonAvatarInfo}
@@ -470,7 +470,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
 
       private boolean isTrial_ ;
       /**
-       * <code>bool is_trial = 13;</code>
+       * <code>bool is_trial = 10;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool is_trial = 13;</code>
+       * <code>bool is_trial = 10;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial = 13;</code>
+       * <code>bool is_trial = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
@@ -598,7 +598,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"CrystalLinkDungeonAvatarInfo.proto\"E\n\034" +
       "CrystalLinkDungeonAvatarInfo\022\020\n\010is_trial" +
-      "\030\r \001(\010\022\023\n\013avatar_guid\030\016 \001(\004B\033\n\031emu.grass" +
+      "\030\n \001(\010\022\023\n\013avatar_guid\030\016 \001(\004B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

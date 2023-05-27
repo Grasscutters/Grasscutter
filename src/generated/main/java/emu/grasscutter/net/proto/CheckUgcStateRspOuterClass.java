@@ -527,8 +527,8 @@ public final class CheckUgcStateRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026CheckUgcStateRsp.proto\"#\n\020CheckUgcStat" +
-      "eRsp\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter" +
-      ".net.protob\006proto3"
+      "eRsp\022\017\n\007retcode\030\002 \001(\005B!\n\031emu.grasscutter" +
+      ".net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

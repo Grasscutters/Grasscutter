@@ -37,7 +37,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: ADDCBCDDJIL
+   * Obf: LGFNBNFIONC
    * </pre>
    *
    * Protobuf type {@code DeshretObeliskGadgetInfo}
@@ -344,7 +344,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: ADDCBCDDJIL
+     * Obf: LGFNBNFIONC
      * </pre>
      *
      * Protobuf type {@code DeshretObeliskGadgetInfo}

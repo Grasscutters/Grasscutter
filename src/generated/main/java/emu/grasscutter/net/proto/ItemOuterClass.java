@@ -79,7 +79,7 @@ public final class ItemOuterClass {
   }
   /**
    * <pre>
-   * Name: FKONGMBBBAN
+   * Obf: EBCKEILKJOG
    * </pre>
    *
    * Protobuf type {@code Item}
@@ -591,7 +591,7 @@ public final class ItemOuterClass {
     }
     /**
      * <pre>
-     * Name: FKONGMBBBAN
+     * Obf: EBCKEILKJOG
      * </pre>
      *
      * Protobuf type {@code Item}
@@ -1353,8 +1353,8 @@ public final class ItemOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nItem.proto\032\013Equip.proto\032\017Furniture.pro" +
-      "to\032\016Material.proto\"\210\001\n\004Item\022\017\n\007item_id\030\001" +
+      "\n\nItem.proto\032\016Material.proto\032\013Equip.prot" +
+      "o\032\017Furniture.proto\"\210\001\n\004Item\022\017\n\007item_id\030\001" +
       " \001(\r\022\014\n\004guid\030\002 \001(\004\022\035\n\010material\030\005 \001(\0132\t.M" +
       "aterialH\000\022\027\n\005equip\030\006 \001(\0132\006.EquipH\000\022\037\n\tfu" +
       "rniture\030\007 \001(\0132\n.FurnitureH\000B\010\n\006detailB\033\n" +
@@ -1363,9 +1363,9 @@ public final class ItemOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.MaterialOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EquipOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FurnitureOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.MaterialOuterClass.getDescriptor(),
         });
     internal_static_Item_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1373,9 +1373,9 @@ public final class ItemOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Item_descriptor,
         new java.lang.String[] { "ItemId", "Guid", "Material", "Equip", "Furniture", "Detail", });
+    emu.grasscutter.net.proto.MaterialOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EquipOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FurnitureOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.MaterialOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

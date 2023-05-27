@@ -80,7 +80,7 @@ public final class AbilityAppliedAbilityOuterClass {
   }
   /**
    * <pre>
-   * Name: GEIBGHJFKCH
+   * Obf: GBOIHEDHOGC
    * </pre>
    *
    * Protobuf type {@code AbilityAppliedAbility}
@@ -509,7 +509,7 @@ public final class AbilityAppliedAbilityOuterClass {
     }
     /**
      * <pre>
-     * Name: GEIBGHJFKCH
+     * Obf: GBOIHEDHOGC
      * </pre>
      *
      * Protobuf type {@code AbilityAppliedAbility}
@@ -1305,8 +1305,8 @@ public final class AbilityAppliedAbilityOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033AbilityAppliedAbility.proto\032\035AbilitySc" +
-      "alarValueEntry.proto\032\023AbilityString.prot" +
+      "\n\033AbilityAppliedAbility.proto\032\023AbilitySt" +
+      "ring.proto\032\035AbilityScalarValueEntry.prot" +
       "o\"\265\001\n\025AbilityAppliedAbility\022$\n\014ability_n" +
       "ame\030\001 \001(\0132\016.AbilityString\022(\n\020ability_ove" +
       "rride\030\002 \001(\0132\016.AbilityString\022.\n\014override_" +
@@ -1317,8 +1317,8 @@ public final class AbilityAppliedAbilityOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
         });
     internal_static_AbilityAppliedAbility_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1326,8 +1326,8 @@ public final class AbilityAppliedAbilityOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityAppliedAbility_descriptor,
         new java.lang.String[] { "AbilityName", "AbilityOverride", "OverrideMap", "InstancedAbilityId", });
-    emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

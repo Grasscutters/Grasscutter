@@ -32,7 +32,7 @@ public final class TrialAvatarGrantRecordOuterClass {
   }
   /**
    * <pre>
-   * Name: NMHLLNINEFA
+   * Obf: GCFNFGACEOP
    * </pre>
    *
    * Protobuf type {@code TrialAvatarGrantRecord}
@@ -122,6 +122,10 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
 
     /**
+     * <pre>
+     * Added by Magix.
+     * </pre>
+     *
      * Protobuf enum {@code TrialAvatarGrantRecord.GrantReason}
      */
     public enum GrantReason
@@ -545,7 +549,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     }
     /**
      * <pre>
-     * Name: NMHLLNINEFA
+     * Obf: GCFNFGACEOP
      * </pre>
      *
      * Protobuf type {@code TrialAvatarGrantRecord}

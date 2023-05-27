@@ -16,7 +16,7 @@ public final class HomePlantFieldStatusOuterClass {
   }
   /**
    * <pre>
-   * Name: GEHIKODGKMC
+   * Obf: EOCCCEGKIIF
    * </pre>
    *
    * Protobuf enum {@code HomePlantFieldStatus}

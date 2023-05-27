@@ -19,7 +19,7 @@ public final class SumoAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_trial = 5;</code>
+     * <code>bool is_trial = 4;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
@@ -32,7 +32,7 @@ public final class SumoAvatarInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: LGLPAMOMGHI
+   * Obf: FMCHEOACJGI
    * </pre>
    *
    * Protobuf type {@code SumoAvatarInfo}
@@ -84,7 +84,7 @@ public final class SumoAvatarInfoOuterClass {
               avatarId_ = input.readUInt64();
               break;
             }
-            case 40: {
+            case 32: {
 
               isTrial_ = input.readBool();
               break;
@@ -121,10 +121,10 @@ public final class SumoAvatarInfoOuterClass {
               emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo.class, emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo.Builder.class);
     }
 
-    public static final int IS_TRIAL_FIELD_NUMBER = 5;
+    public static final int IS_TRIAL_FIELD_NUMBER = 4;
     private boolean isTrial_;
     /**
-     * <code>bool is_trial = 5;</code>
+     * <code>bool is_trial = 4;</code>
      * @return The isTrial.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class SumoAvatarInfoOuterClass {
         output.writeUInt64(1, avatarId_);
       }
       if (isTrial_ != false) {
-        output.writeBool(5, isTrial_);
+        output.writeBool(4, isTrial_);
       }
       unknownFields.writeTo(output);
     }
@@ -178,7 +178,7 @@ public final class SumoAvatarInfoOuterClass {
       }
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isTrial_);
+          .computeBoolSize(4, isTrial_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,7 +313,7 @@ public final class SumoAvatarInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: LGLPAMOMGHI
+     * Obf: FMCHEOACJGI
      * </pre>
      *
      * Protobuf type {@code SumoAvatarInfo}
@@ -470,7 +470,7 @@ public final class SumoAvatarInfoOuterClass {
 
       private boolean isTrial_ ;
       /**
-       * <code>bool is_trial = 5;</code>
+       * <code>bool is_trial = 4;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class SumoAvatarInfoOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool is_trial = 5;</code>
+       * <code>bool is_trial = 4;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class SumoAvatarInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial = 5;</code>
+       * <code>bool is_trial = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
@@ -597,7 +597,7 @@ public final class SumoAvatarInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024SumoAvatarInfo.proto\"5\n\016SumoAvatarInfo" +
-      "\022\020\n\010is_trial\030\005 \001(\010\022\021\n\tavatar_id\030\001 \001(\004B\033\n" +
+      "\022\020\n\010is_trial\030\004 \001(\010\022\021\n\tavatar_id\030\001 \001(\004B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

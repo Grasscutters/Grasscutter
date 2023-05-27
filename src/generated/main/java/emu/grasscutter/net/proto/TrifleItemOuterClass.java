@@ -1350,8 +1350,8 @@ public final class TrifleItemOuterClass {
       "\016\n\006itemId\030\001 \001(\r\022\014\n\004guid\030\002 \001(\004\022\035\n\010materia" +
       "l\030\005 \001(\0132\t.MaterialH\000\022\027\n\005equip\030\006 \001(\0132\006.Eq" +
       "uipH\000\022\037\n\tfurniture\030\007 \001(\0132\n.FurnitureH\000B\010" +
-      "\n\006detailB\033\n\031emu.grasscutter.net.protob\006p" +
-      "roto3"
+      "\n\006detailB!\n\031emu.grasscutter.net.protoZ\004/" +
+      "genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

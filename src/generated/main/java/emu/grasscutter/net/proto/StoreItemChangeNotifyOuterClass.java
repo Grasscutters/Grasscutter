@@ -43,20 +43,20 @@ public final class StoreItemChangeNotifyOuterClass {
         int index);
 
     /**
-     * <code>.StoreType store_type = 3;</code>
+     * <code>.StoreType store_type = 7;</code>
      * @return The enum numeric value on the wire for storeType.
      */
     int getStoreTypeValue();
     /**
-     * <code>.StoreType store_type = 3;</code>
+     * <code>.StoreType store_type = 7;</code>
      * @return The storeType.
      */
     emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType getStoreType();
   }
   /**
    * <pre>
-   * CmdId: 689
-   * Name: KAMNCMHFHKA
+   * CmdId: 602
+   * Obf: MEIPEBBLOAK
    * </pre>
    *
    * Protobuf type {@code StoreItemChangeNotify}
@@ -106,12 +106,6 @@ public final class StoreItemChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-              int rawValue = input.readEnum();
-
-              storeType_ = rawValue;
-              break;
-            }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemOuterClass.Item>();
@@ -119,6 +113,12 @@ public final class StoreItemChangeNotifyOuterClass {
               }
               itemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemOuterClass.Item.parser(), extensionRegistry));
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              storeType_ = rawValue;
               break;
             }
             default: {
@@ -196,17 +196,17 @@ public final class StoreItemChangeNotifyOuterClass {
       return itemList_.get(index);
     }
 
-    public static final int STORE_TYPE_FIELD_NUMBER = 3;
+    public static final int STORE_TYPE_FIELD_NUMBER = 7;
     private int storeType_;
     /**
-     * <code>.StoreType store_type = 3;</code>
+     * <code>.StoreType store_type = 7;</code>
      * @return The enum numeric value on the wire for storeType.
      */
     @java.lang.Override public int getStoreTypeValue() {
       return storeType_;
     }
     /**
-     * <code>.StoreType store_type = 3;</code>
+     * <code>.StoreType store_type = 7;</code>
      * @return The storeType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
@@ -229,11 +229,11 @@ public final class StoreItemChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-        output.writeEnum(3, storeType_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
         output.writeMessage(4, itemList_.get(i));
+      }
+      if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+        output.writeEnum(7, storeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -244,13 +244,13 @@ public final class StoreItemChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, storeType_);
-      }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, itemList_.get(i));
+      }
+      if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, storeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -384,8 +384,8 @@ public final class StoreItemChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 689
-     * Name: KAMNCMHFHKA
+     * CmdId: 602
+     * Obf: MEIPEBBLOAK
      * </pre>
      *
      * Protobuf type {@code StoreItemChangeNotify}
@@ -820,14 +820,14 @@ public final class StoreItemChangeNotifyOuterClass {
 
       private int storeType_ = 0;
       /**
-       * <code>.StoreType store_type = 3;</code>
+       * <code>.StoreType store_type = 7;</code>
        * @return The enum numeric value on the wire for storeType.
        */
       @java.lang.Override public int getStoreTypeValue() {
         return storeType_;
       }
       /**
-       * <code>.StoreType store_type = 3;</code>
+       * <code>.StoreType store_type = 7;</code>
        * @param value The enum numeric value on the wire for storeType to set.
        * @return This builder for chaining.
        */
@@ -838,7 +838,7 @@ public final class StoreItemChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.StoreType store_type = 3;</code>
+       * <code>.StoreType store_type = 7;</code>
        * @return The storeType.
        */
       @java.lang.Override
@@ -848,7 +848,7 @@ public final class StoreItemChangeNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.StoreType store_type = 3;</code>
+       * <code>.StoreType store_type = 7;</code>
        * @param value The storeType to set.
        * @return This builder for chaining.
        */
@@ -862,7 +862,7 @@ public final class StoreItemChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.StoreType store_type = 3;</code>
+       * <code>.StoreType store_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearStoreType() {
@@ -941,7 +941,7 @@ public final class StoreItemChangeNotifyOuterClass {
       "\n\033StoreItemChangeNotify.proto\032\nItem.prot" +
       "o\032\017StoreType.proto\"Q\n\025StoreItemChangeNot" +
       "ify\022\030\n\titem_list\030\004 \003(\0132\005.Item\022\036\n\nstore_t" +
-      "ype\030\003 \001(\0162\n.StoreTypeB\033\n\031emu.grasscutter" +
+      "ype\030\007 \001(\0162\n.StoreTypeB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

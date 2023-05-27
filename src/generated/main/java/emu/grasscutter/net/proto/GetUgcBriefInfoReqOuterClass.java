@@ -636,8 +636,8 @@ public final class GetUgcBriefInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030GetUgcBriefInfoReq.proto\032\rUgcType.prot" +
       "o\"B\n\022GetUgcBriefInfoReq\022\020\n\010ugc_guid\030\n \001(" +
-      "\004\022\032\n\010ugc_type\030\001 \001(\0162\010.UgcTypeB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\004\022\032\n\010ugc_type\030\001 \001(\0162\010.UgcTypeB!\n\031emu.gra" +
+      "sscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

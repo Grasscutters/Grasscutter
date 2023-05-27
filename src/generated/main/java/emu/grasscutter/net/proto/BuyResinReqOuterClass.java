@@ -456,8 +456,8 @@ public final class BuyResinReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BuyResinReq.proto\"\r\n\013BuyResinReqB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\n\021BuyResinReq.proto\"\r\n\013BuyResinReqB!\n\031em" +
+      "u.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

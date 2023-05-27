@@ -19,27 +19,27 @@ public final class GetParentQuestVideoKeyRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 video_key = 3;</code>
+     * <code>uint64 video_key = 7;</code>
      * @return The videoKey.
      */
     long getVideoKey();
 
     /**
-     * <code>uint32 parent_quest_id = 8;</code>
+     * <code>uint32 parent_quest_id = 13;</code>
      * @return The parentQuestId.
      */
     int getParentQuestId();
 
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 426
-   * Name: KMIHBBDHIFF
+   * CmdId: 418
+   * Obf: NJKJOLKFGGK
    * </pre>
    *
    * Protobuf type {@code GetParentQuestVideoKeyRsp}
@@ -86,19 +86,19 @@ public final class GetParentQuestVideoKeyRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 56: {
 
               videoKey_ = input.readUInt64();
               break;
             }
-            case 64: {
+            case 104: {
 
               parentQuestId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class GetParentQuestVideoKeyRspOuterClass {
               emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRsp.class, emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRsp.Builder.class);
     }
 
-    public static final int VIDEO_KEY_FIELD_NUMBER = 3;
+    public static final int VIDEO_KEY_FIELD_NUMBER = 7;
     private long videoKey_;
     /**
-     * <code>uint64 video_key = 3;</code>
+     * <code>uint64 video_key = 7;</code>
      * @return The videoKey.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class GetParentQuestVideoKeyRspOuterClass {
       return videoKey_;
     }
 
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 8;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 13;
     private int parentQuestId_;
     /**
-     * <code>uint32 parent_quest_id = 8;</code>
+     * <code>uint32 parent_quest_id = 13;</code>
      * @return The parentQuestId.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class GetParentQuestVideoKeyRspOuterClass {
       return parentQuestId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 10;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class GetParentQuestVideoKeyRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (retcode_ != 0) {
+        output.writeInt32(6, retcode_);
+      }
       if (videoKey_ != 0L) {
-        output.writeUInt64(3, videoKey_);
+        output.writeUInt64(7, videoKey_);
       }
       if (parentQuestId_ != 0) {
-        output.writeUInt32(8, parentQuestId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
+        output.writeUInt32(13, parentQuestId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class GetParentQuestVideoKeyRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, retcode_);
+      }
       if (videoKey_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, videoKey_);
+          .computeUInt64Size(7, videoKey_);
       }
       if (parentQuestId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, parentQuestId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
+          .computeUInt32Size(13, parentQuestId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,8 +346,8 @@ public final class GetParentQuestVideoKeyRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 426
-     * Name: KMIHBBDHIFF
+     * CmdId: 418
+     * Obf: NJKJOLKFGGK
      * </pre>
      *
      * Protobuf type {@code GetParentQuestVideoKeyRsp}
@@ -510,7 +510,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
       private long videoKey_ ;
       /**
-       * <code>uint64 video_key = 3;</code>
+       * <code>uint64 video_key = 7;</code>
        * @return The videoKey.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return videoKey_;
       }
       /**
-       * <code>uint64 video_key = 3;</code>
+       * <code>uint64 video_key = 7;</code>
        * @param value The videoKey to set.
        * @return This builder for chaining.
        */
@@ -529,7 +529,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return this;
       }
       /**
-       * <code>uint64 video_key = 3;</code>
+       * <code>uint64 video_key = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearVideoKey() {
@@ -541,7 +541,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
       private int parentQuestId_ ;
       /**
-       * <code>uint32 parent_quest_id = 8;</code>
+       * <code>uint32 parent_quest_id = 13;</code>
        * @return The parentQuestId.
        */
       @java.lang.Override
@@ -549,7 +549,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return parentQuestId_;
       }
       /**
-       * <code>uint32 parent_quest_id = 8;</code>
+       * <code>uint32 parent_quest_id = 13;</code>
        * @param value The parentQuestId to set.
        * @return This builder for chaining.
        */
@@ -560,7 +560,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 parent_quest_id = 8;</code>
+       * <code>uint32 parent_quest_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
@@ -572,7 +572,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -580,7 +580,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -591,7 +591,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 10;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -668,8 +668,8 @@ public final class GetParentQuestVideoKeyRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037GetParentQuestVideoKeyRsp.proto\"X\n\031Get" +
-      "ParentQuestVideoKeyRsp\022\021\n\tvideo_key\030\003 \001(" +
-      "\004\022\027\n\017parent_quest_id\030\010 \001(\r\022\017\n\007retcode\030\n " +
+      "ParentQuestVideoKeyRsp\022\021\n\tvideo_key\030\007 \001(" +
+      "\004\022\027\n\017parent_quest_id\030\r \001(\r\022\017\n\007retcode\030\006 " +
       "\001(\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

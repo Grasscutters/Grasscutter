@@ -19,30 +19,30 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 6;</code>
+     * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      * @return Whether the monsterRoute field is set.
      */
     boolean hasMonsterRoute();
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      * @return The monsterRoute.
      */
     emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute();
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      */
     emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 3307
-   * Name: LCONNAKDFLI
+   * CmdId: 3064
+   * Obf: DACNMFEKIII
    * </pre>
    *
    * Protobuf type {@code MonsterPointArrayRouteUpdateNotify}
@@ -89,12 +89,12 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 32: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 82: {
+            case 66: {
               emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder subBuilder = null;
               if (monsterRoute_ != null) {
                 subBuilder = monsterRoute_.toBuilder();
@@ -139,10 +139,10 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.MonsterPointArrayRouteUpdateNotifyOuterClass.MonsterPointArrayRouteUpdateNotify.class, emu.grasscutter.net.proto.MonsterPointArrayRouteUpdateNotifyOuterClass.MonsterPointArrayRouteUpdateNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 6;
+    public static final int ENTITY_ID_FIELD_NUMBER = 4;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 6;</code>
+     * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -150,10 +150,10 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int MONSTER_ROUTE_FIELD_NUMBER = 10;
+    public static final int MONSTER_ROUTE_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute monsterRoute_;
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      * @return Whether the monsterRoute field is set.
      */
     @java.lang.Override
@@ -161,7 +161,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       return monsterRoute_ != null;
     }
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      * @return The monsterRoute.
      */
     @java.lang.Override
@@ -169,7 +169,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       return monsterRoute_ == null ? emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
     }
     /**
-     * <code>.MonsterRoute monster_route = 10;</code>
+     * <code>.MonsterRoute monster_route = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
@@ -191,10 +191,10 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(6, entityId_);
+        output.writeUInt32(4, entityId_);
       }
       if (monsterRoute_ != null) {
-        output.writeMessage(10, getMonsterRoute());
+        output.writeMessage(8, getMonsterRoute());
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, entityId_);
+          .computeUInt32Size(4, entityId_);
       }
       if (monsterRoute_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getMonsterRoute());
+          .computeMessageSize(8, getMonsterRoute());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,8 +349,8 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3307
-     * Name: LCONNAKDFLI
+     * CmdId: 3064
+     * Obf: DACNMFEKIII
      * </pre>
      *
      * Protobuf type {@code MonsterPointArrayRouteUpdateNotify}
@@ -515,7 +515,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -523,7 +523,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -534,7 +534,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 6;</code>
+       * <code>uint32 entity_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -548,14 +548,14 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> monsterRouteBuilder_;
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        * @return Whether the monsterRoute field is set.
        */
       public boolean hasMonsterRoute() {
         return monsterRouteBuilder_ != null || monsterRoute_ != null;
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        * @return The monsterRoute.
        */
       public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute() {
@@ -566,7 +566,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public Builder setMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
         if (monsterRouteBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public Builder setMonsterRoute(
           emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder builderForValue) {
@@ -596,7 +596,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public Builder mergeMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
         if (monsterRouteBuilder_ == null) {
@@ -614,7 +614,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public Builder clearMonsterRoute() {
         if (monsterRouteBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder getMonsterRouteBuilder() {
         
@@ -636,7 +636,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         return getMonsterRouteFieldBuilder().getBuilder();
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
         if (monsterRouteBuilder_ != null) {
@@ -647,7 +647,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>.MonsterRoute monster_route = 10;</code>
+       * <code>.MonsterRoute monster_route = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> 
@@ -731,8 +731,8 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n(MonsterPointArrayRouteUpdateNotify.pro" +
       "to\032\022MonsterRoute.proto\"]\n\"MonsterPointAr" +
-      "rayRouteUpdateNotify\022\021\n\tentity_id\030\006 \001(\r\022" +
-      "$\n\rmonster_route\030\n \001(\0132\r.MonsterRouteB\033\n" +
+      "rayRouteUpdateNotify\022\021\n\tentity_id\030\004 \001(\r\022" +
+      "$\n\rmonster_route\030\010 \001(\0132\r.MonsterRouteB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

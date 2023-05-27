@@ -16,7 +16,7 @@ public final class WidgetSlotOpOuterClass {
   }
   /**
    * <pre>
-   * Name: GOHGODJALDD
+   * Obf: DAADDKFJJAH
    * </pre>
    *
    * Protobuf enum {@code WidgetSlotOp}

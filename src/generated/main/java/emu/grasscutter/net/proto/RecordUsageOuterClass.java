@@ -16,7 +16,7 @@ public final class RecordUsageOuterClass {
   }
   /**
    * <pre>
-   * Name: CFEMNBDBBCK
+   * Obf: MJDHHOAILGG
    * </pre>
    *
    * Protobuf enum {@code RecordUsage}

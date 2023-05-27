@@ -56,7 +56,7 @@ public final class StopServerInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: EEDNKCDNPIP
+   * Obf: CHDJMPLAMAF
    * </pre>
    *
    * Protobuf type {@code StopServerInfo}
@@ -445,7 +445,7 @@ public final class StopServerInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: EEDNKCDNPIP
+     * Obf: CHDJMPLAMAF
      * </pre>
      *
      * Protobuf type {@code StopServerInfo}

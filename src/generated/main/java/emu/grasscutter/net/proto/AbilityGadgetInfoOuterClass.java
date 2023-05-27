@@ -38,7 +38,7 @@ public final class AbilityGadgetInfoOuterClass {
   }
   /**
    * <pre>
-   * Name: JDMJNJAJHGI
+   * Obf: AELEICAJLLG
    * </pre>
    *
    * Protobuf type {@code AbilityGadgetInfo}
@@ -344,7 +344,7 @@ public final class AbilityGadgetInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: JDMJNJAJHGI
+     * Obf: AELEICAJLLG
      * </pre>
      *
      * Protobuf type {@code AbilityGadgetInfo}

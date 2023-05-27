@@ -19,20 +19,20 @@ public final class FungusPlotStageDetailOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 14;</code>
+     * <code>bool is_open = 13;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 stage_id = 9;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * Name: COHJIIJBAGM
+   * Obf: BMFELBMMIJF
    * </pre>
    *
    * Protobuf type {@code FungusPlotStageDetail}
@@ -79,12 +79,12 @@ public final class FungusPlotStageDetailOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 48: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 104: {
 
               isOpen_ = input.readBool();
               break;
@@ -121,10 +121,10 @@ public final class FungusPlotStageDetailOuterClass {
               emu.grasscutter.net.proto.FungusPlotStageDetailOuterClass.FungusPlotStageDetail.class, emu.grasscutter.net.proto.FungusPlotStageDetailOuterClass.FungusPlotStageDetail.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 14;
+    public static final int IS_OPEN_FIELD_NUMBER = 13;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 14;</code>
+     * <code>bool is_open = 13;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -132,10 +132,10 @@ public final class FungusPlotStageDetailOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 9;
+    public static final int STAGE_ID_FIELD_NUMBER = 6;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 9;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -158,10 +158,10 @@ public final class FungusPlotStageDetailOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(9, stageId_);
+        output.writeUInt32(6, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(14, isOpen_);
+        output.writeBool(13, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class FungusPlotStageDetailOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, stageId_);
+          .computeUInt32Size(6, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isOpen_);
+          .computeBoolSize(13, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,7 +312,7 @@ public final class FungusPlotStageDetailOuterClass {
     }
     /**
      * <pre>
-     * Name: COHJIIJBAGM
+     * Obf: BMFELBMMIJF
      * </pre>
      *
      * Protobuf type {@code FungusPlotStageDetail}
@@ -469,7 +469,7 @@ public final class FungusPlotStageDetailOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 14;</code>
+       * <code>bool is_open = 13;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -477,7 +477,7 @@ public final class FungusPlotStageDetailOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 14;</code>
+       * <code>bool is_open = 13;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -488,7 +488,7 @@ public final class FungusPlotStageDetailOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 14;</code>
+       * <code>bool is_open = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -500,7 +500,7 @@ public final class FungusPlotStageDetailOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -508,7 +508,7 @@ public final class FungusPlotStageDetailOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -519,7 +519,7 @@ public final class FungusPlotStageDetailOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 9;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -596,8 +596,8 @@ public final class FungusPlotStageDetailOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033FungusPlotStageDetail.proto\":\n\025FungusP" +
-      "lotStageDetail\022\017\n\007is_open\030\016 \001(\010\022\020\n\010stage" +
-      "_id\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "lotStageDetail\022\017\n\007is_open\030\r \001(\010\022\020\n\010stage" +
+      "_id\030\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

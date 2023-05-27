@@ -19,39 +19,39 @@ public final class BonusActivityInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> 
-        getBonusActivityInfoListList();
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index);
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    int getBonusActivityInfoListCount();
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
-        getBonusActivityInfoListOrBuilderList();
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
-        int index);
-
-    /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> 
+        getBonusActivityInfoListList();
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index);
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    int getBonusActivityInfoListCount();
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
+        getBonusActivityInfoListOrBuilderList();
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * CmdId: 2565
-   * Name: JLPCIJCCNOI
+   * CmdId: 2534
+   * Obf: IPECEELMBPL
    * </pre>
    *
    * Protobuf type {@code BonusActivityInfoRsp}
@@ -100,7 +100,7 @@ public final class BonusActivityInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bonusActivityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -149,46 +149,6 @@ public final class BonusActivityInfoRspOuterClass {
               emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp.class, emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp.Builder.class);
     }
 
-    public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_;
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
-      return bonusActivityInfoList_;
-    }
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
-        getBonusActivityInfoListOrBuilderList() {
-      return bonusActivityInfoList_;
-    }
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public int getBonusActivityInfoListCount() {
-      return bonusActivityInfoList_.size();
-    }
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
-      return bonusActivityInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
-        int index) {
-      return bonusActivityInfoList_.get(index);
-    }
-
     public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
@@ -198,6 +158,46 @@ public final class BonusActivityInfoRspOuterClass {
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_;
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
+      return bonusActivityInfoList_;
+    }
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
+        getBonusActivityInfoListOrBuilderList() {
+      return bonusActivityInfoList_;
+    }
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getBonusActivityInfoListCount() {
+      return bonusActivityInfoList_.size();
+    }
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
+      return bonusActivityInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
+        int index) {
+      return bonusActivityInfoList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -215,7 +215,7 @@ public final class BonusActivityInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < bonusActivityInfoList_.size(); i++) {
-        output.writeMessage(1, bonusActivityInfoList_.get(i));
+        output.writeMessage(3, bonusActivityInfoList_.get(i));
       }
       if (retcode_ != 0) {
         output.writeInt32(7, retcode_);
@@ -231,7 +231,7 @@ public final class BonusActivityInfoRspOuterClass {
       size = 0;
       for (int i = 0; i < bonusActivityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, bonusActivityInfoList_.get(i));
+          .computeMessageSize(3, bonusActivityInfoList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -252,10 +252,10 @@ public final class BonusActivityInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp other = (emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp) obj;
 
-      if (!getBonusActivityInfoListList()
-          .equals(other.getBonusActivityInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (!getBonusActivityInfoListList()
+          .equals(other.getBonusActivityInfoListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class BonusActivityInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       if (getBonusActivityInfoListCount() > 0) {
         hash = (37 * hash) + BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBonusActivityInfoListList().hashCode();
       }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class BonusActivityInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2565
-     * Name: JLPCIJCCNOI
+     * CmdId: 2534
+     * Obf: IPECEELMBPL
      * </pre>
      *
      * Protobuf type {@code BonusActivityInfoRsp}
@@ -412,14 +412,14 @@ public final class BonusActivityInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        retcode_ = 0;
+
         if (bonusActivityInfoListBuilder_ == null) {
           bonusActivityInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           bonusActivityInfoListBuilder_.clear();
         }
-        retcode_ = 0;
-
         return this;
       }
 
@@ -447,6 +447,7 @@ public final class BonusActivityInfoRspOuterClass {
       public emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp buildPartial() {
         emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp result = new emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp(this);
         int from_bitField0_ = bitField0_;
+        result.retcode_ = retcode_;
         if (bonusActivityInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             bonusActivityInfoList_ = java.util.Collections.unmodifiableList(bonusActivityInfoList_);
@@ -456,7 +457,6 @@ public final class BonusActivityInfoRspOuterClass {
         } else {
           result.bonusActivityInfoList_ = bonusActivityInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -505,6 +505,9 @@ public final class BonusActivityInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp other) {
         if (other == emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp.getDefaultInstance()) return this;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         if (bonusActivityInfoListBuilder_ == null) {
           if (!other.bonusActivityInfoList_.isEmpty()) {
             if (bonusActivityInfoList_.isEmpty()) {
@@ -530,9 +533,6 @@ public final class BonusActivityInfoRspOuterClass {
               bonusActivityInfoListBuilder_.addAllMessages(other.bonusActivityInfoList_);
             }
           }
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,246 +564,6 @@ public final class BonusActivityInfoRspOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_ =
-        java.util.Collections.emptyList();
-      private void ensureBonusActivityInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          bonusActivityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>(bonusActivityInfoList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> bonusActivityInfoListBuilder_;
-
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
-        if (bonusActivityInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(bonusActivityInfoList_);
-        } else {
-          return bonusActivityInfoListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public int getBonusActivityInfoListCount() {
-        if (bonusActivityInfoListBuilder_ == null) {
-          return bonusActivityInfoList_.size();
-        } else {
-          return bonusActivityInfoListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          return bonusActivityInfoList_.get(index);
-        } else {
-          return bonusActivityInfoListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder setBonusActivityInfoList(
-          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.set(index, value);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder setBonusActivityInfoList(
-          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder addBonusActivityInfoList(emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.add(value);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder addBonusActivityInfoList(
-          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.add(index, value);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder addBonusActivityInfoList(
-          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder addBonusActivityInfoList(
-          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder addAllBonusActivityInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> values) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          ensureBonusActivityInfoListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, bonusActivityInfoList_);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder clearBonusActivityInfoList() {
-        if (bonusActivityInfoListBuilder_ == null) {
-          bonusActivityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public Builder removeBonusActivityInfoList(int index) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          ensureBonusActivityInfoListIsMutable();
-          bonusActivityInfoList_.remove(index);
-          onChanged();
-        } else {
-          bonusActivityInfoListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder getBonusActivityInfoListBuilder(
-          int index) {
-        return getBonusActivityInfoListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
-          int index) {
-        if (bonusActivityInfoListBuilder_ == null) {
-          return bonusActivityInfoList_.get(index);  } else {
-          return bonusActivityInfoListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
-           getBonusActivityInfoListOrBuilderList() {
-        if (bonusActivityInfoListBuilder_ != null) {
-          return bonusActivityInfoListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(bonusActivityInfoList_);
-        }
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder() {
-        return getBonusActivityInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder(
-          int index) {
-        return getBonusActivityInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder> 
-           getBonusActivityInfoListBuilderList() {
-        return getBonusActivityInfoListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
-          getBonusActivityInfoListFieldBuilder() {
-        if (bonusActivityInfoListBuilder_ == null) {
-          bonusActivityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder>(
-                  bonusActivityInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          bonusActivityInfoList_ = null;
-        }
-        return bonusActivityInfoListBuilder_;
-      }
-
       private int retcode_ ;
       /**
        * <code>int32 retcode = 7;</code>
@@ -833,6 +593,246 @@ public final class BonusActivityInfoRspOuterClass {
         retcode_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_ =
+        java.util.Collections.emptyList();
+      private void ensureBonusActivityInfoListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          bonusActivityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>(bonusActivityInfoList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> bonusActivityInfoListBuilder_;
+
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
+        if (bonusActivityInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bonusActivityInfoList_);
+        } else {
+          return bonusActivityInfoListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public int getBonusActivityInfoListCount() {
+        if (bonusActivityInfoListBuilder_ == null) {
+          return bonusActivityInfoList_.size();
+        } else {
+          return bonusActivityInfoListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          return bonusActivityInfoList_.get(index);
+        } else {
+          return bonusActivityInfoListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder setBonusActivityInfoList(
+          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.set(index, value);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder setBonusActivityInfoList(
+          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder addBonusActivityInfoList(emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.add(value);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder addBonusActivityInfoList(
+          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.add(index, value);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder addBonusActivityInfoList(
+          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder addBonusActivityInfoList(
+          int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder addAllBonusActivityInfoList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> values) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          ensureBonusActivityInfoListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, bonusActivityInfoList_);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder clearBonusActivityInfoList() {
+        if (bonusActivityInfoListBuilder_ == null) {
+          bonusActivityInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public Builder removeBonusActivityInfoList(int index) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          ensureBonusActivityInfoListIsMutable();
+          bonusActivityInfoList_.remove(index);
+          onChanged();
+        } else {
+          bonusActivityInfoListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder getBonusActivityInfoListBuilder(
+          int index) {
+        return getBonusActivityInfoListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
+          int index) {
+        if (bonusActivityInfoListBuilder_ == null) {
+          return bonusActivityInfoList_.get(index);  } else {
+          return bonusActivityInfoListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
+           getBonusActivityInfoListOrBuilderList() {
+        if (bonusActivityInfoListBuilder_ != null) {
+          return bonusActivityInfoListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(bonusActivityInfoList_);
+        }
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder() {
+        return getBonusActivityInfoListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder(
+          int index) {
+        return getBonusActivityInfoListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder> 
+           getBonusActivityInfoListBuilderList() {
+        return getBonusActivityInfoListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
+          getBonusActivityInfoListFieldBuilder() {
+        if (bonusActivityInfoListBuilder_ == null) {
+          bonusActivityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder>(
+                  bonusActivityInfoList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          bonusActivityInfoList_ = null;
+        }
+        return bonusActivityInfoListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -902,9 +902,9 @@ public final class BonusActivityInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032BonusActivityInfoRsp.proto\032\027BonusActiv" +
-      "ityInfo.proto\"]\n\024BonusActivityInfoRsp\0224\n" +
-      "\030bonus_activity_info_list\030\001 \003(\0132\022.BonusA" +
-      "ctivityInfo\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.gras" +
+      "ityInfo.proto\"]\n\024BonusActivityInfoRsp\022\017\n" +
+      "\007retcode\030\007 \001(\005\0224\n\030bonus_activity_info_li" +
+      "st\030\003 \003(\0132\022.BonusActivityInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -917,7 +917,7 @@ public final class BonusActivityInfoRspOuterClass {
     internal_static_BonusActivityInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BonusActivityInfoRsp_descriptor,
-        new java.lang.String[] { "BonusActivityInfoList", "Retcode", });
+        new java.lang.String[] { "Retcode", "BonusActivityInfoList", });
     emu.grasscutter.net.proto.BonusActivityInfoOuterClass.getDescriptor();
   }
 

@@ -588,8 +588,8 @@ public final class ElementReliquaryRequestOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035ElementReliquaryRequest.proto\"A\n\027Eleme" +
       "ntReliquaryRequest\022\023\n\013elementType\030\014 \001(\r\022" +
-      "\021\n\tequipType\030\007 \001(\rB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "\021\n\tequipType\030\007 \001(\rB!\n\031emu.grasscutter.ne" +
+      "t.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

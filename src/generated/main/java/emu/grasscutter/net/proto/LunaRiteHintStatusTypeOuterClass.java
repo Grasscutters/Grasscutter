@@ -16,7 +16,7 @@ public final class LunaRiteHintStatusTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: BJACKBJGDPJ
+   * Obf: GELHLMJFAGP
    * </pre>
    *
    * Protobuf enum {@code LunaRiteHintStatusType}

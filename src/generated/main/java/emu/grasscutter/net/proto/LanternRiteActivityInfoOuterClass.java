@@ -1449,8 +1449,8 @@ public final class LanternRiteActivityInfoOuterClass {
       "fo\022\024\n\014leftMonsters\030\t \001(\010\022\033\n\023Unk3300_PDFJ" +
       "NCDGKGH\030\003 \001(\010\022(\n\rstageInfoList\030\001 \003(\0132\021.S" +
       "alvageStageInfo\022\033\n\023Unk3300_DKBJLCIMBAL\030\007" +
-      " \001(\010B\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      " \001(\010B!\n\031emu.grasscutter.net.protoZ\004/genb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

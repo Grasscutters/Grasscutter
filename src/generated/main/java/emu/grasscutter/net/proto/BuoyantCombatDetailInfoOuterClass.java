@@ -19,32 +19,32 @@ public final class BuoyantCombatDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo> 
         getDailyInfoListList();
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo getDailyInfoList(int index);
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     int getDailyInfoListCount();
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder> 
         getDailyInfoListOrBuilderList();
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder getDailyInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Name: GNMMBNPEODC
+   * Obf: KKAEOLMAJBG
    * </pre>
    *
    * Protobuf type {@code BuoyantCombatDetailInfo}
@@ -93,7 +93,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 106: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dailyInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class BuoyantCombatDetailInfoOuterClass {
               emu.grasscutter.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo.class, emu.grasscutter.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo.Builder.class);
     }
 
-    public static final int DAILY_INFO_LIST_FIELD_NUMBER = 13;
+    public static final int DAILY_INFO_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo> dailyInfoList_;
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo> getDailyInfoListList() {
       return dailyInfoList_;
     }
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder> 
@@ -155,21 +155,21 @@ public final class BuoyantCombatDetailInfoOuterClass {
       return dailyInfoList_;
     }
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     @java.lang.Override
     public int getDailyInfoListCount() {
       return dailyInfoList_.size();
     }
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo getDailyInfoList(int index) {
       return dailyInfoList_.get(index);
     }
     /**
-     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+     * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder getDailyInfoListOrBuilder(
@@ -192,7 +192,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < dailyInfoList_.size(); i++) {
-        output.writeMessage(13, dailyInfoList_.get(i));
+        output.writeMessage(9, dailyInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < dailyInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, dailyInfoList_.get(i));
+          .computeMessageSize(9, dailyInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: GNMMBNPEODC
+     * Obf: KKAEOLMAJBG
      * </pre>
      *
      * Protobuf type {@code BuoyantCombatDetailInfo}
@@ -536,7 +536,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
           emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder> dailyInfoListBuilder_;
 
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo> getDailyInfoListList() {
         if (dailyInfoListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public int getDailyInfoListCount() {
         if (dailyInfoListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo getDailyInfoList(int index) {
         if (dailyInfoListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder setDailyInfoList(
           int index, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo value) {
@@ -583,7 +583,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder setDailyInfoList(
           int index, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder addDailyInfoList(emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo value) {
         if (dailyInfoListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder addDailyInfoList(
           int index, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo value) {
@@ -630,7 +630,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder addDailyInfoList(
           emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder addDailyInfoList(
           int index, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder addAllDailyInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo> values) {
@@ -673,7 +673,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder clearDailyInfoList() {
         if (dailyInfoListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public Builder removeDailyInfoList(int index) {
         if (dailyInfoListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class BuoyantCombatDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder getDailyInfoListBuilder(
           int index) {
         return getDailyInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder getDailyInfoListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfoOrBuilder> 
            getDailyInfoListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class BuoyantCombatDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder addDailyInfoListBuilder() {
         return getDailyInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder addDailyInfoListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 13;</code>
+       * <code>repeated .BuoyantCombatDailyInfo daily_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.Builder> 
            getDailyInfoListBuilderList() {
@@ -831,7 +831,7 @@ public final class BuoyantCombatDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035BuoyantCombatDetailInfo.proto\032\034Buoyant" +
       "CombatDailyInfo.proto\"K\n\027BuoyantCombatDe" +
-      "tailInfo\0220\n\017daily_info_list\030\r \003(\0132\027.Buoy" +
+      "tailInfo\0220\n\017daily_info_list\030\t \003(\0132\027.Buoy" +
       "antCombatDailyInfoB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };

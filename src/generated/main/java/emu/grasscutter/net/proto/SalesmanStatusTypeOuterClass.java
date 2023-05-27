@@ -16,7 +16,7 @@ public final class SalesmanStatusTypeOuterClass {
   }
   /**
    * <pre>
-   * Name: CNCIMIAOHLE
+   * Obf: AGHLKHJDEHO
    * </pre>
    *
    * Protobuf enum {@code SalesmanStatusType}

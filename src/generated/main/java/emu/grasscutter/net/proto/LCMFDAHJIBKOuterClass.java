@@ -633,8 +633,8 @@ public final class LCMFDAHJIBKOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021LCMFDAHJIBK.proto\032\021LLBFJGELKIB.proto\"B" +
       "\n\013LCMFDAHJIBK\022\020\n\010level_id\030\002 \001(\r\022!\n\013CKNPD" +
-      "DAHIPK\030\n \001(\0162\014.LLBFJGELKIBB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "DAHIPK\030\n \001(\0162\014.LLBFJGELKIBB!\n\031emu.grassc" +
+      "utter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

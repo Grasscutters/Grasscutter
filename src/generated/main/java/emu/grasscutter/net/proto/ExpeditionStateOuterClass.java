@@ -16,7 +16,7 @@ public final class ExpeditionStateOuterClass {
   }
   /**
    * <pre>
-   * Name: MKKHEKAJHKN
+   * Obf: GPPFNJKCLPD
    * </pre>
    *
    * Protobuf enum {@code ExpeditionState}

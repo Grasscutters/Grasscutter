@@ -85,7 +85,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
   }
   /**
    * <pre>
-   * Name: HNCPFKLDBIF
+   * Obf: AAMJFNLFJIJ
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -616,7 +616,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
     }
     /**
      * <pre>
-     * Name: HNCPFKLDBIF
+     * Obf: AAMJFNLFJIJ
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -1396,9 +1396,9 @@ public final class HomeMarkPointFurnitureDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n HomeMarkPointFurnitureData.proto\032\032Home" +
-      "MarkPointNPCData.proto\032\034HomeMarkPointSui" +
-      "teData.proto\032\014Vector.proto\"\321\001\n\032HomeMarkP" +
+      "\n HomeMarkPointFurnitureData.proto\032\014Vect" +
+      "or.proto\032\032HomeMarkPointNPCData.proto\032\034Ho" +
+      "meMarkPointSuiteData.proto\"\321\001\n\032HomeMarkP" +
       "ointFurnitureData\022\014\n\004guid\030\001 \001(\r\022\024\n\014furni" +
       "ture_id\030\002 \001(\r\022\026\n\016furniture_type\030\003 \001(\r\022\024\n" +
       "\003pos\030\004 \001(\0132\007.Vector\022)\n\010npc_data\030\006 \001(\0132\025." +
@@ -1409,9 +1409,9 @@ public final class HomeMarkPointFurnitureDataOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_HomeMarkPointFurnitureData_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1419,9 +1419,9 @@ public final class HomeMarkPointFurnitureDataOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeMarkPointFurnitureData_descriptor,
         new java.lang.String[] { "Guid", "FurnitureId", "FurnitureType", "Pos", "NpcData", "SuiteData", "Extra", });
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

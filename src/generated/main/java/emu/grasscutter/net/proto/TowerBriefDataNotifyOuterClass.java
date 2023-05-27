@@ -953,8 +953,8 @@ public final class TowerBriefDataNotifyOuterClass {
       "dule_id\030\001 \001(\r\022!\n\031next_schedule_change_ti" +
       "me\030\010 \001(\r\022\"\n\032is_finished_entrance_floor\030\013" +
       " \001(\010\022\030\n\020last_floor_index\030\006 \001(\r\022\030\n\020last_l" +
-      "evel_index\030\005 \001(\rB\033\n\031emu.grasscutter.net." +
-      "protob\006proto3"
+      "evel_index\030\005 \001(\rB!\n\031emu.grasscutter.net." +
+      "protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

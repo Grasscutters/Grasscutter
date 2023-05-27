@@ -738,8 +738,8 @@ public final class JAAACKLMLHIOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021JAAACKLMLHI.proto\"X\n\013JAAACKLMLHI\022\023\n\013DH" +
       "NNFFCLPGH\030\014 \001(\r\022\021\n\tis_finish\030\002 \001(\010\022\017\n\007is" +
-      "_open\030\n \001(\010\022\020\n\010level_id\030\001 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "_open\030\n \001(\010\022\020\n\010level_id\030\001 \001(\rB!\n\031emu.gra" +
+      "sscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

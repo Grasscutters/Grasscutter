@@ -35,8 +35,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1912
-   * Name: NMMIMIJIBKK
+   * CmdId: 1924
+   * Obf: MIPONPDFIHM
    * </pre>
    *
    * Protobuf type {@code InvestigationMonsterUpdateNotify}
@@ -316,8 +316,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1912
-     * Name: NMMIMIJIBKK
+     * CmdId: 1924
+     * Obf: MIPONPDFIHM
      * </pre>
      *
      * Protobuf type {@code InvestigationMonsterUpdateNotify}

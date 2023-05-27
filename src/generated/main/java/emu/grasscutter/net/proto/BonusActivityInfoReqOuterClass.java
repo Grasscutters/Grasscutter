@@ -20,8 +20,8 @@ public final class BonusActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2512
-   * Name: JOFOPLGFKEJ
+   * CmdId: 2521
+   * Obf: FBLGPGPKKFK
    * </pre>
    *
    * Protobuf type {@code BonusActivityInfoReq}
@@ -246,8 +246,8 @@ public final class BonusActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2512
-     * Name: JOFOPLGFKEJ
+     * CmdId: 2521
+     * Obf: FBLGPGPKKFK
      * </pre>
      *
      * Protobuf type {@code BonusActivityInfoReq}

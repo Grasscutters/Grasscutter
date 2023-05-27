@@ -118,7 +118,7 @@ public final class RoutePointOuterClass {
   }
   /**
    * <pre>
-   * Name: KMEPMNFPJFH
+   * Obf: AJPPKICDBMJ
    * </pre>
    *
    * Protobuf type {@code RoutePoint}
@@ -827,7 +827,7 @@ public final class RoutePointOuterClass {
     }
     /**
      * <pre>
-     * Name: KMEPMNFPJFH
+     * Obf: AJPPKICDBMJ
      * </pre>
      *
      * Protobuf type {@code RoutePoint}
@@ -1841,8 +1841,8 @@ public final class RoutePointOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020RoutePoint.proto\032\024MathQuaternion.proto" +
-      "\032\014Vector.proto\"\211\002\n\nRoutePoint\022\031\n\010positio" +
+      "\n\020RoutePoint.proto\032\014Vector.proto\032\024MathQu" +
+      "aternion.proto\"\211\002\n\nRoutePoint\022\031\n\010positio" +
       "n\030\001 \001(\0132\007.Vector\022\024\n\014arrive_range\030\002 \001(\002\022\027" +
       "\n\017has_reach_event\030\003 \001(\010\022\022\n\010velocity\030\013 \001(" +
       "\002H\000\022\016\n\004time\030\014 \001(\002H\000\022\033\n\010rotation\030\025 \001(\0132\007." +
@@ -1854,8 +1854,8 @@ public final class RoutePointOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor(),
         });
     internal_static_RoutePoint_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1863,8 +1863,8 @@ public final class RoutePointOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoutePoint_descriptor,
         new java.lang.String[] { "Position", "ArriveRange", "HasReachEvent", "Velocity", "Time", "Rotation", "RotationSpeed", "AxisSpeed", "MoveParams", "RotateParams", });
-    emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

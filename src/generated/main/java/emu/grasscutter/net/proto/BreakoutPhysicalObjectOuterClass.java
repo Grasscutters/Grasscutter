@@ -170,7 +170,7 @@ public final class BreakoutPhysicalObjectOuterClass {
   }
   /**
    * <pre>
-   * Name: EAPLJCEIHNA
+   * Obf: LKHNDFCFOPP
    * </pre>
    *
    * Protobuf type {@code BreakoutPhysicalObject}
@@ -963,7 +963,7 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
     /**
      * <pre>
-     * Name: EAPLJCEIHNA
+     * Obf: LKHNDFCFOPP
      * </pre>
      *
      * Protobuf type {@code BreakoutPhysicalObject}
@@ -2448,9 +2448,9 @@ public final class BreakoutPhysicalObjectOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034BreakoutPhysicalObject.proto\032\027Breakout" +
-      "BrickInfo.proto\032$BreakoutPhysicalObjectM" +
-      "odifier.proto\032\025BreakoutVector2.proto\"\261\003\n" +
+      "\n\034BreakoutPhysicalObject.proto\032\025Breakout" +
+      "Vector2.proto\032$BreakoutPhysicalObjectMod" +
+      "ifier.proto\032\027BreakoutBrickInfo.proto\"\261\003\n" +
       "\026BreakoutPhysicalObject\022\n\n\002id\030\001 \001(\r\022\r\n\005i" +
       "ndex\030\002 \001(\r\022\021\n\tis_active\030\003 \001(\010\022\035\n\003pos\030\004 \001" +
       "(\0132\020.BreakoutVector2\022\"\n\010move_dir\030\005 \001(\0132\020" +
@@ -2467,9 +2467,9 @@ public final class BreakoutPhysicalObjectOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.BreakoutPhysicalObjectModifierOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.BreakoutVector2OuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.BreakoutPhysicalObjectModifierOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.getDescriptor(),
         });
     internal_static_BreakoutPhysicalObject_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2477,9 +2477,9 @@ public final class BreakoutPhysicalObjectOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BreakoutPhysicalObject_descriptor,
         new java.lang.String[] { "Id", "Index", "IsActive", "Pos", "MoveDir", "Speed", "InitPeerId", "State", "ElementType", "ElementReactionBuff", "ModifierList", "TotalRotation", "InfoList", "LastHitPeerId", "SpeedIncreaseCount", "Offset", });
-    emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.BreakoutPhysicalObjectModifierOuterClass.getDescriptor();
     emu.grasscutter.net.proto.BreakoutVector2OuterClass.getDescriptor();
+    emu.grasscutter.net.proto.BreakoutPhysicalObjectModifierOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

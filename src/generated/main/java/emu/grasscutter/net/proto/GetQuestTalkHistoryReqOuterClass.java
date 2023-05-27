@@ -528,7 +528,8 @@ public final class GetQuestTalkHistoryReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034GetQuestTalkHistoryReq.proto\"1\n\026GetQue" +
       "stTalkHistoryReq\022\027\n\017parent_quest_id\030\013 \001(" +
-      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

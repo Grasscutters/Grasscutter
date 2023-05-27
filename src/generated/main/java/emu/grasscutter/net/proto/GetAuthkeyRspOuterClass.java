@@ -19,63 +19,63 @@ public final class GetAuthkeyRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OBPIIAHOMOE = 3;</code>
-     * @return The oBPIIAHOMOE.
+     * <code>string auth_appid = 13;</code>
+     * @return The authAppid.
      */
-    int getOBPIIAHOMOE();
-
+    java.lang.String getAuthAppid();
     /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 EAFDADOGNIF = 10;</code>
-     * @return The eAFDADOGNIF.
-     */
-    int getEAFDADOGNIF();
-
-    /**
-     * <code>string game_biz = 4;</code>
-     * @return The gameBiz.
-     */
-    java.lang.String getGameBiz();
-    /**
-     * <code>string game_biz = 4;</code>
-     * @return The bytes for gameBiz.
+     * <code>string auth_appid = 13;</code>
+     * @return The bytes for authAppid.
      */
     com.google.protobuf.ByteString
-        getGameBizBytes();
+        getAuthAppidBytes();
 
     /**
-     * <code>string authkey = 1;</code>
+     * <code>string authkey = 6;</code>
      * @return The authkey.
      */
     java.lang.String getAuthkey();
     /**
-     * <code>string authkey = 1;</code>
+     * <code>string authkey = 6;</code>
      * @return The bytes for authkey.
      */
     com.google.protobuf.ByteString
         getAuthkeyBytes();
 
     /**
-     * <code>string auth_appid = 15;</code>
-     * @return The authAppid.
+     * <code>uint32 GALOPIFDMON = 4;</code>
+     * @return The gALOPIFDMON.
      */
-    java.lang.String getAuthAppid();
+    int getGALOPIFDMON();
+
     /**
-     * <code>string auth_appid = 15;</code>
-     * @return The bytes for authAppid.
+     * <code>int32 retcode = 7;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>string game_biz = 8;</code>
+     * @return The gameBiz.
+     */
+    java.lang.String getGameBiz();
+    /**
+     * <code>string game_biz = 8;</code>
+     * @return The bytes for gameBiz.
      */
     com.google.protobuf.ByteString
-        getAuthAppidBytes();
+        getGameBizBytes();
+
+    /**
+     * <code>uint32 MLKKOEBHEEI = 2;</code>
+     * @return The mLKKOEBHEEI.
+     */
+    int getMLKKOEBHEEI();
   }
   /**
    * <pre>
-   * CmdId: 1492
-   * Name: NFCEPLAAPBE
+   * CmdId: 1487
+   * Obf: OKFMABBCJMI
    * </pre>
    *
    * Protobuf type {@code GetAuthkeyRsp}
@@ -90,9 +90,9 @@ public final class GetAuthkeyRspOuterClass {
       super(builder);
     }
     private GetAuthkeyRsp() {
-      gameBiz_ = "";
-      authkey_ = "";
       authAppid_ = "";
+      authkey_ = "";
+      gameBiz_ = "";
     }
 
     @java.lang.Override
@@ -125,34 +125,34 @@ public final class GetAuthkeyRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 16: {
+
+              mLKKOEBHEEI_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              gALOPIFDMON_ = input.readUInt32();
+              break;
+            }
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               authkey_ = s;
               break;
             }
-            case 24: {
+            case 56: {
 
-              oBPIIAHOMOE_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
-            case 34: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               gameBiz_ = s;
               break;
             }
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              eAFDADOGNIF_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               authAppid_ = s;
@@ -190,119 +190,10 @@ public final class GetAuthkeyRspOuterClass {
               emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp.class, emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp.Builder.class);
     }
 
-    public static final int OBPIIAHOMOE_FIELD_NUMBER = 3;
-    private int oBPIIAHOMOE_;
-    /**
-     * <code>uint32 OBPIIAHOMOE = 3;</code>
-     * @return The oBPIIAHOMOE.
-     */
-    @java.lang.Override
-    public int getOBPIIAHOMOE() {
-      return oBPIIAHOMOE_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int EAFDADOGNIF_FIELD_NUMBER = 10;
-    private int eAFDADOGNIF_;
-    /**
-     * <code>uint32 EAFDADOGNIF = 10;</code>
-     * @return The eAFDADOGNIF.
-     */
-    @java.lang.Override
-    public int getEAFDADOGNIF() {
-      return eAFDADOGNIF_;
-    }
-
-    public static final int GAME_BIZ_FIELD_NUMBER = 4;
-    private volatile java.lang.Object gameBiz_;
-    /**
-     * <code>string game_biz = 4;</code>
-     * @return The gameBiz.
-     */
-    @java.lang.Override
-    public java.lang.String getGameBiz() {
-      java.lang.Object ref = gameBiz_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        gameBiz_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string game_biz = 4;</code>
-     * @return The bytes for gameBiz.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getGameBizBytes() {
-      java.lang.Object ref = gameBiz_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        gameBiz_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AUTHKEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object authkey_;
-    /**
-     * <code>string authkey = 1;</code>
-     * @return The authkey.
-     */
-    @java.lang.Override
-    public java.lang.String getAuthkey() {
-      java.lang.Object ref = authkey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        authkey_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string authkey = 1;</code>
-     * @return The bytes for authkey.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAuthkeyBytes() {
-      java.lang.Object ref = authkey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        authkey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AUTH_APPID_FIELD_NUMBER = 15;
+    public static final int AUTH_APPID_FIELD_NUMBER = 13;
     private volatile java.lang.Object authAppid_;
     /**
-     * <code>string auth_appid = 15;</code>
+     * <code>string auth_appid = 13;</code>
      * @return The authAppid.
      */
     @java.lang.Override
@@ -319,7 +210,7 @@ public final class GetAuthkeyRspOuterClass {
       }
     }
     /**
-     * <code>string auth_appid = 15;</code>
+     * <code>string auth_appid = 13;</code>
      * @return The bytes for authAppid.
      */
     @java.lang.Override
@@ -337,6 +228,115 @@ public final class GetAuthkeyRspOuterClass {
       }
     }
 
+    public static final int AUTHKEY_FIELD_NUMBER = 6;
+    private volatile java.lang.Object authkey_;
+    /**
+     * <code>string authkey = 6;</code>
+     * @return The authkey.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthkey() {
+      java.lang.Object ref = authkey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authkey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string authkey = 6;</code>
+     * @return The bytes for authkey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthkeyBytes() {
+      java.lang.Object ref = authkey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authkey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GALOPIFDMON_FIELD_NUMBER = 4;
+    private int gALOPIFDMON_;
+    /**
+     * <code>uint32 GALOPIFDMON = 4;</code>
+     * @return The gALOPIFDMON.
+     */
+    @java.lang.Override
+    public int getGALOPIFDMON() {
+      return gALOPIFDMON_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 7;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 7;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int GAME_BIZ_FIELD_NUMBER = 8;
+    private volatile java.lang.Object gameBiz_;
+    /**
+     * <code>string game_biz = 8;</code>
+     * @return The gameBiz.
+     */
+    @java.lang.Override
+    public java.lang.String getGameBiz() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gameBiz_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string game_biz = 8;</code>
+     * @return The bytes for gameBiz.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getGameBizBytes() {
+      java.lang.Object ref = gameBiz_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gameBiz_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MLKKOEBHEEI_FIELD_NUMBER = 2;
+    private int mLKKOEBHEEI_;
+    /**
+     * <code>uint32 MLKKOEBHEEI = 2;</code>
+     * @return The mLKKOEBHEEI.
+     */
+    @java.lang.Override
+    public int getMLKKOEBHEEI() {
+      return mLKKOEBHEEI_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -351,23 +351,23 @@ public final class GetAuthkeyRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (mLKKOEBHEEI_ != 0) {
+        output.writeUInt32(2, mLKKOEBHEEI_);
+      }
+      if (gALOPIFDMON_ != 0) {
+        output.writeUInt32(4, gALOPIFDMON_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authkey_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authkey_);
-      }
-      if (oBPIIAHOMOE_ != 0) {
-        output.writeUInt32(3, oBPIIAHOMOE_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, gameBiz_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, authkey_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(7, retcode_);
       }
-      if (eAFDADOGNIF_ != 0) {
-        output.writeUInt32(10, eAFDADOGNIF_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, gameBiz_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, authAppid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, authAppid_);
       }
       unknownFields.writeTo(output);
     }
@@ -378,26 +378,26 @@ public final class GetAuthkeyRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authkey_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authkey_);
-      }
-      if (oBPIIAHOMOE_ != 0) {
+      if (mLKKOEBHEEI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, oBPIIAHOMOE_);
+          .computeUInt32Size(2, mLKKOEBHEEI_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, gameBiz_);
+      if (gALOPIFDMON_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, gALOPIFDMON_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authkey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, authkey_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(7, retcode_);
       }
-      if (eAFDADOGNIF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, eAFDADOGNIF_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gameBiz_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, gameBiz_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, authAppid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, authAppid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -414,18 +414,18 @@ public final class GetAuthkeyRspOuterClass {
       }
       emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp other = (emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp) obj;
 
-      if (getOBPIIAHOMOE()
-          != other.getOBPIIAHOMOE()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getEAFDADOGNIF()
-          != other.getEAFDADOGNIF()) return false;
-      if (!getGameBiz()
-          .equals(other.getGameBiz())) return false;
-      if (!getAuthkey()
-          .equals(other.getAuthkey())) return false;
       if (!getAuthAppid()
           .equals(other.getAuthAppid())) return false;
+      if (!getAuthkey()
+          .equals(other.getAuthkey())) return false;
+      if (getGALOPIFDMON()
+          != other.getGALOPIFDMON()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (!getGameBiz()
+          .equals(other.getGameBiz())) return false;
+      if (getMLKKOEBHEEI()
+          != other.getMLKKOEBHEEI()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -437,18 +437,18 @@ public final class GetAuthkeyRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OBPIIAHOMOE_FIELD_NUMBER;
-      hash = (53 * hash) + getOBPIIAHOMOE();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + EAFDADOGNIF_FIELD_NUMBER;
-      hash = (53 * hash) + getEAFDADOGNIF();
-      hash = (37 * hash) + GAME_BIZ_FIELD_NUMBER;
-      hash = (53 * hash) + getGameBiz().hashCode();
-      hash = (37 * hash) + AUTHKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getAuthkey().hashCode();
       hash = (37 * hash) + AUTH_APPID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthAppid().hashCode();
+      hash = (37 * hash) + AUTHKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthkey().hashCode();
+      hash = (37 * hash) + GALOPIFDMON_FIELD_NUMBER;
+      hash = (53 * hash) + getGALOPIFDMON();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + GAME_BIZ_FIELD_NUMBER;
+      hash = (53 * hash) + getGameBiz().hashCode();
+      hash = (37 * hash) + MLKKOEBHEEI_FIELD_NUMBER;
+      hash = (53 * hash) + getMLKKOEBHEEI();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -546,8 +546,8 @@ public final class GetAuthkeyRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1492
-     * Name: NFCEPLAAPBE
+     * CmdId: 1487
+     * Obf: OKFMABBCJMI
      * </pre>
      *
      * Protobuf type {@code GetAuthkeyRsp}
@@ -587,17 +587,17 @@ public final class GetAuthkeyRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oBPIIAHOMOE_ = 0;
-
-        retcode_ = 0;
-
-        eAFDADOGNIF_ = 0;
-
-        gameBiz_ = "";
+        authAppid_ = "";
 
         authkey_ = "";
 
-        authAppid_ = "";
+        gALOPIFDMON_ = 0;
+
+        retcode_ = 0;
+
+        gameBiz_ = "";
+
+        mLKKOEBHEEI_ = 0;
 
         return this;
       }
@@ -625,12 +625,12 @@ public final class GetAuthkeyRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp buildPartial() {
         emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp result = new emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp(this);
-        result.oBPIIAHOMOE_ = oBPIIAHOMOE_;
-        result.retcode_ = retcode_;
-        result.eAFDADOGNIF_ = eAFDADOGNIF_;
-        result.gameBiz_ = gameBiz_;
-        result.authkey_ = authkey_;
         result.authAppid_ = authAppid_;
+        result.authkey_ = authkey_;
+        result.gALOPIFDMON_ = gALOPIFDMON_;
+        result.retcode_ = retcode_;
+        result.gameBiz_ = gameBiz_;
+        result.mLKKOEBHEEI_ = mLKKOEBHEEI_;
         onBuilt();
         return result;
       }
@@ -679,26 +679,26 @@ public final class GetAuthkeyRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp other) {
         if (other == emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp.getDefaultInstance()) return this;
-        if (other.getOBPIIAHOMOE() != 0) {
-          setOBPIIAHOMOE(other.getOBPIIAHOMOE());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (other.getEAFDADOGNIF() != 0) {
-          setEAFDADOGNIF(other.getEAFDADOGNIF());
-        }
-        if (!other.getGameBiz().isEmpty()) {
-          gameBiz_ = other.gameBiz_;
+        if (!other.getAuthAppid().isEmpty()) {
+          authAppid_ = other.authAppid_;
           onChanged();
         }
         if (!other.getAuthkey().isEmpty()) {
           authkey_ = other.authkey_;
           onChanged();
         }
-        if (!other.getAuthAppid().isEmpty()) {
-          authAppid_ = other.authAppid_;
+        if (other.getGALOPIFDMON() != 0) {
+          setGALOPIFDMON(other.getGALOPIFDMON());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (!other.getGameBiz().isEmpty()) {
+          gameBiz_ = other.gameBiz_;
           onChanged();
+        }
+        if (other.getMLKKOEBHEEI() != 0) {
+          setMLKKOEBHEEI(other.getMLKKOEBHEEI());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -729,254 +729,9 @@ public final class GetAuthkeyRspOuterClass {
         return this;
       }
 
-      private int oBPIIAHOMOE_ ;
-      /**
-       * <code>uint32 OBPIIAHOMOE = 3;</code>
-       * @return The oBPIIAHOMOE.
-       */
-      @java.lang.Override
-      public int getOBPIIAHOMOE() {
-        return oBPIIAHOMOE_;
-      }
-      /**
-       * <code>uint32 OBPIIAHOMOE = 3;</code>
-       * @param value The oBPIIAHOMOE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOBPIIAHOMOE(int value) {
-        
-        oBPIIAHOMOE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OBPIIAHOMOE = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOBPIIAHOMOE() {
-        
-        oBPIIAHOMOE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int eAFDADOGNIF_ ;
-      /**
-       * <code>uint32 EAFDADOGNIF = 10;</code>
-       * @return The eAFDADOGNIF.
-       */
-      @java.lang.Override
-      public int getEAFDADOGNIF() {
-        return eAFDADOGNIF_;
-      }
-      /**
-       * <code>uint32 EAFDADOGNIF = 10;</code>
-       * @param value The eAFDADOGNIF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEAFDADOGNIF(int value) {
-        
-        eAFDADOGNIF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EAFDADOGNIF = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEAFDADOGNIF() {
-        
-        eAFDADOGNIF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object gameBiz_ = "";
-      /**
-       * <code>string game_biz = 4;</code>
-       * @return The gameBiz.
-       */
-      public java.lang.String getGameBiz() {
-        java.lang.Object ref = gameBiz_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          gameBiz_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string game_biz = 4;</code>
-       * @return The bytes for gameBiz.
-       */
-      public com.google.protobuf.ByteString
-          getGameBizBytes() {
-        java.lang.Object ref = gameBiz_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          gameBiz_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string game_biz = 4;</code>
-       * @param value The gameBiz to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGameBiz(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        gameBiz_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string game_biz = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGameBiz() {
-        
-        gameBiz_ = getDefaultInstance().getGameBiz();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string game_biz = 4;</code>
-       * @param value The bytes for gameBiz to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGameBizBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        gameBiz_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object authkey_ = "";
-      /**
-       * <code>string authkey = 1;</code>
-       * @return The authkey.
-       */
-      public java.lang.String getAuthkey() {
-        java.lang.Object ref = authkey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          authkey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string authkey = 1;</code>
-       * @return The bytes for authkey.
-       */
-      public com.google.protobuf.ByteString
-          getAuthkeyBytes() {
-        java.lang.Object ref = authkey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          authkey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string authkey = 1;</code>
-       * @param value The authkey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthkey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        authkey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string authkey = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAuthkey() {
-        
-        authkey_ = getDefaultInstance().getAuthkey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string authkey = 1;</code>
-       * @param value The bytes for authkey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAuthkeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        authkey_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object authAppid_ = "";
       /**
-       * <code>string auth_appid = 15;</code>
+       * <code>string auth_appid = 13;</code>
        * @return The authAppid.
        */
       public java.lang.String getAuthAppid() {
@@ -992,7 +747,7 @@ public final class GetAuthkeyRspOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 15;</code>
+       * <code>string auth_appid = 13;</code>
        * @return The bytes for authAppid.
        */
       public com.google.protobuf.ByteString
@@ -1009,7 +764,7 @@ public final class GetAuthkeyRspOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 15;</code>
+       * <code>string auth_appid = 13;</code>
        * @param value The authAppid to set.
        * @return This builder for chaining.
        */
@@ -1024,7 +779,7 @@ public final class GetAuthkeyRspOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 15;</code>
+       * <code>string auth_appid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthAppid() {
@@ -1034,7 +789,7 @@ public final class GetAuthkeyRspOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 15;</code>
+       * <code>string auth_appid = 13;</code>
        * @param value The bytes for authAppid to set.
        * @return This builder for chaining.
        */
@@ -1046,6 +801,251 @@ public final class GetAuthkeyRspOuterClass {
   checkByteStringIsUtf8(value);
         
         authAppid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object authkey_ = "";
+      /**
+       * <code>string authkey = 6;</code>
+       * @return The authkey.
+       */
+      public java.lang.String getAuthkey() {
+        java.lang.Object ref = authkey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authkey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string authkey = 6;</code>
+       * @return The bytes for authkey.
+       */
+      public com.google.protobuf.ByteString
+          getAuthkeyBytes() {
+        java.lang.Object ref = authkey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authkey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string authkey = 6;</code>
+       * @param value The authkey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthkey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        authkey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string authkey = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthkey() {
+        
+        authkey_ = getDefaultInstance().getAuthkey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string authkey = 6;</code>
+       * @param value The bytes for authkey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthkeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        authkey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int gALOPIFDMON_ ;
+      /**
+       * <code>uint32 GALOPIFDMON = 4;</code>
+       * @return The gALOPIFDMON.
+       */
+      @java.lang.Override
+      public int getGALOPIFDMON() {
+        return gALOPIFDMON_;
+      }
+      /**
+       * <code>uint32 GALOPIFDMON = 4;</code>
+       * @param value The gALOPIFDMON to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGALOPIFDMON(int value) {
+        
+        gALOPIFDMON_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GALOPIFDMON = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGALOPIFDMON() {
+        
+        gALOPIFDMON_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gameBiz_ = "";
+      /**
+       * <code>string game_biz = 8;</code>
+       * @return The gameBiz.
+       */
+      public java.lang.String getGameBiz() {
+        java.lang.Object ref = gameBiz_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gameBiz_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 8;</code>
+       * @return The bytes for gameBiz.
+       */
+      public com.google.protobuf.ByteString
+          getGameBizBytes() {
+        java.lang.Object ref = gameBiz_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gameBiz_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string game_biz = 8;</code>
+       * @param value The gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBiz(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        gameBiz_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGameBiz() {
+        
+        gameBiz_ = getDefaultInstance().getGameBiz();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string game_biz = 8;</code>
+       * @param value The bytes for gameBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGameBizBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        gameBiz_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int mLKKOEBHEEI_ ;
+      /**
+       * <code>uint32 MLKKOEBHEEI = 2;</code>
+       * @return The mLKKOEBHEEI.
+       */
+      @java.lang.Override
+      public int getMLKKOEBHEEI() {
+        return mLKKOEBHEEI_;
+      }
+      /**
+       * <code>uint32 MLKKOEBHEEI = 2;</code>
+       * @param value The mLKKOEBHEEI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMLKKOEBHEEI(int value) {
+        
+        mLKKOEBHEEI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MLKKOEBHEEI = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMLKKOEBHEEI() {
+        
+        mLKKOEBHEEI_ = 0;
         onChanged();
         return this;
       }
@@ -1117,9 +1117,9 @@ public final class GetAuthkeyRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023GetAuthkeyRsp.proto\"\201\001\n\rGetAuthkeyRsp\022" +
-      "\023\n\013OBPIIAHOMOE\030\003 \001(\r\022\017\n\007retcode\030\010 \001(\005\022\023\n" +
-      "\013EAFDADOGNIF\030\n \001(\r\022\020\n\010game_biz\030\004 \001(\t\022\017\n\007" +
-      "authkey\030\001 \001(\t\022\022\n\nauth_appid\030\017 \001(\tB\033\n\031emu" +
+      "\022\n\nauth_appid\030\r \001(\t\022\017\n\007authkey\030\006 \001(\t\022\023\n\013" +
+      "GALOPIFDMON\030\004 \001(\r\022\017\n\007retcode\030\007 \001(\005\022\020\n\010ga" +
+      "me_biz\030\010 \001(\t\022\023\n\013MLKKOEBHEEI\030\002 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1131,7 +1131,7 @@ public final class GetAuthkeyRspOuterClass {
     internal_static_GetAuthkeyRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAuthkeyRsp_descriptor,
-        new java.lang.String[] { "OBPIIAHOMOE", "Retcode", "EAFDADOGNIF", "GameBiz", "Authkey", "AuthAppid", });
+        new java.lang.String[] { "AuthAppid", "Authkey", "GALOPIFDMON", "Retcode", "GameBiz", "MLKKOEBHEEI", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

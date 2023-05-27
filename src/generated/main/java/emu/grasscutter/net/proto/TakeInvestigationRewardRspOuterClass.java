@@ -19,21 +19,21 @@ public final class TakeInvestigationRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 6;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     int getId();
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 1915
-   * Name: BHNOHDDKCNG
+   * CmdId: 1905
+   * Obf: NJKBEAJEHFB
    * </pre>
    *
    * Protobuf type {@code TakeInvestigationRewardRsp}
@@ -80,12 +80,12 @@ public final class TakeInvestigationRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 56: {
 
               id_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 64: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,10 +122,10 @@ public final class TakeInvestigationRewardRspOuterClass {
               emu.grasscutter.net.proto.TakeInvestigationRewardRspOuterClass.TakeInvestigationRewardRsp.class, emu.grasscutter.net.proto.TakeInvestigationRewardRspOuterClass.TakeInvestigationRewardRsp.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 6;
+    public static final int ID_FIELD_NUMBER = 7;
     private int id_;
     /**
-     * <code>uint32 id = 6;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class TakeInvestigationRewardRspOuterClass {
       return id_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 8;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 8;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class TakeInvestigationRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (id_ != 0) {
-        output.writeUInt32(6, id_);
+        output.writeUInt32(7, id_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(8, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class TakeInvestigationRewardRspOuterClass {
       size = 0;
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, id_);
+          .computeUInt32Size(7, id_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(8, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class TakeInvestigationRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1915
-     * Name: BHNOHDDKCNG
+     * CmdId: 1905
+     * Obf: NJKBEAJEHFB
      * </pre>
      *
      * Protobuf type {@code TakeInvestigationRewardRsp}
@@ -470,7 +470,7 @@ public final class TakeInvestigationRewardRspOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 6;</code>
+       * <code>uint32 id = 7;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class TakeInvestigationRewardRspOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 6;</code>
+       * <code>uint32 id = 7;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class TakeInvestigationRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 6;</code>
+       * <code>uint32 id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -501,7 +501,7 @@ public final class TakeInvestigationRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class TakeInvestigationRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class TakeInvestigationRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class TakeInvestigationRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n TakeInvestigationRewardRsp.proto\"9\n\032Ta" +
-      "keInvestigationRewardRsp\022\n\n\002id\030\006 \001(\r\022\017\n\007" +
-      "retcode\030\013 \001(\005B\033\n\031emu.grasscutter.net.pro" +
+      "keInvestigationRewardRsp\022\n\n\002id\030\007 \001(\r\022\017\n\007" +
+      "retcode\030\010 \001(\005B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

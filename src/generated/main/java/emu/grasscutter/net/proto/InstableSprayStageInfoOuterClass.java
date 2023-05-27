@@ -19,50 +19,50 @@ public final class InstableSprayStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 max_score = 13;</code>
+     * <code>uint32 max_score = 10;</code>
      * @return The maxScore.
      */
     int getMaxScore();
 
     /**
-     * <code>bool is_finished = 4;</code>
+     * <code>bool is_finished = 14;</code>
      * @return The isFinished.
      */
     boolean getIsFinished();
+
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> 
+        getTeamInfoListList();
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index);
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    int getTeamInfoListCount();
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
+        getTeamInfoListOrBuilderList();
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
+        int index);
 
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
      */
     int getStageId();
-
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> 
-        getTeamInfoListList();
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index);
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    int getTeamInfoListCount();
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
-        getTeamInfoListOrBuilderList();
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
-        int index);
   }
   /**
    * <pre>
-   * Name: BJAEMIHEOIB
+   * Obf: GDNJIMFKDFO
    * </pre>
    *
    * Protobuf type {@code InstableSprayStageInfo}
@@ -111,12 +111,7 @@ public final class InstableSprayStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 82: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -125,9 +120,14 @@ public final class InstableSprayStageInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.parser(), extensionRegistry));
               break;
             }
-            case 104: {
+            case 80: {
 
               maxScore_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isFinished_ = input.readBool();
               break;
             }
             case 120: {
@@ -170,10 +170,10 @@ public final class InstableSprayStageInfoOuterClass {
               emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.class, emu.grasscutter.net.proto.InstableSprayStageInfoOuterClass.InstableSprayStageInfo.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 13;
+    public static final int MAX_SCORE_FIELD_NUMBER = 10;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 13;</code>
+     * <code>uint32 max_score = 10;</code>
      * @return The maxScore.
      */
     @java.lang.Override
@@ -181,15 +181,55 @@ public final class InstableSprayStageInfoOuterClass {
       return maxScore_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 4;
+    public static final int IS_FINISHED_FIELD_NUMBER = 14;
     private boolean isFinished_;
     /**
-     * <code>bool is_finished = 4;</code>
+     * <code>bool is_finished = 14;</code>
      * @return The isFinished.
      */
     @java.lang.Override
     public boolean getIsFinished() {
       return isFinished_;
+    }
+
+    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_;
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> getTeamInfoListList() {
+      return teamInfoList_;
+    }
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
+        getTeamInfoListOrBuilderList() {
+      return teamInfoList_;
+    }
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getTeamInfoListCount() {
+      return teamInfoList_.size();
+    }
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index) {
+      return teamInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
+        int index) {
+      return teamInfoList_.get(index);
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
@@ -201,46 +241,6 @@ public final class InstableSprayStageInfoOuterClass {
     @java.lang.Override
     public int getStageId() {
       return stageId_;
-    }
-
-    public static final int TEAM_INFO_LIST_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_;
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> getTeamInfoListList() {
-      return teamInfoList_;
-    }
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
-        getTeamInfoListOrBuilderList() {
-      return teamInfoList_;
-    }
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    @java.lang.Override
-    public int getTeamInfoListCount() {
-      return teamInfoList_.size();
-    }
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index) {
-      return teamInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
-        int index) {
-      return teamInfoList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -257,14 +257,14 @@ public final class InstableSprayStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinished_ != false) {
-        output.writeBool(4, isFinished_);
-      }
       for (int i = 0; i < teamInfoList_.size(); i++) {
-        output.writeMessage(10, teamInfoList_.get(i));
+        output.writeMessage(3, teamInfoList_.get(i));
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(13, maxScore_);
+        output.writeUInt32(10, maxScore_);
+      }
+      if (isFinished_ != false) {
+        output.writeBool(14, isFinished_);
       }
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
@@ -278,17 +278,17 @@ public final class InstableSprayStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinished_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isFinished_);
-      }
       for (int i = 0; i < teamInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, teamInfoList_.get(i));
+          .computeMessageSize(3, teamInfoList_.get(i));
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, maxScore_);
+          .computeUInt32Size(10, maxScore_);
+      }
+      if (isFinished_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isFinished_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -313,10 +313,10 @@ public final class InstableSprayStageInfoOuterClass {
           != other.getMaxScore()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
       if (!getTeamInfoListList()
           .equals(other.getTeamInfoListList())) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -333,12 +333,12 @@ public final class InstableSprayStageInfoOuterClass {
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       if (getTeamInfoListCount() > 0) {
         hash = (37 * hash) + TEAM_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTeamInfoListList().hashCode();
       }
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -436,7 +436,7 @@ public final class InstableSprayStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Name: BJAEMIHEOIB
+     * Obf: GDNJIMFKDFO
      * </pre>
      *
      * Protobuf type {@code InstableSprayStageInfo}
@@ -481,14 +481,14 @@ public final class InstableSprayStageInfoOuterClass {
 
         isFinished_ = false;
 
-        stageId_ = 0;
-
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           teamInfoListBuilder_.clear();
         }
+        stageId_ = 0;
+
         return this;
       }
 
@@ -518,7 +518,6 @@ public final class InstableSprayStageInfoOuterClass {
         int from_bitField0_ = bitField0_;
         result.maxScore_ = maxScore_;
         result.isFinished_ = isFinished_;
-        result.stageId_ = stageId_;
         if (teamInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
@@ -528,6 +527,7 @@ public final class InstableSprayStageInfoOuterClass {
         } else {
           result.teamInfoList_ = teamInfoListBuilder_.build();
         }
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
       }
@@ -582,9 +582,6 @@ public final class InstableSprayStageInfoOuterClass {
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
         }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
         if (teamInfoListBuilder_ == null) {
           if (!other.teamInfoList_.isEmpty()) {
             if (teamInfoList_.isEmpty()) {
@@ -610,6 +607,9 @@ public final class InstableSprayStageInfoOuterClass {
               teamInfoListBuilder_.addAllMessages(other.teamInfoList_);
             }
           }
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -643,7 +643,7 @@ public final class InstableSprayStageInfoOuterClass {
 
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 13;</code>
+       * <code>uint32 max_score = 10;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -651,7 +651,7 @@ public final class InstableSprayStageInfoOuterClass {
         return maxScore_;
       }
       /**
-       * <code>uint32 max_score = 13;</code>
+       * <code>uint32 max_score = 10;</code>
        * @param value The maxScore to set.
        * @return This builder for chaining.
        */
@@ -662,7 +662,7 @@ public final class InstableSprayStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_score = 13;</code>
+       * <code>uint32 max_score = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
@@ -674,7 +674,7 @@ public final class InstableSprayStageInfoOuterClass {
 
       private boolean isFinished_ ;
       /**
-       * <code>bool is_finished = 4;</code>
+       * <code>bool is_finished = 14;</code>
        * @return The isFinished.
        */
       @java.lang.Override
@@ -682,7 +682,7 @@ public final class InstableSprayStageInfoOuterClass {
         return isFinished_;
       }
       /**
-       * <code>bool is_finished = 4;</code>
+       * <code>bool is_finished = 14;</code>
        * @param value The isFinished to set.
        * @return This builder for chaining.
        */
@@ -693,7 +693,7 @@ public final class InstableSprayStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finished = 4;</code>
+       * <code>bool is_finished = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
@@ -701,6 +701,246 @@ public final class InstableSprayStageInfoOuterClass {
         isFinished_ = false;
         onChanged();
         return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_ =
+        java.util.Collections.emptyList();
+      private void ensureTeamInfoListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>(teamInfoList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> teamInfoListBuilder_;
+
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> getTeamInfoListList() {
+        if (teamInfoListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(teamInfoList_);
+        } else {
+          return teamInfoListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public int getTeamInfoListCount() {
+        if (teamInfoListBuilder_ == null) {
+          return teamInfoList_.size();
+        } else {
+          return teamInfoListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index) {
+        if (teamInfoListBuilder_ == null) {
+          return teamInfoList_.get(index);
+        } else {
+          return teamInfoListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder setTeamInfoList(
+          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
+        if (teamInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.set(index, value);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder setTeamInfoList(
+          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
+        if (teamInfoListBuilder_ == null) {
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          teamInfoListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder addTeamInfoList(emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
+        if (teamInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.add(value);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder addTeamInfoList(
+          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
+        if (teamInfoListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.add(index, value);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder addTeamInfoList(
+          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
+        if (teamInfoListBuilder_ == null) {
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          teamInfoListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder addTeamInfoList(
+          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
+        if (teamInfoListBuilder_ == null) {
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          teamInfoListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder addAllTeamInfoList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> values) {
+        if (teamInfoListBuilder_ == null) {
+          ensureTeamInfoListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, teamInfoList_);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder clearTeamInfoList() {
+        if (teamInfoListBuilder_ == null) {
+          teamInfoList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public Builder removeTeamInfoList(int index) {
+        if (teamInfoListBuilder_ == null) {
+          ensureTeamInfoListIsMutable();
+          teamInfoList_.remove(index);
+          onChanged();
+        } else {
+          teamInfoListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder getTeamInfoListBuilder(
+          int index) {
+        return getTeamInfoListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
+          int index) {
+        if (teamInfoListBuilder_ == null) {
+          return teamInfoList_.get(index);  } else {
+          return teamInfoListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
+           getTeamInfoListOrBuilderList() {
+        if (teamInfoListBuilder_ != null) {
+          return teamInfoListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(teamInfoList_);
+        }
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder addTeamInfoListBuilder() {
+        return getTeamInfoListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder addTeamInfoListBuilder(
+          int index) {
+        return getTeamInfoListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .InstableSprayTeamInfo team_info_list = 3;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder> 
+           getTeamInfoListBuilderList() {
+        return getTeamInfoListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
+          getTeamInfoListFieldBuilder() {
+        if (teamInfoListBuilder_ == null) {
+          teamInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder>(
+                  teamInfoList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          teamInfoList_ = null;
+        }
+        return teamInfoListBuilder_;
       }
 
       private int stageId_ ;
@@ -732,246 +972,6 @@ public final class InstableSprayStageInfoOuterClass {
         stageId_ = 0;
         onChanged();
         return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> teamInfoList_ =
-        java.util.Collections.emptyList();
-      private void ensureTeamInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          teamInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo>(teamInfoList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> teamInfoListBuilder_;
-
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> getTeamInfoListList() {
-        if (teamInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(teamInfoList_);
-        } else {
-          return teamInfoListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public int getTeamInfoListCount() {
-        if (teamInfoListBuilder_ == null) {
-          return teamInfoList_.size();
-        } else {
-          return teamInfoListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo getTeamInfoList(int index) {
-        if (teamInfoListBuilder_ == null) {
-          return teamInfoList_.get(index);
-        } else {
-          return teamInfoListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder setTeamInfoList(
-          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
-        if (teamInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.set(index, value);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder setTeamInfoList(
-          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
-        if (teamInfoListBuilder_ == null) {
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          teamInfoListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder addTeamInfoList(emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
-        if (teamInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.add(value);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder addTeamInfoList(
-          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo value) {
-        if (teamInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.add(index, value);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder addTeamInfoList(
-          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
-        if (teamInfoListBuilder_ == null) {
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          teamInfoListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder addTeamInfoList(
-          int index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder builderForValue) {
-        if (teamInfoListBuilder_ == null) {
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          teamInfoListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder addAllTeamInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo> values) {
-        if (teamInfoListBuilder_ == null) {
-          ensureTeamInfoListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, teamInfoList_);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder clearTeamInfoList() {
-        if (teamInfoListBuilder_ == null) {
-          teamInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public Builder removeTeamInfoList(int index) {
-        if (teamInfoListBuilder_ == null) {
-          ensureTeamInfoListIsMutable();
-          teamInfoList_.remove(index);
-          onChanged();
-        } else {
-          teamInfoListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder getTeamInfoListBuilder(
-          int index) {
-        return getTeamInfoListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder getTeamInfoListOrBuilder(
-          int index) {
-        if (teamInfoListBuilder_ == null) {
-          return teamInfoList_.get(index);  } else {
-          return teamInfoListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
-           getTeamInfoListOrBuilderList() {
-        if (teamInfoListBuilder_ != null) {
-          return teamInfoListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(teamInfoList_);
-        }
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder addTeamInfoListBuilder() {
-        return getTeamInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder addTeamInfoListBuilder(
-          int index) {
-        return getTeamInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .InstableSprayTeamInfo team_info_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder> 
-           getTeamInfoListBuilderList() {
-        return getTeamInfoListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder> 
-          getTeamInfoListFieldBuilder() {
-        if (teamInfoListBuilder_ == null) {
-          teamInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfo.Builder, emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.InstableSprayTeamInfoOrBuilder>(
-                  teamInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          teamInfoList_ = null;
-        }
-        return teamInfoListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1042,9 +1042,9 @@ public final class InstableSprayStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034InstableSprayStageInfo.proto\032\033Instable" +
       "SprayTeamInfo.proto\"\202\001\n\026InstableSpraySta" +
-      "geInfo\022\021\n\tmax_score\030\r \001(\r\022\023\n\013is_finished" +
-      "\030\004 \001(\010\022\020\n\010stage_id\030\017 \001(\r\022.\n\016team_info_li" +
-      "st\030\n \003(\0132\026.InstableSprayTeamInfoB\033\n\031emu." +
+      "geInfo\022\021\n\tmax_score\030\n \001(\r\022\023\n\013is_finished" +
+      "\030\016 \001(\010\022.\n\016team_info_list\030\003 \003(\0132\026.Instabl" +
+      "eSprayTeamInfo\022\020\n\010stage_id\030\017 \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1057,7 +1057,7 @@ public final class InstableSprayStageInfoOuterClass {
     internal_static_InstableSprayStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InstableSprayStageInfo_descriptor,
-        new java.lang.String[] { "MaxScore", "IsFinished", "StageId", "TeamInfoList", });
+        new java.lang.String[] { "MaxScore", "IsFinished", "TeamInfoList", "StageId", });
     emu.grasscutter.net.proto.InstableSprayTeamInfoOuterClass.getDescriptor();
   }
 

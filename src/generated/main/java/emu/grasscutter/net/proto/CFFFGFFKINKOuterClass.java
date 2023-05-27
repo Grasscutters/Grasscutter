@@ -737,8 +737,8 @@ public final class CFFFGFFKINKOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021CFFFGFFKINK.proto\"^\n\013CFFFGFFKINK\022\023\n\013EL" +
       "KJELLMMAD\030\017 \001(\r\022\020\n\010level_id\030\r \001(\r\022\017\n\007is_" +
-      "open\030\016 \001(\010\022\027\n\017min_finish_time\030\007 \001(\rB\033\n\031e" +
-      "mu.grasscutter.net.protob\006proto3"
+      "open\030\016 \001(\010\022\027\n\017min_finish_time\030\007 \001(\rB!\n\031e" +
+      "mu.grasscutter.net.protoZ\004/genb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
