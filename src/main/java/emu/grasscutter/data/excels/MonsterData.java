@@ -97,9 +97,7 @@ public class MonsterData extends GameResource {
 
         this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
     
-        if (this.describeData == null){
-            return;
-        }       
+        if (this.describeData == null) return;
 
         for (var entry : GameData.getMonsterSpecialNameDataMap().entrySet()) {
             if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()) {
