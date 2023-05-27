@@ -4,1235 +4,1407 @@
 package emu.grasscutter.net.proto;
 
 public final class RoguelikeDungeonSettleInfoOuterClass {
-  private RoguelikeDungeonSettleInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private RoguelikeDungeonSettleInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface RoguelikeDungeonSettleInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:RoguelikeDungeonSettleInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>bool KHILPCPJILE = 5;</code>
-     * @return The kHILPCPJILE.
-     */
-    boolean getKHILPCPJILE();
-
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    int getFinishedChallengeCellNumMapCount();
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    boolean containsFinishedChallengeCellNumMap(
-        int key);
-    /**
-     * Use {@link #getFinishedChallengeCellNumMapMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-    getFinishedChallengeCellNumMap();
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-    getFinishedChallengeCellNumMapMap();
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-
-    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo defaultValue);
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-
-    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrThrow(
-        int key);
-
-    /**
-     * <code>uint32 NGBINNKKLGM = 8;</code>
-     * @return The nGBINNKKLGM.
-     */
-    int getNGBINNKKLGM();
-
-    /**
-     * <code>uint32 cur_level = 12;</code>
-     * @return The curLevel.
-     */
-    int getCurLevel();
-
-    /**
-     * <code>bool CMIGJNOEDCL = 13;</code>
-     * @return The cMIGJNOEDCL.
-     */
-    boolean getCMIGJNOEDCL();
-
-    /**
-     * <code>uint32 EJLMFGAMCNE = 1;</code>
-     * @return The eJLMFGAMCNE.
-     */
-    int getEJLMFGAMCNE();
-
-    /**
-     * <code>uint32 stage_id = 6;</code>
-     * @return The stageId.
-     */
-    int getStageId();
-  }
-  /**
-   * <pre>
-   * Obf: BJJHJCJGLAJ
-   * </pre>
-   *
-   * Protobuf type {@code RoguelikeDungeonSettleInfo}
-   */
-  public static final class RoguelikeDungeonSettleInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:RoguelikeDungeonSettleInfo)
-      RoguelikeDungeonSettleInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use RoguelikeDungeonSettleInfo.newBuilder() to construct.
-    private RoguelikeDungeonSettleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RoguelikeDungeonSettleInfo() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new RoguelikeDungeonSettleInfo();
-    }
+    public interface RoguelikeDungeonSettleInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:RoguelikeDungeonSettleInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private RoguelikeDungeonSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
+        /**
+         * <code>bool KHILPCPJILE = 5;</code>
+         *
+         * @return The kHILPCPJILE.
+         */
+        boolean getKHILPCPJILE();
 
-              eJLMFGAMCNE_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        int getFinishedChallengeCellNumMapCount();
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        boolean containsFinishedChallengeCellNumMap(int key);
+        /** Use {@link #getFinishedChallengeCellNumMapMap()} instead. */
+        @java.lang.Deprecated
+        java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                getFinishedChallengeCellNumMap();
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                getFinishedChallengeCellNumMapMap();
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                getFinishedChallengeCellNumMapOrDefault(
+                        int key,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                                defaultValue);
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                getFinishedChallengeCellNumMapOrThrow(int key);
 
-              kHILPCPJILE_ = input.readBool();
-              break;
-            }
-            case 48: {
+        /**
+         * <code>uint32 NGBINNKKLGM = 8;</code>
+         *
+         * @return The nGBINNKKLGM.
+         */
+        int getNGBINNKKLGM();
 
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>uint32 cur_level = 12;</code>
+         *
+         * @return The curLevel.
+         */
+        int getCurLevel();
 
-              nGBINNKKLGM_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                finishedChallengeCellNumMap_ = com.google.protobuf.MapField.newMapField(
-                    FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-              finishedChallengeCellNumMap__ = input.readMessage(
-                  FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              finishedChallengeCellNumMap_.getMutableMap().put(
-                  finishedChallengeCellNumMap__.getKey(), finishedChallengeCellNumMap__.getValue());
-              break;
-            }
-            case 96: {
+        /**
+         * <code>bool CMIGJNOEDCL = 13;</code>
+         *
+         * @return The cMIGJNOEDCL.
+         */
+        boolean getCMIGJNOEDCL();
 
-              curLevel_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+        /**
+         * <code>uint32 EJLMFGAMCNE = 1;</code>
+         *
+         * @return The eJLMFGAMCNE.
+         */
+        int getEJLMFGAMCNE();
 
-              cMIGJNOEDCL_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 11:
-          return internalGetFinishedChallengeCellNumMap();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.class, emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.Builder.class);
-    }
-
-    public static final int KHILPCPJILE_FIELD_NUMBER = 5;
-    private boolean kHILPCPJILE_;
-    /**
-     * <code>bool KHILPCPJILE = 5;</code>
-     * @return The kHILPCPJILE.
-     */
-    @java.lang.Override
-    public boolean getKHILPCPJILE() {
-      return kHILPCPJILE_;
-    }
-
-    public static final int FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER = 11;
-    private static final class FinishedChallengeCellNumMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>newDefaultInstance(
-                  emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> finishedChallengeCellNumMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-    internalGetFinishedChallengeCellNumMap() {
-      if (finishedChallengeCellNumMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
-      }
-      return finishedChallengeCellNumMap_;
-    }
-
-    public int getFinishedChallengeCellNumMapCount() {
-      return internalGetFinishedChallengeCellNumMap().getMap().size();
+        /**
+         * <code>uint32 stage_id = 6;</code>
+         *
+         * @return The stageId.
+         */
+        int getStageId();
     }
     /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsFinishedChallengeCellNumMap(
-        int key) {
-      
-      return internalGetFinishedChallengeCellNumMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getFinishedChallengeCellNumMapMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> getFinishedChallengeCellNumMap() {
-      return getFinishedChallengeCellNumMapMap();
-    }
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> getFinishedChallengeCellNumMapMap() {
-      return internalGetFinishedChallengeCellNumMap().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrDefault(
-        int key,
-        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo defaultValue) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> map =
-          internalGetFinishedChallengeCellNumMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> map =
-          internalGetFinishedChallengeCellNumMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int NGBINNKKLGM_FIELD_NUMBER = 8;
-    private int nGBINNKKLGM_;
-    /**
-     * <code>uint32 NGBINNKKLGM = 8;</code>
-     * @return The nGBINNKKLGM.
-     */
-    @java.lang.Override
-    public int getNGBINNKKLGM() {
-      return nGBINNKKLGM_;
-    }
-
-    public static final int CUR_LEVEL_FIELD_NUMBER = 12;
-    private int curLevel_;
-    /**
-     * <code>uint32 cur_level = 12;</code>
-     * @return The curLevel.
-     */
-    @java.lang.Override
-    public int getCurLevel() {
-      return curLevel_;
-    }
-
-    public static final int CMIGJNOEDCL_FIELD_NUMBER = 13;
-    private boolean cMIGJNOEDCL_;
-    /**
-     * <code>bool CMIGJNOEDCL = 13;</code>
-     * @return The cMIGJNOEDCL.
-     */
-    @java.lang.Override
-    public boolean getCMIGJNOEDCL() {
-      return cMIGJNOEDCL_;
-    }
-
-    public static final int EJLMFGAMCNE_FIELD_NUMBER = 1;
-    private int eJLMFGAMCNE_;
-    /**
-     * <code>uint32 EJLMFGAMCNE = 1;</code>
-     * @return The eJLMFGAMCNE.
-     */
-    @java.lang.Override
-    public int getEJLMFGAMCNE() {
-      return eJLMFGAMCNE_;
-    }
-
-    public static final int STAGE_ID_FIELD_NUMBER = 6;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 6;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (eJLMFGAMCNE_ != 0) {
-        output.writeUInt32(1, eJLMFGAMCNE_);
-      }
-      if (kHILPCPJILE_ != false) {
-        output.writeBool(5, kHILPCPJILE_);
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(6, stageId_);
-      }
-      if (nGBINNKKLGM_ != 0) {
-        output.writeUInt32(8, nGBINNKKLGM_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetFinishedChallengeCellNumMap(),
-          FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry,
-          11);
-      if (curLevel_ != 0) {
-        output.writeUInt32(12, curLevel_);
-      }
-      if (cMIGJNOEDCL_ != false) {
-        output.writeBool(13, cMIGJNOEDCL_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (eJLMFGAMCNE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, eJLMFGAMCNE_);
-      }
-      if (kHILPCPJILE_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, kHILPCPJILE_);
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, stageId_);
-      }
-      if (nGBINNKKLGM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, nGBINNKKLGM_);
-      }
-      for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> entry
-           : internalGetFinishedChallengeCellNumMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-        finishedChallengeCellNumMap__ = FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(11, finishedChallengeCellNumMap__);
-      }
-      if (curLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, curLevel_);
-      }
-      if (cMIGJNOEDCL_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, cMIGJNOEDCL_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo other = (emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo) obj;
-
-      if (getKHILPCPJILE()
-          != other.getKHILPCPJILE()) return false;
-      if (!internalGetFinishedChallengeCellNumMap().equals(
-          other.internalGetFinishedChallengeCellNumMap())) return false;
-      if (getNGBINNKKLGM()
-          != other.getNGBINNKKLGM()) return false;
-      if (getCurLevel()
-          != other.getCurLevel()) return false;
-      if (getCMIGJNOEDCL()
-          != other.getCMIGJNOEDCL()) return false;
-      if (getEJLMFGAMCNE()
-          != other.getEJLMFGAMCNE()) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KHILPCPJILE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKHILPCPJILE());
-      if (!internalGetFinishedChallengeCellNumMap().getMap().isEmpty()) {
-        hash = (37 * hash) + FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetFinishedChallengeCellNumMap().hashCode();
-      }
-      hash = (37 * hash) + NGBINNKKLGM_FIELD_NUMBER;
-      hash = (53 * hash) + getNGBINNKKLGM();
-      hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getCurLevel();
-      hash = (37 * hash) + CMIGJNOEDCL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCMIGJNOEDCL());
-      hash = (37 * hash) + EJLMFGAMCNE_FIELD_NUMBER;
-      hash = (53 * hash) + getEJLMFGAMCNE();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Obf: BJJHJCJGLAJ
      * </pre>
      *
      * Protobuf type {@code RoguelikeDungeonSettleInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:RoguelikeDungeonSettleInfo)
-        emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 11:
-            return internalGetFinishedChallengeCellNumMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+    public static final class RoguelikeDungeonSettleInfo
+            extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:RoguelikeDungeonSettleInfo)
+            RoguelikeDungeonSettleInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use RoguelikeDungeonSettleInfo.newBuilder() to construct.
+        private RoguelikeDungeonSettleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 11:
-            return internalGetMutableFinishedChallengeCellNumMap();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+
+        private RoguelikeDungeonSettleInfo() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new RoguelikeDungeonSettleInfo();
         }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.class, emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.Builder.class);
-      }
 
-      // Construct using emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        kHILPCPJILE_ = false;
 
-        internalGetMutableFinishedChallengeCellNumMap().clear();
-        nGBINNKKLGM_ = 0;
-
-        curLevel_ = 0;
-
-        cMIGJNOEDCL_ = false;
-
-        eJLMFGAMCNE_ = 0;
-
-        stageId_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.internal_static_RoguelikeDungeonSettleInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo build() {
-        emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private RoguelikeDungeonSettleInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                eJLMFGAMCNE_ = input.readUInt32();
+                                break;
+                            }
+                        case 40:
+                            {
+                                kHILPCPJILE_ = input.readBool();
+                                break;
+                            }
+                        case 48:
+                            {
+                                stageId_ = input.readUInt32();
+                                break;
+                            }
+                        case 64:
+                            {
+                                nGBINNKKLGM_ = input.readUInt32();
+                                break;
+                            }
+                        case 90:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    finishedChallengeCellNumMap_ =
+                                            com.google.protobuf.MapField.newMapField(
+                                                    FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                com.google.protobuf.MapEntry<
+                                                java.lang.Integer,
+                                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
+                                                        .RoguelikeSettleCoinInfo>
+                                        finishedChallengeCellNumMap__ =
+                                                input.readMessage(
+                                                        FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry
+                                                                .getParserForType(),
+                                                        extensionRegistry);
+                                finishedChallengeCellNumMap_
+                                        .getMutableMap()
+                                        .put(
+                                                finishedChallengeCellNumMap__.getKey(),
+                                                finishedChallengeCellNumMap__.getValue());
+                                break;
+                            }
+                        case 96:
+                            {
+                                curLevel_ = input.readUInt32();
+                                break;
+                            }
+                        case 104:
+                            {
+                                cMIGJNOEDCL_ = input.readBool();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo buildPartial() {
-        emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo result = new emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.kHILPCPJILE_ = kHILPCPJILE_;
-        result.finishedChallengeCellNumMap_ = internalGetFinishedChallengeCellNumMap();
-        result.finishedChallengeCellNumMap_.makeImmutable();
-        result.nGBINNKKLGM_ = nGBINNKKLGM_;
-        result.curLevel_ = curLevel_;
-        result.cMIGJNOEDCL_ = cMIGJNOEDCL_;
-        result.eJLMFGAMCNE_ = eJLMFGAMCNE_;
-        result.stageId_ = stageId_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                    .internal_static_RoguelikeDungeonSettleInfo_descriptor;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo other) {
-        if (other == emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.getDefaultInstance()) return this;
-        if (other.getKHILPCPJILE() != false) {
-          setKHILPCPJILE(other.getKHILPCPJILE());
+        @SuppressWarnings({"rawtypes"})
+        @java.lang.Override
+        protected com.google.protobuf.MapField internalGetMapField(int number) {
+            switch (number) {
+                case 11:
+                    return internalGetFinishedChallengeCellNumMap();
+                default:
+                    throw new RuntimeException("Invalid map field number: " + number);
+            }
         }
-        internalGetMutableFinishedChallengeCellNumMap().mergeFrom(
-            other.internalGetFinishedChallengeCellNumMap());
-        if (other.getNGBINNKKLGM() != 0) {
-          setNGBINNKKLGM(other.getNGBINNKKLGM());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                    .internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                    .RoguelikeDungeonSettleInfo.class,
+                            emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                    .RoguelikeDungeonSettleInfo.Builder.class);
         }
-        if (other.getCurLevel() != 0) {
-          setCurLevel(other.getCurLevel());
+
+        public static final int KHILPCPJILE_FIELD_NUMBER = 5;
+        private boolean kHILPCPJILE_;
+        /**
+         * <code>bool KHILPCPJILE = 5;</code>
+         *
+         * @return The kHILPCPJILE.
+         */
+        @java.lang.Override
+        public boolean getKHILPCPJILE() {
+            return kHILPCPJILE_;
         }
-        if (other.getCMIGJNOEDCL() != false) {
-          setCMIGJNOEDCL(other.getCMIGJNOEDCL());
+
+        public static final int FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER = 11;
+
+        private static final class FinishedChallengeCellNumMapDefaultEntryHolder {
+            static final com.google.protobuf.MapEntry<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    defaultEntry =
+                            com.google.protobuf.MapEntry
+                                    .<java.lang.Integer,
+                                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
+                                                    .RoguelikeSettleCoinInfo>
+                                            newDefaultInstance(
+                                                    emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                                            .internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor,
+                                                    com.google.protobuf.WireFormat.FieldType.UINT32,
+                                                    0,
+                                                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                                                    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
+                                                            .RoguelikeSettleCoinInfo.getDefaultInstance());
         }
-        if (other.getEJLMFGAMCNE() != 0) {
-          setEJLMFGAMCNE(other.getEJLMFGAMCNE());
+
+        private com.google.protobuf.MapField<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                finishedChallengeCellNumMap_;
+
+        private com.google.protobuf.MapField<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                internalGetFinishedChallengeCellNumMap() {
+            if (finishedChallengeCellNumMap_ == null) {
+                return com.google.protobuf.MapField.emptyMapField(
+                        FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+            }
+            return finishedChallengeCellNumMap_;
         }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
+
+        public int getFinishedChallengeCellNumMapCount() {
+            return internalGetFinishedChallengeCellNumMap().getMap().size();
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        @java.lang.Override
+        public boolean containsFinishedChallengeCellNumMap(int key) {
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+            return internalGetFinishedChallengeCellNumMap().getMap().containsKey(key);
         }
-        return this;
-      }
-      private int bitField0_;
-
-      private boolean kHILPCPJILE_ ;
-      /**
-       * <code>bool KHILPCPJILE = 5;</code>
-       * @return The kHILPCPJILE.
-       */
-      @java.lang.Override
-      public boolean getKHILPCPJILE() {
-        return kHILPCPJILE_;
-      }
-      /**
-       * <code>bool KHILPCPJILE = 5;</code>
-       * @param value The kHILPCPJILE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKHILPCPJILE(boolean value) {
-        
-        kHILPCPJILE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool KHILPCPJILE = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKHILPCPJILE() {
-        
-        kHILPCPJILE_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> finishedChallengeCellNumMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-      internalGetFinishedChallengeCellNumMap() {
-        if (finishedChallengeCellNumMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+        /** Use {@link #getFinishedChallengeCellNumMapMap()} instead. */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                getFinishedChallengeCellNumMap() {
+            return getFinishedChallengeCellNumMapMap();
         }
-        return finishedChallengeCellNumMap_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-      internalGetMutableFinishedChallengeCellNumMap() {
-        onChanged();;
-        if (finishedChallengeCellNumMap_ == null) {
-          finishedChallengeCellNumMap_ = com.google.protobuf.MapField.newMapField(
-              FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.Map<
+                        java.lang.Integer,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                getFinishedChallengeCellNumMapMap() {
+            return internalGetFinishedChallengeCellNumMap().getMap();
         }
-        if (!finishedChallengeCellNumMap_.isMutable()) {
-          finishedChallengeCellNumMap_ = finishedChallengeCellNumMap_.copy();
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                getFinishedChallengeCellNumMapOrDefault(
+                        int key,
+                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                                defaultValue) {
+
+            java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    map = internalGetFinishedChallengeCellNumMap().getMap();
+            return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        return finishedChallengeCellNumMap_;
-      }
+        /**
+         * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+         * </code>
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                getFinishedChallengeCellNumMapOrThrow(int key) {
 
-      public int getFinishedChallengeCellNumMapCount() {
-        return internalGetFinishedChallengeCellNumMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsFinishedChallengeCellNumMap(
-          int key) {
-        
-        return internalGetFinishedChallengeCellNumMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getFinishedChallengeCellNumMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> getFinishedChallengeCellNumMap() {
-        return getFinishedChallengeCellNumMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> getFinishedChallengeCellNumMapMap() {
-        return internalGetFinishedChallengeCellNumMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrDefault(
-          int key,
-          emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo defaultValue) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> map =
-            internalGetFinishedChallengeCellNumMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getFinishedChallengeCellNumMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> map =
-            internalGetFinishedChallengeCellNumMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+            java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    map = internalGetFinishedChallengeCellNumMap().getMap();
+            if (!map.containsKey(key)) {
+                throw new java.lang.IllegalArgumentException();
+            }
+            return map.get(key);
         }
-        return map.get(key);
-      }
 
-      public Builder clearFinishedChallengeCellNumMap() {
-        internalGetMutableFinishedChallengeCellNumMap().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
+        public static final int NGBINNKKLGM_FIELD_NUMBER = 8;
+        private int nGBINNKKLGM_;
+        /**
+         * <code>uint32 NGBINNKKLGM = 8;</code>
+         *
+         * @return The nGBINNKKLGM.
+         */
+        @java.lang.Override
+        public int getNGBINNKKLGM() {
+            return nGBINNKKLGM_;
+        }
 
-      public Builder removeFinishedChallengeCellNumMap(
-          int key) {
-        
-        internalGetMutableFinishedChallengeCellNumMap().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
-      getMutableFinishedChallengeCellNumMap() {
-        return internalGetMutableFinishedChallengeCellNumMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
-      public Builder putFinishedChallengeCellNumMap(
-          int key,
-          emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo value) {
-        
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableFinishedChallengeCellNumMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;</code>
-       */
+        public static final int CUR_LEVEL_FIELD_NUMBER = 12;
+        private int curLevel_;
+        /**
+         * <code>uint32 cur_level = 12;</code>
+         *
+         * @return The curLevel.
+         */
+        @java.lang.Override
+        public int getCurLevel() {
+            return curLevel_;
+        }
 
-      public Builder putAllFinishedChallengeCellNumMap(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo> values) {
-        internalGetMutableFinishedChallengeCellNumMap().getMutableMap()
-            .putAll(values);
-        return this;
-      }
+        public static final int CMIGJNOEDCL_FIELD_NUMBER = 13;
+        private boolean cMIGJNOEDCL_;
+        /**
+         * <code>bool CMIGJNOEDCL = 13;</code>
+         *
+         * @return The cMIGJNOEDCL.
+         */
+        @java.lang.Override
+        public boolean getCMIGJNOEDCL() {
+            return cMIGJNOEDCL_;
+        }
 
-      private int nGBINNKKLGM_ ;
-      /**
-       * <code>uint32 NGBINNKKLGM = 8;</code>
-       * @return The nGBINNKKLGM.
-       */
-      @java.lang.Override
-      public int getNGBINNKKLGM() {
-        return nGBINNKKLGM_;
-      }
-      /**
-       * <code>uint32 NGBINNKKLGM = 8;</code>
-       * @param value The nGBINNKKLGM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNGBINNKKLGM(int value) {
-        
-        nGBINNKKLGM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NGBINNKKLGM = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNGBINNKKLGM() {
-        
-        nGBINNKKLGM_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int EJLMFGAMCNE_FIELD_NUMBER = 1;
+        private int eJLMFGAMCNE_;
+        /**
+         * <code>uint32 EJLMFGAMCNE = 1;</code>
+         *
+         * @return The eJLMFGAMCNE.
+         */
+        @java.lang.Override
+        public int getEJLMFGAMCNE() {
+            return eJLMFGAMCNE_;
+        }
 
-      private int curLevel_ ;
-      /**
-       * <code>uint32 cur_level = 12;</code>
-       * @return The curLevel.
-       */
-      @java.lang.Override
-      public int getCurLevel() {
-        return curLevel_;
-      }
-      /**
-       * <code>uint32 cur_level = 12;</code>
-       * @param value The curLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurLevel(int value) {
-        
-        curLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_level = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurLevel() {
-        
-        curLevel_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int STAGE_ID_FIELD_NUMBER = 6;
+        private int stageId_;
+        /**
+         * <code>uint32 stage_id = 6;</code>
+         *
+         * @return The stageId.
+         */
+        @java.lang.Override
+        public int getStageId() {
+            return stageId_;
+        }
 
-      private boolean cMIGJNOEDCL_ ;
-      /**
-       * <code>bool CMIGJNOEDCL = 13;</code>
-       * @return The cMIGJNOEDCL.
-       */
-      @java.lang.Override
-      public boolean getCMIGJNOEDCL() {
-        return cMIGJNOEDCL_;
-      }
-      /**
-       * <code>bool CMIGJNOEDCL = 13;</code>
-       * @param value The cMIGJNOEDCL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCMIGJNOEDCL(boolean value) {
-        
-        cMIGJNOEDCL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool CMIGJNOEDCL = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCMIGJNOEDCL() {
-        
-        cMIGJNOEDCL_ = false;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int eJLMFGAMCNE_ ;
-      /**
-       * <code>uint32 EJLMFGAMCNE = 1;</code>
-       * @return The eJLMFGAMCNE.
-       */
-      @java.lang.Override
-      public int getEJLMFGAMCNE() {
-        return eJLMFGAMCNE_;
-      }
-      /**
-       * <code>uint32 EJLMFGAMCNE = 1;</code>
-       * @param value The eJLMFGAMCNE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEJLMFGAMCNE(int value) {
-        
-        eJLMFGAMCNE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EJLMFGAMCNE = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEJLMFGAMCNE() {
-        
-        eJLMFGAMCNE_ = 0;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 6;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 6;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (eJLMFGAMCNE_ != 0) {
+                output.writeUInt32(1, eJLMFGAMCNE_);
+            }
+            if (kHILPCPJILE_ != false) {
+                output.writeBool(5, kHILPCPJILE_);
+            }
+            if (stageId_ != 0) {
+                output.writeUInt32(6, stageId_);
+            }
+            if (nGBINNKKLGM_ != 0) {
+                output.writeUInt32(8, nGBINNKKLGM_);
+            }
+            com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
+                    output,
+                    internalGetFinishedChallengeCellNumMap(),
+                    FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry,
+                    11);
+            if (curLevel_ != 0) {
+                output.writeUInt32(12, curLevel_);
+            }
+            if (cMIGJNOEDCL_ != false) {
+                output.writeBool(13, cMIGJNOEDCL_);
+            }
+            unknownFields.writeTo(output);
+        }
 
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
 
-      // @@protoc_insertion_point(builder_scope:RoguelikeDungeonSettleInfo)
+            size = 0;
+            if (eJLMFGAMCNE_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, eJLMFGAMCNE_);
+            }
+            if (kHILPCPJILE_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, kHILPCPJILE_);
+            }
+            if (stageId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, stageId_);
+            }
+            if (nGBINNKKLGM_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, nGBINNKKLGM_);
+            }
+            for (java.util.Map.Entry<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    entry : internalGetFinishedChallengeCellNumMap().getMap().entrySet()) {
+                com.google.protobuf.MapEntry<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                        finishedChallengeCellNumMap__ =
+                                FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry
+                                        .newBuilderForType()
+                                        .setKey(entry.getKey())
+                                        .setValue(entry.getValue())
+                                        .build();
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(
+                                11, finishedChallengeCellNumMap__);
+            }
+            if (curLevel_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, curLevel_);
+            }
+            if (cMIGJNOEDCL_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, cMIGJNOEDCL_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                            .RoguelikeDungeonSettleInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                    other =
+                            (emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                            .RoguelikeDungeonSettleInfo)
+                                    obj;
+
+            if (getKHILPCPJILE() != other.getKHILPCPJILE()) return false;
+            if (!internalGetFinishedChallengeCellNumMap()
+                    .equals(other.internalGetFinishedChallengeCellNumMap())) return false;
+            if (getNGBINNKKLGM() != other.getNGBINNKKLGM()) return false;
+            if (getCurLevel() != other.getCurLevel()) return false;
+            if (getCMIGJNOEDCL() != other.getCMIGJNOEDCL()) return false;
+            if (getEJLMFGAMCNE() != other.getEJLMFGAMCNE()) return false;
+            if (getStageId() != other.getStageId()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + KHILPCPJILE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKHILPCPJILE());
+            if (!internalGetFinishedChallengeCellNumMap().getMap().isEmpty()) {
+                hash = (37 * hash) + FINISHED_CHALLENGE_CELL_NUM_MAP_FIELD_NUMBER;
+                hash = (53 * hash) + internalGetFinishedChallengeCellNumMap().hashCode();
+            }
+            hash = (37 * hash) + NGBINNKKLGM_FIELD_NUMBER;
+            hash = (53 * hash) + getNGBINNKKLGM();
+            hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
+            hash = (53 * hash) + getCurLevel();
+            hash = (37 * hash) + CMIGJNOEDCL_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCMIGJNOEDCL());
+            hash = (37 * hash) + EJLMFGAMCNE_FIELD_NUMBER;
+            hash = (53 * hash) + getEJLMFGAMCNE();
+            hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getStageId();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                        prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: BJJHJCJGLAJ
+         * </pre>
+         *
+         * Protobuf type {@code RoguelikeDungeonSettleInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:RoguelikeDungeonSettleInfo)
+                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .internal_static_RoguelikeDungeonSettleInfo_descriptor;
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMapField(int number) {
+                switch (number) {
+                    case 11:
+                        return internalGetFinishedChallengeCellNumMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @SuppressWarnings({"rawtypes"})
+            protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+                switch (number) {
+                    case 11:
+                        return internalGetMutableFinishedChallengeCellNumMap();
+                    default:
+                        throw new RuntimeException("Invalid map field number: " + number);
+                }
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                        .RoguelikeDungeonSettleInfo.class,
+                                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                        .RoguelikeDungeonSettleInfo.Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                kHILPCPJILE_ = false;
+
+                internalGetMutableFinishedChallengeCellNumMap().clear();
+                nGBINNKKLGM_ = 0;
+
+                curLevel_ = 0;
+
+                cMIGJNOEDCL_ = false;
+
+                eJLMFGAMCNE_ = 0;
+
+                stageId_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .internal_static_RoguelikeDungeonSettleInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                            .RoguelikeDungeonSettleInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                            .RoguelikeDungeonSettleInfo
+                    build() {
+                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                        result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                            .RoguelikeDungeonSettleInfo
+                    buildPartial() {
+                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                        result =
+                                new emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                        .RoguelikeDungeonSettleInfo(this);
+                int from_bitField0_ = bitField0_;
+                result.kHILPCPJILE_ = kHILPCPJILE_;
+                result.finishedChallengeCellNumMap_ = internalGetFinishedChallengeCellNumMap();
+                result.finishedChallengeCellNumMap_.makeImmutable();
+                result.nGBINNKKLGM_ = nGBINNKKLGM_;
+                result.curLevel_ = curLevel_;
+                result.cMIGJNOEDCL_ = cMIGJNOEDCL_;
+                result.eJLMFGAMCNE_ = eJLMFGAMCNE_;
+                result.stageId_ = stageId_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                .RoguelikeDungeonSettleInfo) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                            .RoguelikeDungeonSettleInfo)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                            other) {
+                if (other
+                        == emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                .RoguelikeDungeonSettleInfo.getDefaultInstance()) return this;
+                if (other.getKHILPCPJILE() != false) {
+                    setKHILPCPJILE(other.getKHILPCPJILE());
+                }
+                internalGetMutableFinishedChallengeCellNumMap()
+                        .mergeFrom(other.internalGetFinishedChallengeCellNumMap());
+                if (other.getNGBINNKKLGM() != 0) {
+                    setNGBINNKKLGM(other.getNGBINNKKLGM());
+                }
+                if (other.getCurLevel() != 0) {
+                    setCurLevel(other.getCurLevel());
+                }
+                if (other.getCMIGJNOEDCL() != false) {
+                    setCMIGJNOEDCL(other.getCMIGJNOEDCL());
+                }
+                if (other.getEJLMFGAMCNE() != 0) {
+                    setEJLMFGAMCNE(other.getEJLMFGAMCNE());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                                            .RoguelikeDungeonSettleInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private boolean kHILPCPJILE_;
+            /**
+             * <code>bool KHILPCPJILE = 5;</code>
+             *
+             * @return The kHILPCPJILE.
+             */
+            @java.lang.Override
+            public boolean getKHILPCPJILE() {
+                return kHILPCPJILE_;
+            }
+            /**
+             * <code>bool KHILPCPJILE = 5;</code>
+             *
+             * @param value The kHILPCPJILE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKHILPCPJILE(boolean value) {
+
+                kHILPCPJILE_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool KHILPCPJILE = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKHILPCPJILE() {
+
+                kHILPCPJILE_ = false;
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    finishedChallengeCellNumMap_;
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    internalGetFinishedChallengeCellNumMap() {
+                if (finishedChallengeCellNumMap_ == null) {
+                    return com.google.protobuf.MapField.emptyMapField(
+                            FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+                }
+                return finishedChallengeCellNumMap_;
+            }
+
+            private com.google.protobuf.MapField<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    internalGetMutableFinishedChallengeCellNumMap() {
+                onChanged();
+                ;
+                if (finishedChallengeCellNumMap_ == null) {
+                    finishedChallengeCellNumMap_ =
+                            com.google.protobuf.MapField.newMapField(
+                                    FinishedChallengeCellNumMapDefaultEntryHolder.defaultEntry);
+                }
+                if (!finishedChallengeCellNumMap_.isMutable()) {
+                    finishedChallengeCellNumMap_ = finishedChallengeCellNumMap_.copy();
+                }
+                return finishedChallengeCellNumMap_;
+            }
+
+            public int getFinishedChallengeCellNumMapCount() {
+                return internalGetFinishedChallengeCellNumMap().getMap().size();
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            @java.lang.Override
+            public boolean containsFinishedChallengeCellNumMap(int key) {
+
+                return internalGetFinishedChallengeCellNumMap().getMap().containsKey(key);
+            }
+            /** Use {@link #getFinishedChallengeCellNumMapMap()} instead. */
+            @java.lang.Override
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    getFinishedChallengeCellNumMap() {
+                return getFinishedChallengeCellNumMapMap();
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            @java.lang.Override
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    getFinishedChallengeCellNumMapMap() {
+                return internalGetFinishedChallengeCellNumMap().getMap();
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                    getFinishedChallengeCellNumMapOrDefault(
+                            int key,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                                    defaultValue) {
+
+                java.util.Map<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                        map = internalGetFinishedChallengeCellNumMap().getMap();
+                return map.containsKey(key) ? map.get(key) : defaultValue;
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                    getFinishedChallengeCellNumMapOrThrow(int key) {
+
+                java.util.Map<
+                                java.lang.Integer,
+                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                        map = internalGetFinishedChallengeCellNumMap().getMap();
+                if (!map.containsKey(key)) {
+                    throw new java.lang.IllegalArgumentException();
+                }
+                return map.get(key);
+            }
+
+            public Builder clearFinishedChallengeCellNumMap() {
+                internalGetMutableFinishedChallengeCellNumMap().getMutableMap().clear();
+                return this;
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            public Builder removeFinishedChallengeCellNumMap(int key) {
+
+                internalGetMutableFinishedChallengeCellNumMap().getMutableMap().remove(key);
+                return this;
+            }
+            /** Use alternate mutation accessors instead. */
+            @java.lang.Deprecated
+            public java.util.Map<
+                            java.lang.Integer,
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo>
+                    getMutableFinishedChallengeCellNumMap() {
+                return internalGetMutableFinishedChallengeCellNumMap().getMutableMap();
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            public Builder putFinishedChallengeCellNumMap(
+                    int key,
+                    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
+                            value) {
+
+                if (value == null) {
+                    throw new java.lang.NullPointerException();
+                }
+                internalGetMutableFinishedChallengeCellNumMap().getMutableMap().put(key, value);
+                return this;
+            }
+            /**
+             * <code>map&lt;uint32, .RoguelikeSettleCoinInfo&gt; finished_challenge_cell_num_map = 11;
+             * </code>
+             */
+            public Builder putAllFinishedChallengeCellNumMap(
+                    java.util.Map<
+                                    java.lang.Integer,
+                                    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
+                                            .RoguelikeSettleCoinInfo>
+                            values) {
+                internalGetMutableFinishedChallengeCellNumMap().getMutableMap().putAll(values);
+                return this;
+            }
+
+            private int nGBINNKKLGM_;
+            /**
+             * <code>uint32 NGBINNKKLGM = 8;</code>
+             *
+             * @return The nGBINNKKLGM.
+             */
+            @java.lang.Override
+            public int getNGBINNKKLGM() {
+                return nGBINNKKLGM_;
+            }
+            /**
+             * <code>uint32 NGBINNKKLGM = 8;</code>
+             *
+             * @param value The nGBINNKKLGM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNGBINNKKLGM(int value) {
+
+                nGBINNKKLGM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 NGBINNKKLGM = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNGBINNKKLGM() {
+
+                nGBINNKKLGM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int curLevel_;
+            /**
+             * <code>uint32 cur_level = 12;</code>
+             *
+             * @return The curLevel.
+             */
+            @java.lang.Override
+            public int getCurLevel() {
+                return curLevel_;
+            }
+            /**
+             * <code>uint32 cur_level = 12;</code>
+             *
+             * @param value The curLevel to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCurLevel(int value) {
+
+                curLevel_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 cur_level = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCurLevel() {
+
+                curLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean cMIGJNOEDCL_;
+            /**
+             * <code>bool CMIGJNOEDCL = 13;</code>
+             *
+             * @return The cMIGJNOEDCL.
+             */
+            @java.lang.Override
+            public boolean getCMIGJNOEDCL() {
+                return cMIGJNOEDCL_;
+            }
+            /**
+             * <code>bool CMIGJNOEDCL = 13;</code>
+             *
+             * @param value The cMIGJNOEDCL to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCMIGJNOEDCL(boolean value) {
+
+                cMIGJNOEDCL_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool CMIGJNOEDCL = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCMIGJNOEDCL() {
+
+                cMIGJNOEDCL_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int eJLMFGAMCNE_;
+            /**
+             * <code>uint32 EJLMFGAMCNE = 1;</code>
+             *
+             * @return The eJLMFGAMCNE.
+             */
+            @java.lang.Override
+            public int getEJLMFGAMCNE() {
+                return eJLMFGAMCNE_;
+            }
+            /**
+             * <code>uint32 EJLMFGAMCNE = 1;</code>
+             *
+             * @param value The eJLMFGAMCNE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEJLMFGAMCNE(int value) {
+
+                eJLMFGAMCNE_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 EJLMFGAMCNE = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEJLMFGAMCNE() {
+
+                eJLMFGAMCNE_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int stageId_;
+            /**
+             * <code>uint32 stage_id = 6;</code>
+             *
+             * @return The stageId.
+             */
+            @java.lang.Override
+            public int getStageId() {
+                return stageId_;
+            }
+            /**
+             * <code>uint32 stage_id = 6;</code>
+             *
+             * @param value The stageId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setStageId(int value) {
+
+                stageId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 stage_id = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearStageId() {
+
+                stageId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:RoguelikeDungeonSettleInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:RoguelikeDungeonSettleInfo)
+        private static final emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                            .RoguelikeDungeonSettleInfo();
+        }
+
+        public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass
+                        .RoguelikeDungeonSettleInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<RoguelikeDungeonSettleInfo> PARSER =
+                new com.google.protobuf.AbstractParser<RoguelikeDungeonSettleInfo>() {
+                    @java.lang.Override
+                    public RoguelikeDungeonSettleInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new RoguelikeDungeonSettleInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<RoguelikeDungeonSettleInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<RoguelikeDungeonSettleInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:RoguelikeDungeonSettleInfo)
-    private static final emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_RoguelikeDungeonSettleInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo();
+        java.lang.String[] descriptorData = {
+            "\n RoguelikeDungeonSettleInfo.proto\032\035Rogu"
+                    + "elikeSettleCoinInfo.proto\"\332\002\n\032RoguelikeD"
+                    + "ungeonSettleInfo\022\023\n\013KHILPCPJILE\030\005 \001(\010\022e\n"
+                    + "\037finished_challenge_cell_num_map\030\013 \003(\0132<"
+                    + ".RoguelikeDungeonSettleInfo.FinishedChal"
+                    + "lengeCellNumMapEntry\022\023\n\013NGBINNKKLGM\030\010 \001("
+                    + "\r\022\021\n\tcur_level\030\014 \001(\r\022\023\n\013CMIGJNOEDCL\030\r \001("
+                    + "\010\022\023\n\013EJLMFGAMCNE\030\001 \001(\r\022\020\n\010stage_id\030\006 \001(\r"
+                    + "\032\\\n FinishedChallengeCellNumMapEntry\022\013\n\003"
+                    + "key\030\001 \001(\r\022\'\n\005value\030\002 \001(\0132\030.RoguelikeSett"
+                    + "leCoinInfo:\0028\001B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.getDescriptor(),
+                        });
+        internal_static_RoguelikeDungeonSettleInfo_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_RoguelikeDungeonSettleInfo_descriptor,
+                        new java.lang.String[] {
+                            "KHILPCPJILE",
+                            "FinishedChallengeCellNumMap",
+                            "NGBINNKKLGM",
+                            "CurLevel",
+                            "CMIGJNOEDCL",
+                            "EJLMFGAMCNE",
+                            "StageId",
+                        });
+        internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor =
+                internal_static_RoguelikeDungeonSettleInfo_descriptor.getNestedTypes().get(0);
+        internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor,
+                        new java.lang.String[] {
+                            "Key", "Value",
+                        });
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RoguelikeDungeonSettleInfo>
-        PARSER = new com.google.protobuf.AbstractParser<RoguelikeDungeonSettleInfo>() {
-      @java.lang.Override
-      public RoguelikeDungeonSettleInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RoguelikeDungeonSettleInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<RoguelikeDungeonSettleInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RoguelikeDungeonSettleInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RoguelikeDungeonSettleInfoOuterClass.RoguelikeDungeonSettleInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RoguelikeDungeonSettleInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n RoguelikeDungeonSettleInfo.proto\032\035Rogu" +
-      "elikeSettleCoinInfo.proto\"\332\002\n\032RoguelikeD" +
-      "ungeonSettleInfo\022\023\n\013KHILPCPJILE\030\005 \001(\010\022e\n" +
-      "\037finished_challenge_cell_num_map\030\013 \003(\0132<" +
-      ".RoguelikeDungeonSettleInfo.FinishedChal" +
-      "lengeCellNumMapEntry\022\023\n\013NGBINNKKLGM\030\010 \001(" +
-      "\r\022\021\n\tcur_level\030\014 \001(\r\022\023\n\013CMIGJNOEDCL\030\r \001(" +
-      "\010\022\023\n\013EJLMFGAMCNE\030\001 \001(\r\022\020\n\010stage_id\030\006 \001(\r" +
-      "\032\\\n FinishedChallengeCellNumMapEntry\022\013\n\003" +
-      "key\030\001 \001(\r\022\'\n\005value\030\002 \001(\0132\030.RoguelikeSett" +
-      "leCoinInfo:\0028\001B\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.getDescriptor(),
-        });
-    internal_static_RoguelikeDungeonSettleInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_RoguelikeDungeonSettleInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RoguelikeDungeonSettleInfo_descriptor,
-        new java.lang.String[] { "KHILPCPJILE", "FinishedChallengeCellNumMap", "NGBINNKKLGM", "CurLevel", "CMIGJNOEDCL", "EJLMFGAMCNE", "StageId", });
-    internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor =
-      internal_static_RoguelikeDungeonSettleInfo_descriptor.getNestedTypes().get(0);
-    internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RoguelikeDungeonSettleInfo_FinishedChallengeCellNumMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

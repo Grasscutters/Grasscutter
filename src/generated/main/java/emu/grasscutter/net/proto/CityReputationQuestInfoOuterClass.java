@@ -4,933 +4,1026 @@
 package emu.grasscutter.net.proto;
 
 public final class CityReputationQuestInfoOuterClass {
-  private CityReputationQuestInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private CityReputationQuestInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface CityReputationQuestInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:CityReputationQuestInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @return A list containing the eCMOALGJMHK.
-     */
-    java.util.List<java.lang.Integer> getECMOALGJMHKList();
-    /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @return The count of eCMOALGJMHK.
-     */
-    int getECMOALGJMHKCount();
-    /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @param index The index of the element to return.
-     * @return The eCMOALGJMHK at the given index.
-     */
-    int getECMOALGJMHK(int index);
-
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @return A list containing the lJEOOGFNFLM.
-     */
-    java.util.List<java.lang.Integer> getLJEOOGFNFLMList();
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @return The count of lJEOOGFNFLM.
-     */
-    int getLJEOOGFNFLMCount();
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @param index The index of the element to return.
-     * @return The lJEOOGFNFLM at the given index.
-     */
-    int getLJEOOGFNFLM(int index);
-
-    /**
-     * <code>bool is_open = 10;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-  }
-  /**
-   * <pre>
-   * Obf: OGNIGMMAPNI
-   * </pre>
-   *
-   * Protobuf type {@code CityReputationQuestInfo}
-   */
-  public static final class CityReputationQuestInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:CityReputationQuestInfo)
-      CityReputationQuestInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CityReputationQuestInfo.newBuilder() to construct.
-    private CityReputationQuestInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CityReputationQuestInfo() {
-      eCMOALGJMHK_ = emptyIntList();
-      lJEOOGFNFLM_ = emptyIntList();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new CityReputationQuestInfo();
-    }
+    public interface CityReputationQuestInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:CityReputationQuestInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CityReputationQuestInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                lJEOOGFNFLM_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              lJEOOGFNFLM_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                lJEOOGFNFLM_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                lJEOOGFNFLM_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @return A list containing the eCMOALGJMHK.
+         */
+        java.util.List<java.lang.Integer> getECMOALGJMHKList();
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @return The count of eCMOALGJMHK.
+         */
+        int getECMOALGJMHKCount();
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The eCMOALGJMHK at the given index.
+         */
+        int getECMOALGJMHK(int index);
 
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                eCMOALGJMHK_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              eCMOALGJMHK_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                eCMOALGJMHK_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                eCMOALGJMHK_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          lJEOOGFNFLM_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          eCMOALGJMHK_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_descriptor;
-    }
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @return A list containing the lJEOOGFNFLM.
+         */
+        java.util.List<java.lang.Integer> getLJEOOGFNFLMList();
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @return The count of lJEOOGFNFLM.
+         */
+        int getLJEOOGFNFLMCount();
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The lJEOOGFNFLM at the given index.
+         */
+        int getLJEOOGFNFLM(int index);
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.class, emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.Builder.class);
-    }
-
-    public static final int ECMOALGJMHK_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.IntList eCMOALGJMHK_;
-    /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @return A list containing the eCMOALGJMHK.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getECMOALGJMHKList() {
-      return eCMOALGJMHK_;
+        /**
+         * <code>bool is_open = 10;</code>
+         *
+         * @return The isOpen.
+         */
+        boolean getIsOpen();
     }
     /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @return The count of eCMOALGJMHK.
-     */
-    public int getECMOALGJMHKCount() {
-      return eCMOALGJMHK_.size();
-    }
-    /**
-     * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-     * @param index The index of the element to return.
-     * @return The eCMOALGJMHK at the given index.
-     */
-    public int getECMOALGJMHK(int index) {
-      return eCMOALGJMHK_.getInt(index);
-    }
-    private int eCMOALGJMHKMemoizedSerializedSize = -1;
-
-    public static final int LJEOOGFNFLM_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList lJEOOGFNFLM_;
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @return A list containing the lJEOOGFNFLM.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getLJEOOGFNFLMList() {
-      return lJEOOGFNFLM_;
-    }
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @return The count of lJEOOGFNFLM.
-     */
-    public int getLJEOOGFNFLMCount() {
-      return lJEOOGFNFLM_.size();
-    }
-    /**
-     * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-     * @param index The index of the element to return.
-     * @return The lJEOOGFNFLM at the given index.
-     */
-    public int getLJEOOGFNFLM(int index) {
-      return lJEOOGFNFLM_.getInt(index);
-    }
-    private int lJEOOGFNFLMMemoizedSerializedSize = -1;
-
-    public static final int IS_OPEN_FIELD_NUMBER = 10;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 10;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (getLJEOOGFNFLMList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(lJEOOGFNFLMMemoizedSerializedSize);
-      }
-      for (int i = 0; i < lJEOOGFNFLM_.size(); i++) {
-        output.writeUInt32NoTag(lJEOOGFNFLM_.getInt(i));
-      }
-      if (isOpen_ != false) {
-        output.writeBool(10, isOpen_);
-      }
-      if (getECMOALGJMHKList().size() > 0) {
-        output.writeUInt32NoTag(114);
-        output.writeUInt32NoTag(eCMOALGJMHKMemoizedSerializedSize);
-      }
-      for (int i = 0; i < eCMOALGJMHK_.size(); i++) {
-        output.writeUInt32NoTag(eCMOALGJMHK_.getInt(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < lJEOOGFNFLM_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(lJEOOGFNFLM_.getInt(i));
-        }
-        size += dataSize;
-        if (!getLJEOOGFNFLMList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        lJEOOGFNFLMMemoizedSerializedSize = dataSize;
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isOpen_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < eCMOALGJMHK_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(eCMOALGJMHK_.getInt(i));
-        }
-        size += dataSize;
-        if (!getECMOALGJMHKList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        eCMOALGJMHKMemoizedSerializedSize = dataSize;
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo other = (emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo) obj;
-
-      if (!getECMOALGJMHKList()
-          .equals(other.getECMOALGJMHKList())) return false;
-      if (!getLJEOOGFNFLMList()
-          .equals(other.getLJEOOGFNFLMList())) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getECMOALGJMHKCount() > 0) {
-        hash = (37 * hash) + ECMOALGJMHK_FIELD_NUMBER;
-        hash = (53 * hash) + getECMOALGJMHKList().hashCode();
-      }
-      if (getLJEOOGFNFLMCount() > 0) {
-        hash = (37 * hash) + LJEOOGFNFLM_FIELD_NUMBER;
-        hash = (53 * hash) + getLJEOOGFNFLMList().hashCode();
-      }
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Obf: OGNIGMMAPNI
      * </pre>
      *
      * Protobuf type {@code CityReputationQuestInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:CityReputationQuestInfo)
-        emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.class, emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class CityReputationQuestInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:CityReputationQuestInfo)
+            CityReputationQuestInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use CityReputationQuestInfo.newBuilder() to construct.
+        private CityReputationQuestInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        eCMOALGJMHK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        lJEOOGFNFLM_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        isOpen_ = false;
 
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo build() {
-        emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        private CityReputationQuestInfo() {
+            eCMOALGJMHK_ = emptyIntList();
+            lJEOOGFNFLM_ = emptyIntList();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo buildPartial() {
-        emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo result = new emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          eCMOALGJMHK_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new CityReputationQuestInfo();
         }
-        result.eCMOALGJMHK_ = eCMOALGJMHK_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          lJEOOGFNFLM_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        result.lJEOOGFNFLM_ = lJEOOGFNFLM_;
-        result.isOpen_ = isOpen_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        private CityReputationQuestInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 32:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    lJEOOGFNFLM_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                lJEOOGFNFLM_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 34:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                                    lJEOOGFNFLM_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    lJEOOGFNFLM_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        case 80:
+                            {
+                                isOpen_ = input.readBool();
+                                break;
+                            }
+                        case 112:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    eCMOALGJMHK_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                eCMOALGJMHK_.addInt(input.readUInt32());
+                                break;
+                            }
+                        case 114:
+                            {
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                    eCMOALGJMHK_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    eCMOALGJMHK_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    lJEOOGFNFLM_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    eCMOALGJMHK_.makeImmutable(); // C
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo other) {
-        if (other == emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.getDefaultInstance()) return this;
-        if (!other.eCMOALGJMHK_.isEmpty()) {
-          if (eCMOALGJMHK_.isEmpty()) {
-            eCMOALGJMHK_ = other.eCMOALGJMHK_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureECMOALGJMHKIsMutable();
-            eCMOALGJMHK_.addAll(other.eCMOALGJMHK_);
-          }
-          onChanged();
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                    .internal_static_CityReputationQuestInfo_descriptor;
         }
-        if (!other.lJEOOGFNFLM_.isEmpty()) {
-          if (lJEOOGFNFLM_.isEmpty()) {
-            lJEOOGFNFLM_ = other.lJEOOGFNFLM_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureLJEOOGFNFLMIsMutable();
-            lJEOOGFNFLM_.addAll(other.lJEOOGFNFLM_);
-          }
-          onChanged();
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                    .internal_static_CityReputationQuestInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                                    .class,
+                            emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                                    .Builder.class);
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+
+        public static final int ECMOALGJMHK_FIELD_NUMBER = 14;
+        private com.google.protobuf.Internal.IntList eCMOALGJMHK_;
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @return A list containing the eCMOALGJMHK.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getECMOALGJMHKList() {
+            return eCMOALGJMHK_;
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @return The count of eCMOALGJMHK.
+         */
+        public int getECMOALGJMHKCount() {
+            return eCMOALGJMHK_.size();
         }
-        return this;
-      }
-      private int bitField0_;
+        /**
+         * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The eCMOALGJMHK at the given index.
+         */
+        public int getECMOALGJMHK(int index) {
+            return eCMOALGJMHK_.getInt(index);
+        }
 
-      private com.google.protobuf.Internal.IntList eCMOALGJMHK_ = emptyIntList();
-      private void ensureECMOALGJMHKIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          eCMOALGJMHK_ = mutableCopy(eCMOALGJMHK_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @return A list containing the eCMOALGJMHK.
-       */
-      public java.util.List<java.lang.Integer>
-          getECMOALGJMHKList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(eCMOALGJMHK_) : eCMOALGJMHK_;
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @return The count of eCMOALGJMHK.
-       */
-      public int getECMOALGJMHKCount() {
-        return eCMOALGJMHK_.size();
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @param index The index of the element to return.
-       * @return The eCMOALGJMHK at the given index.
-       */
-      public int getECMOALGJMHK(int index) {
-        return eCMOALGJMHK_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @param index The index to set the value at.
-       * @param value The eCMOALGJMHK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setECMOALGJMHK(
-          int index, int value) {
-        ensureECMOALGJMHKIsMutable();
-        eCMOALGJMHK_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @param value The eCMOALGJMHK to add.
-       * @return This builder for chaining.
-       */
-      public Builder addECMOALGJMHK(int value) {
-        ensureECMOALGJMHKIsMutable();
-        eCMOALGJMHK_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @param values The eCMOALGJMHK to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllECMOALGJMHK(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureECMOALGJMHKIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, eCMOALGJMHK_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ECMOALGJMHK = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearECMOALGJMHK() {
-        eCMOALGJMHK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
+        private int eCMOALGJMHKMemoizedSerializedSize = -1;
 
-      private com.google.protobuf.Internal.IntList lJEOOGFNFLM_ = emptyIntList();
-      private void ensureLJEOOGFNFLMIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          lJEOOGFNFLM_ = mutableCopy(lJEOOGFNFLM_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @return A list containing the lJEOOGFNFLM.
-       */
-      public java.util.List<java.lang.Integer>
-          getLJEOOGFNFLMList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(lJEOOGFNFLM_) : lJEOOGFNFLM_;
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @return The count of lJEOOGFNFLM.
-       */
-      public int getLJEOOGFNFLMCount() {
-        return lJEOOGFNFLM_.size();
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @param index The index of the element to return.
-       * @return The lJEOOGFNFLM at the given index.
-       */
-      public int getLJEOOGFNFLM(int index) {
-        return lJEOOGFNFLM_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The lJEOOGFNFLM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLJEOOGFNFLM(
-          int index, int value) {
-        ensureLJEOOGFNFLMIsMutable();
-        lJEOOGFNFLM_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @param value The lJEOOGFNFLM to add.
-       * @return This builder for chaining.
-       */
-      public Builder addLJEOOGFNFLM(int value) {
-        ensureLJEOOGFNFLMIsMutable();
-        lJEOOGFNFLM_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @param values The lJEOOGFNFLM to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllLJEOOGFNFLM(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureLJEOOGFNFLMIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, lJEOOGFNFLM_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLJEOOGFNFLM() {
-        lJEOOGFNFLM_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
+        public static final int LJEOOGFNFLM_FIELD_NUMBER = 4;
+        private com.google.protobuf.Internal.IntList lJEOOGFNFLM_;
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @return A list containing the lJEOOGFNFLM.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getLJEOOGFNFLMList() {
+            return lJEOOGFNFLM_;
+        }
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @return The count of lJEOOGFNFLM.
+         */
+        public int getLJEOOGFNFLMCount() {
+            return lJEOOGFNFLM_.size();
+        }
+        /**
+         * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The lJEOOGFNFLM at the given index.
+         */
+        public int getLJEOOGFNFLM(int index) {
+            return lJEOOGFNFLM_.getInt(index);
+        }
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 10;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 10;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private int lJEOOGFNFLMMemoizedSerializedSize = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        public static final int IS_OPEN_FIELD_NUMBER = 10;
+        private boolean isOpen_;
+        /**
+         * <code>bool is_open = 10;</code>
+         *
+         * @return The isOpen.
+         */
+        @java.lang.Override
+        public boolean getIsOpen() {
+            return isOpen_;
+        }
 
+        private byte memoizedIsInitialized = -1;
 
-      // @@protoc_insertion_point(builder_scope:CityReputationQuestInfo)
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            getSerializedSize();
+            if (getLJEOOGFNFLMList().size() > 0) {
+                output.writeUInt32NoTag(34);
+                output.writeUInt32NoTag(lJEOOGFNFLMMemoizedSerializedSize);
+            }
+            for (int i = 0; i < lJEOOGFNFLM_.size(); i++) {
+                output.writeUInt32NoTag(lJEOOGFNFLM_.getInt(i));
+            }
+            if (isOpen_ != false) {
+                output.writeBool(10, isOpen_);
+            }
+            if (getECMOALGJMHKList().size() > 0) {
+                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(eCMOALGJMHKMemoizedSerializedSize);
+            }
+            for (int i = 0; i < eCMOALGJMHK_.size(); i++) {
+                output.writeUInt32NoTag(eCMOALGJMHK_.getInt(i));
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            {
+                int dataSize = 0;
+                for (int i = 0; i < lJEOOGFNFLM_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(lJEOOGFNFLM_.getInt(i));
+                }
+                size += dataSize;
+                if (!getLJEOOGFNFLMList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                lJEOOGFNFLMMemoizedSerializedSize = dataSize;
+            }
+            if (isOpen_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isOpen_);
+            }
+            {
+                int dataSize = 0;
+                for (int i = 0; i < eCMOALGJMHK_.size(); i++) {
+                    dataSize +=
+                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(eCMOALGJMHK_.getInt(i));
+                }
+                size += dataSize;
+                if (!getECMOALGJMHKList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                eCMOALGJMHKMemoizedSerializedSize = dataSize;
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo other =
+                    (emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo) obj;
+
+            if (!getECMOALGJMHKList().equals(other.getECMOALGJMHKList())) return false;
+            if (!getLJEOOGFNFLMList().equals(other.getLJEOOGFNFLMList())) return false;
+            if (getIsOpen() != other.getIsOpen()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            if (getECMOALGJMHKCount() > 0) {
+                hash = (37 * hash) + ECMOALGJMHK_FIELD_NUMBER;
+                hash = (53 * hash) + getECMOALGJMHKList().hashCode();
+            }
+            if (getLJEOOGFNFLMCount() > 0) {
+                hash = (37 * hash) + LJEOOGFNFLM_FIELD_NUMBER;
+                hash = (53 * hash) + getLJEOOGFNFLMList().hashCode();
+            }
+            hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsOpen());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                        prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: OGNIGMMAPNI
+         * </pre>
+         *
+         * Protobuf type {@code CityReputationQuestInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:CityReputationQuestInfo)
+                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .internal_static_CityReputationQuestInfo_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .internal_static_CityReputationQuestInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                                        .class,
+                                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                                        .Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                eCMOALGJMHK_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                lJEOOGFNFLM_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                isOpen_ = false;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .internal_static_CityReputationQuestInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                    build() {
+                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                    buildPartial() {
+                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo result =
+                        new emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo(
+                                this);
+                int from_bitField0_ = bitField0_;
+                if (((bitField0_ & 0x00000001) != 0)) {
+                    eCMOALGJMHK_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                }
+                result.eCMOALGJMHK_ = eCMOALGJMHK_;
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    lJEOOGFNFLM_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.lJEOOGFNFLM_ = lJEOOGFNFLM_;
+                result.isOpen_ = isOpen_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                            other) {
+                if (other
+                        == emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                                .getDefaultInstance()) return this;
+                if (!other.eCMOALGJMHK_.isEmpty()) {
+                    if (eCMOALGJMHK_.isEmpty()) {
+                        eCMOALGJMHK_ = other.eCMOALGJMHK_;
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    } else {
+                        ensureECMOALGJMHKIsMutable();
+                        eCMOALGJMHK_.addAll(other.eCMOALGJMHK_);
+                    }
+                    onChanged();
+                }
+                if (!other.lJEOOGFNFLM_.isEmpty()) {
+                    if (lJEOOGFNFLM_.isEmpty()) {
+                        lJEOOGFNFLM_ = other.lJEOOGFNFLM_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureLJEOOGFNFLMIsMutable();
+                        lJEOOGFNFLM_.addAll(other.lJEOOGFNFLM_);
+                    }
+                    onChanged();
+                }
+                if (other.getIsOpen() != false) {
+                    setIsOpen(other.getIsOpen());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private com.google.protobuf.Internal.IntList eCMOALGJMHK_ = emptyIntList();
+
+            private void ensureECMOALGJMHKIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    eCMOALGJMHK_ = mutableCopy(eCMOALGJMHK_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @return A list containing the eCMOALGJMHK.
+             */
+            public java.util.List<java.lang.Integer> getECMOALGJMHKList() {
+                return ((bitField0_ & 0x00000001) != 0)
+                        ? java.util.Collections.unmodifiableList(eCMOALGJMHK_)
+                        : eCMOALGJMHK_;
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @return The count of eCMOALGJMHK.
+             */
+            public int getECMOALGJMHKCount() {
+                return eCMOALGJMHK_.size();
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The eCMOALGJMHK at the given index.
+             */
+            public int getECMOALGJMHK(int index) {
+                return eCMOALGJMHK_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The eCMOALGJMHK to set.
+             * @return This builder for chaining.
+             */
+            public Builder setECMOALGJMHK(int index, int value) {
+                ensureECMOALGJMHKIsMutable();
+                eCMOALGJMHK_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @param value The eCMOALGJMHK to add.
+             * @return This builder for chaining.
+             */
+            public Builder addECMOALGJMHK(int value) {
+                ensureECMOALGJMHKIsMutable();
+                eCMOALGJMHK_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @param values The eCMOALGJMHK to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllECMOALGJMHK(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureECMOALGJMHKIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, eCMOALGJMHK_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 ECMOALGJMHK = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearECMOALGJMHK() {
+                eCMOALGJMHK_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+            }
+
+            private com.google.protobuf.Internal.IntList lJEOOGFNFLM_ = emptyIntList();
+
+            private void ensureLJEOOGFNFLMIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    lJEOOGFNFLM_ = mutableCopy(lJEOOGFNFLM_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @return A list containing the lJEOOGFNFLM.
+             */
+            public java.util.List<java.lang.Integer> getLJEOOGFNFLMList() {
+                return ((bitField0_ & 0x00000002) != 0)
+                        ? java.util.Collections.unmodifiableList(lJEOOGFNFLM_)
+                        : lJEOOGFNFLM_;
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @return The count of lJEOOGFNFLM.
+             */
+            public int getLJEOOGFNFLMCount() {
+                return lJEOOGFNFLM_.size();
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The lJEOOGFNFLM at the given index.
+             */
+            public int getLJEOOGFNFLM(int index) {
+                return lJEOOGFNFLM_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The lJEOOGFNFLM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLJEOOGFNFLM(int index, int value) {
+                ensureLJEOOGFNFLMIsMutable();
+                lJEOOGFNFLM_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @param value The lJEOOGFNFLM to add.
+             * @return This builder for chaining.
+             */
+            public Builder addLJEOOGFNFLM(int value) {
+                ensureLJEOOGFNFLMIsMutable();
+                lJEOOGFNFLM_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @param values The lJEOOGFNFLM to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllLJEOOGFNFLM(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureLJEOOGFNFLMIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lJEOOGFNFLM_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 LJEOOGFNFLM = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLJEOOGFNFLM() {
+                lJEOOGFNFLM_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
+            }
+
+            private boolean isOpen_;
+            /**
+             * <code>bool is_open = 10;</code>
+             *
+             * @return The isOpen.
+             */
+            @java.lang.Override
+            public boolean getIsOpen() {
+                return isOpen_;
+            }
+            /**
+             * <code>bool is_open = 10;</code>
+             *
+             * @param value The isOpen to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsOpen(boolean value) {
+
+                isOpen_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_open = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsOpen() {
+
+                isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:CityReputationQuestInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:CityReputationQuestInfo)
+        private static final emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo();
+        }
+
+        public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass
+                        .CityReputationQuestInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CityReputationQuestInfo> PARSER =
+                new com.google.protobuf.AbstractParser<CityReputationQuestInfo>() {
+                    @java.lang.Override
+                    public CityReputationQuestInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new CityReputationQuestInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<CityReputationQuestInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CityReputationQuestInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:CityReputationQuestInfo)
-    private static final emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_CityReputationQuestInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_CityReputationQuestInfo_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo();
+        java.lang.String[] descriptorData = {
+            "\n\035CityReputationQuestInfo.proto\"T\n\027CityR"
+                    + "eputationQuestInfo\022\023\n\013ECMOALGJMHK\030\016 \003(\r\022"
+                    + "\023\n\013LJEOOGFNFLM\030\004 \003(\r\022\017\n\007is_open\030\n \001(\010B\033\n"
+                    + "\031emu.grasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_CityReputationQuestInfo_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_CityReputationQuestInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_CityReputationQuestInfo_descriptor,
+                        new java.lang.String[] {
+                            "ECMOALGJMHK", "LJEOOGFNFLM", "IsOpen",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CityReputationQuestInfo>
-        PARSER = new com.google.protobuf.AbstractParser<CityReputationQuestInfo>() {
-      @java.lang.Override
-      public CityReputationQuestInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CityReputationQuestInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CityReputationQuestInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CityReputationQuestInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_CityReputationQuestInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_CityReputationQuestInfo_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\035CityReputationQuestInfo.proto\"T\n\027CityR" +
-      "eputationQuestInfo\022\023\n\013ECMOALGJMHK\030\016 \003(\r\022" +
-      "\023\n\013LJEOOGFNFLM\030\004 \003(\r\022\017\n\007is_open\030\n \001(\010B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_CityReputationQuestInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_CityReputationQuestInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_CityReputationQuestInfo_descriptor,
-        new java.lang.String[] { "ECMOALGJMHK", "LJEOOGFNFLM", "IsOpen", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

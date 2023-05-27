@@ -4,682 +4,735 @@
 package emu.grasscutter.net.proto;
 
 public final class ClientCollectorDataOuterClass {
-  private ClientCollectorDataOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private ClientCollectorDataOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface ClientCollectorDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ClientCollectorData)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 material_id = 8;</code>
-     * @return The materialId.
-     */
-    int getMaterialId();
-
-    /**
-     * <code>uint32 KIAPBPEHAEB = 1;</code>
-     * @return The kIAPBPEHAEB.
-     */
-    int getKIAPBPEHAEB();
-
-    /**
-     * <code>uint32 KCPIPGHNCNM = 11;</code>
-     * @return The kCPIPGHNCNM.
-     */
-    int getKCPIPGHNCNM();
-  }
-  /**
-   * <pre>
-   * Obf: NLEMHBCLPLJ
-   * </pre>
-   *
-   * Protobuf type {@code ClientCollectorData}
-   */
-  public static final class ClientCollectorData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ClientCollectorData)
-      ClientCollectorDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ClientCollectorData.newBuilder() to construct.
-    private ClientCollectorData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ClientCollectorData() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ClientCollectorData();
-    }
+    public interface ClientCollectorDataOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:ClientCollectorData)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ClientCollectorData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
+        /**
+         * <code>uint32 material_id = 8;</code>
+         *
+         * @return The materialId.
+         */
+        int getMaterialId();
 
-              kIAPBPEHAEB_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>uint32 KIAPBPEHAEB = 1;</code>
+         *
+         * @return The kIAPBPEHAEB.
+         */
+        int getKIAPBPEHAEB();
 
-              materialId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              kCPIPGHNCNM_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.class, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder.class);
-    }
-
-    public static final int MATERIAL_ID_FIELD_NUMBER = 8;
-    private int materialId_;
-    /**
-     * <code>uint32 material_id = 8;</code>
-     * @return The materialId.
-     */
-    @java.lang.Override
-    public int getMaterialId() {
-      return materialId_;
-    }
-
-    public static final int KIAPBPEHAEB_FIELD_NUMBER = 1;
-    private int kIAPBPEHAEB_;
-    /**
-     * <code>uint32 KIAPBPEHAEB = 1;</code>
-     * @return The kIAPBPEHAEB.
-     */
-    @java.lang.Override
-    public int getKIAPBPEHAEB() {
-      return kIAPBPEHAEB_;
-    }
-
-    public static final int KCPIPGHNCNM_FIELD_NUMBER = 11;
-    private int kCPIPGHNCNM_;
-    /**
-     * <code>uint32 KCPIPGHNCNM = 11;</code>
-     * @return The kCPIPGHNCNM.
-     */
-    @java.lang.Override
-    public int getKCPIPGHNCNM() {
-      return kCPIPGHNCNM_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (kIAPBPEHAEB_ != 0) {
-        output.writeUInt32(1, kIAPBPEHAEB_);
-      }
-      if (materialId_ != 0) {
-        output.writeUInt32(8, materialId_);
-      }
-      if (kCPIPGHNCNM_ != 0) {
-        output.writeUInt32(11, kCPIPGHNCNM_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (kIAPBPEHAEB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, kIAPBPEHAEB_);
-      }
-      if (materialId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, materialId_);
-      }
-      if (kCPIPGHNCNM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, kCPIPGHNCNM_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData other = (emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) obj;
-
-      if (getMaterialId()
-          != other.getMaterialId()) return false;
-      if (getKIAPBPEHAEB()
-          != other.getKIAPBPEHAEB()) return false;
-      if (getKCPIPGHNCNM()
-          != other.getKCPIPGHNCNM()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMaterialId();
-      hash = (37 * hash) + KIAPBPEHAEB_FIELD_NUMBER;
-      hash = (53 * hash) + getKIAPBPEHAEB();
-      hash = (37 * hash) + KCPIPGHNCNM_FIELD_NUMBER;
-      hash = (53 * hash) + getKCPIPGHNCNM();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>uint32 KCPIPGHNCNM = 11;</code>
+         *
+         * @return The kCPIPGHNCNM.
+         */
+        int getKCPIPGHNCNM();
     }
     /**
+     *
+     *
      * <pre>
      * Obf: NLEMHBCLPLJ
      * </pre>
      *
      * Protobuf type {@code ClientCollectorData}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ClientCollectorData)
-        emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.class, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class ClientCollectorData extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:ClientCollectorData)
+            ClientCollectorDataOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ClientCollectorData.newBuilder() to construct.
+        private ClientCollectorData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        materialId_ = 0;
 
-        kIAPBPEHAEB_ = 0;
+        private ClientCollectorData() {}
 
-        kCPIPGHNCNM_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData build() {
-        emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new ClientCollectorData();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData buildPartial() {
-        emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result = new emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData(this);
-        result.materialId_ = materialId_;
-        result.kIAPBPEHAEB_ = kIAPBPEHAEB_;
-        result.kCPIPGHNCNM_ = kCPIPGHNCNM_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) {
-          return mergeFrom((emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData other) {
-        if (other == emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance()) return this;
-        if (other.getMaterialId() != 0) {
-          setMaterialId(other.getMaterialId());
+        private ClientCollectorData(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                kIAPBPEHAEB_ = input.readUInt32();
+                                break;
+                            }
+                        case 64:
+                            {
+                                materialId_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
+                            {
+                                kCPIPGHNCNM_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getKIAPBPEHAEB() != 0) {
-          setKIAPBPEHAEB(other.getKIAPBPEHAEB());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.ClientCollectorDataOuterClass
+                    .internal_static_ClientCollectorData_descriptor;
         }
-        if (other.getKCPIPGHNCNM() != 0) {
-          setKCPIPGHNCNM(other.getKCPIPGHNCNM());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.ClientCollectorDataOuterClass
+                    .internal_static_ClientCollectorData_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.class,
+                            emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder
+                                    .class);
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int MATERIAL_ID_FIELD_NUMBER = 8;
+        private int materialId_;
+        /**
+         * <code>uint32 material_id = 8;</code>
+         *
+         * @return The materialId.
+         */
+        @java.lang.Override
+        public int getMaterialId() {
+            return materialId_;
         }
-        return this;
-      }
 
-      private int materialId_ ;
-      /**
-       * <code>uint32 material_id = 8;</code>
-       * @return The materialId.
-       */
-      @java.lang.Override
-      public int getMaterialId() {
-        return materialId_;
-      }
-      /**
-       * <code>uint32 material_id = 8;</code>
-       * @param value The materialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaterialId(int value) {
-        
-        materialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 material_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaterialId() {
-        
-        materialId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int KIAPBPEHAEB_FIELD_NUMBER = 1;
+        private int kIAPBPEHAEB_;
+        /**
+         * <code>uint32 KIAPBPEHAEB = 1;</code>
+         *
+         * @return The kIAPBPEHAEB.
+         */
+        @java.lang.Override
+        public int getKIAPBPEHAEB() {
+            return kIAPBPEHAEB_;
+        }
 
-      private int kIAPBPEHAEB_ ;
-      /**
-       * <code>uint32 KIAPBPEHAEB = 1;</code>
-       * @return The kIAPBPEHAEB.
-       */
-      @java.lang.Override
-      public int getKIAPBPEHAEB() {
-        return kIAPBPEHAEB_;
-      }
-      /**
-       * <code>uint32 KIAPBPEHAEB = 1;</code>
-       * @param value The kIAPBPEHAEB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKIAPBPEHAEB(int value) {
-        
-        kIAPBPEHAEB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KIAPBPEHAEB = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKIAPBPEHAEB() {
-        
-        kIAPBPEHAEB_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int KCPIPGHNCNM_FIELD_NUMBER = 11;
+        private int kCPIPGHNCNM_;
+        /**
+         * <code>uint32 KCPIPGHNCNM = 11;</code>
+         *
+         * @return The kCPIPGHNCNM.
+         */
+        @java.lang.Override
+        public int getKCPIPGHNCNM() {
+            return kCPIPGHNCNM_;
+        }
 
-      private int kCPIPGHNCNM_ ;
-      /**
-       * <code>uint32 KCPIPGHNCNM = 11;</code>
-       * @return The kCPIPGHNCNM.
-       */
-      @java.lang.Override
-      public int getKCPIPGHNCNM() {
-        return kCPIPGHNCNM_;
-      }
-      /**
-       * <code>uint32 KCPIPGHNCNM = 11;</code>
-       * @param value The kCPIPGHNCNM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKCPIPGHNCNM(int value) {
-        
-        kCPIPGHNCNM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KCPIPGHNCNM = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKCPIPGHNCNM() {
-        
-        kCPIPGHNCNM_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        private byte memoizedIsInitialized = -1;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      // @@protoc_insertion_point(builder_scope:ClientCollectorData)
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (kIAPBPEHAEB_ != 0) {
+                output.writeUInt32(1, kIAPBPEHAEB_);
+            }
+            if (materialId_ != 0) {
+                output.writeUInt32(8, materialId_);
+            }
+            if (kCPIPGHNCNM_ != 0) {
+                output.writeUInt32(11, kCPIPGHNCNM_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (kIAPBPEHAEB_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, kIAPBPEHAEB_);
+            }
+            if (materialId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, materialId_);
+            }
+            if (kCPIPGHNCNM_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, kCPIPGHNCNM_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData other =
+                    (emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) obj;
+
+            if (getMaterialId() != other.getMaterialId()) return false;
+            if (getKIAPBPEHAEB() != other.getKIAPBPEHAEB()) return false;
+            if (getKCPIPGHNCNM() != other.getKCPIPGHNCNM()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getMaterialId();
+            hash = (37 * hash) + KIAPBPEHAEB_FIELD_NUMBER;
+            hash = (53 * hash) + getKIAPBPEHAEB();
+            hash = (37 * hash) + KCPIPGHNCNM_FIELD_NUMBER;
+            hash = (53 * hash) + getKCPIPGHNCNM();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: NLEMHBCLPLJ
+         * </pre>
+         *
+         * Protobuf type {@code ClientCollectorData}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:ClientCollectorData)
+                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ClientCollectorDataOuterClass
+                        .internal_static_ClientCollectorData_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.ClientCollectorDataOuterClass
+                        .internal_static_ClientCollectorData_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.class,
+                                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                materialId_ = 0;
+
+                kIAPBPEHAEB_ = 0;
+
+                kCPIPGHNCNM_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.ClientCollectorDataOuterClass
+                        .internal_static_ClientCollectorData_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData build() {
+                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                    buildPartial() {
+                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result =
+                        new emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData(this);
+                result.materialId_ = materialId_;
+                result.kIAPBPEHAEB_ = kIAPBPEHAEB_;
+                result.kCPIPGHNCNM_ = kCPIPGHNCNM_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData other) {
+                if (other
+                        == emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                                .getDefaultInstance()) return this;
+                if (other.getMaterialId() != 0) {
+                    setMaterialId(other.getMaterialId());
+                }
+                if (other.getKIAPBPEHAEB() != 0) {
+                    setKIAPBPEHAEB(other.getKIAPBPEHAEB());
+                }
+                if (other.getKCPIPGHNCNM() != 0) {
+                    setKCPIPGHNCNM(other.getKCPIPGHNCNM());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int materialId_;
+            /**
+             * <code>uint32 material_id = 8;</code>
+             *
+             * @return The materialId.
+             */
+            @java.lang.Override
+            public int getMaterialId() {
+                return materialId_;
+            }
+            /**
+             * <code>uint32 material_id = 8;</code>
+             *
+             * @param value The materialId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMaterialId(int value) {
+
+                materialId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 material_id = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMaterialId() {
+
+                materialId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int kIAPBPEHAEB_;
+            /**
+             * <code>uint32 KIAPBPEHAEB = 1;</code>
+             *
+             * @return The kIAPBPEHAEB.
+             */
+            @java.lang.Override
+            public int getKIAPBPEHAEB() {
+                return kIAPBPEHAEB_;
+            }
+            /**
+             * <code>uint32 KIAPBPEHAEB = 1;</code>
+             *
+             * @param value The kIAPBPEHAEB to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKIAPBPEHAEB(int value) {
+
+                kIAPBPEHAEB_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 KIAPBPEHAEB = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKIAPBPEHAEB() {
+
+                kIAPBPEHAEB_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int kCPIPGHNCNM_;
+            /**
+             * <code>uint32 KCPIPGHNCNM = 11;</code>
+             *
+             * @return The kCPIPGHNCNM.
+             */
+            @java.lang.Override
+            public int getKCPIPGHNCNM() {
+                return kCPIPGHNCNM_;
+            }
+            /**
+             * <code>uint32 KCPIPGHNCNM = 11;</code>
+             *
+             * @param value The kCPIPGHNCNM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKCPIPGHNCNM(int value) {
+
+                kCPIPGHNCNM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 KCPIPGHNCNM = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKCPIPGHNCNM() {
+
+                kCPIPGHNCNM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:ClientCollectorData)
+        }
+
+        // @@protoc_insertion_point(class_scope:ClientCollectorData)
+        private static final emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData();
+        }
+
+        public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ClientCollectorData> PARSER =
+                new com.google.protobuf.AbstractParser<ClientCollectorData>() {
+                    @java.lang.Override
+                    public ClientCollectorData parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new ClientCollectorData(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<ClientCollectorData> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ClientCollectorData> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:ClientCollectorData)
-    private static final emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ClientCollectorData_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ClientCollectorData_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData();
+        java.lang.String[] descriptorData = {
+            "\n\031ClientCollectorData.proto\"T\n\023ClientCol"
+                    + "lectorData\022\023\n\013material_id\030\010 \001(\r\022\023\n\013KIAPB"
+                    + "PEHAEB\030\001 \001(\r\022\023\n\013KCPIPGHNCNM\030\013 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_ClientCollectorData_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_ClientCollectorData_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_ClientCollectorData_descriptor,
+                        new java.lang.String[] {
+                            "MaterialId", "KIAPBPEHAEB", "KCPIPGHNCNM",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ClientCollectorData>
-        PARSER = new com.google.protobuf.AbstractParser<ClientCollectorData>() {
-      @java.lang.Override
-      public ClientCollectorData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientCollectorData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ClientCollectorData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ClientCollectorData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ClientCollectorData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ClientCollectorData_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031ClientCollectorData.proto\"T\n\023ClientCol" +
-      "lectorData\022\023\n\013material_id\030\010 \001(\r\022\023\n\013KIAPB" +
-      "PEHAEB\030\001 \001(\r\022\023\n\013KCPIPGHNCNM\030\013 \001(\rB\033\n\031emu" +
-      ".grasscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_ClientCollectorData_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_ClientCollectorData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ClientCollectorData_descriptor,
-        new java.lang.String[] { "MaterialId", "KIAPBPEHAEB", "KCPIPGHNCNM", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

@@ -1,5 +1,7 @@
 package emu.grasscutter.server.dispatch;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
@@ -10,12 +12,6 @@ import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.DispatchUtils;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.objects.HandbookBody;
-import lombok.Getter;
-import org.java_websocket.WebSocket;
-import org.java_websocket.client.WebSocketClient;
-import org.java_websocket.handshake.ServerHandshake;
-import org.slf4j.Logger;
-
 import java.net.ConnectException;
 import java.net.URI;
 import java.nio.ByteBuffer;
@@ -26,8 +22,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import lombok.Getter;
+import org.java_websocket.WebSocket;
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+import org.slf4j.Logger;
 
 public final class DispatchClient extends WebSocketClient implements IDispatcher {
     @Getter private final Logger logger = Grasscutter.getLogger();
@@ -154,7 +153,8 @@ public final class DispatchClient extends WebSocketClient implements IDispatcher
         var fields = fieldsList.toArray(new String[0]);
 
         // Return the response object.
-        this.sendMessage(PacketIds.GetPlayerByAccountRsp, DispatchUtils.getPlayerByAccount(accountId, fields));
+        this.sendMessage(
+                PacketIds.GetPlayerByAccountRsp, DispatchUtils.getPlayerByAccount(accountId, fields));
     }
 
     /**

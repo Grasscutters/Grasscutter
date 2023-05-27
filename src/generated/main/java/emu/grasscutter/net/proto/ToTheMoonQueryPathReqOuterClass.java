@@ -4,1050 +4,129 @@
 package emu.grasscutter.net.proto;
 
 public final class ToTheMoonQueryPathReqOuterClass {
-  private ToTheMoonQueryPathReqOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private ToTheMoonQueryPathReqOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface ToTheMoonQueryPathReqOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:ToTheMoonQueryPathReq)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>int32 fuzzy_range = 7;</code>
-     * @return The fuzzyRange.
-     */
-    int getFuzzyRange();
-
-    /**
-     * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-     * @return The enum numeric value on the wire for queryType.
-     */
-    int getQueryTypeValue();
-    /**
-     * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-     * @return The queryType.
-     */
-    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType getQueryType();
-
-    /**
-     * <code>int32 query_id = 11;</code>
-     * @return The queryId.
-     */
-    int getQueryId();
-
-    /**
-     * <code>uint32 scene_id = 1;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
-     * <code>bool PIODKBAAPMI = 3;</code>
-     * @return The pIODKBAAPMI.
-     */
-    boolean getPIODKBAAPMI();
-
-    /**
-     * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-     * @return The enum numeric value on the wire for hJKBMLBDJKE.
-     */
-    int getHJKBMLBDJKEValue();
-    /**
-     * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-     * @return The hJKBMLBDJKE.
-     */
-    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE getHJKBMLBDJKE();
-
-    /**
-     * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-     * @return The enum numeric value on the wire for fPKOPPELDPD.
-     */
-    int getFPKOPPELDPDValue();
-    /**
-     * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-     * @return The fPKOPPELDPD.
-     */
-    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ getFPKOPPELDPD();
-
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     * @return Whether the destinationPos field is set.
-     */
-    boolean hasDestinationPos();
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     * @return The destinationPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos();
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder();
-
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     * @return Whether the sourcePos field is set.
-     */
-    boolean hasSourcePos();
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     * @return The sourcePos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos();
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder();
-
-    /**
-     * <code>bool PKAONDIKPNI = 13;</code>
-     * @return The pKAONDIKPNI.
-     */
-    boolean getPKAONDIKPNI();
-  }
-  /**
-   * <pre>
-   * CmdId: 6175
-   * Obf: CIEJPEDGGGK
-   * </pre>
-   *
-   * Protobuf type {@code ToTheMoonQueryPathReq}
-   */
-  public static final class ToTheMoonQueryPathReq extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:ToTheMoonQueryPathReq)
-      ToTheMoonQueryPathReqOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ToTheMoonQueryPathReq.newBuilder() to construct.
-    private ToTheMoonQueryPathReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ToTheMoonQueryPathReq() {
-      queryType_ = 0;
-      hJKBMLBDJKE_ = 0;
-      fPKOPPELDPD_ = 0;
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ToTheMoonQueryPathReq();
+    public interface ToTheMoonQueryPathReqOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:ToTheMoonQueryPathReq)
+            com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>int32 fuzzy_range = 7;</code>
+         *
+         * @return The fuzzyRange.
+         */
+        int getFuzzyRange();
+
+        /**
+         * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+         *
+         * @return The enum numeric value on the wire for queryType.
+         */
+        int getQueryTypeValue();
+        /**
+         * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+         *
+         * @return The queryType.
+         */
+        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType
+                getQueryType();
+
+        /**
+         * <code>int32 query_id = 11;</code>
+         *
+         * @return The queryId.
+         */
+        int getQueryId();
+
+        /**
+         * <code>uint32 scene_id = 1;</code>
+         *
+         * @return The sceneId.
+         */
+        int getSceneId();
+
+        /**
+         * <code>bool PIODKBAAPMI = 3;</code>
+         *
+         * @return The pIODKBAAPMI.
+         */
+        boolean getPIODKBAAPMI();
+
+        /**
+         * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+         *
+         * @return The enum numeric value on the wire for hJKBMLBDJKE.
+         */
+        int getHJKBMLBDJKEValue();
+        /**
+         * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+         *
+         * @return The hJKBMLBDJKE.
+         */
+        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE
+                getHJKBMLBDJKE();
+
+        /**
+         * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+         *
+         * @return The enum numeric value on the wire for fPKOPPELDPD.
+         */
+        int getFPKOPPELDPDValue();
+        /**
+         * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+         *
+         * @return The fPKOPPELDPD.
+         */
+        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ
+                getFPKOPPELDPD();
+
+        /**
+         * <code>.Vector destination_pos = 10;</code>
+         *
+         * @return Whether the destinationPos field is set.
+         */
+        boolean hasDestinationPos();
+        /**
+         * <code>.Vector destination_pos = 10;</code>
+         *
+         * @return The destinationPos.
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos();
+        /** <code>.Vector destination_pos = 10;</code> */
+        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder();
+
+        /**
+         * <code>.Vector source_pos = 12;</code>
+         *
+         * @return Whether the sourcePos field is set.
+         */
+        boolean hasSourcePos();
+        /**
+         * <code>.Vector source_pos = 12;</code>
+         *
+         * @return The sourcePos.
+         */
+        emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos();
+        /** <code>.Vector source_pos = 12;</code> */
+        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder();
+
+        /**
+         * <code>bool PKAONDIKPNI = 13;</code>
+         *
+         * @return The pKAONDIKPNI.
+         */
+        boolean getPKAONDIKPNI();
     }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ToTheMoonQueryPathReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              pIODKBAAPMI_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              fuzzyRange_ = input.readInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              hJKBMLBDJKE_ = rawValue;
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              queryType_ = rawValue;
-              break;
-            }
-            case 82: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (destinationPos_ != null) {
-                subBuilder = destinationPos_.toBuilder();
-              }
-              destinationPos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destinationPos_);
-                destinationPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              queryId_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (sourcePos_ != null) {
-                subBuilder = sourcePos_.toBuilder();
-              }
-              sourcePos_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourcePos_);
-                sourcePos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-
-              pKAONDIKPNI_ = input.readBool();
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              fPKOPPELDPD_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.class, emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.Builder.class);
-    }
-
     /**
-     * <pre>
-     * Obf: OALCKINEBHD
-     * </pre>
      *
-     * Protobuf enum {@code ToTheMoonQueryPathReq.OptionType}
-     */
-    public enum OptionType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>OPTION_NONE = 0;</code>
-       */
-      OPTION_NONE(0),
-      /**
-       * <code>OPTION_NORMAL = 1;</code>
-       */
-      OPTION_NORMAL(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>OPTION_NONE = 0;</code>
-       */
-      public static final int OPTION_NONE_VALUE = 0;
-      /**
-       * <code>OPTION_NORMAL = 1;</code>
-       */
-      public static final int OPTION_NORMAL_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static OptionType valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static OptionType forNumber(int value) {
-        switch (value) {
-          case 0: return OPTION_NONE;
-          case 1: return OPTION_NORMAL;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<OptionType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          OptionType> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OptionType>() {
-              public OptionType findValueByNumber(int number) {
-                return OptionType.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final OptionType[] VALUES = values();
-
-      public static OptionType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private OptionType(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.OptionType)
-    }
-
-    /**
-     * Protobuf enum {@code ToTheMoonQueryPathReq.NJDHEEAOEBE}
-     */
-    public enum NJDHEEAOEBE
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>OILPBFMHGMF_CLASSIC = 0;</code>
-       */
-      OILPBFMHGMF_CLASSIC(0),
-      /**
-       * <code>OILPBFMHGMF_TENDENCY = 1;</code>
-       */
-      OILPBFMHGMF_TENDENCY(1),
-      /**
-       * <code>OILPBFMHGMF_ADAPTIVE = 2;</code>
-       */
-      OILPBFMHGMF_ADAPTIVE(2),
-      /**
-       * <code>OILPBFMHGMF_INFLECTION = 3;</code>
-       */
-      OILPBFMHGMF_INFLECTION(3),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>OILPBFMHGMF_CLASSIC = 0;</code>
-       */
-      public static final int OILPBFMHGMF_CLASSIC_VALUE = 0;
-      /**
-       * <code>OILPBFMHGMF_TENDENCY = 1;</code>
-       */
-      public static final int OILPBFMHGMF_TENDENCY_VALUE = 1;
-      /**
-       * <code>OILPBFMHGMF_ADAPTIVE = 2;</code>
-       */
-      public static final int OILPBFMHGMF_ADAPTIVE_VALUE = 2;
-      /**
-       * <code>OILPBFMHGMF_INFLECTION = 3;</code>
-       */
-      public static final int OILPBFMHGMF_INFLECTION_VALUE = 3;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static NJDHEEAOEBE valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static NJDHEEAOEBE forNumber(int value) {
-        switch (value) {
-          case 0: return OILPBFMHGMF_CLASSIC;
-          case 1: return OILPBFMHGMF_TENDENCY;
-          case 2: return OILPBFMHGMF_ADAPTIVE;
-          case 3: return OILPBFMHGMF_INFLECTION;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<NJDHEEAOEBE>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          NJDHEEAOEBE> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<NJDHEEAOEBE>() {
-              public NJDHEEAOEBE findValueByNumber(int number) {
-                return NJDHEEAOEBE.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.getDescriptor().getEnumTypes().get(1);
-      }
-
-      private static final NJDHEEAOEBE[] VALUES = values();
-
-      public static NJDHEEAOEBE valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private NJDHEEAOEBE(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.NJDHEEAOEBE)
-    }
-
-    /**
-     * Protobuf enum {@code ToTheMoonQueryPathReq.IAKAPNKHDPJ}
-     */
-    public enum IAKAPNKHDPJ
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>EHFBKPBIGHA_ALL = 0;</code>
-       */
-      EHFBKPBIGHA_ALL(0),
-      /**
-       * <code>EHFBKPBIGHA_AIR = 1;</code>
-       */
-      EHFBKPBIGHA_AIR(1),
-      /**
-       * <code>EHFBKPBIGHA_WATER = 2;</code>
-       */
-      EHFBKPBIGHA_WATER(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>EHFBKPBIGHA_ALL = 0;</code>
-       */
-      public static final int EHFBKPBIGHA_ALL_VALUE = 0;
-      /**
-       * <code>EHFBKPBIGHA_AIR = 1;</code>
-       */
-      public static final int EHFBKPBIGHA_AIR_VALUE = 1;
-      /**
-       * <code>EHFBKPBIGHA_WATER = 2;</code>
-       */
-      public static final int EHFBKPBIGHA_WATER_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IAKAPNKHDPJ valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IAKAPNKHDPJ forNumber(int value) {
-        switch (value) {
-          case 0: return EHFBKPBIGHA_ALL;
-          case 1: return EHFBKPBIGHA_AIR;
-          case 2: return EHFBKPBIGHA_WATER;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IAKAPNKHDPJ>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IAKAPNKHDPJ> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IAKAPNKHDPJ>() {
-              public IAKAPNKHDPJ findValueByNumber(int number) {
-                return IAKAPNKHDPJ.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.getDescriptor().getEnumTypes().get(2);
-      }
-
-      private static final IAKAPNKHDPJ[] VALUES = values();
-
-      public static IAKAPNKHDPJ valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private IAKAPNKHDPJ(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.IAKAPNKHDPJ)
-    }
-
-    public static final int FUZZY_RANGE_FIELD_NUMBER = 7;
-    private int fuzzyRange_;
-    /**
-     * <code>int32 fuzzy_range = 7;</code>
-     * @return The fuzzyRange.
-     */
-    @java.lang.Override
-    public int getFuzzyRange() {
-      return fuzzyRange_;
-    }
-
-    public static final int QUERY_TYPE_FIELD_NUMBER = 9;
-    private int queryType_;
-    /**
-     * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-     * @return The enum numeric value on the wire for queryType.
-     */
-    @java.lang.Override public int getQueryTypeValue() {
-      return queryType_;
-    }
-    /**
-     * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-     * @return The queryType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType getQueryType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.valueOf(queryType_);
-      return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.UNRECOGNIZED : result;
-    }
-
-    public static final int QUERY_ID_FIELD_NUMBER = 11;
-    private int queryId_;
-    /**
-     * <code>int32 query_id = 11;</code>
-     * @return The queryId.
-     */
-    @java.lang.Override
-    public int getQueryId() {
-      return queryId_;
-    }
-
-    public static final int SCENE_ID_FIELD_NUMBER = 1;
-    private int sceneId_;
-    /**
-     * <code>uint32 scene_id = 1;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
-    public static final int PIODKBAAPMI_FIELD_NUMBER = 3;
-    private boolean pIODKBAAPMI_;
-    /**
-     * <code>bool PIODKBAAPMI = 3;</code>
-     * @return The pIODKBAAPMI.
-     */
-    @java.lang.Override
-    public boolean getPIODKBAAPMI() {
-      return pIODKBAAPMI_;
-    }
-
-    public static final int HJKBMLBDJKE_FIELD_NUMBER = 8;
-    private int hJKBMLBDJKE_;
-    /**
-     * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-     * @return The enum numeric value on the wire for hJKBMLBDJKE.
-     */
-    @java.lang.Override public int getHJKBMLBDJKEValue() {
-      return hJKBMLBDJKE_;
-    }
-    /**
-     * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-     * @return The hJKBMLBDJKE.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE getHJKBMLBDJKE() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.valueOf(hJKBMLBDJKE_);
-      return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.UNRECOGNIZED : result;
-    }
-
-    public static final int FPKOPPELDPD_FIELD_NUMBER = 14;
-    private int fPKOPPELDPD_;
-    /**
-     * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-     * @return The enum numeric value on the wire for fPKOPPELDPD.
-     */
-    @java.lang.Override public int getFPKOPPELDPDValue() {
-      return fPKOPPELDPD_;
-    }
-    /**
-     * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-     * @return The fPKOPPELDPD.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ getFPKOPPELDPD() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.valueOf(fPKOPPELDPD_);
-      return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.UNRECOGNIZED : result;
-    }
-
-    public static final int DESTINATION_POS_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector destinationPos_;
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     * @return Whether the destinationPos field is set.
-     */
-    @java.lang.Override
-    public boolean hasDestinationPos() {
-      return destinationPos_ != null;
-    }
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     * @return The destinationPos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos() {
-      return destinationPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destinationPos_;
-    }
-    /**
-     * <code>.Vector destination_pos = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
-      return getDestinationPos();
-    }
-
-    public static final int SOURCE_POS_FIELD_NUMBER = 12;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     * @return Whether the sourcePos field is set.
-     */
-    @java.lang.Override
-    public boolean hasSourcePos() {
-      return sourcePos_ != null;
-    }
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     * @return The sourcePos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
-      return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
-    }
-    /**
-     * <code>.Vector source_pos = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-      return getSourcePos();
-    }
-
-    public static final int PKAONDIKPNI_FIELD_NUMBER = 13;
-    private boolean pKAONDIKPNI_;
-    /**
-     * <code>bool PKAONDIKPNI = 13;</code>
-     * @return The pKAONDIKPNI.
-     */
-    @java.lang.Override
-    public boolean getPKAONDIKPNI() {
-      return pKAONDIKPNI_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (sceneId_ != 0) {
-        output.writeUInt32(1, sceneId_);
-      }
-      if (pIODKBAAPMI_ != false) {
-        output.writeBool(3, pIODKBAAPMI_);
-      }
-      if (fuzzyRange_ != 0) {
-        output.writeInt32(7, fuzzyRange_);
-      }
-      if (hJKBMLBDJKE_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.OILPBFMHGMF_CLASSIC.getNumber()) {
-        output.writeEnum(8, hJKBMLBDJKE_);
-      }
-      if (queryType_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.OPTION_NONE.getNumber()) {
-        output.writeEnum(9, queryType_);
-      }
-      if (destinationPos_ != null) {
-        output.writeMessage(10, getDestinationPos());
-      }
-      if (queryId_ != 0) {
-        output.writeInt32(11, queryId_);
-      }
-      if (sourcePos_ != null) {
-        output.writeMessage(12, getSourcePos());
-      }
-      if (pKAONDIKPNI_ != false) {
-        output.writeBool(13, pKAONDIKPNI_);
-      }
-      if (fPKOPPELDPD_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.EHFBKPBIGHA_ALL.getNumber()) {
-        output.writeEnum(14, fPKOPPELDPD_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (sceneId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, sceneId_);
-      }
-      if (pIODKBAAPMI_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, pIODKBAAPMI_);
-      }
-      if (fuzzyRange_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, fuzzyRange_);
-      }
-      if (hJKBMLBDJKE_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.OILPBFMHGMF_CLASSIC.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, hJKBMLBDJKE_);
-      }
-      if (queryType_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.OPTION_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, queryType_);
-      }
-      if (destinationPos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getDestinationPos());
-      }
-      if (queryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, queryId_);
-      }
-      if (sourcePos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getSourcePos());
-      }
-      if (pKAONDIKPNI_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, pKAONDIKPNI_);
-      }
-      if (fPKOPPELDPD_ != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.EHFBKPBIGHA_ALL.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, fPKOPPELDPD_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq other = (emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) obj;
-
-      if (getFuzzyRange()
-          != other.getFuzzyRange()) return false;
-      if (queryType_ != other.queryType_) return false;
-      if (getQueryId()
-          != other.getQueryId()) return false;
-      if (getSceneId()
-          != other.getSceneId()) return false;
-      if (getPIODKBAAPMI()
-          != other.getPIODKBAAPMI()) return false;
-      if (hJKBMLBDJKE_ != other.hJKBMLBDJKE_) return false;
-      if (fPKOPPELDPD_ != other.fPKOPPELDPD_) return false;
-      if (hasDestinationPos() != other.hasDestinationPos()) return false;
-      if (hasDestinationPos()) {
-        if (!getDestinationPos()
-            .equals(other.getDestinationPos())) return false;
-      }
-      if (hasSourcePos() != other.hasSourcePos()) return false;
-      if (hasSourcePos()) {
-        if (!getSourcePos()
-            .equals(other.getSourcePos())) return false;
-      }
-      if (getPKAONDIKPNI()
-          != other.getPKAONDIKPNI()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FUZZY_RANGE_FIELD_NUMBER;
-      hash = (53 * hash) + getFuzzyRange();
-      hash = (37 * hash) + QUERY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + queryType_;
-      hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQueryId();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
-      hash = (37 * hash) + PIODKBAAPMI_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPIODKBAAPMI());
-      hash = (37 * hash) + HJKBMLBDJKE_FIELD_NUMBER;
-      hash = (53 * hash) + hJKBMLBDJKE_;
-      hash = (37 * hash) + FPKOPPELDPD_FIELD_NUMBER;
-      hash = (53 * hash) + fPKOPPELDPD_;
-      if (hasDestinationPos()) {
-        hash = (37 * hash) + DESTINATION_POS_FIELD_NUMBER;
-        hash = (53 * hash) + getDestinationPos().hashCode();
-      }
-      if (hasSourcePos()) {
-        hash = (37 * hash) + SOURCE_POS_FIELD_NUMBER;
-        hash = (53 * hash) + getSourcePos().hashCode();
-      }
-      hash = (37 * hash) + PKAONDIKPNI_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPKAONDIKPNI());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
      * <pre>
      * CmdId: 6175
      * Obf: CIEJPEDGGGK
@@ -1055,873 +134,1962 @@ public final class ToTheMoonQueryPathReqOuterClass {
      *
      * Protobuf type {@code ToTheMoonQueryPathReq}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:ToTheMoonQueryPathReq)
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReqOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.class, emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        fuzzyRange_ = 0;
-
-        queryType_ = 0;
-
-        queryId_ = 0;
-
-        sceneId_ = 0;
-
-        pIODKBAAPMI_ = false;
-
-        hJKBMLBDJKE_ = 0;
-
-        fPKOPPELDPD_ = 0;
-
-        if (destinationPosBuilder_ == null) {
-          destinationPos_ = null;
-        } else {
-          destinationPos_ = null;
-          destinationPosBuilder_ = null;
-        }
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = null;
-        } else {
-          sourcePos_ = null;
-          sourcePosBuilder_ = null;
-        }
-        pKAONDIKPNI_ = false;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq build() {
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq buildPartial() {
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result = new emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq(this);
-        result.fuzzyRange_ = fuzzyRange_;
-        result.queryType_ = queryType_;
-        result.queryId_ = queryId_;
-        result.sceneId_ = sceneId_;
-        result.pIODKBAAPMI_ = pIODKBAAPMI_;
-        result.hJKBMLBDJKE_ = hJKBMLBDJKE_;
-        result.fPKOPPELDPD_ = fPKOPPELDPD_;
-        if (destinationPosBuilder_ == null) {
-          result.destinationPos_ = destinationPos_;
-        } else {
-          result.destinationPos_ = destinationPosBuilder_.build();
-        }
-        if (sourcePosBuilder_ == null) {
-          result.sourcePos_ = sourcePos_;
-        } else {
-          result.sourcePos_ = sourcePosBuilder_.build();
-        }
-        result.pKAONDIKPNI_ = pKAONDIKPNI_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) {
-          return mergeFrom((emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq other) {
-        if (other == emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.getDefaultInstance()) return this;
-        if (other.getFuzzyRange() != 0) {
-          setFuzzyRange(other.getFuzzyRange());
-        }
-        if (other.queryType_ != 0) {
-          setQueryTypeValue(other.getQueryTypeValue());
-        }
-        if (other.getQueryId() != 0) {
-          setQueryId(other.getQueryId());
-        }
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
-        if (other.getPIODKBAAPMI() != false) {
-          setPIODKBAAPMI(other.getPIODKBAAPMI());
-        }
-        if (other.hJKBMLBDJKE_ != 0) {
-          setHJKBMLBDJKEValue(other.getHJKBMLBDJKEValue());
-        }
-        if (other.fPKOPPELDPD_ != 0) {
-          setFPKOPPELDPDValue(other.getFPKOPPELDPDValue());
-        }
-        if (other.hasDestinationPos()) {
-          mergeDestinationPos(other.getDestinationPos());
-        }
-        if (other.hasSourcePos()) {
-          mergeSourcePos(other.getSourcePos());
-        }
-        if (other.getPKAONDIKPNI() != false) {
-          setPKAONDIKPNI(other.getPKAONDIKPNI());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int fuzzyRange_ ;
-      /**
-       * <code>int32 fuzzy_range = 7;</code>
-       * @return The fuzzyRange.
-       */
-      @java.lang.Override
-      public int getFuzzyRange() {
-        return fuzzyRange_;
-      }
-      /**
-       * <code>int32 fuzzy_range = 7;</code>
-       * @param value The fuzzyRange to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFuzzyRange(int value) {
-        
-        fuzzyRange_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 fuzzy_range = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFuzzyRange() {
-        
-        fuzzyRange_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int queryType_ = 0;
-      /**
-       * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-       * @return The enum numeric value on the wire for queryType.
-       */
-      @java.lang.Override public int getQueryTypeValue() {
-        return queryType_;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-       * @param value The enum numeric value on the wire for queryType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryTypeValue(int value) {
-        
-        queryType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-       * @return The queryType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType getQueryType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.valueOf(queryType_);
-        return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-       * @param value The queryType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryType(emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        queryType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQueryType() {
-        
-        queryType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int queryId_ ;
-      /**
-       * <code>int32 query_id = 11;</code>
-       * @return The queryId.
-       */
-      @java.lang.Override
-      public int getQueryId() {
-        return queryId_;
-      }
-      /**
-       * <code>int32 query_id = 11;</code>
-       * @param value The queryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQueryId(int value) {
-        
-        queryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 query_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQueryId() {
-        
-        queryId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int sceneId_ ;
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean pIODKBAAPMI_ ;
-      /**
-       * <code>bool PIODKBAAPMI = 3;</code>
-       * @return The pIODKBAAPMI.
-       */
-      @java.lang.Override
-      public boolean getPIODKBAAPMI() {
-        return pIODKBAAPMI_;
-      }
-      /**
-       * <code>bool PIODKBAAPMI = 3;</code>
-       * @param value The pIODKBAAPMI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPIODKBAAPMI(boolean value) {
-        
-        pIODKBAAPMI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool PIODKBAAPMI = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPIODKBAAPMI() {
-        
-        pIODKBAAPMI_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int hJKBMLBDJKE_ = 0;
-      /**
-       * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-       * @return The enum numeric value on the wire for hJKBMLBDJKE.
-       */
-      @java.lang.Override public int getHJKBMLBDJKEValue() {
-        return hJKBMLBDJKE_;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-       * @param value The enum numeric value on the wire for hJKBMLBDJKE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHJKBMLBDJKEValue(int value) {
-        
-        hJKBMLBDJKE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-       * @return The hJKBMLBDJKE.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE getHJKBMLBDJKE() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.valueOf(hJKBMLBDJKE_);
-        return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-       * @param value The hJKBMLBDJKE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHJKBMLBDJKE(emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        hJKBMLBDJKE_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHJKBMLBDJKE() {
-        
-        hJKBMLBDJKE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fPKOPPELDPD_ = 0;
-      /**
-       * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-       * @return The enum numeric value on the wire for fPKOPPELDPD.
-       */
-      @java.lang.Override public int getFPKOPPELDPDValue() {
-        return fPKOPPELDPD_;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-       * @param value The enum numeric value on the wire for fPKOPPELDPD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFPKOPPELDPDValue(int value) {
-        
-        fPKOPPELDPD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-       * @return The fPKOPPELDPD.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ getFPKOPPELDPD() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ result = emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.valueOf(fPKOPPELDPD_);
-        return result == null ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-       * @param value The fPKOPPELDPD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFPKOPPELDPD(emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        fPKOPPELDPD_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFPKOPPELDPD() {
-        
-        fPKOPPELDPD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector destinationPos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> destinationPosBuilder_;
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       * @return Whether the destinationPos field is set.
-       */
-      public boolean hasDestinationPos() {
-        return destinationPosBuilder_ != null || destinationPos_ != null;
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       * @return The destinationPos.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos() {
-        if (destinationPosBuilder_ == null) {
-          return destinationPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destinationPos_;
-        } else {
-          return destinationPosBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public Builder setDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (destinationPosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          destinationPos_ = value;
-          onChanged();
-        } else {
-          destinationPosBuilder_.setMessage(value);
+    public static final class ToTheMoonQueryPathReq extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:ToTheMoonQueryPathReq)
+            ToTheMoonQueryPathReqOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ToTheMoonQueryPathReq.newBuilder() to construct.
+        private ToTheMoonQueryPathReq(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
 
-        return this;
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public Builder setDestinationPos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (destinationPosBuilder_ == null) {
-          destinationPos_ = builderForValue.build();
-          onChanged();
-        } else {
-          destinationPosBuilder_.setMessage(builderForValue.build());
+        private ToTheMoonQueryPathReq() {
+            queryType_ = 0;
+            hJKBMLBDJKE_ = 0;
+            fPKOPPELDPD_ = 0;
         }
 
-        return this;
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public Builder mergeDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (destinationPosBuilder_ == null) {
-          if (destinationPos_ != null) {
-            destinationPos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(destinationPos_).mergeFrom(value).buildPartial();
-          } else {
-            destinationPos_ = value;
-          }
-          onChanged();
-        } else {
-          destinationPosBuilder_.mergeFrom(value);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new ToTheMoonQueryPathReq();
         }
 
-        return this;
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public Builder clearDestinationPos() {
-        if (destinationPosBuilder_ == null) {
-          destinationPos_ = null;
-          onChanged();
-        } else {
-          destinationPos_ = null;
-          destinationPosBuilder_ = null;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
 
-        return this;
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDestinationPosBuilder() {
-        
-        onChanged();
-        return getDestinationPosFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
-        if (destinationPosBuilder_ != null) {
-          return destinationPosBuilder_.getMessageOrBuilder();
-        } else {
-          return destinationPos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destinationPos_;
-        }
-      }
-      /**
-       * <code>.Vector destination_pos = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getDestinationPosFieldBuilder() {
-        if (destinationPosBuilder_ == null) {
-          destinationPosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getDestinationPos(),
-                  getParentForChildren(),
-                  isClean());
-          destinationPos_ = null;
-        }
-        return destinationPosBuilder_;
-      }
+        private ToTheMoonQueryPathReq(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 8:
+                            {
+                                sceneId_ = input.readUInt32();
+                                break;
+                            }
+                        case 24:
+                            {
+                                pIODKBAAPMI_ = input.readBool();
+                                break;
+                            }
+                        case 56:
+                            {
+                                fuzzyRange_ = input.readInt32();
+                                break;
+                            }
+                        case 64:
+                            {
+                                int rawValue = input.readEnum();
 
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> sourcePosBuilder_;
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       * @return Whether the sourcePos field is set.
-       */
-      public boolean hasSourcePos() {
-        return sourcePosBuilder_ != null || sourcePos_ != null;
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       * @return The sourcePos.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
-        if (sourcePosBuilder_ == null) {
-          return sourcePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
-        } else {
-          return sourcePosBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (sourcePosBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sourcePos_ = value;
-          onChanged();
-        } else {
-          sourcePosBuilder_.setMessage(value);
-        }
+                                hJKBMLBDJKE_ = rawValue;
+                                break;
+                            }
+                        case 72:
+                            {
+                                int rawValue = input.readEnum();
 
-        return this;
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public Builder setSourcePos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = builderForValue.build();
-          onChanged();
-        } else {
-          sourcePosBuilder_.setMessage(builderForValue.build());
-        }
+                                queryType_ = rawValue;
+                                break;
+                            }
+                        case 82:
+                            {
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+                                if (destinationPos_ != null) {
+                                    subBuilder = destinationPos_.toBuilder();
+                                }
+                                destinationPos_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(destinationPos_);
+                                    destinationPos_ = subBuilder.buildPartial();
+                                }
 
-        return this;
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public Builder mergeSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (sourcePosBuilder_ == null) {
-          if (sourcePos_ != null) {
-            sourcePos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
-          } else {
-            sourcePos_ = value;
-          }
-          onChanged();
-        } else {
-          sourcePosBuilder_.mergeFrom(value);
-        }
+                                break;
+                            }
+                        case 88:
+                            {
+                                queryId_ = input.readInt32();
+                                break;
+                            }
+                        case 98:
+                            {
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+                                if (sourcePos_ != null) {
+                                    subBuilder = sourcePos_.toBuilder();
+                                }
+                                sourcePos_ =
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(),
+                                                extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom(sourcePos_);
+                                    sourcePos_ = subBuilder.buildPartial();
+                                }
 
-        return this;
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public Builder clearSourcePos() {
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = null;
-          onChanged();
-        } else {
-          sourcePos_ = null;
-          sourcePosBuilder_ = null;
+                                break;
+                            }
+                        case 104:
+                            {
+                                pKAONDIKPNI_ = input.readBool();
+                                break;
+                            }
+                        case 112:
+                            {
+                                int rawValue = input.readEnum();
+
+                                fPKOPPELDPD_ = rawValue;
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
-        return this;
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
-        
-        onChanged();
-        return getSourcePosFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-        if (sourcePosBuilder_ != null) {
-          return sourcePosBuilder_.getMessageOrBuilder();
-        } else {
-          return sourcePos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                    .internal_static_ToTheMoonQueryPathReq_descriptor;
         }
-      }
-      /**
-       * <code>.Vector source_pos = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getSourcePosFieldBuilder() {
-        if (sourcePosBuilder_ == null) {
-          sourcePosBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getSourcePos(),
-                  getParentForChildren(),
-                  isClean());
-          sourcePos_ = null;
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                    .internal_static_ToTheMoonQueryPathReq_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.class,
+                            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .Builder.class);
         }
-        return sourcePosBuilder_;
-      }
 
-      private boolean pKAONDIKPNI_ ;
-      /**
-       * <code>bool PKAONDIKPNI = 13;</code>
-       * @return The pKAONDIKPNI.
-       */
-      @java.lang.Override
-      public boolean getPKAONDIKPNI() {
-        return pKAONDIKPNI_;
-      }
-      /**
-       * <code>bool PKAONDIKPNI = 13;</code>
-       * @param value The pKAONDIKPNI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPKAONDIKPNI(boolean value) {
-        
-        pKAONDIKPNI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool PKAONDIKPNI = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPKAONDIKPNI() {
-        
-        pKAONDIKPNI_ = false;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: OALCKINEBHD
+         * </pre>
+         *
+         * Protobuf enum {@code ToTheMoonQueryPathReq.OptionType}
+         */
+        public enum OptionType implements com.google.protobuf.ProtocolMessageEnum {
+            /** <code>OPTION_NONE = 0;</code> */
+            OPTION_NONE(0),
+            /** <code>OPTION_NORMAL = 1;</code> */
+            OPTION_NORMAL(1),
+            UNRECOGNIZED(-1),
+            ;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+            /** <code>OPTION_NONE = 0;</code> */
+            public static final int OPTION_NONE_VALUE = 0;
+            /** <code>OPTION_NORMAL = 1;</code> */
+            public static final int OPTION_NORMAL_VALUE = 1;
 
+            public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalArgumentException(
+                            "Can't get the number of an unknown enum value.");
+                }
+                return value;
+            }
 
-      // @@protoc_insertion_point(builder_scope:ToTheMoonQueryPathReq)
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static OptionType valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static OptionType forNumber(int value) {
+                switch (value) {
+                    case 0:
+                        return OPTION_NONE;
+                    case 1:
+                        return OPTION_NORMAL;
+                    default:
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<OptionType> internalGetValueMap() {
+                return internalValueMap;
+            }
+
+            private static final com.google.protobuf.Internal.EnumLiteMap<OptionType> internalValueMap =
+                    new com.google.protobuf.Internal.EnumLiteMap<OptionType>() {
+                        public OptionType findValueByNumber(int number) {
+                            return OptionType.forNumber(number);
+                        }
+                    };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalStateException(
+                            "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+            }
+
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .getDescriptor()
+                        .getEnumTypes()
+                        .get(0);
+            }
+
+            private static final OptionType[] VALUES = values();
+
+            public static OptionType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                    return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private OptionType(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.OptionType)
+        }
+
+        /** Protobuf enum {@code ToTheMoonQueryPathReq.NJDHEEAOEBE} */
+        public enum NJDHEEAOEBE implements com.google.protobuf.ProtocolMessageEnum {
+            /** <code>OILPBFMHGMF_CLASSIC = 0;</code> */
+            OILPBFMHGMF_CLASSIC(0),
+            /** <code>OILPBFMHGMF_TENDENCY = 1;</code> */
+            OILPBFMHGMF_TENDENCY(1),
+            /** <code>OILPBFMHGMF_ADAPTIVE = 2;</code> */
+            OILPBFMHGMF_ADAPTIVE(2),
+            /** <code>OILPBFMHGMF_INFLECTION = 3;</code> */
+            OILPBFMHGMF_INFLECTION(3),
+            UNRECOGNIZED(-1),
+            ;
+
+            /** <code>OILPBFMHGMF_CLASSIC = 0;</code> */
+            public static final int OILPBFMHGMF_CLASSIC_VALUE = 0;
+            /** <code>OILPBFMHGMF_TENDENCY = 1;</code> */
+            public static final int OILPBFMHGMF_TENDENCY_VALUE = 1;
+            /** <code>OILPBFMHGMF_ADAPTIVE = 2;</code> */
+            public static final int OILPBFMHGMF_ADAPTIVE_VALUE = 2;
+            /** <code>OILPBFMHGMF_INFLECTION = 3;</code> */
+            public static final int OILPBFMHGMF_INFLECTION_VALUE = 3;
+
+            public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalArgumentException(
+                            "Can't get the number of an unknown enum value.");
+                }
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static NJDHEEAOEBE valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static NJDHEEAOEBE forNumber(int value) {
+                switch (value) {
+                    case 0:
+                        return OILPBFMHGMF_CLASSIC;
+                    case 1:
+                        return OILPBFMHGMF_TENDENCY;
+                    case 2:
+                        return OILPBFMHGMF_ADAPTIVE;
+                    case 3:
+                        return OILPBFMHGMF_INFLECTION;
+                    default:
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<NJDHEEAOEBE> internalGetValueMap() {
+                return internalValueMap;
+            }
+
+            private static final com.google.protobuf.Internal.EnumLiteMap<NJDHEEAOEBE> internalValueMap =
+                    new com.google.protobuf.Internal.EnumLiteMap<NJDHEEAOEBE>() {
+                        public NJDHEEAOEBE findValueByNumber(int number) {
+                            return NJDHEEAOEBE.forNumber(number);
+                        }
+                    };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalStateException(
+                            "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+            }
+
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .getDescriptor()
+                        .getEnumTypes()
+                        .get(1);
+            }
+
+            private static final NJDHEEAOEBE[] VALUES = values();
+
+            public static NJDHEEAOEBE valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                    return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private NJDHEEAOEBE(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.NJDHEEAOEBE)
+        }
+
+        /** Protobuf enum {@code ToTheMoonQueryPathReq.IAKAPNKHDPJ} */
+        public enum IAKAPNKHDPJ implements com.google.protobuf.ProtocolMessageEnum {
+            /** <code>EHFBKPBIGHA_ALL = 0;</code> */
+            EHFBKPBIGHA_ALL(0),
+            /** <code>EHFBKPBIGHA_AIR = 1;</code> */
+            EHFBKPBIGHA_AIR(1),
+            /** <code>EHFBKPBIGHA_WATER = 2;</code> */
+            EHFBKPBIGHA_WATER(2),
+            UNRECOGNIZED(-1),
+            ;
+
+            /** <code>EHFBKPBIGHA_ALL = 0;</code> */
+            public static final int EHFBKPBIGHA_ALL_VALUE = 0;
+            /** <code>EHFBKPBIGHA_AIR = 1;</code> */
+            public static final int EHFBKPBIGHA_AIR_VALUE = 1;
+            /** <code>EHFBKPBIGHA_WATER = 2;</code> */
+            public static final int EHFBKPBIGHA_WATER_VALUE = 2;
+
+            public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalArgumentException(
+                            "Can't get the number of an unknown enum value.");
+                }
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static IAKAPNKHDPJ valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static IAKAPNKHDPJ forNumber(int value) {
+                switch (value) {
+                    case 0:
+                        return EHFBKPBIGHA_ALL;
+                    case 1:
+                        return EHFBKPBIGHA_AIR;
+                    case 2:
+                        return EHFBKPBIGHA_WATER;
+                    default:
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<IAKAPNKHDPJ> internalGetValueMap() {
+                return internalValueMap;
+            }
+
+            private static final com.google.protobuf.Internal.EnumLiteMap<IAKAPNKHDPJ> internalValueMap =
+                    new com.google.protobuf.Internal.EnumLiteMap<IAKAPNKHDPJ>() {
+                        public IAKAPNKHDPJ findValueByNumber(int number) {
+                            return IAKAPNKHDPJ.forNumber(number);
+                        }
+                    };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalStateException(
+                            "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+            }
+
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .getDescriptor()
+                        .getEnumTypes()
+                        .get(2);
+            }
+
+            private static final IAKAPNKHDPJ[] VALUES = values();
+
+            public static IAKAPNKHDPJ valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                    return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private IAKAPNKHDPJ(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathReq.IAKAPNKHDPJ)
+        }
+
+        public static final int FUZZY_RANGE_FIELD_NUMBER = 7;
+        private int fuzzyRange_;
+        /**
+         * <code>int32 fuzzy_range = 7;</code>
+         *
+         * @return The fuzzyRange.
+         */
+        @java.lang.Override
+        public int getFuzzyRange() {
+            return fuzzyRange_;
+        }
+
+        public static final int QUERY_TYPE_FIELD_NUMBER = 9;
+        private int queryType_;
+        /**
+         * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+         *
+         * @return The enum numeric value on the wire for queryType.
+         */
+        @java.lang.Override
+        public int getQueryTypeValue() {
+            return queryType_;
+        }
+        /**
+         * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+         *
+         * @return The queryType.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .OptionType
+                getQueryType() {
+            @SuppressWarnings("deprecation")
+            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType
+                    result =
+                            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .OptionType.valueOf(queryType_);
+            return result == null
+                    ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .OptionType.UNRECOGNIZED
+                    : result;
+        }
+
+        public static final int QUERY_ID_FIELD_NUMBER = 11;
+        private int queryId_;
+        /**
+         * <code>int32 query_id = 11;</code>
+         *
+         * @return The queryId.
+         */
+        @java.lang.Override
+        public int getQueryId() {
+            return queryId_;
+        }
+
+        public static final int SCENE_ID_FIELD_NUMBER = 1;
+        private int sceneId_;
+        /**
+         * <code>uint32 scene_id = 1;</code>
+         *
+         * @return The sceneId.
+         */
+        @java.lang.Override
+        public int getSceneId() {
+            return sceneId_;
+        }
+
+        public static final int PIODKBAAPMI_FIELD_NUMBER = 3;
+        private boolean pIODKBAAPMI_;
+        /**
+         * <code>bool PIODKBAAPMI = 3;</code>
+         *
+         * @return The pIODKBAAPMI.
+         */
+        @java.lang.Override
+        public boolean getPIODKBAAPMI() {
+            return pIODKBAAPMI_;
+        }
+
+        public static final int HJKBMLBDJKE_FIELD_NUMBER = 8;
+        private int hJKBMLBDJKE_;
+        /**
+         * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+         *
+         * @return The enum numeric value on the wire for hJKBMLBDJKE.
+         */
+        @java.lang.Override
+        public int getHJKBMLBDJKEValue() {
+            return hJKBMLBDJKE_;
+        }
+        /**
+         * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+         *
+         * @return The hJKBMLBDJKE.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .NJDHEEAOEBE
+                getHJKBMLBDJKE() {
+            @SuppressWarnings("deprecation")
+            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE
+                    result =
+                            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .NJDHEEAOEBE
+                                    .valueOf(hJKBMLBDJKE_);
+            return result == null
+                    ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .NJDHEEAOEBE
+                            .UNRECOGNIZED
+                    : result;
+        }
+
+        public static final int FPKOPPELDPD_FIELD_NUMBER = 14;
+        private int fPKOPPELDPD_;
+        /**
+         * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+         *
+         * @return The enum numeric value on the wire for fPKOPPELDPD.
+         */
+        @java.lang.Override
+        public int getFPKOPPELDPDValue() {
+            return fPKOPPELDPD_;
+        }
+        /**
+         * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+         *
+         * @return The fPKOPPELDPD.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .IAKAPNKHDPJ
+                getFPKOPPELDPD() {
+            @SuppressWarnings("deprecation")
+            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ
+                    result =
+                            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .IAKAPNKHDPJ
+                                    .valueOf(fPKOPPELDPD_);
+            return result == null
+                    ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .IAKAPNKHDPJ
+                            .UNRECOGNIZED
+                    : result;
+        }
+
+        public static final int DESTINATION_POS_FIELD_NUMBER = 10;
+        private emu.grasscutter.net.proto.VectorOuterClass.Vector destinationPos_;
+        /**
+         * <code>.Vector destination_pos = 10;</code>
+         *
+         * @return Whether the destinationPos field is set.
+         */
+        @java.lang.Override
+        public boolean hasDestinationPos() {
+            return destinationPos_ != null;
+        }
+        /**
+         * <code>.Vector destination_pos = 10;</code>
+         *
+         * @return The destinationPos.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos() {
+            return destinationPos_ == null
+                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                    : destinationPos_;
+        }
+        /** <code>.Vector destination_pos = 10;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
+            return getDestinationPos();
+        }
+
+        public static final int SOURCE_POS_FIELD_NUMBER = 12;
+        private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+        /**
+         * <code>.Vector source_pos = 12;</code>
+         *
+         * @return Whether the sourcePos field is set.
+         */
+        @java.lang.Override
+        public boolean hasSourcePos() {
+            return sourcePos_ != null;
+        }
+        /**
+         * <code>.Vector source_pos = 12;</code>
+         *
+         * @return The sourcePos.
+         */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
+            return sourcePos_ == null
+                    ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                    : sourcePos_;
+        }
+        /** <code>.Vector source_pos = 12;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
+            return getSourcePos();
+        }
+
+        public static final int PKAONDIKPNI_FIELD_NUMBER = 13;
+        private boolean pKAONDIKPNI_;
+        /**
+         * <code>bool PKAONDIKPNI = 13;</code>
+         *
+         * @return The pKAONDIKPNI.
+         */
+        @java.lang.Override
+        public boolean getPKAONDIKPNI() {
+            return pKAONDIKPNI_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
+
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (sceneId_ != 0) {
+                output.writeUInt32(1, sceneId_);
+            }
+            if (pIODKBAAPMI_ != false) {
+                output.writeBool(3, pIODKBAAPMI_);
+            }
+            if (fuzzyRange_ != 0) {
+                output.writeInt32(7, fuzzyRange_);
+            }
+            if (hJKBMLBDJKE_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .NJDHEEAOEBE
+                            .OILPBFMHGMF_CLASSIC.getNumber()) {
+                output.writeEnum(8, hJKBMLBDJKE_);
+            }
+            if (queryType_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .OptionType.OPTION_NONE
+                            .getNumber()) {
+                output.writeEnum(9, queryType_);
+            }
+            if (destinationPos_ != null) {
+                output.writeMessage(10, getDestinationPos());
+            }
+            if (queryId_ != 0) {
+                output.writeInt32(11, queryId_);
+            }
+            if (sourcePos_ != null) {
+                output.writeMessage(12, getSourcePos());
+            }
+            if (pKAONDIKPNI_ != false) {
+                output.writeBool(13, pKAONDIKPNI_);
+            }
+            if (fPKOPPELDPD_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .IAKAPNKHDPJ
+                            .EHFBKPBIGHA_ALL.getNumber()) {
+                output.writeEnum(14, fPKOPPELDPD_);
+            }
+            unknownFields.writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (sceneId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, sceneId_);
+            }
+            if (pIODKBAAPMI_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, pIODKBAAPMI_);
+            }
+            if (fuzzyRange_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, fuzzyRange_);
+            }
+            if (hJKBMLBDJKE_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .NJDHEEAOEBE
+                            .OILPBFMHGMF_CLASSIC.getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, hJKBMLBDJKE_);
+            }
+            if (queryType_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .OptionType.OPTION_NONE
+                            .getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, queryType_);
+            }
+            if (destinationPos_ != null) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDestinationPos());
+            }
+            if (queryId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, queryId_);
+            }
+            if (sourcePos_ != null) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSourcePos());
+            }
+            if (pKAONDIKPNI_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, pKAONDIKPNI_);
+            }
+            if (fPKOPPELDPD_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .IAKAPNKHDPJ
+                            .EHFBKPBIGHA_ALL.getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, fPKOPPELDPD_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq other =
+                    (emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) obj;
+
+            if (getFuzzyRange() != other.getFuzzyRange()) return false;
+            if (queryType_ != other.queryType_) return false;
+            if (getQueryId() != other.getQueryId()) return false;
+            if (getSceneId() != other.getSceneId()) return false;
+            if (getPIODKBAAPMI() != other.getPIODKBAAPMI()) return false;
+            if (hJKBMLBDJKE_ != other.hJKBMLBDJKE_) return false;
+            if (fPKOPPELDPD_ != other.fPKOPPELDPD_) return false;
+            if (hasDestinationPos() != other.hasDestinationPos()) return false;
+            if (hasDestinationPos()) {
+                if (!getDestinationPos().equals(other.getDestinationPos())) return false;
+            }
+            if (hasSourcePos() != other.hasSourcePos()) return false;
+            if (hasSourcePos()) {
+                if (!getSourcePos().equals(other.getSourcePos())) return false;
+            }
+            if (getPKAONDIKPNI() != other.getPKAONDIKPNI()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + FUZZY_RANGE_FIELD_NUMBER;
+            hash = (53 * hash) + getFuzzyRange();
+            hash = (37 * hash) + QUERY_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + queryType_;
+            hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getQueryId();
+            hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getSceneId();
+            hash = (37 * hash) + PIODKBAAPMI_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPIODKBAAPMI());
+            hash = (37 * hash) + HJKBMLBDJKE_FIELD_NUMBER;
+            hash = (53 * hash) + hJKBMLBDJKE_;
+            hash = (37 * hash) + FPKOPPELDPD_FIELD_NUMBER;
+            hash = (53 * hash) + fPKOPPELDPD_;
+            if (hasDestinationPos()) {
+                hash = (37 * hash) + DESTINATION_POS_FIELD_NUMBER;
+                hash = (53 * hash) + getDestinationPos().hashCode();
+            }
+            if (hasSourcePos()) {
+                hash = (37 * hash) + SOURCE_POS_FIELD_NUMBER;
+                hash = (53 * hash) + getSourcePos().hashCode();
+            }
+            hash = (37 * hash) + PKAONDIKPNI_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPKAONDIKPNI());
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CmdId: 6175
+         * Obf: CIEJPEDGGGK
+         * </pre>
+         *
+         * Protobuf type {@code ToTheMoonQueryPathReq}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:ToTheMoonQueryPathReq)
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReqOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                        .internal_static_ToTheMoonQueryPathReq_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                        .internal_static_ToTheMoonQueryPathReq_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                        .class,
+                                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                        .Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                fuzzyRange_ = 0;
+
+                queryType_ = 0;
+
+                queryId_ = 0;
+
+                sceneId_ = 0;
+
+                pIODKBAAPMI_ = false;
+
+                hJKBMLBDJKE_ = 0;
+
+                fPKOPPELDPD_ = 0;
+
+                if (destinationPosBuilder_ == null) {
+                    destinationPos_ = null;
+                } else {
+                    destinationPos_ = null;
+                    destinationPosBuilder_ = null;
+                }
+                if (sourcePosBuilder_ == null) {
+                    sourcePos_ = null;
+                } else {
+                    sourcePos_ = null;
+                    sourcePosBuilder_ = null;
+                }
+                pKAONDIKPNI_ = false;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                        .internal_static_ToTheMoonQueryPathReq_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                    build() {
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                    buildPartial() {
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result =
+                        new emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq(
+                                this);
+                result.fuzzyRange_ = fuzzyRange_;
+                result.queryType_ = queryType_;
+                result.queryId_ = queryId_;
+                result.sceneId_ = sceneId_;
+                result.pIODKBAAPMI_ = pIODKBAAPMI_;
+                result.hJKBMLBDJKE_ = hJKBMLBDJKE_;
+                result.fPKOPPELDPD_ = fPKOPPELDPD_;
+                if (destinationPosBuilder_ == null) {
+                    result.destinationPos_ = destinationPos_;
+                } else {
+                    result.destinationPos_ = destinationPosBuilder_.build();
+                }
+                if (sourcePosBuilder_ == null) {
+                    result.sourcePos_ = sourcePos_;
+                } else {
+                    result.sourcePos_ = sourcePosBuilder_.build();
+                }
+                result.pKAONDIKPNI_ = pKAONDIKPNI_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq other) {
+                if (other
+                        == emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                .getDefaultInstance()) return this;
+                if (other.getFuzzyRange() != 0) {
+                    setFuzzyRange(other.getFuzzyRange());
+                }
+                if (other.queryType_ != 0) {
+                    setQueryTypeValue(other.getQueryTypeValue());
+                }
+                if (other.getQueryId() != 0) {
+                    setQueryId(other.getQueryId());
+                }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
+                }
+                if (other.getPIODKBAAPMI() != false) {
+                    setPIODKBAAPMI(other.getPIODKBAAPMI());
+                }
+                if (other.hJKBMLBDJKE_ != 0) {
+                    setHJKBMLBDJKEValue(other.getHJKBMLBDJKEValue());
+                }
+                if (other.fPKOPPELDPD_ != 0) {
+                    setFPKOPPELDPDValue(other.getFPKOPPELDPDValue());
+                }
+                if (other.hasDestinationPos()) {
+                    mergeDestinationPos(other.getDestinationPos());
+                }
+                if (other.hasSourcePos()) {
+                    mergeSourcePos(other.getSourcePos());
+                }
+                if (other.getPKAONDIKPNI() != false) {
+                    setPKAONDIKPNI(other.getPKAONDIKPNI());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int fuzzyRange_;
+            /**
+             * <code>int32 fuzzy_range = 7;</code>
+             *
+             * @return The fuzzyRange.
+             */
+            @java.lang.Override
+            public int getFuzzyRange() {
+                return fuzzyRange_;
+            }
+            /**
+             * <code>int32 fuzzy_range = 7;</code>
+             *
+             * @param value The fuzzyRange to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFuzzyRange(int value) {
+
+                fuzzyRange_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 fuzzy_range = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFuzzyRange() {
+
+                fuzzyRange_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int queryType_ = 0;
+            /**
+             * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+             *
+             * @return The enum numeric value on the wire for queryType.
+             */
+            @java.lang.Override
+            public int getQueryTypeValue() {
+                return queryType_;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+             *
+             * @param value The enum numeric value on the wire for queryType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setQueryTypeValue(int value) {
+
+                queryType_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+             *
+             * @return The queryType.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .OptionType
+                    getQueryType() {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType
+                        result =
+                                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                        .OptionType.valueOf(queryType_);
+                return result == null
+                        ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                .OptionType.UNRECOGNIZED
+                        : result;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+             *
+             * @param value The queryType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setQueryType(
+                    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType
+                            value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                queryType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.OptionType query_type = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearQueryType() {
+
+                queryType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int queryId_;
+            /**
+             * <code>int32 query_id = 11;</code>
+             *
+             * @return The queryId.
+             */
+            @java.lang.Override
+            public int getQueryId() {
+                return queryId_;
+            }
+            /**
+             * <code>int32 query_id = 11;</code>
+             *
+             * @param value The queryId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setQueryId(int value) {
+
+                queryId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 query_id = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearQueryId() {
+
+                queryId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int sceneId_;
+            /**
+             * <code>uint32 scene_id = 1;</code>
+             *
+             * @return The sceneId.
+             */
+            @java.lang.Override
+            public int getSceneId() {
+                return sceneId_;
+            }
+            /**
+             * <code>uint32 scene_id = 1;</code>
+             *
+             * @param value The sceneId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSceneId(int value) {
+
+                sceneId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 scene_id = 1;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSceneId() {
+
+                sceneId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean pIODKBAAPMI_;
+            /**
+             * <code>bool PIODKBAAPMI = 3;</code>
+             *
+             * @return The pIODKBAAPMI.
+             */
+            @java.lang.Override
+            public boolean getPIODKBAAPMI() {
+                return pIODKBAAPMI_;
+            }
+            /**
+             * <code>bool PIODKBAAPMI = 3;</code>
+             *
+             * @param value The pIODKBAAPMI to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPIODKBAAPMI(boolean value) {
+
+                pIODKBAAPMI_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool PIODKBAAPMI = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPIODKBAAPMI() {
+
+                pIODKBAAPMI_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int hJKBMLBDJKE_ = 0;
+            /**
+             * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+             *
+             * @return The enum numeric value on the wire for hJKBMLBDJKE.
+             */
+            @java.lang.Override
+            public int getHJKBMLBDJKEValue() {
+                return hJKBMLBDJKE_;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+             *
+             * @param value The enum numeric value on the wire for hJKBMLBDJKE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHJKBMLBDJKEValue(int value) {
+
+                hJKBMLBDJKE_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+             *
+             * @return The hJKBMLBDJKE.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .NJDHEEAOEBE
+                    getHJKBMLBDJKE() {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.NJDHEEAOEBE
+                        result =
+                                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                        .NJDHEEAOEBE
+                                        .valueOf(hJKBMLBDJKE_);
+                return result == null
+                        ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                .NJDHEEAOEBE
+                                .UNRECOGNIZED
+                        : result;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+             *
+             * @param value The hJKBMLBDJKE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setHJKBMLBDJKE(
+                    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .NJDHEEAOEBE
+                            value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                hJKBMLBDJKE_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.NJDHEEAOEBE HJKBMLBDJKE = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearHJKBMLBDJKE() {
+
+                hJKBMLBDJKE_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int fPKOPPELDPD_ = 0;
+            /**
+             * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+             *
+             * @return The enum numeric value on the wire for fPKOPPELDPD.
+             */
+            @java.lang.Override
+            public int getFPKOPPELDPDValue() {
+                return fPKOPPELDPD_;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+             *
+             * @param value The enum numeric value on the wire for fPKOPPELDPD to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFPKOPPELDPDValue(int value) {
+
+                fPKOPPELDPD_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+             *
+             * @return The fPKOPPELDPD.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                            .IAKAPNKHDPJ
+                    getFPKOPPELDPD() {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.IAKAPNKHDPJ
+                        result =
+                                emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                        .IAKAPNKHDPJ
+                                        .valueOf(fPKOPPELDPD_);
+                return result == null
+                        ? emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                .IAKAPNKHDPJ
+                                .UNRECOGNIZED
+                        : result;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+             *
+             * @param value The fPKOPPELDPD to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFPKOPPELDPD(
+                    emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                                    .IAKAPNKHDPJ
+                            value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                fPKOPPELDPD_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.ToTheMoonQueryPathReq.IAKAPNKHDPJ FPKOPPELDPD = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFPKOPPELDPD() {
+
+                fPKOPPELDPD_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private emu.grasscutter.net.proto.VectorOuterClass.Vector destinationPos_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    destinationPosBuilder_;
+            /**
+             * <code>.Vector destination_pos = 10;</code>
+             *
+             * @return Whether the destinationPos field is set.
+             */
+            public boolean hasDestinationPos() {
+                return destinationPosBuilder_ != null || destinationPos_ != null;
+            }
+            /**
+             * <code>.Vector destination_pos = 10;</code>
+             *
+             * @return The destinationPos.
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector getDestinationPos() {
+                if (destinationPosBuilder_ == null) {
+                    return destinationPos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : destinationPos_;
+                } else {
+                    return destinationPosBuilder_.getMessage();
+                }
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public Builder setDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (destinationPosBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    destinationPos_ = value;
+                    onChanged();
+                } else {
+                    destinationPosBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public Builder setDestinationPos(
+                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (destinationPosBuilder_ == null) {
+                    destinationPos_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    destinationPosBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public Builder mergeDestinationPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (destinationPosBuilder_ == null) {
+                    if (destinationPos_ != null) {
+                        destinationPos_ =
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(destinationPos_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        destinationPos_ = value;
+                    }
+                    onChanged();
+                } else {
+                    destinationPosBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public Builder clearDestinationPos() {
+                if (destinationPosBuilder_ == null) {
+                    destinationPos_ = null;
+                    onChanged();
+                } else {
+                    destinationPos_ = null;
+                    destinationPosBuilder_ = null;
+                }
+
+                return this;
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getDestinationPosBuilder() {
+
+                onChanged();
+                return getDestinationPosFieldBuilder().getBuilder();
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
+                    getDestinationPosOrBuilder() {
+                if (destinationPosBuilder_ != null) {
+                    return destinationPosBuilder_.getMessageOrBuilder();
+                } else {
+                    return destinationPos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : destinationPos_;
+                }
+            }
+            /** <code>.Vector destination_pos = 10;</code> */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getDestinationPosFieldBuilder() {
+                if (destinationPosBuilder_ == null) {
+                    destinationPosBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                                    getDestinationPos(), getParentForChildren(), isClean());
+                    destinationPos_ = null;
+                }
+                return destinationPosBuilder_;
+            }
+
+            private emu.grasscutter.net.proto.VectorOuterClass.Vector sourcePos_;
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    sourcePosBuilder_;
+            /**
+             * <code>.Vector source_pos = 12;</code>
+             *
+             * @return Whether the sourcePos field is set.
+             */
+            public boolean hasSourcePos() {
+                return sourcePosBuilder_ != null || sourcePos_ != null;
+            }
+            /**
+             * <code>.Vector source_pos = 12;</code>
+             *
+             * @return The sourcePos.
+             */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector getSourcePos() {
+                if (sourcePosBuilder_ == null) {
+                    return sourcePos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : sourcePos_;
+                } else {
+                    return sourcePosBuilder_.getMessage();
+                }
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public Builder setSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (sourcePosBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    sourcePos_ = value;
+                    onChanged();
+                } else {
+                    sourcePosBuilder_.setMessage(value);
+                }
+
+                return this;
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public Builder setSourcePos(
+                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (sourcePosBuilder_ == null) {
+                    sourcePos_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    sourcePosBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public Builder mergeSourcePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (sourcePosBuilder_ == null) {
+                    if (sourcePos_ != null) {
+                        sourcePos_ =
+                                emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_)
+                                        .mergeFrom(value)
+                                        .buildPartial();
+                    } else {
+                        sourcePos_ = value;
+                    }
+                    onChanged();
+                } else {
+                    sourcePosBuilder_.mergeFrom(value);
+                }
+
+                return this;
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public Builder clearSourcePos() {
+                if (sourcePosBuilder_ == null) {
+                    sourcePos_ = null;
+                    onChanged();
+                } else {
+                    sourcePos_ = null;
+                    sourcePosBuilder_ = null;
+                }
+
+                return this;
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
+
+                onChanged();
+                return getSourcePosFieldBuilder().getBuilder();
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
+                if (sourcePosBuilder_ != null) {
+                    return sourcePosBuilder_.getMessageOrBuilder();
+                } else {
+                    return sourcePos_ == null
+                            ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
+                            : sourcePos_;
+                }
+            }
+            /** <code>.Vector source_pos = 12;</code> */
+            private com.google.protobuf.SingleFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getSourcePosFieldBuilder() {
+                if (sourcePosBuilder_ == null) {
+                    sourcePosBuilder_ =
+                            new com.google.protobuf.SingleFieldBuilderV3<
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                                    getSourcePos(), getParentForChildren(), isClean());
+                    sourcePos_ = null;
+                }
+                return sourcePosBuilder_;
+            }
+
+            private boolean pKAONDIKPNI_;
+            /**
+             * <code>bool PKAONDIKPNI = 13;</code>
+             *
+             * @return The pKAONDIKPNI.
+             */
+            @java.lang.Override
+            public boolean getPKAONDIKPNI() {
+                return pKAONDIKPNI_;
+            }
+            /**
+             * <code>bool PKAONDIKPNI = 13;</code>
+             *
+             * @param value The pKAONDIKPNI to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPKAONDIKPNI(boolean value) {
+
+                pKAONDIKPNI_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool PKAONDIKPNI = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPKAONDIKPNI() {
+
+                pKAONDIKPNI_ = false;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:ToTheMoonQueryPathReq)
+        }
+
+        // @@protoc_insertion_point(class_scope:ToTheMoonQueryPathReq)
+        private static final emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass
+                        .ToTheMoonQueryPathReq
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq();
+        }
+
+        public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ToTheMoonQueryPathReq> PARSER =
+                new com.google.protobuf.AbstractParser<ToTheMoonQueryPathReq>() {
+                    @java.lang.Override
+                    public ToTheMoonQueryPathReq parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new ToTheMoonQueryPathReq(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<ToTheMoonQueryPathReq> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ToTheMoonQueryPathReq> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:ToTheMoonQueryPathReq)
-    private static final emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_ToTheMoonQueryPathReq_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_ToTheMoonQueryPathReq_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq();
+        java.lang.String[] descriptorData = {
+            "\n\033ToTheMoonQueryPathReq.proto\032\014Vector.pr"
+                    + "oto\"\334\004\n\025ToTheMoonQueryPathReq\022\023\n\013fuzzy_r"
+                    + "ange\030\007 \001(\005\0225\n\nquery_type\030\t \001(\0162!.ToTheMo"
+                    + "onQueryPathReq.OptionType\022\020\n\010query_id\030\013 "
+                    + "\001(\005\022\020\n\010scene_id\030\001 \001(\r\022\023\n\013PIODKBAAPMI\030\003 \001"
+                    + "(\010\0227\n\013HJKBMLBDJKE\030\010 \001(\0162\".ToTheMoonQuery"
+                    + "PathReq.NJDHEEAOEBE\0227\n\013FPKOPPELDPD\030\016 \001(\016"
+                    + "2\".ToTheMoonQueryPathReq.IAKAPNKHDPJ\022 \n\017"
+                    + "destination_pos\030\n \001(\0132\007.Vector\022\033\n\nsource"
+                    + "_pos\030\014 \001(\0132\007.Vector\022\023\n\013PKAONDIKPNI\030\r \001(\010"
+                    + "\"0\n\nOptionType\022\017\n\013OPTION_NONE\020\000\022\021\n\rOPTIO"
+                    + "N_NORMAL\020\001\"v\n\013NJDHEEAOEBE\022\027\n\023OILPBFMHGMF"
+                    + "_CLASSIC\020\000\022\030\n\024OILPBFMHGMF_TENDENCY\020\001\022\030\n\024"
+                    + "OILPBFMHGMF_ADAPTIVE\020\002\022\032\n\026OILPBFMHGMF_IN"
+                    + "FLECTION\020\003\"N\n\013IAKAPNKHDPJ\022\023\n\017EHFBKPBIGHA"
+                    + "_ALL\020\000\022\023\n\017EHFBKPBIGHA_AIR\020\001\022\025\n\021EHFBKPBIG"
+                    + "HA_WATER\020\002B\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+                        });
+        internal_static_ToTheMoonQueryPathReq_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_ToTheMoonQueryPathReq_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_ToTheMoonQueryPathReq_descriptor,
+                        new java.lang.String[] {
+                            "FuzzyRange",
+                            "QueryType",
+                            "QueryId",
+                            "SceneId",
+                            "PIODKBAAPMI",
+                            "HJKBMLBDJKE",
+                            "FPKOPPELDPD",
+                            "DestinationPos",
+                            "SourcePos",
+                            "PKAONDIKPNI",
+                        });
+        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ToTheMoonQueryPathReq>
-        PARSER = new com.google.protobuf.AbstractParser<ToTheMoonQueryPathReq>() {
-      @java.lang.Override
-      public ToTheMoonQueryPathReq parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ToTheMoonQueryPathReq(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ToTheMoonQueryPathReq> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ToTheMoonQueryPathReq> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ToTheMoonQueryPathReq_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ToTheMoonQueryPathReq_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\033ToTheMoonQueryPathReq.proto\032\014Vector.pr" +
-      "oto\"\334\004\n\025ToTheMoonQueryPathReq\022\023\n\013fuzzy_r" +
-      "ange\030\007 \001(\005\0225\n\nquery_type\030\t \001(\0162!.ToTheMo" +
-      "onQueryPathReq.OptionType\022\020\n\010query_id\030\013 " +
-      "\001(\005\022\020\n\010scene_id\030\001 \001(\r\022\023\n\013PIODKBAAPMI\030\003 \001" +
-      "(\010\0227\n\013HJKBMLBDJKE\030\010 \001(\0162\".ToTheMoonQuery" +
-      "PathReq.NJDHEEAOEBE\0227\n\013FPKOPPELDPD\030\016 \001(\016" +
-      "2\".ToTheMoonQueryPathReq.IAKAPNKHDPJ\022 \n\017" +
-      "destination_pos\030\n \001(\0132\007.Vector\022\033\n\nsource" +
-      "_pos\030\014 \001(\0132\007.Vector\022\023\n\013PKAONDIKPNI\030\r \001(\010" +
-      "\"0\n\nOptionType\022\017\n\013OPTION_NONE\020\000\022\021\n\rOPTIO" +
-      "N_NORMAL\020\001\"v\n\013NJDHEEAOEBE\022\027\n\023OILPBFMHGMF" +
-      "_CLASSIC\020\000\022\030\n\024OILPBFMHGMF_TENDENCY\020\001\022\030\n\024" +
-      "OILPBFMHGMF_ADAPTIVE\020\002\022\032\n\026OILPBFMHGMF_IN" +
-      "FLECTION\020\003\"N\n\013IAKAPNKHDPJ\022\023\n\017EHFBKPBIGHA" +
-      "_ALL\020\000\022\023\n\017EHFBKPBIGHA_AIR\020\001\022\025\n\021EHFBKPBIG" +
-      "HA_WATER\020\002B\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-        });
-    internal_static_ToTheMoonQueryPathReq_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_ToTheMoonQueryPathReq_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ToTheMoonQueryPathReq_descriptor,
-        new java.lang.String[] { "FuzzyRange", "QueryType", "QueryId", "SceneId", "PIODKBAAPMI", "HJKBMLBDJKE", "FPKOPPELDPD", "DestinationPos", "SourcePos", "PKAONDIKPNI", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

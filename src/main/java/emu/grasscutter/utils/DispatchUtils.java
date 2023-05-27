@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -13,12 +15,9 @@ import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.*;
 import emu.grasscutter.utils.objects.JObject;
-
-import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import javax.annotation.Nullable;
 
 public interface DispatchUtils {
     /**
@@ -164,9 +163,8 @@ public interface DispatchUtils {
     }
 
     /**
-     * Fetches the values of fields for a player.
-     * Uses an account to find the player.
-     * Similar to {@link DispatchUtils#getPlayerFields(int, String...)}
+     * Fetches the values of fields for a player. Uses an account to find the player. Similar to
+     * {@link DispatchUtils#getPlayerFields(int, String...)}
      *
      * @param accountId The account ID.
      * @param fields The fields to fetch.
@@ -176,17 +174,15 @@ public interface DispatchUtils {
         return switch (Grasscutter.getRunMode()) {
             case DISPATCH_ONLY -> {
                 // Create a request for player fields.
-                var request = JObject.c()
-                    .add("accountId", accountId)
-                    .add("fields", fields);
+                var request = JObject.c().add("accountId", accountId).add("fields", fields);
 
                 // Wait for the request to complete.
                 yield Grasscutter.getDispatchServer()
-                    .await(
-                        request.gson(),
-                        PacketIds.GetPlayerByAccountReq,
-                        PacketIds.GetPlayerByAccountRsp,
-                        IDispatcher.DEFAULT_PARSER);
+                        .await(
+                                request.gson(),
+                                PacketIds.GetPlayerByAccountReq,
+                                PacketIds.GetPlayerByAccountRsp,
+                                IDispatcher.DEFAULT_PARSER);
             }
             case HYBRID, GAME_ONLY -> {
                 // Get the player by the account.

@@ -4,895 +4,993 @@
 package emu.grasscutter.net.proto;
 
 public final class EffigyChallengeV2LevelDataOuterClass {
-  private EffigyChallengeV2LevelDataOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private EffigyChallengeV2LevelDataOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface EffigyChallengeV2LevelDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:EffigyChallengeV2LevelData)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 AFLGHGHAOMC = 4;</code>
-     * @return The aFLGHGHAOMC.
-     */
-    int getAFLGHGHAOMC();
-
-    /**
-     * <code>bool is_level_open = 5;</code>
-     * @return The isLevelOpen.
-     */
-    boolean getIsLevelOpen();
-
-    /**
-     * <code>uint32 level_id = 10;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 DBHOBFBBONG = 9;</code>
-     * @return The dBHOBFBBONG.
-     */
-    int getDBHOBFBBONG();
-
-    /**
-     * <code>uint32 NIIPDHJEGDE = 7;</code>
-     * @return The nIIPDHJEGDE.
-     */
-    int getNIIPDHJEGDE();
-
-    /**
-     * <code>uint32 PJIHHFHLOGM = 6;</code>
-     * @return The pJIHHFHLOGM.
-     */
-    int getPJIHHFHLOGM();
-  }
-  /**
-   * <pre>
-   * Obf: MNPIDOGLIAN
-   * </pre>
-   *
-   * Protobuf type {@code EffigyChallengeV2LevelData}
-   */
-  public static final class EffigyChallengeV2LevelData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:EffigyChallengeV2LevelData)
-      EffigyChallengeV2LevelDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use EffigyChallengeV2LevelData.newBuilder() to construct.
-    private EffigyChallengeV2LevelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private EffigyChallengeV2LevelData() {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new EffigyChallengeV2LevelData();
-    }
+    public interface EffigyChallengeV2LevelDataOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:EffigyChallengeV2LevelData)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private EffigyChallengeV2LevelData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
+        /**
+         * <code>uint32 AFLGHGHAOMC = 4;</code>
+         *
+         * @return The aFLGHGHAOMC.
+         */
+        int getAFLGHGHAOMC();
 
-              aFLGHGHAOMC_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+        /**
+         * <code>bool is_level_open = 5;</code>
+         *
+         * @return The isLevelOpen.
+         */
+        boolean getIsLevelOpen();
 
-              isLevelOpen_ = input.readBool();
-              break;
-            }
-            case 48: {
+        /**
+         * <code>uint32 level_id = 10;</code>
+         *
+         * @return The levelId.
+         */
+        int getLevelId();
 
-              pJIHHFHLOGM_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+        /**
+         * <code>uint32 DBHOBFBBONG = 9;</code>
+         *
+         * @return The dBHOBFBBONG.
+         */
+        int getDBHOBFBBONG();
 
-              nIIPDHJEGDE_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+        /**
+         * <code>uint32 NIIPDHJEGDE = 7;</code>
+         *
+         * @return The nIIPDHJEGDE.
+         */
+        int getNIIPDHJEGDE();
 
-              dBHOBFBBONG_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.internal_static_EffigyChallengeV2LevelData_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.internal_static_EffigyChallengeV2LevelData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.class, emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.Builder.class);
-    }
-
-    public static final int AFLGHGHAOMC_FIELD_NUMBER = 4;
-    private int aFLGHGHAOMC_;
-    /**
-     * <code>uint32 AFLGHGHAOMC = 4;</code>
-     * @return The aFLGHGHAOMC.
-     */
-    @java.lang.Override
-    public int getAFLGHGHAOMC() {
-      return aFLGHGHAOMC_;
-    }
-
-    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 5;
-    private boolean isLevelOpen_;
-    /**
-     * <code>bool is_level_open = 5;</code>
-     * @return The isLevelOpen.
-     */
-    @java.lang.Override
-    public boolean getIsLevelOpen() {
-      return isLevelOpen_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 10;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 10;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int DBHOBFBBONG_FIELD_NUMBER = 9;
-    private int dBHOBFBBONG_;
-    /**
-     * <code>uint32 DBHOBFBBONG = 9;</code>
-     * @return The dBHOBFBBONG.
-     */
-    @java.lang.Override
-    public int getDBHOBFBBONG() {
-      return dBHOBFBBONG_;
-    }
-
-    public static final int NIIPDHJEGDE_FIELD_NUMBER = 7;
-    private int nIIPDHJEGDE_;
-    /**
-     * <code>uint32 NIIPDHJEGDE = 7;</code>
-     * @return The nIIPDHJEGDE.
-     */
-    @java.lang.Override
-    public int getNIIPDHJEGDE() {
-      return nIIPDHJEGDE_;
-    }
-
-    public static final int PJIHHFHLOGM_FIELD_NUMBER = 6;
-    private int pJIHHFHLOGM_;
-    /**
-     * <code>uint32 PJIHHFHLOGM = 6;</code>
-     * @return The pJIHHFHLOGM.
-     */
-    @java.lang.Override
-    public int getPJIHHFHLOGM() {
-      return pJIHHFHLOGM_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (aFLGHGHAOMC_ != 0) {
-        output.writeUInt32(4, aFLGHGHAOMC_);
-      }
-      if (isLevelOpen_ != false) {
-        output.writeBool(5, isLevelOpen_);
-      }
-      if (pJIHHFHLOGM_ != 0) {
-        output.writeUInt32(6, pJIHHFHLOGM_);
-      }
-      if (nIIPDHJEGDE_ != 0) {
-        output.writeUInt32(7, nIIPDHJEGDE_);
-      }
-      if (dBHOBFBBONG_ != 0) {
-        output.writeUInt32(9, dBHOBFBBONG_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(10, levelId_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (aFLGHGHAOMC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, aFLGHGHAOMC_);
-      }
-      if (isLevelOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isLevelOpen_);
-      }
-      if (pJIHHFHLOGM_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, pJIHHFHLOGM_);
-      }
-      if (nIIPDHJEGDE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, nIIPDHJEGDE_);
-      }
-      if (dBHOBFBBONG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, dBHOBFBBONG_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, levelId_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData other = (emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData) obj;
-
-      if (getAFLGHGHAOMC()
-          != other.getAFLGHGHAOMC()) return false;
-      if (getIsLevelOpen()
-          != other.getIsLevelOpen()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getDBHOBFBBONG()
-          != other.getDBHOBFBBONG()) return false;
-      if (getNIIPDHJEGDE()
-          != other.getNIIPDHJEGDE()) return false;
-      if (getPJIHHFHLOGM()
-          != other.getPJIHHFHLOGM()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AFLGHGHAOMC_FIELD_NUMBER;
-      hash = (53 * hash) + getAFLGHGHAOMC();
-      hash = (37 * hash) + IS_LEVEL_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsLevelOpen());
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + DBHOBFBBONG_FIELD_NUMBER;
-      hash = (53 * hash) + getDBHOBFBBONG();
-      hash = (37 * hash) + NIIPDHJEGDE_FIELD_NUMBER;
-      hash = (53 * hash) + getNIIPDHJEGDE();
-      hash = (37 * hash) + PJIHHFHLOGM_FIELD_NUMBER;
-      hash = (53 * hash) + getPJIHHFHLOGM();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
+        /**
+         * <code>uint32 PJIHHFHLOGM = 6;</code>
+         *
+         * @return The pJIHHFHLOGM.
+         */
+        int getPJIHHFHLOGM();
     }
     /**
+     *
+     *
      * <pre>
      * Obf: MNPIDOGLIAN
      * </pre>
      *
      * Protobuf type {@code EffigyChallengeV2LevelData}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:EffigyChallengeV2LevelData)
-        emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.internal_static_EffigyChallengeV2LevelData_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.internal_static_EffigyChallengeV2LevelData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.class, emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+    public static final class EffigyChallengeV2LevelData
+            extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:EffigyChallengeV2LevelData)
+            EffigyChallengeV2LevelDataOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use EffigyChallengeV2LevelData.newBuilder() to construct.
+        private EffigyChallengeV2LevelData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        aFLGHGHAOMC_ = 0;
 
-        isLevelOpen_ = false;
+        private EffigyChallengeV2LevelData() {}
 
-        levelId_ = 0;
-
-        dBHOBFBBONG_ = 0;
-
-        nIIPDHJEGDE_ = 0;
-
-        pJIHHFHLOGM_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.internal_static_EffigyChallengeV2LevelData_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData build() {
-        emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new EffigyChallengeV2LevelData();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData buildPartial() {
-        emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData result = new emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData(this);
-        result.aFLGHGHAOMC_ = aFLGHGHAOMC_;
-        result.isLevelOpen_ = isLevelOpen_;
-        result.levelId_ = levelId_;
-        result.dBHOBFBBONG_ = dBHOBFBBONG_;
-        result.nIIPDHJEGDE_ = nIIPDHJEGDE_;
-        result.pJIHHFHLOGM_ = pJIHHFHLOGM_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData) {
-          return mergeFrom((emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-      }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData other) {
-        if (other == emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.getDefaultInstance()) return this;
-        if (other.getAFLGHGHAOMC() != 0) {
-          setAFLGHGHAOMC(other.getAFLGHGHAOMC());
+        private EffigyChallengeV2LevelData(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
+            }
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 32:
+                            {
+                                aFLGHGHAOMC_ = input.readUInt32();
+                                break;
+                            }
+                        case 40:
+                            {
+                                isLevelOpen_ = input.readBool();
+                                break;
+                            }
+                        case 48:
+                            {
+                                pJIHHFHLOGM_ = input.readUInt32();
+                                break;
+                            }
+                        case 56:
+                            {
+                                nIIPDHJEGDE_ = input.readUInt32();
+                                break;
+                            }
+                        case 72:
+                            {
+                                dBHOBFBBONG_ = input.readUInt32();
+                                break;
+                            }
+                        case 80:
+                            {
+                                levelId_ = input.readUInt32();
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
-        if (other.getIsLevelOpen() != false) {
-          setIsLevelOpen(other.getIsLevelOpen());
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                    .internal_static_EffigyChallengeV2LevelData_descriptor;
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                    .internal_static_EffigyChallengeV2LevelData_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                    .EffigyChallengeV2LevelData.class,
+                            emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                    .EffigyChallengeV2LevelData.Builder.class);
         }
-        if (other.getDBHOBFBBONG() != 0) {
-          setDBHOBFBBONG(other.getDBHOBFBBONG());
+
+        public static final int AFLGHGHAOMC_FIELD_NUMBER = 4;
+        private int aFLGHGHAOMC_;
+        /**
+         * <code>uint32 AFLGHGHAOMC = 4;</code>
+         *
+         * @return The aFLGHGHAOMC.
+         */
+        @java.lang.Override
+        public int getAFLGHGHAOMC() {
+            return aFLGHGHAOMC_;
         }
-        if (other.getNIIPDHJEGDE() != 0) {
-          setNIIPDHJEGDE(other.getNIIPDHJEGDE());
+
+        public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 5;
+        private boolean isLevelOpen_;
+        /**
+         * <code>bool is_level_open = 5;</code>
+         *
+         * @return The isLevelOpen.
+         */
+        @java.lang.Override
+        public boolean getIsLevelOpen() {
+            return isLevelOpen_;
         }
-        if (other.getPJIHHFHLOGM() != 0) {
-          setPJIHHFHLOGM(other.getPJIHHFHLOGM());
+
+        public static final int LEVEL_ID_FIELD_NUMBER = 10;
+        private int levelId_;
+        /**
+         * <code>uint32 level_id = 10;</code>
+         *
+         * @return The levelId.
+         */
+        @java.lang.Override
+        public int getLevelId() {
+            return levelId_;
         }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        public static final int DBHOBFBBONG_FIELD_NUMBER = 9;
+        private int dBHOBFBBONG_;
+        /**
+         * <code>uint32 DBHOBFBBONG = 9;</code>
+         *
+         * @return The dBHOBFBBONG.
+         */
+        @java.lang.Override
+        public int getDBHOBFBBONG() {
+            return dBHOBFBBONG_;
         }
-        return this;
-      }
 
-      private int aFLGHGHAOMC_ ;
-      /**
-       * <code>uint32 AFLGHGHAOMC = 4;</code>
-       * @return The aFLGHGHAOMC.
-       */
-      @java.lang.Override
-      public int getAFLGHGHAOMC() {
-        return aFLGHGHAOMC_;
-      }
-      /**
-       * <code>uint32 AFLGHGHAOMC = 4;</code>
-       * @param value The aFLGHGHAOMC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAFLGHGHAOMC(int value) {
-        
-        aFLGHGHAOMC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AFLGHGHAOMC = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAFLGHGHAOMC() {
-        
-        aFLGHGHAOMC_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int NIIPDHJEGDE_FIELD_NUMBER = 7;
+        private int nIIPDHJEGDE_;
+        /**
+         * <code>uint32 NIIPDHJEGDE = 7;</code>
+         *
+         * @return The nIIPDHJEGDE.
+         */
+        @java.lang.Override
+        public int getNIIPDHJEGDE() {
+            return nIIPDHJEGDE_;
+        }
 
-      private boolean isLevelOpen_ ;
-      /**
-       * <code>bool is_level_open = 5;</code>
-       * @return The isLevelOpen.
-       */
-      @java.lang.Override
-      public boolean getIsLevelOpen() {
-        return isLevelOpen_;
-      }
-      /**
-       * <code>bool is_level_open = 5;</code>
-       * @param value The isLevelOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsLevelOpen(boolean value) {
-        
-        isLevelOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_level_open = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsLevelOpen() {
-        
-        isLevelOpen_ = false;
-        onChanged();
-        return this;
-      }
+        public static final int PJIHHFHLOGM_FIELD_NUMBER = 6;
+        private int pJIHHFHLOGM_;
+        /**
+         * <code>uint32 PJIHHFHLOGM = 6;</code>
+         *
+         * @return The pJIHHFHLOGM.
+         */
+        @java.lang.Override
+        public int getPJIHHFHLOGM() {
+            return pJIHHFHLOGM_;
+        }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int dBHOBFBBONG_ ;
-      /**
-       * <code>uint32 DBHOBFBBONG = 9;</code>
-       * @return The dBHOBFBBONG.
-       */
-      @java.lang.Override
-      public int getDBHOBFBBONG() {
-        return dBHOBFBBONG_;
-      }
-      /**
-       * <code>uint32 DBHOBFBBONG = 9;</code>
-       * @param value The dBHOBFBBONG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDBHOBFBBONG(int value) {
-        
-        dBHOBFBBONG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DBHOBFBBONG = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDBHOBFBBONG() {
-        
-        dBHOBFBBONG_ = 0;
-        onChanged();
-        return this;
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      private int nIIPDHJEGDE_ ;
-      /**
-       * <code>uint32 NIIPDHJEGDE = 7;</code>
-       * @return The nIIPDHJEGDE.
-       */
-      @java.lang.Override
-      public int getNIIPDHJEGDE() {
-        return nIIPDHJEGDE_;
-      }
-      /**
-       * <code>uint32 NIIPDHJEGDE = 7;</code>
-       * @param value The nIIPDHJEGDE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNIIPDHJEGDE(int value) {
-        
-        nIIPDHJEGDE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NIIPDHJEGDE = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNIIPDHJEGDE() {
-        
-        nIIPDHJEGDE_ = 0;
-        onChanged();
-        return this;
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
-      private int pJIHHFHLOGM_ ;
-      /**
-       * <code>uint32 PJIHHFHLOGM = 6;</code>
-       * @return The pJIHHFHLOGM.
-       */
-      @java.lang.Override
-      public int getPJIHHFHLOGM() {
-        return pJIHHFHLOGM_;
-      }
-      /**
-       * <code>uint32 PJIHHFHLOGM = 6;</code>
-       * @param value The pJIHHFHLOGM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPJIHHFHLOGM(int value) {
-        
-        pJIHHFHLOGM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PJIHHFHLOGM = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPJIHHFHLOGM() {
-        
-        pJIHHFHLOGM_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (aFLGHGHAOMC_ != 0) {
+                output.writeUInt32(4, aFLGHGHAOMC_);
+            }
+            if (isLevelOpen_ != false) {
+                output.writeBool(5, isLevelOpen_);
+            }
+            if (pJIHHFHLOGM_ != 0) {
+                output.writeUInt32(6, pJIHHFHLOGM_);
+            }
+            if (nIIPDHJEGDE_ != 0) {
+                output.writeUInt32(7, nIIPDHJEGDE_);
+            }
+            if (dBHOBFBBONG_ != 0) {
+                output.writeUInt32(9, dBHOBFBBONG_);
+            }
+            if (levelId_ != 0) {
+                output.writeUInt32(10, levelId_);
+            }
+            unknownFields.writeTo(output);
+        }
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
 
+            size = 0;
+            if (aFLGHGHAOMC_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, aFLGHGHAOMC_);
+            }
+            if (isLevelOpen_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isLevelOpen_);
+            }
+            if (pJIHHFHLOGM_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, pJIHHFHLOGM_);
+            }
+            if (nIIPDHJEGDE_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, nIIPDHJEGDE_);
+            }
+            if (dBHOBFBBONG_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, dBHOBFBBONG_);
+            }
+            if (levelId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, levelId_);
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
 
-      // @@protoc_insertion_point(builder_scope:EffigyChallengeV2LevelData)
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof
+                    emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                            .EffigyChallengeV2LevelData)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                    other =
+                            (emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                            .EffigyChallengeV2LevelData)
+                                    obj;
+
+            if (getAFLGHGHAOMC() != other.getAFLGHGHAOMC()) return false;
+            if (getIsLevelOpen() != other.getIsLevelOpen()) return false;
+            if (getLevelId() != other.getLevelId()) return false;
+            if (getDBHOBFBBONG() != other.getDBHOBFBBONG()) return false;
+            if (getNIIPDHJEGDE() != other.getNIIPDHJEGDE()) return false;
+            if (getPJIHHFHLOGM() != other.getPJIHHFHLOGM()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + AFLGHGHAOMC_FIELD_NUMBER;
+            hash = (53 * hash) + getAFLGHGHAOMC();
+            hash = (37 * hash) + IS_LEVEL_OPEN_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsLevelOpen());
+            hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getLevelId();
+            hash = (37 * hash) + DBHOBFBBONG_FIELD_NUMBER;
+            hash = (53 * hash) + getDBHOBFBBONG();
+            hash = (37 * hash) + NIIPDHJEGDE_FIELD_NUMBER;
+            hash = (53 * hash) + getNIIPDHJEGDE();
+            hash = (37 * hash) + PJIHHFHLOGM_FIELD_NUMBER;
+            hash = (53 * hash) + getPJIHHFHLOGM();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                        prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: MNPIDOGLIAN
+         * </pre>
+         *
+         * Protobuf type {@code EffigyChallengeV2LevelData}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:EffigyChallengeV2LevelData)
+                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelDataOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .internal_static_EffigyChallengeV2LevelData_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .internal_static_EffigyChallengeV2LevelData_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                        .EffigyChallengeV2LevelData.class,
+                                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                        .EffigyChallengeV2LevelData.Builder.class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                aFLGHGHAOMC_ = 0;
+
+                isLevelOpen_ = false;
+
+                levelId_ = 0;
+
+                dBHOBFBBONG_ = 0;
+
+                nIIPDHJEGDE_ = 0;
+
+                pJIHHFHLOGM_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .internal_static_EffigyChallengeV2LevelData_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                            .EffigyChallengeV2LevelData
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData.getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                            .EffigyChallengeV2LevelData
+                    build() {
+                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                        result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                            .EffigyChallengeV2LevelData
+                    buildPartial() {
+                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                        result =
+                                new emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                        .EffigyChallengeV2LevelData(this);
+                result.aFLGHGHAOMC_ = aFLGHGHAOMC_;
+                result.isLevelOpen_ = isLevelOpen_;
+                result.levelId_ = levelId_;
+                result.dBHOBFBBONG_ = dBHOBFBBONG_;
+                result.nIIPDHJEGDE_ = nIIPDHJEGDE_;
+                result.pJIHHFHLOGM_ = pJIHHFHLOGM_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                .EffigyChallengeV2LevelData) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                            .EffigyChallengeV2LevelData)
+                                    other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                            other) {
+                if (other
+                        == emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                .EffigyChallengeV2LevelData.getDefaultInstance()) return this;
+                if (other.getAFLGHGHAOMC() != 0) {
+                    setAFLGHGHAOMC(other.getAFLGHGHAOMC());
+                }
+                if (other.getIsLevelOpen() != false) {
+                    setIsLevelOpen(other.getIsLevelOpen());
+                }
+                if (other.getLevelId() != 0) {
+                    setLevelId(other.getLevelId());
+                }
+                if (other.getDBHOBFBBONG() != 0) {
+                    setDBHOBFBBONG(other.getDBHOBFBBONG());
+                }
+                if (other.getNIIPDHJEGDE() != 0) {
+                    setNIIPDHJEGDE(other.getNIIPDHJEGDE());
+                }
+                if (other.getPJIHHFHLOGM() != 0) {
+                    setPJIHHFHLOGM(other.getPJIHHFHLOGM());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                        parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                                            .EffigyChallengeV2LevelData)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int aFLGHGHAOMC_;
+            /**
+             * <code>uint32 AFLGHGHAOMC = 4;</code>
+             *
+             * @return The aFLGHGHAOMC.
+             */
+            @java.lang.Override
+            public int getAFLGHGHAOMC() {
+                return aFLGHGHAOMC_;
+            }
+            /**
+             * <code>uint32 AFLGHGHAOMC = 4;</code>
+             *
+             * @param value The aFLGHGHAOMC to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAFLGHGHAOMC(int value) {
+
+                aFLGHGHAOMC_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 AFLGHGHAOMC = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAFLGHGHAOMC() {
+
+                aFLGHGHAOMC_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean isLevelOpen_;
+            /**
+             * <code>bool is_level_open = 5;</code>
+             *
+             * @return The isLevelOpen.
+             */
+            @java.lang.Override
+            public boolean getIsLevelOpen() {
+                return isLevelOpen_;
+            }
+            /**
+             * <code>bool is_level_open = 5;</code>
+             *
+             * @param value The isLevelOpen to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsLevelOpen(boolean value) {
+
+                isLevelOpen_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_level_open = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsLevelOpen() {
+
+                isLevelOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int levelId_;
+            /**
+             * <code>uint32 level_id = 10;</code>
+             *
+             * @return The levelId.
+             */
+            @java.lang.Override
+            public int getLevelId() {
+                return levelId_;
+            }
+            /**
+             * <code>uint32 level_id = 10;</code>
+             *
+             * @param value The levelId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setLevelId(int value) {
+
+                levelId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 level_id = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearLevelId() {
+
+                levelId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int dBHOBFBBONG_;
+            /**
+             * <code>uint32 DBHOBFBBONG = 9;</code>
+             *
+             * @return The dBHOBFBBONG.
+             */
+            @java.lang.Override
+            public int getDBHOBFBBONG() {
+                return dBHOBFBBONG_;
+            }
+            /**
+             * <code>uint32 DBHOBFBBONG = 9;</code>
+             *
+             * @param value The dBHOBFBBONG to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDBHOBFBBONG(int value) {
+
+                dBHOBFBBONG_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 DBHOBFBBONG = 9;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDBHOBFBBONG() {
+
+                dBHOBFBBONG_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int nIIPDHJEGDE_;
+            /**
+             * <code>uint32 NIIPDHJEGDE = 7;</code>
+             *
+             * @return The nIIPDHJEGDE.
+             */
+            @java.lang.Override
+            public int getNIIPDHJEGDE() {
+                return nIIPDHJEGDE_;
+            }
+            /**
+             * <code>uint32 NIIPDHJEGDE = 7;</code>
+             *
+             * @param value The nIIPDHJEGDE to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNIIPDHJEGDE(int value) {
+
+                nIIPDHJEGDE_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 NIIPDHJEGDE = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNIIPDHJEGDE() {
+
+                nIIPDHJEGDE_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int pJIHHFHLOGM_;
+            /**
+             * <code>uint32 PJIHHFHLOGM = 6;</code>
+             *
+             * @return The pJIHHFHLOGM.
+             */
+            @java.lang.Override
+            public int getPJIHHFHLOGM() {
+                return pJIHHFHLOGM_;
+            }
+            /**
+             * <code>uint32 PJIHHFHLOGM = 6;</code>
+             *
+             * @param value The pJIHHFHLOGM to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPJIHHFHLOGM(int value) {
+
+                pJIHHFHLOGM_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 PJIHHFHLOGM = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPJIHHFHLOGM() {
+
+                pJIHHFHLOGM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:EffigyChallengeV2LevelData)
+        }
+
+        // @@protoc_insertion_point(class_scope:EffigyChallengeV2LevelData)
+        private static final emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                            .EffigyChallengeV2LevelData();
+        }
+
+        public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass
+                        .EffigyChallengeV2LevelData
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<EffigyChallengeV2LevelData> PARSER =
+                new com.google.protobuf.AbstractParser<EffigyChallengeV2LevelData>() {
+                    @java.lang.Override
+                    public EffigyChallengeV2LevelData parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new EffigyChallengeV2LevelData(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<EffigyChallengeV2LevelData> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<EffigyChallengeV2LevelData> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:EffigyChallengeV2LevelData)
-    private static final emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_EffigyChallengeV2LevelData_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_EffigyChallengeV2LevelData_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData();
+        java.lang.String[] descriptorData = {
+            "\n EffigyChallengeV2LevelData.proto\"\231\001\n\032E"
+                    + "ffigyChallengeV2LevelData\022\023\n\013AFLGHGHAOMC"
+                    + "\030\004 \001(\r\022\025\n\ris_level_open\030\005 \001(\010\022\020\n\010level_i"
+                    + "d\030\n \001(\r\022\023\n\013DBHOBFBBONG\030\t \001(\r\022\023\n\013NIIPDHJE"
+                    + "GDE\030\007 \001(\r\022\023\n\013PJIHHFHLOGM\030\006 \001(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        internal_static_EffigyChallengeV2LevelData_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_EffigyChallengeV2LevelData_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_EffigyChallengeV2LevelData_descriptor,
+                        new java.lang.String[] {
+                            "AFLGHGHAOMC", "IsLevelOpen", "LevelId", "DBHOBFBBONG", "NIIPDHJEGDE", "PJIHHFHLOGM",
+                        });
     }
 
-    public static emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<EffigyChallengeV2LevelData>
-        PARSER = new com.google.protobuf.AbstractParser<EffigyChallengeV2LevelData>() {
-      @java.lang.Override
-      public EffigyChallengeV2LevelData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EffigyChallengeV2LevelData(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<EffigyChallengeV2LevelData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<EffigyChallengeV2LevelData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EffigyChallengeV2LevelData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EffigyChallengeV2LevelData_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n EffigyChallengeV2LevelData.proto\"\231\001\n\032E" +
-      "ffigyChallengeV2LevelData\022\023\n\013AFLGHGHAOMC" +
-      "\030\004 \001(\r\022\025\n\ris_level_open\030\005 \001(\010\022\020\n\010level_i" +
-      "d\030\n \001(\r\022\023\n\013DBHOBFBBONG\030\t \001(\r\022\023\n\013NIIPDHJE" +
-      "GDE\030\007 \001(\r\022\023\n\013PJIHHFHLOGM\030\006 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_EffigyChallengeV2LevelData_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_EffigyChallengeV2LevelData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EffigyChallengeV2LevelData_descriptor,
-        new java.lang.String[] { "AFLGHGHAOMC", "IsLevelOpen", "LevelId", "DBHOBFBBONG", "NIIPDHJEGDE", "PJIHHFHLOGM", });
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }

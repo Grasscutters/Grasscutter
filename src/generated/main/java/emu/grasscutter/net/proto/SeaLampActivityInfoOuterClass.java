@@ -4,1417 +4,1494 @@
 package emu.grasscutter.net.proto;
 
 public final class SeaLampActivityInfoOuterClass {
-  private SeaLampActivityInfoOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
+    private SeaLampActivityInfoOuterClass() {}
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface SeaLampActivityInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:SeaLampActivityInfo)
-      com.google.protobuf.MessageOrBuilder {
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
-    /**
-     * <code>uint32 day_index = 8;</code>
-     * @return The dayIndex.
-     */
-    int getDayIndex();
-
-    /**
-     * <code>bool is_content_closed = 6;</code>
-     * @return The isContentClosed.
-     */
-    boolean getIsContentClosed();
-
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> 
-        getSectionInfoListList();
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo getSectionInfoList(int index);
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    int getSectionInfoListCount();
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder> 
-        getSectionInfoListOrBuilderList();
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder getSectionInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>bool JOCKLIEKCHP = 7;</code>
-     * @return The jOCKLIEKCHP.
-     */
-    boolean getJOCKLIEKCHP();
-
-    /**
-     * <code>uint32 first_day_start_time = 10;</code>
-     * @return The firstDayStartTime.
-     */
-    int getFirstDayStartTime();
-
-    /**
-     * <code>uint32 mechanicus_id = 3;</code>
-     * @return The mechanicusId.
-     */
-    int getMechanicusId();
-
-    /**
-     * <code>bool CKANAPMJECL = 4;</code>
-     * @return The cKANAPMJECL.
-     */
-    boolean getCKANAPMJECL();
-
-    /**
-     * <code>uint32 sea_lamp_coin = 11;</code>
-     * @return The seaLampCoin.
-     */
-    int getSeaLampCoin();
-
-    /**
-     * <code>uint32 popularity = 14;</code>
-     * @return The popularity.
-     */
-    int getPopularity();
-  }
-  /**
-   * <pre>
-   * Obf: BAKHKCAKDEI
-   * </pre>
-   *
-   * Protobuf type {@code SeaLampActivityInfo}
-   */
-  public static final class SeaLampActivityInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:SeaLampActivityInfo)
-      SeaLampActivityInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use SeaLampActivityInfo.newBuilder() to construct.
-    private SeaLampActivityInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private SeaLampActivityInfo() {
-      sectionInfoList_ = java.util.Collections.emptyList();
+    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
     }
 
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new SeaLampActivityInfo();
-    }
+    public interface SeaLampActivityInfoOrBuilder
+            extends
+            // @@protoc_insertion_point(interface_extends:SeaLampActivityInfo)
+            com.google.protobuf.MessageOrBuilder {
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private SeaLampActivityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
+        /**
+         * <code>uint32 day_index = 8;</code>
+         *
+         * @return The dayIndex.
+         */
+        int getDayIndex();
 
-              mechanicusId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+        /**
+         * <code>bool is_content_closed = 6;</code>
+         *
+         * @return The isContentClosed.
+         */
+        boolean getIsContentClosed();
 
-              cKANAPMJECL_ = input.readBool();
-              break;
-            }
-            case 48: {
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                getSectionInfoListList();
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo getSectionInfoList(
+                int index);
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        int getSectionInfoListCount();
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>
+                getSectionInfoListOrBuilderList();
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder
+                getSectionInfoListOrBuilder(int index);
 
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            case 56: {
+        /**
+         * <code>bool JOCKLIEKCHP = 7;</code>
+         *
+         * @return The jOCKLIEKCHP.
+         */
+        boolean getJOCKLIEKCHP();
 
-              jOCKLIEKCHP_ = input.readBool();
-              break;
-            }
-            case 64: {
+        /**
+         * <code>uint32 first_day_start_time = 10;</code>
+         *
+         * @return The firstDayStartTime.
+         */
+        int getFirstDayStartTime();
 
-              dayIndex_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+        /**
+         * <code>uint32 mechanicus_id = 3;</code>
+         *
+         * @return The mechanicusId.
+         */
+        int getMechanicusId();
 
-              firstDayStartTime_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+        /**
+         * <code>bool CKANAPMJECL = 4;</code>
+         *
+         * @return The cKANAPMJECL.
+         */
+        boolean getCKANAPMJECL();
 
-              seaLampCoin_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+        /**
+         * <code>uint32 sea_lamp_coin = 11;</code>
+         *
+         * @return The seaLampCoin.
+         */
+        int getSeaLampCoin();
 
-              popularity_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sectionInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sectionInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.class, emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.Builder.class);
-    }
-
-    public static final int DAY_INDEX_FIELD_NUMBER = 8;
-    private int dayIndex_;
-    /**
-     * <code>uint32 day_index = 8;</code>
-     * @return The dayIndex.
-     */
-    @java.lang.Override
-    public int getDayIndex() {
-      return dayIndex_;
-    }
-
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 6;
-    private boolean isContentClosed_;
-    /**
-     * <code>bool is_content_closed = 6;</code>
-     * @return The isContentClosed.
-     */
-    @java.lang.Override
-    public boolean getIsContentClosed() {
-      return isContentClosed_;
-    }
-
-    public static final int SECTION_INFO_LIST_FIELD_NUMBER = 15;
-    private java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> sectionInfoList_;
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> getSectionInfoListList() {
-      return sectionInfoList_;
+        /**
+         * <code>uint32 popularity = 14;</code>
+         *
+         * @return The popularity.
+         */
+        int getPopularity();
     }
     /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder> 
-        getSectionInfoListOrBuilderList() {
-      return sectionInfoList_;
-    }
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    @java.lang.Override
-    public int getSectionInfoListCount() {
-      return sectionInfoList_.size();
-    }
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo getSectionInfoList(int index) {
-      return sectionInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder getSectionInfoListOrBuilder(
-        int index) {
-      return sectionInfoList_.get(index);
-    }
-
-    public static final int JOCKLIEKCHP_FIELD_NUMBER = 7;
-    private boolean jOCKLIEKCHP_;
-    /**
-     * <code>bool JOCKLIEKCHP = 7;</code>
-     * @return The jOCKLIEKCHP.
-     */
-    @java.lang.Override
-    public boolean getJOCKLIEKCHP() {
-      return jOCKLIEKCHP_;
-    }
-
-    public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 10;
-    private int firstDayStartTime_;
-    /**
-     * <code>uint32 first_day_start_time = 10;</code>
-     * @return The firstDayStartTime.
-     */
-    @java.lang.Override
-    public int getFirstDayStartTime() {
-      return firstDayStartTime_;
-    }
-
-    public static final int MECHANICUS_ID_FIELD_NUMBER = 3;
-    private int mechanicusId_;
-    /**
-     * <code>uint32 mechanicus_id = 3;</code>
-     * @return The mechanicusId.
-     */
-    @java.lang.Override
-    public int getMechanicusId() {
-      return mechanicusId_;
-    }
-
-    public static final int CKANAPMJECL_FIELD_NUMBER = 4;
-    private boolean cKANAPMJECL_;
-    /**
-     * <code>bool CKANAPMJECL = 4;</code>
-     * @return The cKANAPMJECL.
-     */
-    @java.lang.Override
-    public boolean getCKANAPMJECL() {
-      return cKANAPMJECL_;
-    }
-
-    public static final int SEA_LAMP_COIN_FIELD_NUMBER = 11;
-    private int seaLampCoin_;
-    /**
-     * <code>uint32 sea_lamp_coin = 11;</code>
-     * @return The seaLampCoin.
-     */
-    @java.lang.Override
-    public int getSeaLampCoin() {
-      return seaLampCoin_;
-    }
-
-    public static final int POPULARITY_FIELD_NUMBER = 14;
-    private int popularity_;
-    /**
-     * <code>uint32 popularity = 14;</code>
-     * @return The popularity.
-     */
-    @java.lang.Override
-    public int getPopularity() {
-      return popularity_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (mechanicusId_ != 0) {
-        output.writeUInt32(3, mechanicusId_);
-      }
-      if (cKANAPMJECL_ != false) {
-        output.writeBool(4, cKANAPMJECL_);
-      }
-      if (isContentClosed_ != false) {
-        output.writeBool(6, isContentClosed_);
-      }
-      if (jOCKLIEKCHP_ != false) {
-        output.writeBool(7, jOCKLIEKCHP_);
-      }
-      if (dayIndex_ != 0) {
-        output.writeUInt32(8, dayIndex_);
-      }
-      if (firstDayStartTime_ != 0) {
-        output.writeUInt32(10, firstDayStartTime_);
-      }
-      if (seaLampCoin_ != 0) {
-        output.writeUInt32(11, seaLampCoin_);
-      }
-      if (popularity_ != 0) {
-        output.writeUInt32(14, popularity_);
-      }
-      for (int i = 0; i < sectionInfoList_.size(); i++) {
-        output.writeMessage(15, sectionInfoList_.get(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (mechanicusId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, mechanicusId_);
-      }
-      if (cKANAPMJECL_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, cKANAPMJECL_);
-      }
-      if (isContentClosed_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isContentClosed_);
-      }
-      if (jOCKLIEKCHP_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, jOCKLIEKCHP_);
-      }
-      if (dayIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, dayIndex_);
-      }
-      if (firstDayStartTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, firstDayStartTime_);
-      }
-      if (seaLampCoin_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, seaLampCoin_);
-      }
-      if (popularity_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, popularity_);
-      }
-      for (int i = 0; i < sectionInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, sectionInfoList_.get(i));
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo)) {
-        return super.equals(obj);
-      }
-      emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo other = (emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) obj;
-
-      if (getDayIndex()
-          != other.getDayIndex()) return false;
-      if (getIsContentClosed()
-          != other.getIsContentClosed()) return false;
-      if (!getSectionInfoListList()
-          .equals(other.getSectionInfoListList())) return false;
-      if (getJOCKLIEKCHP()
-          != other.getJOCKLIEKCHP()) return false;
-      if (getFirstDayStartTime()
-          != other.getFirstDayStartTime()) return false;
-      if (getMechanicusId()
-          != other.getMechanicusId()) return false;
-      if (getCKANAPMJECL()
-          != other.getCKANAPMJECL()) return false;
-      if (getSeaLampCoin()
-          != other.getSeaLampCoin()) return false;
-      if (getPopularity()
-          != other.getPopularity()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DAY_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getDayIndex();
-      hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsContentClosed());
-      if (getSectionInfoListCount() > 0) {
-        hash = (37 * hash) + SECTION_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSectionInfoListList().hashCode();
-      }
-      hash = (37 * hash) + JOCKLIEKCHP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJOCKLIEKCHP());
-      hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstDayStartTime();
-      hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMechanicusId();
-      hash = (37 * hash) + CKANAPMJECL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCKANAPMJECL());
-      hash = (37 * hash) + SEA_LAMP_COIN_FIELD_NUMBER;
-      hash = (53 * hash) + getSeaLampCoin();
-      hash = (37 * hash) + POPULARITY_FIELD_NUMBER;
-      hash = (53 * hash) + getPopularity();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
+     *
+     *
      * <pre>
      * Obf: BAKHKCAKDEI
      * </pre>
      *
      * Protobuf type {@code SeaLampActivityInfo}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:SeaLampActivityInfo)
-        emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.class, emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.Builder.class);
-      }
-
-      // Construct using emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSectionInfoListFieldBuilder();
+    public static final class SeaLampActivityInfo extends com.google.protobuf.GeneratedMessageV3
+            implements
+            // @@protoc_insertion_point(message_implements:SeaLampActivityInfo)
+            SeaLampActivityInfoOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use SeaLampActivityInfo.newBuilder() to construct.
+        private SeaLampActivityInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+            super(builder);
         }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        dayIndex_ = 0;
 
-        isContentClosed_ = false;
-
-        if (sectionInfoListBuilder_ == null) {
-          sectionInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          sectionInfoListBuilder_.clear();
+        private SeaLampActivityInfo() {
+            sectionInfoList_ = java.util.Collections.emptyList();
         }
-        jOCKLIEKCHP_ = false;
 
-        firstDayStartTime_ = 0;
-
-        mechanicusId_ = 0;
-
-        cKANAPMJECL_ = false;
-
-        seaLampCoin_ = 0;
-
-        popularity_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo build() {
-        emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+            return new SeaLampActivityInfo();
         }
-        return result;
-      }
 
-      @java.lang.Override
-      public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo buildPartial() {
-        emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result = new emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.dayIndex_ = dayIndex_;
-        result.isContentClosed_ = isContentClosed_;
-        if (sectionInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.sectionInfoList_ = sectionInfoList_;
-        } else {
-          result.sectionInfoList_ = sectionInfoListBuilder_.build();
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+            return this.unknownFields;
         }
-        result.jOCKLIEKCHP_ = jOCKLIEKCHP_;
-        result.firstDayStartTime_ = firstDayStartTime_;
-        result.mechanicusId_ = mechanicusId_;
-        result.cKANAPMJECL_ = cKANAPMJECL_;
-        result.seaLampCoin_ = seaLampCoin_;
-        result.popularity_ = popularity_;
-        onBuilt();
-        return result;
-      }
 
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) {
-          return mergeFrom((emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo other) {
-        if (other == emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.getDefaultInstance()) return this;
-        if (other.getDayIndex() != 0) {
-          setDayIndex(other.getDayIndex());
-        }
-        if (other.getIsContentClosed() != false) {
-          setIsContentClosed(other.getIsContentClosed());
-        }
-        if (sectionInfoListBuilder_ == null) {
-          if (!other.sectionInfoList_.isEmpty()) {
-            if (sectionInfoList_.isEmpty()) {
-              sectionInfoList_ = other.sectionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureSectionInfoListIsMutable();
-              sectionInfoList_.addAll(other.sectionInfoList_);
+        private SeaLampActivityInfo(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            this();
+            if (extensionRegistry == null) {
+                throw new java.lang.NullPointerException();
             }
-            onChanged();
-          }
-        } else {
-          if (!other.sectionInfoList_.isEmpty()) {
-            if (sectionInfoListBuilder_.isEmpty()) {
-              sectionInfoListBuilder_.dispose();
-              sectionInfoListBuilder_ = null;
-              sectionInfoList_ = other.sectionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              sectionInfoListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSectionInfoListFieldBuilder() : null;
-            } else {
-              sectionInfoListBuilder_.addAllMessages(other.sectionInfoList_);
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        case 24:
+                            {
+                                mechanicusId_ = input.readUInt32();
+                                break;
+                            }
+                        case 32:
+                            {
+                                cKANAPMJECL_ = input.readBool();
+                                break;
+                            }
+                        case 48:
+                            {
+                                isContentClosed_ = input.readBool();
+                                break;
+                            }
+                        case 56:
+                            {
+                                jOCKLIEKCHP_ = input.readBool();
+                                break;
+                            }
+                        case 64:
+                            {
+                                dayIndex_ = input.readUInt32();
+                                break;
+                            }
+                        case 80:
+                            {
+                                firstDayStartTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
+                            {
+                                seaLampCoin_ = input.readUInt32();
+                                break;
+                            }
+                        case 112:
+                            {
+                                popularity_ = input.readUInt32();
+                                break;
+                            }
+                        case 122:
+                            {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                    sectionInfoList_ =
+                                            new java.util.ArrayList<
+                                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass
+                                                            .SeaLampSectionInfo>();
+                                    mutable_bitField0_ |= 0x00000001;
+                                }
+                                sectionInfoList_.add(
+                                        input.readMessage(
+                                                emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo
+                                                        .parser(),
+                                                extensionRegistry));
+                                break;
+                            }
+                        default:
+                            {
+                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                    done = true;
+                                }
+                                break;
+                            }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                    sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
             }
-          }
         }
-        if (other.getJOCKLIEKCHP() != false) {
-          setJOCKLIEKCHP(other.getJOCKLIEKCHP());
-        }
-        if (other.getFirstDayStartTime() != 0) {
-          setFirstDayStartTime(other.getFirstDayStartTime());
-        }
-        if (other.getMechanicusId() != 0) {
-          setMechanicusId(other.getMechanicusId());
-        }
-        if (other.getCKANAPMJECL() != false) {
-          setCKANAPMJECL(other.getCKANAPMJECL());
-        }
-        if (other.getSeaLampCoin() != 0) {
-          setSeaLampCoin(other.getSeaLampCoin());
-        }
-        if (other.getPopularity() != 0) {
-          setPopularity(other.getPopularity());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
 
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass
+                    .internal_static_SeaLampActivityInfo_descriptor;
+        }
 
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                internalGetFieldAccessorTable() {
+            return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass
+                    .internal_static_SeaLampActivityInfo_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.class,
+                            emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.Builder
+                                    .class);
         }
-        return this;
-      }
-      private int bitField0_;
 
-      private int dayIndex_ ;
-      /**
-       * <code>uint32 day_index = 8;</code>
-       * @return The dayIndex.
-       */
-      @java.lang.Override
-      public int getDayIndex() {
-        return dayIndex_;
-      }
-      /**
-       * <code>uint32 day_index = 8;</code>
-       * @param value The dayIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDayIndex(int value) {
-        
-        dayIndex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 day_index = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDayIndex() {
-        
-        dayIndex_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int DAY_INDEX_FIELD_NUMBER = 8;
+        private int dayIndex_;
+        /**
+         * <code>uint32 day_index = 8;</code>
+         *
+         * @return The dayIndex.
+         */
+        @java.lang.Override
+        public int getDayIndex() {
+            return dayIndex_;
+        }
 
-      private boolean isContentClosed_ ;
-      /**
-       * <code>bool is_content_closed = 6;</code>
-       * @return The isContentClosed.
-       */
-      @java.lang.Override
-      public boolean getIsContentClosed() {
-        return isContentClosed_;
-      }
-      /**
-       * <code>bool is_content_closed = 6;</code>
-       * @param value The isContentClosed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsContentClosed(boolean value) {
-        
-        isContentClosed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_content_closed = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsContentClosed() {
-        
-        isContentClosed_ = false;
-        onChanged();
-        return this;
-      }
+        public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 6;
+        private boolean isContentClosed_;
+        /**
+         * <code>bool is_content_closed = 6;</code>
+         *
+         * @return The isContentClosed.
+         */
+        @java.lang.Override
+        public boolean getIsContentClosed() {
+            return isContentClosed_;
+        }
 
-      private java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> sectionInfoList_ =
-        java.util.Collections.emptyList();
-      private void ensureSectionInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          sectionInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>(sectionInfoList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+        public static final int SECTION_INFO_LIST_FIELD_NUMBER = 15;
+        private java.util.List<
+                        emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                sectionInfoList_;
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        @java.lang.Override
+        public java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                getSectionInfoListList() {
+            return sectionInfoList_;
+        }
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends
+                                emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>
+                getSectionInfoListOrBuilderList() {
+            return sectionInfoList_;
+        }
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        @java.lang.Override
+        public int getSectionInfoListCount() {
+            return sectionInfoList_.size();
+        }
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo
+                getSectionInfoList(int index) {
+            return sectionInfoList_.get(index);
+        }
+        /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder
+                getSectionInfoListOrBuilder(int index) {
+            return sectionInfoList_.get(index);
+        }
 
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder> sectionInfoListBuilder_;
+        public static final int JOCKLIEKCHP_FIELD_NUMBER = 7;
+        private boolean jOCKLIEKCHP_;
+        /**
+         * <code>bool JOCKLIEKCHP = 7;</code>
+         *
+         * @return The jOCKLIEKCHP.
+         */
+        @java.lang.Override
+        public boolean getJOCKLIEKCHP() {
+            return jOCKLIEKCHP_;
+        }
 
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> getSectionInfoListList() {
-        if (sectionInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(sectionInfoList_);
-        } else {
-          return sectionInfoListBuilder_.getMessageList();
+        public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 10;
+        private int firstDayStartTime_;
+        /**
+         * <code>uint32 first_day_start_time = 10;</code>
+         *
+         * @return The firstDayStartTime.
+         */
+        @java.lang.Override
+        public int getFirstDayStartTime() {
+            return firstDayStartTime_;
         }
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public int getSectionInfoListCount() {
-        if (sectionInfoListBuilder_ == null) {
-          return sectionInfoList_.size();
-        } else {
-          return sectionInfoListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo getSectionInfoList(int index) {
-        if (sectionInfoListBuilder_ == null) {
-          return sectionInfoList_.get(index);
-        } else {
-          return sectionInfoListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder setSectionInfoList(
-          int index, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
-        if (sectionInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.set(index, value);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder setSectionInfoList(
-          int index, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder builderForValue) {
-        if (sectionInfoListBuilder_ == null) {
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder addSectionInfoList(emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
-        if (sectionInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.add(value);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder addSectionInfoList(
-          int index, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
-        if (sectionInfoListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.add(index, value);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder addSectionInfoList(
-          emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder builderForValue) {
-        if (sectionInfoListBuilder_ == null) {
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder addSectionInfoList(
-          int index, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder builderForValue) {
-        if (sectionInfoListBuilder_ == null) {
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder addAllSectionInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> values) {
-        if (sectionInfoListBuilder_ == null) {
-          ensureSectionInfoListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, sectionInfoList_);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder clearSectionInfoList() {
-        if (sectionInfoListBuilder_ == null) {
-          sectionInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public Builder removeSectionInfoList(int index) {
-        if (sectionInfoListBuilder_ == null) {
-          ensureSectionInfoListIsMutable();
-          sectionInfoList_.remove(index);
-          onChanged();
-        } else {
-          sectionInfoListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder getSectionInfoListBuilder(
-          int index) {
-        return getSectionInfoListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder getSectionInfoListOrBuilder(
-          int index) {
-        if (sectionInfoListBuilder_ == null) {
-          return sectionInfoList_.get(index);  } else {
-          return sectionInfoListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder> 
-           getSectionInfoListOrBuilderList() {
-        if (sectionInfoListBuilder_ != null) {
-          return sectionInfoListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(sectionInfoList_);
-        }
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder addSectionInfoListBuilder() {
-        return getSectionInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder addSectionInfoListBuilder(
-          int index) {
-        return getSectionInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .SeaLampSectionInfo section_info_list = 15;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder> 
-           getSectionInfoListBuilderList() {
-        return getSectionInfoListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder> 
-          getSectionInfoListFieldBuilder() {
-        if (sectionInfoListBuilder_ == null) {
-          sectionInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder, emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>(
-                  sectionInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          sectionInfoList_ = null;
-        }
-        return sectionInfoListBuilder_;
-      }
 
-      private boolean jOCKLIEKCHP_ ;
-      /**
-       * <code>bool JOCKLIEKCHP = 7;</code>
-       * @return The jOCKLIEKCHP.
-       */
-      @java.lang.Override
-      public boolean getJOCKLIEKCHP() {
-        return jOCKLIEKCHP_;
-      }
-      /**
-       * <code>bool JOCKLIEKCHP = 7;</code>
-       * @param value The jOCKLIEKCHP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJOCKLIEKCHP(boolean value) {
-        
-        jOCKLIEKCHP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool JOCKLIEKCHP = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJOCKLIEKCHP() {
-        
-        jOCKLIEKCHP_ = false;
-        onChanged();
-        return this;
-      }
+        public static final int MECHANICUS_ID_FIELD_NUMBER = 3;
+        private int mechanicusId_;
+        /**
+         * <code>uint32 mechanicus_id = 3;</code>
+         *
+         * @return The mechanicusId.
+         */
+        @java.lang.Override
+        public int getMechanicusId() {
+            return mechanicusId_;
+        }
 
-      private int firstDayStartTime_ ;
-      /**
-       * <code>uint32 first_day_start_time = 10;</code>
-       * @return The firstDayStartTime.
-       */
-      @java.lang.Override
-      public int getFirstDayStartTime() {
-        return firstDayStartTime_;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 10;</code>
-       * @param value The firstDayStartTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFirstDayStartTime(int value) {
-        
-        firstDayStartTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 first_day_start_time = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFirstDayStartTime() {
-        
-        firstDayStartTime_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int CKANAPMJECL_FIELD_NUMBER = 4;
+        private boolean cKANAPMJECL_;
+        /**
+         * <code>bool CKANAPMJECL = 4;</code>
+         *
+         * @return The cKANAPMJECL.
+         */
+        @java.lang.Override
+        public boolean getCKANAPMJECL() {
+            return cKANAPMJECL_;
+        }
 
-      private int mechanicusId_ ;
-      /**
-       * <code>uint32 mechanicus_id = 3;</code>
-       * @return The mechanicusId.
-       */
-      @java.lang.Override
-      public int getMechanicusId() {
-        return mechanicusId_;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 3;</code>
-       * @param value The mechanicusId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMechanicusId(int value) {
-        
-        mechanicusId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mechanicus_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMechanicusId() {
-        
-        mechanicusId_ = 0;
-        onChanged();
-        return this;
-      }
+        public static final int SEA_LAMP_COIN_FIELD_NUMBER = 11;
+        private int seaLampCoin_;
+        /**
+         * <code>uint32 sea_lamp_coin = 11;</code>
+         *
+         * @return The seaLampCoin.
+         */
+        @java.lang.Override
+        public int getSeaLampCoin() {
+            return seaLampCoin_;
+        }
 
-      private boolean cKANAPMJECL_ ;
-      /**
-       * <code>bool CKANAPMJECL = 4;</code>
-       * @return The cKANAPMJECL.
-       */
-      @java.lang.Override
-      public boolean getCKANAPMJECL() {
-        return cKANAPMJECL_;
-      }
-      /**
-       * <code>bool CKANAPMJECL = 4;</code>
-       * @param value The cKANAPMJECL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCKANAPMJECL(boolean value) {
-        
-        cKANAPMJECL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool CKANAPMJECL = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCKANAPMJECL() {
-        
-        cKANAPMJECL_ = false;
-        onChanged();
-        return this;
-      }
+        public static final int POPULARITY_FIELD_NUMBER = 14;
+        private int popularity_;
+        /**
+         * <code>uint32 popularity = 14;</code>
+         *
+         * @return The popularity.
+         */
+        @java.lang.Override
+        public int getPopularity() {
+            return popularity_;
+        }
 
-      private int seaLampCoin_ ;
-      /**
-       * <code>uint32 sea_lamp_coin = 11;</code>
-       * @return The seaLampCoin.
-       */
-      @java.lang.Override
-      public int getSeaLampCoin() {
-        return seaLampCoin_;
-      }
-      /**
-       * <code>uint32 sea_lamp_coin = 11;</code>
-       * @param value The seaLampCoin to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSeaLampCoin(int value) {
-        
-        seaLampCoin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 sea_lamp_coin = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSeaLampCoin() {
-        
-        seaLampCoin_ = 0;
-        onChanged();
-        return this;
-      }
+        private byte memoizedIsInitialized = -1;
 
-      private int popularity_ ;
-      /**
-       * <code>uint32 popularity = 14;</code>
-       * @return The popularity.
-       */
-      @java.lang.Override
-      public int getPopularity() {
-        return popularity_;
-      }
-      /**
-       * <code>uint32 popularity = 14;</code>
-       * @param value The popularity to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPopularity(int value) {
-        
-        popularity_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 popularity = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPopularity() {
-        
-        popularity_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
+        @java.lang.Override
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
+            memoizedIsInitialized = 1;
+            return true;
+        }
 
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (mechanicusId_ != 0) {
+                output.writeUInt32(3, mechanicusId_);
+            }
+            if (cKANAPMJECL_ != false) {
+                output.writeBool(4, cKANAPMJECL_);
+            }
+            if (isContentClosed_ != false) {
+                output.writeBool(6, isContentClosed_);
+            }
+            if (jOCKLIEKCHP_ != false) {
+                output.writeBool(7, jOCKLIEKCHP_);
+            }
+            if (dayIndex_ != 0) {
+                output.writeUInt32(8, dayIndex_);
+            }
+            if (firstDayStartTime_ != 0) {
+                output.writeUInt32(10, firstDayStartTime_);
+            }
+            if (seaLampCoin_ != 0) {
+                output.writeUInt32(11, seaLampCoin_);
+            }
+            if (popularity_ != 0) {
+                output.writeUInt32(14, popularity_);
+            }
+            for (int i = 0; i < sectionInfoList_.size(); i++) {
+                output.writeMessage(15, sectionInfoList_.get(i));
+            }
+            unknownFields.writeTo(output);
+        }
 
-      // @@protoc_insertion_point(builder_scope:SeaLampActivityInfo)
+        @java.lang.Override
+        public int getSerializedSize() {
+            int size = memoizedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (mechanicusId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, mechanicusId_);
+            }
+            if (cKANAPMJECL_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, cKANAPMJECL_);
+            }
+            if (isContentClosed_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, isContentClosed_);
+            }
+            if (jOCKLIEKCHP_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, jOCKLIEKCHP_);
+            }
+            if (dayIndex_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, dayIndex_);
+            }
+            if (firstDayStartTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, firstDayStartTime_);
+            }
+            if (seaLampCoin_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, seaLampCoin_);
+            }
+            if (popularity_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, popularity_);
+            }
+            for (int i = 0; i < sectionInfoList_.size(); i++) {
+                size +=
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(15, sectionInfoList_.get(i));
+            }
+            size += unknownFields.getSerializedSize();
+            memoizedSize = size;
+            return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+            if (obj == this) {
+                return true;
+            }
+            if (!(obj
+                    instanceof emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo)) {
+                return super.equals(obj);
+            }
+            emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo other =
+                    (emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) obj;
+
+            if (getDayIndex() != other.getDayIndex()) return false;
+            if (getIsContentClosed() != other.getIsContentClosed()) return false;
+            if (!getSectionInfoListList().equals(other.getSectionInfoListList())) return false;
+            if (getJOCKLIEKCHP() != other.getJOCKLIEKCHP()) return false;
+            if (getFirstDayStartTime() != other.getFirstDayStartTime()) return false;
+            if (getMechanicusId() != other.getMechanicusId()) return false;
+            if (getCKANAPMJECL() != other.getCKANAPMJECL()) return false;
+            if (getSeaLampCoin() != other.getSeaLampCoin()) return false;
+            if (getPopularity() != other.getPopularity()) return false;
+            if (!unknownFields.equals(other.unknownFields)) return false;
+            return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+            if (memoizedHashCode != 0) {
+                return memoizedHashCode;
+            }
+            int hash = 41;
+            hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + DAY_INDEX_FIELD_NUMBER;
+            hash = (53 * hash) + getDayIndex();
+            hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsContentClosed());
+            if (getSectionInfoListCount() > 0) {
+                hash = (37 * hash) + SECTION_INFO_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getSectionInfoListList().hashCode();
+            }
+            hash = (37 * hash) + JOCKLIEKCHP_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getJOCKLIEKCHP());
+            hash = (37 * hash) + FIRST_DAY_START_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getFirstDayStartTime();
+            hash = (37 * hash) + MECHANICUS_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getMechanicusId();
+            hash = (37 * hash) + CKANAPMJECL_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCKANAPMJECL());
+            hash = (37 * hash) + SEA_LAMP_COIN_FIELD_NUMBER;
+            hash = (53 * hash) + getSeaLampCoin();
+            hash = (37 * hash) + POPULARITY_FIELD_NUMBER;
+            hash = (53 * hash) + getPopularity();
+            hash = (29 * hash) + unknownFields.hashCode();
+            memoizedHashCode = hash;
+            return hash;
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(java.nio.ByteBuffer data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(
+                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(com.google.protobuf.ByteString data)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(
+                        com.google.protobuf.ByteString data,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseDelimitedFrom(
+                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                parseFrom(
+                        com.google.protobuf.CodedInputStream input,
+                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                        throws java.io.IOException {
+            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+                    PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Obf: BAKHKCAKDEI
+         * </pre>
+         *
+         * Protobuf type {@code SeaLampActivityInfo}
+         */
+        public static final class Builder
+                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+                implements
+                // @@protoc_insertion_point(builder_implements:SeaLampActivityInfo)
+                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfoOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+                return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass
+                        .internal_static_SeaLampActivityInfo_descriptor;
+            }
+
+            @java.lang.Override
+            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+                    internalGetFieldAccessorTable() {
+                return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass
+                        .internal_static_SeaLampActivityInfo_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.class,
+                                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.Builder
+                                        .class);
+            }
+
+            // Construct using
+            // emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getSectionInfoListFieldBuilder();
+                }
+            }
+
+            @java.lang.Override
+            public Builder clear() {
+                super.clear();
+                dayIndex_ = 0;
+
+                isContentClosed_ = false;
+
+                if (sectionInfoListBuilder_ == null) {
+                    sectionInfoList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                    sectionInfoListBuilder_.clear();
+                }
+                jOCKLIEKCHP_ = false;
+
+                firstDayStartTime_ = 0;
+
+                mechanicusId_ = 0;
+
+                cKANAPMJECL_ = false;
+
+                seaLampCoin_ = 0;
+
+                popularity_ = 0;
+
+                return this;
+            }
+
+            @java.lang.Override
+            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+                return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass
+                        .internal_static_SeaLampActivityInfo_descriptor;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                    getDefaultInstanceForType() {
+                return emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                        .getDefaultInstance();
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo build() {
+                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result =
+                        buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            @java.lang.Override
+            public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                    buildPartial() {
+                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result =
+                        new emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo(this);
+                int from_bitField0_ = bitField0_;
+                result.dayIndex_ = dayIndex_;
+                result.isContentClosed_ = isContentClosed_;
+                if (sectionInfoListBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
+                        sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
+                        bitField0_ = (bitField0_ & ~0x00000001);
+                    }
+                    result.sectionInfoList_ = sectionInfoList_;
+                } else {
+                    result.sectionInfoList_ = sectionInfoListBuilder_.build();
+                }
+                result.jOCKLIEKCHP_ = jOCKLIEKCHP_;
+                result.firstDayStartTime_ = firstDayStartTime_;
+                result.mechanicusId_ = mechanicusId_;
+                result.cKANAPMJECL_ = cKANAPMJECL_;
+                result.seaLampCoin_ = seaLampCoin_;
+                result.popularity_ = popularity_;
+                onBuilt();
+                return result;
+            }
+
+            @java.lang.Override
+            public Builder clone() {
+                return super.clone();
+            }
+
+            @java.lang.Override
+            public Builder setField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.setField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+                return super.clearField(field);
+            }
+
+            @java.lang.Override
+            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+                return super.clearOneof(oneof);
+            }
+
+            @java.lang.Override
+            public Builder setRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field,
+                    int index,
+                    java.lang.Object value) {
+                return super.setRepeatedField(field, index, value);
+            }
+
+            @java.lang.Override
+            public Builder addRepeatedField(
+                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+                return super.addRepeatedField(field, value);
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other
+                        instanceof
+                        emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) {
+                    return mergeFrom(
+                            (emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(
+                    emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo other) {
+                if (other
+                        == emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                                .getDefaultInstance()) return this;
+                if (other.getDayIndex() != 0) {
+                    setDayIndex(other.getDayIndex());
+                }
+                if (other.getIsContentClosed() != false) {
+                    setIsContentClosed(other.getIsContentClosed());
+                }
+                if (sectionInfoListBuilder_ == null) {
+                    if (!other.sectionInfoList_.isEmpty()) {
+                        if (sectionInfoList_.isEmpty()) {
+                            sectionInfoList_ = other.sectionInfoList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                        } else {
+                            ensureSectionInfoListIsMutable();
+                            sectionInfoList_.addAll(other.sectionInfoList_);
+                        }
+                        onChanged();
+                    }
+                } else {
+                    if (!other.sectionInfoList_.isEmpty()) {
+                        if (sectionInfoListBuilder_.isEmpty()) {
+                            sectionInfoListBuilder_.dispose();
+                            sectionInfoListBuilder_ = null;
+                            sectionInfoList_ = other.sectionInfoList_;
+                            bitField0_ = (bitField0_ & ~0x00000001);
+                            sectionInfoListBuilder_ =
+                                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                                            ? getSectionInfoListFieldBuilder()
+                                            : null;
+                        } else {
+                            sectionInfoListBuilder_.addAllMessages(other.sectionInfoList_);
+                        }
+                    }
+                }
+                if (other.getJOCKLIEKCHP() != false) {
+                    setJOCKLIEKCHP(other.getJOCKLIEKCHP());
+                }
+                if (other.getFirstDayStartTime() != 0) {
+                    setFirstDayStartTime(other.getFirstDayStartTime());
+                }
+                if (other.getMechanicusId() != 0) {
+                    setMechanicusId(other.getMechanicusId());
+                }
+                if (other.getCKANAPMJECL() != false) {
+                    setCKANAPMJECL(other.getCKANAPMJECL());
+                }
+                if (other.getSeaLampCoin() != 0) {
+                    setSeaLampCoin(other.getSeaLampCoin());
+                }
+                if (other.getPopularity() != 0) {
+                    setPopularity(other.getPopularity());
+                }
+                this.mergeUnknownFields(other.unknownFields);
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final boolean isInitialized() {
+                return true;
+            }
+
+            @java.lang.Override
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parsedMessage =
+                        null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage =
+                            (emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo)
+                                    e.getUnfinishedMessage();
+                    throw e.unwrapIOException();
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            private int dayIndex_;
+            /**
+             * <code>uint32 day_index = 8;</code>
+             *
+             * @return The dayIndex.
+             */
+            @java.lang.Override
+            public int getDayIndex() {
+                return dayIndex_;
+            }
+            /**
+             * <code>uint32 day_index = 8;</code>
+             *
+             * @param value The dayIndex to set.
+             * @return This builder for chaining.
+             */
+            public Builder setDayIndex(int value) {
+
+                dayIndex_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 day_index = 8;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearDayIndex() {
+
+                dayIndex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean isContentClosed_;
+            /**
+             * <code>bool is_content_closed = 6;</code>
+             *
+             * @return The isContentClosed.
+             */
+            @java.lang.Override
+            public boolean getIsContentClosed() {
+                return isContentClosed_;
+            }
+            /**
+             * <code>bool is_content_closed = 6;</code>
+             *
+             * @param value The isContentClosed to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsContentClosed(boolean value) {
+
+                isContentClosed_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_content_closed = 6;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsContentClosed() {
+
+                isContentClosed_ = false;
+                onChanged();
+                return this;
+            }
+
+            private java.util.List<
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                    sectionInfoList_ = java.util.Collections.emptyList();
+
+            private void ensureSectionInfoListIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    sectionInfoList_ =
+                            new java.util.ArrayList<
+                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>(
+                                    sectionInfoList_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo,
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder,
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>
+                    sectionInfoListBuilder_;
+
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                    getSectionInfoListList() {
+                if (sectionInfoListBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(sectionInfoList_);
+                } else {
+                    return sectionInfoListBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public int getSectionInfoListCount() {
+                if (sectionInfoListBuilder_ == null) {
+                    return sectionInfoList_.size();
+                } else {
+                    return sectionInfoListBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo
+                    getSectionInfoList(int index) {
+                if (sectionInfoListBuilder_ == null) {
+                    return sectionInfoList_.get(index);
+                } else {
+                    return sectionInfoListBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder setSectionInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
+                if (sectionInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.set(index, value);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder setSectionInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                            builderForValue) {
+                if (sectionInfoListBuilder_ == null) {
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder addSectionInfoList(
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
+                if (sectionInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.add(value);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder addSectionInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo value) {
+                if (sectionInfoListBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.add(index, value);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder addSectionInfoList(
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                            builderForValue) {
+                if (sectionInfoListBuilder_ == null) {
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder addSectionInfoList(
+                    int index,
+                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                            builderForValue) {
+                if (sectionInfoListBuilder_ == null) {
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder addAllSectionInfoList(
+                    java.lang.Iterable<
+                                    ? extends
+                                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>
+                            values) {
+                if (sectionInfoListBuilder_ == null) {
+                    ensureSectionInfoListIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sectionInfoList_);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder clearSectionInfoList() {
+                if (sectionInfoListBuilder_ == null) {
+                    sectionInfoList_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public Builder removeSectionInfoList(int index) {
+                if (sectionInfoListBuilder_ == null) {
+                    ensureSectionInfoListIsMutable();
+                    sectionInfoList_.remove(index);
+                    onChanged();
+                } else {
+                    sectionInfoListBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                    getSectionInfoListBuilder(int index) {
+                return getSectionInfoListFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder
+                    getSectionInfoListOrBuilder(int index) {
+                if (sectionInfoListBuilder_ == null) {
+                    return sectionInfoList_.get(index);
+                } else {
+                    return sectionInfoListBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public java.util.List<
+                            ? extends
+                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass
+                                            .SeaLampSectionInfoOrBuilder>
+                    getSectionInfoListOrBuilderList() {
+                if (sectionInfoListBuilder_ != null) {
+                    return sectionInfoListBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(sectionInfoList_);
+                }
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                    addSectionInfoListBuilder() {
+                return getSectionInfoListFieldBuilder()
+                        .addBuilder(
+                                emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder
+                    addSectionInfoListBuilder(int index) {
+                return getSectionInfoListFieldBuilder()
+                        .addBuilder(
+                                index,
+                                emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo
+                                        .getDefaultInstance());
+            }
+            /** <code>repeated .SeaLampSectionInfo section_info_list = 15;</code> */
+            public java.util.List<
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder>
+                    getSectionInfoListBuilderList() {
+                return getSectionInfoListFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo,
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder,
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>
+                    getSectionInfoListFieldBuilder() {
+                if (sectionInfoListBuilder_ == null) {
+                    sectionInfoListBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo,
+                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder,
+                                    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass
+                                            .SeaLampSectionInfoOrBuilder>(
+                                    sectionInfoList_,
+                                    ((bitField0_ & 0x00000001) != 0),
+                                    getParentForChildren(),
+                                    isClean());
+                    sectionInfoList_ = null;
+                }
+                return sectionInfoListBuilder_;
+            }
+
+            private boolean jOCKLIEKCHP_;
+            /**
+             * <code>bool JOCKLIEKCHP = 7;</code>
+             *
+             * @return The jOCKLIEKCHP.
+             */
+            @java.lang.Override
+            public boolean getJOCKLIEKCHP() {
+                return jOCKLIEKCHP_;
+            }
+            /**
+             * <code>bool JOCKLIEKCHP = 7;</code>
+             *
+             * @param value The jOCKLIEKCHP to set.
+             * @return This builder for chaining.
+             */
+            public Builder setJOCKLIEKCHP(boolean value) {
+
+                jOCKLIEKCHP_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool JOCKLIEKCHP = 7;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearJOCKLIEKCHP() {
+
+                jOCKLIEKCHP_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int firstDayStartTime_;
+            /**
+             * <code>uint32 first_day_start_time = 10;</code>
+             *
+             * @return The firstDayStartTime.
+             */
+            @java.lang.Override
+            public int getFirstDayStartTime() {
+                return firstDayStartTime_;
+            }
+            /**
+             * <code>uint32 first_day_start_time = 10;</code>
+             *
+             * @param value The firstDayStartTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setFirstDayStartTime(int value) {
+
+                firstDayStartTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 first_day_start_time = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearFirstDayStartTime() {
+
+                firstDayStartTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int mechanicusId_;
+            /**
+             * <code>uint32 mechanicus_id = 3;</code>
+             *
+             * @return The mechanicusId.
+             */
+            @java.lang.Override
+            public int getMechanicusId() {
+                return mechanicusId_;
+            }
+            /**
+             * <code>uint32 mechanicus_id = 3;</code>
+             *
+             * @param value The mechanicusId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setMechanicusId(int value) {
+
+                mechanicusId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 mechanicus_id = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearMechanicusId() {
+
+                mechanicusId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private boolean cKANAPMJECL_;
+            /**
+             * <code>bool CKANAPMJECL = 4;</code>
+             *
+             * @return The cKANAPMJECL.
+             */
+            @java.lang.Override
+            public boolean getCKANAPMJECL() {
+                return cKANAPMJECL_;
+            }
+            /**
+             * <code>bool CKANAPMJECL = 4;</code>
+             *
+             * @param value The cKANAPMJECL to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCKANAPMJECL(boolean value) {
+
+                cKANAPMJECL_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool CKANAPMJECL = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCKANAPMJECL() {
+
+                cKANAPMJECL_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int seaLampCoin_;
+            /**
+             * <code>uint32 sea_lamp_coin = 11;</code>
+             *
+             * @return The seaLampCoin.
+             */
+            @java.lang.Override
+            public int getSeaLampCoin() {
+                return seaLampCoin_;
+            }
+            /**
+             * <code>uint32 sea_lamp_coin = 11;</code>
+             *
+             * @param value The seaLampCoin to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSeaLampCoin(int value) {
+
+                seaLampCoin_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 sea_lamp_coin = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSeaLampCoin() {
+
+                seaLampCoin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int popularity_;
+            /**
+             * <code>uint32 popularity = 14;</code>
+             *
+             * @return The popularity.
+             */
+            @java.lang.Override
+            public int getPopularity() {
+                return popularity_;
+            }
+            /**
+             * <code>uint32 popularity = 14;</code>
+             *
+             * @param value The popularity to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPopularity(int value) {
+
+                popularity_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 popularity = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearPopularity() {
+
+                popularity_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @java.lang.Override
+            public final Builder setUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.setUnknownFields(unknownFields);
+            }
+
+            @java.lang.Override
+            public final Builder mergeUnknownFields(
+                    final com.google.protobuf.UnknownFieldSet unknownFields) {
+                return super.mergeUnknownFields(unknownFields);
+            }
+
+            // @@protoc_insertion_point(builder_scope:SeaLampActivityInfo)
+        }
+
+        // @@protoc_insertion_point(class_scope:SeaLampActivityInfo)
+        private static final emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                DEFAULT_INSTANCE;
+
+        static {
+            DEFAULT_INSTANCE =
+                    new emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo();
+        }
+
+        public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SeaLampActivityInfo> PARSER =
+                new com.google.protobuf.AbstractParser<SeaLampActivityInfo>() {
+                    @java.lang.Override
+                    public SeaLampActivityInfo parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new SeaLampActivityInfo(input, extensionRegistry);
+                    }
+                };
+
+        public static com.google.protobuf.Parser<SeaLampActivityInfo> parser() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SeaLampActivityInfo> getParserForType() {
+            return PARSER;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo
+                getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+        }
     }
 
-    // @@protoc_insertion_point(class_scope:SeaLampActivityInfo)
-    private static final emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_SeaLampActivityInfo_descriptor;
+    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internal_static_SeaLampActivityInfo_fieldAccessorTable;
+
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+        return descriptor;
+    }
+
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo();
+        java.lang.String[] descriptorData = {
+            "\n\031SeaLampActivityInfo.proto\032\030SeaLampSect"
+                    + "ionInfo.proto\"\375\001\n\023SeaLampActivityInfo\022\021\n"
+                    + "\tday_index\030\010 \001(\r\022\031\n\021is_content_closed\030\006 "
+                    + "\001(\010\022.\n\021section_info_list\030\017 \003(\0132\023.SeaLamp"
+                    + "SectionInfo\022\023\n\013JOCKLIEKCHP\030\007 \001(\010\022\034\n\024firs"
+                    + "t_day_start_time\030\n \001(\r\022\025\n\rmechanicus_id\030"
+                    + "\003 \001(\r\022\023\n\013CKANAPMJECL\030\004 \001(\010\022\025\n\rsea_lamp_c"
+                    + "oin\030\013 \001(\r\022\022\n\npopularity\030\016 \001(\rB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
+        };
+        descriptor =
+                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+                        descriptorData,
+                        new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.getDescriptor(),
+                        });
+        internal_static_SeaLampActivityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
+        internal_static_SeaLampActivityInfo_fieldAccessorTable =
+                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+                        internal_static_SeaLampActivityInfo_descriptor,
+                        new java.lang.String[] {
+                            "DayIndex",
+                            "IsContentClosed",
+                            "SectionInfoList",
+                            "JOCKLIEKCHP",
+                            "FirstDayStartTime",
+                            "MechanicusId",
+                            "CKANAPMJECL",
+                            "SeaLampCoin",
+                            "Popularity",
+                        });
+        emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.getDescriptor();
     }
 
-    public static emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<SeaLampActivityInfo>
-        PARSER = new com.google.protobuf.AbstractParser<SeaLampActivityInfo>() {
-      @java.lang.Override
-      public SeaLampActivityInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SeaLampActivityInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<SeaLampActivityInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<SeaLampActivityInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SeaLampActivityInfo_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SeaLampActivityInfo_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\031SeaLampActivityInfo.proto\032\030SeaLampSect" +
-      "ionInfo.proto\"\375\001\n\023SeaLampActivityInfo\022\021\n" +
-      "\tday_index\030\010 \001(\r\022\031\n\021is_content_closed\030\006 " +
-      "\001(\010\022.\n\021section_info_list\030\017 \003(\0132\023.SeaLamp" +
-      "SectionInfo\022\023\n\013JOCKLIEKCHP\030\007 \001(\010\022\034\n\024firs" +
-      "t_day_start_time\030\n \001(\r\022\025\n\rmechanicus_id\030" +
-      "\003 \001(\r\022\023\n\013CKANAPMJECL\030\004 \001(\010\022\025\n\rsea_lamp_c" +
-      "oin\030\013 \001(\r\022\022\n\npopularity\030\016 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
-    };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.getDescriptor(),
-        });
-    internal_static_SeaLampActivityInfo_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_SeaLampActivityInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SeaLampActivityInfo_descriptor,
-        new java.lang.String[] { "DayIndex", "IsContentClosed", "SectionInfoList", "JOCKLIEKCHP", "FirstDayStartTime", "MechanicusId", "CKANAPMJECL", "SeaLampCoin", "Popularity", });
-    emu.grasscutter.net.proto.SeaLampSectionInfoOuterClass.getDescriptor();
-  }
-
-  // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(outer_class_scope)
 }
