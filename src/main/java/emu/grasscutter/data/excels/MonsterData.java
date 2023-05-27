@@ -100,8 +100,9 @@ public class MonsterData extends GameResource {
         if (this.describeData == null){
             return;
         }       
-        for(Entry<Integer, MonsterSpecialNameData> entry: GameData.getMonsterSpecialNameDataMap().entrySet()) {
-            if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()){
+
+        for (var entry : GameData.getMonsterSpecialNameDataMap().entrySet()) {
+            if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()) {
                 this.specialNameId = entry.getKey();
                 break;
             }
