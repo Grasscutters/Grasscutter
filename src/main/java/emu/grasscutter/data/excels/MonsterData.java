@@ -1,6 +1,7 @@
 package emu.grasscutter.data.excels;
 
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import com.google.gson.annotations.SerializedName;
@@ -60,6 +61,7 @@ public class MonsterData extends GameResource {
     // Transient
     private int weaponId;
     private MonsterDescribeData describeData;
+    private int specialNameId;
 
     public float getFightProperty(FightProperty prop) {
         return switch (prop) {
@@ -80,8 +82,6 @@ public class MonsterData extends GameResource {
 
     @Override
     public void onLoad() {
-        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
-
         for (int id : this.equips) {
             if (id == 0) {
                 continue;
@@ -92,6 +92,16 @@ public class MonsterData extends GameResource {
             }
             if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
                 this.weaponId = id;
+            }
+        }
+
+        this.describeData = GameData.getMonsterDescribeDataMap().get(this.getDescribeId());
+    
+        if (this.describeData == null) return;
+        for (var entry : GameData.getMonsterSpecialNameDataMap().entrySet()) {
+            if (entry.getValue().getSpecialNameLabId() == this.getDescribeData().getSpecialNameLabId()) {
+                this.specialNameId = entry.getKey();
+                break;
             }
         }
     }

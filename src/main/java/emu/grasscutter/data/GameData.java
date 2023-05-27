@@ -88,6 +88,7 @@ public class GameData {
     @Getter private static final Int2ObjectMap<MonsterCurveData> monsterCurveDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MonsterData> monsterDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MonsterDescribeData> monsterDescribeDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<MonsterSpecialNameData> monsterSpecialNameDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<MusicGameBasicData> musicGameBasicDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<NpcData> npcDataMap = new Int2ObjectOpenHashMap<>();
     @Getter private static final Int2ObjectMap<OpenStateData> openStateDataMap = new Int2ObjectOpenHashMap<>();
