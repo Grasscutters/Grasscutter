@@ -84,7 +84,7 @@ public class Account {
         if (email != null && !email.isEmpty()) {
             return email;
         } else {
-            return "";
+            return this.getUsername();
         }
     }
 
