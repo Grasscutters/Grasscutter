@@ -73,6 +73,7 @@ public class ScriptLoader {
         addEnumByOrdinal(ctx, SealBattleType.values(), "SealBattleType");
         addEnumByOrdinal(ctx, FatherChallengeProperty.values(), "FatherChallengeProperty");
         addEnumByOrdinal(ctx, ChallengeEventMarkType.values(), "ChallengeEventMarkType");
+        addEnumByOrdinal(ctx, VisionLevelType.values(), "VisionLevelType");
 
         ctx.globals.set(
                 "EventType",

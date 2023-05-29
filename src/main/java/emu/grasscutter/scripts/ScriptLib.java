@@ -1207,6 +1207,12 @@ public class ScriptLib {
         return 0;
     }
 
+    public int EnterWeatherArea(int var1){
+        logger.warn("[LUA] Call unimplemented EnterWeatherArea with {}", var1);
+        //TODO implement
+        return 0;
+    }
+
     //TODO check
     public boolean CheckIsInMpMode(){
         logger.debug("[LUA] Call CheckIsInMpMode");
