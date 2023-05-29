@@ -20,8 +20,8 @@ public final class GetOpActivityInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 5190
-     * Name: NBAOGEHPIAM
+     * CmdId: 5175
+     * Obf: OLCKDAPDJJF
      * </pre>
      *
      * Protobuf type {@code GetOpActivityInfoReq}
@@ -266,8 +266,8 @@ public final class GetOpActivityInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 5190
-         * Name: NBAOGEHPIAM
+         * CmdId: 5175
+         * Obf: OLCKDAPDJJF
          * </pre>
          *
          * Protobuf type {@code GetOpActivityInfoReq}
@@ -503,8 +503,8 @@ public final class GetOpActivityInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032GetOpActivityInfoReq.proto\"\026\n\024GetOpAct"
-                    + "ivityInfoReqB!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "ivityInfoReqB\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

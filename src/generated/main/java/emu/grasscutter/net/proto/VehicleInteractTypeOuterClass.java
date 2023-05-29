@@ -15,7 +15,7 @@ public final class VehicleInteractTypeOuterClass {
      *
      *
      * <pre>
-     * Name: PCBLIOLCMAE
+     * Obf: HPLKIGCFFBO
      * </pre>
      *
      * Protobuf enum {@code VehicleInteractType}
@@ -136,8 +136,8 @@ public final class VehicleInteractTypeOuterClass {
             "\n\031VehicleInteractType.proto*r\n\023VehicleIn"
                     + "teractType\022\036\n\032VEHICLE_INTERACT_TYPE_NONE"
                     + "\020\000\022\034\n\030VEHICLE_INTERACT_TYPE_IN\020\001\022\035\n\031VEHI"
-                    + "CLE_INTERACT_TYPE_OUT\020\002B!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "CLE_INTERACT_TYPE_OUT\020\002B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -17,13 +17,6 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             // @@protoc_insertion_point(interface_extends:GetBlossomBriefInfoListRsp)
             com.google.protobuf.MessageOrBuilder {
 
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
-
         /** <code>repeated .BlossomBriefInfo brief_info_list = 6;</code> */
         java.util.List<emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfo>
                 getBriefInfoListList();
@@ -40,13 +33,20 @@ public final class GetBlossomBriefInfoListRspOuterClass {
         /** <code>repeated .BlossomBriefInfo brief_info_list = 6;</code> */
         emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfoOrBuilder
                 getBriefInfoListOrBuilder(int index);
+
+        /**
+         * <code>int32 retcode = 2;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
     }
     /**
      *
      *
      * <pre>
      * CmdId: 2796
-     * Name: JOMNNMGBCCP
+     * Obf: PCNGBIDFALG
      * </pre>
      *
      * Protobuf type {@code GetBlossomBriefInfoListRsp}
@@ -96,7 +96,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 16:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -155,18 +155,6 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                                     .GetBlossomBriefInfoListRsp.Builder.class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
-
         public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 6;
         private java.util.List<emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfo>
                 briefInfoList_;
@@ -202,6 +190,18 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             return briefInfoList_.get(index);
         }
 
+        public static final int RETCODE_FIELD_NUMBER = 2;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 2;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -217,7 +217,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(5, retcode_);
+                output.writeInt32(2, retcode_);
             }
             for (int i = 0; i < briefInfoList_.size(); i++) {
                 output.writeMessage(6, briefInfoList_.get(i));
@@ -232,7 +232,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, retcode_);
             }
             for (int i = 0; i < briefInfoList_.size(); i++) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, briefInfoList_.get(i));
@@ -259,8 +259,8 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                                             .GetBlossomBriefInfoListRsp)
                                     obj;
 
-            if (getRetcode() != other.getRetcode()) return false;
             if (!getBriefInfoListList().equals(other.getBriefInfoListList())) return false;
+            if (getRetcode() != other.getRetcode()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -272,12 +272,12 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
             if (getBriefInfoListCount() > 0) {
                 hash = (37 * hash) + BRIEF_INFO_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getBriefInfoListList().hashCode();
             }
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -404,7 +404,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
          *
          * <pre>
          * CmdId: 2796
-         * Name: JOMNNMGBCCP
+         * Obf: PCNGBIDFALG
          * </pre>
          *
          * Protobuf type {@code GetBlossomBriefInfoListRsp}
@@ -452,14 +452,14 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                retcode_ = 0;
-
                 if (briefInfoListBuilder_ == null) {
                     briefInfoList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000001);
                 } else {
                     briefInfoListBuilder_.clear();
                 }
+                retcode_ = 0;
+
                 return this;
             }
 
@@ -498,7 +498,6 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                                 new emu.grasscutter.net.proto.GetBlossomBriefInfoListRspOuterClass
                                         .GetBlossomBriefInfoListRsp(this);
                 int from_bitField0_ = bitField0_;
-                result.retcode_ = retcode_;
                 if (briefInfoListBuilder_ == null) {
                     if (((bitField0_ & 0x00000001) != 0)) {
                         briefInfoList_ = java.util.Collections.unmodifiableList(briefInfoList_);
@@ -508,6 +507,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                 } else {
                     result.briefInfoList_ = briefInfoListBuilder_.build();
                 }
+                result.retcode_ = retcode_;
                 onBuilt();
                 return result;
             }
@@ -569,9 +569,6 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.GetBlossomBriefInfoListRspOuterClass
                                 .GetBlossomBriefInfoListRsp.getDefaultInstance()) return this;
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (briefInfoListBuilder_ == null) {
                     if (!other.briefInfoList_.isEmpty()) {
                         if (briefInfoList_.isEmpty()) {
@@ -598,6 +595,9 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                             briefInfoListBuilder_.addAllMessages(other.briefInfoList_);
                         }
                     }
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -633,40 +633,6 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             }
 
             private int bitField0_;
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
 
             private java.util.List<emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.BlossomBriefInfo>
                     briefInfoList_ = java.util.Collections.emptyList();
@@ -904,6 +870,40 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                 return briefInfoListBuilder_;
             }
 
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 2;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 2;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 2;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
             @java.lang.Override
             public final Builder setUnknownFields(
                     final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -978,9 +978,9 @@ public final class GetBlossomBriefInfoListRspOuterClass {
         java.lang.String[] descriptorData = {
             "\n GetBlossomBriefInfoListRsp.proto\032\026Blos"
                     + "somBriefInfo.proto\"Y\n\032GetBlossomBriefInf"
-                    + "oListRsp\022\017\n\007retcode\030\005 \001(\005\022*\n\017brief_info_"
-                    + "list\030\006 \003(\0132\021.BlossomBriefInfoB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "oListRsp\022*\n\017brief_info_list\030\006 \003(\0132\021.Blos"
+                    + "somBriefInfo\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -994,7 +994,7 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_GetBlossomBriefInfoListRsp_descriptor,
                         new java.lang.String[] {
-                            "Retcode", "BriefInfoList",
+                            "BriefInfoList", "Retcode",
                         });
         emu.grasscutter.net.proto.BlossomBriefInfoOuterClass.getDescriptor();
     }

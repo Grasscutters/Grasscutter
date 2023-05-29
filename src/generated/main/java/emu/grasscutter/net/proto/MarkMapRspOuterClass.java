@@ -17,32 +17,32 @@ public final class MarkMapRspOuterClass {
             // @@protoc_insertion_point(interface_extends:MarkMapRsp)
             com.google.protobuf.MessageOrBuilder {
 
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
+        java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> getMarkListList();
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
+        emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index);
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
+        int getMarkListCount();
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
+        java.util.List<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder>
+                getMarkListOrBuilderList();
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
+        emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkListOrBuilder(
+                int index);
+
         /**
-         * <code>int32 retcode = 2;</code>
+         * <code>int32 retcode = 3;</code>
          *
          * @return The retcode.
          */
         int getRetcode();
-
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
-        java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> getMarkListList();
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
-        emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index);
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
-        int getMarkListCount();
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
-        java.util.List<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder>
-                getMarkListOrBuilderList();
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
-        emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkListOrBuilder(
-                int index);
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 3050
-     * Name: NACCCJOAAGP
+     * CmdId: 3239
+     * Obf: CHEHBLCPPJH
      * </pre>
      *
      * Protobuf type {@code MarkMapRsp}
@@ -91,12 +91,12 @@ public final class MarkMapRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
+                        case 24:
                             {
                                 retcode_ = input.readInt32();
                                 break;
                             }
-                        case 26:
+                        case 98:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     markList_ =
@@ -146,48 +146,48 @@ public final class MarkMapRspOuterClass {
                             emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp.Builder.class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 2;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 2;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
-
-        public static final int MARK_LIST_FIELD_NUMBER = 3;
+        public static final int MARK_LIST_FIELD_NUMBER = 12;
         private java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> markList_;
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
         @java.lang.Override
         public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint>
                 getMarkListList() {
             return markList_;
         }
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder>
                 getMarkListOrBuilderList() {
             return markList_;
         }
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
         @java.lang.Override
         public int getMarkListCount() {
             return markList_.size();
         }
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index) {
             return markList_.get(index);
         }
-        /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+        /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder
                 getMarkListOrBuilder(int index) {
             return markList_.get(index);
+        }
+
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 3;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -205,10 +205,10 @@ public final class MarkMapRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(2, retcode_);
+                output.writeInt32(3, retcode_);
             }
             for (int i = 0; i < markList_.size(); i++) {
-                output.writeMessage(3, markList_.get(i));
+                output.writeMessage(12, markList_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -220,10 +220,10 @@ public final class MarkMapRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, retcode_);
             }
             for (int i = 0; i < markList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, markList_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, markList_.get(i));
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -241,8 +241,8 @@ public final class MarkMapRspOuterClass {
             emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp other =
                     (emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp) obj;
 
-            if (getRetcode() != other.getRetcode()) return false;
             if (!getMarkListList().equals(other.getMarkListList())) return false;
+            if (getRetcode() != other.getRetcode()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -254,12 +254,12 @@ public final class MarkMapRspOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
             if (getMarkListCount() > 0) {
                 hash = (37 * hash) + MARK_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getMarkListList().hashCode();
             }
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -366,8 +366,8 @@ public final class MarkMapRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 3050
-         * Name: NACCCJOAAGP
+         * CmdId: 3239
+         * Obf: CHEHBLCPPJH
          * </pre>
          *
          * Protobuf type {@code MarkMapRsp}
@@ -410,14 +410,14 @@ public final class MarkMapRspOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                retcode_ = 0;
-
                 if (markListBuilder_ == null) {
                     markList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000001);
                 } else {
                     markListBuilder_.clear();
                 }
+                retcode_ = 0;
+
                 return this;
             }
 
@@ -445,7 +445,6 @@ public final class MarkMapRspOuterClass {
                 emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp result =
                         new emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp(this);
                 int from_bitField0_ = bitField0_;
-                result.retcode_ = retcode_;
                 if (markListBuilder_ == null) {
                     if (((bitField0_ & 0x00000001) != 0)) {
                         markList_ = java.util.Collections.unmodifiableList(markList_);
@@ -455,6 +454,7 @@ public final class MarkMapRspOuterClass {
                 } else {
                     result.markList_ = markListBuilder_.build();
                 }
+                result.retcode_ = retcode_;
                 onBuilt();
                 return result;
             }
@@ -507,9 +507,6 @@ public final class MarkMapRspOuterClass {
             public Builder mergeFrom(emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp other) {
                 if (other == emu.grasscutter.net.proto.MarkMapRspOuterClass.MarkMapRsp.getDefaultInstance())
                     return this;
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (markListBuilder_ == null) {
                     if (!other.markList_.isEmpty()) {
                         if (markList_.isEmpty()) {
@@ -536,6 +533,9 @@ public final class MarkMapRspOuterClass {
                             markListBuilder_.addAllMessages(other.markList_);
                         }
                     }
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -569,40 +569,6 @@ public final class MarkMapRspOuterClass {
 
             private int bitField0_;
 
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 2;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 2;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
             private java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint>
                     markList_ = java.util.Collections.emptyList();
 
@@ -621,7 +587,7 @@ public final class MarkMapRspOuterClass {
                             emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder>
                     markListBuilder_;
 
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint>
                     getMarkListList() {
                 if (markListBuilder_ == null) {
@@ -630,7 +596,7 @@ public final class MarkMapRspOuterClass {
                     return markListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public int getMarkListCount() {
                 if (markListBuilder_ == null) {
                     return markList_.size();
@@ -638,7 +604,7 @@ public final class MarkMapRspOuterClass {
                     return markListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index) {
                 if (markListBuilder_ == null) {
                     return markList_.get(index);
@@ -646,7 +612,7 @@ public final class MarkMapRspOuterClass {
                     return markListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder setMarkList(
                     int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
                 if (markListBuilder_ == null) {
@@ -661,7 +627,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder setMarkList(
                     int index,
                     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
@@ -674,7 +640,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder addMarkList(
                     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
                 if (markListBuilder_ == null) {
@@ -689,7 +655,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder addMarkList(
                     int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
                 if (markListBuilder_ == null) {
@@ -704,7 +670,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder addMarkList(
                     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
                 if (markListBuilder_ == null) {
@@ -716,7 +682,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder addMarkList(
                     int index,
                     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
@@ -729,7 +695,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder addAllMarkList(
                     java.lang.Iterable<
                                     ? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint>
@@ -743,7 +709,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder clearMarkList() {
                 if (markListBuilder_ == null) {
                     markList_ = java.util.Collections.emptyList();
@@ -754,7 +720,7 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public Builder removeMarkList(int index) {
                 if (markListBuilder_ == null) {
                     ensureMarkListIsMutable();
@@ -765,12 +731,12 @@ public final class MarkMapRspOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder
                     getMarkListBuilder(int index) {
                 return getMarkListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder
                     getMarkListOrBuilder(int index) {
                 if (markListBuilder_ == null) {
@@ -779,7 +745,7 @@ public final class MarkMapRspOuterClass {
                     return markListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public java.util.List<
                             ? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder>
                     getMarkListOrBuilderList() {
@@ -789,14 +755,14 @@ public final class MarkMapRspOuterClass {
                     return java.util.Collections.unmodifiableList(markList_);
                 }
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder
                     addMarkListBuilder() {
                 return getMarkListFieldBuilder()
                         .addBuilder(
                                 emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance());
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder
                     addMarkListBuilder(int index) {
                 return getMarkListFieldBuilder()
@@ -804,7 +770,7 @@ public final class MarkMapRspOuterClass {
                                 index,
                                 emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance());
             }
-            /** <code>repeated .MapMarkPoint mark_list = 3;</code> */
+            /** <code>repeated .MapMarkPoint mark_list = 12;</code> */
             public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder>
                     getMarkListBuilderList() {
                 return getMarkListFieldBuilder().getBuilderList();
@@ -825,6 +791,40 @@ public final class MarkMapRspOuterClass {
                     markList_ = null;
                 }
                 return markListBuilder_;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @java.lang.Override
@@ -893,9 +893,9 @@ public final class MarkMapRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\020MarkMapRsp.proto\032\022MapMarkPoint.proto\"?"
-                    + "\n\nMarkMapRsp\022\017\n\007retcode\030\002 \001(\005\022 \n\tmark_li"
-                    + "st\030\003 \003(\0132\r.MapMarkPointB!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "\n\nMarkMapRsp\022 \n\tmark_list\030\014 \003(\0132\r.MapMar"
+                    + "kPoint\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -908,7 +908,7 @@ public final class MarkMapRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_MarkMapRsp_descriptor,
                         new java.lang.String[] {
-                            "Retcode", "MarkList",
+                            "MarkList", "Retcode",
                         });
         emu.grasscutter.net.proto.MapMarkPointOuterClass.getDescriptor();
     }

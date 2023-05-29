@@ -20,8 +20,8 @@ public final class GetRegionSearchReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 5615
-     * Name: ENHECGKJAHP
+     * CmdId: 5626
+     * Obf: DEDKFOOONAO
      * </pre>
      *
      * Protobuf type {@code GetRegionSearchReq}
@@ -265,8 +265,8 @@ public final class GetRegionSearchReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 5615
-         * Name: ENHECGKJAHP
+         * CmdId: 5626
+         * Obf: DEDKFOOONAO
          * </pre>
          *
          * Protobuf type {@code GetRegionSearchReq}
@@ -499,8 +499,8 @@ public final class GetRegionSearchReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030GetRegionSearchReq.proto\"\024\n\022GetRegionS"
-                    + "earchReqB!\n\031emu.grasscutter.net.protoZ\004/"
-                    + "genb\006proto3"
+                    + "earchReqB\033\n\031emu.grasscutter.net.protob\006p"
+                    + "roto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

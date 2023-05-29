@@ -20,8 +20,8 @@ public final class HomeLimitedShopGoodsListReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4515
-     * Name: BDNIDPNDIOH
+     * CmdId: 4719
+     * Obf: KKDGLPBMPLP
      * </pre>
      *
      * Protobuf type {@code HomeLimitedShopGoodsListReq}
@@ -285,8 +285,8 @@ public final class HomeLimitedShopGoodsListReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4515
-         * Name: BDNIDPNDIOH
+         * CmdId: 4719
+         * Obf: KKDGLPBMPLP
          * </pre>
          *
          * Protobuf type {@code HomeLimitedShopGoodsListReq}
@@ -538,8 +538,8 @@ public final class HomeLimitedShopGoodsListReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n!HomeLimitedShopGoodsListReq.proto\"\035\n\033H"
-                    + "omeLimitedShopGoodsListReqB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "omeLimitedShopGoodsListReqB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

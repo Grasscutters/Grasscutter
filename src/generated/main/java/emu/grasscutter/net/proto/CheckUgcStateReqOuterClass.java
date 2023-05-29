@@ -20,8 +20,8 @@ public final class CheckUgcStateReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 6321
-     * Name: BFCKNLNKAOD
+     * CmdId: 6342
+     * Obf: MPGDDPFMIPD
      * </pre>
      *
      * Protobuf type {@code CheckUgcStateReq}
@@ -258,8 +258,8 @@ public final class CheckUgcStateReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 6321
-         * Name: BFCKNLNKAOD
+         * CmdId: 6342
+         * Obf: MPGDDPFMIPD
          * </pre>
          *
          * Protobuf type {@code CheckUgcStateReq}
@@ -490,8 +490,8 @@ public final class CheckUgcStateReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026CheckUgcStateReq.proto\"\022\n\020CheckUgcStat"
-                    + "eReqB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "eReqB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

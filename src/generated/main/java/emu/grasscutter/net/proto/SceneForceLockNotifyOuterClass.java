@@ -18,19 +18,19 @@ public final class SceneForceLockNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @return A list containing the forceIdList.
          */
         java.util.List<java.lang.Integer> getForceIdListList();
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @return The count of forceIdList.
          */
         int getForceIdListCount();
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @param index The index of the element to return.
          * @return The forceIdList at the given index.
@@ -41,8 +41,8 @@ public final class SceneForceLockNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 235
-     * Name: AHMGLHBPOGH
+     * CmdId: 203
+     * Obf: ECEAOCGLDJA
      * </pre>
      *
      * Protobuf type {@code SceneForceLockNotify}
@@ -91,7 +91,7 @@ public final class SceneForceLockNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 96:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     forceIdList_ = newIntList();
@@ -100,7 +100,7 @@ public final class SceneForceLockNotifyOuterClass {
                                 forceIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 90:
+                        case 98:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -152,10 +152,10 @@ public final class SceneForceLockNotifyOuterClass {
                                     .class);
         }
 
-        public static final int FORCE_ID_LIST_FIELD_NUMBER = 11;
+        public static final int FORCE_ID_LIST_FIELD_NUMBER = 12;
         private com.google.protobuf.Internal.IntList forceIdList_;
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @return A list containing the forceIdList.
          */
@@ -164,7 +164,7 @@ public final class SceneForceLockNotifyOuterClass {
             return forceIdList_;
         }
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @return The count of forceIdList.
          */
@@ -172,7 +172,7 @@ public final class SceneForceLockNotifyOuterClass {
             return forceIdList_.size();
         }
         /**
-         * <code>repeated uint32 force_id_list = 11;</code>
+         * <code>repeated uint32 force_id_list = 12;</code>
          *
          * @param index The index of the element to return.
          * @return The forceIdList at the given index.
@@ -199,7 +199,7 @@ public final class SceneForceLockNotifyOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getForceIdListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(forceIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < forceIdList_.size(); i++) {
@@ -373,8 +373,8 @@ public final class SceneForceLockNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 235
-         * Name: AHMGLHBPOGH
+         * CmdId: 203
+         * Obf: ECEAOCGLDJA
          * </pre>
          *
          * Protobuf type {@code SceneForceLockNotify}
@@ -568,7 +568,7 @@ public final class SceneForceLockNotifyOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @return A list containing the forceIdList.
              */
@@ -578,7 +578,7 @@ public final class SceneForceLockNotifyOuterClass {
                         : forceIdList_;
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @return The count of forceIdList.
              */
@@ -586,7 +586,7 @@ public final class SceneForceLockNotifyOuterClass {
                 return forceIdList_.size();
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @param index The index of the element to return.
              * @return The forceIdList at the given index.
@@ -595,7 +595,7 @@ public final class SceneForceLockNotifyOuterClass {
                 return forceIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @param index The index to set the value at.
              * @param value The forceIdList to set.
@@ -608,7 +608,7 @@ public final class SceneForceLockNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @param value The forceIdList to add.
              * @return This builder for chaining.
@@ -620,7 +620,7 @@ public final class SceneForceLockNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @param values The forceIdList to add.
              * @return This builder for chaining.
@@ -632,7 +632,7 @@ public final class SceneForceLockNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 force_id_list = 11;</code>
+             * <code>repeated uint32 force_id_list = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -714,8 +714,8 @@ public final class SceneForceLockNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032SceneForceLockNotify.proto\"-\n\024SceneFor"
-                    + "ceLockNotify\022\025\n\rforce_id_list\030\013 \003(\rB!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "ceLockNotify\022\025\n\rforce_id_list\030\014 \003(\rB\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

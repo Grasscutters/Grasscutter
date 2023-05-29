@@ -20,8 +20,8 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4845
-     * Name: MLAGPADBHDI
+     * CmdId: 4688
+     * Obf: AOKHNKCIGFG
      * </pre>
      *
      * Protobuf type {@code GetFurnitureCurModuleArrangeCountReq}
@@ -288,8 +288,8 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4845
-         * Name: MLAGPADBHDI
+         * CmdId: 4688
+         * Obf: AOKHNKCIGFG
          * </pre>
          *
          * Protobuf type {@code GetFurnitureCurModuleArrangeCountReq}
@@ -545,8 +545,8 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n*GetFurnitureCurModuleArrangeCountReq.p"
                     + "roto\"&\n$GetFurnitureCurModuleArrangeCoun"
-                    + "tReqB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "tReqB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

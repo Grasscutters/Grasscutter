@@ -18,31 +18,31 @@ public final class RoguelikeRuneRecordOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 FNOMMOAFCHG = 11;</code>
+         * <code>uint32 AMDENNHDBNO = 7;</code>
          *
-         * @return The fNOMMOAFCHG.
+         * @return The aMDENNHDBNO.
          */
-        int getFNOMMOAFCHG();
+        int getAMDENNHDBNO();
 
         /**
-         * <code>uint32 rune_id = 10;</code>
+         * <code>uint32 rune_id = 9;</code>
          *
          * @return The runeId.
          */
         int getRuneId();
 
         /**
-         * <code>uint32 EGIKJBIOOCF = 15;</code>
+         * <code>uint32 FCDJENECOPL = 4;</code>
          *
-         * @return The eGIKJBIOOCF.
+         * @return The fCDJENECOPL.
          */
-        int getEGIKJBIOOCF();
+        int getFCDJENECOPL();
     }
     /**
      *
      *
      * <pre>
-     * Name: KPMMLJKDLKH
+     * Obf: FJNMGCOBEDA
      * </pre>
      *
      * Protobuf type {@code RoguelikeRuneRecord}
@@ -88,19 +88,19 @@ public final class RoguelikeRuneRecordOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 80:
+                        case 32:
+                            {
+                                fCDJENECOPL_ = input.readUInt32();
+                                break;
+                            }
+                        case 56:
+                            {
+                                aMDENNHDBNO_ = input.readUInt32();
+                                break;
+                            }
+                        case 72:
                             {
                                 runeId_ = input.readUInt32();
-                                break;
-                            }
-                        case 88:
-                            {
-                                fNOMMOAFCHG_ = input.readUInt32();
-                                break;
-                            }
-                        case 120:
-                            {
-                                eGIKJBIOOCF_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -138,22 +138,22 @@ public final class RoguelikeRuneRecordOuterClass {
                                     .class);
         }
 
-        public static final int FNOMMOAFCHG_FIELD_NUMBER = 11;
-        private int fNOMMOAFCHG_;
+        public static final int AMDENNHDBNO_FIELD_NUMBER = 7;
+        private int aMDENNHDBNO_;
         /**
-         * <code>uint32 FNOMMOAFCHG = 11;</code>
+         * <code>uint32 AMDENNHDBNO = 7;</code>
          *
-         * @return The fNOMMOAFCHG.
+         * @return The aMDENNHDBNO.
          */
         @java.lang.Override
-        public int getFNOMMOAFCHG() {
-            return fNOMMOAFCHG_;
+        public int getAMDENNHDBNO() {
+            return aMDENNHDBNO_;
         }
 
-        public static final int RUNE_ID_FIELD_NUMBER = 10;
+        public static final int RUNE_ID_FIELD_NUMBER = 9;
         private int runeId_;
         /**
-         * <code>uint32 rune_id = 10;</code>
+         * <code>uint32 rune_id = 9;</code>
          *
          * @return The runeId.
          */
@@ -162,16 +162,16 @@ public final class RoguelikeRuneRecordOuterClass {
             return runeId_;
         }
 
-        public static final int EGIKJBIOOCF_FIELD_NUMBER = 15;
-        private int eGIKJBIOOCF_;
+        public static final int FCDJENECOPL_FIELD_NUMBER = 4;
+        private int fCDJENECOPL_;
         /**
-         * <code>uint32 EGIKJBIOOCF = 15;</code>
+         * <code>uint32 FCDJENECOPL = 4;</code>
          *
-         * @return The eGIKJBIOOCF.
+         * @return The fCDJENECOPL.
          */
         @java.lang.Override
-        public int getEGIKJBIOOCF() {
-            return eGIKJBIOOCF_;
+        public int getFCDJENECOPL() {
+            return fCDJENECOPL_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -188,14 +188,14 @@ public final class RoguelikeRuneRecordOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (fCDJENECOPL_ != 0) {
+                output.writeUInt32(4, fCDJENECOPL_);
+            }
+            if (aMDENNHDBNO_ != 0) {
+                output.writeUInt32(7, aMDENNHDBNO_);
+            }
             if (runeId_ != 0) {
-                output.writeUInt32(10, runeId_);
-            }
-            if (fNOMMOAFCHG_ != 0) {
-                output.writeUInt32(11, fNOMMOAFCHG_);
-            }
-            if (eGIKJBIOOCF_ != 0) {
-                output.writeUInt32(15, eGIKJBIOOCF_);
+                output.writeUInt32(9, runeId_);
             }
             unknownFields.writeTo(output);
         }
@@ -206,14 +206,14 @@ public final class RoguelikeRuneRecordOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (fCDJENECOPL_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, fCDJENECOPL_);
+            }
+            if (aMDENNHDBNO_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, aMDENNHDBNO_);
+            }
             if (runeId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, runeId_);
-            }
-            if (fNOMMOAFCHG_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, fNOMMOAFCHG_);
-            }
-            if (eGIKJBIOOCF_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, eGIKJBIOOCF_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, runeId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -232,9 +232,9 @@ public final class RoguelikeRuneRecordOuterClass {
             emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord other =
                     (emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord) obj;
 
-            if (getFNOMMOAFCHG() != other.getFNOMMOAFCHG()) return false;
+            if (getAMDENNHDBNO() != other.getAMDENNHDBNO()) return false;
             if (getRuneId() != other.getRuneId()) return false;
-            if (getEGIKJBIOOCF() != other.getEGIKJBIOOCF()) return false;
+            if (getFCDJENECOPL() != other.getFCDJENECOPL()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -246,12 +246,12 @@ public final class RoguelikeRuneRecordOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + FNOMMOAFCHG_FIELD_NUMBER;
-            hash = (53 * hash) + getFNOMMOAFCHG();
+            hash = (37 * hash) + AMDENNHDBNO_FIELD_NUMBER;
+            hash = (53 * hash) + getAMDENNHDBNO();
             hash = (37 * hash) + RUNE_ID_FIELD_NUMBER;
             hash = (53 * hash) + getRuneId();
-            hash = (37 * hash) + EGIKJBIOOCF_FIELD_NUMBER;
-            hash = (53 * hash) + getEGIKJBIOOCF();
+            hash = (37 * hash) + FCDJENECOPL_FIELD_NUMBER;
+            hash = (53 * hash) + getFCDJENECOPL();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -364,7 +364,7 @@ public final class RoguelikeRuneRecordOuterClass {
          *
          *
          * <pre>
-         * Name: KPMMLJKDLKH
+         * Obf: FJNMGCOBEDA
          * </pre>
          *
          * Protobuf type {@code RoguelikeRuneRecord}
@@ -408,11 +408,11 @@ public final class RoguelikeRuneRecordOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                fNOMMOAFCHG_ = 0;
+                aMDENNHDBNO_ = 0;
 
                 runeId_ = 0;
 
-                eGIKJBIOOCF_ = 0;
+                fCDJENECOPL_ = 0;
 
                 return this;
             }
@@ -445,9 +445,9 @@ public final class RoguelikeRuneRecordOuterClass {
                     buildPartial() {
                 emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord result =
                         new emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord(this);
-                result.fNOMMOAFCHG_ = fNOMMOAFCHG_;
+                result.aMDENNHDBNO_ = aMDENNHDBNO_;
                 result.runeId_ = runeId_;
-                result.eGIKJBIOOCF_ = eGIKJBIOOCF_;
+                result.fCDJENECOPL_ = fCDJENECOPL_;
                 onBuilt();
                 return result;
             }
@@ -505,14 +505,14 @@ public final class RoguelikeRuneRecordOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord
                                 .getDefaultInstance()) return this;
-                if (other.getFNOMMOAFCHG() != 0) {
-                    setFNOMMOAFCHG(other.getFNOMMOAFCHG());
+                if (other.getAMDENNHDBNO() != 0) {
+                    setAMDENNHDBNO(other.getAMDENNHDBNO());
                 }
                 if (other.getRuneId() != 0) {
                     setRuneId(other.getRuneId());
                 }
-                if (other.getEGIKJBIOOCF() != 0) {
-                    setEGIKJBIOOCF(other.getEGIKJBIOOCF());
+                if (other.getFCDJENECOPL() != 0) {
+                    setFCDJENECOPL(other.getFCDJENECOPL());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -546,43 +546,43 @@ public final class RoguelikeRuneRecordOuterClass {
                 return this;
             }
 
-            private int fNOMMOAFCHG_;
+            private int aMDENNHDBNO_;
             /**
-             * <code>uint32 FNOMMOAFCHG = 11;</code>
+             * <code>uint32 AMDENNHDBNO = 7;</code>
              *
-             * @return The fNOMMOAFCHG.
+             * @return The aMDENNHDBNO.
              */
             @java.lang.Override
-            public int getFNOMMOAFCHG() {
-                return fNOMMOAFCHG_;
+            public int getAMDENNHDBNO() {
+                return aMDENNHDBNO_;
             }
             /**
-             * <code>uint32 FNOMMOAFCHG = 11;</code>
+             * <code>uint32 AMDENNHDBNO = 7;</code>
              *
-             * @param value The fNOMMOAFCHG to set.
+             * @param value The aMDENNHDBNO to set.
              * @return This builder for chaining.
              */
-            public Builder setFNOMMOAFCHG(int value) {
+            public Builder setAMDENNHDBNO(int value) {
 
-                fNOMMOAFCHG_ = value;
+                aMDENNHDBNO_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 FNOMMOAFCHG = 11;</code>
+             * <code>uint32 AMDENNHDBNO = 7;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearFNOMMOAFCHG() {
+            public Builder clearAMDENNHDBNO() {
 
-                fNOMMOAFCHG_ = 0;
+                aMDENNHDBNO_ = 0;
                 onChanged();
                 return this;
             }
 
             private int runeId_;
             /**
-             * <code>uint32 rune_id = 10;</code>
+             * <code>uint32 rune_id = 9;</code>
              *
              * @return The runeId.
              */
@@ -591,7 +591,7 @@ public final class RoguelikeRuneRecordOuterClass {
                 return runeId_;
             }
             /**
-             * <code>uint32 rune_id = 10;</code>
+             * <code>uint32 rune_id = 9;</code>
              *
              * @param value The runeId to set.
              * @return This builder for chaining.
@@ -603,7 +603,7 @@ public final class RoguelikeRuneRecordOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 rune_id = 10;</code>
+             * <code>uint32 rune_id = 9;</code>
              *
              * @return This builder for chaining.
              */
@@ -614,36 +614,36 @@ public final class RoguelikeRuneRecordOuterClass {
                 return this;
             }
 
-            private int eGIKJBIOOCF_;
+            private int fCDJENECOPL_;
             /**
-             * <code>uint32 EGIKJBIOOCF = 15;</code>
+             * <code>uint32 FCDJENECOPL = 4;</code>
              *
-             * @return The eGIKJBIOOCF.
+             * @return The fCDJENECOPL.
              */
             @java.lang.Override
-            public int getEGIKJBIOOCF() {
-                return eGIKJBIOOCF_;
+            public int getFCDJENECOPL() {
+                return fCDJENECOPL_;
             }
             /**
-             * <code>uint32 EGIKJBIOOCF = 15;</code>
+             * <code>uint32 FCDJENECOPL = 4;</code>
              *
-             * @param value The eGIKJBIOOCF to set.
+             * @param value The fCDJENECOPL to set.
              * @return This builder for chaining.
              */
-            public Builder setEGIKJBIOOCF(int value) {
+            public Builder setFCDJENECOPL(int value) {
 
-                eGIKJBIOOCF_ = value;
+                fCDJENECOPL_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 EGIKJBIOOCF = 15;</code>
+             * <code>uint32 FCDJENECOPL = 4;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearEGIKJBIOOCF() {
+            public Builder clearFCDJENECOPL() {
 
-                eGIKJBIOOCF_ = 0;
+                fCDJENECOPL_ = 0;
                 onChanged();
                 return this;
             }
@@ -718,9 +718,9 @@ public final class RoguelikeRuneRecordOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\031RoguelikeRuneRecord.proto\"P\n\023Roguelike"
-                    + "RuneRecord\022\023\n\013FNOMMOAFCHG\030\013 \001(\r\022\017\n\007rune_"
-                    + "id\030\n \001(\r\022\023\n\013EGIKJBIOOCF\030\017 \001(\rB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "RuneRecord\022\023\n\013AMDENNHDBNO\030\007 \001(\r\022\017\n\007rune_"
+                    + "id\030\t \001(\r\022\023\n\013FCDJENECOPL\030\004 \001(\rB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -730,7 +730,7 @@ public final class RoguelikeRuneRecordOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_RoguelikeRuneRecord_descriptor,
                         new java.lang.String[] {
-                            "FNOMMOAFCHG", "RuneId", "EGIKJBIOOCF",
+                            "AMDENNHDBNO", "RuneId", "FCDJENECOPL",
                         });
     }
 

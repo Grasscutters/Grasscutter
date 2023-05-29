@@ -18,14 +18,14 @@ public final class PotionAvatarInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint64 avatar_id = 14;</code>
+         * <code>uint64 avatar_id = 7;</code>
          *
          * @return The avatarId.
          */
         long getAvatarId();
 
         /**
-         * <code>bool is_trial = 8;</code>
+         * <code>bool is_trial = 10;</code>
          *
          * @return The isTrial.
          */
@@ -35,7 +35,7 @@ public final class PotionAvatarInfoOuterClass {
      *
      *
      * <pre>
-     * Name: FHIBGDNPPMI
+     * Obf: EGFDGFANNGN
      * </pre>
      *
      * Protobuf type {@code PotionAvatarInfo}
@@ -81,14 +81,14 @@ public final class PotionAvatarInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 64:
-                            {
-                                isTrial_ = input.readBool();
-                                break;
-                            }
-                        case 112:
+                        case 56:
                             {
                                 avatarId_ = input.readUInt64();
+                                break;
+                            }
+                        case 80:
+                            {
+                                isTrial_ = input.readBool();
                                 break;
                             }
                         default:
@@ -125,10 +125,10 @@ public final class PotionAvatarInfoOuterClass {
                             emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfo.Builder.class);
         }
 
-        public static final int AVATAR_ID_FIELD_NUMBER = 14;
+        public static final int AVATAR_ID_FIELD_NUMBER = 7;
         private long avatarId_;
         /**
-         * <code>uint64 avatar_id = 14;</code>
+         * <code>uint64 avatar_id = 7;</code>
          *
          * @return The avatarId.
          */
@@ -137,10 +137,10 @@ public final class PotionAvatarInfoOuterClass {
             return avatarId_;
         }
 
-        public static final int IS_TRIAL_FIELD_NUMBER = 8;
+        public static final int IS_TRIAL_FIELD_NUMBER = 10;
         private boolean isTrial_;
         /**
-         * <code>bool is_trial = 8;</code>
+         * <code>bool is_trial = 10;</code>
          *
          * @return The isTrial.
          */
@@ -163,11 +163,11 @@ public final class PotionAvatarInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (isTrial_ != false) {
-                output.writeBool(8, isTrial_);
-            }
             if (avatarId_ != 0L) {
-                output.writeUInt64(14, avatarId_);
+                output.writeUInt64(7, avatarId_);
+            }
+            if (isTrial_ != false) {
+                output.writeBool(10, isTrial_);
             }
             unknownFields.writeTo(output);
         }
@@ -178,11 +178,11 @@ public final class PotionAvatarInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (isTrial_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, isTrial_);
-            }
             if (avatarId_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(14, avatarId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(7, avatarId_);
+            }
+            if (isTrial_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isTrial_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -324,7 +324,7 @@ public final class PotionAvatarInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FHIBGDNPPMI
+         * Obf: EGFDGFANNGN
          * </pre>
          *
          * Protobuf type {@code PotionAvatarInfo}
@@ -499,7 +499,7 @@ public final class PotionAvatarInfoOuterClass {
 
             private long avatarId_;
             /**
-             * <code>uint64 avatar_id = 14;</code>
+             * <code>uint64 avatar_id = 7;</code>
              *
              * @return The avatarId.
              */
@@ -508,7 +508,7 @@ public final class PotionAvatarInfoOuterClass {
                 return avatarId_;
             }
             /**
-             * <code>uint64 avatar_id = 14;</code>
+             * <code>uint64 avatar_id = 7;</code>
              *
              * @param value The avatarId to set.
              * @return This builder for chaining.
@@ -520,7 +520,7 @@ public final class PotionAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 avatar_id = 14;</code>
+             * <code>uint64 avatar_id = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -533,7 +533,7 @@ public final class PotionAvatarInfoOuterClass {
 
             private boolean isTrial_;
             /**
-             * <code>bool is_trial = 8;</code>
+             * <code>bool is_trial = 10;</code>
              *
              * @return The isTrial.
              */
@@ -542,7 +542,7 @@ public final class PotionAvatarInfoOuterClass {
                 return isTrial_;
             }
             /**
-             * <code>bool is_trial = 8;</code>
+             * <code>bool is_trial = 10;</code>
              *
              * @param value The isTrial to set.
              * @return This builder for chaining.
@@ -554,7 +554,7 @@ public final class PotionAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_trial = 8;</code>
+             * <code>bool is_trial = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -635,9 +635,8 @@ public final class PotionAvatarInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026PotionAvatarInfo.proto\"7\n\020PotionAvatar"
-                    + "Info\022\021\n\tavatar_id\030\016 \001(\004\022\020\n\010is_trial\030\010 \001("
-                    + "\010B!\n\031emu.grasscutter.net.protoZ\004/genb\006pr"
-                    + "oto3"
+                    + "Info\022\021\n\tavatar_id\030\007 \001(\004\022\020\n\010is_trial\030\n \001("
+                    + "\010B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

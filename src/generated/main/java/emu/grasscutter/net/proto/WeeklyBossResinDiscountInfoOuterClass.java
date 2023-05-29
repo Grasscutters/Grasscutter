@@ -49,7 +49,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
      *
      *
      * <pre>
-     * Name: HAPLHBDEFAO
+     * Obf: EJPHPKAJEJB
      * </pre>
      *
      * Protobuf type {@code WeeklyBossResinDiscountInfo}
@@ -417,7 +417,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
          *
          *
          * <pre>
-         * Name: HAPLHBDEFAO
+         * Obf: EJPHPKAJEJB
          * </pre>
          *
          * Protobuf type {@code WeeklyBossResinDiscountInfo}
@@ -832,8 +832,8 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
                     + "WeeklyBossResinDiscountInfo\022\024\n\014discount_"
                     + "num\030\001 \001(\r\022\032\n\022discount_num_limit\030\002 \001(\r\022\022\n"
                     + "\nresin_cost\030\003 \001(\r\022\033\n\023original_resin_cost"
-                    + "\030\004 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

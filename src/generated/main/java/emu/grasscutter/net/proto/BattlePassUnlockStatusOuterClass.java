@@ -15,7 +15,7 @@ public final class BattlePassUnlockStatusOuterClass {
      *
      *
      * <pre>
-     * Name: LPJODIDIFIL
+     * Obf: GIJOJHBPCLK
      * </pre>
      *
      * Protobuf enum {@code BattlePassUnlockStatus}
@@ -137,8 +137,8 @@ public final class BattlePassUnlockStatusOuterClass {
                     + "ePassUnlockStatus\022%\n!BATTLE_PASS_UNLOCK_"
                     + "STATUS_INVALID\020\000\022\"\n\036BATTLE_PASS_UNLOCK_S"
                     + "TATUS_FREE\020\001\022\"\n\036BATTLE_PASS_UNLOCK_STATU"
-                    + "S_PAID\020\002B!\n\031emu.grasscutter.net.protoZ\004/"
-                    + "genb\006proto3"
+                    + "S_PAID\020\002B\033\n\031emu.grasscutter.net.protob\006p"
+                    + "roto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

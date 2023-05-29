@@ -15,7 +15,7 @@ public final class MovingPlatformTypeOuterClass {
      *
      *
      * <pre>
-     * Name: OKNINCMBNLI
+     * Obf: EKIOLBCKCAO
      * </pre>
      *
      * Protobuf enum {@code MovingPlatformType}
@@ -143,8 +143,8 @@ public final class MovingPlatformTypeOuterClass {
                     + "tformType\022\035\n\031MOVING_PLATFORM_TYPE_NONE\020\000"
                     + "\022#\n\037MOVING_PLATFORM_TYPE_USE_CONFIG\020\001\022 \n"
                     + "\034MOVING_PLATFORM_TYPE_ABILITY\020\002\022\036\n\032MOVIN"
-                    + "G_PLATFORM_TYPE_ROUTE\020\003B!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "G_PLATFORM_TYPE_ROUTE\020\003B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

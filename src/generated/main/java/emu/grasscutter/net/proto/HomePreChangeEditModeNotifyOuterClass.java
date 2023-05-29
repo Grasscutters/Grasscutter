@@ -18,7 +18,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_enter_edit_mode = 11;</code>
+         * <code>bool is_enter_edit_mode = 4;</code>
          *
          * @return The isEnterEditMode.
          */
@@ -28,8 +28,8 @@ public final class HomePreChangeEditModeNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4490
-     * Name: ACCOBPBFHPH
+     * CmdId: 4830
+     * Obf: DGFGCDOOMLC
      * </pre>
      *
      * Protobuf type {@code HomePreChangeEditModeNotify}
@@ -76,7 +76,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 32:
                             {
                                 isEnterEditMode_ = input.readBool();
                                 break;
@@ -117,10 +117,10 @@ public final class HomePreChangeEditModeNotifyOuterClass {
                                     .HomePreChangeEditModeNotify.Builder.class);
         }
 
-        public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 11;
+        public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 4;
         private boolean isEnterEditMode_;
         /**
-         * <code>bool is_enter_edit_mode = 11;</code>
+         * <code>bool is_enter_edit_mode = 4;</code>
          *
          * @return The isEnterEditMode.
          */
@@ -144,7 +144,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (isEnterEditMode_ != false) {
-                output.writeBool(11, isEnterEditMode_);
+                output.writeBool(4, isEnterEditMode_);
             }
             unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
 
             size = 0;
             if (isEnterEditMode_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isEnterEditMode_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, isEnterEditMode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -319,8 +319,8 @@ public final class HomePreChangeEditModeNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4490
-         * Name: ACCOBPBFHPH
+         * CmdId: 4830
+         * Obf: DGFGCDOOMLC
          * </pre>
          *
          * Protobuf type {@code HomePreChangeEditModeNotify}
@@ -506,7 +506,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
 
             private boolean isEnterEditMode_;
             /**
-             * <code>bool is_enter_edit_mode = 11;</code>
+             * <code>bool is_enter_edit_mode = 4;</code>
              *
              * @return The isEnterEditMode.
              */
@@ -515,7 +515,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
                 return isEnterEditMode_;
             }
             /**
-             * <code>bool is_enter_edit_mode = 11;</code>
+             * <code>bool is_enter_edit_mode = 4;</code>
              *
              * @param value The isEnterEditMode to set.
              * @return This builder for chaining.
@@ -527,7 +527,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_enter_edit_mode = 11;</code>
+             * <code>bool is_enter_edit_mode = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -613,8 +613,8 @@ public final class HomePreChangeEditModeNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n!HomePreChangeEditModeNotify.proto\"9\n\033H"
                     + "omePreChangeEditModeNotify\022\032\n\022is_enter_e"
-                    + "dit_mode\030\013 \001(\010B!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "dit_mode\030\004 \001(\010B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

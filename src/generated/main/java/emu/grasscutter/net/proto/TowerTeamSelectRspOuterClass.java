@@ -18,7 +18,7 @@ public final class TowerTeamSelectRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 14;</code>
+         * <code>int32 retcode = 4;</code>
          *
          * @return The retcode.
          */
@@ -28,8 +28,8 @@ public final class TowerTeamSelectRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 2441
-     * Name: EBBOIDCGABB
+     * CmdId: 2458
+     * Obf: KNFLOIHDFKG
      * </pre>
      *
      * Protobuf type {@code TowerTeamSelectRsp}
@@ -75,7 +75,7 @@ public final class TowerTeamSelectRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 112:
+                        case 32:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -115,10 +115,10 @@ public final class TowerTeamSelectRspOuterClass {
                                     .class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 4;
         private int retcode_;
         /**
-         * <code>int32 retcode = 14;</code>
+         * <code>int32 retcode = 4;</code>
          *
          * @return The retcode.
          */
@@ -142,7 +142,7 @@ public final class TowerTeamSelectRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(14, retcode_);
+                output.writeInt32(4, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class TowerTeamSelectRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -299,8 +299,8 @@ public final class TowerTeamSelectRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2441
-         * Name: EBBOIDCGABB
+         * CmdId: 2458
+         * Obf: KNFLOIHDFKG
          * </pre>
          *
          * Protobuf type {@code TowerTeamSelectRsp}
@@ -471,7 +471,7 @@ public final class TowerTeamSelectRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 14;</code>
+             * <code>int32 retcode = 4;</code>
              *
              * @return The retcode.
              */
@@ -480,7 +480,7 @@ public final class TowerTeamSelectRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 14;</code>
+             * <code>int32 retcode = 4;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -492,7 +492,7 @@ public final class TowerTeamSelectRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 14;</code>
+             * <code>int32 retcode = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -573,8 +573,8 @@ public final class TowerTeamSelectRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030TowerTeamSelectRsp.proto\"%\n\022TowerTeamS"
-                    + "electRsp\022\017\n\007retcode\030\016 \001(\005B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "electRsp\022\017\n\007retcode\030\004 \001(\005B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

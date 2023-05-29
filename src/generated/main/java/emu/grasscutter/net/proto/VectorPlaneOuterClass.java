@@ -35,7 +35,7 @@ public final class VectorPlaneOuterClass {
      *
      *
      * <pre>
-     * Name: KCKOEEDAIMB
+     * Obf: DGAPKAKNFKK
      * </pre>
      *
      * Protobuf type {@code VectorPlane}
@@ -324,7 +324,7 @@ public final class VectorPlaneOuterClass {
          *
          *
          * <pre>
-         * Name: KCKOEEDAIMB
+         * Obf: DGAPKAKNFKK
          * </pre>
          *
          * Protobuf type {@code VectorPlane}
@@ -625,8 +625,8 @@ public final class VectorPlaneOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\021VectorPlane.proto\"#\n\013VectorPlane\022\t\n\001x\030"
-                    + "\001 \001(\002\022\t\n\001y\030\002 \001(\002B!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "\001 \001(\002\022\t\n\001y\030\002 \001(\002B\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

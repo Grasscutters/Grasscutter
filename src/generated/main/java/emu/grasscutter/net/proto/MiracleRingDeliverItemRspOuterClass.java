@@ -18,58 +18,58 @@ public final class MiracleRingDeliverItemRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 gadget_id = 13;</code>
+         * <code>int32 retcode = 2;</code>
          *
-         * @return The gadgetId.
+         * @return The retcode.
          */
-        int getGadgetId();
+        int getRetcode();
 
         /**
-         * <code>.InterOpType op_type = 7;</code>
+         * <code>.InterOpType op_type = 6;</code>
          *
          * @return The enum numeric value on the wire for opType.
          */
         int getOpTypeValue();
         /**
-         * <code>.InterOpType op_type = 7;</code>
+         * <code>.InterOpType op_type = 6;</code>
          *
          * @return The opType.
          */
         emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType getOpType();
 
         /**
-         * <code>uint32 gadget_entity_id = 12;</code>
-         *
-         * @return The gadgetEntityId.
-         */
-        int getGadgetEntityId();
-
-        /**
-         * <code>.InteractType interact_type = 11;</code>
+         * <code>.InteractType interact_type = 15;</code>
          *
          * @return The enum numeric value on the wire for interactType.
          */
         int getInteractTypeValue();
         /**
-         * <code>.InteractType interact_type = 11;</code>
+         * <code>.InteractType interact_type = 15;</code>
          *
          * @return The interactType.
          */
         emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType getInteractType();
 
         /**
-         * <code>int32 retcode = 6;</code>
+         * <code>uint32 gadget_id = 7;</code>
          *
-         * @return The retcode.
+         * @return The gadgetId.
          */
-        int getRetcode();
+        int getGadgetId();
+
+        /**
+         * <code>uint32 gadget_entity_id = 14;</code>
+         *
+         * @return The gadgetEntityId.
+         */
+        int getGadgetEntityId();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 5222
-     * Name: LFFBMNEPNBG
+     * CmdId: 5207
+     * Obf: OPJAAKOAPKD
      * </pre>
      *
      * Protobuf type {@code MiracleRingDeliverItemRsp}
@@ -118,33 +118,33 @@ public final class MiracleRingDeliverItemRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 48:
+                        case 16:
                             {
                                 retcode_ = input.readInt32();
                                 break;
                             }
-                        case 56:
+                        case 48:
                             {
                                 int rawValue = input.readEnum();
 
                                 opType_ = rawValue;
                                 break;
                             }
-                        case 88:
+                        case 56:
                             {
-                                int rawValue = input.readEnum();
-
-                                interactType_ = rawValue;
+                                gadgetId_ = input.readUInt32();
                                 break;
                             }
-                        case 96:
+                        case 112:
                             {
                                 gadgetEntityId_ = input.readUInt32();
                                 break;
                             }
-                        case 104:
+                        case 120:
                             {
-                                gadgetId_ = input.readUInt32();
+                                int rawValue = input.readEnum();
+
+                                interactType_ = rawValue;
                                 break;
                             }
                         default:
@@ -183,22 +183,22 @@ public final class MiracleRingDeliverItemRspOuterClass {
                                     .MiracleRingDeliverItemRsp.Builder.class);
         }
 
-        public static final int GADGET_ID_FIELD_NUMBER = 13;
-        private int gadgetId_;
+        public static final int RETCODE_FIELD_NUMBER = 2;
+        private int retcode_;
         /**
-         * <code>uint32 gadget_id = 13;</code>
+         * <code>int32 retcode = 2;</code>
          *
-         * @return The gadgetId.
+         * @return The retcode.
          */
         @java.lang.Override
-        public int getGadgetId() {
-            return gadgetId_;
+        public int getRetcode() {
+            return retcode_;
         }
 
-        public static final int OP_TYPE_FIELD_NUMBER = 7;
+        public static final int OP_TYPE_FIELD_NUMBER = 6;
         private int opType_;
         /**
-         * <code>.InterOpType op_type = 7;</code>
+         * <code>.InterOpType op_type = 6;</code>
          *
          * @return The enum numeric value on the wire for opType.
          */
@@ -207,7 +207,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
             return opType_;
         }
         /**
-         * <code>.InterOpType op_type = 7;</code>
+         * <code>.InterOpType op_type = 6;</code>
          *
          * @return The opType.
          */
@@ -221,22 +221,10 @@ public final class MiracleRingDeliverItemRspOuterClass {
                     : result;
         }
 
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 12;
-        private int gadgetEntityId_;
-        /**
-         * <code>uint32 gadget_entity_id = 12;</code>
-         *
-         * @return The gadgetEntityId.
-         */
-        @java.lang.Override
-        public int getGadgetEntityId() {
-            return gadgetEntityId_;
-        }
-
-        public static final int INTERACT_TYPE_FIELD_NUMBER = 11;
+        public static final int INTERACT_TYPE_FIELD_NUMBER = 15;
         private int interactType_;
         /**
-         * <code>.InteractType interact_type = 11;</code>
+         * <code>.InteractType interact_type = 15;</code>
          *
          * @return The enum numeric value on the wire for interactType.
          */
@@ -245,7 +233,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
             return interactType_;
         }
         /**
-         * <code>.InteractType interact_type = 11;</code>
+         * <code>.InteractType interact_type = 15;</code>
          *
          * @return The interactType.
          */
@@ -259,16 +247,28 @@ public final class MiracleRingDeliverItemRspOuterClass {
                     : result;
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 6;
-        private int retcode_;
+        public static final int GADGET_ID_FIELD_NUMBER = 7;
+        private int gadgetId_;
         /**
-         * <code>int32 retcode = 6;</code>
+         * <code>uint32 gadget_id = 7;</code>
          *
-         * @return The retcode.
+         * @return The gadgetId.
          */
         @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
+        public int getGadgetId() {
+            return gadgetId_;
+        }
+
+        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 14;
+        private int gadgetEntityId_;
+        /**
+         * <code>uint32 gadget_entity_id = 14;</code>
+         *
+         * @return The gadgetEntityId.
+         */
+        @java.lang.Override
+        public int getGadgetEntityId() {
+            return gadgetEntityId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -286,23 +286,23 @@ public final class MiracleRingDeliverItemRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(6, retcode_);
+                output.writeInt32(2, retcode_);
             }
             if (opType_
                     != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH
                             .getNumber()) {
-                output.writeEnum(7, opType_);
+                output.writeEnum(6, opType_);
+            }
+            if (gadgetId_ != 0) {
+                output.writeUInt32(7, gadgetId_);
+            }
+            if (gadgetEntityId_ != 0) {
+                output.writeUInt32(14, gadgetEntityId_);
             }
             if (interactType_
                     != emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE
                             .getNumber()) {
-                output.writeEnum(11, interactType_);
-            }
-            if (gadgetEntityId_ != 0) {
-                output.writeUInt32(12, gadgetEntityId_);
-            }
-            if (gadgetId_ != 0) {
-                output.writeUInt32(13, gadgetId_);
+                output.writeEnum(15, interactType_);
             }
             unknownFields.writeTo(output);
         }
@@ -314,23 +314,23 @@ public final class MiracleRingDeliverItemRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, retcode_);
             }
             if (opType_
                     != emu.grasscutter.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH
                             .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, opType_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, opType_);
+            }
+            if (gadgetId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, gadgetId_);
+            }
+            if (gadgetEntityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, gadgetEntityId_);
             }
             if (interactType_
                     != emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE
                             .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, interactType_);
-            }
-            if (gadgetEntityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, gadgetEntityId_);
-            }
-            if (gadgetId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, gadgetId_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, interactType_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -354,11 +354,11 @@ public final class MiracleRingDeliverItemRspOuterClass {
                                             .MiracleRingDeliverItemRsp)
                                     obj;
 
-            if (getGadgetId() != other.getGadgetId()) return false;
-            if (opType_ != other.opType_) return false;
-            if (getGadgetEntityId() != other.getGadgetEntityId()) return false;
-            if (interactType_ != other.interactType_) return false;
             if (getRetcode() != other.getRetcode()) return false;
+            if (opType_ != other.opType_) return false;
+            if (interactType_ != other.interactType_) return false;
+            if (getGadgetId() != other.getGadgetId()) return false;
+            if (getGadgetEntityId() != other.getGadgetEntityId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -370,16 +370,16 @@ public final class MiracleRingDeliverItemRspOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
-            hash = (53 * hash) + getGadgetId();
-            hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
-            hash = (53 * hash) + opType_;
-            hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
-            hash = (53 * hash) + getGadgetEntityId();
-            hash = (37 * hash) + INTERACT_TYPE_FIELD_NUMBER;
-            hash = (53 * hash) + interactType_;
             hash = (37 * hash) + RETCODE_FIELD_NUMBER;
             hash = (53 * hash) + getRetcode();
+            hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + opType_;
+            hash = (37 * hash) + INTERACT_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + interactType_;
+            hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getGadgetId();
+            hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getGadgetEntityId();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -505,8 +505,8 @@ public final class MiracleRingDeliverItemRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 5222
-         * Name: LFFBMNEPNBG
+         * CmdId: 5207
+         * Obf: OPJAAKOAPKD
          * </pre>
          *
          * Protobuf type {@code MiracleRingDeliverItemRsp}
@@ -552,15 +552,15 @@ public final class MiracleRingDeliverItemRspOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                gadgetId_ = 0;
+                retcode_ = 0;
 
                 opType_ = 0;
 
-                gadgetEntityId_ = 0;
-
                 interactType_ = 0;
 
-                retcode_ = 0;
+                gadgetId_ = 0;
+
+                gadgetEntityId_ = 0;
 
                 return this;
             }
@@ -596,11 +596,11 @@ public final class MiracleRingDeliverItemRspOuterClass {
                         result =
                                 new emu.grasscutter.net.proto.MiracleRingDeliverItemRspOuterClass
                                         .MiracleRingDeliverItemRsp(this);
-                result.gadgetId_ = gadgetId_;
-                result.opType_ = opType_;
-                result.gadgetEntityId_ = gadgetEntityId_;
-                result.interactType_ = interactType_;
                 result.retcode_ = retcode_;
+                result.opType_ = opType_;
+                result.interactType_ = interactType_;
+                result.gadgetId_ = gadgetId_;
+                result.gadgetEntityId_ = gadgetEntityId_;
                 onBuilt();
                 return result;
             }
@@ -662,20 +662,20 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.MiracleRingDeliverItemRspOuterClass
                                 .MiracleRingDeliverItemRsp.getDefaultInstance()) return this;
-                if (other.getGadgetId() != 0) {
-                    setGadgetId(other.getGadgetId());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.opType_ != 0) {
                     setOpTypeValue(other.getOpTypeValue());
                 }
-                if (other.getGadgetEntityId() != 0) {
-                    setGadgetEntityId(other.getGadgetEntityId());
-                }
                 if (other.interactType_ != 0) {
                     setInteractTypeValue(other.getInteractTypeValue());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.getGadgetId() != 0) {
+                    setGadgetId(other.getGadgetId());
+                }
+                if (other.getGadgetEntityId() != 0) {
+                    setGadgetEntityId(other.getGadgetEntityId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -710,43 +710,43 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
 
-            private int gadgetId_;
+            private int retcode_;
             /**
-             * <code>uint32 gadget_id = 13;</code>
+             * <code>int32 retcode = 2;</code>
              *
-             * @return The gadgetId.
+             * @return The retcode.
              */
             @java.lang.Override
-            public int getGadgetId() {
-                return gadgetId_;
+            public int getRetcode() {
+                return retcode_;
             }
             /**
-             * <code>uint32 gadget_id = 13;</code>
+             * <code>int32 retcode = 2;</code>
              *
-             * @param value The gadgetId to set.
+             * @param value The retcode to set.
              * @return This builder for chaining.
              */
-            public Builder setGadgetId(int value) {
+            public Builder setRetcode(int value) {
 
-                gadgetId_ = value;
+                retcode_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 gadget_id = 13;</code>
+             * <code>int32 retcode = 2;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearGadgetId() {
+            public Builder clearRetcode() {
 
-                gadgetId_ = 0;
+                retcode_ = 0;
                 onChanged();
                 return this;
             }
 
             private int opType_ = 0;
             /**
-             * <code>.InterOpType op_type = 7;</code>
+             * <code>.InterOpType op_type = 6;</code>
              *
              * @return The enum numeric value on the wire for opType.
              */
@@ -755,7 +755,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return opType_;
             }
             /**
-             * <code>.InterOpType op_type = 7;</code>
+             * <code>.InterOpType op_type = 6;</code>
              *
              * @param value The enum numeric value on the wire for opType to set.
              * @return This builder for chaining.
@@ -767,7 +767,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
             /**
-             * <code>.InterOpType op_type = 7;</code>
+             * <code>.InterOpType op_type = 6;</code>
              *
              * @return The opType.
              */
@@ -781,7 +781,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                         : result;
             }
             /**
-             * <code>.InterOpType op_type = 7;</code>
+             * <code>.InterOpType op_type = 6;</code>
              *
              * @param value The opType to set.
              * @return This builder for chaining.
@@ -796,7 +796,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
             /**
-             * <code>.InterOpType op_type = 7;</code>
+             * <code>.InterOpType op_type = 6;</code>
              *
              * @return This builder for chaining.
              */
@@ -807,43 +807,9 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
 
-            private int gadgetEntityId_;
-            /**
-             * <code>uint32 gadget_entity_id = 12;</code>
-             *
-             * @return The gadgetEntityId.
-             */
-            @java.lang.Override
-            public int getGadgetEntityId() {
-                return gadgetEntityId_;
-            }
-            /**
-             * <code>uint32 gadget_entity_id = 12;</code>
-             *
-             * @param value The gadgetEntityId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setGadgetEntityId(int value) {
-
-                gadgetEntityId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 gadget_entity_id = 12;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearGadgetEntityId() {
-
-                gadgetEntityId_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int interactType_ = 0;
             /**
-             * <code>.InteractType interact_type = 11;</code>
+             * <code>.InteractType interact_type = 15;</code>
              *
              * @return The enum numeric value on the wire for interactType.
              */
@@ -852,7 +818,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return interactType_;
             }
             /**
-             * <code>.InteractType interact_type = 11;</code>
+             * <code>.InteractType interact_type = 15;</code>
              *
              * @param value The enum numeric value on the wire for interactType to set.
              * @return This builder for chaining.
@@ -864,7 +830,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
             /**
-             * <code>.InteractType interact_type = 11;</code>
+             * <code>.InteractType interact_type = 15;</code>
              *
              * @return The interactType.
              */
@@ -878,7 +844,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                         : result;
             }
             /**
-             * <code>.InteractType interact_type = 11;</code>
+             * <code>.InteractType interact_type = 15;</code>
              *
              * @param value The interactType to set.
              * @return This builder for chaining.
@@ -894,7 +860,7 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
             /**
-             * <code>.InteractType interact_type = 11;</code>
+             * <code>.InteractType interact_type = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -905,36 +871,70 @@ public final class MiracleRingDeliverItemRspOuterClass {
                 return this;
             }
 
-            private int retcode_;
+            private int gadgetId_;
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>uint32 gadget_id = 7;</code>
              *
-             * @return The retcode.
+             * @return The gadgetId.
              */
             @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
+            public int getGadgetId() {
+                return gadgetId_;
             }
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>uint32 gadget_id = 7;</code>
              *
-             * @param value The retcode to set.
+             * @param value The gadgetId to set.
              * @return This builder for chaining.
              */
-            public Builder setRetcode(int value) {
+            public Builder setGadgetId(int value) {
 
-                retcode_ = value;
+                gadgetId_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>uint32 gadget_id = 7;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearRetcode() {
+            public Builder clearGadgetId() {
 
-                retcode_ = 0;
+                gadgetId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int gadgetEntityId_;
+            /**
+             * <code>uint32 gadget_entity_id = 14;</code>
+             *
+             * @return The gadgetEntityId.
+             */
+            @java.lang.Override
+            public int getGadgetEntityId() {
+                return gadgetEntityId_;
+            }
+            /**
+             * <code>uint32 gadget_entity_id = 14;</code>
+             *
+             * @param value The gadgetEntityId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setGadgetEntityId(int value) {
+
+                gadgetEntityId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 gadget_entity_id = 14;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearGadgetEntityId() {
+
+                gadgetEntityId_ = 0;
                 onChanged();
                 return this;
             }
@@ -1011,30 +1011,30 @@ public final class MiracleRingDeliverItemRspOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\037MiracleRingDeliverItemRsp.proto\032\022Inter"
-                    + "actType.proto\032\021InterOpType.proto\"\236\001\n\031Mir"
-                    + "acleRingDeliverItemRsp\022\021\n\tgadget_id\030\r \001("
-                    + "\r\022\035\n\007op_type\030\007 \001(\0162\014.InterOpType\022\030\n\020gadg"
-                    + "et_entity_id\030\014 \001(\r\022$\n\rinteract_type\030\013 \001("
-                    + "\0162\r.InteractType\022\017\n\007retcode\030\006 \001(\005B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+            "\n\037MiracleRingDeliverItemRsp.proto\032\021Inter"
+                    + "OpType.proto\032\022InteractType.proto\"\236\001\n\031Mir"
+                    + "acleRingDeliverItemRsp\022\017\n\007retcode\030\002 \001(\005\022"
+                    + "\035\n\007op_type\030\006 \001(\0162\014.InterOpType\022$\n\rintera"
+                    + "ct_type\030\017 \001(\0162\r.InteractType\022\021\n\tgadget_i"
+                    + "d\030\007 \001(\r\022\030\n\020gadget_entity_id\030\016 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.InterOpTypeOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor(),
                         });
         internal_static_MiracleRingDeliverItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_MiracleRingDeliverItemRsp_fieldAccessorTable =
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_MiracleRingDeliverItemRsp_descriptor,
                         new java.lang.String[] {
-                            "GadgetId", "OpType", "GadgetEntityId", "InteractType", "Retcode",
+                            "Retcode", "OpType", "InteractType", "GadgetId", "GadgetEntityId",
                         });
-        emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor();
         emu.grasscutter.net.proto.InterOpTypeOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.InteractTypeOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

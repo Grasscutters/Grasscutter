@@ -15,7 +15,7 @@ public final class LunaRiteHintPointTypeOuterClass {
      *
      *
      * <pre>
-     * Name: KBPCMOCENDE
+     * Obf: CHIOFLNBPOE
      * </pre>
      *
      * Protobuf enum {@code LunaRiteHintPointType}
@@ -136,8 +136,8 @@ public final class LunaRiteHintPointTypeOuterClass {
             "\n\033LunaRiteHintPointType.proto*r\n\025LunaRit"
                     + "eHintPointType\022\034\n\030LUNA_RITE_HINT_TYPE_NO"
                     + "NE\020\000\022\034\n\030LUNA_RITE_HINT_TYPE_RUNE\020\001\022\035\n\031LU"
-                    + "NA_RITE_HINT_TYPE_CHEST\020\002B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "NA_RITE_HINT_TYPE_CHEST\020\002B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -20,8 +20,8 @@ public final class PlayerGetForceQuitBanInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4200
-     * Name: OPDAOPFFNFE
+     * CmdId: 4185
+     * Obf: JGGJABGBLMP
      * </pre>
      *
      * Protobuf type {@code PlayerGetForceQuitBanInfoReq}
@@ -287,8 +287,8 @@ public final class PlayerGetForceQuitBanInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4200
-         * Name: OPDAOPFFNFE
+         * CmdId: 4185
+         * Obf: JGGJABGBLMP
          * </pre>
          *
          * Protobuf type {@code PlayerGetForceQuitBanInfoReq}
@@ -543,8 +543,8 @@ public final class PlayerGetForceQuitBanInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\"PlayerGetForceQuitBanInfoReq.proto\"\036\n\034"
-                    + "PlayerGetForceQuitBanInfoReqB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "PlayerGetForceQuitBanInfoReqB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

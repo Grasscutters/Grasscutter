@@ -20,8 +20,8 @@ public final class GetChatEmojiCollectionReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4019
-     * Name: JNHHBEBKNFO
+     * CmdId: 4001
+     * Obf: LHCGKKANDGP
      * </pre>
      *
      * Protobuf type {@code GetChatEmojiCollectionReq}
@@ -284,8 +284,8 @@ public final class GetChatEmojiCollectionReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4019
-         * Name: JNHHBEBKNFO
+         * CmdId: 4001
+         * Obf: LHCGKKANDGP
          * </pre>
          *
          * Protobuf type {@code GetChatEmojiCollectionReq}
@@ -532,8 +532,8 @@ public final class GetChatEmojiCollectionReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\037GetChatEmojiCollectionReq.proto\"\033\n\031Get"
-                    + "ChatEmojiCollectionReqB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "ChatEmojiCollectionReqB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

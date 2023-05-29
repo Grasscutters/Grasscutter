@@ -28,8 +28,8 @@ public final class GetAllMailNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1465
-     * Name: GNHCOJIHAOF
+     * CmdId: 1434
+     * Obf: CNDIIOHHDIO
      * </pre>
      *
      * Protobuf type {@code GetAllMailNotify}
@@ -292,8 +292,8 @@ public final class GetAllMailNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1465
-         * Name: GNHCOJIHAOF
+         * CmdId: 1434
+         * Obf: CNDIIOHHDIO
          * </pre>
          *
          * Protobuf type {@code GetAllMailNotify}
@@ -564,8 +564,8 @@ public final class GetAllMailNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026GetAllMailNotify.proto\"(\n\020GetAllMailNo"
-                    + "tify\022\024\n\014is_collected\030\007 \001(\010B!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "tify\022\024\n\014is_collected\030\007 \001(\010B\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

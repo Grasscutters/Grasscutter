@@ -18,14 +18,14 @@ public final class TeamChainChooseAvatarInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_trial_avatar = 5;</code>
+         * <code>bool is_trial_avatar = 3;</code>
          *
          * @return The isTrialAvatar.
          */
         boolean getIsTrialAvatar();
 
         /**
-         * <code>uint32 avatar_id = 1;</code>
+         * <code>uint32 avatar_id = 8;</code>
          *
          * @return The avatarId.
          */
@@ -35,7 +35,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
      *
      *
      * <pre>
-     * Name: PCABGJIBAOE
+     * Obf: CHLPLBEMOKI
      * </pre>
      *
      * Protobuf type {@code TeamChainChooseAvatarInfo}
@@ -81,14 +81,14 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
-                            {
-                                avatarId_ = input.readUInt32();
-                                break;
-                            }
-                        case 40:
+                        case 24:
                             {
                                 isTrialAvatar_ = input.readBool();
+                                break;
+                            }
+                        case 64:
+                            {
+                                avatarId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -127,10 +127,10 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                                     .TeamChainChooseAvatarInfo.Builder.class);
         }
 
-        public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 5;
+        public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 3;
         private boolean isTrialAvatar_;
         /**
-         * <code>bool is_trial_avatar = 5;</code>
+         * <code>bool is_trial_avatar = 3;</code>
          *
          * @return The isTrialAvatar.
          */
@@ -139,10 +139,10 @@ public final class TeamChainChooseAvatarInfoOuterClass {
             return isTrialAvatar_;
         }
 
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATAR_ID_FIELD_NUMBER = 8;
         private int avatarId_;
         /**
-         * <code>uint32 avatar_id = 1;</code>
+         * <code>uint32 avatar_id = 8;</code>
          *
          * @return The avatarId.
          */
@@ -165,11 +165,11 @@ public final class TeamChainChooseAvatarInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (avatarId_ != 0) {
-                output.writeUInt32(1, avatarId_);
-            }
             if (isTrialAvatar_ != false) {
-                output.writeBool(5, isTrialAvatar_);
+                output.writeBool(3, isTrialAvatar_);
+            }
+            if (avatarId_ != 0) {
+                output.writeUInt32(8, avatarId_);
             }
             unknownFields.writeTo(output);
         }
@@ -180,11 +180,11 @@ public final class TeamChainChooseAvatarInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (avatarId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, avatarId_);
-            }
             if (isTrialAvatar_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isTrialAvatar_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isTrialAvatar_);
+            }
+            if (avatarId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, avatarId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -350,7 +350,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
          *
          *
          * <pre>
-         * Name: PCABGJIBAOE
+         * Obf: CHLPLBEMOKI
          * </pre>
          *
          * Protobuf type {@code TeamChainChooseAvatarInfo}
@@ -538,7 +538,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
 
             private boolean isTrialAvatar_;
             /**
-             * <code>bool is_trial_avatar = 5;</code>
+             * <code>bool is_trial_avatar = 3;</code>
              *
              * @return The isTrialAvatar.
              */
@@ -547,7 +547,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                 return isTrialAvatar_;
             }
             /**
-             * <code>bool is_trial_avatar = 5;</code>
+             * <code>bool is_trial_avatar = 3;</code>
              *
              * @param value The isTrialAvatar to set.
              * @return This builder for chaining.
@@ -559,7 +559,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_trial_avatar = 5;</code>
+             * <code>bool is_trial_avatar = 3;</code>
              *
              * @return This builder for chaining.
              */
@@ -572,7 +572,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
 
             private int avatarId_;
             /**
-             * <code>uint32 avatar_id = 1;</code>
+             * <code>uint32 avatar_id = 8;</code>
              *
              * @return The avatarId.
              */
@@ -581,7 +581,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                 return avatarId_;
             }
             /**
-             * <code>uint32 avatar_id = 1;</code>
+             * <code>uint32 avatar_id = 8;</code>
              *
              * @param value The avatarId to set.
              * @return This builder for chaining.
@@ -593,7 +593,7 @@ public final class TeamChainChooseAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 avatar_id = 1;</code>
+             * <code>uint32 avatar_id = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -678,8 +678,8 @@ public final class TeamChainChooseAvatarInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\037TeamChainChooseAvatarInfo.proto\"G\n\031Tea"
                     + "mChainChooseAvatarInfo\022\027\n\017is_trial_avata"
-                    + "r\030\005 \001(\010\022\021\n\tavatar_id\030\001 \001(\rB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "r\030\003 \001(\010\022\021\n\tavatar_id\030\010 \001(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

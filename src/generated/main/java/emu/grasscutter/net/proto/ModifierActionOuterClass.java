@@ -15,7 +15,7 @@ public final class ModifierActionOuterClass {
      *
      *
      * <pre>
-     * Name: HPODJPJFNAC
+     * Obf: KKFENCAJMAP
      * </pre>
      *
      * Protobuf enum {@code ModifierAction}
@@ -126,8 +126,8 @@ public final class ModifierActionOuterClass {
         java.lang.String[] descriptorData = {
             "\n\024ModifierAction.proto*H\n\016ModifierAction"
                     + "\022\031\n\025MODIFIER_ACTION_ADDED\020\000\022\033\n\027MODIFIER_"
-                    + "ACTION_REMOVED\020\001B!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "ACTION_REMOVED\020\001B\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

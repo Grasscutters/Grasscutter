@@ -143,8 +143,8 @@ public final class FireWorkTypeOuterClass {
                     + "ype_EFGLHEIODFN\020\001\022\034\n\030FireWorkType_JPBBBC"
                     + "FGHAK\020\002\022\034\n\030FireWorkType_IDCMGHBHBFH\020\003\022\034\n"
                     + "\030FireWorkType_ODDBNNDFMBO\020\004\022\034\n\030FireWorkT"
-                    + "ype_AGIDMOGJOBD\020\005B!\n\031emu.grasscutter.net"
-                    + ".protoZ\004/genb\006proto3"
+                    + "ype_AGIDMOGJOBD\020\005B\033\n\031emu.grasscutter.net"
+                    + ".protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -28,8 +28,8 @@ public final class DungeonShowReminderNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 965
-     * Name: DPEAFCEFGCN
+     * CmdId: 934
+     * Obf: BIJEIFJHGGO
      * </pre>
      *
      * Protobuf type {@code DungeonShowReminderNotify}
@@ -318,8 +318,8 @@ public final class DungeonShowReminderNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 965
-         * Name: DPEAFCEFGCN
+         * CmdId: 934
+         * Obf: BIJEIFJHGGO
          * </pre>
          *
          * Protobuf type {@code DungeonShowReminderNotify}
@@ -607,8 +607,7 @@ public final class DungeonShowReminderNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\037DungeonShowReminderNotify.proto\"0\n\031Dun"
                     + "geonShowReminderNotify\022\023\n\013reminder_id\030\016 "
-                    + "\001(\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006"
-                    + "proto3"
+                    + "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

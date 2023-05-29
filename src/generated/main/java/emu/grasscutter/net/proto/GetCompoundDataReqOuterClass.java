@@ -20,8 +20,8 @@ public final class GetCompoundDataReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 143
-     * Name: DHCFHMOGOHP
+     * CmdId: 159
+     * Obf: IHNPHGMDKCD
      * </pre>
      *
      * Protobuf type {@code GetCompoundDataReq}
@@ -265,8 +265,8 @@ public final class GetCompoundDataReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 143
-         * Name: DHCFHMOGOHP
+         * CmdId: 159
+         * Obf: IHNPHGMDKCD
          * </pre>
          *
          * Protobuf type {@code GetCompoundDataReq}
@@ -499,8 +499,8 @@ public final class GetCompoundDataReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030GetCompoundDataReq.proto\"\024\n\022GetCompoun"
-                    + "dDataReqB!\n\031emu.grasscutter.net.protoZ\004/"
-                    + "genb\006proto3"
+                    + "dDataReqB\033\n\031emu.grasscutter.net.protob\006p"
+                    + "roto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

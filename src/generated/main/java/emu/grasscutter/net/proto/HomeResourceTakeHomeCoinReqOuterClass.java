@@ -20,8 +20,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4694
-     * Name: NBBFEOCBBNF
+     * CmdId: 4773
+     * Obf: JBHKJDLNHDJ
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeHomeCoinReq}
@@ -285,8 +285,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4694
-         * Name: NBBFEOCBBNF
+         * CmdId: 4773
+         * Obf: JBHKJDLNHDJ
          * </pre>
          *
          * Protobuf type {@code HomeResourceTakeHomeCoinReq}
@@ -538,8 +538,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n!HomeResourceTakeHomeCoinReq.proto\"\035\n\033H"
-                    + "omeResourceTakeHomeCoinReqB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "omeResourceTakeHomeCoinReqB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -15,7 +15,7 @@ public final class MpSettingTypeOuterClass {
      *
      *
      * <pre>
-     * Name: CEBEGOKNPHM
+     * Obf: BBPFDAGPFLE
      * </pre>
      *
      * Protobuf enum {@code MpSettingType}
@@ -133,8 +133,8 @@ public final class MpSettingTypeOuterClass {
             "\n\023MpSettingType.proto*v\n\rMpSettingType\022\034"
                     + "\n\030MP_SETTING_TYPE_NO_ENTER\020\000\022 \n\034MP_SETTI"
                     + "NG_TYPE_ENTER_FREELY\020\001\022%\n!MP_SETTING_TYP"
-                    + "E_ENTER_AFTER_APPLY\020\002B!\n\031emu.grasscutter"
-                    + ".net.protoZ\004/genb\006proto3"
+                    + "E_ENTER_AFTER_APPLY\020\002B\033\n\031emu.grasscutter"
+                    + ".net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

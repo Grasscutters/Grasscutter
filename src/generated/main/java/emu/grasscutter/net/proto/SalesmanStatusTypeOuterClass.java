@@ -15,7 +15,7 @@ public final class SalesmanStatusTypeOuterClass {
      *
      *
      * <pre>
-     * Name: CNCIMIAOHLE
+     * Obf: AGHLKHJDEHO
      * </pre>
      *
      * Protobuf enum {@code SalesmanStatusType}
@@ -143,8 +143,8 @@ public final class SalesmanStatusTypeOuterClass {
                     + "tatusType\022\030\n\024SALESMAN_STATUS_NONE\020\000\022\035\n\031S"
                     + "ALESMAN_STATUS_UNSTARTED\020\001\022\033\n\027SALESMAN_S"
                     + "TATUS_STARTED\020\002\022\035\n\031SALESMAN_STATUS_DELIV"
-                    + "ERED\020\003B!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "ERED\020\003B\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

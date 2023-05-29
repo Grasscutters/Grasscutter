@@ -35,7 +35,7 @@ public final class Uint32PairOuterClass {
      *
      *
      * <pre>
-     * Name: ONINAMINFAL
+     * Obf: MKMEPCLAACG
      * </pre>
      *
      * Protobuf type {@code Uint32Pair}
@@ -322,7 +322,7 @@ public final class Uint32PairOuterClass {
          *
          *
          * <pre>
-         * Name: ONINAMINFAL
+         * Obf: MKMEPCLAACG
          * </pre>
          *
          * Protobuf type {@code Uint32Pair}
@@ -617,8 +617,8 @@ public final class Uint32PairOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\020Uint32Pair.proto\"(\n\nUint32Pair\022\013\n\003key\030"
-                    + "\001 \001(\r\022\r\n\005value\030\002 \001(\rB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "\001 \001(\r\022\r\n\005value\030\002 \001(\rB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

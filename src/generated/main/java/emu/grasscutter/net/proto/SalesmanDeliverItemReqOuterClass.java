@@ -28,8 +28,8 @@ public final class SalesmanDeliverItemReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 2120
-     * Name: PMAAFMAEHHG
+     * CmdId: 2172
+     * Obf: MDNOMIGCOMD
      * </pre>
      *
      * Protobuf type {@code SalesmanDeliverItemReq}
@@ -302,8 +302,8 @@ public final class SalesmanDeliverItemReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2120
-         * Name: PMAAFMAEHHG
+         * CmdId: 2172
+         * Obf: MDNOMIGCOMD
          * </pre>
          *
          * Protobuf type {@code SalesmanDeliverItemReq}
@@ -582,8 +582,8 @@ public final class SalesmanDeliverItemReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034SalesmanDeliverItemReq.proto\"-\n\026Salesm"
-                    + "anDeliverItemReq\022\023\n\013schedule_id\030\r \001(\rB!\n"
-                    + "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "anDeliverItemReq\022\023\n\013schedule_id\030\r \001(\rB\033\n"
+                    + "\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

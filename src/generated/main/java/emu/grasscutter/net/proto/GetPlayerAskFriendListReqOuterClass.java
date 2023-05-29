@@ -20,8 +20,8 @@ public final class GetPlayerAskFriendListReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4069
-     * Name: HENMGNPHEAB
+     * CmdId: 4070
+     * Obf: MEEGKFLOAKG
      * </pre>
      *
      * Protobuf type {@code GetPlayerAskFriendListReq}
@@ -284,8 +284,8 @@ public final class GetPlayerAskFriendListReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4069
-         * Name: HENMGNPHEAB
+         * CmdId: 4070
+         * Obf: MEEGKFLOAKG
          * </pre>
          *
          * Protobuf type {@code GetPlayerAskFriendListReq}
@@ -532,8 +532,8 @@ public final class GetPlayerAskFriendListReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\037GetPlayerAskFriendListReq.proto\"\033\n\031Get"
-                    + "PlayerAskFriendListReqB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "PlayerAskFriendListReqB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

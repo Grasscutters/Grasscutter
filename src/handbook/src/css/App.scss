@@ -11,6 +11,7 @@ html {
     --background-color: #25294a;
     --primary-color: #2d325a;
     --secondary-color: #202442;
+    --accent-color: #4b5396;
 
     --text-primary-color: #FFFFFF;
     --unselected-color: #c7c8d0;
@@ -82,6 +83,6 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: var(--accent-color);
     border-radius: 10px;
 }

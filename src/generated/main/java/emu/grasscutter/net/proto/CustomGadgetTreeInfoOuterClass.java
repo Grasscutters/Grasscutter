@@ -39,7 +39,7 @@ public final class CustomGadgetTreeInfoOuterClass {
      *
      *
      * <pre>
-     * Name: BJGMHMHDCGE
+     * Obf: DPOLIKKKKLA
      * </pre>
      *
      * Protobuf type {@code CustomGadgetTreeInfo}
@@ -355,7 +355,7 @@ public final class CustomGadgetTreeInfoOuterClass {
          *
          *
          * <pre>
-         * Name: BJGMHMHDCGE
+         * Obf: DPOLIKKKKLA
          * </pre>
          *
          * Protobuf type {@code CustomGadgetTreeInfo}
@@ -883,8 +883,7 @@ public final class CustomGadgetTreeInfoOuterClass {
             "\n\032CustomGadgetTreeInfo.proto\032\032CustomComm"
                     + "onNodeInfo.proto\"@\n\024CustomGadgetTreeInfo"
                     + "\022(\n\tnode_list\030\001 \003(\0132\025.CustomCommonNodeIn"
-                    + "foB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "foB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

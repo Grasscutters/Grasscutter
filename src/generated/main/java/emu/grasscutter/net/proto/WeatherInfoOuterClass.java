@@ -28,7 +28,7 @@ public final class WeatherInfoOuterClass {
      *
      *
      * <pre>
-     * Name: BPMBJDCDKEL
+     * Obf: BMHFKGLDMII
      * </pre>
      *
      * Protobuf type {@code WeatherInfo}
@@ -289,7 +289,7 @@ public final class WeatherInfoOuterClass {
          *
          *
          * <pre>
-         * Name: BPMBJDCDKEL
+         * Obf: BMHFKGLDMII
          * </pre>
          *
          * Protobuf type {@code WeatherInfo}
@@ -550,8 +550,8 @@ public final class WeatherInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\021WeatherInfo.proto\"&\n\013WeatherInfo\022\027\n\017we"
-                    + "ather_area_id\030\001 \001(\rB!\n\031emu.grasscutter.n"
-                    + "et.protoZ\004/genb\006proto3"
+                    + "ather_area_id\030\001 \001(\rB\033\n\031emu.grasscutter.n"
+                    + "et.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

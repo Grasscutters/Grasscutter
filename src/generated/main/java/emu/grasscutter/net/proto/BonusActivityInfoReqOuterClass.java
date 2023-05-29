@@ -20,8 +20,8 @@ public final class BonusActivityInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 2512
-     * Name: JOFOPLGFKEJ
+     * CmdId: 2521
+     * Obf: FBLGPGPKKFK
      * </pre>
      *
      * Protobuf type {@code BonusActivityInfoReq}
@@ -266,8 +266,8 @@ public final class BonusActivityInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2512
-         * Name: JOFOPLGFKEJ
+         * CmdId: 2521
+         * Obf: FBLGPGPKKFK
          * </pre>
          *
          * Protobuf type {@code BonusActivityInfoReq}
@@ -503,8 +503,8 @@ public final class BonusActivityInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032BonusActivityInfoReq.proto\"\026\n\024BonusAct"
-                    + "ivityInfoReqB!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "ivityInfoReqB\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -908,8 +908,8 @@ public final class MusicBeatmapOuterClass {
             "\n\022MusicBeatmap.proto\032\026MusicBeatmapList.p"
                     + "roto\"N\n\014MusicBeatmap\022\020\n\010music_id\030\001 \001(\r\022,"
                     + "\n\021beatmap_item_list\030\002 \003(\0132\021.MusicBeatmap"
-                    + "ListB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "ListB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

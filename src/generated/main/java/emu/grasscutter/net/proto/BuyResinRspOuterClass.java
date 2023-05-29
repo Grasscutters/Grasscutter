@@ -18,14 +18,14 @@ public final class BuyResinRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 cur_value = 9;</code>
+         * <code>uint32 cur_value = 1;</code>
          *
          * @return The curValue.
          */
         int getCurValue();
 
         /**
-         * <code>int32 retcode = 13;</code>
+         * <code>int32 retcode = 15;</code>
          *
          * @return The retcode.
          */
@@ -35,8 +35,8 @@ public final class BuyResinRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 645
-     * Name: MAMGPDIODOE
+     * CmdId: 610
+     * Obf: HLAPBCIAOBK
      * </pre>
      *
      * Protobuf type {@code BuyResinRsp}
@@ -82,12 +82,12 @@ public final class BuyResinRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 72:
+                        case 8:
                             {
                                 curValue_ = input.readUInt32();
                                 break;
                             }
-                        case 104:
+                        case 120:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -125,10 +125,10 @@ public final class BuyResinRspOuterClass {
                             emu.grasscutter.net.proto.BuyResinRspOuterClass.BuyResinRsp.Builder.class);
         }
 
-        public static final int CUR_VALUE_FIELD_NUMBER = 9;
+        public static final int CUR_VALUE_FIELD_NUMBER = 1;
         private int curValue_;
         /**
-         * <code>uint32 cur_value = 9;</code>
+         * <code>uint32 cur_value = 1;</code>
          *
          * @return The curValue.
          */
@@ -137,10 +137,10 @@ public final class BuyResinRspOuterClass {
             return curValue_;
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 13;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
         /**
-         * <code>int32 retcode = 13;</code>
+         * <code>int32 retcode = 15;</code>
          *
          * @return The retcode.
          */
@@ -164,10 +164,10 @@ public final class BuyResinRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (curValue_ != 0) {
-                output.writeUInt32(9, curValue_);
+                output.writeUInt32(1, curValue_);
             }
             if (retcode_ != 0) {
-                output.writeInt32(13, retcode_);
+                output.writeInt32(15, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -179,10 +179,10 @@ public final class BuyResinRspOuterClass {
 
             size = 0;
             if (curValue_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, curValue_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, curValue_);
             }
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(15, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -323,8 +323,8 @@ public final class BuyResinRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 645
-         * Name: MAMGPDIODOE
+         * CmdId: 610
+         * Obf: HLAPBCIAOBK
          * </pre>
          *
          * Protobuf type {@code BuyResinRsp}
@@ -492,7 +492,7 @@ public final class BuyResinRspOuterClass {
 
             private int curValue_;
             /**
-             * <code>uint32 cur_value = 9;</code>
+             * <code>uint32 cur_value = 1;</code>
              *
              * @return The curValue.
              */
@@ -501,7 +501,7 @@ public final class BuyResinRspOuterClass {
                 return curValue_;
             }
             /**
-             * <code>uint32 cur_value = 9;</code>
+             * <code>uint32 cur_value = 1;</code>
              *
              * @param value The curValue to set.
              * @return This builder for chaining.
@@ -513,7 +513,7 @@ public final class BuyResinRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 cur_value = 9;</code>
+             * <code>uint32 cur_value = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -526,7 +526,7 @@ public final class BuyResinRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 13;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @return The retcode.
              */
@@ -535,7 +535,7 @@ public final class BuyResinRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 13;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -547,7 +547,7 @@ public final class BuyResinRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 13;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -625,8 +625,8 @@ public final class BuyResinRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\021BuyResinRsp.proto\"1\n\013BuyResinRsp\022\021\n\tcu"
-                    + "r_value\030\t \001(\r\022\017\n\007retcode\030\r \001(\005B!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "r_value\030\001 \001(\r\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

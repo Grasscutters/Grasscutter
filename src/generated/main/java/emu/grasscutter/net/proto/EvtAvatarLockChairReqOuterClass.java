@@ -18,33 +18,33 @@ public final class EvtAvatarLockChairReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>.Vector position = 3;</code>
+         * <code>uint64 chair_id = 11;</code>
+         *
+         * @return The chairId.
+         */
+        long getChairId();
+
+        /**
+         * <code>.Vector position = 4;</code>
          *
          * @return Whether the position field is set.
          */
         boolean hasPosition();
         /**
-         * <code>.Vector position = 3;</code>
+         * <code>.Vector position = 4;</code>
          *
          * @return The position.
          */
         emu.grasscutter.net.proto.VectorOuterClass.Vector getPosition();
-        /** <code>.Vector position = 3;</code> */
+        /** <code>.Vector position = 4;</code> */
         emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder();
-
-        /**
-         * <code>uint64 chair_id = 7;</code>
-         *
-         * @return The chairId.
-         */
-        long getChairId();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 369
-     * Name: AMHAGIPKAMI
+     * CmdId: 370
+     * Obf: MMMMKEELLIA
      * </pre>
      *
      * Protobuf type {@code EvtAvatarLockChairReq}
@@ -90,7 +90,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 26:
+                        case 34:
                             {
                                 emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
                                 if (position_ != null) {
@@ -107,7 +107,7 @@ public final class EvtAvatarLockChairReqOuterClass {
 
                                 break;
                             }
-                        case 56:
+                        case 88:
                             {
                                 chairId_ = input.readUInt64();
                                 break;
@@ -147,10 +147,22 @@ public final class EvtAvatarLockChairReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int POSITION_FIELD_NUMBER = 3;
+        public static final int CHAIR_ID_FIELD_NUMBER = 11;
+        private long chairId_;
+        /**
+         * <code>uint64 chair_id = 11;</code>
+         *
+         * @return The chairId.
+         */
+        @java.lang.Override
+        public long getChairId() {
+            return chairId_;
+        }
+
+        public static final int POSITION_FIELD_NUMBER = 4;
         private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
         /**
-         * <code>.Vector position = 3;</code>
+         * <code>.Vector position = 4;</code>
          *
          * @return Whether the position field is set.
          */
@@ -159,7 +171,7 @@ public final class EvtAvatarLockChairReqOuterClass {
             return position_ != null;
         }
         /**
-         * <code>.Vector position = 3;</code>
+         * <code>.Vector position = 4;</code>
          *
          * @return The position.
          */
@@ -169,22 +181,10 @@ public final class EvtAvatarLockChairReqOuterClass {
                     ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
                     : position_;
         }
-        /** <code>.Vector position = 3;</code> */
+        /** <code>.Vector position = 4;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
             return getPosition();
-        }
-
-        public static final int CHAIR_ID_FIELD_NUMBER = 7;
-        private long chairId_;
-        /**
-         * <code>uint64 chair_id = 7;</code>
-         *
-         * @return The chairId.
-         */
-        @java.lang.Override
-        public long getChairId() {
-            return chairId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -202,10 +202,10 @@ public final class EvtAvatarLockChairReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (position_ != null) {
-                output.writeMessage(3, getPosition());
+                output.writeMessage(4, getPosition());
             }
             if (chairId_ != 0L) {
-                output.writeUInt64(7, chairId_);
+                output.writeUInt64(11, chairId_);
             }
             unknownFields.writeTo(output);
         }
@@ -217,10 +217,10 @@ public final class EvtAvatarLockChairReqOuterClass {
 
             size = 0;
             if (position_ != null) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPosition());
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPosition());
             }
             if (chairId_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(7, chairId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(11, chairId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -240,11 +240,11 @@ public final class EvtAvatarLockChairReqOuterClass {
             emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq other =
                     (emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq) obj;
 
+            if (getChairId() != other.getChairId()) return false;
             if (hasPosition() != other.hasPosition()) return false;
             if (hasPosition()) {
                 if (!getPosition().equals(other.getPosition())) return false;
             }
-            if (getChairId() != other.getChairId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -256,12 +256,12 @@ public final class EvtAvatarLockChairReqOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + CHAIR_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getChairId());
             if (hasPosition()) {
                 hash = (37 * hash) + POSITION_FIELD_NUMBER;
                 hash = (53 * hash) + getPosition().hashCode();
             }
-            hash = (37 * hash) + CHAIR_ID_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getChairId());
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -374,8 +374,8 @@ public final class EvtAvatarLockChairReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 369
-         * Name: AMHAGIPKAMI
+         * CmdId: 370
+         * Obf: MMMMKEELLIA
          * </pre>
          *
          * Protobuf type {@code EvtAvatarLockChairReq}
@@ -420,14 +420,14 @@ public final class EvtAvatarLockChairReqOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
+                chairId_ = 0L;
+
                 if (positionBuilder_ == null) {
                     position_ = null;
                 } else {
                     position_ = null;
                     positionBuilder_ = null;
                 }
-                chairId_ = 0L;
-
                 return this;
             }
 
@@ -461,12 +461,12 @@ public final class EvtAvatarLockChairReqOuterClass {
                 emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq result =
                         new emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq(
                                 this);
+                result.chairId_ = chairId_;
                 if (positionBuilder_ == null) {
                     result.position_ = position_;
                 } else {
                     result.position_ = positionBuilder_.build();
                 }
-                result.chairId_ = chairId_;
                 onBuilt();
                 return result;
             }
@@ -525,11 +525,11 @@ public final class EvtAvatarLockChairReqOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.EvtAvatarLockChairReqOuterClass.EvtAvatarLockChairReq
                                 .getDefaultInstance()) return this;
-                if (other.hasPosition()) {
-                    mergePosition(other.getPosition());
-                }
                 if (other.getChairId() != 0L) {
                     setChairId(other.getChairId());
+                }
+                if (other.hasPosition()) {
+                    mergePosition(other.getPosition());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -563,6 +563,40 @@ public final class EvtAvatarLockChairReqOuterClass {
                 return this;
             }
 
+            private long chairId_;
+            /**
+             * <code>uint64 chair_id = 11;</code>
+             *
+             * @return The chairId.
+             */
+            @java.lang.Override
+            public long getChairId() {
+                return chairId_;
+            }
+            /**
+             * <code>uint64 chair_id = 11;</code>
+             *
+             * @param value The chairId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setChairId(long value) {
+
+                chairId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint64 chair_id = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearChairId() {
+
+                chairId_ = 0L;
+                onChanged();
+                return this;
+            }
+
             private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.VectorOuterClass.Vector,
@@ -570,7 +604,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                             emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
                     positionBuilder_;
             /**
-             * <code>.Vector position = 3;</code>
+             * <code>.Vector position = 4;</code>
              *
              * @return Whether the position field is set.
              */
@@ -578,7 +612,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                 return positionBuilder_ != null || position_ != null;
             }
             /**
-             * <code>.Vector position = 3;</code>
+             * <code>.Vector position = 4;</code>
              *
              * @return The position.
              */
@@ -591,7 +625,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                     return positionBuilder_.getMessage();
                 }
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public Builder setPosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
                 if (positionBuilder_ == null) {
                     if (value == null) {
@@ -605,7 +639,7 @@ public final class EvtAvatarLockChairReqOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public Builder setPosition(
                     emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
                 if (positionBuilder_ == null) {
@@ -617,7 +651,7 @@ public final class EvtAvatarLockChairReqOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public Builder mergePosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
                 if (positionBuilder_ == null) {
                     if (position_ != null) {
@@ -635,7 +669,7 @@ public final class EvtAvatarLockChairReqOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public Builder clearPosition() {
                 if (positionBuilder_ == null) {
                     position_ = null;
@@ -647,13 +681,13 @@ public final class EvtAvatarLockChairReqOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
 
                 onChanged();
                 return getPositionFieldBuilder().getBuilder();
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
                 if (positionBuilder_ != null) {
                     return positionBuilder_.getMessageOrBuilder();
@@ -663,7 +697,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                             : position_;
                 }
             }
-            /** <code>.Vector position = 3;</code> */
+            /** <code>.Vector position = 4;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.VectorOuterClass.Vector,
                             emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
@@ -679,40 +713,6 @@ public final class EvtAvatarLockChairReqOuterClass {
                     position_ = null;
                 }
                 return positionBuilder_;
-            }
-
-            private long chairId_;
-            /**
-             * <code>uint64 chair_id = 7;</code>
-             *
-             * @return The chairId.
-             */
-            @java.lang.Override
-            public long getChairId() {
-                return chairId_;
-            }
-            /**
-             * <code>uint64 chair_id = 7;</code>
-             *
-             * @param value The chairId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setChairId(long value) {
-
-                chairId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint64 chair_id = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearChairId() {
-
-                chairId_ = 0L;
-                onChanged();
-                return this;
             }
 
             @java.lang.Override
@@ -786,9 +786,9 @@ public final class EvtAvatarLockChairReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033EvtAvatarLockChairReq.proto\032\014Vector.pr"
-                    + "oto\"D\n\025EvtAvatarLockChairReq\022\031\n\010position"
-                    + "\030\003 \001(\0132\007.Vector\022\020\n\010chair_id\030\007 \001(\004B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "oto\"D\n\025EvtAvatarLockChairReq\022\020\n\010chair_id"
+                    + "\030\013 \001(\004\022\031\n\010position\030\004 \001(\0132\007.VectorB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -801,7 +801,7 @@ public final class EvtAvatarLockChairReqOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_EvtAvatarLockChairReq_descriptor,
                         new java.lang.String[] {
-                            "Position", "ChairId",
+                            "ChairId", "Position",
                         });
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }

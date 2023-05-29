@@ -42,7 +42,7 @@ public final class FishtankFishInfoOuterClass {
      *
      *
      * <pre>
-     * Name: GNBJGEJCCJN
+     * Obf: EMABGGFKFDB
      * </pre>
      *
      * Protobuf type {@code FishtankFishInfo}
@@ -360,7 +360,7 @@ public final class FishtankFishInfoOuterClass {
          *
          *
          * <pre>
-         * Name: GNBJGEJCCJN
+         * Obf: EMABGGFKFDB
          * </pre>
          *
          * Protobuf type {@code FishtankFishInfo}
@@ -713,8 +713,8 @@ public final class FishtankFishInfoOuterClass {
             "\n\026FishtankFishInfo.proto\"d\n\020FishtankFish"
                     + "Info\022 \n\030fish_distance_from_water\030\001 \001(\002\022\022"
                     + "\n\nfish_scale\030\002 \001(\002\022\032\n\022initial_rotation_y"
-                    + "\030\003 \001(\002B!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "\030\003 \001(\002B\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

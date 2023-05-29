@@ -18,7 +18,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 quest_id = 11;</code>
+         * <code>uint32 quest_id = 8;</code>
          *
          * @return The questId.
          */
@@ -28,8 +28,8 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1911
-     * Name: ALBAFICCGIB
+     * CmdId: 1917
+     * Obf: DFPKMHAMAHL
      * </pre>
      *
      * Protobuf type {@code TakeInvestigationTargetRewardReq}
@@ -77,7 +77,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 64:
                             {
                                 questId_ = input.readUInt32();
                                 break;
@@ -118,10 +118,10 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
                                     .TakeInvestigationTargetRewardReq.Builder.class);
         }
 
-        public static final int QUEST_ID_FIELD_NUMBER = 11;
+        public static final int QUEST_ID_FIELD_NUMBER = 8;
         private int questId_;
         /**
-         * <code>uint32 quest_id = 11;</code>
+         * <code>uint32 quest_id = 8;</code>
          *
          * @return The questId.
          */
@@ -145,7 +145,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (questId_ != 0) {
-                output.writeUInt32(11, questId_);
+                output.writeUInt32(8, questId_);
             }
             unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
 
             size = 0;
             if (questId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, questId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, questId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -322,8 +322,8 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1911
-         * Name: ALBAFICCGIB
+         * CmdId: 1917
+         * Obf: DFPKMHAMAHL
          * </pre>
          *
          * Protobuf type {@code TakeInvestigationTargetRewardReq}
@@ -512,7 +512,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
 
             private int questId_;
             /**
-             * <code>uint32 quest_id = 11;</code>
+             * <code>uint32 quest_id = 8;</code>
              *
              * @return The questId.
              */
@@ -521,7 +521,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
                 return questId_;
             }
             /**
-             * <code>uint32 quest_id = 11;</code>
+             * <code>uint32 quest_id = 8;</code>
              *
              * @param value The questId to set.
              * @return This builder for chaining.
@@ -533,7 +533,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 quest_id = 11;</code>
+             * <code>uint32 quest_id = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -619,8 +619,8 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n&TakeInvestigationTargetRewardReq.proto"
                     + "\"4\n TakeInvestigationTargetRewardReq\022\020\n\010"
-                    + "quest_id\030\013 \001(\rB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "quest_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

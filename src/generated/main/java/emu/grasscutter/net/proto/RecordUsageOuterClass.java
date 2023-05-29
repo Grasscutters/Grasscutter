@@ -15,7 +15,7 @@ public final class RecordUsageOuterClass {
      *
      *
      * <pre>
-     * Name: CFEMNBDBBCK
+     * Obf: MJDHHOAILGG
      * </pre>
      *
      * Protobuf enum {@code RecordUsage}
@@ -144,8 +144,8 @@ public final class RecordUsageOuterClass {
                     + "GC_RECORD_USAGE_NONE\020\000\022\033\n\027UGC_RECORD_USA"
                     + "GE_IMPORT\020\001\022\031\n\025UGC_RECORD_USAGE_PLAY\020\002\022\032"
                     + "\n\026UGC_RECORD_USAGE_TRIAL\020\003\022\034\n\030UGC_RECORD"
-                    + "_USAGE_COMPARE\020\004B!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "_USAGE_COMPARE\020\004B\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

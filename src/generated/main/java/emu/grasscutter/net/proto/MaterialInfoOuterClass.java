@@ -18,14 +18,14 @@ public final class MaterialInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 count = 3;</code>
+         * <code>uint32 count = 13;</code>
          *
          * @return The count.
          */
         int getCount();
 
         /**
-         * <code>uint64 guid = 14;</code>
+         * <code>uint64 guid = 2;</code>
          *
          * @return The guid.
          */
@@ -35,7 +35,7 @@ public final class MaterialInfoOuterClass {
      *
      *
      * <pre>
-     * Name: KBJIEJFLEPA
+     * Obf: CEIJNOGDKID
      * </pre>
      *
      * Protobuf type {@code MaterialInfo}
@@ -81,14 +81,14 @@ public final class MaterialInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 24:
-                            {
-                                count_ = input.readUInt32();
-                                break;
-                            }
-                        case 112:
+                        case 16:
                             {
                                 guid_ = input.readUInt64();
+                                break;
+                            }
+                        case 104:
+                            {
+                                count_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -125,10 +125,10 @@ public final class MaterialInfoOuterClass {
                             emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo.Builder.class);
         }
 
-        public static final int COUNT_FIELD_NUMBER = 3;
+        public static final int COUNT_FIELD_NUMBER = 13;
         private int count_;
         /**
-         * <code>uint32 count = 3;</code>
+         * <code>uint32 count = 13;</code>
          *
          * @return The count.
          */
@@ -137,10 +137,10 @@ public final class MaterialInfoOuterClass {
             return count_;
         }
 
-        public static final int GUID_FIELD_NUMBER = 14;
+        public static final int GUID_FIELD_NUMBER = 2;
         private long guid_;
         /**
-         * <code>uint64 guid = 14;</code>
+         * <code>uint64 guid = 2;</code>
          *
          * @return The guid.
          */
@@ -163,11 +163,11 @@ public final class MaterialInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (count_ != 0) {
-                output.writeUInt32(3, count_);
-            }
             if (guid_ != 0L) {
-                output.writeUInt64(14, guid_);
+                output.writeUInt64(2, guid_);
+            }
+            if (count_ != 0) {
+                output.writeUInt32(13, count_);
             }
             unknownFields.writeTo(output);
         }
@@ -178,11 +178,11 @@ public final class MaterialInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (count_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, count_);
-            }
             if (guid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(14, guid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(2, guid_);
+            }
+            if (count_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, count_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -323,7 +323,7 @@ public final class MaterialInfoOuterClass {
          *
          *
          * <pre>
-         * Name: KBJIEJFLEPA
+         * Obf: CEIJNOGDKID
          * </pre>
          *
          * Protobuf type {@code MaterialInfo}
@@ -492,7 +492,7 @@ public final class MaterialInfoOuterClass {
 
             private int count_;
             /**
-             * <code>uint32 count = 3;</code>
+             * <code>uint32 count = 13;</code>
              *
              * @return The count.
              */
@@ -501,7 +501,7 @@ public final class MaterialInfoOuterClass {
                 return count_;
             }
             /**
-             * <code>uint32 count = 3;</code>
+             * <code>uint32 count = 13;</code>
              *
              * @param value The count to set.
              * @return This builder for chaining.
@@ -513,7 +513,7 @@ public final class MaterialInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 count = 3;</code>
+             * <code>uint32 count = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -526,7 +526,7 @@ public final class MaterialInfoOuterClass {
 
             private long guid_;
             /**
-             * <code>uint64 guid = 14;</code>
+             * <code>uint64 guid = 2;</code>
              *
              * @return The guid.
              */
@@ -535,7 +535,7 @@ public final class MaterialInfoOuterClass {
                 return guid_;
             }
             /**
-             * <code>uint64 guid = 14;</code>
+             * <code>uint64 guid = 2;</code>
              *
              * @param value The guid to set.
              * @return This builder for chaining.
@@ -547,7 +547,7 @@ public final class MaterialInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 guid = 14;</code>
+             * <code>uint64 guid = 2;</code>
              *
              * @return This builder for chaining.
              */
@@ -627,8 +627,8 @@ public final class MaterialInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\022MaterialInfo.proto\"+\n\014MaterialInfo\022\r\n\005"
-                    + "count\030\003 \001(\r\022\014\n\004guid\030\016 \001(\004B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "count\030\r \001(\r\022\014\n\004guid\030\002 \001(\004B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

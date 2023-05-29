@@ -38,8 +38,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1912
-     * Name: NMMIMIJIBKK
+     * CmdId: 1924
+     * Obf: MIPONPDFIHM
      * </pre>
      *
      * Protobuf type {@code InvestigationMonsterUpdateNotify}
@@ -373,8 +373,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1912
-         * Name: NMMIMIJIBKK
+         * CmdId: 1924
+         * Obf: MIPONPDFIHM
          * </pre>
          *
          * Protobuf type {@code InvestigationMonsterUpdateNotify}
@@ -777,9 +777,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
             "\n&InvestigationMonsterUpdateNotify.proto"
                     + "\032\032InvestigationMonster.proto\"X\n Investig"
                     + "ationMonsterUpdateNotify\0224\n\025investigatio"
-                    + "n_monster\030\007 \001(\0132\025.InvestigationMonsterB!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "n_monster\030\007 \001(\0132\025.InvestigationMonsterB\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

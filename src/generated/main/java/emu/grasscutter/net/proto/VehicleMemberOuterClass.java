@@ -42,7 +42,7 @@ public final class VehicleMemberOuterClass {
      *
      *
      * <pre>
-     * Name: CJDBELBDBLI
+     * Obf: LJCCNICECIC
      * </pre>
      *
      * Protobuf type {@code VehicleMember}
@@ -357,7 +357,7 @@ public final class VehicleMemberOuterClass {
          *
          *
          * <pre>
-         * Name: CJDBELBDBLI
+         * Obf: LJCCNICECIC
          * </pre>
          *
          * Protobuf type {@code VehicleMember}
@@ -703,8 +703,8 @@ public final class VehicleMemberOuterClass {
         java.lang.String[] descriptorData = {
             "\n\023VehicleMember.proto\">\n\rVehicleMember\022\013"
                     + "\n\003uid\030\001 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004\022\013\n\003pos\030"
-                    + "\003 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

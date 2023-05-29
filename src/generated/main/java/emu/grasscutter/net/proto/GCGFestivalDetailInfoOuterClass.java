@@ -18,17 +18,17 @@ public final class GCGFestivalDetailInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool OOLFCFMNBOJ = 15;</code>
+         * <code>bool OJKNLGIJIBJ = 9;</code>
          *
-         * @return The oOLFCFMNBOJ.
+         * @return The oJKNLGIJIBJ.
          */
-        boolean getOOLFCFMNBOJ();
+        boolean getOJKNLGIJIBJ();
     }
     /**
      *
      *
      * <pre>
-     * Name: ELCAKMDGIBA
+     * Obf: FJOECJDLCED
      * </pre>
      *
      * Protobuf type {@code GCGFestivalDetailInfo}
@@ -74,9 +74,9 @@ public final class GCGFestivalDetailInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 120:
+                        case 72:
                             {
-                                oOLFCFMNBOJ_ = input.readBool();
+                                oJKNLGIJIBJ_ = input.readBool();
                                 break;
                             }
                         default:
@@ -114,16 +114,16 @@ public final class GCGFestivalDetailInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int OOLFCFMNBOJ_FIELD_NUMBER = 15;
-        private boolean oOLFCFMNBOJ_;
+        public static final int OJKNLGIJIBJ_FIELD_NUMBER = 9;
+        private boolean oJKNLGIJIBJ_;
         /**
-         * <code>bool OOLFCFMNBOJ = 15;</code>
+         * <code>bool OJKNLGIJIBJ = 9;</code>
          *
-         * @return The oOLFCFMNBOJ.
+         * @return The oJKNLGIJIBJ.
          */
         @java.lang.Override
-        public boolean getOOLFCFMNBOJ() {
-            return oOLFCFMNBOJ_;
+        public boolean getOJKNLGIJIBJ() {
+            return oJKNLGIJIBJ_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -140,8 +140,8 @@ public final class GCGFestivalDetailInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (oOLFCFMNBOJ_ != false) {
-                output.writeBool(15, oOLFCFMNBOJ_);
+            if (oJKNLGIJIBJ_ != false) {
+                output.writeBool(9, oJKNLGIJIBJ_);
             }
             unknownFields.writeTo(output);
         }
@@ -152,8 +152,8 @@ public final class GCGFestivalDetailInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (oOLFCFMNBOJ_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, oOLFCFMNBOJ_);
+            if (oJKNLGIJIBJ_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, oJKNLGIJIBJ_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -173,7 +173,7 @@ public final class GCGFestivalDetailInfoOuterClass {
             emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo other =
                     (emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo) obj;
 
-            if (getOOLFCFMNBOJ() != other.getOOLFCFMNBOJ()) return false;
+            if (getOJKNLGIJIBJ() != other.getOJKNLGIJIBJ()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -185,8 +185,8 @@ public final class GCGFestivalDetailInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + OOLFCFMNBOJ_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOOLFCFMNBOJ());
+            hash = (37 * hash) + OJKNLGIJIBJ_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOJKNLGIJIBJ());
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -299,7 +299,7 @@ public final class GCGFestivalDetailInfoOuterClass {
          *
          *
          * <pre>
-         * Name: ELCAKMDGIBA
+         * Obf: FJOECJDLCED
          * </pre>
          *
          * Protobuf type {@code GCGFestivalDetailInfo}
@@ -344,7 +344,7 @@ public final class GCGFestivalDetailInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                oOLFCFMNBOJ_ = false;
+                oJKNLGIJIBJ_ = false;
 
                 return this;
             }
@@ -379,7 +379,7 @@ public final class GCGFestivalDetailInfoOuterClass {
                 emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo result =
                         new emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo(
                                 this);
-                result.oOLFCFMNBOJ_ = oOLFCFMNBOJ_;
+                result.oJKNLGIJIBJ_ = oJKNLGIJIBJ_;
                 onBuilt();
                 return result;
             }
@@ -438,8 +438,8 @@ public final class GCGFestivalDetailInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo
                                 .getDefaultInstance()) return this;
-                if (other.getOOLFCFMNBOJ() != false) {
-                    setOOLFCFMNBOJ(other.getOOLFCFMNBOJ());
+                if (other.getOJKNLGIJIBJ() != false) {
+                    setOJKNLGIJIBJ(other.getOJKNLGIJIBJ());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -473,36 +473,36 @@ public final class GCGFestivalDetailInfoOuterClass {
                 return this;
             }
 
-            private boolean oOLFCFMNBOJ_;
+            private boolean oJKNLGIJIBJ_;
             /**
-             * <code>bool OOLFCFMNBOJ = 15;</code>
+             * <code>bool OJKNLGIJIBJ = 9;</code>
              *
-             * @return The oOLFCFMNBOJ.
+             * @return The oJKNLGIJIBJ.
              */
             @java.lang.Override
-            public boolean getOOLFCFMNBOJ() {
-                return oOLFCFMNBOJ_;
+            public boolean getOJKNLGIJIBJ() {
+                return oJKNLGIJIBJ_;
             }
             /**
-             * <code>bool OOLFCFMNBOJ = 15;</code>
+             * <code>bool OJKNLGIJIBJ = 9;</code>
              *
-             * @param value The oOLFCFMNBOJ to set.
+             * @param value The oJKNLGIJIBJ to set.
              * @return This builder for chaining.
              */
-            public Builder setOOLFCFMNBOJ(boolean value) {
+            public Builder setOJKNLGIJIBJ(boolean value) {
 
-                oOLFCFMNBOJ_ = value;
+                oJKNLGIJIBJ_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool OOLFCFMNBOJ = 15;</code>
+             * <code>bool OJKNLGIJIBJ = 9;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearOOLFCFMNBOJ() {
+            public Builder clearOJKNLGIJIBJ() {
 
-                oOLFCFMNBOJ_ = false;
+                oJKNLGIJIBJ_ = false;
                 onChanged();
                 return this;
             }
@@ -578,8 +578,8 @@ public final class GCGFestivalDetailInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033GCGFestivalDetailInfo.proto\",\n\025GCGFest"
-                    + "ivalDetailInfo\022\023\n\013OOLFCFMNBOJ\030\017 \001(\010B!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "ivalDetailInfo\022\023\n\013OJKNLGIJIBJ\030\t \001(\010B\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -589,7 +589,7 @@ public final class GCGFestivalDetailInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_GCGFestivalDetailInfo_descriptor,
                         new java.lang.String[] {
-                            "OOLFCFMNBOJ",
+                            "OJKNLGIJIBJ",
                         });
     }
 

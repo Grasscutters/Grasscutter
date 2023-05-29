@@ -28,8 +28,8 @@ public final class TakePlayerLevelRewardReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 164
-     * Name: HIIDJCLGOLA
+     * CmdId: 177
+     * Obf: BDKEEBHCGLM
      * </pre>
      *
      * Protobuf type {@code TakePlayerLevelRewardReq}
@@ -315,8 +315,8 @@ public final class TakePlayerLevelRewardReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 164
-         * Name: HIIDJCLGOLA
+         * CmdId: 177
+         * Obf: BDKEEBHCGLM
          * </pre>
          *
          * Protobuf type {@code TakePlayerLevelRewardReq}
@@ -602,8 +602,8 @@ public final class TakePlayerLevelRewardReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\036TakePlayerLevelRewardReq.proto\")\n\030Take"
-                    + "PlayerLevelRewardReq\022\r\n\005level\030\002 \001(\rB!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "PlayerLevelRewardReq\022\r\n\005level\030\002 \001(\rB\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

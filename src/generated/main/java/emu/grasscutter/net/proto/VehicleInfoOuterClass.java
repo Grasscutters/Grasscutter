@@ -50,7 +50,7 @@ public final class VehicleInfoOuterClass {
      *
      *
      * <pre>
-     * Name: AAIPFEKBIGD
+     * Obf: AIJLDNNMBEG
      * </pre>
      *
      * Protobuf type {@code VehicleInfo}
@@ -403,7 +403,7 @@ public final class VehicleInfoOuterClass {
          *
          *
          * <pre>
-         * Name: AAIPFEKBIGD
+         * Obf: AIJLDNNMBEG
          * </pre>
          *
          * Protobuf type {@code VehicleInfo}
@@ -980,8 +980,8 @@ public final class VehicleInfoOuterClass {
             "\n\021VehicleInfo.proto\032\023VehicleMember.proto"
                     + "\"Z\n\013VehicleInfo\022#\n\013member_list\030\001 \003(\0132\016.V"
                     + "ehicleMember\022\021\n\towner_uid\030\002 \001(\r\022\023\n\013cur_s"
-                    + "tamina\030\003 \001(\002B!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "tamina\030\003 \001(\002B\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

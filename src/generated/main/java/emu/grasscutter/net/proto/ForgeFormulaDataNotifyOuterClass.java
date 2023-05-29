@@ -18,14 +18,14 @@ public final class ForgeFormulaDataNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_locked = 12;</code>
+         * <code>bool is_locked = 10;</code>
          *
          * @return The isLocked.
          */
         boolean getIsLocked();
 
         /**
-         * <code>uint32 forge_id = 3;</code>
+         * <code>uint32 forge_id = 13;</code>
          *
          * @return The forgeId.
          */
@@ -35,8 +35,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 652
-     * Name: MIBIHEGKELM
+     * CmdId: 660
+     * Obf: DNELGIHMGNF
      * </pre>
      *
      * Protobuf type {@code ForgeFormulaDataNotify}
@@ -82,14 +82,14 @@ public final class ForgeFormulaDataNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 24:
-                            {
-                                forgeId_ = input.readUInt32();
-                                break;
-                            }
-                        case 96:
+                        case 80:
                             {
                                 isLocked_ = input.readBool();
+                                break;
+                            }
+                        case 104:
+                            {
+                                forgeId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -128,10 +128,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int IS_LOCKED_FIELD_NUMBER = 12;
+        public static final int IS_LOCKED_FIELD_NUMBER = 10;
         private boolean isLocked_;
         /**
-         * <code>bool is_locked = 12;</code>
+         * <code>bool is_locked = 10;</code>
          *
          * @return The isLocked.
          */
@@ -140,10 +140,10 @@ public final class ForgeFormulaDataNotifyOuterClass {
             return isLocked_;
         }
 
-        public static final int FORGE_ID_FIELD_NUMBER = 3;
+        public static final int FORGE_ID_FIELD_NUMBER = 13;
         private int forgeId_;
         /**
-         * <code>uint32 forge_id = 3;</code>
+         * <code>uint32 forge_id = 13;</code>
          *
          * @return The forgeId.
          */
@@ -166,11 +166,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (forgeId_ != 0) {
-                output.writeUInt32(3, forgeId_);
-            }
             if (isLocked_ != false) {
-                output.writeBool(12, isLocked_);
+                output.writeBool(10, isLocked_);
+            }
+            if (forgeId_ != 0) {
+                output.writeUInt32(13, forgeId_);
             }
             unknownFields.writeTo(output);
         }
@@ -181,11 +181,11 @@ public final class ForgeFormulaDataNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (forgeId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, forgeId_);
-            }
             if (isLocked_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, isLocked_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isLocked_);
+            }
+            if (forgeId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, forgeId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -335,8 +335,8 @@ public final class ForgeFormulaDataNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 652
-         * Name: MIBIHEGKELM
+         * CmdId: 660
+         * Obf: DNELGIHMGNF
          * </pre>
          *
          * Protobuf type {@code ForgeFormulaDataNotify}
@@ -518,7 +518,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
             private boolean isLocked_;
             /**
-             * <code>bool is_locked = 12;</code>
+             * <code>bool is_locked = 10;</code>
              *
              * @return The isLocked.
              */
@@ -527,7 +527,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
                 return isLocked_;
             }
             /**
-             * <code>bool is_locked = 12;</code>
+             * <code>bool is_locked = 10;</code>
              *
              * @param value The isLocked to set.
              * @return This builder for chaining.
@@ -539,7 +539,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_locked = 12;</code>
+             * <code>bool is_locked = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -552,7 +552,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
 
             private int forgeId_;
             /**
-             * <code>uint32 forge_id = 3;</code>
+             * <code>uint32 forge_id = 13;</code>
              *
              * @return The forgeId.
              */
@@ -561,7 +561,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
                 return forgeId_;
             }
             /**
-             * <code>uint32 forge_id = 3;</code>
+             * <code>uint32 forge_id = 13;</code>
              *
              * @param value The forgeId to set.
              * @return This builder for chaining.
@@ -573,7 +573,7 @@ public final class ForgeFormulaDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 forge_id = 3;</code>
+             * <code>uint32 forge_id = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -655,9 +655,9 @@ public final class ForgeFormulaDataNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034ForgeFormulaDataNotify.proto\"=\n\026ForgeF"
-                    + "ormulaDataNotify\022\021\n\tis_locked\030\014 \001(\010\022\020\n\010f"
-                    + "orge_id\030\003 \001(\rB!\n\031emu.grasscutter.net.pro"
-                    + "toZ\004/genb\006proto3"
+                    + "ormulaDataNotify\022\021\n\tis_locked\030\n \001(\010\022\020\n\010f"
+                    + "orge_id\030\r \001(\rB\033\n\031emu.grasscutter.net.pro"
+                    + "tob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

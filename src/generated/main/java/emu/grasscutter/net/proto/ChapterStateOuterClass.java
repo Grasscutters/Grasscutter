@@ -15,7 +15,7 @@ public final class ChapterStateOuterClass {
      *
      *
      * <pre>
-     * Name: FODGEAPLODJ
+     * Obf: OBEGIEJOPKH
      * </pre>
      *
      * Protobuf enum {@code ChapterState}
@@ -137,8 +137,8 @@ public final class ChapterStateOuterClass {
             "\n\022ChapterState.proto*|\n\014ChapterState\022\031\n\025"
                     + "CHAPTER_STATE_INVALID\020\000\022!\n\035CHAPTER_STATE"
                     + "_UNABLE_TO_BEGIN\020\001\022\027\n\023CHAPTER_STATE_BEGI"
-                    + "N\020\002\022\025\n\021CHAPTER_STATE_END\020\003B!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "N\020\002\022\025\n\021CHAPTER_STATE_END\020\003B\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -28,8 +28,8 @@ public final class DungeonWayPointActivateReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 972
-     * Name: MJBBKGDBNJF
+     * CmdId: 935
+     * Obf: JAMLIJIPNJJ
      * </pre>
      *
      * Protobuf type {@code DungeonWayPointActivateReq}
@@ -319,8 +319,8 @@ public final class DungeonWayPointActivateReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 972
-         * Name: MJBBKGDBNJF
+         * CmdId: 935
+         * Obf: JAMLIJIPNJJ
          * </pre>
          *
          * Protobuf type {@code DungeonWayPointActivateReq}
@@ -611,8 +611,8 @@ public final class DungeonWayPointActivateReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n DungeonWayPointActivateReq.proto\"2\n\032Du"
                     + "ngeonWayPointActivateReq\022\024\n\014way_point_id"
-                    + "\030\016 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

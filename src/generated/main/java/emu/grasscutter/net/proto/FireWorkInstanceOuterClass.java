@@ -677,8 +677,8 @@ public final class FireWorkInstanceOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026FireWorkInstance.proto\032\022FireWorkType.p"
                     + "roto\">\n\020FireWorkInstance\022\033\n\004type\030\001 \001(\0162\r"
-                    + ".FireWorkType\022\r\n\005value\030\002 \001(\005B!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + ".FireWorkType\022\r\n\005value\030\002 \001(\005B\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

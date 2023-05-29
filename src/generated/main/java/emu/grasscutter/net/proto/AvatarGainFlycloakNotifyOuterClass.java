@@ -18,7 +18,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 flycloak_id = 11;</code>
+         * <code>uint32 flycloak_id = 6;</code>
          *
          * @return The flycloakId.
          */
@@ -28,8 +28,8 @@ public final class AvatarGainFlycloakNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1747
-     * Name: MMEGEOONABP
+     * CmdId: 1654
+     * Obf: OPFMGFIPHEE
      * </pre>
      *
      * Protobuf type {@code AvatarGainFlycloakNotify}
@@ -75,7 +75,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 48:
                             {
                                 flycloakId_ = input.readUInt32();
                                 break;
@@ -116,10 +116,10 @@ public final class AvatarGainFlycloakNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int FLYCLOAK_ID_FIELD_NUMBER = 11;
+        public static final int FLYCLOAK_ID_FIELD_NUMBER = 6;
         private int flycloakId_;
         /**
-         * <code>uint32 flycloak_id = 11;</code>
+         * <code>uint32 flycloak_id = 6;</code>
          *
          * @return The flycloakId.
          */
@@ -143,7 +143,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (flycloakId_ != 0) {
-                output.writeUInt32(11, flycloakId_);
+                output.writeUInt32(6, flycloakId_);
             }
             unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
 
             size = 0;
             if (flycloakId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, flycloakId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, flycloakId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -315,8 +315,8 @@ public final class AvatarGainFlycloakNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1747
-         * Name: MMEGEOONABP
+         * CmdId: 1654
+         * Obf: OPFMGFIPHEE
          * </pre>
          *
          * Protobuf type {@code AvatarGainFlycloakNotify}
@@ -497,7 +497,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
 
             private int flycloakId_;
             /**
-             * <code>uint32 flycloak_id = 11;</code>
+             * <code>uint32 flycloak_id = 6;</code>
              *
              * @return The flycloakId.
              */
@@ -506,7 +506,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
                 return flycloakId_;
             }
             /**
-             * <code>uint32 flycloak_id = 11;</code>
+             * <code>uint32 flycloak_id = 6;</code>
              *
              * @param value The flycloakId to set.
              * @return This builder for chaining.
@@ -518,7 +518,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 flycloak_id = 11;</code>
+             * <code>uint32 flycloak_id = 6;</code>
              *
              * @return This builder for chaining.
              */
@@ -602,9 +602,8 @@ public final class AvatarGainFlycloakNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\036AvatarGainFlycloakNotify.proto\"/\n\030Avat"
-                    + "arGainFlycloakNotify\022\023\n\013flycloak_id\030\013 \001("
-                    + "\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006pr"
-                    + "oto3"
+                    + "arGainFlycloakNotify\022\023\n\013flycloak_id\030\006 \001("
+                    + "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

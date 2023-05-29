@@ -28,7 +28,7 @@ public final class OfferingInfoOuterClass {
      *
      *
      * <pre>
-     * Name: APJFIICJMBD
+     * Obf: PKHMLMBDEPB
      * </pre>
      *
      * Protobuf type {@code OfferingInfo}
@@ -290,7 +290,7 @@ public final class OfferingInfoOuterClass {
          *
          *
          * <pre>
-         * Name: APJFIICJMBD
+         * Obf: PKHMLMBDEPB
          * </pre>
          *
          * Protobuf type {@code OfferingInfo}
@@ -554,8 +554,8 @@ public final class OfferingInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\022OfferingInfo.proto\"#\n\014OfferingInfo\022\023\n\013"
-                    + "offering_id\030\001 \001(\rB!\n\031emu.grasscutter.net"
-                    + ".protoZ\004/genb\006proto3"
+                    + "offering_id\030\001 \001(\rB\033\n\031emu.grasscutter.net"
+                    + ".protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -79,7 +79,7 @@ public final class AbilityAppliedAbilityOuterClass {
      *
      *
      * <pre>
-     * Name: GEIBGHJFKCH
+     * Obf: GBOIHEDHOGC
      * </pre>
      *
      * Protobuf type {@code AbilityAppliedAbility}
@@ -544,7 +544,7 @@ public final class AbilityAppliedAbilityOuterClass {
          *
          *
          * <pre>
-         * Name: GEIBGHJFKCH
+         * Obf: GBOIHEDHOGC
          * </pre>
          *
          * Protobuf type {@code AbilityAppliedAbility}
@@ -1404,21 +1404,21 @@ public final class AbilityAppliedAbilityOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\033AbilityAppliedAbility.proto\032\035AbilitySc"
-                    + "alarValueEntry.proto\032\023AbilityString.prot"
+            "\n\033AbilityAppliedAbility.proto\032\023AbilitySt"
+                    + "ring.proto\032\035AbilityScalarValueEntry.prot"
                     + "o\"\265\001\n\025AbilityAppliedAbility\022$\n\014ability_n"
                     + "ame\030\001 \001(\0132\016.AbilityString\022(\n\020ability_ove"
                     + "rride\030\002 \001(\0132\016.AbilityString\022.\n\014override_"
                     + "map\030\003 \003(\0132\030.AbilityScalarValueEntry\022\034\n\024i"
-                    + "nstanced_ability_id\030\004 \001(\rB!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "nstanced_ability_id\030\004 \001(\rB\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
                         });
         internal_static_AbilityAppliedAbility_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_AbilityAppliedAbility_fieldAccessorTable =
@@ -1427,8 +1427,8 @@ public final class AbilityAppliedAbilityOuterClass {
                         new java.lang.String[] {
                             "AbilityName", "AbilityOverride", "OverrideMap", "InstancedAbilityId",
                         });
-        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
         emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

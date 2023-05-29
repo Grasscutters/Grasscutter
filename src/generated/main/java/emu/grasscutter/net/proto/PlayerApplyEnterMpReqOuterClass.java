@@ -18,7 +18,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 target_uid = 12;</code>
+         * <code>uint32 target_uid = 6;</code>
          *
          * @return The targetUid.
          */
@@ -28,8 +28,8 @@ public final class PlayerApplyEnterMpReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1816
-     * Name: CFEAALDHMJI
+     * CmdId: 1808
+     * Obf: HODBBPLJLCP
      * </pre>
      *
      * Protobuf type {@code PlayerApplyEnterMpReq}
@@ -75,7 +75,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 96:
+                        case 48:
                             {
                                 targetUid_ = input.readUInt32();
                                 break;
@@ -115,10 +115,10 @@ public final class PlayerApplyEnterMpReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int TARGET_UID_FIELD_NUMBER = 12;
+        public static final int TARGET_UID_FIELD_NUMBER = 6;
         private int targetUid_;
         /**
-         * <code>uint32 target_uid = 12;</code>
+         * <code>uint32 target_uid = 6;</code>
          *
          * @return The targetUid.
          */
@@ -142,7 +142,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (targetUid_ != 0) {
-                output.writeUInt32(12, targetUid_);
+                output.writeUInt32(6, targetUid_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
 
             size = 0;
             if (targetUid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, targetUid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, targetUid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -300,8 +300,8 @@ public final class PlayerApplyEnterMpReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1816
-         * Name: CFEAALDHMJI
+         * CmdId: 1808
+         * Obf: HODBBPLJLCP
          * </pre>
          *
          * Protobuf type {@code PlayerApplyEnterMpReq}
@@ -477,7 +477,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
 
             private int targetUid_;
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 6;</code>
              *
              * @return The targetUid.
              */
@@ -486,7 +486,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
                 return targetUid_;
             }
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 6;</code>
              *
              * @param value The targetUid to set.
              * @return This builder for chaining.
@@ -498,7 +498,7 @@ public final class PlayerApplyEnterMpReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 6;</code>
              *
              * @return This builder for chaining.
              */
@@ -580,8 +580,8 @@ public final class PlayerApplyEnterMpReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033PlayerApplyEnterMpReq.proto\"+\n\025PlayerA"
-                    + "pplyEnterMpReq\022\022\n\ntarget_uid\030\014 \001(\rB!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "pplyEnterMpReq\022\022\n\ntarget_uid\030\006 \001(\rB\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

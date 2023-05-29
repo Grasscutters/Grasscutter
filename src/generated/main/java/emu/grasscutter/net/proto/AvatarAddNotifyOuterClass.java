@@ -18,33 +18,33 @@ public final class AvatarAddNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_in_team = 14;</code>
+         * <code>bool is_in_team = 9;</code>
          *
          * @return The isInTeam.
          */
         boolean getIsInTeam();
 
         /**
-         * <code>.AvatarInfo avatar = 5;</code>
+         * <code>.AvatarInfo avatar = 3;</code>
          *
          * @return Whether the avatar field is set.
          */
         boolean hasAvatar();
         /**
-         * <code>.AvatarInfo avatar = 5;</code>
+         * <code>.AvatarInfo avatar = 3;</code>
          *
          * @return The avatar.
          */
         emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo getAvatar();
-        /** <code>.AvatarInfo avatar = 5;</code> */
+        /** <code>.AvatarInfo avatar = 3;</code> */
         emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder getAvatarOrBuilder();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 1688
-     * Name: JEPIBBDBODC
+     * CmdId: 1758
+     * Obf: FPOFHEKPNPK
      * </pre>
      *
      * Protobuf type {@code AvatarAddNotify}
@@ -90,7 +90,7 @@ public final class AvatarAddNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 42:
+                        case 26:
                             {
                                 emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = null;
                                 if (avatar_ != null) {
@@ -107,7 +107,7 @@ public final class AvatarAddNotifyOuterClass {
 
                                 break;
                             }
-                        case 112:
+                        case 72:
                             {
                                 isInTeam_ = input.readBool();
                                 break;
@@ -146,10 +146,10 @@ public final class AvatarAddNotifyOuterClass {
                             emu.grasscutter.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify.Builder.class);
         }
 
-        public static final int IS_IN_TEAM_FIELD_NUMBER = 14;
+        public static final int IS_IN_TEAM_FIELD_NUMBER = 9;
         private boolean isInTeam_;
         /**
-         * <code>bool is_in_team = 14;</code>
+         * <code>bool is_in_team = 9;</code>
          *
          * @return The isInTeam.
          */
@@ -158,10 +158,10 @@ public final class AvatarAddNotifyOuterClass {
             return isInTeam_;
         }
 
-        public static final int AVATAR_FIELD_NUMBER = 5;
+        public static final int AVATAR_FIELD_NUMBER = 3;
         private emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo avatar_;
         /**
-         * <code>.AvatarInfo avatar = 5;</code>
+         * <code>.AvatarInfo avatar = 3;</code>
          *
          * @return Whether the avatar field is set.
          */
@@ -170,7 +170,7 @@ public final class AvatarAddNotifyOuterClass {
             return avatar_ != null;
         }
         /**
-         * <code>.AvatarInfo avatar = 5;</code>
+         * <code>.AvatarInfo avatar = 3;</code>
          *
          * @return The avatar.
          */
@@ -180,7 +180,7 @@ public final class AvatarAddNotifyOuterClass {
                     ? emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance()
                     : avatar_;
         }
-        /** <code>.AvatarInfo avatar = 5;</code> */
+        /** <code>.AvatarInfo avatar = 3;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder getAvatarOrBuilder() {
             return getAvatar();
@@ -201,10 +201,10 @@ public final class AvatarAddNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (avatar_ != null) {
-                output.writeMessage(5, getAvatar());
+                output.writeMessage(3, getAvatar());
             }
             if (isInTeam_ != false) {
-                output.writeBool(14, isInTeam_);
+                output.writeBool(9, isInTeam_);
             }
             unknownFields.writeTo(output);
         }
@@ -216,10 +216,10 @@ public final class AvatarAddNotifyOuterClass {
 
             size = 0;
             if (avatar_ != null) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAvatar());
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAvatar());
             }
             if (isInTeam_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, isInTeam_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, isInTeam_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -366,8 +366,8 @@ public final class AvatarAddNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1688
-         * Name: JEPIBBDBODC
+         * CmdId: 1758
+         * Obf: FPOFHEKPNPK
          * </pre>
          *
          * Protobuf type {@code AvatarAddNotify}
@@ -547,7 +547,7 @@ public final class AvatarAddNotifyOuterClass {
 
             private boolean isInTeam_;
             /**
-             * <code>bool is_in_team = 14;</code>
+             * <code>bool is_in_team = 9;</code>
              *
              * @return The isInTeam.
              */
@@ -556,7 +556,7 @@ public final class AvatarAddNotifyOuterClass {
                 return isInTeam_;
             }
             /**
-             * <code>bool is_in_team = 14;</code>
+             * <code>bool is_in_team = 9;</code>
              *
              * @param value The isInTeam to set.
              * @return This builder for chaining.
@@ -568,7 +568,7 @@ public final class AvatarAddNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_in_team = 14;</code>
+             * <code>bool is_in_team = 9;</code>
              *
              * @return This builder for chaining.
              */
@@ -586,7 +586,7 @@ public final class AvatarAddNotifyOuterClass {
                             emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder>
                     avatarBuilder_;
             /**
-             * <code>.AvatarInfo avatar = 5;</code>
+             * <code>.AvatarInfo avatar = 3;</code>
              *
              * @return Whether the avatar field is set.
              */
@@ -594,7 +594,7 @@ public final class AvatarAddNotifyOuterClass {
                 return avatarBuilder_ != null || avatar_ != null;
             }
             /**
-             * <code>.AvatarInfo avatar = 5;</code>
+             * <code>.AvatarInfo avatar = 3;</code>
              *
              * @return The avatar.
              */
@@ -607,7 +607,7 @@ public final class AvatarAddNotifyOuterClass {
                     return avatarBuilder_.getMessage();
                 }
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public Builder setAvatar(emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo value) {
                 if (avatarBuilder_ == null) {
                     if (value == null) {
@@ -621,7 +621,7 @@ public final class AvatarAddNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public Builder setAvatar(
                     emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder builderForValue) {
                 if (avatarBuilder_ == null) {
@@ -633,7 +633,7 @@ public final class AvatarAddNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public Builder mergeAvatar(emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo value) {
                 if (avatarBuilder_ == null) {
                     if (avatar_ != null) {
@@ -651,7 +651,7 @@ public final class AvatarAddNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public Builder clearAvatar() {
                 if (avatarBuilder_ == null) {
                     avatar_ = null;
@@ -663,13 +663,13 @@ public final class AvatarAddNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder getAvatarBuilder() {
 
                 onChanged();
                 return getAvatarFieldBuilder().getBuilder();
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             public emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder
                     getAvatarOrBuilder() {
                 if (avatarBuilder_ != null) {
@@ -680,7 +680,7 @@ public final class AvatarAddNotifyOuterClass {
                             : avatar_;
                 }
             }
-            /** <code>.AvatarInfo avatar = 5;</code> */
+            /** <code>.AvatarInfo avatar = 3;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo,
                             emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder,
@@ -767,9 +767,9 @@ public final class AvatarAddNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025AvatarAddNotify.proto\032\020AvatarInfo.prot"
-                    + "o\"B\n\017AvatarAddNotify\022\022\n\nis_in_team\030\016 \001(\010"
-                    + "\022\033\n\006avatar\030\005 \001(\0132\013.AvatarInfoB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "o\"B\n\017AvatarAddNotify\022\022\n\nis_in_team\030\t \001(\010"
+                    + "\022\033\n\006avatar\030\003 \001(\0132\013.AvatarInfoB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

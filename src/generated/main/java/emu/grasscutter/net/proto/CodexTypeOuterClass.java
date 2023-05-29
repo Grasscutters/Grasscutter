@@ -15,7 +15,7 @@ public final class CodexTypeOuterClass {
      *
      *
      * <pre>
-     * Name: PHKDBEICLGJ
+     * Obf: BLGBHLOPHLA
      * </pre>
      *
      * Protobuf enum {@code CodexType}
@@ -168,8 +168,8 @@ public final class CodexTypeOuterClass {
                     + "_NONE\020\000\022\017\n\013CODEX_QUEST\020\001\022\020\n\014CODEX_WEAPON"
                     + "\020\002\022\020\n\014CODEX_ANIMAL\020\003\022\022\n\016CODEX_MATERIAL\020\004"
                     + "\022\017\n\013CODEX_BOOKS\020\005\022\022\n\016CODEX_PUSHTIPS\020\006\022\016\n"
-                    + "\nCODEX_VIEW\020\007\022\023\n\017CODEX_RELIQUARY\020\010B!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\nCODEX_VIEW\020\007\022\023\n\017CODEX_RELIQUARY\020\010B\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

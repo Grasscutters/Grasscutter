@@ -20,8 +20,8 @@ public final class GetWorldMpInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 3100
-     * Name: LEBMIODJLOG
+     * CmdId: 3105
+     * Obf: NAJOFOEPENA
      * </pre>
      *
      * Protobuf type {@code GetWorldMpInfoReq}
@@ -260,8 +260,8 @@ public final class GetWorldMpInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 3100
-         * Name: LEBMIODJLOG
+         * CmdId: 3105
+         * Obf: NAJOFOEPENA
          * </pre>
          *
          * Protobuf type {@code GetWorldMpInfoReq}
@@ -494,8 +494,8 @@ public final class GetWorldMpInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027GetWorldMpInfoReq.proto\"\023\n\021GetWorldMpI"
-                    + "nfoReqB!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "nfoReqB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

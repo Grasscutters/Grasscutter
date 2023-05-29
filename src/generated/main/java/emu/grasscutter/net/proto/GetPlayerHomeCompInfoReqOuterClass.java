@@ -20,8 +20,8 @@ public final class GetPlayerHomeCompInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4814
-     * Name: NMNPBCABMIB
+     * CmdId: 4482
+     * Obf: JCGLANNLAND
      * </pre>
      *
      * Protobuf type {@code GetPlayerHomeCompInfoReq}
@@ -281,8 +281,8 @@ public final class GetPlayerHomeCompInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4814
-         * Name: NMNPBCABMIB
+         * CmdId: 4482
+         * Obf: JCGLANNLAND
          * </pre>
          *
          * Protobuf type {@code GetPlayerHomeCompInfoReq}
@@ -528,8 +528,8 @@ public final class GetPlayerHomeCompInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\036GetPlayerHomeCompInfoReq.proto\"\032\n\030GetP"
-                    + "layerHomeCompInfoReqB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "layerHomeCompInfoReqB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

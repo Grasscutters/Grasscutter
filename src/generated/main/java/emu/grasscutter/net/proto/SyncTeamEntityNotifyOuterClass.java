@@ -34,7 +34,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                 getTeamEntityInfoListOrBuilder(int index);
 
         /**
-         * <code>uint32 scene_id = 5;</code>
+         * <code>uint32 scene_id = 13;</code>
          *
          * @return The sceneId.
          */
@@ -44,8 +44,8 @@ public final class SyncTeamEntityNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 326
-     * Name: GDCDGDCNMLB
+     * CmdId: 318
+     * Obf: CDDMEPKMFHF
      * </pre>
      *
      * Protobuf type {@code SyncTeamEntityNotify}
@@ -108,7 +108,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                                                 extensionRegistry));
                                 break;
                             }
-                        case 40:
+                        case 104:
                             {
                                 sceneId_ = input.readUInt32();
                                 break;
@@ -185,10 +185,10 @@ public final class SyncTeamEntityNotifyOuterClass {
             return teamEntityInfoList_.get(index);
         }
 
-        public static final int SCENE_ID_FIELD_NUMBER = 5;
+        public static final int SCENE_ID_FIELD_NUMBER = 13;
         private int sceneId_;
         /**
-         * <code>uint32 scene_id = 5;</code>
+         * <code>uint32 scene_id = 13;</code>
          *
          * @return The sceneId.
          */
@@ -215,7 +215,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                 output.writeMessage(2, teamEntityInfoList_.get(i));
             }
             if (sceneId_ != 0) {
-                output.writeUInt32(5, sceneId_);
+                output.writeUInt32(13, sceneId_);
             }
             unknownFields.writeTo(output);
         }
@@ -231,7 +231,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                         com.google.protobuf.CodedOutputStream.computeMessageSize(2, teamEntityInfoList_.get(i));
             }
             if (sceneId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, sceneId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, sceneId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -382,8 +382,8 @@ public final class SyncTeamEntityNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 326
-         * Name: GDCDGDCNMLB
+         * CmdId: 318
+         * Obf: CDDMEPKMFHF
          * </pre>
          *
          * Protobuf type {@code SyncTeamEntityNotify}
@@ -838,7 +838,7 @@ public final class SyncTeamEntityNotifyOuterClass {
 
             private int sceneId_;
             /**
-             * <code>uint32 scene_id = 5;</code>
+             * <code>uint32 scene_id = 13;</code>
              *
              * @return The sceneId.
              */
@@ -847,7 +847,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                 return sceneId_;
             }
             /**
-             * <code>uint32 scene_id = 5;</code>
+             * <code>uint32 scene_id = 13;</code>
              *
              * @param value The sceneId to set.
              * @return This builder for chaining.
@@ -859,7 +859,7 @@ public final class SyncTeamEntityNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 scene_id = 5;</code>
+             * <code>uint32 scene_id = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -943,8 +943,8 @@ public final class SyncTeamEntityNotifyOuterClass {
             "\n\032SyncTeamEntityNotify.proto\032\024TeamEntity"
                     + "Info.proto\"X\n\024SyncTeamEntityNotify\022.\n\025te"
                     + "am_entity_info_list\030\002 \003(\0132\017.TeamEntityIn"
-                    + "fo\022\020\n\010scene_id\030\005 \001(\rB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "fo\022\020\n\010scene_id\030\r \001(\rB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

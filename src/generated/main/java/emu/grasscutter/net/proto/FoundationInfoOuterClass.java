@@ -68,7 +68,7 @@ public final class FoundationInfoOuterClass {
      *
      *
      * <pre>
-     * Name: AMABAPDIMGK
+     * Obf: DGNBNKHBONE
      * </pre>
      *
      * Protobuf type {@code FoundationInfo}
@@ -492,7 +492,7 @@ public final class FoundationInfoOuterClass {
          *
          *
          * <pre>
-         * Name: AMABAPDIMGK
+         * Obf: DGNBNKHBONE
          * </pre>
          *
          * Protobuf type {@code FoundationInfo}
@@ -976,8 +976,8 @@ public final class FoundationInfoOuterClass {
                     + ".proto\"y\n\016FoundationInfo\022!\n\006status\030\001 \001(\016"
                     + "2\021.FoundationStatus\022\020\n\010uid_list\030\002 \003(\r\022\033\n"
                     + "\023current_building_id\030\003 \001(\r\022\025\n\rlocked_by_"
-                    + "uid\030\004 \001(\rB!\n\031emu.grasscutter.net.protoZ\004"
-                    + "/genb\006proto3"
+                    + "uid\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006"
+                    + "proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

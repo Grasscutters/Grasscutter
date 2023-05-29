@@ -20,8 +20,8 @@ public final class EndCameraSceneLookNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 226
-     * Name: LOIPBNHAKOH
+     * CmdId: 218
+     * Obf: AIBPCFKJANH
      * </pre>
      *
      * Protobuf type {@code EndCameraSceneLookNotify}
@@ -281,8 +281,8 @@ public final class EndCameraSceneLookNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 226
-         * Name: LOIPBNHAKOH
+         * CmdId: 218
+         * Obf: AIBPCFKJANH
          * </pre>
          *
          * Protobuf type {@code EndCameraSceneLookNotify}
@@ -528,8 +528,8 @@ public final class EndCameraSceneLookNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\036EndCameraSceneLookNotify.proto\"\032\n\030EndC"
-                    + "ameraSceneLookNotifyB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "ameraSceneLookNotifyB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

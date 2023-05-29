@@ -15,7 +15,7 @@ public final class AbilityInvokeArgumentOuterClass {
      *
      *
      * <pre>
-     * Name: OCEIMDJANPL
+     * Obf: IEGANFCMCNJ
      * </pre>
      *
      * Protobuf enum {@code AbilityInvokeArgument}
@@ -620,8 +620,8 @@ public final class AbilityInvokeArgumentOuterClass {
                     + "T_MIXIN_BROADCAST_GV\020|\022,\n(ABILITY_INVOKE"
                     + "_ARGUMENT_MIXIN_RECEIVE_GV\020}\0227\n3ABILITY_"
                     + "INVOKE_ARGUMENT_MIXIN_ENERGY_CRYSTAL_TAR"
-                    + "GET\020\177B!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "GET\020\177B\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

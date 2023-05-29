@@ -18,7 +18,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 uid = 1;</code>
+         * <code>uint32 uid = 12;</code>
          *
          * @return The uid.
          */
@@ -28,8 +28,8 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8875
-     * Name: BLFOENGGJAK
+     * CmdId: 8603
+     * Obf: BKPNLGDHNAF
      * </pre>
      *
      * Protobuf type {@code WinterCampAcceptGiveItemReq}
@@ -76,7 +76,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 96:
                             {
                                 uid_ = input.readUInt32();
                                 break;
@@ -117,10 +117,10 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
                                     .WinterCampAcceptGiveItemReq.Builder.class);
         }
 
-        public static final int UID_FIELD_NUMBER = 1;
+        public static final int UID_FIELD_NUMBER = 12;
         private int uid_;
         /**
-         * <code>uint32 uid = 1;</code>
+         * <code>uint32 uid = 12;</code>
          *
          * @return The uid.
          */
@@ -144,7 +144,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (uid_ != 0) {
-                output.writeUInt32(1, uid_);
+                output.writeUInt32(12, uid_);
             }
             unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
             size = 0;
             if (uid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, uid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, uid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -319,8 +319,8 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8875
-         * Name: BLFOENGGJAK
+         * CmdId: 8603
+         * Obf: BKPNLGDHNAF
          * </pre>
          *
          * Protobuf type {@code WinterCampAcceptGiveItemReq}
@@ -506,7 +506,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
 
             private int uid_;
             /**
-             * <code>uint32 uid = 1;</code>
+             * <code>uint32 uid = 12;</code>
              *
              * @return The uid.
              */
@@ -515,7 +515,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
                 return uid_;
             }
             /**
-             * <code>uint32 uid = 1;</code>
+             * <code>uint32 uid = 12;</code>
              *
              * @param value The uid to set.
              * @return This builder for chaining.
@@ -527,7 +527,7 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 uid = 1;</code>
+             * <code>uint32 uid = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -612,9 +612,8 @@ public final class WinterCampAcceptGiveItemReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n!WinterCampAcceptGiveItemReq.proto\"*\n\033W"
-                    + "interCampAcceptGiveItemReq\022\013\n\003uid\030\001 \001(\rB"
-                    + "!\n\031emu.grasscutter.net.protoZ\004/genb\006prot"
-                    + "o3"
+                    + "interCampAcceptGiveItemReq\022\013\n\003uid\030\014 \001(\rB"
+                    + "\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

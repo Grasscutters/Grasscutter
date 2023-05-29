@@ -55,7 +55,7 @@ public final class MonsterRouteOuterClass {
      *
      *
      * <pre>
-     * Name: IHCFDBEPNMD
+     * Obf: DPMNEGAPBAK
      * </pre>
      *
      * Protobuf type {@code MonsterRoute}
@@ -433,7 +433,7 @@ public final class MonsterRouteOuterClass {
          *
          *
          * <pre>
-         * Name: IHCFDBEPNMD
+         * Obf: DPMNEGAPBAK
          * </pre>
          *
          * Protobuf type {@code MonsterRoute}
@@ -1052,8 +1052,8 @@ public final class MonsterRouteOuterClass {
             "\n\022MonsterRoute.proto\032\020RoutePoint.proto\"p"
                     + "\n\014MonsterRoute\022!\n\014route_points\030\001 \003(\0132\013.R"
                     + "outePoint\022\023\n\013speed_level\030\002 \001(\r\022\022\n\nroute_"
-                    + "type\030\003 \001(\r\022\024\n\014arrive_range\030\004 \001(\002B!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "type\030\003 \001(\r\022\024\n\014arrive_range\030\004 \001(\002B\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

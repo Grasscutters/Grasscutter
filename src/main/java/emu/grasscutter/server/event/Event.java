@@ -14,10 +14,12 @@ public abstract class Event {
     /** Cancels the event if possible. */
     public void cancel() {
         if (this instanceof Cancellable) this.cancelled = true;
+        else throw new UnsupportedOperationException("Event is not cancellable.");
     }
 
     /** Pushes this event to all listeners. */
     public void call() {
-        Grasscutter.getPluginManager().invokeEvent(this);
+        var pluginManager = Grasscutter.getPluginManager();
+        if (pluginManager != null) pluginManager.invokeEvent(this);
     }
 }

@@ -56,7 +56,7 @@ public final class ServerBuffOuterClass {
      *
      *
      * <pre>
-     * Name: LIHFDPHMIGJ
+     * Obf: IKGPNFFPDOG
      * </pre>
      *
      * Protobuf type {@code ServerBuff}
@@ -421,7 +421,7 @@ public final class ServerBuffOuterClass {
          *
          *
          * <pre>
-         * Name: LIHFDPHMIGJ
+         * Obf: IKGPNFFPDOG
          * </pre>
          *
          * Protobuf type {@code ServerBuff}
@@ -839,8 +839,8 @@ public final class ServerBuffOuterClass {
                     + "ver_buff_uid\030\001 \001(\r\022\026\n\016server_buff_id\030\002 \001"
                     + "(\r\022\030\n\020server_buff_type\030\003 \001(\r\022\035\n\025instance"
                     + "d_modifier_id\030\004 \001(\r\022\031\n\021is_modifier_added"
-                    + "\030\005 \001(\010B!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "\030\005 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

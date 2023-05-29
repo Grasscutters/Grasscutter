@@ -15,7 +15,7 @@ public final class MaterialDeleteReturnTypeOuterClass {
      *
      *
      * <pre>
-     * Name: PLKEBHIPGAB
+     * Obf: EACMIGMMBCA
      * </pre>
      *
      * Protobuf enum {@code MaterialDeleteReturnType}
@@ -130,8 +130,8 @@ public final class MaterialDeleteReturnTypeOuterClass {
             "\n\036MaterialDeleteReturnType.proto*[\n\030Mate"
                     + "rialDeleteReturnType\022\036\n\032MATERIAL_DELETE_"
                     + "RETURN_BAG\020\000\022\037\n\033MATERIAL_DELETE_RETURN_S"
-                    + "EED\020\001B!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "EED\020\001B\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

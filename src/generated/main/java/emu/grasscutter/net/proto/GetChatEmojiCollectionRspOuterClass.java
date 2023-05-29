@@ -18,24 +18,24 @@ public final class GetChatEmojiCollectionRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
          *
          * @return Whether the chatEmojiCollectionData field is set.
          */
         boolean hasChatEmojiCollectionData();
         /**
-         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
          *
          * @return The chatEmojiCollectionData.
          */
         emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                 getChatEmojiCollectionData();
-        /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+        /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
         emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionDataOrBuilder
                 getChatEmojiCollectionDataOrBuilder();
 
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 15;</code>
          *
          * @return The retcode.
          */
@@ -45,8 +45,8 @@ public final class GetChatEmojiCollectionRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4027
-     * Name: CLEOEMBHLBK
+     * CmdId: 4015
+     * Obf: PABFDHNLMBL
      * </pre>
      *
      * Protobuf type {@code GetChatEmojiCollectionRsp}
@@ -92,7 +92,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 26:
+                        case 18:
                             {
                                 emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                                                 .Builder
@@ -112,7 +112,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
                                 break;
                             }
-                        case 64:
+                        case 120:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -153,11 +153,11 @@ public final class GetChatEmojiCollectionRspOuterClass {
                                     .GetChatEmojiCollectionRsp.Builder.class);
         }
 
-        public static final int CHAT_EMOJI_COLLECTION_DATA_FIELD_NUMBER = 3;
+        public static final int CHAT_EMOJI_COLLECTION_DATA_FIELD_NUMBER = 2;
         private emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                 chatEmojiCollectionData_;
         /**
-         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
          *
          * @return Whether the chatEmojiCollectionData field is set.
          */
@@ -166,7 +166,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
             return chatEmojiCollectionData_ != null;
         }
         /**
-         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+         * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
          *
          * @return The chatEmojiCollectionData.
          */
@@ -178,7 +178,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                             .getDefaultInstance()
                     : chatEmojiCollectionData_;
         }
-        /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+        /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass
                         .ChatEmojiCollectionDataOrBuilder
@@ -186,10 +186,10 @@ public final class GetChatEmojiCollectionRspOuterClass {
             return getChatEmojiCollectionData();
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 15;</code>
          *
          * @return The retcode.
          */
@@ -213,10 +213,10 @@ public final class GetChatEmojiCollectionRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (chatEmojiCollectionData_ != null) {
-                output.writeMessage(3, getChatEmojiCollectionData());
+                output.writeMessage(2, getChatEmojiCollectionData());
             }
             if (retcode_ != 0) {
-                output.writeInt32(8, retcode_);
+                output.writeInt32(15, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -230,10 +230,10 @@ public final class GetChatEmojiCollectionRspOuterClass {
             if (chatEmojiCollectionData_ != null) {
                 size +=
                         com.google.protobuf.CodedOutputStream.computeMessageSize(
-                                3, getChatEmojiCollectionData());
+                                2, getChatEmojiCollectionData());
             }
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(15, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -404,8 +404,8 @@ public final class GetChatEmojiCollectionRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4027
-         * Name: CLEOEMBHLBK
+         * CmdId: 4015
+         * Obf: PABFDHNLMBL
          * </pre>
          *
          * Protobuf type {@code GetChatEmojiCollectionRsp}
@@ -609,7 +609,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                                     .ChatEmojiCollectionDataOrBuilder>
                     chatEmojiCollectionDataBuilder_;
             /**
-             * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+             * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
              *
              * @return Whether the chatEmojiCollectionData field is set.
              */
@@ -617,7 +617,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                 return chatEmojiCollectionDataBuilder_ != null || chatEmojiCollectionData_ != null;
             }
             /**
-             * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code>
+             * <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code>
              *
              * @return The chatEmojiCollectionData.
              */
@@ -632,7 +632,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                     return chatEmojiCollectionDataBuilder_.getMessage();
                 }
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public Builder setChatEmojiCollectionData(
                     emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                             value) {
@@ -648,7 +648,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
                 return this;
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public Builder setChatEmojiCollectionData(
                     emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                                     .Builder
@@ -662,7 +662,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
                 return this;
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public Builder mergeChatEmojiCollectionData(
                     emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                             value) {
@@ -683,7 +683,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
                 return this;
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public Builder clearChatEmojiCollectionData() {
                 if (chatEmojiCollectionDataBuilder_ == null) {
                     chatEmojiCollectionData_ = null;
@@ -695,7 +695,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
                 return this;
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
                             .Builder
                     getChatEmojiCollectionDataBuilder() {
@@ -703,7 +703,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                 onChanged();
                 return getChatEmojiCollectionDataFieldBuilder().getBuilder();
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             public emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass
                             .ChatEmojiCollectionDataOrBuilder
                     getChatEmojiCollectionDataOrBuilder() {
@@ -716,7 +716,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                             : chatEmojiCollectionData_;
                 }
             }
-            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 3;</code> */
+            /** <code>.ChatEmojiCollectionData chat_emoji_collection_data = 2;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData,
                             emu.grasscutter.net.proto.ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData
@@ -741,7 +741,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @return The retcode.
              */
@@ -750,7 +750,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -762,7 +762,7 @@ public final class GetChatEmojiCollectionRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -848,9 +848,9 @@ public final class GetChatEmojiCollectionRspOuterClass {
             "\n\037GetChatEmojiCollectionRsp.proto\032\035ChatE"
                     + "mojiCollectionData.proto\"j\n\031GetChatEmoji"
                     + "CollectionRsp\022<\n\032chat_emoji_collection_d"
-                    + "ata\030\003 \001(\0132\030.ChatEmojiCollectionData\022\017\n\007r"
-                    + "etcode\030\010 \001(\005B!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "ata\030\002 \001(\0132\030.ChatEmojiCollectionData\022\017\n\007r"
+                    + "etcode\030\017 \001(\005B\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

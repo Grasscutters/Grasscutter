@@ -842,8 +842,8 @@ public final class MusicBeatmapListOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026MusicBeatmapList.proto\032\026MusicBeatmapNo"
                     + "te.proto\"@\n\020MusicBeatmapList\022,\n\021beatmap_"
-                    + "note_list\030\001 \003(\0132\021.MusicBeatmapNoteB!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "note_list\030\001 \003(\0132\021.MusicBeatmapNoteB\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

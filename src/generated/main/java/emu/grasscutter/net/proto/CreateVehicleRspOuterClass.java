@@ -18,21 +18,21 @@ public final class CreateVehicleRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 vehicle_id = 11;</code>
+         * <code>uint32 vehicle_id = 1;</code>
          *
          * @return The vehicleId.
          */
         int getVehicleId();
 
         /**
-         * <code>uint32 entity_id = 13;</code>
+         * <code>uint32 entity_id = 4;</code>
          *
          * @return The entityId.
          */
         int getEntityId();
 
         /**
-         * <code>int32 retcode = 6;</code>
+         * <code>int32 retcode = 11;</code>
          *
          * @return The retcode.
          */
@@ -42,8 +42,8 @@ public final class CreateVehicleRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 895
-     * Name: LHOBJJPEFGM
+     * CmdId: 876
+     * Obf: JLDKEFIDBEK
      * </pre>
      *
      * Protobuf type {@code CreateVehicleRsp}
@@ -89,19 +89,19 @@ public final class CreateVehicleRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 48:
-                            {
-                                retcode_ = input.readInt32();
-                                break;
-                            }
-                        case 88:
+                        case 8:
                             {
                                 vehicleId_ = input.readUInt32();
                                 break;
                             }
-                        case 104:
+                        case 32:
                             {
                                 entityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
+                            {
+                                retcode_ = input.readInt32();
                                 break;
                             }
                         default:
@@ -138,10 +138,10 @@ public final class CreateVehicleRspOuterClass {
                             emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.Builder.class);
         }
 
-        public static final int VEHICLE_ID_FIELD_NUMBER = 11;
+        public static final int VEHICLE_ID_FIELD_NUMBER = 1;
         private int vehicleId_;
         /**
-         * <code>uint32 vehicle_id = 11;</code>
+         * <code>uint32 vehicle_id = 1;</code>
          *
          * @return The vehicleId.
          */
@@ -150,10 +150,10 @@ public final class CreateVehicleRspOuterClass {
             return vehicleId_;
         }
 
-        public static final int ENTITY_ID_FIELD_NUMBER = 13;
+        public static final int ENTITY_ID_FIELD_NUMBER = 4;
         private int entityId_;
         /**
-         * <code>uint32 entity_id = 13;</code>
+         * <code>uint32 entity_id = 4;</code>
          *
          * @return The entityId.
          */
@@ -162,10 +162,10 @@ public final class CreateVehicleRspOuterClass {
             return entityId_;
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 6;
+        public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
         /**
-         * <code>int32 retcode = 6;</code>
+         * <code>int32 retcode = 11;</code>
          *
          * @return The retcode.
          */
@@ -188,14 +188,14 @@ public final class CreateVehicleRspOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (retcode_ != 0) {
-                output.writeInt32(6, retcode_);
-            }
             if (vehicleId_ != 0) {
-                output.writeUInt32(11, vehicleId_);
+                output.writeUInt32(1, vehicleId_);
             }
             if (entityId_ != 0) {
-                output.writeUInt32(13, entityId_);
+                output.writeUInt32(4, entityId_);
+            }
+            if (retcode_ != 0) {
+                output.writeInt32(11, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -206,14 +206,14 @@ public final class CreateVehicleRspOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, retcode_);
-            }
             if (vehicleId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, vehicleId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, vehicleId_);
             }
             if (entityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, entityId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, entityId_);
+            }
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -358,8 +358,8 @@ public final class CreateVehicleRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 895
-         * Name: LHOBJJPEFGM
+         * CmdId: 876
+         * Obf: JLDKEFIDBEK
          * </pre>
          *
          * Protobuf type {@code CreateVehicleRsp}
@@ -540,7 +540,7 @@ public final class CreateVehicleRspOuterClass {
 
             private int vehicleId_;
             /**
-             * <code>uint32 vehicle_id = 11;</code>
+             * <code>uint32 vehicle_id = 1;</code>
              *
              * @return The vehicleId.
              */
@@ -549,7 +549,7 @@ public final class CreateVehicleRspOuterClass {
                 return vehicleId_;
             }
             /**
-             * <code>uint32 vehicle_id = 11;</code>
+             * <code>uint32 vehicle_id = 1;</code>
              *
              * @param value The vehicleId to set.
              * @return This builder for chaining.
@@ -561,7 +561,7 @@ public final class CreateVehicleRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 vehicle_id = 11;</code>
+             * <code>uint32 vehicle_id = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -574,7 +574,7 @@ public final class CreateVehicleRspOuterClass {
 
             private int entityId_;
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 4;</code>
              *
              * @return The entityId.
              */
@@ -583,7 +583,7 @@ public final class CreateVehicleRspOuterClass {
                 return entityId_;
             }
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 4;</code>
              *
              * @param value The entityId to set.
              * @return This builder for chaining.
@@ -595,7 +595,7 @@ public final class CreateVehicleRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -608,7 +608,7 @@ public final class CreateVehicleRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>int32 retcode = 11;</code>
              *
              * @return The retcode.
              */
@@ -617,7 +617,7 @@ public final class CreateVehicleRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>int32 retcode = 11;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -629,7 +629,7 @@ public final class CreateVehicleRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 6;</code>
+             * <code>int32 retcode = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -710,9 +710,9 @@ public final class CreateVehicleRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026CreateVehicleRsp.proto\"J\n\020CreateVehicl"
-                    + "eRsp\022\022\n\nvehicle_id\030\013 \001(\r\022\021\n\tentity_id\030\r "
-                    + "\001(\r\022\017\n\007retcode\030\006 \001(\005B!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "eRsp\022\022\n\nvehicle_id\030\001 \001(\r\022\021\n\tentity_id\030\004 "
+                    + "\001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

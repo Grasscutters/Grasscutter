@@ -17,29 +17,29 @@ public final class IrodoriMasterLevelInfoOuterClass {
             // @@protoc_insertion_point(interface_extends:IrodoriMasterLevelInfo)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         java.util.List<
                         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                 .IrodoriMasterLevelDetailInfo>
                 getDetailInfoList();
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo
                 getDetailInfo(int index);
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         int getDetailInfoCount();
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         java.util.List<
                         ? extends
                                 emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                         .IrodoriMasterLevelDetailInfoOrBuilder>
                 getDetailInfoOrBuilderList();
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                         .IrodoriMasterLevelDetailInfoOrBuilder
                 getDetailInfoOrBuilder(int index);
 
         /**
-         * <code>uint32 level_id = 4;</code>
+         * <code>uint32 level_id = 14;</code>
          *
          * @return The levelId.
          */
@@ -49,7 +49,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
      *
      *
      * <pre>
-     * Name: JJLGNKEIECC
+     * Obf: EMCIPFMAAHF
      * </pre>
      *
      * Protobuf type {@code IrodoriMasterLevelInfo}
@@ -98,12 +98,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 32:
-                            {
-                                levelId_ = input.readUInt32();
-                                break;
-                            }
-                        case 58:
+                        case 26:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     detailInfo_ =
@@ -117,6 +112,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                                 emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                                         .IrodoriMasterLevelDetailInfo.parser(),
                                                 extensionRegistry));
+                                break;
+                            }
+                        case 112:
+                            {
+                                levelId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -158,12 +158,12 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int DETAIL_INFO_FIELD_NUMBER = 7;
+        public static final int DETAIL_INFO_FIELD_NUMBER = 3;
         private java.util.List<
                         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                 .IrodoriMasterLevelDetailInfo>
                 detailInfo_;
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         @java.lang.Override
         public java.util.List<
                         emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -171,7 +171,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 getDetailInfoList() {
             return detailInfo_;
         }
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends
@@ -180,19 +180,19 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 getDetailInfoOrBuilderList() {
             return detailInfo_;
         }
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         @java.lang.Override
         public int getDetailInfoCount() {
             return detailInfo_.size();
         }
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                         .IrodoriMasterLevelDetailInfo
                 getDetailInfo(int index) {
             return detailInfo_.get(index);
         }
-        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+        /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                         .IrodoriMasterLevelDetailInfoOrBuilder
@@ -200,10 +200,10 @@ public final class IrodoriMasterLevelInfoOuterClass {
             return detailInfo_.get(index);
         }
 
-        public static final int LEVEL_ID_FIELD_NUMBER = 4;
+        public static final int LEVEL_ID_FIELD_NUMBER = 14;
         private int levelId_;
         /**
-         * <code>uint32 level_id = 4;</code>
+         * <code>uint32 level_id = 14;</code>
          *
          * @return The levelId.
          */
@@ -226,11 +226,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (levelId_ != 0) {
-                output.writeUInt32(4, levelId_);
-            }
             for (int i = 0; i < detailInfo_.size(); i++) {
-                output.writeMessage(7, detailInfo_.get(i));
+                output.writeMessage(3, detailInfo_.get(i));
+            }
+            if (levelId_ != 0) {
+                output.writeUInt32(14, levelId_);
             }
             unknownFields.writeTo(output);
         }
@@ -241,11 +241,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (levelId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, levelId_);
-            }
             for (int i = 0; i < detailInfo_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, detailInfo_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, detailInfo_.get(i));
+            }
+            if (levelId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, levelId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -397,7 +397,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
          *
          *
          * <pre>
-         * Name: JJLGNKEIECC
+         * Obf: EMCIPFMAAHF
          * </pre>
          *
          * Protobuf type {@code IrodoriMasterLevelInfo}
@@ -642,7 +642,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                     .IrodoriMasterLevelDetailInfoOrBuilder>
                     detailInfoBuilder_;
 
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                     .IrodoriMasterLevelDetailInfo>
@@ -653,7 +653,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     return detailInfoBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public int getDetailInfoCount() {
                 if (detailInfoBuilder_ == null) {
                     return detailInfo_.size();
@@ -661,7 +661,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     return detailInfoBuilder_.getCount();
                 }
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                             .IrodoriMasterLevelDetailInfo
                     getDetailInfo(int index) {
@@ -671,7 +671,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     return detailInfoBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder setDetailInfo(
                     int index,
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -689,7 +689,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder setDetailInfo(
                     int index,
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -704,7 +704,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder addDetailInfo(
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                     .IrodoriMasterLevelDetailInfo
@@ -721,7 +721,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder addDetailInfo(
                     int index,
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -739,7 +739,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder addDetailInfo(
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                     .IrodoriMasterLevelDetailInfo.Builder
@@ -753,7 +753,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder addDetailInfo(
                     int index,
                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -768,7 +768,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder addAllDetailInfo(
                     java.lang.Iterable<
                                     ? extends
@@ -784,7 +784,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder clearDetailInfo() {
                 if (detailInfoBuilder_ == null) {
                     detailInfo_ = java.util.Collections.emptyList();
@@ -795,7 +795,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public Builder removeDetailInfo(int index) {
                 if (detailInfoBuilder_ == null) {
                     ensureDetailInfoIsMutable();
@@ -806,13 +806,13 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                             .IrodoriMasterLevelDetailInfo.Builder
                     getDetailInfoBuilder(int index) {
                 return getDetailInfoFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                             .IrodoriMasterLevelDetailInfoOrBuilder
                     getDetailInfoOrBuilder(int index) {
@@ -822,7 +822,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     return detailInfoBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
@@ -834,7 +834,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     return java.util.Collections.unmodifiableList(detailInfo_);
                 }
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                             .IrodoriMasterLevelDetailInfo.Builder
                     addDetailInfoBuilder() {
@@ -843,7 +843,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                 emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                         .IrodoriMasterLevelDetailInfo.getDefaultInstance());
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                             .IrodoriMasterLevelDetailInfo.Builder
                     addDetailInfoBuilder(int index) {
@@ -853,7 +853,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                 emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                         .IrodoriMasterLevelDetailInfo.getDefaultInstance());
             }
-            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 7;</code> */
+            /** <code>repeated .IrodoriMasterLevelDetailInfo detail_info = 3;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass
                                     .IrodoriMasterLevelDetailInfo.Builder>
@@ -886,7 +886,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
 
             private int levelId_;
             /**
-             * <code>uint32 level_id = 4;</code>
+             * <code>uint32 level_id = 14;</code>
              *
              * @return The levelId.
              */
@@ -895,7 +895,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 return levelId_;
             }
             /**
-             * <code>uint32 level_id = 4;</code>
+             * <code>uint32 level_id = 14;</code>
              *
              * @param value The levelId to set.
              * @return This builder for chaining.
@@ -907,7 +907,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 level_id = 4;</code>
+             * <code>uint32 level_id = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -990,10 +990,9 @@ public final class IrodoriMasterLevelInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\034IrodoriMasterLevelInfo.proto\032\"IrodoriM"
                     + "asterLevelDetailInfo.proto\"^\n\026IrodoriMas"
-                    + "terLevelInfo\0222\n\013detail_info\030\007 \003(\0132\035.Irod"
-                    + "oriMasterLevelDetailInfo\022\020\n\010level_id\030\004 \001"
-                    + "(\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "terLevelInfo\0222\n\013detail_info\030\003 \003(\0132\035.Irod"
+                    + "oriMasterLevelDetailInfo\022\020\n\010level_id\030\016 \001"
+                    + "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

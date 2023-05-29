@@ -15,7 +15,7 @@ public final class HomePlantFieldStatusOuterClass {
      *
      *
      * <pre>
-     * Name: GEHIKODGKMC
+     * Obf: EOCCCEGKIIF
      * </pre>
      *
      * Protobuf enum {@code HomePlantFieldStatus}
@@ -143,8 +143,8 @@ public final class HomePlantFieldStatusOuterClass {
                     + "ntFieldStatus\022\032\n\026HOME_FIELD_STATUE_NONE\020"
                     + "\000\022\032\n\026HOME_FIELD_STATUE_SEED\020\001\022\034\n\030HOME_FI"
                     + "ELD_STATUE_SPROUT\020\002\022\034\n\030HOME_FIELD_STATUE"
-                    + "_GATHER\020\003B!\n\031emu.grasscutter.net.protoZ\004"
-                    + "/genb\006proto3"
+                    + "_GATHER\020\003B\033\n\031emu.grasscutter.net.protob\006"
+                    + "proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

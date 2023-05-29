@@ -56,7 +56,7 @@ public final class AvatarExcelInfoOuterClass {
      *
      *
      * <pre>
-     * Name: FFDCKFPNAHP
+     * Obf: NNEHENIKCMK
      * </pre>
      *
      * Protobuf type {@code AvatarExcelInfo}
@@ -424,7 +424,7 @@ public final class AvatarExcelInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FFDCKFPNAHP
+         * Obf: NNEHENIKCMK
          * </pre>
          *
          * Protobuf type {@code AvatarExcelInfo}
@@ -854,8 +854,8 @@ public final class AvatarExcelInfoOuterClass {
                     + "nfo\022\030\n\020prefab_path_hash\030\001 \001(\004\022\037\n\027prefab_"
                     + "path_remote_hash\030\002 \001(\004\022\034\n\024controller_pat"
                     + "h_hash\030\003 \001(\004\022#\n\033controller_path_remote_h"
-                    + "ash\030\004 \001(\004\022\032\n\022combat_config_hash\030\005 \001(\004B!\n"
-                    + "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "ash\030\004 \001(\004\022\032\n\022combat_config_hash\030\005 \001(\004B\033\n"
+                    + "\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

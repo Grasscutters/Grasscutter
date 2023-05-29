@@ -20,8 +20,8 @@ public final class FurnitureMakeFinishNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4753
-     * Name: CAAEENHGNLG
+     * CmdId: 4822
+     * Obf: AAJECADHNOA
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeFinishNotify}
@@ -284,8 +284,8 @@ public final class FurnitureMakeFinishNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4753
-         * Name: CAAEENHGNLG
+         * CmdId: 4822
+         * Obf: AAJECADHNOA
          * </pre>
          *
          * Protobuf type {@code FurnitureMakeFinishNotify}
@@ -532,8 +532,8 @@ public final class FurnitureMakeFinishNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\037FurnitureMakeFinishNotify.proto\"\033\n\031Fur"
-                    + "nitureMakeFinishNotifyB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "nitureMakeFinishNotifyB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -17,22 +17,22 @@ public final class FleurFairV2PhotoInfoOuterClass {
             // @@protoc_insertion_point(interface_extends:FleurFairV2PhotoInfo)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         java.util.List<
                         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData>
                 getPhotoPosDataListList();
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                 getPhotoPosDataList(int index);
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         int getPhotoPosDataListCount();
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         java.util.List<
                         ? extends
                                 emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass
                                         .FleurFairV2PhotoPosDataOrBuilder>
                 getPhotoPosDataListOrBuilderList();
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosDataOrBuilder
                 getPhotoPosDataListOrBuilder(int index);
     }
@@ -40,7 +40,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
      *
      *
      * <pre>
-     * Name: BMPLONCEFFO
+     * Obf: BGFNBENIOKE
      * </pre>
      *
      * Protobuf type {@code FleurFairV2PhotoInfo}
@@ -89,7 +89,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 50:
+                        case 82:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     photoPosDataList_ =
@@ -143,18 +143,18 @@ public final class FleurFairV2PhotoInfoOuterClass {
                                     .class);
         }
 
-        public static final int PHOTO_POS_DATA_LIST_FIELD_NUMBER = 6;
+        public static final int PHOTO_POS_DATA_LIST_FIELD_NUMBER = 10;
         private java.util.List<
                         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData>
                 photoPosDataList_;
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         @java.lang.Override
         public java.util.List<
                         emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData>
                 getPhotoPosDataListList() {
             return photoPosDataList_;
         }
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends
@@ -163,18 +163,18 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 getPhotoPosDataListOrBuilderList() {
             return photoPosDataList_;
         }
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         @java.lang.Override
         public int getPhotoPosDataListCount() {
             return photoPosDataList_.size();
         }
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                 getPhotoPosDataList(int index) {
             return photoPosDataList_.get(index);
         }
-        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+        /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass
                         .FleurFairV2PhotoPosDataOrBuilder
@@ -197,7 +197,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             for (int i = 0; i < photoPosDataList_.size(); i++) {
-                output.writeMessage(6, photoPosDataList_.get(i));
+                output.writeMessage(10, photoPosDataList_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -210,7 +210,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
             size = 0;
             for (int i = 0; i < photoPosDataList_.size(); i++) {
                 size +=
-                        com.google.protobuf.CodedOutputStream.computeMessageSize(6, photoPosDataList_.get(i));
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(10, photoPosDataList_.get(i));
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -358,7 +358,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
          *
          *
          * <pre>
-         * Name: BMPLONCEFFO
+         * Obf: BGFNBENIOKE
          * </pre>
          *
          * Protobuf type {@code FleurFairV2PhotoInfo}
@@ -592,7 +592,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                                     .FleurFairV2PhotoPosDataOrBuilder>
                     photoPosDataListBuilder_;
 
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData>
                     getPhotoPosDataListList() {
@@ -602,7 +602,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                     return photoPosDataListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public int getPhotoPosDataListCount() {
                 if (photoPosDataListBuilder_ == null) {
                     return photoPosDataList_.size();
@@ -610,7 +610,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                     return photoPosDataListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                     getPhotoPosDataList(int index) {
                 if (photoPosDataListBuilder_ == null) {
@@ -619,7 +619,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                     return photoPosDataListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder setPhotoPosDataList(
                     int index,
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
@@ -636,7 +636,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder setPhotoPosDataList(
                     int index,
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
@@ -651,7 +651,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder addPhotoPosDataList(
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                             value) {
@@ -667,7 +667,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder addPhotoPosDataList(
                     int index,
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
@@ -684,7 +684,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder addPhotoPosDataList(
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                                     .Builder
@@ -698,7 +698,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder addPhotoPosDataList(
                     int index,
                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
@@ -713,7 +713,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder addAllPhotoPosDataList(
                     java.lang.Iterable<
                                     ? extends
@@ -729,7 +729,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder clearPhotoPosDataList() {
                 if (photoPosDataListBuilder_ == null) {
                     photoPosDataList_ = java.util.Collections.emptyList();
@@ -740,7 +740,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public Builder removePhotoPosDataList(int index) {
                 if (photoPosDataListBuilder_ == null) {
                     ensurePhotoPosDataListIsMutable();
@@ -751,13 +751,13 @@ public final class FleurFairV2PhotoInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                             .Builder
                     getPhotoPosDataListBuilder(int index) {
                 return getPhotoPosDataListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass
                             .FleurFairV2PhotoPosDataOrBuilder
                     getPhotoPosDataListOrBuilder(int index) {
@@ -767,7 +767,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                     return photoPosDataListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass
@@ -779,7 +779,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                     return java.util.Collections.unmodifiableList(photoPosDataList_);
                 }
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                             .Builder
                     addPhotoPosDataListBuilder() {
@@ -788,7 +788,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                                 emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                             .Builder
                     addPhotoPosDataListBuilder(int index) {
@@ -798,7 +798,7 @@ public final class FleurFairV2PhotoInfoOuterClass {
                                 emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 6;</code> */
+            /** <code>repeated .FleurFairV2PhotoPosData photo_pos_data_list = 10;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.FleurFairV2PhotoPosDataOuterClass.FleurFairV2PhotoPosData
                                     .Builder>
@@ -903,9 +903,9 @@ public final class FleurFairV2PhotoInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\032FleurFairV2PhotoInfo.proto\032\035FleurFairV"
                     + "2PhotoPosData.proto\"M\n\024FleurFairV2PhotoI"
-                    + "nfo\0225\n\023photo_pos_data_list\030\006 \003(\0132\030.Fleur"
-                    + "FairV2PhotoPosDataB!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "nfo\0225\n\023photo_pos_data_list\030\n \003(\0132\030.Fleur"
+                    + "FairV2PhotoPosDataB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

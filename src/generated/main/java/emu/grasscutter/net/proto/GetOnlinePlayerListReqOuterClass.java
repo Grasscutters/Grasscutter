@@ -20,8 +20,8 @@ public final class GetOnlinePlayerListReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 72
-     * Name: DHENDNHBLNA
+     * CmdId: 35
+     * Obf: PEHFIKEEKHF
      * </pre>
      *
      * Protobuf type {@code GetOnlinePlayerListReq}
@@ -268,8 +268,8 @@ public final class GetOnlinePlayerListReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 72
-         * Name: DHENDNHBLNA
+         * CmdId: 35
+         * Obf: PEHFIKEEKHF
          * </pre>
          *
          * Protobuf type {@code GetOnlinePlayerListReq}
@@ -508,8 +508,8 @@ public final class GetOnlinePlayerListReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034GetOnlinePlayerListReq.proto\"\030\n\026GetOnl"
-                    + "inePlayerListReqB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "inePlayerListReqB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

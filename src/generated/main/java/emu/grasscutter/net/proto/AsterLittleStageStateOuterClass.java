@@ -15,7 +15,7 @@ public final class AsterLittleStageStateOuterClass {
      *
      *
      * <pre>
-     * Name: JFEDOFPBNLC
+     * Obf: KBCJBKKNMMJ
      * </pre>
      *
      * Protobuf enum {@code AsterLittleStageState}
@@ -143,8 +143,8 @@ public final class AsterLittleStageStateOuterClass {
                     + "ittleStageState\022\033\n\027ASTER_LITTLE_STAGE_NO"
                     + "NE\020\000\022 \n\034ASTER_LITTLE_STAGE_UNSTARTED\020\001\022\036"
                     + "\n\032ASTER_LITTLE_STAGE_STARTED\020\002\022\037\n\033ASTER_"
-                    + "LITTLE_STAGE_FINISHED\020\003B!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "LITTLE_STAGE_FINISHED\020\003B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

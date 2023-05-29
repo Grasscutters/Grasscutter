@@ -36,7 +36,7 @@ public final class EntityClientExtraInfoOuterClass {
      *
      *
      * <pre>
-     * Name: KGEALKMFDMM
+     * Obf: COEAEBKAFKD
      * </pre>
      *
      * Protobuf type {@code EntityClientExtraInfo}
@@ -342,7 +342,7 @@ public final class EntityClientExtraInfoOuterClass {
          *
          *
          * <pre>
-         * Name: KGEALKMFDMM
+         * Obf: COEAEBKAFKD
          * </pre>
          *
          * Protobuf type {@code EntityClientExtraInfo}
@@ -718,8 +718,8 @@ public final class EntityClientExtraInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033EntityClientExtraInfo.proto\032\014Vector.pr"
                     + "oto\"?\n\025EntityClientExtraInfo\022&\n\025skill_an"
-                    + "chor_position\030\001 \001(\0132\007.VectorB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "chor_position\030\001 \001(\0132\007.VectorB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

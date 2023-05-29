@@ -18,14 +18,14 @@ public final class AvatarWearFlycloakReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint64 avatar_guid = 7;</code>
+         * <code>uint64 avatar_guid = 3;</code>
          *
          * @return The avatarGuid.
          */
         long getAvatarGuid();
 
         /**
-         * <code>uint32 flycloak_id = 10;</code>
+         * <code>uint32 flycloak_id = 7;</code>
          *
          * @return The flycloakId.
          */
@@ -35,8 +35,8 @@ public final class AvatarWearFlycloakReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1641
-     * Name: GJABBIPEEMJ
+     * CmdId: 1759
+     * Obf: KEBBHMNJCFL
      * </pre>
      *
      * Protobuf type {@code AvatarWearFlycloakReq}
@@ -82,12 +82,12 @@ public final class AvatarWearFlycloakReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
+                        case 24:
                             {
                                 avatarGuid_ = input.readUInt64();
                                 break;
                             }
-                        case 80:
+                        case 56:
                             {
                                 flycloakId_ = input.readUInt32();
                                 break;
@@ -127,10 +127,10 @@ public final class AvatarWearFlycloakReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int AVATAR_GUID_FIELD_NUMBER = 7;
+        public static final int AVATAR_GUID_FIELD_NUMBER = 3;
         private long avatarGuid_;
         /**
-         * <code>uint64 avatar_guid = 7;</code>
+         * <code>uint64 avatar_guid = 3;</code>
          *
          * @return The avatarGuid.
          */
@@ -139,10 +139,10 @@ public final class AvatarWearFlycloakReqOuterClass {
             return avatarGuid_;
         }
 
-        public static final int FLYCLOAK_ID_FIELD_NUMBER = 10;
+        public static final int FLYCLOAK_ID_FIELD_NUMBER = 7;
         private int flycloakId_;
         /**
-         * <code>uint32 flycloak_id = 10;</code>
+         * <code>uint32 flycloak_id = 7;</code>
          *
          * @return The flycloakId.
          */
@@ -166,10 +166,10 @@ public final class AvatarWearFlycloakReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (avatarGuid_ != 0L) {
-                output.writeUInt64(7, avatarGuid_);
+                output.writeUInt64(3, avatarGuid_);
             }
             if (flycloakId_ != 0) {
-                output.writeUInt32(10, flycloakId_);
+                output.writeUInt32(7, flycloakId_);
             }
             unknownFields.writeTo(output);
         }
@@ -181,10 +181,10 @@ public final class AvatarWearFlycloakReqOuterClass {
 
             size = 0;
             if (avatarGuid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(7, avatarGuid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3, avatarGuid_);
             }
             if (flycloakId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, flycloakId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, flycloakId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -333,8 +333,8 @@ public final class AvatarWearFlycloakReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1641
-         * Name: GJABBIPEEMJ
+         * CmdId: 1759
+         * Obf: KEBBHMNJCFL
          * </pre>
          *
          * Protobuf type {@code AvatarWearFlycloakReq}
@@ -516,7 +516,7 @@ public final class AvatarWearFlycloakReqOuterClass {
 
             private long avatarGuid_;
             /**
-             * <code>uint64 avatar_guid = 7;</code>
+             * <code>uint64 avatar_guid = 3;</code>
              *
              * @return The avatarGuid.
              */
@@ -525,7 +525,7 @@ public final class AvatarWearFlycloakReqOuterClass {
                 return avatarGuid_;
             }
             /**
-             * <code>uint64 avatar_guid = 7;</code>
+             * <code>uint64 avatar_guid = 3;</code>
              *
              * @param value The avatarGuid to set.
              * @return This builder for chaining.
@@ -537,7 +537,7 @@ public final class AvatarWearFlycloakReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 avatar_guid = 7;</code>
+             * <code>uint64 avatar_guid = 3;</code>
              *
              * @return This builder for chaining.
              */
@@ -550,7 +550,7 @@ public final class AvatarWearFlycloakReqOuterClass {
 
             private int flycloakId_;
             /**
-             * <code>uint32 flycloak_id = 10;</code>
+             * <code>uint32 flycloak_id = 7;</code>
              *
              * @return The flycloakId.
              */
@@ -559,7 +559,7 @@ public final class AvatarWearFlycloakReqOuterClass {
                 return flycloakId_;
             }
             /**
-             * <code>uint32 flycloak_id = 10;</code>
+             * <code>uint32 flycloak_id = 7;</code>
              *
              * @param value The flycloakId to set.
              * @return This builder for chaining.
@@ -571,7 +571,7 @@ public final class AvatarWearFlycloakReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 flycloak_id = 10;</code>
+             * <code>uint32 flycloak_id = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -653,9 +653,9 @@ public final class AvatarWearFlycloakReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033AvatarWearFlycloakReq.proto\"A\n\025AvatarW"
-                    + "earFlycloakReq\022\023\n\013avatar_guid\030\007 \001(\004\022\023\n\013f"
-                    + "lycloak_id\030\n \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "earFlycloakReq\022\023\n\013avatar_guid\030\003 \001(\004\022\023\n\013f"
+                    + "lycloak_id\030\007 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

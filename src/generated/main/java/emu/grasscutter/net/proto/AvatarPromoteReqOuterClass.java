@@ -18,7 +18,7 @@ public final class AvatarPromoteReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint64 guid = 6;</code>
+         * <code>uint64 guid = 4;</code>
          *
          * @return The guid.
          */
@@ -28,8 +28,8 @@ public final class AvatarPromoteReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1609
-     * Name: BMOIDOOEEFB
+     * CmdId: 1674
+     * Obf: BKHILKDGFFF
      * </pre>
      *
      * Protobuf type {@code AvatarPromoteReq}
@@ -75,7 +75,7 @@ public final class AvatarPromoteReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 48:
+                        case 32:
                             {
                                 guid_ = input.readUInt64();
                                 break;
@@ -114,10 +114,10 @@ public final class AvatarPromoteReqOuterClass {
                             emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq.Builder.class);
         }
 
-        public static final int GUID_FIELD_NUMBER = 6;
+        public static final int GUID_FIELD_NUMBER = 4;
         private long guid_;
         /**
-         * <code>uint64 guid = 6;</code>
+         * <code>uint64 guid = 4;</code>
          *
          * @return The guid.
          */
@@ -141,7 +141,7 @@ public final class AvatarPromoteReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (guid_ != 0L) {
-                output.writeUInt64(6, guid_);
+                output.writeUInt64(4, guid_);
             }
             unknownFields.writeTo(output);
         }
@@ -153,7 +153,7 @@ public final class AvatarPromoteReqOuterClass {
 
             size = 0;
             if (guid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(6, guid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(4, guid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -292,8 +292,8 @@ public final class AvatarPromoteReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1609
-         * Name: BMOIDOOEEFB
+         * CmdId: 1674
+         * Obf: BKHILKDGFFF
          * </pre>
          *
          * Protobuf type {@code AvatarPromoteReq}
@@ -462,7 +462,7 @@ public final class AvatarPromoteReqOuterClass {
 
             private long guid_;
             /**
-             * <code>uint64 guid = 6;</code>
+             * <code>uint64 guid = 4;</code>
              *
              * @return The guid.
              */
@@ -471,7 +471,7 @@ public final class AvatarPromoteReqOuterClass {
                 return guid_;
             }
             /**
-             * <code>uint64 guid = 6;</code>
+             * <code>uint64 guid = 4;</code>
              *
              * @param value The guid to set.
              * @return This builder for chaining.
@@ -483,7 +483,7 @@ public final class AvatarPromoteReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 guid = 6;</code>
+             * <code>uint64 guid = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -564,8 +564,8 @@ public final class AvatarPromoteReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026AvatarPromoteReq.proto\" \n\020AvatarPromot"
-                    + "eReq\022\014\n\004guid\030\006 \001(\004B!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "eReq\022\014\n\004guid\030\004 \001(\004B\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

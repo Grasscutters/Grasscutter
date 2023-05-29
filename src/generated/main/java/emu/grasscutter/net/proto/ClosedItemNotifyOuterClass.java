@@ -18,19 +18,19 @@ public final class ClosedItemNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @return A list containing the itemIdList.
          */
         java.util.List<java.lang.Integer> getItemIdListList();
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @return The count of itemIdList.
          */
         int getItemIdListCount();
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @param index The index of the element to return.
          * @return The itemIdList at the given index.
@@ -41,8 +41,8 @@ public final class ClosedItemNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 691
-     * Name: GLJHANJIAPK
+     * CmdId: 647
+     * Obf: IHODBFNNEON
      * </pre>
      *
      * Protobuf type {@code ClosedItemNotify}
@@ -91,7 +91,7 @@ public final class ClosedItemNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 112:
+                        case 8:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     itemIdList_ = newIntList();
@@ -100,7 +100,7 @@ public final class ClosedItemNotifyOuterClass {
                                 itemIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 114:
+                        case 10:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -151,10 +151,10 @@ public final class ClosedItemNotifyOuterClass {
                             emu.grasscutter.net.proto.ClosedItemNotifyOuterClass.ClosedItemNotify.Builder.class);
         }
 
-        public static final int ITEM_ID_LIST_FIELD_NUMBER = 14;
+        public static final int ITEM_ID_LIST_FIELD_NUMBER = 1;
         private com.google.protobuf.Internal.IntList itemIdList_;
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @return A list containing the itemIdList.
          */
@@ -163,7 +163,7 @@ public final class ClosedItemNotifyOuterClass {
             return itemIdList_;
         }
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @return The count of itemIdList.
          */
@@ -171,7 +171,7 @@ public final class ClosedItemNotifyOuterClass {
             return itemIdList_.size();
         }
         /**
-         * <code>repeated uint32 item_id_list = 14;</code>
+         * <code>repeated uint32 item_id_list = 1;</code>
          *
          * @param index The index of the element to return.
          * @return The itemIdList at the given index.
@@ -198,7 +198,7 @@ public final class ClosedItemNotifyOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getItemIdListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(itemIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < itemIdList_.size(); i++) {
@@ -365,8 +365,8 @@ public final class ClosedItemNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 691
-         * Name: GLJHANJIAPK
+         * CmdId: 647
+         * Obf: IHODBFNNEON
          * </pre>
          *
          * Protobuf type {@code ClosedItemNotify}
@@ -556,7 +556,7 @@ public final class ClosedItemNotifyOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @return A list containing the itemIdList.
              */
@@ -566,7 +566,7 @@ public final class ClosedItemNotifyOuterClass {
                         : itemIdList_;
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @return The count of itemIdList.
              */
@@ -574,7 +574,7 @@ public final class ClosedItemNotifyOuterClass {
                 return itemIdList_.size();
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @param index The index of the element to return.
              * @return The itemIdList at the given index.
@@ -583,7 +583,7 @@ public final class ClosedItemNotifyOuterClass {
                 return itemIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @param index The index to set the value at.
              * @param value The itemIdList to set.
@@ -596,7 +596,7 @@ public final class ClosedItemNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @param value The itemIdList to add.
              * @return This builder for chaining.
@@ -608,7 +608,7 @@ public final class ClosedItemNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @param values The itemIdList to add.
              * @return This builder for chaining.
@@ -620,7 +620,7 @@ public final class ClosedItemNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 item_id_list = 14;</code>
+             * <code>repeated uint32 item_id_list = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -701,8 +701,8 @@ public final class ClosedItemNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026ClosedItemNotify.proto\"(\n\020ClosedItemNo"
-                    + "tify\022\024\n\014item_id_list\030\016 \003(\rB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "tify\022\024\n\014item_id_list\030\001 \003(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

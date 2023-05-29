@@ -18,37 +18,19 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @return A list containing the addQuestIdList.
          */
         java.util.List<java.lang.Integer> getAddQuestIdListList();
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @return The count of addQuestIdList.
          */
         int getAddQuestIdListCount();
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @param index The index of the element to return.
          * @return The addQuestIdList at the given index.
@@ -56,37 +38,19 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         int getAddQuestIdList(int index);
 
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @return A list containing the delQuestIdList.
          */
         java.util.List<java.lang.Integer> getDelQuestIdListList();
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @return The count of delQuestIdList.
          */
         int getDelQuestIdListCount();
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @param index The index of the element to return.
          * @return The delQuestIdList at the given index.
@@ -97,8 +61,8 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 470
-     * Name: MMPFLFGLFFC
+     * CmdId: 443
+     * Obf: KCDEBHKFPJI
      * </pre>
      *
      * Protobuf type {@code ServerCondMeetQuestListUpdateNotify}
@@ -150,7 +114,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 16:
                             {
                                 if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                                     delQuestIdList_ = newIntList();
@@ -159,7 +123,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                                 delQuestIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 42:
+                        case 18:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -173,7 +137,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                                 input.popLimit(limit);
                                 break;
                             }
-                        case 72:
+                        case 96:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     addQuestIdList_ = newIntList();
@@ -182,7 +146,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                                 addQuestIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 74:
+                        case 98:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -238,16 +202,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                                     .ServerCondMeetQuestListUpdateNotify.Builder.class);
         }
 
-        public static final int ADD_QUEST_ID_LIST_FIELD_NUMBER = 9;
+        public static final int ADD_QUEST_ID_LIST_FIELD_NUMBER = 12;
         private com.google.protobuf.Internal.IntList addQuestIdList_;
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @return A list containing the addQuestIdList.
          */
@@ -256,13 +214,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             return addQuestIdList_;
         }
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @return The count of addQuestIdList.
          */
@@ -270,13 +222,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             return addQuestIdList_.size();
         }
         /**
-         *
-         *
-         * <pre>
-         * GNFJHCIHOBE
-         * </pre>
-         *
-         * <code>repeated uint32 add_quest_id_list = 9;</code>
+         * <code>repeated uint32 add_quest_id_list = 12;</code>
          *
          * @param index The index of the element to return.
          * @return The addQuestIdList at the given index.
@@ -287,16 +233,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
 
         private int addQuestIdListMemoizedSerializedSize = -1;
 
-        public static final int DEL_QUEST_ID_LIST_FIELD_NUMBER = 5;
+        public static final int DEL_QUEST_ID_LIST_FIELD_NUMBER = 2;
         private com.google.protobuf.Internal.IntList delQuestIdList_;
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @return A list containing the delQuestIdList.
          */
@@ -305,13 +245,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             return delQuestIdList_;
         }
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @return The count of delQuestIdList.
          */
@@ -319,13 +253,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             return delQuestIdList_.size();
         }
         /**
-         *
-         *
-         * <pre>
-         * EOMIKDEBBGN
-         * </pre>
-         *
-         * <code>repeated uint32 del_quest_id_list = 5;</code>
+         * <code>repeated uint32 del_quest_id_list = 2;</code>
          *
          * @param index The index of the element to return.
          * @return The delQuestIdList at the given index.
@@ -352,14 +280,14 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getDelQuestIdListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(18);
                 output.writeUInt32NoTag(delQuestIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < delQuestIdList_.size(); i++) {
                 output.writeUInt32NoTag(delQuestIdList_.getInt(i));
             }
             if (getAddQuestIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(addQuestIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < addQuestIdList_.size(); i++) {
@@ -572,8 +500,8 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 470
-         * Name: MMPFLFGLFFC
+         * CmdId: 443
+         * Obf: KCDEBHKFPJI
          * </pre>
          *
          * Protobuf type {@code ServerCondMeetQuestListUpdateNotify}
@@ -800,13 +728,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 }
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @return A list containing the addQuestIdList.
              */
@@ -816,13 +738,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                         : addQuestIdList_;
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @return The count of addQuestIdList.
              */
@@ -830,13 +746,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return addQuestIdList_.size();
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @param index The index of the element to return.
              * @return The addQuestIdList at the given index.
@@ -845,13 +755,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return addQuestIdList_.getInt(index);
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @param index The index to set the value at.
              * @param value The addQuestIdList to set.
@@ -864,13 +768,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @param value The addQuestIdList to add.
              * @return This builder for chaining.
@@ -882,13 +780,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @param values The addQuestIdList to add.
              * @return This builder for chaining.
@@ -900,13 +792,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * GNFJHCIHOBE
-             * </pre>
-             *
-             * <code>repeated uint32 add_quest_id_list = 9;</code>
+             * <code>repeated uint32 add_quest_id_list = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -926,13 +812,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 }
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @return A list containing the delQuestIdList.
              */
@@ -942,13 +822,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                         : delQuestIdList_;
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @return The count of delQuestIdList.
              */
@@ -956,13 +830,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return delQuestIdList_.size();
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @param index The index of the element to return.
              * @return The delQuestIdList at the given index.
@@ -971,13 +839,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return delQuestIdList_.getInt(index);
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @param index The index to set the value at.
              * @param value The delQuestIdList to set.
@@ -990,13 +852,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @param value The delQuestIdList to add.
              * @return This builder for chaining.
@@ -1008,13 +864,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @param values The delQuestIdList to add.
              * @return This builder for chaining.
@@ -1026,13 +876,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return this;
             }
             /**
-             *
-             *
-             * <pre>
-             * EOMIKDEBBGN
-             * </pre>
-             *
-             * <code>repeated uint32 del_quest_id_list = 5;</code>
+             * <code>repeated uint32 del_quest_id_list = 2;</code>
              *
              * @return This builder for chaining.
              */
@@ -1118,9 +962,9 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n)ServerCondMeetQuestListUpdateNotify.pr"
                     + "oto\"[\n#ServerCondMeetQuestListUpdateNoti"
-                    + "fy\022\031\n\021add_quest_id_list\030\t \003(\r\022\031\n\021del_que"
-                    + "st_id_list\030\005 \003(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "fy\022\031\n\021add_quest_id_list\030\014 \003(\r\022\031\n\021del_que"
+                    + "st_id_list\030\002 \003(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

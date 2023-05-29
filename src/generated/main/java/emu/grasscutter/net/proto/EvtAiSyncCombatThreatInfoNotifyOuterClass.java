@@ -17,21 +17,21 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             // @@protoc_insertion_point(interface_extends:EvtAiSyncCombatThreatInfoNotify)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         int getCombatThreatInfoMapCount();
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         boolean containsCombatThreatInfoMap(int key);
         /** Use {@link #getCombatThreatInfoMapMap()} instead. */
         @java.lang.Deprecated
         java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
                 getCombatThreatInfoMap();
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
                 getCombatThreatInfoMapMap();
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrDefault(
                 int key, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo defaultValue);
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo getCombatThreatInfoMapOrThrow(
                 int key);
     }
@@ -39,8 +39,8 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 364
-     * Name: NICHDLMHIME
+     * CmdId: 377
+     * Obf: HCMBENCEGEP
      * </pre>
      *
      * Protobuf type {@code EvtAiSyncCombatThreatInfoNotify}
@@ -89,7 +89,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 42:
+                        case 114:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     combatThreatInfoMap_ =
@@ -137,7 +137,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
         @java.lang.Override
         protected com.google.protobuf.MapField internalGetMapField(int number) {
             switch (number) {
-                case 5:
+                case 14:
                     return internalGetCombatThreatInfoMap();
                 default:
                     throw new RuntimeException("Invalid map field number: " + number);
@@ -156,7 +156,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                                     .EvtAiSyncCombatThreatInfoNotify.Builder.class);
         }
 
-        public static final int COMBAT_THREAT_INFO_MAP_FIELD_NUMBER = 5;
+        public static final int COMBAT_THREAT_INFO_MAP_FIELD_NUMBER = 14;
 
         private static final class CombatThreatInfoMapDefaultEntryHolder {
             static final com.google.protobuf.MapEntry<
@@ -192,7 +192,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
         public int getCombatThreatInfoMapCount() {
             return internalGetCombatThreatInfoMap().getMap().size();
         }
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         @java.lang.Override
         public boolean containsCombatThreatInfoMap(int key) {
 
@@ -206,14 +206,14 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                 getCombatThreatInfoMap() {
             return getCombatThreatInfoMapMap();
         }
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         @java.lang.Override
         public java.util.Map<
                         java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
                 getCombatThreatInfoMapMap() {
             return internalGetCombatThreatInfoMap().getMap();
         }
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo
                 getCombatThreatInfoMapOrDefault(
@@ -224,7 +224,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     map = internalGetCombatThreatInfoMap().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+        /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo
                 getCombatThreatInfoMapOrThrow(int key) {
@@ -256,7 +256,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     output,
                     internalGetCombatThreatInfoMap(),
                     CombatThreatInfoMapDefaultEntryHolder.defaultEntry,
-                    5);
+                    14);
             unknownFields.writeTo(output);
         }
 
@@ -277,7 +277,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                                         .setKey(entry.getKey())
                                         .setValue(entry.getValue())
                                         .build();
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, combatThreatInfoMap__);
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, combatThreatInfoMap__);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -445,8 +445,8 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 364
-         * Name: NICHDLMHIME
+         * CmdId: 377
+         * Obf: HCMBENCEGEP
          * </pre>
          *
          * Protobuf type {@code EvtAiSyncCombatThreatInfoNotify}
@@ -465,7 +465,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMapField(int number) {
                 switch (number) {
-                    case 5:
+                    case 14:
                         return internalGetCombatThreatInfoMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -475,7 +475,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
                 switch (number) {
-                    case 5:
+                    case 14:
                         return internalGetMutableCombatThreatInfoMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -687,7 +687,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             public int getCombatThreatInfoMapCount() {
                 return internalGetCombatThreatInfoMap().getMap().size();
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             @java.lang.Override
             public boolean containsCombatThreatInfoMap(int key) {
 
@@ -701,14 +701,14 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     getCombatThreatInfoMap() {
                 return getCombatThreatInfoMapMap();
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             @java.lang.Override
             public java.util.Map<
                             java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
                     getCombatThreatInfoMapMap() {
                 return internalGetCombatThreatInfoMap().getMap();
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo
                     getCombatThreatInfoMapOrDefault(
@@ -719,7 +719,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                         map = internalGetCombatThreatInfoMap().getMap();
                 return map.containsKey(key) ? map.get(key) : defaultValue;
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo
                     getCombatThreatInfoMapOrThrow(int key) {
@@ -737,7 +737,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                 internalGetMutableCombatThreatInfoMap().getMutableMap().clear();
                 return this;
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             public Builder removeCombatThreatInfoMap(int key) {
 
                 internalGetMutableCombatThreatInfoMap().getMutableMap().remove(key);
@@ -750,7 +750,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     getMutableCombatThreatInfoMap() {
                 return internalGetMutableCombatThreatInfoMap().getMutableMap();
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             public Builder putCombatThreatInfoMap(
                     int key, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo value) {
 
@@ -760,7 +760,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                 internalGetMutableCombatThreatInfoMap().getMutableMap().put(key, value);
                 return this;
             }
-            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 5;</code> */
+            /** <code>map&lt;uint32, .AiThreatInfo&gt; combat_threat_info_map = 14;</code> */
             public Builder putAllCombatThreatInfoMap(
                     java.util.Map<
                                     java.lang.Integer, emu.grasscutter.net.proto.AiThreatInfoOuterClass.AiThreatInfo>
@@ -849,11 +849,11 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             "\n%EvtAiSyncCombatThreatInfoNotify.proto\032"
                     + "\022AiThreatInfo.proto\"\307\001\n\037EvtAiSyncCombatT"
                     + "hreatInfoNotify\022Y\n\026combat_threat_info_ma"
-                    + "p\030\005 \003(\01329.EvtAiSyncCombatThreatInfoNotif"
+                    + "p\030\016 \003(\01329.EvtAiSyncCombatThreatInfoNotif"
                     + "y.CombatThreatInfoMapEntry\032I\n\030CombatThre"
                     + "atInfoMapEntry\022\013\n\003key\030\001 \001(\r\022\034\n\005value\030\002 \001"
-                    + "(\0132\r.AiThreatInfo:\0028\001B!\n\031emu.grasscutter"
-                    + ".net.protoZ\004/genb\006proto3"
+                    + "(\0132\r.AiThreatInfo:\0028\001B\033\n\031emu.grasscutter"
+                    + ".net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

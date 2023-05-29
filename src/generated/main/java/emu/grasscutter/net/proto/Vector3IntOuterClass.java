@@ -42,7 +42,7 @@ public final class Vector3IntOuterClass {
      *
      *
      * <pre>
-     * Name: FIEOBJIFPCA
+     * Obf: HIFDGGNOKNC
      * </pre>
      *
      * Protobuf type {@code Vector3Int}
@@ -355,7 +355,7 @@ public final class Vector3IntOuterClass {
          *
          *
          * <pre>
-         * Name: FIEOBJIFPCA
+         * Obf: HIFDGGNOKNC
          * </pre>
          *
          * Protobuf type {@code Vector3Int}
@@ -690,8 +690,8 @@ public final class Vector3IntOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\020Vector3Int.proto\"-\n\nVector3Int\022\t\n\001x\030\001 "
-                    + "\001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001z\030\003 \001(\005B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "\001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001z\030\003 \001(\005B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,7 +18,7 @@ public final class GetQuestLackingResourceReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 quest_id = 5;</code>
+         * <code>uint32 quest_id = 1;</code>
          *
          * @return The questId.
          */
@@ -28,8 +28,8 @@ public final class GetQuestLackingResourceReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 418
-     * Name: LEFCJKGALNG
+     * CmdId: 453
+     * Obf: LJCOMNDKOAO
      * </pre>
      *
      * Protobuf type {@code GetQuestLackingResourceReq}
@@ -76,7 +76,7 @@ public final class GetQuestLackingResourceReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 8:
                             {
                                 questId_ = input.readUInt32();
                                 break;
@@ -117,10 +117,10 @@ public final class GetQuestLackingResourceReqOuterClass {
                                     .GetQuestLackingResourceReq.Builder.class);
         }
 
-        public static final int QUEST_ID_FIELD_NUMBER = 5;
+        public static final int QUEST_ID_FIELD_NUMBER = 1;
         private int questId_;
         /**
-         * <code>uint32 quest_id = 5;</code>
+         * <code>uint32 quest_id = 1;</code>
          *
          * @return The questId.
          */
@@ -144,7 +144,7 @@ public final class GetQuestLackingResourceReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (questId_ != 0) {
-                output.writeUInt32(5, questId_);
+                output.writeUInt32(1, questId_);
             }
             unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class GetQuestLackingResourceReqOuterClass {
 
             size = 0;
             if (questId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, questId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, questId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -319,8 +319,8 @@ public final class GetQuestLackingResourceReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 418
-         * Name: LEFCJKGALNG
+         * CmdId: 453
+         * Obf: LJCOMNDKOAO
          * </pre>
          *
          * Protobuf type {@code GetQuestLackingResourceReq}
@@ -505,7 +505,7 @@ public final class GetQuestLackingResourceReqOuterClass {
 
             private int questId_;
             /**
-             * <code>uint32 quest_id = 5;</code>
+             * <code>uint32 quest_id = 1;</code>
              *
              * @return The questId.
              */
@@ -514,7 +514,7 @@ public final class GetQuestLackingResourceReqOuterClass {
                 return questId_;
             }
             /**
-             * <code>uint32 quest_id = 5;</code>
+             * <code>uint32 quest_id = 1;</code>
              *
              * @param value The questId to set.
              * @return This builder for chaining.
@@ -526,7 +526,7 @@ public final class GetQuestLackingResourceReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 quest_id = 5;</code>
+             * <code>uint32 quest_id = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -610,9 +610,8 @@ public final class GetQuestLackingResourceReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n GetQuestLackingResourceReq.proto\".\n\032Ge"
-                    + "tQuestLackingResourceReq\022\020\n\010quest_id\030\005 \001"
-                    + "(\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "tQuestLackingResourceReq\022\020\n\010quest_id\030\001 \001"
+                    + "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

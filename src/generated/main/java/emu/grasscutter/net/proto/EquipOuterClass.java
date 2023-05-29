@@ -60,7 +60,7 @@ public final class EquipOuterClass {
      *
      *
      * <pre>
-     * Name: PDGCLANHIJP
+     * Obf: JFNFEJHPPKA
      * </pre>
      *
      * Protobuf type {@code Equip}
@@ -506,7 +506,7 @@ public final class EquipOuterClass {
          *
          *
          * <pre>
-         * Name: PDGCLANHIJP
+         * Obf: JFNFEJHPPKA
          * </pre>
          *
          * Protobuf type {@code Equip}
@@ -1093,8 +1093,8 @@ public final class EquipOuterClass {
             "\n\013Equip.proto\032\017Reliquary.proto\032\014Weapon.p"
                     + "roto\"`\n\005Equip\022\021\n\tis_locked\030\003 \001(\010\022\037\n\treli"
                     + "quary\030\001 \001(\0132\n.ReliquaryH\000\022\031\n\006weapon\030\002 \001("
-                    + "\0132\007.WeaponH\000B\010\n\006detailB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "\0132\007.WeaponH\000B\010\n\006detailB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

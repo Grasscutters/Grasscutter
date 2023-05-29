@@ -18,7 +18,7 @@ public final class SetPlayerHeadImageReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 avatar_id = 6;</code>
+         * <code>uint32 avatar_id = 11;</code>
          *
          * @return The avatarId.
          */
@@ -28,8 +28,8 @@ public final class SetPlayerHeadImageReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4046
-     * Name: BFDHKNPNICA
+     * CmdId: 4028
+     * Obf: BFCLIPDJCHJ
      * </pre>
      *
      * Protobuf type {@code SetPlayerHeadImageReq}
@@ -75,7 +75,7 @@ public final class SetPlayerHeadImageReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 48:
+                        case 88:
                             {
                                 avatarId_ = input.readUInt32();
                                 break;
@@ -115,10 +115,10 @@ public final class SetPlayerHeadImageReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int AVATAR_ID_FIELD_NUMBER = 6;
+        public static final int AVATAR_ID_FIELD_NUMBER = 11;
         private int avatarId_;
         /**
-         * <code>uint32 avatar_id = 6;</code>
+         * <code>uint32 avatar_id = 11;</code>
          *
          * @return The avatarId.
          */
@@ -142,7 +142,7 @@ public final class SetPlayerHeadImageReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (avatarId_ != 0) {
-                output.writeUInt32(6, avatarId_);
+                output.writeUInt32(11, avatarId_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class SetPlayerHeadImageReqOuterClass {
 
             size = 0;
             if (avatarId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, avatarId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, avatarId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -300,8 +300,8 @@ public final class SetPlayerHeadImageReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4046
-         * Name: BFDHKNPNICA
+         * CmdId: 4028
+         * Obf: BFCLIPDJCHJ
          * </pre>
          *
          * Protobuf type {@code SetPlayerHeadImageReq}
@@ -477,7 +477,7 @@ public final class SetPlayerHeadImageReqOuterClass {
 
             private int avatarId_;
             /**
-             * <code>uint32 avatar_id = 6;</code>
+             * <code>uint32 avatar_id = 11;</code>
              *
              * @return The avatarId.
              */
@@ -486,7 +486,7 @@ public final class SetPlayerHeadImageReqOuterClass {
                 return avatarId_;
             }
             /**
-             * <code>uint32 avatar_id = 6;</code>
+             * <code>uint32 avatar_id = 11;</code>
              *
              * @param value The avatarId to set.
              * @return This builder for chaining.
@@ -498,7 +498,7 @@ public final class SetPlayerHeadImageReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 avatar_id = 6;</code>
+             * <code>uint32 avatar_id = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -580,8 +580,8 @@ public final class SetPlayerHeadImageReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033SetPlayerHeadImageReq.proto\"*\n\025SetPlay"
-                    + "erHeadImageReq\022\021\n\tavatar_id\030\006 \001(\rB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "erHeadImageReq\022\021\n\tavatar_id\030\013 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

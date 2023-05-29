@@ -18,14 +18,14 @@ public final class InstableSprayAvatarInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_trial = 7;</code>
+         * <code>bool is_trial = 11;</code>
          *
          * @return The isTrial.
          */
         boolean getIsTrial();
 
         /**
-         * <code>uint64 avatar_id = 5;</code>
+         * <code>uint64 avatar_id = 1;</code>
          *
          * @return The avatarId.
          */
@@ -35,7 +35,7 @@ public final class InstableSprayAvatarInfoOuterClass {
      *
      *
      * <pre>
-     * Name: JMAGIHDGPPP
+     * Obf: JIOLGMNCBND
      * </pre>
      *
      * Protobuf type {@code InstableSprayAvatarInfo}
@@ -81,12 +81,12 @@ public final class InstableSprayAvatarInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 8:
                             {
                                 avatarId_ = input.readUInt64();
                                 break;
                             }
-                        case 56:
+                        case 88:
                             {
                                 isTrial_ = input.readBool();
                                 break;
@@ -127,10 +127,10 @@ public final class InstableSprayAvatarInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int IS_TRIAL_FIELD_NUMBER = 7;
+        public static final int IS_TRIAL_FIELD_NUMBER = 11;
         private boolean isTrial_;
         /**
-         * <code>bool is_trial = 7;</code>
+         * <code>bool is_trial = 11;</code>
          *
          * @return The isTrial.
          */
@@ -139,10 +139,10 @@ public final class InstableSprayAvatarInfoOuterClass {
             return isTrial_;
         }
 
-        public static final int AVATAR_ID_FIELD_NUMBER = 5;
+        public static final int AVATAR_ID_FIELD_NUMBER = 1;
         private long avatarId_;
         /**
-         * <code>uint64 avatar_id = 5;</code>
+         * <code>uint64 avatar_id = 1;</code>
          *
          * @return The avatarId.
          */
@@ -166,10 +166,10 @@ public final class InstableSprayAvatarInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (avatarId_ != 0L) {
-                output.writeUInt64(5, avatarId_);
+                output.writeUInt64(1, avatarId_);
             }
             if (isTrial_ != false) {
-                output.writeBool(7, isTrial_);
+                output.writeBool(11, isTrial_);
             }
             unknownFields.writeTo(output);
         }
@@ -181,10 +181,10 @@ public final class InstableSprayAvatarInfoOuterClass {
 
             size = 0;
             if (avatarId_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(5, avatarId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(1, avatarId_);
             }
             if (isTrial_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, isTrial_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isTrial_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -346,7 +346,7 @@ public final class InstableSprayAvatarInfoOuterClass {
          *
          *
          * <pre>
-         * Name: JMAGIHDGPPP
+         * Obf: JIOLGMNCBND
          * </pre>
          *
          * Protobuf type {@code InstableSprayAvatarInfo}
@@ -530,7 +530,7 @@ public final class InstableSprayAvatarInfoOuterClass {
 
             private boolean isTrial_;
             /**
-             * <code>bool is_trial = 7;</code>
+             * <code>bool is_trial = 11;</code>
              *
              * @return The isTrial.
              */
@@ -539,7 +539,7 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return isTrial_;
             }
             /**
-             * <code>bool is_trial = 7;</code>
+             * <code>bool is_trial = 11;</code>
              *
              * @param value The isTrial to set.
              * @return This builder for chaining.
@@ -551,7 +551,7 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_trial = 7;</code>
+             * <code>bool is_trial = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -564,7 +564,7 @@ public final class InstableSprayAvatarInfoOuterClass {
 
             private long avatarId_;
             /**
-             * <code>uint64 avatar_id = 5;</code>
+             * <code>uint64 avatar_id = 1;</code>
              *
              * @return The avatarId.
              */
@@ -573,7 +573,7 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return avatarId_;
             }
             /**
-             * <code>uint64 avatar_id = 5;</code>
+             * <code>uint64 avatar_id = 1;</code>
              *
              * @param value The avatarId to set.
              * @return This builder for chaining.
@@ -585,7 +585,7 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 avatar_id = 5;</code>
+             * <code>uint64 avatar_id = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -668,9 +668,9 @@ public final class InstableSprayAvatarInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035InstableSprayAvatarInfo.proto\">\n\027Insta"
-                    + "bleSprayAvatarInfo\022\020\n\010is_trial\030\007 \001(\010\022\021\n\t"
-                    + "avatar_id\030\005 \001(\004B!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "bleSprayAvatarInfo\022\020\n\010is_trial\030\013 \001(\010\022\021\n\t"
+                    + "avatar_id\030\001 \001(\004B\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,25 +18,18 @@ public final class EvtAnimatorParameterInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 entity_id = 10;</code>
+         * <code>uint32 entity_id = 8;</code>
          *
          * @return The entityId.
          */
         int getEntityId();
 
         /**
-         * <code>bool is_server_cache = 11;</code>
+         * <code>bool is_server_cache = 9;</code>
          *
          * @return The isServerCache.
          */
         boolean getIsServerCache();
-
-        /**
-         * <code>int32 name_id = 13;</code>
-         *
-         * @return The nameId.
-         */
-        int getNameId();
 
         /**
          * <code>.AnimatorParameterValueInfo value = 15;</code>
@@ -55,12 +48,19 @@ public final class EvtAnimatorParameterInfoOuterClass {
         emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass
                         .AnimatorParameterValueInfoOrBuilder
                 getValueOrBuilder();
+
+        /**
+         * <code>int32 name_id = 5;</code>
+         *
+         * @return The nameId.
+         */
+        int getNameId();
     }
     /**
      *
      *
      * <pre>
-     * Name: KPADLGJMKOH
+     * Obf: NJDDPFCLLPO
      * </pre>
      *
      * Protobuf type {@code EvtAnimatorParameterInfo}
@@ -106,19 +106,19 @@ public final class EvtAnimatorParameterInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 80:
+                        case 40:
+                            {
+                                nameId_ = input.readInt32();
+                                break;
+                            }
+                        case 64:
                             {
                                 entityId_ = input.readUInt32();
                                 break;
                             }
-                        case 88:
+                        case 72:
                             {
                                 isServerCache_ = input.readBool();
-                                break;
-                            }
-                        case 104:
-                            {
-                                nameId_ = input.readInt32();
                                 break;
                             }
                         case 122:
@@ -177,10 +177,10 @@ public final class EvtAnimatorParameterInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int ENTITY_ID_FIELD_NUMBER = 10;
+        public static final int ENTITY_ID_FIELD_NUMBER = 8;
         private int entityId_;
         /**
-         * <code>uint32 entity_id = 10;</code>
+         * <code>uint32 entity_id = 8;</code>
          *
          * @return The entityId.
          */
@@ -189,28 +189,16 @@ public final class EvtAnimatorParameterInfoOuterClass {
             return entityId_;
         }
 
-        public static final int IS_SERVER_CACHE_FIELD_NUMBER = 11;
+        public static final int IS_SERVER_CACHE_FIELD_NUMBER = 9;
         private boolean isServerCache_;
         /**
-         * <code>bool is_server_cache = 11;</code>
+         * <code>bool is_server_cache = 9;</code>
          *
          * @return The isServerCache.
          */
         @java.lang.Override
         public boolean getIsServerCache() {
             return isServerCache_;
-        }
-
-        public static final int NAME_ID_FIELD_NUMBER = 13;
-        private int nameId_;
-        /**
-         * <code>int32 name_id = 13;</code>
-         *
-         * @return The nameId.
-         */
-        @java.lang.Override
-        public int getNameId() {
-            return nameId_;
         }
 
         public static final int VALUE_FIELD_NUMBER = 15;
@@ -247,6 +235,18 @@ public final class EvtAnimatorParameterInfoOuterClass {
             return getValue();
         }
 
+        public static final int NAME_ID_FIELD_NUMBER = 5;
+        private int nameId_;
+        /**
+         * <code>int32 name_id = 5;</code>
+         *
+         * @return The nameId.
+         */
+        @java.lang.Override
+        public int getNameId() {
+            return nameId_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -261,14 +261,14 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (nameId_ != 0) {
+                output.writeInt32(5, nameId_);
+            }
             if (entityId_ != 0) {
-                output.writeUInt32(10, entityId_);
+                output.writeUInt32(8, entityId_);
             }
             if (isServerCache_ != false) {
-                output.writeBool(11, isServerCache_);
-            }
-            if (nameId_ != 0) {
-                output.writeInt32(13, nameId_);
+                output.writeBool(9, isServerCache_);
             }
             if (value_ != null) {
                 output.writeMessage(15, getValue());
@@ -282,14 +282,14 @@ public final class EvtAnimatorParameterInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (nameId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, nameId_);
+            }
             if (entityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, entityId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, entityId_);
             }
             if (isServerCache_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isServerCache_);
-            }
-            if (nameId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, nameId_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, isServerCache_);
             }
             if (value_ != null) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getValue());
@@ -315,11 +315,11 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
             if (getEntityId() != other.getEntityId()) return false;
             if (getIsServerCache() != other.getIsServerCache()) return false;
-            if (getNameId() != other.getNameId()) return false;
             if (hasValue() != other.hasValue()) return false;
             if (hasValue()) {
                 if (!getValue().equals(other.getValue())) return false;
             }
+            if (getNameId() != other.getNameId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -335,12 +335,12 @@ public final class EvtAnimatorParameterInfoOuterClass {
             hash = (53 * hash) + getEntityId();
             hash = (37 * hash) + IS_SERVER_CACHE_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsServerCache());
-            hash = (37 * hash) + NAME_ID_FIELD_NUMBER;
-            hash = (53 * hash) + getNameId();
             if (hasValue()) {
                 hash = (37 * hash) + VALUE_FIELD_NUMBER;
                 hash = (53 * hash) + getValue().hashCode();
             }
+            hash = (37 * hash) + NAME_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getNameId();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -466,7 +466,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
          *
          *
          * <pre>
-         * Name: KPADLGJMKOH
+         * Obf: NJDDPFCLLPO
          * </pre>
          *
          * Protobuf type {@code EvtAnimatorParameterInfo}
@@ -516,14 +516,14 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
                 isServerCache_ = false;
 
-                nameId_ = 0;
-
                 if (valueBuilder_ == null) {
                     value_ = null;
                 } else {
                     value_ = null;
                     valueBuilder_ = null;
                 }
+                nameId_ = 0;
+
                 return this;
             }
 
@@ -560,12 +560,12 @@ public final class EvtAnimatorParameterInfoOuterClass {
                                         .EvtAnimatorParameterInfo(this);
                 result.entityId_ = entityId_;
                 result.isServerCache_ = isServerCache_;
-                result.nameId_ = nameId_;
                 if (valueBuilder_ == null) {
                     result.value_ = value_;
                 } else {
                     result.value_ = valueBuilder_.build();
                 }
+                result.nameId_ = nameId_;
                 onBuilt();
                 return result;
             }
@@ -632,11 +632,11 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 if (other.getIsServerCache() != false) {
                     setIsServerCache(other.getIsServerCache());
                 }
-                if (other.getNameId() != 0) {
-                    setNameId(other.getNameId());
-                }
                 if (other.hasValue()) {
                     mergeValue(other.getValue());
+                }
+                if (other.getNameId() != 0) {
+                    setNameId(other.getNameId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -673,7 +673,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
             private int entityId_;
             /**
-             * <code>uint32 entity_id = 10;</code>
+             * <code>uint32 entity_id = 8;</code>
              *
              * @return The entityId.
              */
@@ -682,7 +682,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 return entityId_;
             }
             /**
-             * <code>uint32 entity_id = 10;</code>
+             * <code>uint32 entity_id = 8;</code>
              *
              * @param value The entityId to set.
              * @return This builder for chaining.
@@ -694,7 +694,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 entity_id = 10;</code>
+             * <code>uint32 entity_id = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -707,7 +707,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
 
             private boolean isServerCache_;
             /**
-             * <code>bool is_server_cache = 11;</code>
+             * <code>bool is_server_cache = 9;</code>
              *
              * @return The isServerCache.
              */
@@ -716,7 +716,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 return isServerCache_;
             }
             /**
-             * <code>bool is_server_cache = 11;</code>
+             * <code>bool is_server_cache = 9;</code>
              *
              * @param value The isServerCache to set.
              * @return This builder for chaining.
@@ -728,47 +728,13 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_server_cache = 11;</code>
+             * <code>bool is_server_cache = 9;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearIsServerCache() {
 
                 isServerCache_ = false;
-                onChanged();
-                return this;
-            }
-
-            private int nameId_;
-            /**
-             * <code>int32 name_id = 13;</code>
-             *
-             * @return The nameId.
-             */
-            @java.lang.Override
-            public int getNameId() {
-                return nameId_;
-            }
-            /**
-             * <code>int32 name_id = 13;</code>
-             *
-             * @param value The nameId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setNameId(int value) {
-
-                nameId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 name_id = 13;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearNameId() {
-
-                nameId_ = 0;
                 onChanged();
                 return this;
             }
@@ -917,6 +883,40 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 return valueBuilder_;
             }
 
+            private int nameId_;
+            /**
+             * <code>int32 name_id = 5;</code>
+             *
+             * @return The nameId.
+             */
+            @java.lang.Override
+            public int getNameId() {
+                return nameId_;
+            }
+            /**
+             * <code>int32 name_id = 5;</code>
+             *
+             * @param value The nameId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setNameId(int value) {
+
+                nameId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 name_id = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearNameId() {
+
+                nameId_ = 0;
+                onChanged();
+                return this;
+            }
+
             @java.lang.Override
             public final Builder setUnknownFields(
                     final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -991,11 +991,10 @@ public final class EvtAnimatorParameterInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\036EvtAnimatorParameterInfo.proto\032 Animat"
                     + "orParameterValueInfo.proto\"\203\001\n\030EvtAnimat"
-                    + "orParameterInfo\022\021\n\tentity_id\030\n \001(\r\022\027\n\017is"
-                    + "_server_cache\030\013 \001(\010\022\017\n\007name_id\030\r \001(\005\022*\n\005"
-                    + "value\030\017 \001(\0132\033.AnimatorParameterValueInfo"
-                    + "B!\n\031emu.grasscutter.net.protoZ\004/genb\006pro"
-                    + "to3"
+                    + "orParameterInfo\022\021\n\tentity_id\030\010 \001(\r\022\027\n\017is"
+                    + "_server_cache\030\t \001(\010\022*\n\005value\030\017 \001(\0132\033.Ani"
+                    + "matorParameterValueInfo\022\017\n\007name_id\030\005 \001(\005"
+                    + "B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1008,7 +1007,7 @@ public final class EvtAnimatorParameterInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_EvtAnimatorParameterInfo_descriptor,
                         new java.lang.String[] {
-                            "EntityId", "IsServerCache", "NameId", "Value",
+                            "EntityId", "IsServerCache", "Value", "NameId",
                         });
         emu.grasscutter.net.proto.AnimatorParameterValueInfoOuterClass.getDescriptor();
     }

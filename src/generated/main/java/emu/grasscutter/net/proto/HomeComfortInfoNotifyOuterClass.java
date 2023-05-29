@@ -17,21 +17,21 @@ public final class HomeComfortInfoNotifyOuterClass {
             // @@protoc_insertion_point(interface_extends:HomeComfortInfoNotify)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         java.util.List<emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo>
                 getModuleInfoListList();
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                 getModuleInfoList(int index);
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         int getModuleInfoListCount();
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         java.util.List<
                         ? extends
                                 emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass
                                         .HomeModuleComfortInfoOrBuilder>
                 getModuleInfoListOrBuilderList();
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
                 getModuleInfoListOrBuilder(int index);
     }
@@ -39,8 +39,8 @@ public final class HomeComfortInfoNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4631
-     * Name: CHPBONNJCNN
+     * CmdId: 4580
+     * Obf: HAPBDHHGKBN
      * </pre>
      *
      * Protobuf type {@code HomeComfortInfoNotify}
@@ -89,7 +89,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 98:
+                        case 114:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     moduleInfoList_ =
@@ -143,18 +143,18 @@ public final class HomeComfortInfoNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int MODULE_INFO_LIST_FIELD_NUMBER = 12;
+        public static final int MODULE_INFO_LIST_FIELD_NUMBER = 14;
         private java.util.List<
                         emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo>
                 moduleInfoList_;
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         @java.lang.Override
         public java.util.List<
                         emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo>
                 getModuleInfoListList() {
             return moduleInfoList_;
         }
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends
@@ -163,18 +163,18 @@ public final class HomeComfortInfoNotifyOuterClass {
                 getModuleInfoListOrBuilderList() {
             return moduleInfoList_;
         }
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         @java.lang.Override
         public int getModuleInfoListCount() {
             return moduleInfoList_.size();
         }
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                 getModuleInfoList(int index) {
             return moduleInfoList_.get(index);
         }
-        /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+        /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
                 getModuleInfoListOrBuilder(int index) {
@@ -196,7 +196,7 @@ public final class HomeComfortInfoNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             for (int i = 0; i < moduleInfoList_.size(); i++) {
-                output.writeMessage(12, moduleInfoList_.get(i));
+                output.writeMessage(14, moduleInfoList_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -209,7 +209,7 @@ public final class HomeComfortInfoNotifyOuterClass {
             size = 0;
             for (int i = 0; i < moduleInfoList_.size(); i++) {
                 size +=
-                        com.google.protobuf.CodedOutputStream.computeMessageSize(12, moduleInfoList_.get(i));
+                        com.google.protobuf.CodedOutputStream.computeMessageSize(14, moduleInfoList_.get(i));
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -357,8 +357,8 @@ public final class HomeComfortInfoNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4631
-         * Name: CHPBONNJCNN
+         * CmdId: 4580
+         * Obf: HAPBDHHGKBN
          * </pre>
          *
          * Protobuf type {@code HomeComfortInfoNotify}
@@ -595,7 +595,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                                     .HomeModuleComfortInfoOrBuilder>
                     moduleInfoListBuilder_;
 
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo>
                     getModuleInfoListList() {
@@ -605,7 +605,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                     return moduleInfoListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public int getModuleInfoListCount() {
                 if (moduleInfoListBuilder_ == null) {
                     return moduleInfoList_.size();
@@ -613,7 +613,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                     return moduleInfoListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                     getModuleInfoList(int index) {
                 if (moduleInfoListBuilder_ == null) {
@@ -622,7 +622,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                     return moduleInfoListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder setModuleInfoList(
                     int index,
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo value) {
@@ -638,7 +638,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder setModuleInfoList(
                     int index,
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
@@ -652,7 +652,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder addModuleInfoList(
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo value) {
                 if (moduleInfoListBuilder_ == null) {
@@ -667,7 +667,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder addModuleInfoList(
                     int index,
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo value) {
@@ -683,7 +683,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder addModuleInfoList(
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
                             builderForValue) {
@@ -696,7 +696,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder addModuleInfoList(
                     int index,
                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
@@ -710,7 +710,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder addAllModuleInfoList(
                     java.lang.Iterable<
                                     ? extends
@@ -726,7 +726,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder clearModuleInfoList() {
                 if (moduleInfoListBuilder_ == null) {
                     moduleInfoList_ = java.util.Collections.emptyList();
@@ -737,7 +737,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public Builder removeModuleInfoList(int index) {
                 if (moduleInfoListBuilder_ == null) {
                     ensureModuleInfoListIsMutable();
@@ -748,12 +748,12 @@ public final class HomeComfortInfoNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
                     getModuleInfoListBuilder(int index) {
                 return getModuleInfoListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass
                             .HomeModuleComfortInfoOrBuilder
                     getModuleInfoListOrBuilder(int index) {
@@ -763,7 +763,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                     return moduleInfoListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass
@@ -775,7 +775,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                     return java.util.Collections.unmodifiableList(moduleInfoList_);
                 }
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
                     addModuleInfoListBuilder() {
                 return getModuleInfoListFieldBuilder()
@@ -783,7 +783,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                                 emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                                         .getDefaultInstance());
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.Builder
                     addModuleInfoListBuilder(int index) {
                 return getModuleInfoListFieldBuilder()
@@ -792,7 +792,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                                 emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                                         .getDefaultInstance());
             }
-            /** <code>repeated .HomeModuleComfortInfo module_info_list = 12;</code> */
+            /** <code>repeated .HomeModuleComfortInfo module_info_list = 14;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo
                                     .Builder>
@@ -896,9 +896,9 @@ public final class HomeComfortInfoNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033HomeComfortInfoNotify.proto\032\033HomeModul"
                     + "eComfortInfo.proto\"I\n\025HomeComfortInfoNot"
-                    + "ify\0220\n\020module_info_list\030\014 \003(\0132\026.HomeModu"
-                    + "leComfortInfoB!\n\031emu.grasscutter.net.pro"
-                    + "toZ\004/genb\006proto3"
+                    + "ify\0220\n\020module_info_list\030\016 \003(\0132\026.HomeModu"
+                    + "leComfortInfoB\033\n\031emu.grasscutter.net.pro"
+                    + "tob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

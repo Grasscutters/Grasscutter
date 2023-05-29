@@ -35,7 +35,7 @@ public final class BirthdayOuterClass {
      *
      *
      * <pre>
-     * Name: CIHBKIMLMLO
+     * Obf: CKNMHNJLNKL
      * </pre>
      *
      * Protobuf type {@code Birthday}
@@ -322,7 +322,7 @@ public final class BirthdayOuterClass {
          *
          *
          * <pre>
-         * Name: CIHBKIMLMLO
+         * Obf: CKNMHNJLNKL
          * </pre>
          *
          * Protobuf type {@code Birthday}
@@ -617,8 +617,8 @@ public final class BirthdayOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\016Birthday.proto\"&\n\010Birthday\022\r\n\005month\030\001 "
-                    + "\001(\r\022\013\n\003day\030\002 \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "\001(\r\022\013\n\003day\030\002 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

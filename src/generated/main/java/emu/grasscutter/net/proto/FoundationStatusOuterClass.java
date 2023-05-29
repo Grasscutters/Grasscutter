@@ -15,7 +15,7 @@ public final class FoundationStatusOuterClass {
      *
      *
      * <pre>
-     * Name: BBEMLEOGGGN
+     * Obf: MHACFHPGBFN
      * </pre>
      *
      * Protobuf enum {@code FoundationStatus}
@@ -142,8 +142,7 @@ public final class FoundationStatusOuterClass {
                     + "tatus\022\032\n\026FOUNDATION_STATUS_NONE\020\000\022\032\n\026FOU"
                     + "NDATION_STATUS_INIT\020\001\022\036\n\032FOUNDATION_STAT"
                     + "US_BUILDING\020\002\022\033\n\027FOUNDATION_STATUS_BUILT"
-                    + "\020\003B!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "\020\003B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

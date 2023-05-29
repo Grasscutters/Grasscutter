@@ -15,7 +15,7 @@ public final class RogueDiaryAvatarDisableStatusOuterClass {
      *
      *
      * <pre>
-     * Name: EDHNIJFDFDO
+     * Obf: KGJFEPEIOKM
      * </pre>
      *
      * Protobuf enum {@code RogueDiaryAvatarDisableStatus}
@@ -144,8 +144,8 @@ public final class RogueDiaryAvatarDisableStatusOuterClass {
                     + "_DIARY_AVATAR_DISABLE_NONE\020\000\022$\n ROGUE_DI"
                     + "ARY_AVATAR_DISABLE_DEATH\020\001\022$\n ROGUE_DIAR"
                     + "Y_AVATAR_DISABLE_TIRED\020\002\022)\n%ROGUE_DIARY_"
-                    + "AVATAR_DISABLE_DUPLICATED\020\003B!\n\031emu.grass"
-                    + "cutter.net.protoZ\004/genb\006proto3"
+                    + "AVATAR_DISABLE_DUPLICATED\020\003B\033\n\031emu.grass"
+                    + "cutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

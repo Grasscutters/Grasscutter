@@ -20,8 +20,8 @@ public final class HomeGetOnlineStatusReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4873
-     * Name: LBMOFLDAOOG
+     * CmdId: 4729
+     * Obf: DBADDFDJKAK
      * </pre>
      *
      * Protobuf type {@code HomeGetOnlineStatusReq}
@@ -268,8 +268,8 @@ public final class HomeGetOnlineStatusReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4873
-         * Name: LBMOFLDAOOG
+         * CmdId: 4729
+         * Obf: DBADDFDJKAK
          * </pre>
          *
          * Protobuf type {@code HomeGetOnlineStatusReq}
@@ -508,8 +508,8 @@ public final class HomeGetOnlineStatusReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034HomeGetOnlineStatusReq.proto\"\030\n\026HomeGe"
-                    + "tOnlineStatusReqB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "tOnlineStatusReqB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

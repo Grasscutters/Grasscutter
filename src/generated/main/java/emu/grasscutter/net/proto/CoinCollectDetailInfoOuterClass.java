@@ -17,21 +17,21 @@ public final class CoinCollectDetailInfoOuterClass {
             // @@protoc_insertion_point(interface_extends:CoinCollectDetailInfo)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         java.util.List<emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData>
                 getLevelDataListList();
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData getLevelDataList(
                 int index);
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         int getLevelDataListCount();
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         java.util.List<
                         ? extends
                                 emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass
                                         .CoinCollectLevelDataOrBuilder>
                 getLevelDataListOrBuilderList();
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelDataOrBuilder
                 getLevelDataListOrBuilder(int index);
     }
@@ -39,7 +39,7 @@ public final class CoinCollectDetailInfoOuterClass {
      *
      *
      * <pre>
-     * Name: ECDHHOAEKGP
+     * Obf: OHDPPODAGHJ
      * </pre>
      *
      * Protobuf type {@code CoinCollectDetailInfo}
@@ -88,7 +88,7 @@ public final class CoinCollectDetailInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 10:
+                        case 58:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     levelDataList_ =
@@ -142,18 +142,18 @@ public final class CoinCollectDetailInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int LEVEL_DATA_LIST_FIELD_NUMBER = 1;
+        public static final int LEVEL_DATA_LIST_FIELD_NUMBER = 7;
         private java.util.List<
                         emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData>
                 levelDataList_;
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         @java.lang.Override
         public java.util.List<
                         emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData>
                 getLevelDataListList() {
             return levelDataList_;
         }
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends
@@ -162,18 +162,18 @@ public final class CoinCollectDetailInfoOuterClass {
                 getLevelDataListOrBuilderList() {
             return levelDataList_;
         }
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         @java.lang.Override
         public int getLevelDataListCount() {
             return levelDataList_.size();
         }
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData
                 getLevelDataList(int index) {
             return levelDataList_.get(index);
         }
-        /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+        /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelDataOrBuilder
                 getLevelDataListOrBuilder(int index) {
@@ -195,7 +195,7 @@ public final class CoinCollectDetailInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             for (int i = 0; i < levelDataList_.size(); i++) {
-                output.writeMessage(1, levelDataList_.get(i));
+                output.writeMessage(7, levelDataList_.get(i));
             }
             unknownFields.writeTo(output);
         }
@@ -207,7 +207,7 @@ public final class CoinCollectDetailInfoOuterClass {
 
             size = 0;
             for (int i = 0; i < levelDataList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, levelDataList_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, levelDataList_.get(i));
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -355,7 +355,7 @@ public final class CoinCollectDetailInfoOuterClass {
          *
          *
          * <pre>
-         * Name: ECDHHOAEKGP
+         * Obf: OHDPPODAGHJ
          * </pre>
          *
          * Protobuf type {@code CoinCollectDetailInfo}
@@ -591,7 +591,7 @@ public final class CoinCollectDetailInfoOuterClass {
                                     .CoinCollectLevelDataOrBuilder>
                     levelDataListBuilder_;
 
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData>
                     getLevelDataListList() {
@@ -601,7 +601,7 @@ public final class CoinCollectDetailInfoOuterClass {
                     return levelDataListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public int getLevelDataListCount() {
                 if (levelDataListBuilder_ == null) {
                     return levelDataList_.size();
@@ -609,7 +609,7 @@ public final class CoinCollectDetailInfoOuterClass {
                     return levelDataListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData
                     getLevelDataList(int index) {
                 if (levelDataListBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class CoinCollectDetailInfoOuterClass {
                     return levelDataListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder setLevelDataList(
                     int index,
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData value) {
@@ -634,7 +634,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder setLevelDataList(
                     int index,
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
@@ -648,7 +648,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder addLevelDataList(
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData value) {
                 if (levelDataListBuilder_ == null) {
@@ -663,7 +663,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder addLevelDataList(
                     int index,
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData value) {
@@ -679,7 +679,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder addLevelDataList(
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
                             builderForValue) {
@@ -692,7 +692,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder addLevelDataList(
                     int index,
                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
@@ -706,7 +706,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder addAllLevelDataList(
                     java.lang.Iterable<
                                     ? extends
@@ -721,7 +721,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder clearLevelDataList() {
                 if (levelDataListBuilder_ == null) {
                     levelDataList_ = java.util.Collections.emptyList();
@@ -732,7 +732,7 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public Builder removeLevelDataList(int index) {
                 if (levelDataListBuilder_ == null) {
                     ensureLevelDataListIsMutable();
@@ -743,12 +743,12 @@ public final class CoinCollectDetailInfoOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
                     getLevelDataListBuilder(int index) {
                 return getLevelDataListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelDataOrBuilder
                     getLevelDataListOrBuilder(int index) {
                 if (levelDataListBuilder_ == null) {
@@ -757,7 +757,7 @@ public final class CoinCollectDetailInfoOuterClass {
                     return levelDataListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass
@@ -769,7 +769,7 @@ public final class CoinCollectDetailInfoOuterClass {
                     return java.util.Collections.unmodifiableList(levelDataList_);
                 }
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
                     addLevelDataListBuilder() {
                 return getLevelDataListFieldBuilder()
@@ -777,7 +777,7 @@ public final class CoinCollectDetailInfoOuterClass {
                                 emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder
                     addLevelDataListBuilder(int index) {
                 return getLevelDataListFieldBuilder()
@@ -786,7 +786,7 @@ public final class CoinCollectDetailInfoOuterClass {
                                 emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .CoinCollectLevelData level_data_list = 1;</code> */
+            /** <code>repeated .CoinCollectLevelData level_data_list = 7;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.CoinCollectLevelDataOuterClass.CoinCollectLevelData.Builder>
                     getLevelDataListBuilderList() {
@@ -888,9 +888,9 @@ public final class CoinCollectDetailInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033CoinCollectDetailInfo.proto\032\032CoinColle"
                     + "ctLevelData.proto\"G\n\025CoinCollectDetailIn"
-                    + "fo\022.\n\017level_data_list\030\001 \003(\0132\025.CoinCollec"
-                    + "tLevelDataB!\n\031emu.grasscutter.net.protoZ"
-                    + "\004/genb\006proto3"
+                    + "fo\022.\n\017level_data_list\030\007 \003(\0132\025.CoinCollec"
+                    + "tLevelDataB\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

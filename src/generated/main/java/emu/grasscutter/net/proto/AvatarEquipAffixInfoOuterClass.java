@@ -18,24 +18,24 @@ public final class AvatarEquipAffixInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 HADFPPBMPBC = 1;</code>
+         * <code>uint32 equip_affix_id = 1;</code>
          *
-         * @return The hADFPPBMPBC.
+         * @return The equipAffixId.
          */
-        int getHADFPPBMPBC();
+        int getEquipAffixId();
 
         /**
-         * <code>uint32 HLEKEGIICBH = 2;</code>
+         * <code>uint32 left_cd_time = 2;</code>
          *
-         * @return The hLEKEGIICBH.
+         * @return The leftCdTime.
          */
-        int getHLEKEGIICBH();
+        int getLeftCdTime();
     }
     /**
      *
      *
      * <pre>
-     * Name: AJMBBHKJNFH
+     * Obf: MPLMIMHAFOJ
      * </pre>
      *
      * Protobuf type {@code AvatarEquipAffixInfo}
@@ -83,12 +83,12 @@ public final class AvatarEquipAffixInfoOuterClass {
                             break;
                         case 8:
                             {
-                                hADFPPBMPBC_ = input.readUInt32();
+                                equipAffixId_ = input.readUInt32();
                                 break;
                             }
                         case 16:
                             {
-                                hLEKEGIICBH_ = input.readUInt32();
+                                leftCdTime_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -126,28 +126,28 @@ public final class AvatarEquipAffixInfoOuterClass {
                                     .class);
         }
 
-        public static final int HADFPPBMPBC_FIELD_NUMBER = 1;
-        private int hADFPPBMPBC_;
+        public static final int EQUIP_AFFIX_ID_FIELD_NUMBER = 1;
+        private int equipAffixId_;
         /**
-         * <code>uint32 HADFPPBMPBC = 1;</code>
+         * <code>uint32 equip_affix_id = 1;</code>
          *
-         * @return The hADFPPBMPBC.
+         * @return The equipAffixId.
          */
         @java.lang.Override
-        public int getHADFPPBMPBC() {
-            return hADFPPBMPBC_;
+        public int getEquipAffixId() {
+            return equipAffixId_;
         }
 
-        public static final int HLEKEGIICBH_FIELD_NUMBER = 2;
-        private int hLEKEGIICBH_;
+        public static final int LEFT_CD_TIME_FIELD_NUMBER = 2;
+        private int leftCdTime_;
         /**
-         * <code>uint32 HLEKEGIICBH = 2;</code>
+         * <code>uint32 left_cd_time = 2;</code>
          *
-         * @return The hLEKEGIICBH.
+         * @return The leftCdTime.
          */
         @java.lang.Override
-        public int getHLEKEGIICBH() {
-            return hLEKEGIICBH_;
+        public int getLeftCdTime() {
+            return leftCdTime_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -164,11 +164,11 @@ public final class AvatarEquipAffixInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (hADFPPBMPBC_ != 0) {
-                output.writeUInt32(1, hADFPPBMPBC_);
+            if (equipAffixId_ != 0) {
+                output.writeUInt32(1, equipAffixId_);
             }
-            if (hLEKEGIICBH_ != 0) {
-                output.writeUInt32(2, hLEKEGIICBH_);
+            if (leftCdTime_ != 0) {
+                output.writeUInt32(2, leftCdTime_);
             }
             unknownFields.writeTo(output);
         }
@@ -179,11 +179,11 @@ public final class AvatarEquipAffixInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (hADFPPBMPBC_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, hADFPPBMPBC_);
+            if (equipAffixId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, equipAffixId_);
             }
-            if (hLEKEGIICBH_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, hLEKEGIICBH_);
+            if (leftCdTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, leftCdTime_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -203,8 +203,8 @@ public final class AvatarEquipAffixInfoOuterClass {
             emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo other =
                     (emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo) obj;
 
-            if (getHADFPPBMPBC() != other.getHADFPPBMPBC()) return false;
-            if (getHLEKEGIICBH() != other.getHLEKEGIICBH()) return false;
+            if (getEquipAffixId() != other.getEquipAffixId()) return false;
+            if (getLeftCdTime() != other.getLeftCdTime()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -216,10 +216,10 @@ public final class AvatarEquipAffixInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + HADFPPBMPBC_FIELD_NUMBER;
-            hash = (53 * hash) + getHADFPPBMPBC();
-            hash = (37 * hash) + HLEKEGIICBH_FIELD_NUMBER;
-            hash = (53 * hash) + getHLEKEGIICBH();
+            hash = (37 * hash) + EQUIP_AFFIX_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getEquipAffixId();
+            hash = (37 * hash) + LEFT_CD_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getLeftCdTime();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -332,7 +332,7 @@ public final class AvatarEquipAffixInfoOuterClass {
          *
          *
          * <pre>
-         * Name: AJMBBHKJNFH
+         * Obf: MPLMIMHAFOJ
          * </pre>
          *
          * Protobuf type {@code AvatarEquipAffixInfo}
@@ -376,9 +376,9 @@ public final class AvatarEquipAffixInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                hADFPPBMPBC_ = 0;
+                equipAffixId_ = 0;
 
-                hLEKEGIICBH_ = 0;
+                leftCdTime_ = 0;
 
                 return this;
             }
@@ -411,8 +411,8 @@ public final class AvatarEquipAffixInfoOuterClass {
                     buildPartial() {
                 emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo result =
                         new emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo(this);
-                result.hADFPPBMPBC_ = hADFPPBMPBC_;
-                result.hLEKEGIICBH_ = hLEKEGIICBH_;
+                result.equipAffixId_ = equipAffixId_;
+                result.leftCdTime_ = leftCdTime_;
                 onBuilt();
                 return result;
             }
@@ -471,11 +471,11 @@ public final class AvatarEquipAffixInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo
                                 .getDefaultInstance()) return this;
-                if (other.getHADFPPBMPBC() != 0) {
-                    setHADFPPBMPBC(other.getHADFPPBMPBC());
+                if (other.getEquipAffixId() != 0) {
+                    setEquipAffixId(other.getEquipAffixId());
                 }
-                if (other.getHLEKEGIICBH() != 0) {
-                    setHLEKEGIICBH(other.getHLEKEGIICBH());
+                if (other.getLeftCdTime() != 0) {
+                    setLeftCdTime(other.getLeftCdTime());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -509,70 +509,70 @@ public final class AvatarEquipAffixInfoOuterClass {
                 return this;
             }
 
-            private int hADFPPBMPBC_;
+            private int equipAffixId_;
             /**
-             * <code>uint32 HADFPPBMPBC = 1;</code>
+             * <code>uint32 equip_affix_id = 1;</code>
              *
-             * @return The hADFPPBMPBC.
+             * @return The equipAffixId.
              */
             @java.lang.Override
-            public int getHADFPPBMPBC() {
-                return hADFPPBMPBC_;
+            public int getEquipAffixId() {
+                return equipAffixId_;
             }
             /**
-             * <code>uint32 HADFPPBMPBC = 1;</code>
+             * <code>uint32 equip_affix_id = 1;</code>
              *
-             * @param value The hADFPPBMPBC to set.
+             * @param value The equipAffixId to set.
              * @return This builder for chaining.
              */
-            public Builder setHADFPPBMPBC(int value) {
+            public Builder setEquipAffixId(int value) {
 
-                hADFPPBMPBC_ = value;
+                equipAffixId_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 HADFPPBMPBC = 1;</code>
+             * <code>uint32 equip_affix_id = 1;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearHADFPPBMPBC() {
+            public Builder clearEquipAffixId() {
 
-                hADFPPBMPBC_ = 0;
+                equipAffixId_ = 0;
                 onChanged();
                 return this;
             }
 
-            private int hLEKEGIICBH_;
+            private int leftCdTime_;
             /**
-             * <code>uint32 HLEKEGIICBH = 2;</code>
+             * <code>uint32 left_cd_time = 2;</code>
              *
-             * @return The hLEKEGIICBH.
+             * @return The leftCdTime.
              */
             @java.lang.Override
-            public int getHLEKEGIICBH() {
-                return hLEKEGIICBH_;
+            public int getLeftCdTime() {
+                return leftCdTime_;
             }
             /**
-             * <code>uint32 HLEKEGIICBH = 2;</code>
+             * <code>uint32 left_cd_time = 2;</code>
              *
-             * @param value The hLEKEGIICBH to set.
+             * @param value The leftCdTime to set.
              * @return This builder for chaining.
              */
-            public Builder setHLEKEGIICBH(int value) {
+            public Builder setLeftCdTime(int value) {
 
-                hLEKEGIICBH_ = value;
+                leftCdTime_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 HLEKEGIICBH = 2;</code>
+             * <code>uint32 left_cd_time = 2;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearHLEKEGIICBH() {
+            public Builder clearLeftCdTime() {
 
-                hLEKEGIICBH_ = 0;
+                leftCdTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -647,10 +647,10 @@ public final class AvatarEquipAffixInfoOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\032AvatarEquipAffixInfo.proto\"@\n\024AvatarEq"
-                    + "uipAffixInfo\022\023\n\013HADFPPBMPBC\030\001 \001(\r\022\023\n\013HLE"
-                    + "KEGIICBH\030\002 \001(\rB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+            "\n\032AvatarEquipAffixInfo.proto\"D\n\024AvatarEq"
+                    + "uipAffixInfo\022\026\n\016equip_affix_id\030\001 \001(\r\022\024\n\014"
+                    + "left_cd_time\030\002 \001(\rB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -660,7 +660,7 @@ public final class AvatarEquipAffixInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_AvatarEquipAffixInfo_descriptor,
                         new java.lang.String[] {
-                            "HADFPPBMPBC", "HLEKEGIICBH",
+                            "EquipAffixId", "LeftCdTime",
                         });
     }
 

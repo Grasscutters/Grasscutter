@@ -18,7 +18,7 @@ public final class DeleteFriendReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 target_uid = 12;</code>
+         * <code>uint32 target_uid = 15;</code>
          *
          * @return The targetUid.
          */
@@ -28,8 +28,8 @@ public final class DeleteFriendReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4059
-     * Name: DNNCFLDIPFG
+     * CmdId: 4084
+     * Obf: CPGJHGFGGBD
      * </pre>
      *
      * Protobuf type {@code DeleteFriendReq}
@@ -75,7 +75,7 @@ public final class DeleteFriendReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 96:
+                        case 120:
                             {
                                 targetUid_ = input.readUInt32();
                                 break;
@@ -114,10 +114,10 @@ public final class DeleteFriendReqOuterClass {
                             emu.grasscutter.net.proto.DeleteFriendReqOuterClass.DeleteFriendReq.Builder.class);
         }
 
-        public static final int TARGET_UID_FIELD_NUMBER = 12;
+        public static final int TARGET_UID_FIELD_NUMBER = 15;
         private int targetUid_;
         /**
-         * <code>uint32 target_uid = 12;</code>
+         * <code>uint32 target_uid = 15;</code>
          *
          * @return The targetUid.
          */
@@ -141,7 +141,7 @@ public final class DeleteFriendReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (targetUid_ != 0) {
-                output.writeUInt32(12, targetUid_);
+                output.writeUInt32(15, targetUid_);
             }
             unknownFields.writeTo(output);
         }
@@ -153,7 +153,7 @@ public final class DeleteFriendReqOuterClass {
 
             size = 0;
             if (targetUid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, targetUid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, targetUid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -292,8 +292,8 @@ public final class DeleteFriendReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4059
-         * Name: DNNCFLDIPFG
+         * CmdId: 4084
+         * Obf: CPGJHGFGGBD
          * </pre>
          *
          * Protobuf type {@code DeleteFriendReq}
@@ -459,7 +459,7 @@ public final class DeleteFriendReqOuterClass {
 
             private int targetUid_;
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @return The targetUid.
              */
@@ -468,7 +468,7 @@ public final class DeleteFriendReqOuterClass {
                 return targetUid_;
             }
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @param value The targetUid to set.
              * @return This builder for chaining.
@@ -480,7 +480,7 @@ public final class DeleteFriendReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 target_uid = 12;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -560,8 +560,8 @@ public final class DeleteFriendReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025DeleteFriendReq.proto\"%\n\017DeleteFriendR"
-                    + "eq\022\022\n\ntarget_uid\030\014 \001(\rB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "eq\022\022\n\ntarget_uid\030\017 \001(\rB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -15,7 +15,7 @@ public final class GadgetBornTypeOuterClass {
      *
      *
      * <pre>
-     * Name: EOMJMDNEMOO
+     * Obf: OOFKDFMGBHE
      * </pre>
      *
      * Protobuf enum {@code GadgetBornType}
@@ -160,8 +160,8 @@ public final class GadgetBornTypeOuterClass {
                     + "AYER\020\002\022 \n\034GADGET_BORN_TYPE_MONSTER_HIT\020\003"
                     + "\022 \n\034GADGET_BORN_TYPE_MONSTER_DIE\020\004\022\033\n\027GA"
                     + "DGET_BORN_TYPE_GADGET\020\005\022\033\n\027GADGET_BORN_T"
-                    + "YPE_GROUND\020\006B!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "YPE_GROUND\020\006B\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

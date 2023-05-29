@@ -20,8 +20,8 @@ public final class GetGachaInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1590
-     * Name: AMHKOMFJCKN
+     * CmdId: 1575
+     * Obf: PFFGPJKAJGH
      * </pre>
      *
      * Protobuf type {@code GetGachaInfoReq}
@@ -258,8 +258,8 @@ public final class GetGachaInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1590
-         * Name: AMHKOMFJCKN
+         * CmdId: 1575
+         * Obf: PFFGPJKAJGH
          * </pre>
          *
          * Protobuf type {@code GetGachaInfoReq}
@@ -486,8 +486,7 @@ public final class GetGachaInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025GetGachaInfoReq.proto\"\021\n\017GetGachaInfoR"
-                    + "eqB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "eqB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,3 +1,4 @@
+import org.apache.tools.ant.taskdefs.condition.Os
 import org.gradle.plugins.ide.eclipse.model.SourceFolder
 
 /*
@@ -220,7 +221,7 @@ publishing {
         maven {
             if (version.endsWith('-dev')) {
                 // Check if the action being ran is 'publish'.
-                if (project.hasProperty('publish')) {
+                if (publish.state.executing) {
                     println('Publishing to Ben4J-Maven')
                 }
 
@@ -232,7 +233,7 @@ publishing {
                 }
             } else {
                 // Check if the action being ran is 'publish'.
-                if (project.hasProperty('publish')) {
+                if (publish.state.executing) {
                     println('Publishing to Sonatype')
                 }
 
@@ -321,6 +322,43 @@ public final class BuildConfig {
     public static final String VERSION = \"${version}\";
     public static final String GIT_HASH = \"${gitCommitHash()}\";
 }"""
+}
+
+tasks.register('generateHandbook') {
+    if (project.hasProperty('skipHandbook')) {
+        println('Skipping handbook generation.')
+        return
+    }
+
+    def nodeVersion = {
+        try {
+            return 'node --version'.execute().text.trim()
+        } catch (ignored) {
+            return 'NODE_NOT_FOUND'
+        }
+    }
+
+    // Check if Node is installed.
+    if (nodeVersion() == 'NODE_NOT_FOUND') {
+        println('Node is not installed. Skipping handbook generation.')
+    } else {
+        // Build the handbook.
+        var npm = 'npm'
+        if (Os.isFamily(Os.FAMILY_WINDOWS))
+            npm = 'npm.cmd'
+
+        exec {
+            workingDir 'src/handbook'
+            commandLine npm, 'run', 'build'
+        }
+
+        // Copy the handbook from /dist to /src/main/resources.
+        copy {
+            from 'src/handbook/dist/index.html'
+            into 'src/main/resources/html'
+            rename 'index.html', 'handbook.html'
+        }
+    }
 }
 
 processResources {

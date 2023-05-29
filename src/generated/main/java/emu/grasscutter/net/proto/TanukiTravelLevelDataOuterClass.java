@@ -18,21 +18,21 @@ public final class TanukiTravelLevelDataOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 route_id = 12;</code>
+         * <code>uint32 route_id = 14;</code>
          *
          * @return The routeId.
          */
         int getRouteId();
 
         /**
-         * <code>bool is_open = 7;</code>
+         * <code>bool is_open = 9;</code>
          *
          * @return The isOpen.
          */
         boolean getIsOpen();
 
         /**
-         * <code>bool is_finish = 11;</code>
+         * <code>bool is_finish = 15;</code>
          *
          * @return The isFinish.
          */
@@ -42,7 +42,7 @@ public final class TanukiTravelLevelDataOuterClass {
      *
      *
      * <pre>
-     * Name: NAKACCCBMGO
+     * Obf: NLIDHPKHNHF
      * </pre>
      *
      * Protobuf type {@code TanukiTravelLevelData}
@@ -88,19 +88,19 @@ public final class TanukiTravelLevelDataOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
+                        case 72:
                             {
                                 isOpen_ = input.readBool();
                                 break;
                             }
-                        case 88:
-                            {
-                                isFinish_ = input.readBool();
-                                break;
-                            }
-                        case 96:
+                        case 112:
                             {
                                 routeId_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                isFinish_ = input.readBool();
                                 break;
                             }
                         default:
@@ -138,10 +138,10 @@ public final class TanukiTravelLevelDataOuterClass {
                                     .Builder.class);
         }
 
-        public static final int ROUTE_ID_FIELD_NUMBER = 12;
+        public static final int ROUTE_ID_FIELD_NUMBER = 14;
         private int routeId_;
         /**
-         * <code>uint32 route_id = 12;</code>
+         * <code>uint32 route_id = 14;</code>
          *
          * @return The routeId.
          */
@@ -150,10 +150,10 @@ public final class TanukiTravelLevelDataOuterClass {
             return routeId_;
         }
 
-        public static final int IS_OPEN_FIELD_NUMBER = 7;
+        public static final int IS_OPEN_FIELD_NUMBER = 9;
         private boolean isOpen_;
         /**
-         * <code>bool is_open = 7;</code>
+         * <code>bool is_open = 9;</code>
          *
          * @return The isOpen.
          */
@@ -162,10 +162,10 @@ public final class TanukiTravelLevelDataOuterClass {
             return isOpen_;
         }
 
-        public static final int IS_FINISH_FIELD_NUMBER = 11;
+        public static final int IS_FINISH_FIELD_NUMBER = 15;
         private boolean isFinish_;
         /**
-         * <code>bool is_finish = 11;</code>
+         * <code>bool is_finish = 15;</code>
          *
          * @return The isFinish.
          */
@@ -189,13 +189,13 @@ public final class TanukiTravelLevelDataOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (isOpen_ != false) {
-                output.writeBool(7, isOpen_);
-            }
-            if (isFinish_ != false) {
-                output.writeBool(11, isFinish_);
+                output.writeBool(9, isOpen_);
             }
             if (routeId_ != 0) {
-                output.writeUInt32(12, routeId_);
+                output.writeUInt32(14, routeId_);
+            }
+            if (isFinish_ != false) {
+                output.writeBool(15, isFinish_);
             }
             unknownFields.writeTo(output);
         }
@@ -207,13 +207,13 @@ public final class TanukiTravelLevelDataOuterClass {
 
             size = 0;
             if (isOpen_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, isOpen_);
-            }
-            if (isFinish_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isFinish_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, isOpen_);
             }
             if (routeId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, routeId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, routeId_);
+            }
+            if (isFinish_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isFinish_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -365,7 +365,7 @@ public final class TanukiTravelLevelDataOuterClass {
          *
          *
          * <pre>
-         * Name: NAKACCCBMGO
+         * Obf: NLIDHPKHNHF
          * </pre>
          *
          * Protobuf type {@code TanukiTravelLevelData}
@@ -553,7 +553,7 @@ public final class TanukiTravelLevelDataOuterClass {
 
             private int routeId_;
             /**
-             * <code>uint32 route_id = 12;</code>
+             * <code>uint32 route_id = 14;</code>
              *
              * @return The routeId.
              */
@@ -562,7 +562,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return routeId_;
             }
             /**
-             * <code>uint32 route_id = 12;</code>
+             * <code>uint32 route_id = 14;</code>
              *
              * @param value The routeId to set.
              * @return This builder for chaining.
@@ -574,7 +574,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 route_id = 12;</code>
+             * <code>uint32 route_id = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -587,7 +587,7 @@ public final class TanukiTravelLevelDataOuterClass {
 
             private boolean isOpen_;
             /**
-             * <code>bool is_open = 7;</code>
+             * <code>bool is_open = 9;</code>
              *
              * @return The isOpen.
              */
@@ -596,7 +596,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return isOpen_;
             }
             /**
-             * <code>bool is_open = 7;</code>
+             * <code>bool is_open = 9;</code>
              *
              * @param value The isOpen to set.
              * @return This builder for chaining.
@@ -608,7 +608,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_open = 7;</code>
+             * <code>bool is_open = 9;</code>
              *
              * @return This builder for chaining.
              */
@@ -621,7 +621,7 @@ public final class TanukiTravelLevelDataOuterClass {
 
             private boolean isFinish_;
             /**
-             * <code>bool is_finish = 11;</code>
+             * <code>bool is_finish = 15;</code>
              *
              * @return The isFinish.
              */
@@ -630,7 +630,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return isFinish_;
             }
             /**
-             * <code>bool is_finish = 11;</code>
+             * <code>bool is_finish = 15;</code>
              *
              * @param value The isFinish to set.
              * @return This builder for chaining.
@@ -642,7 +642,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_finish = 11;</code>
+             * <code>bool is_finish = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -724,9 +724,9 @@ public final class TanukiTravelLevelDataOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033TanukiTravelLevelData.proto\"M\n\025TanukiT"
-                    + "ravelLevelData\022\020\n\010route_id\030\014 \001(\r\022\017\n\007is_o"
-                    + "pen\030\007 \001(\010\022\021\n\tis_finish\030\013 \001(\010B!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "ravelLevelData\022\020\n\010route_id\030\016 \001(\r\022\017\n\007is_o"
+                    + "pen\030\t \001(\010\022\021\n\tis_finish\030\017 \001(\010B\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

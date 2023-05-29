@@ -164,7 +164,7 @@ public final class OnlinePlayerInfoOuterClass {
      *
      *
      * <pre>
-     * Name: GEKCCHCJMPC
+     * Obf: KFAGEFMEFCD
      * </pre>
      *
      * Protobuf type {@code OnlinePlayerInfo}
@@ -970,7 +970,7 @@ public final class OnlinePlayerInfoOuterClass {
          *
          *
          * <pre>
-         * Name: GEKCCHCJMPC
+         * Obf: KFAGEFMEFCD
          * </pre>
          *
          * Protobuf type {@code OnlinePlayerInfo}
@@ -2097,8 +2097,7 @@ public final class OnlinePlayerInfoOuterClass {
                     + "me_card_id\030\t \001(\r\022\032\n\022blacklist_uid_list\030\n"
                     + " \003(\r\022\021\n\tsignature\030\013 \001(\t\022(\n\017profile_pictu"
                     + "re\030\014 \001(\0132\017.ProfilePicture\022\016\n\006psn_id\030\r \001("
-                    + "\tB!\n\031emu.grasscutter.net.protoZ\004/genb\006pr"
-                    + "oto3"
+                    + "\tB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

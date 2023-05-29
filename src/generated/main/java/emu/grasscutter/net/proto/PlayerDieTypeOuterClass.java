@@ -15,7 +15,7 @@ public final class PlayerDieTypeOuterClass {
      *
      *
      * <pre>
-     * Name: AFOALEMHCMM
+     * Obf: GMCDBNJBEHA
      * </pre>
      *
      * Protobuf enum {@code PlayerDieType}
@@ -173,8 +173,8 @@ public final class PlayerDieTypeOuterClass {
                     + "\020\003\022\031\n\025PLAYER_DIE_TYPE_DRAWN\020\004\022\031\n\025PLAYER_"
                     + "DIE_TYPE_ABYSS\020\005\022\026\n\022PLAYER_DIE_TYPE_GM\020\006"
                     + "\022 \n\034PLAYER_DIE_TYPE_CLIMATE_COLD\020\007\022\"\n\036PL"
-                    + "AYER_DIE_TYPE_STORM_LIGHTING\020\010B!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "AYER_DIE_TYPE_STORM_LIGHTING\020\010B\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

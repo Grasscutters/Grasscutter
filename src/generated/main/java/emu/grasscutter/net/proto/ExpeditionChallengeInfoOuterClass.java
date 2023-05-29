@@ -18,6 +18,13 @@ public final class ExpeditionChallengeInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
+         * <code>bool is_finished = 11;</code>
+         *
+         * @return The isFinished.
+         */
+        boolean getIsFinished();
+
+        /**
          * <code>uint32 open_time = 5;</code>
          *
          * @return The openTime.
@@ -25,24 +32,17 @@ public final class ExpeditionChallengeInfoOuterClass {
         int getOpenTime();
 
         /**
-         * <code>uint32 id = 15;</code>
+         * <code>uint32 id = 4;</code>
          *
          * @return The id.
          */
         int getId();
-
-        /**
-         * <code>bool is_finished = 11;</code>
-         *
-         * @return The isFinished.
-         */
-        boolean getIsFinished();
     }
     /**
      *
      *
      * <pre>
-     * Name: FFADNOLCIKG
+     * Obf: IPJPEPIILAJ
      * </pre>
      *
      * Protobuf type {@code ExpeditionChallengeInfo}
@@ -88,6 +88,11 @@ public final class ExpeditionChallengeInfoOuterClass {
                         case 0:
                             done = true;
                             break;
+                        case 32:
+                            {
+                                id_ = input.readUInt32();
+                                break;
+                            }
                         case 40:
                             {
                                 openTime_ = input.readUInt32();
@@ -96,11 +101,6 @@ public final class ExpeditionChallengeInfoOuterClass {
                         case 88:
                             {
                                 isFinished_ = input.readBool();
-                                break;
-                            }
-                        case 120:
-                            {
-                                id_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -139,6 +139,18 @@ public final class ExpeditionChallengeInfoOuterClass {
                                     .Builder.class);
         }
 
+        public static final int IS_FINISHED_FIELD_NUMBER = 11;
+        private boolean isFinished_;
+        /**
+         * <code>bool is_finished = 11;</code>
+         *
+         * @return The isFinished.
+         */
+        @java.lang.Override
+        public boolean getIsFinished() {
+            return isFinished_;
+        }
+
         public static final int OPEN_TIME_FIELD_NUMBER = 5;
         private int openTime_;
         /**
@@ -151,28 +163,16 @@ public final class ExpeditionChallengeInfoOuterClass {
             return openTime_;
         }
 
-        public static final int ID_FIELD_NUMBER = 15;
+        public static final int ID_FIELD_NUMBER = 4;
         private int id_;
         /**
-         * <code>uint32 id = 15;</code>
+         * <code>uint32 id = 4;</code>
          *
          * @return The id.
          */
         @java.lang.Override
         public int getId() {
             return id_;
-        }
-
-        public static final int IS_FINISHED_FIELD_NUMBER = 11;
-        private boolean isFinished_;
-        /**
-         * <code>bool is_finished = 11;</code>
-         *
-         * @return The isFinished.
-         */
-        @java.lang.Override
-        public boolean getIsFinished() {
-            return isFinished_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -189,14 +189,14 @@ public final class ExpeditionChallengeInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (id_ != 0) {
+                output.writeUInt32(4, id_);
+            }
             if (openTime_ != 0) {
                 output.writeUInt32(5, openTime_);
             }
             if (isFinished_ != false) {
                 output.writeBool(11, isFinished_);
-            }
-            if (id_ != 0) {
-                output.writeUInt32(15, id_);
             }
             unknownFields.writeTo(output);
         }
@@ -207,14 +207,14 @@ public final class ExpeditionChallengeInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (id_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, id_);
+            }
             if (openTime_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, openTime_);
             }
             if (isFinished_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isFinished_);
-            }
-            if (id_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, id_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -234,9 +234,9 @@ public final class ExpeditionChallengeInfoOuterClass {
             emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo other =
                     (emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo) obj;
 
+            if (getIsFinished() != other.getIsFinished()) return false;
             if (getOpenTime() != other.getOpenTime()) return false;
             if (getId() != other.getId()) return false;
-            if (getIsFinished() != other.getIsFinished()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -248,12 +248,12 @@ public final class ExpeditionChallengeInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
+            hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinished());
             hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
             hash = (53 * hash) + getOpenTime();
             hash = (37 * hash) + ID_FIELD_NUMBER;
             hash = (53 * hash) + getId();
-            hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinished());
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -379,7 +379,7 @@ public final class ExpeditionChallengeInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FFADNOLCIKG
+         * Obf: IPJPEPIILAJ
          * </pre>
          *
          * Protobuf type {@code ExpeditionChallengeInfo}
@@ -425,11 +425,11 @@ public final class ExpeditionChallengeInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
+                isFinished_ = false;
+
                 openTime_ = 0;
 
                 id_ = 0;
-
-                isFinished_ = false;
 
                 return this;
             }
@@ -464,9 +464,9 @@ public final class ExpeditionChallengeInfoOuterClass {
                 emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo result =
                         new emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo(
                                 this);
+                result.isFinished_ = isFinished_;
                 result.openTime_ = openTime_;
                 result.id_ = id_;
-                result.isFinished_ = isFinished_;
                 onBuilt();
                 return result;
             }
@@ -526,14 +526,14 @@ public final class ExpeditionChallengeInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo
                                 .getDefaultInstance()) return this;
+                if (other.getIsFinished() != false) {
+                    setIsFinished(other.getIsFinished());
+                }
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
                 }
                 if (other.getId() != 0) {
                     setId(other.getId());
-                }
-                if (other.getIsFinished() != false) {
-                    setIsFinished(other.getIsFinished());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -564,6 +564,40 @@ public final class ExpeditionChallengeInfoOuterClass {
                         mergeFrom(parsedMessage);
                     }
                 }
+                return this;
+            }
+
+            private boolean isFinished_;
+            /**
+             * <code>bool is_finished = 11;</code>
+             *
+             * @return The isFinished.
+             */
+            @java.lang.Override
+            public boolean getIsFinished() {
+                return isFinished_;
+            }
+            /**
+             * <code>bool is_finished = 11;</code>
+             *
+             * @param value The isFinished to set.
+             * @return This builder for chaining.
+             */
+            public Builder setIsFinished(boolean value) {
+
+                isFinished_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>bool is_finished = 11;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearIsFinished() {
+
+                isFinished_ = false;
+                onChanged();
                 return this;
             }
 
@@ -603,7 +637,7 @@ public final class ExpeditionChallengeInfoOuterClass {
 
             private int id_;
             /**
-             * <code>uint32 id = 15;</code>
+             * <code>uint32 id = 4;</code>
              *
              * @return The id.
              */
@@ -612,7 +646,7 @@ public final class ExpeditionChallengeInfoOuterClass {
                 return id_;
             }
             /**
-             * <code>uint32 id = 15;</code>
+             * <code>uint32 id = 4;</code>
              *
              * @param value The id to set.
              * @return This builder for chaining.
@@ -624,47 +658,13 @@ public final class ExpeditionChallengeInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 id = 15;</code>
+             * <code>uint32 id = 4;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearId() {
 
                 id_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private boolean isFinished_;
-            /**
-             * <code>bool is_finished = 11;</code>
-             *
-             * @return The isFinished.
-             */
-            @java.lang.Override
-            public boolean getIsFinished() {
-                return isFinished_;
-            }
-            /**
-             * <code>bool is_finished = 11;</code>
-             *
-             * @param value The isFinished to set.
-             * @return This builder for chaining.
-             */
-            public Builder setIsFinished(boolean value) {
-
-                isFinished_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool is_finished = 11;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearIsFinished() {
-
-                isFinished_ = false;
                 onChanged();
                 return this;
             }
@@ -741,9 +741,9 @@ public final class ExpeditionChallengeInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035ExpeditionChallengeInfo.proto\"M\n\027Exped"
-                    + "itionChallengeInfo\022\021\n\topen_time\030\005 \001(\r\022\n\n"
-                    + "\002id\030\017 \001(\r\022\023\n\013is_finished\030\013 \001(\010B!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "itionChallengeInfo\022\023\n\013is_finished\030\013 \001(\010\022"
+                    + "\021\n\topen_time\030\005 \001(\r\022\n\n\002id\030\004 \001(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -753,7 +753,7 @@ public final class ExpeditionChallengeInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_ExpeditionChallengeInfo_descriptor,
                         new java.lang.String[] {
-                            "OpenTime", "Id", "IsFinished",
+                            "IsFinished", "OpenTime", "Id",
                         });
     }
 

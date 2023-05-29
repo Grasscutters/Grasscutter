@@ -15,7 +15,7 @@ public final class AvatarTypeOuterClass {
      *
      *
      * <pre>
-     * Name: FDOECABHIEL
+     * Obf: GEAOCPFMLEP
      * </pre>
      *
      * Protobuf enum {@code AvatarType}
@@ -137,8 +137,8 @@ public final class AvatarTypeOuterClass {
             "\n\020AvatarType.proto*i\n\nAvatarType\022\024\n\020AVAT"
                     + "AR_TYPE_NONE\020\000\022\026\n\022AVATAR_TYPE_FORMAL\020\001\022\025"
                     + "\n\021AVATAR_TYPE_TRIAL\020\002\022\026\n\022AVATAR_TYPE_MIR"
-                    + "ROR\020\003B!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "ROR\020\003B\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

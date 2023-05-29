@@ -2,7 +2,6 @@ package emu.grasscutter.utils;
 
 import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
 
-import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
@@ -15,22 +14,12 @@ import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.server.http.objects.LoginTokenRequestJson;
 import emu.grasscutter.utils.objects.HandbookBody;
 import emu.grasscutter.utils.objects.HandbookBody.*;
-import java.lang.reflect.Field;
-import java.net.http.HttpClient;
-import java.util.Arrays;
-import java.util.HashMap;
+import emu.grasscutter.utils.objects.JObject;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
 public interface DispatchUtils {
-    /** HTTP client used for dispatch queries. */
-    HttpClient HTTP_CLIENT =
-            HttpClient.newBuilder()
-                    .version(HttpClient.Version.HTTP_2)
-                    .followRedirects(HttpClient.Redirect.ALWAYS)
-                    .build();
-
     /**
      * @return The dispatch URL.
      */
@@ -167,30 +156,41 @@ public interface DispatchUtils {
                 var player = Grasscutter.getGameServer().getPlayerByUid(playerId, true);
                 if (player == null) yield null;
 
-                // Prepare field properties.
-                var fieldValues = new JsonObject();
-                var fieldMap = new HashMap<String, Field>();
-                Arrays.stream(player.getClass().getDeclaredFields())
-                        .forEach(field -> fieldMap.put(field.getName(), field));
+                // Return the values.
+                yield player.fetchFields(fields);
+            }
+        };
+    }
 
-                // Find the values of all requested fields.
-                for (var fieldName : fields) {
-                    try {
-                        var field = fieldMap.get(fieldName);
-                        if (field == null) fieldValues.add(fieldName, JsonNull.INSTANCE);
-                        else {
-                            var wasAccessible = field.canAccess(player);
-                            field.setAccessible(true);
-                            fieldValues.add(fieldName, IDispatcher.JSON.toJsonTree(field.get(player)));
-                            field.setAccessible(wasAccessible);
-                        }
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }
-                }
+    /**
+     * Fetches the values of fields for a player. Uses an account to find the player. Similar to
+     * {@link DispatchUtils#getPlayerFields(int, String...)}
+     *
+     * @param accountId The account ID.
+     * @param fields The fields to fetch.
+     * @return An object holding the field values.
+     */
+    @Nullable static JsonObject getPlayerByAccount(String accountId, String... fields) {
+        return switch (Grasscutter.getRunMode()) {
+            case DISPATCH_ONLY -> {
+                // Create a request for player fields.
+                var request = JObject.c().add("accountId", accountId).add("fields", fields);
+
+                // Wait for the request to complete.
+                yield Grasscutter.getDispatchServer()
+                        .await(
+                                request.gson(),
+                                PacketIds.GetPlayerByAccountReq,
+                                PacketIds.GetPlayerByAccountRsp,
+                                IDispatcher.DEFAULT_PARSER);
+            }
+            case HYBRID, GAME_ONLY -> {
+                // Get the player by the account.
+                var player = Grasscutter.getGameServer().getPlayerByAccountId(accountId);
+                if (player == null) yield null;
 
                 // Return the values.
-                yield fieldValues;
+                yield player.fetchFields(fields);
             }
         };
     }

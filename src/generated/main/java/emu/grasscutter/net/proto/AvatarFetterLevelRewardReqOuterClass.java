@@ -35,8 +35,8 @@ public final class AvatarFetterLevelRewardReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1763
-     * Name: FMBNPHNEMJA
+     * CmdId: 1656
+     * Obf: ELIDOKACJNB
      * </pre>
      *
      * Protobuf type {@code AvatarFetterLevelRewardReq}
@@ -352,8 +352,8 @@ public final class AvatarFetterLevelRewardReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1763
-         * Name: FMBNPHNEMJA
+         * CmdId: 1656
+         * Obf: ELIDOKACJNB
          * </pre>
          *
          * Protobuf type {@code AvatarFetterLevelRewardReq}
@@ -684,8 +684,8 @@ public final class AvatarFetterLevelRewardReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n AvatarFetterLevelRewardReq.proto\"G\n\032Av"
                     + "atarFetterLevelRewardReq\022\024\n\014fetter_level"
-                    + "\030\007 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004B!\n\031emu.grass"
-                    + "cutter.net.protoZ\004/genb\006proto3"
+                    + "\030\007 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004B\033\n\031emu.grass"
+                    + "cutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

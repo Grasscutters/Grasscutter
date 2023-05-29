@@ -15,7 +15,7 @@ public final class MapMarkFromTypeOuterClass {
      *
      *
      * <pre>
-     * Name: ICFEJHJADHJ
+     * Obf: PNMEOLJPFCC
      * </pre>
      *
      * Protobuf enum {@code MapMarkFromType}
@@ -135,8 +135,8 @@ public final class MapMarkFromTypeOuterClass {
             "\n\025MapMarkFromType.proto*l\n\017MapMarkFromTy"
                     + "pe\022\033\n\027MAP_MARK_FROM_TYPE_NONE\020\000\022\036\n\032MAP_M"
                     + "ARK_FROM_TYPE_MONSTER\020\001\022\034\n\030MAP_MARK_FROM"
-                    + "_TYPE_QUEST\020\002B!\n\031emu.grasscutter.net.pro"
-                    + "toZ\004/genb\006proto3"
+                    + "_TYPE_QUEST\020\002B\033\n\031emu.grasscutter.net.pro"
+                    + "tob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

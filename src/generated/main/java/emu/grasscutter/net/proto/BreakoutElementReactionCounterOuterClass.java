@@ -35,7 +35,7 @@ public final class BreakoutElementReactionCounterOuterClass {
      *
      *
      * <pre>
-     * Name: FIPDDEKMPLK
+     * Obf: ECLOAEHKMCA
      * </pre>
      *
      * Protobuf type {@code BreakoutElementReactionCounter}
@@ -354,7 +354,7 @@ public final class BreakoutElementReactionCounterOuterClass {
          *
          *
          * <pre>
-         * Name: FIPDDEKMPLK
+         * Obf: ECLOAEHKMCA
          * </pre>
          *
          * Protobuf type {@code BreakoutElementReactionCounter}
@@ -690,8 +690,8 @@ public final class BreakoutElementReactionCounterOuterClass {
         java.lang.String[] descriptorData = {
             "\n$BreakoutElementReactionCounter.proto\"I"
                     + "\n\036BreakoutElementReactionCounter\022\030\n\020elem"
-                    + "ent_reaction\030\001 \001(\r\022\r\n\005count\030\002 \001(\rB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "ent_reaction\030\001 \001(\r\022\r\n\005count\030\002 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

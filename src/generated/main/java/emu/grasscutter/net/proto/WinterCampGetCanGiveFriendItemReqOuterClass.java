@@ -20,8 +20,8 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8446
-     * Name: GLAIMPCKKHB
+     * CmdId: 8598
+     * Obf: BBPPOBIMPIC
      * </pre>
      *
      * Protobuf type {@code WinterCampGetCanGiveFriendItemReq}
@@ -288,8 +288,8 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8446
-         * Name: GLAIMPCKKHB
+         * CmdId: 8598
+         * Obf: BBPPOBIMPIC
          * </pre>
          *
          * Protobuf type {@code WinterCampGetCanGiveFriendItemReq}
@@ -544,9 +544,8 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\'WinterCampGetCanGiveFriendItemReq.prot"
-                    + "o\"#\n!WinterCampGetCanGiveFriendItemReqB!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "o\"#\n!WinterCampGetCanGiveFriendItemReqB\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

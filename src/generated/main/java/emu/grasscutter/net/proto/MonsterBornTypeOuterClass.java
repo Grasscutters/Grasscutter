@@ -15,7 +15,7 @@ public final class MonsterBornTypeOuterClass {
      *
      *
      * <pre>
-     * Name: PKKAPIFAEHB
+     * Obf: CNKCBENCCOC
      * </pre>
      *
      * Protobuf enum {@code MonsterBornType}
@@ -135,8 +135,8 @@ public final class MonsterBornTypeOuterClass {
             "\n\025MonsterBornType.proto*j\n\017MonsterBornTy"
                     + "pe\022\032\n\026MONSTER_BORN_TYPE_NONE\020\000\022\035\n\031MONSTE"
                     + "R_BORN_TYPE_DEFAULT\020\001\022\034\n\030MONSTER_BORN_TY"
-                    + "PE_RANDOM\020\002B!\n\031emu.grasscutter.net.proto"
-                    + "Z\004/genb\006proto3"
+                    + "PE_RANDOM\020\002B\033\n\031emu.grasscutter.net.proto"
+                    + "b\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

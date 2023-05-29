@@ -18,20 +18,20 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>.ForwardType forward_type = 2;</code>
+         * <code>.ForwardType forward_type = 11;</code>
          *
          * @return The enum numeric value on the wire for forwardType.
          */
         int getForwardTypeValue();
         /**
-         * <code>.ForwardType forward_type = 2;</code>
+         * <code>.ForwardType forward_type = 11;</code>
          *
          * @return The forwardType.
          */
         emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
 
         /**
-         * <code>uint32 entity_id = 13;</code>
+         * <code>uint32 entity_id = 7;</code>
          *
          * @return The entityId.
          */
@@ -41,8 +41,8 @@ public final class EvtDestroyGadgetNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 356
-     * Name: BAHHBFKIGHP
+     * CmdId: 348
+     * Obf: KBKJDANOAHC
      * </pre>
      *
      * Protobuf type {@code EvtDestroyGadgetNotify}
@@ -90,16 +90,16 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
+                        case 56:
+                            {
+                                entityId_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
                             {
                                 int rawValue = input.readEnum();
 
                                 forwardType_ = rawValue;
-                                break;
-                            }
-                        case 104:
-                            {
-                                entityId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -138,10 +138,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int FORWARD_TYPE_FIELD_NUMBER = 2;
+        public static final int FORWARD_TYPE_FIELD_NUMBER = 11;
         private int forwardType_;
         /**
-         * <code>.ForwardType forward_type = 2;</code>
+         * <code>.ForwardType forward_type = 11;</code>
          *
          * @return The enum numeric value on the wire for forwardType.
          */
@@ -150,7 +150,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             return forwardType_;
         }
         /**
-         * <code>.ForwardType forward_type = 2;</code>
+         * <code>.ForwardType forward_type = 11;</code>
          *
          * @return The forwardType.
          */
@@ -164,10 +164,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                     : result;
         }
 
-        public static final int ENTITY_ID_FIELD_NUMBER = 13;
+        public static final int ENTITY_ID_FIELD_NUMBER = 7;
         private int entityId_;
         /**
-         * <code>uint32 entity_id = 13;</code>
+         * <code>uint32 entity_id = 7;</code>
          *
          * @return The entityId.
          */
@@ -190,13 +190,13 @@ public final class EvtDestroyGadgetNotifyOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (entityId_ != 0) {
+                output.writeUInt32(7, entityId_);
+            }
             if (forwardType_
                     != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL
                             .getNumber()) {
-                output.writeEnum(2, forwardType_);
-            }
-            if (entityId_ != 0) {
-                output.writeUInt32(13, entityId_);
+                output.writeEnum(11, forwardType_);
             }
             unknownFields.writeTo(output);
         }
@@ -207,13 +207,13 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (entityId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, entityId_);
+            }
             if (forwardType_
                     != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL
                             .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, forwardType_);
-            }
-            if (entityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, entityId_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, forwardType_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -363,8 +363,8 @@ public final class EvtDestroyGadgetNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 356
-         * Name: BAHHBFKIGHP
+         * CmdId: 348
+         * Obf: KBKJDANOAHC
          * </pre>
          *
          * Protobuf type {@code EvtDestroyGadgetNotify}
@@ -546,7 +546,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
 
             private int forwardType_ = 0;
             /**
-             * <code>.ForwardType forward_type = 2;</code>
+             * <code>.ForwardType forward_type = 11;</code>
              *
              * @return The enum numeric value on the wire for forwardType.
              */
@@ -555,7 +555,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return forwardType_;
             }
             /**
-             * <code>.ForwardType forward_type = 2;</code>
+             * <code>.ForwardType forward_type = 11;</code>
              *
              * @param value The enum numeric value on the wire for forwardType to set.
              * @return This builder for chaining.
@@ -567,7 +567,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>.ForwardType forward_type = 2;</code>
+             * <code>.ForwardType forward_type = 11;</code>
              *
              * @return The forwardType.
              */
@@ -581,7 +581,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                         : result;
             }
             /**
-             * <code>.ForwardType forward_type = 2;</code>
+             * <code>.ForwardType forward_type = 11;</code>
              *
              * @param value The forwardType to set.
              * @return This builder for chaining.
@@ -597,7 +597,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>.ForwardType forward_type = 2;</code>
+             * <code>.ForwardType forward_type = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -610,7 +610,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
 
             private int entityId_;
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 7;</code>
              *
              * @return The entityId.
              */
@@ -619,7 +619,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return entityId_;
             }
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 7;</code>
              *
              * @param value The entityId to set.
              * @return This builder for chaining.
@@ -631,7 +631,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 entity_id = 13;</code>
+             * <code>uint32 entity_id = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -714,9 +714,9 @@ public final class EvtDestroyGadgetNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\034EvtDestroyGadgetNotify.proto\032\021ForwardT"
                     + "ype.proto\"O\n\026EvtDestroyGadgetNotify\022\"\n\014f"
-                    + "orward_type\030\002 \001(\0162\014.ForwardType\022\021\n\tentit"
-                    + "y_id\030\r \001(\rB!\n\031emu.grasscutter.net.protoZ"
-                    + "\004/genb\006proto3"
+                    + "orward_type\030\013 \001(\0162\014.ForwardType\022\021\n\tentit"
+                    + "y_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

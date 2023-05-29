@@ -20,8 +20,8 @@ public final class GetShopmallDataReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 716
-     * Name: MFPLDKCEHKF
+     * CmdId: 755
+     * Obf: JDGADILKHCE
      * </pre>
      *
      * Protobuf type {@code GetShopmallDataReq}
@@ -265,8 +265,8 @@ public final class GetShopmallDataReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 716
-         * Name: MFPLDKCEHKF
+         * CmdId: 755
+         * Obf: JDGADILKHCE
          * </pre>
          *
          * Protobuf type {@code GetShopmallDataReq}
@@ -499,8 +499,8 @@ public final class GetShopmallDataReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030GetShopmallDataReq.proto\"\024\n\022GetShopmal"
-                    + "lDataReqB!\n\031emu.grasscutter.net.protoZ\004/"
-                    + "genb\006proto3"
+                    + "lDataReqB\033\n\031emu.grasscutter.net.protob\006p"
+                    + "roto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

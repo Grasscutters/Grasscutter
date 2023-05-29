@@ -40,7 +40,7 @@ public final class SeaLampV3CampInfoOuterClass {
      *
      *
      * <pre>
-     * Name: GAMFHGOFNHP
+     * Obf: NAFCFFFCKIL
      * </pre>
      *
      * Protobuf type {@code SeaLampV3CampInfo}
@@ -351,7 +351,7 @@ public final class SeaLampV3CampInfoOuterClass {
          *
          *
          * <pre>
-         * Name: GAMFHGOFNHP
+         * Obf: NAFCFFFCKIL
          * </pre>
          *
          * Protobuf type {@code SeaLampV3CampInfo}
@@ -887,8 +887,8 @@ public final class SeaLampV3CampInfoOuterClass {
             "\n\027SeaLampV3CampInfo.proto\032\034SeaLampV3Camp"
                     + "StageInfo.proto\"E\n\021SeaLampV3CampInfo\0220\n\017"
                     + "stage_info_list\030\006 \003(\0132\027.SeaLampV3CampSta"
-                    + "geInfoB!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "geInfoB\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

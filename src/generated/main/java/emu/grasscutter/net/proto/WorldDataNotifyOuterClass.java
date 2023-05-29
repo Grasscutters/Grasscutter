@@ -17,29 +17,29 @@ public final class WorldDataNotifyOuterClass {
             // @@protoc_insertion_point(interface_extends:WorldDataNotify)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         int getWorldPropMapCount();
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         boolean containsWorldPropMap(int key);
         /** Use {@link #getWorldPropMapMap()} instead. */
         @java.lang.Deprecated
         java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
                 getWorldPropMap();
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
                 getWorldPropMapMap();
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
                 int key, emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue);
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(int key);
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 3017
-     * Name: GLHFIFHNHGH
+     * CmdId: 3465
+     * Obf: GGEEDINMPLC
      * </pre>
      *
      * Protobuf type {@code WorldDataNotify}
@@ -86,7 +86,7 @@ public final class WorldDataNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 66:
+                        case 114:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     worldPropMap_ =
@@ -133,7 +133,7 @@ public final class WorldDataNotifyOuterClass {
         @java.lang.Override
         protected com.google.protobuf.MapField internalGetMapField(int number) {
             switch (number) {
-                case 8:
+                case 14:
                     return internalGetWorldPropMap();
                 default:
                     throw new RuntimeException("Invalid map field number: " + number);
@@ -150,7 +150,7 @@ public final class WorldDataNotifyOuterClass {
                             emu.grasscutter.net.proto.WorldDataNotifyOuterClass.WorldDataNotify.Builder.class);
         }
 
-        public static final int WORLD_PROP_MAP_FIELD_NUMBER = 8;
+        public static final int WORLD_PROP_MAP_FIELD_NUMBER = 14;
 
         private static final class WorldPropMapDefaultEntryHolder {
             static final com.google.protobuf.MapEntry<
@@ -185,7 +185,7 @@ public final class WorldDataNotifyOuterClass {
         public int getWorldPropMapCount() {
             return internalGetWorldPropMap().getMap().size();
         }
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         @java.lang.Override
         public boolean containsWorldPropMap(int key) {
 
@@ -198,13 +198,13 @@ public final class WorldDataNotifyOuterClass {
                 getWorldPropMap() {
             return getWorldPropMapMap();
         }
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         @java.lang.Override
         public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
                 getWorldPropMapMap() {
             return internalGetWorldPropMap().getMap();
         }
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
                 int key, emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
@@ -213,7 +213,7 @@ public final class WorldDataNotifyOuterClass {
                     map = internalGetWorldPropMap().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+        /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(int key) {
 
@@ -240,7 +240,7 @@ public final class WorldDataNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
-                    output, internalGetWorldPropMap(), WorldPropMapDefaultEntryHolder.defaultEntry, 8);
+                    output, internalGetWorldPropMap(), WorldPropMapDefaultEntryHolder.defaultEntry, 14);
             unknownFields.writeTo(output);
         }
 
@@ -261,7 +261,7 @@ public final class WorldDataNotifyOuterClass {
                                         .setKey(entry.getKey())
                                         .setValue(entry.getValue())
                                         .build();
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, worldPropMap__);
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, worldPropMap__);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -402,8 +402,8 @@ public final class WorldDataNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 3017
-         * Name: GLHFIFHNHGH
+         * CmdId: 3465
+         * Obf: GGEEDINMPLC
          * </pre>
          *
          * Protobuf type {@code WorldDataNotify}
@@ -421,7 +421,7 @@ public final class WorldDataNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMapField(int number) {
                 switch (number) {
-                    case 8:
+                    case 14:
                         return internalGetWorldPropMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -431,7 +431,7 @@ public final class WorldDataNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
                 switch (number) {
-                    case 8:
+                    case 14:
                         return internalGetMutableWorldPropMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -620,7 +620,7 @@ public final class WorldDataNotifyOuterClass {
             public int getWorldPropMapCount() {
                 return internalGetWorldPropMap().getMap().size();
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             @java.lang.Override
             public boolean containsWorldPropMap(int key) {
 
@@ -634,14 +634,14 @@ public final class WorldDataNotifyOuterClass {
                     getWorldPropMap() {
                 return getWorldPropMapMap();
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             @java.lang.Override
             public java.util.Map<
                             java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
                     getWorldPropMapMap() {
                 return internalGetWorldPropMap().getMap();
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrDefault(
                     int key, emu.grasscutter.net.proto.PropValueOuterClass.PropValue defaultValue) {
@@ -650,7 +650,7 @@ public final class WorldDataNotifyOuterClass {
                         map = internalGetWorldPropMap().getMap();
                 return map.containsKey(key) ? map.get(key) : defaultValue;
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.PropValueOuterClass.PropValue getWorldPropMapOrThrow(
                     int key) {
@@ -667,7 +667,7 @@ public final class WorldDataNotifyOuterClass {
                 internalGetMutableWorldPropMap().getMutableMap().clear();
                 return this;
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             public Builder removeWorldPropMap(int key) {
 
                 internalGetMutableWorldPropMap().getMutableMap().remove(key);
@@ -680,7 +680,7 @@ public final class WorldDataNotifyOuterClass {
                     getMutableWorldPropMap() {
                 return internalGetMutableWorldPropMap().getMutableMap();
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             public Builder putWorldPropMap(
                     int key, emu.grasscutter.net.proto.PropValueOuterClass.PropValue value) {
 
@@ -690,7 +690,7 @@ public final class WorldDataNotifyOuterClass {
                 internalGetMutableWorldPropMap().getMutableMap().put(key, value);
                 return this;
             }
-            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 8;</code> */
+            /** <code>map&lt;uint32, .PropValue&gt; world_prop_map = 14;</code> */
             public Builder putAllWorldPropMap(
                     java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.PropValueOuterClass.PropValue>
                             values) {
@@ -771,11 +771,11 @@ public final class WorldDataNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025WorldDataNotify.proto\032\017PropValue.proto"
-                    + "\"\216\001\n\017WorldDataNotify\022:\n\016world_prop_map\030\010"
+                    + "\"\216\001\n\017WorldDataNotify\022:\n\016world_prop_map\030\016"
                     + " \003(\0132\".WorldDataNotify.WorldPropMapEntry"
                     + "\032?\n\021WorldPropMapEntry\022\013\n\003key\030\001 \001(\r\022\031\n\005va"
-                    + "lue\030\002 \001(\0132\n.PropValue:\0028\001B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "lue\030\002 \001(\0132\n.PropValue:\0028\001B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

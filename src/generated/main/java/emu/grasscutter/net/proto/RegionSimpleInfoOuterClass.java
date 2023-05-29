@@ -73,7 +73,7 @@ public final class RegionSimpleInfoOuterClass {
      *
      *
      * <pre>
-     * Name: PNCGEFDNHHF
+     * Obf: BODMEBNADPL
      * </pre>
      *
      * Protobuf type {@code RegionSimpleInfo}
@@ -527,7 +527,7 @@ public final class RegionSimpleInfoOuterClass {
          *
          *
          * <pre>
-         * Name: PNCGEFDNHHF
+         * Obf: BODMEBNADPL
          * </pre>
          *
          * Protobuf type {@code RegionSimpleInfo}
@@ -1091,8 +1091,8 @@ public final class RegionSimpleInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026RegionSimpleInfo.proto\"S\n\020RegionSimple"
                     + "Info\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\014\n\004typ"
-                    + "e\030\003 \001(\t\022\024\n\014dispatch_url\030\004 \001(\tB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "e\030\003 \001(\t\022\024\n\014dispatch_url\030\004 \001(\tB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

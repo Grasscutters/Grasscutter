@@ -17,26 +17,6 @@ public final class SumoTeamDataOuterClass {
             // @@protoc_insertion_point(interface_extends:SumoTeamData)
             com.google.protobuf.MessageOrBuilder {
 
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @return A list containing the skillIdList.
-         */
-        java.util.List<java.lang.Integer> getSkillIdListList();
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @return The count of skillIdList.
-         */
-        int getSkillIdListCount();
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The skillIdList at the given index.
-         */
-        int getSkillIdList(int index);
-
         /** <code>repeated .SumoAvatarInfo avatar_info_list = 10;</code> */
         java.util.List<emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>
                 getAvatarInfoListList();
@@ -51,12 +31,32 @@ public final class SumoTeamDataOuterClass {
         /** <code>repeated .SumoAvatarInfo avatar_info_list = 10;</code> */
         emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfoOrBuilder
                 getAvatarInfoListOrBuilder(int index);
+
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @return A list containing the skillIdList.
+         */
+        java.util.List<java.lang.Integer> getSkillIdListList();
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @return The count of skillIdList.
+         */
+        int getSkillIdListCount();
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The skillIdList at the given index.
+         */
+        int getSkillIdList(int index);
     }
     /**
      *
      *
      * <pre>
-     * Name: JPAKFKCGEAN
+     * Obf: JONCAGENEAF
      * </pre>
      *
      * Protobuf type {@code SumoTeamData}
@@ -72,8 +72,8 @@ public final class SumoTeamDataOuterClass {
         }
 
         private SumoTeamData() {
-            skillIdList_ = emptyIntList();
             avatarInfoList_ = java.util.Collections.emptyList();
+            skillIdList_ = emptyIntList();
         }
 
         @java.lang.Override
@@ -106,22 +106,22 @@ public final class SumoTeamDataOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
+                        case 40:
                             {
-                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                                     skillIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
+                                    mutable_bitField0_ |= 0x00000002;
                                 }
                                 skillIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 18:
+                        case 42:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                                     skillIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
+                                    mutable_bitField0_ |= 0x00000002;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     skillIdList_.addInt(input.readUInt32());
@@ -131,11 +131,11 @@ public final class SumoTeamDataOuterClass {
                             }
                         case 82:
                             {
-                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     avatarInfoList_ =
                                             new java.util.ArrayList<
                                                     emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>();
-                                    mutable_bitField0_ |= 0x00000002;
+                                    mutable_bitField0_ |= 0x00000001;
                                 }
                                 avatarInfoList_.add(
                                         input.readMessage(
@@ -157,10 +157,10 @@ public final class SumoTeamDataOuterClass {
             } catch (java.io.IOException e) {
                 throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
             } finally {
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
                     skillIdList_.makeImmutable(); // C
                 }
-                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
                     avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
                 }
                 this.unknownFields = unknownFields.build();
@@ -182,37 +182,6 @@ public final class SumoTeamDataOuterClass {
                             emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData.class,
                             emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData.Builder.class);
         }
-
-        public static final int SKILL_ID_LIST_FIELD_NUMBER = 2;
-        private com.google.protobuf.Internal.IntList skillIdList_;
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @return A list containing the skillIdList.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getSkillIdListList() {
-            return skillIdList_;
-        }
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @return The count of skillIdList.
-         */
-        public int getSkillIdListCount() {
-            return skillIdList_.size();
-        }
-        /**
-         * <code>repeated uint32 skill_id_list = 2;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The skillIdList at the given index.
-         */
-        public int getSkillIdList(int index) {
-            return skillIdList_.getInt(index);
-        }
-
-        private int skillIdListMemoizedSerializedSize = -1;
 
         public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 10;
         private java.util.List<emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>
@@ -248,6 +217,37 @@ public final class SumoTeamDataOuterClass {
             return avatarInfoList_.get(index);
         }
 
+        public static final int SKILL_ID_LIST_FIELD_NUMBER = 5;
+        private com.google.protobuf.Internal.IntList skillIdList_;
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @return A list containing the skillIdList.
+         */
+        @java.lang.Override
+        public java.util.List<java.lang.Integer> getSkillIdListList() {
+            return skillIdList_;
+        }
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @return The count of skillIdList.
+         */
+        public int getSkillIdListCount() {
+            return skillIdList_.size();
+        }
+        /**
+         * <code>repeated uint32 skill_id_list = 5;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The skillIdList at the given index.
+         */
+        public int getSkillIdList(int index) {
+            return skillIdList_.getInt(index);
+        }
+
+        private int skillIdListMemoizedSerializedSize = -1;
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -264,7 +264,7 @@ public final class SumoTeamDataOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getSkillIdListList().size() > 0) {
-                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(skillIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < skillIdList_.size(); i++) {
@@ -315,8 +315,8 @@ public final class SumoTeamDataOuterClass {
             emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData other =
                     (emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData) obj;
 
-            if (!getSkillIdListList().equals(other.getSkillIdListList())) return false;
             if (!getAvatarInfoListList().equals(other.getAvatarInfoListList())) return false;
+            if (!getSkillIdListList().equals(other.getSkillIdListList())) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -328,13 +328,13 @@ public final class SumoTeamDataOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            if (getSkillIdListCount() > 0) {
-                hash = (37 * hash) + SKILL_ID_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getSkillIdListList().hashCode();
-            }
             if (getAvatarInfoListCount() > 0) {
                 hash = (37 * hash) + AVATAR_INFO_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getAvatarInfoListList().hashCode();
+            }
+            if (getSkillIdListCount() > 0) {
+                hash = (37 * hash) + SKILL_ID_LIST_FIELD_NUMBER;
+                hash = (53 * hash) + getSkillIdListList().hashCode();
             }
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
@@ -442,7 +442,7 @@ public final class SumoTeamDataOuterClass {
          *
          *
          * <pre>
-         * Name: JPAKFKCGEAN
+         * Obf: JONCAGENEAF
          * </pre>
          *
          * Protobuf type {@code SumoTeamData}
@@ -486,14 +486,14 @@ public final class SumoTeamDataOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                skillIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
                 if (avatarInfoListBuilder_ == null) {
                     avatarInfoList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
+                    bitField0_ = (bitField0_ & ~0x00000001);
                 } else {
                     avatarInfoListBuilder_.clear();
                 }
+                skillIdList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
                 return this;
             }
 
@@ -523,20 +523,20 @@ public final class SumoTeamDataOuterClass {
                 emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData result =
                         new emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData(this);
                 int from_bitField0_ = bitField0_;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                    skillIdList_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                }
-                result.skillIdList_ = skillIdList_;
                 if (avatarInfoListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) != 0)) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
                         avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
-                        bitField0_ = (bitField0_ & ~0x00000002);
+                        bitField0_ = (bitField0_ & ~0x00000001);
                     }
                     result.avatarInfoList_ = avatarInfoList_;
                 } else {
                     result.avatarInfoList_ = avatarInfoListBuilder_.build();
                 }
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    skillIdList_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.skillIdList_ = skillIdList_;
                 onBuilt();
                 return result;
             }
@@ -591,21 +591,11 @@ public final class SumoTeamDataOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.SumoTeamDataOuterClass.SumoTeamData.getDefaultInstance())
                     return this;
-                if (!other.skillIdList_.isEmpty()) {
-                    if (skillIdList_.isEmpty()) {
-                        skillIdList_ = other.skillIdList_;
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    } else {
-                        ensureSkillIdListIsMutable();
-                        skillIdList_.addAll(other.skillIdList_);
-                    }
-                    onChanged();
-                }
                 if (avatarInfoListBuilder_ == null) {
                     if (!other.avatarInfoList_.isEmpty()) {
                         if (avatarInfoList_.isEmpty()) {
                             avatarInfoList_ = other.avatarInfoList_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
+                            bitField0_ = (bitField0_ & ~0x00000001);
                         } else {
                             ensureAvatarInfoListIsMutable();
                             avatarInfoList_.addAll(other.avatarInfoList_);
@@ -618,7 +608,7 @@ public final class SumoTeamDataOuterClass {
                             avatarInfoListBuilder_.dispose();
                             avatarInfoListBuilder_ = null;
                             avatarInfoList_ = other.avatarInfoList_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
+                            bitField0_ = (bitField0_ & ~0x00000001);
                             avatarInfoListBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                                             ? getAvatarInfoListFieldBuilder()
@@ -627,6 +617,16 @@ public final class SumoTeamDataOuterClass {
                             avatarInfoListBuilder_.addAllMessages(other.avatarInfoList_);
                         }
                     }
+                }
+                if (!other.skillIdList_.isEmpty()) {
+                    if (skillIdList_.isEmpty()) {
+                        skillIdList_ = other.skillIdList_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureSkillIdListIsMutable();
+                        skillIdList_.addAll(other.skillIdList_);
+                    }
+                    onChanged();
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -661,100 +661,16 @@ public final class SumoTeamDataOuterClass {
 
             private int bitField0_;
 
-            private com.google.protobuf.Internal.IntList skillIdList_ = emptyIntList();
-
-            private void ensureSkillIdListIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    skillIdList_ = mutableCopy(skillIdList_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @return A list containing the skillIdList.
-             */
-            public java.util.List<java.lang.Integer> getSkillIdListList() {
-                return ((bitField0_ & 0x00000001) != 0)
-                        ? java.util.Collections.unmodifiableList(skillIdList_)
-                        : skillIdList_;
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @return The count of skillIdList.
-             */
-            public int getSkillIdListCount() {
-                return skillIdList_.size();
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The skillIdList at the given index.
-             */
-            public int getSkillIdList(int index) {
-                return skillIdList_.getInt(index);
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The skillIdList to set.
-             * @return This builder for chaining.
-             */
-            public Builder setSkillIdList(int index, int value) {
-                ensureSkillIdListIsMutable();
-                skillIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @param value The skillIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addSkillIdList(int value) {
-                ensureSkillIdListIsMutable();
-                skillIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @param values The skillIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllSkillIdList(java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureSkillIdListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, skillIdList_);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 skill_id_list = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearSkillIdList() {
-                skillIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                onChanged();
-                return this;
-            }
-
             private java.util.List<emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>
                     avatarInfoList_ = java.util.Collections.emptyList();
 
             private void ensureAvatarInfoListIsMutable() {
-                if (!((bitField0_ & 0x00000002) != 0)) {
+                if (!((bitField0_ & 0x00000001) != 0)) {
                     avatarInfoList_ =
                             new java.util.ArrayList<
                                     emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo>(
                                     avatarInfoList_);
-                    bitField0_ |= 0x00000002;
+                    bitField0_ |= 0x00000001;
                 }
             }
 
@@ -894,7 +810,7 @@ public final class SumoTeamDataOuterClass {
             public Builder clearAvatarInfoList() {
                 if (avatarInfoListBuilder_ == null) {
                     avatarInfoList_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
+                    bitField0_ = (bitField0_ & ~0x00000001);
                     onChanged();
                 } else {
                     avatarInfoListBuilder_.clear();
@@ -972,12 +888,96 @@ public final class SumoTeamDataOuterClass {
                                     emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfo.Builder,
                                     emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.SumoAvatarInfoOrBuilder>(
                                     avatarInfoList_,
-                                    ((bitField0_ & 0x00000002) != 0),
+                                    ((bitField0_ & 0x00000001) != 0),
                                     getParentForChildren(),
                                     isClean());
                     avatarInfoList_ = null;
                 }
                 return avatarInfoListBuilder_;
+            }
+
+            private com.google.protobuf.Internal.IntList skillIdList_ = emptyIntList();
+
+            private void ensureSkillIdListIsMutable() {
+                if (!((bitField0_ & 0x00000002) != 0)) {
+                    skillIdList_ = mutableCopy(skillIdList_);
+                    bitField0_ |= 0x00000002;
+                }
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @return A list containing the skillIdList.
+             */
+            public java.util.List<java.lang.Integer> getSkillIdListList() {
+                return ((bitField0_ & 0x00000002) != 0)
+                        ? java.util.Collections.unmodifiableList(skillIdList_)
+                        : skillIdList_;
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @return The count of skillIdList.
+             */
+            public int getSkillIdListCount() {
+                return skillIdList_.size();
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @param index The index of the element to return.
+             * @return The skillIdList at the given index.
+             */
+            public int getSkillIdList(int index) {
+                return skillIdList_.getInt(index);
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @param index The index to set the value at.
+             * @param value The skillIdList to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSkillIdList(int index, int value) {
+                ensureSkillIdListIsMutable();
+                skillIdList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @param value The skillIdList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addSkillIdList(int value) {
+                ensureSkillIdListIsMutable();
+                skillIdList_.addInt(value);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @param values The skillIdList to add.
+             * @return This builder for chaining.
+             */
+            public Builder addAllSkillIdList(java.lang.Iterable<? extends java.lang.Integer> values) {
+                ensureSkillIdListIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, skillIdList_);
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>repeated uint32 skill_id_list = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSkillIdList() {
+                skillIdList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                onChanged();
+                return this;
             }
 
             @java.lang.Override
@@ -1049,10 +1049,10 @@ public final class SumoTeamDataOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\022SumoTeamData.proto\032\024SumoAvatarInfo.pro"
-                    + "to\"P\n\014SumoTeamData\022\025\n\rskill_id_list\030\002 \003("
-                    + "\r\022)\n\020avatar_info_list\030\n \003(\0132\017.SumoAvatar"
-                    + "InfoB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "to\"P\n\014SumoTeamData\022)\n\020avatar_info_list\030\n"
+                    + " \003(\0132\017.SumoAvatarInfo\022\025\n\rskill_id_list\030\005"
+                    + " \003(\rB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1065,7 +1065,7 @@ public final class SumoTeamDataOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_SumoTeamData_descriptor,
                         new java.lang.String[] {
-                            "SkillIdList", "AvatarInfoList",
+                            "AvatarInfoList", "SkillIdList",
                         });
         emu.grasscutter.net.proto.SumoAvatarInfoOuterClass.getDescriptor();
     }

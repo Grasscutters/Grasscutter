@@ -48,7 +48,7 @@ public final class CustomCommonNodeInfoOuterClass {
      *
      *
      * <pre>
-     * Name: OPFOGLAHFNE
+     * Obf: COEBLBLIGHJ
      * </pre>
      *
      * Protobuf type {@code CustomCommonNodeInfo}
@@ -400,7 +400,7 @@ public final class CustomCommonNodeInfoOuterClass {
          *
          *
          * <pre>
-         * Name: OPFOGLAHFNE
+         * Obf: COEBLBLIGHJ
          * </pre>
          *
          * Protobuf type {@code CustomCommonNodeInfo}
@@ -800,9 +800,8 @@ public final class CustomCommonNodeInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\032CustomCommonNodeInfo.proto\"X\n\024CustomCo"
                     + "mmonNodeInfo\022\024\n\014parent_index\030\001 \001(\005\022\021\n\tco"
-                    + "nfig_id\030\002 \001(\r\022\027\n\017slot_identifier\030\003 \001(\tB!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "nfig_id\030\002 \001(\r\022\027\n\017slot_identifier\030\003 \001(\tB\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -20,8 +20,8 @@ public final class AvatarExpeditionAllDataReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1690
-     * Name: BOMGBIMAENG
+     * CmdId: 1665
+     * Obf: PNEIGBDCOON
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionAllDataReq}
@@ -285,8 +285,8 @@ public final class AvatarExpeditionAllDataReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1690
-         * Name: BOMGBIMAENG
+         * CmdId: 1665
+         * Obf: PNEIGBDCOON
          * </pre>
          *
          * Protobuf type {@code AvatarExpeditionAllDataReq}
@@ -536,8 +536,8 @@ public final class AvatarExpeditionAllDataReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n AvatarExpeditionAllDataReq.proto\"\034\n\032Av"
-                    + "atarExpeditionAllDataReqB!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "atarExpeditionAllDataReqB\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

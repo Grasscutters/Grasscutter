@@ -28,7 +28,7 @@ public final class EchoShellInfoOuterClass {
      *
      *
      * <pre>
-     * Name: EMEGCNJLBOD
+     * Obf: ODKKHMAMPOH
      * </pre>
      *
      * Protobuf type {@code EchoShellInfo}
@@ -291,7 +291,7 @@ public final class EchoShellInfoOuterClass {
          *
          *
          * <pre>
-         * Name: EMEGCNJLBOD
+         * Obf: ODKKHMAMPOH
          * </pre>
          *
          * Protobuf type {@code EchoShellInfo}
@@ -556,8 +556,8 @@ public final class EchoShellInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\023EchoShellInfo.proto\"!\n\rEchoShellInfo\022\020"
-                    + "\n\010shell_id\030\001 \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "\n\010shell_id\030\001 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

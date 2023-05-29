@@ -57,7 +57,7 @@ public final class TrialAvatarInfoOuterClass {
      *
      *
      * <pre>
-     * Name: NDCPPFJKBFD
+     * Obf: LHKLGLMFEOF
      * </pre>
      *
      * Protobuf type {@code TrialAvatarInfo}
@@ -446,7 +446,7 @@ public final class TrialAvatarInfoOuterClass {
          *
          *
          * <pre>
-         * Name: NDCPPFJKBFD
+         * Obf: LHKLGLMFEOF
          * </pre>
          *
          * Protobuf type {@code TrialAvatarInfo}
@@ -1129,8 +1129,8 @@ public final class TrialAvatarInfoOuterClass {
                     + "alAvatarGrantRecord.proto\"z\n\017TrialAvatar"
                     + "Info\022\027\n\017trial_avatar_id\030\001 \001(\r\022\037\n\020trial_e"
                     + "quip_list\030\002 \003(\0132\005.Item\022-\n\014grant_record\030\003"
-                    + " \001(\0132\027.TrialAvatarGrantRecordB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + " \001(\0132\027.TrialAvatarGrantRecordB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

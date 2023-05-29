@@ -38,8 +38,8 @@ public final class SetChatEmojiCollectionReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4068
-     * Name: MPMEMEBCIAG
+     * CmdId: 4019
+     * Obf: IOLHCMEELHO
      * </pre>
      *
      * Protobuf type {@code SetChatEmojiCollectionReq}
@@ -371,8 +371,8 @@ public final class SetChatEmojiCollectionReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4068
-         * Name: MPMEMEBCIAG
+         * CmdId: 4019
+         * Obf: IOLHCMEELHO
          * </pre>
          *
          * Protobuf type {@code SetChatEmojiCollectionReq}
@@ -775,8 +775,8 @@ public final class SetChatEmojiCollectionReqOuterClass {
             "\n\037SetChatEmojiCollectionReq.proto\032\035ChatE"
                     + "mojiCollectionData.proto\"Y\n\031SetChatEmoji"
                     + "CollectionReq\022<\n\032chat_emoji_collection_d"
-                    + "ata\030\016 \001(\0132\030.ChatEmojiCollectionDataB!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "ata\030\016 \001(\0132\030.ChatEmojiCollectionDataB\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

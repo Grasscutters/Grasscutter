@@ -128,8 +128,8 @@ public final class MusicGameUnknown2EnumOuterClass {
             "\n\033MusicGameUnknown2Enum.proto*s\n\025MusicGa"
                     + "meUnknown2Enum\022\034\n\030MusicGameUnknown2Enum_"
                     + "u1\020\000\022\036\n\032MusicGameUnknown2Enum_MINE\020\001\022\034\n\030"
-                    + "MusicGameUnknown2Enum_u3\020\002B!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "MusicGameUnknown2Enum_u3\020\002B\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

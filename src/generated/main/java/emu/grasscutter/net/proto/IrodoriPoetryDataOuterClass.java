@@ -18,28 +18,28 @@ public final class IrodoriPoetryDataOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 cur_theme_id = 2;</code>
+         * <code>uint32 cur_theme_id = 14;</code>
          *
          * @return The curThemeId.
          */
         int getCurThemeId();
 
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         java.util.List<
                         emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData>
                 getThemeDataListList();
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                 getThemeDataList(int index);
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         int getThemeDataListCount();
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         java.util.List<
                         ? extends
                                 emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass
                                         .IrodoriPoetryThemeDataOrBuilder>
                 getThemeDataListOrBuilderList();
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder
                 getThemeDataListOrBuilder(int index);
     }
@@ -47,7 +47,7 @@ public final class IrodoriPoetryDataOuterClass {
      *
      *
      * <pre>
-     * Name: DCDPDMDHDHD
+     * Obf: NGOPLHAHODO
      * </pre>
      *
      * Protobuf type {@code IrodoriPoetryData}
@@ -96,12 +96,7 @@ public final class IrodoriPoetryDataOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
-                            {
-                                curThemeId_ = input.readUInt32();
-                                break;
-                            }
-                        case 122:
+                        case 26:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     themeDataList_ =
@@ -115,6 +110,11 @@ public final class IrodoriPoetryDataOuterClass {
                                                 emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass
                                                         .IrodoriPoetryThemeData.parser(),
                                                 extensionRegistry));
+                                break;
+                            }
+                        case 112:
+                            {
+                                curThemeId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -155,10 +155,10 @@ public final class IrodoriPoetryDataOuterClass {
                                     .class);
         }
 
-        public static final int CUR_THEME_ID_FIELD_NUMBER = 2;
+        public static final int CUR_THEME_ID_FIELD_NUMBER = 14;
         private int curThemeId_;
         /**
-         * <code>uint32 cur_theme_id = 2;</code>
+         * <code>uint32 cur_theme_id = 14;</code>
          *
          * @return The curThemeId.
          */
@@ -167,18 +167,18 @@ public final class IrodoriPoetryDataOuterClass {
             return curThemeId_;
         }
 
-        public static final int THEME_DATA_LIST_FIELD_NUMBER = 15;
+        public static final int THEME_DATA_LIST_FIELD_NUMBER = 3;
         private java.util.List<
                         emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData>
                 themeDataList_;
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         @java.lang.Override
         public java.util.List<
                         emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData>
                 getThemeDataListList() {
             return themeDataList_;
         }
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         @java.lang.Override
         public java.util.List<
                         ? extends
@@ -187,18 +187,18 @@ public final class IrodoriPoetryDataOuterClass {
                 getThemeDataListOrBuilderList() {
             return themeDataList_;
         }
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         @java.lang.Override
         public int getThemeDataListCount() {
             return themeDataList_.size();
         }
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                 getThemeDataList(int index) {
             return themeDataList_.get(index);
         }
-        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+        /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass
                         .IrodoriPoetryThemeDataOrBuilder
@@ -220,11 +220,11 @@ public final class IrodoriPoetryDataOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (curThemeId_ != 0) {
-                output.writeUInt32(2, curThemeId_);
-            }
             for (int i = 0; i < themeDataList_.size(); i++) {
-                output.writeMessage(15, themeDataList_.get(i));
+                output.writeMessage(3, themeDataList_.get(i));
+            }
+            if (curThemeId_ != 0) {
+                output.writeUInt32(14, curThemeId_);
             }
             unknownFields.writeTo(output);
         }
@@ -235,11 +235,11 @@ public final class IrodoriPoetryDataOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (curThemeId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, curThemeId_);
-            }
             for (int i = 0; i < themeDataList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, themeDataList_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, themeDataList_.get(i));
+            }
+            if (curThemeId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, curThemeId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -384,7 +384,7 @@ public final class IrodoriPoetryDataOuterClass {
          *
          *
          * <pre>
-         * Name: DCDPDMDHDHD
+         * Obf: NGOPLHAHODO
          * </pre>
          *
          * Protobuf type {@code IrodoriPoetryData}
@@ -602,7 +602,7 @@ public final class IrodoriPoetryDataOuterClass {
 
             private int curThemeId_;
             /**
-             * <code>uint32 cur_theme_id = 2;</code>
+             * <code>uint32 cur_theme_id = 14;</code>
              *
              * @return The curThemeId.
              */
@@ -611,7 +611,7 @@ public final class IrodoriPoetryDataOuterClass {
                 return curThemeId_;
             }
             /**
-             * <code>uint32 cur_theme_id = 2;</code>
+             * <code>uint32 cur_theme_id = 14;</code>
              *
              * @param value The curThemeId to set.
              * @return This builder for chaining.
@@ -623,7 +623,7 @@ public final class IrodoriPoetryDataOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 cur_theme_id = 2;</code>
+             * <code>uint32 cur_theme_id = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -656,7 +656,7 @@ public final class IrodoriPoetryDataOuterClass {
                                     .IrodoriPoetryThemeDataOrBuilder>
                     themeDataListBuilder_;
 
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData>
                     getThemeDataListList() {
@@ -666,7 +666,7 @@ public final class IrodoriPoetryDataOuterClass {
                     return themeDataListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public int getThemeDataListCount() {
                 if (themeDataListBuilder_ == null) {
                     return themeDataList_.size();
@@ -674,7 +674,7 @@ public final class IrodoriPoetryDataOuterClass {
                     return themeDataListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                     getThemeDataList(int index) {
                 if (themeDataListBuilder_ == null) {
@@ -683,7 +683,7 @@ public final class IrodoriPoetryDataOuterClass {
                     return themeDataListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder setThemeDataList(
                     int index,
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
@@ -699,7 +699,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder setThemeDataList(
                     int index,
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder
@@ -713,7 +713,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder addThemeDataList(
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
                 if (themeDataListBuilder_ == null) {
@@ -728,7 +728,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder addThemeDataList(
                     int index,
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
@@ -744,7 +744,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder addThemeDataList(
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder
                             builderForValue) {
@@ -757,7 +757,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder addThemeDataList(
                     int index,
                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder
@@ -771,7 +771,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder addAllThemeDataList(
                     java.lang.Iterable<
                                     ? extends
@@ -787,7 +787,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder clearThemeDataList() {
                 if (themeDataListBuilder_ == null) {
                     themeDataList_ = java.util.Collections.emptyList();
@@ -798,7 +798,7 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public Builder removeThemeDataList(int index) {
                 if (themeDataListBuilder_ == null) {
                     ensureThemeDataListIsMutable();
@@ -809,13 +809,13 @@ public final class IrodoriPoetryDataOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                             .Builder
                     getThemeDataListBuilder(int index) {
                 return getThemeDataListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass
                             .IrodoriPoetryThemeDataOrBuilder
                     getThemeDataListOrBuilder(int index) {
@@ -825,7 +825,7 @@ public final class IrodoriPoetryDataOuterClass {
                     return themeDataListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass
@@ -837,7 +837,7 @@ public final class IrodoriPoetryDataOuterClass {
                     return java.util.Collections.unmodifiableList(themeDataList_);
                 }
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                             .Builder
                     addThemeDataListBuilder() {
@@ -846,7 +846,7 @@ public final class IrodoriPoetryDataOuterClass {
                                 emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                             .Builder
                     addThemeDataListBuilder(int index) {
@@ -856,7 +856,7 @@ public final class IrodoriPoetryDataOuterClass {
                                 emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                                         .getDefaultInstance());
             }
-            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 15;</code> */
+            /** <code>repeated .IrodoriPoetryThemeData theme_data_list = 3;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData
                                     .Builder>
@@ -959,9 +959,9 @@ public final class IrodoriPoetryDataOuterClass {
         java.lang.String[] descriptorData = {
             "\n\027IrodoriPoetryData.proto\032\034IrodoriPoetry"
                     + "ThemeData.proto\"[\n\021IrodoriPoetryData\022\024\n\014"
-                    + "cur_theme_id\030\002 \001(\r\0220\n\017theme_data_list\030\017 "
-                    + "\003(\0132\027.IrodoriPoetryThemeDataB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "cur_theme_id\030\016 \001(\r\0220\n\017theme_data_list\030\003 "
+                    + "\003(\0132\027.IrodoriPoetryThemeDataB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

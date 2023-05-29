@@ -15,7 +15,7 @@ public final class CompoundBoostTakeStatusTypeOuterClass {
      *
      *
      * <pre>
-     * Name: BCHLHMNBPCI
+     * Obf: KBJDBGIEOHI
      * </pre>
      *
      * Protobuf enum {@code CompoundBoostTakeStatusType}
@@ -144,8 +144,8 @@ public final class CompoundBoostTakeStatusTypeOuterClass {
                     + "BOOST_TAKE_STATUS_NONE\020\000\022)\n%COMPOUND_BOO"
                     + "ST_TAKE_STATUS_BOOST_ONLY\020\001\022-\n)COMPOUND_"
                     + "BOOST_TAKE_STATUS_BOOST_AND_TAKE\020\002\022\'\n#CO"
-                    + "MPOUND_BOOST_TAKE_STATUS_BAG_FULL\020\003B!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "MPOUND_BOOST_TAKE_STATUS_BAG_FULL\020\003B\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

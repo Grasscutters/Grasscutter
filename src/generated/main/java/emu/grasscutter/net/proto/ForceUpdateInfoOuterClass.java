@@ -34,7 +34,7 @@ public final class ForceUpdateInfoOuterClass {
      *
      *
      * <pre>
-     * Name: FKIGODAGGJA
+     * Obf: BFFAMAJFAIO
      * </pre>
      *
      * Protobuf type {@code ForceUpdateInfo}
@@ -326,7 +326,7 @@ public final class ForceUpdateInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FKIGODAGGJA
+         * Obf: BFFAMAJFAIO
          * </pre>
          *
          * Protobuf type {@code ForceUpdateInfo}
@@ -636,8 +636,8 @@ public final class ForceUpdateInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025ForceUpdateInfo.proto\"+\n\017ForceUpdateIn"
-                    + "fo\022\030\n\020force_update_url\030\001 \001(\tB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "fo\022\030\n\020force_update_url\030\001 \001(\tB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

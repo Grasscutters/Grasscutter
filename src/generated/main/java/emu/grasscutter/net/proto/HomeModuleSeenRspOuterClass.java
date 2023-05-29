@@ -18,19 +18,19 @@ public final class HomeModuleSeenRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @return A list containing the seenModuleIdList.
          */
         java.util.List<java.lang.Integer> getSeenModuleIdListList();
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @return The count of seenModuleIdList.
          */
         int getSeenModuleIdListCount();
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @param index The index of the element to return.
          * @return The seenModuleIdList at the given index.
@@ -38,7 +38,7 @@ public final class HomeModuleSeenRspOuterClass {
         int getSeenModuleIdList(int index);
 
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 9;</code>
          *
          * @return The retcode.
          */
@@ -48,8 +48,8 @@ public final class HomeModuleSeenRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4605
-     * Name: ELBAMHIEJLG
+     * CmdId: 4725
+     * Obf: MFJDJBOBBMM
      * </pre>
      *
      * Protobuf type {@code HomeModuleSeenRsp}
@@ -98,12 +98,12 @@ public final class HomeModuleSeenRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 64:
+                        case 72:
                             {
                                 retcode_ = input.readInt32();
                                 break;
                             }
-                        case 88:
+                        case 112:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     seenModuleIdList_ = newIntList();
@@ -112,7 +112,7 @@ public final class HomeModuleSeenRspOuterClass {
                                 seenModuleIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 90:
+                        case 114:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -164,10 +164,10 @@ public final class HomeModuleSeenRspOuterClass {
                                     .class);
         }
 
-        public static final int SEEN_MODULE_ID_LIST_FIELD_NUMBER = 11;
+        public static final int SEEN_MODULE_ID_LIST_FIELD_NUMBER = 14;
         private com.google.protobuf.Internal.IntList seenModuleIdList_;
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @return A list containing the seenModuleIdList.
          */
@@ -176,7 +176,7 @@ public final class HomeModuleSeenRspOuterClass {
             return seenModuleIdList_;
         }
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @return The count of seenModuleIdList.
          */
@@ -184,7 +184,7 @@ public final class HomeModuleSeenRspOuterClass {
             return seenModuleIdList_.size();
         }
         /**
-         * <code>repeated uint32 seen_module_id_list = 11;</code>
+         * <code>repeated uint32 seen_module_id_list = 14;</code>
          *
          * @param index The index of the element to return.
          * @return The seenModuleIdList at the given index.
@@ -195,10 +195,10 @@ public final class HomeModuleSeenRspOuterClass {
 
         private int seenModuleIdListMemoizedSerializedSize = -1;
 
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 9;</code>
          *
          * @return The retcode.
          */
@@ -223,10 +223,10 @@ public final class HomeModuleSeenRspOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (retcode_ != 0) {
-                output.writeInt32(8, retcode_);
+                output.writeInt32(9, retcode_);
             }
             if (getSeenModuleIdListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(114);
                 output.writeUInt32NoTag(seenModuleIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < seenModuleIdList_.size(); i++) {
@@ -242,7 +242,7 @@ public final class HomeModuleSeenRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, retcode_);
             }
             {
                 int dataSize = 0;
@@ -401,8 +401,8 @@ public final class HomeModuleSeenRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4605
-         * Name: ELBAMHIEJLG
+         * CmdId: 4725
+         * Obf: MFJDJBOBBMM
          * </pre>
          *
          * Protobuf type {@code HomeModuleSeenRsp}
@@ -600,7 +600,7 @@ public final class HomeModuleSeenRspOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @return A list containing the seenModuleIdList.
              */
@@ -610,7 +610,7 @@ public final class HomeModuleSeenRspOuterClass {
                         : seenModuleIdList_;
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @return The count of seenModuleIdList.
              */
@@ -618,7 +618,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return seenModuleIdList_.size();
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @param index The index of the element to return.
              * @return The seenModuleIdList at the given index.
@@ -627,7 +627,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return seenModuleIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @param index The index to set the value at.
              * @param value The seenModuleIdList to set.
@@ -640,7 +640,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @param value The seenModuleIdList to add.
              * @return This builder for chaining.
@@ -652,7 +652,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @param values The seenModuleIdList to add.
              * @return This builder for chaining.
@@ -665,7 +665,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 seen_module_id_list = 11;</code>
+             * <code>repeated uint32 seen_module_id_list = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -678,7 +678,7 @@ public final class HomeModuleSeenRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 9;</code>
              *
              * @return The retcode.
              */
@@ -687,7 +687,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 9;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -699,7 +699,7 @@ public final class HomeModuleSeenRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 9;</code>
              *
              * @return This builder for chaining.
              */
@@ -780,9 +780,9 @@ public final class HomeModuleSeenRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027HomeModuleSeenRsp.proto\"A\n\021HomeModuleS"
-                    + "eenRsp\022\033\n\023seen_module_id_list\030\013 \003(\r\022\017\n\007r"
-                    + "etcode\030\010 \001(\005B!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "eenRsp\022\033\n\023seen_module_id_list\030\016 \003(\r\022\017\n\007r"
+                    + "etcode\030\t \001(\005B\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

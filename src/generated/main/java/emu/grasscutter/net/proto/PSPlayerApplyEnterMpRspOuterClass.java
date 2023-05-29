@@ -18,7 +18,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 param = 7;</code>
+         * <code>uint32 param = 12;</code>
          *
          * @return The param.
          */
@@ -38,7 +38,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
         com.google.protobuf.ByteString getTargetPsnIdBytes();
 
         /**
-         * <code>int32 retcode = 12;</code>
+         * <code>int32 retcode = 2;</code>
          *
          * @return The retcode.
          */
@@ -48,8 +48,8 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1821
-     * Name: IFCMJCBNEIP
+     * CmdId: 1842
+     * Obf: LBNPFNBAJOI
      * </pre>
      *
      * Protobuf type {@code PSPlayerApplyEnterMpRsp}
@@ -97,9 +97,9 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
+                        case 16:
                             {
-                                param_ = input.readUInt32();
+                                retcode_ = input.readInt32();
                                 break;
                             }
                         case 82:
@@ -111,7 +111,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                             }
                         case 96:
                             {
-                                retcode_ = input.readInt32();
+                                param_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -150,10 +150,10 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                                     .Builder.class);
         }
 
-        public static final int PARAM_FIELD_NUMBER = 7;
+        public static final int PARAM_FIELD_NUMBER = 12;
         private int param_;
         /**
-         * <code>uint32 param = 7;</code>
+         * <code>uint32 param = 12;</code>
          *
          * @return The param.
          */
@@ -199,10 +199,10 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             }
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 12;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
         /**
-         * <code>int32 retcode = 12;</code>
+         * <code>int32 retcode = 2;</code>
          *
          * @return The retcode.
          */
@@ -225,14 +225,14 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (param_ != 0) {
-                output.writeUInt32(7, param_);
+            if (retcode_ != 0) {
+                output.writeInt32(2, retcode_);
             }
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
                 com.google.protobuf.GeneratedMessageV3.writeString(output, 10, targetPsnId_);
             }
-            if (retcode_ != 0) {
-                output.writeInt32(12, retcode_);
+            if (param_ != 0) {
+                output.writeUInt32(12, param_);
             }
             unknownFields.writeTo(output);
         }
@@ -243,14 +243,14 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (param_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, param_);
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, retcode_);
             }
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetPsnId_)) {
                 size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, targetPsnId_);
             }
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, retcode_);
+            if (param_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, param_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -415,8 +415,8 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1821
-         * Name: IFCMJCBNEIP
+         * CmdId: 1842
+         * Obf: LBNPFNBAJOI
          * </pre>
          *
          * Protobuf type {@code PSPlayerApplyEnterMpRsp}
@@ -607,7 +607,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
 
             private int param_;
             /**
-             * <code>uint32 param = 7;</code>
+             * <code>uint32 param = 12;</code>
              *
              * @return The param.
              */
@@ -616,7 +616,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return param_;
             }
             /**
-             * <code>uint32 param = 7;</code>
+             * <code>uint32 param = 12;</code>
              *
              * @param value The param to set.
              * @return This builder for chaining.
@@ -628,7 +628,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 param = 7;</code>
+             * <code>uint32 param = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -717,7 +717,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 2;</code>
              *
              * @return The retcode.
              */
@@ -726,7 +726,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 2;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -738,7 +738,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 2;</code>
              *
              * @return This builder for chaining.
              */
@@ -821,9 +821,9 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035PSPlayerApplyEnterMpRsp.proto\"P\n\027PSPla"
-                    + "yerApplyEnterMpRsp\022\r\n\005param\030\007 \001(\r\022\025\n\rtar"
-                    + "get_psn_id\030\n \001(\t\022\017\n\007retcode\030\014 \001(\005B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "yerApplyEnterMpRsp\022\r\n\005param\030\014 \001(\r\022\025\n\rtar"
+                    + "get_psn_id\030\n \001(\t\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

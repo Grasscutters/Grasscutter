@@ -24,14 +24,21 @@ class HomeButton extends React.PureComponent<IProps> {
         navigate(this.props.anchor);
     }
 
+    /**
+     * Checks if this component should be showed.
+     */
+    private shouldShow(): boolean {
+        return !((window as any).hide as string[]).includes(this.props.anchor.toLowerCase());
+    }
+
     render() {
-        return (
+        return this.shouldShow() ? (
             <div className={"HomeButton"} onClick={() => this.redirect()}>
                 <img className={"HomeButton_Icon"} src={this.props.icon} alt={this.props.name} />
 
                 <p className={"HomeButton_Label"}>{this.props.name}</p>
             </div>
-        );
+        ) : undefined;
     }
 }
 

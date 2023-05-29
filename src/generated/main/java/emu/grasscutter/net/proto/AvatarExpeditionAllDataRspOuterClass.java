@@ -17,9 +17,9 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             // @@protoc_insertion_point(interface_extends:AvatarExpeditionAllDataRsp)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         int getExpeditionInfoMapCount();
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         boolean containsExpeditionInfoMap(long key);
         /** Use {@link #getExpeditionInfoMapMap()} instead. */
         @java.lang.Deprecated
@@ -27,61 +27,61 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                         java.lang.Long,
                         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
                 getExpeditionInfoMap();
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         java.util.Map<
                         java.lang.Long,
                         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
                 getExpeditionInfoMapMap();
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                 getExpeditionInfoMapOrDefault(
                         long key,
                         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                                 defaultValue);
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                 getExpeditionInfoMapOrThrow(long key);
 
         /**
-         * <code>uint32 expedition_count_limit = 12;</code>
+         * <code>uint32 expedition_count_limit = 10;</code>
          *
          * @return The expeditionCountLimit.
          */
         int getExpeditionCountLimit();
 
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>int32 retcode = 13;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
+
+        /**
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @return A list containing the openExpeditionList.
          */
         java.util.List<java.lang.Integer> getOpenExpeditionListList();
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @return The count of openExpeditionList.
          */
         int getOpenExpeditionListCount();
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @param index The index of the element to return.
          * @return The openExpeditionList at the given index.
          */
         int getOpenExpeditionList(int index);
-
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 1683
-     * Name: BFEGBKILMIB
+     * CmdId: 1722
+     * Obf: FIOCIHFCAPH
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionAllDataRsp}
@@ -133,11 +133,6 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                             break;
                         case 40:
                             {
-                                retcode_ = input.readInt32();
-                                break;
-                            }
-                        case 72:
-                            {
                                 if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                                     openExpeditionList_ = newIntList();
                                     mutable_bitField0_ |= 0x00000002;
@@ -145,7 +140,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                                 openExpeditionList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 74:
+                        case 42:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -159,7 +154,17 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                                 input.popLimit(limit);
                                 break;
                             }
-                        case 90:
+                        case 80:
+                            {
+                                expeditionCountLimit_ = input.readUInt32();
+                                break;
+                            }
+                        case 104:
+                            {
+                                retcode_ = input.readInt32();
+                                break;
+                            }
+                        case 114:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     expeditionInfoMap_ =
@@ -178,11 +183,6 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                                 expeditionInfoMap_
                                         .getMutableMap()
                                         .put(expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
-                                break;
-                            }
-                        case 96:
-                            {
-                                expeditionCountLimit_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -216,7 +216,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
         @java.lang.Override
         protected com.google.protobuf.MapField internalGetMapField(int number) {
             switch (number) {
-                case 11:
+                case 14:
                     return internalGetExpeditionInfoMap();
                 default:
                     throw new RuntimeException("Invalid map field number: " + number);
@@ -235,7 +235,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                                     .AvatarExpeditionAllDataRsp.Builder.class);
         }
 
-        public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 11;
+        public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 14;
 
         private static final class ExpeditionInfoMapDefaultEntryHolder {
             static final com.google.protobuf.MapEntry<
@@ -274,7 +274,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
         public int getExpeditionInfoMapCount() {
             return internalGetExpeditionInfoMap().getMap().size();
         }
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         @java.lang.Override
         public boolean containsExpeditionInfoMap(long key) {
 
@@ -289,7 +289,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 getExpeditionInfoMap() {
             return getExpeditionInfoMapMap();
         }
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         @java.lang.Override
         public java.util.Map<
                         java.lang.Long,
@@ -297,7 +297,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 getExpeditionInfoMapMap() {
             return internalGetExpeditionInfoMap().getMap();
         }
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                 getExpeditionInfoMapOrDefault(
@@ -311,7 +311,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                     map = internalGetExpeditionInfoMap().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+        /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                 getExpeditionInfoMapOrThrow(long key) {
@@ -326,10 +326,10 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             return map.get(key);
         }
 
-        public static final int EXPEDITION_COUNT_LIMIT_FIELD_NUMBER = 12;
+        public static final int EXPEDITION_COUNT_LIMIT_FIELD_NUMBER = 10;
         private int expeditionCountLimit_;
         /**
-         * <code>uint32 expedition_count_limit = 12;</code>
+         * <code>uint32 expedition_count_limit = 10;</code>
          *
          * @return The expeditionCountLimit.
          */
@@ -338,10 +338,22 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             return expeditionCountLimit_;
         }
 
-        public static final int OPEN_EXPEDITION_LIST_FIELD_NUMBER = 9;
+        public static final int RETCODE_FIELD_NUMBER = 13;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 13;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
+        }
+
+        public static final int OPEN_EXPEDITION_LIST_FIELD_NUMBER = 5;
         private com.google.protobuf.Internal.IntList openExpeditionList_;
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @return A list containing the openExpeditionList.
          */
@@ -350,7 +362,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             return openExpeditionList_;
         }
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @return The count of openExpeditionList.
          */
@@ -358,7 +370,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             return openExpeditionList_.size();
         }
         /**
-         * <code>repeated uint32 open_expedition_list = 9;</code>
+         * <code>repeated uint32 open_expedition_list = 5;</code>
          *
          * @param index The index of the element to return.
          * @return The openExpeditionList at the given index.
@@ -368,18 +380,6 @@ public final class AvatarExpeditionAllDataRspOuterClass {
         }
 
         private int openExpeditionListMemoizedSerializedSize = -1;
-
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
 
         private byte memoizedIsInitialized = -1;
 
@@ -396,24 +396,24 @@ public final class AvatarExpeditionAllDataRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
-            if (retcode_ != 0) {
-                output.writeInt32(5, retcode_);
-            }
             if (getOpenExpeditionListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(openExpeditionListMemoizedSerializedSize);
             }
             for (int i = 0; i < openExpeditionList_.size(); i++) {
                 output.writeUInt32NoTag(openExpeditionList_.getInt(i));
             }
+            if (expeditionCountLimit_ != 0) {
+                output.writeUInt32(10, expeditionCountLimit_);
+            }
+            if (retcode_ != 0) {
+                output.writeInt32(13, retcode_);
+            }
             com.google.protobuf.GeneratedMessageV3.serializeLongMapTo(
                     output,
                     internalGetExpeditionInfoMap(),
                     ExpeditionInfoMapDefaultEntryHolder.defaultEntry,
-                    11);
-            if (expeditionCountLimit_ != 0) {
-                output.writeUInt32(12, expeditionCountLimit_);
-            }
+                    14);
             unknownFields.writeTo(output);
         }
 
@@ -423,9 +423,6 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, retcode_);
-            }
             {
                 int dataSize = 0;
                 for (int i = 0; i < openExpeditionList_.size(); i++) {
@@ -440,6 +437,12 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 }
                 openExpeditionListMemoizedSerializedSize = dataSize;
             }
+            if (expeditionCountLimit_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, expeditionCountLimit_);
+            }
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, retcode_);
+            }
             for (java.util.Map.Entry<
                             java.lang.Long,
                             emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
@@ -453,10 +456,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                                         .setKey(entry.getKey())
                                         .setValue(entry.getValue())
                                         .build();
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, expeditionInfoMap__);
-            }
-            if (expeditionCountLimit_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, expeditionCountLimit_);
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, expeditionInfoMap__);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -483,8 +483,8 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             if (!internalGetExpeditionInfoMap().equals(other.internalGetExpeditionInfoMap()))
                 return false;
             if (getExpeditionCountLimit() != other.getExpeditionCountLimit()) return false;
-            if (!getOpenExpeditionListList().equals(other.getOpenExpeditionListList())) return false;
             if (getRetcode() != other.getRetcode()) return false;
+            if (!getOpenExpeditionListList().equals(other.getOpenExpeditionListList())) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -502,12 +502,12 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             }
             hash = (37 * hash) + EXPEDITION_COUNT_LIMIT_FIELD_NUMBER;
             hash = (53 * hash) + getExpeditionCountLimit();
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
             if (getOpenExpeditionListCount() > 0) {
                 hash = (37 * hash) + OPEN_EXPEDITION_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getOpenExpeditionListList().hashCode();
             }
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -633,8 +633,8 @@ public final class AvatarExpeditionAllDataRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1683
-         * Name: BFEGBKILMIB
+         * CmdId: 1722
+         * Obf: FIOCIHFCAPH
          * </pre>
          *
          * Protobuf type {@code AvatarExpeditionAllDataRsp}
@@ -653,7 +653,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMapField(int number) {
                 switch (number) {
-                    case 11:
+                    case 14:
                         return internalGetExpeditionInfoMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -663,7 +663,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
                 switch (number) {
-                    case 11:
+                    case 14:
                         return internalGetMutableExpeditionInfoMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -703,10 +703,10 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 internalGetMutableExpeditionInfoMap().clear();
                 expeditionCountLimit_ = 0;
 
-                openExpeditionList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000002);
                 retcode_ = 0;
 
+                openExpeditionList_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
                 return this;
             }
 
@@ -748,12 +748,12 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 result.expeditionInfoMap_ = internalGetExpeditionInfoMap();
                 result.expeditionInfoMap_.makeImmutable();
                 result.expeditionCountLimit_ = expeditionCountLimit_;
+                result.retcode_ = retcode_;
                 if (((bitField0_ & 0x00000002) != 0)) {
                     openExpeditionList_.makeImmutable();
                     bitField0_ = (bitField0_ & ~0x00000002);
                 }
                 result.openExpeditionList_ = openExpeditionList_;
-                result.retcode_ = retcode_;
                 onBuilt();
                 return result;
             }
@@ -819,6 +819,9 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 if (other.getExpeditionCountLimit() != 0) {
                     setExpeditionCountLimit(other.getExpeditionCountLimit());
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 if (!other.openExpeditionList_.isEmpty()) {
                     if (openExpeditionList_.isEmpty()) {
                         openExpeditionList_ = other.openExpeditionList_;
@@ -828,9 +831,6 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                         openExpeditionList_.addAll(other.openExpeditionList_);
                     }
                     onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -903,7 +903,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
             public int getExpeditionInfoMapCount() {
                 return internalGetExpeditionInfoMap().getMap().size();
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             @java.lang.Override
             public boolean containsExpeditionInfoMap(long key) {
 
@@ -918,7 +918,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                     getExpeditionInfoMap() {
                 return getExpeditionInfoMapMap();
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             @java.lang.Override
             public java.util.Map<
                             java.lang.Long,
@@ -926,7 +926,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                     getExpeditionInfoMapMap() {
                 return internalGetExpeditionInfoMap().getMap();
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                     getExpeditionInfoMapOrDefault(
@@ -940,7 +940,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                         map = internalGetExpeditionInfoMap().getMap();
                 return map.containsKey(key) ? map.get(key) : defaultValue;
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo
                     getExpeditionInfoMapOrThrow(long key) {
@@ -959,7 +959,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 internalGetMutableExpeditionInfoMap().getMutableMap().clear();
                 return this;
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             public Builder removeExpeditionInfoMap(long key) {
 
                 internalGetMutableExpeditionInfoMap().getMutableMap().remove(key);
@@ -973,7 +973,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                     getMutableExpeditionInfoMap() {
                 return internalGetMutableExpeditionInfoMap().getMutableMap();
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             public Builder putExpeditionInfoMap(
                     long key,
                     emu.grasscutter.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo value) {
@@ -984,7 +984,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 internalGetMutableExpeditionInfoMap().getMutableMap().put(key, value);
                 return this;
             }
-            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 11;</code> */
+            /** <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 14;</code> */
             public Builder putAllExpeditionInfoMap(
                     java.util.Map<
                                     java.lang.Long,
@@ -996,7 +996,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
 
             private int expeditionCountLimit_;
             /**
-             * <code>uint32 expedition_count_limit = 12;</code>
+             * <code>uint32 expedition_count_limit = 10;</code>
              *
              * @return The expeditionCountLimit.
              */
@@ -1005,7 +1005,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return expeditionCountLimit_;
             }
             /**
-             * <code>uint32 expedition_count_limit = 12;</code>
+             * <code>uint32 expedition_count_limit = 10;</code>
              *
              * @param value The expeditionCountLimit to set.
              * @return This builder for chaining.
@@ -1017,13 +1017,47 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 expedition_count_limit = 12;</code>
+             * <code>uint32 expedition_count_limit = 10;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearExpeditionCountLimit() {
 
                 expeditionCountLimit_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -1037,7 +1071,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @return A list containing the openExpeditionList.
              */
@@ -1047,7 +1081,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                         : openExpeditionList_;
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @return The count of openExpeditionList.
              */
@@ -1055,7 +1089,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return openExpeditionList_.size();
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @param index The index of the element to return.
              * @return The openExpeditionList at the given index.
@@ -1064,7 +1098,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return openExpeditionList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @param index The index to set the value at.
              * @param value The openExpeditionList to set.
@@ -1077,7 +1111,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @param value The openExpeditionList to add.
              * @return This builder for chaining.
@@ -1089,7 +1123,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @param values The openExpeditionList to add.
              * @return This builder for chaining.
@@ -1102,47 +1136,13 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 open_expedition_list = 9;</code>
+             * <code>repeated uint32 open_expedition_list = 5;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearOpenExpeditionList() {
                 openExpeditionList_ = emptyIntList();
                 bitField0_ = (bitField0_ & ~0x00000002);
-                onChanged();
-                return this;
-            }
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -1225,14 +1225,14 @@ public final class AvatarExpeditionAllDataRspOuterClass {
         java.lang.String[] descriptorData = {
             "\n AvatarExpeditionAllDataRsp.proto\032\032Avat"
                     + "arExpeditionInfo.proto\"\215\002\n\032AvatarExpedit"
-                    + "ionAllDataRsp\022O\n\023expedition_info_map\030\013 \003"
+                    + "ionAllDataRsp\022O\n\023expedition_info_map\030\016 \003"
                     + "(\01322.AvatarExpeditionAllDataRsp.Expediti"
                     + "onInfoMapEntry\022\036\n\026expedition_count_limit"
-                    + "\030\014 \001(\r\022\034\n\024open_expedition_list\030\t \003(\r\022\017\n\007"
-                    + "retcode\030\005 \001(\005\032O\n\026ExpeditionInfoMapEntry\022"
+                    + "\030\n \001(\r\022\017\n\007retcode\030\r \001(\005\022\034\n\024open_expediti"
+                    + "on_list\030\005 \003(\r\032O\n\026ExpeditionInfoMapEntry\022"
                     + "\013\n\003key\030\001 \001(\004\022$\n\005value\030\002 \001(\0132\025.AvatarExpe"
-                    + "ditionInfo:\0028\001B!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "ditionInfo:\0028\001B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1246,7 +1246,7 @@ public final class AvatarExpeditionAllDataRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_AvatarExpeditionAllDataRsp_descriptor,
                         new java.lang.String[] {
-                            "ExpeditionInfoMap", "ExpeditionCountLimit", "OpenExpeditionList", "Retcode",
+                            "ExpeditionInfoMap", "ExpeditionCountLimit", "Retcode", "OpenExpeditionList",
                         });
         internal_static_AvatarExpeditionAllDataRsp_ExpeditionInfoMapEntry_descriptor =
                 internal_static_AvatarExpeditionAllDataRsp_descriptor.getNestedTypes().get(0);

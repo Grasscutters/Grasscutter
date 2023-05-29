@@ -63,7 +63,7 @@ public final class PropValueOuterClass {
      *
      *
      * <pre>
-     * Name: PAPLIDJPGCN
+     * Obf: PFAKCFKJKIC
      * </pre>
      *
      * Protobuf type {@code PropValue}
@@ -495,7 +495,7 @@ public final class PropValueOuterClass {
          *
          *
          * <pre>
-         * Name: PAPLIDJPGCN
+         * Obf: PFAKCFKJKIC
          * </pre>
          *
          * Protobuf type {@code PropValue}
@@ -920,8 +920,8 @@ public final class PropValueOuterClass {
         java.lang.String[] descriptorData = {
             "\n\017PropValue.proto\"O\n\tPropValue\022\014\n\004type\030\001"
                     + " \001(\r\022\013\n\003val\030\004 \001(\003\022\016\n\004ival\030\002 \001(\003H\000\022\016\n\004fva"
-                    + "l\030\003 \001(\002H\000B\007\n\005valueB!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "l\030\003 \001(\002H\000B\007\n\005valueB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -35,7 +35,7 @@ public final class TrialAvatarGrantRecordOuterClass {
      *
      *
      * <pre>
-     * Name: NMHLLNINEFA
+     * Obf: GCFNFGACEOP
      * </pre>
      *
      * Protobuf type {@code TrialAvatarGrantRecord}
@@ -516,7 +516,7 @@ public final class TrialAvatarGrantRecordOuterClass {
          *
          *
          * <pre>
-         * Name: NMHLLNINEFA
+         * Obf: GCFNFGACEOP
          * </pre>
          *
          * Protobuf type {@code TrialAvatarGrantRecord}
@@ -851,8 +851,8 @@ public final class TrialAvatarGrantRecordOuterClass {
                     + "ION_ACTIVITY\020\013\022#\n\037GRANT_REASON_BY_VINTAG"
                     + "E_HUNTING\020\014\022\"\n\036GRANT_REASON_BY_CHAR_AMUS"
                     + "EMENT\020\r\022\033\n\027FJBKKFJNBHD_HMLDNDBKNFL\020\016\022\033\n\027"
-                    + "FJBKKFJNBHD_PJDEJIHFCPP\020\017B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "FJBKKFJNBHD_PJDEJIHFCPP\020\017B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

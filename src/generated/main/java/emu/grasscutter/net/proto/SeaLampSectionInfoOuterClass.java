@@ -18,7 +18,7 @@ public final class SeaLampSectionInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 section_id = 12;</code>
+         * <code>uint32 section_id = 13;</code>
          *
          * @return The sectionId.
          */
@@ -28,7 +28,7 @@ public final class SeaLampSectionInfoOuterClass {
      *
      *
      * <pre>
-     * Name: FJMAOPGLLOM
+     * Obf: KKNGABPHNLP
      * </pre>
      *
      * Protobuf type {@code SeaLampSectionInfo}
@@ -74,7 +74,7 @@ public final class SeaLampSectionInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 96:
+                        case 104:
                             {
                                 sectionId_ = input.readUInt32();
                                 break;
@@ -114,10 +114,10 @@ public final class SeaLampSectionInfoOuterClass {
                                     .class);
         }
 
-        public static final int SECTION_ID_FIELD_NUMBER = 12;
+        public static final int SECTION_ID_FIELD_NUMBER = 13;
         private int sectionId_;
         /**
-         * <code>uint32 section_id = 12;</code>
+         * <code>uint32 section_id = 13;</code>
          *
          * @return The sectionId.
          */
@@ -141,7 +141,7 @@ public final class SeaLampSectionInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (sectionId_ != 0) {
-                output.writeUInt32(12, sectionId_);
+                output.writeUInt32(13, sectionId_);
             }
             unknownFields.writeTo(output);
         }
@@ -153,7 +153,7 @@ public final class SeaLampSectionInfoOuterClass {
 
             size = 0;
             if (sectionId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, sectionId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, sectionId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -298,7 +298,7 @@ public final class SeaLampSectionInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FJMAOPGLLOM
+         * Obf: KKNGABPHNLP
          * </pre>
          *
          * Protobuf type {@code SeaLampSectionInfo}
@@ -469,7 +469,7 @@ public final class SeaLampSectionInfoOuterClass {
 
             private int sectionId_;
             /**
-             * <code>uint32 section_id = 12;</code>
+             * <code>uint32 section_id = 13;</code>
              *
              * @return The sectionId.
              */
@@ -478,7 +478,7 @@ public final class SeaLampSectionInfoOuterClass {
                 return sectionId_;
             }
             /**
-             * <code>uint32 section_id = 12;</code>
+             * <code>uint32 section_id = 13;</code>
              *
              * @param value The sectionId to set.
              * @return This builder for chaining.
@@ -490,7 +490,7 @@ public final class SeaLampSectionInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 section_id = 12;</code>
+             * <code>uint32 section_id = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -571,8 +571,8 @@ public final class SeaLampSectionInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030SeaLampSectionInfo.proto\"(\n\022SeaLampSec"
-                    + "tionInfo\022\022\n\nsection_id\030\014 \001(\rB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "tionInfo\022\022\n\nsection_id\030\r \001(\rB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

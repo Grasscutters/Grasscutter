@@ -20,8 +20,8 @@ public final class HomeSceneInitFinishReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4613
-     * Name: AKJFJDIFEBH
+     * CmdId: 4497
+     * Obf: JJFGMDDJNEN
      * </pre>
      *
      * Protobuf type {@code HomeSceneInitFinishReq}
@@ -268,8 +268,8 @@ public final class HomeSceneInitFinishReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4613
-         * Name: AKJFJDIFEBH
+         * CmdId: 4497
+         * Obf: JJFGMDDJNEN
          * </pre>
          *
          * Protobuf type {@code HomeSceneInitFinishReq}
@@ -508,8 +508,8 @@ public final class HomeSceneInitFinishReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034HomeSceneInitFinishReq.proto\"\030\n\026HomeSc"
-                    + "eneInitFinishReqB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "eneInitFinishReqB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

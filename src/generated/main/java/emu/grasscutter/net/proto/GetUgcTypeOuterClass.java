@@ -15,7 +15,7 @@ public final class GetUgcTypeOuterClass {
      *
      *
      * <pre>
-     * Name: HIPHDMMKJFG
+     * Obf: JMLGMJCMHIG
      * </pre>
      *
      * Protobuf enum {@code GetUgcType}
@@ -130,8 +130,8 @@ public final class GetUgcTypeOuterClass {
         java.lang.String[] descriptorData = {
             "\n\020GetUgcType.proto*O\n\nGetUgcType\022\020\n\014GET_"
                     + "UGC_NONE\020\000\022\025\n\021GET_UGC_TYPE_MINE\020\001\022\030\n\024GET"
-                    + "_UGC_TYPE_PUBLISH\020\002B!\n\031emu.grasscutter.n"
-                    + "et.protoZ\004/genb\006proto3"
+                    + "_UGC_TYPE_PUBLISH\020\002B\033\n\031emu.grasscutter.n"
+                    + "et.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

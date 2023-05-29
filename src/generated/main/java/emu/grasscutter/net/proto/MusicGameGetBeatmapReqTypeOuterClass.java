@@ -191,8 +191,7 @@ public final class MusicGameGetBeatmapReqTypeOuterClass {
                     + "mapReqType_u2\020\001\022!\n\035MusicGameGetBeatmapRe"
                     + "qType_u3\020\002\022!\n\035MusicGameGetBeatmapReqType"
                     + "_u4\020\003\022!\n\035MusicGameGetBeatmapReqType_u5\020\004"
-                    + "B!\n\031emu.grasscutter.net.protoZ\004/genb\006pro"
-                    + "to3"
+                    + "B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

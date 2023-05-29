@@ -18,32 +18,32 @@ public final class ForgeStartReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 avatar_id = 7;</code>
+         * <code>uint32 avatar_id = 13;</code>
          *
          * @return The avatarId.
          */
         int getAvatarId();
 
         /**
-         * <code>uint32 forge_count = 9;</code>
-         *
-         * @return The forgeCount.
-         */
-        int getForgeCount();
-
-        /**
-         * <code>uint32 forge_id = 8;</code>
+         * <code>uint32 forge_id = 10;</code>
          *
          * @return The forgeId.
          */
         int getForgeId();
+
+        /**
+         * <code>uint32 forge_count = 4;</code>
+         *
+         * @return The forgeCount.
+         */
+        int getForgeCount();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 629
-     * Name: MINLPCIDJLK
+     * CmdId: 693
+     * Obf: PJPLODEIGON
      * </pre>
      *
      * Protobuf type {@code ForgeStartReq}
@@ -89,19 +89,19 @@ public final class ForgeStartReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
+                        case 32:
                             {
-                                avatarId_ = input.readUInt32();
+                                forgeCount_ = input.readUInt32();
                                 break;
                             }
-                        case 64:
+                        case 80:
                             {
                                 forgeId_ = input.readUInt32();
                                 break;
                             }
-                        case 72:
+                        case 104:
                             {
-                                forgeCount_ = input.readUInt32();
+                                avatarId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -138,10 +138,10 @@ public final class ForgeStartReqOuterClass {
                             emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq.Builder.class);
         }
 
-        public static final int AVATAR_ID_FIELD_NUMBER = 7;
+        public static final int AVATAR_ID_FIELD_NUMBER = 13;
         private int avatarId_;
         /**
-         * <code>uint32 avatar_id = 7;</code>
+         * <code>uint32 avatar_id = 13;</code>
          *
          * @return The avatarId.
          */
@@ -150,28 +150,28 @@ public final class ForgeStartReqOuterClass {
             return avatarId_;
         }
 
-        public static final int FORGE_COUNT_FIELD_NUMBER = 9;
-        private int forgeCount_;
-        /**
-         * <code>uint32 forge_count = 9;</code>
-         *
-         * @return The forgeCount.
-         */
-        @java.lang.Override
-        public int getForgeCount() {
-            return forgeCount_;
-        }
-
-        public static final int FORGE_ID_FIELD_NUMBER = 8;
+        public static final int FORGE_ID_FIELD_NUMBER = 10;
         private int forgeId_;
         /**
-         * <code>uint32 forge_id = 8;</code>
+         * <code>uint32 forge_id = 10;</code>
          *
          * @return The forgeId.
          */
         @java.lang.Override
         public int getForgeId() {
             return forgeId_;
+        }
+
+        public static final int FORGE_COUNT_FIELD_NUMBER = 4;
+        private int forgeCount_;
+        /**
+         * <code>uint32 forge_count = 4;</code>
+         *
+         * @return The forgeCount.
+         */
+        @java.lang.Override
+        public int getForgeCount() {
+            return forgeCount_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -188,14 +188,14 @@ public final class ForgeStartReqOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (avatarId_ != 0) {
-                output.writeUInt32(7, avatarId_);
+            if (forgeCount_ != 0) {
+                output.writeUInt32(4, forgeCount_);
             }
             if (forgeId_ != 0) {
-                output.writeUInt32(8, forgeId_);
+                output.writeUInt32(10, forgeId_);
             }
-            if (forgeCount_ != 0) {
-                output.writeUInt32(9, forgeCount_);
+            if (avatarId_ != 0) {
+                output.writeUInt32(13, avatarId_);
             }
             unknownFields.writeTo(output);
         }
@@ -206,14 +206,14 @@ public final class ForgeStartReqOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (avatarId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, avatarId_);
+            if (forgeCount_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, forgeCount_);
             }
             if (forgeId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, forgeId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, forgeId_);
             }
-            if (forgeCount_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, forgeCount_);
+            if (avatarId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, avatarId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -232,8 +232,8 @@ public final class ForgeStartReqOuterClass {
                     (emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq) obj;
 
             if (getAvatarId() != other.getAvatarId()) return false;
-            if (getForgeCount() != other.getForgeCount()) return false;
             if (getForgeId() != other.getForgeId()) return false;
+            if (getForgeCount() != other.getForgeCount()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -247,10 +247,10 @@ public final class ForgeStartReqOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
             hash = (53 * hash) + getAvatarId();
-            hash = (37 * hash) + FORGE_COUNT_FIELD_NUMBER;
-            hash = (53 * hash) + getForgeCount();
             hash = (37 * hash) + FORGE_ID_FIELD_NUMBER;
             hash = (53 * hash) + getForgeId();
+            hash = (37 * hash) + FORGE_COUNT_FIELD_NUMBER;
+            hash = (53 * hash) + getForgeCount();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -358,8 +358,8 @@ public final class ForgeStartReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 629
-         * Name: MINLPCIDJLK
+         * CmdId: 693
+         * Obf: PJPLODEIGON
          * </pre>
          *
          * Protobuf type {@code ForgeStartReq}
@@ -404,9 +404,9 @@ public final class ForgeStartReqOuterClass {
                 super.clear();
                 avatarId_ = 0;
 
-                forgeCount_ = 0;
-
                 forgeId_ = 0;
+
+                forgeCount_ = 0;
 
                 return this;
             }
@@ -437,8 +437,8 @@ public final class ForgeStartReqOuterClass {
                 emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq result =
                         new emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq(this);
                 result.avatarId_ = avatarId_;
-                result.forgeCount_ = forgeCount_;
                 result.forgeId_ = forgeId_;
+                result.forgeCount_ = forgeCount_;
                 onBuilt();
                 return result;
             }
@@ -496,11 +496,11 @@ public final class ForgeStartReqOuterClass {
                 if (other.getAvatarId() != 0) {
                     setAvatarId(other.getAvatarId());
                 }
-                if (other.getForgeCount() != 0) {
-                    setForgeCount(other.getForgeCount());
-                }
                 if (other.getForgeId() != 0) {
                     setForgeId(other.getForgeId());
+                }
+                if (other.getForgeCount() != 0) {
+                    setForgeCount(other.getForgeCount());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -535,7 +535,7 @@ public final class ForgeStartReqOuterClass {
 
             private int avatarId_;
             /**
-             * <code>uint32 avatar_id = 7;</code>
+             * <code>uint32 avatar_id = 13;</code>
              *
              * @return The avatarId.
              */
@@ -544,7 +544,7 @@ public final class ForgeStartReqOuterClass {
                 return avatarId_;
             }
             /**
-             * <code>uint32 avatar_id = 7;</code>
+             * <code>uint32 avatar_id = 13;</code>
              *
              * @param value The avatarId to set.
              * @return This builder for chaining.
@@ -556,7 +556,7 @@ public final class ForgeStartReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 avatar_id = 7;</code>
+             * <code>uint32 avatar_id = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -567,43 +567,9 @@ public final class ForgeStartReqOuterClass {
                 return this;
             }
 
-            private int forgeCount_;
-            /**
-             * <code>uint32 forge_count = 9;</code>
-             *
-             * @return The forgeCount.
-             */
-            @java.lang.Override
-            public int getForgeCount() {
-                return forgeCount_;
-            }
-            /**
-             * <code>uint32 forge_count = 9;</code>
-             *
-             * @param value The forgeCount to set.
-             * @return This builder for chaining.
-             */
-            public Builder setForgeCount(int value) {
-
-                forgeCount_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 forge_count = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearForgeCount() {
-
-                forgeCount_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int forgeId_;
             /**
-             * <code>uint32 forge_id = 8;</code>
+             * <code>uint32 forge_id = 10;</code>
              *
              * @return The forgeId.
              */
@@ -612,7 +578,7 @@ public final class ForgeStartReqOuterClass {
                 return forgeId_;
             }
             /**
-             * <code>uint32 forge_id = 8;</code>
+             * <code>uint32 forge_id = 10;</code>
              *
              * @param value The forgeId to set.
              * @return This builder for chaining.
@@ -624,13 +590,47 @@ public final class ForgeStartReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 forge_id = 8;</code>
+             * <code>uint32 forge_id = 10;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearForgeId() {
 
                 forgeId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int forgeCount_;
+            /**
+             * <code>uint32 forge_count = 4;</code>
+             *
+             * @return The forgeCount.
+             */
+            @java.lang.Override
+            public int getForgeCount() {
+                return forgeCount_;
+            }
+            /**
+             * <code>uint32 forge_count = 4;</code>
+             *
+             * @param value The forgeCount to set.
+             * @return This builder for chaining.
+             */
+            public Builder setForgeCount(int value) {
+
+                forgeCount_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 forge_count = 4;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearForgeCount() {
+
+                forgeCount_ = 0;
                 onChanged();
                 return this;
             }
@@ -704,9 +704,9 @@ public final class ForgeStartReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\023ForgeStartReq.proto\"I\n\rForgeStartReq\022\021"
-                    + "\n\tavatar_id\030\007 \001(\r\022\023\n\013forge_count\030\t \001(\r\022\020"
-                    + "\n\010forge_id\030\010 \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "\n\tavatar_id\030\r \001(\r\022\020\n\010forge_id\030\n \001(\r\022\023\n\013f"
+                    + "orge_count\030\004 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -716,7 +716,7 @@ public final class ForgeStartReqOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_ForgeStartReq_descriptor,
                         new java.lang.String[] {
-                            "AvatarId", "ForgeCount", "ForgeId",
+                            "AvatarId", "ForgeId", "ForgeCount",
                         });
     }
 

@@ -18,19 +18,19 @@ public final class GetMailItemReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @return A list containing the mailIdList.
          */
         java.util.List<java.lang.Integer> getMailIdListList();
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @return The count of mailIdList.
          */
         int getMailIdListCount();
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @param index The index of the element to return.
          * @return The mailIdList at the given index.
@@ -41,8 +41,8 @@ public final class GetMailItemReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1476
-     * Name: IFBKCKFGICP
+     * CmdId: 1472
+     * Obf: NDJKANLCIIP
      * </pre>
      *
      * Protobuf type {@code GetMailItemReq}
@@ -91,7 +91,7 @@ public final class GetMailItemReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 72:
+                        case 56:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     mailIdList_ = newIntList();
@@ -100,7 +100,7 @@ public final class GetMailItemReqOuterClass {
                                 mailIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 74:
+                        case 58:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -151,10 +151,10 @@ public final class GetMailItemReqOuterClass {
                             emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq.Builder.class);
         }
 
-        public static final int MAIL_ID_LIST_FIELD_NUMBER = 9;
+        public static final int MAIL_ID_LIST_FIELD_NUMBER = 7;
         private com.google.protobuf.Internal.IntList mailIdList_;
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @return A list containing the mailIdList.
          */
@@ -163,7 +163,7 @@ public final class GetMailItemReqOuterClass {
             return mailIdList_;
         }
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @return The count of mailIdList.
          */
@@ -171,7 +171,7 @@ public final class GetMailItemReqOuterClass {
             return mailIdList_.size();
         }
         /**
-         * <code>repeated uint32 mail_id_list = 9;</code>
+         * <code>repeated uint32 mail_id_list = 7;</code>
          *
          * @param index The index of the element to return.
          * @return The mailIdList at the given index.
@@ -198,7 +198,7 @@ public final class GetMailItemReqOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(mailIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < mailIdList_.size(); i++) {
@@ -365,8 +365,8 @@ public final class GetMailItemReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1476
-         * Name: IFBKCKFGICP
+         * CmdId: 1472
+         * Obf: NDJKANLCIIP
          * </pre>
          *
          * Protobuf type {@code GetMailItemReq}
@@ -553,7 +553,7 @@ public final class GetMailItemReqOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @return A list containing the mailIdList.
              */
@@ -563,7 +563,7 @@ public final class GetMailItemReqOuterClass {
                         : mailIdList_;
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @return The count of mailIdList.
              */
@@ -571,7 +571,7 @@ public final class GetMailItemReqOuterClass {
                 return mailIdList_.size();
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @param index The index of the element to return.
              * @return The mailIdList at the given index.
@@ -580,7 +580,7 @@ public final class GetMailItemReqOuterClass {
                 return mailIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @param index The index to set the value at.
              * @param value The mailIdList to set.
@@ -593,7 +593,7 @@ public final class GetMailItemReqOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @param value The mailIdList to add.
              * @return This builder for chaining.
@@ -605,7 +605,7 @@ public final class GetMailItemReqOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @param values The mailIdList to add.
              * @return This builder for chaining.
@@ -617,7 +617,7 @@ public final class GetMailItemReqOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 mail_id_list = 9;</code>
+             * <code>repeated uint32 mail_id_list = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -697,8 +697,8 @@ public final class GetMailItemReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\024GetMailItemReq.proto\"&\n\016GetMailItemReq"
-                    + "\022\024\n\014mail_id_list\030\t \003(\rB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "\022\024\n\014mail_id_list\030\007 \003(\rB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

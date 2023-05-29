@@ -18,7 +18,7 @@ public final class DeleteFriendNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 target_uid = 9;</code>
+         * <code>uint32 target_uid = 7;</code>
          *
          * @return The targetUid.
          */
@@ -28,8 +28,8 @@ public final class DeleteFriendNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4094
-     * Name: HNGNCNLBPEF
+     * CmdId: 4068
+     * Obf: KJMHHBBMIDO
      * </pre>
      *
      * Protobuf type {@code DeleteFriendNotify}
@@ -75,7 +75,7 @@ public final class DeleteFriendNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 72:
+                        case 56:
                             {
                                 targetUid_ = input.readUInt32();
                                 break;
@@ -115,10 +115,10 @@ public final class DeleteFriendNotifyOuterClass {
                                     .class);
         }
 
-        public static final int TARGET_UID_FIELD_NUMBER = 9;
+        public static final int TARGET_UID_FIELD_NUMBER = 7;
         private int targetUid_;
         /**
-         * <code>uint32 target_uid = 9;</code>
+         * <code>uint32 target_uid = 7;</code>
          *
          * @return The targetUid.
          */
@@ -142,7 +142,7 @@ public final class DeleteFriendNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (targetUid_ != 0) {
-                output.writeUInt32(9, targetUid_);
+                output.writeUInt32(7, targetUid_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DeleteFriendNotifyOuterClass {
 
             size = 0;
             if (targetUid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, targetUid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, targetUid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -299,8 +299,8 @@ public final class DeleteFriendNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4094
-         * Name: HNGNCNLBPEF
+         * CmdId: 4068
+         * Obf: KJMHHBBMIDO
          * </pre>
          *
          * Protobuf type {@code DeleteFriendNotify}
@@ -471,7 +471,7 @@ public final class DeleteFriendNotifyOuterClass {
 
             private int targetUid_;
             /**
-             * <code>uint32 target_uid = 9;</code>
+             * <code>uint32 target_uid = 7;</code>
              *
              * @return The targetUid.
              */
@@ -480,7 +480,7 @@ public final class DeleteFriendNotifyOuterClass {
                 return targetUid_;
             }
             /**
-             * <code>uint32 target_uid = 9;</code>
+             * <code>uint32 target_uid = 7;</code>
              *
              * @param value The targetUid to set.
              * @return This builder for chaining.
@@ -492,7 +492,7 @@ public final class DeleteFriendNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 target_uid = 9;</code>
+             * <code>uint32 target_uid = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -573,8 +573,8 @@ public final class DeleteFriendNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030DeleteFriendNotify.proto\"(\n\022DeleteFrie"
-                    + "ndNotify\022\022\n\ntarget_uid\030\t \001(\rB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "ndNotify\022\022\n\ntarget_uid\030\007 \001(\rB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

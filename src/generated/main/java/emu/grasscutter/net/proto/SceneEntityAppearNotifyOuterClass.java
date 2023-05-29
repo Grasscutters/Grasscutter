@@ -17,47 +17,47 @@ public final class SceneEntityAppearNotifyOuterClass {
             // @@protoc_insertion_point(interface_extends:SceneEntityAppearNotify)
             com.google.protobuf.MessageOrBuilder {
 
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
+                getEntityListList();
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityList(int index);
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        int getEntityListCount();
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        java.util.List<
+                        ? extends emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
+                getEntityListOrBuilderList();
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder
+                getEntityListOrBuilder(int index);
+
         /**
-         * <code>.VisionType appear_type = 13;</code>
+         * <code>uint32 param = 1;</code>
+         *
+         * @return The param.
+         */
+        int getParam();
+
+        /**
+         * <code>.VisionType appear_type = 10;</code>
          *
          * @return The enum numeric value on the wire for appearType.
          */
         int getAppearTypeValue();
         /**
-         * <code>.VisionType appear_type = 13;</code>
+         * <code>.VisionType appear_type = 10;</code>
          *
          * @return The appearType.
          */
         emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType getAppearType();
-
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
-                getEntityListList();
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityList(int index);
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        int getEntityListCount();
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        java.util.List<
-                        ? extends emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
-                getEntityListOrBuilderList();
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder
-                getEntityListOrBuilder(int index);
-
-        /**
-         * <code>uint32 param = 15;</code>
-         *
-         * @return The param.
-         */
-        int getParam();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 256
-     * Name: GIGOIBLMDHA
+     * CmdId: 248
+     * Obf: EJEBGFEJNHH
      * </pre>
      *
      * Protobuf type {@code SceneEntityAppearNotify}
@@ -73,8 +73,8 @@ public final class SceneEntityAppearNotifyOuterClass {
         }
 
         private SceneEntityAppearNotify() {
-            appearType_ = 0;
             entityList_ = java.util.Collections.emptyList();
+            appearType_ = 0;
         }
 
         @java.lang.Override
@@ -107,7 +107,12 @@ public final class SceneEntityAppearNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 50:
+                        case 8:
+                            {
+                                param_ = input.readUInt32();
+                                break;
+                            }
+                        case 74:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     entityList_ =
@@ -122,16 +127,11 @@ public final class SceneEntityAppearNotifyOuterClass {
                                                 extensionRegistry));
                                 break;
                             }
-                        case 104:
+                        case 80:
                             {
                                 int rawValue = input.readEnum();
 
                                 appearType_ = rawValue;
-                                break;
-                            }
-                        case 120:
-                            {
-                                param_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -173,10 +173,56 @@ public final class SceneEntityAppearNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int APPEAR_TYPE_FIELD_NUMBER = 13;
+        public static final int ENTITY_LIST_FIELD_NUMBER = 9;
+        private java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
+                entityList_;
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        @java.lang.Override
+        public java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
+                getEntityListList() {
+            return entityList_;
+        }
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        @java.lang.Override
+        public java.util.List<
+                        ? extends emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
+                getEntityListOrBuilderList() {
+            return entityList_;
+        }
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        @java.lang.Override
+        public int getEntityListCount() {
+            return entityList_.size();
+        }
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityList(
+                int index) {
+            return entityList_.get(index);
+        }
+        /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder
+                getEntityListOrBuilder(int index) {
+            return entityList_.get(index);
+        }
+
+        public static final int PARAM_FIELD_NUMBER = 1;
+        private int param_;
+        /**
+         * <code>uint32 param = 1;</code>
+         *
+         * @return The param.
+         */
+        @java.lang.Override
+        public int getParam() {
+            return param_;
+        }
+
+        public static final int APPEAR_TYPE_FIELD_NUMBER = 10;
         private int appearType_;
         /**
-         * <code>.VisionType appear_type = 13;</code>
+         * <code>.VisionType appear_type = 10;</code>
          *
          * @return The enum numeric value on the wire for appearType.
          */
@@ -185,7 +231,7 @@ public final class SceneEntityAppearNotifyOuterClass {
             return appearType_;
         }
         /**
-         * <code>.VisionType appear_type = 13;</code>
+         * <code>.VisionType appear_type = 10;</code>
          *
          * @return The appearType.
          */
@@ -197,52 +243,6 @@ public final class SceneEntityAppearNotifyOuterClass {
             return result == null
                     ? emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED
                     : result;
-        }
-
-        public static final int ENTITY_LIST_FIELD_NUMBER = 6;
-        private java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
-                entityList_;
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        @java.lang.Override
-        public java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
-                getEntityListList() {
-            return entityList_;
-        }
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        @java.lang.Override
-        public java.util.List<
-                        ? extends emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
-                getEntityListOrBuilderList() {
-            return entityList_;
-        }
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        @java.lang.Override
-        public int getEntityListCount() {
-            return entityList_.size();
-        }
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityList(
-                int index) {
-            return entityList_.get(index);
-        }
-        /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder
-                getEntityListOrBuilder(int index) {
-            return entityList_.get(index);
-        }
-
-        public static final int PARAM_FIELD_NUMBER = 15;
-        private int param_;
-        /**
-         * <code>uint32 param = 15;</code>
-         *
-         * @return The param.
-         */
-        @java.lang.Override
-        public int getParam() {
-            return param_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -259,16 +259,16 @@ public final class SceneEntityAppearNotifyOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+            if (param_ != 0) {
+                output.writeUInt32(1, param_);
+            }
             for (int i = 0; i < entityList_.size(); i++) {
-                output.writeMessage(6, entityList_.get(i));
+                output.writeMessage(9, entityList_.get(i));
             }
             if (appearType_
                     != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VISION_TYPE_NONE
                             .getNumber()) {
-                output.writeEnum(13, appearType_);
-            }
-            if (param_ != 0) {
-                output.writeUInt32(15, param_);
+                output.writeEnum(10, appearType_);
             }
             unknownFields.writeTo(output);
         }
@@ -279,16 +279,16 @@ public final class SceneEntityAppearNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (param_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, param_);
+            }
             for (int i = 0; i < entityList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, entityList_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, entityList_.get(i));
             }
             if (appearType_
                     != emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.VISION_TYPE_NONE
                             .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, appearType_);
-            }
-            if (param_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, param_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, appearType_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -308,9 +308,9 @@ public final class SceneEntityAppearNotifyOuterClass {
             emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify other =
                     (emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify) obj;
 
-            if (appearType_ != other.appearType_) return false;
             if (!getEntityListList().equals(other.getEntityListList())) return false;
             if (getParam() != other.getParam()) return false;
+            if (appearType_ != other.appearType_) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -322,14 +322,14 @@ public final class SceneEntityAppearNotifyOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + APPEAR_TYPE_FIELD_NUMBER;
-            hash = (53 * hash) + appearType_;
             if (getEntityListCount() > 0) {
                 hash = (37 * hash) + ENTITY_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getEntityListList().hashCode();
             }
             hash = (37 * hash) + PARAM_FIELD_NUMBER;
             hash = (53 * hash) + getParam();
+            hash = (37 * hash) + APPEAR_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + appearType_;
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -455,8 +455,8 @@ public final class SceneEntityAppearNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 256
-         * Name: GIGOIBLMDHA
+         * CmdId: 248
+         * Obf: EJEBGFEJNHH
          * </pre>
          *
          * Protobuf type {@code SceneEntityAppearNotify}
@@ -504,8 +504,6 @@ public final class SceneEntityAppearNotifyOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                appearType_ = 0;
-
                 if (entityListBuilder_ == null) {
                     entityList_ = java.util.Collections.emptyList();
                     bitField0_ = (bitField0_ & ~0x00000001);
@@ -513,6 +511,8 @@ public final class SceneEntityAppearNotifyOuterClass {
                     entityListBuilder_.clear();
                 }
                 param_ = 0;
+
+                appearType_ = 0;
 
                 return this;
             }
@@ -548,7 +548,6 @@ public final class SceneEntityAppearNotifyOuterClass {
                         new emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify(
                                 this);
                 int from_bitField0_ = bitField0_;
-                result.appearType_ = appearType_;
                 if (entityListBuilder_ == null) {
                     if (((bitField0_ & 0x00000001) != 0)) {
                         entityList_ = java.util.Collections.unmodifiableList(entityList_);
@@ -559,6 +558,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     result.entityList_ = entityListBuilder_.build();
                 }
                 result.param_ = param_;
+                result.appearType_ = appearType_;
                 onBuilt();
                 return result;
             }
@@ -618,9 +618,6 @@ public final class SceneEntityAppearNotifyOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.SceneEntityAppearNotifyOuterClass.SceneEntityAppearNotify
                                 .getDefaultInstance()) return this;
-                if (other.appearType_ != 0) {
-                    setAppearTypeValue(other.getAppearTypeValue());
-                }
                 if (entityListBuilder_ == null) {
                     if (!other.entityList_.isEmpty()) {
                         if (entityList_.isEmpty()) {
@@ -650,6 +647,9 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 if (other.getParam() != 0) {
                     setParam(other.getParam());
+                }
+                if (other.appearType_ != 0) {
+                    setAppearTypeValue(other.getAppearTypeValue());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -685,70 +685,6 @@ public final class SceneEntityAppearNotifyOuterClass {
 
             private int bitField0_;
 
-            private int appearType_ = 0;
-            /**
-             * <code>.VisionType appear_type = 13;</code>
-             *
-             * @return The enum numeric value on the wire for appearType.
-             */
-            @java.lang.Override
-            public int getAppearTypeValue() {
-                return appearType_;
-            }
-            /**
-             * <code>.VisionType appear_type = 13;</code>
-             *
-             * @param value The enum numeric value on the wire for appearType to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAppearTypeValue(int value) {
-
-                appearType_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>.VisionType appear_type = 13;</code>
-             *
-             * @return The appearType.
-             */
-            @java.lang.Override
-            public emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
-                @SuppressWarnings("deprecation")
-                emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType result =
-                        emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
-                return result == null
-                        ? emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED
-                        : result;
-            }
-            /**
-             * <code>.VisionType appear_type = 13;</code>
-             *
-             * @param value The appearType to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAppearType(
-                    emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-
-                appearType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>.VisionType appear_type = 13;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAppearType() {
-
-                appearType_ = 0;
-                onChanged();
-                return this;
-            }
-
             private java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
                     entityList_ = java.util.Collections.emptyList();
 
@@ -767,7 +703,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                             emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
                     entityListBuilder_;
 
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public java.util.List<emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
                     getEntityListList() {
                 if (entityListBuilder_ == null) {
@@ -776,7 +712,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     return entityListBuilder_.getMessageList();
                 }
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public int getEntityListCount() {
                 if (entityListBuilder_ == null) {
                     return entityList_.size();
@@ -784,7 +720,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     return entityListBuilder_.getCount();
                 }
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityList(
                     int index) {
                 if (entityListBuilder_ == null) {
@@ -793,7 +729,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     return entityListBuilder_.getMessage(index);
                 }
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder setEntityList(
                     int index, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
                 if (entityListBuilder_ == null) {
@@ -808,7 +744,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder setEntityList(
                     int index,
                     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
@@ -822,7 +758,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder addEntityList(
                     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
                 if (entityListBuilder_ == null) {
@@ -837,7 +773,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder addEntityList(
                     int index, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
                 if (entityListBuilder_ == null) {
@@ -852,7 +788,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder addEntityList(
                     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
                             builderForValue) {
@@ -865,7 +801,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder addEntityList(
                     int index,
                     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
@@ -879,7 +815,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder addAllEntityList(
                     java.lang.Iterable<
                                     ? extends emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>
@@ -893,7 +829,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder clearEntityList() {
                 if (entityListBuilder_ == null) {
                     entityList_ = java.util.Collections.emptyList();
@@ -904,7 +840,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public Builder removeEntityList(int index) {
                 if (entityListBuilder_ == null) {
                     ensureEntityListIsMutable();
@@ -915,12 +851,12 @@ public final class SceneEntityAppearNotifyOuterClass {
                 }
                 return this;
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
                     getEntityListBuilder(int index) {
                 return getEntityListFieldBuilder().getBuilder(index);
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder
                     getEntityListOrBuilder(int index) {
                 if (entityListBuilder_ == null) {
@@ -929,7 +865,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     return entityListBuilder_.getMessageOrBuilder(index);
                 }
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public java.util.List<
                             ? extends
                                     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>
@@ -940,7 +876,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                     return java.util.Collections.unmodifiableList(entityList_);
                 }
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
                     addEntityListBuilder() {
                 return getEntityListFieldBuilder()
@@ -948,7 +884,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                                 emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo
                                         .getDefaultInstance());
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder
                     addEntityListBuilder(int index) {
                 return getEntityListFieldBuilder()
@@ -957,7 +893,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                                 emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo
                                         .getDefaultInstance());
             }
-            /** <code>repeated .SceneEntityInfo entity_list = 6;</code> */
+            /** <code>repeated .SceneEntityInfo entity_list = 9;</code> */
             public java.util.List<
                             emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder>
                     getEntityListBuilderList() {
@@ -983,7 +919,7 @@ public final class SceneEntityAppearNotifyOuterClass {
 
             private int param_;
             /**
-             * <code>uint32 param = 15;</code>
+             * <code>uint32 param = 1;</code>
              *
              * @return The param.
              */
@@ -992,7 +928,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 return param_;
             }
             /**
-             * <code>uint32 param = 15;</code>
+             * <code>uint32 param = 1;</code>
              *
              * @param value The param to set.
              * @return This builder for chaining.
@@ -1004,13 +940,77 @@ public final class SceneEntityAppearNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 param = 15;</code>
+             * <code>uint32 param = 1;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearParam() {
 
                 param_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int appearType_ = 0;
+            /**
+             * <code>.VisionType appear_type = 10;</code>
+             *
+             * @return The enum numeric value on the wire for appearType.
+             */
+            @java.lang.Override
+            public int getAppearTypeValue() {
+                return appearType_;
+            }
+            /**
+             * <code>.VisionType appear_type = 10;</code>
+             *
+             * @param value The enum numeric value on the wire for appearType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAppearTypeValue(int value) {
+
+                appearType_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.VisionType appear_type = 10;</code>
+             *
+             * @return The appearType.
+             */
+            @java.lang.Override
+            public emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
+                @SuppressWarnings("deprecation")
+                emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType result =
+                        emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
+                return result == null
+                        ? emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED
+                        : result;
+            }
+            /**
+             * <code>.VisionType appear_type = 10;</code>
+             *
+             * @param value The appearType to set.
+             * @return This builder for chaining.
+             */
+            public Builder setAppearType(
+                    emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+
+                appearType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>.VisionType appear_type = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearAppearType() {
+
+                appearType_ = 0;
                 onChanged();
                 return this;
             }
@@ -1088,10 +1088,10 @@ public final class SceneEntityAppearNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\035SceneEntityAppearNotify.proto\032\025SceneEn"
                     + "tityInfo.proto\032\020VisionType.proto\"q\n\027Scen"
-                    + "eEntityAppearNotify\022 \n\013appear_type\030\r \001(\016"
-                    + "2\013.VisionType\022%\n\013entity_list\030\006 \003(\0132\020.Sce"
-                    + "neEntityInfo\022\r\n\005param\030\017 \001(\rB!\n\031emu.grass"
-                    + "cutter.net.protoZ\004/genb\006proto3"
+                    + "eEntityAppearNotify\022%\n\013entity_list\030\t \003(\013"
+                    + "2\020.SceneEntityInfo\022\r\n\005param\030\001 \001(\r\022 \n\013app"
+                    + "ear_type\030\n \001(\0162\013.VisionTypeB\033\n\031emu.grass"
+                    + "cutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1105,7 +1105,7 @@ public final class SceneEntityAppearNotifyOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_SceneEntityAppearNotify_descriptor,
                         new java.lang.String[] {
-                            "AppearType", "EntityList", "Param",
+                            "EntityList", "Param", "AppearType",
                         });
         emu.grasscutter.net.proto.SceneEntityInfoOuterClass.getDescriptor();
         emu.grasscutter.net.proto.VisionTypeOuterClass.getDescriptor();

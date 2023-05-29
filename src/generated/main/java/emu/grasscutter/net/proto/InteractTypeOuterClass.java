@@ -15,7 +15,7 @@ public final class InteractTypeOuterClass {
      *
      *
      * <pre>
-     * Name: JJNNDFMMKMA
+     * Obf: IJMMJPAEDFE
      * </pre>
      *
      * Protobuf enum {@code InteractType}
@@ -225,8 +225,8 @@ public final class InteractTypeOuterClass {
                     + "TYPE_HOME_GATHER\020\014\022\034\n\030INTERACT_TYPE_ENV_"
                     + "ANIMAL\020\r\022\036\n\032INTERACT_TYPE_QUEST_GADGET\020\016"
                     + "\022\035\n\031INTERACT_TYPE_UI_INTERACT\020\017\022!\n\035INTER"
-                    + "ACT_TYPE_DESHRET_OBELISK\020\020B!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "ACT_TYPE_DESHRET_OBELISK\020\020B\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

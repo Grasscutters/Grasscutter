@@ -110,7 +110,7 @@ public final class ClientGadgetInfoOuterClass {
      *
      *
      * <pre>
-     * Name: OKBKAFDHDFA
+     * Obf: INJJFHFANAD
      * </pre>
      *
      * Protobuf type {@code ClientGadgetInfo}
@@ -701,7 +701,7 @@ public final class ClientGadgetInfoOuterClass {
          *
          *
          * <pre>
-         * Name: OKBKAFDHDFA
+         * Obf: INJJFHFANAD
          * </pre>
          *
          * Protobuf type {@code ClientGadgetInfo}
@@ -1424,8 +1424,8 @@ public final class ClientGadgetInfoOuterClass {
                     + "\022\030\n\020target_entity_id\030\005 \001(\r\022\022\n\nasync_load"
                     + "\030\006 \001(\010\022\036\n\026is_peer_id_from_player\030\007 \001(\010\022\035"
                     + "\n\025target_entity_id_list\030\010 \003(\r\022$\n\034target_"
-                    + "lock_point_index_list\030\t \003(\rB!\n\031emu.grass"
-                    + "cutter.net.protoZ\004/genb\006proto3"
+                    + "lock_point_index_list\030\t \003(\rB\033\n\031emu.grass"
+                    + "cutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

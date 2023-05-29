@@ -18,7 +18,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 activity_id = 1;</code>
+         * <code>uint32 activity_id = 12;</code>
          *
          * @return The activityId.
          */
@@ -28,8 +28,8 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8503
-     * Name: LNPAAPEMOMK
+     * CmdId: 8045
+     * Obf: ECGJBENJDOP
      * </pre>
      *
      * Protobuf type {@code TanukiTravelFinishGuideQuestNotify}
@@ -77,7 +77,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 96:
                             {
                                 activityId_ = input.readUInt32();
                                 break;
@@ -118,10 +118,10 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
                                     .TanukiTravelFinishGuideQuestNotify.Builder.class);
         }
 
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
+        public static final int ACTIVITY_ID_FIELD_NUMBER = 12;
         private int activityId_;
         /**
-         * <code>uint32 activity_id = 1;</code>
+         * <code>uint32 activity_id = 12;</code>
          *
          * @return The activityId.
          */
@@ -145,7 +145,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (activityId_ != 0) {
-                output.writeUInt32(1, activityId_);
+                output.writeUInt32(12, activityId_);
             }
             unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
 
             size = 0;
             if (activityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, activityId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, activityId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -322,8 +322,8 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8503
-         * Name: LNPAAPEMOMK
+         * CmdId: 8045
+         * Obf: ECGJBENJDOP
          * </pre>
          *
          * Protobuf type {@code TanukiTravelFinishGuideQuestNotify}
@@ -512,7 +512,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
 
             private int activityId_;
             /**
-             * <code>uint32 activity_id = 1;</code>
+             * <code>uint32 activity_id = 12;</code>
              *
              * @return The activityId.
              */
@@ -521,7 +521,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
                 return activityId_;
             }
             /**
-             * <code>uint32 activity_id = 1;</code>
+             * <code>uint32 activity_id = 12;</code>
              *
              * @param value The activityId to set.
              * @return This builder for chaining.
@@ -533,7 +533,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 activity_id = 1;</code>
+             * <code>uint32 activity_id = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -619,8 +619,8 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n(TanukiTravelFinishGuideQuestNotify.pro"
                     + "to\"9\n\"TanukiTravelFinishGuideQuestNotify"
-                    + "\022\023\n\013activity_id\030\001 \001(\rB!\n\031emu.grasscutter"
-                    + ".net.protoZ\004/genb\006proto3"
+                    + "\022\023\n\013activity_id\030\014 \001(\rB\033\n\031emu.grasscutter"
+                    + ".net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

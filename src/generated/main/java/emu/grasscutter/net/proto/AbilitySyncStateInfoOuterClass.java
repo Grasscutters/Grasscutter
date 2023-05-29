@@ -122,7 +122,7 @@ public final class AbilitySyncStateInfoOuterClass {
      *
      *
      * <pre>
-     * Name: OIEKIGIJIFH
+     * Obf: LKMIECILJCL
      * </pre>
      *
      * Protobuf type {@code AbilitySyncStateInfo}
@@ -749,7 +749,7 @@ public final class AbilitySyncStateInfoOuterClass {
          *
          *
          * <pre>
-         * Name: OIEKIGIJIFH
+         * Obf: LKMIECILJCL
          * </pre>
          *
          * Protobuf type {@code AbilitySyncStateInfo}
@@ -2531,10 +2531,10 @@ public final class AbilitySyncStateInfoOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\032AbilitySyncStateInfo.proto\032\033AbilityApp"
-                    + "liedAbility.proto\032\034AbilityAppliedModifie"
-                    + "r.proto\032\035AbilityMixinRecoverInfo.proto\032\035"
-                    + "AbilityScalarValueEntry.proto\"\265\002\n\024Abilit"
+            "\n\032AbilitySyncStateInfo.proto\032\035AbilitySca"
+                    + "larValueEntry.proto\032\033AbilityAppliedAbili"
+                    + "ty.proto\032\034AbilityAppliedModifier.proto\032\035"
+                    + "AbilityMixinRecoverInfo.proto\"\265\002\n\024Abilit"
                     + "ySyncStateInfo\022\021\n\tis_inited\030\001 \001(\010\0223\n\021dyn"
                     + "amic_value_map\030\002 \003(\0132\030.AbilityScalarValu"
                     + "eEntry\0221\n\021applied_abilities\030\003 \003(\0132\026.Abil"
@@ -2542,17 +2542,17 @@ public final class AbilitySyncStateInfoOuterClass {
                     + " \003(\0132\027.AbilityAppliedModifier\0225\n\023mixin_r"
                     + "ecover_infos\030\005 \003(\0132\030.AbilityMixinRecover"
                     + "Info\0227\n\025sgv_dynamic_value_map\030\006 \003(\0132\030.Ab"
-                    + "ilityScalarValueEntryB!\n\031emu.grasscutter"
-                    + ".net.protoZ\004/genb\006proto3"
+                    + "ilityScalarValueEntryB\033\n\031emu.grasscutter"
+                    + ".net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.AbilityAppliedModifierOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor(),
                         });
         internal_static_AbilitySyncStateInfo_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_AbilitySyncStateInfo_fieldAccessorTable =
@@ -2566,10 +2566,10 @@ public final class AbilitySyncStateInfoOuterClass {
                             "MixinRecoverInfos",
                             "SgvDynamicValueMap",
                         });
+        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
         emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.getDescriptor();
         emu.grasscutter.net.proto.AbilityAppliedModifierOuterClass.getDescriptor();
         emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

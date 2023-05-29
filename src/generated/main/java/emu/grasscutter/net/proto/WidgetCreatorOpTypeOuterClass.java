@@ -15,7 +15,7 @@ public final class WidgetCreatorOpTypeOuterClass {
      *
      *
      * <pre>
-     * Name: HFCKLPODICN
+     * Obf: LACENMJJAHB
      * </pre>
      *
      * Protobuf enum {@code WidgetCreatorOpType}
@@ -136,9 +136,8 @@ public final class WidgetCreatorOpTypeOuterClass {
             "\n\031WidgetCreatorOpType.proto*\200\001\n\023WidgetCr"
                     + "eatorOpType\022\034\n\030WIDGET_CREATOR_TYPE_NONE\020"
                     + "\000\022\037\n\033WIDGET_CREATOR_TYPE_RETRACT\020\001\022*\n&WI"
-                    + "DGET_CREATOR_TYPE_RETRACT_AND_CREATE\020\002B!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "DGET_CREATOR_TYPE_RETRACT_AND_CREATE\020\002B\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

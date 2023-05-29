@@ -20,8 +20,8 @@ public final class WinterCampGetRecvItemListReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8852
-     * Name: KBAAIPKAPHE
+     * CmdId: 8339
+     * Obf: JBADDDJFJIN
      * </pre>
      *
      * Protobuf type {@code WinterCampGetRecvItemListReq}
@@ -287,8 +287,8 @@ public final class WinterCampGetRecvItemListReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8852
-         * Name: KBAAIPKAPHE
+         * CmdId: 8339
+         * Obf: JBADDDJFJIN
          * </pre>
          *
          * Protobuf type {@code WinterCampGetRecvItemListReq}
@@ -543,8 +543,8 @@ public final class WinterCampGetRecvItemListReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\"WinterCampGetRecvItemListReq.proto\"\036\n\034"
-                    + "WinterCampGetRecvItemListReqB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "WinterCampGetRecvItemListReqB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

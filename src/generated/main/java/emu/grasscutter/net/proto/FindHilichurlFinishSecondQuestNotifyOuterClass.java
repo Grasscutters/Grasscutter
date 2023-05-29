@@ -18,7 +18,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 day_index = 1;</code>
+         * <code>uint32 day_index = 8;</code>
          *
          * @return The dayIndex.
          */
@@ -28,8 +28,8 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8465
-     * Name: MAEIFFICOIC
+     * CmdId: 8503
+     * Obf: JGILMPHMBLJ
      * </pre>
      *
      * Protobuf type {@code FindHilichurlFinishSecondQuestNotify}
@@ -77,7 +77,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 64:
                             {
                                 dayIndex_ = input.readUInt32();
                                 break;
@@ -118,10 +118,10 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
                                     .FindHilichurlFinishSecondQuestNotify.Builder.class);
         }
 
-        public static final int DAY_INDEX_FIELD_NUMBER = 1;
+        public static final int DAY_INDEX_FIELD_NUMBER = 8;
         private int dayIndex_;
         /**
-         * <code>uint32 day_index = 1;</code>
+         * <code>uint32 day_index = 8;</code>
          *
          * @return The dayIndex.
          */
@@ -145,7 +145,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (dayIndex_ != 0) {
-                output.writeUInt32(1, dayIndex_);
+                output.writeUInt32(8, dayIndex_);
             }
             unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
 
             size = 0;
             if (dayIndex_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, dayIndex_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, dayIndex_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -322,8 +322,8 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8465
-         * Name: MAEIFFICOIC
+         * CmdId: 8503
+         * Obf: JGILMPHMBLJ
          * </pre>
          *
          * Protobuf type {@code FindHilichurlFinishSecondQuestNotify}
@@ -512,7 +512,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
 
             private int dayIndex_;
             /**
-             * <code>uint32 day_index = 1;</code>
+             * <code>uint32 day_index = 8;</code>
              *
              * @return The dayIndex.
              */
@@ -521,7 +521,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
                 return dayIndex_;
             }
             /**
-             * <code>uint32 day_index = 1;</code>
+             * <code>uint32 day_index = 8;</code>
              *
              * @param value The dayIndex to set.
              * @return This builder for chaining.
@@ -533,7 +533,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 day_index = 1;</code>
+             * <code>uint32 day_index = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -619,8 +619,8 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n*FindHilichurlFinishSecondQuestNotify.p"
                     + "roto\"9\n$FindHilichurlFinishSecondQuestNo"
-                    + "tify\022\021\n\tday_index\030\001 \001(\rB!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "tify\022\021\n\tday_index\030\010 \001(\rB\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

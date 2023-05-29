@@ -18,14 +18,14 @@ public final class EnterWorldAreaReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 area_id = 7;</code>
+         * <code>uint32 area_id = 11;</code>
          *
          * @return The areaId.
          */
         int getAreaId();
 
         /**
-         * <code>uint32 area_type = 10;</code>
+         * <code>uint32 area_type = 9;</code>
          *
          * @return The areaType.
          */
@@ -35,8 +35,8 @@ public final class EnterWorldAreaReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 233
-     * Name: NOOICDGONFO
+     * CmdId: 242
+     * Obf: PKDAGNPOOOK
      * </pre>
      *
      * Protobuf type {@code EnterWorldAreaReq}
@@ -82,14 +82,14 @@ public final class EnterWorldAreaReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
-                            {
-                                areaId_ = input.readUInt32();
-                                break;
-                            }
-                        case 80:
+                        case 72:
                             {
                                 areaType_ = input.readUInt32();
+                                break;
+                            }
+                        case 88:
+                            {
+                                areaId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -127,10 +127,10 @@ public final class EnterWorldAreaReqOuterClass {
                                     .class);
         }
 
-        public static final int AREA_ID_FIELD_NUMBER = 7;
+        public static final int AREA_ID_FIELD_NUMBER = 11;
         private int areaId_;
         /**
-         * <code>uint32 area_id = 7;</code>
+         * <code>uint32 area_id = 11;</code>
          *
          * @return The areaId.
          */
@@ -139,10 +139,10 @@ public final class EnterWorldAreaReqOuterClass {
             return areaId_;
         }
 
-        public static final int AREA_TYPE_FIELD_NUMBER = 10;
+        public static final int AREA_TYPE_FIELD_NUMBER = 9;
         private int areaType_;
         /**
-         * <code>uint32 area_type = 10;</code>
+         * <code>uint32 area_type = 9;</code>
          *
          * @return The areaType.
          */
@@ -165,11 +165,11 @@ public final class EnterWorldAreaReqOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (areaId_ != 0) {
-                output.writeUInt32(7, areaId_);
-            }
             if (areaType_ != 0) {
-                output.writeUInt32(10, areaType_);
+                output.writeUInt32(9, areaType_);
+            }
+            if (areaId_ != 0) {
+                output.writeUInt32(11, areaId_);
             }
             unknownFields.writeTo(output);
         }
@@ -180,11 +180,11 @@ public final class EnterWorldAreaReqOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (areaId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, areaId_);
-            }
             if (areaType_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, areaType_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, areaType_);
+            }
+            if (areaId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, areaId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -327,8 +327,8 @@ public final class EnterWorldAreaReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 233
-         * Name: NOOICDGONFO
+         * CmdId: 242
+         * Obf: PKDAGNPOOOK
          * </pre>
          *
          * Protobuf type {@code EnterWorldAreaReq}
@@ -505,7 +505,7 @@ public final class EnterWorldAreaReqOuterClass {
 
             private int areaId_;
             /**
-             * <code>uint32 area_id = 7;</code>
+             * <code>uint32 area_id = 11;</code>
              *
              * @return The areaId.
              */
@@ -514,7 +514,7 @@ public final class EnterWorldAreaReqOuterClass {
                 return areaId_;
             }
             /**
-             * <code>uint32 area_id = 7;</code>
+             * <code>uint32 area_id = 11;</code>
              *
              * @param value The areaId to set.
              * @return This builder for chaining.
@@ -526,7 +526,7 @@ public final class EnterWorldAreaReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 area_id = 7;</code>
+             * <code>uint32 area_id = 11;</code>
              *
              * @return This builder for chaining.
              */
@@ -539,7 +539,7 @@ public final class EnterWorldAreaReqOuterClass {
 
             private int areaType_;
             /**
-             * <code>uint32 area_type = 10;</code>
+             * <code>uint32 area_type = 9;</code>
              *
              * @return The areaType.
              */
@@ -548,7 +548,7 @@ public final class EnterWorldAreaReqOuterClass {
                 return areaType_;
             }
             /**
-             * <code>uint32 area_type = 10;</code>
+             * <code>uint32 area_type = 9;</code>
              *
              * @param value The areaType to set.
              * @return This builder for chaining.
@@ -560,7 +560,7 @@ public final class EnterWorldAreaReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 area_type = 10;</code>
+             * <code>uint32 area_type = 9;</code>
              *
              * @return This builder for chaining.
              */
@@ -641,9 +641,8 @@ public final class EnterWorldAreaReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027EnterWorldAreaReq.proto\"7\n\021EnterWorldA"
-                    + "reaReq\022\017\n\007area_id\030\007 \001(\r\022\021\n\tarea_type\030\n \001"
-                    + "(\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "reaReq\022\017\n\007area_id\030\013 \001(\r\022\021\n\tarea_type\030\t \001"
+                    + "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

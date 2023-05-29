@@ -42,7 +42,7 @@ public final class SocialShowAvatarInfoOuterClass {
      *
      *
      * <pre>
-     * Name: PKPGAPABGIN
+     * Obf: HFJBPBGJGNP
      * </pre>
      *
      * Protobuf type {@code SocialShowAvatarInfo}
@@ -365,7 +365,7 @@ public final class SocialShowAvatarInfoOuterClass {
          *
          *
          * <pre>
-         * Name: PKPGAPABGIN
+         * Obf: HFJBPBGJGNP
          * </pre>
          *
          * Protobuf type {@code SocialShowAvatarInfo}
@@ -722,8 +722,8 @@ public final class SocialShowAvatarInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\032SocialShowAvatarInfo.proto\"L\n\024SocialSh"
                     + "owAvatarInfo\022\021\n\tavatar_id\030\001 \001(\r\022\r\n\005level"
-                    + "\030\002 \001(\r\022\022\n\ncostume_id\030\003 \001(\rB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "\030\002 \001(\r\022\022\n\ncostume_id\030\003 \001(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

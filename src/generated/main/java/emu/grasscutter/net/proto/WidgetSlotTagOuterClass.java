@@ -15,7 +15,7 @@ public final class WidgetSlotTagOuterClass {
      *
      *
      * <pre>
-     * Name: PKGFJDKCLNB
+     * Obf: GMCPLJCPMGC
      * </pre>
      *
      * Protobuf enum {@code WidgetSlotTag}
@@ -126,8 +126,8 @@ public final class WidgetSlotTagOuterClass {
         java.lang.String[] descriptorData = {
             "\n\023WidgetSlotTag.proto*Q\n\rWidgetSlotTag\022\035"
                     + "\n\031WIDGET_SLOT_TAG_QUICK_USE\020\000\022!\n\035WIDGET_"
-                    + "SLOT_TAG_ATTACH_AVATAR\020\001B!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "SLOT_TAG_ATTACH_AVATAR\020\001B\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

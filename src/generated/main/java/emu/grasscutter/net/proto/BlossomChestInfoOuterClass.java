@@ -89,7 +89,7 @@ public final class BlossomChestInfoOuterClass {
      *
      *
      * <pre>
-     * Name: JGBHEKPGJOJ
+     * Obf: ADMOGMEBELJ
      * </pre>
      *
      * Protobuf type {@code BlossomChestInfo}
@@ -601,7 +601,7 @@ public final class BlossomChestInfoOuterClass {
          *
          *
          * <pre>
-         * Name: JGBHEKPGJOJ
+         * Obf: ADMOGMEBELJ
          * </pre>
          *
          * Protobuf type {@code BlossomChestInfo}
@@ -1200,8 +1200,8 @@ public final class BlossomChestInfoOuterClass {
                     + "tInfo\022\r\n\005resin\030\001 \001(\r\022\030\n\020qualify_uid_list"
                     + "\030\002 \003(\r\022\027\n\017remain_uid_list\030\003 \003(\r\022\021\n\tdead_"
                     + "time\030\004 \001(\r\022\034\n\024blossom_refresh_type\030\005 \001(\r"
-                    + "\022\022\n\nrefresh_id\030\006 \001(\rB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "\022\022\n\nrefresh_id\030\006 \001(\rB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -104,17 +104,17 @@ public final class SceneEntityAiInfoOuterClass {
         int getCurTactic();
 
         /**
-         * <code>bool IGINBLKLKCF = 8;</code>
+         * <code>bool LHPKKKJLJHK = 8;</code>
          *
-         * @return The iGINBLKLKCF.
+         * @return The lHPKKKJLJHK.
          */
-        boolean getIGINBLKLKCF();
+        boolean getLHPKKKJLJHK();
     }
     /**
      *
      *
      * <pre>
-     * Name: MCNFHNMIDGK
+     * Obf: DLDEGHAICPF
      * </pre>
      *
      * Protobuf type {@code SceneEntityAiInfo}
@@ -256,7 +256,7 @@ public final class SceneEntityAiInfoOuterClass {
                             }
                         case 64:
                             {
-                                iGINBLKLKCF_ = input.readBool();
+                                lHPKKKJLJHK_ = input.readBool();
                                 break;
                             }
                         default:
@@ -578,16 +578,16 @@ public final class SceneEntityAiInfoOuterClass {
             return curTactic_;
         }
 
-        public static final int IGINBLKLKCF_FIELD_NUMBER = 8;
-        private boolean iGINBLKLKCF_;
+        public static final int LHPKKKJLJHK_FIELD_NUMBER = 8;
+        private boolean lHPKKKJLJHK_;
         /**
-         * <code>bool IGINBLKLKCF = 8;</code>
+         * <code>bool LHPKKKJLJHK = 8;</code>
          *
-         * @return The iGINBLKLKCF.
+         * @return The lHPKKKJLJHK.
          */
         @java.lang.Override
-        public boolean getIGINBLKLKCF() {
-            return iGINBLKLKCF_;
+        public boolean getLHPKKKJLJHK() {
+            return lHPKKKJLJHK_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -622,8 +622,8 @@ public final class SceneEntityAiInfoOuterClass {
             if (curTactic_ != 0) {
                 output.writeUInt32(7, curTactic_);
             }
-            if (iGINBLKLKCF_ != false) {
-                output.writeBool(8, iGINBLKLKCF_);
+            if (lHPKKKJLJHK_ != false) {
+                output.writeBool(8, lHPKKKJLJHK_);
             }
             unknownFields.writeTo(output);
         }
@@ -676,8 +676,8 @@ public final class SceneEntityAiInfoOuterClass {
             if (curTactic_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, curTactic_);
             }
-            if (iGINBLKLKCF_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, iGINBLKLKCF_);
+            if (lHPKKKJLJHK_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, lHPKKKJLJHK_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -709,7 +709,7 @@ public final class SceneEntityAiInfoOuterClass {
             if (!internalGetAiThreatMap().equals(other.internalGetAiThreatMap())) return false;
             if (!internalGetSkillGroupCdMap().equals(other.internalGetSkillGroupCdMap())) return false;
             if (getCurTactic() != other.getCurTactic()) return false;
-            if (getIGINBLKLKCF() != other.getIGINBLKLKCF()) return false;
+            if (getLHPKKKJLJHK() != other.getLHPKKKJLJHK()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -745,8 +745,8 @@ public final class SceneEntityAiInfoOuterClass {
             }
             hash = (37 * hash) + CUR_TACTIC_FIELD_NUMBER;
             hash = (53 * hash) + getCurTactic();
-            hash = (37 * hash) + IGINBLKLKCF_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIGINBLKLKCF());
+            hash = (37 * hash) + LHPKKKJLJHK_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLHPKKKJLJHK());
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -854,7 +854,7 @@ public final class SceneEntityAiInfoOuterClass {
          *
          *
          * <pre>
-         * Name: MCNFHNMIDGK
+         * Obf: DLDEGHAICPF
          * </pre>
          *
          * Protobuf type {@code SceneEntityAiInfo}
@@ -945,7 +945,7 @@ public final class SceneEntityAiInfoOuterClass {
                 internalGetMutableSkillGroupCdMap().clear();
                 curTactic_ = 0;
 
-                iGINBLKLKCF_ = false;
+                lHPKKKJLJHK_ = false;
 
                 return this;
             }
@@ -997,7 +997,7 @@ public final class SceneEntityAiInfoOuterClass {
                 result.skillGroupCdMap_ = internalGetSkillGroupCdMap();
                 result.skillGroupCdMap_.makeImmutable();
                 result.curTactic_ = curTactic_;
-                result.iGINBLKLKCF_ = iGINBLKLKCF_;
+                result.lHPKKKJLJHK_ = lHPKKKJLJHK_;
                 onBuilt();
                 return result;
             }
@@ -1069,8 +1069,8 @@ public final class SceneEntityAiInfoOuterClass {
                 if (other.getCurTactic() != 0) {
                     setCurTactic(other.getCurTactic());
                 }
-                if (other.getIGINBLKLKCF() != false) {
-                    setIGINBLKLKCF(other.getIGINBLKLKCF());
+                if (other.getLHPKKKJLJHK() != false) {
+                    setLHPKKKJLJHK(other.getLHPKKKJLJHK());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1688,36 +1688,36 @@ public final class SceneEntityAiInfoOuterClass {
                 return this;
             }
 
-            private boolean iGINBLKLKCF_;
+            private boolean lHPKKKJLJHK_;
             /**
-             * <code>bool IGINBLKLKCF = 8;</code>
+             * <code>bool LHPKKKJLJHK = 8;</code>
              *
-             * @return The iGINBLKLKCF.
+             * @return The lHPKKKJLJHK.
              */
             @java.lang.Override
-            public boolean getIGINBLKLKCF() {
-                return iGINBLKLKCF_;
+            public boolean getLHPKKKJLJHK() {
+                return lHPKKKJLJHK_;
             }
             /**
-             * <code>bool IGINBLKLKCF = 8;</code>
+             * <code>bool LHPKKKJLJHK = 8;</code>
              *
-             * @param value The iGINBLKLKCF to set.
+             * @param value The lHPKKKJLJHK to set.
              * @return This builder for chaining.
              */
-            public Builder setIGINBLKLKCF(boolean value) {
+            public Builder setLHPKKKJLJHK(boolean value) {
 
-                iGINBLKLKCF_ = value;
+                lHPKKKJLJHK_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool IGINBLKLKCF = 8;</code>
+             * <code>bool LHPKKKJLJHK = 8;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearIGINBLKLKCF() {
+            public Builder clearLHPKKKJLJHK() {
 
-                iGINBLKLKCF_ = false;
+                lHPKKKJLJHK_ = false;
                 onChanged();
                 return this;
             }
@@ -1803,8 +1803,8 @@ public final class SceneEntityAiInfoOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\027SceneEntityAiInfo.proto\032\021ServantInfo.p"
-                    + "roto\032\014Vector.proto\"\351\003\n\021SceneEntityAiInfo"
+            "\n\027SceneEntityAiInfo.proto\032\014Vector.proto\032"
+                    + "\021ServantInfo.proto\"\351\003\n\021SceneEntityAiInfo"
                     + "\022\022\n\nis_ai_open\030\001 \001(\010\022\031\n\010born_pos\030\002 \001(\0132\007"
                     + ".Vector\0228\n\014skill_cd_map\030\003 \003(\0132\".SceneEnt"
                     + "ityAiInfo.SkillCdMapEntry\022\"\n\014servant_inf"
@@ -1812,19 +1812,19 @@ public final class SceneEntityAiInfoOuterClass {
                     + " \003(\0132#.SceneEntityAiInfo.AiThreatMapEntr"
                     + "y\022C\n\022skill_group_cd_map\030\006 \003(\0132\'.SceneEnt"
                     + "ityAiInfo.SkillGroupCdMapEntry\022\022\n\ncur_ta"
-                    + "ctic\030\007 \001(\r\022\023\n\013IGINBLKLKCF\030\010 \001(\010\0321\n\017Skill"
+                    + "ctic\030\007 \001(\r\022\023\n\013LHPKKKJLJHK\030\010 \001(\010\0321\n\017Skill"
                     + "CdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\002"
                     + "8\001\0322\n\020AiThreatMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v"
                     + "alue\030\002 \001(\r:\0028\001\0326\n\024SkillGroupCdMapEntry\022\013"
-                    + "\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor(),
                         });
         internal_static_SceneEntityAiInfo_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_SceneEntityAiInfo_fieldAccessorTable =
@@ -1838,7 +1838,7 @@ public final class SceneEntityAiInfoOuterClass {
                             "AiThreatMap",
                             "SkillGroupCdMap",
                             "CurTactic",
-                            "IGINBLKLKCF",
+                            "LHPKKKJLJHK",
                         });
         internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor =
                 internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(0);
@@ -1864,8 +1864,8 @@ public final class SceneEntityAiInfoOuterClass {
                         new java.lang.String[] {
                             "Key", "Value",
                         });
-        emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor();
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.ServantInfoOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

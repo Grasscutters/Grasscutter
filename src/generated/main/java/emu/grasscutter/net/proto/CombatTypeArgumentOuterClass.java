@@ -15,7 +15,7 @@ public final class CombatTypeArgumentOuterClass {
      *
      *
      * <pre>
-     * Name: DHGBKMMCECM
+     * Obf: CBOEAHNFCIJ
      * </pre>
      *
      * Protobuf enum {@code CombatTypeArgument}
@@ -250,8 +250,8 @@ public final class CombatTypeArgumentOuterClass {
                     + "E_MOVE\020\017\022)\n%COMBAT_TYPE_ARGUMENT_BEING_H"
                     + "EALED_NTF\020\020\0222\n.COMBAT_TYPE_ARGUMENT_SKIL"
                     + "L_ANCHOR_POSITION_NTF\020\021\022,\n(COMBAT_TYPE_A"
-                    + "RGUMENT_GRAPPLING_HOOK_MOVE\020\022B!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "RGUMENT_GRAPPLING_HOOK_MOVE\020\022B\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

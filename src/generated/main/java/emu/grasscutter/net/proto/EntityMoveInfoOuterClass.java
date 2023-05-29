@@ -64,7 +64,7 @@ public final class EntityMoveInfoOuterClass {
      *
      *
      * <pre>
-     * Name: DNFJKJBPHLE
+     * Obf: DGBPMOADLDG
      * </pre>
      *
      * Protobuf type {@code EntityMoveInfo}
@@ -465,7 +465,7 @@ public final class EntityMoveInfoOuterClass {
          *
          *
          * <pre>
-         * Name: DNFJKJBPHLE
+         * Obf: DGBPMOADLDG
          * </pre>
          *
          * Protobuf type {@code EntityMoveInfo}
@@ -991,8 +991,8 @@ public final class EntityMoveInfoOuterClass {
                     + "\"\204\001\n\016EntityMoveInfo\022\021\n\tentity_id\030\001 \001(\r\022 "
                     + "\n\013motion_info\030\002 \001(\0132\013.MotionInfo\022\022\n\nscen"
                     + "e_time\030\003 \001(\r\022\024\n\014reliable_seq\030\004 \001(\r\022\023\n\013is"
-                    + "_reliable\030\005 \001(\010B!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "_reliable\030\005 \001(\010B\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

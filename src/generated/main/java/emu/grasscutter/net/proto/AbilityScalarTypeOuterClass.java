@@ -15,7 +15,7 @@ public final class AbilityScalarTypeOuterClass {
      *
      *
      * <pre>
-     * Name: OOCPHEKKCJH
+     * Obf: EBCOKIIELIE
      * </pre>
      *
      * Protobuf enum {@code AbilityScalarType}
@@ -163,8 +163,8 @@ public final class AbilityScalarTypeOuterClass {
                     + "Y_SCALAR_TYPE_INT\020\002\022\034\n\030ABILITY_SCALAR_TY"
                     + "PE_BOOL\020\003\022\037\n\033ABILITY_SCALAR_TYPE_TRIGGER"
                     + "\020\004\022\036\n\032ABILITY_SCALAR_TYPE_STRING\020\005\022\034\n\030AB"
-                    + "ILITY_SCALAR_TYPE_UINT\020\006B!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "ILITY_SCALAR_TYPE_UINT\020\006B\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

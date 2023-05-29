@@ -374,7 +374,7 @@ public final class RegionInfoOuterClass {
      *
      *
      * <pre>
-     * Name: ECJIHDDFOCO
+     * Obf: NBDGDBINJAH
      * </pre>
      *
      * Protobuf type {@code RegionInfo}
@@ -2063,7 +2063,7 @@ public final class RegionInfoOuterClass {
          *
          *
          * <pre>
-         * Name: ECJIHDDFOCO
+         * Obf: NBDGDBINJAH
          * </pre>
          *
          * Protobuf type {@code RegionInfo}
@@ -4611,8 +4611,8 @@ public final class RegionInfoOuterClass {
                     + "cdkey_url\030  \001(\t\022\032\n\022privacy_policy_url\030! "
                     + "\001(\t\022\031\n\021next_resource_url\030\" \001(\t\0222\n\027next_r"
                     + "es_version_config\030# \001(\0132\021.ResVersionConf"
-                    + "ig\022\020\n\010game_biz\030$ \001(\tB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "ig\022\020\n\010game_biz\030$ \001(\tB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

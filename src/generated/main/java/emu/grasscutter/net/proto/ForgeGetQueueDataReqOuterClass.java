@@ -20,8 +20,8 @@ public final class ForgeGetQueueDataReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 654
-     * Name: FDJBLFOADKF
+     * CmdId: 680
+     * Obf: ICIPKMHLDKP
      * </pre>
      *
      * Protobuf type {@code ForgeGetQueueDataReq}
@@ -266,8 +266,8 @@ public final class ForgeGetQueueDataReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 654
-         * Name: FDJBLFOADKF
+         * CmdId: 680
+         * Obf: ICIPKMHLDKP
          * </pre>
          *
          * Protobuf type {@code ForgeGetQueueDataReq}
@@ -503,8 +503,8 @@ public final class ForgeGetQueueDataReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032ForgeGetQueueDataReq.proto\"\026\n\024ForgeGet"
-                    + "QueueDataReqB!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "QueueDataReqB\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

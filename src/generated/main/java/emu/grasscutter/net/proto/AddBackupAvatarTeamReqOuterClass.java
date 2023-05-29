@@ -20,8 +20,8 @@ public final class AddBackupAvatarTeamReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1670
-     * Name: JGCLHIODNGH
+     * CmdId: 1638
+     * Obf: DHMGMLAKAEN
      * </pre>
      *
      * Protobuf type {@code AddBackupAvatarTeamReq}
@@ -268,8 +268,8 @@ public final class AddBackupAvatarTeamReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1670
-         * Name: JGCLHIODNGH
+         * CmdId: 1638
+         * Obf: DHMGMLAKAEN
          * </pre>
          *
          * Protobuf type {@code AddBackupAvatarTeamReq}
@@ -508,8 +508,8 @@ public final class AddBackupAvatarTeamReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034AddBackupAvatarTeamReq.proto\"\030\n\026AddBac"
-                    + "kupAvatarTeamReqB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "kupAvatarTeamReqB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

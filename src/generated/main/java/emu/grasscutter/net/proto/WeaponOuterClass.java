@@ -56,7 +56,7 @@ public final class WeaponOuterClass {
      *
      *
      * <pre>
-     * Name: LKKKOFHDIBB
+     * Obf: ONOPOBPAHOE
      * </pre>
      *
      * Protobuf type {@code Weapon}
@@ -472,7 +472,7 @@ public final class WeaponOuterClass {
          *
          *
          * <pre>
-         * Name: LKKKOFHDIBB
+         * Obf: ONOPOBPAHOE
          * </pre>
          *
          * Protobuf type {@code Weapon}
@@ -929,8 +929,8 @@ public final class WeaponOuterClass {
                     + "\022\013\n\003exp\030\002 \001(\r\022\025\n\rpromote_level\030\003 \001(\r\022(\n\t"
                     + "affix_map\030\004 \003(\0132\025.Weapon.AffixMapEntry\032/"
                     + "\n\rAffixMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 "
-                    + "\001(\r:\0028\001B!\n\031emu.grasscutter.net.protoZ\004/g"
-                    + "enb\006proto3"
+                    + "\001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006pr"
+                    + "oto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

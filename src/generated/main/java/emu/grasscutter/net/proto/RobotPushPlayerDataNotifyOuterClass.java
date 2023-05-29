@@ -28,8 +28,8 @@ public final class RobotPushPlayerDataNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 65
-     * Name: LAJIBNCFOMI
+     * CmdId: 34
+     * Obf: NMAMMHHNPKN
      * </pre>
      *
      * Protobuf type {@code RobotPushPlayerDataNotify}
@@ -320,8 +320,8 @@ public final class RobotPushPlayerDataNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 65
-         * Name: LAJIBNCFOMI
+         * CmdId: 34
+         * Obf: NMAMMHHNPKN
          * </pre>
          *
          * Protobuf type {@code RobotPushPlayerDataNotify}
@@ -611,8 +611,8 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\037RobotPushPlayerDataNotify.proto\"(\n\031Rob"
-                    + "otPushPlayerDataNotify\022\013\n\003bin\030\010 \001(\014B!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "otPushPlayerDataNotify\022\013\n\003bin\030\010 \001(\014B\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

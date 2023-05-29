@@ -28,7 +28,7 @@ public final class FleurFairBalloonInfoOuterClass {
      *
      *
      * <pre>
-     * Name: NDMNFHFIDMB
+     * Obf: GNDNOIIAFFH
      * </pre>
      *
      * Protobuf type {@code FleurFairBalloonInfo}
@@ -299,7 +299,7 @@ public final class FleurFairBalloonInfoOuterClass {
          *
          *
          * <pre>
-         * Name: NDMNFHFIDMB
+         * Obf: GNDNOIIAFFH
          * </pre>
          *
          * Protobuf type {@code FleurFairBalloonInfo}
@@ -575,8 +575,8 @@ public final class FleurFairBalloonInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032FleurFairBalloonInfo.proto\"*\n\024FleurFai"
-                    + "rBalloonInfo\022\022\n\nbest_score\030\n \001(\rB!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "rBalloonInfo\022\022\n\nbest_score\030\n \001(\rB\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

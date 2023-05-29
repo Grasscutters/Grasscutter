@@ -1599,8 +1599,7 @@ public final class MusicGameActivityDetailInfoOuterClass {
                     + "y\022\'\n\013JIDGICBBLBG\030\001 \003(\0132\022.UgcMusicBriefIn"
                     + "fo\032K\n\027MusicGameRecordMapEntry\022\013\n\003key\030\001 \001"
                     + "(\r\022\037\n\005value\030\002 \001(\0132\020.MusicGameRecord:\0028\001B"
-                    + "!\n\031emu.grasscutter.net.protoZ\004/genb\006prot"
-                    + "o3"
+                    + "\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

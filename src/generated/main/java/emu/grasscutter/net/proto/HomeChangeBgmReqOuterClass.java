@@ -28,8 +28,8 @@ public final class HomeChangeBgmReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4470
-     * Name: CLLEAGFNBFB
+     * CmdId: 4496
+     * Obf: HADMLDEDBLD
      * </pre>
      *
      * Protobuf type {@code HomeChangeBgmReq}
@@ -292,8 +292,8 @@ public final class HomeChangeBgmReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4470
-         * Name: CLLEAGFNBFB
+         * CmdId: 4496
+         * Obf: HADMLDEDBLD
          * </pre>
          *
          * Protobuf type {@code HomeChangeBgmReq}
@@ -564,8 +564,8 @@ public final class HomeChangeBgmReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026HomeChangeBgmReq.proto\"\"\n\020HomeChangeBg"
-                    + "mReq\022\016\n\006bgm_id\030\003 \001(\rB!\n\031emu.grasscutter."
-                    + "net.protoZ\004/genb\006proto3"
+                    + "mReq\022\016\n\006bgm_id\030\003 \001(\rB\033\n\031emu.grasscutter."
+                    + "net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

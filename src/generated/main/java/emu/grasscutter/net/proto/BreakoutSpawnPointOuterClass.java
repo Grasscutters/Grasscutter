@@ -54,7 +54,7 @@ public final class BreakoutSpawnPointOuterClass {
      *
      *
      * <pre>
-     * Name: BPDEGPENGBL
+     * Obf: OCEKCPLEHCI
      * </pre>
      *
      * Protobuf type {@code BreakoutSpawnPoint}
@@ -423,7 +423,7 @@ public final class BreakoutSpawnPointOuterClass {
          *
          *
          * <pre>
-         * Name: BPDEGPENGBL
+         * Obf: OCEKCPLEHCI
          * </pre>
          *
          * Protobuf type {@code BreakoutSpawnPoint}
@@ -1040,8 +1040,8 @@ public final class BreakoutSpawnPointOuterClass {
                     + "icalObject.proto\"m\n\022BreakoutSpawnPoint\022\n"
                     + "\n\002id\030\001 \001(\r\022\026\n\016brick_suite_id\030\002 \001(\r\0223\n\022sp"
                     + "awned_brick_list\030\003 \003(\0132\027.BreakoutPhysica"
-                    + "lObjectB!\n\031emu.grasscutter.net.protoZ\004/g"
-                    + "enb\006proto3"
+                    + "lObjectB\033\n\031emu.grasscutter.net.protob\006pr"
+                    + "oto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

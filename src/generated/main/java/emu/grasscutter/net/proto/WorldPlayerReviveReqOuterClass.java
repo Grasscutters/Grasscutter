@@ -20,8 +20,8 @@ public final class WorldPlayerReviveReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 213
-     * Name: OKLAGFKPDJI
+     * CmdId: 273
+     * Obf: OBKKEOENCLB
      * </pre>
      *
      * Protobuf type {@code WorldPlayerReviveReq}
@@ -266,8 +266,8 @@ public final class WorldPlayerReviveReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 213
-         * Name: OKLAGFKPDJI
+         * CmdId: 273
+         * Obf: OBKKEOENCLB
          * </pre>
          *
          * Protobuf type {@code WorldPlayerReviveReq}
@@ -503,8 +503,8 @@ public final class WorldPlayerReviveReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032WorldPlayerReviveReq.proto\"\026\n\024WorldPla"
-                    + "yerReviveReqB!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "yerReviveReqB\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,24 +18,25 @@ public final class H5ActivityInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 OBINALNIFGI = 9;</code>
+         * <code>uint32 HPLJKGAJNOA = 4;</code>
          *
-         * @return The oBINALNIFGI.
+         * @return The hPLJKGAJNOA.
          */
-        int getOBINALNIFGI();
+        int getHPLJKGAJNOA();
 
         /**
-         * <code>string prefab_path = 10;</code>
+         * <code>bool is_entrance_open = 5;</code>
          *
-         * @return The prefabPath.
+         * @return The isEntranceOpen.
          */
-        java.lang.String getPrefabPath();
+        boolean getIsEntranceOpen();
+
         /**
-         * <code>string prefab_path = 10;</code>
+         * <code>uint32 PAIONNJCHAG = 12;</code>
          *
-         * @return The bytes for prefabPath.
+         * @return The pAIONNJCHAG.
          */
-        com.google.protobuf.ByteString getPrefabPathBytes();
+        int getPAIONNJCHAG();
 
         /**
          * <code>uint32 begin_time = 11;</code>
@@ -45,41 +46,40 @@ public final class H5ActivityInfoOuterClass {
         int getBeginTime();
 
         /**
-         * <code>uint32 EKOKDKCNOOA = 13;</code>
-         *
-         * @return The eKOKDKCNOOA.
-         */
-        int getEKOKDKCNOOA();
-
-        /**
-         * <code>uint32 end_time = 2;</code>
-         *
-         * @return The endTime.
-         */
-        int getEndTime();
-
-        /**
-         * <code>uint32 content_close_time = 3;</code>
+         * <code>uint32 content_close_time = 14;</code>
          *
          * @return The contentCloseTime.
          */
         int getContentCloseTime();
 
         /**
-         * <code>bool is_entrance_open = 12;</code>
+         * <code>string prefab_path = 8;</code>
          *
-         * @return The isEntranceOpen.
+         * @return The prefabPath.
          */
-        boolean getIsEntranceOpen();
+        java.lang.String getPrefabPath();
+        /**
+         * <code>string prefab_path = 8;</code>
+         *
+         * @return The bytes for prefabPath.
+         */
+        com.google.protobuf.ByteString getPrefabPathBytes();
 
         /**
-         * <code>string url = 1;</code>
+         * <code>uint32 end_time = 15;</code>
+         *
+         * @return The endTime.
+         */
+        int getEndTime();
+
+        /**
+         * <code>string url = 3;</code>
          *
          * @return The url.
          */
         java.lang.String getUrl();
         /**
-         * <code>string url = 1;</code>
+         * <code>string url = 3;</code>
          *
          * @return The bytes for url.
          */
@@ -89,7 +89,7 @@ public final class H5ActivityInfoOuterClass {
      *
      *
      * <pre>
-     * Name: MDGLDNMDCHA
+     * Obf: NJDJNOHKGHG
      * </pre>
      *
      * Protobuf type {@code H5ActivityInfo}
@@ -138,29 +138,24 @@ public final class H5ActivityInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 10:
+                        case 26:
                             {
                                 java.lang.String s = input.readStringRequireUtf8();
 
                                 url_ = s;
                                 break;
                             }
-                        case 16:
+                        case 32:
                             {
-                                endTime_ = input.readUInt32();
+                                hPLJKGAJNOA_ = input.readUInt32();
                                 break;
                             }
-                        case 24:
+                        case 40:
                             {
-                                contentCloseTime_ = input.readUInt32();
+                                isEntranceOpen_ = input.readBool();
                                 break;
                             }
-                        case 72:
-                            {
-                                oBINALNIFGI_ = input.readUInt32();
-                                break;
-                            }
-                        case 82:
+                        case 66:
                             {
                                 java.lang.String s = input.readStringRequireUtf8();
 
@@ -174,12 +169,17 @@ public final class H5ActivityInfoOuterClass {
                             }
                         case 96:
                             {
-                                isEntranceOpen_ = input.readBool();
+                                pAIONNJCHAG_ = input.readUInt32();
                                 break;
                             }
-                        case 104:
+                        case 112:
                             {
-                                eKOKDKCNOOA_ = input.readUInt32();
+                                contentCloseTime_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                endTime_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -216,22 +216,70 @@ public final class H5ActivityInfoOuterClass {
                             emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo.Builder.class);
         }
 
-        public static final int OBINALNIFGI_FIELD_NUMBER = 9;
-        private int oBINALNIFGI_;
+        public static final int HPLJKGAJNOA_FIELD_NUMBER = 4;
+        private int hPLJKGAJNOA_;
         /**
-         * <code>uint32 OBINALNIFGI = 9;</code>
+         * <code>uint32 HPLJKGAJNOA = 4;</code>
          *
-         * @return The oBINALNIFGI.
+         * @return The hPLJKGAJNOA.
          */
         @java.lang.Override
-        public int getOBINALNIFGI() {
-            return oBINALNIFGI_;
+        public int getHPLJKGAJNOA() {
+            return hPLJKGAJNOA_;
         }
 
-        public static final int PREFAB_PATH_FIELD_NUMBER = 10;
+        public static final int IS_ENTRANCE_OPEN_FIELD_NUMBER = 5;
+        private boolean isEntranceOpen_;
+        /**
+         * <code>bool is_entrance_open = 5;</code>
+         *
+         * @return The isEntranceOpen.
+         */
+        @java.lang.Override
+        public boolean getIsEntranceOpen() {
+            return isEntranceOpen_;
+        }
+
+        public static final int PAIONNJCHAG_FIELD_NUMBER = 12;
+        private int pAIONNJCHAG_;
+        /**
+         * <code>uint32 PAIONNJCHAG = 12;</code>
+         *
+         * @return The pAIONNJCHAG.
+         */
+        @java.lang.Override
+        public int getPAIONNJCHAG() {
+            return pAIONNJCHAG_;
+        }
+
+        public static final int BEGIN_TIME_FIELD_NUMBER = 11;
+        private int beginTime_;
+        /**
+         * <code>uint32 begin_time = 11;</code>
+         *
+         * @return The beginTime.
+         */
+        @java.lang.Override
+        public int getBeginTime() {
+            return beginTime_;
+        }
+
+        public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 14;
+        private int contentCloseTime_;
+        /**
+         * <code>uint32 content_close_time = 14;</code>
+         *
+         * @return The contentCloseTime.
+         */
+        @java.lang.Override
+        public int getContentCloseTime() {
+            return contentCloseTime_;
+        }
+
+        public static final int PREFAB_PATH_FIELD_NUMBER = 8;
         private volatile java.lang.Object prefabPath_;
         /**
-         * <code>string prefab_path = 10;</code>
+         * <code>string prefab_path = 8;</code>
          *
          * @return The prefabPath.
          */
@@ -248,7 +296,7 @@ public final class H5ActivityInfoOuterClass {
             }
         }
         /**
-         * <code>string prefab_path = 10;</code>
+         * <code>string prefab_path = 8;</code>
          *
          * @return The bytes for prefabPath.
          */
@@ -265,34 +313,10 @@ public final class H5ActivityInfoOuterClass {
             }
         }
 
-        public static final int BEGIN_TIME_FIELD_NUMBER = 11;
-        private int beginTime_;
-        /**
-         * <code>uint32 begin_time = 11;</code>
-         *
-         * @return The beginTime.
-         */
-        @java.lang.Override
-        public int getBeginTime() {
-            return beginTime_;
-        }
-
-        public static final int EKOKDKCNOOA_FIELD_NUMBER = 13;
-        private int eKOKDKCNOOA_;
-        /**
-         * <code>uint32 EKOKDKCNOOA = 13;</code>
-         *
-         * @return The eKOKDKCNOOA.
-         */
-        @java.lang.Override
-        public int getEKOKDKCNOOA() {
-            return eKOKDKCNOOA_;
-        }
-
-        public static final int END_TIME_FIELD_NUMBER = 2;
+        public static final int END_TIME_FIELD_NUMBER = 15;
         private int endTime_;
         /**
-         * <code>uint32 end_time = 2;</code>
+         * <code>uint32 end_time = 15;</code>
          *
          * @return The endTime.
          */
@@ -301,34 +325,10 @@ public final class H5ActivityInfoOuterClass {
             return endTime_;
         }
 
-        public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 3;
-        private int contentCloseTime_;
-        /**
-         * <code>uint32 content_close_time = 3;</code>
-         *
-         * @return The contentCloseTime.
-         */
-        @java.lang.Override
-        public int getContentCloseTime() {
-            return contentCloseTime_;
-        }
-
-        public static final int IS_ENTRANCE_OPEN_FIELD_NUMBER = 12;
-        private boolean isEntranceOpen_;
-        /**
-         * <code>bool is_entrance_open = 12;</code>
-         *
-         * @return The isEntranceOpen.
-         */
-        @java.lang.Override
-        public boolean getIsEntranceOpen() {
-            return isEntranceOpen_;
-        }
-
-        public static final int URL_FIELD_NUMBER = 1;
+        public static final int URL_FIELD_NUMBER = 3;
         private volatile java.lang.Object url_;
         /**
-         * <code>string url = 1;</code>
+         * <code>string url = 3;</code>
          *
          * @return The url.
          */
@@ -345,7 +345,7 @@ public final class H5ActivityInfoOuterClass {
             }
         }
         /**
-         * <code>string url = 1;</code>
+         * <code>string url = 3;</code>
          *
          * @return The bytes for url.
          */
@@ -377,28 +377,28 @@ public final class H5ActivityInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 3, url_);
             }
-            if (endTime_ != 0) {
-                output.writeUInt32(2, endTime_);
+            if (hPLJKGAJNOA_ != 0) {
+                output.writeUInt32(4, hPLJKGAJNOA_);
             }
-            if (contentCloseTime_ != 0) {
-                output.writeUInt32(3, contentCloseTime_);
-            }
-            if (oBINALNIFGI_ != 0) {
-                output.writeUInt32(9, oBINALNIFGI_);
+            if (isEntranceOpen_ != false) {
+                output.writeBool(5, isEntranceOpen_);
             }
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prefabPath_)) {
-                com.google.protobuf.GeneratedMessageV3.writeString(output, 10, prefabPath_);
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 8, prefabPath_);
             }
             if (beginTime_ != 0) {
                 output.writeUInt32(11, beginTime_);
             }
-            if (isEntranceOpen_ != false) {
-                output.writeBool(12, isEntranceOpen_);
+            if (pAIONNJCHAG_ != 0) {
+                output.writeUInt32(12, pAIONNJCHAG_);
             }
-            if (eKOKDKCNOOA_ != 0) {
-                output.writeUInt32(13, eKOKDKCNOOA_);
+            if (contentCloseTime_ != 0) {
+                output.writeUInt32(14, contentCloseTime_);
+            }
+            if (endTime_ != 0) {
+                output.writeUInt32(15, endTime_);
             }
             unknownFields.writeTo(output);
         }
@@ -410,28 +410,28 @@ public final class H5ActivityInfoOuterClass {
 
             size = 0;
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, url_);
             }
-            if (endTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, endTime_);
+            if (hPLJKGAJNOA_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, hPLJKGAJNOA_);
             }
-            if (contentCloseTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, contentCloseTime_);
-            }
-            if (oBINALNIFGI_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, oBINALNIFGI_);
+            if (isEntranceOpen_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, isEntranceOpen_);
             }
             if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(prefabPath_)) {
-                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, prefabPath_);
+                size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, prefabPath_);
             }
             if (beginTime_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, beginTime_);
             }
-            if (isEntranceOpen_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, isEntranceOpen_);
+            if (pAIONNJCHAG_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, pAIONNJCHAG_);
             }
-            if (eKOKDKCNOOA_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, eKOKDKCNOOA_);
+            if (contentCloseTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, contentCloseTime_);
+            }
+            if (endTime_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, endTime_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -449,13 +449,13 @@ public final class H5ActivityInfoOuterClass {
             emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo other =
                     (emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo) obj;
 
-            if (getOBINALNIFGI() != other.getOBINALNIFGI()) return false;
-            if (!getPrefabPath().equals(other.getPrefabPath())) return false;
-            if (getBeginTime() != other.getBeginTime()) return false;
-            if (getEKOKDKCNOOA() != other.getEKOKDKCNOOA()) return false;
-            if (getEndTime() != other.getEndTime()) return false;
-            if (getContentCloseTime() != other.getContentCloseTime()) return false;
+            if (getHPLJKGAJNOA() != other.getHPLJKGAJNOA()) return false;
             if (getIsEntranceOpen() != other.getIsEntranceOpen()) return false;
+            if (getPAIONNJCHAG() != other.getPAIONNJCHAG()) return false;
+            if (getBeginTime() != other.getBeginTime()) return false;
+            if (getContentCloseTime() != other.getContentCloseTime()) return false;
+            if (!getPrefabPath().equals(other.getPrefabPath())) return false;
+            if (getEndTime() != other.getEndTime()) return false;
             if (!getUrl().equals(other.getUrl())) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
@@ -468,20 +468,20 @@ public final class H5ActivityInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + OBINALNIFGI_FIELD_NUMBER;
-            hash = (53 * hash) + getOBINALNIFGI();
-            hash = (37 * hash) + PREFAB_PATH_FIELD_NUMBER;
-            hash = (53 * hash) + getPrefabPath().hashCode();
-            hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getBeginTime();
-            hash = (37 * hash) + EKOKDKCNOOA_FIELD_NUMBER;
-            hash = (53 * hash) + getEKOKDKCNOOA();
-            hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getEndTime();
-            hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getContentCloseTime();
+            hash = (37 * hash) + HPLJKGAJNOA_FIELD_NUMBER;
+            hash = (53 * hash) + getHPLJKGAJNOA();
             hash = (37 * hash) + IS_ENTRANCE_OPEN_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsEntranceOpen());
+            hash = (37 * hash) + PAIONNJCHAG_FIELD_NUMBER;
+            hash = (53 * hash) + getPAIONNJCHAG();
+            hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getBeginTime();
+            hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getContentCloseTime();
+            hash = (37 * hash) + PREFAB_PATH_FIELD_NUMBER;
+            hash = (53 * hash) + getPrefabPath().hashCode();
+            hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getEndTime();
             hash = (37 * hash) + URL_FIELD_NUMBER;
             hash = (53 * hash) + getUrl().hashCode();
             hash = (29 * hash) + unknownFields.hashCode();
@@ -591,7 +591,7 @@ public final class H5ActivityInfoOuterClass {
          *
          *
          * <pre>
-         * Name: MDGLDNMDCHA
+         * Obf: NJDJNOHKGHG
          * </pre>
          *
          * Protobuf type {@code H5ActivityInfo}
@@ -634,19 +634,19 @@ public final class H5ActivityInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                oBINALNIFGI_ = 0;
+                hPLJKGAJNOA_ = 0;
 
-                prefabPath_ = "";
+                isEntranceOpen_ = false;
+
+                pAIONNJCHAG_ = 0;
 
                 beginTime_ = 0;
 
-                eKOKDKCNOOA_ = 0;
-
-                endTime_ = 0;
-
                 contentCloseTime_ = 0;
 
-                isEntranceOpen_ = false;
+                prefabPath_ = "";
+
+                endTime_ = 0;
 
                 url_ = "";
 
@@ -679,13 +679,13 @@ public final class H5ActivityInfoOuterClass {
             public emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo buildPartial() {
                 emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo result =
                         new emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo(this);
-                result.oBINALNIFGI_ = oBINALNIFGI_;
-                result.prefabPath_ = prefabPath_;
-                result.beginTime_ = beginTime_;
-                result.eKOKDKCNOOA_ = eKOKDKCNOOA_;
-                result.endTime_ = endTime_;
-                result.contentCloseTime_ = contentCloseTime_;
+                result.hPLJKGAJNOA_ = hPLJKGAJNOA_;
                 result.isEntranceOpen_ = isEntranceOpen_;
+                result.pAIONNJCHAG_ = pAIONNJCHAG_;
+                result.beginTime_ = beginTime_;
+                result.contentCloseTime_ = contentCloseTime_;
+                result.prefabPath_ = prefabPath_;
+                result.endTime_ = endTime_;
                 result.url_ = url_;
                 onBuilt();
                 return result;
@@ -742,27 +742,27 @@ public final class H5ActivityInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo
                                 .getDefaultInstance()) return this;
-                if (other.getOBINALNIFGI() != 0) {
-                    setOBINALNIFGI(other.getOBINALNIFGI());
+                if (other.getHPLJKGAJNOA() != 0) {
+                    setHPLJKGAJNOA(other.getHPLJKGAJNOA());
+                }
+                if (other.getIsEntranceOpen() != false) {
+                    setIsEntranceOpen(other.getIsEntranceOpen());
+                }
+                if (other.getPAIONNJCHAG() != 0) {
+                    setPAIONNJCHAG(other.getPAIONNJCHAG());
+                }
+                if (other.getBeginTime() != 0) {
+                    setBeginTime(other.getBeginTime());
+                }
+                if (other.getContentCloseTime() != 0) {
+                    setContentCloseTime(other.getContentCloseTime());
                 }
                 if (!other.getPrefabPath().isEmpty()) {
                     prefabPath_ = other.prefabPath_;
                     onChanged();
                 }
-                if (other.getBeginTime() != 0) {
-                    setBeginTime(other.getBeginTime());
-                }
-                if (other.getEKOKDKCNOOA() != 0) {
-                    setEKOKDKCNOOA(other.getEKOKDKCNOOA());
-                }
                 if (other.getEndTime() != 0) {
                     setEndTime(other.getEndTime());
-                }
-                if (other.getContentCloseTime() != 0) {
-                    setContentCloseTime(other.getContentCloseTime());
-                }
-                if (other.getIsEntranceOpen() != false) {
-                    setIsEntranceOpen(other.getIsEntranceOpen());
                 }
                 if (!other.getUrl().isEmpty()) {
                     url_ = other.url_;
@@ -799,112 +799,104 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
 
-            private int oBINALNIFGI_;
+            private int hPLJKGAJNOA_;
             /**
-             * <code>uint32 OBINALNIFGI = 9;</code>
+             * <code>uint32 HPLJKGAJNOA = 4;</code>
              *
-             * @return The oBINALNIFGI.
+             * @return The hPLJKGAJNOA.
              */
             @java.lang.Override
-            public int getOBINALNIFGI() {
-                return oBINALNIFGI_;
+            public int getHPLJKGAJNOA() {
+                return hPLJKGAJNOA_;
             }
             /**
-             * <code>uint32 OBINALNIFGI = 9;</code>
+             * <code>uint32 HPLJKGAJNOA = 4;</code>
              *
-             * @param value The oBINALNIFGI to set.
+             * @param value The hPLJKGAJNOA to set.
              * @return This builder for chaining.
              */
-            public Builder setOBINALNIFGI(int value) {
+            public Builder setHPLJKGAJNOA(int value) {
 
-                oBINALNIFGI_ = value;
+                hPLJKGAJNOA_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 OBINALNIFGI = 9;</code>
+             * <code>uint32 HPLJKGAJNOA = 4;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearOBINALNIFGI() {
+            public Builder clearHPLJKGAJNOA() {
 
-                oBINALNIFGI_ = 0;
+                hPLJKGAJNOA_ = 0;
                 onChanged();
                 return this;
             }
 
-            private java.lang.Object prefabPath_ = "";
+            private boolean isEntranceOpen_;
             /**
-             * <code>string prefab_path = 10;</code>
+             * <code>bool is_entrance_open = 5;</code>
              *
-             * @return The prefabPath.
+             * @return The isEntranceOpen.
              */
-            public java.lang.String getPrefabPath() {
-                java.lang.Object ref = prefabPath_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    prefabPath_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
+            @java.lang.Override
+            public boolean getIsEntranceOpen() {
+                return isEntranceOpen_;
             }
             /**
-             * <code>string prefab_path = 10;</code>
+             * <code>bool is_entrance_open = 5;</code>
              *
-             * @return The bytes for prefabPath.
-             */
-            public com.google.protobuf.ByteString getPrefabPathBytes() {
-                java.lang.Object ref = prefabPath_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-                    prefabPath_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-            /**
-             * <code>string prefab_path = 10;</code>
-             *
-             * @param value The prefabPath to set.
+             * @param value The isEntranceOpen to set.
              * @return This builder for chaining.
              */
-            public Builder setPrefabPath(java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
+            public Builder setIsEntranceOpen(boolean value) {
 
-                prefabPath_ = value;
+                isEntranceOpen_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>string prefab_path = 10;</code>
+             * <code>bool is_entrance_open = 5;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearPrefabPath() {
+            public Builder clearIsEntranceOpen() {
 
-                prefabPath_ = getDefaultInstance().getPrefabPath();
+                isEntranceOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            private int pAIONNJCHAG_;
+            /**
+             * <code>uint32 PAIONNJCHAG = 12;</code>
+             *
+             * @return The pAIONNJCHAG.
+             */
+            @java.lang.Override
+            public int getPAIONNJCHAG() {
+                return pAIONNJCHAG_;
+            }
+            /**
+             * <code>uint32 PAIONNJCHAG = 12;</code>
+             *
+             * @param value The pAIONNJCHAG to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPAIONNJCHAG(int value) {
+
+                pAIONNJCHAG_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>string prefab_path = 10;</code>
+             * <code>uint32 PAIONNJCHAG = 12;</code>
              *
-             * @param value The bytes for prefabPath to set.
              * @return This builder for chaining.
              */
-            public Builder setPrefabPathBytes(com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
+            public Builder clearPAIONNJCHAG() {
 
-                prefabPath_ = value;
+                pAIONNJCHAG_ = 0;
                 onChanged();
                 return this;
             }
@@ -943,77 +935,9 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
 
-            private int eKOKDKCNOOA_;
-            /**
-             * <code>uint32 EKOKDKCNOOA = 13;</code>
-             *
-             * @return The eKOKDKCNOOA.
-             */
-            @java.lang.Override
-            public int getEKOKDKCNOOA() {
-                return eKOKDKCNOOA_;
-            }
-            /**
-             * <code>uint32 EKOKDKCNOOA = 13;</code>
-             *
-             * @param value The eKOKDKCNOOA to set.
-             * @return This builder for chaining.
-             */
-            public Builder setEKOKDKCNOOA(int value) {
-
-                eKOKDKCNOOA_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 EKOKDKCNOOA = 13;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearEKOKDKCNOOA() {
-
-                eKOKDKCNOOA_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int endTime_;
-            /**
-             * <code>uint32 end_time = 2;</code>
-             *
-             * @return The endTime.
-             */
-            @java.lang.Override
-            public int getEndTime() {
-                return endTime_;
-            }
-            /**
-             * <code>uint32 end_time = 2;</code>
-             *
-             * @param value The endTime to set.
-             * @return This builder for chaining.
-             */
-            public Builder setEndTime(int value) {
-
-                endTime_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 end_time = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearEndTime() {
-
-                endTime_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int contentCloseTime_;
             /**
-             * <code>uint32 content_close_time = 3;</code>
+             * <code>uint32 content_close_time = 14;</code>
              *
              * @return The contentCloseTime.
              */
@@ -1022,7 +946,7 @@ public final class H5ActivityInfoOuterClass {
                 return contentCloseTime_;
             }
             /**
-             * <code>uint32 content_close_time = 3;</code>
+             * <code>uint32 content_close_time = 14;</code>
              *
              * @param value The contentCloseTime to set.
              * @return This builder for chaining.
@@ -1034,7 +958,7 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 content_close_time = 3;</code>
+             * <code>uint32 content_close_time = 14;</code>
              *
              * @return This builder for chaining.
              */
@@ -1045,43 +969,119 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
 
-            private boolean isEntranceOpen_;
+            private java.lang.Object prefabPath_ = "";
             /**
-             * <code>bool is_entrance_open = 12;</code>
+             * <code>string prefab_path = 8;</code>
              *
-             * @return The isEntranceOpen.
+             * @return The prefabPath.
              */
-            @java.lang.Override
-            public boolean getIsEntranceOpen() {
-                return isEntranceOpen_;
+            public java.lang.String getPrefabPath() {
+                java.lang.Object ref = prefabPath_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    prefabPath_ = s;
+                    return s;
+                } else {
+                    return (java.lang.String) ref;
+                }
             }
             /**
-             * <code>bool is_entrance_open = 12;</code>
+             * <code>string prefab_path = 8;</code>
              *
-             * @param value The isEntranceOpen to set.
+             * @return The bytes for prefabPath.
+             */
+            public com.google.protobuf.ByteString getPrefabPathBytes() {
+                java.lang.Object ref = prefabPath_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                    prefabPath_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+            /**
+             * <code>string prefab_path = 8;</code>
+             *
+             * @param value The prefabPath to set.
              * @return This builder for chaining.
              */
-            public Builder setIsEntranceOpen(boolean value) {
+            public Builder setPrefabPath(java.lang.String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
 
-                isEntranceOpen_ = value;
+                prefabPath_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool is_entrance_open = 12;</code>
+             * <code>string prefab_path = 8;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearIsEntranceOpen() {
+            public Builder clearPrefabPath() {
 
-                isEntranceOpen_ = false;
+                prefabPath_ = getDefaultInstance().getPrefabPath();
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>string prefab_path = 8;</code>
+             *
+             * @param value The bytes for prefabPath to set.
+             * @return This builder for chaining.
+             */
+            public Builder setPrefabPathBytes(com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                checkByteStringIsUtf8(value);
+
+                prefabPath_ = value;
+                onChanged();
+                return this;
+            }
+
+            private int endTime_;
+            /**
+             * <code>uint32 end_time = 15;</code>
+             *
+             * @return The endTime.
+             */
+            @java.lang.Override
+            public int getEndTime() {
+                return endTime_;
+            }
+            /**
+             * <code>uint32 end_time = 15;</code>
+             *
+             * @param value The endTime to set.
+             * @return This builder for chaining.
+             */
+            public Builder setEndTime(int value) {
+
+                endTime_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 end_time = 15;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearEndTime() {
+
+                endTime_ = 0;
                 onChanged();
                 return this;
             }
 
             private java.lang.Object url_ = "";
             /**
-             * <code>string url = 1;</code>
+             * <code>string url = 3;</code>
              *
              * @return The url.
              */
@@ -1097,7 +1097,7 @@ public final class H5ActivityInfoOuterClass {
                 }
             }
             /**
-             * <code>string url = 1;</code>
+             * <code>string url = 3;</code>
              *
              * @return The bytes for url.
              */
@@ -1113,7 +1113,7 @@ public final class H5ActivityInfoOuterClass {
                 }
             }
             /**
-             * <code>string url = 1;</code>
+             * <code>string url = 3;</code>
              *
              * @param value The url to set.
              * @return This builder for chaining.
@@ -1128,7 +1128,7 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
             /**
-             * <code>string url = 1;</code>
+             * <code>string url = 3;</code>
              *
              * @return This builder for chaining.
              */
@@ -1139,7 +1139,7 @@ public final class H5ActivityInfoOuterClass {
                 return this;
             }
             /**
-             * <code>string url = 1;</code>
+             * <code>string url = 3;</code>
              *
              * @param value The bytes for url to set.
              * @return This builder for chaining.
@@ -1224,12 +1224,12 @@ public final class H5ActivityInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\024H5ActivityInfo.proto\"\270\001\n\016H5ActivityInf"
-                    + "o\022\023\n\013OBINALNIFGI\030\t \001(\r\022\023\n\013prefab_path\030\n "
-                    + "\001(\t\022\022\n\nbegin_time\030\013 \001(\r\022\023\n\013EKOKDKCNOOA\030\r"
-                    + " \001(\r\022\020\n\010end_time\030\002 \001(\r\022\032\n\022content_close_"
-                    + "time\030\003 \001(\r\022\030\n\020is_entrance_open\030\014 \001(\010\022\013\n\003"
-                    + "url\030\001 \001(\tB!\n\031emu.grasscutter.net.protoZ\004"
-                    + "/genb\006proto3"
+                    + "o\022\023\n\013HPLJKGAJNOA\030\004 \001(\r\022\030\n\020is_entrance_op"
+                    + "en\030\005 \001(\010\022\023\n\013PAIONNJCHAG\030\014 \001(\r\022\022\n\nbegin_t"
+                    + "ime\030\013 \001(\r\022\032\n\022content_close_time\030\016 \001(\r\022\023\n"
+                    + "\013prefab_path\030\010 \001(\t\022\020\n\010end_time\030\017 \001(\r\022\013\n\003"
+                    + "url\030\003 \001(\tB\033\n\031emu.grasscutter.net.protob\006"
+                    + "proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1239,13 +1239,13 @@ public final class H5ActivityInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_H5ActivityInfo_descriptor,
                         new java.lang.String[] {
-                            "OBINALNIFGI",
-                            "PrefabPath",
-                            "BeginTime",
-                            "EKOKDKCNOOA",
-                            "EndTime",
-                            "ContentCloseTime",
+                            "HPLJKGAJNOA",
                             "IsEntranceOpen",
+                            "PAIONNJCHAG",
+                            "BeginTime",
+                            "ContentCloseTime",
+                            "PrefabPath",
+                            "EndTime",
                             "Url",
                         });
     }

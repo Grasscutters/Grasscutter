@@ -18,7 +18,7 @@ public final class PlayerForceExitRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 12;</code>
+         * <code>int32 retcode = 8;</code>
          *
          * @return The retcode.
          */
@@ -28,8 +28,8 @@ public final class PlayerForceExitRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 144
-     * Name: HBIGNFGKKDJ
+     * CmdId: 140
+     * Obf: LIBPJCAAPKH
      * </pre>
      *
      * Protobuf type {@code PlayerForceExitRsp}
@@ -75,7 +75,7 @@ public final class PlayerForceExitRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 96:
+                        case 64:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -115,10 +115,10 @@ public final class PlayerForceExitRspOuterClass {
                                     .class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 12;
+        public static final int RETCODE_FIELD_NUMBER = 8;
         private int retcode_;
         /**
-         * <code>int32 retcode = 12;</code>
+         * <code>int32 retcode = 8;</code>
          *
          * @return The retcode.
          */
@@ -142,7 +142,7 @@ public final class PlayerForceExitRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(12, retcode_);
+                output.writeInt32(8, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class PlayerForceExitRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -299,8 +299,8 @@ public final class PlayerForceExitRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 144
-         * Name: HBIGNFGKKDJ
+         * CmdId: 140
+         * Obf: LIBPJCAAPKH
          * </pre>
          *
          * Protobuf type {@code PlayerForceExitRsp}
@@ -471,7 +471,7 @@ public final class PlayerForceExitRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 8;</code>
              *
              * @return The retcode.
              */
@@ -480,7 +480,7 @@ public final class PlayerForceExitRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 8;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -492,7 +492,7 @@ public final class PlayerForceExitRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 12;</code>
+             * <code>int32 retcode = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -573,8 +573,8 @@ public final class PlayerForceExitRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\030PlayerForceExitRsp.proto\"%\n\022PlayerForc"
-                    + "eExitRsp\022\017\n\007retcode\030\014 \001(\005B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "eExitRsp\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

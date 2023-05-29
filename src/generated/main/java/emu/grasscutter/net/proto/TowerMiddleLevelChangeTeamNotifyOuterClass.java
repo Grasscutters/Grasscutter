@@ -20,8 +20,8 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 2435
-     * Name: LHDCNOCCOPF
+     * CmdId: 2403
+     * Obf: PEPCKKGFJCN
      * </pre>
      *
      * Protobuf type {@code TowerMiddleLevelChangeTeamNotify}
@@ -288,8 +288,8 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2435
-         * Name: LHDCNOCCOPF
+         * CmdId: 2403
+         * Obf: PEPCKKGFJCN
          * </pre>
          *
          * Protobuf type {@code TowerMiddleLevelChangeTeamNotify}
@@ -544,8 +544,8 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n&TowerMiddleLevelChangeTeamNotify.proto"
-                    + "\"\"\n TowerMiddleLevelChangeTeamNotifyB!\n\031"
-                    + "emu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\"\"\n TowerMiddleLevelChangeTeamNotifyB\033\n\031"
+                    + "emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

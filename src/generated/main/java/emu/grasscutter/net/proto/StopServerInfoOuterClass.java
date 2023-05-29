@@ -61,7 +61,7 @@ public final class StopServerInfoOuterClass {
      *
      *
      * <pre>
-     * Name: EEDNKCDNPIP
+     * Obf: CHDJMPLAMAF
      * </pre>
      *
      * Protobuf type {@code StopServerInfo}
@@ -459,7 +459,7 @@ public final class StopServerInfoOuterClass {
          *
          *
          * <pre>
-         * Name: EEDNKCDNPIP
+         * Obf: CHDJMPLAMAF
          * </pre>
          *
          * Protobuf type {@code StopServerInfo}
@@ -934,8 +934,7 @@ public final class StopServerInfoOuterClass {
             "\n\024StopServerInfo.proto\"b\n\016StopServerInfo"
                     + "\022\027\n\017stop_begin_time\030\001 \001(\r\022\025\n\rstop_end_ti"
                     + "me\030\002 \001(\r\022\013\n\003url\030\003 \001(\t\022\023\n\013content_msg\030\004 \001"
-                    + "(\tB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "(\tB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

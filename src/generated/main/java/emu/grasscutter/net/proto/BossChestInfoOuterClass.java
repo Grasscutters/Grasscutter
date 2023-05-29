@@ -103,7 +103,7 @@ public final class BossChestInfoOuterClass {
      *
      *
      * <pre>
-     * Name: COGBGNFGPGI
+     * Obf: EIFECCBEIPL
      * </pre>
      *
      * Protobuf type {@code BossChestInfo}
@@ -721,7 +721,7 @@ public final class BossChestInfoOuterClass {
          *
          *
          * <pre>
-         * Name: COGBGNFGPGI
+         * Obf: EIFECCBEIPL
          * </pre>
          *
          * Protobuf type {@code BossChestInfo}
@@ -1406,8 +1406,8 @@ public final class BossChestInfoOuterClass {
                     + "t\030\004 \003(\r\022<\n\020uid_discount_map\030\005 \003(\0132\".Boss"
                     + "ChestInfo.UidDiscountMapEntry\032S\n\023UidDisc"
                     + "ountMapEntry\022\013\n\003key\030\001 \001(\r\022+\n\005value\030\002 \001(\013"
-                    + "2\034.WeeklyBossResinDiscountInfo:\0028\001B!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "2\034.WeeklyBossResinDiscountInfo:\0028\001B\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

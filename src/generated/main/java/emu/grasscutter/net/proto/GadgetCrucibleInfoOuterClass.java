@@ -35,7 +35,7 @@ public final class GadgetCrucibleInfoOuterClass {
      *
      *
      * <pre>
-     * Name: BPDPHKJNGFI
+     * Obf: HFGJDLIJKIO
      * </pre>
      *
      * Protobuf type {@code GadgetCrucibleInfo}
@@ -331,7 +331,7 @@ public final class GadgetCrucibleInfoOuterClass {
          *
          *
          * <pre>
-         * Name: BPDPHKJNGFI
+         * Obf: HFGJDLIJKIO
          * </pre>
          *
          * Protobuf type {@code GadgetCrucibleInfo}
@@ -645,8 +645,8 @@ public final class GadgetCrucibleInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\030GadgetCrucibleInfo.proto\"B\n\022GadgetCruc"
                     + "ibleInfo\022\022\n\nmp_play_id\030\001 \001(\r\022\030\n\020prepare_"
-                    + "end_time\030\002 \001(\rB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "end_time\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -49,7 +49,7 @@ public final class SceneReliquaryInfoOuterClass {
      *
      *
      * <pre>
-     * Name: COKLELGGFLH
+     * Obf: FNNPFGFHKCK
      * </pre>
      *
      * Protobuf type {@code SceneReliquaryInfo}
@@ -397,7 +397,7 @@ public final class SceneReliquaryInfoOuterClass {
          *
          *
          * <pre>
-         * Name: COKLELGGFLH
+         * Obf: FNNPFGFHKCK
          * </pre>
          *
          * Protobuf type {@code SceneReliquaryInfo}
@@ -791,8 +791,8 @@ public final class SceneReliquaryInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\030SceneReliquaryInfo.proto\"Y\n\022SceneReliq"
                     + "uaryInfo\022\017\n\007item_id\030\001 \001(\r\022\014\n\004guid\030\002 \001(\004\022"
-                    + "\r\n\005level\030\003 \001(\r\022\025\n\rpromote_level\030\004 \001(\rB!\n"
-                    + "\031emu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\r\n\005level\030\003 \001(\r\022\025\n\rpromote_level\030\004 \001(\rB\033\n"
+                    + "\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

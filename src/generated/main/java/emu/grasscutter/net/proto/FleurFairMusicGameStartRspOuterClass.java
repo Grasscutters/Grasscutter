@@ -18,25 +18,25 @@ public final class FleurFairMusicGameStartRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 12;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
-
-        /**
-         * <code>uint32 music_basic_id = 1;</code>
+         * <code>uint32 music_basic_id = 9;</code>
          *
          * @return The musicBasicId.
          */
         int getMusicBasicId();
+
+        /**
+         * <code>int32 retcode = 13;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 2144
-     * Name: HPBMFFNJHOC
+     * CmdId: 2174
+     * Obf: NAECELACNBI
      * </pre>
      *
      * Protobuf type {@code FleurFairMusicGameStartRsp}
@@ -83,12 +83,12 @@ public final class FleurFairMusicGameStartRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 72:
                             {
                                 musicBasicId_ = input.readUInt32();
                                 break;
                             }
-                        case 96:
+                        case 104:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -129,28 +129,28 @@ public final class FleurFairMusicGameStartRspOuterClass {
                                     .FleurFairMusicGameStartRsp.Builder.class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 12;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 12;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
-
-        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 1;
+        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 9;
         private int musicBasicId_;
         /**
-         * <code>uint32 music_basic_id = 1;</code>
+         * <code>uint32 music_basic_id = 9;</code>
          *
          * @return The musicBasicId.
          */
         @java.lang.Override
         public int getMusicBasicId() {
             return musicBasicId_;
+        }
+
+        public static final int RETCODE_FIELD_NUMBER = 13;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 13;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -168,10 +168,10 @@ public final class FleurFairMusicGameStartRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (musicBasicId_ != 0) {
-                output.writeUInt32(1, musicBasicId_);
+                output.writeUInt32(9, musicBasicId_);
             }
             if (retcode_ != 0) {
-                output.writeInt32(12, retcode_);
+                output.writeInt32(13, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -183,10 +183,10 @@ public final class FleurFairMusicGameStartRspOuterClass {
 
             size = 0;
             if (musicBasicId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, musicBasicId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, musicBasicId_);
             }
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -210,8 +210,8 @@ public final class FleurFairMusicGameStartRspOuterClass {
                                             .FleurFairMusicGameStartRsp)
                                     obj;
 
-            if (getRetcode() != other.getRetcode()) return false;
             if (getMusicBasicId() != other.getMusicBasicId()) return false;
+            if (getRetcode() != other.getRetcode()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -223,10 +223,10 @@ public final class FleurFairMusicGameStartRspOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
             hash = (37 * hash) + MUSIC_BASIC_ID_FIELD_NUMBER;
             hash = (53 * hash) + getMusicBasicId();
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -352,8 +352,8 @@ public final class FleurFairMusicGameStartRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2144
-         * Name: HPBMFFNJHOC
+         * CmdId: 2174
+         * Obf: NAECELACNBI
          * </pre>
          *
          * Protobuf type {@code FleurFairMusicGameStartRsp}
@@ -399,9 +399,9 @@ public final class FleurFairMusicGameStartRspOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                retcode_ = 0;
-
                 musicBasicId_ = 0;
+
+                retcode_ = 0;
 
                 return this;
             }
@@ -440,8 +440,8 @@ public final class FleurFairMusicGameStartRspOuterClass {
                         result =
                                 new emu.grasscutter.net.proto.FleurFairMusicGameStartRspOuterClass
                                         .FleurFairMusicGameStartRsp(this);
-                result.retcode_ = retcode_;
                 result.musicBasicId_ = musicBasicId_;
+                result.retcode_ = retcode_;
                 onBuilt();
                 return result;
             }
@@ -503,11 +503,11 @@ public final class FleurFairMusicGameStartRspOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.FleurFairMusicGameStartRspOuterClass
                                 .FleurFairMusicGameStartRsp.getDefaultInstance()) return this;
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getMusicBasicId() != 0) {
                     setMusicBasicId(other.getMusicBasicId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -542,43 +542,9 @@ public final class FleurFairMusicGameStartRspOuterClass {
                 return this;
             }
 
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 12;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 12;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 12;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int musicBasicId_;
             /**
-             * <code>uint32 music_basic_id = 1;</code>
+             * <code>uint32 music_basic_id = 9;</code>
              *
              * @return The musicBasicId.
              */
@@ -587,7 +553,7 @@ public final class FleurFairMusicGameStartRspOuterClass {
                 return musicBasicId_;
             }
             /**
-             * <code>uint32 music_basic_id = 1;</code>
+             * <code>uint32 music_basic_id = 9;</code>
              *
              * @param value The musicBasicId to set.
              * @return This builder for chaining.
@@ -599,13 +565,47 @@ public final class FleurFairMusicGameStartRspOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 music_basic_id = 1;</code>
+             * <code>uint32 music_basic_id = 9;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearMusicBasicId() {
 
                 musicBasicId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 13;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -683,9 +683,9 @@ public final class FleurFairMusicGameStartRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n FleurFairMusicGameStartRsp.proto\"E\n\032Fl"
-                    + "eurFairMusicGameStartRsp\022\017\n\007retcode\030\014 \001("
-                    + "\005\022\026\n\016music_basic_id\030\001 \001(\rB!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "eurFairMusicGameStartRsp\022\026\n\016music_basic_"
+                    + "id\030\t \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -696,7 +696,7 @@ public final class FleurFairMusicGameStartRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_FleurFairMusicGameStartRsp_descriptor,
                         new java.lang.String[] {
-                            "Retcode", "MusicBasicId",
+                            "MusicBasicId", "Retcode",
                         });
     }
 

@@ -42,7 +42,7 @@ public final class AbilityEmbryoOuterClass {
      *
      *
      * <pre>
-     * Name: ENCLMIKCGEE
+     * Obf: JAODNDBPGJA
      * </pre>
      *
      * Protobuf type {@code AbilityEmbryo}
@@ -358,7 +358,7 @@ public final class AbilityEmbryoOuterClass {
          *
          *
          * <pre>
-         * Name: ENCLMIKCGEE
+         * Obf: JAODNDBPGJA
          * </pre>
          *
          * Protobuf type {@code AbilityEmbryo}
@@ -705,8 +705,7 @@ public final class AbilityEmbryoOuterClass {
             "\n\023AbilityEmbryo.proto\"b\n\rAbilityEmbryo\022\022"
                     + "\n\nability_id\030\001 \001(\r\022\031\n\021ability_name_hash\030"
                     + "\002 \001(\007\022\"\n\032ability_override_name_hash\030\003 \001("
-                    + "\007B!\n\031emu.grasscutter.net.protoZ\004/genb\006pr"
-                    + "oto3"
+                    + "\007B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

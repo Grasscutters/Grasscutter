@@ -18,7 +18,7 @@ public final class WeaponPromoteReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint64 target_weapon_guid = 7;</code>
+         * <code>uint64 target_weapon_guid = 10;</code>
          *
          * @return The targetWeaponGuid.
          */
@@ -28,8 +28,8 @@ public final class WeaponPromoteReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 677
-     * Name: KANJNJOOJNO
+     * CmdId: 606
+     * Obf: APGGEFMJPLG
      * </pre>
      *
      * Protobuf type {@code WeaponPromoteReq}
@@ -75,7 +75,7 @@ public final class WeaponPromoteReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
+                        case 80:
                             {
                                 targetWeaponGuid_ = input.readUInt64();
                                 break;
@@ -114,10 +114,10 @@ public final class WeaponPromoteReqOuterClass {
                             emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq.Builder.class);
         }
 
-        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 7;
+        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 10;
         private long targetWeaponGuid_;
         /**
-         * <code>uint64 target_weapon_guid = 7;</code>
+         * <code>uint64 target_weapon_guid = 10;</code>
          *
          * @return The targetWeaponGuid.
          */
@@ -141,7 +141,7 @@ public final class WeaponPromoteReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (targetWeaponGuid_ != 0L) {
-                output.writeUInt64(7, targetWeaponGuid_);
+                output.writeUInt64(10, targetWeaponGuid_);
             }
             unknownFields.writeTo(output);
         }
@@ -153,7 +153,7 @@ public final class WeaponPromoteReqOuterClass {
 
             size = 0;
             if (targetWeaponGuid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(7, targetWeaponGuid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(10, targetWeaponGuid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -292,8 +292,8 @@ public final class WeaponPromoteReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 677
-         * Name: KANJNJOOJNO
+         * CmdId: 606
+         * Obf: APGGEFMJPLG
          * </pre>
          *
          * Protobuf type {@code WeaponPromoteReq}
@@ -462,7 +462,7 @@ public final class WeaponPromoteReqOuterClass {
 
             private long targetWeaponGuid_;
             /**
-             * <code>uint64 target_weapon_guid = 7;</code>
+             * <code>uint64 target_weapon_guid = 10;</code>
              *
              * @return The targetWeaponGuid.
              */
@@ -471,7 +471,7 @@ public final class WeaponPromoteReqOuterClass {
                 return targetWeaponGuid_;
             }
             /**
-             * <code>uint64 target_weapon_guid = 7;</code>
+             * <code>uint64 target_weapon_guid = 10;</code>
              *
              * @param value The targetWeaponGuid to set.
              * @return This builder for chaining.
@@ -483,7 +483,7 @@ public final class WeaponPromoteReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 target_weapon_guid = 7;</code>
+             * <code>uint64 target_weapon_guid = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -564,8 +564,8 @@ public final class WeaponPromoteReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026WeaponPromoteReq.proto\".\n\020WeaponPromot"
-                    + "eReq\022\032\n\022target_weapon_guid\030\007 \001(\004B!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "eReq\022\032\n\022target_weapon_guid\030\n \001(\004B\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

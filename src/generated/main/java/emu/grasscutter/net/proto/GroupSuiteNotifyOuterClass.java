@@ -35,8 +35,8 @@ public final class GroupSuiteNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 3026
-     * Name: EOCLBFJEPNJ
+     * CmdId: 3284
+     * Obf: PICEJIDPMOD
      * </pre>
      *
      * Protobuf type {@code GroupSuiteNotify}
@@ -378,8 +378,8 @@ public final class GroupSuiteNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 3026
-         * Name: EOCLBFJEPNJ
+         * CmdId: 3284
+         * Obf: PICEJIDPMOD
          * </pre>
          *
          * Protobuf type {@code GroupSuiteNotify}
@@ -733,8 +733,8 @@ public final class GroupSuiteNotifyOuterClass {
             "\n\026GroupSuiteNotify.proto\"w\n\020GroupSuiteNo"
                     + "tify\0222\n\tgroup_map\030\017 \003(\0132\037.GroupSuiteNoti"
                     + "fy.GroupMapEntry\032/\n\rGroupMapEntry\022\013\n\003key"
-                    + "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

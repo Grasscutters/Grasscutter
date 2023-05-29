@@ -18,7 +18,7 @@ public final class DailyTaskFilterCityReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 city_id = 1;</code>
+         * <code>uint32 city_id = 8;</code>
          *
          * @return The cityId.
          */
@@ -28,8 +28,8 @@ public final class DailyTaskFilterCityReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 180
-     * Name: OPHFKHGDMBK
+     * CmdId: 132
+     * Obf: FGIIGEAAJGI
      * </pre>
      *
      * Protobuf type {@code DailyTaskFilterCityReq}
@@ -75,7 +75,7 @@ public final class DailyTaskFilterCityReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 64:
                             {
                                 cityId_ = input.readUInt32();
                                 break;
@@ -116,10 +116,10 @@ public final class DailyTaskFilterCityReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int CITY_ID_FIELD_NUMBER = 1;
+        public static final int CITY_ID_FIELD_NUMBER = 8;
         private int cityId_;
         /**
-         * <code>uint32 city_id = 1;</code>
+         * <code>uint32 city_id = 8;</code>
          *
          * @return The cityId.
          */
@@ -143,7 +143,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (cityId_ != 0) {
-                output.writeUInt32(1, cityId_);
+                output.writeUInt32(8, cityId_);
             }
             unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class DailyTaskFilterCityReqOuterClass {
 
             size = 0;
             if (cityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, cityId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, cityId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -302,8 +302,8 @@ public final class DailyTaskFilterCityReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 180
-         * Name: OPHFKHGDMBK
+         * CmdId: 132
+         * Obf: FGIIGEAAJGI
          * </pre>
          *
          * Protobuf type {@code DailyTaskFilterCityReq}
@@ -479,7 +479,7 @@ public final class DailyTaskFilterCityReqOuterClass {
 
             private int cityId_;
             /**
-             * <code>uint32 city_id = 1;</code>
+             * <code>uint32 city_id = 8;</code>
              *
              * @return The cityId.
              */
@@ -488,7 +488,7 @@ public final class DailyTaskFilterCityReqOuterClass {
                 return cityId_;
             }
             /**
-             * <code>uint32 city_id = 1;</code>
+             * <code>uint32 city_id = 8;</code>
              *
              * @param value The cityId to set.
              * @return This builder for chaining.
@@ -500,7 +500,7 @@ public final class DailyTaskFilterCityReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 city_id = 1;</code>
+             * <code>uint32 city_id = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -582,8 +582,8 @@ public final class DailyTaskFilterCityReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034DailyTaskFilterCityReq.proto\")\n\026DailyT"
-                    + "askFilterCityReq\022\017\n\007city_id\030\001 \001(\rB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "askFilterCityReq\022\017\n\007city_id\030\010 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

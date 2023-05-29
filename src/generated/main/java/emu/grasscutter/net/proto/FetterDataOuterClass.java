@@ -55,7 +55,7 @@ public final class FetterDataOuterClass {
      *
      *
      * <pre>
-     * Name: IIANFLLDLFO
+     * Obf: KDDPKLNAMGL
      * </pre>
      *
      * Protobuf type {@code FetterData}
@@ -429,7 +429,7 @@ public final class FetterDataOuterClass {
          *
          *
          * <pre>
-         * Name: IIANFLLDLFO
+         * Obf: KDDPKLNAMGL
          * </pre>
          *
          * Protobuf type {@code FetterData}
@@ -829,8 +829,8 @@ public final class FetterDataOuterClass {
         java.lang.String[] descriptorData = {
             "\n\020FetterData.proto\"N\n\nFetterData\022\021\n\tfett"
                     + "er_id\030\001 \001(\r\022\024\n\014fetter_state\030\002 \001(\r\022\027\n\017con"
-                    + "d_index_list\030\003 \003(\rB!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "d_index_list\030\003 \003(\rB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

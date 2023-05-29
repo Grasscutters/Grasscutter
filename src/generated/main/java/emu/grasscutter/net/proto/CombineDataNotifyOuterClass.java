@@ -18,19 +18,19 @@ public final class CombineDataNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @return A list containing the combineIdList.
          */
         java.util.List<java.lang.Integer> getCombineIdListList();
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @return The count of combineIdList.
          */
         int getCombineIdListCount();
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @param index The index of the element to return.
          * @return The combineIdList at the given index.
@@ -41,8 +41,8 @@ public final class CombineDataNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 644
-     * Name: GIMLJCFLMLA
+     * CmdId: 640
+     * Obf: DCIKPMMCEAB
      * </pre>
      *
      * Protobuf type {@code CombineDataNotify}
@@ -91,7 +91,7 @@ public final class CombineDataNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 72:
+                        case 120:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     combineIdList_ = newIntList();
@@ -100,7 +100,7 @@ public final class CombineDataNotifyOuterClass {
                                 combineIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 74:
+                        case 122:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -152,10 +152,10 @@ public final class CombineDataNotifyOuterClass {
                                     .class);
         }
 
-        public static final int COMBINE_ID_LIST_FIELD_NUMBER = 9;
+        public static final int COMBINE_ID_LIST_FIELD_NUMBER = 15;
         private com.google.protobuf.Internal.IntList combineIdList_;
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @return A list containing the combineIdList.
          */
@@ -164,7 +164,7 @@ public final class CombineDataNotifyOuterClass {
             return combineIdList_;
         }
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @return The count of combineIdList.
          */
@@ -172,7 +172,7 @@ public final class CombineDataNotifyOuterClass {
             return combineIdList_.size();
         }
         /**
-         * <code>repeated uint32 combine_id_list = 9;</code>
+         * <code>repeated uint32 combine_id_list = 15;</code>
          *
          * @param index The index of the element to return.
          * @return The combineIdList at the given index.
@@ -199,7 +199,7 @@ public final class CombineDataNotifyOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getCombineIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(combineIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < combineIdList_.size(); i++) {
@@ -368,8 +368,8 @@ public final class CombineDataNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 644
-         * Name: GIMLJCFLMLA
+         * CmdId: 640
+         * Obf: DCIKPMMCEAB
          * </pre>
          *
          * Protobuf type {@code CombineDataNotify}
@@ -561,7 +561,7 @@ public final class CombineDataNotifyOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @return A list containing the combineIdList.
              */
@@ -571,7 +571,7 @@ public final class CombineDataNotifyOuterClass {
                         : combineIdList_;
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @return The count of combineIdList.
              */
@@ -579,7 +579,7 @@ public final class CombineDataNotifyOuterClass {
                 return combineIdList_.size();
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @param index The index of the element to return.
              * @return The combineIdList at the given index.
@@ -588,7 +588,7 @@ public final class CombineDataNotifyOuterClass {
                 return combineIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @param index The index to set the value at.
              * @param value The combineIdList to set.
@@ -601,7 +601,7 @@ public final class CombineDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @param value The combineIdList to add.
              * @return This builder for chaining.
@@ -613,7 +613,7 @@ public final class CombineDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @param values The combineIdList to add.
              * @return This builder for chaining.
@@ -625,7 +625,7 @@ public final class CombineDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 combine_id_list = 9;</code>
+             * <code>repeated uint32 combine_id_list = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -706,8 +706,8 @@ public final class CombineDataNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027CombineDataNotify.proto\",\n\021CombineData"
-                    + "Notify\022\027\n\017combine_id_list\030\t \003(\rB!\n\031emu.g"
-                    + "rasscutter.net.protoZ\004/genb\006proto3"
+                    + "Notify\022\027\n\017combine_id_list\030\017 \003(\rB\033\n\031emu.g"
+                    + "rasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

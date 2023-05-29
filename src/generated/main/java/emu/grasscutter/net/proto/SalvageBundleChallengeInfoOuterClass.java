@@ -18,19 +18,19 @@ public final class SalvageBundleChallengeInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @return A list containing the finishedBundleList.
          */
         java.util.List<java.lang.Integer> getFinishedBundleListList();
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @return The count of finishedBundleList.
          */
         int getFinishedBundleListCount();
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @param index The index of the element to return.
          * @return The finishedBundleList at the given index.
@@ -41,7 +41,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
      *
      *
      * <pre>
-     * Name: JGPAGHCFBOP
+     * Obf: LBHNHAEEOCA
      * </pre>
      *
      * Protobuf type {@code SalvageBundleChallengeInfo}
@@ -91,7 +91,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 80:
+                        case 120:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     finishedBundleList_ = newIntList();
@@ -100,7 +100,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                                 finishedBundleList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 82:
+                        case 122:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -153,10 +153,10 @@ public final class SalvageBundleChallengeInfoOuterClass {
                                     .SalvageBundleChallengeInfo.Builder.class);
         }
 
-        public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 10;
+        public static final int FINISHED_BUNDLE_LIST_FIELD_NUMBER = 15;
         private com.google.protobuf.Internal.IntList finishedBundleList_;
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @return A list containing the finishedBundleList.
          */
@@ -165,7 +165,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
             return finishedBundleList_;
         }
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @return The count of finishedBundleList.
          */
@@ -173,7 +173,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
             return finishedBundleList_.size();
         }
         /**
-         * <code>repeated uint32 finished_bundle_list = 10;</code>
+         * <code>repeated uint32 finished_bundle_list = 15;</code>
          *
          * @param index The index of the element to return.
          * @return The finishedBundleList at the given index.
@@ -200,7 +200,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (getFinishedBundleListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(finishedBundleListMemoizedSerializedSize);
             }
             for (int i = 0; i < finishedBundleList_.size(); i++) {
@@ -392,7 +392,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
          *
          *
          * <pre>
-         * Name: JGPAGHCFBOP
+         * Obf: LBHNHAEEOCA
          * </pre>
          *
          * Protobuf type {@code SalvageBundleChallengeInfo}
@@ -598,7 +598,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @return A list containing the finishedBundleList.
              */
@@ -608,7 +608,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                         : finishedBundleList_;
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @return The count of finishedBundleList.
              */
@@ -616,7 +616,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 return finishedBundleList_.size();
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @param index The index of the element to return.
              * @return The finishedBundleList at the given index.
@@ -625,7 +625,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 return finishedBundleList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @param index The index to set the value at.
              * @param value The finishedBundleList to set.
@@ -638,7 +638,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @param value The finishedBundleList to add.
              * @return This builder for chaining.
@@ -650,7 +650,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @param values The finishedBundleList to add.
              * @return This builder for chaining.
@@ -663,7 +663,7 @@ public final class SalvageBundleChallengeInfoOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 finished_bundle_list = 10;</code>
+             * <code>repeated uint32 finished_bundle_list = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -748,8 +748,8 @@ public final class SalvageBundleChallengeInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n SalvageBundleChallengeInfo.proto\":\n\032Sa"
                     + "lvageBundleChallengeInfo\022\034\n\024finished_bun"
-                    + "dle_list\030\n \003(\rB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "dle_list\030\017 \003(\rB\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

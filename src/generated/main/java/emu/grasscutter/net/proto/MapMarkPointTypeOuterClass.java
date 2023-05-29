@@ -15,7 +15,7 @@ public final class MapMarkPointTypeOuterClass {
      *
      *
      * <pre>
-     * Name: IPLKIIFIDJK
+     * Obf: DBNNAIEGABK
      * </pre>
      *
      * Protobuf enum {@code MapMarkPointType}
@@ -162,8 +162,8 @@ public final class MapMarkPointTypeOuterClass {
                     + "INT_TYPE_SPECIAL\020\002\022\034\n\030MAP_MARK_POINT_TYP"
                     + "E_MINE\020\003\022\"\n\036MAP_MARK_POINT_TYPE_COLLECTI"
                     + "ON\020\004\022\037\n\033MAP_MARK_POINT_TYPE_MONSTER\020\005\022!\n"
-                    + "\035MAP_MARK_POINT_TYPE_FISH_POOL\020\006B!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\035MAP_MARK_POINT_TYPE_FISH_POOL\020\006B\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

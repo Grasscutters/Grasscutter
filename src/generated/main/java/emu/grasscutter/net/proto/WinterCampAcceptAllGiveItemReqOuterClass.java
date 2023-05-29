@@ -20,8 +20,8 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8357
-     * Name: LFECJIBHEPN
+     * CmdId: 8002
+     * Obf: PGDMGFMKDBM
      * </pre>
      *
      * Protobuf type {@code WinterCampAcceptAllGiveItemReq}
@@ -288,8 +288,8 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8357
-         * Name: LFECJIBHEPN
+         * CmdId: 8002
+         * Obf: PGDMGFMKDBM
          * </pre>
          *
          * Protobuf type {@code WinterCampAcceptAllGiveItemReq}
@@ -544,8 +544,8 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n$WinterCampAcceptAllGiveItemReq.proto\" "
-                    + "\n\036WinterCampAcceptAllGiveItemReqB!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\n\036WinterCampAcceptAllGiveItemReqB\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

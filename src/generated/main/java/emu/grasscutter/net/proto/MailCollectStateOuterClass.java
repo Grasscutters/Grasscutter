@@ -15,7 +15,7 @@ public final class MailCollectStateOuterClass {
      *
      *
      * <pre>
-     * Name: COONHFJFEHG
+     * Obf: DPIHCPLMCID
      * </pre>
      *
      * Protobuf enum {@code MailCollectState}
@@ -143,8 +143,8 @@ public final class MailCollectStateOuterClass {
                     + "UNKNOWN\020\000\022&\n\"MAIL_COLLECT_STATE_NOT_COLL"
                     + "ECTIBLE\020\001\022.\n*MAIL_COLLECT_STATE_COLLECTI"
                     + "BLE_UNCOLLECTED\020\002\022,\n(MAIL_COLLECT_STATE_"
-                    + "COLLECTIBLE_COLLECTED\020\003B!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "COLLECTIBLE_COLLECTED\020\003B\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

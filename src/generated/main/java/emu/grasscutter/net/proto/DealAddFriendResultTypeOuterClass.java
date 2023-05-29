@@ -15,7 +15,7 @@ public final class DealAddFriendResultTypeOuterClass {
      *
      *
      * <pre>
-     * Name: POFNPDMFDFB
+     * Obf: ABPPEJELBNL
      * </pre>
      *
      * Protobuf enum {@code DealAddFriendResultType}
@@ -130,8 +130,8 @@ public final class DealAddFriendResultTypeOuterClass {
             "\n\035DealAddFriendResultType.proto*i\n\027DealA"
                     + "ddFriendResultType\022&\n\"DEAL_ADD_FRIEND_RE"
                     + "SULT_TYPE_REJECT\020\000\022&\n\"DEAL_ADD_FRIEND_RE"
-                    + "SULT_TYPE_ACCEPT\020\001B!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "SULT_TYPE_ACCEPT\020\001B\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

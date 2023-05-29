@@ -33,7 +33,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Format Code
-        run: ./gradlew && ./gradlew spotlessApply
+        run: ./gradlew -PskipHandbook=1 && ./gradlew spotlessApply -PskipHandbook=1
 
       - run: git config --global user.name "github-actions"
       - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"

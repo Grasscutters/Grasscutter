@@ -20,8 +20,8 @@ public final class GetAllH5ActivityInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 5666
-     * Name: DGDDKAFONCL
+     * CmdId: 5658
+     * Obf: IFMGFGLPEJM
      * </pre>
      *
      * Protobuf type {@code GetAllH5ActivityInfoReq}
@@ -280,8 +280,8 @@ public final class GetAllH5ActivityInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 5666
-         * Name: DGDDKAFONCL
+         * CmdId: 5658
+         * Obf: IFMGFGLPEJM
          * </pre>
          *
          * Protobuf type {@code GetAllH5ActivityInfoReq}
@@ -523,8 +523,8 @@ public final class GetAllH5ActivityInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035GetAllH5ActivityInfoReq.proto\"\031\n\027GetAl"
-                    + "lH5ActivityInfoReqB!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "lH5ActivityInfoReqB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

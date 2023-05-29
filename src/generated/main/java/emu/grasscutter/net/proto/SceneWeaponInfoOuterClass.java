@@ -110,7 +110,7 @@ public final class SceneWeaponInfoOuterClass {
      *
      *
      * <pre>
-     * Name: JEOEDBOGIAG
+     * Obf: KOGLLGKJBFG
      * </pre>
      *
      * Protobuf type {@code SceneWeaponInfo}
@@ -742,7 +742,7 @@ public final class SceneWeaponInfoOuterClass {
          *
          *
          * <pre>
-         * Name: JEOEDBOGIAG
+         * Obf: KOGLLGKJBFG
          * </pre>
          *
          * Protobuf type {@code SceneWeaponInfo}
@@ -1642,8 +1642,8 @@ public final class SceneWeaponInfoOuterClass {
                     + "eneWeaponInfo.AffixMapEntry\0229\n\025renderer_"
                     + "changed_info\030\t \001(\0132\032.EntityRendererChang"
                     + "edInfo\032/\n\rAffixMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005"
-                    + "value\030\002 \001(\r:\0028\001B!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,20 +18,20 @@ public final class DealAddFriendReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 target_uid = 8;</code>
+         * <code>uint32 target_uid = 15;</code>
          *
          * @return The targetUid.
          */
         int getTargetUid();
 
         /**
-         * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+         * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
          *
          * @return The enum numeric value on the wire for dealAddFriendResult.
          */
         int getDealAddFriendResultValue();
         /**
-         * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+         * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
          *
          * @return The dealAddFriendResult.
          */
@@ -42,8 +42,8 @@ public final class DealAddFriendReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4041
-     * Name: KJKEOIMDAKE
+     * CmdId: 4058
+     * Obf: PIAFDFFMOBK
      * </pre>
      *
      * Protobuf type {@code DealAddFriendReq}
@@ -91,14 +91,14 @@ public final class DealAddFriendReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 32:
                             {
                                 int rawValue = input.readEnum();
 
                                 dealAddFriendResult_ = rawValue;
                                 break;
                             }
-                        case 64:
+                        case 120:
                             {
                                 targetUid_ = input.readUInt32();
                                 break;
@@ -137,10 +137,10 @@ public final class DealAddFriendReqOuterClass {
                             emu.grasscutter.net.proto.DealAddFriendReqOuterClass.DealAddFriendReq.Builder.class);
         }
 
-        public static final int TARGET_UID_FIELD_NUMBER = 8;
+        public static final int TARGET_UID_FIELD_NUMBER = 15;
         private int targetUid_;
         /**
-         * <code>uint32 target_uid = 8;</code>
+         * <code>uint32 target_uid = 15;</code>
          *
          * @return The targetUid.
          */
@@ -149,10 +149,10 @@ public final class DealAddFriendReqOuterClass {
             return targetUid_;
         }
 
-        public static final int DEAL_ADD_FRIEND_RESULT_FIELD_NUMBER = 5;
+        public static final int DEAL_ADD_FRIEND_RESULT_FIELD_NUMBER = 4;
         private int dealAddFriendResult_;
         /**
-         * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+         * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
          *
          * @return The enum numeric value on the wire for dealAddFriendResult.
          */
@@ -161,7 +161,7 @@ public final class DealAddFriendReqOuterClass {
             return dealAddFriendResult_;
         }
         /**
-         * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+         * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
          *
          * @return The dealAddFriendResult.
          */
@@ -196,10 +196,10 @@ public final class DealAddFriendReqOuterClass {
                     != emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType
                             .DEAL_ADD_FRIEND_RESULT_TYPE_REJECT
                             .getNumber()) {
-                output.writeEnum(5, dealAddFriendResult_);
+                output.writeEnum(4, dealAddFriendResult_);
             }
             if (targetUid_ != 0) {
-                output.writeUInt32(8, targetUid_);
+                output.writeUInt32(15, targetUid_);
             }
             unknownFields.writeTo(output);
         }
@@ -214,10 +214,10 @@ public final class DealAddFriendReqOuterClass {
                     != emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType
                             .DEAL_ADD_FRIEND_RESULT_TYPE_REJECT
                             .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, dealAddFriendResult_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, dealAddFriendResult_);
             }
             if (targetUid_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, targetUid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, targetUid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -359,8 +359,8 @@ public final class DealAddFriendReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4041
-         * Name: KJKEOIMDAKE
+         * CmdId: 4058
+         * Obf: PIAFDFFMOBK
          * </pre>
          *
          * Protobuf type {@code DealAddFriendReq}
@@ -535,7 +535,7 @@ public final class DealAddFriendReqOuterClass {
 
             private int targetUid_;
             /**
-             * <code>uint32 target_uid = 8;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @return The targetUid.
              */
@@ -544,7 +544,7 @@ public final class DealAddFriendReqOuterClass {
                 return targetUid_;
             }
             /**
-             * <code>uint32 target_uid = 8;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @param value The targetUid to set.
              * @return This builder for chaining.
@@ -556,7 +556,7 @@ public final class DealAddFriendReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 target_uid = 8;</code>
+             * <code>uint32 target_uid = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -569,7 +569,7 @@ public final class DealAddFriendReqOuterClass {
 
             private int dealAddFriendResult_ = 0;
             /**
-             * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+             * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
              *
              * @return The enum numeric value on the wire for dealAddFriendResult.
              */
@@ -578,7 +578,7 @@ public final class DealAddFriendReqOuterClass {
                 return dealAddFriendResult_;
             }
             /**
-             * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+             * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
              *
              * @param value The enum numeric value on the wire for dealAddFriendResult to set.
              * @return This builder for chaining.
@@ -590,7 +590,7 @@ public final class DealAddFriendReqOuterClass {
                 return this;
             }
             /**
-             * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+             * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
              *
              * @return The dealAddFriendResult.
              */
@@ -607,7 +607,7 @@ public final class DealAddFriendReqOuterClass {
                         : result;
             }
             /**
-             * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+             * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
              *
              * @param value The dealAddFriendResult to set.
              * @return This builder for chaining.
@@ -624,7 +624,7 @@ public final class DealAddFriendReqOuterClass {
                 return this;
             }
             /**
-             * <code>.DealAddFriendResultType deal_add_friend_result = 5;</code>
+             * <code>.DealAddFriendResultType deal_add_friend_result = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -706,9 +706,9 @@ public final class DealAddFriendReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026DealAddFriendReq.proto\032\035DealAddFriendR"
                     + "esultType.proto\"`\n\020DealAddFriendReq\022\022\n\nt"
-                    + "arget_uid\030\010 \001(\r\0228\n\026deal_add_friend_resul"
-                    + "t\030\005 \001(\0162\030.DealAddFriendResultTypeB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "arget_uid\030\017 \001(\r\0228\n\026deal_add_friend_resul"
+                    + "t\030\004 \001(\0162\030.DealAddFriendResultTypeB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

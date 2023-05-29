@@ -272,7 +272,7 @@ public final class BreakoutSnapShotOuterClass {
      *
      *
      * <pre>
-     * Name: GMKOGAABHBL
+     * Obf: DHLCLOHBMIO
      * </pre>
      *
      * Protobuf type {@code BreakoutSnapShot}
@@ -1450,7 +1450,7 @@ public final class BreakoutSnapShotOuterClass {
          *
          *
          * <pre>
-         * Name: GMKOGAABHBL
+         * Obf: DHLCLOHBMIO
          * </pre>
          *
          * Protobuf type {@code BreakoutSnapShot}
@@ -4608,10 +4608,10 @@ public final class BreakoutSnapShotOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\026BreakoutSnapShot.proto\032\024BreakoutAction"
-                    + ".proto\032$BreakoutElementReactionCounter.p"
-                    + "roto\032\034BreakoutPhysicalObject.proto\032\030Brea"
-                    + "koutSpawnPoint.proto\032 BreakoutSyncConnec"
+            "\n\026BreakoutSnapShot.proto\032\034BreakoutPhysic"
+                    + "alObject.proto\032\024BreakoutAction.proto\032\030Br"
+                    + "eakoutSpawnPoint.proto\032$BreakoutElementR"
+                    + "eactionCounter.proto\032 BreakoutSyncConnec"
                     + "tUidInfo.proto\"\311\005\n\020BreakoutSnapShot\022\030\n\020c"
                     + "lient_game_time\030\001 \001(\004\022\030\n\020server_game_tim"
                     + "e\030\002 \001(\004\022*\n\tball_list\030\003 \003(\0132\027.BreakoutPhy"
@@ -4630,17 +4630,17 @@ public final class BreakoutSnapShotOuterClass {
                     + "akoutSyncConnectUidInfo\0224\n\023dynamic_objec"
                     + "t_list\030\022 \003(\0132\027.BreakoutPhysicalObject\022\025\n"
                     + "\rid_index_list\030\023 \003(\r\022\034\n\024raw_client_game_"
-                    + "time\030\024 \001(\005B!\n\031emu.grasscutter.net.protoZ"
-                    + "\004/genb\006proto3"
+                    + "time\030\024 \001(\005B\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.BreakoutActionOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.BreakoutActionOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.BreakoutSpawnPointOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.getDescriptor(),
                         });
         internal_static_BreakoutSnapShot_descriptor = getDescriptor().getMessageTypes().get(0);
@@ -4669,10 +4669,10 @@ public final class BreakoutSnapShotOuterClass {
                             "IdIndexList",
                             "RawClientGameTime",
                         });
-        emu.grasscutter.net.proto.BreakoutActionOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.getDescriptor();
         emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.BreakoutActionOuterClass.getDescriptor();
         emu.grasscutter.net.proto.BreakoutSpawnPointOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.getDescriptor();
         emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.getDescriptor();
     }
 

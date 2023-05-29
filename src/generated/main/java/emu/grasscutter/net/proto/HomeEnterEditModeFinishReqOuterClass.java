@@ -20,8 +20,8 @@ public final class HomeEnterEditModeFinishReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4892
-     * Name: GONDOHFJCLK
+     * CmdId: 4537
+     * Obf: HKHAGDJPLEP
      * </pre>
      *
      * Protobuf type {@code HomeEnterEditModeFinishReq}
@@ -285,8 +285,8 @@ public final class HomeEnterEditModeFinishReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4892
-         * Name: GONDOHFJCLK
+         * CmdId: 4537
+         * Obf: HKHAGDJPLEP
          * </pre>
          *
          * Protobuf type {@code HomeEnterEditModeFinishReq}
@@ -536,8 +536,8 @@ public final class HomeEnterEditModeFinishReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n HomeEnterEditModeFinishReq.proto\"\034\n\032Ho"
-                    + "meEnterEditModeFinishReqB!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "meEnterEditModeFinishReqB\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

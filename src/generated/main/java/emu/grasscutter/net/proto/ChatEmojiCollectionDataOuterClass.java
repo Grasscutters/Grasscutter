@@ -41,7 +41,7 @@ public final class ChatEmojiCollectionDataOuterClass {
      *
      *
      * <pre>
-     * Name: JHHIJDIHNLF
+     * Obf: JFCBGLDLECB
      * </pre>
      *
      * Protobuf type {@code ChatEmojiCollectionData}
@@ -386,7 +386,7 @@ public final class ChatEmojiCollectionDataOuterClass {
          *
          *
          * <pre>
-         * Name: JHHIJDIHNLF
+         * Obf: JFCBGLDLECB
          * </pre>
          *
          * Protobuf type {@code ChatEmojiCollectionData}
@@ -733,8 +733,7 @@ public final class ChatEmojiCollectionDataOuterClass {
         java.lang.String[] descriptorData = {
             "\n\035ChatEmojiCollectionData.proto\"0\n\027ChatE"
                     + "mojiCollectionData\022\025\n\remoji_id_list\030\001 \003("
-                    + "\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006pr"
-                    + "oto3"
+                    + "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

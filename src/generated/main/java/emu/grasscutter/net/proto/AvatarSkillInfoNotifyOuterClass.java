@@ -17,27 +17,27 @@ public final class AvatarSkillInfoNotifyOuterClass {
             // @@protoc_insertion_point(interface_extends:AvatarSkillInfoNotify)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         int getSkillMapCount();
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         boolean containsSkillMap(int key);
         /** Use {@link #getSkillMapMap()} instead. */
         @java.lang.Deprecated
         java.util.Map<
                         java.lang.Integer, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
                 getSkillMap();
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         java.util.Map<
                         java.lang.Integer, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
                 getSkillMapMap();
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
                 int key, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue);
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(int key);
 
         /**
-         * <code>uint64 guid = 12;</code>
+         * <code>uint64 guid = 15;</code>
          *
          * @return The guid.
          */
@@ -47,8 +47,8 @@ public final class AvatarSkillInfoNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1072
-     * Name: IMODKAICNHM
+     * CmdId: 1035
+     * Obf: ECFIAOJHBFD
      * </pre>
      *
      * Protobuf type {@code AvatarSkillInfoNotify}
@@ -95,7 +95,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 10:
+                        case 34:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     skillMap_ =
@@ -113,7 +113,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                                 skillMap_.getMutableMap().put(skillMap__.getKey(), skillMap__.getValue());
                                 break;
                             }
-                        case 96:
+                        case 120:
                             {
                                 guid_ = input.readUInt64();
                                 break;
@@ -146,7 +146,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
         @java.lang.Override
         protected com.google.protobuf.MapField internalGetMapField(int number) {
             switch (number) {
-                case 1:
+                case 4:
                     return internalGetSkillMap();
                 default:
                     throw new RuntimeException("Invalid map field number: " + number);
@@ -164,7 +164,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int SKILL_MAP_FIELD_NUMBER = 1;
+        public static final int SKILL_MAP_FIELD_NUMBER = 4;
 
         private static final class SkillMapDefaultEntryHolder {
             static final com.google.protobuf.MapEntry<
@@ -200,7 +200,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
         public int getSkillMapCount() {
             return internalGetSkillMap().getMap().size();
         }
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         @java.lang.Override
         public boolean containsSkillMap(int key) {
 
@@ -214,14 +214,14 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 getSkillMap() {
             return getSkillMapMap();
         }
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         @java.lang.Override
         public java.util.Map<
                         java.lang.Integer, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo>
                 getSkillMapMap() {
             return internalGetSkillMap().getMap();
         }
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrDefault(
                 int key, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo defaultValue) {
@@ -232,7 +232,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     map = internalGetSkillMap().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+        /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(
                 int key) {
@@ -247,10 +247,10 @@ public final class AvatarSkillInfoNotifyOuterClass {
             return map.get(key);
         }
 
-        public static final int GUID_FIELD_NUMBER = 12;
+        public static final int GUID_FIELD_NUMBER = 15;
         private long guid_;
         /**
-         * <code>uint64 guid = 12;</code>
+         * <code>uint64 guid = 15;</code>
          *
          * @return The guid.
          */
@@ -274,9 +274,9 @@ public final class AvatarSkillInfoNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
-                    output, internalGetSkillMap(), SkillMapDefaultEntryHolder.defaultEntry, 1);
+                    output, internalGetSkillMap(), SkillMapDefaultEntryHolder.defaultEntry, 4);
             if (guid_ != 0L) {
-                output.writeUInt64(12, guid_);
+                output.writeUInt64(15, guid_);
             }
             unknownFields.writeTo(output);
         }
@@ -300,10 +300,10 @@ public final class AvatarSkillInfoNotifyOuterClass {
                                         .setKey(entry.getKey())
                                         .setValue(entry.getValue())
                                         .build();
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, skillMap__);
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, skillMap__);
             }
             if (guid_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(12, guid_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(15, guid_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -454,8 +454,8 @@ public final class AvatarSkillInfoNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1072
-         * Name: IMODKAICNHM
+         * CmdId: 1035
+         * Obf: ECFIAOJHBFD
          * </pre>
          *
          * Protobuf type {@code AvatarSkillInfoNotify}
@@ -473,7 +473,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMapField(int number) {
                 switch (number) {
-                    case 1:
+                    case 4:
                         return internalGetSkillMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -483,7 +483,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
                 switch (number) {
-                    case 1:
+                    case 4:
                         return internalGetMutableSkillMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -691,7 +691,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
             public int getSkillMapCount() {
                 return internalGetSkillMap().getMap().size();
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             @java.lang.Override
             public boolean containsSkillMap(int key) {
 
@@ -706,7 +706,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     getSkillMap() {
                 return getSkillMapMap();
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             @java.lang.Override
             public java.util.Map<
                             java.lang.Integer,
@@ -714,7 +714,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     getSkillMapMap() {
                 return internalGetSkillMap().getMap();
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo
                     getSkillMapOrDefault(
@@ -727,7 +727,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                         map = internalGetSkillMap().getMap();
                 return map.containsKey(key) ? map.get(key) : defaultValue;
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo getSkillMapOrThrow(
                     int key) {
@@ -746,7 +746,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 internalGetMutableSkillMap().getMutableMap().clear();
                 return this;
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             public Builder removeSkillMap(int key) {
 
                 internalGetMutableSkillMap().getMutableMap().remove(key);
@@ -760,7 +760,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     getMutableSkillMap() {
                 return internalGetMutableSkillMap().getMutableMap();
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             public Builder putSkillMap(
                     int key, emu.grasscutter.net.proto.AvatarSkillInfoOuterClass.AvatarSkillInfo value) {
 
@@ -770,7 +770,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 internalGetMutableSkillMap().getMutableMap().put(key, value);
                 return this;
             }
-            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 1;</code> */
+            /** <code>map&lt;uint32, .AvatarSkillInfo&gt; skill_map = 4;</code> */
             public Builder putAllSkillMap(
                     java.util.Map<
                                     java.lang.Integer,
@@ -782,7 +782,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
 
             private long guid_;
             /**
-             * <code>uint64 guid = 12;</code>
+             * <code>uint64 guid = 15;</code>
              *
              * @return The guid.
              */
@@ -791,7 +791,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 return guid_;
             }
             /**
-             * <code>uint64 guid = 12;</code>
+             * <code>uint64 guid = 15;</code>
              *
              * @param value The guid to set.
              * @return This builder for chaining.
@@ -803,7 +803,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint64 guid = 12;</code>
+             * <code>uint64 guid = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -890,11 +890,11 @@ public final class AvatarSkillInfoNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033AvatarSkillInfoNotify.proto\032\025AvatarSki"
                     + "llInfo.proto\"\241\001\n\025AvatarSkillInfoNotify\0227"
-                    + "\n\tskill_map\030\001 \003(\0132$.AvatarSkillInfoNotif"
-                    + "y.SkillMapEntry\022\014\n\004guid\030\014 \001(\004\032A\n\rSkillMa"
+                    + "\n\tskill_map\030\004 \003(\0132$.AvatarSkillInfoNotif"
+                    + "y.SkillMapEntry\022\014\n\004guid\030\017 \001(\004\032A\n\rSkillMa"
                     + "pEntry\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0132\020.Ava"
-                    + "tarSkillInfo:\0028\001B!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "tarSkillInfo:\0028\001B\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

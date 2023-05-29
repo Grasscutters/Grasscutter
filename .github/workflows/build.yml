@@ -43,7 +43,7 @@ jobs:
           url: https://api.grasscutter.io/static/handbook.html
           target: src/main/resources/html/
       - name: Run Gradle
-        run: ./gradlew && ./gradlew jar
+        run: ./gradlew -PskipHandbook=1 && ./gradlew jar -PskipHandbook=1
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:

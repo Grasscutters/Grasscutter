@@ -18,7 +18,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 slip_revive_point_id = 13;</code>
+         * <code>uint32 slip_revive_point_id = 1;</code>
          *
          * @return The slipRevivePointId.
          */
@@ -28,8 +28,8 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 958
-     * Name: BMGILOEIPPD
+     * CmdId: 956
+     * Obf: MJDBOGJIPMD
      * </pre>
      *
      * Protobuf type {@code DungeonSlipRevivePointActivateReq}
@@ -77,7 +77,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 104:
+                        case 8:
                             {
                                 slipRevivePointId_ = input.readUInt32();
                                 break;
@@ -118,10 +118,10 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
                                     .DungeonSlipRevivePointActivateReq.Builder.class);
         }
 
-        public static final int SLIP_REVIVE_POINT_ID_FIELD_NUMBER = 13;
+        public static final int SLIP_REVIVE_POINT_ID_FIELD_NUMBER = 1;
         private int slipRevivePointId_;
         /**
-         * <code>uint32 slip_revive_point_id = 13;</code>
+         * <code>uint32 slip_revive_point_id = 1;</code>
          *
          * @return The slipRevivePointId.
          */
@@ -145,7 +145,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (slipRevivePointId_ != 0) {
-                output.writeUInt32(13, slipRevivePointId_);
+                output.writeUInt32(1, slipRevivePointId_);
             }
             unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
 
             size = 0;
             if (slipRevivePointId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, slipRevivePointId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, slipRevivePointId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -322,8 +322,8 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 958
-         * Name: BMGILOEIPPD
+         * CmdId: 956
+         * Obf: MJDBOGJIPMD
          * </pre>
          *
          * Protobuf type {@code DungeonSlipRevivePointActivateReq}
@@ -512,7 +512,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
 
             private int slipRevivePointId_;
             /**
-             * <code>uint32 slip_revive_point_id = 13;</code>
+             * <code>uint32 slip_revive_point_id = 1;</code>
              *
              * @return The slipRevivePointId.
              */
@@ -521,7 +521,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
                 return slipRevivePointId_;
             }
             /**
-             * <code>uint32 slip_revive_point_id = 13;</code>
+             * <code>uint32 slip_revive_point_id = 1;</code>
              *
              * @param value The slipRevivePointId to set.
              * @return This builder for chaining.
@@ -533,7 +533,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 slip_revive_point_id = 13;</code>
+             * <code>uint32 slip_revive_point_id = 1;</code>
              *
              * @return This builder for chaining.
              */
@@ -619,8 +619,8 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n\'DungeonSlipRevivePointActivateReq.prot"
                     + "o\"A\n!DungeonSlipRevivePointActivateReq\022\034"
-                    + "\n\024slip_revive_point_id\030\r \001(\rB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "\n\024slip_revive_point_id\030\001 \001(\rB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

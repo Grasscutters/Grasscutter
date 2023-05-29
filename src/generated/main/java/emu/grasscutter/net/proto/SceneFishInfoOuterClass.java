@@ -64,7 +64,7 @@ public final class SceneFishInfoOuterClass {
      *
      *
      * <pre>
-     * Name: CODPKPLDBDH
+     * Obf: EALFECBKMNC
      * </pre>
      *
      * Protobuf type {@code SceneFishInfo}
@@ -464,7 +464,7 @@ public final class SceneFishInfoOuterClass {
          *
          *
          * <pre>
-         * Name: CODPKPLDBDH
+         * Obf: EALFECBKMNC
          * </pre>
          *
          * Protobuf type {@code SceneFishInfo}
@@ -984,8 +984,8 @@ public final class SceneFishInfoOuterClass {
                     + "SceneFishInfo\022\017\n\007fish_id\030\001 \001(\r\022\033\n\023fish_p"
                     + "ool_entity_id\030\002 \001(\r\022\036\n\rfish_pool_pos\030\003 \001"
                     + "(\0132\007.Vector\022\033\n\023fish_pool_gadget_id\030\004 \001(\r"
-                    + "\022\027\n\017last_shock_time\030\005 \001(\rB!\n\031emu.grasscu"
-                    + "tter.net.protoZ\004/genb\006proto3"
+                    + "\022\027\n\017last_shock_time\030\005 \001(\rB\033\n\031emu.grasscu"
+                    + "tter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

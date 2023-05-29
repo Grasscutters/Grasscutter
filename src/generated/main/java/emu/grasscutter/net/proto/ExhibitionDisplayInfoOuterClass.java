@@ -42,7 +42,7 @@ public final class ExhibitionDisplayInfoOuterClass {
      *
      *
      * <pre>
-     * Name: LJLCOKBCBOG
+     * Obf: FALKBLEJAOC
      * </pre>
      *
      * Protobuf type {@code ExhibitionDisplayInfo}
@@ -365,7 +365,7 @@ public final class ExhibitionDisplayInfoOuterClass {
          *
          *
          * <pre>
-         * Name: LJLCOKBCBOG
+         * Obf: FALKBLEJAOC
          * </pre>
          *
          * Protobuf type {@code ExhibitionDisplayInfo}
@@ -725,8 +725,8 @@ public final class ExhibitionDisplayInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033ExhibitionDisplayInfo.proto\"H\n\025Exhibit"
                     + "ionDisplayInfo\022\n\n\002id\030\001 \001(\r\022\r\n\005param\030\002 \001("
-                    + "\r\022\024\n\014detail_param\030\003 \001(\rB!\n\031emu.grasscutt"
-                    + "er.net.protoZ\004/genb\006proto3"
+                    + "\r\022\024\n\014detail_param\030\003 \001(\rB\033\n\031emu.grasscutt"
+                    + "er.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

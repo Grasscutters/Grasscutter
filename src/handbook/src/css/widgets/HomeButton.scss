@@ -3,8 +3,8 @@
     flex-direction: column;
     padding: 20px;
 
-    width: 196px;
-    height: 196px;
+    width: min(10vw, 196px);
+    height: min(20vh, 196px);
 
     background-color: var(--primary-color);
 
@@ -17,10 +17,11 @@
 
     &:hover {
         cursor: pointer;
-        transition: 0.1s ease-in-out all;
-        box-shadow: 0 0 10px 5px var(--primary-color);
+        box-shadow: 0 0 10px 5px var(--accent-color);
         scale: 1.01;
     }
+
+    transition: 0.1s ease-in-out all;
 }
 
 .HomeButton:hover {
@@ -40,6 +41,6 @@
 }
 
 .HomeButton_Label {
-    font-size: 30px;
+    font-size: min(1.3vw, 30px);
     text-align: center;
 }

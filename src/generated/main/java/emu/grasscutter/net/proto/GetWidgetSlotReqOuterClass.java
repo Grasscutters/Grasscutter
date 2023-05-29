@@ -20,8 +20,8 @@ public final class GetWidgetSlotReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4258
-     * Name: HCMHNCMNKIN
+     * CmdId: 4270
+     * Obf: ALONJJHLCAM
      * </pre>
      *
      * Protobuf type {@code GetWidgetSlotReq}
@@ -258,8 +258,8 @@ public final class GetWidgetSlotReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4258
-         * Name: HCMHNCMNKIN
+         * CmdId: 4270
+         * Obf: ALONJJHLCAM
          * </pre>
          *
          * Protobuf type {@code GetWidgetSlotReq}
@@ -490,8 +490,8 @@ public final class GetWidgetSlotReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026GetWidgetSlotReq.proto\"\022\n\020GetWidgetSlo"
-                    + "tReqB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "tReqB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

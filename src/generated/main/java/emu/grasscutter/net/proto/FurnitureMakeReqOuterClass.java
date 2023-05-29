@@ -20,8 +20,8 @@ public final class FurnitureMakeReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4680
-     * Name: AFJECFFIJCH
+     * CmdId: 4758
+     * Obf: BHKDJDDKOAB
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeReq}
@@ -258,8 +258,8 @@ public final class FurnitureMakeReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4680
-         * Name: AFJECFFIJCH
+         * CmdId: 4758
+         * Obf: BHKDJDDKOAB
          * </pre>
          *
          * Protobuf type {@code FurnitureMakeReq}
@@ -490,8 +490,8 @@ public final class FurnitureMakeReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\026FurnitureMakeReq.proto\"\022\n\020FurnitureMak"
-                    + "eReqB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "eReqB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

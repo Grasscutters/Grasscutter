@@ -20,8 +20,8 @@ public final class MaterialDeleteUpdateNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 657
-     * Name: DJEPBIENMFA
+     * CmdId: 609
+     * Obf: GIOKMCHNNHM
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteUpdateNotify}
@@ -285,8 +285,8 @@ public final class MaterialDeleteUpdateNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 657
-         * Name: DJEPBIENMFA
+         * CmdId: 609
+         * Obf: GIOKMCHNNHM
          * </pre>
          *
          * Protobuf type {@code MaterialDeleteUpdateNotify}
@@ -536,8 +536,8 @@ public final class MaterialDeleteUpdateNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n MaterialDeleteUpdateNotify.proto\"\034\n\032Ma"
-                    + "terialDeleteUpdateNotifyB!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "terialDeleteUpdateNotifyB\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

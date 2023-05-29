@@ -18,7 +18,7 @@ public final class CanUseSkillNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_can_use_skill = 11;</code>
+         * <code>bool is_can_use_skill = 10;</code>
          *
          * @return The isCanUseSkill.
          */
@@ -28,8 +28,8 @@ public final class CanUseSkillNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1075
-     * Name: ODLKDIPGMOC
+     * CmdId: 1016
+     * Obf: PBIONEOKAFI
      * </pre>
      *
      * Protobuf type {@code CanUseSkillNotify}
@@ -75,7 +75,7 @@ public final class CanUseSkillNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 80:
                             {
                                 isCanUseSkill_ = input.readBool();
                                 break;
@@ -115,10 +115,10 @@ public final class CanUseSkillNotifyOuterClass {
                                     .class);
         }
 
-        public static final int IS_CAN_USE_SKILL_FIELD_NUMBER = 11;
+        public static final int IS_CAN_USE_SKILL_FIELD_NUMBER = 10;
         private boolean isCanUseSkill_;
         /**
-         * <code>bool is_can_use_skill = 11;</code>
+         * <code>bool is_can_use_skill = 10;</code>
          *
          * @return The isCanUseSkill.
          */
@@ -142,7 +142,7 @@ public final class CanUseSkillNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (isCanUseSkill_ != false) {
-                output.writeBool(11, isCanUseSkill_);
+                output.writeBool(10, isCanUseSkill_);
             }
             unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class CanUseSkillNotifyOuterClass {
 
             size = 0;
             if (isCanUseSkill_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, isCanUseSkill_);
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isCanUseSkill_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -294,8 +294,8 @@ public final class CanUseSkillNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1075
-         * Name: ODLKDIPGMOC
+         * CmdId: 1016
+         * Obf: PBIONEOKAFI
          * </pre>
          *
          * Protobuf type {@code CanUseSkillNotify}
@@ -466,7 +466,7 @@ public final class CanUseSkillNotifyOuterClass {
 
             private boolean isCanUseSkill_;
             /**
-             * <code>bool is_can_use_skill = 11;</code>
+             * <code>bool is_can_use_skill = 10;</code>
              *
              * @return The isCanUseSkill.
              */
@@ -475,7 +475,7 @@ public final class CanUseSkillNotifyOuterClass {
                 return isCanUseSkill_;
             }
             /**
-             * <code>bool is_can_use_skill = 11;</code>
+             * <code>bool is_can_use_skill = 10;</code>
              *
              * @param value The isCanUseSkill to set.
              * @return This builder for chaining.
@@ -487,7 +487,7 @@ public final class CanUseSkillNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_can_use_skill = 11;</code>
+             * <code>bool is_can_use_skill = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -568,8 +568,8 @@ public final class CanUseSkillNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027CanUseSkillNotify.proto\"-\n\021CanUseSkill"
-                    + "Notify\022\030\n\020is_can_use_skill\030\013 \001(\010B!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "Notify\022\030\n\020is_can_use_skill\030\n \001(\010B\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

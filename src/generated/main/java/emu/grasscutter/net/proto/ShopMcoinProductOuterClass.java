@@ -82,7 +82,7 @@ public final class ShopMcoinProductOuterClass {
      *
      *
      * <pre>
-     * Name: JFMBGGFOPJO
+     * Obf: CLIPCGJEBBP
      * </pre>
      *
      * Protobuf type {@code ShopMcoinProduct}
@@ -558,7 +558,7 @@ public final class ShopMcoinProductOuterClass {
          *
          *
          * <pre>
-         * Name: JFMBGGFOPJO
+         * Obf: CLIPCGJEBBP
          * </pre>
          *
          * Protobuf type {@code ShopMcoinProduct}
@@ -1158,8 +1158,8 @@ public final class ShopMcoinProductOuterClass {
                     + "oduct\022\022\n\nproduct_id\030\001 \001(\t\022\022\n\nprice_tier\030"
                     + "\002 \001(\t\022\022\n\nmcoin_base\030\003 \001(\r\022\027\n\017mcoin_non_f"
                     + "irst\030\004 \001(\r\022\023\n\013mcoin_first\030\005 \001(\r\022\022\n\nbough"
-                    + "t_num\030\006 \001(\r\022\020\n\010is_audit\030\007 \001(\010B!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "t_num\030\006 \001(\r\022\020\n\010is_audit\030\007 \001(\010B\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

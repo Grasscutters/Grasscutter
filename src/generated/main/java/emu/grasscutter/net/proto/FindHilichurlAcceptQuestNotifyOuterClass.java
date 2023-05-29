@@ -20,8 +20,8 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 8287
-     * Name: KFDFIIMBCPO
+     * CmdId: 8560
+     * Obf: ACMPJBDCEBG
      * </pre>
      *
      * Protobuf type {@code FindHilichurlAcceptQuestNotify}
@@ -288,8 +288,8 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 8287
-         * Name: KFDFIIMBCPO
+         * CmdId: 8560
+         * Obf: ACMPJBDCEBG
          * </pre>
          *
          * Protobuf type {@code FindHilichurlAcceptQuestNotify}
@@ -544,8 +544,8 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n$FindHilichurlAcceptQuestNotify.proto\" "
-                    + "\n\036FindHilichurlAcceptQuestNotifyB!\n\031emu."
-                    + "grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\n\036FindHilichurlAcceptQuestNotifyB\033\n\031emu."
+                    + "grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

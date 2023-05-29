@@ -121,8 +121,8 @@ public final class MusicGameUnknown1EnumOuterClass {
         java.lang.String[] descriptorData = {
             "\n\033MusicGameUnknown1Enum.proto*U\n\025MusicGa"
                     + "meUnknown1Enum\022\036\n\032MusicGameUnknown1Enum_"
-                    + "NONE\020\000\022\034\n\030MusicGameUnknown1Enum_u2\020\001B!\n\031"
-                    + "emu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "NONE\020\000\022\034\n\030MusicGameUnknown1Enum_u2\020\001B\033\n\031"
+                    + "emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

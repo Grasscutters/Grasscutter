@@ -17,14 +17,33 @@ public final class ToTheMoonQueryPathRspOuterClass {
             // @@protoc_insertion_point(interface_extends:ToTheMoonQueryPathRsp)
             com.google.protobuf.MessageOrBuilder {
 
+        /** <code>repeated .Vector corners = 4;</code> */
+        java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList();
+        /** <code>repeated .Vector corners = 4;</code> */
+        emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index);
+        /** <code>repeated .Vector corners = 4;</code> */
+        int getCornersCount();
+        /** <code>repeated .Vector corners = 4;</code> */
+        java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                getCornersOrBuilderList();
+        /** <code>repeated .Vector corners = 4;</code> */
+        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(int index);
+
         /**
-         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+         * <code>int32 retcode = 3;</code>
+         *
+         * @return The retcode.
+         */
+        int getRetcode();
+
+        /**
+         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
          *
          * @return The enum numeric value on the wire for queryStatus.
          */
         int getQueryStatusValue();
         /**
-         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
          *
          * @return The queryStatus.
          */
@@ -32,19 +51,19 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 getQueryStatus();
 
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @return A list containing the level.
          */
         java.util.List<java.lang.Integer> getLevelList();
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @return The count of level.
          */
         int getLevelCount();
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @param index The index of the element to return.
          * @return The level at the given index.
@@ -52,57 +71,38 @@ public final class ToTheMoonQueryPathRspOuterClass {
         int getLevel(int index);
 
         /**
-         * <code>int32 query_id = 15;</code>
+         * <code>int32 query_id = 2;</code>
          *
          * @return The queryId.
          */
         int getQueryId();
 
-        /** <code>repeated .Vector corners = 9;</code> */
-        java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList();
-        /** <code>repeated .Vector corners = 9;</code> */
-        emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index);
-        /** <code>repeated .Vector corners = 9;</code> */
-        int getCornersCount();
-        /** <code>repeated .Vector corners = 9;</code> */
-        java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                getCornersOrBuilderList();
-        /** <code>repeated .Vector corners = 9;</code> */
-        emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(int index);
-
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @return A list containing the index.
          */
         java.util.List<java.lang.Long> getIndexList();
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @return The count of index.
          */
         int getIndexCount();
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @param index The index of the element to return.
          * @return The index at the given index.
          */
         long getIndex(int index);
-
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        int getRetcode();
     }
     /**
      *
      *
      * <pre>
      * CmdId: 6196
-     * Name: BLMEIMMKNIG
+     * Obf: FJLGCJGKCNH
      * </pre>
      *
      * Protobuf type {@code ToTheMoonQueryPathRsp}
@@ -118,9 +118,9 @@ public final class ToTheMoonQueryPathRspOuterClass {
         }
 
         private ToTheMoonQueryPathRsp() {
+            corners_ = java.util.Collections.emptyList();
             queryStatus_ = 0;
             level_ = emptyIntList();
-            corners_ = java.util.Collections.emptyList();
             index_ = emptyLongList();
         }
 
@@ -154,40 +154,22 @@ public final class ToTheMoonQueryPathRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 40:
+                        case 16:
+                            {
+                                queryId_ = input.readInt32();
+                                break;
+                            }
+                        case 24:
                             {
                                 retcode_ = input.readInt32();
                                 break;
                             }
-                        case 56:
+                        case 34:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                                    level_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                level_.addInt(input.readInt32());
-                                break;
-                            }
-                        case 58:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                                    level_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    level_.addInt(input.readInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 74:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                                     corners_ =
                                             new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>();
-                                    mutable_bitField0_ |= 0x00000002;
+                                    mutable_bitField0_ |= 0x00000001;
                                 }
                                 corners_.add(
                                         input.readMessage(
@@ -195,7 +177,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
                                                 extensionRegistry));
                                 break;
                             }
-                        case 80:
+                        case 48:
+                            {
+                                int rawValue = input.readEnum();
+
+                                queryStatus_ = rawValue;
+                                break;
+                            }
+                        case 64:
                             {
                                 if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                                     index_ = newLongList();
@@ -204,7 +193,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                                 index_.addLong(input.readInt64());
                                 break;
                             }
-                        case 82:
+                        case 66:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -218,16 +207,27 @@ public final class ToTheMoonQueryPathRspOuterClass {
                                 input.popLimit(limit);
                                 break;
                             }
-                        case 96:
+                        case 112:
                             {
-                                int rawValue = input.readEnum();
-
-                                queryStatus_ = rawValue;
+                                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                                    level_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                level_.addInt(input.readInt32());
                                 break;
                             }
-                        case 120:
+                        case 114:
                             {
-                                queryId_ = input.readInt32();
+                                int length = input.readRawVarint32();
+                                int limit = input.pushLimit(length);
+                                if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                                    level_ = newIntList();
+                                    mutable_bitField0_ |= 0x00000002;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    level_.addInt(input.readInt32());
+                                }
+                                input.popLimit(limit);
                                 break;
                             }
                         default:
@@ -245,13 +245,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
             } finally {
                 if (((mutable_bitField0_ & 0x00000001) != 0)) {
-                    level_.makeImmutable(); // C
-                }
-                if (((mutable_bitField0_ & 0x00000002) != 0)) {
                     corners_ = java.util.Collections.unmodifiableList(corners_);
                 }
                 if (((mutable_bitField0_ & 0x00000004) != 0)) {
                     index_.makeImmutable(); // C
+                }
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
+                    level_.makeImmutable(); // C
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -278,7 +278,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
          *
          *
          * <pre>
-         * Name: OICDHCHDIAF
+         * Obf: CMEHMMFDJGC
          * </pre>
          *
          * Protobuf enum {@code ToTheMoonQueryPathRsp.PathStatusType}
@@ -388,10 +388,52 @@ public final class ToTheMoonQueryPathRspOuterClass {
             // @@protoc_insertion_point(enum_scope:ToTheMoonQueryPathRsp.PathStatusType)
         }
 
-        public static final int QUERY_STATUS_FIELD_NUMBER = 12;
+        public static final int CORNERS_FIELD_NUMBER = 4;
+        private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> corners_;
+        /** <code>repeated .Vector corners = 4;</code> */
+        @java.lang.Override
+        public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList() {
+            return corners_;
+        }
+        /** <code>repeated .Vector corners = 4;</code> */
+        @java.lang.Override
+        public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                getCornersOrBuilderList() {
+            return corners_;
+        }
+        /** <code>repeated .Vector corners = 4;</code> */
+        @java.lang.Override
+        public int getCornersCount() {
+            return corners_.size();
+        }
+        /** <code>repeated .Vector corners = 4;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index) {
+            return corners_.get(index);
+        }
+        /** <code>repeated .Vector corners = 4;</code> */
+        @java.lang.Override
+        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(
+                int index) {
+            return corners_.get(index);
+        }
+
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
+        /**
+         * <code>int32 retcode = 3;</code>
+         *
+         * @return The retcode.
+         */
+        @java.lang.Override
+        public int getRetcode() {
+            return retcode_;
+        }
+
+        public static final int QUERY_STATUS_FIELD_NUMBER = 6;
         private int queryStatus_;
         /**
-         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
          *
          * @return The enum numeric value on the wire for queryStatus.
          */
@@ -400,7 +442,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return queryStatus_;
         }
         /**
-         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+         * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
          *
          * @return The queryStatus.
          */
@@ -419,10 +461,10 @@ public final class ToTheMoonQueryPathRspOuterClass {
                     : result;
         }
 
-        public static final int LEVEL_FIELD_NUMBER = 7;
+        public static final int LEVEL_FIELD_NUMBER = 14;
         private com.google.protobuf.Internal.IntList level_;
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @return A list containing the level.
          */
@@ -431,7 +473,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return level_;
         }
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @return The count of level.
          */
@@ -439,7 +481,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return level_.size();
         }
         /**
-         * <code>repeated int32 level = 7;</code>
+         * <code>repeated int32 level = 14;</code>
          *
          * @param index The index of the element to return.
          * @return The level at the given index.
@@ -450,10 +492,10 @@ public final class ToTheMoonQueryPathRspOuterClass {
 
         private int levelMemoizedSerializedSize = -1;
 
-        public static final int QUERY_ID_FIELD_NUMBER = 15;
+        public static final int QUERY_ID_FIELD_NUMBER = 2;
         private int queryId_;
         /**
-         * <code>int32 query_id = 15;</code>
+         * <code>int32 query_id = 2;</code>
          *
          * @return The queryId.
          */
@@ -462,40 +504,10 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return queryId_;
         }
 
-        public static final int CORNERS_FIELD_NUMBER = 9;
-        private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> corners_;
-        /** <code>repeated .Vector corners = 9;</code> */
-        @java.lang.Override
-        public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList() {
-            return corners_;
-        }
-        /** <code>repeated .Vector corners = 9;</code> */
-        @java.lang.Override
-        public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                getCornersOrBuilderList() {
-            return corners_;
-        }
-        /** <code>repeated .Vector corners = 9;</code> */
-        @java.lang.Override
-        public int getCornersCount() {
-            return corners_.size();
-        }
-        /** <code>repeated .Vector corners = 9;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index) {
-            return corners_.get(index);
-        }
-        /** <code>repeated .Vector corners = 9;</code> */
-        @java.lang.Override
-        public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(
-                int index) {
-            return corners_.get(index);
-        }
-
-        public static final int INDEX_FIELD_NUMBER = 10;
+        public static final int INDEX_FIELD_NUMBER = 8;
         private com.google.protobuf.Internal.LongList index_;
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @return A list containing the index.
          */
@@ -504,7 +516,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return index_;
         }
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @return The count of index.
          */
@@ -512,7 +524,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
             return index_.size();
         }
         /**
-         * <code>repeated int64 index = 10;</code>
+         * <code>repeated int64 index = 8;</code>
          *
          * @param index The index of the element to return.
          * @return The index at the given index.
@@ -522,18 +534,6 @@ public final class ToTheMoonQueryPathRspOuterClass {
         }
 
         private int indexMemoizedSerializedSize = -1;
-
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        /**
-         * <code>int32 retcode = 5;</code>
-         *
-         * @return The retcode.
-         */
-        @java.lang.Override
-        public int getRetcode() {
-            return retcode_;
-        }
 
         private byte memoizedIsInitialized = -1;
 
@@ -550,34 +550,34 @@ public final class ToTheMoonQueryPathRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
+            if (queryId_ != 0) {
+                output.writeInt32(2, queryId_);
+            }
             if (retcode_ != 0) {
-                output.writeInt32(5, retcode_);
-            }
-            if (getLevelList().size() > 0) {
-                output.writeUInt32NoTag(58);
-                output.writeUInt32NoTag(levelMemoizedSerializedSize);
-            }
-            for (int i = 0; i < level_.size(); i++) {
-                output.writeInt32NoTag(level_.getInt(i));
+                output.writeInt32(3, retcode_);
             }
             for (int i = 0; i < corners_.size(); i++) {
-                output.writeMessage(9, corners_.get(i));
-            }
-            if (getIndexList().size() > 0) {
-                output.writeUInt32NoTag(82);
-                output.writeUInt32NoTag(indexMemoizedSerializedSize);
-            }
-            for (int i = 0; i < index_.size(); i++) {
-                output.writeInt64NoTag(index_.getLong(i));
+                output.writeMessage(4, corners_.get(i));
             }
             if (queryStatus_
                     != emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp
                             .PathStatusType.STATUS_FAIL
                             .getNumber()) {
-                output.writeEnum(12, queryStatus_);
+                output.writeEnum(6, queryStatus_);
             }
-            if (queryId_ != 0) {
-                output.writeInt32(15, queryId_);
+            if (getIndexList().size() > 0) {
+                output.writeUInt32NoTag(66);
+                output.writeUInt32NoTag(indexMemoizedSerializedSize);
+            }
+            for (int i = 0; i < index_.size(); i++) {
+                output.writeInt64NoTag(index_.getLong(i));
+            }
+            if (getLevelList().size() > 0) {
+                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(levelMemoizedSerializedSize);
+            }
+            for (int i = 0; i < level_.size(); i++) {
+                output.writeInt32NoTag(level_.getInt(i));
             }
             unknownFields.writeTo(output);
         }
@@ -588,23 +588,20 @@ public final class ToTheMoonQueryPathRspOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, retcode_);
+            if (queryId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, queryId_);
             }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < level_.size(); i++) {
-                    dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(level_.getInt(i));
-                }
-                size += dataSize;
-                if (!getLevelList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                levelMemoizedSerializedSize = dataSize;
+            if (retcode_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, retcode_);
             }
             for (int i = 0; i < corners_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, corners_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, corners_.get(i));
+            }
+            if (queryStatus_
+                    != emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp
+                            .PathStatusType.STATUS_FAIL
+                            .getNumber()) {
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, queryStatus_);
             }
             {
                 int dataSize = 0;
@@ -619,14 +616,17 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 }
                 indexMemoizedSerializedSize = dataSize;
             }
-            if (queryStatus_
-                    != emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp
-                            .PathStatusType.STATUS_FAIL
-                            .getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, queryStatus_);
-            }
-            if (queryId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(15, queryId_);
+            {
+                int dataSize = 0;
+                for (int i = 0; i < level_.size(); i++) {
+                    dataSize += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(level_.getInt(i));
+                }
+                size += dataSize;
+                if (!getLevelList().isEmpty()) {
+                    size += 1;
+                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                }
+                levelMemoizedSerializedSize = dataSize;
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -646,12 +646,12 @@ public final class ToTheMoonQueryPathRspOuterClass {
             emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp other =
                     (emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp) obj;
 
+            if (!getCornersList().equals(other.getCornersList())) return false;
+            if (getRetcode() != other.getRetcode()) return false;
             if (queryStatus_ != other.queryStatus_) return false;
             if (!getLevelList().equals(other.getLevelList())) return false;
             if (getQueryId() != other.getQueryId()) return false;
-            if (!getCornersList().equals(other.getCornersList())) return false;
             if (!getIndexList().equals(other.getIndexList())) return false;
-            if (getRetcode() != other.getRetcode()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -663,6 +663,12 @@ public final class ToTheMoonQueryPathRspOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
+            if (getCornersCount() > 0) {
+                hash = (37 * hash) + CORNERS_FIELD_NUMBER;
+                hash = (53 * hash) + getCornersList().hashCode();
+            }
+            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+            hash = (53 * hash) + getRetcode();
             hash = (37 * hash) + QUERY_STATUS_FIELD_NUMBER;
             hash = (53 * hash) + queryStatus_;
             if (getLevelCount() > 0) {
@@ -671,16 +677,10 @@ public final class ToTheMoonQueryPathRspOuterClass {
             }
             hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
             hash = (53 * hash) + getQueryId();
-            if (getCornersCount() > 0) {
-                hash = (37 * hash) + CORNERS_FIELD_NUMBER;
-                hash = (53 * hash) + getCornersList().hashCode();
-            }
             if (getIndexCount() > 0) {
                 hash = (37 * hash) + INDEX_FIELD_NUMBER;
                 hash = (53 * hash) + getIndexList().hashCode();
             }
-            hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getRetcode();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -794,7 +794,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
          *
          * <pre>
          * CmdId: 6196
-         * Name: BLMEIMMKNIG
+         * Obf: FJLGCJGKCNH
          * </pre>
          *
          * Protobuf type {@code ToTheMoonQueryPathRsp}
@@ -841,22 +841,22 @@ public final class ToTheMoonQueryPathRspOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                queryStatus_ = 0;
-
-                level_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                queryId_ = 0;
-
                 if (cornersBuilder_ == null) {
                     corners_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
+                    bitField0_ = (bitField0_ & ~0x00000001);
                 } else {
                     cornersBuilder_.clear();
                 }
-                index_ = emptyLongList();
-                bitField0_ = (bitField0_ & ~0x00000004);
                 retcode_ = 0;
 
+                queryStatus_ = 0;
+
+                level_ = emptyIntList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                queryId_ = 0;
+
+                index_ = emptyLongList();
+                bitField0_ = (bitField0_ & ~0x00000004);
                 return this;
             }
 
@@ -891,28 +891,28 @@ public final class ToTheMoonQueryPathRspOuterClass {
                         new emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp(
                                 this);
                 int from_bitField0_ = bitField0_;
-                result.queryStatus_ = queryStatus_;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                    level_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                }
-                result.level_ = level_;
-                result.queryId_ = queryId_;
                 if (cornersBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) != 0)) {
+                    if (((bitField0_ & 0x00000001) != 0)) {
                         corners_ = java.util.Collections.unmodifiableList(corners_);
-                        bitField0_ = (bitField0_ & ~0x00000002);
+                        bitField0_ = (bitField0_ & ~0x00000001);
                     }
                     result.corners_ = corners_;
                 } else {
                     result.corners_ = cornersBuilder_.build();
                 }
+                result.retcode_ = retcode_;
+                result.queryStatus_ = queryStatus_;
+                if (((bitField0_ & 0x00000002) != 0)) {
+                    level_.makeImmutable();
+                    bitField0_ = (bitField0_ & ~0x00000002);
+                }
+                result.level_ = level_;
+                result.queryId_ = queryId_;
                 if (((bitField0_ & 0x00000004) != 0)) {
                     index_.makeImmutable();
                     bitField0_ = (bitField0_ & ~0x00000004);
                 }
                 result.index_ = index_;
-                result.retcode_ = retcode_;
                 onBuilt();
                 return result;
             }
@@ -971,27 +971,11 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.ToTheMoonQueryPathRspOuterClass.ToTheMoonQueryPathRsp
                                 .getDefaultInstance()) return this;
-                if (other.queryStatus_ != 0) {
-                    setQueryStatusValue(other.getQueryStatusValue());
-                }
-                if (!other.level_.isEmpty()) {
-                    if (level_.isEmpty()) {
-                        level_ = other.level_;
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    } else {
-                        ensureLevelIsMutable();
-                        level_.addAll(other.level_);
-                    }
-                    onChanged();
-                }
-                if (other.getQueryId() != 0) {
-                    setQueryId(other.getQueryId());
-                }
                 if (cornersBuilder_ == null) {
                     if (!other.corners_.isEmpty()) {
                         if (corners_.isEmpty()) {
                             corners_ = other.corners_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
+                            bitField0_ = (bitField0_ & ~0x00000001);
                         } else {
                             ensureCornersIsMutable();
                             corners_.addAll(other.corners_);
@@ -1004,7 +988,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                             cornersBuilder_.dispose();
                             cornersBuilder_ = null;
                             corners_ = other.corners_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
+                            bitField0_ = (bitField0_ & ~0x00000001);
                             cornersBuilder_ =
                                     com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                                             ? getCornersFieldBuilder()
@@ -1013,6 +997,25 @@ public final class ToTheMoonQueryPathRspOuterClass {
                             cornersBuilder_.addAllMessages(other.corners_);
                         }
                     }
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (other.queryStatus_ != 0) {
+                    setQueryStatusValue(other.getQueryStatusValue());
+                }
+                if (!other.level_.isEmpty()) {
+                    if (level_.isEmpty()) {
+                        level_ = other.level_;
+                        bitField0_ = (bitField0_ & ~0x00000002);
+                    } else {
+                        ensureLevelIsMutable();
+                        level_.addAll(other.level_);
+                    }
+                    onChanged();
+                }
+                if (other.getQueryId() != 0) {
+                    setQueryId(other.getQueryId());
                 }
                 if (!other.index_.isEmpty()) {
                     if (index_.isEmpty()) {
@@ -1023,9 +1026,6 @@ public final class ToTheMoonQueryPathRspOuterClass {
                         index_.addAll(other.index_);
                     }
                     onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1061,9 +1061,256 @@ public final class ToTheMoonQueryPathRspOuterClass {
 
             private int bitField0_;
 
+            private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> corners_ =
+                    java.util.Collections.emptyList();
+
+            private void ensureCornersIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                    corners_ =
+                            new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>(corners_);
+                    bitField0_ |= 0x00000001;
+                }
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    cornersBuilder_;
+
+            /** <code>repeated .Vector corners = 4;</code> */
+            public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList() {
+                if (cornersBuilder_ == null) {
+                    return java.util.Collections.unmodifiableList(corners_);
+                } else {
+                    return cornersBuilder_.getMessageList();
+                }
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public int getCornersCount() {
+                if (cornersBuilder_ == null) {
+                    return corners_.size();
+                } else {
+                    return cornersBuilder_.getCount();
+                }
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index) {
+                if (cornersBuilder_ == null) {
+                    return corners_.get(index);
+                } else {
+                    return cornersBuilder_.getMessage(index);
+                }
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder setCorners(
+                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (cornersBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCornersIsMutable();
+                    corners_.set(index, value);
+                    onChanged();
+                } else {
+                    cornersBuilder_.setMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder setCorners(
+                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (cornersBuilder_ == null) {
+                    ensureCornersIsMutable();
+                    corners_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    cornersBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder addCorners(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (cornersBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCornersIsMutable();
+                    corners_.add(value);
+                    onChanged();
+                } else {
+                    cornersBuilder_.addMessage(value);
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder addCorners(
+                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+                if (cornersBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    ensureCornersIsMutable();
+                    corners_.add(index, value);
+                    onChanged();
+                } else {
+                    cornersBuilder_.addMessage(index, value);
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder addCorners(
+                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (cornersBuilder_ == null) {
+                    ensureCornersIsMutable();
+                    corners_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    cornersBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder addCorners(
+                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+                if (cornersBuilder_ == null) {
+                    ensureCornersIsMutable();
+                    corners_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    cornersBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder addAllCorners(
+                    java.lang.Iterable<? extends emu.grasscutter.net.proto.VectorOuterClass.Vector> values) {
+                if (cornersBuilder_ == null) {
+                    ensureCornersIsMutable();
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, corners_);
+                    onChanged();
+                } else {
+                    cornersBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder clearCorners() {
+                if (cornersBuilder_ == null) {
+                    corners_ = java.util.Collections.emptyList();
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                    onChanged();
+                } else {
+                    cornersBuilder_.clear();
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public Builder removeCorners(int index) {
+                if (cornersBuilder_ == null) {
+                    ensureCornersIsMutable();
+                    corners_.remove(index);
+                    onChanged();
+                } else {
+                    cornersBuilder_.remove(index);
+                }
+                return this;
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getCornersBuilder(
+                    int index) {
+                return getCornersFieldBuilder().getBuilder(index);
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(
+                    int index) {
+                if (cornersBuilder_ == null) {
+                    return corners_.get(index);
+                } else {
+                    return cornersBuilder_.getMessageOrBuilder(index);
+                }
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getCornersOrBuilderList() {
+                if (cornersBuilder_ != null) {
+                    return cornersBuilder_.getMessageOrBuilderList();
+                } else {
+                    return java.util.Collections.unmodifiableList(corners_);
+                }
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addCornersBuilder() {
+                return getCornersFieldBuilder()
+                        .addBuilder(emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addCornersBuilder(
+                    int index) {
+                return getCornersFieldBuilder()
+                        .addBuilder(
+                                index, emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
+            }
+            /** <code>repeated .Vector corners = 4;</code> */
+            public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder>
+                    getCornersBuilderList() {
+                return getCornersFieldBuilder().getBuilderList();
+            }
+
+            private com.google.protobuf.RepeatedFieldBuilderV3<
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
+                    getCornersFieldBuilder() {
+                if (cornersBuilder_ == null) {
+                    cornersBuilder_ =
+                            new com.google.protobuf.RepeatedFieldBuilderV3<
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
+                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
+                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                                    corners_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                    corners_ = null;
+                }
+                return cornersBuilder_;
+            }
+
+            private int retcode_;
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @return The retcode.
+             */
+            @java.lang.Override
+            public int getRetcode() {
+                return retcode_;
+            }
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @param value The retcode to set.
+             * @return This builder for chaining.
+             */
+            public Builder setRetcode(int value) {
+
+                retcode_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>int32 retcode = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearRetcode() {
+
+                retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
             private int queryStatus_ = 0;
             /**
-             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
              *
              * @return The enum numeric value on the wire for queryStatus.
              */
@@ -1072,7 +1319,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return queryStatus_;
             }
             /**
-             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
              *
              * @param value The enum numeric value on the wire for queryStatus to set.
              * @return This builder for chaining.
@@ -1084,7 +1331,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
              *
              * @return The queryStatus.
              */
@@ -1104,7 +1351,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                         : result;
             }
             /**
-             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
              *
              * @param value The queryStatus to set.
              * @return This builder for chaining.
@@ -1122,7 +1369,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 12;</code>
+             * <code>.ToTheMoonQueryPathRsp.PathStatusType query_status = 6;</code>
              *
              * @return This builder for chaining.
              */
@@ -1136,23 +1383,23 @@ public final class ToTheMoonQueryPathRspOuterClass {
             private com.google.protobuf.Internal.IntList level_ = emptyIntList();
 
             private void ensureLevelIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
+                if (!((bitField0_ & 0x00000002) != 0)) {
                     level_ = mutableCopy(level_);
-                    bitField0_ |= 0x00000001;
+                    bitField0_ |= 0x00000002;
                 }
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @return A list containing the level.
              */
             public java.util.List<java.lang.Integer> getLevelList() {
-                return ((bitField0_ & 0x00000001) != 0)
+                return ((bitField0_ & 0x00000002) != 0)
                         ? java.util.Collections.unmodifiableList(level_)
                         : level_;
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @return The count of level.
              */
@@ -1160,7 +1407,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return level_.size();
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @param index The index of the element to return.
              * @return The level at the given index.
@@ -1169,7 +1416,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return level_.getInt(index);
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @param index The index to set the value at.
              * @param value The level to set.
@@ -1182,7 +1429,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @param value The level to add.
              * @return This builder for chaining.
@@ -1194,7 +1441,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @param values The level to add.
              * @return This builder for chaining.
@@ -1206,20 +1453,20 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int32 level = 7;</code>
+             * <code>repeated int32 level = 14;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearLevel() {
                 level_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 onChanged();
                 return this;
             }
 
             private int queryId_;
             /**
-             * <code>int32 query_id = 15;</code>
+             * <code>int32 query_id = 2;</code>
              *
              * @return The queryId.
              */
@@ -1228,7 +1475,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return queryId_;
             }
             /**
-             * <code>int32 query_id = 15;</code>
+             * <code>int32 query_id = 2;</code>
              *
              * @param value The queryId to set.
              * @return This builder for chaining.
@@ -1240,7 +1487,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 query_id = 15;</code>
+             * <code>int32 query_id = 2;</code>
              *
              * @return This builder for chaining.
              */
@@ -1249,219 +1496,6 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 queryId_ = 0;
                 onChanged();
                 return this;
-            }
-
-            private java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> corners_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureCornersIsMutable() {
-                if (!((bitField0_ & 0x00000002) != 0)) {
-                    corners_ =
-                            new java.util.ArrayList<emu.grasscutter.net.proto.VectorOuterClass.Vector>(corners_);
-                    bitField0_ |= 0x00000002;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    cornersBuilder_;
-
-            /** <code>repeated .Vector corners = 9;</code> */
-            public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector> getCornersList() {
-                if (cornersBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(corners_);
-                } else {
-                    return cornersBuilder_.getMessageList();
-                }
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public int getCornersCount() {
-                if (cornersBuilder_ == null) {
-                    return corners_.size();
-                } else {
-                    return cornersBuilder_.getCount();
-                }
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector getCorners(int index) {
-                if (cornersBuilder_ == null) {
-                    return corners_.get(index);
-                } else {
-                    return cornersBuilder_.getMessage(index);
-                }
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder setCorners(
-                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (cornersBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCornersIsMutable();
-                    corners_.set(index, value);
-                    onChanged();
-                } else {
-                    cornersBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder setCorners(
-                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-                if (cornersBuilder_ == null) {
-                    ensureCornersIsMutable();
-                    corners_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    cornersBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder addCorners(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (cornersBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCornersIsMutable();
-                    corners_.add(value);
-                    onChanged();
-                } else {
-                    cornersBuilder_.addMessage(value);
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder addCorners(
-                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-                if (cornersBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCornersIsMutable();
-                    corners_.add(index, value);
-                    onChanged();
-                } else {
-                    cornersBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder addCorners(
-                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-                if (cornersBuilder_ == null) {
-                    ensureCornersIsMutable();
-                    corners_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    cornersBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder addCorners(
-                    int index, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-                if (cornersBuilder_ == null) {
-                    ensureCornersIsMutable();
-                    corners_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    cornersBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder addAllCorners(
-                    java.lang.Iterable<? extends emu.grasscutter.net.proto.VectorOuterClass.Vector> values) {
-                if (cornersBuilder_ == null) {
-                    ensureCornersIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(values, corners_);
-                    onChanged();
-                } else {
-                    cornersBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder clearCorners() {
-                if (cornersBuilder_ == null) {
-                    corners_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
-                    onChanged();
-                } else {
-                    cornersBuilder_.clear();
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public Builder removeCorners(int index) {
-                if (cornersBuilder_ == null) {
-                    ensureCornersIsMutable();
-                    corners_.remove(index);
-                    onChanged();
-                } else {
-                    cornersBuilder_.remove(index);
-                }
-                return this;
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getCornersBuilder(
-                    int index) {
-                return getCornersFieldBuilder().getBuilder(index);
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getCornersOrBuilder(
-                    int index) {
-                if (cornersBuilder_ == null) {
-                    return corners_.get(index);
-                } else {
-                    return cornersBuilder_.getMessageOrBuilder(index);
-                }
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public java.util.List<? extends emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    getCornersOrBuilderList() {
-                if (cornersBuilder_ != null) {
-                    return cornersBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(corners_);
-                }
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addCornersBuilder() {
-                return getCornersFieldBuilder()
-                        .addBuilder(emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder addCornersBuilder(
-                    int index) {
-                return getCornersFieldBuilder()
-                        .addBuilder(
-                                index, emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance());
-            }
-            /** <code>repeated .Vector corners = 9;</code> */
-            public java.util.List<emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder>
-                    getCornersBuilderList() {
-                return getCornersFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilderV3<
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                            emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                            emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
-                    getCornersFieldBuilder() {
-                if (cornersBuilder_ == null) {
-                    cornersBuilder_ =
-                            new com.google.protobuf.RepeatedFieldBuilderV3<
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector,
-                                    emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
-                                    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                                    corners_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
-                    corners_ = null;
-                }
-                return cornersBuilder_;
             }
 
             private com.google.protobuf.Internal.LongList index_ = emptyLongList();
@@ -1473,7 +1507,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 }
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @return A list containing the index.
              */
@@ -1483,7 +1517,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                         : index_;
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @return The count of index.
              */
@@ -1491,7 +1525,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return index_.size();
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @param index The index of the element to return.
              * @return The index at the given index.
@@ -1500,7 +1534,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return index_.getLong(index);
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @param index The index to set the value at.
              * @param value The index to set.
@@ -1513,7 +1547,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @param value The index to add.
              * @return This builder for chaining.
@@ -1525,7 +1559,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @param values The index to add.
              * @return This builder for chaining.
@@ -1537,47 +1571,13 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated int64 index = 10;</code>
+             * <code>repeated int64 index = 8;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearIndex() {
                 index_ = emptyLongList();
                 bitField0_ = (bitField0_ & ~0x00000004);
-                onChanged();
-                return this;
-            }
-
-            private int retcode_;
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return The retcode.
-             */
-            @java.lang.Override
-            public int getRetcode() {
-                return retcode_;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @param value The retcode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setRetcode(int value) {
-
-                retcode_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>int32 retcode = 5;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearRetcode() {
-
-                retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -1653,14 +1653,14 @@ public final class ToTheMoonQueryPathRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\033ToTheMoonQueryPathRsp.proto\032\014Vector.pr"
-                    + "oto\"\367\001\n\025ToTheMoonQueryPathRsp\022;\n\014query_s"
-                    + "tatus\030\014 \001(\0162%.ToTheMoonQueryPathRsp.Path"
-                    + "StatusType\022\r\n\005level\030\007 \003(\005\022\020\n\010query_id\030\017 "
-                    + "\001(\005\022\030\n\007corners\030\t \003(\0132\007.Vector\022\r\n\005index\030\n"
-                    + " \003(\003\022\017\n\007retcode\030\005 \001(\005\"F\n\016PathStatusType\022"
+                    + "oto\"\367\001\n\025ToTheMoonQueryPathRsp\022\030\n\007corners"
+                    + "\030\004 \003(\0132\007.Vector\022\017\n\007retcode\030\003 \001(\005\022;\n\014quer"
+                    + "y_status\030\006 \001(\0162%.ToTheMoonQueryPathRsp.P"
+                    + "athStatusType\022\r\n\005level\030\016 \003(\005\022\020\n\010query_id"
+                    + "\030\002 \001(\005\022\r\n\005index\030\010 \003(\003\"F\n\016PathStatusType\022"
                     + "\017\n\013STATUS_FAIL\020\000\022\017\n\013STATUS_SUCC\020\001\022\022\n\016STA"
-                    + "TUS_PARTIAL\020\002B!\n\031emu.grasscutter.net.pro"
-                    + "toZ\004/genb\006proto3"
+                    + "TUS_PARTIAL\020\002B\033\n\031emu.grasscutter.net.pro"
+                    + "tob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1673,7 +1673,7 @@ public final class ToTheMoonQueryPathRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_ToTheMoonQueryPathRsp_descriptor,
                         new java.lang.String[] {
-                            "QueryStatus", "Level", "QueryId", "Corners", "Index", "Retcode",
+                            "Corners", "Retcode", "QueryStatus", "Level", "QueryId", "Index",
                         });
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }

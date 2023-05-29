@@ -28,7 +28,7 @@ public final class FurnitureOuterClass {
      *
      *
      * <pre>
-     * Name: MENJHDPJMCN
+     * Obf: BILANGJEJAM
      * </pre>
      *
      * Protobuf type {@code Furniture}
@@ -289,7 +289,7 @@ public final class FurnitureOuterClass {
          *
          *
          * <pre>
-         * Name: MENJHDPJMCN
+         * Obf: BILANGJEJAM
          * </pre>
          *
          * Protobuf type {@code Furniture}
@@ -544,8 +544,8 @@ public final class FurnitureOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\017Furniture.proto\"\032\n\tFurniture\022\r\n\005count\030"
-                    + "\001 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

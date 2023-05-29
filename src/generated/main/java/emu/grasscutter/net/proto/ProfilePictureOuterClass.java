@@ -35,7 +35,7 @@ public final class ProfilePictureOuterClass {
      *
      *
      * <pre>
-     * Name: CAOGLKMLEOG
+     * Obf: ECNCPJCKFAE
      * </pre>
      *
      * Protobuf type {@code ProfilePicture}
@@ -324,7 +324,7 @@ public final class ProfilePictureOuterClass {
          *
          *
          * <pre>
-         * Name: CAOGLKMLEOG
+         * Obf: ECNCPJCKFAE
          * </pre>
          *
          * Protobuf type {@code ProfilePicture}
@@ -632,8 +632,7 @@ public final class ProfilePictureOuterClass {
         java.lang.String[] descriptorData = {
             "\n\024ProfilePicture.proto\"7\n\016ProfilePicture"
                     + "\022\021\n\tavatar_id\030\001 \001(\r\022\022\n\ncostume_id\030\002 \001(\rB"
-                    + "!\n\031emu.grasscutter.net.protoZ\004/genb\006prot"
-                    + "o3"
+                    + "\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

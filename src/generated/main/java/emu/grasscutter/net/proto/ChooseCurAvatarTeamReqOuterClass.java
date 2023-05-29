@@ -18,7 +18,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 team_id = 11;</code>
+         * <code>uint32 team_id = 5;</code>
          *
          * @return The teamId.
          */
@@ -28,8 +28,8 @@ public final class ChooseCurAvatarTeamReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1699
-     * Name: LCBAAKNNLKF
+     * CmdId: 1789
+     * Obf: GPOADFMJEGE
      * </pre>
      *
      * Protobuf type {@code ChooseCurAvatarTeamReq}
@@ -75,7 +75,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 88:
+                        case 40:
                             {
                                 teamId_ = input.readUInt32();
                                 break;
@@ -116,10 +116,10 @@ public final class ChooseCurAvatarTeamReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int TEAM_ID_FIELD_NUMBER = 11;
+        public static final int TEAM_ID_FIELD_NUMBER = 5;
         private int teamId_;
         /**
-         * <code>uint32 team_id = 11;</code>
+         * <code>uint32 team_id = 5;</code>
          *
          * @return The teamId.
          */
@@ -143,7 +143,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (teamId_ != 0) {
-                output.writeUInt32(11, teamId_);
+                output.writeUInt32(5, teamId_);
             }
             unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
             size = 0;
             if (teamId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, teamId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, teamId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -302,8 +302,8 @@ public final class ChooseCurAvatarTeamReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1699
-         * Name: LCBAAKNNLKF
+         * CmdId: 1789
+         * Obf: GPOADFMJEGE
          * </pre>
          *
          * Protobuf type {@code ChooseCurAvatarTeamReq}
@@ -479,7 +479,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
             private int teamId_;
             /**
-             * <code>uint32 team_id = 11;</code>
+             * <code>uint32 team_id = 5;</code>
              *
              * @return The teamId.
              */
@@ -488,7 +488,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
                 return teamId_;
             }
             /**
-             * <code>uint32 team_id = 11;</code>
+             * <code>uint32 team_id = 5;</code>
              *
              * @param value The teamId to set.
              * @return This builder for chaining.
@@ -500,7 +500,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 team_id = 11;</code>
+             * <code>uint32 team_id = 5;</code>
              *
              * @return This builder for chaining.
              */
@@ -582,8 +582,8 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034ChooseCurAvatarTeamReq.proto\")\n\026Choose"
-                    + "CurAvatarTeamReq\022\017\n\007team_id\030\013 \001(\rB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "CurAvatarTeamReq\022\017\n\007team_id\030\005 \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

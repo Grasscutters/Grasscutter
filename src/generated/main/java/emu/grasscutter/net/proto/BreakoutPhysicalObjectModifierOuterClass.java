@@ -133,7 +133,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
      *
      *
      * <pre>
-     * Name: DHHHNMEKJHP
+     * Obf: MJJIHNCKJAL
      * </pre>
      *
      * Protobuf type {@code BreakoutPhysicalObjectModifier}
@@ -816,7 +816,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
          *
          *
          * <pre>
-         * Name: DHHHNMEKJHP
+         * Obf: MJJIHNCKJAL
          * </pre>
          *
          * Protobuf type {@code BreakoutPhysicalObjectModifier}
@@ -1718,8 +1718,8 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
                     + "ool1\030\t \001(\010\022\020\n\010duration\030\n \001(\005\022\020\n\010end_time"
                     + "\030\013 \001(\005\022\r\n\005combo\030\014 \001(\r\022\017\n\007peer_id\030\r \001(\r\022\022"
                     + "\n\nskill_type\030\016 \001(\r\022\r\n\005level\030\017 \001(\r\022\033\n\023cho"
-                    + "ose_player_count\030\020 \001(\rB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "ose_player_count\030\020 \001(\rB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

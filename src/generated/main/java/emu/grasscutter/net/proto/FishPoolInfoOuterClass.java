@@ -55,7 +55,7 @@ public final class FishPoolInfoOuterClass {
      *
      *
      * <pre>
-     * Name: PPCINKMGAIE
+     * Obf: JNLEJBIEONJ
      * </pre>
      *
      * Protobuf type {@code FishPoolInfo}
@@ -429,7 +429,7 @@ public final class FishPoolInfoOuterClass {
          *
          *
          * <pre>
-         * Name: PPCINKMGAIE
+         * Obf: JNLEJBIEONJ
          * </pre>
          *
          * Protobuf type {@code FishPoolInfo}
@@ -838,8 +838,8 @@ public final class FishPoolInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\022FishPoolInfo.proto\"O\n\014FishPoolInfo\022\017\n\007"
                     + "pool_id\030\001 \001(\r\022\026\n\016fish_area_list\030\002 \003(\r\022\026\n"
-                    + "\016today_fish_num\030\003 \001(\rB!\n\031emu.grasscutter"
-                    + ".net.protoZ\004/genb\006proto3"
+                    + "\016today_fish_num\030\003 \001(\rB\033\n\031emu.grasscutter"
+                    + ".net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

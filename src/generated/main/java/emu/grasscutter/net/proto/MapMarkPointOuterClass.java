@@ -96,7 +96,7 @@ public final class MapMarkPointOuterClass {
      *
      *
      * <pre>
-     * Name: EDELLOCMJAG
+     * Obf: GOBPDEPLBLM
      * </pre>
      *
      * Protobuf type {@code MapMarkPoint}
@@ -622,7 +622,7 @@ public final class MapMarkPointOuterClass {
          *
          *
          * <pre>
-         * Name: EDELLOCMJAG
+         * Obf: GOBPDEPLBLM
          * </pre>
          *
          * Protobuf type {@code MapMarkPoint}
@@ -1321,22 +1321,22 @@ public final class MapMarkPointOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\022MapMarkPoint.proto\032\025MapMarkFromType.pr"
-                    + "oto\032\026MapMarkPointType.proto\032\014Vector.prot"
+            "\n\022MapMarkPoint.proto\032\014Vector.proto\032\026MapM"
+                    + "arkPointType.proto\032\025MapMarkFromType.prot"
                     + "o\"\266\001\n\014MapMarkPoint\022\020\n\010scene_id\030\001 \001(\r\022\014\n\004"
                     + "name\030\002 \001(\t\022\024\n\003pos\030\003 \001(\0132\007.Vector\022%\n\npoin"
                     + "t_type\030\004 \001(\0162\021.MapMarkPointType\022\022\n\nmonst"
                     + "er_id\030\005 \001(\r\022#\n\tfrom_type\030\006 \001(\0162\020.MapMark"
-                    + "FromType\022\020\n\010quest_id\030\007 \001(\rB!\n\031emu.grassc"
-                    + "utter.net.protoZ\004/genb\006proto3"
+                    + "FromType\022\020\n\010quest_id\030\007 \001(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.getDescriptor(),
                         });
         internal_static_MapMarkPoint_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_MapMarkPoint_fieldAccessorTable =
@@ -1345,9 +1345,9 @@ public final class MapMarkPointOuterClass {
                         new java.lang.String[] {
                             "SceneId", "Name", "Pos", "PointType", "MonsterId", "FromType", "QuestId",
                         });
-        emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.getDescriptor();
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

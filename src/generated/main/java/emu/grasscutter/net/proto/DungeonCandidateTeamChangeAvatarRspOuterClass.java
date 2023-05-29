@@ -18,7 +18,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 3;</code>
+         * <code>int32 retcode = 13;</code>
          *
          * @return The retcode.
          */
@@ -28,8 +28,8 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 988
-     * Name: HJADKLKFJAB
+     * CmdId: 912
+     * Obf: DBOPADOPECA
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamChangeAvatarRsp}
@@ -77,7 +77,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 24:
+                        case 104:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -118,10 +118,10 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
                                     .DungeonCandidateTeamChangeAvatarRsp.Builder.class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 13;
         private int retcode_;
         /**
-         * <code>int32 retcode = 3;</code>
+         * <code>int32 retcode = 13;</code>
          *
          * @return The retcode.
          */
@@ -145,7 +145,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(3, retcode_);
+                output.writeInt32(13, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -322,8 +322,8 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 988
-         * Name: HJADKLKFJAB
+         * CmdId: 912
+         * Obf: DBOPADOPECA
          * </pre>
          *
          * Protobuf type {@code DungeonCandidateTeamChangeAvatarRsp}
@@ -512,7 +512,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 3;</code>
+             * <code>int32 retcode = 13;</code>
              *
              * @return The retcode.
              */
@@ -521,7 +521,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 3;</code>
+             * <code>int32 retcode = 13;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -533,7 +533,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 3;</code>
+             * <code>int32 retcode = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -619,8 +619,8 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
         java.lang.String[] descriptorData = {
             "\n)DungeonCandidateTeamChangeAvatarRsp.pr"
                     + "oto\"6\n#DungeonCandidateTeamChangeAvatarR"
-                    + "sp\022\017\n\007retcode\030\003 \001(\005B!\n\031emu.grasscutter.n"
-                    + "et.protoZ\004/genb\006proto3"
+                    + "sp\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.grasscutter.n"
+                    + "et.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

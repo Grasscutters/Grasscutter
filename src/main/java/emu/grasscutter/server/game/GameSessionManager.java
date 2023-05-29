@@ -64,11 +64,11 @@ public class GameSessionManager {
 
                 @Override
                 public void handleReceive(ByteBuf buf, Ukcp kcp) {
-                    byte[] byteData = Utils.byteBufToArray(buf);
+                    var byteData = Utils.byteBufToArray(buf);
                     logicThread.execute(
                             () -> {
                                 try {
-                                    GameSession conversation = sessions.get(kcp);
+                                    var conversation = sessions.get(kcp);
                                     if (conversation != null) {
                                         conversation.handleReceive(byteData);
                                     }

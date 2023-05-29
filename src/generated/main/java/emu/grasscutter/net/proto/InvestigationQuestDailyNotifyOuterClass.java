@@ -20,8 +20,8 @@ public final class InvestigationQuestDailyNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 1918
-     * Name: GPFNDHHGNBK
+     * CmdId: 1908
+     * Obf: BJMGDOLKAAL
      * </pre>
      *
      * Protobuf type {@code InvestigationQuestDailyNotify}
@@ -288,8 +288,8 @@ public final class InvestigationQuestDailyNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 1918
-         * Name: GPFNDHHGNBK
+         * CmdId: 1908
+         * Obf: BJMGDOLKAAL
          * </pre>
          *
          * Protobuf type {@code InvestigationQuestDailyNotify}
@@ -544,8 +544,8 @@ public final class InvestigationQuestDailyNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n#InvestigationQuestDailyNotify.proto\"\037\n"
-                    + "\035InvestigationQuestDailyNotifyB!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "\035InvestigationQuestDailyNotifyB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

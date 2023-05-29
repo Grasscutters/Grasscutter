@@ -44,7 +44,7 @@ public final class MassivePropSyncInfoOuterClass {
      *
      *
      * <pre>
-     * Name: MNKOCGLGJNP
+     * Obf: HNDJPPEKOPF
      * </pre>
      *
      * Protobuf type {@code MassivePropSyncInfo}
@@ -381,7 +381,7 @@ public final class MassivePropSyncInfoOuterClass {
          *
          *
          * <pre>
-         * Name: MNKOCGLGJNP
+         * Obf: HNDJPPEKOPF
          * </pre>
          *
          * Protobuf type {@code MassivePropSyncInfo}
@@ -936,8 +936,8 @@ public final class MassivePropSyncInfoOuterClass {
             "\n\031MassivePropSyncInfo.proto\032\026MassiveProp"
                     + "Param.proto\"G\n\023MassivePropSyncInfo\022\n\n\002id"
                     + "\030\001 \001(\003\022$\n\tprop_list\030\002 \003(\0132\021.MassivePropP"
-                    + "aramB!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "aramB\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

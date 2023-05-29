@@ -20,8 +20,8 @@ public final class HomeLimitedShopInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4511
-     * Name: IPEEBIFNEBD
+     * CmdId: 4741
+     * Obf: KKICFPCDONF
      * </pre>
      *
      * Protobuf type {@code HomeLimitedShopInfoReq}
@@ -268,8 +268,8 @@ public final class HomeLimitedShopInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4511
-         * Name: IPEEBIFNEBD
+         * CmdId: 4741
+         * Obf: KKICFPCDONF
          * </pre>
          *
          * Protobuf type {@code HomeLimitedShopInfoReq}
@@ -508,8 +508,8 @@ public final class HomeLimitedShopInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\034HomeLimitedShopInfoReq.proto\"\030\n\026HomeLi"
-                    + "mitedShopInfoReqB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "mitedShopInfoReqB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

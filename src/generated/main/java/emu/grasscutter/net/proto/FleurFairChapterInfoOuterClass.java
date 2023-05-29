@@ -18,14 +18,14 @@ public final class FleurFairChapterInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 chapter_id = 2;</code>
+         * <code>uint32 chapter_id = 3;</code>
          *
          * @return The chapterId.
          */
         int getChapterId();
 
         /**
-         * <code>uint32 open_time = 11;</code>
+         * <code>uint32 open_time = 7;</code>
          *
          * @return The openTime.
          */
@@ -35,7 +35,7 @@ public final class FleurFairChapterInfoOuterClass {
      *
      *
      * <pre>
-     * Name: GJIIPOEKHAA
+     * Obf: ANBPPBIEHCK
      * </pre>
      *
      * Protobuf type {@code FleurFairChapterInfo}
@@ -81,12 +81,12 @@ public final class FleurFairChapterInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
+                        case 24:
                             {
                                 chapterId_ = input.readUInt32();
                                 break;
                             }
-                        case 88:
+                        case 56:
                             {
                                 openTime_ = input.readUInt32();
                                 break;
@@ -126,10 +126,10 @@ public final class FleurFairChapterInfoOuterClass {
                                     .class);
         }
 
-        public static final int CHAPTER_ID_FIELD_NUMBER = 2;
+        public static final int CHAPTER_ID_FIELD_NUMBER = 3;
         private int chapterId_;
         /**
-         * <code>uint32 chapter_id = 2;</code>
+         * <code>uint32 chapter_id = 3;</code>
          *
          * @return The chapterId.
          */
@@ -138,10 +138,10 @@ public final class FleurFairChapterInfoOuterClass {
             return chapterId_;
         }
 
-        public static final int OPEN_TIME_FIELD_NUMBER = 11;
+        public static final int OPEN_TIME_FIELD_NUMBER = 7;
         private int openTime_;
         /**
-         * <code>uint32 open_time = 11;</code>
+         * <code>uint32 open_time = 7;</code>
          *
          * @return The openTime.
          */
@@ -165,10 +165,10 @@ public final class FleurFairChapterInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (chapterId_ != 0) {
-                output.writeUInt32(2, chapterId_);
+                output.writeUInt32(3, chapterId_);
             }
             if (openTime_ != 0) {
-                output.writeUInt32(11, openTime_);
+                output.writeUInt32(7, openTime_);
             }
             unknownFields.writeTo(output);
         }
@@ -180,10 +180,10 @@ public final class FleurFairChapterInfoOuterClass {
 
             size = 0;
             if (chapterId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, chapterId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, chapterId_);
             }
             if (openTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, openTime_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, openTime_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -332,7 +332,7 @@ public final class FleurFairChapterInfoOuterClass {
          *
          *
          * <pre>
-         * Name: GJIIPOEKHAA
+         * Obf: ANBPPBIEHCK
          * </pre>
          *
          * Protobuf type {@code FleurFairChapterInfo}
@@ -511,7 +511,7 @@ public final class FleurFairChapterInfoOuterClass {
 
             private int chapterId_;
             /**
-             * <code>uint32 chapter_id = 2;</code>
+             * <code>uint32 chapter_id = 3;</code>
              *
              * @return The chapterId.
              */
@@ -520,7 +520,7 @@ public final class FleurFairChapterInfoOuterClass {
                 return chapterId_;
             }
             /**
-             * <code>uint32 chapter_id = 2;</code>
+             * <code>uint32 chapter_id = 3;</code>
              *
              * @param value The chapterId to set.
              * @return This builder for chaining.
@@ -532,7 +532,7 @@ public final class FleurFairChapterInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 chapter_id = 2;</code>
+             * <code>uint32 chapter_id = 3;</code>
              *
              * @return This builder for chaining.
              */
@@ -545,7 +545,7 @@ public final class FleurFairChapterInfoOuterClass {
 
             private int openTime_;
             /**
-             * <code>uint32 open_time = 11;</code>
+             * <code>uint32 open_time = 7;</code>
              *
              * @return The openTime.
              */
@@ -554,7 +554,7 @@ public final class FleurFairChapterInfoOuterClass {
                 return openTime_;
             }
             /**
-             * <code>uint32 open_time = 11;</code>
+             * <code>uint32 open_time = 7;</code>
              *
              * @param value The openTime to set.
              * @return This builder for chaining.
@@ -566,7 +566,7 @@ public final class FleurFairChapterInfoOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 open_time = 11;</code>
+             * <code>uint32 open_time = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -648,9 +648,9 @@ public final class FleurFairChapterInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\032FleurFairChapterInfo.proto\"=\n\024FleurFai"
-                    + "rChapterInfo\022\022\n\nchapter_id\030\002 \001(\r\022\021\n\topen"
-                    + "_time\030\013 \001(\rB!\n\031emu.grasscutter.net.proto"
-                    + "Z\004/genb\006proto3"
+                    + "rChapterInfo\022\022\n\nchapter_id\030\003 \001(\r\022\021\n\topen"
+                    + "_time\030\007 \001(\rB\033\n\031emu.grasscutter.net.proto"
+                    + "b\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

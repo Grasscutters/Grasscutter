@@ -15,7 +15,7 @@ public final class StoreTypeOuterClass {
      *
      *
      * <pre>
-     * Name: MPBJOANOMOJ
+     * Obf: CLABPDKNMDH
      * </pre>
      *
      * Protobuf enum {@code StoreType}
@@ -130,8 +130,8 @@ public final class StoreTypeOuterClass {
         java.lang.String[] descriptorData = {
             "\n\017StoreType.proto*K\n\tStoreType\022\023\n\017STORE_"
                     + "TYPE_NONE\020\000\022\023\n\017STORE_TYPE_PACK\020\001\022\024\n\020STOR"
-                    + "E_TYPE_DEPOT\020\002B!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "E_TYPE_DEPOT\020\002B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

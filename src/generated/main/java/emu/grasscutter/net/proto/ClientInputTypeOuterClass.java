@@ -15,7 +15,7 @@ public final class ClientInputTypeOuterClass {
      *
      *
      * <pre>
-     * Name: NPODOLLHBFD
+     * Obf: DFMBCLCIGOD
      * </pre>
      *
      * Protobuf enum {@code ClientInputType}
@@ -141,8 +141,8 @@ public final class ClientInputTypeOuterClass {
             "\n\025ClientInputType.proto*\200\001\n\017ClientInputT"
                     + "ype\022\025\n\021CLIENT_INPUT_NONE\020\000\022\036\n\032CLIENT_INP"
                     + "UT_KEYBORD_MOUSE\020\001\022\030\n\024CLIENT_INPUT_GAMEP"
-                    + "AD\020\002\022\034\n\030CLIENT_INPUT_TOUCH_PANEL\020\003B!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "AD\020\002\022\034\n\030CLIENT_INPUT_TOUCH_PANEL\020\003B\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

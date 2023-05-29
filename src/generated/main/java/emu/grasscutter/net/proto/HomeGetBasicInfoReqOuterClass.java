@@ -20,8 +20,8 @@ public final class HomeGetBasicInfoReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4858
-     * Name: GPLCKBLHPND
+     * CmdId: 4806
+     * Obf: IFGLHNJGLDB
      * </pre>
      *
      * Protobuf type {@code HomeGetBasicInfoReq}
@@ -265,8 +265,8 @@ public final class HomeGetBasicInfoReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4858
-         * Name: GPLCKBLHPND
+         * CmdId: 4806
+         * Obf: IFGLHNJGLDB
          * </pre>
          *
          * Protobuf type {@code HomeGetBasicInfoReq}
@@ -500,8 +500,8 @@ public final class HomeGetBasicInfoReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\031HomeGetBasicInfoReq.proto\"\025\n\023HomeGetBa"
-                    + "sicInfoReqB!\n\031emu.grasscutter.net.protoZ"
-                    + "\004/genb\006proto3"
+                    + "sicInfoReqB\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

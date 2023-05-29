@@ -100,7 +100,7 @@ public final class ResVersionConfigOuterClass {
      *
      *
      * <pre>
-     * Name: HCBPECOJPEI
+     * Obf: FJIHAIMDBMB
      * </pre>
      *
      * Protobuf type {@code ResVersionConfig}
@@ -660,7 +660,7 @@ public final class ResVersionConfigOuterClass {
          *
          *
          * <pre>
-         * Name: HCBPECOJPEI
+         * Obf: FJIHAIMDBMB
          * </pre>
          *
          * Protobuf type {@code ResVersionConfig}
@@ -1389,8 +1389,8 @@ public final class ResVersionConfigOuterClass {
                     + "onfig\022\017\n\007version\030\001 \001(\r\022\017\n\007relogin\030\002 \001(\010\022"
                     + "\013\n\003md5\030\003 \001(\t\022\032\n\022release_total_size\030\004 \001(\t"
                     + "\022\026\n\016version_suffix\030\005 \001(\t\022\016\n\006branch\030\006 \001(\t"
-                    + "\022\033\n\023next_script_version\030\007 \001(\tB!\n\031emu.gra"
-                    + "sscutter.net.protoZ\004/genb\006proto3"
+                    + "\022\033\n\023next_script_version\030\007 \001(\tB\033\n\031emu.gra"
+                    + "sscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

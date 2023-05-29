@@ -69,7 +69,7 @@ public final class ReliquaryOuterClass {
      *
      *
      * <pre>
-     * Name: BAADGLFOHPI
+     * Obf: IEFNJJOADGD
      * </pre>
      *
      * Protobuf type {@code Reliquary}
@@ -495,7 +495,7 @@ public final class ReliquaryOuterClass {
          *
          *
          * <pre>
-         * Name: BAADGLFOHPI
+         * Obf: IEFNJJOADGD
          * </pre>
          *
          * Protobuf type {@code Reliquary}
@@ -977,8 +977,8 @@ public final class ReliquaryOuterClass {
             "\n\017Reliquary.proto\"q\n\tReliquary\022\r\n\005level\030"
                     + "\001 \001(\r\022\013\n\003exp\030\002 \001(\r\022\025\n\rpromote_level\030\003 \001("
                     + "\r\022\024\n\014main_prop_id\030\004 \001(\r\022\033\n\023append_prop_i"
-                    + "d_list\030\005 \003(\rB!\n\031emu.grasscutter.net.prot"
-                    + "oZ\004/genb\006proto3"
+                    + "d_list\030\005 \003(\rB\033\n\031emu.grasscutter.net.prot"
+                    + "ob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

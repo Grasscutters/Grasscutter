@@ -94,7 +94,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
      *
      *
      * <pre>
-     * Name: HNCPFKLDBIF
+     * Obf: AAMJFNLFJIJ
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -719,7 +719,7 @@ public final class HomeMarkPointFurnitureDataOuterClass {
          *
          *
          * <pre>
-         * Name: HNCPFKLDBIF
+         * Obf: AAMJFNLFJIJ
          * </pre>
          *
          * Protobuf type {@code HomeMarkPointFurnitureData}
@@ -1602,24 +1602,23 @@ public final class HomeMarkPointFurnitureDataOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n HomeMarkPointFurnitureData.proto\032\032Home"
-                    + "MarkPointNPCData.proto\032\034HomeMarkPointSui"
-                    + "teData.proto\032\014Vector.proto\"\321\001\n\032HomeMarkP"
+            "\n HomeMarkPointFurnitureData.proto\032\014Vect"
+                    + "or.proto\032\032HomeMarkPointNPCData.proto\032\034Ho"
+                    + "meMarkPointSuiteData.proto\"\321\001\n\032HomeMarkP"
                     + "ointFurnitureData\022\014\n\004guid\030\001 \001(\r\022\024\n\014furni"
                     + "ture_id\030\002 \001(\r\022\026\n\016furniture_type\030\003 \001(\r\022\024\n"
                     + "\003pos\030\004 \001(\0132\007.Vector\022)\n\010npc_data\030\006 \001(\0132\025."
                     + "HomeMarkPointNPCDataH\000\022-\n\nsuite_data\030\007 \001"
-                    + "(\0132\027.HomeMarkPointSuiteDataH\000B\007\n\005extraB!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "(\0132\027.HomeMarkPointSuiteDataH\000B\007\n\005extraB\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
+                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
                         });
         internal_static_HomeMarkPointFurnitureData_descriptor =
                 getDescriptor().getMessageTypes().get(0);
@@ -1629,9 +1628,9 @@ public final class HomeMarkPointFurnitureDataOuterClass {
                         new java.lang.String[] {
                             "Guid", "FurnitureId", "FurnitureType", "Pos", "NpcData", "SuiteData", "Extra",
                         });
+        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
         emu.grasscutter.net.proto.HomeMarkPointNPCDataOuterClass.getDescriptor();
         emu.grasscutter.net.proto.HomeMarkPointSuiteDataOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

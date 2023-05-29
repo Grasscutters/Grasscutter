@@ -68,7 +68,7 @@ public final class MpPlayRewardInfoOuterClass {
      *
      *
      * <pre>
-     * Name: DCPIKCIDILK
+     * Obf: OACEIOAILNE
      * </pre>
      *
      * Protobuf type {@code MpPlayRewardInfo}
@@ -502,7 +502,7 @@ public final class MpPlayRewardInfoOuterClass {
          *
          *
          * <pre>
-         * Name: DCPIKCIDILK
+         * Obf: OACEIOAILNE
          * </pre>
          *
          * Protobuf type {@code MpPlayRewardInfo}
@@ -979,8 +979,8 @@ public final class MpPlayRewardInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026MpPlayRewardInfo.proto\"T\n\020MpPlayReward"
                     + "Info\022\r\n\005resin\030\001 \001(\r\022\027\n\017remain_uid_list\030\002"
-                    + " \003(\r\022\030\n\020qualify_uid_list\030\003 \003(\rB!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + " \003(\r\022\030\n\020qualify_uid_list\030\003 \003(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -60,7 +60,7 @@ public final class ShowEquipOuterClass {
      *
      *
      * <pre>
-     * Name: KPPGCJMONCN
+     * Obf: EPAIHJBBEOM
      * </pre>
      *
      * Protobuf type {@code ShowEquip}
@@ -508,7 +508,7 @@ public final class ShowEquipOuterClass {
          *
          *
          * <pre>
-         * Name: KPPGCJMONCN
+         * Obf: EPAIHJBBEOM
          * </pre>
          *
          * Protobuf type {@code ShowEquip}
@@ -1097,8 +1097,8 @@ public final class ShowEquipOuterClass {
             "\n\017ShowEquip.proto\032\017Reliquary.proto\032\014Weap"
                     + "on.proto\"b\n\tShowEquip\022\017\n\007item_id\030\001 \001(\r\022\037"
                     + "\n\treliquary\030\002 \001(\0132\n.ReliquaryH\000\022\031\n\006weapo"
-                    + "n\030\003 \001(\0132\007.WeaponH\000B\010\n\006detailB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "n\030\003 \001(\0132\007.WeaponH\000B\010\n\006detailB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

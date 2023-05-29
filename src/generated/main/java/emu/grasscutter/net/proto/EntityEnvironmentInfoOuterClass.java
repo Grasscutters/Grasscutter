@@ -18,24 +18,24 @@ public final class EntityEnvironmentInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 PBFMHLPEEPE = 1;</code>
+         * <code>uint32 json_climate_type = 1;</code>
          *
-         * @return The pBFMHLPEEPE.
+         * @return The jsonClimateType.
          */
-        int getPBFMHLPEEPE();
+        int getJsonClimateType();
 
         /**
-         * <code>uint32 NJDCDHDPMBE = 2;</code>
+         * <code>uint32 climate_area_id = 2;</code>
          *
-         * @return The nJDCDHDPMBE.
+         * @return The climateAreaId.
          */
-        int getNJDCDHDPMBE();
+        int getClimateAreaId();
     }
     /**
      *
      *
      * <pre>
-     * Name: FMNPHBGDPIP
+     * Obf: DILGEMDKHHN
      * </pre>
      *
      * Protobuf type {@code EntityEnvironmentInfo}
@@ -83,12 +83,12 @@ public final class EntityEnvironmentInfoOuterClass {
                             break;
                         case 8:
                             {
-                                pBFMHLPEEPE_ = input.readUInt32();
+                                jsonClimateType_ = input.readUInt32();
                                 break;
                             }
                         case 16:
                             {
-                                nJDCDHDPMBE_ = input.readUInt32();
+                                climateAreaId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -126,28 +126,28 @@ public final class EntityEnvironmentInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int PBFMHLPEEPE_FIELD_NUMBER = 1;
-        private int pBFMHLPEEPE_;
+        public static final int JSON_CLIMATE_TYPE_FIELD_NUMBER = 1;
+        private int jsonClimateType_;
         /**
-         * <code>uint32 PBFMHLPEEPE = 1;</code>
+         * <code>uint32 json_climate_type = 1;</code>
          *
-         * @return The pBFMHLPEEPE.
+         * @return The jsonClimateType.
          */
         @java.lang.Override
-        public int getPBFMHLPEEPE() {
-            return pBFMHLPEEPE_;
+        public int getJsonClimateType() {
+            return jsonClimateType_;
         }
 
-        public static final int NJDCDHDPMBE_FIELD_NUMBER = 2;
-        private int nJDCDHDPMBE_;
+        public static final int CLIMATE_AREA_ID_FIELD_NUMBER = 2;
+        private int climateAreaId_;
         /**
-         * <code>uint32 NJDCDHDPMBE = 2;</code>
+         * <code>uint32 climate_area_id = 2;</code>
          *
-         * @return The nJDCDHDPMBE.
+         * @return The climateAreaId.
          */
         @java.lang.Override
-        public int getNJDCDHDPMBE() {
-            return nJDCDHDPMBE_;
+        public int getClimateAreaId() {
+            return climateAreaId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -164,11 +164,11 @@ public final class EntityEnvironmentInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (pBFMHLPEEPE_ != 0) {
-                output.writeUInt32(1, pBFMHLPEEPE_);
+            if (jsonClimateType_ != 0) {
+                output.writeUInt32(1, jsonClimateType_);
             }
-            if (nJDCDHDPMBE_ != 0) {
-                output.writeUInt32(2, nJDCDHDPMBE_);
+            if (climateAreaId_ != 0) {
+                output.writeUInt32(2, climateAreaId_);
             }
             unknownFields.writeTo(output);
         }
@@ -179,11 +179,11 @@ public final class EntityEnvironmentInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (pBFMHLPEEPE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, pBFMHLPEEPE_);
+            if (jsonClimateType_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, jsonClimateType_);
             }
-            if (nJDCDHDPMBE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, nJDCDHDPMBE_);
+            if (climateAreaId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, climateAreaId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -203,8 +203,8 @@ public final class EntityEnvironmentInfoOuterClass {
             emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo other =
                     (emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo) obj;
 
-            if (getPBFMHLPEEPE() != other.getPBFMHLPEEPE()) return false;
-            if (getNJDCDHDPMBE() != other.getNJDCDHDPMBE()) return false;
+            if (getJsonClimateType() != other.getJsonClimateType()) return false;
+            if (getClimateAreaId() != other.getClimateAreaId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -216,10 +216,10 @@ public final class EntityEnvironmentInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + PBFMHLPEEPE_FIELD_NUMBER;
-            hash = (53 * hash) + getPBFMHLPEEPE();
-            hash = (37 * hash) + NJDCDHDPMBE_FIELD_NUMBER;
-            hash = (53 * hash) + getNJDCDHDPMBE();
+            hash = (37 * hash) + JSON_CLIMATE_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getJsonClimateType();
+            hash = (37 * hash) + CLIMATE_AREA_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getClimateAreaId();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -332,7 +332,7 @@ public final class EntityEnvironmentInfoOuterClass {
          *
          *
          * <pre>
-         * Name: FMNPHBGDPIP
+         * Obf: DILGEMDKHHN
          * </pre>
          *
          * Protobuf type {@code EntityEnvironmentInfo}
@@ -377,9 +377,9 @@ public final class EntityEnvironmentInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                pBFMHLPEEPE_ = 0;
+                jsonClimateType_ = 0;
 
-                nJDCDHDPMBE_ = 0;
+                climateAreaId_ = 0;
 
                 return this;
             }
@@ -414,8 +414,8 @@ public final class EntityEnvironmentInfoOuterClass {
                 emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo result =
                         new emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo(
                                 this);
-                result.pBFMHLPEEPE_ = pBFMHLPEEPE_;
-                result.nJDCDHDPMBE_ = nJDCDHDPMBE_;
+                result.jsonClimateType_ = jsonClimateType_;
+                result.climateAreaId_ = climateAreaId_;
                 onBuilt();
                 return result;
             }
@@ -474,11 +474,11 @@ public final class EntityEnvironmentInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.EntityEnvironmentInfoOuterClass.EntityEnvironmentInfo
                                 .getDefaultInstance()) return this;
-                if (other.getPBFMHLPEEPE() != 0) {
-                    setPBFMHLPEEPE(other.getPBFMHLPEEPE());
+                if (other.getJsonClimateType() != 0) {
+                    setJsonClimateType(other.getJsonClimateType());
                 }
-                if (other.getNJDCDHDPMBE() != 0) {
-                    setNJDCDHDPMBE(other.getNJDCDHDPMBE());
+                if (other.getClimateAreaId() != 0) {
+                    setClimateAreaId(other.getClimateAreaId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -512,70 +512,70 @@ public final class EntityEnvironmentInfoOuterClass {
                 return this;
             }
 
-            private int pBFMHLPEEPE_;
+            private int jsonClimateType_;
             /**
-             * <code>uint32 PBFMHLPEEPE = 1;</code>
+             * <code>uint32 json_climate_type = 1;</code>
              *
-             * @return The pBFMHLPEEPE.
+             * @return The jsonClimateType.
              */
             @java.lang.Override
-            public int getPBFMHLPEEPE() {
-                return pBFMHLPEEPE_;
+            public int getJsonClimateType() {
+                return jsonClimateType_;
             }
             /**
-             * <code>uint32 PBFMHLPEEPE = 1;</code>
+             * <code>uint32 json_climate_type = 1;</code>
              *
-             * @param value The pBFMHLPEEPE to set.
+             * @param value The jsonClimateType to set.
              * @return This builder for chaining.
              */
-            public Builder setPBFMHLPEEPE(int value) {
+            public Builder setJsonClimateType(int value) {
 
-                pBFMHLPEEPE_ = value;
+                jsonClimateType_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 PBFMHLPEEPE = 1;</code>
+             * <code>uint32 json_climate_type = 1;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearPBFMHLPEEPE() {
+            public Builder clearJsonClimateType() {
 
-                pBFMHLPEEPE_ = 0;
+                jsonClimateType_ = 0;
                 onChanged();
                 return this;
             }
 
-            private int nJDCDHDPMBE_;
+            private int climateAreaId_;
             /**
-             * <code>uint32 NJDCDHDPMBE = 2;</code>
+             * <code>uint32 climate_area_id = 2;</code>
              *
-             * @return The nJDCDHDPMBE.
+             * @return The climateAreaId.
              */
             @java.lang.Override
-            public int getNJDCDHDPMBE() {
-                return nJDCDHDPMBE_;
+            public int getClimateAreaId() {
+                return climateAreaId_;
             }
             /**
-             * <code>uint32 NJDCDHDPMBE = 2;</code>
+             * <code>uint32 climate_area_id = 2;</code>
              *
-             * @param value The nJDCDHDPMBE to set.
+             * @param value The climateAreaId to set.
              * @return This builder for chaining.
              */
-            public Builder setNJDCDHDPMBE(int value) {
+            public Builder setClimateAreaId(int value) {
 
-                nJDCDHDPMBE_ = value;
+                climateAreaId_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 NJDCDHDPMBE = 2;</code>
+             * <code>uint32 climate_area_id = 2;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearNJDCDHDPMBE() {
+            public Builder clearClimateAreaId() {
 
-                nJDCDHDPMBE_ = 0;
+                climateAreaId_ = 0;
                 onChanged();
                 return this;
             }
@@ -650,10 +650,10 @@ public final class EntityEnvironmentInfoOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\033EntityEnvironmentInfo.proto\"A\n\025EntityE"
-                    + "nvironmentInfo\022\023\n\013PBFMHLPEEPE\030\001 \001(\r\022\023\n\013N"
-                    + "JDCDHDPMBE\030\002 \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+            "\n\033EntityEnvironmentInfo.proto\"K\n\025EntityE"
+                    + "nvironmentInfo\022\031\n\021json_climate_type\030\001 \001("
+                    + "\r\022\027\n\017climate_area_id\030\002 \001(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -663,7 +663,7 @@ public final class EntityEnvironmentInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_EntityEnvironmentInfo_descriptor,
                         new java.lang.String[] {
-                            "PBFMHLPEEPE", "NJDCDHDPMBE",
+                            "JsonClimateType", "ClimateAreaId",
                         });
     }
 

@@ -41,7 +41,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
      *
      *
      * <pre>
-     * Name: ADDCBCDDJIL
+     * Obf: LGFNBNFIONC
      * </pre>
      *
      * Protobuf type {@code DeshretObeliskGadgetInfo}
@@ -387,7 +387,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
          *
          *
          * <pre>
-         * Name: ADDCBCDDJIL
+         * Obf: LGFNBNFIONC
          * </pre>
          *
          * Protobuf type {@code DeshretObeliskGadgetInfo}
@@ -738,8 +738,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\036DeshretObeliskGadgetInfo.proto\"1\n\030Desh"
                     + "retObeliskGadgetInfo\022\025\n\rargument_list\030\001 "
-                    + "\003(\rB!\n\031emu.grasscutter.net.protoZ\004/genb\006"
-                    + "proto3"
+                    + "\003(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

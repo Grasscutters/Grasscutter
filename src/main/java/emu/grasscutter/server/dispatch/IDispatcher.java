@@ -8,6 +8,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.JsonAdapters.ByteArrayAdapter;
+import emu.grasscutter.utils.objects.JObject;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,6 +26,7 @@ public interface IDispatcher {
             new GsonBuilder()
                     .disableHtmlEscaping()
                     .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
+                    .registerTypeAdapter(JObject.class, new JObject.Adapter())
                     .create();
 
     Function<JsonElement, JsonObject> DEFAULT_PARSER =

@@ -35,7 +35,7 @@ public final class GatherGadgetInfoOuterClass {
      *
      *
      * <pre>
-     * Name: BAANIDIMAEB
+     * Obf: MOKCLGJBLDD
      * </pre>
      *
      * Protobuf type {@code GatherGadgetInfo}
@@ -324,7 +324,7 @@ public final class GatherGadgetInfoOuterClass {
          *
          *
          * <pre>
-         * Name: BAANIDIMAEB
+         * Obf: MOKCLGJBLDD
          * </pre>
          *
          * Protobuf type {@code GatherGadgetInfo}
@@ -636,8 +636,8 @@ public final class GatherGadgetInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\026GatherGadgetInfo.proto\"<\n\020GatherGadget"
                     + "Info\022\017\n\007item_id\030\001 \001(\r\022\027\n\017is_forbid_guest"
-                    + "\030\002 \001(\010B!\n\031emu.grasscutter.net.protoZ\004/ge"
-                    + "nb\006proto3"
+                    + "\030\002 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro"
+                    + "to3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

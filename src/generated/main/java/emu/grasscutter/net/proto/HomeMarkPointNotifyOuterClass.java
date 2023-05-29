@@ -40,8 +40,8 @@ public final class HomeMarkPointNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4551
-     * Name: ILKGKNKEFIP
+     * CmdId: 4465
+     * Obf: LFOMAGPNMGE
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointNotify}
@@ -358,8 +358,8 @@ public final class HomeMarkPointNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4551
-         * Name: ILKGKNKEFIP
+         * CmdId: 4465
+         * Obf: LFOMAGPNMGE
          * </pre>
          *
          * Protobuf type {@code HomeMarkPointNotify}
@@ -896,8 +896,8 @@ public final class HomeMarkPointNotifyOuterClass {
             "\n\031HomeMarkPointNotify.proto\032\034HomeMarkPoi"
                     + "ntSceneData.proto\"L\n\023HomeMarkPointNotify"
                     + "\0225\n\024mark_point_data_list\030\n \003(\0132\027.HomeMar"
-                    + "kPointSceneDataB!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "kPointSceneDataB\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

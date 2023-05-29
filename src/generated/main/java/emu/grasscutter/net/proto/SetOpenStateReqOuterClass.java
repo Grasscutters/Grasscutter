@@ -18,25 +18,25 @@ public final class SetOpenStateReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 key = 3;</code>
-         *
-         * @return The key.
-         */
-        int getKey();
-
-        /**
-         * <code>uint32 value = 14;</code>
+         * <code>uint32 value = 12;</code>
          *
          * @return The value.
          */
         int getValue();
+
+        /**
+         * <code>uint32 key = 5;</code>
+         *
+         * @return The key.
+         */
+        int getKey();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 186
-     * Name: GBJPMDHMOGG
+     * CmdId: 133
+     * Obf: MNNNDMABDMJ
      * </pre>
      *
      * Protobuf type {@code SetOpenStateReq}
@@ -82,12 +82,12 @@ public final class SetOpenStateReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 24:
+                        case 40:
                             {
                                 key_ = input.readUInt32();
                                 break;
                             }
-                        case 112:
+                        case 96:
                             {
                                 value_ = input.readUInt32();
                                 break;
@@ -126,28 +126,28 @@ public final class SetOpenStateReqOuterClass {
                             emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.Builder.class);
         }
 
-        public static final int KEY_FIELD_NUMBER = 3;
-        private int key_;
-        /**
-         * <code>uint32 key = 3;</code>
-         *
-         * @return The key.
-         */
-        @java.lang.Override
-        public int getKey() {
-            return key_;
-        }
-
-        public static final int VALUE_FIELD_NUMBER = 14;
+        public static final int VALUE_FIELD_NUMBER = 12;
         private int value_;
         /**
-         * <code>uint32 value = 14;</code>
+         * <code>uint32 value = 12;</code>
          *
          * @return The value.
          */
         @java.lang.Override
         public int getValue() {
             return value_;
+        }
+
+        public static final int KEY_FIELD_NUMBER = 5;
+        private int key_;
+        /**
+         * <code>uint32 key = 5;</code>
+         *
+         * @return The key.
+         */
+        @java.lang.Override
+        public int getKey() {
+            return key_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -165,10 +165,10 @@ public final class SetOpenStateReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (key_ != 0) {
-                output.writeUInt32(3, key_);
+                output.writeUInt32(5, key_);
             }
             if (value_ != 0) {
-                output.writeUInt32(14, value_);
+                output.writeUInt32(12, value_);
             }
             unknownFields.writeTo(output);
         }
@@ -180,10 +180,10 @@ public final class SetOpenStateReqOuterClass {
 
             size = 0;
             if (key_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, key_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, key_);
             }
             if (value_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, value_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, value_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -201,8 +201,8 @@ public final class SetOpenStateReqOuterClass {
             emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq other =
                     (emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq) obj;
 
-            if (getKey() != other.getKey()) return false;
             if (getValue() != other.getValue()) return false;
+            if (getKey() != other.getKey()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -214,10 +214,10 @@ public final class SetOpenStateReqOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + KEY_FIELD_NUMBER;
-            hash = (53 * hash) + getKey();
             hash = (37 * hash) + VALUE_FIELD_NUMBER;
             hash = (53 * hash) + getValue();
+            hash = (37 * hash) + KEY_FIELD_NUMBER;
+            hash = (53 * hash) + getKey();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -325,8 +325,8 @@ public final class SetOpenStateReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 186
-         * Name: GBJPMDHMOGG
+         * CmdId: 133
+         * Obf: MNNNDMABDMJ
          * </pre>
          *
          * Protobuf type {@code SetOpenStateReq}
@@ -369,9 +369,9 @@ public final class SetOpenStateReqOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                key_ = 0;
-
                 value_ = 0;
+
+                key_ = 0;
 
                 return this;
             }
@@ -402,8 +402,8 @@ public final class SetOpenStateReqOuterClass {
             public emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq buildPartial() {
                 emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq result =
                         new emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq(this);
-                result.key_ = key_;
                 result.value_ = value_;
+                result.key_ = key_;
                 onBuilt();
                 return result;
             }
@@ -459,11 +459,11 @@ public final class SetOpenStateReqOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq
                                 .getDefaultInstance()) return this;
-                if (other.getKey() != 0) {
-                    setKey(other.getKey());
-                }
                 if (other.getValue() != 0) {
                     setValue(other.getValue());
+                }
+                if (other.getKey() != 0) {
+                    setKey(other.getKey());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -496,43 +496,9 @@ public final class SetOpenStateReqOuterClass {
                 return this;
             }
 
-            private int key_;
-            /**
-             * <code>uint32 key = 3;</code>
-             *
-             * @return The key.
-             */
-            @java.lang.Override
-            public int getKey() {
-                return key_;
-            }
-            /**
-             * <code>uint32 key = 3;</code>
-             *
-             * @param value The key to set.
-             * @return This builder for chaining.
-             */
-            public Builder setKey(int value) {
-
-                key_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 key = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearKey() {
-
-                key_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int value_;
             /**
-             * <code>uint32 value = 14;</code>
+             * <code>uint32 value = 12;</code>
              *
              * @return The value.
              */
@@ -541,7 +507,7 @@ public final class SetOpenStateReqOuterClass {
                 return value_;
             }
             /**
-             * <code>uint32 value = 14;</code>
+             * <code>uint32 value = 12;</code>
              *
              * @param value The value to set.
              * @return This builder for chaining.
@@ -553,13 +519,47 @@ public final class SetOpenStateReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 value = 14;</code>
+             * <code>uint32 value = 12;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearValue() {
 
                 value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int key_;
+            /**
+             * <code>uint32 key = 5;</code>
+             *
+             * @return The key.
+             */
+            @java.lang.Override
+            public int getKey() {
+                return key_;
+            }
+            /**
+             * <code>uint32 key = 5;</code>
+             *
+             * @param value The key to set.
+             * @return This builder for chaining.
+             */
+            public Builder setKey(int value) {
+
+                key_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 key = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearKey() {
+
+                key_ = 0;
                 onChanged();
                 return this;
             }
@@ -633,8 +633,8 @@ public final class SetOpenStateReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025SetOpenStateReq.proto\"-\n\017SetOpenStateR"
-                    + "eq\022\013\n\003key\030\003 \001(\r\022\r\n\005value\030\016 \001(\rB!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "eq\022\r\n\005value\030\014 \001(\r\022\013\n\003key\030\005 \001(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -644,7 +644,7 @@ public final class SetOpenStateReqOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_SetOpenStateReq_descriptor,
                         new java.lang.String[] {
-                            "Key", "Value",
+                            "Value", "Key",
                         });
     }
 

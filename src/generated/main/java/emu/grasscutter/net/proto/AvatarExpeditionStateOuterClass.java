@@ -15,7 +15,7 @@ public final class AvatarExpeditionStateOuterClass {
      *
      *
      * <pre>
-     * Name: PHCFOHLGLJN
+     * Obf: LICFNNPLLLA
      * </pre>
      *
      * Protobuf enum {@code AvatarExpeditionState}
@@ -150,8 +150,8 @@ public final class AvatarExpeditionStateOuterClass {
                     + "E\020\000\022\033\n\027AVATAR_EXPEDITION_DOING\020\001\022(\n$AVAT"
                     + "AR_EXPEDITION_FINISH_WAIT_REWARD\020\002\022*\n&AV"
                     + "ATAR_EXPEDITION_CALLBACK_WAIT_REWARD\020\003\022\034"
-                    + "\n\030AVATAR_EXPEDITION_LOCKED\020\004B!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "\n\030AVATAR_EXPEDITION_LOCKED\020\004B\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

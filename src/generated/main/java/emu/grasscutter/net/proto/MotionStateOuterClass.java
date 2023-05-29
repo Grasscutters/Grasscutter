@@ -15,7 +15,7 @@ public final class MotionStateOuterClass {
      *
      *
      * <pre>
-     * Name: CKBDHMCNIFJ
+     * Obf: NCLOPCFKODI
      * </pre>
      *
      * Protobuf enum {@code MotionState}
@@ -501,8 +501,8 @@ public final class MotionStateOuterClass {
                     + "OTION_STATE_FLY_FAST\0205\022\031\n\025MOTION_STATE_A"
                     + "IM_MOVE\0206\022!\n\035MOTION_STATE_AIR_COMPENSATI"
                     + "ON\0207\022\036\n\032MOTION_STATE_SORUSH_NORMAL\0208\022\024\n\020"
-                    + "MOTION_STATE_NUM\0209B!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "MOTION_STATE_NUM\0209B\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

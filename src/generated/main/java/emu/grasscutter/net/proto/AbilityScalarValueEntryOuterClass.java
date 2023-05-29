@@ -111,7 +111,7 @@ public final class AbilityScalarValueEntryOuterClass {
      *
      *
      * <pre>
-     * Name: JLEGECKKDKB
+     * Obf: ELHFFNHJCPD
      * </pre>
      *
      * Protobuf type {@code AbilityScalarValueEntry}
@@ -749,7 +749,7 @@ public final class AbilityScalarValueEntryOuterClass {
          *
          *
          * <pre>
-         * Name: JLEGECKKDKB
+         * Obf: ELHFFNHJCPD
          * </pre>
          *
          * Protobuf type {@code AbilityScalarValueEntry}
@@ -1487,21 +1487,21 @@ public final class AbilityScalarValueEntryOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\035AbilityScalarValueEntry.proto\032\027Ability"
-                    + "ScalarType.proto\032\023AbilityString.proto\"\301\001"
+            "\n\035AbilityScalarValueEntry.proto\032\023Ability"
+                    + "String.proto\032\027AbilityScalarType.proto\"\301\001"
                     + "\n\027AbilityScalarValueEntry\022\033\n\003key\030\001 \001(\0132\016"
                     + ".AbilityString\022&\n\nvalue_type\030\002 \001(\0162\022.Abi"
                     + "lityScalarType\022\025\n\013float_value\030\003 \001(\002H\000\022\026\n"
                     + "\014string_value\030\004 \001(\tH\000\022\023\n\tint_value\030\005 \001(\005"
-                    + "H\000\022\024\n\nuint_value\030\006 \001(\rH\000B\007\n\005valueB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "H\000\022\024\n\nuint_value\030\006 \001(\rH\000B\007\n\005valueB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor(),
                         });
         internal_static_AbilityScalarValueEntry_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_AbilityScalarValueEntry_fieldAccessorTable =
@@ -1510,8 +1510,8 @@ public final class AbilityScalarValueEntryOuterClass {
                         new java.lang.String[] {
                             "Key", "ValueType", "FloatValue", "StringValue", "IntValue", "UintValue", "Value",
                         });
-        emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor();
         emu.grasscutter.net.proto.AbilityStringOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

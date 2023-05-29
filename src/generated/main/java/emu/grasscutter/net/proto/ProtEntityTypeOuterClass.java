@@ -15,7 +15,7 @@ public final class ProtEntityTypeOuterClass {
      *
      *
      * <pre>
-     * Name: BBAHHNMJMJH
+     * Obf: KLLMIOGKNNI
      * </pre>
      *
      * Protobuf enum {@code ProtEntityType}
@@ -214,8 +214,8 @@ public final class ProtEntityTypeOuterClass {
                     + "\020\n\022\035\n\031PROT_ENTITY_TYPE_MP_LEVEL\020\013\022%\n!PRO"
                     + "T_ENTITY_TYPE_PLAY_TEAM_ENTITY\020\014\022\036\n\032PROT"
                     + "_ENTITY_TYPE_EYE_POINT\020\r\022\030\n\024PROT_ENTITY_"
-                    + "TYPE_MAX\020\016B!\n\031emu.grasscutter.net.protoZ"
-                    + "\004/genb\006proto3"
+                    + "TYPE_MAX\020\016B\033\n\031emu.grasscutter.net.protob"
+                    + "\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

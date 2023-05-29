@@ -20,8 +20,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4577
-     * Name: FKKOJDOMLBE
+     * CmdId: 4766
+     * Obf: JAJFLCAJDNA
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeFetterExpReq}
@@ -287,8 +287,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4577
-         * Name: FKKOJDOMLBE
+         * CmdId: 4766
+         * Obf: JAJFLCAJDNA
          * </pre>
          *
          * Protobuf type {@code HomeResourceTakeFetterExpReq}
@@ -543,8 +543,8 @@ public final class HomeResourceTakeFetterExpReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\"HomeResourceTakeFetterExpReq.proto\"\036\n\034"
-                    + "HomeResourceTakeFetterExpReqB!\n\031emu.gras"
-                    + "scutter.net.protoZ\004/genb\006proto3"
+                    + "HomeResourceTakeFetterExpReqB\033\n\031emu.gras"
+                    + "scutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

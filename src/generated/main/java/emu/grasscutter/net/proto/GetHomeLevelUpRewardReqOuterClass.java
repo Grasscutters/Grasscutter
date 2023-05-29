@@ -18,7 +18,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 level = 6;</code>
+         * <code>uint32 level = 10;</code>
          *
          * @return The level.
          */
@@ -28,8 +28,8 @@ public final class GetHomeLevelUpRewardReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4503
-     * Name: KNFIIIHNHHK
+     * CmdId: 4752
+     * Obf: GPFIIOLMMDK
      * </pre>
      *
      * Protobuf type {@code GetHomeLevelUpRewardReq}
@@ -75,7 +75,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 48:
+                        case 80:
                             {
                                 level_ = input.readUInt32();
                                 break;
@@ -116,10 +116,10 @@ public final class GetHomeLevelUpRewardReqOuterClass {
                                     .Builder.class);
         }
 
-        public static final int LEVEL_FIELD_NUMBER = 6;
+        public static final int LEVEL_FIELD_NUMBER = 10;
         private int level_;
         /**
-         * <code>uint32 level = 6;</code>
+         * <code>uint32 level = 10;</code>
          *
          * @return The level.
          */
@@ -143,7 +143,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (level_ != 0) {
-                output.writeUInt32(6, level_);
+                output.writeUInt32(10, level_);
             }
             unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
 
             size = 0;
             if (level_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, level_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, level_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -314,8 +314,8 @@ public final class GetHomeLevelUpRewardReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4503
-         * Name: KNFIIIHNHHK
+         * CmdId: 4752
+         * Obf: GPFIIOLMMDK
          * </pre>
          *
          * Protobuf type {@code GetHomeLevelUpRewardReq}
@@ -493,7 +493,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
 
             private int level_;
             /**
-             * <code>uint32 level = 6;</code>
+             * <code>uint32 level = 10;</code>
              *
              * @return The level.
              */
@@ -502,7 +502,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
                 return level_;
             }
             /**
-             * <code>uint32 level = 6;</code>
+             * <code>uint32 level = 10;</code>
              *
              * @param value The level to set.
              * @return This builder for chaining.
@@ -514,7 +514,7 @@ public final class GetHomeLevelUpRewardReqOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 level = 6;</code>
+             * <code>uint32 level = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -597,8 +597,8 @@ public final class GetHomeLevelUpRewardReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\035GetHomeLevelUpRewardReq.proto\"(\n\027GetHo"
-                    + "meLevelUpRewardReq\022\r\n\005level\030\006 \001(\rB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "meLevelUpRewardReq\022\r\n\005level\030\n \001(\rB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,67 +18,63 @@ public final class SaveUgcReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>.UgcType ugc_type = 13;</code>
-         *
-         * @return The enum numeric value on the wire for ugcType.
-         */
-        int getUgcTypeValue();
-        /**
-         * <code>.UgcType ugc_type = 13;</code>
-         *
-         * @return The ugcType.
-         */
-        emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType getUgcType();
-
-        /**
-         * <code>uint32 schedule_id = 2;</code>
+         * <code>uint32 schedule_id = 5;</code>
          *
          * @return The scheduleId.
          */
         int getScheduleId();
 
         /**
-         * <code>.UgcMusicRecord music_record = 11;</code>
+         * <code>.UgcType ugc_type = 8;</code>
+         *
+         * @return The enum numeric value on the wire for ugcType.
+         */
+        int getUgcTypeValue();
+        /**
+         * <code>.UgcType ugc_type = 8;</code>
+         *
+         * @return The ugcType.
+         */
+        emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType getUgcType();
+
+        /**
+         * <code>optional .UgcMusicRecord music_record = 6;</code>
          *
          * @return Whether the musicRecord field is set.
          */
         boolean hasMusicRecord();
         /**
-         * <code>.UgcMusicRecord music_record = 11;</code>
+         * <code>optional .UgcMusicRecord music_record = 6;</code>
          *
          * @return The musicRecord.
          */
         emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord();
-        /** <code>.UgcMusicRecord music_record = 11;</code> */
+        /** <code>optional .UgcMusicRecord music_record = 6;</code> */
         emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder
                 getMusicRecordOrBuilder();
 
         /**
-         * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+         * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
          *
          * @return Whether the musicBriefInfo field is set.
          */
         boolean hasMusicBriefInfo();
         /**
-         * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+         * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
          *
          * @return The musicBriefInfo.
          */
         emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo getMusicBriefInfo();
-        /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+        /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
         emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder
                 getMusicBriefInfoOrBuilder();
-
-        public emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq.RecordCase getRecordCase();
-
-        public emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq.BriefCase getBriefCase();
     }
     /**
      *
      *
      * <pre>
-     * Name: DMPCNMHFEHN
-     * CmdId: 6344
+     * CmdId: 6325
+     * Obf: OLCCDLNIBJO
      * </pre>
      *
      * Protobuf type {@code SaveUgcReq}
@@ -116,6 +112,7 @@ public final class SaveUgcReqOuterClass {
             if (extensionRegistry == null) {
                 throw new java.lang.NullPointerException();
             }
+            int mutable_bitField0_ = 0;
             com.google.protobuf.UnknownFieldSet.Builder unknownFields =
                     com.google.protobuf.UnknownFieldSet.newBuilder();
             try {
@@ -126,61 +123,53 @@ public final class SaveUgcReqOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 16:
+                        case 40:
                             {
                                 scheduleId_ = input.readUInt32();
                                 break;
                             }
-                        case 90:
+                        case 50:
                             {
                                 emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder
                                         subBuilder = null;
-                                if (recordCase_ == 11) {
-                                    subBuilder =
-                                            ((emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_)
-                                                    .toBuilder();
+                                if (((bitField0_ & 0x00000001) != 0)) {
+                                    subBuilder = musicRecord_.toBuilder();
                                 }
-                                record_ =
+                                musicRecord_ =
                                         input.readMessage(
                                                 emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.parser(),
                                                 extensionRegistry);
                                 if (subBuilder != null) {
-                                    subBuilder.mergeFrom(
-                                            (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_);
-                                    record_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(musicRecord_);
+                                    musicRecord_ = subBuilder.buildPartial();
                                 }
-                                recordCase_ = 11;
+                                bitField0_ |= 0x00000001;
                                 break;
                             }
-                        case 104:
+                        case 64:
                             {
                                 int rawValue = input.readEnum();
 
                                 ugcType_ = rawValue;
                                 break;
                             }
-                        case 3042:
+                        case 8034:
                             {
                                 emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder
                                         subBuilder = null;
-                                if (briefCase_ == 380) {
-                                    subBuilder =
-                                            ((emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo)
-                                                            brief_)
-                                                    .toBuilder();
+                                if (((bitField0_ & 0x00000002) != 0)) {
+                                    subBuilder = musicBriefInfo_.toBuilder();
                                 }
-                                brief_ =
+                                musicBriefInfo_ =
                                         input.readMessage(
                                                 emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
                                                         .parser(),
                                                 extensionRegistry);
                                 if (subBuilder != null) {
-                                    subBuilder.mergeFrom(
-                                            (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo)
-                                                    brief_);
-                                    brief_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(musicBriefInfo_);
+                                    musicBriefInfo_ = subBuilder.buildPartial();
                                 }
-                                briefCase_ = 380;
+                                bitField0_ |= 0x00000002;
                                 break;
                             }
                         default:
@@ -216,98 +205,23 @@ public final class SaveUgcReqOuterClass {
                             emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq.Builder.class);
         }
 
-        private int recordCase_ = 0;
-        private java.lang.Object record_;
-
-        public enum RecordCase
-                implements
-                        com.google.protobuf.Internal.EnumLite,
-                        com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-            MUSIC_RECORD(11),
-            RECORD_NOT_SET(0);
-            private final int value;
-
-            private RecordCase(int value) {
-                this.value = value;
-            }
-            /**
-             * @param value The number of the enum to look for.
-             * @return The enum associated with the given number.
-             * @deprecated Use {@link #forNumber(int)} instead.
-             */
-            @java.lang.Deprecated
-            public static RecordCase valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static RecordCase forNumber(int value) {
-                switch (value) {
-                    case 11:
-                        return MUSIC_RECORD;
-                    case 0:
-                        return RECORD_NOT_SET;
-                    default:
-                        return null;
-                }
-            }
-
-            public int getNumber() {
-                return this.value;
-            }
-        };
-
-        public RecordCase getRecordCase() {
-            return RecordCase.forNumber(recordCase_);
+        private int bitField0_;
+        public static final int SCHEDULE_ID_FIELD_NUMBER = 5;
+        private int scheduleId_;
+        /**
+         * <code>uint32 schedule_id = 5;</code>
+         *
+         * @return The scheduleId.
+         */
+        @java.lang.Override
+        public int getScheduleId() {
+            return scheduleId_;
         }
 
-        private int briefCase_ = 0;
-        private java.lang.Object brief_;
-
-        public enum BriefCase
-                implements
-                        com.google.protobuf.Internal.EnumLite,
-                        com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-            MUSIC_BRIEF_INFO(380),
-            BRIEF_NOT_SET(0);
-            private final int value;
-
-            private BriefCase(int value) {
-                this.value = value;
-            }
-            /**
-             * @param value The number of the enum to look for.
-             * @return The enum associated with the given number.
-             * @deprecated Use {@link #forNumber(int)} instead.
-             */
-            @java.lang.Deprecated
-            public static BriefCase valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static BriefCase forNumber(int value) {
-                switch (value) {
-                    case 380:
-                        return MUSIC_BRIEF_INFO;
-                    case 0:
-                        return BRIEF_NOT_SET;
-                    default:
-                        return null;
-                }
-            }
-
-            public int getNumber() {
-                return this.value;
-            }
-        };
-
-        public BriefCase getBriefCase() {
-            return BriefCase.forNumber(briefCase_);
-        }
-
-        public static final int UGC_TYPE_FIELD_NUMBER = 13;
+        public static final int UGC_TYPE_FIELD_NUMBER = 8;
         private int ugcType_;
         /**
-         * <code>.UgcType ugc_type = 13;</code>
+         * <code>.UgcType ugc_type = 8;</code>
          *
          * @return The enum numeric value on the wire for ugcType.
          */
@@ -316,7 +230,7 @@ public final class SaveUgcReqOuterClass {
             return ugcType_;
         }
         /**
-         * <code>.UgcType ugc_type = 13;</code>
+         * <code>.UgcType ugc_type = 8;</code>
          *
          * @return The ugcType.
          */
@@ -330,83 +244,69 @@ public final class SaveUgcReqOuterClass {
                     : result;
         }
 
-        public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
-        private int scheduleId_;
+        public static final int MUSIC_RECORD_FIELD_NUMBER = 6;
+        private emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord musicRecord_;
         /**
-         * <code>uint32 schedule_id = 2;</code>
-         *
-         * @return The scheduleId.
-         */
-        @java.lang.Override
-        public int getScheduleId() {
-            return scheduleId_;
-        }
-
-        public static final int MUSIC_RECORD_FIELD_NUMBER = 11;
-        /**
-         * <code>.UgcMusicRecord music_record = 11;</code>
+         * <code>optional .UgcMusicRecord music_record = 6;</code>
          *
          * @return Whether the musicRecord field is set.
          */
         @java.lang.Override
         public boolean hasMusicRecord() {
-            return recordCase_ == 11;
+            return ((bitField0_ & 0x00000001) != 0);
         }
         /**
-         * <code>.UgcMusicRecord music_record = 11;</code>
+         * <code>optional .UgcMusicRecord music_record = 6;</code>
          *
          * @return The musicRecord.
          */
         @java.lang.Override
         public emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord() {
-            if (recordCase_ == 11) {
-                return (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_;
-            }
-            return emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+            return musicRecord_ == null
+                    ? emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance()
+                    : musicRecord_;
         }
-        /** <code>.UgcMusicRecord music_record = 11;</code> */
+        /** <code>optional .UgcMusicRecord music_record = 6;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder
                 getMusicRecordOrBuilder() {
-            if (recordCase_ == 11) {
-                return (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_;
-            }
-            return emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+            return musicRecord_ == null
+                    ? emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance()
+                    : musicRecord_;
         }
 
-        public static final int MUSIC_BRIEF_INFO_FIELD_NUMBER = 380;
+        public static final int MUSIC_BRIEF_INFO_FIELD_NUMBER = 1004;
+        private emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo musicBriefInfo_;
         /**
-         * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+         * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
          *
          * @return Whether the musicBriefInfo field is set.
          */
         @java.lang.Override
         public boolean hasMusicBriefInfo() {
-            return briefCase_ == 380;
+            return ((bitField0_ & 0x00000002) != 0);
         }
         /**
-         * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+         * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
          *
          * @return The musicBriefInfo.
          */
         @java.lang.Override
         public emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
                 getMusicBriefInfo() {
-            if (briefCase_ == 380) {
-                return (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_;
-            }
-            return emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                    .getDefaultInstance();
+            return musicBriefInfo_ == null
+                    ? emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
+                            .getDefaultInstance()
+                    : musicBriefInfo_;
         }
-        /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+        /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder
                 getMusicBriefInfoOrBuilder() {
-            if (briefCase_ == 380) {
-                return (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_;
-            }
-            return emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                    .getDefaultInstance();
+            return musicBriefInfo_ == null
+                    ? emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
+                            .getDefaultInstance()
+                    : musicBriefInfo_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -424,19 +324,17 @@ public final class SaveUgcReqOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (scheduleId_ != 0) {
-                output.writeUInt32(2, scheduleId_);
+                output.writeUInt32(5, scheduleId_);
             }
-            if (recordCase_ == 11) {
-                output.writeMessage(
-                        11, (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_);
+            if (((bitField0_ & 0x00000001) != 0)) {
+                output.writeMessage(6, getMusicRecord());
             }
             if (ugcType_
                     != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
-                output.writeEnum(13, ugcType_);
+                output.writeEnum(8, ugcType_);
             }
-            if (briefCase_ == 380) {
-                output.writeMessage(
-                        380, (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_);
+            if (((bitField0_ & 0x00000002) != 0)) {
+                output.writeMessage(1004, getMusicBriefInfo());
             }
             unknownFields.writeTo(output);
         }
@@ -448,22 +346,17 @@ public final class SaveUgcReqOuterClass {
 
             size = 0;
             if (scheduleId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, scheduleId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, scheduleId_);
             }
-            if (recordCase_ == 11) {
-                size +=
-                        com.google.protobuf.CodedOutputStream.computeMessageSize(
-                                11, (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_);
+            if (((bitField0_ & 0x00000001) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMusicRecord());
             }
             if (ugcType_
                     != emu.grasscutter.net.proto.UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
-                size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, ugcType_);
+                size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, ugcType_);
             }
-            if (briefCase_ == 380) {
-                size +=
-                        com.google.protobuf.CodedOutputStream.computeMessageSize(
-                                380,
-                                (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_);
+            if (((bitField0_ & 0x00000002) != 0)) {
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(1004, getMusicBriefInfo());
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -481,23 +374,15 @@ public final class SaveUgcReqOuterClass {
             emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq other =
                     (emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq) obj;
 
-            if (ugcType_ != other.ugcType_) return false;
             if (getScheduleId() != other.getScheduleId()) return false;
-            if (!getRecordCase().equals(other.getRecordCase())) return false;
-            switch (recordCase_) {
-                case 11:
-                    if (!getMusicRecord().equals(other.getMusicRecord())) return false;
-                    break;
-                case 0:
-                default:
+            if (ugcType_ != other.ugcType_) return false;
+            if (hasMusicRecord() != other.hasMusicRecord()) return false;
+            if (hasMusicRecord()) {
+                if (!getMusicRecord().equals(other.getMusicRecord())) return false;
             }
-            if (!getBriefCase().equals(other.getBriefCase())) return false;
-            switch (briefCase_) {
-                case 380:
-                    if (!getMusicBriefInfo().equals(other.getMusicBriefInfo())) return false;
-                    break;
-                case 0:
-                default:
+            if (hasMusicBriefInfo() != other.hasMusicBriefInfo()) return false;
+            if (hasMusicBriefInfo()) {
+                if (!getMusicBriefInfo().equals(other.getMusicBriefInfo())) return false;
             }
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
@@ -510,25 +395,17 @@ public final class SaveUgcReqOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + UGC_TYPE_FIELD_NUMBER;
-            hash = (53 * hash) + ugcType_;
             hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
             hash = (53 * hash) + getScheduleId();
-            switch (recordCase_) {
-                case 11:
-                    hash = (37 * hash) + MUSIC_RECORD_FIELD_NUMBER;
-                    hash = (53 * hash) + getMusicRecord().hashCode();
-                    break;
-                case 0:
-                default:
+            hash = (37 * hash) + UGC_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + ugcType_;
+            if (hasMusicRecord()) {
+                hash = (37 * hash) + MUSIC_RECORD_FIELD_NUMBER;
+                hash = (53 * hash) + getMusicRecord().hashCode();
             }
-            switch (briefCase_) {
-                case 380:
-                    hash = (37 * hash) + MUSIC_BRIEF_INFO_FIELD_NUMBER;
-                    hash = (53 * hash) + getMusicBriefInfo().hashCode();
-                    break;
-                case 0:
-                default:
+            if (hasMusicBriefInfo()) {
+                hash = (37 * hash) + MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                hash = (53 * hash) + getMusicBriefInfo().hashCode();
             }
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
@@ -636,8 +513,8 @@ public final class SaveUgcReqOuterClass {
          *
          *
          * <pre>
-         * Name: DMPCNMHFEHN
-         * CmdId: 6344
+         * CmdId: 6325
+         * Obf: OLCCDLNIBJO
          * </pre>
          *
          * Protobuf type {@code SaveUgcReq}
@@ -672,20 +549,31 @@ public final class SaveUgcReqOuterClass {
             }
 
             private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+                    getMusicRecordFieldBuilder();
+                    getMusicBriefInfoFieldBuilder();
+                }
             }
 
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                ugcType_ = 0;
-
                 scheduleId_ = 0;
 
-                recordCase_ = 0;
-                record_ = null;
-                briefCase_ = 0;
-                brief_ = null;
+                ugcType_ = 0;
+
+                if (musicRecordBuilder_ == null) {
+                    musicRecord_ = null;
+                } else {
+                    musicRecordBuilder_.clear();
+                }
+                bitField0_ = (bitField0_ & ~0x00000001);
+                if (musicBriefInfoBuilder_ == null) {
+                    musicBriefInfo_ = null;
+                } else {
+                    musicBriefInfoBuilder_.clear();
+                }
+                bitField0_ = (bitField0_ & ~0x00000002);
                 return this;
             }
 
@@ -712,24 +600,27 @@ public final class SaveUgcReqOuterClass {
             public emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq buildPartial() {
                 emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq result =
                         new emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq(this);
-                result.ugcType_ = ugcType_;
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
                 result.scheduleId_ = scheduleId_;
-                if (recordCase_ == 11) {
+                result.ugcType_ = ugcType_;
+                if (((from_bitField0_ & 0x00000001) != 0)) {
                     if (musicRecordBuilder_ == null) {
-                        result.record_ = record_;
+                        result.musicRecord_ = musicRecord_;
                     } else {
-                        result.record_ = musicRecordBuilder_.build();
+                        result.musicRecord_ = musicRecordBuilder_.build();
                     }
+                    to_bitField0_ |= 0x00000001;
                 }
-                if (briefCase_ == 380) {
+                if (((from_bitField0_ & 0x00000002) != 0)) {
                     if (musicBriefInfoBuilder_ == null) {
-                        result.brief_ = brief_;
+                        result.musicBriefInfo_ = musicBriefInfo_;
                     } else {
-                        result.brief_ = musicBriefInfoBuilder_.build();
+                        result.musicBriefInfo_ = musicBriefInfoBuilder_.build();
                     }
+                    to_bitField0_ |= 0x00000002;
                 }
-                result.recordCase_ = recordCase_;
-                result.briefCase_ = briefCase_;
+                result.bitField0_ = to_bitField0_;
                 onBuilt();
                 return result;
             }
@@ -782,33 +673,17 @@ public final class SaveUgcReqOuterClass {
             public Builder mergeFrom(emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq other) {
                 if (other == emu.grasscutter.net.proto.SaveUgcReqOuterClass.SaveUgcReq.getDefaultInstance())
                     return this;
-                if (other.ugcType_ != 0) {
-                    setUgcTypeValue(other.getUgcTypeValue());
-                }
                 if (other.getScheduleId() != 0) {
                     setScheduleId(other.getScheduleId());
                 }
-                switch (other.getRecordCase()) {
-                    case MUSIC_RECORD:
-                        {
-                            mergeMusicRecord(other.getMusicRecord());
-                            break;
-                        }
-                    case RECORD_NOT_SET:
-                        {
-                            break;
-                        }
+                if (other.ugcType_ != 0) {
+                    setUgcTypeValue(other.getUgcTypeValue());
                 }
-                switch (other.getBriefCase()) {
-                    case MUSIC_BRIEF_INFO:
-                        {
-                            mergeMusicBriefInfo(other.getMusicBriefInfo());
-                            break;
-                        }
-                    case BRIEF_NOT_SET:
-                        {
-                            break;
-                        }
+                if (other.hasMusicRecord()) {
+                    mergeMusicRecord(other.getMusicRecord());
+                }
+                if (other.hasMusicBriefInfo()) {
+                    mergeMusicBriefInfo(other.getMusicBriefInfo());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -840,37 +715,45 @@ public final class SaveUgcReqOuterClass {
                 return this;
             }
 
-            private int recordCase_ = 0;
-            private java.lang.Object record_;
+            private int bitField0_;
 
-            public RecordCase getRecordCase() {
-                return RecordCase.forNumber(recordCase_);
+            private int scheduleId_;
+            /**
+             * <code>uint32 schedule_id = 5;</code>
+             *
+             * @return The scheduleId.
+             */
+            @java.lang.Override
+            public int getScheduleId() {
+                return scheduleId_;
             }
+            /**
+             * <code>uint32 schedule_id = 5;</code>
+             *
+             * @param value The scheduleId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setScheduleId(int value) {
 
-            public Builder clearRecord() {
-                recordCase_ = 0;
-                record_ = null;
+                scheduleId_ = value;
                 onChanged();
                 return this;
             }
+            /**
+             * <code>uint32 schedule_id = 5;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearScheduleId() {
 
-            private int briefCase_ = 0;
-            private java.lang.Object brief_;
-
-            public BriefCase getBriefCase() {
-                return BriefCase.forNumber(briefCase_);
-            }
-
-            public Builder clearBrief() {
-                briefCase_ = 0;
-                brief_ = null;
+                scheduleId_ = 0;
                 onChanged();
                 return this;
             }
 
             private int ugcType_ = 0;
             /**
-             * <code>.UgcType ugc_type = 13;</code>
+             * <code>.UgcType ugc_type = 8;</code>
              *
              * @return The enum numeric value on the wire for ugcType.
              */
@@ -879,7 +762,7 @@ public final class SaveUgcReqOuterClass {
                 return ugcType_;
             }
             /**
-             * <code>.UgcType ugc_type = 13;</code>
+             * <code>.UgcType ugc_type = 8;</code>
              *
              * @param value The enum numeric value on the wire for ugcType to set.
              * @return This builder for chaining.
@@ -891,7 +774,7 @@ public final class SaveUgcReqOuterClass {
                 return this;
             }
             /**
-             * <code>.UgcType ugc_type = 13;</code>
+             * <code>.UgcType ugc_type = 8;</code>
              *
              * @return The ugcType.
              */
@@ -905,7 +788,7 @@ public final class SaveUgcReqOuterClass {
                         : result;
             }
             /**
-             * <code>.UgcType ugc_type = 13;</code>
+             * <code>.UgcType ugc_type = 8;</code>
              *
              * @param value The ugcType to set.
              * @return This builder for chaining.
@@ -920,7 +803,7 @@ public final class SaveUgcReqOuterClass {
                 return this;
             }
             /**
-             * <code>.UgcType ugc_type = 13;</code>
+             * <code>.UgcType ugc_type = 8;</code>
              *
              * @return This builder for chaining.
              */
@@ -931,345 +814,263 @@ public final class SaveUgcReqOuterClass {
                 return this;
             }
 
-            private int scheduleId_;
-            /**
-             * <code>uint32 schedule_id = 2;</code>
-             *
-             * @return The scheduleId.
-             */
-            @java.lang.Override
-            public int getScheduleId() {
-                return scheduleId_;
-            }
-            /**
-             * <code>uint32 schedule_id = 2;</code>
-             *
-             * @param value The scheduleId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setScheduleId(int value) {
-
-                scheduleId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 schedule_id = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearScheduleId() {
-
-                scheduleId_ = 0;
-                onChanged();
-                return this;
-            }
-
+            private emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord musicRecord_;
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord,
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder,
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder>
                     musicRecordBuilder_;
             /**
-             * <code>.UgcMusicRecord music_record = 11;</code>
+             * <code>optional .UgcMusicRecord music_record = 6;</code>
              *
              * @return Whether the musicRecord field is set.
              */
-            @java.lang.Override
             public boolean hasMusicRecord() {
-                return recordCase_ == 11;
+                return ((bitField0_ & 0x00000001) != 0);
             }
             /**
-             * <code>.UgcMusicRecord music_record = 11;</code>
+             * <code>optional .UgcMusicRecord music_record = 6;</code>
              *
              * @return The musicRecord.
              */
-            @java.lang.Override
             public emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord() {
                 if (musicRecordBuilder_ == null) {
-                    if (recordCase_ == 11) {
-                        return (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_;
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
-                            .getDefaultInstance();
+                    return musicRecord_ == null
+                            ? emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
+                                    .getDefaultInstance()
+                            : musicRecord_;
                 } else {
-                    if (recordCase_ == 11) {
-                        return musicRecordBuilder_.getMessage();
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
-                            .getDefaultInstance();
+                    return musicRecordBuilder_.getMessage();
                 }
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public Builder setMusicRecord(
                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord value) {
                 if (musicRecordBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    record_ = value;
+                    musicRecord_ = value;
                     onChanged();
                 } else {
                     musicRecordBuilder_.setMessage(value);
                 }
-                recordCase_ = 11;
+                bitField0_ |= 0x00000001;
                 return this;
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public Builder setMusicRecord(
                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder
                             builderForValue) {
                 if (musicRecordBuilder_ == null) {
-                    record_ = builderForValue.build();
+                    musicRecord_ = builderForValue.build();
                     onChanged();
                 } else {
                     musicRecordBuilder_.setMessage(builderForValue.build());
                 }
-                recordCase_ = 11;
+                bitField0_ |= 0x00000001;
                 return this;
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public Builder mergeMusicRecord(
                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord value) {
                 if (musicRecordBuilder_ == null) {
-                    if (recordCase_ == 11
-                            && record_
+                    if (((bitField0_ & 0x00000001) != 0)
+                            && musicRecord_ != null
+                            && musicRecord_
                                     != emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
                                             .getDefaultInstance()) {
-                        record_ =
+                        musicRecord_ =
                                 emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.newBuilder(
-                                                (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_)
+                                                musicRecord_)
                                         .mergeFrom(value)
                                         .buildPartial();
                     } else {
-                        record_ = value;
+                        musicRecord_ = value;
                     }
                     onChanged();
                 } else {
-                    if (recordCase_ == 11) {
-                        musicRecordBuilder_.mergeFrom(value);
-                    }
-                    musicRecordBuilder_.setMessage(value);
+                    musicRecordBuilder_.mergeFrom(value);
                 }
-                recordCase_ = 11;
+                bitField0_ |= 0x00000001;
                 return this;
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public Builder clearMusicRecord() {
                 if (musicRecordBuilder_ == null) {
-                    if (recordCase_ == 11) {
-                        recordCase_ = 0;
-                        record_ = null;
-                        onChanged();
-                    }
+                    musicRecord_ = null;
+                    onChanged();
                 } else {
-                    if (recordCase_ == 11) {
-                        recordCase_ = 0;
-                        record_ = null;
-                    }
                     musicRecordBuilder_.clear();
                 }
+                bitField0_ = (bitField0_ & ~0x00000001);
                 return this;
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder
                     getMusicRecordBuilder() {
+                bitField0_ |= 0x00000001;
+                onChanged();
                 return getMusicRecordFieldBuilder().getBuilder();
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
-            @java.lang.Override
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             public emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder
                     getMusicRecordOrBuilder() {
-                if ((recordCase_ == 11) && (musicRecordBuilder_ != null)) {
+                if (musicRecordBuilder_ != null) {
                     return musicRecordBuilder_.getMessageOrBuilder();
                 } else {
-                    if (recordCase_ == 11) {
-                        return (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_;
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
-                            .getDefaultInstance();
+                    return musicRecord_ == null
+                            ? emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
+                                    .getDefaultInstance()
+                            : musicRecord_;
                 }
             }
-            /** <code>.UgcMusicRecord music_record = 11;</code> */
+            /** <code>optional .UgcMusicRecord music_record = 6;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord,
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder,
                             emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder>
                     getMusicRecordFieldBuilder() {
                 if (musicRecordBuilder_ == null) {
-                    if (!(recordCase_ == 11)) {
-                        record_ =
-                                emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord
-                                        .getDefaultInstance();
-                    }
                     musicRecordBuilder_ =
                             new com.google.protobuf.SingleFieldBuilderV3<
                                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord,
                                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder,
                                     emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder>(
-                                    (emu.grasscutter.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_,
-                                    getParentForChildren(),
-                                    isClean());
-                    record_ = null;
+                                    getMusicRecord(), getParentForChildren(), isClean());
+                    musicRecord_ = null;
                 }
-                recordCase_ = 11;
-                onChanged();
-                ;
                 return musicRecordBuilder_;
             }
 
+            private emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
+                    musicBriefInfo_;
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo,
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder,
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder>
                     musicBriefInfoBuilder_;
             /**
-             * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+             * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
              *
              * @return Whether the musicBriefInfo field is set.
              */
-            @java.lang.Override
             public boolean hasMusicBriefInfo() {
-                return briefCase_ == 380;
+                return ((bitField0_ & 0x00000002) != 0);
             }
             /**
-             * <code>.UgcMusicBriefInfo music_brief_info = 380;</code>
+             * <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code>
              *
              * @return The musicBriefInfo.
              */
-            @java.lang.Override
             public emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
                     getMusicBriefInfo() {
                 if (musicBriefInfoBuilder_ == null) {
-                    if (briefCase_ == 380) {
-                        return (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_;
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                            .getDefaultInstance();
+                    return musicBriefInfo_ == null
+                            ? emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
+                                    .getDefaultInstance()
+                            : musicBriefInfo_;
                 } else {
-                    if (briefCase_ == 380) {
-                        return musicBriefInfoBuilder_.getMessage();
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                            .getDefaultInstance();
+                    return musicBriefInfoBuilder_.getMessage();
                 }
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public Builder setMusicBriefInfo(
                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo value) {
                 if (musicBriefInfoBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
                     }
-                    brief_ = value;
+                    musicBriefInfo_ = value;
                     onChanged();
                 } else {
                     musicBriefInfoBuilder_.setMessage(value);
                 }
-                briefCase_ = 380;
+                bitField0_ |= 0x00000002;
                 return this;
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public Builder setMusicBriefInfo(
                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder
                             builderForValue) {
                 if (musicBriefInfoBuilder_ == null) {
-                    brief_ = builderForValue.build();
+                    musicBriefInfo_ = builderForValue.build();
                     onChanged();
                 } else {
                     musicBriefInfoBuilder_.setMessage(builderForValue.build());
                 }
-                briefCase_ = 380;
+                bitField0_ |= 0x00000002;
                 return this;
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public Builder mergeMusicBriefInfo(
                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo value) {
                 if (musicBriefInfoBuilder_ == null) {
-                    if (briefCase_ == 380
-                            && brief_
+                    if (((bitField0_ & 0x00000002) != 0)
+                            && musicBriefInfo_ != null
+                            && musicBriefInfo_
                                     != emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
                                             .getDefaultInstance()) {
-                        brief_ =
+                        musicBriefInfo_ =
                                 emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder(
-                                                (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo)
-                                                        brief_)
+                                                musicBriefInfo_)
                                         .mergeFrom(value)
                                         .buildPartial();
                     } else {
-                        brief_ = value;
+                        musicBriefInfo_ = value;
                     }
                     onChanged();
                 } else {
-                    if (briefCase_ == 380) {
-                        musicBriefInfoBuilder_.mergeFrom(value);
-                    }
-                    musicBriefInfoBuilder_.setMessage(value);
+                    musicBriefInfoBuilder_.mergeFrom(value);
                 }
-                briefCase_ = 380;
+                bitField0_ |= 0x00000002;
                 return this;
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public Builder clearMusicBriefInfo() {
                 if (musicBriefInfoBuilder_ == null) {
-                    if (briefCase_ == 380) {
-                        briefCase_ = 0;
-                        brief_ = null;
-                        onChanged();
-                    }
+                    musicBriefInfo_ = null;
+                    onChanged();
                 } else {
-                    if (briefCase_ == 380) {
-                        briefCase_ = 0;
-                        brief_ = null;
-                    }
                     musicBriefInfoBuilder_.clear();
                 }
+                bitField0_ = (bitField0_ & ~0x00000002);
                 return this;
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder
                     getMusicBriefInfoBuilder() {
+                bitField0_ |= 0x00000002;
+                onChanged();
                 return getMusicBriefInfoFieldBuilder().getBuilder();
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
-            @java.lang.Override
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             public emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder
                     getMusicBriefInfoOrBuilder() {
-                if ((briefCase_ == 380) && (musicBriefInfoBuilder_ != null)) {
+                if (musicBriefInfoBuilder_ != null) {
                     return musicBriefInfoBuilder_.getMessageOrBuilder();
                 } else {
-                    if (briefCase_ == 380) {
-                        return (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_;
-                    }
-                    return emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                            .getDefaultInstance();
+                    return musicBriefInfo_ == null
+                            ? emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
+                                    .getDefaultInstance()
+                            : musicBriefInfo_;
                 }
             }
-            /** <code>.UgcMusicBriefInfo music_brief_info = 380;</code> */
+            /** <code>optional .UgcMusicBriefInfo music_brief_info = 1004;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo,
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder,
                             emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder>
                     getMusicBriefInfoFieldBuilder() {
                 if (musicBriefInfoBuilder_ == null) {
-                    if (!(briefCase_ == 380)) {
-                        brief_ =
-                                emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo
-                                        .getDefaultInstance();
-                    }
                     musicBriefInfoBuilder_ =
                             new com.google.protobuf.SingleFieldBuilderV3<
                                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo,
                                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder,
                                     emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder>(
-                                    (emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_,
-                                    getParentForChildren(),
-                                    isClean());
-                    brief_ = null;
+                                    getMusicBriefInfo(), getParentForChildren(), isClean());
+                    musicBriefInfo_ = null;
                 }
-                briefCase_ = 380;
-                onChanged();
-                ;
                 return musicBriefInfoBuilder_;
             }
 
@@ -1338,33 +1139,38 @@ public final class SaveUgcReqOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\020SaveUgcReq.proto\032\027UgcMusicBriefInfo.pr"
-                    + "oto\032\024UgcMusicRecord.proto\032\rUgcType.proto"
-                    + "\"\252\001\n\nSaveUgcReq\022\032\n\010ugc_type\030\r \001(\0162\010.UgcT"
-                    + "ype\022\023\n\013schedule_id\030\002 \001(\r\022\'\n\014music_record"
-                    + "\030\013 \001(\0132\017.UgcMusicRecordH\000\022/\n\020music_brief"
-                    + "_info\030\374\002 \001(\0132\022.UgcMusicBriefInfoH\001B\010\n\006re"
-                    + "cordB\007\n\005briefB\033\n\031emu.grasscutter.net.pro"
-                    + "tob\006proto3"
+            "\n\020SaveUgcReq.proto\032\rUgcType.proto\032\024UgcMu"
+                    + "sicRecord.proto\032\027UgcMusicBriefInfo.proto"
+                    + "\"\303\001\n\nSaveUgcReq\022\023\n\013schedule_id\030\005 \001(\r\022\032\n\010"
+                    + "ugc_type\030\010 \001(\0162\010.UgcType\022*\n\014music_record"
+                    + "\030\006 \001(\0132\017.UgcMusicRecordH\000\210\001\001\0222\n\020music_br"
+                    + "ief_info\030\354\007 \001(\0132\022.UgcMusicBriefInfoH\001\210\001\001"
+                    + "B\017\n\r_music_recordB\023\n\021_music_brief_infoB\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.getDescriptor(),
-                            emu.grasscutter.net.proto.UgcMusicRecordOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.UgcTypeOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.UgcMusicRecordOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.getDescriptor(),
                         });
         internal_static_SaveUgcReq_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_SaveUgcReq_fieldAccessorTable =
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_SaveUgcReq_descriptor,
                         new java.lang.String[] {
-                            "UgcType", "ScheduleId", "MusicRecord", "MusicBriefInfo", "Record", "Brief",
+                            "ScheduleId",
+                            "UgcType",
+                            "MusicRecord",
+                            "MusicBriefInfo",
+                            "MusicRecord",
+                            "MusicBriefInfo",
                         });
-        emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.getDescriptor();
-        emu.grasscutter.net.proto.UgcMusicRecordOuterClass.getDescriptor();
         emu.grasscutter.net.proto.UgcTypeOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.UgcMusicRecordOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

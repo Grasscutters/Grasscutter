@@ -129,7 +129,7 @@ public final class RoutePointOuterClass {
      *
      *
      * <pre>
-     * Name: KMEPMNFPJFH
+     * Obf: AJPPKICDBMJ
      * </pre>
      *
      * Protobuf type {@code RoutePoint}
@@ -891,7 +891,7 @@ public final class RoutePointOuterClass {
          *
          *
          * <pre>
-         * Name: KMEPMNFPJFH
+         * Obf: AJPPKICDBMJ
          * </pre>
          *
          * Protobuf type {@code RoutePoint}
@@ -1959,23 +1959,22 @@ public final class RoutePointOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\020RoutePoint.proto\032\024MathQuaternion.proto"
-                    + "\032\014Vector.proto\"\211\002\n\nRoutePoint\022\031\n\010positio"
+            "\n\020RoutePoint.proto\032\014Vector.proto\032\024MathQu"
+                    + "aternion.proto\"\211\002\n\nRoutePoint\022\031\n\010positio"
                     + "n\030\001 \001(\0132\007.Vector\022\024\n\014arrive_range\030\002 \001(\002\022\027"
                     + "\n\017has_reach_event\030\003 \001(\010\022\022\n\010velocity\030\013 \001("
                     + "\002H\000\022\016\n\004time\030\014 \001(\002H\000\022\033\n\010rotation\030\025 \001(\0132\007."
                     + "VectorH\001\022)\n\016rotation_speed\030\026 \001(\0132\017.MathQ"
                     + "uaternionH\001\022%\n\naxis_speed\030\027 \001(\0132\017.MathQu"
                     + "aternionH\001B\r\n\013move_paramsB\017\n\rrotate_para"
-                    + "msB!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "msB\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
                         descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor(),
                             emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+                            emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor(),
                         });
         internal_static_RoutePoint_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_RoutePoint_fieldAccessorTable =
@@ -1993,8 +1992,8 @@ public final class RoutePointOuterClass {
                             "MoveParams",
                             "RotateParams",
                         });
-        emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor();
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+        emu.grasscutter.net.proto.MathQuaternionOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

@@ -15,7 +15,7 @@ public final class ForwardTypeOuterClass {
      *
      *
      * <pre>
-     * Name: PEHLILGOPKN
+     * Obf: GPGOKLPGBAG
      * </pre>
      *
      * Protobuf enum {@code ForwardType}
@@ -171,8 +171,8 @@ public final class ForwardTypeOuterClass {
                     + "PE_TO_ALL_GUEST\020\004\022\030\n\024FORWARD_TYPE_TO_PEE"
                     + "R\020\005\022\031\n\025FORWARD_TYPE_TO_PEERS\020\006\022\034\n\030FORWAR"
                     + "D_TYPE_ONLY_SERVER\020\007\022(\n$FORWARD_TYPE_TO_"
-                    + "ALL_EXIST_EXCEPT_CUR\020\010B!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "ALL_EXIST_EXCEPT_CUR\020\010B\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -35,7 +35,7 @@ public final class BreakoutVector2OuterClass {
      *
      *
      * <pre>
-     * Name: GBLHDOOKNCK
+     * Obf: FBODBKPINBJ
      * </pre>
      *
      * Protobuf type {@code BreakoutVector2}
@@ -324,7 +324,7 @@ public final class BreakoutVector2OuterClass {
          *
          *
          * <pre>
-         * Name: GBLHDOOKNCK
+         * Obf: FBODBKPINBJ
          * </pre>
          *
          * Protobuf type {@code BreakoutVector2}
@@ -631,8 +631,8 @@ public final class BreakoutVector2OuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\025BreakoutVector2.proto\"\'\n\017BreakoutVecto"
-                    + "r2\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005B!\n\031emu.grasscut"
-                    + "ter.net.protoZ\004/genb\006proto3"
+                    + "r2\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005B\033\n\031emu.grasscut"
+                    + "ter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

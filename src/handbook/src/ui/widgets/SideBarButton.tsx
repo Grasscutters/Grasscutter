@@ -24,14 +24,21 @@ class SideBarButton extends React.PureComponent<IProps> {
         navigate(this.props.anchor);
     }
 
+    /**
+     * Checks if this component should be showed.
+     */
+    private shouldShow(): boolean {
+        return !((window as any).hide as string[]).includes(this.props.anchor.toLowerCase());
+    }
+
     render() {
-        return (
+        return this.shouldShow() ? (
             <div className={"SideBarButton"} onClick={() => this.redirect()}>
                 <img className={"SideBarButton_Icon"} src={this.props.icon} alt={this.props.name} />
 
                 <p className={"SideBarButton_Label"}>{this.props.name}</p>
             </div>
-        );
+        ) : undefined;
     }
 }
 

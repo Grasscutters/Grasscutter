@@ -15,7 +15,7 @@ public final class FriendOnlineStateOuterClass {
      *
      *
      * <pre>
-     * Name: IFJDEEJLEDK
+     * Obf: LDPPKCBGAHG
      * </pre>
      *
      * Protobuf enum {@code FriendOnlineState}
@@ -129,8 +129,8 @@ public final class FriendOnlineStateOuterClass {
         java.lang.String[] descriptorData = {
             "\n\027FriendOnlineState.proto*W\n\021FriendOnlin"
                     + "eState\022\"\n\036FRIEND_ONLINE_STATE_DISCONNECT"
-                    + "\020\000\022\036\n\032FRIEND_ONLINE_STATE_ONLINE\020\001B!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\020\000\022\036\n\032FRIEND_ONLINE_STATE_ONLINE\020\001B\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

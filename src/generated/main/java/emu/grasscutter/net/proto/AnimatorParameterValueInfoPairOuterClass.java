@@ -46,7 +46,7 @@ public final class AnimatorParameterValueInfoPairOuterClass {
      *
      *
      * <pre>
-     * Name: GHMDEHIIAJD
+     * Obf: HDPEDMCMNHN
      * </pre>
      *
      * Protobuf type {@code AnimatorParameterValueInfoPair}
@@ -407,7 +407,7 @@ public final class AnimatorParameterValueInfoPairOuterClass {
          *
          *
          * <pre>
-         * Name: GHMDEHIIAJD
+         * Obf: HDPEDMCMNHN
          * </pre>
          *
          * Protobuf type {@code AnimatorParameterValueInfoPair}
@@ -863,8 +863,8 @@ public final class AnimatorParameterValueInfoPairOuterClass {
                     + "AnimatorParameterValueInfo.proto\"e\n\036Anim"
                     + "atorParameterValueInfoPair\022\017\n\007name_id\030\001 "
                     + "\001(\005\0222\n\ranimator_para\030\002 \001(\0132\033.AnimatorPar"
-                    + "ameterValueInfoB!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "ameterValueInfoB\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

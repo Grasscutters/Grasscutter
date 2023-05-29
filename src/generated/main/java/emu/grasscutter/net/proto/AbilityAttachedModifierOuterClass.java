@@ -56,7 +56,7 @@ public final class AbilityAttachedModifierOuterClass {
      *
      *
      * <pre>
-     * Name: ECIBJPBMCPH
+     * Obf: KLMOHHKFHDB
      * </pre>
      *
      * Protobuf type {@code AbilityAttachedModifier}
@@ -445,7 +445,7 @@ public final class AbilityAttachedModifierOuterClass {
          *
          *
          * <pre>
-         * Name: ECIBJPBMCPH
+         * Obf: KLMOHHKFHDB
          * </pre>
          *
          * Protobuf type {@code AbilityAttachedModifier}
@@ -890,8 +890,8 @@ public final class AbilityAttachedModifierOuterClass {
                     + "ityAttachedModifier\022\022\n\nis_invalid\030\001 \001(\010\022"
                     + "\027\n\017owner_entity_id\030\002 \001(\r\022\035\n\025instanced_mo"
                     + "difier_id\030\003 \001(\r\022\036\n\026is_serverbuff_modifie"
-                    + "r\030\004 \001(\010\022\030\n\020attach_name_hash\030\005 \001(\005B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "r\030\004 \001(\010\022\030\n\020attach_name_hash\030\005 \001(\005B\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

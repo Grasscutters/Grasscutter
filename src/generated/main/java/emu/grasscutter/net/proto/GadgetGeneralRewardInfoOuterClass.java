@@ -90,7 +90,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
      *
      *
      * <pre>
-     * Name: IHKFBPJAMOH
+     * Obf: PDEOKHPGMIJ
      * </pre>
      *
      * Protobuf type {@code GadgetGeneralRewardInfo}
@@ -632,7 +632,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
          *
          *
          * <pre>
-         * Name: IHKFBPJAMOH
+         * Obf: PDEOKHPGMIJ
          * </pre>
          *
          * Protobuf type {@code GadgetGeneralRewardInfo}
@@ -1295,8 +1295,8 @@ public final class GadgetGeneralRewardInfoOuterClass {
                     + "am.proto\"\216\001\n\027GadgetGeneralRewardInfo\022\r\n\005"
                     + "resin\030\001 \001(\r\022\021\n\tdead_time\030\002 \001(\r\022\027\n\017remain"
                     + "_uid_list\030\003 \003(\r\022\030\n\020qualify_uid_list\030\004 \003("
-                    + "\r\022\036\n\nitem_param\030\005 \001(\0132\n.ItemParamB!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "\r\022\036\n\nitem_param\030\005 \001(\0132\n.ItemParamB\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

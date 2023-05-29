@@ -15,7 +15,7 @@ public final class HitColliderTypeOuterClass {
      *
      *
      * <pre>
-     * Name: GHNPJLHELHH
+     * Obf: GKJOKLCBGMO
      * </pre>
      *
      * Protobuf enum {@code HitColliderType}
@@ -141,8 +141,8 @@ public final class HitColliderTypeOuterClass {
             "\n\025HitColliderType.proto*~\n\017HitColliderTy"
                     + "pe\022\030\n\024HIT_COLLIDER_INVALID\020\000\022\030\n\024HIT_COLL"
                     + "IDER_HIT_BOX\020\001\022\034\n\030HIT_COLLIDER_WET_HIT_B"
-                    + "OX\020\002\022\031\n\025HIT_COLLIDER_HEAD_BOX\020\003B!\n\031emu.g"
-                    + "rasscutter.net.protoZ\004/genb\006proto3"
+                    + "OX\020\002\022\031\n\025HIT_COLLIDER_HEAD_BOX\020\003B\033\n\031emu.g"
+                    + "rasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

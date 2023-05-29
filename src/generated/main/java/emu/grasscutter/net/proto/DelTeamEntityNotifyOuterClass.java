@@ -18,19 +18,19 @@ public final class DelTeamEntityNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @return A list containing the delEntityIdList.
          */
         java.util.List<java.lang.Integer> getDelEntityIdListList();
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @return The count of delEntityIdList.
          */
         int getDelEntityIdListCount();
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @param index The index of the element to return.
          * @return The delEntityIdList at the given index.
@@ -38,7 +38,7 @@ public final class DelTeamEntityNotifyOuterClass {
         int getDelEntityIdList(int index);
 
         /**
-         * <code>uint32 scene_id = 8;</code>
+         * <code>uint32 scene_id = 4;</code>
          *
          * @return The sceneId.
          */
@@ -48,8 +48,8 @@ public final class DelTeamEntityNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 340
-     * Name: LLAEAGCDEND
+     * CmdId: 369
+     * Obf: IBMDDFGACLA
      * </pre>
      *
      * Protobuf type {@code DelTeamEntityNotify}
@@ -98,7 +98,12 @@ public final class DelTeamEntityNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
+                        case 32:
+                            {
+                                sceneId_ = input.readUInt32();
+                                break;
+                            }
+                        case 104:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     delEntityIdList_ = newIntList();
@@ -107,7 +112,7 @@ public final class DelTeamEntityNotifyOuterClass {
                                 delEntityIdList_.addInt(input.readUInt32());
                                 break;
                             }
-                        case 10:
+                        case 106:
                             {
                                 int length = input.readRawVarint32();
                                 int limit = input.pushLimit(length);
@@ -119,11 +124,6 @@ public final class DelTeamEntityNotifyOuterClass {
                                     delEntityIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            }
-                        case 64:
-                            {
-                                sceneId_ = input.readUInt32();
                                 break;
                             }
                         default:
@@ -164,10 +164,10 @@ public final class DelTeamEntityNotifyOuterClass {
                                     .class);
         }
 
-        public static final int DEL_ENTITY_ID_LIST_FIELD_NUMBER = 1;
+        public static final int DEL_ENTITY_ID_LIST_FIELD_NUMBER = 13;
         private com.google.protobuf.Internal.IntList delEntityIdList_;
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @return A list containing the delEntityIdList.
          */
@@ -176,7 +176,7 @@ public final class DelTeamEntityNotifyOuterClass {
             return delEntityIdList_;
         }
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @return The count of delEntityIdList.
          */
@@ -184,7 +184,7 @@ public final class DelTeamEntityNotifyOuterClass {
             return delEntityIdList_.size();
         }
         /**
-         * <code>repeated uint32 del_entity_id_list = 1;</code>
+         * <code>repeated uint32 del_entity_id_list = 13;</code>
          *
          * @param index The index of the element to return.
          * @return The delEntityIdList at the given index.
@@ -195,10 +195,10 @@ public final class DelTeamEntityNotifyOuterClass {
 
         private int delEntityIdListMemoizedSerializedSize = -1;
 
-        public static final int SCENE_ID_FIELD_NUMBER = 8;
+        public static final int SCENE_ID_FIELD_NUMBER = 4;
         private int sceneId_;
         /**
-         * <code>uint32 scene_id = 8;</code>
+         * <code>uint32 scene_id = 4;</code>
          *
          * @return The sceneId.
          */
@@ -222,15 +222,15 @@ public final class DelTeamEntityNotifyOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
+            if (sceneId_ != 0) {
+                output.writeUInt32(4, sceneId_);
+            }
             if (getDelEntityIdListList().size() > 0) {
-                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(106);
                 output.writeUInt32NoTag(delEntityIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < delEntityIdList_.size(); i++) {
                 output.writeUInt32NoTag(delEntityIdList_.getInt(i));
-            }
-            if (sceneId_ != 0) {
-                output.writeUInt32(8, sceneId_);
             }
             unknownFields.writeTo(output);
         }
@@ -241,6 +241,9 @@ public final class DelTeamEntityNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
+            if (sceneId_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, sceneId_);
+            }
             {
                 int dataSize = 0;
                 for (int i = 0; i < delEntityIdList_.size(); i++) {
@@ -254,9 +257,6 @@ public final class DelTeamEntityNotifyOuterClass {
                     size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
                 }
                 delEntityIdListMemoizedSerializedSize = dataSize;
-            }
-            if (sceneId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, sceneId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -406,8 +406,8 @@ public final class DelTeamEntityNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 340
-         * Name: LLAEAGCDEND
+         * CmdId: 369
+         * Obf: IBMDDFGACLA
          * </pre>
          *
          * Protobuf type {@code DelTeamEntityNotify}
@@ -606,7 +606,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 }
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @return A list containing the delEntityIdList.
              */
@@ -616,7 +616,7 @@ public final class DelTeamEntityNotifyOuterClass {
                         : delEntityIdList_;
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @return The count of delEntityIdList.
              */
@@ -624,7 +624,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return delEntityIdList_.size();
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @param index The index of the element to return.
              * @return The delEntityIdList at the given index.
@@ -633,7 +633,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return delEntityIdList_.getInt(index);
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @param index The index to set the value at.
              * @param value The delEntityIdList to set.
@@ -646,7 +646,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @param value The delEntityIdList to add.
              * @return This builder for chaining.
@@ -658,7 +658,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @param values The delEntityIdList to add.
              * @return This builder for chaining.
@@ -670,7 +670,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>repeated uint32 del_entity_id_list = 1;</code>
+             * <code>repeated uint32 del_entity_id_list = 13;</code>
              *
              * @return This builder for chaining.
              */
@@ -683,7 +683,7 @@ public final class DelTeamEntityNotifyOuterClass {
 
             private int sceneId_;
             /**
-             * <code>uint32 scene_id = 8;</code>
+             * <code>uint32 scene_id = 4;</code>
              *
              * @return The sceneId.
              */
@@ -692,7 +692,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return sceneId_;
             }
             /**
-             * <code>uint32 scene_id = 8;</code>
+             * <code>uint32 scene_id = 4;</code>
              *
              * @param value The sceneId to set.
              * @return This builder for chaining.
@@ -704,7 +704,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 scene_id = 8;</code>
+             * <code>uint32 scene_id = 4;</code>
              *
              * @return This builder for chaining.
              */
@@ -785,9 +785,9 @@ public final class DelTeamEntityNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\031DelTeamEntityNotify.proto\"C\n\023DelTeamEn"
-                    + "tityNotify\022\032\n\022del_entity_id_list\030\001 \003(\r\022\020"
-                    + "\n\010scene_id\030\010 \001(\rB!\n\031emu.grasscutter.net."
-                    + "protoZ\004/genb\006proto3"
+                    + "tityNotify\022\032\n\022del_entity_id_list\030\r \003(\r\022\020"
+                    + "\n\010scene_id\030\004 \001(\rB\033\n\031emu.grasscutter.net."
+                    + "protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

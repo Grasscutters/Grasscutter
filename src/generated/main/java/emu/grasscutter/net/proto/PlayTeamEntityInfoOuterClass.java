@@ -65,7 +65,7 @@ public final class PlayTeamEntityInfoOuterClass {
      *
      *
      * <pre>
-     * Name: NEKLBLMLJNC
+     * Obf: BCJDGLPGIFK
      * </pre>
      *
      * Protobuf type {@code PlayTeamEntityInfo}
@@ -479,7 +479,7 @@ public final class PlayTeamEntityInfoOuterClass {
          *
          *
          * <pre>
-         * Name: NEKLBLMLJNC
+         * Obf: BCJDGLPGIFK
          * </pre>
          *
          * Protobuf type {@code PlayTeamEntityInfo}
@@ -1022,8 +1022,8 @@ public final class PlayTeamEntityInfoOuterClass {
                     + "\tentity_id\030\001 \001(\r\022\022\n\nplayer_uid\030\002 \001(\r\022\031\n\021"
                     + "authority_peer_id\030\003 \001(\r\022\030\n\020gadget_config"
                     + "_id\030\005 \001(\r\022+\n\014ability_info\030\006 \001(\0132\025.Abilit"
-                    + "ySyncStateInfoB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "ySyncStateInfoB\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

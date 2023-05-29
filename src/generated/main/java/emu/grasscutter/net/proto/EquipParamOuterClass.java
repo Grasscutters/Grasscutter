@@ -49,7 +49,7 @@ public final class EquipParamOuterClass {
      *
      *
      * <pre>
-     * Name: KCAIJMFIGIA
+     * Obf: BCIPINJAEOO
      * </pre>
      *
      * Protobuf type {@code EquipParam}
@@ -388,7 +388,7 @@ public final class EquipParamOuterClass {
          *
          *
          * <pre>
-         * Name: KCAIJMFIGIA
+         * Obf: BCIPINJAEOO
          * </pre>
          *
          * Protobuf type {@code EquipParam}
@@ -764,8 +764,8 @@ public final class EquipParamOuterClass {
         java.lang.String[] descriptorData = {
             "\n\020EquipParam.proto\"Z\n\nEquipParam\022\017\n\007item"
                     + "_id\030\001 \001(\r\022\020\n\010item_num\030\002 \001(\r\022\022\n\nitem_leve"
-                    + "l\030\003 \001(\r\022\025\n\rpromote_level\030\004 \001(\rB!\n\031emu.gr"
-                    + "asscutter.net.protoZ\004/genb\006proto3"
+                    + "l\030\003 \001(\r\022\025\n\rpromote_level\030\004 \001(\rB\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

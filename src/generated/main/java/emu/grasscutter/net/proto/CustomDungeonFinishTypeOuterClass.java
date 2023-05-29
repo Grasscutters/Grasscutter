@@ -15,7 +15,7 @@ public final class CustomDungeonFinishTypeOuterClass {
      *
      *
      * <pre>
-     * Name: MNOIKAEJGOK
+     * Obf: HPPKOKPKAHJ
      * </pre>
      *
      * Protobuf enum {@code CustomDungeonFinishType}
@@ -144,8 +144,8 @@ public final class CustomDungeonFinishTypeOuterClass {
                     + "NISH_PLAY_NORMAL\020\000\022\"\n\036CUSTOM_DUNGEON_FIN"
                     + "ISH_PLAY_TRY\020\001\022\"\n\036CUSTOM_DUNGEON_FINISH_"
                     + "EDIT_TRY\020\002\022*\n&CUSTOM_DUNGEON_FINISH_SELF"
-                    + "_PLAY_NORMAL\020\003B!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "_PLAY_NORMAL\020\003B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,40 +18,40 @@ public final class EvtAvatarSitDownNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 entity_id = 9;</code>
+         * <code>uint32 entity_id = 6;</code>
          *
          * @return The entityId.
          */
         int getEntityId();
 
         /**
-         * <code>uint64 chair_id = 1;</code>
-         *
-         * @return The chairId.
-         */
-        long getChairId();
-
-        /**
-         * <code>.Vector position = 15;</code>
+         * <code>.Vector position = 8;</code>
          *
          * @return Whether the position field is set.
          */
         boolean hasPosition();
         /**
-         * <code>.Vector position = 15;</code>
+         * <code>.Vector position = 8;</code>
          *
          * @return The position.
          */
         emu.grasscutter.net.proto.VectorOuterClass.Vector getPosition();
-        /** <code>.Vector position = 15;</code> */
+        /** <code>.Vector position = 8;</code> */
         emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder();
+
+        /**
+         * <code>uint64 chair_id = 10;</code>
+         *
+         * @return The chairId.
+         */
+        long getChairId();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 374
-     * Name: LJELJMOKMEJ
+     * CmdId: 371
+     * Obf: ANDEKBPGEIO
      * </pre>
      *
      * Protobuf type {@code EvtAvatarSitDownNotify}
@@ -97,17 +97,12 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 8:
-                            {
-                                chairId_ = input.readUInt64();
-                                break;
-                            }
-                        case 72:
+                        case 48:
                             {
                                 entityId_ = input.readUInt32();
                                 break;
                             }
-                        case 122:
+                        case 66:
                             {
                                 emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
                                 if (position_ != null) {
@@ -122,6 +117,11 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                                     position_ = subBuilder.buildPartial();
                                 }
 
+                                break;
+                            }
+                        case 80:
+                            {
+                                chairId_ = input.readUInt64();
                                 break;
                             }
                         default:
@@ -160,10 +160,10 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int ENTITY_ID_FIELD_NUMBER = 9;
+        public static final int ENTITY_ID_FIELD_NUMBER = 6;
         private int entityId_;
         /**
-         * <code>uint32 entity_id = 9;</code>
+         * <code>uint32 entity_id = 6;</code>
          *
          * @return The entityId.
          */
@@ -172,22 +172,10 @@ public final class EvtAvatarSitDownNotifyOuterClass {
             return entityId_;
         }
 
-        public static final int CHAIR_ID_FIELD_NUMBER = 1;
-        private long chairId_;
-        /**
-         * <code>uint64 chair_id = 1;</code>
-         *
-         * @return The chairId.
-         */
-        @java.lang.Override
-        public long getChairId() {
-            return chairId_;
-        }
-
-        public static final int POSITION_FIELD_NUMBER = 15;
+        public static final int POSITION_FIELD_NUMBER = 8;
         private emu.grasscutter.net.proto.VectorOuterClass.Vector position_;
         /**
-         * <code>.Vector position = 15;</code>
+         * <code>.Vector position = 8;</code>
          *
          * @return Whether the position field is set.
          */
@@ -196,7 +184,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
             return position_ != null;
         }
         /**
-         * <code>.Vector position = 15;</code>
+         * <code>.Vector position = 8;</code>
          *
          * @return The position.
          */
@@ -206,10 +194,22 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                     ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance()
                     : position_;
         }
-        /** <code>.Vector position = 15;</code> */
+        /** <code>.Vector position = 8;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
             return getPosition();
+        }
+
+        public static final int CHAIR_ID_FIELD_NUMBER = 10;
+        private long chairId_;
+        /**
+         * <code>uint64 chair_id = 10;</code>
+         *
+         * @return The chairId.
+         */
+        @java.lang.Override
+        public long getChairId() {
+            return chairId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -226,14 +226,14 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (chairId_ != 0L) {
-                output.writeUInt64(1, chairId_);
-            }
             if (entityId_ != 0) {
-                output.writeUInt32(9, entityId_);
+                output.writeUInt32(6, entityId_);
             }
             if (position_ != null) {
-                output.writeMessage(15, getPosition());
+                output.writeMessage(8, getPosition());
+            }
+            if (chairId_ != 0L) {
+                output.writeUInt64(10, chairId_);
             }
             unknownFields.writeTo(output);
         }
@@ -244,14 +244,14 @@ public final class EvtAvatarSitDownNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (chairId_ != 0L) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(1, chairId_);
-            }
             if (entityId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, entityId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, entityId_);
             }
             if (position_ != null) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getPosition());
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPosition());
+            }
+            if (chairId_ != 0L) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt64Size(10, chairId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -272,11 +272,11 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                     (emu.grasscutter.net.proto.EvtAvatarSitDownNotifyOuterClass.EvtAvatarSitDownNotify) obj;
 
             if (getEntityId() != other.getEntityId()) return false;
-            if (getChairId() != other.getChairId()) return false;
             if (hasPosition() != other.hasPosition()) return false;
             if (hasPosition()) {
                 if (!getPosition().equals(other.getPosition())) return false;
             }
+            if (getChairId() != other.getChairId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -290,12 +290,12 @@ public final class EvtAvatarSitDownNotifyOuterClass {
             hash = (19 * hash) + getDescriptor().hashCode();
             hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
             hash = (53 * hash) + getEntityId();
-            hash = (37 * hash) + CHAIR_ID_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getChairId());
             if (hasPosition()) {
                 hash = (37 * hash) + POSITION_FIELD_NUMBER;
                 hash = (53 * hash) + getPosition().hashCode();
             }
+            hash = (37 * hash) + CHAIR_ID_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getChairId());
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -409,8 +409,8 @@ public final class EvtAvatarSitDownNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 374
-         * Name: LJELJMOKMEJ
+         * CmdId: 371
+         * Obf: ANDEKBPGEIO
          * </pre>
          *
          * Protobuf type {@code EvtAvatarSitDownNotify}
@@ -457,14 +457,14 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 super.clear();
                 entityId_ = 0;
 
-                chairId_ = 0L;
-
                 if (positionBuilder_ == null) {
                     position_ = null;
                 } else {
                     position_ = null;
                     positionBuilder_ = null;
                 }
+                chairId_ = 0L;
+
                 return this;
             }
 
@@ -499,12 +499,12 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                         new emu.grasscutter.net.proto.EvtAvatarSitDownNotifyOuterClass.EvtAvatarSitDownNotify(
                                 this);
                 result.entityId_ = entityId_;
-                result.chairId_ = chairId_;
                 if (positionBuilder_ == null) {
                     result.position_ = position_;
                 } else {
                     result.position_ = positionBuilder_.build();
                 }
+                result.chairId_ = chairId_;
                 onBuilt();
                 return result;
             }
@@ -566,11 +566,11 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
                 }
-                if (other.getChairId() != 0L) {
-                    setChairId(other.getChairId());
-                }
                 if (other.hasPosition()) {
                     mergePosition(other.getPosition());
+                }
+                if (other.getChairId() != 0L) {
+                    setChairId(other.getChairId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -606,7 +606,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
             private int entityId_;
             /**
-             * <code>uint32 entity_id = 9;</code>
+             * <code>uint32 entity_id = 6;</code>
              *
              * @return The entityId.
              */
@@ -615,7 +615,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 return entityId_;
             }
             /**
-             * <code>uint32 entity_id = 9;</code>
+             * <code>uint32 entity_id = 6;</code>
              *
              * @param value The entityId to set.
              * @return This builder for chaining.
@@ -627,47 +627,13 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 entity_id = 9;</code>
+             * <code>uint32 entity_id = 6;</code>
              *
              * @return This builder for chaining.
              */
             public Builder clearEntityId() {
 
                 entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private long chairId_;
-            /**
-             * <code>uint64 chair_id = 1;</code>
-             *
-             * @return The chairId.
-             */
-            @java.lang.Override
-            public long getChairId() {
-                return chairId_;
-            }
-            /**
-             * <code>uint64 chair_id = 1;</code>
-             *
-             * @param value The chairId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setChairId(long value) {
-
-                chairId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint64 chair_id = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearChairId() {
-
-                chairId_ = 0L;
                 onChanged();
                 return this;
             }
@@ -679,7 +645,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                             emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>
                     positionBuilder_;
             /**
-             * <code>.Vector position = 15;</code>
+             * <code>.Vector position = 8;</code>
              *
              * @return Whether the position field is set.
              */
@@ -687,7 +653,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 return positionBuilder_ != null || position_ != null;
             }
             /**
-             * <code>.Vector position = 15;</code>
+             * <code>.Vector position = 8;</code>
              *
              * @return The position.
              */
@@ -700,7 +666,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                     return positionBuilder_.getMessage();
                 }
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public Builder setPosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
                 if (positionBuilder_ == null) {
                     if (value == null) {
@@ -714,7 +680,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public Builder setPosition(
                     emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
                 if (positionBuilder_ == null) {
@@ -726,7 +692,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public Builder mergePosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
                 if (positionBuilder_ == null) {
                     if (position_ != null) {
@@ -744,7 +710,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public Builder clearPosition() {
                 if (positionBuilder_ == null) {
                     position_ = null;
@@ -756,13 +722,13 @@ public final class EvtAvatarSitDownNotifyOuterClass {
 
                 return this;
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
 
                 onChanged();
                 return getPositionFieldBuilder().getBuilder();
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
                 if (positionBuilder_ != null) {
                     return positionBuilder_.getMessageOrBuilder();
@@ -772,7 +738,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                             : position_;
                 }
             }
-            /** <code>.Vector position = 15;</code> */
+            /** <code>.Vector position = 8;</code> */
             private com.google.protobuf.SingleFieldBuilderV3<
                             emu.grasscutter.net.proto.VectorOuterClass.Vector,
                             emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder,
@@ -788,6 +754,40 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                     position_ = null;
                 }
                 return positionBuilder_;
+            }
+
+            private long chairId_;
+            /**
+             * <code>uint64 chair_id = 10;</code>
+             *
+             * @return The chairId.
+             */
+            @java.lang.Override
+            public long getChairId() {
+                return chairId_;
+            }
+            /**
+             * <code>uint64 chair_id = 10;</code>
+             *
+             * @param value The chairId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setChairId(long value) {
+
+                chairId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint64 chair_id = 10;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearChairId() {
+
+                chairId_ = 0L;
+                onChanged();
+                return this;
             }
 
             @java.lang.Override
@@ -862,9 +862,9 @@ public final class EvtAvatarSitDownNotifyOuterClass {
         java.lang.String[] descriptorData = {
             "\n\034EvtAvatarSitDownNotify.proto\032\014Vector.p"
                     + "roto\"X\n\026EvtAvatarSitDownNotify\022\021\n\tentity"
-                    + "_id\030\t \001(\r\022\020\n\010chair_id\030\001 \001(\004\022\031\n\010position\030"
-                    + "\017 \001(\0132\007.VectorB!\n\031emu.grasscutter.net.pr"
-                    + "otoZ\004/genb\006proto3"
+                    + "_id\030\006 \001(\r\022\031\n\010position\030\010 \001(\0132\007.Vector\022\020\n\010"
+                    + "chair_id\030\n \001(\004B\033\n\031emu.grasscutter.net.pr"
+                    + "otob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -877,7 +877,7 @@ public final class EvtAvatarSitDownNotifyOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_EvtAvatarSitDownNotify_descriptor,
                         new java.lang.String[] {
-                            "EntityId", "ChairId", "Position",
+                            "EntityId", "Position", "ChairId",
                         });
         emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     }

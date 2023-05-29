@@ -49,7 +49,7 @@ public final class EntityRendererChangedInfoOuterClass {
      *
      *
      * <pre>
-     * Name: OJIGKDCPAJL
+     * Obf: KAFDABCNHDM
      * </pre>
      *
      * Protobuf type {@code EntityRendererChangedInfo}
@@ -484,7 +484,7 @@ public final class EntityRendererChangedInfoOuterClass {
          *
          *
          * <pre>
-         * Name: OJIGKDCPAJL
+         * Obf: KAFDABCNHDM
          * </pre>
          *
          * Protobuf type {@code EntityRendererChangedInfo}
@@ -952,8 +952,7 @@ public final class EntityRendererChangedInfoOuterClass {
                     + "hangedRenderersEntry\022\030\n\020visibility_count"
                     + "\030\002 \001(\r\022\021\n\tis_cached\030\003 \001(\010\0327\n\025ChangedRend"
                     + "erersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\r:\002"
-                    + "8\001B!\n\031emu.grasscutter.net.protoZ\004/genb\006p"
-                    + "roto3"
+                    + "8\001B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

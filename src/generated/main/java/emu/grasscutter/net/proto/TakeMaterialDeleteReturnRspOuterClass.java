@@ -18,7 +18,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 7;</code>
          *
          * @return The retcode.
          */
@@ -28,8 +28,8 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 700
-     * Name: KMDPAEENPIK
+     * CmdId: 692
+     * Obf: NFIPDJLJCOG
      * </pre>
      *
      * Protobuf type {@code TakeMaterialDeleteReturnRsp}
@@ -76,7 +76,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 64:
+                        case 56:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -117,10 +117,10 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
                                     .TakeMaterialDeleteReturnRsp.Builder.class);
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
         /**
-         * <code>int32 retcode = 8;</code>
+         * <code>int32 retcode = 7;</code>
          *
          * @return The retcode.
          */
@@ -144,7 +144,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             if (retcode_ != 0) {
-                output.writeInt32(8, retcode_);
+                output.writeInt32(7, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
 
             size = 0;
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -319,8 +319,8 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 700
-         * Name: KMDPAEENPIK
+         * CmdId: 692
+         * Obf: NFIPDJLJCOG
          * </pre>
          *
          * Protobuf type {@code TakeMaterialDeleteReturnRsp}
@@ -506,7 +506,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 7;</code>
              *
              * @return The retcode.
              */
@@ -515,7 +515,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 7;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -527,7 +527,7 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 8;</code>
+             * <code>int32 retcode = 7;</code>
              *
              * @return This builder for chaining.
              */
@@ -612,9 +612,8 @@ public final class TakeMaterialDeleteReturnRspOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n!TakeMaterialDeleteReturnRsp.proto\".\n\033T"
-                    + "akeMaterialDeleteReturnRsp\022\017\n\007retcode\030\010 "
-                    + "\001(\005B!\n\031emu.grasscutter.net.protoZ\004/genb\006"
-                    + "proto3"
+                    + "akeMaterialDeleteReturnRsp\022\017\n\007retcode\030\007 "
+                    + "\001(\005B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

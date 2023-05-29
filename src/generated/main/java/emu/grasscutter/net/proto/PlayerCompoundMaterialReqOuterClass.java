@@ -18,25 +18,25 @@ public final class PlayerCompoundMaterialReqOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>uint32 compound_id = 10;</code>
-         *
-         * @return The compoundId.
-         */
-        int getCompoundId();
-
-        /**
          * <code>uint32 count = 6;</code>
          *
          * @return The count.
          */
         int getCount();
+
+        /**
+         * <code>uint32 compound_id = 12;</code>
+         *
+         * @return The compoundId.
+         */
+        int getCompoundId();
     }
     /**
      *
      *
      * <pre>
-     * CmdId: 133
-     * Name: IHLADGBBKDA
+     * CmdId: 142
+     * Obf: CIDMNOMHPKC
      * </pre>
      *
      * Protobuf type {@code PlayerCompoundMaterialReq}
@@ -87,7 +87,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
                                 count_ = input.readUInt32();
                                 break;
                             }
-                        case 80:
+                        case 96:
                             {
                                 compoundId_ = input.readUInt32();
                                 break;
@@ -128,18 +128,6 @@ public final class PlayerCompoundMaterialReqOuterClass {
                                     .PlayerCompoundMaterialReq.Builder.class);
         }
 
-        public static final int COMPOUND_ID_FIELD_NUMBER = 10;
-        private int compoundId_;
-        /**
-         * <code>uint32 compound_id = 10;</code>
-         *
-         * @return The compoundId.
-         */
-        @java.lang.Override
-        public int getCompoundId() {
-            return compoundId_;
-        }
-
         public static final int COUNT_FIELD_NUMBER = 6;
         private int count_;
         /**
@@ -150,6 +138,18 @@ public final class PlayerCompoundMaterialReqOuterClass {
         @java.lang.Override
         public int getCount() {
             return count_;
+        }
+
+        public static final int COMPOUND_ID_FIELD_NUMBER = 12;
+        private int compoundId_;
+        /**
+         * <code>uint32 compound_id = 12;</code>
+         *
+         * @return The compoundId.
+         */
+        @java.lang.Override
+        public int getCompoundId() {
+            return compoundId_;
         }
 
         private byte memoizedIsInitialized = -1;
@@ -170,7 +170,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 output.writeUInt32(6, count_);
             }
             if (compoundId_ != 0) {
-                output.writeUInt32(10, compoundId_);
+                output.writeUInt32(12, compoundId_);
             }
             unknownFields.writeTo(output);
         }
@@ -185,7 +185,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, count_);
             }
             if (compoundId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, compoundId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, compoundId_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -209,8 +209,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
                                             .PlayerCompoundMaterialReq)
                                     obj;
 
-            if (getCompoundId() != other.getCompoundId()) return false;
             if (getCount() != other.getCount()) return false;
+            if (getCompoundId() != other.getCompoundId()) return false;
             if (!unknownFields.equals(other.unknownFields)) return false;
             return true;
         }
@@ -222,10 +222,10 @@ public final class PlayerCompoundMaterialReqOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
-            hash = (53 * hash) + getCompoundId();
             hash = (37 * hash) + COUNT_FIELD_NUMBER;
             hash = (53 * hash) + getCount();
+            hash = (37 * hash) + COMPOUND_ID_FIELD_NUMBER;
+            hash = (53 * hash) + getCompoundId();
             hash = (29 * hash) + unknownFields.hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -351,8 +351,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 133
-         * Name: IHLADGBBKDA
+         * CmdId: 142
+         * Obf: CIDMNOMHPKC
          * </pre>
          *
          * Protobuf type {@code PlayerCompoundMaterialReq}
@@ -398,9 +398,9 @@ public final class PlayerCompoundMaterialReqOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                compoundId_ = 0;
-
                 count_ = 0;
+
+                compoundId_ = 0;
 
                 return this;
             }
@@ -436,8 +436,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
                         result =
                                 new emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass
                                         .PlayerCompoundMaterialReq(this);
-                result.compoundId_ = compoundId_;
                 result.count_ = count_;
+                result.compoundId_ = compoundId_;
                 onBuilt();
                 return result;
             }
@@ -499,11 +499,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass
                                 .PlayerCompoundMaterialReq.getDefaultInstance()) return this;
-                if (other.getCompoundId() != 0) {
-                    setCompoundId(other.getCompoundId());
-                }
                 if (other.getCount() != 0) {
                     setCount(other.getCount());
+                }
+                if (other.getCompoundId() != 0) {
+                    setCompoundId(other.getCompoundId());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -538,40 +538,6 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 return this;
             }
 
-            private int compoundId_;
-            /**
-             * <code>uint32 compound_id = 10;</code>
-             *
-             * @return The compoundId.
-             */
-            @java.lang.Override
-            public int getCompoundId() {
-                return compoundId_;
-            }
-            /**
-             * <code>uint32 compound_id = 10;</code>
-             *
-             * @param value The compoundId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setCompoundId(int value) {
-
-                compoundId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 compound_id = 10;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearCompoundId() {
-
-                compoundId_ = 0;
-                onChanged();
-                return this;
-            }
-
             private int count_;
             /**
              * <code>uint32 count = 6;</code>
@@ -602,6 +568,40 @@ public final class PlayerCompoundMaterialReqOuterClass {
             public Builder clearCount() {
 
                 count_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private int compoundId_;
+            /**
+             * <code>uint32 compound_id = 12;</code>
+             *
+             * @return The compoundId.
+             */
+            @java.lang.Override
+            public int getCompoundId() {
+                return compoundId_;
+            }
+            /**
+             * <code>uint32 compound_id = 12;</code>
+             *
+             * @param value The compoundId to set.
+             * @return This builder for chaining.
+             */
+            public Builder setCompoundId(int value) {
+
+                compoundId_ = value;
+                onChanged();
+                return this;
+            }
+            /**
+             * <code>uint32 compound_id = 12;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearCompoundId() {
+
+                compoundId_ = 0;
                 onChanged();
                 return this;
             }
@@ -679,9 +679,9 @@ public final class PlayerCompoundMaterialReqOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\037PlayerCompoundMaterialReq.proto\"?\n\031Pla"
-                    + "yerCompoundMaterialReq\022\023\n\013compound_id\030\n "
-                    + "\001(\r\022\r\n\005count\030\006 \001(\rB!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "yerCompoundMaterialReq\022\r\n\005count\030\006 \001(\r\022\023\n"
+                    + "\013compound_id\030\014 \001(\rB\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -691,7 +691,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_PlayerCompoundMaterialReq_descriptor,
                         new java.lang.String[] {
-                            "CompoundId", "Count",
+                            "Count", "CompoundId",
                         });
     }
 

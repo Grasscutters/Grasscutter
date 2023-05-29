@@ -185,7 +185,7 @@ public final class QuestOuterClass {
      *
      *
      * <pre>
-     * Name: HPOLMCEHFAC
+     * Obf: LGKNABFOEKJ
      * </pre>
      *
      * Protobuf type {@code Quest}
@@ -1173,7 +1173,7 @@ public final class QuestOuterClass {
          *
          *
          * <pre>
-         * Name: HPOLMCEHFAC
+         * Obf: LGKNABFOEKJ
          * </pre>
          *
          * Protobuf type {@code Quest}
@@ -2353,8 +2353,8 @@ public final class QuestOuterClass {
                     + "d_place_map\030\017 \003(\0132\032.Quest.LackedPlaceMap"
                     + "Entry\0323\n\021LackedNpcMapEntry\022\013\n\003key\030\001 \001(\r\022"
                     + "\r\n\005value\030\002 \001(\r:\0028\001\0325\n\023LackedPlaceMapEntr"
-                    + "y\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "y\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

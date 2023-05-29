@@ -17,9 +17,9 @@ public final class FleurFairMusicGameInfoOuterClass {
             // @@protoc_insertion_point(interface_extends:FleurFairMusicGameInfo)
             com.google.protobuf.MessageOrBuilder {
 
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         int getMusicRecordMapCount();
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         boolean containsMusicRecordMap(int key);
         /** Use {@link #getMusicRecordMapMap()} instead. */
         @java.lang.Deprecated
@@ -27,18 +27,18 @@ public final class FleurFairMusicGameInfoOuterClass {
                         java.lang.Integer,
                         emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
                 getMusicRecordMap();
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         java.util.Map<
                         java.lang.Integer,
                         emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord>
                 getMusicRecordMapMap();
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                 getMusicRecordMapOrDefault(
                         int key,
                         emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                                 defaultValue);
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                 getMusicRecordMapOrThrow(int key);
     }
@@ -46,7 +46,7 @@ public final class FleurFairMusicGameInfoOuterClass {
      *
      *
      * <pre>
-     * Name: NCGOHMANHCA
+     * Obf: BNLGMOEKANO
      * </pre>
      *
      * Protobuf type {@code FleurFairMusicGameInfo}
@@ -93,7 +93,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 50:
+                        case 58:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     musicRecordMap_ =
@@ -142,7 +142,7 @@ public final class FleurFairMusicGameInfoOuterClass {
         @java.lang.Override
         protected com.google.protobuf.MapField internalGetMapField(int number) {
             switch (number) {
-                case 6:
+                case 7:
                     return internalGetMusicRecordMap();
                 default:
                     throw new RuntimeException("Invalid map field number: " + number);
@@ -161,7 +161,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                                     .Builder.class);
         }
 
-        public static final int MUSIC_RECORD_MAP_FIELD_NUMBER = 6;
+        public static final int MUSIC_RECORD_MAP_FIELD_NUMBER = 7;
 
         private static final class MusicRecordMapDefaultEntryHolder {
             static final com.google.protobuf.MapEntry<
@@ -200,7 +200,7 @@ public final class FleurFairMusicGameInfoOuterClass {
         public int getMusicRecordMapCount() {
             return internalGetMusicRecordMap().getMap().size();
         }
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         @java.lang.Override
         public boolean containsMusicRecordMap(int key) {
 
@@ -215,7 +215,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                 getMusicRecordMap() {
             return getMusicRecordMapMap();
         }
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         @java.lang.Override
         public java.util.Map<
                         java.lang.Integer,
@@ -223,7 +223,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                 getMusicRecordMapMap() {
             return internalGetMusicRecordMap().getMap();
         }
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                 getMusicRecordMapOrDefault(
@@ -237,7 +237,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                     map = internalGetMusicRecordMap().getMap();
             return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+        /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
         @java.lang.Override
         public emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                 getMusicRecordMapOrThrow(int key) {
@@ -267,7 +267,7 @@ public final class FleurFairMusicGameInfoOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
-                    output, internalGetMusicRecordMap(), MusicRecordMapDefaultEntryHolder.defaultEntry, 6);
+                    output, internalGetMusicRecordMap(), MusicRecordMapDefaultEntryHolder.defaultEntry, 7);
             unknownFields.writeTo(output);
         }
 
@@ -290,7 +290,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                                         .setKey(entry.getKey())
                                         .setValue(entry.getValue())
                                         .build();
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, musicRecordMap__);
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, musicRecordMap__);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -439,7 +439,7 @@ public final class FleurFairMusicGameInfoOuterClass {
          *
          *
          * <pre>
-         * Name: NCGOHMANHCA
+         * Obf: BNLGMOEKANO
          * </pre>
          *
          * Protobuf type {@code FleurFairMusicGameInfo}
@@ -457,7 +457,7 @@ public final class FleurFairMusicGameInfoOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMapField(int number) {
                 switch (number) {
-                    case 6:
+                    case 7:
                         return internalGetMusicRecordMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -467,7 +467,7 @@ public final class FleurFairMusicGameInfoOuterClass {
             @SuppressWarnings({"rawtypes"})
             protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
                 switch (number) {
-                    case 6:
+                    case 7:
                         return internalGetMutableMusicRecordMap();
                     default:
                         throw new RuntimeException("Invalid map field number: " + number);
@@ -670,7 +670,7 @@ public final class FleurFairMusicGameInfoOuterClass {
             public int getMusicRecordMapCount() {
                 return internalGetMusicRecordMap().getMap().size();
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             @java.lang.Override
             public boolean containsMusicRecordMap(int key) {
 
@@ -685,7 +685,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                     getMusicRecordMap() {
                 return getMusicRecordMapMap();
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             @java.lang.Override
             public java.util.Map<
                             java.lang.Integer,
@@ -693,7 +693,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                     getMusicRecordMapMap() {
                 return internalGetMusicRecordMap().getMap();
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                     getMusicRecordMapOrDefault(
@@ -707,7 +707,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                         map = internalGetMusicRecordMap().getMap();
                 return map.containsKey(key) ? map.get(key) : defaultValue;
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             @java.lang.Override
             public emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord
                     getMusicRecordMapOrThrow(int key) {
@@ -726,7 +726,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                 internalGetMutableMusicRecordMap().getMutableMap().clear();
                 return this;
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             public Builder removeMusicRecordMap(int key) {
 
                 internalGetMutableMusicRecordMap().getMutableMap().remove(key);
@@ -740,7 +740,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                     getMutableMusicRecordMap() {
                 return internalGetMutableMusicRecordMap().getMutableMap();
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             public Builder putMusicRecordMap(
                     int key,
                     emu.grasscutter.net.proto.FleurFairMusicRecordOuterClass.FleurFairMusicRecord value) {
@@ -751,7 +751,7 @@ public final class FleurFairMusicGameInfoOuterClass {
                 internalGetMutableMusicRecordMap().getMutableMap().put(key, value);
                 return this;
             }
-            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 6;</code> */
+            /** <code>map&lt;uint32, .FleurFairMusicRecord&gt; music_record_map = 7;</code> */
             public Builder putAllMusicRecordMap(
                     java.util.Map<
                                     java.lang.Integer,
@@ -837,11 +837,11 @@ public final class FleurFairMusicGameInfoOuterClass {
         java.lang.String[] descriptorData = {
             "\n\034FleurFairMusicGameInfo.proto\032\032FleurFai"
                     + "rMusicRecord.proto\"\255\001\n\026FleurFairMusicGam"
-                    + "eInfo\022E\n\020music_record_map\030\006 \003(\0132+.FleurF"
+                    + "eInfo\022E\n\020music_record_map\030\007 \003(\0132+.FleurF"
                     + "airMusicGameInfo.MusicRecordMapEntry\032L\n\023"
                     + "MusicRecordMapEntry\022\013\n\003key\030\001 \001(\r\022$\n\005valu"
-                    + "e\030\002 \001(\0132\025.FleurFairMusicRecord:\0028\001B!\n\031em"
-                    + "u.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "e\030\002 \001(\0132\025.FleurFairMusicRecord:\0028\001B\033\n\031em"
+                    + "u.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -18,14 +18,14 @@ public final class CombineFormulaDataNotifyOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool is_locked = 7;</code>
+         * <code>bool is_locked = 15;</code>
          *
          * @return The isLocked.
          */
         boolean getIsLocked();
 
         /**
-         * <code>uint32 combine_id = 9;</code>
+         * <code>uint32 combine_id = 10;</code>
          *
          * @return The combineId.
          */
@@ -35,8 +35,8 @@ public final class CombineFormulaDataNotifyOuterClass {
      *
      *
      * <pre>
-     * CmdId: 622
-     * Name: BKJBIOIIJNB
+     * CmdId: 678
+     * Obf: JFJDDJBLOLF
      * </pre>
      *
      * Protobuf type {@code CombineFormulaDataNotify}
@@ -82,14 +82,14 @@ public final class CombineFormulaDataNotifyOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 56:
-                            {
-                                isLocked_ = input.readBool();
-                                break;
-                            }
-                        case 72:
+                        case 80:
                             {
                                 combineId_ = input.readUInt32();
+                                break;
+                            }
+                        case 120:
+                            {
+                                isLocked_ = input.readBool();
                                 break;
                             }
                         default:
@@ -128,10 +128,10 @@ public final class CombineFormulaDataNotifyOuterClass {
                                     .Builder.class);
         }
 
-        public static final int IS_LOCKED_FIELD_NUMBER = 7;
+        public static final int IS_LOCKED_FIELD_NUMBER = 15;
         private boolean isLocked_;
         /**
-         * <code>bool is_locked = 7;</code>
+         * <code>bool is_locked = 15;</code>
          *
          * @return The isLocked.
          */
@@ -140,10 +140,10 @@ public final class CombineFormulaDataNotifyOuterClass {
             return isLocked_;
         }
 
-        public static final int COMBINE_ID_FIELD_NUMBER = 9;
+        public static final int COMBINE_ID_FIELD_NUMBER = 10;
         private int combineId_;
         /**
-         * <code>uint32 combine_id = 9;</code>
+         * <code>uint32 combine_id = 10;</code>
          *
          * @return The combineId.
          */
@@ -166,11 +166,11 @@ public final class CombineFormulaDataNotifyOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (isLocked_ != false) {
-                output.writeBool(7, isLocked_);
-            }
             if (combineId_ != 0) {
-                output.writeUInt32(9, combineId_);
+                output.writeUInt32(10, combineId_);
+            }
+            if (isLocked_ != false) {
+                output.writeBool(15, isLocked_);
             }
             unknownFields.writeTo(output);
         }
@@ -181,11 +181,11 @@ public final class CombineFormulaDataNotifyOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (isLocked_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, isLocked_);
-            }
             if (combineId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, combineId_);
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, combineId_);
+            }
+            if (isLocked_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isLocked_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -348,8 +348,8 @@ public final class CombineFormulaDataNotifyOuterClass {
          *
          *
          * <pre>
-         * CmdId: 622
-         * Name: BKJBIOIIJNB
+         * CmdId: 678
+         * Obf: JFJDDJBLOLF
          * </pre>
          *
          * Protobuf type {@code CombineFormulaDataNotify}
@@ -536,7 +536,7 @@ public final class CombineFormulaDataNotifyOuterClass {
 
             private boolean isLocked_;
             /**
-             * <code>bool is_locked = 7;</code>
+             * <code>bool is_locked = 15;</code>
              *
              * @return The isLocked.
              */
@@ -545,7 +545,7 @@ public final class CombineFormulaDataNotifyOuterClass {
                 return isLocked_;
             }
             /**
-             * <code>bool is_locked = 7;</code>
+             * <code>bool is_locked = 15;</code>
              *
              * @param value The isLocked to set.
              * @return This builder for chaining.
@@ -557,7 +557,7 @@ public final class CombineFormulaDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>bool is_locked = 7;</code>
+             * <code>bool is_locked = 15;</code>
              *
              * @return This builder for chaining.
              */
@@ -570,7 +570,7 @@ public final class CombineFormulaDataNotifyOuterClass {
 
             private int combineId_;
             /**
-             * <code>uint32 combine_id = 9;</code>
+             * <code>uint32 combine_id = 10;</code>
              *
              * @return The combineId.
              */
@@ -579,7 +579,7 @@ public final class CombineFormulaDataNotifyOuterClass {
                 return combineId_;
             }
             /**
-             * <code>uint32 combine_id = 9;</code>
+             * <code>uint32 combine_id = 10;</code>
              *
              * @param value The combineId to set.
              * @return This builder for chaining.
@@ -591,7 +591,7 @@ public final class CombineFormulaDataNotifyOuterClass {
                 return this;
             }
             /**
-             * <code>uint32 combine_id = 9;</code>
+             * <code>uint32 combine_id = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -675,9 +675,9 @@ public final class CombineFormulaDataNotifyOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\036CombineFormulaDataNotify.proto\"A\n\030Comb"
-                    + "ineFormulaDataNotify\022\021\n\tis_locked\030\007 \001(\010\022"
-                    + "\022\n\ncombine_id\030\t \001(\rB!\n\031emu.grasscutter.n"
-                    + "et.protoZ\004/genb\006proto3"
+                    + "ineFormulaDataNotify\022\021\n\tis_locked\030\017 \001(\010\022"
+                    + "\022\n\ncombine_id\030\n \001(\rB\033\n\031emu.grasscutter.n"
+                    + "et.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

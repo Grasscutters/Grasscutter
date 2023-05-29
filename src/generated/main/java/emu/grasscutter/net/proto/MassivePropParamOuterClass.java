@@ -75,7 +75,7 @@ public final class MassivePropParamOuterClass {
      *
      *
      * <pre>
-     * Name: HPABALOPOIG
+     * Obf: EEBMHDBBEEH
      * </pre>
      *
      * Protobuf type {@code MassivePropParam}
@@ -531,7 +531,7 @@ public final class MassivePropParamOuterClass {
          *
          *
          * <pre>
-         * Name: HPABALOPOIG
+         * Obf: EEBMHDBBEEH
          * </pre>
          *
          * Protobuf type {@code MassivePropParam}
@@ -1050,8 +1050,8 @@ public final class MassivePropParamOuterClass {
             "\n\026MassivePropParam.proto\"c\n\020MassivePropP"
                     + "aram\022\014\n\004type\030\001 \001(\005\022\032\n\022reaction_info_list"
                     + "\030\002 \003(\r\022\022\n\nparam_list\030\003 \003(\002\022\021\n\tsync_flag\030"
-                    + "\004 \001(\rB!\n\031emu.grasscutter.net.protoZ\004/gen"
-                    + "b\006proto3"
+                    + "\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot"
+                    + "o3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
