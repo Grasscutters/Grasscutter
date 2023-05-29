@@ -802,8 +802,8 @@ public final class MusicGameCreateBeatmapRspOuterClass {
                     + "GameUnknown1Enum.proto\"s\n\031MusicGameCreat"
                     + "eBeatmapRsp\022\017\n\007retcode\030\n \001(\005\022-\n\runknown_"
                     + "enum1\030\014 \001(\0162\026.MusicGameUnknown1Enum\022\026\n\016m"
-                    + "usic_share_id\030\005 \001(\004B!\n\031emu.grasscutter.n"
-                    + "et.protoZ\004/genb\006proto3"
+                    + "usic_share_id\030\005 \001(\004B\033\n\031emu.grasscutter.n"
+                    + "et.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

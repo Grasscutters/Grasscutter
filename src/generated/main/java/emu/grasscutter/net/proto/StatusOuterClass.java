@@ -128,8 +128,8 @@ public final class StatusOuterClass {
         java.lang.String[] descriptorData = {
             "\n\014Status.proto*a\n\006Status\022\022\n\016STATUS_INVAL"
                     + "ID\020\000\022\025\n\021STATUS_UNFINISHED\020\001\022\023\n\017STATUS_FI"
-                    + "NISHED\020\002\022\027\n\023STATUS_REWARD_TAKEN\020\003B!\n\031emu"
-                    + ".grasscutter.net.protoZ\004/genb\006proto3"
+                    + "NISHED\020\002\022\027\n\023STATUS_REWARD_TAKEN\020\003B\033\n\031emu"
+                    + ".grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -43,6 +43,7 @@ public final class MusicGameStartRspOuterClass {
      *
      * <pre>
      * CmdId: 8290
+     * Obf: DEEDIBPLJLB
      * </pre>
      *
      * Protobuf type {@code MusicGameStartRsp}
@@ -360,6 +361,7 @@ public final class MusicGameStartRspOuterClass {
          *
          * <pre>
          * CmdId: 8290
+         * Obf: DEEDIBPLJLB
          * </pre>
          *
          * Protobuf type {@code MusicGameStartRsp}

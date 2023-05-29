@@ -1340,8 +1340,8 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                     + "MusicGameUnknown1Enum\022%\n\014music_record\030\n "
                     + "\001(\0132\r.MusicBeatmapH\000\022,\n\020music_brief_info"
                     + "\030\375\007 \001(\0132\017.MusicBriefInfoH\001B\t\n\007beatmapB\014\n"
-                    + "\nbrief_infoB!\n\031emu.grasscutter.net.proto"
-                    + "Z\004/genb\006proto3"
+                    + "\nbrief_infoB\033\n\031emu.grasscutter.net.proto"
+                    + "b\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

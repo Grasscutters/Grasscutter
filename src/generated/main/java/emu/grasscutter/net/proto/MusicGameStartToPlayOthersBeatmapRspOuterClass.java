@@ -970,9 +970,8 @@ public final class MusicGameStartToPlayOthersBeatmapRspOuterClass {
                     + "roto\032\033MusicGameUnknown1Enum.proto\"{\n$Mus"
                     + "icGameStartToPlayOthersBeatmapRsp\022\017\n\007ret"
                     + "code\030\002 \001(\005\022-\n\runknown_enum1\030\013 \001(\0162\026.Musi"
-                    + "cGameUnknown1Enum\022\023\n\013AMNODOLNOIM\030\006 \003(\004B!"
-                    + "\n\031emu.grasscutter.net.protoZ\004/genb\006proto"
-                    + "3"
+                    + "cGameUnknown1Enum\022\023\n\013AMNODOLNOIM\030\006 \003(\004B\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

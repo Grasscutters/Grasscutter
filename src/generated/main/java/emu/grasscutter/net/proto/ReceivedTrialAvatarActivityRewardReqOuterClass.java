@@ -28,8 +28,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
      *
      *
      * <pre>
-     * CmdId: 2003
-     * Name: LADELAPFEJE
+     * CmdId: 2068
+     * Obf: KKODGFOHEBE
      * </pre>
      *
      * Protobuf type {@code ReceivedTrialAvatarActivityRewardReq}
@@ -322,8 +322,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
          *
          *
          * <pre>
-         * CmdId: 2003
-         * Name: LADELAPFEJE
+         * CmdId: 2068
+         * Obf: KKODGFOHEBE
          * </pre>
          *
          * Protobuf type {@code ReceivedTrialAvatarActivityRewardReq}
@@ -619,8 +619,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n*ReceivedTrialAvatarActivityRewardReq.p"
                     + "roto\"E\n$ReceivedTrialAvatarActivityRewar"
-                    + "dReq\022\035\n\025trial_avatar_index_id\030\007 \001(\rB!\n\031e"
-                    + "mu.grasscutter.net.protoZ\004/genb\006proto3"
+                    + "dReq\022\035\n\025trial_avatar_index_id\030\007 \001(\rB\033\n\031e"
+                    + "mu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

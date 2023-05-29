@@ -1158,8 +1158,8 @@ public final class MusicGameSearchBeatmapRspOuterClass {
                     + "tcode\030\t \001(\005\022-\n\runknown_enum1\030\003 \001(\0162\026.Mus"
                     + "icGameUnknown1Enum\022\026\n\016music_share_id\030\004 \001"
                     + "(\004\022+\n\020music_brief_info\030\013 \001(\0132\017.MusicBrie"
-                    + "fInfoH\000B\r\n\013ELBEIFGDBMMB!\n\031emu.grasscutte"
-                    + "r.net.protoZ\004/genb\006proto3"
+                    + "fInfoH\000B\r\n\013ELBEIFGDBMMB\033\n\031emu.grasscutte"
+                    + "r.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

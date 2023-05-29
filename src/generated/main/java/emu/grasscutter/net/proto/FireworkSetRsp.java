@@ -548,8 +548,8 @@ public final class FireworkSetRsp {
     static {
         java.lang.String[] descriptorData = {
             "\n\024FireworkSetRsp.proto\"\"\n\017NBFJOJPCCEK_Rs"
-                    + "p\022\017\n\007retcode\030\007 \001(\005B!\n\031emu.grasscutter.ne"
-                    + "t.protoZ\004/genb\006proto3"
+                    + "p\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grasscutter.ne"
+                    + "t.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

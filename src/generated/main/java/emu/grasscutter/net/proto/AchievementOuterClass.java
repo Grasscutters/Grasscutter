@@ -25,17 +25,17 @@ public final class AchievementOuterClass {
         int getId();
 
         /**
-         * <code>.Status status = 10;</code>
+         * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
          *
          * @return The enum numeric value on the wire for status.
          */
         int getStatusValue();
         /**
-         * <code>.Status status = 10;</code>
+         * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
          *
          * @return The status.
          */
-        emu.grasscutter.net.proto.StatusOuterClass.Status getStatus();
+        emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI getStatus();
 
         /**
          * <code>uint32 total_progress = 14;</code>
@@ -170,6 +170,115 @@ public final class AchievementOuterClass {
                             emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Builder.class);
         }
 
+        /** Protobuf enum {@code Achievement.OHCJGBIOHNI} */
+        public enum OHCJGBIOHNI implements com.google.protobuf.ProtocolMessageEnum {
+            /** <code>OPFLKOJMOIG_Invalid = 0;</code> */
+            OPFLKOJMOIG_Invalid(0),
+            /** <code>OPFLKOJMOIG_Unfinished = 1;</code> */
+            OPFLKOJMOIG_Unfinished(1),
+            /** <code>OPFLKOJMOIG_Finished = 2;</code> */
+            OPFLKOJMOIG_Finished(2),
+            /** <code>OPFLKOJMOIG_RewardTaken = 3;</code> */
+            OPFLKOJMOIG_RewardTaken(3),
+            UNRECOGNIZED(-1),
+            ;
+
+            /** <code>OPFLKOJMOIG_Invalid = 0;</code> */
+            public static final int OPFLKOJMOIG_Invalid_VALUE = 0;
+            /** <code>OPFLKOJMOIG_Unfinished = 1;</code> */
+            public static final int OPFLKOJMOIG_Unfinished_VALUE = 1;
+            /** <code>OPFLKOJMOIG_Finished = 2;</code> */
+            public static final int OPFLKOJMOIG_Finished_VALUE = 2;
+            /** <code>OPFLKOJMOIG_RewardTaken = 3;</code> */
+            public static final int OPFLKOJMOIG_RewardTaken_VALUE = 3;
+
+            public final int getNumber() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalArgumentException(
+                            "Can't get the number of an unknown enum value.");
+                }
+                return value;
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             * @deprecated Use {@link #forNumber(int)} instead.
+             */
+            @java.lang.Deprecated
+            public static OHCJGBIOHNI valueOf(int value) {
+                return forNumber(value);
+            }
+
+            /**
+             * @param value The numeric wire value of the corresponding enum entry.
+             * @return The enum associated with the given numeric wire value.
+             */
+            public static OHCJGBIOHNI forNumber(int value) {
+                switch (value) {
+                    case 0:
+                        return OPFLKOJMOIG_Invalid;
+                    case 1:
+                        return OPFLKOJMOIG_Unfinished;
+                    case 2:
+                        return OPFLKOJMOIG_Finished;
+                    case 3:
+                        return OPFLKOJMOIG_RewardTaken;
+                    default:
+                        return null;
+                }
+            }
+
+            public static com.google.protobuf.Internal.EnumLiteMap<OHCJGBIOHNI> internalGetValueMap() {
+                return internalValueMap;
+            }
+
+            private static final com.google.protobuf.Internal.EnumLiteMap<OHCJGBIOHNI> internalValueMap =
+                    new com.google.protobuf.Internal.EnumLiteMap<OHCJGBIOHNI>() {
+                        public OHCJGBIOHNI findValueByNumber(int number) {
+                            return OHCJGBIOHNI.forNumber(number);
+                        }
+                    };
+
+            public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+                if (this == UNRECOGNIZED) {
+                    throw new java.lang.IllegalStateException(
+                            "Can't get the descriptor of an unrecognized enum value.");
+                }
+                return getDescriptor().getValues().get(ordinal());
+            }
+
+            public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+                return getDescriptor();
+            }
+
+            public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+                return emu.grasscutter.net.proto.AchievementOuterClass.Achievement.getDescriptor()
+                        .getEnumTypes()
+                        .get(0);
+            }
+
+            private static final OHCJGBIOHNI[] VALUES = values();
+
+            public static OHCJGBIOHNI valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+                if (desc.getType() != getDescriptor()) {
+                    throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+                }
+                if (desc.getIndex() == -1) {
+                    return UNRECOGNIZED;
+                }
+                return VALUES[desc.getIndex()];
+            }
+
+            private final int value;
+
+            private OHCJGBIOHNI(int value) {
+                this.value = value;
+            }
+
+            // @@protoc_insertion_point(enum_scope:Achievement.OHCJGBIOHNI)
+        }
+
         public static final int ID_FIELD_NUMBER = 3;
         private int id_;
         /**
@@ -185,7 +294,7 @@ public final class AchievementOuterClass {
         public static final int STATUS_FIELD_NUMBER = 10;
         private int status_;
         /**
-         * <code>.Status status = 10;</code>
+         * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
          *
          * @return The enum numeric value on the wire for status.
          */
@@ -194,17 +303,17 @@ public final class AchievementOuterClass {
             return status_;
         }
         /**
-         * <code>.Status status = 10;</code>
+         * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
          *
          * @return The status.
          */
         @java.lang.Override
-        public emu.grasscutter.net.proto.StatusOuterClass.Status getStatus() {
+        public emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI getStatus() {
             @SuppressWarnings("deprecation")
-            emu.grasscutter.net.proto.StatusOuterClass.Status result =
-                    emu.grasscutter.net.proto.StatusOuterClass.Status.valueOf(status_);
+            emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI result =
+                    emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI.valueOf(status_);
             return result == null
-                    ? emu.grasscutter.net.proto.StatusOuterClass.Status.UNRECOGNIZED
+                    ? emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI.UNRECOGNIZED
                     : result;
         }
 
@@ -264,7 +373,9 @@ public final class AchievementOuterClass {
             if (curProgress_ != 0) {
                 output.writeUInt32(5, curProgress_);
             }
-            if (status_ != emu.grasscutter.net.proto.StatusOuterClass.Status.STATUS_INVALID.getNumber()) {
+            if (status_
+                    != emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI
+                            .OPFLKOJMOIG_Invalid.getNumber()) {
                 output.writeEnum(10, status_);
             }
             if (totalProgress_ != 0) {
@@ -288,7 +399,9 @@ public final class AchievementOuterClass {
             if (curProgress_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, curProgress_);
             }
-            if (status_ != emu.grasscutter.net.proto.StatusOuterClass.Status.STATUS_INVALID.getNumber()) {
+            if (status_
+                    != emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI
+                            .OPFLKOJMOIG_Invalid.getNumber()) {
                 size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, status_);
             }
             if (totalProgress_ != 0) {
@@ -665,7 +778,7 @@ public final class AchievementOuterClass {
 
             private int status_ = 0;
             /**
-             * <code>.Status status = 10;</code>
+             * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
              *
              * @return The enum numeric value on the wire for status.
              */
@@ -674,7 +787,7 @@ public final class AchievementOuterClass {
                 return status_;
             }
             /**
-             * <code>.Status status = 10;</code>
+             * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
              *
              * @param value The enum numeric value on the wire for status to set.
              * @return This builder for chaining.
@@ -686,26 +799,28 @@ public final class AchievementOuterClass {
                 return this;
             }
             /**
-             * <code>.Status status = 10;</code>
+             * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
              *
              * @return The status.
              */
             @java.lang.Override
-            public emu.grasscutter.net.proto.StatusOuterClass.Status getStatus() {
+            public emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI getStatus() {
                 @SuppressWarnings("deprecation")
-                emu.grasscutter.net.proto.StatusOuterClass.Status result =
-                        emu.grasscutter.net.proto.StatusOuterClass.Status.valueOf(status_);
+                emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI result =
+                        emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI.valueOf(
+                                status_);
                 return result == null
-                        ? emu.grasscutter.net.proto.StatusOuterClass.Status.UNRECOGNIZED
+                        ? emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI.UNRECOGNIZED
                         : result;
             }
             /**
-             * <code>.Status status = 10;</code>
+             * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
              *
              * @param value The status to set.
              * @return This builder for chaining.
              */
-            public Builder setStatus(emu.grasscutter.net.proto.StatusOuterClass.Status value) {
+            public Builder setStatus(
+                    emu.grasscutter.net.proto.AchievementOuterClass.Achievement.OHCJGBIOHNI value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -715,7 +830,7 @@ public final class AchievementOuterClass {
                 return this;
             }
             /**
-             * <code>.Status status = 10;</code>
+             * <code>.Achievement.OHCJGBIOHNI status = 10;</code>
              *
              * @return This builder for chaining.
              */
@@ -894,18 +1009,19 @@ public final class AchievementOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n\021Achievement.proto\032\014Status.proto\"z\n\013Ach"
-                    + "ievement\022\n\n\002id\030\003 \001(\r\022\027\n\006status\030\n \001(\0162\007.S"
-                    + "tatus\022\026\n\016total_progress\030\016 \001(\r\022\030\n\020finish_"
-                    + "timestamp\030\017 \001(\r\022\024\n\014cur_progress\030\005 \001(\rB\033\n"
-                    + "\031emu.grasscutter.net.protob\006proto3"
+            "\n\021Achievement.proto\"\206\002\n\013Achievement\022\n\n\002i"
+                    + "d\030\003 \001(\r\022(\n\006status\030\n \001(\0162\030.Achievement.OH"
+                    + "CJGBIOHNI\022\026\n\016total_progress\030\016 \001(\r\022\030\n\020fin"
+                    + "ish_timestamp\030\017 \001(\r\022\024\n\014cur_progress\030\005 \001("
+                    + "\r\"y\n\013OHCJGBIOHNI\022\027\n\023OPFLKOJMOIG_Invalid\020"
+                    + "\000\022\032\n\026OPFLKOJMOIG_Unfinished\020\001\022\030\n\024OPFLKOJ"
+                    + "MOIG_Finished\020\002\022\033\n\027OPFLKOJMOIG_RewardTak"
+                    + "en\020\003B\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[] {
-                            emu.grasscutter.net.proto.StatusOuterClass.getDescriptor(),
-                        });
+                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
         internal_static_Achievement_descriptor = getDescriptor().getMessageTypes().get(0);
         internal_static_Achievement_fieldAccessorTable =
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
@@ -913,7 +1029,6 @@ public final class AchievementOuterClass {
                         new java.lang.String[] {
                             "Id", "Status", "TotalProgress", "FinishTimestamp", "CurProgress",
                         });
-        emu.grasscutter.net.proto.StatusOuterClass.getDescriptor();
     }
 
     // @@protoc_insertion_point(outer_class_scope)

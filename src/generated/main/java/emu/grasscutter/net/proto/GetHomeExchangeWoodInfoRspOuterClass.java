@@ -18,31 +18,31 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>int32 retcode = 4;</code>
+         * <code>int32 retcode = 12;</code>
          *
          * @return The retcode.
          */
         int getRetcode();
 
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         java.util.List<
                         emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                                 .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo>
                 getWoodInfoListList();
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
                         .HomeExchangeWoodInfo
                 getWoodInfoList(int index);
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         int getWoodInfoListCount();
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         java.util.List<
                         ? extends
@@ -50,7 +50,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                         .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfoOrBuilder>
                 getWoodInfoListOrBuilderList();
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
                         .HomeExchangeWoodInfoOrBuilder
@@ -60,8 +60,8 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
      *
      *
      * <pre>
-     * CmdId: 4480
-     * Name: HGKMIEPCCCJ
+     * CmdId: 4693
+     * Obf: PIEBLPJEMHK
      * </pre>
      *
      * Protobuf type {@code GetHomeExchangeWoodInfoRsp}
@@ -111,7 +111,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                         case 0:
                             done = true;
                             break;
-                        case 26:
+                        case 66:
                             {
                                 if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                                     woodInfoList_ =
@@ -127,7 +127,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                                 extensionRegistry));
                                 break;
                             }
-                        case 32:
+                        case 96:
                             {
                                 retcode_ = input.readInt32();
                                 break;
@@ -177,38 +177,38 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 com.google.protobuf.MessageOrBuilder {
 
             /**
-             * <code>uint32 exchangedCount = 14;</code>
+             * <code>uint32 OADAPMHIAIG = 4;</code>
              *
-             * @return The exchangedCount.
+             * @return The oADAPMHIAIG.
              */
-            int getExchangedCount();
+            int getOADAPMHIAIG();
 
             /**
-             * <code>uint32 wood_id = 8;</code>
+             * <code>uint32 wood_id = 12;</code>
              *
              * @return The woodId.
              */
             int getWoodId();
 
             /**
-             * <code>uint32 exchangeLimit = 9;</code>
-             *
-             * @return The exchangeLimit.
-             */
-            int getExchangeLimit();
-
-            /**
-             * <code>fixed32 next_refresh_time = 1;</code>
+             * <code>fixed32 next_refresh_time = 7;</code>
              *
              * @return The nextRefreshTime.
              */
             int getNextRefreshTime();
+
+            /**
+             * <code>uint32 DKKLDFNFCCG = 3;</code>
+             *
+             * @return The dKKLDFNFCCG.
+             */
+            int getDKKLDFNFCCG();
         }
         /**
          *
          *
          * <pre>
-         * Name: FOLINBPAHGO
+         * Obf: NICFGMIONJE
          * </pre>
          *
          * Protobuf type {@code GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo}
@@ -254,24 +254,24 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 13:
+                            case 24:
+                                {
+                                    dKKLDFNFCCG_ = input.readUInt32();
+                                    break;
+                                }
+                            case 32:
+                                {
+                                    oADAPMHIAIG_ = input.readUInt32();
+                                    break;
+                                }
+                            case 61:
                                 {
                                     nextRefreshTime_ = input.readFixed32();
                                     break;
                                 }
-                            case 64:
+                            case 96:
                                 {
                                     woodId_ = input.readUInt32();
-                                    break;
-                                }
-                            case 72:
-                                {
-                                    exchangeLimit_ = input.readUInt32();
-                                    break;
-                                }
-                            case 112:
-                                {
-                                    exchangedCount_ = input.readUInt32();
                                     break;
                                 }
                             default:
@@ -311,22 +311,22 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                         .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.Builder.class);
             }
 
-            public static final int EXCHANGEDCOUNT_FIELD_NUMBER = 14;
-            private int exchangedCount_;
+            public static final int OADAPMHIAIG_FIELD_NUMBER = 4;
+            private int oADAPMHIAIG_;
             /**
-             * <code>uint32 exchangedCount = 14;</code>
+             * <code>uint32 OADAPMHIAIG = 4;</code>
              *
-             * @return The exchangedCount.
+             * @return The oADAPMHIAIG.
              */
             @java.lang.Override
-            public int getExchangedCount() {
-                return exchangedCount_;
+            public int getOADAPMHIAIG() {
+                return oADAPMHIAIG_;
             }
 
-            public static final int WOOD_ID_FIELD_NUMBER = 8;
+            public static final int WOOD_ID_FIELD_NUMBER = 12;
             private int woodId_;
             /**
-             * <code>uint32 wood_id = 8;</code>
+             * <code>uint32 wood_id = 12;</code>
              *
              * @return The woodId.
              */
@@ -335,28 +335,28 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return woodId_;
             }
 
-            public static final int EXCHANGELIMIT_FIELD_NUMBER = 9;
-            private int exchangeLimit_;
-            /**
-             * <code>uint32 exchangeLimit = 9;</code>
-             *
-             * @return The exchangeLimit.
-             */
-            @java.lang.Override
-            public int getExchangeLimit() {
-                return exchangeLimit_;
-            }
-
-            public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 1;
+            public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 7;
             private int nextRefreshTime_;
             /**
-             * <code>fixed32 next_refresh_time = 1;</code>
+             * <code>fixed32 next_refresh_time = 7;</code>
              *
              * @return The nextRefreshTime.
              */
             @java.lang.Override
             public int getNextRefreshTime() {
                 return nextRefreshTime_;
+            }
+
+            public static final int DKKLDFNFCCG_FIELD_NUMBER = 3;
+            private int dKKLDFNFCCG_;
+            /**
+             * <code>uint32 DKKLDFNFCCG = 3;</code>
+             *
+             * @return The dKKLDFNFCCG.
+             */
+            @java.lang.Override
+            public int getDKKLDFNFCCG() {
+                return dKKLDFNFCCG_;
             }
 
             private byte memoizedIsInitialized = -1;
@@ -373,17 +373,17 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
             @java.lang.Override
             public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+                if (dKKLDFNFCCG_ != 0) {
+                    output.writeUInt32(3, dKKLDFNFCCG_);
+                }
+                if (oADAPMHIAIG_ != 0) {
+                    output.writeUInt32(4, oADAPMHIAIG_);
+                }
                 if (nextRefreshTime_ != 0) {
-                    output.writeFixed32(1, nextRefreshTime_);
+                    output.writeFixed32(7, nextRefreshTime_);
                 }
                 if (woodId_ != 0) {
-                    output.writeUInt32(8, woodId_);
-                }
-                if (exchangeLimit_ != 0) {
-                    output.writeUInt32(9, exchangeLimit_);
-                }
-                if (exchangedCount_ != 0) {
-                    output.writeUInt32(14, exchangedCount_);
+                    output.writeUInt32(12, woodId_);
                 }
                 unknownFields.writeTo(output);
             }
@@ -394,17 +394,17 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 if (size != -1) return size;
 
                 size = 0;
+                if (dKKLDFNFCCG_ != 0) {
+                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, dKKLDFNFCCG_);
+                }
+                if (oADAPMHIAIG_ != 0) {
+                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, oADAPMHIAIG_);
+                }
                 if (nextRefreshTime_ != 0) {
-                    size += com.google.protobuf.CodedOutputStream.computeFixed32Size(1, nextRefreshTime_);
+                    size += com.google.protobuf.CodedOutputStream.computeFixed32Size(7, nextRefreshTime_);
                 }
                 if (woodId_ != 0) {
-                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, woodId_);
-                }
-                if (exchangeLimit_ != 0) {
-                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, exchangeLimit_);
-                }
-                if (exchangedCount_ != 0) {
-                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, exchangedCount_);
+                    size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, woodId_);
                 }
                 size += unknownFields.getSerializedSize();
                 memoizedSize = size;
@@ -429,10 +429,10 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                                 .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo)
                                         obj;
 
-                if (getExchangedCount() != other.getExchangedCount()) return false;
+                if (getOADAPMHIAIG() != other.getOADAPMHIAIG()) return false;
                 if (getWoodId() != other.getWoodId()) return false;
-                if (getExchangeLimit() != other.getExchangeLimit()) return false;
                 if (getNextRefreshTime() != other.getNextRefreshTime()) return false;
+                if (getDKKLDFNFCCG() != other.getDKKLDFNFCCG()) return false;
                 if (!unknownFields.equals(other.unknownFields)) return false;
                 return true;
             }
@@ -444,14 +444,14 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
                 int hash = 41;
                 hash = (19 * hash) + getDescriptor().hashCode();
-                hash = (37 * hash) + EXCHANGEDCOUNT_FIELD_NUMBER;
-                hash = (53 * hash) + getExchangedCount();
+                hash = (37 * hash) + OADAPMHIAIG_FIELD_NUMBER;
+                hash = (53 * hash) + getOADAPMHIAIG();
                 hash = (37 * hash) + WOOD_ID_FIELD_NUMBER;
                 hash = (53 * hash) + getWoodId();
-                hash = (37 * hash) + EXCHANGELIMIT_FIELD_NUMBER;
-                hash = (53 * hash) + getExchangeLimit();
                 hash = (37 * hash) + NEXT_REFRESH_TIME_FIELD_NUMBER;
                 hash = (53 * hash) + getNextRefreshTime();
+                hash = (37 * hash) + DKKLDFNFCCG_FIELD_NUMBER;
+                hash = (53 * hash) + getDKKLDFNFCCG();
                 hash = (29 * hash) + unknownFields.hashCode();
                 memoizedHashCode = hash;
                 return hash;
@@ -580,7 +580,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
              *
              *
              * <pre>
-             * Name: FOLINBPAHGO
+             * Obf: NICFGMIONJE
              * </pre>
              *
              * Protobuf type {@code GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo}
@@ -626,13 +626,13 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 @java.lang.Override
                 public Builder clear() {
                     super.clear();
-                    exchangedCount_ = 0;
+                    oADAPMHIAIG_ = 0;
 
                     woodId_ = 0;
 
-                    exchangeLimit_ = 0;
-
                     nextRefreshTime_ = 0;
+
+                    dKKLDFNFCCG_ = 0;
 
                     return this;
                 }
@@ -673,10 +673,10 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                             result =
                                     new emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo(this);
-                    result.exchangedCount_ = exchangedCount_;
+                    result.oADAPMHIAIG_ = oADAPMHIAIG_;
                     result.woodId_ = woodId_;
-                    result.exchangeLimit_ = exchangeLimit_;
                     result.nextRefreshTime_ = nextRefreshTime_;
+                    result.dKKLDFNFCCG_ = dKKLDFNFCCG_;
                     onBuilt();
                     return result;
                 }
@@ -740,17 +740,17 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                             == emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                                     .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.getDefaultInstance())
                         return this;
-                    if (other.getExchangedCount() != 0) {
-                        setExchangedCount(other.getExchangedCount());
+                    if (other.getOADAPMHIAIG() != 0) {
+                        setOADAPMHIAIG(other.getOADAPMHIAIG());
                     }
                     if (other.getWoodId() != 0) {
                         setWoodId(other.getWoodId());
                     }
-                    if (other.getExchangeLimit() != 0) {
-                        setExchangeLimit(other.getExchangeLimit());
-                    }
                     if (other.getNextRefreshTime() != 0) {
                         setNextRefreshTime(other.getNextRefreshTime());
+                    }
+                    if (other.getDKKLDFNFCCG() != 0) {
+                        setDKKLDFNFCCG(other.getDKKLDFNFCCG());
                     }
                     this.mergeUnknownFields(other.unknownFields);
                     onChanged();
@@ -786,43 +786,43 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return this;
                 }
 
-                private int exchangedCount_;
+                private int oADAPMHIAIG_;
                 /**
-                 * <code>uint32 exchangedCount = 14;</code>
+                 * <code>uint32 OADAPMHIAIG = 4;</code>
                  *
-                 * @return The exchangedCount.
+                 * @return The oADAPMHIAIG.
                  */
                 @java.lang.Override
-                public int getExchangedCount() {
-                    return exchangedCount_;
+                public int getOADAPMHIAIG() {
+                    return oADAPMHIAIG_;
                 }
                 /**
-                 * <code>uint32 exchangedCount = 14;</code>
+                 * <code>uint32 OADAPMHIAIG = 4;</code>
                  *
-                 * @param value The exchangedCount to set.
+                 * @param value The oADAPMHIAIG to set.
                  * @return This builder for chaining.
                  */
-                public Builder setExchangedCount(int value) {
+                public Builder setOADAPMHIAIG(int value) {
 
-                    exchangedCount_ = value;
+                    oADAPMHIAIG_ = value;
                     onChanged();
                     return this;
                 }
                 /**
-                 * <code>uint32 exchangedCount = 14;</code>
+                 * <code>uint32 OADAPMHIAIG = 4;</code>
                  *
                  * @return This builder for chaining.
                  */
-                public Builder clearExchangedCount() {
+                public Builder clearOADAPMHIAIG() {
 
-                    exchangedCount_ = 0;
+                    oADAPMHIAIG_ = 0;
                     onChanged();
                     return this;
                 }
 
                 private int woodId_;
                 /**
-                 * <code>uint32 wood_id = 8;</code>
+                 * <code>uint32 wood_id = 12;</code>
                  *
                  * @return The woodId.
                  */
@@ -831,7 +831,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return woodId_;
                 }
                 /**
-                 * <code>uint32 wood_id = 8;</code>
+                 * <code>uint32 wood_id = 12;</code>
                  *
                  * @param value The woodId to set.
                  * @return This builder for chaining.
@@ -843,7 +843,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return this;
                 }
                 /**
-                 * <code>uint32 wood_id = 8;</code>
+                 * <code>uint32 wood_id = 12;</code>
                  *
                  * @return This builder for chaining.
                  */
@@ -854,43 +854,9 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return this;
                 }
 
-                private int exchangeLimit_;
-                /**
-                 * <code>uint32 exchangeLimit = 9;</code>
-                 *
-                 * @return The exchangeLimit.
-                 */
-                @java.lang.Override
-                public int getExchangeLimit() {
-                    return exchangeLimit_;
-                }
-                /**
-                 * <code>uint32 exchangeLimit = 9;</code>
-                 *
-                 * @param value The exchangeLimit to set.
-                 * @return This builder for chaining.
-                 */
-                public Builder setExchangeLimit(int value) {
-
-                    exchangeLimit_ = value;
-                    onChanged();
-                    return this;
-                }
-                /**
-                 * <code>uint32 exchangeLimit = 9;</code>
-                 *
-                 * @return This builder for chaining.
-                 */
-                public Builder clearExchangeLimit() {
-
-                    exchangeLimit_ = 0;
-                    onChanged();
-                    return this;
-                }
-
                 private int nextRefreshTime_;
                 /**
-                 * <code>fixed32 next_refresh_time = 1;</code>
+                 * <code>fixed32 next_refresh_time = 7;</code>
                  *
                  * @return The nextRefreshTime.
                  */
@@ -899,7 +865,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return nextRefreshTime_;
                 }
                 /**
-                 * <code>fixed32 next_refresh_time = 1;</code>
+                 * <code>fixed32 next_refresh_time = 7;</code>
                  *
                  * @param value The nextRefreshTime to set.
                  * @return This builder for chaining.
@@ -911,13 +877,47 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     return this;
                 }
                 /**
-                 * <code>fixed32 next_refresh_time = 1;</code>
+                 * <code>fixed32 next_refresh_time = 7;</code>
                  *
                  * @return This builder for chaining.
                  */
                 public Builder clearNextRefreshTime() {
 
                     nextRefreshTime_ = 0;
+                    onChanged();
+                    return this;
+                }
+
+                private int dKKLDFNFCCG_;
+                /**
+                 * <code>uint32 DKKLDFNFCCG = 3;</code>
+                 *
+                 * @return The dKKLDFNFCCG.
+                 */
+                @java.lang.Override
+                public int getDKKLDFNFCCG() {
+                    return dKKLDFNFCCG_;
+                }
+                /**
+                 * <code>uint32 DKKLDFNFCCG = 3;</code>
+                 *
+                 * @param value The dKKLDFNFCCG to set.
+                 * @return This builder for chaining.
+                 */
+                public Builder setDKKLDFNFCCG(int value) {
+
+                    dKKLDFNFCCG_ = value;
+                    onChanged();
+                    return this;
+                }
+                /**
+                 * <code>uint32 DKKLDFNFCCG = 3;</code>
+                 *
+                 * @return This builder for chaining.
+                 */
+                public Builder clearDKKLDFNFCCG() {
+
+                    dKKLDFNFCCG_ = 0;
                     onChanged();
                     return this;
                 }
@@ -982,10 +982,10 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             }
         }
 
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         /**
-         * <code>int32 retcode = 4;</code>
+         * <code>int32 retcode = 12;</code>
          *
          * @return The retcode.
          */
@@ -994,13 +994,13 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             return retcode_;
         }
 
-        public static final int WOOD_INFO_LIST_FIELD_NUMBER = 3;
+        public static final int WOOD_INFO_LIST_FIELD_NUMBER = 8;
         private java.util.List<
                         emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                                 .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo>
                 woodInfoList_;
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         @java.lang.Override
         public java.util.List<
@@ -1010,7 +1010,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             return woodInfoList_;
         }
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         @java.lang.Override
         public java.util.List<
@@ -1021,14 +1021,14 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             return woodInfoList_;
         }
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         @java.lang.Override
         public int getWoodInfoListCount() {
             return woodInfoList_.size();
         }
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         @java.lang.Override
         public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
@@ -1037,7 +1037,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             return woodInfoList_.get(index);
         }
         /**
-         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+         * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
          */
         @java.lang.Override
         public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
@@ -1061,10 +1061,10 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             for (int i = 0; i < woodInfoList_.size(); i++) {
-                output.writeMessage(3, woodInfoList_.get(i));
+                output.writeMessage(8, woodInfoList_.get(i));
             }
             if (retcode_ != 0) {
-                output.writeInt32(4, retcode_);
+                output.writeInt32(12, retcode_);
             }
             unknownFields.writeTo(output);
         }
@@ -1076,10 +1076,10 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
             size = 0;
             for (int i = 0; i < woodInfoList_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, woodInfoList_.get(i));
+                size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, woodInfoList_.get(i));
             }
             if (retcode_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, retcode_);
+                size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, retcode_);
             }
             size += unknownFields.getSerializedSize();
             memoizedSize = size;
@@ -1247,8 +1247,8 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
          *
          *
          * <pre>
-         * CmdId: 4480
-         * Name: HGKMIEPCCCJ
+         * CmdId: 4693
+         * Obf: PIEBLPJEMHK
          * </pre>
          *
          * Protobuf type {@code GetHomeExchangeWoodInfoRsp}
@@ -1480,7 +1480,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
             private int retcode_;
             /**
-             * <code>int32 retcode = 4;</code>
+             * <code>int32 retcode = 12;</code>
              *
              * @return The retcode.
              */
@@ -1489,7 +1489,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return retcode_;
             }
             /**
-             * <code>int32 retcode = 4;</code>
+             * <code>int32 retcode = 12;</code>
              *
              * @param value The retcode to set.
              * @return This builder for chaining.
@@ -1501,7 +1501,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>int32 retcode = 4;</code>
+             * <code>int32 retcode = 12;</code>
              *
              * @return This builder for chaining.
              */
@@ -1537,7 +1537,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                     woodInfoListBuilder_;
 
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public java.util.List<
                             emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
@@ -1550,7 +1550,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public int getWoodInfoListCount() {
                 if (woodInfoListBuilder_ == null) {
@@ -1560,7 +1560,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo
@@ -1572,7 +1572,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder setWoodInfoList(
                     int index,
@@ -1592,7 +1592,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder setWoodInfoList(
                     int index,
@@ -1609,7 +1609,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder addWoodInfoList(
                     emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
@@ -1628,7 +1628,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder addWoodInfoList(
                     int index,
@@ -1648,7 +1648,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder addWoodInfoList(
                     emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp
@@ -1664,7 +1664,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder addWoodInfoList(
                     int index,
@@ -1681,7 +1681,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder addAllWoodInfoList(
                     java.lang.Iterable<
@@ -1699,7 +1699,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder clearWoodInfoList() {
                 if (woodInfoListBuilder_ == null) {
@@ -1712,7 +1712,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public Builder removeWoodInfoList(int index) {
                 if (woodInfoListBuilder_ == null) {
@@ -1725,7 +1725,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return this;
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.Builder
@@ -1733,7 +1733,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 return getWoodInfoListFieldBuilder().getBuilder(index);
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfoOrBuilder
@@ -1745,7 +1745,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public java.util.List<
                             ? extends
@@ -1759,7 +1759,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 }
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.Builder
@@ -1770,7 +1770,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                         .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.getDefaultInstance());
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
                             .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.Builder
@@ -1782,7 +1782,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                                         .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.getDefaultInstance());
             }
             /**
-             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 3;</code>
+             * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 8;</code>
              */
             public java.util.List<
                             emu.grasscutter.net.proto.GetHomeExchangeWoodInfoRspOuterClass
@@ -1893,14 +1893,14 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
     static {
         java.lang.String[] descriptorData = {
-            "\n GetHomeExchangeWoodInfoRsp.proto\"\352\001\n\032G"
-                    + "etHomeExchangeWoodInfoRsp\022\017\n\007retcode\030\004 \001"
-                    + "(\005\022H\n\016wood_info_list\030\003 \003(\01320.GetHomeExch"
-                    + "angeWoodInfoRsp.HomeExchangeWoodInfo\032q\n\024"
-                    + "HomeExchangeWoodInfo\022\026\n\016exchangedCount\030\016"
-                    + " \001(\r\022\017\n\007wood_id\030\010 \001(\r\022\025\n\rexchangeLimit\030\t"
-                    + " \001(\r\022\031\n\021next_refresh_time\030\001 \001(\007B!\n\031emu.g"
-                    + "rasscutter.net.protoZ\004/genb\006proto3"
+            "\n GetHomeExchangeWoodInfoRsp.proto\"\345\001\n\032G"
+                    + "etHomeExchangeWoodInfoRsp\022\017\n\007retcode\030\014 \001"
+                    + "(\005\022H\n\016wood_info_list\030\010 \003(\01320.GetHomeExch"
+                    + "angeWoodInfoRsp.HomeExchangeWoodInfo\032l\n\024"
+                    + "HomeExchangeWoodInfo\022\023\n\013OADAPMHIAIG\030\004 \001("
+                    + "\r\022\017\n\007wood_id\030\014 \001(\r\022\031\n\021next_refresh_time\030"
+                    + "\007 \001(\007\022\023\n\013DKKLDFNFCCG\030\003 \001(\rB\033\n\031emu.grassc"
+                    + "utter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1919,7 +1919,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_GetHomeExchangeWoodInfoRsp_HomeExchangeWoodInfo_descriptor,
                         new java.lang.String[] {
-                            "ExchangedCount", "WoodId", "ExchangeLimit", "NextRefreshTime",
+                            "OADAPMHIAIG", "WoodId", "NextRefreshTime", "DKKLDFNFCCG",
                         });
     }
 

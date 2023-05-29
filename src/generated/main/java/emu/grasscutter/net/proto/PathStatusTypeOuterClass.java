@@ -125,8 +125,8 @@ public final class PathStatusTypeOuterClass {
             "\n\024PathStatusType.proto*d\n\016PathStatusType"
                     + "\022\031\n\025PATH_STATUS_TYPE_FAIL\020\000\022\031\n\025PATH_STAT"
                     + "US_TYPE_SUCC\020\001\022\034\n\030PATH_STATUS_TYPE_PARTI"
-                    + "AL\020\002B!\n\031emu.grasscutter.net.protoZ\004/genb"
-                    + "\006proto3"
+                    + "AL\020\002B\033\n\031emu.grasscutter.net.protob\006proto"
+                    + "3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

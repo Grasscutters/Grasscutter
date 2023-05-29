@@ -709,8 +709,8 @@ public final class FireworkSetReqOuterClass {
         java.lang.String[] descriptorData = {
             "\n\024FireworkSetReq.proto\032\025FireworkSetData."
                     + "proto\"0\n\016FireworkSetReq\022\036\n\004data\030\002 \001(\0132\020."
-                    + "FireworkSetDataB!\n\031emu.grasscutter.net.p"
-                    + "rotoZ\004/genb\006proto3"
+                    + "FireworkSetDataB\033\n\031emu.grasscutter.net.p"
+                    + "rotob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
