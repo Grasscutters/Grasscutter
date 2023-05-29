@@ -12,6 +12,6 @@ public final class HandlerClientLockGameTimeNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var packet = ClientLockGameTimeNotify.parseFrom(payload);
-        session.getPlayer().setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, packet.getIsLock() ? 1 : 0);
+        session.getPlayer().setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, packet.getIsLock());
     }
 }
