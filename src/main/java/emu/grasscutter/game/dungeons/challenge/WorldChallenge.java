@@ -27,7 +27,7 @@ public class WorldChallenge {
     private final int challengeId;
     private final int challengeIndex;
     private final List<Integer> paramList;
-    private final int timeLimit;
+    private int timeLimit;
     private final List<ChallengeTrigger> challengeTriggers;
     private final int goal;
     private final AtomicInteger score;

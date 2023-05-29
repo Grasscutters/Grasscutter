@@ -18,6 +18,7 @@ public abstract class ChallengeFactory {
         challengeFactoryHandlers.add(new KillMonsterTimeChallengeFactoryHandler());
         challengeFactoryHandlers.add(new SurviveChallengeFactoryHandler());
         challengeFactoryHandlers.add(new TriggerInTimeChallengeFactoryHandler());
+        challengeFactoryHandlers.add(new KillMonsterCountInTimeIncChallengeFactoryHandler());
     }
 
     public static WorldChallenge getChallenge(

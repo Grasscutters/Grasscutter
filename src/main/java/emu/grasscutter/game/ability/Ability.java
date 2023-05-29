@@ -30,10 +30,10 @@ public class Ability {
     public Ability(AbilityData data, GameEntity owner, Player playerOwner) {
         this.data = data;
         this.owner = owner;
-        this.manager = owner.getScene().getWorld().getHost().getAbilityManager();
+        this.manager = owner.getWorld().getHost().getAbilityManager();
 
         if (this.data.abilitySpecials != null) {
-            for (var entry : this.data.abilitySpecials.entrySet())
+            for(var entry : this.data.abilitySpecials.entrySet())
                 abilitySpecials.put(entry.getKey(), entry.getValue().floatValue());
         }
 

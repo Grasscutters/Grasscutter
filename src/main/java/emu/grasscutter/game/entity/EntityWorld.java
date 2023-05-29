@@ -8,9 +8,10 @@ import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
+import lombok.Getter;
 
 public class EntityWorld extends GameEntity {
-    private World world;
+    @Getter private World world;
 
     public EntityWorld(World world) {
         super(null);

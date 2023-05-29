@@ -145,7 +145,7 @@ public class EntityAvatar extends GameEntity {
             return 0f;
         }
 
-        float healed = super.heal(amount);
+        float healed = super.heal(amount, mute);
 
         if (healed > 0f) {
             getScene().broadcastPacket(

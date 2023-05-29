@@ -153,8 +153,8 @@ public class World implements Iterable<Player> {
 
         // Set player variables
         player.setPeerId(this.getNextPeerId());
-        player.getTeamManager().setEntity(new EntityTeam(player.getScene()));
-        // player.getTeamManager().setEntityId(this.getNextEntityId(EntityIdType.TEAM));
+        player.getTeamManager().setEntity(new EntityTeam(player));
+        //player.getTeamManager().setEntityId(this.getNextEntityId(EntityIdType.TEAM));
 
         // Copy main team to multiplayer team
         if (this.isMultiplayer()) {
@@ -182,9 +182,7 @@ public class World implements Iterable<Player> {
         player.sendPacket(
                 new PacketDelTeamEntityNotify(
                         player.getSceneId(),
-                    this.getPlayers().stream()
-                        .map(p -> p.getTeamManager().getEntity().getId())
-                        .toList()
+                    this.getPlayers().stream().map(p -> p.getTeamManager().getEntity() == null ? 0 : p.getTeamManager().getEntity().getId()).collect(Collectors.toList())
                 )
         );
 
