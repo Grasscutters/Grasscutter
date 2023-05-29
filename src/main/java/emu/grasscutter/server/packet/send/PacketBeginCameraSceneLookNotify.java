@@ -3,11 +3,10 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.Collection;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 public final class PacketBeginCameraSceneLookNotify extends BasePacket {
 
