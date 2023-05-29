@@ -708,6 +708,17 @@ public class ScriptLib {
         return quest.getState().getValue();
     }
 
+    public int GetHostQuestState(int questId){
+        val player = getSceneScriptManager().getScene().getWorld().getHost();
+
+        val quest = player.getQuestManager().getQuestById(questId);
+        if(quest == null){
+            return QuestState.QUEST_STATE_NONE.getValue();
+        }
+
+        return quest.getState().getValue();
+    }
+
     public int ShowReminder(int reminderId){
         getSceneScriptManager().getScene().broadcastPacket(new PacketDungeonShowReminderNotify(reminderId));
         return 0;
