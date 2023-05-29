@@ -109,11 +109,11 @@ public final class AbilityAppliedModifierOuterClass {
         int getApplyEntityId();
 
         /**
-         * <code>bool DLOLFHNNEKI = 10;</code>
+         * <code>bool is_attached_parent_ability = 10;</code>
          *
-         * @return The dLOLFHNNEKI.
+         * @return The isAttachedParentAbility.
          */
-        boolean getDLOLFHNNEKI();
+        boolean getIsAttachedParentAbility();
 
         /**
          * <code>.ModifierDurability modifier_durability = 11;</code>
@@ -284,7 +284,7 @@ public final class AbilityAppliedModifierOuterClass {
                             }
                         case 80:
                             {
-                                dLOLFHNNEKI_ = input.readBool();
+                                isAttachedParentAbility_ = input.readBool();
                                 break;
                             }
                         case 90:
@@ -516,16 +516,16 @@ public final class AbilityAppliedModifierOuterClass {
             return applyEntityId_;
         }
 
-        public static final int DLOLFHNNEKI_FIELD_NUMBER = 10;
-        private boolean dLOLFHNNEKI_;
+        public static final int IS_ATTACHED_PARENT_ABILITY_FIELD_NUMBER = 10;
+        private boolean isAttachedParentAbility_;
         /**
-         * <code>bool DLOLFHNNEKI = 10;</code>
+         * <code>bool is_attached_parent_ability = 10;</code>
          *
-         * @return The dLOLFHNNEKI.
+         * @return The isAttachedParentAbility.
          */
         @java.lang.Override
-        public boolean getDLOLFHNNEKI() {
-            return dLOLFHNNEKI_;
+        public boolean getIsAttachedParentAbility() {
+            return isAttachedParentAbility_;
         }
 
         public static final int MODIFIER_DURABILITY_FIELD_NUMBER = 11;
@@ -625,8 +625,8 @@ public final class AbilityAppliedModifierOuterClass {
             if (applyEntityId_ != 0) {
                 output.writeUInt32(9, applyEntityId_);
             }
-            if (dLOLFHNNEKI_ != false) {
-                output.writeBool(10, dLOLFHNNEKI_);
+            if (isAttachedParentAbility_ != false) {
+                output.writeBool(10, isAttachedParentAbility_);
             }
             if (modifierDurability_ != null) {
                 output.writeMessage(11, getModifierDurability());
@@ -676,8 +676,8 @@ public final class AbilityAppliedModifierOuterClass {
             if (applyEntityId_ != 0) {
                 size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, applyEntityId_);
             }
-            if (dLOLFHNNEKI_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, dLOLFHNNEKI_);
+            if (isAttachedParentAbility_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isAttachedParentAbility_);
             }
             if (modifierDurability_ != null) {
                 size +=
@@ -727,7 +727,7 @@ public final class AbilityAppliedModifierOuterClass {
                     return false;
             }
             if (getApplyEntityId() != other.getApplyEntityId()) return false;
-            if (getDLOLFHNNEKI() != other.getDLOLFHNNEKI()) return false;
+            if (getIsAttachedParentAbility() != other.getIsAttachedParentAbility()) return false;
             if (hasModifierDurability() != other.hasModifierDurability()) return false;
             if (hasModifierDurability()) {
                 if (!getModifierDurability().equals(other.getModifierDurability())) return false;
@@ -769,8 +769,8 @@ public final class AbilityAppliedModifierOuterClass {
             }
             hash = (37 * hash) + APPLY_ENTITY_ID_FIELD_NUMBER;
             hash = (53 * hash) + getApplyEntityId();
-            hash = (37 * hash) + DLOLFHNNEKI_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDLOLFHNNEKI());
+            hash = (37 * hash) + IS_ATTACHED_PARENT_ABILITY_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsAttachedParentAbility());
             if (hasModifierDurability()) {
                 hash = (37 * hash) + MODIFIER_DURABILITY_FIELD_NUMBER;
                 hash = (53 * hash) + getModifierDurability().hashCode();
@@ -967,7 +967,7 @@ public final class AbilityAppliedModifierOuterClass {
                 }
                 applyEntityId_ = 0;
 
-                dLOLFHNNEKI_ = false;
+                isAttachedParentAbility_ = false;
 
                 if (modifierDurabilityBuilder_ == null) {
                     modifierDurability_ = null;
@@ -1033,7 +1033,7 @@ public final class AbilityAppliedModifierOuterClass {
                     result.attachedInstancedModifier_ = attachedInstancedModifierBuilder_.build();
                 }
                 result.applyEntityId_ = applyEntityId_;
-                result.dLOLFHNNEKI_ = dLOLFHNNEKI_;
+                result.isAttachedParentAbility_ = isAttachedParentAbility_;
                 if (modifierDurabilityBuilder_ == null) {
                     result.modifierDurability_ = modifierDurability_;
                 } else {
@@ -1126,8 +1126,8 @@ public final class AbilityAppliedModifierOuterClass {
                 if (other.getApplyEntityId() != 0) {
                     setApplyEntityId(other.getApplyEntityId());
                 }
-                if (other.getDLOLFHNNEKI() != false) {
-                    setDLOLFHNNEKI(other.getDLOLFHNNEKI());
+                if (other.getIsAttachedParentAbility() != false) {
+                    setIsAttachedParentAbility(other.getIsAttachedParentAbility());
                 }
                 if (other.hasModifierDurability()) {
                     mergeModifierDurability(other.getModifierDurability());
@@ -1763,36 +1763,36 @@ public final class AbilityAppliedModifierOuterClass {
                 return this;
             }
 
-            private boolean dLOLFHNNEKI_;
+            private boolean isAttachedParentAbility_;
             /**
-             * <code>bool DLOLFHNNEKI = 10;</code>
+             * <code>bool is_attached_parent_ability = 10;</code>
              *
-             * @return The dLOLFHNNEKI.
+             * @return The isAttachedParentAbility.
              */
             @java.lang.Override
-            public boolean getDLOLFHNNEKI() {
-                return dLOLFHNNEKI_;
+            public boolean getIsAttachedParentAbility() {
+                return isAttachedParentAbility_;
             }
             /**
-             * <code>bool DLOLFHNNEKI = 10;</code>
+             * <code>bool is_attached_parent_ability = 10;</code>
              *
-             * @param value The dLOLFHNNEKI to set.
+             * @param value The isAttachedParentAbility to set.
              * @return This builder for chaining.
              */
-            public Builder setDLOLFHNNEKI(boolean value) {
+            public Builder setIsAttachedParentAbility(boolean value) {
 
-                dLOLFHNNEKI_ = value;
+                isAttachedParentAbility_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool DLOLFHNNEKI = 10;</code>
+             * <code>bool is_attached_parent_ability = 10;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearDLOLFHNNEKI() {
+            public Builder clearIsAttachedParentAbility() {
 
-                dLOLFHNNEKI_ = false;
+                isAttachedParentAbility_ = false;
                 onChanged();
                 return this;
             }
@@ -2066,7 +2066,7 @@ public final class AbilityAppliedModifierOuterClass {
         java.lang.String[] descriptorData = {
             "\n\034AbilityAppliedModifier.proto\032\023AbilityS"
                     + "tring.proto\032\035AbilityAttachedModifier.pro"
-                    + "to\032\030ModifierDurability.proto\"\332\003\n\026Ability"
+                    + "to\032\030ModifierDurability.proto\"\351\003\n\026Ability"
                     + "AppliedModifier\022\031\n\021modifier_local_id\030\001 \001"
                     + "(\005\022 \n\030parent_ability_entity_id\030\002 \001(\r\022+\n\023"
                     + "parent_ability_name\030\003 \001(\0132\016.AbilityStrin"
@@ -2075,11 +2075,11 @@ public final class AbilityAppliedModifierOuterClass {
                     + "\022\035\n\025instanced_modifier_id\030\006 \001(\r\022\026\n\016exist"
                     + "_duration\030\007 \001(\002\022=\n\033attached_instanced_mo"
                     + "difier\030\010 \001(\0132\030.AbilityAttachedModifier\022\027"
-                    + "\n\017apply_entity_id\030\t \001(\r\022\023\n\013DLOLFHNNEKI\030\n"
-                    + " \001(\010\0220\n\023modifier_durability\030\013 \001(\0132\023.Modi"
-                    + "fierDurability\022\021\n\tsbuff_uid\030\014 \001(\r\022\036\n\026is_"
-                    + "serverbuff_modifier\030\r \001(\010B\033\n\031emu.grasscu"
-                    + "tter.net.protob\006proto3"
+                    + "\n\017apply_entity_id\030\t \001(\r\022\"\n\032is_attached_p"
+                    + "arent_ability\030\n \001(\010\0220\n\023modifier_durabili"
+                    + "ty\030\013 \001(\0132\023.ModifierDurability\022\021\n\tsbuff_u"
+                    + "id\030\014 \001(\r\022\036\n\026is_serverbuff_modifier\030\r \001(\010"
+                    + "B\033\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -2103,7 +2103,7 @@ public final class AbilityAppliedModifierOuterClass {
                             "ExistDuration",
                             "AttachedInstancedModifier",
                             "ApplyEntityId",
-                            "DLOLFHNNEKI",
+                            "IsAttachedParentAbility",
                             "ModifierDurability",
                             "SbuffUid",
                             "IsServerbuffModifier",

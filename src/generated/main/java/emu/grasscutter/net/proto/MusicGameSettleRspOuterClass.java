@@ -57,7 +57,6 @@ public final class MusicGameSettleRspOuterClass {
      *
      * <pre>
      * CmdId: 8828
-     * Obf: LNJBNJPOIOP
      * </pre>
      *
      * Protobuf type {@code MusicGameSettleRsp}
@@ -432,7 +431,6 @@ public final class MusicGameSettleRspOuterClass {
          *
          * <pre>
          * CmdId: 8828
-         * Obf: LNJBNJPOIOP
          * </pre>
          *
          * Protobuf type {@code MusicGameSettleRsp}

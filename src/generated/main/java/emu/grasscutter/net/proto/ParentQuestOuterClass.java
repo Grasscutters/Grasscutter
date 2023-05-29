@@ -66,11 +66,11 @@ public final class ParentQuestOuterClass {
         int getTimeVarMapOrThrow(int key);
 
         /**
-         * <code>uint32 BENEFOELIBI = 11;</code>
+         * <code>uint32 parent_quest_state = 11;</code>
          *
-         * @return The bENEFOELIBI.
+         * @return The parentQuestState.
          */
-        int getBENEFOELIBI();
+        int getParentQuestState();
 
         /** <code>repeated .InferencePageInfo inference_page_list = 7;</code> */
         java.util.List<emu.grasscutter.net.proto.InferencePageInfoOuterClass.InferencePageInfo>
@@ -104,11 +104,11 @@ public final class ParentQuestOuterClass {
                 int index);
 
         /**
-         * <code>uint32 NFAHBNHBHDE = 12;</code>
+         * <code>uint32 quest_var_seq = 12;</code>
          *
-         * @return The nFAHBNHBHDE.
+         * @return The questVarSeq.
          */
-        int getNFAHBNHBHDE();
+        int getQuestVarSeq();
 
         /**
          * <code>uint64 video_key = 14;</code>
@@ -274,12 +274,12 @@ public final class ParentQuestOuterClass {
                             }
                         case 88:
                             {
-                                bENEFOELIBI_ = input.readUInt32();
+                                parentQuestState_ = input.readUInt32();
                                 break;
                             }
                         case 96:
                             {
-                                nFAHBNHBHDE_ = input.readUInt32();
+                                questVarSeq_ = input.readUInt32();
                                 break;
                             }
                         case 106:
@@ -495,16 +495,16 @@ public final class ParentQuestOuterClass {
             return map.get(key);
         }
 
-        public static final int BENEFOELIBI_FIELD_NUMBER = 11;
-        private int bENEFOELIBI_;
+        public static final int PARENT_QUEST_STATE_FIELD_NUMBER = 11;
+        private int parentQuestState_;
         /**
-         * <code>uint32 BENEFOELIBI = 11;</code>
+         * <code>uint32 parent_quest_state = 11;</code>
          *
-         * @return The bENEFOELIBI.
+         * @return The parentQuestState.
          */
         @java.lang.Override
-        public int getBENEFOELIBI() {
-            return bENEFOELIBI_;
+        public int getParentQuestState() {
+            return parentQuestState_;
         }
 
         public static final int INFERENCE_PAGE_LIST_FIELD_NUMBER = 7;
@@ -575,16 +575,16 @@ public final class ParentQuestOuterClass {
             return childQuestList_.get(index);
         }
 
-        public static final int NFAHBNHBHDE_FIELD_NUMBER = 12;
-        private int nFAHBNHBHDE_;
+        public static final int QUEST_VAR_SEQ_FIELD_NUMBER = 12;
+        private int questVarSeq_;
         /**
-         * <code>uint32 NFAHBNHBHDE = 12;</code>
+         * <code>uint32 quest_var_seq = 12;</code>
          *
-         * @return The nFAHBNHBHDE.
+         * @return The questVarSeq.
          */
         @java.lang.Override
-        public int getNFAHBNHBHDE() {
-            return nFAHBNHBHDE_;
+        public int getQuestVarSeq() {
+            return questVarSeq_;
         }
 
         public static final int VIDEO_KEY_FIELD_NUMBER = 14;
@@ -691,11 +691,11 @@ public final class ParentQuestOuterClass {
             if (isRandom_ != false) {
                 output.writeBool(10, isRandom_);
             }
-            if (bENEFOELIBI_ != 0) {
-                output.writeUInt32(11, bENEFOELIBI_);
+            if (parentQuestState_ != 0) {
+                output.writeUInt32(11, parentQuestState_);
             }
-            if (nFAHBNHBHDE_ != 0) {
-                output.writeUInt32(12, nFAHBNHBHDE_);
+            if (questVarSeq_ != 0) {
+                output.writeUInt32(12, questVarSeq_);
             }
             com.google.protobuf.GeneratedMessageV3.serializeIntegerMapTo(
                     output, internalGetTimeVarMap(), TimeVarMapDefaultEntryHolder.defaultEntry, 13);
@@ -740,11 +740,11 @@ public final class ParentQuestOuterClass {
             if (isRandom_ != false) {
                 size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, isRandom_);
             }
-            if (bENEFOELIBI_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, bENEFOELIBI_);
+            if (parentQuestState_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, parentQuestState_);
             }
-            if (nFAHBNHBHDE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, nFAHBNHBHDE_);
+            if (questVarSeq_ != 0) {
+                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(12, questVarSeq_);
             }
             for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry :
                     internalGetTimeVarMap().getMap().entrySet()) {
@@ -792,10 +792,10 @@ public final class ParentQuestOuterClass {
             if (!getQuestVarList().equals(other.getQuestVarList())) return false;
             if (getIsFinished() != other.getIsFinished()) return false;
             if (!internalGetTimeVarMap().equals(other.internalGetTimeVarMap())) return false;
-            if (getBENEFOELIBI() != other.getBENEFOELIBI()) return false;
+            if (getParentQuestState() != other.getParentQuestState()) return false;
             if (!getInferencePageListList().equals(other.getInferencePageListList())) return false;
             if (!getChildQuestListList().equals(other.getChildQuestListList())) return false;
-            if (getNFAHBNHBHDE() != other.getNFAHBNHBHDE()) return false;
+            if (getQuestVarSeq() != other.getQuestVarSeq()) return false;
             if (getVideoKey() != other.getVideoKey()) return false;
             if (getIsRandom() != other.getIsRandom()) return false;
             if (getParentQuestId() != other.getParentQuestId()) return false;
@@ -826,8 +826,8 @@ public final class ParentQuestOuterClass {
                 hash = (37 * hash) + TIME_VAR_MAP_FIELD_NUMBER;
                 hash = (53 * hash) + internalGetTimeVarMap().hashCode();
             }
-            hash = (37 * hash) + BENEFOELIBI_FIELD_NUMBER;
-            hash = (53 * hash) + getBENEFOELIBI();
+            hash = (37 * hash) + PARENT_QUEST_STATE_FIELD_NUMBER;
+            hash = (53 * hash) + getParentQuestState();
             if (getInferencePageListCount() > 0) {
                 hash = (37 * hash) + INFERENCE_PAGE_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getInferencePageListList().hashCode();
@@ -836,8 +836,8 @@ public final class ParentQuestOuterClass {
                 hash = (37 * hash) + CHILD_QUEST_LIST_FIELD_NUMBER;
                 hash = (53 * hash) + getChildQuestListList().hashCode();
             }
-            hash = (37 * hash) + NFAHBNHBHDE_FIELD_NUMBER;
-            hash = (53 * hash) + getNFAHBNHBHDE();
+            hash = (37 * hash) + QUEST_VAR_SEQ_FIELD_NUMBER;
+            hash = (53 * hash) + getQuestVarSeq();
             hash = (37 * hash) + VIDEO_KEY_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getVideoKey());
             hash = (37 * hash) + IS_RANDOM_FIELD_NUMBER;
@@ -1026,7 +1026,7 @@ public final class ParentQuestOuterClass {
                 isFinished_ = false;
 
                 internalGetMutableTimeVarMap().clear();
-                bENEFOELIBI_ = 0;
+                parentQuestState_ = 0;
 
                 if (inferencePageListBuilder_ == null) {
                     inferencePageList_ = java.util.Collections.emptyList();
@@ -1040,7 +1040,7 @@ public final class ParentQuestOuterClass {
                 } else {
                     childQuestListBuilder_.clear();
                 }
-                nFAHBNHBHDE_ = 0;
+                questVarSeq_ = 0;
 
                 videoKey_ = 0L;
 
@@ -1092,7 +1092,7 @@ public final class ParentQuestOuterClass {
                 result.isFinished_ = isFinished_;
                 result.timeVarMap_ = internalGetTimeVarMap();
                 result.timeVarMap_.makeImmutable();
-                result.bENEFOELIBI_ = bENEFOELIBI_;
+                result.parentQuestState_ = parentQuestState_;
                 if (inferencePageListBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) != 0)) {
                         inferencePageList_ = java.util.Collections.unmodifiableList(inferencePageList_);
@@ -1111,7 +1111,7 @@ public final class ParentQuestOuterClass {
                 } else {
                     result.childQuestList_ = childQuestListBuilder_.build();
                 }
-                result.nFAHBNHBHDE_ = nFAHBNHBHDE_;
+                result.questVarSeq_ = questVarSeq_;
                 result.videoKey_ = videoKey_;
                 result.isRandom_ = isRandom_;
                 result.parentQuestId_ = parentQuestId_;
@@ -1190,8 +1190,8 @@ public final class ParentQuestOuterClass {
                     setIsFinished(other.getIsFinished());
                 }
                 internalGetMutableTimeVarMap().mergeFrom(other.internalGetTimeVarMap());
-                if (other.getBENEFOELIBI() != 0) {
-                    setBENEFOELIBI(other.getBENEFOELIBI());
+                if (other.getParentQuestState() != 0) {
+                    setParentQuestState(other.getParentQuestState());
                 }
                 if (inferencePageListBuilder_ == null) {
                     if (!other.inferencePageList_.isEmpty()) {
@@ -1247,8 +1247,8 @@ public final class ParentQuestOuterClass {
                         }
                     }
                 }
-                if (other.getNFAHBNHBHDE() != 0) {
-                    setNFAHBNHBHDE(other.getNFAHBNHBHDE());
+                if (other.getQuestVarSeq() != 0) {
+                    setQuestVarSeq(other.getQuestVarSeq());
                 }
                 if (other.getVideoKey() != 0L) {
                     setVideoKey(other.getVideoKey());
@@ -1537,36 +1537,36 @@ public final class ParentQuestOuterClass {
                 return this;
             }
 
-            private int bENEFOELIBI_;
+            private int parentQuestState_;
             /**
-             * <code>uint32 BENEFOELIBI = 11;</code>
+             * <code>uint32 parent_quest_state = 11;</code>
              *
-             * @return The bENEFOELIBI.
+             * @return The parentQuestState.
              */
             @java.lang.Override
-            public int getBENEFOELIBI() {
-                return bENEFOELIBI_;
+            public int getParentQuestState() {
+                return parentQuestState_;
             }
             /**
-             * <code>uint32 BENEFOELIBI = 11;</code>
+             * <code>uint32 parent_quest_state = 11;</code>
              *
-             * @param value The bENEFOELIBI to set.
+             * @param value The parentQuestState to set.
              * @return This builder for chaining.
              */
-            public Builder setBENEFOELIBI(int value) {
+            public Builder setParentQuestState(int value) {
 
-                bENEFOELIBI_ = value;
+                parentQuestState_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 BENEFOELIBI = 11;</code>
+             * <code>uint32 parent_quest_state = 11;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearBENEFOELIBI() {
+            public Builder clearParentQuestState() {
 
-                bENEFOELIBI_ = 0;
+                parentQuestState_ = 0;
                 onChanged();
                 return this;
             }
@@ -2037,36 +2037,36 @@ public final class ParentQuestOuterClass {
                 return childQuestListBuilder_;
             }
 
-            private int nFAHBNHBHDE_;
+            private int questVarSeq_;
             /**
-             * <code>uint32 NFAHBNHBHDE = 12;</code>
+             * <code>uint32 quest_var_seq = 12;</code>
              *
-             * @return The nFAHBNHBHDE.
+             * @return The questVarSeq.
              */
             @java.lang.Override
-            public int getNFAHBNHBHDE() {
-                return nFAHBNHBHDE_;
+            public int getQuestVarSeq() {
+                return questVarSeq_;
             }
             /**
-             * <code>uint32 NFAHBNHBHDE = 12;</code>
+             * <code>uint32 quest_var_seq = 12;</code>
              *
-             * @param value The nFAHBNHBHDE to set.
+             * @param value The questVarSeq to set.
              * @return This builder for chaining.
              */
-            public Builder setNFAHBNHBHDE(int value) {
+            public Builder setQuestVarSeq(int value) {
 
-                nFAHBNHBHDE_ = value;
+                questVarSeq_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>uint32 NFAHBNHBHDE = 12;</code>
+             * <code>uint32 quest_var_seq = 12;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearNFAHBNHBHDE() {
+            public Builder clearQuestVarSeq() {
 
-                nFAHBNHBHDE_ = 0;
+                questVarSeq_ = 0;
                 onChanged();
                 return this;
             }
@@ -2380,18 +2380,18 @@ public final class ParentQuestOuterClass {
         java.lang.String[] descriptorData = {
             "\n\021ParentQuest.proto\032\027InferencePageInfo.p"
                     + "roto\032\020ChildQuest.proto\032\033ParentQuestRando"
-                    + "mInfo.proto\"\237\003\n\013ParentQuest\022\023\n\013accept_ti"
+                    + "mInfo.proto\"\250\003\n\013ParentQuest\022\023\n\013accept_ti"
                     + "me\030\t \001(\r\022\021\n\tquest_var\030\017 \003(\005\022\023\n\013is_finish"
                     + "ed\030\002 \001(\010\0222\n\014time_var_map\030\r \003(\0132\034.ParentQ"
-                    + "uest.TimeVarMapEntry\022\023\n\013BENEFOELIBI\030\013 \001("
-                    + "\r\022/\n\023inference_page_list\030\007 \003(\0132\022.Inferen"
-                    + "cePageInfo\022%\n\020child_quest_list\030\005 \003(\0132\013.C"
-                    + "hildQuest\022\023\n\013NFAHBNHBHDE\030\014 \001(\r\022\021\n\tvideo_"
-                    + "key\030\016 \001(\004\022\021\n\tis_random\030\n \001(\010\022\027\n\017parent_q"
-                    + "uest_id\030\010 \001(\r\022+\n\013random_info\030\001 \001(\0132\026.Par"
-                    + "entQuestRandomInfo\0321\n\017TimeVarMapEntry\022\013\n"
-                    + "\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gra"
-                    + "sscutter.net.protob\006proto3"
+                    + "uest.TimeVarMapEntry\022\032\n\022parent_quest_sta"
+                    + "te\030\013 \001(\r\022/\n\023inference_page_list\030\007 \003(\0132\022."
+                    + "InferencePageInfo\022%\n\020child_quest_list\030\005 "
+                    + "\003(\0132\013.ChildQuest\022\025\n\rquest_var_seq\030\014 \001(\r\022"
+                    + "\021\n\tvideo_key\030\016 \001(\004\022\021\n\tis_random\030\n \001(\010\022\027\n"
+                    + "\017parent_quest_id\030\010 \001(\r\022+\n\013random_info\030\001 "
+                    + "\001(\0132\026.ParentQuestRandomInfo\0321\n\017TimeVarMa"
+                    + "pEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033"
+                    + "\n\031emu.grasscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -2410,10 +2410,10 @@ public final class ParentQuestOuterClass {
                             "QuestVar",
                             "IsFinished",
                             "TimeVarMap",
-                            "BENEFOELIBI",
+                            "ParentQuestState",
                             "InferencePageList",
                             "ChildQuestList",
-                            "NFAHBNHBHDE",
+                            "QuestVarSeq",
                             "VideoKey",
                             "IsRandom",
                             "ParentQuestId",

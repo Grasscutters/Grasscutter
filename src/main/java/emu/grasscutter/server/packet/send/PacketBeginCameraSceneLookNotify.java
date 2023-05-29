@@ -14,24 +14,24 @@ public final class PacketBeginCameraSceneLookNotify extends BasePacket {
     public PacketBeginCameraSceneLookNotify(CameraSceneLookNotify parameters) {
         super(PacketOpcodes.BeginCameraSceneLookNotify);
 
-//        var packet =
-//                BeginCameraSceneLookNotify.newBuilder()
-//                        .setLookPos(parameters.lookPos.toProto())
-//                        .setFollowPos(parameters.followPos.toProto())
-//                        .setDuration(parameters.duration)
-//                        .setIsAllowInput(parameters.isAllowInput)
-//                        .setIsSetFollowPos(parameters.setFollowPos)
-//                        .setIsSetScreenXy(parameters.isScreenXY)
-//                        .setIsRecoverKeepCurrent(parameters.recoverKeepCurrent)
-//                        .setIsChangePlayMode(parameters.isChangePlayMode)
-//                        .setScreenY(parameters.screenY)
-//                        .setScreenX(parameters.screenX)
-//                        .setIsForce(parameters.isForce)
-//                        .setIsForce(parameters.isForceWalk)
-//                        .setEntityId(parameters.entityId)
-//                        .addAllOtherParams(parameters.otherParams);
-//
-//        this.setData(packet);
+        //        var packet =
+        //                BeginCameraSceneLookNotify.newBuilder()
+        //                        .setLookPos(parameters.lookPos.toProto())
+        //                        .setFollowPos(parameters.followPos.toProto())
+        //                        .setDuration(parameters.duration)
+        //                        .setIsAllowInput(parameters.isAllowInput)
+        //                        .setIsSetFollowPos(parameters.setFollowPos)
+        //                        .setIsSetScreenXy(parameters.isScreenXY)
+        //                        .setIsRecoverKeepCurrent(parameters.recoverKeepCurrent)
+        //                        .setIsChangePlayMode(parameters.isChangePlayMode)
+        //                        .setScreenY(parameters.screenY)
+        //                        .setScreenX(parameters.screenX)
+        //                        .setIsForce(parameters.isForce)
+        //                        .setIsForce(parameters.isForceWalk)
+        //                        .setEntityId(parameters.entityId)
+        //                        .addAllOtherParams(parameters.otherParams);
+        //
+        //        this.setData(packet);
     }
 
     // TODO check default values

@@ -43,7 +43,6 @@ public final class MusicGameStartReqOuterClass {
      *
      * <pre>
      * CmdId: 8583
-     * Obf: APIHLPKFBGN
      * </pre>
      *
      * Protobuf type {@code MusicGameStartReq}
@@ -361,7 +360,6 @@ public final class MusicGameStartReqOuterClass {
          *
          * <pre>
          * CmdId: 8583
-         * Obf: APIHLPKFBGN
          * </pre>
          *
          * Protobuf type {@code MusicGameStartReq}
