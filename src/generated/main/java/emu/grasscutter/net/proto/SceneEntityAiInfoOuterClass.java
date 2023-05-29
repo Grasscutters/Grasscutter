@@ -18,11 +18,11 @@ public final class SceneEntityAiInfoOuterClass {
             com.google.protobuf.MessageOrBuilder {
 
         /**
-         * <code>bool PCIPPECCGJF = 1;</code>
+         * <code>bool is_ai_open = 1;</code>
          *
-         * @return The pCIPPECCGJF.
+         * @return The isAiOpen.
          */
-        boolean getPCIPPECCGJF();
+        boolean getIsAiOpen();
 
         /**
          * <code>.Vector born_pos = 2;</code>
@@ -163,7 +163,7 @@ public final class SceneEntityAiInfoOuterClass {
                             break;
                         case 8:
                             {
-                                pCIPPECCGJF_ = input.readBool();
+                                isAiOpen_ = input.readBool();
                                 break;
                             }
                         case 18:
@@ -309,16 +309,16 @@ public final class SceneEntityAiInfoOuterClass {
                                     .class);
         }
 
-        public static final int PCIPPECCGJF_FIELD_NUMBER = 1;
-        private boolean pCIPPECCGJF_;
+        public static final int IS_AI_OPEN_FIELD_NUMBER = 1;
+        private boolean isAiOpen_;
         /**
-         * <code>bool PCIPPECCGJF = 1;</code>
+         * <code>bool is_ai_open = 1;</code>
          *
-         * @return The pCIPPECCGJF.
+         * @return The isAiOpen.
          */
         @java.lang.Override
-        public boolean getPCIPPECCGJF() {
-            return pCIPPECCGJF_;
+        public boolean getIsAiOpen() {
+            return isAiOpen_;
         }
 
         public static final int BORN_POS_FIELD_NUMBER = 2;
@@ -604,8 +604,8 @@ public final class SceneEntityAiInfoOuterClass {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (pCIPPECCGJF_ != false) {
-                output.writeBool(1, pCIPPECCGJF_);
+            if (isAiOpen_ != false) {
+                output.writeBool(1, isAiOpen_);
             }
             if (bornPos_ != null) {
                 output.writeMessage(2, getBornPos());
@@ -634,8 +634,8 @@ public final class SceneEntityAiInfoOuterClass {
             if (size != -1) return size;
 
             size = 0;
-            if (pCIPPECCGJF_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, pCIPPECCGJF_);
+            if (isAiOpen_ != false) {
+                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, isAiOpen_);
             }
             if (bornPos_ != null) {
                 size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBornPos());
@@ -696,7 +696,7 @@ public final class SceneEntityAiInfoOuterClass {
             emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo other =
                     (emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo) obj;
 
-            if (getPCIPPECCGJF() != other.getPCIPPECCGJF()) return false;
+            if (getIsAiOpen() != other.getIsAiOpen()) return false;
             if (hasBornPos() != other.hasBornPos()) return false;
             if (hasBornPos()) {
                 if (!getBornPos().equals(other.getBornPos())) return false;
@@ -721,8 +721,8 @@ public final class SceneEntityAiInfoOuterClass {
             }
             int hash = 41;
             hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + PCIPPECCGJF_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPCIPPECCGJF());
+            hash = (37 * hash) + IS_AI_OPEN_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsAiOpen());
             if (hasBornPos()) {
                 hash = (37 * hash) + BORN_POS_FIELD_NUMBER;
                 hash = (53 * hash) + getBornPos().hashCode();
@@ -926,7 +926,7 @@ public final class SceneEntityAiInfoOuterClass {
             @java.lang.Override
             public Builder clear() {
                 super.clear();
-                pCIPPECCGJF_ = false;
+                isAiOpen_ = false;
 
                 if (bornPosBuilder_ == null) {
                     bornPos_ = null;
@@ -979,7 +979,7 @@ public final class SceneEntityAiInfoOuterClass {
                 emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo result =
                         new emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo(this);
                 int from_bitField0_ = bitField0_;
-                result.pCIPPECCGJF_ = pCIPPECCGJF_;
+                result.isAiOpen_ = isAiOpen_;
                 if (bornPosBuilder_ == null) {
                     result.bornPos_ = bornPos_;
                 } else {
@@ -1054,8 +1054,8 @@ public final class SceneEntityAiInfoOuterClass {
                 if (other
                         == emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo
                                 .getDefaultInstance()) return this;
-                if (other.getPCIPPECCGJF() != false) {
-                    setPCIPPECCGJF(other.getPCIPPECCGJF());
+                if (other.getIsAiOpen() != false) {
+                    setIsAiOpen(other.getIsAiOpen());
                 }
                 if (other.hasBornPos()) {
                     mergeBornPos(other.getBornPos());
@@ -1106,36 +1106,36 @@ public final class SceneEntityAiInfoOuterClass {
 
             private int bitField0_;
 
-            private boolean pCIPPECCGJF_;
+            private boolean isAiOpen_;
             /**
-             * <code>bool PCIPPECCGJF = 1;</code>
+             * <code>bool is_ai_open = 1;</code>
              *
-             * @return The pCIPPECCGJF.
+             * @return The isAiOpen.
              */
             @java.lang.Override
-            public boolean getPCIPPECCGJF() {
-                return pCIPPECCGJF_;
+            public boolean getIsAiOpen() {
+                return isAiOpen_;
             }
             /**
-             * <code>bool PCIPPECCGJF = 1;</code>
+             * <code>bool is_ai_open = 1;</code>
              *
-             * @param value The pCIPPECCGJF to set.
+             * @param value The isAiOpen to set.
              * @return This builder for chaining.
              */
-            public Builder setPCIPPECCGJF(boolean value) {
+            public Builder setIsAiOpen(boolean value) {
 
-                pCIPPECCGJF_ = value;
+                isAiOpen_ = value;
                 onChanged();
                 return this;
             }
             /**
-             * <code>bool PCIPPECCGJF = 1;</code>
+             * <code>bool is_ai_open = 1;</code>
              *
              * @return This builder for chaining.
              */
-            public Builder clearPCIPPECCGJF() {
+            public Builder clearIsAiOpen() {
 
-                pCIPPECCGJF_ = false;
+                isAiOpen_ = false;
                 onChanged();
                 return this;
             }
@@ -1804,20 +1804,20 @@ public final class SceneEntityAiInfoOuterClass {
     static {
         java.lang.String[] descriptorData = {
             "\n\027SceneEntityAiInfo.proto\032\014Vector.proto\032"
-                    + "\021ServantInfo.proto\"\352\003\n\021SceneEntityAiInfo"
-                    + "\022\023\n\013PCIPPECCGJF\030\001 \001(\010\022\031\n\010born_pos\030\002 \001(\0132"
-                    + "\007.Vector\0228\n\014skill_cd_map\030\003 \003(\0132\".SceneEn"
-                    + "tityAiInfo.SkillCdMapEntry\022\"\n\014servant_in"
-                    + "fo\030\004 \001(\0132\014.ServantInfo\022:\n\rai_threat_map\030"
-                    + "\005 \003(\0132#.SceneEntityAiInfo.AiThreatMapEnt"
-                    + "ry\022C\n\022skill_group_cd_map\030\006 \003(\0132\'.SceneEn"
-                    + "tityAiInfo.SkillGroupCdMapEntry\022\022\n\ncur_t"
-                    + "actic\030\007 \001(\r\022\023\n\013LHPKKKJLJHK\030\010 \001(\010\0321\n\017Skil"
-                    + "lCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:"
-                    + "\0028\001\0322\n\020AiThreatMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005"
-                    + "value\030\002 \001(\r:\0028\001\0326\n\024SkillGroupCdMapEntry\022"
-                    + "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.g"
-                    + "rasscutter.net.protob\006proto3"
+                    + "\021ServantInfo.proto\"\351\003\n\021SceneEntityAiInfo"
+                    + "\022\022\n\nis_ai_open\030\001 \001(\010\022\031\n\010born_pos\030\002 \001(\0132\007"
+                    + ".Vector\0228\n\014skill_cd_map\030\003 \003(\0132\".SceneEnt"
+                    + "ityAiInfo.SkillCdMapEntry\022\"\n\014servant_inf"
+                    + "o\030\004 \001(\0132\014.ServantInfo\022:\n\rai_threat_map\030\005"
+                    + " \003(\0132#.SceneEntityAiInfo.AiThreatMapEntr"
+                    + "y\022C\n\022skill_group_cd_map\030\006 \003(\0132\'.SceneEnt"
+                    + "ityAiInfo.SkillGroupCdMapEntry\022\022\n\ncur_ta"
+                    + "ctic\030\007 \001(\r\022\023\n\013LHPKKKJLJHK\030\010 \001(\010\0321\n\017Skill"
+                    + "CdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\002"
+                    + "8\001\0322\n\020AiThreatMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v"
+                    + "alue\030\002 \001(\r:\0028\001\0326\n\024SkillGroupCdMapEntry\022\013"
+                    + "\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gr"
+                    + "asscutter.net.protob\006proto3"
         };
         descriptor =
                 com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1831,7 +1831,7 @@ public final class SceneEntityAiInfoOuterClass {
                 new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
                         internal_static_SceneEntityAiInfo_descriptor,
                         new java.lang.String[] {
-                            "PCIPPECCGJF",
+                            "IsAiOpen",
                             "BornPos",
                             "SkillCdMap",
                             "ServantInfo",
