@@ -1,7 +1,5 @@
 package emu.grasscutter.database;
 
-import static com.mongodb.client.model.Filters.eq;
-
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
 import dev.morphia.query.experimental.filters.Filters;
@@ -23,9 +21,12 @@ import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.utils.objects.Returnable;
 import io.netty.util.concurrent.FastThreadLocalThread;
+
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.stream.Stream;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public final class DatabaseHelper {
     private static final ExecutorService eventExecutor =
@@ -53,7 +54,7 @@ public final class DatabaseHelper {
      * @param object The object to save.
      */
     public static void saveGameAsync(Object object) {
-        DatabaseHelper.eventExecutor.submit(() -> DatabaseHelper.saveGameAsync(object));
+        DatabaseHelper.eventExecutor.submit(() -> DatabaseManager.getGameDatastore().save(object));
     }
 
     /**
