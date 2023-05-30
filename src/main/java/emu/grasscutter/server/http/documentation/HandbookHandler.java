@@ -15,7 +15,7 @@ import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
-    private final byte[] handbook;
+    private String handbook;
     private final boolean serve;
 
     /**
@@ -23,8 +23,16 @@ public final class HandbookHandler implements Router {
      * found.
      */
     public HandbookHandler() {
-        this.handbook = FileUtils.readResource("/html/handbook.html");
-        this.serve = HANDBOOK.enable && this.handbook.length > 0;
+        this.handbook = new String(FileUtils.readResource("/html/handbook.html"));
+        this.serve = HANDBOOK.enable && this.handbook.length() > 0;
+
+        var server = HANDBOOK.server;
+        if (this.serve && server.enforced) {
+            this.handbook = this.handbook
+                .replace("{{DETAILS_ADDRESS}}", server.address)
+                .replace("{{DETAILS_PORT}}", String.valueOf(server.port))
+                .replace("{{DETAILS_DISABLE}}", Boolean.toString(server.canChange));
+        }
     }
 
     @Override
@@ -48,7 +56,7 @@ public final class HandbookHandler implements Router {
      * @return True if the server can execute handbook commands.
      */
     private boolean controlSupported() {
-        return HANDBOOK.enable;
+        return HANDBOOK.enable && HANDBOOK.allowCommands;
     }
 
     /**
@@ -61,7 +69,9 @@ public final class HandbookHandler implements Router {
         if (!this.serve) {
             ctx.status(500).result("Handbook not found.");
         } else {
-            ctx.contentType("text/html").result(this.handbook);
+            ctx
+                .contentType(ContentType.TEXT_HTML)
+                .result(this.handbook);
         }
     }
 
@@ -102,8 +112,7 @@ public final class HandbookHandler implements Router {
             } else {
                 ctx.status(result.getStatus())
                         .result(result.getBody())
-                        .contentType(
-                                result.isHtml() ? ContentType.TEXT_HTML : ContentType.TEXT_PLAIN);
+                        .contentType(result.isHtml() ? ContentType.TEXT_HTML : ContentType.TEXT_PLAIN);
             }
         }
     }

@@ -135,6 +135,12 @@ export type CommandResponse = {
     message: string;
 };
 
+export type WindowDetails = {
+    address: string,
+    port: number,
+    disable: boolean
+};
+
 /**
  * Checks if a string is a page.
  *

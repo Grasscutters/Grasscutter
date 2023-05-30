@@ -1,12 +1,14 @@
 import type { CommandResponse } from "@backend/types";
 import emitter from "@backend/events";
 
+import { getWindowDetails } from "@app/utils";
+
 let playerToken: string | null = null; // The session token for the player.
 export let targetPlayer = 0; // The UID of the target player.
 
 // The server's address and port.
-export let address: string = "127.0.0.1",
-    port: string = "443";
+export let address: string = getWindowDetails().address,
+    port: string = getWindowDetails().port.toString();
 export let encrypted: boolean = true;
 
 export let lockedPlayer = false; // Whether the UID field is locked.
@@ -16,6 +18,9 @@ export let connected = false; // Whether the server is connected.
  * Loads the server details from local storage.
  */
 export function setup(): void {
+    // Check if the server is disabled.
+    if (getWindowDetails().disable) return;
+
     // Load the server details from local storage.
     const storedAddress = localStorage.getItem("address");
     const storedPort = localStorage.getItem("port");

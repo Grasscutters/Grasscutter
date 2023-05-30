@@ -1,4 +1,4 @@
-import type { Entity, Item, EntityInfo, ItemInfo } from "@backend/types";
+import type { Entity, Item, EntityInfo, ItemInfo, WindowDetails } from "@backend/types";
 import { ItemType, Quality } from "@backend/types";
 
 /**
@@ -164,4 +164,21 @@ export function openUrl(url: string): void {
 export function notNaN(value: number | string): string {
     const number = parseInt(value.toString());
     return isNaN(number) ? "" : number.toString();
+}
+
+/**
+ * Extracts the server details out of the window.
+ */
+export function getWindowDetails(): WindowDetails {
+    const details = (window as any).details;
+    const { address, port, disable } = details;
+
+    return {
+        address: address == "{{DETAILS_ADDRESS}}" ?
+            "127.0.0.1" : address,
+        port: port == "{{DETAILS_PORT}}" ?
+            443 : parseInt(port),
+        disable: disable == "{{DETAILS_DISABLE}}" ?
+            false : disable == "true"
+    };
 }

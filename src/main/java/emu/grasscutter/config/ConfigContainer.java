@@ -32,9 +32,11 @@ public class ConfigContainer {
      *             The field for 'legacyResources' has been removed.
      * Version 7 - 'regionKey' is being added for authentication
      *             with the new dispatch server.
+     * Version 8 - 'server' is being added for enforcing handbook server
+     *             addresses.
      */
     private static int version() {
-        return 7;
+        return 8;
     }
 
     /**
@@ -299,9 +301,19 @@ public class ConfigContainer {
 
         public static class HandbookOptions {
             public boolean enable = false;
+
             public boolean allowCommands = true;
             public int maxRequests = 10;
             public int maxEntities = 100;
+
+            public Server server = new Server();
+
+            public static class Server {
+                public boolean enforced = false;
+                public String address = "127.0.0.1";
+                public int port = 443;
+                public boolean canChange = true;
+            }
         }
     }
 

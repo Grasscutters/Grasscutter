@@ -4,6 +4,7 @@ import emitter from "@backend/events";
 import { targetPlayer, address, port, setServerDetails, url, setTargetPlayer } from "@backend/server";
 
 import "@css/widgets/ServerSettings.scss";
+import { getWindowDetails } from "@app/utils";
 
 interface IState {
     webview: boolean;
@@ -97,6 +98,8 @@ class ServerSettings extends React.Component<{}, IState> {
     }
 
     render() {
+        const { disable } = getWindowDetails();
+
         return (
             <div className={"ServerSettings"}>
                 {this.state.webview ? (
@@ -109,7 +112,14 @@ class ServerSettings extends React.Component<{}, IState> {
                         <div className={"ServerSettings_Content ServerSettings_Top"}>
                             <h1 className={"ServerSettings_Title"}>Server Settings</h1>
 
-                            <div className={"ServerSettings_Details"}>
+                            <div
+                                className={"ServerSettings_Details"}
+                                style={{
+                                    opacity: disable ? 0.5 : 1,
+                                    cursor: disable ? "not-allowed" : "default",
+                                    userSelect: disable ? "none" : "auto"
+                                }}
+                            >
                                 <div>
                                     <p>Address:</p>
                                     <input
@@ -120,6 +130,10 @@ class ServerSettings extends React.Component<{}, IState> {
                                             const value = target.value;
 
                                             this.setState({ address: value });
+                                        }}
+                                        disabled={disable}
+                                        style={{
+                                            cursor: disable ? "not-allowed" : "text"
                                         }}
                                     />
                                 </div>
@@ -138,6 +152,10 @@ class ServerSettings extends React.Component<{}, IState> {
                                             }
 
                                             this.setState({ port: Number(value) });
+                                        }}
+                                        disabled={disable}
+                                        style={{
+                                            cursor: disable ? "not-allowed" : "text"
                                         }}
                                     />
                                 </div>
