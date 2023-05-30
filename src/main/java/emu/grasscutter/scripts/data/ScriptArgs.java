@@ -79,6 +79,11 @@ public class ScriptArgs {
         return this;
     }
 
+    public ScriptArgs setEventSource(int source) {
+        this.source = Integer.toString(source);
+        return this;
+    }
+
     public int getGroupId() {
         return group_id;
     }

@@ -35,7 +35,10 @@ public class AbilityModifier implements Serializable {
     public AbilityModifierAction[] onHeal;
     public AbilityModifierAction[] onBeingHealed;
     public DynamicFloat duration = DynamicFloat.ZERO;
+    public DynamicFloat thinkInterval = DynamicFloat.ZERO;
     public String stacking;
+
+    public AbilityMixinData[] modifierMixins;
 
     public ElementType elementType;
     public DynamicFloat elementDurability = DynamicFloat.ZERO;
@@ -264,20 +267,51 @@ public class AbilityModifier implements Serializable {
 
         public String target;
 
-        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
+        @SerializedName(value = "amount", alternate = {"PDLLIFICICJ", "cdRatio"})
         public DynamicFloat amount = DynamicFloat.ZERO;
 
+        @SerializedName(value = "amountByTargetCurrentHPRatio")
         public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "unused")
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "unknown", alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
         public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
+
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
+
+        @SerializedName(value = "amountByTargetMaxHPRatio")
         public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "amountByCasterMaxHPRatio")
         public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+
+        public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
+
+        public DynamicFloat healRatio = DynamicFloat.ONE;
 
         @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
         public boolean ignoreAbilityProperty;
 
         public String modifierName;
+
+        public boolean enableLockHP;
+        public boolean disableWhenLoading;
+        public boolean lethal = true;
+
+        public boolean muteHealEffect = false;
+
+        public boolean byServer;
+        public boolean lifeByOwnerIsAlive;
+        public String campTargetType;
+        public int campID;
+        public int gadgetID;
+        public boolean ownerIsTarget;
+
+        public boolean isFromOwner;
+        public String globalValueKey;
+        public String abilityFormula;
 
         public int param1;
         public int param2;

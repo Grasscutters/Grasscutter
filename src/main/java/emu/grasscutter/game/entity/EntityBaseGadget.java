@@ -18,14 +18,23 @@ public abstract class EntityBaseGadget extends GameEntity {
     @Getter(onMethod_ = @Override)
     protected final Position rotation;
 
+    @Getter private final int campId;
+    @Getter private final int campType;
+
     public EntityBaseGadget(Scene scene) {
         this(scene, null, null);
     }
 
     public EntityBaseGadget(Scene scene, Position position, Position rotation) {
+        this(scene, position, rotation, 0, 0);
+    }
+
+    public EntityBaseGadget(Scene scene, Position position, Position rotation, int campId, int campType) {
         super(scene);
         this.position = position != null ? position.clone() : new Position();
         this.rotation = rotation != null ? rotation.clone() : new Position();
+        this.campId = campId;
+        this.campType = campType;
     }
 
     public abstract int getGadgetId();

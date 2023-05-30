@@ -11,6 +11,7 @@ import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.entity.gadget.platform.ConfigRoute;
 import emu.grasscutter.game.entity.gadget.platform.PointArrayRoute;
 import emu.grasscutter.game.props.ClimateType;
+import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.quest.enums.QuestContent;
@@ -459,9 +460,9 @@ public class ScriptLib {
     private void printLog(String source, String msg){
         var currentGroup = this.currentGroup.getIfExists();
         if(currentGroup!=null) {
-            logger.debug("[LUA] {} {} {}", source, currentGroup.id, msg);
+            Grasscutter.getLogger().warn("[LUA] {} {} {}", source, currentGroup.id, msg);
         } else {
-            logger.debug("[LUA] {} {}", source, msg);
+            Grasscutter.getLogger().warn("[LUA] {} {}", source, msg);
         }
     }
 
@@ -490,9 +491,16 @@ public class ScriptLib {
     public int SetMonsterBattleByGroup(int configId, int groupId) {
         logger.debug("[LUA] Call SetMonsterBattleByGroup with {} {}",
             configId,groupId);
-        // TODO implement scene50008_group250008057.lua uses incomplete group numbers
-        return 0;
-    }
+		// TODO implement scene50008_group250008057.lua uses incomplete group numbers
+
+        // -> MonsterForceAlertNotify
+        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
+        if (entity instanceof EntityMonster monster) {
+            this.getSceneScriptManager().getScene().broadcastPacket(new PacketMonsterForceAlertNotify(monster.getId()));
+        }
+
+		return 0;
+	}
 
     public int CauseDungeonFail(){
         logger.debug("[LUA] Call CauseDungeonFail with");
@@ -809,7 +817,7 @@ public class ScriptLib {
     }
     public int IsPlayerAllAvatarDie(int sceneUid){
         logger.warn("[LUA] Call unimplemented IsPlayerAllAvatarDie {}", sceneUid);
-        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityType.Avatar.getValue()).toList();
+        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityIdType.AVATAR.getId()).toList();
         for (GameEntity p : playerEntities){
             var player = (EntityAvatar)p;
             if(player.isAlive()){
@@ -1581,14 +1589,23 @@ public class ScriptLib {
         return gadget.getGroupId();
     }
 
+    public int SetGadgetEnableInteract(int groupId, int configId, boolean enable) {
+        EntityGadget gadget = getCurrentEntityGadget();
+        if(gadget.getGroupId() != groupId || gadget.getConfigId() != configId) return -1;
+
+        gadget.setInteractEnabled(enable);
+
+        return 0;
+    }
+
     public int[] GetGatherConfigIdList() {
         EntityGadget gadget = getCurrentEntityGadget();
 
-        GameEntity[] children = (GameEntity[]) gadget.getChildren().toArray();
+        var children = gadget.getChildren();
 
-        int[] configIds = new int[children.length + 1];
-        for(int i = 0; i < children.length; i++) {
-            configIds[i] = children[i].getConfigId();
+        int[] configIds = new int[children.size()];
+        for(int i = 0; i < children.size(); i++) {
+            configIds[i] = children.get(i).getConfigId();
         }
 
         return configIds;

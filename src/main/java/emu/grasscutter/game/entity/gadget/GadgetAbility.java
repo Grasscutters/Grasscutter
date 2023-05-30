@@ -1,6 +1,6 @@
 package emu.grasscutter.game.entity.gadget;
 
-import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AbilityGadgetInfoOuterClass;
@@ -9,10 +9,11 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import lombok.val;
 
 public class GadgetAbility extends GadgetContent {
-    private EntityClientGadget parent;
+    private EntityBaseGadget parent;
 
-    public GadgetAbility(EntityGadget gadget, EntityClientGadget parent) {
+    public GadgetAbility(EntityGadget gadget, EntityBaseGadget parent) {
         super(gadget);
+
         this.parent = parent;
     }
 

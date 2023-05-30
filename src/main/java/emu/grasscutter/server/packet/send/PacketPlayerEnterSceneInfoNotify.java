@@ -26,7 +26,7 @@ public class PacketPlayerEnterSceneInfoNotify extends BasePacket {
 
         proto.setTeamEnterInfo(
                 TeamEnterSceneInfo.newBuilder()
-                        .setTeamEntityId(player.getTeamManager().getEntityId()) // 150995833
+                        .setTeamEntityId(player.getTeamManager().getEntity().getId()) // 150995833
                         .setTeamAbilityInfo(empty)
                         .setAbilityControlBlock(
                                 AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder().build()));

@@ -16,7 +16,7 @@ public class PacketSyncTeamEntityNotify extends BasePacket {
                 SyncTeamEntityNotify.newBuilder().setSceneId(player.getSceneId());
 
         if (player.getWorld().isMultiplayer()) {
-            for (Player p : player.getWorld().getPlayers()) {
+            for (var p : player.getWorld()) {
                 // Skip if same player
                 if (player == p) {
                     continue;
@@ -25,7 +25,7 @@ public class PacketSyncTeamEntityNotify extends BasePacket {
                 // Set info
                 TeamEntityInfo info =
                         TeamEntityInfo.newBuilder()
-                                .setTeamEntityId(p.getTeamManager().getEntityId())
+                                .setTeamEntityId(p.getTeamManager().getEntity().getId())
                                 .setAuthorityPeerId(p.getPeerId())
                                 .setTeamAbilityInfo(AbilitySyncStateInfo.newBuilder())
                                 .build();

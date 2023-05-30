@@ -1,7 +1,5 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
@@ -11,6 +9,7 @@ import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.game.entity.EntityTeam;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
@@ -33,11 +32,14 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import java.util.*;
-import java.util.stream.Stream;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
+
+import java.util.*;
+import java.util.stream.Stream;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
@@ -50,7 +52,7 @@ public final class TeamManager extends BasePlayerDataManager {
     private int currentTeamIndex;
     @Getter @Setter private int currentCharacterIndex;
     @Transient @Getter @Setter private TeamInfo mpTeam;
-    @Transient @Getter @Setter private int entityId;
+    @Transient @Getter @Setter private EntityTeam entity;
 
     @Transient private int useTemporarilyTeamIndex = -1;
     @Transient private List<TeamInfo> temporaryTeam; // Temporary Team for tower
@@ -155,6 +157,9 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     public EntityAvatar getCurrentAvatarEntity() {
+        // Check if any avatars are equipped.
+        if (this.getActiveTeam().size() == 0) return null;
+
         if (this.currentCharacterIndex >= this.getActiveTeam().size()) {
             this.currentCharacterIndex = 0; // Reset to the first character.
         }

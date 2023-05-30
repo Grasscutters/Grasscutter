@@ -13,12 +13,13 @@ import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
+import lombok.val;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import lombok.val;
 
 public interface JsonAdapters {
     class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -180,15 +181,16 @@ public interface JsonAdapters {
                     default -> false;
                 }) {
                     // System.out.println("Enum value field found - " + f.getName());
-                    boolean acc = f.isAccessible();
-                    f.setAccessible(true);
                     try {
-                        for (val constant : enumConstants)
+                        for (var constant : enumConstants) {
+                            var accessible = f.canAccess(constant);
+                            f.setAccessible(true);
                             map.put(String.valueOf(f.getInt(constant)), constant);
+                            f.setAccessible(accessible);
+                        }
                     } catch (IllegalAccessException e) {
                         // System.out.println("Failed to access enum id field.");
                     }
-                    f.setAccessible(acc);
                     break;
                 }
             }

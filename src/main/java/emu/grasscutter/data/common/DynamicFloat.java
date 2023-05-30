@@ -1,14 +1,22 @@
 package emu.grasscutter.data.common;
 
+import emu.grasscutter.data.excels.ProudSkillData;
+import emu.grasscutter.game.ability.Ability;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
-import java.util.List;
-import java.util.Optional;
+import lombok.Getter;
 import lombok.val;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+@Getter
 public class DynamicFloat {
     public static DynamicFloat ZERO = new DynamicFloat(0f);
+    public static DynamicFloat ONE = new DynamicFloat(1f);
+
     private List<StackOp> ops;
     private boolean dynamic = false;
     private float constant = 0f;
@@ -33,23 +41,35 @@ public class DynamicFloat {
     }
 
     public String toString(boolean nextBoolean) {
-        String key = String.valueOf(nextBoolean);
+        var key = String.valueOf(nextBoolean);
         this.ops = List.of(new StackOp(key));
         return ops.toString();
     }
 
     public float get() {
-        return this.get(new Object2FloatArrayMap<String>());
+        return this.get(new Object2FloatArrayMap<>(), 0);
     }
 
-    public float get(Object2FloatMap<String> props) {
-        if (!dynamic) return constant;
+    public float get(float defaultValue) {
+        return this.get(new Object2FloatArrayMap<>(), defaultValue);
+    }
+
+    public float get(Ability ability, float defaultValue) {
+        return this.get(ability.getAbilitySpecials(), defaultValue);
+    }
+
+    public float get(Ability ability) {
+        return this.get(ability.getAbilitySpecials(), 0f);
+    }
+
+    public float get(Object2FloatMap<String> props, float defaultValue) {
+        if (!this.dynamic) return constant;
 
         val fl = new FloatArrayList();
         for (var op : this.ops) {
             switch (op.op) {
                 case CONSTANT -> fl.push(op.fValue);
-                case KEY -> fl.push(props.getOrDefault(op.sValue, 0f));
+                case KEY -> fl.push(props.getOrDefault(op.sValue, 0f) * (op.negative ? -1 : 1));
                 case ADD -> fl.push(fl.popFloat() + fl.popFloat());
                 case SUB -> fl.push(
                         -fl.popFloat() + fl.popFloat()); // [f0, f1, f2] -> [f0, f1-f2]  (opposite of RPN order)
@@ -59,7 +79,21 @@ public class DynamicFloat {
             }
         }
 
-        return fl.popFloat(); // well-formed data will always have only one value left at this point
+        try {
+            return fl.popFloat();  // well-formed data will always have only one value left at this point
+        } catch(NoSuchElementException e) {
+            return defaultValue;
+        }
+    }
+
+    public float get(ProudSkillData skill) {
+        //Construct the map
+        return get(skill.getParamListMap(), 0f);
+    }
+
+    public float get(ProudSkillData skill, float defaultValue) {
+        //Construct the map
+        return get(skill.getParamListMap(), defaultValue);
     }
 
     public static class StackOp {
@@ -68,6 +102,7 @@ public class DynamicFloat {
         public float fValue;
         public String sValue;
         public boolean bValue;
+        public boolean negative = false;
 
         public StackOp(String s) {
             switch (s.toUpperCase()) {
@@ -76,6 +111,12 @@ public class DynamicFloat {
                 case "MUL" -> this.op = Op.MUL;
                 case "DIV" -> this.op = Op.DIV;
                 default -> {
+                    if (s.startsWith("%")) {
+                        s = s.substring(1);
+                    } else if (s.startsWith("-%")) {
+                        s = s.substring(2);
+                    }
+
                     this.op = Op.KEY;
                     this.sValue = s;
                 }

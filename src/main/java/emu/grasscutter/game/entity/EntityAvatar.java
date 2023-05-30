@@ -69,6 +69,8 @@ public class EntityAvatar extends GameEntity {
             Grasscutter.getLogger()
                     .error("Unable to create EntityAvatar instance; provided scene is null.");
         }
+
+        this.initAbilities();
     }
 
     @Override
@@ -100,11 +102,13 @@ public class EntityAvatar extends GameEntity {
         return getAvatar().getFightProperties();
     }
 
+    /**
+     * @return The entity ID of the avatar's equipped weapon.
+     */
     public int getWeaponEntityId() {
-        if (getAvatar().getWeapon() != null) {
-            return getAvatar().getWeapon().getWeaponEntityId();
-        }
-        return 0;
+        var avatar = this.getAvatar();
+        return avatar.getWeapon() == null ? 0 :
+            avatar.getWeapon().getWeaponEntityId();
     }
 
     @Override
@@ -125,26 +129,36 @@ public class EntityAvatar extends GameEntity {
     }
 
     @Override
-    public float heal(float amount) {
+    public void initAbilities() {
+    }
+
+    private void addConfigAbility(String abilityName){
+        var data = GameData.getAbilityData(abilityName);
+        if (data != null) this.getScene().getWorld()
+            .getHost().getAbilityManager().addAbilityToEntity(this, data);
+    }
+
+    @Override
+    public float heal(float amount, boolean mute) {
         // Do not heal character if they are dead
         if (!this.isAlive()) {
             return 0f;
         }
 
-        float healed = super.heal(amount);
+        float healed = super.heal(amount, mute);
 
         if (healed > 0f) {
-            getScene()
-                    .broadcastPacket(
-                            new PacketEntityFightPropChangeReasonNotify(
-                                    this,
-                                    FightProperty.FIGHT_PROP_CUR_HP,
-                                    healed,
-                                    PropChangeReason.PROP_CHANGE_REASON_ABILITY,
-                                    ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY));
+            getScene().broadcastPacket(
+                new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, mute ? PropChangeReason.PROP_CHANGE_REASON_NONE : PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY)
+            );
         }
 
         return healed;
+    }
+
+    @Override
+    public float heal(float amount) {
+        return this.heal(amount, false);
     }
 
     public void clearEnergy(ChangeEnergyReason reason) {

@@ -41,14 +41,15 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -78,6 +79,8 @@ public final class Scene {
     @Getter private int tickCount = 0;
     @Getter private boolean isPaused = false;
 
+    @Getter private GameEntity sceneEntity;
+
     public Scene(World world, SceneData sceneData) {
         this.world = world;
         this.sceneData = sceneData;
@@ -98,6 +101,7 @@ public final class Scene {
         this.scriptManager = new SceneScriptManager(this);
         this.blossomManager = new BlossomManager(this);
         this.unlockedForces = new HashSet<>();
+        this.sceneEntity = new EntityScene(this);
     }
 
     public int getId() {
@@ -113,7 +117,25 @@ public final class Scene {
     }
 
     public GameEntity getEntityById(int id) {
-        return this.entities.get(id);
+        // Check if the scene's entity ID is referenced.
+        if (id == 0x13800001) return this.sceneEntity;
+        else if (id == this.getWorld().getLevelEntityId())
+            return this.getWorld().getEntity();
+
+        var teamEntityPlayer = players.stream().filter(p -> p.getTeamManager().getEntity().getId() == id).findAny();
+        if(teamEntityPlayer.isPresent())
+            return teamEntityPlayer.get().getTeamManager().getEntity();
+
+        var entity = this.entities.get(id);
+        if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {
+            for (var player : this.getPlayers()) {
+                for (var avatar : player.getTeamManager().getActiveTeam()) {
+                    if (avatar.getId() == id) return avatar;
+                }
+            }
+        }
+
+        return entity;
     }
 
     public GameEntity getEntityByConfigId(int configId) {
@@ -336,6 +358,14 @@ public final class Scene {
 
     public void addEntities(Collection<? extends GameEntity> entities) {
         addEntities(entities, VisionType.VISION_TYPE_BORN);
+    }
+
+    public void updateEntity(GameEntity entity) {
+        this.broadcastPacket(new PacketSceneEntityUpdateNotify(entity));
+    }
+
+    public void updateEntity(GameEntity entity, VisionType type) {
+        this.broadcastPacket(new PacketSceneEntityUpdateNotify(Arrays.asList(entity), type));
     }
 
     private static <T> List<List<T>> chopped(List<T> list, final int L) {

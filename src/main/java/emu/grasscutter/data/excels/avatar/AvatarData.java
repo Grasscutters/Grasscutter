@@ -14,40 +14,27 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @ResourceType(name = "AvatarExcelConfigData.json", loadPriority = LoadPriority.LOW)
 public class AvatarData extends GameResource {
 
     private String iconName;
-    @Getter
-    private String bodyType;
-    @Getter
-    private String qualityType;
-    @Getter
-    private int chargeEfficiency;
-    @Getter
-    private int initialWeapon;
-    @Getter
-    private WeaponType weaponType;
-    @Getter
-    private String imageName;
-    @Getter
-    private int avatarPromoteId;
-    @Getter
-    private String cutsceneShow;
-    @Getter
-    private int skillDepotId;
-    @Getter
-    private int staminaRecoverSpeed;
-    @Getter
-    private List<Integer> candSkillDepotIds;
-    @Getter
-    private String avatarIdentityType;
-    @Getter
-    private List<Integer> avatarPromoteRewardLevelList;
-    @Getter
-    private List<Integer> avatarPromoteRewardIdList;
+    @Getter private String bodyType;
+    @Getter private String qualityType;
+    @Getter private int chargeEfficiency;
+    @Getter private int initialWeapon;
+    @Getter private WeaponType weaponType;
+    @Getter private String imageName;
+    @Getter private int avatarPromoteId;
+    @Getter private String cutsceneShow;
+    @Getter private int skillDepotId;
+    @Getter private int staminaRecoverSpeed;
+    @Getter private List<Integer> candSkillDepotIds;
+    @Getter private String avatarIdentityType;
+    @Getter private List<Integer> avatarPromoteRewardLevelList;
+    @Getter private List<Integer> avatarPromoteRewardIdList;
 
     @Getter
     private long nameTextMapHash;
@@ -74,6 +61,8 @@ public class AvatarData extends GameResource {
     private AvatarSkillDepotData skillDepot;
     @Getter
     private IntList abilities;
+    @Getter
+    private List<String> abilitieNames = new ArrayList<>();
 
     @Getter
     private List<Integer> fetters;
@@ -187,8 +176,10 @@ public class AvatarData extends GameResource {
             var info = GameData.getAbilityEmbryoInfo().get(this.name);
             if (info != null) {
                 this.abilities = new IntArrayList(info.getAbilities().length);
-                for (var ability : info.getAbilities())
+                for (var ability : info.getAbilities()) {
                     this.abilities.add(Utils.abilityHash(ability));
+                    this.abilitieNames.add(ability);
+                }
             }
         }
     }

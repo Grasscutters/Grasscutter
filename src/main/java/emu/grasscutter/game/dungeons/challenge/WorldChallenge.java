@@ -13,11 +13,11 @@ import emu.grasscutter.scripts.data.SceneTrigger;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Getter
 @Setter
@@ -27,7 +27,7 @@ public class WorldChallenge {
     private final int challengeId;
     private final int challengeIndex;
     private final List<Integer> paramList;
-    private final int timeLimit;
+    private int timeLimit;
     private final List<ChallengeTrigger> challengeTriggers;
     private final int goal;
     private final AtomicInteger score;
@@ -112,24 +112,10 @@ public class WorldChallenge {
         }
 
         // TODO: record the time in PARAM2 and used in action
-        // TODO: Set 'eventSource' in script arguments.
-        // Event source should be set to '1' for timer challenges.
-
-        var eventSource = new AtomicReference<>("");
-        // TODO: This is a hack to get the event source.
-        // This should be properly implemented.
-        scriptManager
-                .getTriggersByEvent(EventType.EVENT_CHALLENGE_SUCCESS)
-                .forEach(
-                        trigger -> {
-                            if (trigger.currentGroup.id == this.getGroup().id) {
-                                eventSource.set(trigger.getSource());
-                            }
-                        });
         scriptManager.callEvent(
                 new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_SUCCESS)
                         .setParam2(finishedTime)
-                        .setEventSource(eventSource.get()));
+                        .setEventSource(this.getChallengeIndex()));
 
         this.getScene()
                 .triggerDungeonEvent(
@@ -145,23 +131,10 @@ public class WorldChallenge {
         this.finish(false);
 
         // TODO: Set 'eventSource' in script arguments.
-        // Event source should be set to '1' for timer challenges.
-        var eventSource = new AtomicReference<>("");
-        // TODO: This is a hack to get the event source.
-        // This should be properly implemented.
         var scriptManager = this.getScene().getScriptManager();
-        scriptManager
-                .getTriggersByEvent(EventType.EVENT_CHALLENGE_FAIL)
-                .forEach(
-                        trigger -> {
-                            if (trigger.currentGroup.id == this.getGroup().id) {
-                                eventSource.set(trigger.getSource());
-                            }
-                        });
-
         scriptManager.callEvent(
                 new ScriptArgs(this.getGroup().id, EventType.EVENT_CHALLENGE_FAIL)
-                        .setEventSource(eventSource.get()));
+                        .setEventSource(this.getChallengeIndex()));
         challengeTriggers.forEach(t -> t.onFinish(this));
     }
 

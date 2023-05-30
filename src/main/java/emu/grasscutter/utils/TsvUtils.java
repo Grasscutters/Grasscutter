@@ -1,7 +1,5 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.utils.Utils.nonRegexSplit;
-
 import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
@@ -9,6 +7,8 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
+import lombok.val;
+
 import java.io.IOException;
 import java.lang.reflect.*;
 import java.nio.charset.StandardCharsets;
@@ -19,7 +19,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-import lombok.val;
+
+import static emu.grasscutter.utils.Utils.nonRegexSplit;
 
 // Throughout this file, commented System.out.println debug log calls are left in.
 // This is because the default logger will deadlock when operating on parallel streams.
@@ -126,14 +127,16 @@ public final class TsvUtils {
                 default -> false;
             }) {
                 // System.out.println("Enum value field found - " + f.getName());
-                boolean acc = f.isAccessible();
-                f.setAccessible(true);
                 try {
-                    for (val constant : enumConstants) map.put(String.valueOf(f.getInt(constant)), constant);
+                    for (var constant : enumConstants) {
+                        var accessible = f.canAccess(constant);
+                        f.setAccessible(true);
+                        map.put(String.valueOf(f.getInt(constant)), constant);
+                        f.setAccessible(accessible);
+                    }
                 } catch (IllegalAccessException e) {
                     // System.out.println("Failed to access enum id field.");
                 }
-                f.setAccessible(acc);
                 break;
             }
         }

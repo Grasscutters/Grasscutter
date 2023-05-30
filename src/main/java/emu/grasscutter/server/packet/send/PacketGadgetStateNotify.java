@@ -14,7 +14,7 @@ public class PacketGadgetStateNotify extends BasePacket {
                 GadgetStateNotify.newBuilder()
                         .setGadgetEntityId(gadget.getId())
                         .setGadgetState(newState)
-                        .setIsEnableInteract(true)
+                        .setIsEnableInteract(gadget.isInteractEnabled())
                         .build();
 
         this.setData(proto);

@@ -122,4 +122,10 @@ public class EntityVehicle extends EntityBaseGadget {
 
         return entityInfo.build();
     }
+
+    @Override
+    public void initAbilities() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'initAbilities'");
+    }
 }
