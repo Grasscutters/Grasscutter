@@ -47,11 +47,11 @@ public class DynamicFloat {
     }
 
     public float get() {
-        return this.get(new Object2FloatArrayMap<String>(), 0);
+        return this.get(new Object2FloatArrayMap<>(), 0);
     }
 
     public float get(float defaultValue) {
-        return this.get(new Object2FloatArrayMap<String>(), defaultValue);
+        return this.get(new Object2FloatArrayMap<>(), defaultValue);
     }
 
     public float get(Ability ability, float defaultValue) {

@@ -267,16 +267,28 @@ public class AbilityModifier implements Serializable {
 
         public String target;
 
-        @SerializedName(value = "amount", alternate = "PDLLIFICICJ")
+        @SerializedName(value = "amount", alternate = {"PDLLIFICICJ", "cdRatio"})
         public DynamicFloat amount = DynamicFloat.ZERO;
 
+        @SerializedName(value = "amountByTargetCurrentHPRatio")
         public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "unused")
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "unknown", alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
         public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
+
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;
+
+        @SerializedName(value = "amountByTargetMaxHPRatio")
         public DynamicFloat amountByTargetCurrentHPRatio = DynamicFloat.ZERO;
+
+        @SerializedName(value = "amountByCasterMaxHPRatio")
         public DynamicFloat amountByTargetMaxHPRatio = DynamicFloat.ZERO;
+
         public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
+
         public DynamicFloat healRatio = DynamicFloat.ONE;
 
         @SerializedName(value = "ignoreAbilityProperty", alternate = "HHFGADCJJDI")
