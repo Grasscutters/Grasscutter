@@ -11,6 +11,7 @@ public interface HandbookAuthenticator {
     class Response {
         private final int status;
         private final String body;
+        @Builder.Default private boolean html = false;
     }
 
     /**
