@@ -4,758 +4,682 @@
 package emu.grasscutter.net.proto;
 
 public final class RoguelikeSettleCoinInfoOuterClass {
-    private RoguelikeSettleCoinInfoOuterClass() {}
+  private RoguelikeSettleCoinInfoOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface RoguelikeSettleCoinInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:RoguelikeSettleCoinInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>uint32 OHCKIMGAALC = 11;</code>
+     * @return The oHCKIMGAALC.
+     */
+    int getOHCKIMGAALC();
+
+    /**
+     * <code>uint32 LJIOMIABKJC = 8;</code>
+     * @return The lJIOMIABKJC.
+     */
+    int getLJIOMIABKJC();
+
+    /**
+     * <code>uint32 LCGJJIKGFKK = 1;</code>
+     * @return The lCGJJIKGFKK.
+     */
+    int getLCGJJIKGFKK();
+  }
+  /**
+   * <pre>
+   * Obf: KFPDFBOIMFC
+   * </pre>
+   *
+   * Protobuf type {@code RoguelikeSettleCoinInfo}
+   */
+  public static final class RoguelikeSettleCoinInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:RoguelikeSettleCoinInfo)
+      RoguelikeSettleCoinInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RoguelikeSettleCoinInfo.newBuilder() to construct.
+    private RoguelikeSettleCoinInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RoguelikeSettleCoinInfo() {
     }
 
-    public interface RoguelikeSettleCoinInfoOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:RoguelikeSettleCoinInfo)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RoguelikeSettleCoinInfo();
+    }
 
-        /**
-         * <code>uint32 OHCKIMGAALC = 11;</code>
-         *
-         * @return The oHCKIMGAALC.
-         */
-        int getOHCKIMGAALC();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RoguelikeSettleCoinInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
 
-        /**
-         * <code>uint32 LJIOMIABKJC = 8;</code>
-         *
-         * @return The lJIOMIABKJC.
-         */
-        int getLJIOMIABKJC();
+              lCGJJIKGFKK_ = input.readUInt32();
+              break;
+            }
+            case 64: {
 
-        /**
-         * <code>uint32 LCGJJIKGFKK = 1;</code>
-         *
-         * @return The lCGJJIKGFKK.
-         */
-        int getLCGJJIKGFKK();
+              lJIOMIABKJC_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              oHCKIMGAALC_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.internal_static_RoguelikeSettleCoinInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.class, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.Builder.class);
+    }
+
+    public static final int OHCKIMGAALC_FIELD_NUMBER = 11;
+    private int oHCKIMGAALC_;
+    /**
+     * <code>uint32 OHCKIMGAALC = 11;</code>
+     * @return The oHCKIMGAALC.
+     */
+    @java.lang.Override
+    public int getOHCKIMGAALC() {
+      return oHCKIMGAALC_;
+    }
+
+    public static final int LJIOMIABKJC_FIELD_NUMBER = 8;
+    private int lJIOMIABKJC_;
+    /**
+     * <code>uint32 LJIOMIABKJC = 8;</code>
+     * @return The lJIOMIABKJC.
+     */
+    @java.lang.Override
+    public int getLJIOMIABKJC() {
+      return lJIOMIABKJC_;
+    }
+
+    public static final int LCGJJIKGFKK_FIELD_NUMBER = 1;
+    private int lCGJJIKGFKK_;
+    /**
+     * <code>uint32 LCGJJIKGFKK = 1;</code>
+     * @return The lCGJJIKGFKK.
+     */
+    @java.lang.Override
+    public int getLCGJJIKGFKK() {
+      return lCGJJIKGFKK_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (lCGJJIKGFKK_ != 0) {
+        output.writeUInt32(1, lCGJJIKGFKK_);
+      }
+      if (lJIOMIABKJC_ != 0) {
+        output.writeUInt32(8, lJIOMIABKJC_);
+      }
+      if (oHCKIMGAALC_ != 0) {
+        output.writeUInt32(11, oHCKIMGAALC_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (lCGJJIKGFKK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, lCGJJIKGFKK_);
+      }
+      if (lJIOMIABKJC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, lJIOMIABKJC_);
+      }
+      if (oHCKIMGAALC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, oHCKIMGAALC_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo other = (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) obj;
+
+      if (getOHCKIMGAALC()
+          != other.getOHCKIMGAALC()) return false;
+      if (getLJIOMIABKJC()
+          != other.getLJIOMIABKJC()) return false;
+      if (getLCGJJIKGFKK()
+          != other.getLCGJJIKGFKK()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OHCKIMGAALC_FIELD_NUMBER;
+      hash = (53 * hash) + getOHCKIMGAALC();
+      hash = (37 * hash) + LJIOMIABKJC_FIELD_NUMBER;
+      hash = (53 * hash) + getLJIOMIABKJC();
+      hash = (37 * hash) + LCGJJIKGFKK_FIELD_NUMBER;
+      hash = (53 * hash) + getLCGJJIKGFKK();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
     }
     /**
-     *
-     *
      * <pre>
      * Obf: KFPDFBOIMFC
      * </pre>
      *
      * Protobuf type {@code RoguelikeSettleCoinInfo}
      */
-    public static final class RoguelikeSettleCoinInfo extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:RoguelikeSettleCoinInfo)
-            RoguelikeSettleCoinInfoOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use RoguelikeSettleCoinInfo.newBuilder() to construct.
-        private RoguelikeSettleCoinInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:RoguelikeSettleCoinInfo)
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.internal_static_RoguelikeSettleCoinInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.class, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        oHCKIMGAALC_ = 0;
 
-        private RoguelikeSettleCoinInfo() {}
+        lJIOMIABKJC_ = 0;
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new RoguelikeSettleCoinInfo();
+        lCGJJIKGFKK_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.internal_static_RoguelikeSettleCoinInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo build() {
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+      @java.lang.Override
+      public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo buildPartial() {
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo result = new emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo(this);
+        result.oHCKIMGAALC_ = oHCKIMGAALC_;
+        result.lJIOMIABKJC_ = lJIOMIABKJC_;
+        result.lCGJJIKGFKK_ = lCGJJIKGFKK_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) {
+          return mergeFrom((emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private RoguelikeSettleCoinInfo(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8:
-                            {
-                                lCGJJIKGFKK_ = input.readUInt32();
-                                break;
-                            }
-                        case 64:
-                            {
-                                lJIOMIABKJC_ = input.readUInt32();
-                                break;
-                            }
-                        case 88:
-                            {
-                                oHCKIMGAALC_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo other) {
+        if (other == emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.getDefaultInstance()) return this;
+        if (other.getOHCKIMGAALC() != 0) {
+          setOHCKIMGAALC(other.getOHCKIMGAALC());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                    .internal_static_RoguelikeSettleCoinInfo_descriptor;
+        if (other.getLJIOMIABKJC() != 0) {
+          setLJIOMIABKJC(other.getLJIOMIABKJC());
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                    .internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                                    .class,
-                            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                                    .Builder.class);
+        if (other.getLCGJJIKGFKK() != 0) {
+          setLCGJJIKGFKK(other.getLCGJJIKGFKK());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final int OHCKIMGAALC_FIELD_NUMBER = 11;
-        private int oHCKIMGAALC_;
-        /**
-         * <code>uint32 OHCKIMGAALC = 11;</code>
-         *
-         * @return The oHCKIMGAALC.
-         */
-        @java.lang.Override
-        public int getOHCKIMGAALC() {
-            return oHCKIMGAALC_;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+
+      private int oHCKIMGAALC_ ;
+      /**
+       * <code>uint32 OHCKIMGAALC = 11;</code>
+       * @return The oHCKIMGAALC.
+       */
+      @java.lang.Override
+      public int getOHCKIMGAALC() {
+        return oHCKIMGAALC_;
+      }
+      /**
+       * <code>uint32 OHCKIMGAALC = 11;</code>
+       * @param value The oHCKIMGAALC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOHCKIMGAALC(int value) {
+        
+        oHCKIMGAALC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 OHCKIMGAALC = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOHCKIMGAALC() {
+        
+        oHCKIMGAALC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lJIOMIABKJC_ ;
+      /**
+       * <code>uint32 LJIOMIABKJC = 8;</code>
+       * @return The lJIOMIABKJC.
+       */
+      @java.lang.Override
+      public int getLJIOMIABKJC() {
+        return lJIOMIABKJC_;
+      }
+      /**
+       * <code>uint32 LJIOMIABKJC = 8;</code>
+       * @param value The lJIOMIABKJC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLJIOMIABKJC(int value) {
+        
+        lJIOMIABKJC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LJIOMIABKJC = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLJIOMIABKJC() {
+        
+        lJIOMIABKJC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lCGJJIKGFKK_ ;
+      /**
+       * <code>uint32 LCGJJIKGFKK = 1;</code>
+       * @return The lCGJJIKGFKK.
+       */
+      @java.lang.Override
+      public int getLCGJJIKGFKK() {
+        return lCGJJIKGFKK_;
+      }
+      /**
+       * <code>uint32 LCGJJIKGFKK = 1;</code>
+       * @param value The lCGJJIKGFKK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLCGJJIKGFKK(int value) {
+        
+        lCGJJIKGFKK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LCGJJIKGFKK = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLCGJJIKGFKK() {
+        
+        lCGJJIKGFKK_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
 
-        public static final int LJIOMIABKJC_FIELD_NUMBER = 8;
-        private int lJIOMIABKJC_;
-        /**
-         * <code>uint32 LJIOMIABKJC = 8;</code>
-         *
-         * @return The lJIOMIABKJC.
-         */
-        @java.lang.Override
-        public int getLJIOMIABKJC() {
-            return lJIOMIABKJC_;
-        }
 
-        public static final int LCGJJIKGFKK_FIELD_NUMBER = 1;
-        private int lCGJJIKGFKK_;
-        /**
-         * <code>uint32 LCGJJIKGFKK = 1;</code>
-         *
-         * @return The lCGJJIKGFKK.
-         */
-        @java.lang.Override
-        public int getLCGJJIKGFKK() {
-            return lCGJJIKGFKK_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (lCGJJIKGFKK_ != 0) {
-                output.writeUInt32(1, lCGJJIKGFKK_);
-            }
-            if (lJIOMIABKJC_ != 0) {
-                output.writeUInt32(8, lJIOMIABKJC_);
-            }
-            if (oHCKIMGAALC_ != 0) {
-                output.writeUInt32(11, oHCKIMGAALC_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (lCGJJIKGFKK_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(1, lCGJJIKGFKK_);
-            }
-            if (lJIOMIABKJC_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(8, lJIOMIABKJC_);
-            }
-            if (oHCKIMGAALC_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(11, oHCKIMGAALC_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo other =
-                    (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) obj;
-
-            if (getOHCKIMGAALC() != other.getOHCKIMGAALC()) return false;
-            if (getLJIOMIABKJC() != other.getLJIOMIABKJC()) return false;
-            if (getLCGJJIKGFKK() != other.getLCGJJIKGFKK()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + OHCKIMGAALC_FIELD_NUMBER;
-            hash = (53 * hash) + getOHCKIMGAALC();
-            hash = (37 * hash) + LJIOMIABKJC_FIELD_NUMBER;
-            hash = (53 * hash) + getLJIOMIABKJC();
-            hash = (37 * hash) + LCGJJIKGFKK_FIELD_NUMBER;
-            hash = (53 * hash) + getLCGJJIKGFKK();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                        prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Obf: KFPDFBOIMFC
-         * </pre>
-         *
-         * Protobuf type {@code RoguelikeSettleCoinInfo}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:RoguelikeSettleCoinInfo)
-                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfoOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .internal_static_RoguelikeSettleCoinInfo_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                                        .class,
-                                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                                        .Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                oHCKIMGAALC_ = 0;
-
-                lJIOMIABKJC_ = 0;
-
-                lCGJJIKGFKK_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .internal_static_RoguelikeSettleCoinInfo_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                        .getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                    build() {
-                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo result =
-                        buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                    buildPartial() {
-                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo result =
-                        new emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo(
-                                this);
-                result.oHCKIMGAALC_ = oHCKIMGAALC_;
-                result.lJIOMIABKJC_ = lJIOMIABKJC_;
-                result.lCGJJIKGFKK_ = lCGJJIKGFKK_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                            other) {
-                if (other
-                        == emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                                .getDefaultInstance()) return this;
-                if (other.getOHCKIMGAALC() != 0) {
-                    setOHCKIMGAALC(other.getOHCKIMGAALC());
-                }
-                if (other.getLJIOMIABKJC() != 0) {
-                    setLJIOMIABKJC(other.getLJIOMIABKJC());
-                }
-                if (other.getLCGJJIKGFKK() != 0) {
-                    setLCGJJIKGFKK(other.getLCGJJIKGFKK());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int oHCKIMGAALC_;
-            /**
-             * <code>uint32 OHCKIMGAALC = 11;</code>
-             *
-             * @return The oHCKIMGAALC.
-             */
-            @java.lang.Override
-            public int getOHCKIMGAALC() {
-                return oHCKIMGAALC_;
-            }
-            /**
-             * <code>uint32 OHCKIMGAALC = 11;</code>
-             *
-             * @param value The oHCKIMGAALC to set.
-             * @return This builder for chaining.
-             */
-            public Builder setOHCKIMGAALC(int value) {
-
-                oHCKIMGAALC_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 OHCKIMGAALC = 11;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearOHCKIMGAALC() {
-
-                oHCKIMGAALC_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int lJIOMIABKJC_;
-            /**
-             * <code>uint32 LJIOMIABKJC = 8;</code>
-             *
-             * @return The lJIOMIABKJC.
-             */
-            @java.lang.Override
-            public int getLJIOMIABKJC() {
-                return lJIOMIABKJC_;
-            }
-            /**
-             * <code>uint32 LJIOMIABKJC = 8;</code>
-             *
-             * @param value The lJIOMIABKJC to set.
-             * @return This builder for chaining.
-             */
-            public Builder setLJIOMIABKJC(int value) {
-
-                lJIOMIABKJC_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 LJIOMIABKJC = 8;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearLJIOMIABKJC() {
-
-                lJIOMIABKJC_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int lCGJJIKGFKK_;
-            /**
-             * <code>uint32 LCGJJIKGFKK = 1;</code>
-             *
-             * @return The lCGJJIKGFKK.
-             */
-            @java.lang.Override
-            public int getLCGJJIKGFKK() {
-                return lCGJJIKGFKK_;
-            }
-            /**
-             * <code>uint32 LCGJJIKGFKK = 1;</code>
-             *
-             * @param value The lCGJJIKGFKK to set.
-             * @return This builder for chaining.
-             */
-            public Builder setLCGJJIKGFKK(int value) {
-
-                lCGJJIKGFKK_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 LCGJJIKGFKK = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearLCGJJIKGFKK() {
-
-                lCGJJIKGFKK_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:RoguelikeSettleCoinInfo)
-        }
-
-        // @@protoc_insertion_point(class_scope:RoguelikeSettleCoinInfo)
-        private static final emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo();
-        }
-
-        public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass
-                        .RoguelikeSettleCoinInfo
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<RoguelikeSettleCoinInfo> PARSER =
-                new com.google.protobuf.AbstractParser<RoguelikeSettleCoinInfo>() {
-                    @java.lang.Override
-                    public RoguelikeSettleCoinInfo parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new RoguelikeSettleCoinInfo(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<RoguelikeSettleCoinInfo> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<RoguelikeSettleCoinInfo> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+      // @@protoc_insertion_point(builder_scope:RoguelikeSettleCoinInfo)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_RoguelikeSettleCoinInfo_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:RoguelikeSettleCoinInfo)
+    private static final emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\035RoguelikeSettleCoinInfo.proto\"X\n\027Rogue"
-                    + "likeSettleCoinInfo\022\023\n\013OHCKIMGAALC\030\013 \001(\r\022"
-                    + "\023\n\013LJIOMIABKJC\030\010 \001(\r\022\023\n\013LCGJJIKGFKK\030\001 \001("
-                    + "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_RoguelikeSettleCoinInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_RoguelikeSettleCoinInfo_descriptor,
-                        new java.lang.String[] {
-                            "OHCKIMGAALC", "LJIOMIABKJC", "LCGJJIKGFKK",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RoguelikeSettleCoinInfo>
+        PARSER = new com.google.protobuf.AbstractParser<RoguelikeSettleCoinInfo>() {
+      @java.lang.Override
+      public RoguelikeSettleCoinInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RoguelikeSettleCoinInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoguelikeSettleCoinInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoguelikeSettleCoinInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_RoguelikeSettleCoinInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\035RoguelikeSettleCoinInfo.proto\"X\n\027Rogue" +
+      "likeSettleCoinInfo\022\023\n\013OHCKIMGAALC\030\013 \001(\r\022" +
+      "\023\n\013LJIOMIABKJC\030\010 \001(\r\022\023\n\013LCGJJIKGFKK\030\001 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_RoguelikeSettleCoinInfo_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_RoguelikeSettleCoinInfo_descriptor,
+        new java.lang.String[] { "OHCKIMGAALC", "LJIOMIABKJC", "LCGJJIKGFKK", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

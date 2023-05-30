@@ -36,6 +36,11 @@ plugins {
 
 spotless {
     java {
+        target fileTree(rootDir) {
+            include '**/*.java'
+            exclude '**/generated/**/*.*'
+        }
+
         importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
         googleJavaFormat('1.15.0') // Use Google's Java formatter.
         formatAnnotations() // Reformat annotations.

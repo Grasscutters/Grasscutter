@@ -4,817 +4,755 @@
 package emu.grasscutter.net.proto;
 
 public final class TowerLevelStarCondDataOuterClass {
-    private TowerLevelStarCondDataOuterClass() {}
+  private TowerLevelStarCondDataOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface TowerLevelStarCondDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TowerLevelStarCondData)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>uint32 star_cond_index = 15;</code>
+     * @return The starCondIndex.
+     */
+    int getStarCondIndex();
+
+    /**
+     * <code>uint32 cond_value = 7;</code>
+     * @return The condValue.
+     */
+    int getCondValue();
+
+    /**
+     * <code>bool HHFLBKFMCIH = 4;</code>
+     * @return The hHFLBKFMCIH.
+     */
+    boolean getHHFLBKFMCIH();
+
+    /**
+     * <code>bool DJEMLDOFGLI = 11;</code>
+     * @return The dJEMLDOFGLI.
+     */
+    boolean getDJEMLDOFGLI();
+  }
+  /**
+   * <pre>
+   * Obf: BGEPDKGLCMN
+   * </pre>
+   *
+   * Protobuf type {@code TowerLevelStarCondData}
+   */
+  public static final class TowerLevelStarCondData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TowerLevelStarCondData)
+      TowerLevelStarCondDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TowerLevelStarCondData.newBuilder() to construct.
+    private TowerLevelStarCondData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TowerLevelStarCondData() {
     }
 
-    public interface TowerLevelStarCondDataOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:TowerLevelStarCondData)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TowerLevelStarCondData();
+    }
 
-        /**
-         * <code>uint32 star_cond_index = 15;</code>
-         *
-         * @return The starCondIndex.
-         */
-        int getStarCondIndex();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TowerLevelStarCondData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 32: {
 
-        /**
-         * <code>uint32 cond_value = 7;</code>
-         *
-         * @return The condValue.
-         */
-        int getCondValue();
+              hHFLBKFMCIH_ = input.readBool();
+              break;
+            }
+            case 56: {
 
-        /**
-         * <code>bool HHFLBKFMCIH = 4;</code>
-         *
-         * @return The hHFLBKFMCIH.
-         */
-        boolean getHHFLBKFMCIH();
+              condValue_ = input.readUInt32();
+              break;
+            }
+            case 88: {
 
-        /**
-         * <code>bool DJEMLDOFGLI = 11;</code>
-         *
-         * @return The dJEMLDOFGLI.
-         */
-        boolean getDJEMLDOFGLI();
+              dJEMLDOFGLI_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              starCondIndex_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.class, emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.Builder.class);
+    }
+
+    public static final int STAR_COND_INDEX_FIELD_NUMBER = 15;
+    private int starCondIndex_;
+    /**
+     * <code>uint32 star_cond_index = 15;</code>
+     * @return The starCondIndex.
+     */
+    @java.lang.Override
+    public int getStarCondIndex() {
+      return starCondIndex_;
+    }
+
+    public static final int COND_VALUE_FIELD_NUMBER = 7;
+    private int condValue_;
+    /**
+     * <code>uint32 cond_value = 7;</code>
+     * @return The condValue.
+     */
+    @java.lang.Override
+    public int getCondValue() {
+      return condValue_;
+    }
+
+    public static final int HHFLBKFMCIH_FIELD_NUMBER = 4;
+    private boolean hHFLBKFMCIH_;
+    /**
+     * <code>bool HHFLBKFMCIH = 4;</code>
+     * @return The hHFLBKFMCIH.
+     */
+    @java.lang.Override
+    public boolean getHHFLBKFMCIH() {
+      return hHFLBKFMCIH_;
+    }
+
+    public static final int DJEMLDOFGLI_FIELD_NUMBER = 11;
+    private boolean dJEMLDOFGLI_;
+    /**
+     * <code>bool DJEMLDOFGLI = 11;</code>
+     * @return The dJEMLDOFGLI.
+     */
+    @java.lang.Override
+    public boolean getDJEMLDOFGLI() {
+      return dJEMLDOFGLI_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hHFLBKFMCIH_ != false) {
+        output.writeBool(4, hHFLBKFMCIH_);
+      }
+      if (condValue_ != 0) {
+        output.writeUInt32(7, condValue_);
+      }
+      if (dJEMLDOFGLI_ != false) {
+        output.writeBool(11, dJEMLDOFGLI_);
+      }
+      if (starCondIndex_ != 0) {
+        output.writeUInt32(15, starCondIndex_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (hHFLBKFMCIH_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, hHFLBKFMCIH_);
+      }
+      if (condValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, condValue_);
+      }
+      if (dJEMLDOFGLI_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, dJEMLDOFGLI_);
+      }
+      if (starCondIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, starCondIndex_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData other = (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) obj;
+
+      if (getStarCondIndex()
+          != other.getStarCondIndex()) return false;
+      if (getCondValue()
+          != other.getCondValue()) return false;
+      if (getHHFLBKFMCIH()
+          != other.getHHFLBKFMCIH()) return false;
+      if (getDJEMLDOFGLI()
+          != other.getDJEMLDOFGLI()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STAR_COND_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStarCondIndex();
+      hash = (37 * hash) + COND_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getCondValue();
+      hash = (37 * hash) + HHFLBKFMCIH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHHFLBKFMCIH());
+      hash = (37 * hash) + DJEMLDOFGLI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDJEMLDOFGLI());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
     }
     /**
-     *
-     *
      * <pre>
      * Obf: BGEPDKGLCMN
      * </pre>
      *
      * Protobuf type {@code TowerLevelStarCondData}
      */
-    public static final class TowerLevelStarCondData extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:TowerLevelStarCondData)
-            TowerLevelStarCondDataOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use TowerLevelStarCondData.newBuilder() to construct.
-        private TowerLevelStarCondData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TowerLevelStarCondData)
+        emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.class, emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        starCondIndex_ = 0;
 
-        private TowerLevelStarCondData() {}
+        condValue_ = 0;
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new TowerLevelStarCondData();
+        hHFLBKFMCIH_ = false;
+
+        dJEMLDOFGLI_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.internal_static_TowerLevelStarCondData_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData build() {
+        emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData buildPartial() {
+        emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result = new emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData(this);
+        result.starCondIndex_ = starCondIndex_;
+        result.condValue_ = condValue_;
+        result.hHFLBKFMCIH_ = hHFLBKFMCIH_;
+        result.dJEMLDOFGLI_ = dJEMLDOFGLI_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) {
+          return mergeFrom((emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private TowerLevelStarCondData(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 32:
-                            {
-                                hHFLBKFMCIH_ = input.readBool();
-                                break;
-                            }
-                        case 56:
-                            {
-                                condValue_ = input.readUInt32();
-                                break;
-                            }
-                        case 88:
-                            {
-                                dJEMLDOFGLI_ = input.readBool();
-                                break;
-                            }
-                        case 120:
-                            {
-                                starCondIndex_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData other) {
+        if (other == emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.getDefaultInstance()) return this;
+        if (other.getStarCondIndex() != 0) {
+          setStarCondIndex(other.getStarCondIndex());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                    .internal_static_TowerLevelStarCondData_descriptor;
+        if (other.getCondValue() != 0) {
+          setCondValue(other.getCondValue());
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                    .internal_static_TowerLevelStarCondData_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                                    .class,
-                            emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                                    .Builder.class);
+        if (other.getHHFLBKFMCIH() != false) {
+          setHHFLBKFMCIH(other.getHHFLBKFMCIH());
         }
-
-        public static final int STAR_COND_INDEX_FIELD_NUMBER = 15;
-        private int starCondIndex_;
-        /**
-         * <code>uint32 star_cond_index = 15;</code>
-         *
-         * @return The starCondIndex.
-         */
-        @java.lang.Override
-        public int getStarCondIndex() {
-            return starCondIndex_;
+        if (other.getDJEMLDOFGLI() != false) {
+          setDJEMLDOFGLI(other.getDJEMLDOFGLI());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final int COND_VALUE_FIELD_NUMBER = 7;
-        private int condValue_;
-        /**
-         * <code>uint32 cond_value = 7;</code>
-         *
-         * @return The condValue.
-         */
-        @java.lang.Override
-        public int getCondValue() {
-            return condValue_;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static final int HHFLBKFMCIH_FIELD_NUMBER = 4;
-        private boolean hHFLBKFMCIH_;
-        /**
-         * <code>bool HHFLBKFMCIH = 4;</code>
-         *
-         * @return The hHFLBKFMCIH.
-         */
-        @java.lang.Override
-        public boolean getHHFLBKFMCIH() {
-            return hHFLBKFMCIH_;
-        }
-
-        public static final int DJEMLDOFGLI_FIELD_NUMBER = 11;
-        private boolean dJEMLDOFGLI_;
-        /**
-         * <code>bool DJEMLDOFGLI = 11;</code>
-         *
-         * @return The dJEMLDOFGLI.
-         */
-        @java.lang.Override
-        public boolean getDJEMLDOFGLI() {
-            return dJEMLDOFGLI_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (hHFLBKFMCIH_ != false) {
-                output.writeBool(4, hHFLBKFMCIH_);
-            }
-            if (condValue_ != 0) {
-                output.writeUInt32(7, condValue_);
-            }
-            if (dJEMLDOFGLI_ != false) {
-                output.writeBool(11, dJEMLDOFGLI_);
-            }
-            if (starCondIndex_ != 0) {
-                output.writeUInt32(15, starCondIndex_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (hHFLBKFMCIH_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, hHFLBKFMCIH_);
-            }
-            if (condValue_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, condValue_);
-            }
-            if (dJEMLDOFGLI_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, dJEMLDOFGLI_);
-            }
-            if (starCondIndex_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(15, starCondIndex_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData other =
-                    (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) obj;
-
-            if (getStarCondIndex() != other.getStarCondIndex()) return false;
-            if (getCondValue() != other.getCondValue()) return false;
-            if (getHHFLBKFMCIH() != other.getHHFLBKFMCIH()) return false;
-            if (getDJEMLDOFGLI() != other.getDJEMLDOFGLI()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + STAR_COND_INDEX_FIELD_NUMBER;
-            hash = (53 * hash) + getStarCondIndex();
-            hash = (37 * hash) + COND_VALUE_FIELD_NUMBER;
-            hash = (53 * hash) + getCondValue();
-            hash = (37 * hash) + HHFLBKFMCIH_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHHFLBKFMCIH());
-            hash = (37 * hash) + DJEMLDOFGLI_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDJEMLDOFGLI());
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                        prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Obf: BGEPDKGLCMN
-         * </pre>
-         *
-         * Protobuf type {@code TowerLevelStarCondData}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:TowerLevelStarCondData)
-                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                        .internal_static_TowerLevelStarCondData_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                        .internal_static_TowerLevelStarCondData_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                                        .class,
-                                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                                        .Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                starCondIndex_ = 0;
-
-                condValue_ = 0;
-
-                hHFLBKFMCIH_ = false;
-
-                dJEMLDOFGLI_ = false;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                        .internal_static_TowerLevelStarCondData_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                        .getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                    build() {
-                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result =
-                        buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                    buildPartial() {
-                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData result =
-                        new emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData(
-                                this);
-                result.starCondIndex_ = starCondIndex_;
-                result.condValue_ = condValue_;
-                result.hHFLBKFMCIH_ = hHFLBKFMCIH_;
-                result.dJEMLDOFGLI_ = dJEMLDOFGLI_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData other) {
-                if (other
-                        == emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                                .getDefaultInstance()) return this;
-                if (other.getStarCondIndex() != 0) {
-                    setStarCondIndex(other.getStarCondIndex());
-                }
-                if (other.getCondValue() != 0) {
-                    setCondValue(other.getCondValue());
-                }
-                if (other.getHHFLBKFMCIH() != false) {
-                    setHHFLBKFMCIH(other.getHHFLBKFMCIH());
-                }
-                if (other.getDJEMLDOFGLI() != false) {
-                    setDJEMLDOFGLI(other.getDJEMLDOFGLI());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int starCondIndex_;
-            /**
-             * <code>uint32 star_cond_index = 15;</code>
-             *
-             * @return The starCondIndex.
-             */
-            @java.lang.Override
-            public int getStarCondIndex() {
-                return starCondIndex_;
-            }
-            /**
-             * <code>uint32 star_cond_index = 15;</code>
-             *
-             * @param value The starCondIndex to set.
-             * @return This builder for chaining.
-             */
-            public Builder setStarCondIndex(int value) {
-
-                starCondIndex_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 star_cond_index = 15;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearStarCondIndex() {
-
-                starCondIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int condValue_;
-            /**
-             * <code>uint32 cond_value = 7;</code>
-             *
-             * @return The condValue.
-             */
-            @java.lang.Override
-            public int getCondValue() {
-                return condValue_;
-            }
-            /**
-             * <code>uint32 cond_value = 7;</code>
-             *
-             * @param value The condValue to set.
-             * @return This builder for chaining.
-             */
-            public Builder setCondValue(int value) {
-
-                condValue_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 cond_value = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearCondValue() {
-
-                condValue_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private boolean hHFLBKFMCIH_;
-            /**
-             * <code>bool HHFLBKFMCIH = 4;</code>
-             *
-             * @return The hHFLBKFMCIH.
-             */
-            @java.lang.Override
-            public boolean getHHFLBKFMCIH() {
-                return hHFLBKFMCIH_;
-            }
-            /**
-             * <code>bool HHFLBKFMCIH = 4;</code>
-             *
-             * @param value The hHFLBKFMCIH to set.
-             * @return This builder for chaining.
-             */
-            public Builder setHHFLBKFMCIH(boolean value) {
-
-                hHFLBKFMCIH_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool HHFLBKFMCIH = 4;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearHHFLBKFMCIH() {
-
-                hHFLBKFMCIH_ = false;
-                onChanged();
-                return this;
-            }
-
-            private boolean dJEMLDOFGLI_;
-            /**
-             * <code>bool DJEMLDOFGLI = 11;</code>
-             *
-             * @return The dJEMLDOFGLI.
-             */
-            @java.lang.Override
-            public boolean getDJEMLDOFGLI() {
-                return dJEMLDOFGLI_;
-            }
-            /**
-             * <code>bool DJEMLDOFGLI = 11;</code>
-             *
-             * @param value The dJEMLDOFGLI to set.
-             * @return This builder for chaining.
-             */
-            public Builder setDJEMLDOFGLI(boolean value) {
-
-                dJEMLDOFGLI_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool DJEMLDOFGLI = 11;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearDJEMLDOFGLI() {
-
-                dJEMLDOFGLI_ = false;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:TowerLevelStarCondData)
-        }
-
-        // @@protoc_insertion_point(class_scope:TowerLevelStarCondData)
-        private static final emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass
-                        .TowerLevelStarCondData
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData();
-        }
-
-        public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<TowerLevelStarCondData> PARSER =
-                new com.google.protobuf.AbstractParser<TowerLevelStarCondData>() {
-                    @java.lang.Override
-                    public TowerLevelStarCondData parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new TowerLevelStarCondData(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<TowerLevelStarCondData> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<TowerLevelStarCondData> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        return this;
+      }
+
+      private int starCondIndex_ ;
+      /**
+       * <code>uint32 star_cond_index = 15;</code>
+       * @return The starCondIndex.
+       */
+      @java.lang.Override
+      public int getStarCondIndex() {
+        return starCondIndex_;
+      }
+      /**
+       * <code>uint32 star_cond_index = 15;</code>
+       * @param value The starCondIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStarCondIndex(int value) {
+        
+        starCondIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 star_cond_index = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStarCondIndex() {
+        
+        starCondIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int condValue_ ;
+      /**
+       * <code>uint32 cond_value = 7;</code>
+       * @return The condValue.
+       */
+      @java.lang.Override
+      public int getCondValue() {
+        return condValue_;
+      }
+      /**
+       * <code>uint32 cond_value = 7;</code>
+       * @param value The condValue to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCondValue(int value) {
+        
+        condValue_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cond_value = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCondValue() {
+        
+        condValue_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean hHFLBKFMCIH_ ;
+      /**
+       * <code>bool HHFLBKFMCIH = 4;</code>
+       * @return The hHFLBKFMCIH.
+       */
+      @java.lang.Override
+      public boolean getHHFLBKFMCIH() {
+        return hHFLBKFMCIH_;
+      }
+      /**
+       * <code>bool HHFLBKFMCIH = 4;</code>
+       * @param value The hHFLBKFMCIH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHHFLBKFMCIH(boolean value) {
+        
+        hHFLBKFMCIH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool HHFLBKFMCIH = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHHFLBKFMCIH() {
+        
+        hHFLBKFMCIH_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean dJEMLDOFGLI_ ;
+      /**
+       * <code>bool DJEMLDOFGLI = 11;</code>
+       * @return The dJEMLDOFGLI.
+       */
+      @java.lang.Override
+      public boolean getDJEMLDOFGLI() {
+        return dJEMLDOFGLI_;
+      }
+      /**
+       * <code>bool DJEMLDOFGLI = 11;</code>
+       * @param value The dJEMLDOFGLI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDJEMLDOFGLI(boolean value) {
+        
+        dJEMLDOFGLI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool DJEMLDOFGLI = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDJEMLDOFGLI() {
+        
+        dJEMLDOFGLI_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TowerLevelStarCondData)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_TowerLevelStarCondData_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_TowerLevelStarCondData_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:TowerLevelStarCondData)
+    private static final emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\034TowerLevelStarCondData.proto\"o\n\026TowerL"
-                    + "evelStarCondData\022\027\n\017star_cond_index\030\017 \001("
-                    + "\r\022\022\n\ncond_value\030\007 \001(\r\022\023\n\013HHFLBKFMCIH\030\004 \001"
-                    + "(\010\022\023\n\013DJEMLDOFGLI\030\013 \001(\010B\033\n\031emu.grasscutt"
-                    + "er.net.protob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_TowerLevelStarCondData_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_TowerLevelStarCondData_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_TowerLevelStarCondData_descriptor,
-                        new java.lang.String[] {
-                            "StarCondIndex", "CondValue", "HHFLBKFMCIH", "DJEMLDOFGLI",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TowerLevelStarCondData>
+        PARSER = new com.google.protobuf.AbstractParser<TowerLevelStarCondData>() {
+      @java.lang.Override
+      public TowerLevelStarCondData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TowerLevelStarCondData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TowerLevelStarCondData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TowerLevelStarCondData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TowerLevelStarCondData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TowerLevelStarCondData_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\034TowerLevelStarCondData.proto\"o\n\026TowerL" +
+      "evelStarCondData\022\027\n\017star_cond_index\030\017 \001(" +
+      "\r\022\022\n\ncond_value\030\007 \001(\r\022\023\n\013HHFLBKFMCIH\030\004 \001" +
+      "(\010\022\023\n\013DJEMLDOFGLI\030\013 \001(\010B\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_TowerLevelStarCondData_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_TowerLevelStarCondData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TowerLevelStarCondData_descriptor,
+        new java.lang.String[] { "StarCondIndex", "CondValue", "HHFLBKFMCIH", "DJEMLDOFGLI", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

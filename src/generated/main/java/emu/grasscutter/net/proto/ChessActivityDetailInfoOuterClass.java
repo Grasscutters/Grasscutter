@@ -4,1347 +4,1235 @@
 package emu.grasscutter.net.proto;
 
 public final class ChessActivityDetailInfoOuterClass {
-    private ChessActivityDetailInfoOuterClass() {}
+  private ChessActivityDetailInfoOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface ChessActivityDetailInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:ChessActivityDetailInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>uint32 level = 7;</code>
+     * @return The level.
+     */
+    int getLevel();
+
+    /**
+     * <code>uint32 GPEHFLDFEAA = 13;</code>
+     * @return The gPEHFLDFEAA.
+     */
+    int getGPEHFLDFEAA();
+
+    /**
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @return A list containing the finishedMapIdList.
+     */
+    java.util.List<java.lang.Integer> getFinishedMapIdListList();
+    /**
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @return The count of finishedMapIdList.
+     */
+    int getFinishedMapIdListCount();
+    /**
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @param index The index of the element to return.
+     * @return The finishedMapIdList at the given index.
+     */
+    int getFinishedMapIdList(int index);
+
+    /**
+     * <code>uint32 LDBPIMIFGNE = 3;</code>
+     * @return The lDBPIMIFGNE.
+     */
+    int getLDBPIMIFGNE();
+
+    /**
+     * <code>bool is_teach_dungeon_finished = 2;</code>
+     * @return The isTeachDungeonFinished.
+     */
+    boolean getIsTeachDungeonFinished();
+
+    /**
+     * <code>bool is_content_closed = 1;</code>
+     * @return The isContentClosed.
+     */
+    boolean getIsContentClosed();
+
+    /**
+     * <code>uint32 exp = 9;</code>
+     * @return The exp.
+     */
+    int getExp();
+
+    /**
+     * <code>uint32 punish_over_time = 6;</code>
+     * @return The punishOverTime.
+     */
+    int getPunishOverTime();
+
+    /**
+     * <code>uint32 content_close_time = 10;</code>
+     * @return The contentCloseTime.
+     */
+    int getContentCloseTime();
+  }
+  /**
+   * <pre>
+   * Obf: MDCOJLLKODN
+   * </pre>
+   *
+   * Protobuf type {@code ChessActivityDetailInfo}
+   */
+  public static final class ChessActivityDetailInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:ChessActivityDetailInfo)
+      ChessActivityDetailInfoOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ChessActivityDetailInfo.newBuilder() to construct.
+    private ChessActivityDetailInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ChessActivityDetailInfo() {
+      finishedMapIdList_ = emptyIntList();
     }
 
-    public interface ChessActivityDetailInfoOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:ChessActivityDetailInfo)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ChessActivityDetailInfo();
+    }
 
-        /**
-         * <code>uint32 level = 7;</code>
-         *
-         * @return The level.
-         */
-        int getLevel();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ChessActivityDetailInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
 
-        /**
-         * <code>uint32 GPEHFLDFEAA = 13;</code>
-         *
-         * @return The gPEHFLDFEAA.
-         */
-        int getGPEHFLDFEAA();
+              isContentClosed_ = input.readBool();
+              break;
+            }
+            case 16: {
 
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @return A list containing the finishedMapIdList.
-         */
-        java.util.List<java.lang.Integer> getFinishedMapIdListList();
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @return The count of finishedMapIdList.
-         */
-        int getFinishedMapIdListCount();
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The finishedMapIdList at the given index.
-         */
-        int getFinishedMapIdList(int index);
+              isTeachDungeonFinished_ = input.readBool();
+              break;
+            }
+            case 24: {
 
-        /**
-         * <code>uint32 LDBPIMIFGNE = 3;</code>
-         *
-         * @return The lDBPIMIFGNE.
-         */
-        int getLDBPIMIFGNE();
+              lDBPIMIFGNE_ = input.readUInt32();
+              break;
+            }
+            case 48: {
 
-        /**
-         * <code>bool is_teach_dungeon_finished = 2;</code>
-         *
-         * @return The isTeachDungeonFinished.
-         */
-        boolean getIsTeachDungeonFinished();
+              punishOverTime_ = input.readUInt32();
+              break;
+            }
+            case 56: {
 
-        /**
-         * <code>bool is_content_closed = 1;</code>
-         *
-         * @return The isContentClosed.
-         */
-        boolean getIsContentClosed();
+              level_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                finishedMapIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              finishedMapIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                finishedMapIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                finishedMapIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 72: {
 
-        /**
-         * <code>uint32 exp = 9;</code>
-         *
-         * @return The exp.
-         */
-        int getExp();
+              exp_ = input.readUInt32();
+              break;
+            }
+            case 80: {
 
-        /**
-         * <code>uint32 punish_over_time = 6;</code>
-         *
-         * @return The punishOverTime.
-         */
-        int getPunishOverTime();
+              contentCloseTime_ = input.readUInt32();
+              break;
+            }
+            case 104: {
 
-        /**
-         * <code>uint32 content_close_time = 10;</code>
-         *
-         * @return The contentCloseTime.
-         */
-        int getContentCloseTime();
+              gPEHFLDFEAA_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          finishedMapIdList_.makeImmutable(); // C
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.internal_static_ChessActivityDetailInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.internal_static_ChessActivityDetailInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.class, emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.Builder.class);
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 7;
+    private int level_;
+    /**
+     * <code>uint32 level = 7;</code>
+     * @return The level.
+     */
+    @java.lang.Override
+    public int getLevel() {
+      return level_;
+    }
+
+    public static final int GPEHFLDFEAA_FIELD_NUMBER = 13;
+    private int gPEHFLDFEAA_;
+    /**
+     * <code>uint32 GPEHFLDFEAA = 13;</code>
+     * @return The gPEHFLDFEAA.
+     */
+    @java.lang.Override
+    public int getGPEHFLDFEAA() {
+      return gPEHFLDFEAA_;
+    }
+
+    public static final int FINISHED_MAP_ID_LIST_FIELD_NUMBER = 8;
+    private com.google.protobuf.Internal.IntList finishedMapIdList_;
+    /**
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @return A list containing the finishedMapIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getFinishedMapIdListList() {
+      return finishedMapIdList_;
     }
     /**
-     *
-     *
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @return The count of finishedMapIdList.
+     */
+    public int getFinishedMapIdListCount() {
+      return finishedMapIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 finished_map_id_list = 8;</code>
+     * @param index The index of the element to return.
+     * @return The finishedMapIdList at the given index.
+     */
+    public int getFinishedMapIdList(int index) {
+      return finishedMapIdList_.getInt(index);
+    }
+    private int finishedMapIdListMemoizedSerializedSize = -1;
+
+    public static final int LDBPIMIFGNE_FIELD_NUMBER = 3;
+    private int lDBPIMIFGNE_;
+    /**
+     * <code>uint32 LDBPIMIFGNE = 3;</code>
+     * @return The lDBPIMIFGNE.
+     */
+    @java.lang.Override
+    public int getLDBPIMIFGNE() {
+      return lDBPIMIFGNE_;
+    }
+
+    public static final int IS_TEACH_DUNGEON_FINISHED_FIELD_NUMBER = 2;
+    private boolean isTeachDungeonFinished_;
+    /**
+     * <code>bool is_teach_dungeon_finished = 2;</code>
+     * @return The isTeachDungeonFinished.
+     */
+    @java.lang.Override
+    public boolean getIsTeachDungeonFinished() {
+      return isTeachDungeonFinished_;
+    }
+
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
+    private boolean isContentClosed_;
+    /**
+     * <code>bool is_content_closed = 1;</code>
+     * @return The isContentClosed.
+     */
+    @java.lang.Override
+    public boolean getIsContentClosed() {
+      return isContentClosed_;
+    }
+
+    public static final int EXP_FIELD_NUMBER = 9;
+    private int exp_;
+    /**
+     * <code>uint32 exp = 9;</code>
+     * @return The exp.
+     */
+    @java.lang.Override
+    public int getExp() {
+      return exp_;
+    }
+
+    public static final int PUNISH_OVER_TIME_FIELD_NUMBER = 6;
+    private int punishOverTime_;
+    /**
+     * <code>uint32 punish_over_time = 6;</code>
+     * @return The punishOverTime.
+     */
+    @java.lang.Override
+    public int getPunishOverTime() {
+      return punishOverTime_;
+    }
+
+    public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 10;
+    private int contentCloseTime_;
+    /**
+     * <code>uint32 content_close_time = 10;</code>
+     * @return The contentCloseTime.
+     */
+    @java.lang.Override
+    public int getContentCloseTime() {
+      return contentCloseTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (isContentClosed_ != false) {
+        output.writeBool(1, isContentClosed_);
+      }
+      if (isTeachDungeonFinished_ != false) {
+        output.writeBool(2, isTeachDungeonFinished_);
+      }
+      if (lDBPIMIFGNE_ != 0) {
+        output.writeUInt32(3, lDBPIMIFGNE_);
+      }
+      if (punishOverTime_ != 0) {
+        output.writeUInt32(6, punishOverTime_);
+      }
+      if (level_ != 0) {
+        output.writeUInt32(7, level_);
+      }
+      if (getFinishedMapIdListList().size() > 0) {
+        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(finishedMapIdListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < finishedMapIdList_.size(); i++) {
+        output.writeUInt32NoTag(finishedMapIdList_.getInt(i));
+      }
+      if (exp_ != 0) {
+        output.writeUInt32(9, exp_);
+      }
+      if (contentCloseTime_ != 0) {
+        output.writeUInt32(10, contentCloseTime_);
+      }
+      if (gPEHFLDFEAA_ != 0) {
+        output.writeUInt32(13, gPEHFLDFEAA_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isContentClosed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, isContentClosed_);
+      }
+      if (isTeachDungeonFinished_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isTeachDungeonFinished_);
+      }
+      if (lDBPIMIFGNE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, lDBPIMIFGNE_);
+      }
+      if (punishOverTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, punishOverTime_);
+      }
+      if (level_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, level_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < finishedMapIdList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(finishedMapIdList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getFinishedMapIdListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        finishedMapIdListMemoizedSerializedSize = dataSize;
+      }
+      if (exp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, exp_);
+      }
+      if (contentCloseTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, contentCloseTime_);
+      }
+      if (gPEHFLDFEAA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, gPEHFLDFEAA_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo other = (emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) obj;
+
+      if (getLevel()
+          != other.getLevel()) return false;
+      if (getGPEHFLDFEAA()
+          != other.getGPEHFLDFEAA()) return false;
+      if (!getFinishedMapIdListList()
+          .equals(other.getFinishedMapIdListList())) return false;
+      if (getLDBPIMIFGNE()
+          != other.getLDBPIMIFGNE()) return false;
+      if (getIsTeachDungeonFinished()
+          != other.getIsTeachDungeonFinished()) return false;
+      if (getIsContentClosed()
+          != other.getIsContentClosed()) return false;
+      if (getExp()
+          != other.getExp()) return false;
+      if (getPunishOverTime()
+          != other.getPunishOverTime()) return false;
+      if (getContentCloseTime()
+          != other.getContentCloseTime()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevel();
+      hash = (37 * hash) + GPEHFLDFEAA_FIELD_NUMBER;
+      hash = (53 * hash) + getGPEHFLDFEAA();
+      if (getFinishedMapIdListCount() > 0) {
+        hash = (37 * hash) + FINISHED_MAP_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getFinishedMapIdListList().hashCode();
+      }
+      hash = (37 * hash) + LDBPIMIFGNE_FIELD_NUMBER;
+      hash = (53 * hash) + getLDBPIMIFGNE();
+      hash = (37 * hash) + IS_TEACH_DUNGEON_FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsTeachDungeonFinished());
+      hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsContentClosed());
+      hash = (37 * hash) + EXP_FIELD_NUMBER;
+      hash = (53 * hash) + getExp();
+      hash = (37 * hash) + PUNISH_OVER_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getPunishOverTime();
+      hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getContentCloseTime();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
      * <pre>
      * Obf: MDCOJLLKODN
      * </pre>
      *
      * Protobuf type {@code ChessActivityDetailInfo}
      */
-    public static final class ChessActivityDetailInfo extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:ChessActivityDetailInfo)
-            ChessActivityDetailInfoOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use ChessActivityDetailInfo.newBuilder() to construct.
-        private ChessActivityDetailInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:ChessActivityDetailInfo)
+        emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.internal_static_ChessActivityDetailInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.internal_static_ChessActivityDetailInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.class, emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        level_ = 0;
 
-        private ChessActivityDetailInfo() {
-            finishedMapIdList_ = emptyIntList();
+        gPEHFLDFEAA_ = 0;
+
+        finishedMapIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lDBPIMIFGNE_ = 0;
+
+        isTeachDungeonFinished_ = false;
+
+        isContentClosed_ = false;
+
+        exp_ = 0;
+
+        punishOverTime_ = 0;
+
+        contentCloseTime_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.internal_static_ChessActivityDetailInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo build() {
+        emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new ChessActivityDetailInfo();
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo buildPartial() {
+        emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo result = new emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo(this);
+        int from_bitField0_ = bitField0_;
+        result.level_ = level_;
+        result.gPEHFLDFEAA_ = gPEHFLDFEAA_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          finishedMapIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
+        result.finishedMapIdList_ = finishedMapIdList_;
+        result.lDBPIMIFGNE_ = lDBPIMIFGNE_;
+        result.isTeachDungeonFinished_ = isTeachDungeonFinished_;
+        result.isContentClosed_ = isContentClosed_;
+        result.exp_ = exp_;
+        result.punishOverTime_ = punishOverTime_;
+        result.contentCloseTime_ = contentCloseTime_;
+        onBuilt();
+        return result;
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) {
+          return mergeFrom((emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private ChessActivityDetailInfo(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 8:
-                            {
-                                isContentClosed_ = input.readBool();
-                                break;
-                            }
-                        case 16:
-                            {
-                                isTeachDungeonFinished_ = input.readBool();
-                                break;
-                            }
-                        case 24:
-                            {
-                                lDBPIMIFGNE_ = input.readUInt32();
-                                break;
-                            }
-                        case 48:
-                            {
-                                punishOverTime_ = input.readUInt32();
-                                break;
-                            }
-                        case 56:
-                            {
-                                level_ = input.readUInt32();
-                                break;
-                            }
-                        case 64:
-                            {
-                                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                                    finishedMapIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                finishedMapIdList_.addInt(input.readUInt32());
-                                break;
-                            }
-                        case 66:
-                            {
-                                int length = input.readRawVarint32();
-                                int limit = input.pushLimit(length);
-                                if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                                    finishedMapIdList_ = newIntList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    finishedMapIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            }
-                        case 72:
-                            {
-                                exp_ = input.readUInt32();
-                                break;
-                            }
-                        case 80:
-                            {
-                                contentCloseTime_ = input.readUInt32();
-                                break;
-                            }
-                        case 104:
-                            {
-                                gPEHFLDFEAA_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
-                    finishedMapIdList_.makeImmutable(); // C
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo other) {
+        if (other == emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.getDefaultInstance()) return this;
+        if (other.getLevel() != 0) {
+          setLevel(other.getLevel());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                    .internal_static_ChessActivityDetailInfo_descriptor;
+        if (other.getGPEHFLDFEAA() != 0) {
+          setGPEHFLDFEAA(other.getGPEHFLDFEAA());
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                    .internal_static_ChessActivityDetailInfo_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                                    .class,
-                            emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                                    .Builder.class);
+        if (!other.finishedMapIdList_.isEmpty()) {
+          if (finishedMapIdList_.isEmpty()) {
+            finishedMapIdList_ = other.finishedMapIdList_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFinishedMapIdListIsMutable();
+            finishedMapIdList_.addAll(other.finishedMapIdList_);
+          }
+          onChanged();
         }
-
-        public static final int LEVEL_FIELD_NUMBER = 7;
-        private int level_;
-        /**
-         * <code>uint32 level = 7;</code>
-         *
-         * @return The level.
-         */
-        @java.lang.Override
-        public int getLevel() {
-            return level_;
+        if (other.getLDBPIMIFGNE() != 0) {
+          setLDBPIMIFGNE(other.getLDBPIMIFGNE());
         }
-
-        public static final int GPEHFLDFEAA_FIELD_NUMBER = 13;
-        private int gPEHFLDFEAA_;
-        /**
-         * <code>uint32 GPEHFLDFEAA = 13;</code>
-         *
-         * @return The gPEHFLDFEAA.
-         */
-        @java.lang.Override
-        public int getGPEHFLDFEAA() {
-            return gPEHFLDFEAA_;
+        if (other.getIsTeachDungeonFinished() != false) {
+          setIsTeachDungeonFinished(other.getIsTeachDungeonFinished());
         }
-
-        public static final int FINISHED_MAP_ID_LIST_FIELD_NUMBER = 8;
-        private com.google.protobuf.Internal.IntList finishedMapIdList_;
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @return A list containing the finishedMapIdList.
-         */
-        @java.lang.Override
-        public java.util.List<java.lang.Integer> getFinishedMapIdListList() {
-            return finishedMapIdList_;
+        if (other.getIsContentClosed() != false) {
+          setIsContentClosed(other.getIsContentClosed());
         }
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @return The count of finishedMapIdList.
-         */
-        public int getFinishedMapIdListCount() {
-            return finishedMapIdList_.size();
+        if (other.getExp() != 0) {
+          setExp(other.getExp());
         }
-        /**
-         * <code>repeated uint32 finished_map_id_list = 8;</code>
-         *
-         * @param index The index of the element to return.
-         * @return The finishedMapIdList at the given index.
-         */
-        public int getFinishedMapIdList(int index) {
-            return finishedMapIdList_.getInt(index);
+        if (other.getPunishOverTime() != 0) {
+          setPunishOverTime(other.getPunishOverTime());
         }
-
-        private int finishedMapIdListMemoizedSerializedSize = -1;
-
-        public static final int LDBPIMIFGNE_FIELD_NUMBER = 3;
-        private int lDBPIMIFGNE_;
-        /**
-         * <code>uint32 LDBPIMIFGNE = 3;</code>
-         *
-         * @return The lDBPIMIFGNE.
-         */
-        @java.lang.Override
-        public int getLDBPIMIFGNE() {
-            return lDBPIMIFGNE_;
+        if (other.getContentCloseTime() != 0) {
+          setContentCloseTime(other.getContentCloseTime());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final int IS_TEACH_DUNGEON_FINISHED_FIELD_NUMBER = 2;
-        private boolean isTeachDungeonFinished_;
-        /**
-         * <code>bool is_teach_dungeon_finished = 2;</code>
-         *
-         * @return The isTeachDungeonFinished.
-         */
-        @java.lang.Override
-        public boolean getIsTeachDungeonFinished() {
-            return isTeachDungeonFinished_;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
-        private boolean isContentClosed_;
-        /**
-         * <code>bool is_content_closed = 1;</code>
-         *
-         * @return The isContentClosed.
-         */
-        @java.lang.Override
-        public boolean getIsContentClosed() {
-            return isContentClosed_;
-        }
-
-        public static final int EXP_FIELD_NUMBER = 9;
-        private int exp_;
-        /**
-         * <code>uint32 exp = 9;</code>
-         *
-         * @return The exp.
-         */
-        @java.lang.Override
-        public int getExp() {
-            return exp_;
-        }
-
-        public static final int PUNISH_OVER_TIME_FIELD_NUMBER = 6;
-        private int punishOverTime_;
-        /**
-         * <code>uint32 punish_over_time = 6;</code>
-         *
-         * @return The punishOverTime.
-         */
-        @java.lang.Override
-        public int getPunishOverTime() {
-            return punishOverTime_;
-        }
-
-        public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 10;
-        private int contentCloseTime_;
-        /**
-         * <code>uint32 content_close_time = 10;</code>
-         *
-         * @return The contentCloseTime.
-         */
-        @java.lang.Override
-        public int getContentCloseTime() {
-            return contentCloseTime_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            getSerializedSize();
-            if (isContentClosed_ != false) {
-                output.writeBool(1, isContentClosed_);
-            }
-            if (isTeachDungeonFinished_ != false) {
-                output.writeBool(2, isTeachDungeonFinished_);
-            }
-            if (lDBPIMIFGNE_ != 0) {
-                output.writeUInt32(3, lDBPIMIFGNE_);
-            }
-            if (punishOverTime_ != 0) {
-                output.writeUInt32(6, punishOverTime_);
-            }
-            if (level_ != 0) {
-                output.writeUInt32(7, level_);
-            }
-            if (getFinishedMapIdListList().size() > 0) {
-                output.writeUInt32NoTag(66);
-                output.writeUInt32NoTag(finishedMapIdListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < finishedMapIdList_.size(); i++) {
-                output.writeUInt32NoTag(finishedMapIdList_.getInt(i));
-            }
-            if (exp_ != 0) {
-                output.writeUInt32(9, exp_);
-            }
-            if (contentCloseTime_ != 0) {
-                output.writeUInt32(10, contentCloseTime_);
-            }
-            if (gPEHFLDFEAA_ != 0) {
-                output.writeUInt32(13, gPEHFLDFEAA_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (isContentClosed_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, isContentClosed_);
-            }
-            if (isTeachDungeonFinished_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, isTeachDungeonFinished_);
-            }
-            if (lDBPIMIFGNE_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3, lDBPIMIFGNE_);
-            }
-            if (punishOverTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, punishOverTime_);
-            }
-            if (level_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, level_);
-            }
-            {
-                int dataSize = 0;
-                for (int i = 0; i < finishedMapIdList_.size(); i++) {
-                    dataSize +=
-                            com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(
-                                    finishedMapIdList_.getInt(i));
-                }
-                size += dataSize;
-                if (!getFinishedMapIdListList().isEmpty()) {
-                    size += 1;
-                    size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
-                }
-                finishedMapIdListMemoizedSerializedSize = dataSize;
-            }
-            if (exp_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, exp_);
-            }
-            if (contentCloseTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(10, contentCloseTime_);
-            }
-            if (gPEHFLDFEAA_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13, gPEHFLDFEAA_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo other =
-                    (emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) obj;
-
-            if (getLevel() != other.getLevel()) return false;
-            if (getGPEHFLDFEAA() != other.getGPEHFLDFEAA()) return false;
-            if (!getFinishedMapIdListList().equals(other.getFinishedMapIdListList())) return false;
-            if (getLDBPIMIFGNE() != other.getLDBPIMIFGNE()) return false;
-            if (getIsTeachDungeonFinished() != other.getIsTeachDungeonFinished()) return false;
-            if (getIsContentClosed() != other.getIsContentClosed()) return false;
-            if (getExp() != other.getExp()) return false;
-            if (getPunishOverTime() != other.getPunishOverTime()) return false;
-            if (getContentCloseTime() != other.getContentCloseTime()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-            hash = (53 * hash) + getLevel();
-            hash = (37 * hash) + GPEHFLDFEAA_FIELD_NUMBER;
-            hash = (53 * hash) + getGPEHFLDFEAA();
-            if (getFinishedMapIdListCount() > 0) {
-                hash = (37 * hash) + FINISHED_MAP_ID_LIST_FIELD_NUMBER;
-                hash = (53 * hash) + getFinishedMapIdListList().hashCode();
-            }
-            hash = (37 * hash) + LDBPIMIFGNE_FIELD_NUMBER;
-            hash = (53 * hash) + getLDBPIMIFGNE();
-            hash = (37 * hash) + IS_TEACH_DUNGEON_FINISHED_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsTeachDungeonFinished());
-            hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsContentClosed());
-            hash = (37 * hash) + EXP_FIELD_NUMBER;
-            hash = (53 * hash) + getExp();
-            hash = (37 * hash) + PUNISH_OVER_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getPunishOverTime();
-            hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getContentCloseTime();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                        prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * Obf: MDCOJLLKODN
-         * </pre>
-         *
-         * Protobuf type {@code ChessActivityDetailInfo}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:ChessActivityDetailInfo)
-                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfoOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .internal_static_ChessActivityDetailInfo_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .internal_static_ChessActivityDetailInfo_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                                        .class,
-                                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                                        .Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                level_ = 0;
-
-                gPEHFLDFEAA_ = 0;
-
-                finishedMapIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                lDBPIMIFGNE_ = 0;
-
-                isTeachDungeonFinished_ = false;
-
-                isContentClosed_ = false;
-
-                exp_ = 0;
-
-                punishOverTime_ = 0;
-
-                contentCloseTime_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .internal_static_ChessActivityDetailInfo_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                        .getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                    build() {
-                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo result =
-                        buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                    buildPartial() {
-                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo result =
-                        new emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo(
-                                this);
-                int from_bitField0_ = bitField0_;
-                result.level_ = level_;
-                result.gPEHFLDFEAA_ = gPEHFLDFEAA_;
-                if (((bitField0_ & 0x00000001) != 0)) {
-                    finishedMapIdList_.makeImmutable();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                }
-                result.finishedMapIdList_ = finishedMapIdList_;
-                result.lDBPIMIFGNE_ = lDBPIMIFGNE_;
-                result.isTeachDungeonFinished_ = isTeachDungeonFinished_;
-                result.isContentClosed_ = isContentClosed_;
-                result.exp_ = exp_;
-                result.punishOverTime_ = punishOverTime_;
-                result.contentCloseTime_ = contentCloseTime_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                            other) {
-                if (other
-                        == emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                                .getDefaultInstance()) return this;
-                if (other.getLevel() != 0) {
-                    setLevel(other.getLevel());
-                }
-                if (other.getGPEHFLDFEAA() != 0) {
-                    setGPEHFLDFEAA(other.getGPEHFLDFEAA());
-                }
-                if (!other.finishedMapIdList_.isEmpty()) {
-                    if (finishedMapIdList_.isEmpty()) {
-                        finishedMapIdList_ = other.finishedMapIdList_;
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    } else {
-                        ensureFinishedMapIdListIsMutable();
-                        finishedMapIdList_.addAll(other.finishedMapIdList_);
-                    }
-                    onChanged();
-                }
-                if (other.getLDBPIMIFGNE() != 0) {
-                    setLDBPIMIFGNE(other.getLDBPIMIFGNE());
-                }
-                if (other.getIsTeachDungeonFinished() != false) {
-                    setIsTeachDungeonFinished(other.getIsTeachDungeonFinished());
-                }
-                if (other.getIsContentClosed() != false) {
-                    setIsContentClosed(other.getIsContentClosed());
-                }
-                if (other.getExp() != 0) {
-                    setExp(other.getExp());
-                }
-                if (other.getPunishOverTime() != 0) {
-                    setPunishOverTime(other.getPunishOverTime());
-                }
-                if (other.getContentCloseTime() != 0) {
-                    setContentCloseTime(other.getContentCloseTime());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            private int level_;
-            /**
-             * <code>uint32 level = 7;</code>
-             *
-             * @return The level.
-             */
-            @java.lang.Override
-            public int getLevel() {
-                return level_;
-            }
-            /**
-             * <code>uint32 level = 7;</code>
-             *
-             * @param value The level to set.
-             * @return This builder for chaining.
-             */
-            public Builder setLevel(int value) {
-
-                level_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 level = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearLevel() {
-
-                level_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int gPEHFLDFEAA_;
-            /**
-             * <code>uint32 GPEHFLDFEAA = 13;</code>
-             *
-             * @return The gPEHFLDFEAA.
-             */
-            @java.lang.Override
-            public int getGPEHFLDFEAA() {
-                return gPEHFLDFEAA_;
-            }
-            /**
-             * <code>uint32 GPEHFLDFEAA = 13;</code>
-             *
-             * @param value The gPEHFLDFEAA to set.
-             * @return This builder for chaining.
-             */
-            public Builder setGPEHFLDFEAA(int value) {
-
-                gPEHFLDFEAA_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 GPEHFLDFEAA = 13;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearGPEHFLDFEAA() {
-
-                gPEHFLDFEAA_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private com.google.protobuf.Internal.IntList finishedMapIdList_ = emptyIntList();
-
-            private void ensureFinishedMapIdListIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    finishedMapIdList_ = mutableCopy(finishedMapIdList_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @return A list containing the finishedMapIdList.
-             */
-            public java.util.List<java.lang.Integer> getFinishedMapIdListList() {
-                return ((bitField0_ & 0x00000001) != 0)
-                        ? java.util.Collections.unmodifiableList(finishedMapIdList_)
-                        : finishedMapIdList_;
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @return The count of finishedMapIdList.
-             */
-            public int getFinishedMapIdListCount() {
-                return finishedMapIdList_.size();
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @param index The index of the element to return.
-             * @return The finishedMapIdList at the given index.
-             */
-            public int getFinishedMapIdList(int index) {
-                return finishedMapIdList_.getInt(index);
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @param index The index to set the value at.
-             * @param value The finishedMapIdList to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFinishedMapIdList(int index, int value) {
-                ensureFinishedMapIdListIsMutable();
-                finishedMapIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @param value The finishedMapIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addFinishedMapIdList(int value) {
-                ensureFinishedMapIdListIsMutable();
-                finishedMapIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @param values The finishedMapIdList to add.
-             * @return This builder for chaining.
-             */
-            public Builder addAllFinishedMapIdList(
-                    java.lang.Iterable<? extends java.lang.Integer> values) {
-                ensureFinishedMapIdListIsMutable();
-                com.google.protobuf.AbstractMessageLite.Builder.addAll(values, finishedMapIdList_);
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>repeated uint32 finished_map_id_list = 8;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearFinishedMapIdList() {
-                finishedMapIdList_ = emptyIntList();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                onChanged();
-                return this;
-            }
-
-            private int lDBPIMIFGNE_;
-            /**
-             * <code>uint32 LDBPIMIFGNE = 3;</code>
-             *
-             * @return The lDBPIMIFGNE.
-             */
-            @java.lang.Override
-            public int getLDBPIMIFGNE() {
-                return lDBPIMIFGNE_;
-            }
-            /**
-             * <code>uint32 LDBPIMIFGNE = 3;</code>
-             *
-             * @param value The lDBPIMIFGNE to set.
-             * @return This builder for chaining.
-             */
-            public Builder setLDBPIMIFGNE(int value) {
-
-                lDBPIMIFGNE_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 LDBPIMIFGNE = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearLDBPIMIFGNE() {
-
-                lDBPIMIFGNE_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private boolean isTeachDungeonFinished_;
-            /**
-             * <code>bool is_teach_dungeon_finished = 2;</code>
-             *
-             * @return The isTeachDungeonFinished.
-             */
-            @java.lang.Override
-            public boolean getIsTeachDungeonFinished() {
-                return isTeachDungeonFinished_;
-            }
-            /**
-             * <code>bool is_teach_dungeon_finished = 2;</code>
-             *
-             * @param value The isTeachDungeonFinished to set.
-             * @return This builder for chaining.
-             */
-            public Builder setIsTeachDungeonFinished(boolean value) {
-
-                isTeachDungeonFinished_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool is_teach_dungeon_finished = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearIsTeachDungeonFinished() {
-
-                isTeachDungeonFinished_ = false;
-                onChanged();
-                return this;
-            }
-
-            private boolean isContentClosed_;
-            /**
-             * <code>bool is_content_closed = 1;</code>
-             *
-             * @return The isContentClosed.
-             */
-            @java.lang.Override
-            public boolean getIsContentClosed() {
-                return isContentClosed_;
-            }
-            /**
-             * <code>bool is_content_closed = 1;</code>
-             *
-             * @param value The isContentClosed to set.
-             * @return This builder for chaining.
-             */
-            public Builder setIsContentClosed(boolean value) {
-
-                isContentClosed_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool is_content_closed = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearIsContentClosed() {
-
-                isContentClosed_ = false;
-                onChanged();
-                return this;
-            }
-
-            private int exp_;
-            /**
-             * <code>uint32 exp = 9;</code>
-             *
-             * @return The exp.
-             */
-            @java.lang.Override
-            public int getExp() {
-                return exp_;
-            }
-            /**
-             * <code>uint32 exp = 9;</code>
-             *
-             * @param value The exp to set.
-             * @return This builder for chaining.
-             */
-            public Builder setExp(int value) {
-
-                exp_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 exp = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearExp() {
-
-                exp_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int punishOverTime_;
-            /**
-             * <code>uint32 punish_over_time = 6;</code>
-             *
-             * @return The punishOverTime.
-             */
-            @java.lang.Override
-            public int getPunishOverTime() {
-                return punishOverTime_;
-            }
-            /**
-             * <code>uint32 punish_over_time = 6;</code>
-             *
-             * @param value The punishOverTime to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPunishOverTime(int value) {
-
-                punishOverTime_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 punish_over_time = 6;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearPunishOverTime() {
-
-                punishOverTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int contentCloseTime_;
-            /**
-             * <code>uint32 content_close_time = 10;</code>
-             *
-             * @return The contentCloseTime.
-             */
-            @java.lang.Override
-            public int getContentCloseTime() {
-                return contentCloseTime_;
-            }
-            /**
-             * <code>uint32 content_close_time = 10;</code>
-             *
-             * @param value The contentCloseTime to set.
-             * @return This builder for chaining.
-             */
-            public Builder setContentCloseTime(int value) {
-
-                contentCloseTime_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 content_close_time = 10;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearContentCloseTime() {
-
-                contentCloseTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:ChessActivityDetailInfo)
-        }
-
-        // @@protoc_insertion_point(class_scope:ChessActivityDetailInfo)
-        private static final emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo();
-        }
-
-        public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass
-                        .ChessActivityDetailInfo
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<ChessActivityDetailInfo> PARSER =
-                new com.google.protobuf.AbstractParser<ChessActivityDetailInfo>() {
-                    @java.lang.Override
-                    public ChessActivityDetailInfo parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new ChessActivityDetailInfo(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<ChessActivityDetailInfo> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<ChessActivityDetailInfo> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int level_ ;
+      /**
+       * <code>uint32 level = 7;</code>
+       * @return The level.
+       */
+      @java.lang.Override
+      public int getLevel() {
+        return level_;
+      }
+      /**
+       * <code>uint32 level = 7;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevel(int value) {
+        
+        level_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevel() {
+        
+        level_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gPEHFLDFEAA_ ;
+      /**
+       * <code>uint32 GPEHFLDFEAA = 13;</code>
+       * @return The gPEHFLDFEAA.
+       */
+      @java.lang.Override
+      public int getGPEHFLDFEAA() {
+        return gPEHFLDFEAA_;
+      }
+      /**
+       * <code>uint32 GPEHFLDFEAA = 13;</code>
+       * @param value The gPEHFLDFEAA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGPEHFLDFEAA(int value) {
+        
+        gPEHFLDFEAA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GPEHFLDFEAA = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGPEHFLDFEAA() {
+        
+        gPEHFLDFEAA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList finishedMapIdList_ = emptyIntList();
+      private void ensureFinishedMapIdListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          finishedMapIdList_ = mutableCopy(finishedMapIdList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @return A list containing the finishedMapIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getFinishedMapIdListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(finishedMapIdList_) : finishedMapIdList_;
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @return The count of finishedMapIdList.
+       */
+      public int getFinishedMapIdListCount() {
+        return finishedMapIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @param index The index of the element to return.
+       * @return The finishedMapIdList at the given index.
+       */
+      public int getFinishedMapIdList(int index) {
+        return finishedMapIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The finishedMapIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishedMapIdList(
+          int index, int value) {
+        ensureFinishedMapIdListIsMutable();
+        finishedMapIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @param value The finishedMapIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFinishedMapIdList(int value) {
+        ensureFinishedMapIdListIsMutable();
+        finishedMapIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @param values The finishedMapIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFinishedMapIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureFinishedMapIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, finishedMapIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 finished_map_id_list = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishedMapIdList() {
+        finishedMapIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int lDBPIMIFGNE_ ;
+      /**
+       * <code>uint32 LDBPIMIFGNE = 3;</code>
+       * @return The lDBPIMIFGNE.
+       */
+      @java.lang.Override
+      public int getLDBPIMIFGNE() {
+        return lDBPIMIFGNE_;
+      }
+      /**
+       * <code>uint32 LDBPIMIFGNE = 3;</code>
+       * @param value The lDBPIMIFGNE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLDBPIMIFGNE(int value) {
+        
+        lDBPIMIFGNE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LDBPIMIFGNE = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLDBPIMIFGNE() {
+        
+        lDBPIMIFGNE_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isTeachDungeonFinished_ ;
+      /**
+       * <code>bool is_teach_dungeon_finished = 2;</code>
+       * @return The isTeachDungeonFinished.
+       */
+      @java.lang.Override
+      public boolean getIsTeachDungeonFinished() {
+        return isTeachDungeonFinished_;
+      }
+      /**
+       * <code>bool is_teach_dungeon_finished = 2;</code>
+       * @param value The isTeachDungeonFinished to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsTeachDungeonFinished(boolean value) {
+        
+        isTeachDungeonFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_teach_dungeon_finished = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsTeachDungeonFinished() {
+        
+        isTeachDungeonFinished_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isContentClosed_ ;
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @return The isContentClosed.
+       */
+      @java.lang.Override
+      public boolean getIsContentClosed() {
+        return isContentClosed_;
+      }
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @param value The isContentClosed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsContentClosed(boolean value) {
+        
+        isContentClosed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsContentClosed() {
+        
+        isContentClosed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int exp_ ;
+      /**
+       * <code>uint32 exp = 9;</code>
+       * @return The exp.
+       */
+      @java.lang.Override
+      public int getExp() {
+        return exp_;
+      }
+      /**
+       * <code>uint32 exp = 9;</code>
+       * @param value The exp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExp(int value) {
+        
+        exp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 exp = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExp() {
+        
+        exp_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int punishOverTime_ ;
+      /**
+       * <code>uint32 punish_over_time = 6;</code>
+       * @return The punishOverTime.
+       */
+      @java.lang.Override
+      public int getPunishOverTime() {
+        return punishOverTime_;
+      }
+      /**
+       * <code>uint32 punish_over_time = 6;</code>
+       * @param value The punishOverTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPunishOverTime(int value) {
+        
+        punishOverTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 punish_over_time = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPunishOverTime() {
+        
+        punishOverTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int contentCloseTime_ ;
+      /**
+       * <code>uint32 content_close_time = 10;</code>
+       * @return The contentCloseTime.
+       */
+      @java.lang.Override
+      public int getContentCloseTime() {
+        return contentCloseTime_;
+      }
+      /**
+       * <code>uint32 content_close_time = 10;</code>
+       * @param value The contentCloseTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContentCloseTime(int value) {
+        
+        contentCloseTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 content_close_time = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContentCloseTime() {
+        
+        contentCloseTime_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:ChessActivityDetailInfo)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_ChessActivityDetailInfo_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_ChessActivityDetailInfo_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:ChessActivityDetailInfo)
+    private static final emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\035ChessActivityDetailInfo.proto\"\361\001\n\027Ches"
-                    + "sActivityDetailInfo\022\r\n\005level\030\007 \001(\r\022\023\n\013GP"
-                    + "EHFLDFEAA\030\r \001(\r\022\034\n\024finished_map_id_list\030"
-                    + "\010 \003(\r\022\023\n\013LDBPIMIFGNE\030\003 \001(\r\022!\n\031is_teach_d"
-                    + "ungeon_finished\030\002 \001(\010\022\031\n\021is_content_clos"
-                    + "ed\030\001 \001(\010\022\013\n\003exp\030\t \001(\r\022\030\n\020punish_over_tim"
-                    + "e\030\006 \001(\r\022\032\n\022content_close_time\030\n \001(\rB\033\n\031e"
-                    + "mu.grasscutter.net.protob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_ChessActivityDetailInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_ChessActivityDetailInfo_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_ChessActivityDetailInfo_descriptor,
-                        new java.lang.String[] {
-                            "Level",
-                            "GPEHFLDFEAA",
-                            "FinishedMapIdList",
-                            "LDBPIMIFGNE",
-                            "IsTeachDungeonFinished",
-                            "IsContentClosed",
-                            "Exp",
-                            "PunishOverTime",
-                            "ContentCloseTime",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChessActivityDetailInfo>
+        PARSER = new com.google.protobuf.AbstractParser<ChessActivityDetailInfo>() {
+      @java.lang.Override
+      public ChessActivityDetailInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ChessActivityDetailInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ChessActivityDetailInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChessActivityDetailInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ChessActivityDetailInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ChessActivityDetailInfo_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\035ChessActivityDetailInfo.proto\"\361\001\n\027Ches" +
+      "sActivityDetailInfo\022\r\n\005level\030\007 \001(\r\022\023\n\013GP" +
+      "EHFLDFEAA\030\r \001(\r\022\034\n\024finished_map_id_list\030" +
+      "\010 \003(\r\022\023\n\013LDBPIMIFGNE\030\003 \001(\r\022!\n\031is_teach_d" +
+      "ungeon_finished\030\002 \001(\010\022\031\n\021is_content_clos" +
+      "ed\030\001 \001(\010\022\013\n\003exp\030\t \001(\r\022\030\n\020punish_over_tim" +
+      "e\030\006 \001(\r\022\032\n\022content_close_time\030\n \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_ChessActivityDetailInfo_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_ChessActivityDetailInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ChessActivityDetailInfo_descriptor,
+        new java.lang.String[] { "Level", "GPEHFLDFEAA", "FinishedMapIdList", "LDBPIMIFGNE", "IsTeachDungeonFinished", "IsContentClosed", "Exp", "PunishOverTime", "ContentCloseTime", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

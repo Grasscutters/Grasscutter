@@ -4,71 +4,479 @@
 package emu.grasscutter.net.proto;
 
 public final class TowerBriefDataNotifyOuterClass {
-    private TowerBriefDataNotifyOuterClass() {}
+  private TowerBriefDataNotifyOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface TowerBriefDataNotifyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TowerBriefDataNotify)
+      com.google.protobuf.MessageOrBuilder {
 
-    public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
+    /**
+     * <code>uint32 KKHFBLDICMJ = 6;</code>
+     * @return The kKHFBLDICMJ.
+     */
+    int getKKHFBLDICMJ();
+
+    /**
+     * <code>uint32 next_schedule_change_time = 9;</code>
+     * @return The nextScheduleChangeTime.
+     */
+    int getNextScheduleChangeTime();
+
+    /**
+     * <code>bool is_finished_entrance_floor = 3;</code>
+     * @return The isFinishedEntranceFloor.
+     */
+    boolean getIsFinishedEntranceFloor();
+
+    /**
+     * <code>uint32 schedule_start_time = 5;</code>
+     * @return The scheduleStartTime.
+     */
+    int getScheduleStartTime();
+
+    /**
+     * <code>uint32 tower_schedule_id = 14;</code>
+     * @return The towerScheduleId.
+     */
+    int getTowerScheduleId();
+
+    /**
+     * <code>uint32 BCHDECHFOAA = 2;</code>
+     * @return The bCHDECHFOAA.
+     */
+    int getBCHDECHFOAA();
+
+    /**
+     * <code>uint32 HECMGJCDAOA = 7;</code>
+     * @return The hECMGJCDAOA.
+     */
+    int getHECMGJCDAOA();
+  }
+  /**
+   * <pre>
+   * CmdId: 2475
+   * Obf: JGALMNICNFO
+   * </pre>
+   *
+   * Protobuf type {@code TowerBriefDataNotify}
+   */
+  public static final class TowerBriefDataNotify extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TowerBriefDataNotify)
+      TowerBriefDataNotifyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TowerBriefDataNotify.newBuilder() to construct.
+    private TowerBriefDataNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TowerBriefDataNotify() {
     }
 
-    public interface TowerBriefDataNotifyOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:TowerBriefDataNotify)
-            com.google.protobuf.MessageOrBuilder {
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TowerBriefDataNotify();
+    }
 
-        /**
-         * <code>uint32 KKHFBLDICMJ = 6;</code>
-         *
-         * @return The kKHFBLDICMJ.
-         */
-        int getKKHFBLDICMJ();
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TowerBriefDataNotify(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 16: {
 
-        /**
-         * <code>uint32 next_schedule_change_time = 9;</code>
-         *
-         * @return The nextScheduleChangeTime.
-         */
-        int getNextScheduleChangeTime();
+              bCHDECHFOAA_ = input.readUInt32();
+              break;
+            }
+            case 24: {
 
-        /**
-         * <code>bool is_finished_entrance_floor = 3;</code>
-         *
-         * @return The isFinishedEntranceFloor.
-         */
-        boolean getIsFinishedEntranceFloor();
+              isFinishedEntranceFloor_ = input.readBool();
+              break;
+            }
+            case 40: {
 
-        /**
-         * <code>uint32 schedule_start_time = 5;</code>
-         *
-         * @return The scheduleStartTime.
-         */
-        int getScheduleStartTime();
+              scheduleStartTime_ = input.readUInt32();
+              break;
+            }
+            case 48: {
 
-        /**
-         * <code>uint32 tower_schedule_id = 14;</code>
-         *
-         * @return The towerScheduleId.
-         */
-        int getTowerScheduleId();
+              kKHFBLDICMJ_ = input.readUInt32();
+              break;
+            }
+            case 56: {
 
-        /**
-         * <code>uint32 BCHDECHFOAA = 2;</code>
-         *
-         * @return The bCHDECHFOAA.
-         */
-        int getBCHDECHFOAA();
+              hECMGJCDAOA_ = input.readUInt32();
+              break;
+            }
+            case 72: {
 
-        /**
-         * <code>uint32 HECMGJCDAOA = 7;</code>
-         *
-         * @return The hECMGJCDAOA.
-         */
-        int getHECMGJCDAOA();
+              nextScheduleChangeTime_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              towerScheduleId_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.class, emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.Builder.class);
+    }
+
+    public static final int KKHFBLDICMJ_FIELD_NUMBER = 6;
+    private int kKHFBLDICMJ_;
+    /**
+     * <code>uint32 KKHFBLDICMJ = 6;</code>
+     * @return The kKHFBLDICMJ.
+     */
+    @java.lang.Override
+    public int getKKHFBLDICMJ() {
+      return kKHFBLDICMJ_;
+    }
+
+    public static final int NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER = 9;
+    private int nextScheduleChangeTime_;
+    /**
+     * <code>uint32 next_schedule_change_time = 9;</code>
+     * @return The nextScheduleChangeTime.
+     */
+    @java.lang.Override
+    public int getNextScheduleChangeTime() {
+      return nextScheduleChangeTime_;
+    }
+
+    public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 3;
+    private boolean isFinishedEntranceFloor_;
+    /**
+     * <code>bool is_finished_entrance_floor = 3;</code>
+     * @return The isFinishedEntranceFloor.
+     */
+    @java.lang.Override
+    public boolean getIsFinishedEntranceFloor() {
+      return isFinishedEntranceFloor_;
+    }
+
+    public static final int SCHEDULE_START_TIME_FIELD_NUMBER = 5;
+    private int scheduleStartTime_;
+    /**
+     * <code>uint32 schedule_start_time = 5;</code>
+     * @return The scheduleStartTime.
+     */
+    @java.lang.Override
+    public int getScheduleStartTime() {
+      return scheduleStartTime_;
+    }
+
+    public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 14;
+    private int towerScheduleId_;
+    /**
+     * <code>uint32 tower_schedule_id = 14;</code>
+     * @return The towerScheduleId.
+     */
+    @java.lang.Override
+    public int getTowerScheduleId() {
+      return towerScheduleId_;
+    }
+
+    public static final int BCHDECHFOAA_FIELD_NUMBER = 2;
+    private int bCHDECHFOAA_;
+    /**
+     * <code>uint32 BCHDECHFOAA = 2;</code>
+     * @return The bCHDECHFOAA.
+     */
+    @java.lang.Override
+    public int getBCHDECHFOAA() {
+      return bCHDECHFOAA_;
+    }
+
+    public static final int HECMGJCDAOA_FIELD_NUMBER = 7;
+    private int hECMGJCDAOA_;
+    /**
+     * <code>uint32 HECMGJCDAOA = 7;</code>
+     * @return The hECMGJCDAOA.
+     */
+    @java.lang.Override
+    public int getHECMGJCDAOA() {
+      return hECMGJCDAOA_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (bCHDECHFOAA_ != 0) {
+        output.writeUInt32(2, bCHDECHFOAA_);
+      }
+      if (isFinishedEntranceFloor_ != false) {
+        output.writeBool(3, isFinishedEntranceFloor_);
+      }
+      if (scheduleStartTime_ != 0) {
+        output.writeUInt32(5, scheduleStartTime_);
+      }
+      if (kKHFBLDICMJ_ != 0) {
+        output.writeUInt32(6, kKHFBLDICMJ_);
+      }
+      if (hECMGJCDAOA_ != 0) {
+        output.writeUInt32(7, hECMGJCDAOA_);
+      }
+      if (nextScheduleChangeTime_ != 0) {
+        output.writeUInt32(9, nextScheduleChangeTime_);
+      }
+      if (towerScheduleId_ != 0) {
+        output.writeUInt32(14, towerScheduleId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (bCHDECHFOAA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, bCHDECHFOAA_);
+      }
+      if (isFinishedEntranceFloor_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isFinishedEntranceFloor_);
+      }
+      if (scheduleStartTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, scheduleStartTime_);
+      }
+      if (kKHFBLDICMJ_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, kKHFBLDICMJ_);
+      }
+      if (hECMGJCDAOA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, hECMGJCDAOA_);
+      }
+      if (nextScheduleChangeTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, nextScheduleChangeTime_);
+      }
+      if (towerScheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, towerScheduleId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify)) {
+        return super.equals(obj);
+      }
+      emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify other = (emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) obj;
+
+      if (getKKHFBLDICMJ()
+          != other.getKKHFBLDICMJ()) return false;
+      if (getNextScheduleChangeTime()
+          != other.getNextScheduleChangeTime()) return false;
+      if (getIsFinishedEntranceFloor()
+          != other.getIsFinishedEntranceFloor()) return false;
+      if (getScheduleStartTime()
+          != other.getScheduleStartTime()) return false;
+      if (getTowerScheduleId()
+          != other.getTowerScheduleId()) return false;
+      if (getBCHDECHFOAA()
+          != other.getBCHDECHFOAA()) return false;
+      if (getHECMGJCDAOA()
+          != other.getHECMGJCDAOA()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KKHFBLDICMJ_FIELD_NUMBER;
+      hash = (53 * hash) + getKKHFBLDICMJ();
+      hash = (37 * hash) + NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getNextScheduleChangeTime();
+      hash = (37 * hash) + IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinishedEntranceFloor());
+      hash = (37 * hash) + SCHEDULE_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleStartTime();
+      hash = (37 * hash) + TOWER_SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTowerScheduleId();
+      hash = (37 * hash) + BCHDECHFOAA_FIELD_NUMBER;
+      hash = (53 * hash) + getBCHDECHFOAA();
+      hash = (37 * hash) + HECMGJCDAOA_FIELD_NUMBER;
+      hash = (53 * hash) + getHECMGJCDAOA();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
     }
     /**
-     *
-     *
      * <pre>
      * CmdId: 2475
      * Obf: JGALMNICNFO
@@ -76,969 +484,488 @@ public final class TowerBriefDataNotifyOuterClass {
      *
      * Protobuf type {@code TowerBriefDataNotify}
      */
-    public static final class TowerBriefDataNotify extends com.google.protobuf.GeneratedMessageV3
-            implements
-            // @@protoc_insertion_point(message_implements:TowerBriefDataNotify)
-            TowerBriefDataNotifyOrBuilder {
-        private static final long serialVersionUID = 0L;
-        // Use TowerBriefDataNotify.newBuilder() to construct.
-        private TowerBriefDataNotify(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-            super(builder);
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:TowerBriefDataNotify)
+        emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotifyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.class, emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.Builder.class);
+      }
+
+      // Construct using emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        kKHFBLDICMJ_ = 0;
 
-        private TowerBriefDataNotify() {}
+        nextScheduleChangeTime_ = 0;
 
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-            return new TowerBriefDataNotify();
+        isFinishedEntranceFloor_ = false;
+
+        scheduleStartTime_ = 0;
+
+        towerScheduleId_ = 0;
+
+        bCHDECHFOAA_ = 0;
+
+        hECMGJCDAOA_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.internal_static_TowerBriefDataNotify_descriptor;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify build() {
+        emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-            return this.unknownFields;
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify buildPartial() {
+        emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result = new emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify(this);
+        result.kKHFBLDICMJ_ = kKHFBLDICMJ_;
+        result.nextScheduleChangeTime_ = nextScheduleChangeTime_;
+        result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
+        result.scheduleStartTime_ = scheduleStartTime_;
+        result.towerScheduleId_ = towerScheduleId_;
+        result.bCHDECHFOAA_ = bCHDECHFOAA_;
+        result.hECMGJCDAOA_ = hECMGJCDAOA_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) {
+          return mergeFrom((emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
+      }
 
-        private TowerBriefDataNotify(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            this();
-            if (extensionRegistry == null) {
-                throw new java.lang.NullPointerException();
-            }
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        case 16:
-                            {
-                                bCHDECHFOAA_ = input.readUInt32();
-                                break;
-                            }
-                        case 24:
-                            {
-                                isFinishedEntranceFloor_ = input.readBool();
-                                break;
-                            }
-                        case 40:
-                            {
-                                scheduleStartTime_ = input.readUInt32();
-                                break;
-                            }
-                        case 48:
-                            {
-                                kKHFBLDICMJ_ = input.readUInt32();
-                                break;
-                            }
-                        case 56:
-                            {
-                                hECMGJCDAOA_ = input.readUInt32();
-                                break;
-                            }
-                        case 72:
-                            {
-                                nextScheduleChangeTime_ = input.readUInt32();
-                                break;
-                            }
-                        case 112:
-                            {
-                                towerScheduleId_ = input.readUInt32();
-                                break;
-                            }
-                        default:
-                            {
-                                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public Builder mergeFrom(emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify other) {
+        if (other == emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.getDefaultInstance()) return this;
+        if (other.getKKHFBLDICMJ() != 0) {
+          setKKHFBLDICMJ(other.getKKHFBLDICMJ());
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-            return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                    .internal_static_TowerBriefDataNotify_descriptor;
+        if (other.getNextScheduleChangeTime() != 0) {
+          setNextScheduleChangeTime(other.getNextScheduleChangeTime());
         }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-            return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                    .internal_static_TowerBriefDataNotify_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.class,
-                            emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.Builder
-                                    .class);
+        if (other.getIsFinishedEntranceFloor() != false) {
+          setIsFinishedEntranceFloor(other.getIsFinishedEntranceFloor());
         }
-
-        public static final int KKHFBLDICMJ_FIELD_NUMBER = 6;
-        private int kKHFBLDICMJ_;
-        /**
-         * <code>uint32 KKHFBLDICMJ = 6;</code>
-         *
-         * @return The kKHFBLDICMJ.
-         */
-        @java.lang.Override
-        public int getKKHFBLDICMJ() {
-            return kKHFBLDICMJ_;
+        if (other.getScheduleStartTime() != 0) {
+          setScheduleStartTime(other.getScheduleStartTime());
         }
-
-        public static final int NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER = 9;
-        private int nextScheduleChangeTime_;
-        /**
-         * <code>uint32 next_schedule_change_time = 9;</code>
-         *
-         * @return The nextScheduleChangeTime.
-         */
-        @java.lang.Override
-        public int getNextScheduleChangeTime() {
-            return nextScheduleChangeTime_;
+        if (other.getTowerScheduleId() != 0) {
+          setTowerScheduleId(other.getTowerScheduleId());
         }
-
-        public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 3;
-        private boolean isFinishedEntranceFloor_;
-        /**
-         * <code>bool is_finished_entrance_floor = 3;</code>
-         *
-         * @return The isFinishedEntranceFloor.
-         */
-        @java.lang.Override
-        public boolean getIsFinishedEntranceFloor() {
-            return isFinishedEntranceFloor_;
+        if (other.getBCHDECHFOAA() != 0) {
+          setBCHDECHFOAA(other.getBCHDECHFOAA());
         }
-
-        public static final int SCHEDULE_START_TIME_FIELD_NUMBER = 5;
-        private int scheduleStartTime_;
-        /**
-         * <code>uint32 schedule_start_time = 5;</code>
-         *
-         * @return The scheduleStartTime.
-         */
-        @java.lang.Override
-        public int getScheduleStartTime() {
-            return scheduleStartTime_;
+        if (other.getHECMGJCDAOA() != 0) {
+          setHECMGJCDAOA(other.getHECMGJCDAOA());
         }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
 
-        public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 14;
-        private int towerScheduleId_;
-        /**
-         * <code>uint32 tower_schedule_id = 14;</code>
-         *
-         * @return The towerScheduleId.
-         */
-        @java.lang.Override
-        public int getTowerScheduleId() {
-            return towerScheduleId_;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
-
-        public static final int BCHDECHFOAA_FIELD_NUMBER = 2;
-        private int bCHDECHFOAA_;
-        /**
-         * <code>uint32 BCHDECHFOAA = 2;</code>
-         *
-         * @return The bCHDECHFOAA.
-         */
-        @java.lang.Override
-        public int getBCHDECHFOAA() {
-            return bCHDECHFOAA_;
-        }
-
-        public static final int HECMGJCDAOA_FIELD_NUMBER = 7;
-        private int hECMGJCDAOA_;
-        /**
-         * <code>uint32 HECMGJCDAOA = 7;</code>
-         *
-         * @return The hECMGJCDAOA.
-         */
-        @java.lang.Override
-        public int getHECMGJCDAOA() {
-            return hECMGJCDAOA_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-            if (bCHDECHFOAA_ != 0) {
-                output.writeUInt32(2, bCHDECHFOAA_);
-            }
-            if (isFinishedEntranceFloor_ != false) {
-                output.writeBool(3, isFinishedEntranceFloor_);
-            }
-            if (scheduleStartTime_ != 0) {
-                output.writeUInt32(5, scheduleStartTime_);
-            }
-            if (kKHFBLDICMJ_ != 0) {
-                output.writeUInt32(6, kKHFBLDICMJ_);
-            }
-            if (hECMGJCDAOA_ != 0) {
-                output.writeUInt32(7, hECMGJCDAOA_);
-            }
-            if (nextScheduleChangeTime_ != 0) {
-                output.writeUInt32(9, nextScheduleChangeTime_);
-            }
-            if (towerScheduleId_ != 0) {
-                output.writeUInt32(14, towerScheduleId_);
-            }
-            unknownFields.writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (bCHDECHFOAA_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(2, bCHDECHFOAA_);
-            }
-            if (isFinishedEntranceFloor_ != false) {
-                size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isFinishedEntranceFloor_);
-            }
-            if (scheduleStartTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, scheduleStartTime_);
-            }
-            if (kKHFBLDICMJ_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(6, kKHFBLDICMJ_);
-            }
-            if (hECMGJCDAOA_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(7, hECMGJCDAOA_);
-            }
-            if (nextScheduleChangeTime_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(9, nextScheduleChangeTime_);
-            }
-            if (towerScheduleId_ != 0) {
-                size += com.google.protobuf.CodedOutputStream.computeUInt32Size(14, towerScheduleId_);
-            }
-            size += unknownFields.getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj
-                    instanceof
-                    emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify)) {
-                return super.equals(obj);
-            }
-            emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify other =
-                    (emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) obj;
-
-            if (getKKHFBLDICMJ() != other.getKKHFBLDICMJ()) return false;
-            if (getNextScheduleChangeTime() != other.getNextScheduleChangeTime()) return false;
-            if (getIsFinishedEntranceFloor() != other.getIsFinishedEntranceFloor()) return false;
-            if (getScheduleStartTime() != other.getScheduleStartTime()) return false;
-            if (getTowerScheduleId() != other.getTowerScheduleId()) return false;
-            if (getBCHDECHFOAA() != other.getBCHDECHFOAA()) return false;
-            if (getHECMGJCDAOA() != other.getHECMGJCDAOA()) return false;
-            if (!unknownFields.equals(other.unknownFields)) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + KKHFBLDICMJ_FIELD_NUMBER;
-            hash = (53 * hash) + getKKHFBLDICMJ();
-            hash = (37 * hash) + NEXT_SCHEDULE_CHANGE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getNextScheduleChangeTime();
-            hash = (37 * hash) + IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER;
-            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinishedEntranceFloor());
-            hash = (37 * hash) + SCHEDULE_START_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getScheduleStartTime();
-            hash = (37 * hash) + TOWER_SCHEDULE_ID_FIELD_NUMBER;
-            hash = (53 * hash) + getTowerScheduleId();
-            hash = (37 * hash) + BCHDECHFOAA_FIELD_NUMBER;
-            hash = (53 * hash) + getBCHDECHFOAA();
-            hash = (37 * hash) + HECMGJCDAOA_FIELD_NUMBER;
-            hash = (53 * hash) + getHECMGJCDAOA();
-            hash = (29 * hash) + unknownFields.hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(java.nio.ByteBuffer data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(
-                        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(com.google.protobuf.ByteString data)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(
-                        com.google.protobuf.ByteString data,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseDelimitedFrom(
-                        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                parseFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-                    PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-        /**
-         *
-         *
-         * <pre>
-         * CmdId: 2475
-         * Obf: JGALMNICNFO
-         * </pre>
-         *
-         * Protobuf type {@code TowerBriefDataNotify}
-         */
-        public static final class Builder
-                extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:TowerBriefDataNotify)
-                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotifyOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-                return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                        .internal_static_TowerBriefDataNotify_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-                    internalGetFieldAccessorTable() {
-                return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                        .internal_static_TowerBriefDataNotify_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.class,
-                                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                                        .Builder.class);
-            }
-
-            // Construct using
-            // emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                kKHFBLDICMJ_ = 0;
-
-                nextScheduleChangeTime_ = 0;
-
-                isFinishedEntranceFloor_ = false;
-
-                scheduleStartTime_ = 0;
-
-                towerScheduleId_ = 0;
-
-                bCHDECHFOAA_ = 0;
-
-                hECMGJCDAOA_ = 0;
-
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-                return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                        .internal_static_TowerBriefDataNotify_descriptor;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                    getDefaultInstanceForType() {
-                return emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                        .getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify build() {
-                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result =
-                        buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                    buildPartial() {
-                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify result =
-                        new emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify(this);
-                result.kKHFBLDICMJ_ = kKHFBLDICMJ_;
-                result.nextScheduleChangeTime_ = nextScheduleChangeTime_;
-                result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
-                result.scheduleStartTime_ = scheduleStartTime_;
-                result.towerScheduleId_ = towerScheduleId_;
-                result.bCHDECHFOAA_ = bCHDECHFOAA_;
-                result.hECMGJCDAOA_ = hECMGJCDAOA_;
-                onBuilt();
-                return result;
-            }
-
-            @java.lang.Override
-            public Builder clone() {
-                return super.clone();
-            }
-
-            @java.lang.Override
-            public Builder setField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.setField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-                return super.clearField(field);
-            }
-
-            @java.lang.Override
-            public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-                return super.clearOneof(oneof);
-            }
-
-            @java.lang.Override
-            public Builder setRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field,
-                    int index,
-                    java.lang.Object value) {
-                return super.setRepeatedField(field, index, value);
-            }
-
-            @java.lang.Override
-            public Builder addRepeatedField(
-                    com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-                return super.addRepeatedField(field, value);
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other
-                        instanceof
-                        emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify) {
-                    return mergeFrom(
-                            (emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify)
-                                    other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify other) {
-                if (other
-                        == emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                                .getDefaultInstance()) return this;
-                if (other.getKKHFBLDICMJ() != 0) {
-                    setKKHFBLDICMJ(other.getKKHFBLDICMJ());
-                }
-                if (other.getNextScheduleChangeTime() != 0) {
-                    setNextScheduleChangeTime(other.getNextScheduleChangeTime());
-                }
-                if (other.getIsFinishedEntranceFloor() != false) {
-                    setIsFinishedEntranceFloor(other.getIsFinishedEntranceFloor());
-                }
-                if (other.getScheduleStartTime() != 0) {
-                    setScheduleStartTime(other.getScheduleStartTime());
-                }
-                if (other.getTowerScheduleId() != 0) {
-                    setTowerScheduleId(other.getTowerScheduleId());
-                }
-                if (other.getBCHDECHFOAA() != 0) {
-                    setBCHDECHFOAA(other.getBCHDECHFOAA());
-                }
-                if (other.getHECMGJCDAOA() != 0) {
-                    setHECMGJCDAOA(other.getHECMGJCDAOA());
-                }
-                this.mergeUnknownFields(other.unknownFields);
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                        parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage =
-                            (emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify)
-                                    e.getUnfinishedMessage();
-                    throw e.unwrapIOException();
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int kKHFBLDICMJ_;
-            /**
-             * <code>uint32 KKHFBLDICMJ = 6;</code>
-             *
-             * @return The kKHFBLDICMJ.
-             */
-            @java.lang.Override
-            public int getKKHFBLDICMJ() {
-                return kKHFBLDICMJ_;
-            }
-            /**
-             * <code>uint32 KKHFBLDICMJ = 6;</code>
-             *
-             * @param value The kKHFBLDICMJ to set.
-             * @return This builder for chaining.
-             */
-            public Builder setKKHFBLDICMJ(int value) {
-
-                kKHFBLDICMJ_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 KKHFBLDICMJ = 6;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearKKHFBLDICMJ() {
-
-                kKHFBLDICMJ_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int nextScheduleChangeTime_;
-            /**
-             * <code>uint32 next_schedule_change_time = 9;</code>
-             *
-             * @return The nextScheduleChangeTime.
-             */
-            @java.lang.Override
-            public int getNextScheduleChangeTime() {
-                return nextScheduleChangeTime_;
-            }
-            /**
-             * <code>uint32 next_schedule_change_time = 9;</code>
-             *
-             * @param value The nextScheduleChangeTime to set.
-             * @return This builder for chaining.
-             */
-            public Builder setNextScheduleChangeTime(int value) {
-
-                nextScheduleChangeTime_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 next_schedule_change_time = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearNextScheduleChangeTime() {
-
-                nextScheduleChangeTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private boolean isFinishedEntranceFloor_;
-            /**
-             * <code>bool is_finished_entrance_floor = 3;</code>
-             *
-             * @return The isFinishedEntranceFloor.
-             */
-            @java.lang.Override
-            public boolean getIsFinishedEntranceFloor() {
-                return isFinishedEntranceFloor_;
-            }
-            /**
-             * <code>bool is_finished_entrance_floor = 3;</code>
-             *
-             * @param value The isFinishedEntranceFloor to set.
-             * @return This builder for chaining.
-             */
-            public Builder setIsFinishedEntranceFloor(boolean value) {
-
-                isFinishedEntranceFloor_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>bool is_finished_entrance_floor = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearIsFinishedEntranceFloor() {
-
-                isFinishedEntranceFloor_ = false;
-                onChanged();
-                return this;
-            }
-
-            private int scheduleStartTime_;
-            /**
-             * <code>uint32 schedule_start_time = 5;</code>
-             *
-             * @return The scheduleStartTime.
-             */
-            @java.lang.Override
-            public int getScheduleStartTime() {
-                return scheduleStartTime_;
-            }
-            /**
-             * <code>uint32 schedule_start_time = 5;</code>
-             *
-             * @param value The scheduleStartTime to set.
-             * @return This builder for chaining.
-             */
-            public Builder setScheduleStartTime(int value) {
-
-                scheduleStartTime_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 schedule_start_time = 5;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearScheduleStartTime() {
-
-                scheduleStartTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int towerScheduleId_;
-            /**
-             * <code>uint32 tower_schedule_id = 14;</code>
-             *
-             * @return The towerScheduleId.
-             */
-            @java.lang.Override
-            public int getTowerScheduleId() {
-                return towerScheduleId_;
-            }
-            /**
-             * <code>uint32 tower_schedule_id = 14;</code>
-             *
-             * @param value The towerScheduleId to set.
-             * @return This builder for chaining.
-             */
-            public Builder setTowerScheduleId(int value) {
-
-                towerScheduleId_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 tower_schedule_id = 14;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearTowerScheduleId() {
-
-                towerScheduleId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int bCHDECHFOAA_;
-            /**
-             * <code>uint32 BCHDECHFOAA = 2;</code>
-             *
-             * @return The bCHDECHFOAA.
-             */
-            @java.lang.Override
-            public int getBCHDECHFOAA() {
-                return bCHDECHFOAA_;
-            }
-            /**
-             * <code>uint32 BCHDECHFOAA = 2;</code>
-             *
-             * @param value The bCHDECHFOAA to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBCHDECHFOAA(int value) {
-
-                bCHDECHFOAA_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 BCHDECHFOAA = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBCHDECHFOAA() {
-
-                bCHDECHFOAA_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private int hECMGJCDAOA_;
-            /**
-             * <code>uint32 HECMGJCDAOA = 7;</code>
-             *
-             * @return The hECMGJCDAOA.
-             */
-            @java.lang.Override
-            public int getHECMGJCDAOA() {
-                return hECMGJCDAOA_;
-            }
-            /**
-             * <code>uint32 HECMGJCDAOA = 7;</code>
-             *
-             * @param value The hECMGJCDAOA to set.
-             * @return This builder for chaining.
-             */
-            public Builder setHECMGJCDAOA(int value) {
-
-                hECMGJCDAOA_ = value;
-                onChanged();
-                return this;
-            }
-            /**
-             * <code>uint32 HECMGJCDAOA = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearHECMGJCDAOA() {
-
-                hECMGJCDAOA_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final Builder setUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.setUnknownFields(unknownFields);
-            }
-
-            @java.lang.Override
-            public final Builder mergeUnknownFields(
-                    final com.google.protobuf.UnknownFieldSet unknownFields) {
-                return super.mergeUnknownFields(unknownFields);
-            }
-
-            // @@protoc_insertion_point(builder_scope:TowerBriefDataNotify)
-        }
-
-        // @@protoc_insertion_point(class_scope:TowerBriefDataNotify)
-        private static final emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass
-                        .TowerBriefDataNotify
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify();
-        }
-
-        public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<TowerBriefDataNotify> PARSER =
-                new com.google.protobuf.AbstractParser<TowerBriefDataNotify>() {
-                    @java.lang.Override
-                    public TowerBriefDataNotify parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new TowerBriefDataNotify(input, extensionRegistry);
-                    }
-                };
-
-        public static com.google.protobuf.Parser<TowerBriefDataNotify> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<TowerBriefDataNotify> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify
-                getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
+        return this;
+      }
+
+      private int kKHFBLDICMJ_ ;
+      /**
+       * <code>uint32 KKHFBLDICMJ = 6;</code>
+       * @return The kKHFBLDICMJ.
+       */
+      @java.lang.Override
+      public int getKKHFBLDICMJ() {
+        return kKHFBLDICMJ_;
+      }
+      /**
+       * <code>uint32 KKHFBLDICMJ = 6;</code>
+       * @param value The kKHFBLDICMJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKKHFBLDICMJ(int value) {
+        
+        kKHFBLDICMJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KKHFBLDICMJ = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKKHFBLDICMJ() {
+        
+        kKHFBLDICMJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nextScheduleChangeTime_ ;
+      /**
+       * <code>uint32 next_schedule_change_time = 9;</code>
+       * @return The nextScheduleChangeTime.
+       */
+      @java.lang.Override
+      public int getNextScheduleChangeTime() {
+        return nextScheduleChangeTime_;
+      }
+      /**
+       * <code>uint32 next_schedule_change_time = 9;</code>
+       * @param value The nextScheduleChangeTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNextScheduleChangeTime(int value) {
+        
+        nextScheduleChangeTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 next_schedule_change_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNextScheduleChangeTime() {
+        
+        nextScheduleChangeTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinishedEntranceFloor_ ;
+      /**
+       * <code>bool is_finished_entrance_floor = 3;</code>
+       * @return The isFinishedEntranceFloor.
+       */
+      @java.lang.Override
+      public boolean getIsFinishedEntranceFloor() {
+        return isFinishedEntranceFloor_;
+      }
+      /**
+       * <code>bool is_finished_entrance_floor = 3;</code>
+       * @param value The isFinishedEntranceFloor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinishedEntranceFloor(boolean value) {
+        
+        isFinishedEntranceFloor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finished_entrance_floor = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinishedEntranceFloor() {
+        
+        isFinishedEntranceFloor_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int scheduleStartTime_ ;
+      /**
+       * <code>uint32 schedule_start_time = 5;</code>
+       * @return The scheduleStartTime.
+       */
+      @java.lang.Override
+      public int getScheduleStartTime() {
+        return scheduleStartTime_;
+      }
+      /**
+       * <code>uint32 schedule_start_time = 5;</code>
+       * @param value The scheduleStartTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleStartTime(int value) {
+        
+        scheduleStartTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_start_time = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleStartTime() {
+        
+        scheduleStartTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int towerScheduleId_ ;
+      /**
+       * <code>uint32 tower_schedule_id = 14;</code>
+       * @return The towerScheduleId.
+       */
+      @java.lang.Override
+      public int getTowerScheduleId() {
+        return towerScheduleId_;
+      }
+      /**
+       * <code>uint32 tower_schedule_id = 14;</code>
+       * @param value The towerScheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTowerScheduleId(int value) {
+        
+        towerScheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 tower_schedule_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTowerScheduleId() {
+        
+        towerScheduleId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bCHDECHFOAA_ ;
+      /**
+       * <code>uint32 BCHDECHFOAA = 2;</code>
+       * @return The bCHDECHFOAA.
+       */
+      @java.lang.Override
+      public int getBCHDECHFOAA() {
+        return bCHDECHFOAA_;
+      }
+      /**
+       * <code>uint32 BCHDECHFOAA = 2;</code>
+       * @param value The bCHDECHFOAA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBCHDECHFOAA(int value) {
+        
+        bCHDECHFOAA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BCHDECHFOAA = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBCHDECHFOAA() {
+        
+        bCHDECHFOAA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hECMGJCDAOA_ ;
+      /**
+       * <code>uint32 HECMGJCDAOA = 7;</code>
+       * @return The hECMGJCDAOA.
+       */
+      @java.lang.Override
+      public int getHECMGJCDAOA() {
+        return hECMGJCDAOA_;
+      }
+      /**
+       * <code>uint32 HECMGJCDAOA = 7;</code>
+       * @param value The hECMGJCDAOA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHECMGJCDAOA(int value) {
+        
+        hECMGJCDAOA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HECMGJCDAOA = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHECMGJCDAOA() {
+        
+        hECMGJCDAOA_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:TowerBriefDataNotify)
     }
 
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_TowerBriefDataNotify_descriptor;
-    private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_TowerBriefDataNotify_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
-
+    // @@protoc_insertion_point(class_scope:TowerBriefDataNotify)
+    private static final emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify DEFAULT_INSTANCE;
     static {
-        java.lang.String[] descriptorData = {
-            "\n\032TowerBriefDataNotify.proto\"\324\001\n\024TowerBr"
-                    + "iefDataNotify\022\023\n\013KKHFBLDICMJ\030\006 \001(\r\022!\n\031ne"
-                    + "xt_schedule_change_time\030\t \001(\r\022\"\n\032is_fini"
-                    + "shed_entrance_floor\030\003 \001(\010\022\033\n\023schedule_st"
-                    + "art_time\030\005 \001(\r\022\031\n\021tower_schedule_id\030\016 \001("
-                    + "\r\022\023\n\013BCHDECHFOAA\030\002 \001(\r\022\023\n\013HECMGJCDAOA\030\007 "
-                    + "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
-        };
-        descriptor =
-                com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-                        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-        internal_static_TowerBriefDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-        internal_static_TowerBriefDataNotify_fieldAccessorTable =
-                new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                        internal_static_TowerBriefDataNotify_descriptor,
-                        new java.lang.String[] {
-                            "KKHFBLDICMJ",
-                            "NextScheduleChangeTime",
-                            "IsFinishedEntranceFloor",
-                            "ScheduleStartTime",
-                            "TowerScheduleId",
-                            "BCHDECHFOAA",
-                            "HECMGJCDAOA",
-                        });
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TowerBriefDataNotify>
+        PARSER = new com.google.protobuf.AbstractParser<TowerBriefDataNotify>() {
+      @java.lang.Override
+      public TowerBriefDataNotify parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TowerBriefDataNotify(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TowerBriefDataNotify> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TowerBriefDataNotify> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TowerBriefDataNotifyOuterClass.TowerBriefDataNotify getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TowerBriefDataNotify_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TowerBriefDataNotify_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\032TowerBriefDataNotify.proto\"\324\001\n\024TowerBr" +
+      "iefDataNotify\022\023\n\013KKHFBLDICMJ\030\006 \001(\r\022!\n\031ne" +
+      "xt_schedule_change_time\030\t \001(\r\022\"\n\032is_fini" +
+      "shed_entrance_floor\030\003 \001(\010\022\033\n\023schedule_st" +
+      "art_time\030\005 \001(\r\022\031\n\021tower_schedule_id\030\016 \001(" +
+      "\r\022\023\n\013BCHDECHFOAA\030\002 \001(\r\022\023\n\013HECMGJCDAOA\030\007 " +
+      "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_TowerBriefDataNotify_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_TowerBriefDataNotify_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TowerBriefDataNotify_descriptor,
+        new java.lang.String[] { "KKHFBLDICMJ", "NextScheduleChangeTime", "IsFinishedEntranceFloor", "ScheduleStartTime", "TowerScheduleId", "BCHDECHFOAA", "HECMGJCDAOA", });
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }
