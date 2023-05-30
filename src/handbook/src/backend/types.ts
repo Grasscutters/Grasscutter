@@ -136,9 +136,9 @@ export type CommandResponse = {
 };
 
 export type WindowDetails = {
-    address: string,
-    port: number,
-    disable: boolean
+    address: string;
+    port: number;
+    disable: boolean;
 };
 
 /**
