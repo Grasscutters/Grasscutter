@@ -708,6 +708,17 @@ public class ScriptLib {
         return quest.getState().getValue();
     }
 
+    public int GetHostQuestState(int questId){
+        val player = getSceneScriptManager().getScene().getWorld().getHost();
+
+        val quest = player.getQuestManager().getQuestById(questId);
+        if(quest == null){
+            return QuestState.QUEST_STATE_NONE.getValue();
+        }
+
+        return quest.getState().getValue();
+    }
+
     public int ShowReminder(int reminderId){
         getSceneScriptManager().getScene().broadcastPacket(new PacketDungeonShowReminderNotify(reminderId));
         return 0;
@@ -1204,6 +1215,12 @@ public class ScriptLib {
     public int SetWeatherAreaState(int var1, int var2){
         logger.warn("[LUA] Call unimplemented SetWeatherAreaState with {} {}", var1, var2);
         getSceneScriptManager().getScene().getPlayers().forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
+        return 0;
+    }
+
+    public int EnterWeatherArea(int var1){
+        logger.warn("[LUA] Call unimplemented EnterWeatherArea with {}", var1);
+        //TODO implement
         return 0;
     }
 
