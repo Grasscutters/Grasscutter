@@ -8,13 +8,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @ResourceType(name = "MonsterSpecialNameExcelConfigData.json", loadPriority = LoadPriority.HIGH)
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class MonsterSpecialNameData extends GameResource {
-    @SerializedName(value = "specialNameId", alternate={"specialNameID"})
+    @SerializedName(
+            value = "specialNameId",
+            alternate = {"specialNameID"})
     private int specialNameId;
-    @SerializedName(value = "specialNameLabId", alternate={"specialNameLabID"})
+
+    @SerializedName(
+            value = "specialNameLabId",
+            alternate = {"specialNameLabID"})
     private int specialNameLabId;
+
     private long specialNameTextMapHash;
 
     @Override
