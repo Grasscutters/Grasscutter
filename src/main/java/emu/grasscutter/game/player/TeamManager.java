@@ -1,5 +1,7 @@
 package emu.grasscutter.game.player;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.GameConstants;
@@ -32,14 +34,11 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import java.util.*;
+import java.util.stream.Stream;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
-
-import java.util.*;
-import java.util.stream.Stream;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {

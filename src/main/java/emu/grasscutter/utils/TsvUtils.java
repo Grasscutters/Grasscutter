@@ -1,5 +1,7 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.utils.Utils.nonRegexSplit;
+
 import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
@@ -7,8 +9,6 @@ import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
-import lombok.val;
-
 import java.io.IOException;
 import java.lang.reflect.*;
 import java.nio.charset.StandardCharsets;
@@ -19,8 +19,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.utils.Utils.nonRegexSplit;
+import lombok.val;
 
 // Throughout this file, commented System.out.println debug log calls are left in.
 // This is because the default logger will deadlock when operating on parallel streams.

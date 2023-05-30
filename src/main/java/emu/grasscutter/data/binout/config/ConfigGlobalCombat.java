@@ -1,13 +1,12 @@
 package emu.grasscutter.data.binout.config;
 
 import java.util.List;
-
 import lombok.Data;
 
 @Data
 public class ConfigGlobalCombat {
     private DefaultAbilities defaultAbilities;
-    //TODO: Add more indices
+    // TODO: Add more indices
 
     @Data
     public class DefaultAbilities {

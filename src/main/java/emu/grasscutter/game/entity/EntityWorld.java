@@ -29,12 +29,11 @@ public class EntityWorld extends GameEntity {
 
     @Override
     public void initAbilities() {
-        //Load abilities from levelElementAbilities
-        for (var ability : GameData.getConfigGlobalCombat()
-            .getDefaultAbilities().getDefaultMPLevelAbilities()) {
-            var data =  GameData.getAbilityData(ability);
-            if (data != null) world.getHost()
-                .getAbilityManager().addAbilityToEntity(this, data);
+        // Load abilities from levelElementAbilities
+        for (var ability :
+                GameData.getConfigGlobalCombat().getDefaultAbilities().getDefaultMPLevelAbilities()) {
+            var data = GameData.getAbilityData(ability);
+            if (data != null) world.getHost().getAbilityManager().addAbilityToEntity(this, data);
         }
     }
 
@@ -45,7 +44,7 @@ public class EntityWorld extends GameEntity {
 
     @Override
     public Int2FloatMap getFightProperties() {
-        //TODO
+        // TODO
         return new Int2FloatArrayMap();
     }
 

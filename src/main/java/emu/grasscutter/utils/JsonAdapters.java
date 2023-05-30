@@ -13,13 +13,12 @@ import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
-import lombok.val;
-
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+import lombok.val;
 
 public interface JsonAdapters {
     class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {

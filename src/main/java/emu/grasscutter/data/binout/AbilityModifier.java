@@ -267,7 +267,9 @@ public class AbilityModifier implements Serializable {
 
         public String target;
 
-        @SerializedName(value = "amount", alternate = {"PDLLIFICICJ", "cdRatio"})
+        @SerializedName(
+                value = "amount",
+                alternate = {"PDLLIFICICJ", "cdRatio"})
         public DynamicFloat amount = DynamicFloat.ZERO;
 
         @SerializedName(value = "amountByTargetCurrentHPRatio")
@@ -276,7 +278,9 @@ public class AbilityModifier implements Serializable {
         @SerializedName(value = "unused")
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;
 
-        @SerializedName(value = "unknown", alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
+        @SerializedName(
+                value = "unknown",
+                alternate = {"HFNJHOGGFKB", "GEJGGCIOLKN"})
         public DynamicFloat amountByCasterMaxHPRatio = DynamicFloat.ZERO;
 
         public DynamicFloat amountByGetDamage = DynamicFloat.ZERO;

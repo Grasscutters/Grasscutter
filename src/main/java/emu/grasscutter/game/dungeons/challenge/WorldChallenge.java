@@ -13,11 +13,10 @@ import emu.grasscutter.scripts.data.SceneTrigger;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter

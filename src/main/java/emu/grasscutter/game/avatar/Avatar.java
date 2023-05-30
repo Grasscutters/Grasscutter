@@ -1,5 +1,7 @@
 package emu.grasscutter.game.avatar;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
@@ -22,7 +24,6 @@ import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
 import emu.grasscutter.data.excels.weapon.WeaponCurveData;
 import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
@@ -41,18 +42,15 @@ import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
+import java.util.*;
+import java.util.stream.Stream;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
 import org.bson.types.ObjectId;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.*;
-import java.util.stream.Stream;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -284,7 +282,7 @@ public class Avatar {
                 .forEach(proudSkillId -> this.proudSkillList.add(proudSkillId));
         this.recalcStats();
 
-        if (notify){
+        if (notify) {
             owner.sendPacket(new PacketAvatarSkillDepotChangeNotify(this));
         }
     }

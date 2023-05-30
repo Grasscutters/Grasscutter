@@ -39,13 +39,12 @@ import emu.grasscutter.server.packet.send.PacketSceneTimeNotify;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 @ToString(callSuper = true)
 public class EntityGadget extends EntityBaseGadget {
@@ -85,15 +84,24 @@ public class EntityGadget extends EntityBaseGadget {
         this(scene, gadgetId, pos, rot, null);
     }
 
-    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, int campId, int campType) {
+    public EntityGadget(
+            Scene scene, int gadgetId, Position pos, Position rot, int campId, int campType) {
         this(scene, gadgetId, pos, rot, null, campId, campType);
     }
 
-    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
+    public EntityGadget(
+            Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content) {
         this(scene, gadgetId, pos, rot, content, 0, 0);
     }
 
-    public EntityGadget(Scene scene, int gadgetId, Position pos, Position rot, GadgetContent content, int campId, int campType) {
+    public EntityGadget(
+            Scene scene,
+            int gadgetId,
+            Position pos,
+            Position rot,
+            GadgetContent content,
+            int campId,
+            int campType) {
         super(scene, pos, rot, campId, campType);
 
         this.gadgetData = GameData.getGadgetDataMap().get(gadgetId);
@@ -119,15 +127,15 @@ public class EntityGadget extends EntityBaseGadget {
         this.initAbilities(); // TODO: move this
     }
 
-    private void addConfigAbility(ConfigAbilityData abilityData){
-        var data =  GameData.getAbilityData(abilityData.getAbilityName());
-        if(data != null) this.getScene().getWorld().getHost()
-            .getAbilityManager().addAbilityToEntity(this, data);
+    private void addConfigAbility(ConfigAbilityData abilityData) {
+        var data = GameData.getAbilityData(abilityData.getAbilityName());
+        if (data != null)
+            this.getScene().getWorld().getHost().getAbilityManager().addAbilityToEntity(this, data);
     }
 
     @Override
     public void initAbilities() {
-        //TODO: handle pre-dynamic, static and dynamic here
+        // TODO: handle pre-dynamic, static and dynamic here
         if (this.configGadget != null && this.configGadget.getAbilities() != null) {
             for (var ability : this.configGadget.getAbilities()) {
                 this.addConfigAbility(ability);
@@ -137,7 +145,8 @@ public class EntityGadget extends EntityBaseGadget {
 
     public void setInteractEnabled(boolean enable) {
         this.interactEnabled = enable;
-        this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, this.getState())); //Update the interact
+        this.getScene()
+                .broadcastPacket(new PacketGadgetStateNotify(this, this.getState())); // Update the interact
     }
 
     public void setState(int state) {
@@ -308,13 +317,14 @@ public class EntityGadget extends EntityBaseGadget {
             addAllFightPropsToEntityInfo(entityInfo);
         }
 
-        var gadgetInfo = SceneGadgetInfo.newBuilder()
-                .setGadgetId(this.getGadgetId())
-                .setGroupId(this.getGroupId())
-                .setConfigId(this.getConfigId())
-                .setGadgetState(this.getState())
-                .setIsEnableInteract(this.interactEnabled)
-                .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
+        var gadgetInfo =
+                SceneGadgetInfo.newBuilder()
+                        .setGadgetId(this.getGadgetId())
+                        .setGroupId(this.getGroupId())
+                        .setConfigId(this.getConfigId())
+                        .setGadgetState(this.getState())
+                        .setIsEnableInteract(this.interactEnabled)
+                        .setAuthorityPeerId(this.getScene().getWorld().getHostPeerId());
 
         if (this.metaGadget != null) {
             gadgetInfo.setDraftId(this.metaGadget.draft_id);

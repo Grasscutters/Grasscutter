@@ -107,8 +107,7 @@ public class EntityAvatar extends GameEntity {
      */
     public int getWeaponEntityId() {
         var avatar = this.getAvatar();
-        return avatar.getWeapon() == null ? 0 :
-            avatar.getWeapon().getWeaponEntityId();
+        return avatar.getWeapon() == null ? 0 : avatar.getWeapon().getWeaponEntityId();
     }
 
     @Override
@@ -129,13 +128,12 @@ public class EntityAvatar extends GameEntity {
     }
 
     @Override
-    public void initAbilities() {
-    }
+    public void initAbilities() {}
 
-    private void addConfigAbility(String abilityName){
+    private void addConfigAbility(String abilityName) {
         var data = GameData.getAbilityData(abilityName);
-        if (data != null) this.getScene().getWorld()
-            .getHost().getAbilityManager().addAbilityToEntity(this, data);
+        if (data != null)
+            this.getScene().getWorld().getHost().getAbilityManager().addAbilityToEntity(this, data);
     }
 
     @Override
@@ -148,9 +146,16 @@ public class EntityAvatar extends GameEntity {
         float healed = super.heal(amount, mute);
 
         if (healed > 0f) {
-            getScene().broadcastPacket(
-                new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP, healed, mute ? PropChangeReason.PROP_CHANGE_REASON_NONE : PropChangeReason.PROP_CHANGE_REASON_ABILITY, ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY)
-            );
+            getScene()
+                    .broadcastPacket(
+                            new PacketEntityFightPropChangeReasonNotify(
+                                    this,
+                                    FightProperty.FIGHT_PROP_CUR_HP,
+                                    healed,
+                                    mute
+                                            ? PropChangeReason.PROP_CHANGE_REASON_NONE
+                                            : PropChangeReason.PROP_CHANGE_REASON_ABILITY,
+                                    ChangeHpReason.CHANGE_HP_REASON_ADD_ABILITY));
         }
 
         return healed;

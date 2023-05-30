@@ -10,11 +10,10 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.MapType;
 import emu.grasscutter.Grasscutter;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-
 import java.io.IOException;
 import java.util.*;
+import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.LuaValue;
 
 public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implements Serializer {
 
@@ -22,10 +21,11 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
 
     public LuaTableJacksonSerializer() {
         if (objectMapper == null) {
-            objectMapper = JsonMapper.builder()
-                .configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true)
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-                .build();
+            objectMapper =
+                    JsonMapper.builder()
+                            .configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true)
+                            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                            .build();
             objectMapper
                     .configOverride(List.class)
                     .setSetterInfo(JsonSetter.Value.forContentNulls(Nulls.AS_EMPTY));

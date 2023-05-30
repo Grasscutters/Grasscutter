@@ -42,7 +42,12 @@ public class EntityClientGadget extends EntityBaseGadget {
     private ConfigEntityGadget configGadget;
 
     public EntityClientGadget(Scene scene, Player player, EvtCreateGadgetNotify notify) {
-        super(scene, new Position(notify.getInitPos()), new Position(notify.getInitEulerAngles()), notify.getCampId(), notify.getCampType());
+        super(
+                scene,
+                new Position(notify.getInitPos()),
+                new Position(notify.getInitEulerAngles()),
+                notify.getCampId(),
+                notify.getCampType());
         this.owner = player;
         this.id = notify.getEntityId();
         this.gadgetId = notify.getConfigId();
@@ -67,18 +72,16 @@ public class EntityClientGadget extends EntityBaseGadget {
 
     @Override
     public void initAbilities() {
-        if(this.configGadget != null && this.configGadget.getAbilities() != null) {
+        if (this.configGadget != null && this.configGadget.getAbilities() != null) {
             for (var ability : this.configGadget.getAbilities()) {
                 addConfigAbility(ability);
             }
         }
     }
 
-    private void addConfigAbility(ConfigAbilityData abilityData){
-        var data =  GameData.getAbilityData(abilityData.getAbilityName());
-        if (data != null)
-            owner.getAbilityManager().addAbilityToEntity(
-                this, data);
+    private void addConfigAbility(ConfigAbilityData abilityData) {
+        var data = GameData.getAbilityData(abilityData.getAbilityName());
+        if (data != null) owner.getAbilityManager().addAbilityToEntity(this, data);
     }
 
     @Override

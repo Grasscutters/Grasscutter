@@ -41,15 +41,14 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
-
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -119,12 +118,11 @@ public final class Scene {
     public GameEntity getEntityById(int id) {
         // Check if the scene's entity ID is referenced.
         if (id == 0x13800001) return this.sceneEntity;
-        else if (id == this.getWorld().getLevelEntityId())
-            return this.getWorld().getEntity();
+        else if (id == this.getWorld().getLevelEntityId()) return this.getWorld().getEntity();
 
-        var teamEntityPlayer = players.stream().filter(p -> p.getTeamManager().getEntity().getId() == id).findAny();
-        if(teamEntityPlayer.isPresent())
-            return teamEntityPlayer.get().getTeamManager().getEntity();
+        var teamEntityPlayer =
+                players.stream().filter(p -> p.getTeamManager().getEntity().getId() == id).findAny();
+        if (teamEntityPlayer.isPresent()) return teamEntityPlayer.get().getTeamManager().getEntity();
 
         var entity = this.entities.get(id);
         if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {

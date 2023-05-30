@@ -3,7 +3,6 @@ package emu.grasscutter.data.binout;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.AbilityLocalIdGenerator;
 import emu.grasscutter.game.ability.AbilityLocalIdGenerator.ConfigAbilitySubContainerType;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,7 +44,8 @@ public class AbilityData {
     }
 
     private void initializeActions() {
-        AbilityLocalIdGenerator generator = new AbilityLocalIdGenerator(ConfigAbilitySubContainerType.ACTION);
+        AbilityLocalIdGenerator generator =
+                new AbilityLocalIdGenerator(ConfigAbilitySubContainerType.ACTION);
         generator.configIndex = 0;
 
         generator.initializeActionLocalIds(onAdded, localIdToAction);
@@ -76,8 +76,9 @@ public class AbilityData {
     }
 
     private void initializeMixins() {
-        if(abilityMixins != null) {
-            AbilityLocalIdGenerator generator = new AbilityLocalIdGenerator(ConfigAbilitySubContainerType.MIXIN);
+        if (abilityMixins != null) {
+            AbilityLocalIdGenerator generator =
+                    new AbilityLocalIdGenerator(ConfigAbilitySubContainerType.MIXIN);
             generator.modifierIndex = 0;
             generator.configIndex = 0;
 
@@ -86,33 +87,53 @@ public class AbilityData {
     }
 
     private void initializeModifiers() {
-        if(modifiers == null) return;
+        if (modifiers == null) return;
 
-        var _modifiers = modifiers.entrySet().stream()
-            .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue)
-            .toList();
+        var _modifiers =
+                modifiers.entrySet().stream()
+                        .sorted(Map.Entry.comparingByKey())
+                        .map(Map.Entry::getValue)
+                        .toList();
 
         var modifierIndex = 0;
         for (AbilityModifier abilityModifier : _modifiers) {
             long configIndex = 0L;
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onAdded, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onRemoved, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onBeingHit, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onAttackLanded, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onHittingOther, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onThinkInterval, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onKill, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onCrash, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onAvatarIn, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onAvatarOut, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onReconnect, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onChangeAuthority, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onVehicleIn, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onVehicleOut, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onZoneEnter, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onZoneExit, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onHeal, localIdToAction);
-            this.initializeActionSubCategory(modifierIndex, configIndex++, abilityModifier.onBeingHealed, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onAdded, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onRemoved, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onBeingHit, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onAttackLanded, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onHittingOther, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onThinkInterval, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onKill, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onCrash, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onAvatarIn, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onAvatarOut, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onReconnect, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onChangeAuthority, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onVehicleIn, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onVehicleOut, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onZoneEnter, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onZoneExit, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onHeal, localIdToAction);
+            this.initializeActionSubCategory(
+                    modifierIndex, configIndex++, abilityModifier.onBeingHealed, localIdToAction);
 
             if (abilityModifier.modifierMixins != null) {
                 var generator = new AbilityLocalIdGenerator(ConfigAbilitySubContainerType.MODIFIER_MIXIN);

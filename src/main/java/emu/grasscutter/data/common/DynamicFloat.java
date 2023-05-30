@@ -5,12 +5,11 @@ import emu.grasscutter.game.ability.Ability;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
-import lombok.Getter;
-import lombok.val;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import lombok.Getter;
+import lombok.val;
 
 @Getter
 public class DynamicFloat {
@@ -80,19 +79,19 @@ public class DynamicFloat {
         }
 
         try {
-            return fl.popFloat();  // well-formed data will always have only one value left at this point
-        } catch(NoSuchElementException e) {
+            return fl.popFloat(); // well-formed data will always have only one value left at this point
+        } catch (NoSuchElementException e) {
             return defaultValue;
         }
     }
 
     public float get(ProudSkillData skill) {
-        //Construct the map
+        // Construct the map
         return get(skill.getParamListMap(), 0f);
     }
 
     public float get(ProudSkillData skill, float defaultValue) {
-        //Construct the map
+        // Construct the map
         return get(skill.getParamListMap(), defaultValue);
     }
 

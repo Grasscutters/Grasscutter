@@ -29,7 +29,8 @@ public abstract class EntityBaseGadget extends GameEntity {
         this(scene, position, rotation, 0, 0);
     }
 
-    public EntityBaseGadget(Scene scene, Position position, Position rotation, int campId, int campType) {
+    public EntityBaseGadget(
+            Scene scene, Position position, Position rotation, int campId, int campType) {
         super(scene);
         this.position = position != null ? position.clone() : new Position();
         this.rotation = rotation != null ? rotation.clone() : new Position();

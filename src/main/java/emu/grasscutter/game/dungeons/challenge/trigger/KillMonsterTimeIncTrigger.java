@@ -4,7 +4,7 @@ import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityMonster;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 
-public class KillMonsterTimeIncTrigger extends ChallengeTrigger{
+public class KillMonsterTimeIncTrigger extends ChallengeTrigger {
 
     private int increment;
 
@@ -14,7 +14,8 @@ public class KillMonsterTimeIncTrigger extends ChallengeTrigger{
 
     @Override
     public void onBegin(WorldChallenge challenge) {
-        //challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 0, challenge.getScore().get()));
+        // challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 0,
+        // challenge.getScore().get()));
     }
 
     @Override

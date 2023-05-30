@@ -7,10 +7,9 @@ import emu.grasscutter.data.common.FightPropData;
 import emu.grasscutter.data.common.ItemParamData;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "ProudSkillExcelConfigData.json")
 public class ProudSkillData extends GameResource {
@@ -40,9 +39,7 @@ public class ProudSkillData extends GameResource {
     public Iterable<ItemParamData> getTotalCostItems() {
         if (this.totalCostItems == null) {
             List<ItemParamData> total =
-                    (this.costItems != null) ?
-                        new ArrayList<>(this.costItems) :
-                        new ArrayList<>(1);
+                    (this.costItems != null) ? new ArrayList<>(this.costItems) : new ArrayList<>(1);
             if (this.coinCost > 0) total.add(new ItemParamData(202, this.coinCost));
             this.totalCostItems = total;
         }

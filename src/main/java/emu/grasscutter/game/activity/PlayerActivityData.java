@@ -13,15 +13,14 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityUpdateWatcherNotify;
 import emu.grasscutter.utils.JsonUtils;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.experimental.FieldDefaults;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
 
 @Entity("activities")
 @Data
@@ -113,8 +112,7 @@ public class PlayerActivityData {
 
         public static WatcherInfo init(ActivityWatcher watcher) {
             var watcherData = watcher.getActivityWatcherData();
-            var progress = watcherData != null ?
-                watcherData.getProgress() : 0;
+            var progress = watcherData != null ? watcherData.getProgress() : 0;
 
             return WatcherInfo.of()
                     .watcherId(watcher.getWatcherId())

@@ -4,9 +4,9 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityIdType;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
-import emu.grasscutter.game.world.Position;
 import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 
@@ -22,14 +22,13 @@ public class EntityTeam extends GameEntity {
 
     @Override
     public void initAbilities() {
-        //Load abilities from levelElementAbilities
+        // Load abilities from levelElementAbilities
         var defaultAbilities = GameData.getConfigGlobalCombat().getDefaultAbilities();
-        if(defaultAbilities.getDefaultTeamAbilities() != null)
-            for(var ability : defaultAbilities.getDefaultTeamAbilities()) {
-                AbilityData data =  GameData.getAbilityData(ability);
-                if(data != null)
-                    player.getWorld().getHost().getAbilityManager().addAbilityToEntity(
-                        this, data);
+        if (defaultAbilities.getDefaultTeamAbilities() != null)
+            for (var ability : defaultAbilities.getDefaultTeamAbilities()) {
+                AbilityData data = GameData.getAbilityData(ability);
+                if (data != null)
+                    player.getWorld().getHost().getAbilityManager().addAbilityToEntity(this, data);
             }
     }
 
@@ -45,7 +44,7 @@ public class EntityTeam extends GameEntity {
 
     @Override
     public Int2FloatMap getFightProperties() {
-        //TODO
+        // TODO
         return new Int2FloatArrayMap();
     }
 
@@ -64,5 +63,4 @@ public class EntityTeam extends GameEntity {
     public SceneEntityInfo toProto() {
         return null;
     }
-
 }

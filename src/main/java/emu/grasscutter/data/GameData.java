@@ -47,13 +47,12 @@ import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.game.world.GroupReplacementData;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
+import java.lang.reflect.Field;
+import java.util.*;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.val;
-
-import javax.annotation.Nullable;
-import java.lang.reflect.Field;
-import java.util.*;
 
 @SuppressWarnings({"unused", "MismatchedQueryAndUpdateOfCollection"})
 public final class GameData {
@@ -243,7 +242,9 @@ public final class GameData {
     private static final Int2ObjectMap<EquipAffixData> equipAffixDataMap =
             new Int2ObjectOpenHashMap<>();
 
-    @Getter private static final Int2ObjectMap<MonsterAffixData> monsterAffixDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter
+    private static final Int2ObjectMap<MonsterAffixData> monsterAffixDataMap =
+            new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<FetterCharacterCardData> fetterCharacterCardDataMap =
@@ -439,8 +440,7 @@ public final class GameData {
     private static final Int2ObjectMap<CodexWeaponData> codexWeaponDataMap =
             new Int2ObjectOpenHashMap<>();
 
-    @Getter @Setter
-    private static ConfigGlobalCombat configGlobalCombat = null;
+    @Getter @Setter private static ConfigGlobalCombat configGlobalCombat = null;
 
     // Custom community server resources
     @Getter
@@ -451,7 +451,8 @@ public final class GameData {
     private static final Int2ObjectMap<GadgetMapping> gadgetMappingMap =
             new Int2ObjectOpenHashMap<>();
 
-    @Getter private static final Int2ObjectMap<MonsterMapping> monsterMappingMap =
+    @Getter
+    private static final Int2ObjectMap<MonsterMapping> monsterMappingMap =
             new Int2ObjectOpenHashMap<>();
 
     @Getter

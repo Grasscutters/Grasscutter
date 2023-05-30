@@ -23,15 +23,12 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.Object2FloatMap;
-import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import lombok.Getter;
+import lombok.Setter;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -53,7 +50,11 @@ public abstract class GameEntity {
     @Getter private ElementType lastAttackType = ElementType.None;
 
     @Getter private List<Ability> instancedAbilities = new ArrayList<>();
-    @Getter private Int2ObjectMap<AbilityModifierController> instancedModifiers = new Int2ObjectOpenHashMap<>();
+
+    @Getter
+    private Int2ObjectMap<AbilityModifierController> instancedModifiers =
+            new Int2ObjectOpenHashMap<>();
+
     @Getter private Map<String, Float> globalAbilityValues = new HashMap<>();
 
     public GameEntity(Scene scene) {

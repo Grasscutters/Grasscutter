@@ -10,11 +10,15 @@ import emu.grasscutter.game.props.FightProperty;
 @AbilityAction(AbilityModifierAction.Type.LoseHP)
 public class ActionLoseHP extends AbilityActionHandler {
     @Override
-    public boolean execute(Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
+    public boolean execute(
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         GameEntity owner = ability.getOwner();
         // handle client gadgets, that the effective caster is the current local avatar
         if (owner instanceof EntityClientGadget ownerGadget) {
-            owner = ownerGadget.getScene().getEntityById(ownerGadget.getOwnerEntityId()); //Caster for EntityClientGadget
+            owner =
+                    ownerGadget
+                            .getScene()
+                            .getEntityById(ownerGadget.getOwnerEntityId()); // Caster for EntityClientGadget
 
             // TODO: Do this per entity, not just the player
             if (ownerGadget.getOwner().getAbilityManager().isAbilityInvulnerable()) return true;
@@ -25,21 +29,26 @@ public class ActionLoseHP extends AbilityActionHandler {
             return true;
         }
 
-        if (action.disableWhenLoading && target.getScene().getWorld().getHost().getSceneLoadState().getValue() < 2) {
+        if (action.disableWhenLoading
+                && target.getScene().getWorld().getHost().getSceneLoadState().getValue() < 2) {
             return true;
         }
 
         var amountByCasterMaxHPRatio = action.amountByCasterMaxHPRatio.get(ability);
         var amountByCasterAttackRatio = action.amountByCasterAttackRatio.get(ability);
-        var amountByCasterCurrentHPRatio = action.amountByCasterCurrentHPRatio.get(ability); //Seems unused on server
+        var amountByCasterCurrentHPRatio =
+                action.amountByCasterCurrentHPRatio.get(ability); // Seems unused on server
         var amountByTargetCurrentHPRatio = action.amountByTargetCurrentHPRatio.get(ability);
         var amountByTargetMaxHPRatio = action.amountByTargetMaxHPRatio.get(ability);
         var limboByTargetMaxHPRatio = action.limboByTargetMaxHPRatio.get(ability);
 
         var amountToLose = action.amount.get(ability);
-        amountToLose += amountByCasterMaxHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-        amountToLose += amountByCasterAttackRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
-        amountToLose += amountByCasterCurrentHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        amountToLose +=
+                amountByCasterMaxHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        amountToLose +=
+                amountByCasterAttackRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
+        amountToLose +=
+                amountByCasterCurrentHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
 
         var currentHp = target.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
         var maxHp = target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
@@ -47,10 +56,13 @@ public class ActionLoseHP extends AbilityActionHandler {
         amountToLose += amountByTargetMaxHPRatio * maxHp;
 
         if (limboByTargetMaxHPRatio > 1.192093e-07)
-            amountToLose = (float) Math.min(Math.max(currentHp - Math.max(limboByTargetMaxHPRatio * maxHp, 1.0), 0.0), amountToLose);
+            amountToLose =
+                    (float)
+                            Math.min(
+                                    Math.max(currentHp - Math.max(limboByTargetMaxHPRatio * maxHp, 1.0), 0.0),
+                                    amountToLose);
 
-        if (currentHp < (amountToLose + 0.01) && !action.lethal)
-            amountToLose = 0;
+        if (currentHp < (amountToLose + 0.01) && !action.lethal) amountToLose = 0;
 
         target.damage(amountToLose);
 

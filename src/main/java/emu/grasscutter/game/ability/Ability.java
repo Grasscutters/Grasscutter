@@ -1,8 +1,5 @@
 package emu.grasscutter.game.ability;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityData;
 import emu.grasscutter.game.entity.GameEntity;
@@ -11,6 +8,8 @@ import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.objects.Object2FloatMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Getter;
 
 public class Ability {
@@ -23,7 +22,8 @@ public class Ability {
     @Getter private Map<String, AbilityModifierController> modifiers = new HashMap<>();
     @Getter private Object2FloatMap<String> abilitySpecials = new Object2FloatOpenHashMap<>();
 
-    @Getter private static Map<String, Object2FloatMap<String>> abilitySpecialsModified = new HashMap<>();
+    @Getter
+    private static Map<String, Object2FloatMap<String>> abilitySpecialsModified = new HashMap<>();
 
     @Getter private int hash;
 
@@ -33,13 +33,13 @@ public class Ability {
         this.manager = owner.getWorld().getHost().getAbilityManager();
 
         if (this.data.abilitySpecials != null) {
-            for(var entry : this.data.abilitySpecials.entrySet())
+            for (var entry : this.data.abilitySpecials.entrySet())
                 abilitySpecials.put(entry.getKey(), entry.getValue().floatValue());
         }
 
-        //if(abilitySpecialsModified.containsKey(this.data.abilityName)) {//Modify talent data
+        // if(abilitySpecialsModified.containsKey(this.data.abilityName)) {//Modify talent data
         //    abilitySpecials.putAll(abilitySpecialsModified.get(this.data.abilityName));
-        //}
+        // }
 
         this.playerOwner = playerOwner;
 
@@ -50,8 +50,7 @@ public class Ability {
 
     public static String getAbilityName(AbilityString abString) {
         if (abString.hasStr()) return abString.getStr();
-        if (abString.hasHash())
-            return GameData.getAbilityHashes().get(abString.getHash());
+        if (abString.hasHash()) return GameData.getAbilityHashes().get(abString.getHash());
 
         return null;
     }
