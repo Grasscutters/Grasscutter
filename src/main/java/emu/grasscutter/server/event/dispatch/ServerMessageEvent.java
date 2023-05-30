@@ -4,11 +4,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import emu.grasscutter.server.dispatch.IDispatcher;
 import emu.grasscutter.server.event.Event;
+import java.util.Base64;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.java_websocket.WebSocket;
-
-import java.util.Base64;
 
 @Getter
 @RequiredArgsConstructor
@@ -22,8 +21,7 @@ public final class ServerMessageEvent extends Event {
     public static void invoke(WebSocket client, JsonElement object) {
         var message = IDispatcher.decode(object);
         var isBinary = message.get("binary").getAsBoolean();
-        var data = Base64.getDecoder().decode(
-            message.get("data").getAsString());
+        var data = Base64.getDecoder().decode(message.get("data").getAsString());
 
         // Create the event and invoke it.
         new ServerMessageEvent(client, isBinary, data).call();
@@ -46,16 +44,13 @@ public final class ServerMessageEvent extends Event {
      * @return The message as a JSON object.
      */
     public JsonObject asJson() {
-        return IDispatcher.JSON.fromJson(
-            this.asString(), JsonObject.class);
+        return IDispatcher.JSON.fromJson(this.asString(), JsonObject.class);
     }
 
     /**
-     * @return The message as a JSON object.
-     *         The type is specified.
+     * @return The message as a JSON object. The type is specified.
      */
     public <T> T asJson(Class<T> type) {
-        return IDispatcher.JSON.fromJson(
-            this.asString(), type);
+        return IDispatcher.JSON.fromJson(this.asString(), type);
     }
 }

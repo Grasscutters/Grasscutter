@@ -22,12 +22,13 @@ public abstract class AbilityActionHandler {
             default -> throw new RuntimeException("Unknown target type: " + target);
             case "Self" -> entity;
             case "Team" -> ability.getPlayerOwner().getTeamManager().getEntity();
-            case "OriginOwner" -> ability.getPlayerOwner()
-                .getTeamManager().getCurrentAvatarEntity();
+            case "OriginOwner" -> ability.getPlayerOwner().getTeamManager().getCurrentAvatarEntity();
             case "Owner" -> ability.getOwner();
             case "Applier" -> entity; // TODO: Validate.
-            case "CurLocalAvatar" -> ability.getPlayerOwner()
-                .getTeamManager().getCurrentAvatarEntity(); // TODO: Validate.
+            case "CurLocalAvatar" -> ability
+                    .getPlayerOwner()
+                    .getTeamManager()
+                    .getCurrentAvatarEntity(); // TODO: Validate.
             case "CasterOriginOwner" -> null; // TODO: Figure out.
         };
     }

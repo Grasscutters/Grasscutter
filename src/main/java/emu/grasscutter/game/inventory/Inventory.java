@@ -1,5 +1,7 @@
 package emu.grasscutter.game.inventory;
 
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -20,13 +22,10 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-
-import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;

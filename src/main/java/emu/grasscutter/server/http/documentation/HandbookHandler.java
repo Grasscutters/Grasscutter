@@ -28,10 +28,11 @@ public final class HandbookHandler implements Router {
 
         var server = HANDBOOK.server;
         if (this.serve && server.enforced) {
-            this.handbook = this.handbook
-                .replace("{{DETAILS_ADDRESS}}", server.address)
-                .replace("{{DETAILS_PORT}}", String.valueOf(server.port))
-                .replace("{{DETAILS_DISABLE}}", Boolean.toString(server.canChange));
+            this.handbook =
+                    this.handbook
+                            .replace("{{DETAILS_ADDRESS}}", server.address)
+                            .replace("{{DETAILS_PORT}}", String.valueOf(server.port))
+                            .replace("{{DETAILS_DISABLE}}", Boolean.toString(!server.canChange));
         }
     }
 
@@ -69,9 +70,7 @@ public final class HandbookHandler implements Router {
         if (!this.serve) {
             ctx.status(500).result("Handbook not found.");
         } else {
-            ctx
-                .contentType(ContentType.TEXT_HTML)
-                .result(this.handbook);
+            ctx.contentType(ContentType.TEXT_HTML).result(this.handbook);
         }
     }
 

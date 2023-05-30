@@ -1,5 +1,8 @@
 package emu.grasscutter;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.auth.AuthenticationSystem;
@@ -31,6 +34,16 @@ import emu.grasscutter.utils.StartupArguments;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.lang.Language;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 import org.jline.reader.EndOfFileException;
@@ -41,20 +54,6 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nullable;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
@@ -81,12 +80,16 @@ public final class Grasscutter {
 
     private static LineReader consoleLineReader = null;
 
-    @Getter private static final ExecutorService threadPool = new ThreadPoolExecutor(
-        6, 6, 60, TimeUnit.SECONDS,
-        new LinkedBlockingDeque<>(),
-        FastThreadLocalThread::new,
-        new ThreadPoolExecutor.AbortPolicy()
-    );
+    @Getter
+    private static final ExecutorService threadPool =
+            new ThreadPoolExecutor(
+                    6,
+                    6,
+                    60,
+                    TimeUnit.SECONDS,
+                    new LinkedBlockingDeque<>(),
+                    FastThreadLocalThread::new,
+                    new ThreadPoolExecutor.AbortPolicy());
 
     static {
         // Declare logback configuration.
