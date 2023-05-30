@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.documentation;
 
+import static emu.grasscutter.config.Configuration.HANDBOOK;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.server.http.Router;
@@ -10,8 +12,6 @@ import emu.grasscutter.utils.objects.HandbookBody.Action;
 import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
-
-import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
@@ -102,8 +102,7 @@ public final class HandbookHandler implements Router {
             } else {
                 ctx.status(result.getStatus())
                         .result(result.getBody())
-                        .contentType(
-                                result.isHtml() ? ContentType.TEXT_HTML : ContentType.TEXT_PLAIN);
+                        .contentType(result.isHtml() ? ContentType.TEXT_HTML : ContentType.TEXT_PLAIN);
             }
         }
     }

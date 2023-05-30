@@ -1,5 +1,7 @@
 package emu.grasscutter.database;
 
+import static emu.grasscutter.config.Configuration.DATABASE;
+
 import com.mongodb.MongoCommandException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -15,8 +17,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.game.Account;
 import org.reflections.Reflections;
-
-import static emu.grasscutter.config.Configuration.DATABASE;
 
 public final class DatabaseManager {
     private static Datastore gameDatastore;

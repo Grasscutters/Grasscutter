@@ -9,7 +9,8 @@ import emu.grasscutter.game.entity.GameEntity;
 @AbilityAction(AbilityModifierAction.Type.CopyGlobalValue)
 public final class ActionCopyGlobalValue extends AbilityActionHandler {
     @Override
-    public boolean execute(Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity entity) {
+    public boolean execute(
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity entity) {
         // Get the entities referred to.
         var source = this.getTarget(ability, entity, action.srcTarget);
         var destination = this.getTarget(ability, entity, action.dstTarget);
