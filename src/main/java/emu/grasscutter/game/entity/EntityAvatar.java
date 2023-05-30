@@ -63,7 +63,10 @@ public class EntityAvatar extends GameEntity {
 
             var weapon = this.getAvatar().getWeapon();
             if (weapon != null) {
-                weapon.setWeaponEntityId(world.getNextEntityId(EntityIdType.WEAPON));
+                if (!(weapon.getWeaponEntity() != null && weapon.getWeaponEntity().getScene() == scene)) {
+                    weapon.setWeaponEntity(new EntityWeapon(this.getPlayer().getScene(), weapon.getItemData().getGadgetId()));
+                    scene.getWeaponEntities().put(weapon.getWeaponEntity().getId(), weapon.getWeaponEntity());
+                }
             }
         } else {
             Grasscutter.getLogger()
@@ -107,7 +110,10 @@ public class EntityAvatar extends GameEntity {
      */
     public int getWeaponEntityId() {
         var avatar = this.getAvatar();
-        return avatar.getWeapon() == null ? 0 : avatar.getWeapon().getWeaponEntityId();
+
+        if (avatar.getWeapon() != null && avatar.getWeapon().getWeaponEntity() != null) {
+            return avatar.getWeapon().getWeaponEntity().getId();
+        } else return 0;
     }
 
     @Override

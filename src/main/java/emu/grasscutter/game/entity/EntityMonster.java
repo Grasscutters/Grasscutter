@@ -55,7 +55,7 @@ public class EntityMonster extends GameEntity {
     @Getter private final ConfigEntityMonster configEntityMonster;
     @Getter private final Position bornPos;
     @Getter private final int level;
-    @Getter private int weaponEntityId;
+    @Getter private EntityWeapon weaponEntity;
     @Getter @Setter private int poseId;
     @Getter @Setter private int aiId = -1;
 
@@ -81,7 +81,9 @@ public class EntityMonster extends GameEntity {
 
         // Monster weapon
         if (getMonsterWeaponId() > 0) {
-            this.weaponEntityId = getWorld().getNextEntityId(EntityIdType.WEAPON);
+            this.weaponEntity = new EntityWeapon(scene, getMonsterWeaponId());
+            scene.getWeaponEntities().put(this.weaponEntity.getId(), this.weaponEntity);
+            //this.weaponEntityId = getWorld().getNextEntityId(EntityIdType.WEAPON);
         }
 
         this.recalcStats();
@@ -349,7 +351,7 @@ public class EntityMonster extends GameEntity {
 
         if (this.getMonsterWeaponId() > 0) {
             SceneWeaponInfo weaponInfo = SceneWeaponInfo.newBuilder()
-                .setEntityId(this.weaponEntityId)
+                .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
                 .setGadgetId(this.getMonsterWeaponId())
                 .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                 .build();

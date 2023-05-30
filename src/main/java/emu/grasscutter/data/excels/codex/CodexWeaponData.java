@@ -8,6 +8,7 @@ import emu.grasscutter.data.ResourceType;
 public class CodexWeaponData extends GameResource {
     private int Id;
     private int weaponId;
+    private int gadgetId;
     private int sortOrder;
 
     public int getSortOrder() {
@@ -15,6 +16,10 @@ public class CodexWeaponData extends GameResource {
     }
 
     public int getWeaponId() {
+        return weaponId;
+    }
+
+    public int getGadgetId() {
         return weaponId;
     }
 

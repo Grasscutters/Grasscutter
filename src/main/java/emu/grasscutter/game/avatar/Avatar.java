@@ -25,6 +25,7 @@ import emu.grasscutter.data.excels.weapon.WeaponCurveData;
 import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityWeapon;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.ItemType;
@@ -459,10 +460,14 @@ public class Avatar {
         }
 
         // Set equip
-        getEquips().put(itemEquipType.getValue(), item);
+        this.getEquips().put(itemEquipType.getValue(), item);
 
         if (itemEquipType == EquipType.EQUIP_WEAPON && getPlayer().getWorld() != null) {
-            item.setWeaponEntityId(this.getPlayer().getWorld().getNextEntityId(EntityIdType.WEAPON));
+            if (!(item.getWeaponEntity() != null && item.getWeaponEntity().getScene() == getPlayer().getScene())) {
+                item.setWeaponEntity(new EntityWeapon(this.getPlayer().getScene(), item.getItemData().getGadgetId()));
+                this.getPlayer().getScene().getWeaponEntities().put(item.getWeaponEntity().getId(), item.getWeaponEntity());
+            }
+            //item.setWeaponEntityId(this.getPlayer().getWorld().getNextEntityId(EntityIdType.WEAPON));
         }
 
         item.setEquipCharacter(this.getAvatarId());
@@ -1257,7 +1262,11 @@ public class Avatar {
                             item.setEquipCharacter(this.getAvatarId());
                             item.setOwner(player);
                             if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
-                                item.setWeaponEntityId(player.getWorld().getNextEntityId(EntityIdType.WEAPON));
+                                if (!(item.getWeaponEntity() != null && item.getWeaponEntity().getScene() == player.getScene())) {
+                                    item.setWeaponEntity(new EntityWeapon(player.getScene(), item.getItemData().getGadgetId()));
+                                    player.getScene().getWeaponEntities().put(item.getWeaponEntity().getId(), item.getWeaponEntity());
+                                }
+
                                 player.sendPacket(new PacketAvatarEquipChangeNotify(this, item));
                             }
                         });

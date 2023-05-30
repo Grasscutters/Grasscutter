@@ -55,6 +55,7 @@ public final class Scene {
     @Getter private final SceneData sceneData;
     @Getter private final List<Player> players;
     @Getter private final Map<Integer, GameEntity> entities;
+    @Getter private final Map<Integer, GameEntity> weaponEntities;
     @Getter private final Set<SpawnDataEntry> spawnedEntities;
     @Getter private final Set<SpawnDataEntry> deadSpawnedEntities;
     @Getter private final Set<SceneBlock> loadedBlocks;
@@ -85,6 +86,7 @@ public final class Scene {
         this.sceneData = sceneData;
         this.players = new CopyOnWriteArrayList<>();
         this.entities = new ConcurrentHashMap<>();
+        this.weaponEntities = new ConcurrentHashMap<>();
 
         this.prevScene = 3;
         this.sceneRoutes = GameData.getSceneRoutes(getId());
@@ -126,8 +128,9 @@ public final class Scene {
 
         // Check for an avatar.
         var entity = this.entities.get(id);
-        if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {
-            for (var player : this.getPlayers()) {
+        if (entity == null) entity = this.weaponEntities.get(id);
+        if (entity == null && (id >> 24) == EntityIdType.AVATAR.getId()) {
+            for (var player : getPlayers()) {
                 for (var avatar : player.getTeamManager().getActiveTeam()) {
                     if (avatar.getId() == id) return avatar;
                 }
@@ -797,7 +800,7 @@ public final class Scene {
 
         for (GameEntity entity : this.getEntities().values()) {
             var spawnEntry = entity.getSpawnEntry();
-            if (spawnEntry != null && !visible.contains(spawnEntry)) {
+            if (spawnEntry != null && !(entity instanceof EntityWeapon) && !visible.contains(spawnEntry)) {
                 toRemove.add(entity);
                 spawnedEntities.remove(spawnEntry);
             }
