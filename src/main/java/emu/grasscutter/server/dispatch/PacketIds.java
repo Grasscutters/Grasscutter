@@ -17,4 +17,5 @@ public interface PacketIds {
     int GetPlayerFieldsRsp = 9;
     int GetPlayerByAccountReq = 10;
     int GetPlayerByAccountRsp = 11;
+    int ServerMessageNotify = 12;
 }
