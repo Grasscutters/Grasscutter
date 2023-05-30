@@ -316,6 +316,8 @@ public class AbilityModifier implements Serializable {
         public boolean isFromOwner;
         public String globalValueKey;
         public String abilityFormula;
+        public String srcTarget, dstTarget;
+        public String srcKey, dstKey;
 
         public int param1;
         public int param2;
