@@ -1313,16 +1313,17 @@ public class Player implements PlayerHook, FieldFetch {
         }
 
         // Load from db
-        this.achievements = Achievements.getByPlayer(this);
-        this.getAvatars().loadFromDatabase();
-        this.getInventory().loadFromDatabase();
+        var runner = Grasscutter.getThreadPool();
+        runner.submit(() -> this.achievements = Achievements.getByPlayer(this));
 
-        this.getFriendsList().loadFromDatabase();
-        this.getMailHandler().loadFromDatabase();
-        this.getQuestManager().loadFromDatabase();
+        runner.submit(this.getAvatars()::loadFromDatabase);
+        runner.submit(this.getInventory()::loadFromDatabase);
 
-        this.loadBattlePassManager();
-        this.getAvatars().postLoad(); // Needs to be called after inventory is handled
+        runner.submit(this.getFriendsList()::loadFromDatabase);
+        runner.submit(this.getMailHandler()::loadFromDatabase);
+        runner.submit(this.getQuestManager()::loadFromDatabase);
+
+        runner.submit(this::loadBattlePassManager);
 
         this.getPlayerProgress().setPlayer(this); // Add reference to the player.
     }
@@ -1397,7 +1398,7 @@ public class Player implements PlayerHook, FieldFetch {
         home = GameHome.getByUid(getUid());
         home.onOwnerLogin(this);
         // Activity
-        activityManager = new ActivityManager(this);
+        this.activityManager = new ActivityManager(this);
 
         session.send(new PacketPlayerEnterSceneNotify(this)); // Enter game world
         session.send(new PacketPlayerLevelRewardUpdateNotify(rewardedLevels));

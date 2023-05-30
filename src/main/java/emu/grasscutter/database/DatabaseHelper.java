@@ -1,8 +1,5 @@
 package emu.grasscutter.database;
 
-import static com.mongodb.client.model.Filters.eq;
-
-import com.mongodb.client.result.DeleteResult;
 import dev.morphia.query.FindOptions;
 import dev.morphia.query.Sort;
 import dev.morphia.query.experimental.filters.Filters;
@@ -22,10 +19,74 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
+import emu.grasscutter.utils.objects.Returnable;
+import io.netty.util.concurrent.FastThreadLocalThread;
+
 import java.util.List;
+import java.util.concurrent.*;
 import java.util.stream.Stream;
 
+import static com.mongodb.client.model.Filters.eq;
+
 public final class DatabaseHelper {
+    private static final ExecutorService eventExecutor = new ThreadPoolExecutor(
+        6, 6, 60, TimeUnit.SECONDS,
+        new LinkedBlockingDeque<>(),
+        FastThreadLocalThread::new,
+        new ThreadPoolExecutor.AbortPolicy()
+    );
+
+    /**
+     * Saves an object on the account datastore.
+     *
+     * @param object The object to save.
+     */
+    public static void saveAccountAsync(Object object) {
+        DatabaseHelper.eventExecutor.submit(() ->
+            DatabaseManager.getAccountDatastore().save(object));
+    }
+
+    /**
+     * Saves an object on the game datastore.
+     *
+     * @param object The object to save.
+     */
+    public static void saveGameAsync(Object object) {
+        DatabaseHelper.eventExecutor.submit(() ->
+            DatabaseHelper.saveGameAsync(object));
+    }
+
+    /**
+     * Runs a runnable on the event executor.
+     * Should be limited to database-related operations.
+     *
+     * @param runnable The runnable to run.
+     */
+    public static void asyncOperation(Runnable runnable) {
+        DatabaseHelper.eventExecutor.submit(runnable);
+    }
+
+    /**
+     * Fetches an object asynchronously.
+     *
+     * @param task The task to run.
+     * @return The future.
+     */
+    public static <T> CompletableFuture<T> fetchAsync(Returnable<T> task) {
+        var future = new CompletableFuture<T>();
+
+        // Run the task on the event executor.
+        DatabaseHelper.eventExecutor.submit(() -> {
+            try {
+                future.complete(task.invoke());
+            } catch (Exception e) {
+                future.completeExceptionally(e);
+            }
+        });
+
+        return future;
+    }
+
     public static Account createAccount(String username) {
         return createAccountWithUid(username, 0);
     }
@@ -85,7 +146,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveAccount(Account account) {
-        DatabaseManager.getAccountDatastore().save(account);
+        DatabaseHelper.saveAccountAsync(account);
     }
 
     public static Account getAccountByName(String username) {
@@ -159,31 +220,34 @@ public final class DatabaseHelper {
             if (player == null) return;
         }
         int uid = player.getUid();
-        // Delete data from collections
-        DatabaseManager.getGameDatabase().getCollection("achievements").deleteMany(eq("uid", uid));
-        DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid", uid));
-        DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid", uid));
-        DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", uid));
-        DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", uid));
-        DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", uid));
-        DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", uid));
-        DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", uid));
-        DatabaseManager.getGameDatabase().getCollection("battlepass").deleteMany(eq("ownerUid", uid));
 
-        // Delete friendships.
-        // Here, we need to make sure to not only delete the deleted account's friendships,
-        // but also all friendship entries for that account's friends.
-        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("ownerId", uid));
-        DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("friendId", uid));
+        DatabaseHelper.asyncOperation(() -> {
+            // Delete data from collections
+            DatabaseManager.getGameDatabase().getCollection("achievements").deleteMany(eq("uid", uid));
+            DatabaseManager.getGameDatabase().getCollection("activities").deleteMany(eq("uid", uid));
+            DatabaseManager.getGameDatabase().getCollection("homes").deleteMany(eq("ownerUid", uid));
+            DatabaseManager.getGameDatabase().getCollection("mail").deleteMany(eq("ownerUid", uid));
+            DatabaseManager.getGameDatabase().getCollection("avatars").deleteMany(eq("ownerId", uid));
+            DatabaseManager.getGameDatabase().getCollection("gachas").deleteMany(eq("ownerId", uid));
+            DatabaseManager.getGameDatabase().getCollection("items").deleteMany(eq("ownerId", uid));
+            DatabaseManager.getGameDatabase().getCollection("quests").deleteMany(eq("ownerUid", uid));
+            DatabaseManager.getGameDatabase().getCollection("battlepass").deleteMany(eq("ownerUid", uid));
 
-        // Delete the player last.
-        DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", uid)).delete();
+            // Delete friendships.
+            // Here, we need to make sure to not only delete the deleted account's friendships,
+            // but also all friendship entries for that account's friends.
+            DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("ownerId", uid));
+            DatabaseManager.getGameDatabase().getCollection("friendships").deleteMany(eq("friendId", uid));
 
-        // Finally, delete the account itself.
-        DatabaseManager.getAccountDatastore()
+            // Delete the player last.
+            DatabaseManager.getGameDatastore().find(Player.class).filter(Filters.eq("id", uid)).delete();
+
+            // Finally, delete the account itself.
+            DatabaseManager.getAccountDatastore()
                 .find(Account.class)
                 .filter(Filters.eq("id", target.getId()))
                 .delete();
+        });
     }
 
     public static <T> Stream<T> getByGameClass(Class<T> classType) {
@@ -239,7 +303,7 @@ public final class DatabaseHelper {
                 > 0;
     }
 
-    public static synchronized Player generatePlayerUid(Player character, int reservedId) {
+    public static synchronized void generatePlayerUid(Player character, int reservedId) {
         // Check if reserved id
         int id;
         if (reservedId > 0 && !checkIfPlayerExists(reservedId)) {
@@ -251,9 +315,9 @@ public final class DatabaseHelper {
             } while (checkIfPlayerExists(id));
             character.setUid(id);
         }
+
         // Save to database
-        DatabaseManager.getGameDatastore().save(character);
-        return character;
+        DatabaseHelper.saveGameAsync(character);
     }
 
     public static synchronized int getNextPlayerId(int reservedId) {
@@ -270,36 +334,48 @@ public final class DatabaseHelper {
     }
 
     public static void savePlayer(Player character) {
-        DatabaseManager.getGameDatastore().save(character);
+        DatabaseHelper.saveGameAsync(character);
     }
 
     public static void saveAvatar(Avatar avatar) {
-        DatabaseManager.getGameDatastore().save(avatar);
+        DatabaseHelper.saveGameAsync(avatar);
     }
 
+    /**
+     * Fetches all avatars of a player.
+     *
+     * @param player The player.
+     * @return The list of avatars.
+     */
     public static List<Avatar> getAvatars(Player player) {
         return DatabaseManager.getGameDatastore()
-                .find(Avatar.class)
-                .filter(Filters.eq("ownerId", player.getUid()))
-                .stream()
-                .toList();
+            .find(Avatar.class)
+            .filter(Filters.eq("ownerId", player.getUid()))
+            .stream()
+            .toList();
     }
 
     public static void saveItem(GameItem item) {
-        DatabaseManager.getGameDatastore().save(item);
+        DatabaseHelper.saveGameAsync(item);
     }
 
-    public static boolean deleteItem(GameItem item) {
-        DeleteResult result = DatabaseManager.getGameDatastore().delete(item);
-        return result.wasAcknowledged();
+    public static void deleteItem(GameItem item) {
+        DatabaseHelper.asyncOperation(() ->
+            DatabaseManager.getGameDatastore().delete(item));
     }
 
+    /**
+     * Fetches all items of a player.
+     *
+     * @param player The player.
+     * @return The list of items.
+     */
     public static List<GameItem> getInventoryItems(Player player) {
         return DatabaseManager.getGameDatastore()
-                .find(GameItem.class)
-                .filter(Filters.eq("ownerId", player.getUid()))
-                .stream()
-                .toList();
+            .find(GameItem.class)
+            .filter(Filters.eq("ownerId", player.getUid()))
+            .stream()
+            .toList();
     }
 
     public static List<Friendship> getFriends(Player player) {
@@ -319,11 +395,12 @@ public final class DatabaseHelper {
     }
 
     public static void saveFriendship(Friendship friendship) {
-        DatabaseManager.getGameDatastore().save(friendship);
+        DatabaseHelper.saveGameAsync(friendship);
     }
 
     public static void deleteFriendship(Friendship friendship) {
-        DatabaseManager.getGameDatastore().delete(friendship);
+        DatabaseHelper.asyncOperation(() ->
+            DatabaseManager.getGameDatastore().delete(friendship));
     }
 
     public static Friendship getReverseFriendship(Friendship friendship) {
@@ -367,7 +444,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveGachaRecord(GachaRecord gachaRecord) {
-        DatabaseManager.getGameDatastore().save(gachaRecord);
+        DatabaseHelper.saveGameAsync(gachaRecord);
     }
 
     public static List<Mail> getAllMail(Player player) {
@@ -379,12 +456,12 @@ public final class DatabaseHelper {
     }
 
     public static void saveMail(Mail mail) {
-        DatabaseManager.getGameDatastore().save(mail);
+        DatabaseHelper.saveGameAsync(mail);
     }
 
-    public static boolean deleteMail(Mail mail) {
-        DeleteResult result = DatabaseManager.getGameDatastore().delete(mail);
-        return result.wasAcknowledged();
+    public static void deleteMail(Mail mail) {
+        DatabaseHelper.asyncOperation(() ->
+            DatabaseManager.getGameDatastore().delete(mail));
     }
 
     public static List<GameMainQuest> getAllQuests(Player player) {
@@ -396,11 +473,12 @@ public final class DatabaseHelper {
     }
 
     public static void saveQuest(GameMainQuest quest) {
-        DatabaseManager.getGameDatastore().save(quest);
+        DatabaseHelper.saveGameAsync(quest);
     }
 
-    public static boolean deleteQuest(GameMainQuest quest) {
-        return DatabaseManager.getGameDatastore().delete(quest).wasAcknowledged();
+    public static void deleteQuest(GameMainQuest quest) {
+        DatabaseHelper.asyncOperation(() ->
+            DatabaseManager.getGameDatastore().delete(quest));
     }
 
     public static GameHome getHomeByUid(int id) {
@@ -411,7 +489,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveHome(GameHome gameHome) {
-        DatabaseManager.getGameDatastore().save(gameHome);
+        DatabaseHelper.saveGameAsync(gameHome);
     }
 
     public static BattlePassManager loadBattlePass(Player player) {
@@ -430,7 +508,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveBattlePass(BattlePassManager manager) {
-        DatabaseManager.getGameDatastore().save(manager);
+        DatabaseHelper.saveGameAsync(manager);
     }
 
     public static PlayerActivityData getPlayerActivityData(int uid, int activityId) {
@@ -441,7 +519,7 @@ public final class DatabaseHelper {
     }
 
     public static void savePlayerActivityData(PlayerActivityData playerActivityData) {
-        DatabaseManager.getGameDatastore().save(playerActivityData);
+        DatabaseHelper.saveGameAsync(playerActivityData);
     }
 
     public static MusicGameBeatmap getMusicGameBeatmap(long musicShareId) {
@@ -452,7 +530,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveMusicGameBeatmap(MusicGameBeatmap musicGameBeatmap) {
-        DatabaseManager.getGameDatastore().save(musicGameBeatmap);
+        DatabaseHelper.saveGameAsync(musicGameBeatmap);
     }
 
     public static Achievements getAchievementData(int uid) {
@@ -463,11 +541,11 @@ public final class DatabaseHelper {
     }
 
     public static void saveAchievementData(Achievements achievements) {
-        DatabaseManager.getGameDatastore().save(achievements);
+        DatabaseHelper.saveGameAsync(achievements);
     }
 
     public static void saveGroupInstance(SceneGroupInstance instance) {
-        DatabaseManager.getGameDatastore().save(instance);
+        DatabaseHelper.saveGameAsync(instance);
     }
 
     public static SceneGroupInstance loadGroupInstance(int groupId, Player owner) {
