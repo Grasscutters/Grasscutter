@@ -1,7 +1,6 @@
 package emu.grasscutter.game.quest.exec;
 
 import emu.grasscutter.data.excels.quest.QuestData.QuestExecParam;
-import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.QuestValueExec;
 import emu.grasscutter.game.quest.enums.QuestExec;
@@ -13,7 +12,7 @@ public final class ExecSetGameTimeLocked extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestExecParam condition, String... paramStr) {
         var isLocked = Objects.equals(condition.getParam()[0], "1");
-        quest.getOwner().setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, isLocked);
+        quest.getOwner().getWorld().lockTime(isLocked);
 
         return true;
     }

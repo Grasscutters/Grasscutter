@@ -483,8 +483,6 @@ public final class World implements Iterable<Player> {
         // Update the world time.
         this.getWorldTime();
         this.updateTime();
-        // Lock the world time.
-        this.lockTime(paused);
 
         // If the world is being un-paused, update the last update time.
         if (this.isPaused != paused && !paused) {
@@ -545,13 +543,12 @@ public final class World implements Iterable<Player> {
      * @param locked True if the world time should be locked.
      */
     public void lockTime(boolean locked) {
-        if (host.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0) {
-            this.timeLocked = true;
-        } else {
-            this.timeLocked = locked;
-        }
+        this.timeLocked = locked;
+
         // Notify players of the locking.
         this.updateTime();
+        this.getPlayers()
+                .forEach(player -> player.setProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED, locked));
     }
 
     @NotNull @Override
