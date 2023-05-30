@@ -6,7 +6,7 @@ import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.GameEntity;
 
 @AbilityAction(AbilityModifierAction.Type.KillSelf)
-public class ActionKillSelf extends AbilityActionHandler {
+public final class ActionKillSelf extends AbilityActionHandler {
     @Override
     public boolean execute(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
