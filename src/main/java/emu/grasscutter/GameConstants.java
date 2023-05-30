@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public final class GameConstants {
     public static String VERSION = "3.7.0";
-    public static final boolean DEBUG = true;
+    public static boolean DEBUG = false;
 
     public static final int DEFAULT_TEAMS = 4;
     public static final int MAX_TEAMS = 10;
