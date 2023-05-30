@@ -41,14 +41,15 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
 
 public final class Scene {
     @Getter private final World world;
@@ -129,7 +130,7 @@ public final class Scene {
         if (entity == null && (id >> 24) == EntityType.Avatar.getValue()) {
             for (var player : this.getPlayers()) {
                 for (var avatar : player.getTeamManager().getActiveTeam()) {
-                    if(avatar.getId() == id) return avatar;
+                    if (avatar.getId() == id) return avatar;
                 }
             }
         }

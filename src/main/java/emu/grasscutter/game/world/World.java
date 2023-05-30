@@ -182,7 +182,10 @@ public class World implements Iterable<Player> {
         player.sendPacket(
                 new PacketDelTeamEntityNotify(
                         player.getSceneId(),
-                    this.getPlayers().stream().map(p -> p.getTeamManager().getEntity() == null ? 0 : p.getTeamManager().getEntity().getId()).collect(Collectors.toList())
+                    this.getPlayers().stream()
+                        .map(p ->
+                            p.getTeamManager().getEntity() == null ? 0 :
+                            p.getTeamManager().getEntity().getId()).toList()
                 )
         );
 
