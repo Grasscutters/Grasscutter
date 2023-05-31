@@ -1,36 +1,25 @@
 package emu.grasscutter.utils.lang;
 
-import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
-import static emu.grasscutter.utils.FileUtils.getCachePath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import emu.grasscutter.utils.*;
+import it.unimi.dsi.fastutil.ints.*;
+import it.unimi.dsi.fastutil.objects.*;
+import lombok.EqualsAndHashCode;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import lombok.EqualsAndHashCode;
+import java.util.regex.*;
+import java.util.stream.*;
+
+import static emu.grasscutter.config.Configuration.FALLBACK_LANGUAGE;
+import static emu.grasscutter.utils.FileUtils.*;
 
 public final class Language {
     private static final Map<String, Language> cachedLanguages = new ConcurrentHashMap<>();
@@ -370,6 +359,8 @@ public final class Language {
                     textMapStrings = loadTextMapsCache();
                     return;
                 }
+            } catch (NoSuchFileException ignored) {
+                // Cache doesn't exist, generate it.
             } catch (Exception exception) {
                 Grasscutter.getLogger().error("Error loading textmaps cache: " + exception.toString());
             }
