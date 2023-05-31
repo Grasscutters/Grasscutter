@@ -276,13 +276,14 @@ public class GameItem {
     }
 
     public SceneWeaponInfo createSceneWeaponInfo() {
-        var weaponInfo = SceneWeaponInfo.newBuilder()
-                .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
-                .setItemId(this.getItemId())
-                .setGuid(this.getGuid())
-                .setLevel(this.getLevel())
-                .setGadgetId(this.getItemData().getGadgetId())
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
+        var weaponInfo =
+                SceneWeaponInfo.newBuilder()
+                        .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
+                        .setItemId(this.getItemId())
+                        .setGuid(this.getGuid())
+                        .setLevel(this.getLevel())
+                        .setGadgetId(this.getItemData().getGadgetId())
+                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
 
         if (this.getAffixes() != null && this.getAffixes().size() > 0) {
             for (int affix : this.getAffixes()) {

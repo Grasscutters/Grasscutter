@@ -463,11 +463,16 @@ public class Avatar {
         this.getEquips().put(itemEquipType.getValue(), item);
 
         if (itemEquipType == EquipType.EQUIP_WEAPON && getPlayer().getWorld() != null) {
-            if (!(item.getWeaponEntity() != null && item.getWeaponEntity().getScene() == getPlayer().getScene())) {
-                item.setWeaponEntity(new EntityWeapon(this.getPlayer().getScene(), item.getItemData().getGadgetId()));
-                this.getPlayer().getScene().getWeaponEntities().put(item.getWeaponEntity().getId(), item.getWeaponEntity());
+            if (!(item.getWeaponEntity() != null
+                    && item.getWeaponEntity().getScene() == getPlayer().getScene())) {
+                item.setWeaponEntity(
+                        new EntityWeapon(this.getPlayer().getScene(), item.getItemData().getGadgetId()));
+                this.getPlayer()
+                        .getScene()
+                        .getWeaponEntities()
+                        .put(item.getWeaponEntity().getId(), item.getWeaponEntity());
             }
-            //item.setWeaponEntityId(this.getPlayer().getWorld().getNextEntityId(EntityIdType.WEAPON));
+            // item.setWeaponEntityId(this.getPlayer().getWorld().getNextEntityId(EntityIdType.WEAPON));
         }
 
         item.setEquipCharacter(this.getAvatarId());
@@ -1262,9 +1267,14 @@ public class Avatar {
                             item.setEquipCharacter(this.getAvatarId());
                             item.setOwner(player);
                             if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
-                                if (!(item.getWeaponEntity() != null && item.getWeaponEntity().getScene() == player.getScene())) {
-                                    item.setWeaponEntity(new EntityWeapon(player.getScene(), item.getItemData().getGadgetId()));
-                                    player.getScene().getWeaponEntities().put(item.getWeaponEntity().getId(), item.getWeaponEntity());
+                                if (!(item.getWeaponEntity() != null
+                                        && item.getWeaponEntity().getScene() == player.getScene())) {
+                                    item.setWeaponEntity(
+                                            new EntityWeapon(player.getScene(), item.getItemData().getGadgetId()));
+                                    player
+                                            .getScene()
+                                            .getWeaponEntities()
+                                            .put(item.getWeaponEntity().getId(), item.getWeaponEntity());
                                 }
 
                                 player.sendPacket(new PacketAvatarEquipChangeNotify(this, item));

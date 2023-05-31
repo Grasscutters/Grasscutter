@@ -64,7 +64,8 @@ public class EntityAvatar extends GameEntity {
             var weapon = this.getAvatar().getWeapon();
             if (weapon != null) {
                 if (!(weapon.getWeaponEntity() != null && weapon.getWeaponEntity().getScene() == scene)) {
-                    weapon.setWeaponEntity(new EntityWeapon(this.getPlayer().getScene(), weapon.getItemData().getGadgetId()));
+                    weapon.setWeaponEntity(
+                            new EntityWeapon(this.getPlayer().getScene(), weapon.getItemData().getGadgetId()));
                     scene.getWeaponEntities().put(weapon.getWeaponEntity().getId(), weapon.getWeaponEntity());
                 }
             }
