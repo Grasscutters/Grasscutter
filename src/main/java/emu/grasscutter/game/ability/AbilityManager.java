@@ -23,13 +23,14 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import lombok.Getter;
+import org.reflections.Reflections;
+
 import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import lombok.Getter;
-import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
 
@@ -96,8 +97,7 @@ public final class AbilityManager extends BasePlayerManager {
 
     public void executeAction(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
-        AbilityActionHandler handler = actionHandlers.get(action.type);
-
+        var handler = actionHandlers.get(action.type);
         if (handler == null || ability == null) {
             Grasscutter.getLogger()
                     .debug("Could not execute ability action {} at {}", action.type, ability);
@@ -108,17 +108,16 @@ public final class AbilityManager extends BasePlayerManager {
                 () -> {
                     if (!handler.execute(ability, action, abilityData, target)) {
                         Grasscutter.getLogger()
-                                .debug("Execute ability action failed {} at {}", action.type, ability);
+                                .debug("Ability execute action failed for {} at {}.", action.type, ability);
                     }
                 });
     }
 
     public void executeMixin(Ability ability, AbilityMixinData mixinData, ByteString abilityData) {
-        AbilityMixinHandler handler = mixinHandlers.get(mixinData.type);
-
-        if (handler == null || ability == null || mixinData == null) {
+        var handler = mixinHandlers.get(mixinData.type);
+        if (handler == null || ability == null) {
             Grasscutter.getLogger()
-                    .error("Could not execute ability mixin {} at {}", mixinData.type, ability);
+                    .trace("Could not execute ability mixin {} at {}", mixinData.type, ability);
             return;
         }
 
@@ -126,7 +125,7 @@ public final class AbilityManager extends BasePlayerManager {
                 () -> {
                     if (!handler.execute(ability, mixinData, abilityData)) {
                         Grasscutter.getLogger()
-                                .error("exec ability action failed {} at {}", mixinData.type, ability);
+                                .error("Ability execute action failed for {} at {}.", mixinData.type, ability);
                     }
                 });
     }
@@ -335,7 +334,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         var instancedAbilityIndex = head.getInstancedAbilityId() - 1;
         if (instancedAbilityIndex >= entity.getInstancedAbilities().size()) {
-            Grasscutter.getLogger().error("Ability not found {}", head.getInstancedAbilityId());
+            Grasscutter.getLogger().trace("Ability not found {}", head.getInstancedAbilityId());
             return;
         }
 
@@ -356,7 +355,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         var instancedAbilityIndex = head.getInstancedAbilityId() - 1;
         if (instancedAbilityIndex >= entity.getInstancedAbilities().size()) {
-            Grasscutter.getLogger().error("Ability not found {}", head.getInstancedAbilityId());
+            Grasscutter.getLogger().trace("Ability not found {}", head.getInstancedAbilityId());
             return;
         }
 

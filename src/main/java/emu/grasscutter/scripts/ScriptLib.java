@@ -459,10 +459,10 @@ public class ScriptLib {
 
     private void printLog(String source, String msg){
         var currentGroup = this.currentGroup.getIfExists();
-        if(currentGroup!=null) {
-            Grasscutter.getLogger().warn("[LUA] {} {} {}", source, currentGroup.id, msg);
+        if(currentGroup != null) {
+            Grasscutter.getLogger().trace("[LUA] {} {} {}", source, currentGroup.id, msg);
         } else {
-            Grasscutter.getLogger().warn("[LUA] {} {}", source, msg);
+            Grasscutter.getLogger().trace("[LUA] {} {}", source, msg);
         }
     }
 
