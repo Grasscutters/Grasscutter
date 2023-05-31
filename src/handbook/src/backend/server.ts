@@ -66,8 +66,7 @@ export function setTargetPlayer(player: number, token: string | null = null): vo
  */
 export async function setServerDetails(newAddress: string | null, newPort: string | number | null): Promise<void> {
     if (!getWindowDetails().disable) {
-        if (typeof newPort == "number")
-            newPort = newPort.toString();
+        if (typeof newPort == "number") newPort = newPort.toString();
 
         // Apply the new details.
         if (newAddress != null) {
