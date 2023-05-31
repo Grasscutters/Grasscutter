@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.dispatch;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.ByteString;
@@ -21,15 +23,12 @@ import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import org.slf4j.Logger;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.config.Configuration.*;
+import org.slf4j.Logger;
 
 /** Handles requests related to region queries. */
 public final class RegionHandler implements Router {
@@ -314,7 +313,9 @@ public final class RegionHandler implements Router {
         }
         // Log to console.
         Grasscutter.getLogger()
-                .info(String.format("Client %s request: query_cur_region/%s", Utils.address(ctx), regionName));
+                .info(
+                        String.format(
+                                "Client %s request: query_cur_region/%s", Utils.address(ctx), regionName));
     }
 
     /** Region data container. */
