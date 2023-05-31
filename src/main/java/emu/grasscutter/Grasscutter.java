@@ -1,59 +1,36 @@
 package emu.grasscutter;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.lang.Language.translate;
-
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
-import emu.grasscutter.auth.AuthenticationSystem;
-import emu.grasscutter.auth.DefaultAuthentication;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.command.DefaultPermissionHandler;
-import emu.grasscutter.command.PermissionHandler;
+import ch.qos.logback.classic.*;
+import emu.grasscutter.auth.*;
+import emu.grasscutter.command.*;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.plugin.PluginManager;
 import emu.grasscutter.plugin.api.ServerHelper;
-import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
-import emu.grasscutter.server.http.dispatch.AuthenticationHandler;
-import emu.grasscutter.server.http.dispatch.RegionHandler;
-import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
-import emu.grasscutter.server.http.documentation.HandbookHandler;
-import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
-import emu.grasscutter.server.http.handlers.GachaHandler;
-import emu.grasscutter.server.http.handlers.GenericHandler;
-import emu.grasscutter.server.http.handlers.LogHandler;
+import emu.grasscutter.server.http.dispatch.*;
+import emu.grasscutter.server.http.documentation.*;
+import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.StartupArguments;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOError;
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
-import org.jline.reader.EndOfFileException;
-import org.jline.reader.LineReader;
-import org.jline.reader.LineReaderBuilder;
-import org.jline.reader.UserInterruptException;
-import org.jline.terminal.Terminal;
-import org.jline.terminal.TerminalBuilder;
+import lombok.*;
+import org.jline.reader.*;
+import org.jline.terminal.*;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
+
+import javax.annotation.Nullable;
+import java.io.*;
+import java.util.Calendar;
+import java.util.concurrent.*;
+
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
@@ -156,8 +133,6 @@ public final class Grasscutter {
 
         // Create a server hook instance with both servers.
         new ServerHelper(gameServer, httpServer);
-        // noinspection removal
-        new ServerHook(gameServer, httpServer);
 
         // Create plugin manager instance.
         pluginManager = new PluginManager();

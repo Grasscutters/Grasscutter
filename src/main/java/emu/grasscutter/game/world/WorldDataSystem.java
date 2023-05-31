@@ -1,26 +1,18 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.InvestigationMonsterData;
-import emu.grasscutter.data.excels.RewardPreviewData;
+import emu.grasscutter.data.*;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.world.WorldLevelData;
-import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
-import emu.grasscutter.game.entity.gadget.chest.ChestInteractHandler;
-import emu.grasscutter.game.entity.gadget.chest.NormalChestInteractHandler;
+import emu.grasscutter.game.entity.gadget.chest.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
-import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.SceneMonster;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
+import emu.grasscutter.scripts.data.*;
+import emu.grasscutter.server.game.*;
 import org.luaj.vm2.LuaError;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
@@ -57,7 +49,6 @@ public class WorldDataSystem extends BaseGameSystem {
         return chestInteractHandlerMap;
     }
 
-    @Deprecated
     public RewardPreviewData getRewardByBossId(int monsterId) {
         var investigationMonsterData =
                 GameData.getInvestigationMonsterDataMap().values().parallelStream()
@@ -65,11 +56,8 @@ public class WorldDataSystem extends BaseGameSystem {
                         .filter(imd -> imd.getMonsterIdList().get(0) == monsterId)
                         .findFirst();
 
-        if (investigationMonsterData.isEmpty()) {
-            return null;
-        }
-        return GameData.getRewardPreviewDataMap()
-                .get(investigationMonsterData.get().getRewardPreviewId());
+        return investigationMonsterData.map(monsterData -> GameData.getRewardPreviewDataMap()
+            .get(monsterData.getRewardPreviewId())).orElse(null);
     }
 
     private SceneGroup getInvestigationGroup(int sceneId, int groupId) {

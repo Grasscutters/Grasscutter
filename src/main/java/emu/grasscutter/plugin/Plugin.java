@@ -3,21 +3,18 @@ package emu.grasscutter.plugin;
 import ch.qos.logback.classic.Level;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.api.ServerHelper;
-import emu.grasscutter.plugin.api.ServerHook;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URLClassLoader;
 import lombok.EqualsAndHashCode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
+
+import java.io.*;
+import java.net.URLClassLoader;
 
 /** The base class for all plugins to extend. */
 @EqualsAndHashCode
-@SuppressWarnings("removal")
 public abstract class Plugin {
-    private final ServerHelper server = ServerHook.getInstance();
+    private final ServerHelper server = ServerHelper.getInstance();
 
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
@@ -31,6 +28,7 @@ public abstract class Plugin {
      *
      * @param identifier The plugin's identifier.
      */
+    @SuppressWarnings("unused")
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
         if (this.identifier != null) {
             Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
@@ -109,8 +107,8 @@ public abstract class Plugin {
      *
      * @return A server hook singleton.
      */
-    public final ServerHook getHandle() {
-        return (ServerHook) this.server;
+    public final ServerHelper getHandle() {
+        return this.server;
     }
 
     /**

@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /** Hooks into the {@link GameServer} class, adding convenient ways to do certain things. */
-public class ServerHelper {
+public final class ServerHelper {
     private static ServerHelper instance;
     private final GameServer gameServer;
     private final HttpServer httpServer;
