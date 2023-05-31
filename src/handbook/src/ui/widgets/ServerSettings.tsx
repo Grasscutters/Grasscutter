@@ -2,9 +2,9 @@ import React from "react";
 
 import emitter from "@backend/events";
 import { targetPlayer, address, port, setServerDetails, url, setTargetPlayer } from "@backend/server";
+import { getWindowDetails } from "@app/utils";
 
 import "@css/widgets/ServerSettings.scss";
-import { getWindowDetails } from "@app/utils";
 
 interface IState {
     webview: boolean;
@@ -51,7 +51,7 @@ class ServerSettings extends React.Component<{}, IState> {
      * @private
      */
     private authenticate(): void {
-        setServerDetails(null, null).then(() => {
+        setServerDetails(this.state.address, this.state.port).then(() => {
             this.setState({ webview: true });
         });
 
@@ -133,7 +133,8 @@ class ServerSettings extends React.Component<{}, IState> {
                                         }}
                                         disabled={disable}
                                         style={{
-                                            cursor: disable ? "not-allowed" : "text"
+                                            cursor: disable ? "not-allowed" : "text",
+                                            userSelect: disable ? "none" : "auto"
                                         }}
                                     />
                                 </div>
@@ -155,7 +156,8 @@ class ServerSettings extends React.Component<{}, IState> {
                                         }}
                                         disabled={disable}
                                         style={{
-                                            cursor: disable ? "not-allowed" : "text"
+                                            cursor: disable ? "not-allowed" : "text",
+                                            userSelect: disable ? "none" : "auto"
                                         }}
                                     />
                                 </div>

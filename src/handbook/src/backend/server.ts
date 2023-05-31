@@ -64,15 +64,20 @@ export function setTargetPlayer(player: number, token: string | null = null): vo
  * @param newAddress The server's address.
  * @param newPort The server's port.
  */
-export async function setServerDetails(newAddress: string | null, newPort: string | null): Promise<void> {
-    // Apply the new details.
-    if (newAddress != null) {
-        address = newAddress;
-        localStorage.setItem("address", newAddress);
-    }
-    if (newPort != null) {
-        port = newPort;
-        localStorage.setItem("port", newPort);
+export async function setServerDetails(newAddress: string | null, newPort: string | number | null): Promise<void> {
+    if (!getWindowDetails().disable) {
+        if (typeof newPort == "number")
+            newPort = newPort.toString();
+
+        // Apply the new details.
+        if (newAddress != null) {
+            address = newAddress;
+            localStorage.setItem("address", newAddress);
+        }
+        if (newPort != null) {
+            port = newPort;
+            localStorage.setItem("port", newPort);
+        }
     }
 
     // Check if the server is encrypted.
