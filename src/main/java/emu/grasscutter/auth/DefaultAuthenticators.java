@@ -6,13 +6,9 @@ import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
-import emu.grasscutter.server.dispatch.IDispatcher;
-import emu.grasscutter.server.dispatch.PacketIds;
-import emu.grasscutter.server.http.objects.ComboTokenResJson;
-import emu.grasscutter.server.http.objects.LoginResultJson;
-import emu.grasscutter.utils.DispatchUtils;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.server.dispatch.*;
+import emu.grasscutter.server.http.objects.*;
+import emu.grasscutter.utils.*;
 import io.javalin.http.ContentType;
 
 import javax.crypto.Cipher;
@@ -20,8 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 import static emu.grasscutter.config.Configuration.ACCOUNT;
 import static emu.grasscutter.utils.lang.Language.translate;

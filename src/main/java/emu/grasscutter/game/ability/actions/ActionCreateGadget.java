@@ -45,7 +45,7 @@ public class ActionCreateGadget extends AbilityActionHandler {
         entity.getScene().addEntity(entityCreated);
 
         Grasscutter.getLogger()
-                .info(
+                .trace(
                         "Gadget {} created at pos {} rot {}",
                         action.gadgetID,
                         entityCreated.getPosition(),
