@@ -1,5 +1,8 @@
 package emu.grasscutter.utils;
 
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
@@ -7,9 +10,6 @@ import emu.grasscutter.game.world.Position;
 import io.javalin.http.Context;
 import io.netty.buffer.*;
 import it.unimi.dsi.fastutil.ints.*;
-import org.slf4j.Logger;
-
-import javax.annotation.Nullable;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -17,9 +17,8 @@ import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.annotation.Nullable;
+import org.slf4j.Logger;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {

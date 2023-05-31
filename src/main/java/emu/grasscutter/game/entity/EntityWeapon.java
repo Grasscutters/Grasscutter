@@ -10,17 +10,18 @@ import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.scripts.EntityControllerScriptManager;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import javax.annotation.Nullable;
+import lombok.*;
 
 @ToString(callSuper = true)
 public class EntityWeapon extends EntityBaseGadget {
     @Getter private final GadgetData gadgetData;
-    @Getter(onMethod_ = @Override) @Setter
+
+    @Getter(onMethod_ = @Override)
+    @Setter
     private int gadgetId;
-    @Nullable @Getter
-    private ConfigEntityGadget configGadget;
+
+    @Nullable @Getter private ConfigEntityGadget configGadget;
 
     @Getter(onMethod_ = @Override, lazy = true)
     private final Int2FloatMap fightProperties = new Int2FloatOpenHashMap();
@@ -50,21 +51,20 @@ public class EntityWeapon extends EntityBaseGadget {
         }
 
         this.id = scene.getWorld().getNextEntityId(EntityIdType.WEAPON);
-        Grasscutter.getLogger().trace("New weapon entity {} in scene {}.",
-            this.id, this.getScene().getId());
+        Grasscutter.getLogger()
+                .trace("New weapon entity {} in scene {}.", this.id, this.getScene().getId());
 
         this.initAbilities();
     }
 
-    private void addConfigAbility(ConfigAbilityData abilityData){
-        var data =  GameData.getAbilityData(abilityData.getAbilityName());
-        if (data != null) this.getWorld().getHost()
-            .getAbilityManager().addAbilityToEntity(this, data);
+    private void addConfigAbility(ConfigAbilityData abilityData) {
+        var data = GameData.getAbilityData(abilityData.getAbilityName());
+        if (data != null) this.getWorld().getHost().getAbilityManager().addAbilityToEntity(this, data);
     }
 
     @Override
     public void initAbilities() {
-        //TODO: handle pre-dynamic, static and dynamic here
+        // TODO: handle pre-dynamic, static and dynamic here
         if (this.configGadget != null && this.configGadget.getAbilities() != null) {
             for (var ability : this.configGadget.getAbilities()) {
                 this.addConfigAbility(ability);

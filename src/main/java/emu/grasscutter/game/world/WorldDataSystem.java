@@ -9,10 +9,9 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.game.*;
-import org.luaj.vm2.LuaError;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import org.luaj.vm2.LuaError;
 
 public class WorldDataSystem extends BaseGameSystem {
     private final Map<String, ChestInteractHandler> chestInteractHandlerMap; // chestType-Handler
@@ -56,8 +55,10 @@ public class WorldDataSystem extends BaseGameSystem {
                         .filter(imd -> imd.getMonsterIdList().get(0) == monsterId)
                         .findFirst();
 
-        return investigationMonsterData.map(monsterData -> GameData.getRewardPreviewDataMap()
-            .get(monsterData.getRewardPreviewId())).orElse(null);
+        return investigationMonsterData
+                .map(
+                        monsterData -> GameData.getRewardPreviewDataMap().get(monsterData.getRewardPreviewId()))
+                .orElse(null);
     }
 
     private SceneGroup getInvestigationGroup(int sceneId, int groupId) {
