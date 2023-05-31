@@ -1,15 +1,17 @@
 package emu.grasscutter.server.http.objects;
 
-import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
+import emu.grasscutter.utils.Utils;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Objects;
-import org.jetbrains.annotations.NotNull;
+
+import static emu.grasscutter.config.Configuration.DISPATCH_INFO;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class HttpJsonResponse implements Handler {
     private final String response;
@@ -42,7 +44,7 @@ public final class HttpJsonResponse implements Handler {
                     .info(
                             translate(
                                             "messages.dispatch.request",
-                                            ctx.ip(),
+                                            Utils.address(ctx),
                                             ctx.method(),
                                             ctx.endpointHandlerPath())
                                     + (DISPATCH_INFO.logRequests == ServerDebugMode.MISSING ? "(MISSING)" : ""));

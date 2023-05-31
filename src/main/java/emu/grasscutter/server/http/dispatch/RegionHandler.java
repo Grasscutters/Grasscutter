@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.dispatch;
 
-import static emu.grasscutter.config.Configuration.*;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.protobuf.ByteString;
@@ -23,12 +21,15 @@ import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.Utils;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+import org.slf4j.Logger;
+
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-import org.slf4j.Logger;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /** Handles requests related to region queries. */
 public final class RegionHandler implements Router {
@@ -220,7 +221,7 @@ public final class RegionHandler implements Router {
         }
         // Log the request to the console.
         Grasscutter.getLogger()
-                .info(String.format("[Dispatch] Client %s request: query_region_list", ctx.ip()));
+                .info(String.format("[Dispatch] Client %s request: query_region_list", Utils.address(ctx)));
     }
 
     /**
@@ -280,8 +281,8 @@ public final class RegionHandler implements Router {
                     Grasscutter.getLogger()
                             .info(
                                     String.format(
-                                            "Connection denied for %s due to %s",
-                                            ctx.ip(), updateClient ? "outdated client!" : "outdated server!"));
+                                            "Connection denied for %s due to %s.",
+                                            Utils.address(ctx), updateClient ? "outdated client!" : "outdated server!"));
 
                     ctx.json(Crypto.encryptAndSignRegionData(rsp.toByteArray(), key_id));
                     return;
@@ -313,7 +314,7 @@ public final class RegionHandler implements Router {
         }
         // Log to console.
         Grasscutter.getLogger()
-                .info(String.format("Client %s request: query_cur_region/%s", ctx.ip(), regionName));
+                .info(String.format("Client %s request: query_cur_region/%s", Utils.address(ctx), regionName));
     }
 
     /** Region data container. */
