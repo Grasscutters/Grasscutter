@@ -800,7 +800,9 @@ public final class Scene {
 
         for (GameEntity entity : this.getEntities().values()) {
             var spawnEntry = entity.getSpawnEntry();
-            if (spawnEntry != null && !(entity instanceof EntityWeapon) && !visible.contains(spawnEntry)) {
+            if (spawnEntry != null
+                    && !(entity instanceof EntityWeapon)
+                    && !visible.contains(spawnEntry)) {
                 toRemove.add(entity);
                 spawnedEntities.remove(spawnEntry);
             }
