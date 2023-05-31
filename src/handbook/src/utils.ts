@@ -174,11 +174,8 @@ export function getWindowDetails(): WindowDetails {
     const { address, port, disable } = details;
 
     return {
-        address: address == "{{DETAILS_ADDRESS}}" ?
-            "127.0.0.1" : address,
-        port: port == "{{DETAILS_PORT}}" ?
-            443 : parseInt(port),
-        disable: disable == "{{DETAILS_DISABLE}}" ?
-            false : disable == "true"
+        address: address == "{{DETAILS_ADDRESS}}" ? "127.0.0.1" : address,
+        port: port == "{{DETAILS_PORT}}" ? 443 : parseInt(port),
+        disable: disable == "{{DETAILS_DISABLE}}" ? false : disable == "true"
     };
 }
