@@ -128,4 +128,12 @@ public final class JObject {
     public Object json() {
         return this.members;
     }
+
+    /**
+     * @return A string representation of this object.
+     */
+    @Override
+    public String toString() {
+        return JsonUtils.encode(this.gson());
+    }
 }

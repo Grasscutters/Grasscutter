@@ -1,22 +1,26 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.config.Configuration.HANDBOOK;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest;
 import emu.grasscutter.server.http.Router;
-import emu.grasscutter.utils.DispatchUtils;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.objects.HandbookBody;
+import emu.grasscutter.utils.*;
+import emu.grasscutter.utils.objects.*;
 import emu.grasscutter.utils.objects.HandbookBody.Action;
 import io.javalin.Javalin;
-import io.javalin.http.ContentType;
-import io.javalin.http.Context;
+import io.javalin.http.*;
+
+import java.util.*;
+import java.util.concurrent.*;
+
+import static emu.grasscutter.config.Configuration.HANDBOOK;
 
 /** Handles requests for the new GM Handbook. */
 public final class HandbookHandler implements Router {
     private String handbook;
     private final boolean serve;
+
+    private final Map<String, Integer> currentRequests
+        = new ConcurrentHashMap<>();
 
     /**
      * Constructor for the handbook router. Enables serving the handbook if the handbook file is
@@ -33,6 +37,17 @@ public final class HandbookHandler implements Router {
                             .replace("{{DETAILS_ADDRESS}}", server.address)
                             .replace("{{DETAILS_PORT}}", String.valueOf(server.port))
                             .replace("{{DETAILS_DISABLE}}", Boolean.toString(!server.canChange));
+        }
+
+        // Create a new task to reset the request count.
+        if (HANDBOOK.limits.enabled) {
+            new Timer().scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    currentRequests.clear();
+                }
+            }, 0, TimeUnit.SECONDS.toMillis(
+                HANDBOOK.limits.interval));
         }
     }
 
@@ -58,6 +73,32 @@ public final class HandbookHandler implements Router {
      */
     private boolean controlSupported() {
         return HANDBOOK.enable && HANDBOOK.allowCommands;
+    }
+
+    /**
+     * Checks the request against the normal request limits.
+     *
+     * @param ctx The Javalin request context.
+     * @return True if the request is within the normal limits.
+     */
+    private boolean normalLimit(Context ctx) {
+        var limits = HANDBOOK.limits;
+        if (!limits.enabled) return true;
+
+        // Check the request count.
+        var address = Utils.address(ctx);
+        var count = this.currentRequests.getOrDefault(address, 0);
+        if (++count >= limits.maxRequests) {
+            // Respond to the request.
+            ctx.status(429).result(JObject.c()
+                .add("timestamp", System.currentTimeMillis())
+                .toString());
+            return false;
+        }
+
+        // Update the request count.
+        this.currentRequests.put(address, count);
+        return true;
     }
 
     /**
@@ -128,6 +169,9 @@ public final class HandbookHandler implements Router {
             return;
         }
 
+        // Check for rate limiting.
+        if (!this.normalLimit(ctx)) return;
+
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GrantAvatar.class);
         // Get the response.
@@ -147,6 +191,9 @@ public final class HandbookHandler implements Router {
             ctx.status(500).result("Handbook control not supported.");
             return;
         }
+
+        // Check for rate limiting.
+        if (!this.normalLimit(ctx)) return;
 
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.GiveItem.class);
@@ -168,6 +215,9 @@ public final class HandbookHandler implements Router {
             return;
         }
 
+        // Check for rate limiting.
+        if (!this.normalLimit(ctx)) return;
+
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.TeleportTo.class);
         // Get the response.
@@ -188,8 +238,23 @@ public final class HandbookHandler implements Router {
             return;
         }
 
+        // Check for rate limiting.
+        if (!this.normalLimit(ctx)) return;
+
         // Parse the request body into a class.
         var request = ctx.bodyAsClass(HandbookBody.SpawnEntity.class);
+        // Check the entity limit.
+        var entityLimit = HANDBOOK.limits.enabled ?
+            Math.max(HANDBOOK.limits.maxEntities, 0) :
+            Long.MAX_VALUE;
+        if (request.getAmount() > entityLimit) {
+            ctx.status(400).result(JObject.c()
+                .add("timestamp", System.currentTimeMillis())
+                .add("error", "Entity limit exceeded.")
+                .toString());
+            return;
+        }
+
         // Get the response.
         var response = DispatchUtils.performHandbookAction(Action.SPAWN_ENTITY, request);
         // Send the response.

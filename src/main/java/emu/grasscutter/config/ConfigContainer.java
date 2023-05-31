@@ -4,20 +4,12 @@ import ch.qos.logback.classic.Level;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Grasscutter.ServerDebugMode;
-import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import lombok.NoArgsConstructor;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Set;
+import java.util.*;
 
-import static emu.grasscutter.Grasscutter.config;
+import static emu.grasscutter.Grasscutter.*;
 
 /**
  * *when your JVM fails*
@@ -34,17 +26,18 @@ public class ConfigContainer {
      *             with the new dispatch server.
      * Version 8 - 'server' is being added for enforcing handbook server
      *             addresses.
+     * Version 9 - 'limits' was added for handbook requests.
      */
     private static int version() {
-        return 8;
+        return 9;
     }
 
     /**
-     * Attempts to update the server's existing configuration to the latest
+     * Attempts to update the server's existing configuration.
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
-            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
+            var configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
@@ -58,9 +51,9 @@ public class ConfigContainer {
             return;
 
         // Create a new configuration instance.
-        ConfigContainer updated = new ConfigContainer();
+        var updated = new ConfigContainer();
         // Update all configuration fields.
-        Field[] fields = ConfigContainer.class.getDeclaredFields();
+        var fields = ConfigContainer.class.getDeclaredFields();
         Arrays.stream(fields).forEach(field -> {
             try {
                 field.set(updated, field.get(config));
@@ -73,7 +66,7 @@ public class ConfigContainer {
             Grasscutter.saveConfig(updated);
             Grasscutter.loadConfig();
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to inject the updated ", exception);
+            Grasscutter.getLogger().warn("Failed to save the updated configuration.", exception);
         }
     }
 
@@ -301,17 +294,31 @@ public class ConfigContainer {
 
         public static class HandbookOptions {
             public boolean enable = false;
-
             public boolean allowCommands = true;
-            public int maxRequests = 10;
-            public int maxEntities = 100;
 
+            public Limits limits = new Limits();
             public Server server = new Server();
 
+            public static class Limits {
+                /* Are rate limits checked? */
+                public boolean enabled = false;
+                /* The time for limits to expire. */
+                public int interval = 3;
+
+                /* The maximum amount of normal requests. */
+                public int maxRequests = 10;
+                /* The maximum amount of entities to be spawned in one request. */
+                public int maxEntities = 25;
+            }
+
             public static class Server {
+                /* Are the server settings sent to the handbook? */
                 public boolean enforced = false;
+                /* The default server address for the handbook's authentication. */
                 public String address = "127.0.0.1";
+                /* The default server port for the handbook's authentication. */
                 public int port = 443;
+                /* Should the defaults be enforced? */
                 public boolean canChange = true;
             }
         }
