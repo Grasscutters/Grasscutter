@@ -14,9 +14,8 @@ import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -256,9 +255,7 @@ public abstract class GameEntity {
         }
     }
 
-    /**
-     * Invoked when a global ability value is updated.
-     */
+    /** Invoked when a global ability value is updated. */
     public void onAbilityValueUpdate() {
         // Does nothing.
     }

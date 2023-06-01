@@ -16,11 +16,10 @@ import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
-import lombok.*;
-import org.bson.types.ObjectId;
-
 import java.util.*;
 import java.util.stream.Collectors;
+import lombok.*;
+import org.bson.types.ObjectId;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
@@ -495,7 +494,8 @@ public class GameMainQuest {
                                 subQuestWithCond.getFinishProgressList());
 
                 var questManager = this.getQuestManager();
-                if (questManager != null && questManager.getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
+                if (questManager != null
+                        && questManager.getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
                     Grasscutter.getLogger()
                             .debug(
                                     ">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",

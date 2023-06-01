@@ -401,8 +401,7 @@ public class EntityAvatar extends GameEntity {
             var count = this.getGlobalAbilityValues().get("_ABILITY_UziExplode_Count");
             if (count == 2f) {
                 this.getGlobalAbilityValues().remove("_ABILITY_UziExplode_Count");
-                this.getPlayer().getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10006);
+                this.getPlayer().getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10006);
             }
         }
     }

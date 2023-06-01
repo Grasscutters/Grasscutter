@@ -17,11 +17,10 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
 
@@ -491,8 +490,9 @@ public final class AbilityManager extends BasePlayerManager {
                 if (!Float.isNaN(entry.getFloatValue()))
                     entity.getGlobalAbilityValues().put(key, entry.getFloatValue());
             }
-            case AbilityScalarType.ABILITY_SCALAR_TYPE_UINT_VALUE ->
-                entity.getGlobalAbilityValues().put(key, (float) entry.getUintValue());
+            case AbilityScalarType.ABILITY_SCALAR_TYPE_UINT_VALUE -> entity
+                    .getGlobalAbilityValues()
+                    .put(key, (float) entry.getUintValue());
             default -> {
                 return;
             }

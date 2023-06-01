@@ -9,9 +9,7 @@ import emu.grasscutter.game.entity.GameEntity;
 public final class ActionAvatarSkillStart extends AbilityActionHandler {
     @Override
     public boolean execute(
-        Ability ability, AbilityModifierAction action,
-        ByteString abilityData, GameEntity target
-    ) {
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         return false;
     }
 }
