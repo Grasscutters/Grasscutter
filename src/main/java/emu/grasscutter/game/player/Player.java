@@ -345,8 +345,9 @@ public class Player implements PlayerHook, FieldFetch {
         this.playerGameTime = gameTime;
 
         // If the player is the host of the world, update the game time as well.
-        if (this.getWorld().getHost() == this) {
-            this.getWorld().changeTime(gameTime);
+        var world = this.getWorld();
+        if (world != null && world.getHost() == this) {
+            world.changeTime(gameTime);
         }
 
         // Trigger the script event for game time update.
