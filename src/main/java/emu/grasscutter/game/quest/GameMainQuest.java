@@ -16,10 +16,11 @@ import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
-import java.util.*;
-import java.util.stream.Collectors;
 import lombok.*;
 import org.bson.types.ObjectId;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
@@ -314,7 +315,7 @@ public class GameMainQuest {
                 0, new Position(avatarPosPos.get(0), avatarPosPos.get(1), avatarPosPos.get(2))); // position
         posAndRot.add(
                 1, new Position(avatarPosRot.get(0), avatarPosRot.get(1), avatarPosRot.get(2))); // rotation
-        Grasscutter.getLogger().info("Succesfully loaded rewind data for subQuest {}", subId);
+        Grasscutter.getLogger().debug("Successfully loaded rewind data for quest {}.", subId);
         return true;
     }
 
