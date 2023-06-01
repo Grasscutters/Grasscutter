@@ -504,9 +504,7 @@ public final class Utils {
      * @return A list of all fields in the class.
      */
     public static List<Field> getAllFields(Class<?> type) {
-        var fields = new LinkedList<>(
-            Arrays.asList(type.getDeclaredFields())
-        );
+        var fields = new LinkedList<>(Arrays.asList(type.getDeclaredFields()));
 
         // Check for superclasses.
         if (type.getSuperclass() != null) {
@@ -514,5 +512,17 @@ public final class Utils {
         }
 
         return fields;
+    }
+
+    /**
+     * Sleeps the current thread without an exception.
+     *
+     * @param millis The amount of milliseconds to sleep.
+     */
+    public static void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException ignored) {
+        }
     }
 }
