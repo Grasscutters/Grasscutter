@@ -31,6 +31,7 @@ public class ActionSetGlobalValueToOverrideMap extends AbilityActionHandler {
         }
 
         entity.getGlobalAbilityValues().put(globalValueKey, globalValue);
+        entity.onAbilityValueUpdate();
 
         // TODO: ChangeServerGlobalValueNotify
 

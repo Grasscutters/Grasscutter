@@ -351,7 +351,7 @@ public class QuestManager extends BasePlayerManager {
         // Forcefully start
         quest.start();
         // Check conditions.
-        this.checkQuestAlreadyFullfilled(quest);
+        this.checkQuestAlreadyFulfilled(quest);
 
         return quest;
     }
@@ -462,8 +462,8 @@ public class QuestManager extends BasePlayerManager {
      * TODO move content checks to use static informations where possible to allow direct already fulfilled checking
      * @param quest The ID of the quest.
      */
-    public void checkQuestAlreadyFullfilled(GameQuest quest){
-        Grasscutter.getGameServer().getScheduler().scheduleDelayedTask(() -> {
+    public void checkQuestAlreadyFulfilled(GameQuest quest){
+        Grasscutter.getThreadPool().submit(() -> {
             for (var condition : quest.getQuestData().getFinishCond()){
                 switch (condition.getType()) {
                     case QUEST_CONTENT_OBTAIN_ITEM, QUEST_CONTENT_ITEM_LESS_THAN -> {
@@ -486,7 +486,7 @@ public class QuestManager extends BasePlayerManager {
                     case QUEST_CONTENT_PLAYER_LEVEL_UP -> queueEvent(condition.getType(), player.getLevel());
                 }
             }
-        }, 1);
+        });
     }
 
     public List<QuestGroupSuite> getSceneGroupSuite(int sceneId) {

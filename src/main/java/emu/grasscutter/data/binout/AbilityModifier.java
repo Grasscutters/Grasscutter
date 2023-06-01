@@ -3,6 +3,8 @@ package emu.grasscutter.data.binout;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.props.ElementType;
+import lombok.ToString;
+
 import java.io.Serializable;
 
 public class AbilityModifier implements Serializable {
@@ -43,6 +45,7 @@ public class AbilityModifier implements Serializable {
     public ElementType elementType;
     public DynamicFloat elementDurability = DynamicFloat.ZERO;
 
+    @ToString
     public static class AbilityModifierAction implements Serializable {
         public enum Type {
             ActCameraRadialBlur,

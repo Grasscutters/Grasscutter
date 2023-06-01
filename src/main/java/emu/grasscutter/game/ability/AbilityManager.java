@@ -17,10 +17,11 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import java.util.HashMap;
-import java.util.concurrent.*;
 import lombok.Getter;
 import org.reflections.Reflections;
+
+import java.util.HashMap;
+import java.util.concurrent.*;
 
 public final class AbilityManager extends BasePlayerManager {
 
@@ -486,16 +487,18 @@ public final class AbilityManager extends BasePlayerManager {
 
         if (key.startsWith("SGV_")) return; // Server does not allow to change this variables I think
         switch (entry.getValueType().getNumber()) {
-            case AbilityScalarType.ABILITY_SCALAR_TYPE_FLOAT_VALUE:
+            case AbilityScalarType.ABILITY_SCALAR_TYPE_FLOAT_VALUE -> {
                 if (!Float.isNaN(entry.getFloatValue()))
                     entity.getGlobalAbilityValues().put(key, entry.getFloatValue());
-                break;
-            case AbilityScalarType.ABILITY_SCALAR_TYPE_UINT_VALUE:
+            }
+            case AbilityScalarType.ABILITY_SCALAR_TYPE_UINT_VALUE ->
                 entity.getGlobalAbilityValues().put(key, (float) entry.getUintValue());
-                break;
-            default:
+            default -> {
                 return;
+            }
         }
+
+        entity.onAbilityValueUpdate();
     }
 
     private void invokeAction(

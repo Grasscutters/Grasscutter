@@ -1,15 +1,9 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.game.ability.Ability;
-import emu.grasscutter.game.ability.AbilityModifierController;
+import emu.grasscutter.game.ability.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.LifeState;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
@@ -17,18 +11,12 @@ import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.scripts.data.controller.EntityController;
-import emu.grasscutter.server.event.entity.EntityDamageEvent;
-import emu.grasscutter.server.event.entity.EntityDeathEvent;
+import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import lombok.Getter;
-import lombok.Setter;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
+import java.util.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -266,6 +254,13 @@ public abstract class GameEntity {
         if (entityController != null) {
             entityController.onDie(this, getLastAttackType());
         }
+    }
+
+    /**
+     * Invoked when a global ability value is updated.
+     */
+    public void onAbilityValueUpdate() {
+        // Does nothing.
     }
 
     public abstract SceneEntityInfo toProto();

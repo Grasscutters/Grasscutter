@@ -127,8 +127,8 @@ public class QuestSystem extends BaseGameSystem {
                     if (!handler.execute(quest, execParam, params)) {
                         Grasscutter.getLogger()
                                 .debug(
-                                        "exec trigger failed {} at {}",
-                                        execParam.getType().getValue(),
+                                        "Execute trigger failed for {} at {}.",
+                                        execParam.getType().name(),
                                         quest.getQuestData());
                     }
                 });

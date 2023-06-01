@@ -1,15 +1,10 @@
 package emu.grasscutter.game.quest;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.binout.MainQuestData.SubQuestData;
-import emu.grasscutter.data.binout.MainQuestData.TalkData;
-import emu.grasscutter.data.binout.ScriptSceneData;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.data.binout.MainQuestData.*;
 import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
@@ -19,16 +14,13 @@ import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
-import emu.grasscutter.server.packet.send.PacketCodexDataUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestProgressUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
+import lombok.*;
+import org.bson.types.ObjectId;
+
 import java.util.*;
 import java.util.stream.Collectors;
-import lombok.Getter;
-import lombok.val;
-import org.bson.types.ObjectId;
 
 @Entity(value = "quests", useDiscriminator = false)
 public class GameMainQuest {
@@ -377,7 +369,7 @@ public class GameMainQuest {
     public void checkProgress() {
         for (var quest : getChildQuests().values()) {
             if (quest.getState() == QuestState.QUEST_STATE_UNFINISHED) {
-                questManager.checkQuestAlreadyFullfilled(quest);
+                questManager.checkQuestAlreadyFulfilled(quest);
             }
         }
     }
@@ -502,7 +494,8 @@ public class GameMainQuest {
                                 subQuestWithCond.getQuestData().getFinishCondComb(),
                                 subQuestWithCond.getFinishProgressList());
 
-                if (this.getQuestManager().getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
+                var questManager = this.getQuestManager();
+                if (questManager != null && questManager.getLoggedQuests().contains(subQuestWithCond.getSubQuestId())) {
                     Grasscutter.getLogger()
                             .debug(
                                     ">>> Quest {} will be {} as a result of content trigger {} ({}, {}).",

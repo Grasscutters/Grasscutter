@@ -1,19 +1,14 @@
 package emu.grasscutter.game.entity;
 
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.*;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.inventory.EquipType;
-import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.quest.enums.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock;
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -32,14 +27,11 @@ import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.event.player.PlayerMoveEvent;
-import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import lombok.Getter;
-import lombok.val;
+import lombok.*;
 
 public class EntityAvatar extends GameEntity {
     @Getter private final Avatar avatar;
@@ -397,5 +389,21 @@ public class EntityAvatar extends GameEntity {
 
         // Set position and rotation.
         super.move(event.getDestination(), rotation);
+    }
+
+    @Override
+    public void onAbilityValueUpdate() {
+        super.onAbilityValueUpdate();
+
+        // TODO: Replace with a proper implementation/call.
+        // Check if the condition for 35303 is met.
+        if (this.getGlobalAbilityValues().containsKey("_ABILITY_UziExplode_Count")) {
+            var count = this.getGlobalAbilityValues().get("_ABILITY_UziExplode_Count");
+            if (count == 2f) {
+                this.getGlobalAbilityValues().remove("_ABILITY_UziExplode_Count");
+                this.getPlayer().getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10006);
+            }
+        }
     }
 }

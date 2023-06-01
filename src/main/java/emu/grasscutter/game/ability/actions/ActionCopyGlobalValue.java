@@ -29,6 +29,7 @@ public final class ActionCopyGlobalValue extends AbilityActionHandler {
 
         // Apply the new global value.
         destination.getGlobalAbilityValues().put(action.dstKey, value);
+        destination.onAbilityValueUpdate();
         return true;
     }
 }

@@ -1,33 +1,24 @@
 package emu.grasscutter.game.quest;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.ChapterData;
-import emu.grasscutter.data.excels.TriggerExcelConfigData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.quest.enums.QuestCond;
-import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.game.quest.enums.QuestState;
+import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
 import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.server.packet.send.PacketChapterStateNotify;
-import emu.grasscutter.server.packet.send.PacketDelQuestNotify;
-import emu.grasscutter.server.packet.send.PacketQuestListUpdateNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import lombok.*;
+
 import javax.script.Bindings;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
+import java.util.*;
 
 @Entity
 public class GameQuest {
@@ -110,7 +101,7 @@ public class GameQuest {
         this.getQuestData()
                 .getBeginExec()
                 .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
-        this.getOwner().getQuestManager().checkQuestAlreadyFullfilled(this);
+        this.getOwner().getQuestManager().checkQuestAlreadyFulfilled(this);
 
         Grasscutter.getLogger().debug("Quest {} is started", subQuestId);
         this.save();
@@ -330,5 +321,13 @@ public class GameQuest {
         }
 
         return proto.build();
+    }
+
+    @Override
+    public String toString() {
+        return "Main Quest: %s; Sub Quest: %s; State: %s"
+                .formatted(this.getMainQuestId(),
+                    this.getSubQuestId(),
+                    this.getState());
     }
 }
