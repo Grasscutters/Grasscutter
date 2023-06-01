@@ -1,11 +1,11 @@
 package emu.grasscutter.utils.objects;
 
-import com.google.gson.JsonNull;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 import emu.grasscutter.server.dispatch.IDispatcher;
+import emu.grasscutter.utils.Utils;
+
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 public interface FieldFetch {
     /**
@@ -18,7 +18,7 @@ public interface FieldFetch {
         // Prepare field properties.
         var fieldValues = new JsonObject();
         var fieldMap = new HashMap<String, Field>();
-        Arrays.stream(this.getClass().getDeclaredFields())
+        Utils.getAllFields(this.getClass())
                 .forEach(field -> fieldMap.put(field.getName(), field));
 
         // Find the values of all requested fields.

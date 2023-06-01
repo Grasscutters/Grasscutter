@@ -1,8 +1,5 @@
 package emu.grasscutter.utils;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.DataLoader;
@@ -11,15 +8,20 @@ import emu.grasscutter.utils.objects.Returnable;
 import io.javalin.http.Context;
 import io.netty.buffer.*;
 import it.unimi.dsi.fastutil.ints.*;
+import org.slf4j.Logger;
+
+import javax.annotation.Nullable;
 import java.io.*;
+import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import javax.annotation.Nullable;
-import org.slf4j.Logger;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @SuppressWarnings({"UnusedReturnValue", "BooleanMethodIsAlwaysInverted"})
 public final class Utils {
@@ -484,6 +486,7 @@ public final class Utils {
      *
      * @param runnable The task to run.
      */
+    @SuppressWarnings("BusyWait")
     public static void waitFor(Returnable<Boolean> runnable) {
         while (!runnable.invoke()) {
             try {
@@ -492,5 +495,24 @@ public final class Utils {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Recursively finds all fields in a class.
+     *
+     * @param type The class to find fields in.
+     * @return A list of all fields in the class.
+     */
+    public static List<Field> getAllFields(Class<?> type) {
+        var fields = new LinkedList<>(
+            Arrays.asList(type.getDeclaredFields())
+        );
+
+        // Check for superclasses.
+        if (type.getSuperclass() != null) {
+            fields.addAll(getAllFields(type.getSuperclass()));
+        }
+
+        return fields;
     }
 }
