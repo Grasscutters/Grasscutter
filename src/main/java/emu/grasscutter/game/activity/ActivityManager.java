@@ -2,20 +2,17 @@ package emu.grasscutter.game.activity;
 
 import com.esotericsoftware.reflectasm.ConstructorAccess;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.*;
 import emu.grasscutter.game.activity.condition.*;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.server.packet.send.PacketActivityScheduleInfoNotify;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.TimeUnit;
 import lombok.Getter;
 import org.reflections.Reflections;
+
+import java.util.*;
+import java.util.concurrent.*;
 
 @Getter
 public class ActivityManager extends BasePlayerManager {
@@ -27,10 +24,9 @@ public class ActivityManager extends BasePlayerManager {
     static {
         activityConfigItemMap = new HashMap<>();
         scheduleActivityConfigMap = new HashMap<>();
-        loadActivityConfigData();
     }
 
-    private static void loadActivityConfigData() {
+    public static void loadActivityConfigData() {
         // scan activity type handler & watcher type
         var activityHandlerTypeMap = new HashMap<ActivityType, ConstructorAccess<?>>();
         var activityWatcherTypeMap = new HashMap<WatcherTriggerType, ConstructorAccess<?>>();

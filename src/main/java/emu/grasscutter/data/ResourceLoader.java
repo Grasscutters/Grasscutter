@@ -1,9 +1,5 @@
 package emu.grasscutter.data;
 
-import static emu.grasscutter.utils.FileUtils.getDataPath;
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
@@ -11,47 +7,32 @@ import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.config.*;
 import emu.grasscutter.data.common.PointData;
-import emu.grasscutter.data.custom.TrialAvatarActivityCustomData;
-import emu.grasscutter.data.custom.TrialAvatarCustomData;
+import emu.grasscutter.data.custom.*;
 import emu.grasscutter.data.excels.trial.TrialAvatarActivityDataData;
-import emu.grasscutter.data.server.ActivityCondGroup;
-import emu.grasscutter.data.server.GadgetMapping;
-import emu.grasscutter.data.server.MonsterMapping;
+import emu.grasscutter.data.server.*;
+import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
-import emu.grasscutter.game.quest.QuestEncryptionKey;
-import emu.grasscutter.game.quest.RewindData;
-import emu.grasscutter.game.quest.TeleportData;
-import emu.grasscutter.game.world.GroupReplacementData;
-import emu.grasscutter.game.world.SpawnDataEntry;
-import emu.grasscutter.game.world.SpawnDataEntry.GridBlockId;
-import emu.grasscutter.game.world.SpawnDataEntry.SpawnGroupEntry;
-import emu.grasscutter.scripts.EntityControllerScriptManager;
-import emu.grasscutter.scripts.SceneIndexManager;
-import emu.grasscutter.scripts.ScriptLoader;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.TsvUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.game.quest.*;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.SpawnDataEntry.*;
+import emu.grasscutter.scripts.*;
+import emu.grasscutter.utils.*;
 import it.unimi.dsi.fastutil.Pair;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntArraySet;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+import org.reflections.Reflections;
+
+import javax.script.*;
+import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import lombok.SneakyThrows;
-import lombok.val;
-import org.reflections.Reflections;
+import java.util.stream.*;
+
+import static emu.grasscutter.utils.FileUtils.*;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class ResourceLoader {
 
@@ -129,6 +110,8 @@ public final class ResourceLoader {
         loadNpcBornData();
         loadBlossomResources();
         cacheTalentLevelSets();
+        // Load activities.
+        ActivityManager.loadActivityConfigData();
 
         // Load custom server resources.
         loadConfigLevelEntityData();
