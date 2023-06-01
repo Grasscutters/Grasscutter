@@ -111,7 +111,9 @@ public class QuestManager extends BasePlayerManager {
                 30700, // Quest which is responsible for unlocking Crash Course.
                 30800, // Quest which is responsible for unlocking Sparks Amongst the Pages.
 
-                47001, 47002, 47003, 47004
+                47001, 47002, 47003, 47004,
+
+                2010103, 2010144 // Prologue Act 2: Chasing Shadows
             ));
         }
     }

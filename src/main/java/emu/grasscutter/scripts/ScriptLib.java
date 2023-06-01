@@ -129,7 +129,7 @@ public class ScriptLib {
 
     public int SetWorktopOptionsByGroupId(int groupId, int configId, int[] options) {
         logger.debug("[LUA] Call SetWorktopOptionsByGroupId with {},{},{}",
-            groupId,configId,options);
+            groupId, configId, options);
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
 
