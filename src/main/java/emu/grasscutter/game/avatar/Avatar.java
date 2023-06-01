@@ -1,7 +1,5 @@
 package emu.grasscutter.game.avatar;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
@@ -32,11 +30,14 @@ import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
-import java.util.stream.Stream;
-import javax.annotation.*;
 import lombok.*;
 import org.bson.types.ObjectId;
+
+import javax.annotation.*;
+import java.util.*;
+import java.util.stream.Stream;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -1243,13 +1244,15 @@ public class Avatar {
                         });
 
         // Add costume if avatar has a costume.
-        GameData.getAvatarCostumeDataItemIdMap()
+        if (GAME_OPTIONS.trialCostumes) {
+            GameData.getAvatarCostumeDataItemIdMap()
                 .values()
                 .forEach(
-                        costumeData -> {
-                            if (costumeData.getCharacterId() != this.getAvatarId()) return;
-                            this.setCostume(costumeData.getId());
-                        });
+                    costumeData -> {
+                        if (costumeData.getCharacterId() != this.getAvatarId()) return;
+                        this.setCostume(costumeData.getId());
+                    });
+        }
     }
 
     /** Equips the items applied from {@link Avatar#applyTrialItems()}. */

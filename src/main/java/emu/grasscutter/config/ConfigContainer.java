@@ -17,19 +17,21 @@ import static emu.grasscutter.Grasscutter.*;
 public class ConfigContainer {
     /*
      * Configuration changes:
-     * Version 5 - 'questing' has been changed from a boolean
-     *             to a container of options ('questOptions').
-     *             This field will be removed in future versions.
-     * Version 6 - 'questing' has been fully replaced with 'questOptions'.
-     *             The field for 'legacyResources' has been removed.
-     * Version 7 - 'regionKey' is being added for authentication
-     *             with the new dispatch server.
-     * Version 8 - 'server' is being added for enforcing handbook server
-     *             addresses.
-     * Version 9 - 'limits' was added for handbook requests.
+     * Version  5 - 'questing' has been changed from a boolean
+     *              to a container of options ('questOptions').
+     *              This field will be removed in future versions.
+     * Version  6 - 'questing' has been fully replaced with 'questOptions'.
+     *              The field for 'legacyResources' has been removed.
+     * Version  7 - 'regionKey' is being added for authentication
+     *              with the new dispatch server.
+     * Version  8 - 'server' is being added for enforcing handbook server
+     *              addresses.
+     * Version  9 - 'limits' was added for handbook requests.
+     * Version 10 - 'trialCostumes' was added for enabling costumes
+     *              on trial avatars.
      */
     private static int version() {
-        return 9;
+        return 10;
     }
 
     /**
@@ -255,6 +257,8 @@ public class ConfigContainer {
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
+        public boolean trialCostumes = false;
+
         @SerializedName(value = "questing", alternate = "questOptions")
         public Questing questing = new Questing();
         public ResinOptions resinOptions = new ResinOptions();
