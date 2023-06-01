@@ -87,7 +87,10 @@ public class AbilityData {
     }
 
     private void initializeModifiers() {
-        if (modifiers == null) return;
+        if (modifiers == null) {
+            this.modifiers = new HashMap<>();
+            return;
+        }
 
         var _modifiers =
                 modifiers.entrySet().stream()
