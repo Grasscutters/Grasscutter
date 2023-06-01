@@ -463,7 +463,8 @@
     "disabling_failed": "Error al desactivar el plugin: %s",
     "invalid_api": {
       "not_present": "🇺🇸Plugin %s does not specify an API version.",
-      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
+      "outdated": "🇺🇸Plugin %s is using an outdated API method."
     }
   }
 }

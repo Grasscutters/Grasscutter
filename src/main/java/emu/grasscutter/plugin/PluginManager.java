@@ -1,17 +1,18 @@
 package emu.grasscutter.plugin;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
 import emu.grasscutter.utils.*;
+import lombok.*;
+
+import javax.annotation.Nullable;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-import javax.annotation.Nullable;
-import lombok.*;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
@@ -216,9 +217,14 @@ public final class PluginManager {
                     Grasscutter.getLogger().info(translate("plugin.enabling_plugin", name));
                     try {
                         plugin.onEnable();
+                        return;
+                    } catch (NoSuchMethodError ignored) {
+                        Grasscutter.getLogger().error(translate("plugin.invalid_api.outdated", name));
                     } catch (Throwable exception) {
                         Grasscutter.getLogger().error(translate("plugin.enabling_failed", name), exception);
                     }
+
+                    this.disablePlugin(plugin);
                 });
     }
 
