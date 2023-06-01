@@ -15,7 +15,6 @@ public final class PluginConfig {
      */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean validate() {
-        return name != null && description != null &&
-            mainClass != null && api != null;
+        return name != null && description != null && mainClass != null && api != null;
     }
 }

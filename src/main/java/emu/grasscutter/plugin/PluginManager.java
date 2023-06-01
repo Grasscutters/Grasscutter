@@ -1,18 +1,17 @@
 package emu.grasscutter.plugin;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
 import emu.grasscutter.utils.*;
-import lombok.*;
-
-import javax.annotation.Nullable;
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.*;
 import java.util.*;
 import java.util.jar.*;
-
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.annotation.Nullable;
+import lombok.*;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
@@ -80,11 +79,17 @@ public final class PluginManager {
                     PluginConfig pluginConfig = JsonUtils.loadToClass(fileReader, PluginConfig.class);
                     // Check the plugin's API version.
                     if (pluginConfig.api == null) {
-                        Grasscutter.getLogger().warn(translate("plugin.invalid_api.not_present", plugin.getName()));
+                        Grasscutter.getLogger()
+                                .warn(translate("plugin.invalid_api.not_present", plugin.getName()));
                         return;
                     } else if (pluginConfig.api != API_VERSION) {
-                        Grasscutter.getLogger().warn(translate("plugin.invalid_api.lower",
-                            plugin.getName(), pluginConfig.api, API_VERSION));
+                        Grasscutter.getLogger()
+                                .warn(
+                                        translate(
+                                                "plugin.invalid_api.lower",
+                                                plugin.getName(),
+                                                pluginConfig.api,
+                                                API_VERSION));
                         return;
                     }
 

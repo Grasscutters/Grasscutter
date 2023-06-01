@@ -1,5 +1,8 @@
 package emu.grasscutter.data;
 
+import static emu.grasscutter.utils.FileUtils.*;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.Grasscutter;
@@ -19,10 +22,6 @@ import emu.grasscutter.scripts.*;
 import emu.grasscutter.utils.*;
 import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-import org.reflections.Reflections;
-
-import javax.script.*;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -30,9 +29,9 @@ import java.util.Map.Entry;
 import java.util.concurrent.*;
 import java.util.regex.Pattern;
 import java.util.stream.*;
-
-import static emu.grasscutter.utils.FileUtils.*;
-import static emu.grasscutter.utils.lang.Language.translate;
+import javax.script.*;
+import lombok.*;
+import org.reflections.Reflections;
 
 public final class ResourceLoader {
 
