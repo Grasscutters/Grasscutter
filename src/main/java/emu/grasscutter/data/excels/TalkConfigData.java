@@ -1,12 +1,11 @@
 package emu.grasscutter.data.excels;
 
 import com.google.gson.annotations.SerializedName;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.game.talk.TalkExec;
+import lombok.*;
+
 import java.util.List;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @ResourceType(name = "TalkExcelConfigData.json")
 @EqualsAndHashCode(callSuper = false)
@@ -38,6 +37,14 @@ public final class TalkConfigData extends GameResource {
                 this.finishExec == null
                         ? List.of()
                         : this.finishExec.stream().filter(x -> x.getType() != null).toList();
+
+        if (this.questId <= 0) {
+            var id = String.valueOf(this.getId());
+            this.questId = Integer.parseInt(
+                id.length() < 5 ? "0" :
+                    id.substring(0, 3)
+            );
+        }
     }
 
     @Data

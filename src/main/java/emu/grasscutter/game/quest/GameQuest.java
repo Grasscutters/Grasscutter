@@ -15,9 +15,10 @@ import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
-import java.util.*;
-import javax.script.Bindings;
 import lombok.*;
+
+import javax.script.Bindings;
+import java.util.*;
 
 @Entity
 public class GameQuest {
@@ -142,7 +143,7 @@ public class GameQuest {
     }
 
     public void setFinishProgress(int index, int value) {
-        finishProgressList[index] = value;
+        this.finishProgressList[index] = value;
     }
 
     public void setFailProgress(int index, int value) {
