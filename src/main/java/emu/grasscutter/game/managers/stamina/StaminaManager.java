@@ -3,26 +3,17 @@ package emu.grasscutter.game.managers.stamina;
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.GameEntity;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.LifeState;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.WeaponType;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo;
-import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.net.proto.VehicleInteractTypeOuterClass.VehicleInteractType;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
-import emu.grasscutter.server.packet.send.PacketVehicleStaminaNotify;
-import emu.grasscutter.game.world.Position;
+import emu.grasscutter.server.packet.send.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -248,6 +239,7 @@ public class StaminaManager extends BasePlayerManager {
         if (consumption.amount == 0) {
             return currentStamina;
         }
+
         // notify will update
         for (Map.Entry<String, BeforeUpdateStaminaListener> listener : beforeUpdateStaminaListeners.entrySet()) {
             Consumption overriddenConsumption = listener.getValue().onBeforeUpdateStamina(consumption.type.toString(), consumption, isCharacterStamina);
@@ -258,16 +250,19 @@ public class StaminaManager extends BasePlayerManager {
                 return currentStamina;
             }
         }
+
         int maxStamina = isCharacterStamina ? getMaxCharacterStamina() : getMaxVehicleStamina();
         logger.trace((isCharacterStamina ? "C " : "V ") + currentStamina + "/" + maxStamina + "\t" + currentState + "\t" +
             (isPlayerMoving() ? "moving" : "      ") + "\t(" + consumption.type + "," +
             consumption.amount + ")");
+
         int newStamina = currentStamina + consumption.amount;
         if (newStamina < 0) {
             newStamina = 0;
         } else if (newStamina > maxStamina) {
             newStamina = maxStamina;
         }
+
         return setStamina(session, consumption.type.toString(), newStamina, isCharacterStamina);
     }
 
@@ -380,22 +375,27 @@ public class StaminaManager extends BasePlayerManager {
 
     public void handleCombatInvocationsNotify(@NotNull GameSession session, @NotNull EntityMoveInfo moveInfo, @NotNull GameEntity entity) {
         // cache info for later use in SustainedStaminaHandler tick
-        cachedSession = session;
-        cachedEntity = entity;
-        MotionInfo motionInfo = moveInfo.getMotionInfo();
-        MotionState motionState = motionInfo.getState();
-        int notifyEntityId = entity.getId();
-        int currentAvatarEntityId = session.getPlayer().getTeamManager().getCurrentAvatarEntity().getId();
+        this.cachedSession = session;
+        this.cachedEntity = entity;
+
+        // Get the motion data.
+        var motionInfo = moveInfo.getMotionInfo();
+        var motionState = motionInfo.getState();
+        var notifyEntityId = entity.getId();
+        var currentAvatarEntityId = session.getPlayer().getTeamManager().getCurrentAvatarEntity().getId();
         if (notifyEntityId != currentAvatarEntityId && notifyEntityId != vehicleId) {
             return;
         }
-        currentState = motionState;
+
+        // Update the current state.
+        this.currentState = motionState;
         // logger.trace(currentState + "\t" + (notifyEntityId == currentAvatarEntityId ? "character" : "vehicle"));
         Vector posVector = motionInfo.getPos();
         Position newPos = new Position(posVector.getX(), posVector.getY(), posVector.getZ());
         if (newPos.getX() != 0 && newPos.getY() != 0 && newPos.getZ() != 0) {
             currentCoordinates = newPos;
         }
+
         startSustainedStaminaHandler();
         handleImmediateStamina(session, motionState);
     }
@@ -415,7 +415,6 @@ public class StaminaManager extends BasePlayerManager {
     // Internal handler
 
     private void handleImmediateStamina(GameSession session, @NotNull MotionState motionState) {
-        if (currentState == motionState) return;
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
                 updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);
@@ -425,8 +424,6 @@ public class StaminaManager extends BasePlayerManager {
                 updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
             case MOTION_STATE_SWIM_DASH ->
                 updateStaminaRelative(session, new Consumption(ConsumptionType.SWIM_DASH_START), true);
-            default -> {
-            }
         }
     }
 
@@ -447,6 +444,7 @@ public class StaminaManager extends BasePlayerManager {
                         (currentCharacterStamina >= maxCharacterStamina) + ", recalculate stamina");
                 boolean isCharacterStamina = true;
                 Consumption consumption;
+
                 if (MotionStatesCategorized.get("CLIMB").contains(currentState)) {
                     consumption = getClimbConsumption();
                 } else if (MotionStatesCategorized.get("DASH").contains(currentState)) {
@@ -600,18 +598,10 @@ public class StaminaManager extends BasePlayerManager {
     }
 
     private Consumption getOtherConsumptions() {
-        switch (currentState) {
-            case MOTION_STATE_NOTIFY:
-//                if (BowSkills.contains(lastSkillId)) {
-//                    return new Consumption(ConsumptionType.FIGHT, 500);
-//                }
-                break;
-            case MOTION_STATE_FIGHT:
-                // TODO: what if charged attack
-                return new Consumption(ConsumptionType.FIGHT, 500);
-        }
-
-        return new Consumption();
+        return switch (this.currentState) {
+            default -> new Consumption();
+            case MOTION_STATE_FIGHT -> new Consumption(ConsumptionType.FIGHT, 500);
+        };
     }
 
     // Reduction getter
