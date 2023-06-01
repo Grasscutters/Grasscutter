@@ -7,6 +7,7 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock;
 import emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo;
@@ -388,5 +389,21 @@ public class EntityAvatar extends GameEntity {
 
         // Set position and rotation.
         super.move(event.getDestination(), rotation);
+    }
+
+    @Override
+    public void onAbilityValueUpdate() {
+        super.onAbilityValueUpdate();
+
+        // TODO: Replace with a proper implementation/call.
+        // Check if the condition for 35303 is met.
+        if (this.getGlobalAbilityValues().containsKey("_ABILITY_UziExplode_Count")) {
+            var count = this.getGlobalAbilityValues().get("_ABILITY_UziExplode_Count");
+            if (count == 2f) {
+                this.getGlobalAbilityValues().remove("_ABILITY_UziExplode_Count");
+                this.getPlayer().getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10006);
+            }
+        }
     }
 }
