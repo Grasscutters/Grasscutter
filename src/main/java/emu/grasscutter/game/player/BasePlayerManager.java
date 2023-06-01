@@ -4,6 +4,7 @@ import lombok.*;
 
 public abstract class BasePlayerManager {
     protected final transient Player player;
+
     @Getter
     @Setter(AccessLevel.PROTECTED)
     protected boolean loaded = false;
