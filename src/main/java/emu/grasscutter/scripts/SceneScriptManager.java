@@ -1,7 +1,5 @@
 package emu.grasscutter.scripts;
 
-import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
-
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
@@ -11,37 +9,30 @@ import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.platform.BaseRoute;
 import emu.grasscutter.game.props.EntityType;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.game.world.GridPosition;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.SceneGroupInstance;
+import emu.grasscutter.game.quest.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
-import emu.grasscutter.scripts.service.ScriptMonsterSpawnService;
-import emu.grasscutter.scripts.service.ScriptMonsterTideService;
+import emu.grasscutter.scripts.service.*;
 import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.io.FileWriter;
-import java.io.IOException;
+import it.unimi.dsi.fastutil.ints.*;
+import kotlin.Pair;
+import lombok.val;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import javax.annotation.*;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import kotlin.Pair;
-import lombok.val;
-import org.luaj.vm2.LuaError;
-import org.luaj.vm2.LuaValue;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
 
 public class SceneScriptManager {
     private final Scene scene;
@@ -272,7 +263,7 @@ public class SceneScriptManager {
             targetGroupInstance = getGroupInstanceById(groupId);
             Grasscutter.getLogger()
                     .debug(
-                            "trying to regresh group suite {} in an unloaded and uncached group {} in scene {}",
+                            "Tried to refresh group suite {} in an unloaded and uncached group {} in scene {}.",
                             suiteId,
                             groupId,
                             getScene().getId());

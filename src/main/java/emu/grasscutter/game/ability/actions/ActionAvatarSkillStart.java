@@ -13,12 +13,11 @@ import emu.grasscutter.game.quest.enums.QuestContent;
 public class ActionAvatarSkillStart extends AbilityActionHandler {
     @Override
     public boolean execute(Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
-        GameEntity owner = ability.getOwner();
-        if(owner instanceof EntityAvatar avatar) {
+        var owner = ability.getOwner();
+        if (owner instanceof EntityAvatar avatar) {
             avatar.getPlayer().getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_SKILL, action.skillID);
         } else {
             Grasscutter.getLogger().warn("AvatarSkillStart not implemented for other entities than EntityAvatar right now");
-
             return false;
         }
 
