@@ -460,6 +460,10 @@
     "enabling_plugin": "플러그인을 활성화했습니다: %s",
     "enabling_failed": "플러그인을 활성화하는데 실패했습니다: %s",
     "disabling_plugin": "플러그인을 비활성화했습니다: %s",
-    "disabling_failed": "플러그인을 비활성화하는데 실패했습니다: %s"
+    "disabling_failed": "플러그인을 비활성화하는데 실패했습니다: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

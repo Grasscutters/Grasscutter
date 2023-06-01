@@ -1,28 +1,28 @@
 package emu.grasscutter.plugin;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.server.event.Event;
-import emu.grasscutter.server.event.EventHandler;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.JsonUtils;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.*;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
+import emu.grasscutter.server.event.*;
+import emu.grasscutter.utils.*;
+import lombok.*;
+
 import javax.annotation.Nullable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import java.io.*;
+import java.lang.reflect.Method;
+import java.net.*;
+import java.util.*;
+import java.util.jar.*;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /** Manages the server's plugins and the event system. */
 public final class PluginManager {
+    /*
+     * This should only be changed when a breaking change is made to the plugin API.
+     * A 'breaking change' is something which changes the existing logic of the API.
+     */
+    @SuppressWarnings("FieldCanBeLocal")
+    private static int API_VERSION = 2;
+
     /* All loaded plugins. */
     private final Map<String, Plugin> plugins = new LinkedHashMap<>();
     /* All currently registered listeners per plugin. */
@@ -78,6 +78,16 @@ public final class PluginManager {
 
                     // Create a plugin config instance from the config file.
                     PluginConfig pluginConfig = JsonUtils.loadToClass(fileReader, PluginConfig.class);
+                    // Check the plugin's API version.
+                    if (pluginConfig.api == null) {
+                        Grasscutter.getLogger().warn(translate("plugin.invalid_api.not_present", plugin.getName()));
+                        return;
+                    } else if (pluginConfig.api != API_VERSION) {
+                        Grasscutter.getLogger().warn(translate("plugin.invalid_api.lower",
+                            plugin.getName(), pluginConfig.api, API_VERSION));
+                        return;
+                    }
+
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
                         Grasscutter.getLogger().warn(translate("plugin.invalid_config", plugin.getName()));

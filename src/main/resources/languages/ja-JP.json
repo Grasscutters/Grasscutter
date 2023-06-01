@@ -460,6 +460,10 @@
     "enabling_plugin": "プラグインを有効にしています: %s",
     "enabling_failed": "プラグインの有効化に失敗しました: %s",
     "disabling_plugin": "プラグインを無効にしています: %s",
-    "disabling_failed": "プラグインの無効化に失敗しました: %s"
+    "disabling_failed": "プラグインの無効化に失敗しました: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

@@ -460,6 +460,10 @@
     "enabling_plugin": "启用插件：%s",
     "enabling_failed": "无法启用插件：%s",
     "disabling_plugin": "正在禁用插件：%s",
-    "disabling_failed": "无法禁用插件：%s"
+    "disabling_failed": "无法禁用插件：%s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

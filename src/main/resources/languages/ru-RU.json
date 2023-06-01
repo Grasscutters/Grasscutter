@@ -460,6 +460,10 @@
     "enabling_plugin": "Включаем Плагин: %s",
     "enabling_failed": "Ошибка включения Плагина: %s",
     "disabling_plugin": "Отключаем Плагин: %s",
-    "disabling_failed": "Ошибка отключения Плагина: %s"
+    "disabling_failed": "Ошибка отключения Плагина: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

@@ -460,6 +460,10 @@
     "enabling_plugin": "Włączanie pluginu: %s",
     "enabling_failed": "Nie udało się załączyć pluginu: %s",
     "disabling_plugin": "Wyłączanie pluginu: %s",
-    "disabling_failed": "Nie udało się wyłączyć pluginu: %s"
+    "disabling_failed": "Nie udało się wyłączyć pluginu: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

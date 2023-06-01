@@ -460,6 +460,10 @@
     "enabling_plugin": "🇺🇸Enabling plugin: %s",
     "enabling_failed": "🇺🇸Failed to enable plugin: %s",
     "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

@@ -460,6 +460,10 @@
     "enabling_plugin": "Activando plugin: %s",
     "enabling_failed": "Error al activar el plugin: %s",
     "disabling_plugin": "Desactivando el plugin: %s",
-    "disabling_failed": "Error al desactivar el plugin: %s"
+    "disabling_failed": "Error al desactivar el plugin: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }
