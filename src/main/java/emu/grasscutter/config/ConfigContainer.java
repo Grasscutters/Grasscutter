@@ -2,32 +2,42 @@ package emu.grasscutter.config;
 
 import ch.qos.logback.classic.Level;
 import com.google.gson.JsonObject;
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.Grasscutter.ServerDebugMode;
-import emu.grasscutter.Grasscutter.ServerRunMode;
-import emu.grasscutter.utils.JsonUtils;
+import emu.grasscutter.utils.*;
+import lombok.NoArgsConstructor;
 
-import java.util.Set;
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.*;
 
-import static emu.grasscutter.Grasscutter.config;
+import static emu.grasscutter.Grasscutter.*;
 
 /**
  * *when your JVM fails*
  */
 public class ConfigContainer {
+    /*
+     * Configuration changes:
+     * Version 5 - 'questing' has been changed from a boolean
+     *             to a container of options ('questOptions').
+     *             This field will be removed in future versions.
+     * Version 6 - 'questing' has been fully replaced with 'questOptions'.
+     *             The field for 'legacyResources' has been removed.
+     * Version 7 - 'regionKey' is being added for authentication
+     *             with the new dispatch server.
+     * Version 8 - 'server' is being added for enforcing handbook server
+     *             addresses.
+     * Version 9 - 'limits' was added for handbook requests.
+     */
     private static int version() {
-        return 4;
+        return 9;
     }
 
     /**
-     * Attempts to update the server's existing configuration to the latest
+     * Attempts to update the server's existing configuration.
      */
     public static void updateConfig() {
         try { // Check if the server is using a legacy config.
-            JsonObject configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
+            var configObject = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
             if (!configObject.has("version")) {
                 Grasscutter.getLogger().info("Updating legacy ..");
                 Grasscutter.saveConfig(null);
@@ -41,9 +51,9 @@ public class ConfigContainer {
             return;
 
         // Create a new configuration instance.
-        ConfigContainer updated = new ConfigContainer();
+        var updated = new ConfigContainer();
         // Update all configuration fields.
-        Field[] fields = ConfigContainer.class.getDeclaredFields();
+        var fields = ConfigContainer.class.getDeclaredFields();
         Arrays.stream(fields).forEach(field -> {
             try {
                 field.set(updated, field.get(config));
@@ -56,7 +66,7 @@ public class ConfigContainer {
             Grasscutter.saveConfig(updated);
             Grasscutter.loadConfig();
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Failed to inject the updated ", exception);
+            Grasscutter.getLogger().warn("Failed to save the updated configuration.", exception);
         }
     }
 
@@ -87,6 +97,7 @@ public class ConfigContainer {
         public String packets = "./packets/";
         public String scripts = "resources:Scripts/";
         public String plugins = "./plugins/";
+        public String cache = "./cache/";
 
         // UNUSED (potentially added later?)
         // public String dumps = "./dumps/";
@@ -144,8 +155,9 @@ public class ConfigContainer {
         public int accessPort = 0;
 
         /* Entities within a certain range will be loaded for the player */
-        public int loadEntitiesForPlayerRange = 100;
-        public boolean enableScriptInBigWorld = false;
+        public int loadEntitiesForPlayerRange = 300;
+        /* Start in 'unstable-quests', Lua scripts will be enabled by default. */
+        public boolean enableScriptInBigWorld = true;
         public boolean enableConsole = true;
 
         /* Kcp internal work interval (milliseconds) */
@@ -153,19 +165,39 @@ public class ConfigContainer {
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.NONE;
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
-        public Boolean isShowPacketPayload = false;
+        public boolean isShowPacketPayload = false;
         /* Show annoying loop packets or no */
-        public Boolean isShowLoopPackets = false;
+        public boolean isShowLoopPackets = false;
+
+        public boolean cacheSceneEntitiesEveryRun = false;
 
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
+
+        public VisionOptions[] visionOptions = new VisionOptions[] {
+            new VisionOptions("VISION_LEVEL_NORMAL"         , 80    , 20),
+            new VisionOptions("VISION_LEVEL_LITTLE_REMOTE"  , 16    , 40),
+            new VisionOptions("VISION_LEVEL_REMOTE"         , 1000  , 250),
+            new VisionOptions("VISION_LEVEL_SUPER"          , 4000  , 1000),
+            new VisionOptions("VISION_LEVEL_NEARBY"         , 40    , 20),
+            new VisionOptions("VISION_LEVEL_SUPER_NEARBY"   , 20    , 20)
+        };
     }
 
     /* Data containers. */
 
     public static class Dispatch {
-        public Region[] regions = {};
+        /* An array of servers. */
+        public List<Region> regions = List.of();
+
+        /* The URL used to make HTTP requests to the dispatch server. */
+        public String dispatchUrl = "ws://127.0.0.1:1111";
+        /* A unique key used for encryption. */
+        public byte[] encryptionKey = Crypto.createSessionKey(32);
+        /* A unique key used for authentication. */
+        public String dispatchKey = Utils.base64Encode(
+            Crypto.createSessionKey(32));
 
         public String defaultName = "Grasscutter";
 
@@ -174,23 +206,23 @@ public class ConfigContainer {
     }
 
     /* Debug options container, used when jar launch argument is -debug | -debugall and override default values
-    *  (see StartupArguments.enableDebug) */
+     *  (see StartupArguments.enableDebug) */
     public static class DebugMode {
         /* Log level of the main server code (works only with -debug arg) */
         public Level serverLoggerLevel = Level.DEBUG;
 
         /* Log level of the third-party services (works only with -debug arg):
-           javalin, quartz, reflections, jetty, mongodb.driver*/
+           javalin, quartz, reflections, jetty, mongodb.driver */
         public Level servicesLoggersLevel = Level.INFO;
 
         /* Controls whether packets should be logged in console or not */
         public ServerDebugMode logPackets = ServerDebugMode.ALL;
 
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
-        public Boolean isShowPacketPayload = false;
+        public boolean isShowPacketPayload = false;
 
         /* Show annoying loop packets or no */
-        public Boolean isShowLoopPackets = false;
+        public boolean isShowLoopPackets = false;
 
         /* Controls whether http requests should be logged in console or not */
         public ServerDebugMode logRequests = ServerDebugMode.ALL;
@@ -208,7 +240,7 @@ public class ConfigContainer {
         public Policies.CORS cors = new Policies.CORS();
 
         public static class CORS {
-            public boolean enabled = false;
+            public boolean enabled = true;
             public String[] allowedOrigins = new String[]{"*"};
         }
     }
@@ -223,8 +255,12 @@ public class ConfigContainer {
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
+        @SerializedName(value = "questing", alternate = "questOptions")
+        public Questing questing = new Questing();
         public ResinOptions resinOptions = new ResinOptions();
         public Rates rates = new Rates();
+
+        public HandbookOptions handbook = new HandbookOptions();
 
         public static class InventoryLimits {
             public int weapons = 2000;
@@ -250,6 +286,54 @@ public class ConfigContainer {
             public int cap = 160;
             public int rechargeTime = 480;
         }
+
+        public static class Questing {
+            /* Should questing behavior be used? */
+            public boolean enabled = true;
+        }
+
+        public static class HandbookOptions {
+            public boolean enable = false;
+            public boolean allowCommands = true;
+
+            public Limits limits = new Limits();
+            public Server server = new Server();
+
+            public static class Limits {
+                /* Are rate limits checked? */
+                public boolean enabled = false;
+                /* The time for limits to expire. */
+                public int interval = 3;
+
+                /* The maximum amount of normal requests. */
+                public int maxRequests = 10;
+                /* The maximum amount of entities to be spawned in one request. */
+                public int maxEntities = 25;
+            }
+
+            public static class Server {
+                /* Are the server settings sent to the handbook? */
+                public boolean enforced = false;
+                /* The default server address for the handbook's authentication. */
+                public String address = "127.0.0.1";
+                /* The default server port for the handbook's authentication. */
+                public int port = 443;
+                /* Should the defaults be enforced? */
+                public boolean canChange = true;
+            }
+        }
+    }
+
+    public static class VisionOptions {
+        public String name;
+        public int visionRange;
+        public int gridWidth;
+
+        public VisionOptions(String name, int visionRange, int gridWidth) {
+            this.name = name;
+            this.visionRange = visionRange;
+            this.gridWidth = gridWidth;
+        }
     }
 
     public static class JoinOptions {
@@ -268,8 +352,8 @@ public class ConfigContainer {
                     """;
             public String sender = "Lawnmower";
             public emu.grasscutter.game.mail.Mail.MailItem[] items = {
-                    new emu.grasscutter.game.mail.Mail.MailItem(13509, 1, 1),
-                    new emu.grasscutter.game.mail.Mail.MailItem(201, 99999, 1)
+                new emu.grasscutter.game.mail.Mail.MailItem(13509, 1, 1),
+                new emu.grasscutter.game.mail.Mail.MailItem(201, 99999, 1)
             };
         }
     }
@@ -291,22 +375,21 @@ public class ConfigContainer {
 
     /* Objects. */
 
+    @NoArgsConstructor
     public static class Region {
-        public Region() { }
+        public String Name = "os_usa";
+        public String Title = "Grasscutter";
+        public String Ip = "127.0.0.1";
+        public int Port = 22102;
 
         public Region(
-                String name, String title,
-                String address, int port
+            String name, String title,
+            String address, int port
         ) {
             this.Name = name;
             this.Title = title;
             this.Ip = address;
             this.Port  = port;
         }
-
-        public String Name = "os_usa";
-        public String Title = "Grasscutter";
-        public String Ip = "127.0.0.1";
-        public int Port = 22102;
     }
 }

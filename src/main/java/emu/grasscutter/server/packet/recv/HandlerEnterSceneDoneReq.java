@@ -2,10 +2,9 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player.SceneLoadState;
-import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
 
@@ -36,16 +35,20 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
         session.getPlayer().getScene().loadNpcForPlayerEnter(session.getPlayer());
 
         // notify client to load the npc for quest
-        var questGroupSuites = session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
+        var questGroupSuites =
+                session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
 
         session.getPlayer().getScene().loadGroupForQuest(questGroupSuites);
-        Grasscutter.getLogger().debug("Loaded Scene {} Quest(s) Groupsuite(s): {}", session.getPlayer().getSceneId(), questGroupSuites);
+        Grasscutter.getLogger()
+                .trace(
+                        "Loaded Scene {} Quest(s) Groupsuite(s): {}",
+                        session.getPlayer().getSceneId(),
+                        questGroupSuites);
         session.send(new PacketGroupSuiteNotify(questGroupSuites));
 
         // Reset timer for sending player locations
         session.getPlayer().resetSendPlayerLocTime();
-        //Rsp
+        // Rsp
         session.send(new PacketEnterSceneDoneRsp(session.getPlayer()));
     }
-
 }

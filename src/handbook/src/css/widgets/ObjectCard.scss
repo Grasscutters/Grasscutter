@@ -1,0 +1,160 @@
+.ObjectCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 700px;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.ObjectCard_Content {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+}
+
+.ObjectCard_Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ObjectCard_Info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    :nth-child(1) {
+        font-weight: bold;
+        font-size: 20px;
+
+        max-width: 170px;
+        max-height: 60px;
+
+        color: var(--text-primary-color);
+    }
+
+    :nth-child(2) {
+        font-size: 16px;
+
+        color: var(--text-primary-color);
+    }
+}
+
+.ObjectCard_Icon {
+    width: 64px;
+    height: 64px
+}
+
+.ObjectCard_Description {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    max-width: 250px;
+    max-height: 460px;
+
+    p {
+        font-size: 14px;
+
+        color: var(--text-primary-color);
+    }
+}
+
+.ObjectCard_Actions {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+    padding-top: 10px;
+}
+
+.ObjectCard_Counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    max-width: 260px;
+    max-height: 46px;
+
+    border-radius: 10px;
+    padding: 0 13px 0 13px;
+    box-sizing: border-box;
+
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.ObjectCard_Operation {
+    user-select: none;
+    display: flex;
+
+    width: 30px;
+    height: 20px;
+
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary-color);
+
+    background-color: var(--background-color);
+}
+
+.ObjectCard_Operation:hover {
+    cursor: pointer;
+}
+
+.ObjectCard_Count {
+    max-width: 105px;
+    height: 48px;
+
+    font-size: 24px;
+    text-align: center;
+    background-color: transparent;
+    color: var(--text-primary-color);
+    border: transparent;
+}
+
+.ObjectCard_Count:focus {
+    outline: none;
+}
+
+.ObjectCard_Submit {
+    width: 100%;
+    height: 46px;
+    max-width: 260px;
+
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+
+    border: transparent;
+    font-size: 24px;
+
+    color: var(--text-primary-color);
+    background-color: var(--secondary-color);
+
+    user-select: none;
+    transition: 0.1s ease-in-out all;
+}
+
+.ObjectCard_Submit:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.ObjectCard_Submit:active {
+    scale: 0.9;
+}

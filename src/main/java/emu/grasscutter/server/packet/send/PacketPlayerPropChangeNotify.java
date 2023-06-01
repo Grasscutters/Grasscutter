@@ -5,7 +5,6 @@ import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerPropChangeNotifyOuterClass.PlayerPropChangeNotify;
-import emu.grasscutter.utils.ProtoHelper;
 
 public class PacketPlayerPropChangeNotify extends BasePacket {
 
@@ -14,10 +13,8 @@ public class PacketPlayerPropChangeNotify extends BasePacket {
 
         this.buildHeader(0);
 
-        PlayerPropChangeNotify proto = PlayerPropChangeNotify.newBuilder()
-                .setPropType(prop.getId())
-                .setPropDelta(delta)
-                .build();
+        PlayerPropChangeNotify proto =
+                PlayerPropChangeNotify.newBuilder().setPropType(prop.getId()).setPropDelta(delta).build();
 
         this.setData(proto);
     }

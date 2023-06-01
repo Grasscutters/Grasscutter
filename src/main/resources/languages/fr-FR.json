@@ -63,7 +63,10 @@
       "game_version": "Version du jeu: %s",
       "resources": {
         "loading": "Chargement des ressources...",
-        "finish": "Chargement des ressources terminé."
+        "finish": "Chargement des ressources terminé.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "ID de l'artéfact invalide.",
         "avatarId": "ID de l'avatar invalide.",
         "avatarLevel": "avatarLevel invalide.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "ID de l'entité invalide.",
         "itemId": "ID de l'objet invalide.",
         "itemLevel": "Niveau de l'objet invalide.",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "Vous êtes déjà dans ce donjon.",
       "description": "Entrer dans un donjon"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "Utilisation: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "L'ID de cet artéfact appartient a une liste blacklistée, ce n'est peut-être pas celui que vous désirez.",
@@ -230,7 +238,32 @@
       "finished": "Quête terminée : %s.",
       "not_found": "Quête introuvable.",
       "invalid_id": "ID de la quête invalide.",
-      "description": "Ajoute ou termine une quête"
+      "description": "Ajoute ou termine une quête",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "Quêtes activées."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Joue une cinématique"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Rechargement de la configuration.",
@@ -321,7 +354,7 @@
     "team": {
       "invalid_usage": "Utilisation invalide.",
       "invalid_index": "Index invalide.",
-      "add_too_much": "Ce serveur autorise à avoir au maximum %s avatar(s) dans votre équipe.",
+      "add_too_much": "Ce serveur autorise à avoir au maximum %d avatar(s) dans votre équipe.",
       "failed_to_add_avatar": "Echec de l'ajout de l'avatar a l'ID %s dans votre équipe.",
       "failed_to_parse_index": "Echec de l'analyse de l'index index: %s",
       "remove_too_much": "Vous ne pouvez pas retirer tous les avatars.",
@@ -329,7 +362,7 @@
       "index_out_of_range": "L'index spécifié est en dehors du champ.",
       "failed_parse_avatar_id": "Echec de l'analyse de l'ID de l'avatar: %s",
       "avatar_already_in_team": "L'avatar est déjà dans votre équipe.",
-      "avatar_not_found": "L'avatar %s est introuvable.",
+      "avatar_not_found": "L'avatar %d est introuvable.",
       "description": "Modifie votre équipe manuellement."
     },
     "teleportAll": {
@@ -342,6 +375,17 @@
       "exists_error": "La scène spécifié n'existe pas.",
       "success": "%s a été téléporté à %s, %s, %s dans la scène %s.",
       "description": "Change la position du joueur"
+    },
+    "trialAvatarActivity": {
+      "description": "Manipuler les fonctionnalités de Trial Avatar Activity. Cela inclut le basculement des états de donjon et de récompense.",
+      "not_found": "Les données du lecteur d'activité d'avatar d'essai sont introuvables. Peut-être que l'activité n'est pas activée.",
+      "invalid_param": "Paramètre invalide.",
+      "schedule_not_found": "Horaire %s introuvable.",
+      "success_schedule": "ID de planification changé en %s.",
+      "success_dungeon": "Basculement du statut du donjon de l'avatar %s.",
+      "success_dungeon_all": "Basculement du statut de donjon de tous les avatars.",
+      "success_reward": "Basculement du statut de récompense de l'avatar %s.",
+      "success_reward_all": "Basculement du statut de récompense de tous les avatars."
     },
     "weather": {
       "success": "L'ID de la météo à été défini a %s avec le type de climat %s.",
@@ -362,6 +406,9 @@
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
       "description": "Retire le bannissement d'un joueur"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -394,9 +441,9 @@
       "header_monster": "Monstre"
     },
     "index": {
-      "title": "Documentation",
+      "title": "🇺🇸Documentation",
       "handbook": "Manuel GM",
-      "gacha_mapping": "Gacha mapping JSON"
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   },
   "plugin": {
@@ -413,6 +460,10 @@
     "enabling_plugin": "Activation du plugin %s",
     "enabling_failed": "Impossible d'activer le plugin %s",
     "disabling_plugin": "Désactivation du plugin %s",
-    "disabling_failed": "Impossible de désactiver le plugin %s"
+    "disabling_failed": "Impossible de désactiver le plugin %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

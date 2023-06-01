@@ -14,11 +14,10 @@ public class HandlerGetInvestigationMonsterReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = GetInvestigationMonsterReqOuterClass.GetInvestigationMonsterReq.parseFrom(payload);
 
-        session.send(new PacketGetInvestigationMonsterRsp(
-                session.getPlayer(),
-                session.getServer().getWorldDataSystem(),
-                req.getCityIdListList()));
-
+        session.send(
+                new PacketGetInvestigationMonsterRsp(
+                        session.getPlayer(),
+                        session.getServer().getWorldDataSystem(),
+                        req.getCityIdListList()));
     }
-
 }

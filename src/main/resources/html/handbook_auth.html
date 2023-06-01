@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            p {
+                margin: 2px;
+            }
+        </style>
+        <title>Handbook Authentication</title>
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            if ("{{VALUE}}" === "true") {
+                parent.postMessage({
+                    type: "handbook-auth",
+                    token: "{{SESSION_TOKEN}}",
+                    uid: "{{PLAYER_ID}}"
+                }, "*");
+            }
+        </script>
+
+        <p>Input your Player UID here.</p>
+        <form method="post">
+            <label>
+                <input
+                    name="playerid"
+                    type="number"
+                />
+            </label>
+
+            <input type="submit" />
+        </form>
+    </body>
+</html>

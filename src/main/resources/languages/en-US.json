@@ -63,7 +63,10 @@
       "game_version": "Game version: %s",
       "resources": {
         "loading": "Loading resources...",
-        "finish": "Finished loading resources."
+        "finish": "Finished loading resources.",
+        "custom": "Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "Invalid artifact ID.",
         "avatarId": "Invalid avatar ID.",
         "avatarLevel": "Invalid avatarLevel.",
+        "cfgId": "Invalid cfg ID.",
         "entityId": "Invalid entity ID.",
         "itemId": "Invalid item ID.",
         "itemLevel": "Invalid itemLevel.",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "You are already in that dungeon.",
       "description": "Enter a dungeon"
     },
+    "entity": {
+      "description": "Modify an existing entity's properties",
+      "not_found_error": "Entity does not exist"
+    },
     "give": {
       "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
@@ -184,8 +192,8 @@
       "aliases": "Aliases: ",
       "available_commands": "Available commands: ",
       "tip_need_permission": "Permission: ",
-      "tip_need_no_permission": " None",
-      "tip_permission_targeted": " (Permission %s is also required to use on other players)",
+      "tip_need_no_permission": "None",
+      "tip_permission_targeted": "(Permission %s is also required to use on other players)",
       "warn_player_has_no_permission": "Notice: You do not have permission to run this command.",
       "description": "Sends the help message or shows information about a specified command"
     },
@@ -230,7 +238,32 @@
       "finished": "Finished quest %s.",
       "not_found": "Quest not found.",
       "invalid_id": "Invalid quest ID.",
-      "description": "Add or finish quests"
+      "description": "Add or finish quests",
+      "running": "Quest %s is %s (%s).",
+      "talking": "Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "unknown (none)",
+        "unstarted": "unfinished (not started, not completed)",
+        "unfinished": "unfinished (started, not completed)",
+        "finished": "finished (completed)",
+        "failed": "finished (completed, but failed)",
+        "exists": "found",
+        "not_exists": "not found"
+      },
+      "enabled": "Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "Invalid group ID.",
+      "invalid_suiteid": "Invalid suite ID.",
+      "group_not_found": "Group not found.",
+      "description": "Alter group loading",
+      "refreshed": "Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Plays a cutscene"
+    },
+    "sound": {
+      "description": "Plays a sound"
     },
     "reload": {
       "reload_start": "Reloading config.",
@@ -343,6 +376,17 @@
       "success": "Teleported %s to %s, %s, %s in scene %s.",
       "description": "Change the player's position"
     },
+    "trialAvatarActivity": {
+      "description": "Manipulate functionalities of Trial Avatar Activity. This includes toggling dungeon and reward states.",
+      "not_found": "Trial avatar activity player data not found. Maybe the activity is not enabled.",
+      "invalid_param": "Invalid parameter.",
+      "schedule_not_found": "Schedule %s not found.",
+      "success_schedule": "Changed schedule id to %s.",
+      "success_dungeon": "Togggled avatar %s's dungeon status.",
+      "success_dungeon_all": "Toggled all avatars' dungeon status.",
+      "success_reward": "Togggled avatar %s's reward status.",
+      "success_reward_all": "Togggled all avatars reward status."
+    },
     "weather": {
       "success": "Set weather ID to %s with climate type %s.",
       "status": "Current weather ID is %s with climate type %s.",
@@ -362,6 +406,9 @@
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "description": "Unban a player"
+    },
+    "troubleshoot": {
+      "description": "Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -400,19 +447,23 @@
     }
   },
   "plugin": {
-	  "directory_failed": "Failed to create plugins directory: ",
-	  "unable_to_load": "Unable to load plugin.",
-	  "invalid_config": "Plugin %s has an invalid config file.",
-	  "invalid_main_class": "Plugin %s has an invalid main class.",
-	  "missing_config": "Plugin %s lacks a valid config file.",
-	  "failed_to_load_plugin": "Failed to load plugin: %s",
-	  "failed_to_load": "Failed to load a plugin.",
-	  "failed_to_load_dependencies": "Failed to load plugins with dependencies.",
-	  "loading_plugin": "Loading plugin: %s",
-	  "failed_add_id": "Failed to add plugin identifier: %s",
-	  "enabling_plugin": "Enabling plugin: %s",
-	  "enabling_failed": "Failed to enable plugin: %s",
-	  "disabling_plugin": "Disabling plugin: %s",
-	  "disabling_failed": "Failed to disable plugin: %s"
+    "directory_failed": "Failed to create plugins directory: ",
+    "unable_to_load": "Unable to load plugin.",
+    "invalid_config": "Plugin %s has an invalid config file.",
+    "invalid_main_class": "Plugin %s has an invalid main class.",
+    "missing_config": "Plugin %s lacks a valid config file.",
+    "failed_to_load_plugin": "Failed to load plugin: %s",
+    "failed_to_load": "Failed to load a plugin.",
+    "failed_to_load_dependencies": "Failed to load plugins with dependencies.",
+    "loading_plugin": "Loading plugin: %s",
+    "failed_add_id": "Failed to add plugin identifier: %s",
+    "enabling_plugin": "Enabling plugin: %s",
+    "enabling_failed": "Failed to enable plugin: %s",
+    "disabling_plugin": "Disabling plugin: %s",
+    "disabling_failed": "Failed to disable plugin: %s",
+    "invalid_api": {
+      "not_present": "Plugin %s does not specify an API version.",
+      "lower": "Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

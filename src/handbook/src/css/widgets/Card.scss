@@ -1,0 +1,53 @@
+.Card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1510px;
+
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: var(--primary-color);
+}
+
+.Card_Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Card_Header {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+
+    gap: 15px;
+    align-items: center;
+}
+
+.Card_Title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.Card_Alternate {
+    font-size: 24px;
+}
+
+.Card_Description {
+    color: var(--text-primary-color);
+    padding-bottom: 5px;
+}
+
+.Card_Button {
+    display: flex;
+    margin-right: 13px;
+
+    align-self: center;
+    justify-content: center;
+}

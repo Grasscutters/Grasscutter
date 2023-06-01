@@ -63,7 +63,10 @@
       "game_version": "Версия игры: %s",
       "resources": {
         "loading": "Загружаем ресурсы...",
-        "finish": "Загрузка ресурсов завершена."
+        "finish": "Загрузка ресурсов завершена.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "Некорректный ID артефакта.",
         "avatarId": "Некорректный ID персонажа.",
         "avatarLevel": "Некорректный уровень персонажа (avatarLevel).",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "Некорректный ID сущности.",
         "itemId": "Некорректный ID предмета.",
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "Вы уже в этом подземелье.",
       "description": "Позволяет войти в подземелье"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "Применение: give <ID_артефакта> [ID_глав_хар-ки] [<ID доп_хар-ки>[,<раз>]]... [lv<уровень 0-20>]",
       "illegal_relic": "Данный ID_артефакта находится в черном списке. Возможно, это не то, что вы хотите получить.",
@@ -230,7 +238,32 @@
       "finished": "Квест %s был завершен.",
       "not_found": "Квест не найден.",
       "invalid_id": "Некорректный ID квеста.",
-      "description": "Добавляет (add) или завершает (finish) квесты"
+      "description": "Добавляет (add) или завершает (finish) квесты",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "Odtwarza przerywnik filmowy"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Перезагружаем файл конфигурации.",
@@ -343,6 +376,17 @@
       "success": "Игрок %s был телепортирован по координатам %s, %s, %s в сцене %s.",
       "description": "Изменяет местоположение игрока"
     },
+    "trialAvatarActivity": {
+      "description": "Управление функциями пробного аватара. Это включает в себя переключение состояний подземелий и наград.",
+      "not_found": "Данные об активности пробного аватара игрока не найдены. Возможно, активность не включена.",
+      "invalid_param": "Неверный параметр.",
+      "schedule_not_found": "Расписание %s не найдено.",
+      "success_schedule": "Идентификатор расписания изменен на %s.",
+      "success_dungeon": "Переключен статус подземелья аватара %s.",
+      "success_dungeon_all": "Переключен статус подземелий всех аватаров.",
+      "success_reward": "Переключен статус награды аватара %s.",
+      "success_reward_all": "Переключен статус вознаграждения всех аватаров."
+    },
     "weather": {
       "success": "Установлен ID погоды %s, тип климата: %s.",
       "status": "Текущий ID погоды: %s, тип климата: %s.",
@@ -362,6 +406,9 @@
       "success": "Успех.",
       "failure": "Неудача, игрок не найден.",
       "description": "Разблокировывает доступ к серверу (\"разбанивает\")"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -413,6 +460,10 @@
     "enabling_plugin": "Включаем Плагин: %s",
     "enabling_failed": "Ошибка включения Плагина: %s",
     "disabling_plugin": "Отключаем Плагин: %s",
-    "disabling_failed": "Ошибка отключения Плагина: %s"
+    "disabling_failed": "Ошибка отключения Плагина: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

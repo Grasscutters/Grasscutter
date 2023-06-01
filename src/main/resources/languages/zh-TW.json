@@ -63,7 +63,10 @@
       "game_version": "遊戲版本：%s",
       "resources": {
         "loading": "加載資源中...",
-        "finish": "資源加載完成.。"
+        "finish": "資源加載完成.。",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "無效的聖遺物ID。",
         "avatarId": "無效的角色ID。",
         "avatarLevel": "無效的角色等級。",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "無效的實體ID。",
         "itemId": "無效的物品ID。",
         "itemLevel": "無效的物品等級。",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "你已經在祕境中了。",
       "description": "進入指定祕境。"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "用法： give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "你不可以取得這個聖遺物，因為該聖遺物ID在黑名單列表內。",
@@ -230,7 +238,32 @@
       "finished": "已完成任務 %s",
       "not_found": "未找到任務",
       "invalid_id": "無效的任務ID",
-      "description": "添加或完成任務"
+      "description": "添加或完成任務",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "🇺🇸Plays a cutscene"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "正在重新加載設定檔。",
@@ -343,6 +376,17 @@
       "success": "傳送 %s 到座標 %s,%s,%s ，場景為 %s 。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
+    "trialAvatarActivity": {
+      "description": "操縱試用角色活動的功能。這包括切換地牢和獎勵的狀態。",
+      "not_found": "未找到試用角色活動玩家數據。也許該活動未被啟用。",
+      "invalid_param": "無效的參數。",
+      "schedule_not_found": "未找到計劃 %s。",
+      "success_schedule": "已將計劃 ID 更改為 %s。",
+      "success_dungeon": "已切換角色 %s 的地牢狀態。",
+      "success_dungeon_all": "已切換所有角色的地牢狀態。",
+      "success_reward": "已切換角色 %s 的獎勵狀態。",
+      "success_reward_all": "已切換所有角色的獎勵狀態。"
+    },
     "weather": {
       "success": "已設定天氣ID 為 %s，氣候型別為 %s。",
       "status": "當前天氣ID 為 %s，氣候型別為 %s。",
@@ -362,6 +406,9 @@
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
       "description": "撤銷停權指定玩家。"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -413,6 +460,10 @@
     "enabling_plugin": "🇺🇸Enabling plugin: %s",
     "enabling_failed": "🇺🇸Failed to enable plugin: %s",
     "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s"
+    "disabling_failed": "🇺🇸Failed to disable plugin: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

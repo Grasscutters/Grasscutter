@@ -7,7 +7,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify;
 
 import java.util.List;
-import java.util.Set;
 
 public class PacketServerCondMeetQuestListUpdateNotify extends BasePacket {
 

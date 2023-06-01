@@ -6,14 +6,13 @@ import emu.grasscutter.net.proto.AddQuestContentProgressRspOuterClass;
 
 public class PacketAddQuestContentProgressRsp extends BasePacket {
 
-	public PacketAddQuestContentProgressRsp(int contentType) {
-		super(PacketOpcodes.AddQuestContentProgressRsp);
+    public PacketAddQuestContentProgressRsp(int contentType) {
+        super(PacketOpcodes.AddQuestContentProgressRsp);
 
         var proto = AddQuestContentProgressRspOuterClass.AddQuestContentProgressRsp.newBuilder();
 
         proto.setContentType(contentType);
 
         this.setData(proto);
-
-	}
+    }
 }

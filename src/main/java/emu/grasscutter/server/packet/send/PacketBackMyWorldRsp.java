@@ -6,11 +6,11 @@ import emu.grasscutter.net.proto.BackMyWorldRspOuterClass;
 
 public class PacketBackMyWorldRsp extends BasePacket {
 
-	public PacketBackMyWorldRsp() {
-		super(PacketOpcodes.BackMyWorldRsp);
+    public PacketBackMyWorldRsp() {
+        super(PacketOpcodes.BackMyWorldRsp);
 
-		var proto = BackMyWorldRspOuterClass.BackMyWorldRsp.newBuilder();
+        var proto = BackMyWorldRspOuterClass.BackMyWorldRsp.newBuilder();
 
-		this.setData(proto.build());
-	}
+        this.setData(proto.build());
+    }
 }

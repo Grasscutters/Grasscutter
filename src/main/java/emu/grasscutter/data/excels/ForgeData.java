@@ -1,18 +1,20 @@
 package emu.grasscutter.data.excels;
 
-import java.util.List;
-
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.common.ItemParamData;
+import java.util.List;
 import lombok.Getter;
 
-@ResourceType(name = {"ForgeExcelConfigData.json"}, loadPriority = LoadPriority.HIGHEST)
+@ResourceType(
+        name = {"ForgeExcelConfigData.json"},
+        loadPriority = LoadPriority.HIGHEST)
 @Getter
 public class ForgeData extends GameResource {
     @Getter(onMethod_ = @Override)
     private int id;
+
     private int playerLevel;
     private int forgeType;
     private int showItemId;

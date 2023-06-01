@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
@@ -10,7 +11,6 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketHomeChangeModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
-import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.HomeChangeModuleReq)
 public class HandlerHomeChangeModuleReq extends PacketHandler {
@@ -29,9 +29,9 @@ public class HandlerHomeChangeModuleReq extends PacketHandler {
         Scene scene = session.getPlayer().getWorld().getSceneById(realmId);
         Position pos = scene.getScriptManager().getConfig().born_pos;
 
-        session.getPlayer().getWorld().transferPlayerToScene(
-                session.getPlayer(), realmId,
-                TeleportType.WAYPOINT, pos
-        );
+        session
+                .getPlayer()
+                .getWorld()
+                .transferPlayerToScene(session.getPlayer(), realmId, TeleportType.WAYPOINT, pos);
     }
 }

@@ -5,30 +5,23 @@ import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass;
-
 import java.util.Collection;
 import java.util.List;
 
 public class PacketGroupSuiteNotify extends BasePacket {
 
-	/**
-	 * Real control which npc suite is loaded
-     * EntityNPC is useless
-	 */
-	public PacketGroupSuiteNotify(List<SceneNpcBornEntry> npcBornEntries) {
-		super(PacketOpcodes.GroupSuiteNotify);
+    /** Real control which npc suite is loaded EntityNPC is useless */
+    public PacketGroupSuiteNotify(List<SceneNpcBornEntry> npcBornEntries) {
+        super(PacketOpcodes.GroupSuiteNotify);
 
-		var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
+        var proto = GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder();
 
         npcBornEntries.stream()
-            .filter(x -> x.getGroupId() > 0 && x.getSuiteIdList() != null)
-            .forEach(x -> x.getSuiteIdList().forEach(y ->
-                proto.putGroupMap(x.getGroupId(), y)
-            ));
+                .filter(x -> x.getGroupId() > 0 && x.getSuiteIdList() != null)
+                .forEach(x -> x.getSuiteIdList().forEach(y -> proto.putGroupMap(x.getGroupId(), y)));
 
-		this.setData(proto);
-
-	}
+        this.setData(proto);
+    }
 
     public PacketGroupSuiteNotify(int groupId, int suiteId) {
         super(PacketOpcodes.GroupSuiteNotify);

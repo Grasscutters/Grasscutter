@@ -4,21 +4,26 @@ import com.esotericsoftware.reflectasm.ConstructorAccess;
 import com.esotericsoftware.reflectasm.MethodAccess;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.scripts.ScriptUtils;
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.jetbrains.annotations.Nullable;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
 
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-
 public class LuaSerializer implements Serializer {
 
-    private final static Map<Class<?>, MethodAccess> methodAccessCache = new ConcurrentHashMap<>();
-    private final static Map<Class<?>, ConstructorAccess<?>> constructorCache = new ConcurrentHashMap<>();
-    private final static Map<Class<?>, Map<String, FieldMeta>> fieldMetaCache = new ConcurrentHashMap<>();
+    private static final Map<Class<?>, MethodAccess> methodAccessCache = new ConcurrentHashMap<>();
+    private static final Map<Class<?>, ConstructorAccess<?>> constructorCache =
+            new ConcurrentHashMap<>();
+    private static final Map<Class<?>, Map<String, FieldMeta>> fieldMetaCache =
+            new ConcurrentHashMap<>();
 
     @Override
     public <T> List<T> toList(Class<T> type, Object obj) {
@@ -27,7 +32,7 @@ public class LuaSerializer implements Serializer {
 
     @Override
     public <T> T toObject(Class<T> type, Object obj) {
-        return serialize(type, (LuaTable) obj);
+        return serialize(type, null, (LuaTable) obj);
     }
 
     @Override
@@ -35,8 +40,8 @@ public class LuaSerializer implements Serializer {
         return serializeMap(type, (LuaTable) obj);
     }
 
-    private <T> Map<String,T> serializeMap(Class<T> type, LuaTable table) {
-        Map<String,T> map = new HashMap<>();
+    private <T> Map<String, T> serializeMap(Class<T> type, LuaTable table) {
+        Map<String, T> map = new HashMap<>();
 
         if (table == null) {
             return map;
@@ -51,7 +56,7 @@ public class LuaSerializer implements Serializer {
                     T object = null;
 
                     if (keyValue.istable()) {
-                        object = serialize(type, keyValue.checktable());
+                        object = serialize(type, null, keyValue.checktable());
                     } else if (keyValue.isint()) {
                         object = (T) (Integer) keyValue.toint();
                     } else if (keyValue.isnumber()) {
@@ -65,7 +70,7 @@ public class LuaSerializer implements Serializer {
                     }
 
                     if (object != null) {
-                        map.put(String.valueOf(k),object);
+                        map.put(String.valueOf(k), object);
                     }
                 } catch (Exception ex) {
 
@@ -94,7 +99,7 @@ public class LuaSerializer implements Serializer {
                     T object = null;
 
                     if (keyValue.istable()) {
-                        object = serialize(type, keyValue.checktable());
+                        object = serialize(type, null, keyValue.checktable());
                     } else if (keyValue.isint()) {
                         object = (T) (Integer) keyValue.toint();
                     } else if (keyValue.isnumber()) {
@@ -121,12 +126,24 @@ public class LuaSerializer implements Serializer {
         return list;
     }
 
-    public <T> T serialize(Class<T> type, LuaTable table) {
+    private Class<?> getListType(Class<?> type, @Nullable Field field) {
+        if (field == null) {
+            return type.getTypeParameters()[0].getClass();
+        }
+        Type fieldType = field.getGenericType();
+        if (fieldType instanceof ParameterizedType) {
+            return (Class<?>) ((ParameterizedType) fieldType).getActualTypeArguments()[0];
+        }
+
+        return null;
+    }
+
+    public <T> T serialize(Class<T> type, @Nullable Field field, LuaTable table) {
         T object = null;
 
         if (type == List.class) {
             try {
-                Class<T> listType = (Class<T>) type.getTypeParameters()[0].getClass();
+                Class<?> listType = getListType(type, field);
                 return (T) serializeList(listType, table);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -158,7 +175,10 @@ public class LuaSerializer implements Serializer {
                     LuaValue keyValue = table.get(k);
 
                     if (keyValue.istable()) {
-                        methodAccess.invoke(object, fieldMeta.index, serialize(fieldMeta.getType(), keyValue.checktable()));
+                        methodAccess.invoke(
+                                object,
+                                fieldMeta.index,
+                                serialize(fieldMeta.getType(), fieldMeta.getField(), keyValue.checktable()));
                     } else if (fieldMeta.getType().equals(float.class)) {
                         methodAccess.invoke(object, fieldMeta.index, keyValue.tofloat());
                     } else if (fieldMeta.getType().equals(int.class)) {
@@ -171,7 +191,7 @@ public class LuaSerializer implements Serializer {
                         methodAccess.invoke(object, fieldMeta.index, keyValue.tojstring());
                     }
                 } catch (Exception ex) {
-                    //ex.printStackTrace();
+                    // ex.printStackTrace();
                     continue;
                 }
             }
@@ -190,7 +210,8 @@ public class LuaSerializer implements Serializer {
         if (!constructorCache.containsKey(type)) {
             constructorCache.putIfAbsent(type, ConstructorAccess.get(type));
         }
-        var methodAccess = Optional.ofNullable(methodAccessCache.get(type)).orElse(MethodAccess.get(type));
+        var methodAccess =
+                Optional.ofNullable(methodAccessCache.get(type)).orElse(MethodAccess.get(type));
         methodAccessCache.putIfAbsent(type, methodAccess);
 
         var fieldMetaMap = new HashMap<String, FieldMeta>();
@@ -198,20 +219,26 @@ public class LuaSerializer implements Serializer {
 
         Arrays.stream(type.getDeclaredFields())
                 .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
-                .forEach(field -> {
-                    var setter = getSetterName(field.getName());
-                    var index = methodAccess.getIndex(setter);
-                    fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
-                });
+                .forEach(
+                        field -> {
+                            var setter = getSetterName(field.getName());
+                            var index = methodAccess.getIndex(setter);
+                            fieldMetaMap.put(
+                                    field.getName(),
+                                    new FieldMeta(field.getName(), setter, index, field.getType(), field));
+                        });
 
         Arrays.stream(type.getFields())
                 .filter(field -> !fieldMetaMap.containsKey(field.getName()))
                 .filter(field -> methodNameSet.contains(getSetterName(field.getName())))
-                .forEach(field -> {
-                    var setter = getSetterName(field.getName());
-                    var index = methodAccess.getIndex(setter);
-                    fieldMetaMap.put(field.getName(), new FieldMeta(field.getName(), setter, index, field.getType()));
-                });
+                .forEach(
+                        field -> {
+                            var setter = getSetterName(field.getName());
+                            var index = methodAccess.getIndex(setter);
+                            fieldMetaMap.put(
+                                    field.getName(),
+                                    new FieldMeta(field.getName(), setter, index, field.getType(), field));
+                        });
 
         fieldMetaCache.put(type, fieldMetaMap);
         return fieldMetaMap;
@@ -230,10 +257,11 @@ public class LuaSerializer implements Serializer {
     @Data
     @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    static class FieldMeta{
+    static class FieldMeta {
         String name;
         String setter;
         int index;
         Class<?> type;
+        @Nullable Field field;
     }
 }

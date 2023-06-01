@@ -1,17 +1,23 @@
 package emu.grasscutter.game.quest.conditions;
 
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER;
 
-@QuestValue(QuestTrigger.QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER)
-public class ConditionPlayerLevelEqualGreater extends QuestBaseHandler {
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.QuestValueCond;
+import lombok.val;
 
-	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-		return quest.getOwner().getLevel() >= params[0];
-	}
+@QuestValueCond(QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER)
+public class ConditionPlayerLevelEqualGreater extends BaseCondition {
 
+    @Override
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
+        val minLevel = condition.getParam()[0];
+        return owner.getLevel() >= minLevel;
+    }
 }

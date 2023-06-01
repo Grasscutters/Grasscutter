@@ -6,15 +6,16 @@ import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriend
 import emu.grasscutter.net.proto.DealAddFriendRspOuterClass.DealAddFriendRsp;
 
 public class PacketDealAddFriendRsp extends BasePacket {
-	
-	public PacketDealAddFriendRsp(int targetUid, DealAddFriendResultType result) {
-		super(PacketOpcodes.DealAddFriendRsp);
 
-		DealAddFriendRsp proto = DealAddFriendRsp.newBuilder()
-				.setTargetUid(targetUid)
-				.setDealAddFriendResult(result)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketDealAddFriendRsp(int targetUid, DealAddFriendResultType result) {
+        super(PacketOpcodes.DealAddFriendRsp);
+
+        DealAddFriendRsp proto =
+                DealAddFriendRsp.newBuilder()
+                        .setTargetUid(targetUid)
+                        .setDealAddFriendResult(result)
+                        .build();
+
+        this.setData(proto);
+    }
 }

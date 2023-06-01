@@ -1,22 +1,19 @@
 package emu.grasscutter.plugin;
 
+import ch.qos.logback.classic.Level;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.plugin.api.ServerHook;
+import emu.grasscutter.plugin.api.ServerHelper;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.utils.FileUtils;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URLClassLoader;
+import lombok.EqualsAndHashCode;
+import org.slf4j.*;
 
-/**
- * The base class for all plugins to extend.
- */
+/** The base class for all plugins to extend. */
+@EqualsAndHashCode
 public abstract class Plugin {
-    private final ServerHook server = ServerHook.getInstance();
+    private final ServerHelper server = ServerHelper.getInstance();
 
     private PluginIdentifier identifier;
     private URLClassLoader classLoader;
@@ -26,9 +23,11 @@ public abstract class Plugin {
     /**
      * This method is reflected into.
      *
-     * Set plugin variables.
+     * <p>Set plugin variables.
+     *
      * @param identifier The plugin's identifier.
      */
+    @SuppressWarnings("unused")
     private void initializePlugin(PluginIdentifier identifier, URLClassLoader classLoader) {
         if (this.identifier != null) {
             Grasscutter.getLogger().warn(this.identifier.name + " had a reinitialization attempt.");
@@ -40,43 +39,43 @@ public abstract class Plugin {
         this.dataFolder = FileUtils.getPluginPath(identifier.name).toFile();
         this.logger = LoggerFactory.getLogger(identifier.name);
 
+        // Check if the logger should be set in debug mode.
+        if (Grasscutter.getLogger().isDebugEnabled())
+            ((ch.qos.logback.classic.Logger) logger).setLevel(Level.DEBUG);
+
         if (!this.dataFolder.exists() && !this.dataFolder.mkdirs()) {
-            Grasscutter.getLogger().warn("Failed to create plugin data folder for " + this.identifier.name);
-            return;
+            Grasscutter.getLogger()
+                    .warn("Failed to create plugin data folder for " + this.identifier.name);
         }
     }
 
     /**
      * The plugin's identifier instance.
+     *
      * @return An instance of {@link PluginIdentifier}.
      */
     public final PluginIdentifier getIdentifier() {
         return this.identifier;
     }
 
-    /**
-     * Get the plugin's name.
-     */
+    /** Get the plugin's name. */
     public final String getName() {
         return this.identifier.name;
     }
 
-    /**
-     * Get the plugin's description.
-     */
+    /** Get the plugin's description. */
     public final String getDescription() {
         return this.identifier.description;
     }
 
-    /**
-     * Get the plugin's version.
-     */
+    /** Get the plugin's version. */
     public final String getVersion() {
         return this.identifier.version;
     }
 
     /**
      * Returns the server that initialized the plugin.
+     *
      * @return A server instance.
      */
     public final GameServer getServer() {
@@ -85,6 +84,7 @@ public abstract class Plugin {
 
     /**
      * Returns an input stream for a resource in the JAR file.
+     *
      * @param resourceName The name of the resource.
      * @return An input stream.
      */
@@ -94,6 +94,7 @@ public abstract class Plugin {
 
     /**
      * Returns a directory where plugins can store data files.
+     *
      * @return A directory on the file system.
      */
     public final File getDataFolder() {
@@ -102,14 +103,16 @@ public abstract class Plugin {
 
     /**
      * Returns the server hook.
+     *
      * @return A server hook singleton.
      */
-    public final ServerHook getHandle() {
+    public final ServerHelper getHandle() {
         return this.server;
     }
 
     /**
      * Returns the plugin's logger.
+     *
      * @return A SLF4J logger.
      */
     public final Logger getLogger() {
@@ -117,9 +120,11 @@ public abstract class Plugin {
     }
 
     /* Called when the plugin is first loaded. */
-    public void onLoad() { }
+    public void onLoad() {}
+
     /* Called after (most of) the server enables. */
-    public void onEnable() { }
+    public void onEnable() {}
+
     /* Called before the server disables. */
-    public void onDisable() { }
+    public void onDisable() {}
 }

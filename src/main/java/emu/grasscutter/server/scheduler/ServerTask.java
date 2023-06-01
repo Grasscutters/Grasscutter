@@ -1,11 +1,9 @@
 package emu.grasscutter.server.scheduler;
 
 import emu.grasscutter.Grasscutter;
-import lombok.*;
+import lombok.Getter;
 
-/**
- * This class works the same as a runnable, except with more information.
- */
+/** This class works the same as a runnable, except with more information. */
 public final class ServerTask implements Runnable {
     /* The runnable to run. */
     private final Runnable runnable;
@@ -14,6 +12,10 @@ public final class ServerTask implements Runnable {
     /* The period at which the task should be run. */
     /* The delay between the first execute. */
     private final int period, delay;
+    /* The amount of times the task has been run. */
+    @Getter private int ticks = 0;
+    /* Should the check consider delay? */
+    private boolean considerDelay = true;
 
     public ServerTask(Runnable runnable, int taskId, int period, int delay) {
         this.runnable = runnable;
@@ -22,46 +24,47 @@ public final class ServerTask implements Runnable {
         this.delay = delay;
     }
 
-    /* The amount of times the task has been run. */
-    @Getter private int ticks = 0;
-    /* Should the check consider delay? */
-    private boolean considerDelay = true;
-
-    /**
-     * Cancels the task from running the next time.
-     */
+    /** Cancels the task from running the next time. */
     public void cancel() {
         Grasscutter.getGameServer().getScheduler().cancelTask(this.taskId);
     }
 
     /**
      * Checks if the task should run at the current tick.
+     *
      * @return True if the task should run, false otherwise.
      */
     public boolean shouldRun() {
-        if(this.delay != -1 && this.considerDelay) {
-            this.considerDelay = false;
-            return this.ticks == this.delay;
-        } else if(this.period != -1)
-            return this.ticks % this.period == 0;
+        // Increase tick count.
+        var ticks = this.ticks++;
+        if (this.delay != -1 && this.considerDelay) {
+            // Check if the task should run.
+            var shouldRun = ticks >= this.delay;
+            // Check if the task should be canceled.
+            if (shouldRun) this.considerDelay = false;
+
+            return shouldRun; // Return the result.
+        } else if (this.period != -1) return ticks % this.period == 0;
         else return true;
     }
 
     /**
      * Checks if the task should be canceled.
+     *
      * @return True if the task should be canceled, false otherwise.
      */
     public boolean shouldCancel() {
-        return this.period == -1;
+        return this.period == -1 && ticks >= delay;
     }
 
-    /**
-     * Runs the task.
-     */
-    @Override public void run() {
+    /** Runs the task. */
+    @Override
+    public void run() {
         // Run the runnable.
-        this.runnable.run();
-        // Increase tick count.
-        this.ticks++;
+        try {
+            this.runnable.run();
+        } catch (Exception ex) {
+            Grasscutter.getLogger().error("Exception during task: ", ex);
+        }
     }
 }

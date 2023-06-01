@@ -3,14 +3,13 @@ package emu.grasscutter.game.managers.mapmark;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq;
 import emu.grasscutter.net.proto.MarkMapReqOuterClass.MarkMapReq.Operation;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
 import emu.grasscutter.server.packet.send.PacketMarkMapRsp;
 import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
-import emu.grasscutter.utils.Position;
-
 import java.util.Map;
 
 public class MapMarksManager extends BasePlayerManager {
@@ -30,7 +29,8 @@ public class MapMarksManager extends BasePlayerManager {
             case OPERATION_ADD -> {
                 MapMark createMark = new MapMark(req.getMark());
                 // keep teleporting functionality on fishhook mark.
-                if (Configuration.GAME_OPTIONS.fishhookTeleport && createMark.getMapMarkPointType() == MapMarkPointType.MAP_MARK_POINT_TYPE_FISH_POOL) {
+                if (Configuration.GAME_OPTIONS.fishhookTeleport
+                        && createMark.getMapMarkPointType() == MapMarkPointType.MAP_MARK_POINT_TYPE_FISH_POOL) {
                     this.teleport(player, createMark);
                     return;
                 }
@@ -54,7 +54,7 @@ public class MapMarksManager extends BasePlayerManager {
     }
 
     public String getMapMarkKey(Position position) {
-        return "x" + (int)position.getX()+ "z" + (int)position.getZ();
+        return "x" + (int) position.getX() + "z" + (int) position.getZ();
     }
 
     public void removeMapMark(Position position) {
@@ -76,7 +76,13 @@ public class MapMarksManager extends BasePlayerManager {
         }
 
         Position pos = mapMark.getPosition();
-        player.getWorld().transferPlayerToScene(player, mapMark.getSceneId(), TeleportType.MAP, new Position(pos.getX(), y, pos.getZ()));
+        player
+                .getWorld()
+                .transferPlayerToScene(
+                        player,
+                        mapMark.getSceneId(),
+                        TeleportType.MAP,
+                        new Position(pos.getX(), y, pos.getZ()));
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
 }

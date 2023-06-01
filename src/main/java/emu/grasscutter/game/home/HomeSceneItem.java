@@ -4,23 +4,21 @@ import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import emu.grasscutter.utils.Position;
+import java.util.Map;
+import java.util.stream.Collectors;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
-
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Entity
 @Data
 @Builder(builderMethodName = "of")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HomeSceneItem {
-    @Id
-    int sceneId;
+    @Id int sceneId;
     Map<Integer, HomeBlockItem> blockItems;
     Position bornPos;
     Position bornRot;
@@ -28,17 +26,21 @@ public class HomeSceneItem {
     int homeBgmId;
     HomeFurnitureItem mainHouse;
     int tmpVersion;
+
     public static HomeSceneItem parseFrom(HomeworldDefaultSaveData defaultItem, int sceneId) {
         return HomeSceneItem.of()
                 .sceneId(sceneId)
-                .blockItems(defaultItem.getHomeBlockLists().stream()
-                        .map(HomeBlockItem::parseFrom)
-                        .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
+                .blockItems(
+                        defaultItem.getHomeBlockLists().stream()
+                                .map(HomeBlockItem::parseFrom)
+                                .collect(Collectors.toMap(HomeBlockItem::getBlockId, y -> y)))
                 .bornPos(defaultItem.getBornPos())
                 .bornRot(defaultItem.getBornRot() == null ? new Position() : defaultItem.getBornRot())
                 .djinnPos(defaultItem.getDjinPos() == null ? new Position() : defaultItem.getDjinPos())
-                .mainHouse(defaultItem.getMainhouse() == null ? null :
-                        HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
+                .mainHouse(
+                        defaultItem.getMainhouse() == null
+                                ? null
+                                : HomeFurnitureItem.parseFrom(defaultItem.getMainhouse()))
                 .build();
     }
 
@@ -69,16 +71,15 @@ public class HomeSceneItem {
     }
 
     public int calComfort() {
-        return this.blockItems.values().stream()
-                .mapToInt(HomeBlockItem::calComfort)
-                .sum();
+        return this.blockItems.values().stream().mapToInt(HomeBlockItem::calComfort).sum();
     }
 
     public HomeSceneArrangementInfo toProto() {
         var proto = HomeSceneArrangementInfo.newBuilder();
         blockItems.values().forEach(b -> proto.addBlockArrangementInfoList(b.toProto()));
 
-        proto.setComfortValue(calComfort())
+        proto
+                .setComfortValue(calComfort())
                 .setBornPos(bornPos.toProto())
                 .setBornRot(bornRot.toProto())
                 .setDjinnPos(djinnPos.toProto())
@@ -92,5 +93,4 @@ public class HomeSceneItem {
         }
         return proto.build();
     }
-
 }

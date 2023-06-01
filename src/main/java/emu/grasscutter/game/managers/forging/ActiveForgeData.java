@@ -26,10 +26,9 @@ public class ActiveForgeData {
     }
 
     public int getNextFinishTimestamp(int currentTime) {
-        return
-            (currentTime >= this.getTotalFinishTimestamp())
-            ? this.getTotalFinishTimestamp()
-            : (this.getFinishedCount(currentTime) * this.forgeTime + this.forgeTime + this.startTime);
+        return (currentTime >= this.getTotalFinishTimestamp())
+                ? this.getTotalFinishTimestamp()
+                : (this.getFinishedCount(currentTime) * this.forgeTime + this.forgeTime + this.startTime);
     }
 
     public int getTotalFinishTimestamp() {
@@ -39,6 +38,7 @@ public class ActiveForgeData {
     public int getForgeId() {
         return this.forgeId;
     }
+
     public void setForgeId(int value) {
         this.forgeId = value;
     }
@@ -46,6 +46,7 @@ public class ActiveForgeData {
     public int getAvatarId() {
         return this.avatarId;
     }
+
     public void setAvatarId(int value) {
         this.avatarId = value;
     }
@@ -53,6 +54,7 @@ public class ActiveForgeData {
     public int getCount() {
         return count;
     }
+
     public void setCount(int value) {
         this.count = value;
     }
@@ -60,6 +62,7 @@ public class ActiveForgeData {
     public int getStartTime() {
         return this.startTime;
     }
+
     public void setStartTime(int value) {
         this.startTime = value;
     }
@@ -67,6 +70,7 @@ public class ActiveForgeData {
     public int getForgeTime() {
         return this.forgeTime;
     }
+
     public void setForgeTime(int value) {
         this.forgeTime = value;
     }
@@ -74,6 +78,7 @@ public class ActiveForgeData {
     public boolean isChanged() {
         return this.changed;
     }
+
     public void setChanged(boolean value) {
         this.changed = value;
     }

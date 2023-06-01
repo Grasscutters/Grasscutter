@@ -19,15 +19,15 @@ public final class CheckUgcStateRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 6350
-   * Name: AHIDOJBDLOF
+   * CmdId: 6335
+   * Obf: CCLNOBMBJNK
    * </pre>
    *
    * Protobuf type {@code CheckUgcStateRsp}
@@ -74,7 +74,7 @@ public final class CheckUgcStateRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 32: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class CheckUgcStateRspOuterClass {
               emu.grasscutter.net.proto.CheckUgcStateRspOuterClass.CheckUgcStateRsp.class, emu.grasscutter.net.proto.CheckUgcStateRspOuterClass.CheckUgcStateRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class CheckUgcStateRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(4, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class CheckUgcStateRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(4, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class CheckUgcStateRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6350
-     * Name: AHIDOJBDLOF
+     * CmdId: 6335
+     * Obf: CCLNOBMBJNK
      * </pre>
      *
      * Protobuf type {@code CheckUgcStateRsp}
@@ -431,7 +431,7 @@ public final class CheckUgcStateRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class CheckUgcStateRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class CheckUgcStateRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,8 +527,8 @@ public final class CheckUgcStateRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026CheckUgcStateRsp.proto\"#\n\020CheckUgcStat" +
-      "eRsp\022\017\n\007retcode\030\002 \001(\005B!\n\031emu.grasscutter" +
-      ".net.protoZ\004/genb\006proto3"
+      "eRsp\022\017\n\007retcode\030\004 \001(\005B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

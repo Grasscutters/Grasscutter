@@ -1,22 +1,22 @@
 package emu.grasscutter.game.avatar;
 
-import java.util.Iterator;
-import java.util.List;
-
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.packet.send.PacketAvatarChangeCostumeNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFlycloakChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
+import java.util.Iterator;
+import java.util.List;
 
 public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar> {
     private final Int2ObjectMap<Avatar> avatars;
@@ -116,7 +116,9 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
         // Update entity
         EntityAvatar entity = avatar.getAsEntity();
         if (entity == null) {
-            entity = new EntityAvatar(avatar);
+            entity =
+                    EntityCreationEvent.call(
+                            EntityAvatar.class, new Class<?>[] {Avatar.class}, new Object[] {avatar});
             getPlayer().sendPacket(new PacketAvatarChangeCostumeNotify(entity));
         } else {
             getPlayer().getScene().broadcastPacket(new PacketAvatarChangeCostumeNotify(entity));
@@ -127,6 +129,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
     }
 
     public void loadFromDatabase() {
+        if (this.isLoaded()) return;
+
         List<Avatar> avatars = DatabaseHelper.getAvatars(getPlayer());
 
         for (Avatar avatar : avatars) {
@@ -136,7 +140,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             }
 
             AvatarData avatarData = GameData.getAvatarDataMap().get(avatar.getAvatarId());
-            AvatarSkillDepotData skillDepot = GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
+            AvatarSkillDepotData skillDepot =
+                    GameData.getAvatarSkillDepotDataMap().get(avatar.getSkillDepotId());
             if (avatarData == null || skillDepot == null) {
                 continue;
             }
@@ -153,6 +158,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             this.avatars.put(avatar.getAvatarId(), avatar);
             this.avatarsGuid.put(avatar.getGuid(), avatar);
         }
+
+        this.setLoaded(true);
     }
 
     public void postLoad() {

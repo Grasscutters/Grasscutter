@@ -5,19 +5,18 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.World;
-import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.Position;
-
+import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import java.util.List;
 
 @Command(
-    label = "setConst",
-    aliases = {"setconstellation"},
-    usage = {"<constellation level> [all]"},
-    permission = "player.setconstellation",
-    permissionTargeted = "player.setconstellation.others")
+        label = "setConst",
+        aliases = {"setconstellation"},
+        usage = {"<constellation level> [all]"},
+        permission = "player.setconstellation",
+        permissionTargeted = "player.setconstellation.others")
 public final class SetConstCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -38,15 +37,16 @@ public final class SetConstCommand implements CommandHandler {
                 if (entity == null) return;
                 Avatar avatar = entity.getAvatar();
                 this.setConstellation(targetPlayer, avatar, constLevel);
-                CommandHandler.sendTranslatedMessage(sender, "commands.setConst.success", avatar.getAvatarData().getName(), constLevel);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.setConst.success", avatar.getAvatarData().getName(), constLevel);
                 return;
             }
-            // Check if there's an additional argument which is "all", if it does then go setAllConstellation
+            // Check if there's an additional argument which is "all", if it does then go
+            // setAllConstellation
             if (args.size() > 1 && args.get(1).equalsIgnoreCase("all")) {
                 this.setAllConstellation(targetPlayer, constLevel);
                 CommandHandler.sendTranslatedMessage(sender, "commands.setConst.successall", constLevel);
-            }
-            else sendUsageMessage(sender);
+            } else sendUsageMessage(sender);
         } catch (NumberFormatException ignored) {
             CommandHandler.sendTranslatedMessage(sender, "commands.setConst.level_error");
         }
@@ -68,12 +68,15 @@ public final class SetConstCommand implements CommandHandler {
     }
 
     private void setAllConstellation(Player player, int constLevel) {
-        player.getAvatars().forEach(avatar -> {
-                avatar.forceConstellationLevel(constLevel);
-                avatar.recalcConstellations();
-                avatar.recalcStats(true);
-                avatar.save();
-        });
+        player
+                .getAvatars()
+                .forEach(
+                        avatar -> {
+                            avatar.forceConstellationLevel(constLevel);
+                            avatar.recalcConstellations();
+                            avatar.recalcStats(true);
+                            avatar.save();
+                        });
         // Just reload scene once, shorter than having to check for each constLevel < currentConstLevel
         this.reloadScene(player);
     }

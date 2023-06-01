@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.Nulls;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.MapType;
 import emu.grasscutter.Grasscutter;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-
 import java.io.IOException;
 import java.util.*;
+import org.luaj.vm2.LuaTable;
+import org.luaj.vm2.LuaValue;
 
 public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implements Serializer {
 
@@ -21,19 +21,24 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
 
     public LuaTableJacksonSerializer() {
         if (objectMapper == null) {
-            objectMapper = new ObjectMapper();
-            objectMapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true);
-            // Some properties in Lua table but not in java field
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            objectMapper.configOverride(List.class).setSetterInfo(JsonSetter.Value.forContentNulls(Nulls.AS_EMPTY));
-            SimpleModule luaSerializeModule = new SimpleModule();
+            objectMapper =
+                    JsonMapper.builder()
+                            .configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true)
+                            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                            .build();
+            objectMapper
+                    .configOverride(List.class)
+                    .setSetterInfo(JsonSetter.Value.forContentNulls(Nulls.AS_EMPTY));
+
+            var luaSerializeModule = new SimpleModule();
             luaSerializeModule.addSerializer(LuaTable.class, this);
             objectMapper.registerModule(luaSerializeModule);
         }
     }
 
     @Override
-    public void serialize(LuaTable value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+    public void serialize(LuaTable value, JsonGenerator gen, SerializerProvider serializers)
+            throws IOException {
         if (value == null || value.isnil()) {
             gen.writeNull();
             return;
@@ -117,9 +122,12 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
             return list;
         }
 
-        CollectionType collectionType = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, type);
+        CollectionType collectionType =
+                objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, type);
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToList] className={},data={}", type.getCanonicalName(), jsonNode.toString());
+        Grasscutter.getLogger()
+                .trace(
+                        "[LuaTableToList] className={},data={}", type.getCanonicalName(), jsonNode.toString());
         if (jsonNode.isEmpty()) {
             return list;
         }
@@ -151,7 +159,11 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
         }
 
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToObject] className={},data={}", type.getCanonicalName(), jsonNode.toString());
+        Grasscutter.getLogger()
+                .trace(
+                        "[LuaTableToObject] className={},data={}",
+                        type.getCanonicalName(),
+                        jsonNode.toString());
         try {
             return objectMapper.treeToValue(jsonNode, type);
         } catch (JsonProcessingException e) {
@@ -167,9 +179,12 @@ public class LuaTableJacksonSerializer extends JsonSerializer<LuaTable> implemen
             return map;
         }
 
-        MapType mapStringType = objectMapper.getTypeFactory().constructMapType(HashMap.class, String.class, type);
+        MapType mapStringType =
+                objectMapper.getTypeFactory().constructMapType(HashMap.class, String.class, type);
         JsonNode jsonNode = objectMapper.valueToTree(luaTable);
-        Grasscutter.getLogger().trace("[LuaTableToMap] className={},data={}", type.getCanonicalName(), jsonNode.toString());
+        Grasscutter.getLogger()
+                .trace(
+                        "[LuaTableToMap] className={},data={}", type.getCanonicalName(), jsonNode.toString());
         try {
             Object o = objectMapper.treeToValue(jsonNode, mapStringType);
             if (o != null) {

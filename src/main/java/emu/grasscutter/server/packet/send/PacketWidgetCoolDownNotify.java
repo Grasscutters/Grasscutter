@@ -10,15 +10,15 @@ public class PacketWidgetCoolDownNotify extends BasePacket {
     public PacketWidgetCoolDownNotify(int id, long coolDownTime, boolean isSuccess) {
         super(PacketOpcodes.WidgetCoolDownNotify);
 
-        WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify proto = WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.newBuilder()
-                .addGroupCoolDownDataList(
-                        WidgetCoolDownDataOuterClass.WidgetCoolDownData.newBuilder()
-                                .setId(id)
-                                .setCoolDownTime(coolDownTime)
-                                .setIsSuccess(isSuccess)
-                                .build()
-                )
-                .build();
+        WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify proto =
+                WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.newBuilder()
+                        .addGroupCoolDownDataList(
+                                WidgetCoolDownDataOuterClass.WidgetCoolDownData.newBuilder()
+                                        .setId(id)
+                                        .setCoolDownTime(coolDownTime)
+                                        .setIsSuccess(isSuccess)
+                                        .build())
+                        .build();
 
         this.setData(proto);
     }

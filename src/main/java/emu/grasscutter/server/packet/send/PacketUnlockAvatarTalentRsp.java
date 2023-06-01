@@ -6,15 +6,16 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp;
 
 public class PacketUnlockAvatarTalentRsp extends BasePacket {
-	
-	public PacketUnlockAvatarTalentRsp(Avatar avatar, int talentId) {
-		super(PacketOpcodes.UnlockAvatarTalentRsp);
 
-		UnlockAvatarTalentRsp proto = UnlockAvatarTalentRsp.newBuilder()
-				.setAvatarGuid(avatar.getGuid())
-				.setTalentId(talentId)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketUnlockAvatarTalentRsp(Avatar avatar, int talentId) {
+        super(PacketOpcodes.UnlockAvatarTalentRsp);
+
+        UnlockAvatarTalentRsp proto =
+                UnlockAvatarTalentRsp.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setTalentId(talentId)
+                        .build();
+
+        this.setData(proto);
+    }
 }

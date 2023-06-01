@@ -1,0 +1,31 @@
+.AvatarsPage {
+    display: flex;
+    width: calc(100% - 352px);
+
+    background-color: var(--background-color);
+    flex-direction: column;
+
+    padding: 24px;
+
+    overflow-y: scroll;
+}
+
+.AvatarsPage_Title {
+    max-width: 275px;
+    max-height: 60px;
+
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.AvatarsPage_List {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    max-width: 90%;
+}

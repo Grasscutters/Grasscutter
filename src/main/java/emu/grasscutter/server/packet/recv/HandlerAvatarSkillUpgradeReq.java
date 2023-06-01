@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarSkillUpgradeReqOuterClass.AvatarSkillUpgradeReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.AvatarSkillUpgradeReq)

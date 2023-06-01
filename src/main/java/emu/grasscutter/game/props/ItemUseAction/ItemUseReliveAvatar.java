@@ -3,12 +3,11 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseReliveAvatar extends ItemUseAction {
+    public ItemUseReliveAvatar(String[] useParam) {}
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_RELIVE_AVATAR;
-    }
-
-    public ItemUseReliveAvatar(String[] useParam) {
     }
 
     @Override

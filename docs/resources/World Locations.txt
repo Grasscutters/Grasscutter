@@ -1,0 +1,17 @@
+Excels:
+- WorldAreaConfigData.json
+- scene3_point.json (BinOutput/Scene/Trans)
+
+textmaps contain the names of the areas
+
+if a world area has an 'AreaType' of 'LEVEL_1', it has the following properties:
+- there is not an 'AreaID2' field
+- there is an 'elementType' field
+- this is a PRIMARY region
+
+if a world area has an 'AreaType' of 'LEVEL_2', it has the following properties:
+- there is not an 'elementType' field
+- the 'AreaID1' field is inherited from its parent area
+- this is a SECONDARY region
+
+the textmap hash is of the secondary region's name, unless it's a primary region

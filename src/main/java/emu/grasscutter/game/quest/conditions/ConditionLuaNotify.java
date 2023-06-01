@@ -1,17 +1,24 @@
 package emu.grasscutter.game.quest.conditions;
 
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_LUA_NOTIFY;
 
-@QuestValue(QuestTrigger.QUEST_COND_LUA_NOTIFY)
-public class ConditionLuaNotify extends QuestBaseHandler {
-    //Wrong implementation. Example: 7010226 has no paramStr
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.QuestValueCond;
+import lombok.val;
+
+@QuestValueCond(QUEST_COND_LUA_NOTIFY)
+public class ConditionLuaNotify extends BaseCondition {
+
     @Override
-    public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-        return condition.getParam()[0] == Integer.parseInt(paramStr);
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
+        val triggerId = Integer.parseInt(paramStr);
+        val targetTrigger = condition.getParam()[0];
+        return targetTrigger == triggerId;
     }
-
 }

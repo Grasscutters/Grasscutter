@@ -20,11 +20,11 @@ public final class SendPacketEvent extends ServerEvent implements Cancellable {
         return this.gameSession;
     }
 
-    public void setPacket(BasePacket packet) {
-        this.packet = packet;
-    }
-
     public BasePacket getPacket() {
         return this.packet;
+    }
+
+    public void setPacket(BasePacket packet) {
+        this.packet = packet;
     }
 }

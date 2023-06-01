@@ -1,19 +1,17 @@
 package emu.grasscutter.command.commands;
 
-import java.util.List;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameSession;
+import java.util.List;
 
 @Command(
-    label = "ban",
-    usage = {"[<time> [<reason>]]"},
-    permission = "server.ban",
-    targetRequirement = Command.TargetRequirement.PLAYER
-)
+        label = "ban",
+        usage = {"[<time> [<reason>]]"},
+        permission = "server.ban",
+        targetRequirement = Command.TargetRequirement.PLAYER)
 public final class BanCommand implements CommandHandler {
 
     private boolean banAccount(Player targetPlayer, int time, String reason) {
@@ -43,14 +41,14 @@ public final class BanCommand implements CommandHandler {
 
         switch (args.size()) {
             case 2:
-                reason = args.get(1);  // Fall-through
+                reason = args.get(1); // Fall-through
             case 1:
                 try {
                     time = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
                     CommandHandler.sendTranslatedMessage(sender, "commands.ban.invalid_time");
                     return;
-                }  // Fall-through, unimportant
+                } // Fall-through, unimportant
             default:
                 break;
         }

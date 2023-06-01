@@ -13,7 +13,6 @@ import emu.grasscutter.net.proto.BuyGoodsReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketBuyGoodsRsp;
 import emu.grasscutter.utils.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -24,18 +23,19 @@ public class HandlerBuyGoodsReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        BuyGoodsReqOuterClass.BuyGoodsReq buyGoodsReq = BuyGoodsReqOuterClass.BuyGoodsReq.parseFrom(payload);
-        List<ShopInfo> configShop = session.getServer().getShopSystem().getShopData().get(buyGoodsReq.getShopType());
-        if (configShop == null)
-            return;
+        BuyGoodsReqOuterClass.BuyGoodsReq buyGoodsReq =
+                BuyGoodsReqOuterClass.BuyGoodsReq.parseFrom(payload);
+        List<ShopInfo> configShop =
+                session.getServer().getShopSystem().getShopData().get(buyGoodsReq.getShopType());
+        if (configShop == null) return;
 
         // Don't trust your users' input
         var player = session.getPlayer();
         List<Integer> targetShopGoodsId = List.of(buyGoodsReq.getGoods().getGoodsId());
         for (int goodsId : targetShopGoodsId) {
-            Optional<ShopInfo> sg2 = configShop.stream().filter(x -> x.getGoodsId() == goodsId).findFirst();
-            if (sg2.isEmpty())
-                continue;
+            Optional<ShopInfo> sg2 =
+                    configShop.stream().filter(x -> x.getGoodsId() == goodsId).findFirst();
+            if (sg2.isEmpty()) continue;
             ShopInfo sg = sg2.get();
 
             int currentTs = Utils.getCurrentSeconds();
@@ -54,7 +54,8 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 return;
             }
 
-            List<ItemParamData> costs = new ArrayList<ItemParamData>(sg.getCostItemList());  // Can this even be null?
+            List<ItemParamData> costs =
+                    new ArrayList<ItemParamData>(sg.getCostItemList()); // Can this even be null?
             costs.add(new ItemParamData(202, sg.getScoin()));
             costs.add(new ItemParamData(201, sg.getHcoin()));
             costs.add(new ItemParamData(203, sg.getMcoin()));
@@ -62,10 +63,23 @@ public class HandlerBuyGoodsReq extends PacketHandler {
                 return;
             }
 
-            player.addShopLimit(sg.getGoodsId(), buyGoodsReq.getBuyCount(), ShopSystem.getShopNextRefreshTime(sg));
-            GameItem item = new GameItem(sg.getGoodsItem().getId(), buyGoodsReq.getBuyCount() * sg.getGoodsItem().getCount());
-            player.getInventory().addItem(item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop
-            session.send(new PacketBuyGoodsRsp(buyGoodsReq.getShopType(), player.getGoodsLimit(sg.getGoodsId()).getHasBoughtInPeriod(), Stream.of(buyGoodsReq.getGoods()).filter(x -> x.getGoodsId() == goodsId).findFirst().get()));
+            player.addShopLimit(
+                    sg.getGoodsId(), buyGoodsReq.getBuyCount(), ShopSystem.getShopNextRefreshTime(sg));
+            GameItem item =
+                    new GameItem(
+                            sg.getGoodsItem().getId(), buyGoodsReq.getBuyCount() * sg.getGoodsItem().getCount());
+            player
+                    .getInventory()
+                    .addItem(
+                            item, ActionReason.Shop, true); // fix: not notify when got virtual item from shop
+            session.send(
+                    new PacketBuyGoodsRsp(
+                            buyGoodsReq.getShopType(),
+                            player.getGoodsLimit(sg.getGoodsId()).getHasBoughtInPeriod(),
+                            Stream.of(buyGoodsReq.getGoods())
+                                    .filter(x -> x.getGoodsId() == goodsId)
+                                    .findFirst()
+                                    .get()));
         }
 
         player.save();

@@ -1,24 +1,23 @@
 package emu.grasscutter.game.battlepass;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.BattlePassMissionRefreshType;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class BattlePassSystem extends BaseGameSystem {
     private final Map<WatcherTriggerType, List<BattlePassMissionData>> cachedTriggers;
 
-    // BP Mission manager for the server, contains cached triggers so we dont have to load it for each player
+    // BP Mission manager for the server, contains cached triggers so we dont have to load it for each
+    // player
     public BattlePassSystem(GameServer server) {
         super(server);
 
@@ -26,7 +25,8 @@ public class BattlePassSystem extends BaseGameSystem {
 
         for (BattlePassMissionData missionData : GameData.getBattlePassMissionDataMap().values()) {
             if (missionData.isValidRefreshType()) {
-                List<BattlePassMissionData> triggerList = getTriggers().computeIfAbsent(missionData.getTriggerType(), e -> new ArrayList<>());
+                List<BattlePassMissionData> triggerList =
+                        getTriggers().computeIfAbsent(missionData.getTriggerType(), e -> new ArrayList<>());
                 triggerList.add(missionData);
             }
         }
@@ -44,7 +44,8 @@ public class BattlePassSystem extends BaseGameSystem {
         triggerMission(player, triggerType, 0, 1);
     }
 
-    public void triggerMission(Player player, WatcherTriggerType triggerType, int param, int progress) {
+    public void triggerMission(
+            Player player, WatcherTriggerType triggerType, int param, int progress) {
         List<BattlePassMissionData> triggerList = getTriggers().get(triggerType);
 
         if (triggerList == null || triggerList.isEmpty()) return;

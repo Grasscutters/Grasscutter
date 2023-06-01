@@ -38,8 +38,7 @@ public class AchievementControlReturns {
         ALREADY_ACHIEVED("commands.achievement.fail.already_achieved"),
         NOT_YET_ACHIEVED("commands.achievement.fail.not_yet_achieved");
 
-        @Getter
-        private final String key;
+        @Getter private final String key;
 
         Return(String key) {
             this.key = key;

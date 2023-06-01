@@ -1,18 +1,20 @@
 package emu.grasscutter.game.quest.conditions;
 
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_UNKNOWN;
 
-@QuestValue(QuestTrigger.QUEST_CONTENT_NONE)
-public class BaseCondition extends QuestBaseHandler {
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.QuestValueCond;
 
-	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+@QuestValueCond(QUEST_COND_UNKNOWN)
+public class BaseCondition {
 
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
+        return false;
+    }
 }

@@ -1,7 +1,7 @@
 <Configuration>
-  <variable name="LOG_LEVEL" value="${LOG_LEVEL:-INFO}" />
+  <variable name="LOG_LEVEL" value="${LOG_LEVEL:-INFO}"/>
 
-  <appender name="STDOUT" class="emu.grasscutter.utils.JlineLogbackAppender">
+  <appender name="STDOUT" class="emu.grasscutter.utils.objects.JLineLogbackAppender">
     <encoder>
       <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
     </encoder>
@@ -18,22 +18,22 @@
     </encoder>
   </appender>
 
-  <appender name="SERVEREVENT" class="emu.grasscutter.utils.ServerLogEventAppender">
+  <appender name="SERVEREVENT" class="emu.grasscutter.utils.objects.ServerLogEventAppender">
     <encoder>
       <pattern>%d{HH:mm:ss} &lt;%highlight(%level):%gray(%class{0})&gt; %msg%n</pattern>
     </encoder>
   </appender>
 
-  <logger name="io.javalin" level="OFF" />
-  <logger name="org.quartz" level="OFF" />
-  <logger name="org.reflections" level="OFF" />
-  <logger name="org.eclipse.jetty" level="OFF" />
+  <logger name="io.javalin" level="OFF"/>
+  <logger name="org.quartz" level="OFF"/>
+  <logger name="org.reflections" level="OFF"/>
+  <logger name="org.eclipse.jetty" level="OFF"/>
 
-  <logger name="emu.grasscutter" level="${LOG_LEVEL}" />
+  <logger name="emu.grasscutter" level="${LOG_LEVEL}"/>
 
   <root level="INFO">
-    <appender-ref ref="STDOUT" />
-    <appender-ref ref="FILE" />
-    <appender-ref ref="SERVEREVENT" />
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="FILE"/>
+    <appender-ref ref="SERVEREVENT"/>
   </root>
 </Configuration>

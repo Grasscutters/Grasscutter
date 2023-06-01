@@ -8,15 +8,17 @@ import emu.grasscutter.net.proto.EvtAvatarLockChairRspOuterClass.EvtAvatarLockCh
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 
 public class PacketEvtAvatarLockChairRsp extends BasePacket {
-    public PacketEvtAvatarLockChairRsp(int clientSequence, EntityAvatar entityAvatar, EvtAvatarLockChairReq lockChairReq) {
+    public PacketEvtAvatarLockChairRsp(
+            int clientSequence, EntityAvatar entityAvatar, EvtAvatarLockChairReq lockChairReq) {
         super(PacketOpcodes.EvtAvatarLockChairRsp);
 
-        EvtAvatarLockChairRsp p = EvtAvatarLockChairRsp.newBuilder()
-                .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
-                .setEntityId(entityAvatar.getId())
-                .setPosition(lockChairReq.getPosition())
-                .setChairId(lockChairReq.getChairId())
-                .build();
+        EvtAvatarLockChairRsp p =
+                EvtAvatarLockChairRsp.newBuilder()
+                        .setRetcode(RetcodeOuterClass.Retcode.RET_SUCC_VALUE)
+                        .setEntityId(entityAvatar.getId())
+                        .setPosition(lockChairReq.getPosition())
+                        .setChairId(lockChairReq.getChairId())
+                        .build();
 
         this.setData(p);
     }

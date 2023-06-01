@@ -1,9 +1,9 @@
 package emu.grasscutter.data.excels;
 
-import java.util.ArrayList;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.FightPropData;
+import java.util.ArrayList;
 
 @ResourceType(name = "EquipAffixExcelConfigData.json")
 public class EquipAffixData extends GameResource {

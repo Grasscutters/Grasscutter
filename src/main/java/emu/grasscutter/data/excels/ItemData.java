@@ -1,32 +1,36 @@
 package emu.grasscutter.data.excels;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
-
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
-import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.inventory.EquipType;
+import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseTarget;
-import emu.grasscutter.game.props.ItemUseAction.ItemUseAction;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 import lombok.Getter;
 
-@ResourceType(name = {"MaterialExcelConfigData.json",
-        "WeaponExcelConfigData.json",
-        "ReliquaryExcelConfigData.json",
-        "HomeWorldFurnitureExcelConfigData.json"
-})
+@ResourceType(
+        name = {
+            "MaterialExcelConfigData.json",
+            "WeaponExcelConfigData.json",
+            "ReliquaryExcelConfigData.json",
+            "HomeWorldFurnitureExcelConfigData.json"
+        })
 @Getter
 public class ItemData extends GameResource {
     // Main
     @Getter(onMethod_ = @Override)
     private int id;
+
     private int stackLimit = 1;
     private int maxUseCount;
     private int rankLevel;
@@ -34,6 +38,7 @@ public class ItemData extends GameResource {
     private int rank;
     private int weight;
     private int gadgetId;
+    private String icon;
 
     private int[] destroyReturnMaterial;
     private int[] destroyReturnMaterialCount;
@@ -82,7 +87,9 @@ public class ItemData extends GameResource {
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
 
-    @SerializedName(value="roomSceneId", alternate={"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
+    @SerializedName(
+            value = "roomSceneId",
+            alternate = {"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
     private int roomSceneId;
 
     // Custom
@@ -113,7 +120,10 @@ public class ItemData extends GameResource {
         }
 
         if (this.weaponProp != null) {
-            this.weaponProp = Arrays.stream(this.weaponProp).filter(prop -> prop.getPropType() != null).toArray(WeaponProperty[]::new);
+            this.weaponProp =
+                    Arrays.stream(this.weaponProp)
+                            .filter(prop -> prop.getPropType() != null)
+                            .toArray(WeaponProperty[]::new);
         }
 
         if (this.getFurnType() != null) {
@@ -127,14 +137,14 @@ public class ItemData extends GameResource {
         this.materialType = this.materialType == null ? MaterialType.MATERIAL_NONE : this.materialType;
 
         if (this.itemUse != null && !this.itemUse.isEmpty()) {
-            this.itemUseActions = this.itemUse.stream()
-                                    .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
-                                    .map(ItemUseAction::fromItemUseData)
-                                    .filter(Objects::nonNull)
-                                    .toList();
+            this.itemUseActions =
+                    this.itemUse.stream()
+                            .filter(x -> x.getUseOp() != ItemUseOp.ITEM_USE_NONE)
+                            .map(ItemUseAction::fromItemUseData)
+                            .filter(Objects::nonNull)
+                            .toList();
         }
     }
-
 
     @Getter
     public static class WeaponProperty {

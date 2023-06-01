@@ -1,9 +1,9 @@
 package emu.grasscutter.game.shop;
 
 /**
- * ShopTypes 0-1010 based on `ActivityShopOverallExcelConfigData.json`
- * ShopTypes for activities are partially guessed on the version, and partially tested
- * ShopTypes 1011-1070 are mostly based of `BinOutput/InterAction/Shop`
+ * ShopTypes 0-1010 based on `ActivityShopOverallExcelConfigData.json` ShopTypes for activities are
+ * partially guessed on the version, and partially tested ShopTypes 1011-1070 are mostly based of
+ * `BinOutput/InterAction/Shop`
  */
 public enum ShopType {
     SHOP_TYPE_NONE(0),
@@ -52,7 +52,7 @@ public enum ShopType {
     SHOP_TYPE_ACTIVITY_DRAGON_SPINE(1040),
     SHOP_TYPE_ACTIVITY_TREASURE_MAP(1041),
     SHOP_TYPE_NPC_Yinian(1042),
-    SHOP_TYPE_ACTIVITY_SEA_LAMP(1043), //event guess
+    SHOP_TYPE_ACTIVITY_SEA_LAMP(1043), // event guess
     SHOP_TYPE_ACTIVITY_FLEUR_FAIR(1044),
     SHOP_TYPE_NPC_Changshun(1045),
     SHOP_TYPE_NPC_Bolai(1046),
@@ -80,15 +80,15 @@ public enum ShopType {
     SHOP_TYPE_EXPIRED_WIDGET_MENGDE(1068),
     SHOP_TYPE_CAPTURE_ANIMAL_SHOP(1069),
     SHOP_TYPE_NPC_YamashiroKenta(1070),
-    SHOP_TYPE_ACTIVITY_CHANNELLER_SLAB(15001), //prob
+    SHOP_TYPE_ACTIVITY_CHANNELLER_SLAB(15001), // prob
     SHOP_TYPE_ACTIVITY_SUMMER_TIME(16001),
     SHOP_TYPE_ACTIVITY_BOUNCE_CONJURING(16002),
-    SHOP_TYPE_ACTIVITY_BLITZ_RUSH(20001),// guess
-    SHOP_TYPE_ACTIVITY_CHESS(20002),// guess
+    SHOP_TYPE_ACTIVITY_BLITZ_RUSH(20001), // guess
+    SHOP_TYPE_ACTIVITY_CHESS(20002), // guess
     SHOP_TYPE_ACTIVITY_WINTER_CAMP(20004),
-    SHOP_TYPE_ACTIVITY_LANTERN_RITE(20005),// guess
-    SHOP_TYPE_ACTIVITY_ROGUELIKE_DUNGEON(22001),// guess
-    SHOP_TYPE_ACTIVITY_ROGUE_DIARY(27001),// guess
+    SHOP_TYPE_ACTIVITY_LANTERN_RITE(20005), // guess
+    SHOP_TYPE_ACTIVITY_ROGUELIKE_DUNGEON(22001), // guess
+    SHOP_TYPE_ACTIVITY_ROGUE_DIARY(27001), // guess
     SHOP_TYPE_ACTIVITY_SUMMER_TIME_V2(28001), // guess
     SHOP_TYPE_ACTIVITY_GRAVEN_INNOCENCE(30001); // guess
 

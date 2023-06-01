@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
@@ -17,9 +17,10 @@ public class PacketPlayerStoreNotify extends BasePacket {
 
         this.buildHeader(2);
 
-        PlayerStoreNotify.Builder p = PlayerStoreNotify.newBuilder()
-                .setStoreType(StoreType.STORE_TYPE_PACK)
-                .setWeightLimit(GAME_OPTIONS.inventoryLimits.all);
+        PlayerStoreNotify.Builder p =
+                PlayerStoreNotify.newBuilder()
+                        .setStoreType(StoreType.STORE_TYPE_PACK)
+                        .setWeightLimit(GAME_OPTIONS.inventoryLimits.all);
 
         for (GameItem item : player.getInventory()) {
             Item itemProto = item.toProto();

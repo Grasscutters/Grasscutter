@@ -1,20 +1,28 @@
 package emu.grasscutter.game.quest.conditions;
 
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.excels.QuestData;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_EQUAL;
 
-@QuestValue(QuestTrigger.QUEST_COND_QUEST_GLOBAL_VAR_EQUAL)
-public class ConditionQuestGlobalVarEqual extends QuestBaseHandler {
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.QuestValueCond;
+import lombok.val;
+
+@QuestValueCond(QUEST_COND_QUEST_GLOBAL_VAR_EQUAL)
+public class ConditionQuestGlobalVarEqual extends BaseCondition {
 
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestCondition condition, String paramStr, int... params) {
-        Integer questGlobalVarValue = quest.getMainQuest().getQuestManager().getQuestGlobalVarValue(Integer.valueOf(params[0]));
-        Grasscutter.getLogger().debug("questGlobarVar {} : {}", params[0],questGlobalVarValue);
-        return questGlobalVarValue.intValue() == params[1];
+    public boolean execute(
+            Player owner,
+            QuestData questData,
+            QuestData.QuestAcceptCondition condition,
+            String paramStr,
+            int... params) {
+        val questId = condition.getParam()[0];
+        val targetValue = condition.getParam()[1];
+        Integer questGlobalVarValue = owner.getQuestManager().getQuestGlobalVarValue(questId);
+        Grasscutter.getLogger()
+                .debug("questGlobarVar {} {} : {}", questId, targetValue, questGlobalVarValue);
+        return questGlobalVarValue == targetValue;
     }
 }

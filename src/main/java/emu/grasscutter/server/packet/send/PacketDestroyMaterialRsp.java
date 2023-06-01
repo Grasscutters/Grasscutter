@@ -12,10 +12,11 @@ public class PacketDestroyMaterialRsp extends BasePacket {
 
         var proto = DestroyMaterialRsp.newBuilder();
 
-        returnMaterialMap.forEach((id, count) -> {
-            proto.addItemIdList(id);
-            proto.addItemCountList(count);
-        });
+        returnMaterialMap.forEach(
+                (id, count) -> {
+                    proto.addItemIdList(id);
+                    proto.addItemCountList(count);
+                });
 
         this.setData(proto);
     }

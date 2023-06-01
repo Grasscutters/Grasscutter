@@ -1,10 +1,8 @@
 package emu.grasscutter.game.world;
 
+import emu.grasscutter.data.GameDepot;
 import java.util.List;
 import java.util.Objects;
-
-import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.utils.Position;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,10 +20,11 @@ public class SpawnDataEntry {
 
     public GridBlockId getBlockId() {
         int scale = GridBlockId.getScale(gadgetId);
-        return new GridBlockId(group.sceneId,scale,
-            (int)(pos.getX() / GameDepot.BLOCK_SIZE[scale]),
-            (int)(pos.getZ() / GameDepot.BLOCK_SIZE[scale])
-        );
+        return new GridBlockId(
+                group.sceneId,
+                scale,
+                (int) (pos.getX() / GameDepot.BLOCK_SIZE[scale]),
+                (int) (pos.getZ() / GameDepot.BLOCK_SIZE[scale]));
     }
 
     public static class SpawnGroupEntry {
@@ -48,14 +47,37 @@ public class SpawnDataEntry {
             this.z = z;
         }
 
+        public static GridBlockId[] getAdjacentGridBlockIds(int sceneId, Position pos) {
+            GridBlockId[] results = new GridBlockId[5 * 5 * GameDepot.BLOCK_SIZE.length];
+            int t = 0;
+            for (int scale = 0; scale < GameDepot.BLOCK_SIZE.length; scale++) {
+                int x = ((int) (pos.getX() / GameDepot.BLOCK_SIZE[scale]));
+                int z = ((int) (pos.getZ() / GameDepot.BLOCK_SIZE[scale]));
+                for (int i = x - 2; i < x + 3; i++) {
+                    for (int j = z - 2; j < z + 3; j++) {
+                        results[t++] = new GridBlockId(sceneId, scale, i, j);
+                    }
+                }
+            }
+            return results;
+        }
+
+        public static int getScale(int gadgetId) {
+            return 0; // you should implement here,this is index of GameDepot.BLOCK_SIZE
+        }
+
         @Override
         public String toString() {
-            return "SpawnDataEntryScaledPoint{" +
-                "sceneId=" + sceneId +
-                ", scale=" + scale +
-                ", x=" + x +
-                ", z=" + z +
-                '}';
+            return "SpawnDataEntryScaledPoint{"
+                    + "sceneId="
+                    + sceneId
+                    + ", scale="
+                    + scale
+                    + ", x="
+                    + x
+                    + ", z="
+                    + z
+                    + '}';
         }
 
         @Override
@@ -69,25 +91,6 @@ public class SpawnDataEntry {
         @Override
         public int hashCode() {
             return Objects.hash(sceneId, scale, x, z);
-        }
-
-        public static GridBlockId[] getAdjacentGridBlockIds(int sceneId, Position pos) {
-            GridBlockId[] results = new GridBlockId[5*5*GameDepot.BLOCK_SIZE.length];
-            int t=0;
-            for (int scale = 0; scale < GameDepot.BLOCK_SIZE.length; scale++) {
-                int x = ((int)(pos.getX()/GameDepot.BLOCK_SIZE[scale]));
-                int z = ((int)(pos.getZ()/GameDepot.BLOCK_SIZE[scale]));
-                for (int i=x-2; i<x+3; i++) {
-                    for (int j=z-2; j<z+3; j++) {
-                        results[t++] = new GridBlockId(sceneId, scale, i, j);
-                    }
-                }
-            }
-            return results;
-        }
-
-        public static int getScale(int gadgetId) {
-            return 0;//you should implement here,this is index of GameDepot.BLOCK_SIZE
         }
     }
 }

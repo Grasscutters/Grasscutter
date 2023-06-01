@@ -63,7 +63,10 @@
       "game_version": "게임 버전: %s",
       "resources": {
         "loading": "리소스 로딩중...",
-        "finish": "리소스 로딩완료."
+        "finish": "리소스 로딩완료.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "성유물ID가 잘못되었습니다.",
         "avatarId": "캐릭터ID가 잘못되었습니다.",
         "avatarLevel": "캐릭터 레벨이 잘못되었습니다.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "엔티티ID가 잘못되었습니다.",
         "itemId": "아이템ID가 잘못되었습니다.",
         "itemLevel": "아이템 레벨이 잘못되었습니다.",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "이미 당신은 그 던전에 있습니다.",
       "description": "던전에 진입합니다."
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
       "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
@@ -230,7 +238,32 @@
       "finished": "%s 퀘스트를 마쳤습니다.",
       "not_found": "퀘스트를 찾을 수 없습니다.",
       "invalid_id": "퀘스트ID를 찾을 수 없습니다.",
-      "description": "퀘스트를 추가하거나 완료합니다."
+      "description": "퀘스트를 추가하거나 완료합니다.",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "🇺🇸Invalid group ID.",
+      "invalid_suiteid": "🇺🇸Invalid suite ID.",
+      "group_not_found": "🇺🇸Group not found.",
+      "description": "🇺🇸Alter group loading",
+      "refreshed": "🇺🇸Group %s refreshed."
+    },
+    "cutscene": {
+      "description": "🇺🇸Plays a cutscene"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "구성 설정을 다시 불러오는중...",
@@ -262,10 +295,10 @@
       "set_message_sender": "메세지 발송자가 '%s'으로 설정되었습니다.\n계속하려면 '/sendmail <itemID|itemName|finish> [amount] [level]'을 사용하십시오.",
       "send": "%s 의 %s을 (레벨 %s)을 메세지에 첨부했습니다.\n계속 항목을 추가하거나, '/sendmail finish'을 사용해 메세지를 보낼 수 있습니다..",
       "invalid_arguments_please_use": "잘못된 인수입니다.\n '/sendmail %s'을 사용하십시오",
-      "title": "<title>",
-      "message": "<message>",
-      "sender": "<sender>",
-      "arguments": "<itemID|itemName|finish> [amount] [level]",
+      "title": "🇺🇸<title>",
+      "message": "🇺🇸<message>",
+      "sender": "🇺🇸<sender>",
+      "arguments": "🇺🇸<itemID|itemName|finish> [amount] [level]",
       "error": "오류: 잘못된 시공 단계 %s. Console에서 스택을 확인하십시오.",
       "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
     },
@@ -321,7 +354,7 @@
     "team": {
       "invalid_usage": "잘못된 사용.",
       "invalid_index": "잘못된 목차.",
-      "add_too_much": "팀에 넣을 수 있는 캐릭터 수의 최대는 %s 명 입니다.",
+      "add_too_much": "팀에 넣을 수 있는 캐릭터 수의 최대는 %d 명 입니다.",
       "failed_to_add_avatar": "추가하는데 실패했습니다 캐릭터 ID %s.",
       "failed_to_parse_index": "분석에 실패함 index: %s",
       "remove_too_much": "팀에는 최소 1명의 캐릭터가 편성 되어야 합니다.",
@@ -329,7 +362,7 @@
       "index_out_of_range": "지정된 목차는 범위 밖에 있습니다.",
       "failed_parse_avatar_id": "분석에 실패한 캐릭터 ID: %s",
       "avatar_already_in_team": "해당 캐릭터는 이미 팀에 포함되어 있습니다.",
-      "avatar_not_found": "캐릭터 %s 발견되지 않음.",
+      "avatar_not_found": "캐릭터 %d 발견되지 않음.",
       "description": "당신의 팀을 수정으로 수정합니다."
     },
     "teleportAll": {
@@ -342,6 +375,17 @@
       "exists_error": "scene가 존재하지 않습니다..",
       "success": " %s 을(를) %s, %s, %s 로 이동시켰습니다. scene %s.",
       "description": "플레이어의 위치를 이동시킵니다."
+    },
+    "trialAvatarActivity": {
+      "description": "평가판 아바타 활동의 기능을 조작합니다. 여기에는 던전 및 보상 상태 전환이 포함됩니다.",
+      "not_found": "평가판 아바타 활동 플레이어 데이터를 찾을 수 없습니다. 활동이 활성화되지 않았을 수 있습니다.",
+      "invalid_param": "잘못된 매개 변수.",
+      "schedule_not_found": "일정 %s을(를) 찾을 수 없습니다.",
+      "success_schedule": "일정 ID를 %s(으)로 변경했습니다.",
+      "success_dungeon": "아바타 %s의 던전 상태를 전환했습니다.",
+      "success_dungeon_all": "모든 아바타의 던전 상태를 전환했습니다.",
+      "success_reward": "아바타 %s의 보상 상태를 전환했습니다.",
+      "success_reward_all": "모든 아바타 보상 상태를 전환했습니다."
     },
     "weather": {
       "success": "설정 날씨 ID %s 를 %s 로.",
@@ -362,6 +406,9 @@
       "success": "성공.",
       "failure": "실패, 플레이어를 찾을 수 없습니다.",
       "description": "플레이어에 대한 밴을 해제합니다"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -395,8 +442,8 @@
     },
     "index": {
       "title": "문서",
-      "handbook": "GM Handbook",
-      "gacha_mapping": "Gacha mapping JSON"
+      "handbook": "🇺🇸GM Handbook",
+      "gacha_mapping": "🇺🇸Gacha mapping JSON"
     }
   },
   "plugin": {
@@ -413,6 +460,10 @@
     "enabling_plugin": "플러그인을 활성화했습니다: %s",
     "enabling_failed": "플러그인을 활성화하는데 실패했습니다: %s",
     "disabling_plugin": "플러그인을 비활성화했습니다: %s",
-    "disabling_failed": "플러그인을 비활성화하는데 실패했습니다: %s"
+    "disabling_failed": "플러그인을 비활성화하는데 실패했습니다: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

@@ -1,25 +1,14 @@
 package emu.grasscutter.game.inventory;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import org.bson.types.ObjectId;
-
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import dev.morphia.annotations.PostLoad;
-import dev.morphia.annotations.Transient;
-
+import dev.morphia.annotations.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.ReliquaryAffixData;
-import emu.grasscutter.data.excels.ReliquaryMainPropData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
+import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.entity.EntityWeapon;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
@@ -33,9 +22,14 @@ import emu.grasscutter.net.proto.ReliquaryOuterClass.Reliquary;
 import emu.grasscutter.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.WeaponOuterClass.Weapon;
-import emu.grasscutter.utils.WeightedList;
+import emu.grasscutter.utils.objects.WeightedList;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
+import org.bson.types.ObjectId;
 
 @Entity(value = "items", useDiscriminator = false)
 public class GameItem {
@@ -63,7 +57,8 @@ public class GameItem {
     @Getter private List<Integer> appendPropIdList;
 
     @Getter @Setter private int equipCharacter;
-    @Transient @Getter @Setter private int weaponEntityId;
+    @Transient @Getter @Setter private EntityWeapon weaponEntity;
+    @Transient @Getter private boolean newItem = false;
 
     public GameItem() {
         // Morphia only
@@ -91,11 +86,11 @@ public class GameItem {
 
         switch (data.getItemType()) {
             case ITEM_VIRTUAL:
-            this.count = count;
+                this.count = count;
                 break;
             case ITEM_WEAPON:
                 this.count = 1;
-                this.level = Math.max(this.count, 1);  // ??????????????????
+                this.level = Math.max(this.count, 1); // ??????????????????
                 this.affixes = new ArrayList<>(2);
                 if (data.getSkillAffix() != null) {
                     for (int skillAffix : data.getSkillAffix()) {
@@ -110,7 +105,8 @@ public class GameItem {
                 this.level = 1;
                 this.appendPropIdList = new ArrayList<>();
                 // Create main property
-                ReliquaryMainPropData mainPropData = GameDepot.getRandomRelicMainProp(data.getMainPropDepotId());
+                ReliquaryMainPropData mainPropData =
+                        GameDepot.getRandomRelicMainProp(data.getMainPropDepotId());
                 if (mainPropData != null) {
                     this.mainPropId = mainPropData.getId();
                 }
@@ -129,6 +125,13 @@ public class GameItem {
     public void setOwner(Player player) {
         this.ownerId = player.getUid();
         this.guid = player.getNextGameGuid();
+    }
+
+    public void checkIsNew(Inventory inventory) {
+        // display notification when player obtain new item
+        if (inventory.getItemByGuid(this.itemId) == null) {
+            this.newItem = true;
+        }
     }
 
     public ObjectId getObjectId() {
@@ -189,7 +192,8 @@ public class GameItem {
 
     private Set<FightProperty> getAppendFightProperties() {
         Set<FightProperty> props = new HashSet<>();
-        // Previously this would check no more than the first four affixes, however custom artifacts may not respect this order.
+        // Previously this would check no more than the first four affixes, however custom artifacts may
+        // not respect this order.
         for (int appendPropId : this.appendPropIdList) {
             ReliquaryAffixData affixData = GameData.getReliquaryAffixDataMap().get(appendPropId);
             if (affixData != null) {
@@ -200,7 +204,8 @@ public class GameItem {
     }
 
     private void addNewAppendProp() {
-        List<ReliquaryAffixData> affixList = GameDepot.getRelicAffixList(this.itemData.getAppendPropDepotId());
+        List<ReliquaryAffixData> affixList =
+                GameDepot.getRelicAffixList(this.itemData.getAppendPropDepotId());
 
         if (affixList == null) {
             return;
@@ -208,7 +213,8 @@ public class GameItem {
 
         // Build blacklist - Dont add same stat as main/sub stat
         Set<FightProperty> blacklist = this.getAppendFightProperties();
-        ReliquaryMainPropData mainPropData = GameData.getReliquaryMainPropDataMap().get(this.mainPropId);
+        ReliquaryMainPropData mainPropData =
+                GameData.getReliquaryMainPropDataMap().get(this.mainPropId);
         if (mainPropData != null) {
             blacklist.add(mainPropData.getFightProp());
         }
@@ -231,7 +237,8 @@ public class GameItem {
     }
 
     private void upgradeRandomAppendProp() {
-        List<ReliquaryAffixData> affixList = GameDepot.getRelicAffixList(this.itemData.getAppendPropDepotId());
+        List<ReliquaryAffixData> affixList =
+                GameDepot.getRelicAffixList(this.itemData.getAppendPropDepotId());
 
         if (affixList == null) {
             return;
@@ -269,38 +276,41 @@ public class GameItem {
     }
 
     public SceneWeaponInfo createSceneWeaponInfo() {
-        SceneWeaponInfo.Builder weaponInfo = SceneWeaponInfo.newBuilder()
-                .setEntityId(this.getWeaponEntityId())
-                .setItemId(this.getItemId())
-                .setGuid(this.getGuid())
-                .setLevel(this.getLevel())
-                .setGadgetId(this.getItemData().getGadgetId())
-                .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
+        var weaponInfo =
+                SceneWeaponInfo.newBuilder()
+                        .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
+                        .setItemId(this.getItemId())
+                        .setGuid(this.getGuid())
+                        .setLevel(this.getLevel())
+                        .setGadgetId(this.getItemData().getGadgetId())
+                        .setAbilityInfo(AbilitySyncStateInfo.newBuilder().setIsInited(getAffixes().size() > 0));
 
-                if (this.getAffixes() != null && this.getAffixes().size() > 0) {
-                    for (int affix : this.getAffixes()) {
-                        weaponInfo.putAffixMap(affix, this.getRefinement());
-                    }
-                }
+        if (this.getAffixes() != null && this.getAffixes().size() > 0) {
+            for (int affix : this.getAffixes()) {
+                weaponInfo.putAffixMap(affix, this.getRefinement());
+            }
+        }
 
         return weaponInfo.build();
     }
 
     public SceneReliquaryInfo createSceneReliquaryInfo() {
-        SceneReliquaryInfo relicInfo = SceneReliquaryInfo.newBuilder()
-                .setItemId(this.getItemId())
-                .setGuid(this.getGuid())
-                .setLevel(this.getLevel())
-                .build();
+        SceneReliquaryInfo relicInfo =
+                SceneReliquaryInfo.newBuilder()
+                        .setItemId(this.getItemId())
+                        .setGuid(this.getGuid())
+                        .setLevel(this.getLevel())
+                        .build();
 
         return relicInfo;
     }
 
     public Weapon toWeaponProto() {
-        Weapon.Builder weapon = Weapon.newBuilder()
-            .setLevel(this.getLevel())
-            .setExp(this.getExp())
-            .setPromoteLevel(this.getPromoteLevel());
+        Weapon.Builder weapon =
+                Weapon.newBuilder()
+                        .setLevel(this.getLevel())
+                        .setExp(this.getExp())
+                        .setPromoteLevel(this.getPromoteLevel());
 
         if (this.getAffixes() != null && this.getAffixes().size() > 0) {
             for (int affix : this.getAffixes()) {
@@ -312,20 +322,19 @@ public class GameItem {
     }
 
     public Reliquary toReliquaryProto() {
-        Reliquary.Builder relic = Reliquary.newBuilder()
-            .setLevel(this.getLevel())
-            .setExp(this.getExp())
-            .setPromoteLevel(this.getPromoteLevel())
-            .setMainPropId(this.getMainPropId())
-            .addAllAppendPropIdList(this.getAppendPropIdList());
+        Reliquary.Builder relic =
+                Reliquary.newBuilder()
+                        .setLevel(this.getLevel())
+                        .setExp(this.getExp())
+                        .setPromoteLevel(this.getPromoteLevel())
+                        .setMainPropId(this.getMainPropId())
+                        .addAllAppendPropIdList(this.getAppendPropIdList());
 
         return relic.build();
     }
 
     public Item toProto() {
-        Item.Builder proto = Item.newBuilder()
-                .setGuid(this.getGuid())
-                .setItemId(this.getItemId());
+        Item.Builder proto = Item.newBuilder().setGuid(this.getGuid()).setItemId(this.getItemId());
 
         switch (getItemType()) {
             case ITEM_WEAPON:
@@ -337,15 +346,11 @@ public class GameItem {
                 proto.setEquip(Equip.newBuilder().setReliquary(relic).setIsLocked(this.isLocked()).build());
                 break;
             case ITEM_FURNITURE:
-                Furniture furniture = Furniture.newBuilder()
-                    .setCount(getCount())
-                    .build();
+                Furniture furniture = Furniture.newBuilder().setCount(getCount()).build();
                 proto.setFurniture(furniture);
                 break;
             default:
-                Material material = Material.newBuilder()
-                    .setCount(getCount())
-                    .build();
+                Material material = Material.newBuilder().setCount(getCount()).build();
                 proto.setMaterial(material);
                 break;
         }
@@ -354,7 +359,11 @@ public class GameItem {
     }
 
     public ItemHint toItemHintProto() {
-        return ItemHint.newBuilder().setItemId(getItemId()).setCount(getCount()).setIsNew(false).build();
+        return ItemHint.newBuilder()
+                .setItemId(getItemId())
+                .setCount(getCount())
+                .setIsNew(this.isNewItem())
+                .build();
     }
 
     public ItemParam toItemParam() {

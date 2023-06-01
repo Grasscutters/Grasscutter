@@ -1,12 +1,9 @@
 package emu.grasscutter.server.event.player;
 
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.server.event.types.PlayerEvent;
-import emu.grasscutter.utils.Position;
 
-/**
- * TODO: Allow plugins to change the position of the player.
- */
 public final class PlayerMoveEvent extends PlayerEvent {
     private final MoveType type;
     private final Position from;
@@ -33,14 +30,10 @@ public final class PlayerMoveEvent extends PlayerEvent {
     }
 
     public enum MoveType {
-        /**
-         * The player has sent a combat invocation to move.
-         */
+        /** The player has sent a combat invocation to move. */
         PLAYER,
 
-        /**
-         * The server has requested that the player moves.
-         */
+        /** The server has requested that the player moves. */
         SERVER
     }
 }

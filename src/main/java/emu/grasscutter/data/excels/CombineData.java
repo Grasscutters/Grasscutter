@@ -3,7 +3,6 @@ package emu.grasscutter.data.excels;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemParamData;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,8 +30,10 @@ public class CombineData extends GameResource {
     public void onLoad() {
         super.onLoad();
         // clean data
-        randomItems = randomItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
-        materialItems = materialItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
+        randomItems =
+                randomItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
+        materialItems =
+                materialItems.stream().filter(item -> item.getId() > 0).collect(Collectors.toList());
     }
 
     public int getCombineId() {
@@ -54,7 +55,7 @@ public class CombineData extends GameResource {
     public int getSubCombineType() {
         return subCombineType;
     }
-    
+
     public int getResultItemId() {
         return resultItemId;
     }
@@ -78,6 +79,4 @@ public class CombineData extends GameResource {
     public String getRecipeType() {
         return recipeType;
     }
-
 }
-

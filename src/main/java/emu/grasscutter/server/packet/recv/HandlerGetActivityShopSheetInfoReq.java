@@ -15,5 +15,4 @@ public class HandlerGetActivityShopSheetInfoReq extends PacketHandler {
         GetActivityShopSheetInfoReq req = GetActivityShopSheetInfoReq.parseFrom(payload);
         session.getPlayer().sendPacket(new PacketGetActivityShopSheetInfoRsp(req.getShopType()));
     }
-
 }

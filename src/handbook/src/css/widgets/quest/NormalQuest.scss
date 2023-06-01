@@ -1,0 +1,54 @@
+.NormalQuest {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 431px;
+    height: 100%;
+
+    min-width: 100px;
+    min-height: 25px;
+    max-height: 53px;
+
+    background-color: var(--quest-unselected);
+    padding: 11px 20px 11px 20px;
+    box-sizing: border-box;
+
+    p {
+        user-select: none;
+        cursor: pointer;
+    }
+}
+
+.NormalQuest[datatype="right"] {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.NormalQuest:hover {
+    background-color: var(--quest-selected);
+
+    p {
+        color: var(--qt-selected);
+    }
+}
+
+.NormalQuest_Info {
+    display: flex;
+    flex-direction: column;
+
+    :nth-child(1) {
+        font-size: 16px;
+        color: var(--qt-unselected);
+    }
+
+    :nth-child(2) {
+        font-size: 13px;
+        color: var(--qt2-unselected);
+    }
+}
+
+.NormalQuest_Icon {
+    font-size: 16px;
+    color: var(--quest-accent);
+}

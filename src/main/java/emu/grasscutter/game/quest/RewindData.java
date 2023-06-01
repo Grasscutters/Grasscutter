@@ -1,9 +1,9 @@
 package emu.grasscutter.game.quest;
 
+import java.util.List;
 import lombok.Data;
 import lombok.Getter;
 
-import java.util.List;
 @Data
 public class RewindData {
     AvatarData avatar;
@@ -15,7 +15,7 @@ public class RewindData {
     }
 
     @Data
-    private static class Npc {
+    public static class Npc {
         private String script;
         private int room_id;
         private int data_index;
@@ -25,4 +25,3 @@ public class RewindData {
         private String alias;
     }
 }
-

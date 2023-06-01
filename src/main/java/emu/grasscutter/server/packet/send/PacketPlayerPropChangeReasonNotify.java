@@ -9,17 +9,23 @@ import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 
 public class PacketPlayerPropChangeReasonNotify extends BasePacket {
 
-    public PacketPlayerPropChangeReasonNotify(Player player, PlayerProperty prop, int oldValue, int newValue, PropChangeReason changeReason) {
+    public PacketPlayerPropChangeReasonNotify(
+            Player player,
+            PlayerProperty prop,
+            int oldValue,
+            int newValue,
+            PropChangeReason changeReason) {
         super(PacketOpcodes.PlayerPropChangeReasonNotify);
 
         this.buildHeader(0);
 
-        PlayerPropChangeReasonNotify proto = PlayerPropChangeReasonNotify.newBuilder()
-                .setPropType(prop.getId())
-                .setReason(changeReason)
-                .setOldValue(oldValue)
-                .setCurValue(newValue)
-                .build();
+        PlayerPropChangeReasonNotify proto =
+                PlayerPropChangeReasonNotify.newBuilder()
+                        .setPropType(prop.getId())
+                        .setReason(changeReason)
+                        .setOldValue(oldValue)
+                        .setCurValue(newValue)
+                        .build();
 
         this.setData(proto);
     }

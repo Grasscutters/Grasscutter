@@ -6,8 +6,6 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.TsvUtils;
-import lombok.val;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,11 +14,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import lombok.val;
 
 public class DataLoader {
 
     /**
-     * Load a data file by its name. If the file isn't found within the /data directory then it will fallback to the default within the jar resources
+     * Load a data file by its name. If the file isn't found within the /data directory then it will
+     * fallback to the default within the jar resources
      *
      * @param resourcePath The path to the data file to be loaded.
      * @return InputStream of the data file.
@@ -32,7 +32,8 @@ public class DataLoader {
     }
 
     /**
-     * Creates an input stream reader for a data file. If the file isn't found within the /data directory then it will fallback to the default within the jar resources
+     * Creates an input stream reader for a data file. If the file isn't found within the /data
+     * directory then it will fallback to the default within the jar resources
      *
      * @param resourcePath The path to the data file to be loaded.
      * @return InputStreamReader of the data file.
@@ -40,7 +41,8 @@ public class DataLoader {
      * @throws FileNotFoundException
      * @see #load(String, boolean)
      */
-    public static InputStreamReader loadReader(String resourcePath) throws IOException, FileNotFoundException {
+    public static InputStreamReader loadReader(String resourcePath)
+            throws IOException, FileNotFoundException {
         try {
             InputStream is = load(resourcePath, true);
             return new InputStreamReader(is);
@@ -53,20 +55,22 @@ public class DataLoader {
      * Load a data file by its name.
      *
      * @param resourcePath The path to the data file to be loaded.
-     * @param useFallback  If the file does not exist in the /data directory, should it use the default file in the jar?
+     * @param useFallback If the file does not exist in the /data directory, should it use the default
+     *     file in the jar?
      * @return InputStream of the data file.
      * @throws FileNotFoundException
      */
-    public static InputStream load(String resourcePath, boolean useFallback) throws FileNotFoundException {
-        Path path = useFallback
-            ? FileUtils.getDataPath(resourcePath)
-            : FileUtils.getDataUserPath(resourcePath);
+    public static InputStream load(String resourcePath, boolean useFallback)
+            throws FileNotFoundException {
+        Path path =
+                useFallback ? FileUtils.getDataPath(resourcePath) : FileUtils.getDataUserPath(resourcePath);
         if (Files.exists(path)) {
             // Data is in the resource directory
             try {
                 return Files.newInputStream(path);
             } catch (IOException e) {
-                throw new FileNotFoundException(e.getMessage());  // This is evil but so is changing the function signature at this point
+                throw new FileNotFoundException(
+                        e.getMessage()); // This is evil but so is changing the function signature at this point
             }
         }
         return null;
@@ -79,20 +83,22 @@ public class DataLoader {
     }
 
     public static <T> List<T> loadList(String resourcePath, Class<T> classType) throws IOException {
-        try (InputStreamReader reader = loadReader(resourcePath)) {
+        try (var reader = loadReader(resourcePath)) {
             return JsonUtils.loadToList(reader, classType);
         }
     }
 
-    public static <T1,T2> Map<T1,T2> loadMap(String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
+    public static <T1, T2> Map<T1, T2> loadMap(
+            String resourcePath, Class<T1> keyType, Class<T2> valueType) throws IOException {
         try (InputStreamReader reader = loadReader(resourcePath)) {
             return JsonUtils.loadToMap(reader, keyType, valueType);
         }
     }
 
-    public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType) throws IOException {
+    public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType)
+            throws IOException {
         val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
-        Grasscutter.getLogger().debug("Loading data table from: "+path);
+        Grasscutter.getLogger().debug("Loading data table from: " + path);
         return switch (FileUtils.getFileExtension(path)) {
             case "json" -> JsonUtils.loadToList(path, classType);
             case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);
@@ -107,7 +113,7 @@ public class DataLoader {
 
             if (filenames == null) {
                 Grasscutter.getLogger().error("We were unable to locate your default data files.");
-            } //else for (Path file : filenames) {
+            } // else for (Path file : filenames) {
             //     String relativePath = String.valueOf(file).split("defaults[\\\\\\/]data[\\\\\\/]")[1];
 
             //     checkAndCopyData(relativePath);

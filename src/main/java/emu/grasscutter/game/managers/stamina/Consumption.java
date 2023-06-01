@@ -13,6 +13,5 @@ public class Consumption {
         this(type, type.amount);
     }
 
-    public Consumption() {
-    }
+    public Consumption() {}
 }

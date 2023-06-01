@@ -4,9 +4,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.MarkNewNotifyOuterClass.MarkNewNotify;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class PacketMarkNewNotify extends BasePacket {
 

@@ -1,17 +1,16 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.props.ItemUseOp;
 
-import emu.grasscutter.data.GameData;
-
 public class ItemUseGainFlycloak extends ItemUseInt {
+    public ItemUseGainFlycloak(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_GAIN_FLYCLOAK;
-    }
-
-    public ItemUseGainFlycloak(String[] useParam) {
-        super(useParam);
     }
 
     @Override

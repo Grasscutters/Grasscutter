@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.SceneKickPlayerReqOuterClass.SceneKickPlayerReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSceneKickPlayerRsp;
 
@@ -14,7 +14,10 @@ public class HandlerSceneKickPlayerReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         SceneKickPlayerReq req = SceneKickPlayerReq.parseFrom(payload);
 
-        if (session.getServer().getMultiplayerSystem().kickPlayer(session.getPlayer(), req.getTargetUid())) {
+        if (session
+                .getServer()
+                .getMultiplayerSystem()
+                .kickPlayer(session.getPlayer(), req.getTargetUid())) {
             // Success
             session.send(new PacketSceneKickPlayerRsp(req.getTargetUid()));
         } else {
@@ -22,5 +25,4 @@ public class HandlerSceneKickPlayerReq extends PacketHandler {
             session.send(new PacketSceneKickPlayerRsp());
         }
     }
-
 }

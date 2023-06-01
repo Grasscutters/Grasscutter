@@ -1,0 +1,78 @@
+name: "Lint & Format Code"
+
+on:
+  workflow_dispatch: ~
+  push:
+    paths:
+      - "src/main/**.java"
+      - "**.json"
+    branches:
+      - "development"
+      - "unstable"
+
+jobs:
+  Format-Code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Cache gradle files
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ./.gradle/loom-cache
+          key: ${{ runner.os }}-gradle-${{ hashFiles('*.gradle', 'gradle.properties', '**/*.accesswidener') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Format Code
+        run: ./gradlew -PskipHandbook=1 && ./gradlew spotlessApply -PskipHandbook=1
+
+      - run: git config --global user.name "github-actions"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git stash
+      - run: git checkout ${{ steps.extract_branch.outputs.branch }} && git pull
+      - run: git stash pop || true
+
+      - name: Commit Code Changes
+        run: git add -u && git commit -m 'Format code [skip actions]' || true
+      - name: Push Code Changes
+        run: git push --set-upstream --force origin ${{ steps.extract_branch.outputs.branch }}
+
+  Update-Languages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Update Languages
+        run: python scripts/manage_languages.py -u
+
+      - run: git config --global user.name "github-actions"
+      - run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git stash
+      - run: git checkout ${{ steps.extract_branch.outputs.branch }} && git pull
+      - run: git stash pop || true
+
+      - name: Commit any language changes
+        run: git add -u && git commit -m 'Update languages [skip actions]' || true
+      - name: Push language changes
+        run: git push --set-upstream --force origin ${{ steps.extract_branch.outputs.branch }}

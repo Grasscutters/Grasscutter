@@ -3,38 +3,45 @@ package emu.grasscutter.game.entity.gadget;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GatherData;
 import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
-import emu.grasscutter.utils.Utils;
 
-public class GadgetGatherPoint extends GadgetContent {
-    private int itemId;
-    private boolean isForbidGuest;
+/** Spawner for the gather objects */
+public final class GadgetGatherPoint extends GadgetContent {
+    private final GatherData gatherData;
+    private final EntityGadget gatherObjectChild;
 
     public GadgetGatherPoint(EntityGadget gadget) {
         super(gadget);
 
-        if (gadget.getSpawnEntry() != null) {
-            this.itemId = gadget.getSpawnEntry().getGatherItemId();
-        } else {
-            GatherData gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
-            this.itemId = gatherData.getItemId();
-            this.isForbidGuest = gatherData.isForbidGuest();
-        }
+        this.gatherData = GameData.getGatherDataMap().get(gadget.getPointType());
+
+        var scene = gadget.getScene();
+        gatherObjectChild = new EntityGadget(scene, gatherData.getGadgetId(), gadget.getBornPos());
+
+        gatherObjectChild.setBlockId(gadget.getBlockId());
+        gatherObjectChild.setConfigId(gadget.getConfigId());
+        gatherObjectChild.setGroupId(gadget.getGroupId());
+        gatherObjectChild.getRotation().set(gadget.getRotation());
+        gatherObjectChild.setState(gadget.getState());
+        gatherObjectChild.setPointType(gadget.getPointType());
+        gatherObjectChild.setMetaGadget(gadget.getMetaGadget());
+        gatherObjectChild.buildContent();
+
+        gadget.getChildren().add(gatherObjectChild);
+        scene.addEntity(gatherObjectChild);
     }
 
     public int getItemId() {
-        return this.itemId;
+        return this.gatherData.getItemId();
     }
 
     public boolean isForbidGuest() {
-        return isForbidGuest;
+        return this.gatherData.isForbidGuest();
     }
 
     public boolean onInteract(Player player, GadgetInteractReq req) {
@@ -46,34 +53,13 @@ public class GadgetGatherPoint extends GadgetContent {
     }
 
     public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-        GatherGadgetInfo gatherGadgetInfo = GatherGadgetInfo.newBuilder()
-                .setItemId(this.getItemId())
-                .setIsForbidGuest(this.isForbidGuest())
-                .build();
+        // todo does official use this for the spawners?
+        GatherGadgetInfo gatherGadgetInfo =
+                GatherGadgetInfo.newBuilder()
+                        .setItemId(this.getItemId())
+                        .setIsForbidGuest(this.isForbidGuest())
+                        .build();
 
         gadgetInfo.setGatherGadget(gatherGadgetInfo);
-    }
-
-    public void dropItems(Player player) {
-        Scene scene = getGadget().getScene();
-        int times = Utils.randomRange(1,2);
-
-        for (int i = 0 ; i < times ; i++) {
-            EntityItem item = new EntityItem(
-                    scene,
-                    player,
-                    GameData.getItemDataMap().get(itemId),
-                    getGadget().getPosition().clone()
-                        .addY(2f)
-                        .addX(Utils.randomFloatRange(-1f, 1f))
-                        .addZ(Utils.randomFloatRange(-1f, 1f)),
-                    1,
-                    true);
-
-            scene.addEntity(item);
-        }
-
-        scene.killEntity(this.getGadget(), player.getTeamManager().getCurrentAvatarEntity().getId());
-        // Todo: add record
     }
 }

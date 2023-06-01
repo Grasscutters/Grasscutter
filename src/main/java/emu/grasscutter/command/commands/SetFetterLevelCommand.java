@@ -1,6 +1,6 @@
 package emu.grasscutter.command.commands;
 
-import java.util.List;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
@@ -8,15 +8,14 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketAvatarFetterDataNotify;
-
-import static emu.grasscutter.utils.Language.translate;
+import java.util.List;
 
 @Command(
-    label = "setFetterLevel",
-    usage = {"<level>"},
-    aliases = {"setfetterlvl", "setfriendship"},
-    permission = "player.setfetterlevel",
-    permissionTargeted = "player.setfetterlevel.others")
+        label = "setFetterLevel",
+        usage = {"<level>"},
+        aliases = {"setfetterlvl", "setfriendship"},
+        permission = "player.setfetterlevel",
+        permissionTargeted = "player.setfetterlevel.others")
 public final class SetFetterLevelCommand implements CommandHandler {
 
     @Override
@@ -29,7 +28,8 @@ public final class SetFetterLevelCommand implements CommandHandler {
         try {
             int fetterLevel = Integer.parseInt(args.get(0));
             if (fetterLevel < 0 || fetterLevel > 10) {
-                CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.range_error"));
+                CommandHandler.sendMessage(
+                        sender, translate(sender, "commands.setFetterLevel.range_error"));
                 return;
             }
             Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
@@ -41,10 +41,10 @@ public final class SetFetterLevelCommand implements CommandHandler {
             avatar.save();
 
             targetPlayer.sendPacket(new PacketAvatarFetterDataNotify(avatar));
-            CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.success", fetterLevel));
+            CommandHandler.sendMessage(
+                    sender, translate(sender, "commands.setFetterLevel.success", fetterLevel));
         } catch (NumberFormatException ignored) {
             CommandHandler.sendMessage(sender, translate(sender, "commands.setFetterLevel.level_error"));
         }
     }
-
 }

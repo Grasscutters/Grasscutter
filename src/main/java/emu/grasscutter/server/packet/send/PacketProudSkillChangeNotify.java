@@ -6,17 +6,18 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify;
 
 public class PacketProudSkillChangeNotify extends BasePacket {
-	
-	public PacketProudSkillChangeNotify(Avatar avatar) {
-		super(PacketOpcodes.ProudSkillChangeNotify);
-		
-		ProudSkillChangeNotify proto = ProudSkillChangeNotify.newBuilder()
-				.setAvatarGuid(avatar.getGuid())
-				.setEntityId(avatar.getEntityId())
-				.setSkillDepotId(avatar.getSkillDepotId())
-				.addAllProudSkillList(avatar.getProudSkillList())
-				.build();
-		
-		this.setData(proto);
-	}
+
+    public PacketProudSkillChangeNotify(Avatar avatar) {
+        super(PacketOpcodes.ProudSkillChangeNotify);
+
+        ProudSkillChangeNotify proto =
+                ProudSkillChangeNotify.newBuilder()
+                        .setAvatarGuid(avatar.getGuid())
+                        .setEntityId(avatar.getEntityId())
+                        .setSkillDepotId(avatar.getSkillDepotId())
+                        .addAllProudSkillList(avatar.getProudSkillList())
+                        .build();
+
+        this.setData(proto);
+    }
 }

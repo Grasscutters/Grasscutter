@@ -1,0 +1,47 @@
+.Character {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 96px;
+    max-height: 135px;
+    border-radius: 15px;
+
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+        transition: 0.1s ease-in-out all;
+        box-shadow: 0 0 10px 5px var(--primary-color);
+    }
+}
+
+.Character :hover {
+    cursor: pointer;
+}
+
+.Character_Icon {
+    width: 96px;
+    height: 96px;
+
+    align-self: center;
+}
+
+.Character_Label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-color);
+
+    max-width: 100px;
+    height: 40px;
+
+    p {
+        text-align: center;
+        margin: 4px;
+    }
+}

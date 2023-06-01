@@ -5,15 +5,13 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify;
 
 public class PacketForgeFormulaDataNotify extends BasePacket {
-	
-	public PacketForgeFormulaDataNotify(int itemId) {
-		super(PacketOpcodes.ForgeFormulaDataNotify);
 
-		ForgeFormulaDataNotify proto = ForgeFormulaDataNotify.newBuilder()
-				.setForgeId(itemId)
-				.setIsLocked(false)
-				.build();
-		
-		this.setData(proto);
-	}
+    public PacketForgeFormulaDataNotify(int itemId) {
+        super(PacketOpcodes.ForgeFormulaDataNotify);
+
+        ForgeFormulaDataNotify proto =
+                ForgeFormulaDataNotify.newBuilder().setForgeId(itemId).setIsLocked(false).build();
+
+        this.setData(proto);
+    }
 }

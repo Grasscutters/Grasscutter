@@ -1,12 +1,11 @@
 package emu.grasscutter.server.http.documentation;
 
-import static emu.grasscutter.utils.Language.translate;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.utils.FileUtils;
 import io.javalin.http.ContentType;
 import io.javalin.http.Context;
-
 import java.io.IOException;
 import java.nio.file.Files;
 
@@ -32,9 +31,11 @@ final class RootRequestHandler implements DocumentationHandler {
             return;
         }
 
-        String content = template.replace("{{TITLE}}", translate("documentation.index.title"))
-                .replace("{{ITEM_HANDBOOK}}", translate("documentation.index.handbook"))
-                .replace("{{ITEM_GACHA_MAPPING}}", translate("documentation.index.gacha_mapping"));
+        String content =
+                template
+                        .replace("{{TITLE}}", translate("documentation.index.title"))
+                        .replace("{{ITEM_HANDBOOK}}", translate("documentation.index.handbook"))
+                        .replace("{{ITEM_GACHA_MAPPING}}", translate("documentation.index.gacha_mapping"));
         ctx.contentType(ContentType.TEXT_HTML);
         ctx.result(content);
     }

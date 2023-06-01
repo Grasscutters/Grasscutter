@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/data/assets/Poppins-Regular.ttf')
+}
+
+html {
+    --background-color: #25294a;
+    --primary-color: #2d325a;
+    --secondary-color: #202442;
+    --accent-color: #4b5396;
+
+    --text-primary-color: #FFFFFF;
+    --unselected-color: #c7c8d0;
+    --selected-color: #FFFFFF;
+
+    --legendary-color: #926d45;
+    --epic-color: #7b5c90;
+
+    // pq = Primary Quest
+    --pq-bg: #333d49;
+    --pq-text: #d3bc8e;
+    --pq-text2: #8c836f;
+
+    --quest-unselected: #4e5765;
+    --quest-selected: #ede5da;
+    --quest-accent: #9b927d;
+
+    // qt = Quest Text
+    --qt-unselected: #ede5da;
+    --qt2-unselected: #8e9295;
+    --qt-selected: #4d5568;
+    --qt2-selected: #a6a5a7;
+
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--background-color);
+
+    #root {
+        height: 100%;
+        width: 100%;
+    }
+
+    * {
+        font-family: 'SDK_SC_Web', 'SDK_JP_Web', 'Poppins', sans-serif;
+    }
+
+    svg:focus {
+        outline: none;
+    }
+}
+
+.App {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}

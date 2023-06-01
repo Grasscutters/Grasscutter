@@ -3,7 +3,6 @@ package emu.grasscutter.task.tasks;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.task.Task;
 import emu.grasscutter.task.TaskHandler;
-
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
@@ -23,12 +22,15 @@ public final class MoonCard extends TaskHandler {
 
     @Override
     public synchronized void execute(JobExecutionContext context) throws JobExecutionException {
-        Grasscutter.getGameServer().getPlayers().forEach((uid, player) -> {
-            if (player.isOnline()) {
-                if (player.inMoonCard()) {
-                    player.getTodayMoonCard();
-                }
-            }
-        });
+        Grasscutter.getGameServer()
+                .getPlayers()
+                .forEach(
+                        (uid, player) -> {
+                            if (player.isOnline()) {
+                                if (player.inMoonCard()) {
+                                    player.getTodayMoonCard();
+                                }
+                            }
+                        });
     }
 }

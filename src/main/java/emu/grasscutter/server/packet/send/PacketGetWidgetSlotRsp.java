@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetWidgetSlotRspOuterClass;
 import emu.grasscutter.net.proto.WidgetSlotDataOuterClass;
 import emu.grasscutter.net.proto.WidgetSlotTagOuterClass;
-
 import java.util.List;
 
 public class PacketGetWidgetSlotRsp extends BasePacket {
@@ -17,21 +16,21 @@ public class PacketGetWidgetSlotRsp extends BasePacket {
         GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.Builder proto =
                 GetWidgetSlotRspOuterClass.GetWidgetSlotRsp.newBuilder();
 
-        if (player.getWidgetId() == 0) {  // TODO: check this logic later, it was null-checking an int before which made it dead code
+        if (player.getWidgetId()
+                == 0) { // TODO: check this logic later, it was null-checking an int before which made it
+            // dead code
             proto.addAllSlotList(List.of());
         } else {
             proto.addSlotList(
                     WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
                             .setIsActive(true)
                             .setMaterialId(player.getWidgetId())
-                            .build()
-            );
+                            .build());
 
             proto.addSlotList(
                     WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
                             .setTag(WidgetSlotTagOuterClass.WidgetSlotTag.WIDGET_SLOT_TAG_ATTACH_AVATAR)
-                            .build()
-            );
+                            .build());
         }
 
         GetWidgetSlotRspOuterClass.GetWidgetSlotRsp protoData = proto.build();

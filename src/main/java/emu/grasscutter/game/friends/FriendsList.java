@@ -1,18 +1,13 @@
 package emu.grasscutter.game.friends;
 
-import java.util.List;
-
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.DealAddFriendResultTypeOuterClass.DealAddFriendResultType;
-import emu.grasscutter.server.packet.send.PacketAskAddFriendNotify;
-import emu.grasscutter.server.packet.send.PacketAskAddFriendRsp;
-import emu.grasscutter.server.packet.send.PacketDealAddFriendRsp;
-import emu.grasscutter.server.packet.send.PacketDeleteFriendNotify;
-import emu.grasscutter.server.packet.send.PacketDeleteFriendRsp;
+import emu.grasscutter.server.packet.send.*;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import java.util.List;
 
 public class FriendsList extends BasePlayerManager {
     private final Int2ObjectMap<Friendship> friends;
@@ -167,7 +162,8 @@ public class FriendsList extends BasePlayerManager {
         }
 
         // Check if friend already exists
-        if (this.getPendingFriends().containsKey(targetUid) || this.getFriends().containsKey(targetUid)) {
+        if (this.getPendingFriends().containsKey(targetUid)
+                || this.getFriends().containsKey(targetUid)) {
             return;
         }
 
@@ -191,8 +187,7 @@ public class FriendsList extends BasePlayerManager {
         this.getPlayer().sendPacket(new PacketAskAddFriendRsp(targetUid));
     }
 
-    /** Gets total amount of potential friends
-     * */
+    /** Gets total amount of potential friends */
     public int getFullFriendCount() {
         return this.getPendingFriends().size() + this.getFriends().size();
     }
@@ -215,14 +210,16 @@ public class FriendsList extends BasePlayerManager {
         friendship.setOwner(getPlayer());
 
         // Check if friend is online
-        Player friend = getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getUid());
+        Player friend =
+                getPlayer().getSession().getServer().getPlayerByUid(friendship.getFriendProfile().getUid());
         if (friend != null) {
             // Set friend to online mode
             friendship.setFriendProfile(friend);
 
             // Update our status on friend's client if theyre online
             if (friend.getFriendsList().hasLoaded()) {
-                Friendship theirFriendship = friend.getFriendsList().getFriendshipById(getPlayer().getUid());
+                Friendship theirFriendship =
+                        friend.getFriendsList().getFriendshipById(getPlayer().getUid());
                 if (theirFriendship != null) {
                     // Update friend profile
                     theirFriendship.setFriendProfile(getPlayer());

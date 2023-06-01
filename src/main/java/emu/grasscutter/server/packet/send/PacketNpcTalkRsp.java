@@ -8,11 +8,12 @@ public class PacketNpcTalkRsp extends BasePacket {
     public PacketNpcTalkRsp(int npcEntityId, int curTalkId, int entityId) {
         super(PacketOpcodes.NpcTalkRsp);
 
-        NpcTalkRsp p = NpcTalkRsp.newBuilder()
-                .setNpcEntityId(npcEntityId)
-                .setCurTalkId(curTalkId)
-                .setEntityId(entityId)
-                .build();
+        NpcTalkRsp p =
+                NpcTalkRsp.newBuilder()
+                        .setNpcEntityId(npcEntityId)
+                        .setCurTalkId(curTalkId)
+                        .setEntityId(entityId)
+                        .build();
 
         this.setData(p);
     }

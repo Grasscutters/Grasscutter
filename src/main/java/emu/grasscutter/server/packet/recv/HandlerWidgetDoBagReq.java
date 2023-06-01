@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.entity.EntityVehicle;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -9,14 +10,14 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketWidgetCoolDownNotify;
 import emu.grasscutter.server.packet.send.PacketWidgetDoBagRsp;
 import emu.grasscutter.server.packet.send.PacketWidgetGadgetDataNotify;
-import emu.grasscutter.utils.Position;
 
 @Opcodes(PacketOpcodes.WidgetDoBagReq)
 public class HandlerWidgetDoBagReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        WidgetDoBagReqOuterClass.WidgetDoBagReq req = WidgetDoBagReqOuterClass.WidgetDoBagReq.parseFrom(payload);
+        WidgetDoBagReqOuterClass.WidgetDoBagReq req =
+                WidgetDoBagReqOuterClass.WidgetDoBagReq.parseFrom(payload);
         var locationInfo = req.getWidgetCreatorInfo().getLocationInfo();
         Position pos = new Position(locationInfo.getPos());
         Position rot = new Position(locationInfo.getRot());
@@ -32,7 +33,8 @@ public class HandlerWidgetDoBagReq extends PacketHandler {
         session.send(new PacketWidgetDoBagRsp());
     }
 
-    private void spawnVehicle(GameSession session, int gadgetId, Position pos, Position rot) throws Exception {
+    private void spawnVehicle(GameSession session, int gadgetId, Position pos, Position rot)
+            throws Exception {
         var player = session.getPlayer();
         var scene = player.getScene();
         var entity = new EntityVehicle(scene, player, gadgetId, 0, pos, rot);

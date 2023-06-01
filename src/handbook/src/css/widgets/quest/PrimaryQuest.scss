@@ -1,0 +1,65 @@
+.PrimaryQuest {
+    display: flex;
+    flex-direction: column;
+
+    height: min-content;
+}
+
+.PrimaryQuest_List {
+    display: flex;
+    flex-direction: column;
+
+    width: 97%;
+    margin-left: auto;
+    margin-right: 5px;
+
+    gap: 8px;
+    padding: 8px 8px 8px 8px;
+    background-color: var(--primary-color);
+}
+
+/* Trigger related CSS. */
+
+.Trigger {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+
+    width: 461px;
+    height: 100%;
+    min-width: 100px;
+    min-height: 25px;
+    max-height: 60px;
+
+    background-color: var(--pq-bg);
+
+    p {
+        user-select: none;
+        cursor: pointer;
+    }
+}
+
+.Trigger_Icon {
+    font-size: 20px;
+    padding-top: 5px;
+
+    color: var(--pq-text);
+}
+
+.Trigger_Info {
+    display: flex;
+    flex-direction: column;
+
+    :nth-child(1) {
+        font-size: 16px;
+        color: var(--pq-text);
+    }
+
+    :nth-child(2) {
+        font-size: 14px;
+        color: var(--pq-text2);
+    }
+}

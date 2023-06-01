@@ -3,12 +3,7 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseChestSelectItem extends ItemUseSelectItems {
-    private int[] optionItemCounts;
-
-    @Override
-    public ItemUseOp getItemUseOp() {
-        return ItemUseOp.ITEM_USE_CHEST_SELECT_ITEM;
-    }
+    private final int[] optionItemCounts;
 
     public ItemUseChestSelectItem(String[] useParam) {
         String[] options = useParam[0].split(",");
@@ -26,12 +21,18 @@ public class ItemUseChestSelectItem extends ItemUseSelectItems {
             } catch (NumberFormatException ignored) {
                 this.optionItemCounts[i] = INVALID;
             }
-        };
+        }
+    }
+
+    @Override
+    public ItemUseOp getItemUseOp() {
+        return ItemUseOp.ITEM_USE_CHEST_SELECT_ITEM;
     }
 
     @Override
     protected int getItemCount(int index) {
-        if ((optionItemCounts == null) || (index < 0) || (index > optionItemCounts.length)) return INVALID;
+        if ((optionItemCounts == null) || (index < 0) || (index > optionItemCounts.length))
+            return INVALID;
         return this.optionItemCounts[index];
     }
 }

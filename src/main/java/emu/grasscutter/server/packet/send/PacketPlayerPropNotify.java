@@ -5,19 +5,20 @@ import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerPropNotifyOuterClass.PlayerPropNotify;
-import emu.grasscutter.utils.ProtoHelper;
+import emu.grasscutter.utils.helpers.ProtoHelper;
 
 public class PacketPlayerPropNotify extends BasePacket {
-	
-	public PacketPlayerPropNotify(Player player, PlayerProperty prop) {
-		super(PacketOpcodes.PlayerPropNotify);
-		
-		this.buildHeader(0);
-		
-		PlayerPropNotify proto = PlayerPropNotify.newBuilder()
-				.putPropMap(prop.getId(), ProtoHelper.newPropValue(prop, player.getProperty(prop)))
-				.build();
-		
-		this.setData(proto);
-	}
+
+    public PacketPlayerPropNotify(Player player, PlayerProperty prop) {
+        super(PacketOpcodes.PlayerPropNotify);
+
+        this.buildHeader(0);
+
+        PlayerPropNotify proto =
+                PlayerPropNotify.newBuilder()
+                        .putPropMap(prop.getId(), ProtoHelper.newPropValue(prop, player.getProperty(prop)))
+                        .build();
+
+        this.setData(proto);
+    }
 }

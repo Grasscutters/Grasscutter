@@ -13,12 +13,14 @@ import lombok.experimental.FieldDefaults;
 public class HomeWorldBgmData extends GameResource {
     @SerializedName(value = "homeBgmId", alternate = "MJJENLEBKEF")
     private int homeBgmId;
+
     private boolean isDefaultUnlock;
     private boolean NBIDHGOOCKD;
     private boolean JJMNJMCCOKP;
     private int cityId;
     private int sortOrder;
     private String GEGHMJBJMGB;
+
     @SerializedName(value = "bgmNameTextMapHash", alternate = "LMLNBMJFFML")
     private long bgmNameTextMapHash;
 

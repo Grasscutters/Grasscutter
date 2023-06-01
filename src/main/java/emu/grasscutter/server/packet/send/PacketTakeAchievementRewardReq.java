@@ -5,9 +5,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.TakeAchievementRewardReqOuterClass.TakeAchievementRewardReq;
 import emu.grasscutter.server.game.GameSession;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PacketTakeAchievementRewardReq extends BasePacket {
 
     public PacketTakeAchievementRewardReq(GameSession session) {
@@ -17,5 +14,4 @@ public class PacketTakeAchievementRewardReq extends BasePacket {
 
         this.setData(proto);
     }
-
 }

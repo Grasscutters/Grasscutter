@@ -3,13 +3,13 @@ package emu.grasscutter.game.props.ItemUseAction;
 import emu.grasscutter.game.props.ItemUseOp;
 
 public class ItemUseUnlockFurnitureFormula extends ItemUseInt {
+    public ItemUseUnlockFurnitureFormula(String[] useParam) {
+        super(useParam);
+    }
+
     @Override
     public ItemUseOp getItemUseOp() {
         return ItemUseOp.ITEM_USE_UNLOCK_FURNITURE_FORMULA;
-    }
-
-    public ItemUseUnlockFurnitureFormula(String[] useParam) {
-        super(useParam);
     }
 
     @Override

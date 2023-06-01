@@ -3,21 +3,20 @@ package emu.grasscutter.game.tower;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.TowerScheduleData;
+import emu.grasscutter.data.excels.tower.TowerScheduleData;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class TowerSystem extends BaseGameSystem {
 
+    private TowerScheduleConfig towerScheduleConfig;
+
     public TowerSystem(GameServer server) {
         super(server);
         this.load();
     }
-
-    private TowerScheduleConfig towerScheduleConfig;
 
     public synchronized void load() {
         try {
@@ -34,8 +33,10 @@ public class TowerSystem extends BaseGameSystem {
     public TowerScheduleData getCurrentTowerScheduleData() {
         var data = GameData.getTowerScheduleDataMap().get(towerScheduleConfig.getScheduleId());
         if (data == null) {
-            Grasscutter.getLogger().error("Could not get current tower schedule data by schedule id {}, please check your resource files",
-                    towerScheduleConfig.getScheduleId());
+            Grasscutter.getLogger()
+                    .error(
+                            "Could not get current tower schedule data by schedule id {}, please check your resource files",
+                            towerScheduleConfig.getScheduleId());
         }
 
         return data;
@@ -57,13 +58,13 @@ public class TowerSystem extends BaseGameSystem {
         var nextId = 0;
 
         // find in entrance floors first
-        for (int i=0;i<entranceFloors.size()-1;i++) {
+        for (int i = 0; i < entranceFloors.size() - 1; i++) {
             if (floorId == entranceFloors.get(i)) {
-                nextId = entranceFloors.get(i+1);
+                nextId = entranceFloors.get(i + 1);
             }
         }
 
-        if (floorId == entranceFloors.get(entranceFloors.size()-1)) {
+        if (floorId == entranceFloors.get(entranceFloors.size() - 1)) {
             nextId = scheduleFloors.get(0);
         }
 
@@ -72,14 +73,17 @@ public class TowerSystem extends BaseGameSystem {
         }
 
         // find in schedule floors
-        for (int i=0; i < scheduleFloors.size() - 1; i++) {
+        for (int i = 0; i < scheduleFloors.size() - 1; i++) {
             if (floorId == scheduleFloors.get(i)) {
                 nextId = scheduleFloors.get(i + 1);
             }
-        }return nextId;
+        }
+        return nextId;
     }
 
     public Integer getLastEntranceFloor() {
-        return getCurrentTowerScheduleData().getEntranceFloorId().get(getCurrentTowerScheduleData().getEntranceFloorId().size() - 1);
+        return getCurrentTowerScheduleData()
+                .getEntranceFloorId()
+                .get(getCurrentTowerScheduleData().getEntranceFloorId().size() - 1);
     }
 }

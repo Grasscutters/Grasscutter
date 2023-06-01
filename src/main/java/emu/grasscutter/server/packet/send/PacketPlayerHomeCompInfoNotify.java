@@ -5,6 +5,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.PlayerHomeCompInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerHomeCompInfoOuterClass;
+import java.util.List;
 
 public class PacketPlayerHomeCompInfoNotify extends BasePacket {
 
@@ -16,16 +17,15 @@ public class PacketPlayerHomeCompInfoNotify extends BasePacket {
             return;
         }
 
-        PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify proto = PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.newBuilder()
-                .setCompInfo(
-                        PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.newBuilder()
-                                .addAllUnlockedModuleIdList(player.getRealmList())
-                                .addAllSeenModuleIdList(player.getSeenRealmList())
-                                .addAllLevelupRewardGotLevelList(player.getHomeRewardedLevels())
-                                .setFriendEnterHomeOptionValue(player.getHome().getEnterHomeOption())
-                                .build()
-                )
-                .build();
+        PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify proto =
+                PlayerHomeCompInfoNotifyOuterClass.PlayerHomeCompInfoNotify.newBuilder()
+                        .setCompInfo(
+                                PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.newBuilder()
+                                        .addAllUnlockedModuleIdList(player.getRealmList())
+                                        .addAllLevelupRewardGotLevelList(List.of(1)) // Hardcoded
+                                        .setFriendEnterHomeOptionValue(player.getHome().getEnterHomeOption())
+                                        .build())
+                        .build();
 
         this.setData(proto);
     }

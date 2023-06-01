@@ -6,7 +6,6 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.HomeComfortInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,25 +23,22 @@ public class PacketHomeComfortInfoNotify extends BasePacket {
 
         for (int moduleId : player.getRealmList()) {
             var homeScene = player.getHome().getHomeSceneItem(moduleId + 2000);
-            var blockComfortList = homeScene.getBlockItems().values().stream()
-                    .map(HomeBlockItem::calComfort)
-                    .toList();
+            var blockComfortList =
+                    homeScene.getBlockItems().values().stream().map(HomeBlockItem::calComfort).toList();
             var homeRoomScene = player.getHome().getHomeSceneItem(homeScene.getRoomSceneId());
 
             comfortInfoList.add(
                     HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.newBuilder()
-                        .setModuleId(moduleId)
+                            .setModuleId(moduleId)
                             .setRoomSceneComfortValue(homeRoomScene.calComfort())
                             .addAllWorldSceneBlockComfortValueList(blockComfortList)
-                        .build()
-            );
+                            .build());
         }
 
-        HomeComfortInfoNotifyOuterClass.HomeComfortInfoNotify proto = HomeComfortInfoNotifyOuterClass.HomeComfortInfoNotify
-                .newBuilder()
-                .addAllModuleInfoList(comfortInfoList)
-                .build();
-
+        HomeComfortInfoNotifyOuterClass.HomeComfortInfoNotify proto =
+                HomeComfortInfoNotifyOuterClass.HomeComfortInfoNotify.newBuilder()
+                        .addAllModuleInfoList(comfortInfoList)
+                        .build();
 
         this.setData(proto);
     }

@@ -1,0 +1,80 @@
+.SideBar {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+    max-width: 300px;
+
+    background-color: var(--secondary-color);
+
+    gap: 40px;
+}
+
+.SideBar_Title {
+    margin-top: 42px;
+    line-height: 41px;
+    font-size: 34px;
+
+    max-width: 256px;
+    max-height: 128px;
+    text-align: center;
+    align-self: center;
+
+    user-select: none;
+}
+
+.SideBar_Title:hover {
+    cursor: pointer;
+}
+
+.SideBar_Buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    user-select: none;
+}
+
+.SideBar_Enter {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 50px;
+    margin-bottom: 24px;
+
+    box-sizing: border-box;
+    align-self: center;
+    align-items: center;
+    border-radius: 10px;
+
+    background-color: var(--background-color);
+}
+
+.SideBar_Input {
+    background-color: transparent;
+    border: none;
+
+    color: var(--text-primary-color);
+    font-size: 20px;
+    width: 100%;
+    padding: 11px;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+.SideBar_Input::placeholder {
+    color: var(--text-secondary-color);
+    opacity: 1;
+}
+
+.SideBar_Input:disabled {
+    cursor: not-allowed;
+    border-radius: 10px ;
+    background-color: var(--background-color);
+}

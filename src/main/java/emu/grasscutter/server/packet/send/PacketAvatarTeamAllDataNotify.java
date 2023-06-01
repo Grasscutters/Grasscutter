@@ -19,7 +19,10 @@ public class PacketAvatarTeamAllDataNotify extends BasePacket {
         }
 
         // Add the avatar lists for all the teams the player has.
-        player.getTeamManager().getTeams().forEach((id, teamInfo) -> proto.putAvatarTeamMap(id, teamInfo.toProto(player)));
+        player
+                .getTeamManager()
+                .getTeams()
+                .forEach((id, teamInfo) -> proto.putAvatarTeamMap(id, teamInfo.toProto(player)));
 
         this.setData(proto);
     }

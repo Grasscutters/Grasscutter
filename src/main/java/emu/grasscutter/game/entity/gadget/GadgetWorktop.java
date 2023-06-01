@@ -1,7 +1,6 @@
 package emu.grasscutter.game.entity.gadget;
 
-import java.util.Arrays;
-
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.gadget.worktop.WorktopWorktopOptionHandler;
 import emu.grasscutter.game.player.Player;
@@ -10,17 +9,24 @@ import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq;
 import emu.grasscutter.net.proto.WorktopInfoOuterClass.WorktopInfo;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
-public class GadgetWorktop extends GadgetContent {
-    private IntSet worktopOptions;
+public final class GadgetWorktop extends GadgetContent {
+    private Set<Integer> worktopOptions;
     private WorktopWorktopOptionHandler handler;
 
     public GadgetWorktop(EntityGadget gadget) {
         super(gadget);
     }
 
-    public IntSet getWorktopOptions() {
+    public Set<Integer> getWorktopOptions() {
+        if (this.worktopOptions == null) {
+            this.worktopOptions = new HashSet<>();
+        }
+
         return worktopOptions;
     }
 
@@ -43,25 +49,25 @@ public class GadgetWorktop extends GadgetContent {
     }
 
     public void onBuildProto(SceneGadgetInfo.Builder gadgetInfo) {
-        if (this.worktopOptions == null) {
-            return;
+        var options = this.getWorktopOptions();
+        if (options == null) return;
+
+        try {
+            var worktop = WorktopInfo.newBuilder().addAllOptionList(options).build();
+            gadgetInfo.setWorktop(worktop);
+        } catch (NullPointerException ignored) {
+            // "this.wrapped" is null.
+            gadgetInfo.setWorktop(
+                    WorktopInfo.newBuilder().addAllOptionList(Collections.emptyList()).build());
+            Grasscutter.getLogger().warn("GadgetWorktop.onBuildProto: this.wrapped is null");
         }
-
-        WorktopInfo worktop = WorktopInfo.newBuilder()
-                .addAllOptionList(this.getWorktopOptions())
-                .build();
-
-        gadgetInfo.setWorktop(worktop);
     }
 
     public void setOnSelectWorktopOptionEvent(WorktopWorktopOptionHandler handler) {
         this.handler = handler;
     }
-    public boolean onSelectWorktopOption(SelectWorktopOptionReq req) {
-        if (this.handler != null) {
-            this.handler.onSelectWorktopOption(this, req.getOptionId());
-        }
-        return false;
-    }
 
+    public boolean onSelectWorktopOption(SelectWorktopOptionReq req) {
+        return this.handler != null && this.handler.onSelectWorktopOption(this, req.getOptionId());
+    }
 }

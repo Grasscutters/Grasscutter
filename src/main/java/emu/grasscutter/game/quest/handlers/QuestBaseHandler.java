@@ -1,10 +1,9 @@
 package emu.grasscutter.game.quest.handlers;
 
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
+import emu.grasscutter.data.excels.quest.QuestData.QuestCondition;
 import emu.grasscutter.game.quest.GameQuest;
 
-public abstract class QuestBaseHandler {
+public abstract class QuestBaseHandler<T extends QuestCondition<?>> {
 
-	public abstract boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params);
-
+    public abstract boolean execute(GameQuest quest, T condition, String paramStr, int... params);
 }

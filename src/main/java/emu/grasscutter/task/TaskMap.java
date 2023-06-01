@@ -1,12 +1,10 @@
 package emu.grasscutter.task;
 
 import emu.grasscutter.Grasscutter;
-
+import java.util.*;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.reflections.Reflections;
-
-import java.util.*;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class TaskMap {
@@ -109,15 +107,13 @@ public final class TaskMap {
         // register task
         try {
             Scheduler scheduler = schedulerFactory.getScheduler();
-            JobDetail job = JobBuilder
-                        .newJob(task.getClass())
-                        .withIdentity(taskName)
-                        .build();
+            JobDetail job = JobBuilder.newJob(task.getClass()).withIdentity(taskName).build();
 
-            Trigger convTrigger = TriggerBuilder.newTrigger()
-                        .withIdentity(annotation.triggerName())
-                        .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
-                        .build();
+            Trigger convTrigger =
+                    TriggerBuilder.newTrigger()
+                            .withIdentity(annotation.triggerName())
+                            .withSchedule(CronScheduleBuilder.cronSchedule(annotation.taskCronExpression()))
+                            .build();
 
             scheduler.scheduleJob(job, convTrigger);
 
@@ -147,28 +143,31 @@ public final class TaskMap {
     private void scan() {
         Reflections reflector = Grasscutter.reflector;
         Set<Class<?>> classes = reflector.getTypesAnnotatedWith(Task.class);
-        classes.forEach(annotated -> {
-            try {
-                Task taskData = annotated.getAnnotation(Task.class);
-                Object object = annotated.getDeclaredConstructor().newInstance();
-                if (object instanceof TaskHandler) {
-                    this.registerTask(taskData.taskName(), (TaskHandler) object);
-                    if (taskData.executeImmediatelyAfterReset()) {
-                        this.afterReset.put(taskData.taskName(), (TaskHandler) object);
+        classes.forEach(
+                annotated -> {
+                    try {
+                        Task taskData = annotated.getAnnotation(Task.class);
+                        Object object = annotated.getDeclaredConstructor().newInstance();
+                        if (object instanceof TaskHandler) {
+                            this.registerTask(taskData.taskName(), (TaskHandler) object);
+                            if (taskData.executeImmediatelyAfterReset()) {
+                                this.afterReset.put(taskData.taskName(), (TaskHandler) object);
+                            }
+                        } else {
+                            Grasscutter.getLogger()
+                                    .error("Class " + annotated.getName() + " is not a TaskHandler!");
+                        }
+                    } catch (Exception exception) {
+                        Grasscutter.getLogger()
+                                .error(
+                                        "Failed to register task handler for " + annotated.getSimpleName(), exception);
                     }
-                } else {
-                    Grasscutter.getLogger().error("Class " + annotated.getName() + " is not a TaskHandler!");
-                }
-            } catch (Exception exception) {
-                Grasscutter.getLogger().error("Failed to register task handler for " + annotated.getSimpleName(), exception);
-            }
-        });
+                });
         try {
             Scheduler scheduler = schedulerFactory.getScheduler();
             scheduler.start();
         } catch (SchedulerException e) {
             e.printStackTrace();
         }
-
     }
 }

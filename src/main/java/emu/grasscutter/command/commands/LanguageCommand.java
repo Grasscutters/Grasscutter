@@ -1,17 +1,20 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
-
 import java.util.List;
 import java.util.Locale;
 
-import static emu.grasscutter.utils.Language.translate;
-
-@Command(label = "language", usage = {"[<language code>]"}, aliases = {"lang"}, targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+        label = "language",
+        usage = {"[<language code>]"},
+        aliases = {"lang"},
+        targetRequirement = Command.TargetRequirement.NONE)
 public final class LanguageCommand implements CommandHandler {
 
     @Override
@@ -20,11 +23,11 @@ public final class LanguageCommand implements CommandHandler {
             String curLangCode = null;
             if (sender != null) {
                 curLangCode = Utils.getLanguageCode(sender.getAccount().getLocale());
-            }
-            else {
+            } else {
                 curLangCode = Grasscutter.getLanguage().getLanguageCode();
             }
-            CommandHandler.sendMessage(sender, translate(sender, "commands.language.current_language", curLangCode));
+            CommandHandler.sendMessage(
+                    sender, translate(sender, "commands.language.current_language", curLangCode));
             return;
         }
 
@@ -37,8 +40,7 @@ public final class LanguageCommand implements CommandHandler {
             var account = sender.getAccount();
             account.setLocale(locale);
             account.save();
-        }
-        else {
+        } else {
             Grasscutter.setLanguage(languageInst);
             var config = Grasscutter.getConfig();
             config.language.language = locale;
@@ -46,10 +48,11 @@ public final class LanguageCommand implements CommandHandler {
         }
 
         if (!langCode.equals(actualLangCode)) {
-            CommandHandler.sendMessage(sender, translate(sender, "commands.language.language_not_found", langCode));
+            CommandHandler.sendMessage(
+                    sender, translate(sender, "commands.language.language_not_found", langCode));
         }
 
-        CommandHandler.sendMessage(sender, translate(sender, "commands.language.language_changed", actualLangCode));
-
+        CommandHandler.sendMessage(
+                sender, translate(sender, "commands.language.language_changed", actualLangCode));
     }
 }

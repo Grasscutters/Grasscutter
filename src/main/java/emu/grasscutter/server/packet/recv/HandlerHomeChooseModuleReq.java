@@ -9,7 +9,6 @@ import emu.grasscutter.server.packet.send.PacketHomeChooseModuleRsp;
 import emu.grasscutter.server.packet.send.PacketHomeComfortInfoNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerHomeCompInfoNotify;
 
-
 @Opcodes(PacketOpcodes.HomeChooseModuleReq)
 public class HandlerHomeChooseModuleReq extends PacketHandler {
 

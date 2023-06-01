@@ -1,21 +1,20 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
 @Command(
-    label = "resetConst",
-    aliases = {"resetconstellation"},
-    usage = "[all]",
-    permission = "player.resetconstellation",
-    permissionTargeted = "player.resetconstellation.others")
+        label = "resetConst",
+        aliases = {"resetconstellation"},
+        usage = "[all]",
+        permission = "player.resetconstellation",
+        permissionTargeted = "player.resetconstellation.others")
 public final class ResetConstCommand implements CommandHandler {
 
     @Override
@@ -32,7 +31,9 @@ public final class ResetConstCommand implements CommandHandler {
             Avatar avatar = entity.getAvatar();
             this.resetConstellation(avatar);
 
-            CommandHandler.sendMessage(sender, translate(sender, "commands.resetConst.success", avatar.getAvatarData().getName()));
+            CommandHandler.sendMessage(
+                    sender,
+                    translate(sender, "commands.resetConst.success", avatar.getAvatarData().getName()));
         }
     }
 

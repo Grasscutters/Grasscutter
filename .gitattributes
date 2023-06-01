@@ -1,6 +1,1 @@
-*.java text=auto
-*.json text=auto
-*.md text=auto
-*.properties text=auto
-*.py text=auto
-*.sh text=auto
+* text=auto

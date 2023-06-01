@@ -15,9 +15,10 @@ public class PacketHomeAllUnlockedBgmIdListNotify extends BasePacket {
 
         var unlocked = player.getHome().getUnlockedHomeBgmList();
 
-        var notify = HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotify.newBuilder()
-            .addAllAllUnlockedBgmIdList(unlocked)
-            .build();
+        var notify =
+                HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotify.newBuilder()
+                        .addAllAllUnlockedBgmIdList(unlocked)
+                        .build();
 
         this.setData(notify);
     }

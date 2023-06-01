@@ -1,0 +1,147 @@
+.HomePage {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 0;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+
+    background-color: var(--background-color);
+
+    div {
+        display: flex;
+    }
+}
+
+.HomePage_Top {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.HomePage_Title {
+    margin-top: 31px;
+    margin-bottom: 15px;
+}
+
+.HomePage_Buttons {
+    width: 100%;
+
+    max-width: 1376px;
+
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.HomePage_Bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.HomePage_Box {
+    display: flex;
+    background-color: var(--primary-color);
+}
+
+.HomePage_Disclaimer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    background-color: var(--primary-color);
+
+    height: 100px;
+    align-self: end;
+
+    margin: 0 0 0 60px;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding: 11px;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.HomePage_Discord {
+    max-width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+
+    gap: 8px;
+    align-self: center;
+    align-items: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        max-width: 44px;
+        max-height: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: #5865F2;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+    }
+}
+
+.HomePage_Text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--primary-color);
+
+    max-width: 300px;
+
+    margin: 13px 60px 0 0;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding: 11px;
+}
+
+.HomePage_Credits {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    :nth-child(1) {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    :nth-child(2) {
+        font-size: 10px;
+        align-self: center;
+    }
+}
+
+.HomePage_Links {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: var(--text-primary-color);
+        text-decoration: none;
+        padding-right: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

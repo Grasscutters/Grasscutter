@@ -1,0 +1,6 @@
+[submodule "docs/wiki"]
+	path = docs/wiki
+	url = https://github.com/Grasscutters/Grasscutter.wiki.git
+[submodule "src/handbook/data/assets"]
+	path = src/handbook/data/assets
+	url = https://github.com/genshitters/gm-handbook-assets.git

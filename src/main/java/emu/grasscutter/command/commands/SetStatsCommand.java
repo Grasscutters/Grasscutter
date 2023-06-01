@@ -1,9 +1,5 @@
 package emu.grasscutter.command.commands;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
@@ -11,45 +7,22 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Command(
-    label = "setStats",
-    aliases = {"stats", "stat"},
-    usage = {
-        "[set] <stat> <value>",
-        "(lock|freeze) <stat> [<value>]",  // Can lock to current value
-        "(unlock|unfreeze) <stat>"},
-    permission = "player.setstats",
-    permissionTargeted = "player.setstats.others")
+        label = "setStats",
+        aliases = {"stats", "stat"},
+        usage = {
+            "[set] <stat> <value>",
+            "(lock|freeze) <stat> [<value>]", // Can lock to current value
+            "(unlock|unfreeze) <stat>"
+        },
+        permission = "player.setstats",
+        permissionTargeted = "player.setstats.others")
 public final class SetStatsCommand implements CommandHandler {
-    private static class Stat {
-        String name;
-        FightProperty prop;
-
-        public Stat(FightProperty prop) {
-            this.name = prop.toString();
-            this.prop = prop;
-        }
-
-        public Stat(String name, FightProperty prop) {
-            this.name = name;
-            this.prop = prop;
-        }
-    }
-
-    private static enum Action {
-        ACTION_SET("commands.generic.set_to", "commands.generic.set_for_to"),
-        ACTION_LOCK("commands.setStats.locked_to", "commands.setStats.locked_for_to"),
-        ACTION_UNLOCK("commands.setStats.unlocked", "commands.setStats.unlocked_for");
-        public final String messageKeySelf;
-        public final String messageKeyOther;
-        private Action(String messageKeySelf, String messageKeyOther) {
-            this.messageKeySelf = messageKeySelf;
-            this.messageKeyOther = messageKeyOther;
-        }
-    }
-
-    private Map<String, Stat> stats;
+    private final Map<String, Stat> stats;
 
     public SetStatsCommand() {
         this.stats = new HashMap<>();
@@ -59,18 +32,22 @@ public final class SetStatsCommand implements CommandHandler {
         // Full FightProperty enum that won't be advertised but can be used by devs
         // They have a prefix to avoid the "hp" clash
         for (FightProperty prop : FightProperty.values()) {
-            String name = prop.toString().substring(10);  // FIGHT_PROP_BASE_HP -> _BASE_HP
-            String key = name.toLowerCase();  // _BASE_HP -> _base_hp
-            name = name.substring(1);  // _BASE_HP -> BASE_HP
+            String name = prop.toString().substring(10); // FIGHT_PROP_BASE_HP -> _BASE_HP
+            String key = name.toLowerCase(); // _BASE_HP -> _base_hp
+            name = name.substring(1); // _BASE_HP -> BASE_HP
             this.stats.put(key, new Stat(name, prop));
         }
 
         // Compatibility aliases
         this.stats.put("mhp", this.stats.get("maxhp"));
-        this.stats.put("hp", this.stats.get("_cur_hp"));  // Overrides FIGHT_PROP_HP
-        this.stats.put("atk", this.stats.get("_cur_attack"));  // Overrides FIGHT_PROP_ATTACK
-        this.stats.put("def", this.stats.get("_cur_defense"));  // Overrides FIGHT_PROP_DEFENSE
-        this.stats.put("atkb", this.stats.get("_base_attack"));  // This doesn't seem to get used to recalculate ATK, so it's only useful for stuff like Bennett's buff.
+        this.stats.put("hp", this.stats.get("_cur_hp")); // Overrides FIGHT_PROP_HP
+        this.stats.put("atk", this.stats.get("_cur_attack")); // Overrides FIGHT_PROP_ATTACK
+        this.stats.put("def", this.stats.get("_cur_defense")); // Overrides FIGHT_PROP_DEFENSE
+        this.stats.put(
+                "atkb",
+                this.stats.get(
+                        "_base_attack")); // This doesn't seem to get used to recalculate ATK, so it's only
+        // useful for stuff like Bennett's buff.
         this.stats.put("eanemo", this.stats.get("anemo%"));
         this.stats.put("ecryo", this.stats.get("cryo%"));
         this.stats.put("edendro", this.stats.get("dendro%"));
@@ -86,7 +63,7 @@ public final class SetStatsCommand implements CommandHandler {
 
     public static float parsePercent(String input) throws NumberFormatException {
         if (input.endsWith("%")) {
-            return Float.parseFloat(input.substring(0, input.length()-1))/100f;
+            return Float.parseFloat(input.substring(0, input.length() - 1)) / 100f;
         } else {
             return Float.parseFloat(input);
         }
@@ -105,17 +82,21 @@ public final class SetStatsCommand implements CommandHandler {
 
         // Get the action and stat
         String arg0 = args.remove(0).toLowerCase();
-        Action action = switch (arg0) {
-            default -> {statStr = arg0; yield Action.ACTION_SET;}  // Implicit set command
-            case "set" -> Action.ACTION_SET;  // Explicit set command
-            case "lock", "freeze" -> Action.ACTION_LOCK;
-            case "unlock", "unfreeze" -> Action.ACTION_UNLOCK;
-        };
+        Action action =
+                switch (arg0) {
+                    default -> {
+                        statStr = arg0;
+                        yield Action.ACTION_SET;
+                    } // Implicit set command
+                    case "set" -> Action.ACTION_SET; // Explicit set command
+                    case "lock", "freeze" -> Action.ACTION_LOCK;
+                    case "unlock", "unfreeze" -> Action.ACTION_UNLOCK;
+                };
         if (statStr == null) {
             statStr = args.remove(0).toLowerCase();
         }
         if (!stats.containsKey(statStr)) {
-            sendUsageMessage(sender);  // Invalid stat or action
+            sendUsageMessage(sender); // Invalid stat or action
             return;
         }
         Stat stat = stats.get(statStr);
@@ -126,10 +107,10 @@ public final class SetStatsCommand implements CommandHandler {
         try {
             switch (action) {
                 case ACTION_LOCK:
-                    if (args.isEmpty()) {  // Lock to current value
+                    if (args.isEmpty()) { // Lock to current value
                         value = avatar.getFightProperty(stat.prop);
                         break;
-                    }  // Else fall-through and lock to supplied value
+                    } // Else fall-through and lock to supplied value
                 case ACTION_SET:
                     value = parsePercent(args.remove(0));
                     break;
@@ -144,7 +125,7 @@ public final class SetStatsCommand implements CommandHandler {
             return;
         }
 
-        if (!args.isEmpty()) {  // Leftover arguments!
+        if (!args.isEmpty()) { // Leftover arguments!
             sendUsageMessage(sender);
             return;
         }
@@ -174,8 +155,36 @@ public final class SetStatsCommand implements CommandHandler {
             CommandHandler.sendTranslatedMessage(sender, action.messageKeySelf, stat.name, valueStr);
         } else {
             String uidStr = targetPlayer.getAccount().getId();
-            CommandHandler.sendTranslatedMessage(sender, action.messageKeyOther, stat.name, uidStr, valueStr);
+            CommandHandler.sendTranslatedMessage(
+                    sender, action.messageKeyOther, stat.name, uidStr, valueStr);
         }
-        return;
+    }
+
+    private enum Action {
+        ACTION_SET("commands.generic.set_to", "commands.generic.set_for_to"),
+        ACTION_LOCK("commands.setStats.locked_to", "commands.setStats.locked_for_to"),
+        ACTION_UNLOCK("commands.setStats.unlocked", "commands.setStats.unlocked_for");
+        public final String messageKeySelf;
+        public final String messageKeyOther;
+
+        Action(String messageKeySelf, String messageKeyOther) {
+            this.messageKeySelf = messageKeySelf;
+            this.messageKeyOther = messageKeyOther;
+        }
+    }
+
+    private static class Stat {
+        String name;
+        FightProperty prop;
+
+        public Stat(FightProperty prop) {
+            this.name = prop.toString();
+            this.prop = prop;
+        }
+
+        public Stat(String name, FightProperty prop) {
+            this.name = name;
+            this.prop = prop;
+        }
     }
 }

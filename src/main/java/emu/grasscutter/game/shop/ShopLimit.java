@@ -4,6 +4,11 @@ import dev.morphia.annotations.Entity;
 
 @Entity
 public class ShopLimit {
+    private int shopGoodId;
+    private int hasBought;
+    private int hasBoughtInPeriod = 0;
+    private int nextRefreshTime = 0;
+
     public int getShopGoodId() {
         return shopGoodId;
     }
@@ -35,9 +40,4 @@ public class ShopLimit {
     public void setHasBoughtInPeriod(int hasBoughtInPeriod) {
         this.hasBoughtInPeriod = hasBoughtInPeriod;
     }
-
-    private int shopGoodId;
-    private int hasBought;
-    private int hasBoughtInPeriod = 0;
-    private int nextRefreshTime = 0;
 }

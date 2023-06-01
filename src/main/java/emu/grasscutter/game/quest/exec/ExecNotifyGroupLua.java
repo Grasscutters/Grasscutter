@@ -1,34 +1,62 @@
 package emu.grasscutter.game.quest.exec;
 
-import emu.grasscutter.data.excels.QuestData;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.game.quest.QuestValue;
+import emu.grasscutter.game.quest.QuestValueExec;
+import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
-import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
+import lombok.val;
 
-@QuestValue(QuestTrigger.QUEST_EXEC_NOTIFY_GROUP_LUA)
+@QuestValueExec(QuestExec.QUEST_EXEC_NOTIFY_GROUP_LUA)
 public class ExecNotifyGroupLua extends QuestExecHandler {
 
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
-        var sceneId = Integer.parseInt(paramStr[0]);
-        var groupId = Integer.parseInt(paramStr[1]);
+        val sceneId = Integer.parseInt(paramStr[0]);
+        val groupId = Integer.parseInt(paramStr[1]);
 
-        var scriptManager = quest.getOwner().getScene().getScriptManager();
+        val scene = quest.getOwner().getScene();
+        val scriptManager = scene.getScriptManager();
 
-        if(quest.getOwner().getScene().getId() == sceneId){
-            scriptManager.callEvent(
-                quest.getState() == QuestState.QUEST_STATE_FINISHED ?
-                    EventType.EVENT_QUEST_FINISH : EventType.EVENT_QUEST_START
-                , new ScriptArgs());
+        if (scene.getId() != sceneId) {
+            return false;
         }
+        scene.runWhenFinished(
+                () -> {
+                    val groupInstance = scriptManager.getGroupInstanceById(groupId);
+
+                    if (groupInstance != null) {
+                        // workaround to make sure the triggers are still there todo find better way of trigger
+                        // handling
+                        scriptManager.refreshGroup(groupInstance);
+                        Grasscutter.getLogger()
+                                .trace(
+                                        "group: {} \ncondition: {} \nparamStr {}",
+                                        groupInstance.getLuaGroup(),
+                                        condition,
+                                        paramStr);
+                    } else {
+                        Grasscutter.getLogger()
+                                .debug(
+                                        "notify, no group instance for:\n group: {} \ncondition: {} \nparamStr {}",
+                                        groupId,
+                                        condition,
+                                        paramStr);
+                    }
+
+                    val eventType =
+                            quest.getState() == QuestState.QUEST_STATE_FINISHED
+                                    ? EventType.EVENT_QUEST_FINISH
+                                    : EventType.EVENT_QUEST_START;
+                    scriptManager.callEvent(
+                            new ScriptArgs(groupId, eventType, quest.getSubQuestId())
+                                    .setEventSource(quest.getSubQuestId()));
+                });
 
         return true;
     }
-
 }

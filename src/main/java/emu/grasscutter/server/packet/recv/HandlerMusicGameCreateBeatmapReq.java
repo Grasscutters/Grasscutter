@@ -1,23 +1,23 @@
-//package emu.grasscutter.server.packet.recv;
+// package emu.grasscutter.server.packet.recv;
 //
-//import emu.grasscutter.database.DatabaseHelper;
-//import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
-//import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
-//import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
-//import emu.grasscutter.game.props.ActivityType;
-//import emu.grasscutter.net.packet.Opcodes;
-//import emu.grasscutter.net.packet.PacketHandler;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.MusicGameCreateBeatmapReqOuterClass;
-//import emu.grasscutter.server.game.GameSession;
-//import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
-//import emu.grasscutter.server.packet.send.PacketMusicGameCreateBeatmapRsp;
-//import emu.grasscutter.utils.Utils;
+// import emu.grasscutter.database.DatabaseHelper;
+// import emu.grasscutter.game.activity.musicgame.MusicGameActivityHandler;
+// import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
+// import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
+// import emu.grasscutter.game.props.ActivityType;
+// import emu.grasscutter.net.packet.Opcodes;
+// import emu.grasscutter.net.packet.PacketHandler;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.MusicGameCreateBeatmapReqOuterClass;
+// import emu.grasscutter.server.game.GameSession;
+// import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
+// import emu.grasscutter.server.packet.send.PacketMusicGameCreateBeatmapRsp;
+// import emu.grasscutter.utils.Utils;
 //
-//import java.util.Objects;
+// import java.util.Objects;
 //
-//@Opcodes(PacketOpcodes.MusicGameCreateBeatmapReq)
-//public class HandlerMusicGameCreateBeatmapReq extends PacketHandler {
+// @Opcodes(PacketOpcodes.MusicGameCreateBeatmapReq)
+// public class HandlerMusicGameCreateBeatmapReq extends PacketHandler {
 //
 //	@Override
 //	public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
@@ -35,7 +35,8 @@
 //
 //        musicGameBeatmap.save();
 //
-//        var playerData = session.getPlayer().getActivityManager().getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
+//        var playerData =
+// session.getPlayer().getActivityManager().getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
 //        if(playerData.isEmpty()){
 //            return;
 //        }
@@ -60,7 +61,8 @@
 //        handler.addPersonalBeatmap(playerData.get(), musicGameBeatmap);
 //
 //        session.send(new PacketActivityInfoNotify(handler.toProto(playerData.get())));
-//        session.send(new PacketMusicGameCreateBeatmapRsp(musicGameBeatmap.getMusicShareId(), req.getUnknownEnum1()));
+//        session.send(new PacketMusicGameCreateBeatmapRsp(musicGameBeatmap.getMusicShareId(),
+// req.getUnknownEnum1()));
 //	}
 //
-//}
+// }

@@ -1,23 +1,37 @@
 package emu.grasscutter.game.quest.content;
 
-import emu.grasscutter.data.excels.QuestData.QuestCondition;
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_GAME_TIME_TICK;
+
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValue;
-import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.game.quest.handlers.QuestBaseHandler;
+import emu.grasscutter.game.quest.QuestValueContent;
+import lombok.val;
 
-@QuestValue(QuestTrigger.QUEST_CONTENT_GAME_TIME_TICK)
-public class ContentGameTimeTick extends QuestBaseHandler {
+@QuestValueContent(QUEST_CONTENT_GAME_TIME_TICK)
+public class ContentGameTimeTick extends BaseContent {
+    @Override
+    public boolean execute(
+            GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
+        val daysSinceStart =
+                quest.getOwner().getWorld().getTotalGameTimeDays() - quest.getStartGameDay();
+        val currentHour = quest.getOwner().getWorld().getGameTimeHours();
 
-	@Override
-	public boolean execute(GameQuest quest, QuestCondition condition, String paramStr, int... params) {
-        var range = condition.getParamStr().split(",");
-        var min = Math.min(Integer.parseInt(range[0]), Integer.parseInt(range[1]));
-        var max = Math.max(Integer.parseInt(range[0]), Integer.parseInt(range[1]));
+        // params[0] is days since start, str is hours of day
+        val range = condition.getParamStr().split(",");
+        val from = Integer.parseInt(range[0]);
+        val to = Integer.parseInt(range[1]);
 
-        // params[0] is clock, params[1] is day
-		return params[0] >= min && params[0] <= max &&
-            params[1] >= condition.getParam()[0];
-	}
+        val daysToPass = condition.getParam()[0];
+        // if to is at the beginning of the day, we need to pass it one more time
+        val daysMod = to < from && daysToPass > 0 && currentHour < to ? 1 : 0;
 
+        val isTimeMet =
+                from < to
+                        ? currentHour >= from && currentHour < to
+                        : currentHour < to || currentHour >= from;
+
+        val isDaysSinceMet = daysSinceStart >= daysToPass + daysMod;
+
+        return isTimeMet && isDaysSinceMet;
+    }
 }

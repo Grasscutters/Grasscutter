@@ -1,5 +1,13 @@
 package emu.grasscutter.utils;
 
+import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
+import emu.grasscutter.data.common.DynamicFloat;
+import emu.grasscutter.game.world.GridPosition;
+import emu.grasscutter.game.world.Position;
+import emu.grasscutter.utils.JsonAdapters.*;
+import emu.grasscutter.utils.objects.JObject;
+import it.unimi.dsi.fastutil.ints.IntList;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,25 +19,29 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
-
-import emu.grasscutter.data.common.DynamicFloat;
-import emu.grasscutter.utils.JsonAdapters.*;
-
-import it.unimi.dsi.fastutil.ints.IntList;
-
 public final class JsonUtils {
-    static final Gson gson = new GsonBuilder()
-        .setPrettyPrinting()
-        .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
-        .registerTypeAdapter(IntList.class, new IntListAdapter())
-        .registerTypeAdapter(Position.class, new PositionAdapter())
-        .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
-        .create();
+    static final Gson gson =
+            new GsonBuilder()
+                    .setPrettyPrinting()
+                    .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
+                    .registerTypeAdapter(IntList.class, new IntListAdapter())
+                    .registerTypeAdapter(Position.class, new PositionAdapter())
+                    .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
+                    .registerTypeAdapter(byte[].class, new ByteArrayAdapter())
+                    .registerTypeAdapter(JObject.class, new JObject.Adapter())
+                    .registerTypeAdapterFactory(new EnumTypeAdapterFactory())
+                    .disableHtmlEscaping()
+                    .create();
+
+    /**
+     * Converts the given object to a JsonElement.
+     *
+     * @param object The object to convert.
+     * @return The JsonElement.
+     */
+    public static JsonElement toJson(Object object) {
+        return gson.toJsonTree(object);
+    }
 
     /*
      * Encode an object to a JSON string
@@ -38,7 +50,8 @@ public final class JsonUtils {
         return gson.toJson(object);
     }
 
-    public static <T> T decode(JsonElement jsonElement, Class<T> classType) throws JsonSyntaxException {
+    public static <T> T decode(JsonElement jsonElement, Class<T> classType)
+            throws JsonSyntaxException {
         return gson.fromJson(jsonElement, classType);
     }
 
@@ -48,7 +61,9 @@ public final class JsonUtils {
 
     @Deprecated(forRemoval = true)
     public static <T> T loadToClass(String filename, Class<T> classType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
+        try (InputStreamReader fileReader =
+                new InputStreamReader(
+                        new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
             return loadToClass(fileReader, classType);
         }
     }
@@ -65,7 +80,9 @@ public final class JsonUtils {
 
     @Deprecated(forRemoval = true)
     public static <T> List<T> loadToList(String filename, Class<T> classType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
+        try (InputStreamReader fileReader =
+                new InputStreamReader(
+                        new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
             return loadToList(fileReader, classType);
         }
     }
@@ -76,25 +93,40 @@ public final class JsonUtils {
         }
     }
 
-    public static <T1,T2> Map<T1,T2> loadToMap(Reader fileReader, Class<T1> keyType, Class<T2> valueType) throws IOException {
-        return gson.fromJson(fileReader, TypeToken.getParameterized(Map.class, keyType, valueType).getType());
+    public static <T1, T2> Map<T1, T2> loadToMap(
+            Reader fileReader, Class<T1> keyType, Class<T2> valueType) throws IOException {
+        return gson.fromJson(
+                fileReader, TypeToken.getParameterized(Map.class, keyType, valueType).getType());
     }
 
     @Deprecated(forRemoval = true)
-    public static <T1,T2> Map<T1,T2> loadToMap(String filename, Class<T1> keyType, Class<T2> valueType) throws IOException {
-        try (InputStreamReader fileReader = new InputStreamReader(new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
+    public static <T1, T2> Map<T1, T2> loadToMap(
+            String filename, Class<T1> keyType, Class<T2> valueType) throws IOException {
+        try (InputStreamReader fileReader =
+                new InputStreamReader(
+                        new FileInputStream(Utils.toFilePath(filename)), StandardCharsets.UTF_8)) {
             return loadToMap(fileReader, keyType, valueType);
         }
     }
 
-    public static <T1,T2> Map<T1,T2> loadToMap(Path filename, Class<T1> keyType, Class<T2> valueType) throws IOException {
+    public static <T1, T2> Map<T1, T2> loadToMap(
+            Path filename, Class<T1> keyType, Class<T2> valueType) throws IOException {
         try (var fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
             return loadToMap(fileReader, keyType, valueType);
         }
     }
 
+    public static <T1, T2> Map<T1, T2> loadToMap(Path filename, Class<T1> keyType, Type valueType)
+            throws IOException {
+        try (var fileReader = Files.newBufferedReader(filename, StandardCharsets.UTF_8)) {
+            return gson.fromJson(
+                    fileReader, TypeToken.getParameterized(Map.class, keyType, valueType).getType());
+        }
+    }
+
     /**
      * Safely JSON decodes a given string.
+     *
      * @param jsonData The JSON-encoded data.
      * @return JSON decoded data, or null if an exception occurred.
      */

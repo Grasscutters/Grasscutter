@@ -4,10 +4,12 @@ import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.server.packet.send.PacketChallengeDataNotify;
 
-public class KillGadgetTrigger extends ChallengeTrigger{
+public class KillGadgetTrigger extends ChallengeTrigger {
     @Override
     public void onBegin(WorldChallenge challenge) {
-        challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, challenge.getScore().get()));
+        challenge
+                .getScene()
+                .broadcastPacket(new PacketChallengeDataNotify(challenge, 2, challenge.getScore().get()));
     }
 
     @Override
@@ -15,9 +17,8 @@ public class KillGadgetTrigger extends ChallengeTrigger{
         var newScore = challenge.increaseScore();
         challenge.getScene().broadcastPacket(new PacketChallengeDataNotify(challenge, 2, newScore));
 
-        if(newScore >= challenge.getGoal()){
+        if (newScore >= challenge.getGoal()) {
             challenge.done();
         }
-
     }
 }

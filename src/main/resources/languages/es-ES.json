@@ -63,7 +63,10 @@
       "game_version": "Versión del juego: %s",
       "resources": {
         "loading": "Cargando recursos...",
-        "finish": "Ha finalizado la carga de recursos."
+        "finish": "Ha finalizado la carga de recursos.",
+        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
+        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
       }
     }
   },
@@ -84,6 +87,7 @@
         "artifactId": "ID de artefacto no válido.",
         "avatarId": "ID de avatar no válido.",
         "avatarLevel": "avatarLevel inválido.",
+        "cfgId": "🇺🇸Invalid cfg ID.",
         "entityId": "ID de entidad inválido.",
         "itemId": "ID de objeto inválido.",
         "itemLevel": "itemLevel inválido.",
@@ -166,6 +170,10 @@
       "in_dungeon_error": "Ya estás en esa mazmorra.",
       "description": "Te introduce en una mazmorra"
     },
+    "entity": {
+      "description": "🇺🇸Modify an existing entity's properties",
+      "not_found_error": "🇺🇸Entity does not exist"
+    },
     "give": {
       "usage_relic": "Usa: give <artifactID> [mainPropID] [<appendPropID>[,<veces>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Este artifactID pertenece a un rango de la lista negra, puede que no sea el que buscas.",
@@ -230,7 +238,32 @@
       "finished": "Misión %s finalizada.",
       "not_found": "Misión no encontrada.",
       "invalid_id": "ID de misión inválido.",
-      "description": "Añade o finaliza misiones"
+      "description": "Añade o finaliza misiones",
+      "running": "🇺🇸Quest %s is %s (%s).",
+      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "state": {
+        "none": "🇺🇸unknown (none)",
+        "unstarted": "🇺🇸unfinished (not started, not completed)",
+        "unfinished": "🇺🇸unfinished (started, not completed)",
+        "finished": "🇺🇸finished (completed)",
+        "failed": "🇺🇸finished (completed, but failed)",
+        "exists": "🇺🇸found",
+        "not_exists": "🇺🇸not found"
+      },
+      "enabled": "🇺🇸Questing enabled."
+    },
+    "group": {
+      "invalid_groupid": "ID de grupo invalida.",
+      "invalid_suiteid": "ID del conjunto invalida.",
+      "group_not_found": "Grupo no encontrado.",
+      "description": "Altera la carga de grupos",
+      "refreshed": "Grupo %s refrescado."
+    },
+    "cutscene": {
+      "description": "Reproduce una escena"
+    },
+    "sound": {
+      "description": "🇺🇸Plays a sound"
     },
     "reload": {
       "reload_start": "Recargando configuración.",
@@ -321,7 +354,7 @@
     "team": {
       "invalid_usage": "Uso inválido.",
       "invalid_index": "Index inválido.",
-      "add_too_much": "El servidor solo permite tener como máximo %s avatar(es) en tu equipo.",
+      "add_too_much": "El servidor solo permite tener como máximo %d avatar(es) en tu equipo.",
       "failed_to_add_avatar": "Error al añadir el avatar con ID %s.",
       "failed_to_parse_index": "Error al usar el index: %s",
       "remove_too_much": "No puedes quitar todos tus avatares.",
@@ -329,7 +362,7 @@
       "index_out_of_range": "El index especificado está fuera de rango.",
       "failed_parse_avatar_id": "Error al usar el ID del avatar: %s",
       "avatar_already_in_team": "El avatar ya está en el equipo.",
-      "avatar_not_found": "Avatar %s no encontrado.",
+      "avatar_not_found": "Avatar %d no encontrado.",
       "description": "Modifica tu equipo manualmente."
     },
     "teleportAll": {
@@ -342,6 +375,17 @@
       "exists_error": "El escenario especificado no existe.",
       "success": "Teletransportado %s a %s, %s, %s en el escenario %s.",
       "description": "Cambia la posición del jugador"
+    },
+    "trialAvatarActivity": {
+      "description": "Manipular las funcionalidades de la Actividad de Avatar de Prueba. Esto incluye alternar estados de mazmorra y recompensa.",
+      "not_found": "No se encontraron los datos del jugador de la actividad del avatar de prueba. Quizás la actividad no esté habilitada.",
+      "invalid_param": "🇺🇸Invalid parameter.",
+      "schedule_not_found": "Horario %s no encontrado.",
+      "success_schedule": "Cambió la identificación del horario a %s.",
+      "success_dungeon": "Se alteró el estado de la mazmorra del avatar %s.",
+      "success_dungeon_all": "Cambiado el estado de mazmorra de todos los avatares.",
+      "success_reward": "Se alteró el estado de recompensa del avatar %s.",
+      "success_reward_all": "Cambiado el estado de recompensa de todos los avatares."
     },
     "weather": {
       "success": "Establece el ID del clima %s con el tipo de clima %s.",
@@ -362,6 +406,9 @@
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "description": "Elimina el veto a un jugador"
+    },
+    "troubleshoot": {
+      "description": "🇺🇸Generate debugging information for troubleshooting."
     }
   },
   "gacha": {
@@ -379,23 +426,23 @@
   },
   "documentation": {
     "handbook": {
-      "title": "GM Handbook",
+      "title": "🇺🇸GM Handbook",
       "title_commands": "Comandos",
       "title_avatars": "Avatares",
       "title_items": "Objetos",
       "title_scenes": "Escenario",
       "title_monsters": "Monstruos",
-      "header_id": "Id",
+      "header_id": "🇺🇸Id",
       "header_command": "Comando",
       "header_description": "Descripción",
-      "header_avatar": "Avatar",
+      "header_avatar": "🇺🇸Avatar",
       "header_item": "Objeto",
       "header_scene": "Escenario",
       "header_monster": "Monstruo"
     },
     "index": {
       "title": "Documentación",
-      "handbook": "GM Handbook",
+      "handbook": "🇺🇸GM Handbook",
       "gacha_mapping": "JSON de mapeo del Gacha"
     }
   },
@@ -413,6 +460,10 @@
     "enabling_plugin": "Activando plugin: %s",
     "enabling_failed": "Error al activar el plugin: %s",
     "disabling_plugin": "Desactivando el plugin: %s",
-    "disabling_failed": "Error al desactivar el plugin: %s"
+    "disabling_failed": "Error al desactivar el plugin: %s",
+    "invalid_api": {
+      "not_present": "🇺🇸Plugin %s does not specify an API version.",
+      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s."
+    }
   }
 }

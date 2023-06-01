@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.WeaponPromoteReqOuterClass.WeaponPromoteReq;
-import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
 @Opcodes(PacketOpcodes.WeaponPromoteReq)
@@ -14,7 +14,9 @@ public class HandlerWeaponPromoteReq extends PacketHandler {
         WeaponPromoteReq req = WeaponPromoteReq.parseFrom(payload);
 
         // Ascend weapon
-        session.getServer().getInventorySystem().promoteWeapon(session.getPlayer(), req.getTargetWeaponGuid());
+        session
+                .getServer()
+                .getInventorySystem()
+                .promoteWeapon(session.getPlayer(), req.getTargetWeaponGuid());
     }
-
 }

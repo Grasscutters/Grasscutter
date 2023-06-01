@@ -22,6 +22,7 @@ public class BuffData extends GameResource {
     }
 
     public void onLoad() {
-        this.serverBuffType = this.serverBuffType != null ? this.serverBuffType : ServerBuffType.SERVER_BUFF_NONE;
+        this.serverBuffType =
+                this.serverBuffType != null ? this.serverBuffType : ServerBuffType.SERVER_BUFF_NONE;
     }
 }

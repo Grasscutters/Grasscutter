@@ -1,0 +1,31 @@
+.SideBarButton {
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+    padding-left: 27px;
+
+    height: 64px;
+
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        backdrop-filter: brightness(0.9);
+    }
+
+    transition: 0.2s ease-in-out all;
+}
+
+.SideBarButton_Icon {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.SideBarButton_Label {
+    font-size: 22px;
+    line-height: 29px;
+    font-style: normal;
+
+    max-width: 220px;
+}

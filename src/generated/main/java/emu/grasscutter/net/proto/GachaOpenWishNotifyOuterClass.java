@@ -19,21 +19,21 @@ public final class GachaOpenWishNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gachaScheduleId = 14;</code>
-     * @return The gachaScheduleId.
-     */
-    int getGachaScheduleId();
-
-    /**
-     * <code>uint32 gachaType = 2;</code>
+     * <code>uint32 gachaType = 5;</code>
      * @return The gachaType.
      */
     int getGachaType();
+
+    /**
+     * <code>uint32 gachaScheduleId = 10;</code>
+     * @return The gachaScheduleId.
+     */
+    int getGachaScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 1541
-   * Name: EHEPDPEIEHP
+   * CmdId: 1558
+   * Obf: HIFNJMPDIHJ
    * </pre>
    *
    * Protobuf type {@code GachaOpenWishNotify}
@@ -80,12 +80,12 @@ public final class GachaOpenWishNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 40: {
 
               gachaType_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 80: {
 
               gachaScheduleId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class GachaOpenWishNotifyOuterClass {
               emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify.class, emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify.Builder.class);
     }
 
-    public static final int GACHASCHEDULEID_FIELD_NUMBER = 14;
-    private int gachaScheduleId_;
-    /**
-     * <code>uint32 gachaScheduleId = 14;</code>
-     * @return The gachaScheduleId.
-     */
-    @java.lang.Override
-    public int getGachaScheduleId() {
-      return gachaScheduleId_;
-    }
-
-    public static final int GACHATYPE_FIELD_NUMBER = 2;
+    public static final int GACHATYPE_FIELD_NUMBER = 5;
     private int gachaType_;
     /**
-     * <code>uint32 gachaType = 2;</code>
+     * <code>uint32 gachaType = 5;</code>
      * @return The gachaType.
      */
     @java.lang.Override
     public int getGachaType() {
       return gachaType_;
+    }
+
+    public static final int GACHASCHEDULEID_FIELD_NUMBER = 10;
+    private int gachaScheduleId_;
+    /**
+     * <code>uint32 gachaScheduleId = 10;</code>
+     * @return The gachaScheduleId.
+     */
+    @java.lang.Override
+    public int getGachaScheduleId() {
+      return gachaScheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class GachaOpenWishNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (gachaType_ != 0) {
-        output.writeUInt32(2, gachaType_);
+        output.writeUInt32(5, gachaType_);
       }
       if (gachaScheduleId_ != 0) {
-        output.writeUInt32(14, gachaScheduleId_);
+        output.writeUInt32(10, gachaScheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class GachaOpenWishNotifyOuterClass {
       size = 0;
       if (gachaType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, gachaType_);
+          .computeUInt32Size(5, gachaType_);
       }
       if (gachaScheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gachaScheduleId_);
+          .computeUInt32Size(10, gachaScheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GachaOpenWishNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify other = (emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify) obj;
 
-      if (getGachaScheduleId()
-          != other.getGachaScheduleId()) return false;
       if (getGachaType()
           != other.getGachaType()) return false;
+      if (getGachaScheduleId()
+          != other.getGachaScheduleId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GachaOpenWishNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GACHASCHEDULEID_FIELD_NUMBER;
-      hash = (53 * hash) + getGachaScheduleId();
       hash = (37 * hash) + GACHATYPE_FIELD_NUMBER;
       hash = (53 * hash) + getGachaType();
+      hash = (37 * hash) + GACHASCHEDULEID_FIELD_NUMBER;
+      hash = (53 * hash) + getGachaScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GachaOpenWishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1541
-     * Name: EHEPDPEIEHP
+     * CmdId: 1558
+     * Obf: HIFNJMPDIHJ
      * </pre>
      *
      * Protobuf type {@code GachaOpenWishNotify}
@@ -353,9 +353,9 @@ public final class GachaOpenWishNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gachaScheduleId_ = 0;
-
         gachaType_ = 0;
+
+        gachaScheduleId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GachaOpenWishNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify buildPartial() {
         emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify result = new emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify(this);
-        result.gachaScheduleId_ = gachaScheduleId_;
         result.gachaType_ = gachaType_;
+        result.gachaScheduleId_ = gachaScheduleId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GachaOpenWishNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify other) {
         if (other == emu.grasscutter.net.proto.GachaOpenWishNotifyOuterClass.GachaOpenWishNotify.getDefaultInstance()) return this;
-        if (other.getGachaScheduleId() != 0) {
-          setGachaScheduleId(other.getGachaScheduleId());
-        }
         if (other.getGachaType() != 0) {
           setGachaType(other.getGachaType());
+        }
+        if (other.getGachaScheduleId() != 0) {
+          setGachaScheduleId(other.getGachaScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class GachaOpenWishNotifyOuterClass {
         return this;
       }
 
-      private int gachaScheduleId_ ;
-      /**
-       * <code>uint32 gachaScheduleId = 14;</code>
-       * @return The gachaScheduleId.
-       */
-      @java.lang.Override
-      public int getGachaScheduleId() {
-        return gachaScheduleId_;
-      }
-      /**
-       * <code>uint32 gachaScheduleId = 14;</code>
-       * @param value The gachaScheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGachaScheduleId(int value) {
-        
-        gachaScheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gachaScheduleId = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGachaScheduleId() {
-        
-        gachaScheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int gachaType_ ;
       /**
-       * <code>uint32 gachaType = 2;</code>
+       * <code>uint32 gachaType = 5;</code>
        * @return The gachaType.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class GachaOpenWishNotifyOuterClass {
         return gachaType_;
       }
       /**
-       * <code>uint32 gachaType = 2;</code>
+       * <code>uint32 gachaType = 5;</code>
        * @param value The gachaType to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class GachaOpenWishNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gachaType = 2;</code>
+       * <code>uint32 gachaType = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearGachaType() {
         
         gachaType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gachaScheduleId_ ;
+      /**
+       * <code>uint32 gachaScheduleId = 10;</code>
+       * @return The gachaScheduleId.
+       */
+      @java.lang.Override
+      public int getGachaScheduleId() {
+        return gachaScheduleId_;
+      }
+      /**
+       * <code>uint32 gachaScheduleId = 10;</code>
+       * @param value The gachaScheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGachaScheduleId(int value) {
+        
+        gachaScheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gachaScheduleId = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGachaScheduleId() {
+        
+        gachaScheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -597,9 +597,9 @@ public final class GachaOpenWishNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031GachaOpenWishNotify.proto\"A\n\023GachaOpen" +
-      "WishNotify\022\027\n\017gachaScheduleId\030\016 \001(\r\022\021\n\tg" +
-      "achaType\030\002 \001(\rB!\n\031emu.grasscutter.net.pr" +
-      "otoZ\004/genb\006proto3"
+      "WishNotify\022\021\n\tgachaType\030\005 \001(\r\022\027\n\017gachaSc" +
+      "heduleId\030\n \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -610,7 +610,7 @@ public final class GachaOpenWishNotifyOuterClass {
     internal_static_GachaOpenWishNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GachaOpenWishNotify_descriptor,
-        new java.lang.String[] { "GachaScheduleId", "GachaType", });
+        new java.lang.String[] { "GachaType", "GachaScheduleId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,0 +1,46 @@
+.HomeButton {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    width: min(10vw, 196px);
+    height: min(20vh, 196px);
+
+    background-color: var(--primary-color);
+
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    border-radius: 10px;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px 5px var(--accent-color);
+        scale: 1.01;
+    }
+
+    transition: 0.1s ease-in-out all;
+}
+
+.HomeButton:hover {
+    cursor: pointer;
+    transition: 0.1s ease-in-out all;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px 5px var(--primary-color);
+        scale: 1.01;
+    }
+}
+
+.HomeButton_Icon {
+    max-width: 128px;
+    max-height: 128px;
+}
+
+.HomeButton_Label {
+    font-size: min(1.3vw, 30px);
+    text-align: center;
+}

@@ -1,74 +1,71 @@
 package emu.grasscutter;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.lang.Language.translate;
 
-import emu.grasscutter.auth.AuthenticationSystem;
-import emu.grasscutter.auth.DefaultAuthentication;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.command.DefaultPermissionHandler;
-import emu.grasscutter.command.PermissionHandler;
+import ch.qos.logback.classic.*;
+import emu.grasscutter.auth.*;
+import emu.grasscutter.command.*;
 import emu.grasscutter.config.ConfigContainer;
 import emu.grasscutter.data.ResourceLoader;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.plugin.PluginManager;
-import emu.grasscutter.plugin.api.ServerHook;
-import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.plugin.api.ServerHelper;
+import emu.grasscutter.server.dispatch.DispatchServer;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.http.HttpServer;
-import emu.grasscutter.server.http.dispatch.DispatchHandler;
-import emu.grasscutter.server.http.dispatch.RegionHandler;
-import emu.grasscutter.server.http.documentation.DocumentationServerHandler;
-import emu.grasscutter.server.http.handlers.AnnouncementsHandler;
-import emu.grasscutter.server.http.handlers.GachaHandler;
-import emu.grasscutter.server.http.handlers.GenericHandler;
-import emu.grasscutter.server.http.handlers.LogHandler;
+import emu.grasscutter.server.http.dispatch.*;
+import emu.grasscutter.server.http.documentation.*;
+import emu.grasscutter.server.http.handlers.*;
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Language;
-import emu.grasscutter.utils.StartupArguments;
-import emu.grasscutter.utils.Utils;
-import lombok.Getter;
-import lombok.Setter;
-import org.jline.reader.EndOfFileException;
-import org.jline.reader.LineReader;
-import org.jline.reader.LineReaderBuilder;
-import org.jline.reader.UserInterruptException;
-import org.jline.terminal.Terminal;
-import org.jline.terminal.TerminalBuilder;
+import emu.grasscutter.utils.*;
+import emu.grasscutter.utils.lang.Language;
+import io.netty.util.concurrent.FastThreadLocalThread;
+import java.io.*;
+import java.util.Calendar;
+import java.util.concurrent.*;
+import javax.annotation.Nullable;
+import lombok.*;
+import org.jline.reader.*;
+import org.jline.terminal.*;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nullable;
-import java.io.*;
-import java.util.Calendar;
-
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.Language.translate;
-
 public final class Grasscutter {
+    public static final File configFile = new File("./config.json");
+    public static final Reflections reflector = new Reflections("emu.grasscutter");
     @Getter private static final Logger logger = (Logger) LoggerFactory.getLogger(Grasscutter.class);
-    private static LineReader consoleLineReader = null;
+
+    @Getter public static ConfigContainer config;
 
     @Getter @Setter private static Language language;
-
-    public static final File configFile = new File("./config.json");
-    @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
+    @Getter @Setter private static String preferredLanguage;
 
     @Getter private static int currentDayOfWeek;
-    @Getter @Setter private static String preferredLanguage;
+    @Setter private static ServerRunMode runModeOverride = null; // Config override for run mode
+    @Setter private static boolean noConsole = false;
 
     @Getter private static HttpServer httpServer;
     @Getter private static GameServer gameServer;
+    @Getter private static DispatchServer dispatchServer;
     @Getter private static PluginManager pluginManager;
     @Getter private static CommandMap commandMap;
 
     @Getter @Setter private static AuthenticationSystem authenticationSystem;
     @Getter @Setter private static PermissionHandler permissionHandler;
 
-    public static final Reflections reflector = new Reflections("emu.grasscutter");
-    @Getter public static ConfigContainer config;
+    private static LineReader consoleLineReader = null;
+
+    @Getter
+    private static final ExecutorService threadPool =
+            new ThreadPoolExecutor(
+                    6,
+                    6,
+                    60,
+                    TimeUnit.SECONDS,
+                    new LinkedBlockingDeque<>(),
+                    FastThreadLocalThread::new,
+                    new ThreadPoolExecutor.AbortPolicy());
 
     static {
         // Declare logback configuration.
@@ -82,6 +79,8 @@ public final class Grasscutter {
         Grasscutter.loadConfig();
         // Attempt to update configuration.
         ConfigContainer.updateConfig();
+
+        Grasscutter.getLogger().info("Loading Grasscutter...");
 
         // Load translation files.
         Grasscutter.loadLanguage();
@@ -98,21 +97,25 @@ public final class Grasscutter {
             System.exit(0); // Exit early.
         }
 
+        // Get the server run mode.
+        var runMode = Grasscutter.getRunMode();
+
         // Create command map.
         commandMap = new CommandMap(true);
 
         // Initialize server.
-        Grasscutter.getLogger().info(translate("messages.status.starting"));
-        Grasscutter.getLogger().info(translate("messages.status.game_version", GameConstants.VERSION));
-        Grasscutter.getLogger().info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
+        logger.info(translate("messages.status.starting"));
+        logger.info(translate("messages.status.game_version", GameConstants.VERSION));
+        logger.info(translate("messages.status.version", BuildConfig.VERSION, BuildConfig.GIT_HASH));
 
-        // Load all resources.
-        Grasscutter.updateDayOfWeek();
-        ResourceLoader.loadAll();
-        ScriptLoader.init();
+        if (runMode != ServerRunMode.DISPATCH_ONLY) {
+            // Load all resources.
+            Grasscutter.updateDayOfWeek();
+            ResourceLoader.loadAll();
 
-        // Generate handbooks.
-        Tools.createGmHandbooks(false);
+            // Generate handbooks.
+            Tools.createGmHandbooks(false);
+        }
 
         // Initialize database.
         DatabaseManager.initialize();
@@ -122,37 +125,47 @@ public final class Grasscutter {
         permissionHandler = new DefaultPermissionHandler();
 
         // Create server instances.
-        httpServer = new HttpServer();
-        gameServer = new GameServer();
+        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.GAME_ONLY)
+            Grasscutter.gameServer = new GameServer();
+        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.DISPATCH_ONLY)
+            Grasscutter.httpServer = new HttpServer();
+
         // Create a server hook instance with both servers.
-        new ServerHook(gameServer, httpServer);
+        new ServerHelper(gameServer, httpServer);
 
         // Create plugin manager instance.
         pluginManager = new PluginManager();
-        // Add HTTP routes after loading plugins.
-        httpServer.addRouter(HttpServer.UnhandledRequestRouter.class);
-        httpServer.addRouter(HttpServer.DefaultRequestRouter.class);
-        httpServer.addRouter(RegionHandler.class);
-        httpServer.addRouter(LogHandler.class);
-        httpServer.addRouter(GenericHandler.class);
-        httpServer.addRouter(AnnouncementsHandler.class);
-        httpServer.addRouter(DispatchHandler.class);
-        httpServer.addRouter(GachaHandler.class);
-        httpServer.addRouter(DocumentationServerHandler.class);
+
+        if (runMode != ServerRunMode.GAME_ONLY) {
+            // Add HTTP routes after loading plugins.
+            httpServer.addRouter(HttpServer.UnhandledRequestRouter.class);
+            httpServer.addRouter(HttpServer.DefaultRequestRouter.class);
+            httpServer.addRouter(RegionHandler.class);
+            httpServer.addRouter(LogHandler.class);
+            httpServer.addRouter(GenericHandler.class);
+            httpServer.addRouter(AnnouncementsHandler.class);
+            httpServer.addRouter(AuthenticationHandler.class);
+            httpServer.addRouter(GachaHandler.class);
+            httpServer.addRouter(DocumentationServerHandler.class);
+            httpServer.addRouter(HandbookHandler.class);
+        }
 
         // Start servers.
-        var runMode = Grasscutter.getRunMode();
         if (runMode == ServerRunMode.HYBRID) {
             httpServer.start();
             gameServer.start();
         } else if (runMode == ServerRunMode.DISPATCH_ONLY) {
             httpServer.start();
+
+            // Start dispatch server.
+            dispatchServer = new DispatchServer("0.0.0.0", 1111);
+            dispatchServer.start();
         } else if (runMode == ServerRunMode.GAME_ONLY) {
             gameServer.start();
         } else {
-            getLogger().error(translate("messages.status.run_mode_error", runMode));
-            getLogger().error(translate("messages.status.run_mode_help"));
-            getLogger().error(translate("messages.status.shutdown"));
+            logger.error(translate("messages.status.run_mode_error", runMode));
+            logger.error(translate("messages.status.run_mode_help"));
+            logger.error(translate("messages.status.shutdown"));
             System.exit(1);
         }
 
@@ -163,16 +176,13 @@ public final class Grasscutter {
         Runtime.getRuntime().addShutdownHook(new Thread(Grasscutter::onShutdown));
 
         // Open console.
-        startConsole();
+        Grasscutter.startConsole();
     }
 
-    /**
-     * Server shutdown event.
-     */
+    /** Server shutdown event. */
     private static void onShutdown() {
         // Disable all plugins.
-        if (pluginManager != null)
-            pluginManager.disablePlugins();
+        if (pluginManager != null) pluginManager.disablePlugins();
     }
 
     /*
@@ -188,9 +198,7 @@ public final class Grasscutter {
      * Methods for the configuration system component.
      */
 
-    /**
-     * Attempts to load the configuration from a file.
-     */
+    /** Attempts to load the configuration from a file. */
     public static void loadConfig() {
         // Check if config.json exists. If not, we generate a new config.
         if (!configFile.exists()) {
@@ -204,7 +212,9 @@ public final class Grasscutter {
         try {
             config = JsonUtils.loadToClass(configFile.toPath(), ConfigContainer.class);
         } catch (Exception exception) {
-            getLogger().error("There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
+            getLogger()
+                    .error(
+                            "There was an error while trying to load the configuration from config.json. Please make sure that there are no syntax errors. If you want to start with a default configuration, delete your existing config.json.");
             System.exit(1);
         }
     }
@@ -220,9 +230,9 @@ public final class Grasscutter {
         try (FileWriter file = new FileWriter(configFile)) {
             file.write(JsonUtils.encode(config));
         } catch (IOException ignored) {
-            Grasscutter.getLogger().error("Unable to write to config file.");
+            logger.error("Unable to write to config file.");
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Unable to save config file.", e);
+            logger.error("Unable to save config file.", e);
         }
     }
 
@@ -251,10 +261,10 @@ public final class Grasscutter {
                     // When dumb is true, build() never throws.
                 }
             }
-            consoleLineReader = LineReaderBuilder.builder()
-                .terminal(terminal)
-                .build();
+
+            consoleLineReader = LineReaderBuilder.builder().terminal(terminal).build();
         }
+
         return consoleLineReader;
     }
 
@@ -265,43 +275,45 @@ public final class Grasscutter {
     public static void updateDayOfWeek() {
         Calendar calendar = Calendar.getInstance();
         Grasscutter.currentDayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-        Grasscutter.getLogger().debug("Set day of week to "+currentDayOfWeek);
+        logger.debug("Set day of week to " + currentDayOfWeek);
     }
 
     public static void startConsole() {
         // Console should not start in dispatch only mode.
-        if (SERVER.runMode == ServerRunMode.DISPATCH_ONLY) {
-            getLogger().info(translate("messages.dispatch.no_commands_error"));
+        if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY && Grasscutter.noConsole) {
+            logger.info(translate("messages.dispatch.no_commands_error"));
             return;
+        } else {
+            logger.info(translate("messages.status.done"));
         }
 
-        getLogger().info(translate("messages.status.done"));
         String input = null;
-        boolean isLastInterrupted = false;
+        var isLastInterrupted = false;
         while (config.server.game.enableConsole) {
             try {
                 input = consoleLineReader.readLine("> ");
             } catch (UserInterruptException e) {
                 if (!isLastInterrupted) {
                     isLastInterrupted = true;
-                    Grasscutter.getLogger().info("Press Ctrl-C again to shutdown.");
+                    logger.info("Press Ctrl-C again to shutdown.");
                     continue;
                 } else {
                     Runtime.getRuntime().exit(0);
                 }
             } catch (EndOfFileException e) {
-                Grasscutter.getLogger().info("EOF detected.");
+                logger.info("EOF detected.");
                 continue;
             } catch (IOError e) {
-                Grasscutter.getLogger().error("An IO error occurred while trying to read from console.", e);
+                logger.error("An IO error occurred while trying to read from console.", e);
                 return;
             }
 
             isLastInterrupted = false;
+
             try {
-                CommandMap.getInstance().invoke(null, null, input);
+                commandMap.invoke(null, null, input);
             } catch (Exception e) {
-                Grasscutter.getLogger().error(translate("messages.game.command_error"), e);
+                logger.error(translate("messages.game.command_error"), e);
             }
         }
     }
@@ -311,10 +323,16 @@ public final class Grasscutter {
      */
 
     public enum ServerRunMode {
-        HYBRID, DISPATCH_ONLY, GAME_ONLY
+        HYBRID,
+        DISPATCH_ONLY,
+        GAME_ONLY
     }
 
     public enum ServerDebugMode {
-        ALL, MISSING, WHITELIST, BLACKLIST, NONE
+        ALL,
+        MISSING,
+        WHITELIST,
+        BLACKLIST,
+        NONE
     }
 }

@@ -8,7 +8,8 @@ import emu.grasscutter.net.proto.WidgetSlotOpOuterClass;
 
 public class PacketWidgetSlotChangeNotify extends BasePacket {
 
-    public PacketWidgetSlotChangeNotify(WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto) {
+    public PacketWidgetSlotChangeNotify(
+            WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto) {
         super(PacketOpcodes.WidgetSlotChangeNotify);
 
         this.setData(proto);
@@ -17,14 +18,11 @@ public class PacketWidgetSlotChangeNotify extends BasePacket {
     public PacketWidgetSlotChangeNotify(WidgetSlotOpOuterClass.WidgetSlotOp op) {
         super(PacketOpcodes.WidgetSlotChangeNotify);
 
-        WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto = WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
-                .setOp(op)
-                .setSlot(
-                        WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                                .setIsActive(true)
-                                .build()
-                )
-                .build();
+        WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto =
+                WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
+                        .setOp(op)
+                        .setSlot(WidgetSlotDataOuterClass.WidgetSlotData.newBuilder().setIsActive(true).build())
+                        .build();
 
         this.setData(proto);
     }
@@ -32,16 +30,15 @@ public class PacketWidgetSlotChangeNotify extends BasePacket {
     public PacketWidgetSlotChangeNotify(int materialId) {
         super(PacketOpcodes.WidgetSlotChangeNotify);
 
-        WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto = WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
-                .setSlot(
-                        WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
-                                .setIsActive(true)
-                                .setMaterialId(materialId)
-                                .build()
-                )
-                .build();
+        WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify proto =
+                WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
+                        .setSlot(
+                                WidgetSlotDataOuterClass.WidgetSlotData.newBuilder()
+                                        .setIsActive(true)
+                                        .setMaterialId(materialId)
+                                        .build())
+                        .build();
 
         this.setData(proto);
     }
-
 }

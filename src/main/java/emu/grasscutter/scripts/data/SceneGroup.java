@@ -1,31 +1,35 @@
 package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
-import emu.grasscutter.utils.Position;
-import lombok.Setter;
-import lombok.ToString;
-import org.luaj.vm2.LuaValue;
-
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import javax.script.ScriptException;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
+import javax.script.Bindings;
+import javax.script.CompiledScript;
+import javax.script.ScriptException;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.luaj.vm2.LuaError;
+import org.luaj.vm2.LuaValue;
 
 @ToString
 @Setter
-public class SceneGroup {
-    public transient int block_id; // Not an actual variable in the scripts but we will keep it here for reference
+public final class SceneGroup {
+    public transient int
+            block_id; // Not an actual variable in the scripts but we will keep it here for reference
 
     public int id;
     public int refresh_id;
     public Position pos;
 
-    public Map<Integer,SceneMonster> monsters; // <ConfigId, Monster>
+    public Map<Integer, SceneMonster> monsters; // <ConfigId, Monster>
+    public Map<Integer, SceneNPC> npcs; // <ConfigId, Npc>
     public Map<Integer, SceneGadget> gadgets; // <ConfigId, Gadgets>
     public Map<String, SceneTrigger> triggers;
     public Map<Integer, SceneRegion> regions;
@@ -35,10 +39,14 @@ public class SceneGroup {
     public SceneBusiness business;
     public SceneGarbage garbages;
     public SceneInitConfig init_config;
+    @Getter public boolean dynamic_load = false;
+
+    public SceneReplaceable is_replaceable;
 
     private transient boolean loaded; // Not an actual variable in the scripts either
     private transient CompiledScript script;
     private transient Bindings bindings;
+
     public static SceneGroup of(int groupId) {
         var group = new SceneGroup();
         group.id = groupId;
@@ -66,6 +74,9 @@ public class SceneGroup {
     }
 
     public SceneSuite getSuiteByIndex(int index) {
+        if (index < 1 || index > suites.size()) {
+            return null;
+        }
         return this.suites.get(index - 1);
     }
 
@@ -82,7 +93,8 @@ public class SceneGroup {
 
         this.bindings = ScriptLoader.getEngine().createBindings();
 
-        CompiledScript cs = ScriptLoader.getScript("Scene/" + sceneId + "/scene" + sceneId + "_group" + this.id + ".lua");
+        var cs =
+                ScriptLoader.getScript("Scene/%s/scene%s_group%s.lua".formatted(sceneId, sceneId, this.id));
 
         if (cs == null) {
             return this;
@@ -95,47 +107,98 @@ public class SceneGroup {
             cs.eval(this.bindings);
 
             // Set
-            this.monsters = ScriptLoader.getSerializer().toList(SceneMonster.class, this.bindings.get("monsters")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+            this.monsters =
+                    ScriptLoader.getSerializer()
+                            .toList(SceneMonster.class, this.bindings.get("monsters"))
+                            .stream()
+                            .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.monsters.values().forEach(m -> m.group = this);
 
-            this.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, this.bindings.get("gadgets")).stream()
-                    .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+            this.npcs =
+                    ScriptLoader.getSerializer().toList(SceneNPC.class, this.bindings.get("npcs")).stream()
+                            .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+            this.npcs.values().forEach(m -> m.group = this);
+
+            this.gadgets =
+                    ScriptLoader.getSerializer()
+                            .toList(SceneGadget.class, this.bindings.get("gadgets"))
+                            .stream()
+                            .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.gadgets.values().forEach(m -> m.group = this);
 
-            this.triggers = ScriptLoader.getSerializer().toList(SceneTrigger.class, this.bindings.get("triggers")).stream()
-                    .collect(Collectors.toMap(x -> x.name, y -> y, (a, b) -> a));
+            this.triggers =
+                    ScriptLoader.getSerializer()
+                            .toList(SceneTrigger.class, this.bindings.get("triggers"))
+                            .stream()
+                            .collect(Collectors.toMap(SceneTrigger::getName, y -> y, (a, b) -> a));
             this.triggers.values().forEach(t -> t.currentGroup = this);
 
-            this.suites = ScriptLoader.getSerializer().toList(SceneSuite.class, this.bindings.get("suites"));
-            this.regions = ScriptLoader.getSerializer().toList(SceneRegion.class, this.bindings.get("regions")).stream()
-                .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
+            this.suites =
+                    ScriptLoader.getSerializer().toList(SceneSuite.class, this.bindings.get("suites"));
+            this.regions =
+                    ScriptLoader.getSerializer()
+                            .toList(SceneRegion.class, this.bindings.get("regions"))
+                            .stream()
+                            .collect(Collectors.toMap(x -> x.config_id, y -> y, (a, b) -> a));
             this.regions.values().forEach(m -> m.group = this);
 
-            this.init_config = ScriptLoader.getSerializer().toObject(SceneInitConfig.class, this.bindings.get("init_config"));
+            this.init_config =
+                    ScriptLoader.getSerializer()
+                            .toObject(SceneInitConfig.class, this.bindings.get("init_config"));
 
             // Garbages // TODO: fix properly later
             Object garbagesValue = this.bindings.get("garbages");
             if (garbagesValue instanceof LuaValue garbagesTable) {
                 this.garbages = new SceneGarbage();
                 if (garbagesTable.checktable().get("gadgets") != LuaValue.NIL) {
-                    this.garbages.gadgets = ScriptLoader.getSerializer().toList(SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
+                    this.garbages.gadgets =
+                            ScriptLoader.getSerializer()
+                                    .toList(
+                                            SceneGadget.class, garbagesTable.checktable().get("gadgets").checktable());
                     this.garbages.gadgets.forEach(m -> m.group = this);
                 }
             }
 
             // Add variables to suite
-            this.variables = ScriptLoader.getSerializer().toList(SceneVar.class, this.bindings.get("variables"));
+            this.variables =
+                    ScriptLoader.getSerializer().toList(SceneVar.class, this.bindings.get("variables"));
 
             // Add monsters and gadgets to suite
             this.suites.forEach(i -> i.init(this));
-
         } catch (ScriptException e) {
-            Grasscutter.getLogger().error("An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
+            Grasscutter.getLogger()
+                    .error(
+                            "An error occurred while loading group " + this.id + " in scene " + sceneId + ".", e);
+        } catch (LuaError luaError) {
+            Grasscutter.getLogger()
+                    .error(
+                            "An error occurred while loading group %s in scene %s.".formatted(this.id, sceneId),
+                            luaError);
         }
 
-        Grasscutter.getLogger().debug("Successfully loaded group {} in scene {}.", this.id, sceneId);
+        Grasscutter.getLogger().trace("Successfully loaded group {} in scene {}.", this.id, sceneId);
         return this;
+    }
+
+    public int findInitSuiteIndex(int exclude_index) { // TODO: Investigate end index
+        if (init_config == null) return 1;
+        if (init_config.io_type == 1) return init_config.suite; // IO TYPE FLOW
+        if (init_config.rand_suite) {
+            if (suites.size() == 1) {
+                return init_config.suite;
+            } else {
+                List<Integer> randSuiteList = new ArrayList<>();
+                for (int i = 0; i < suites.size(); i++) {
+                    if (i == exclude_index) continue;
+
+                    var suite = suites.get(i);
+                    for (int j = 0; j < suite.rand_weight; j++) randSuiteList.add(i);
+                }
+
+                return randSuiteList.get(new Random().nextInt(randSuiteList.size()));
+            }
+        }
+        return init_config.suite;
     }
 
     public Optional<SceneBossChest> searchBossChestInGroup() {
@@ -144,5 +207,4 @@ public class SceneGroup {
                 .map(g -> g.boss_chest)
                 .findFirst();
     }
-
 }

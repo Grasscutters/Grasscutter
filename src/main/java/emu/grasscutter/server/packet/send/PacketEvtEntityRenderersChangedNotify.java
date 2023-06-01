@@ -6,9 +6,10 @@ import emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass;
 
 public class PacketEvtEntityRenderersChangedNotify extends BasePacket {
 
-	public PacketEvtEntityRenderersChangedNotify(EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify req) {
-		super(PacketOpcodes.EvtEntityRenderersChangedNotify, true);
+    public PacketEvtEntityRenderersChangedNotify(
+            EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify req) {
+        super(PacketOpcodes.EvtEntityRenderersChangedNotify, true);
 
         this.setData(req);
-	}
+    }
 }

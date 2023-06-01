@@ -3,8 +3,8 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.HomeResourceTakeFetterExpRspOuterClass;
 import emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource;
+import emu.grasscutter.net.proto.HomeResourceTakeFetterExpRspOuterClass;
 
 public class PacketHomeResourceTakeFetterExpRsp extends BasePacket {
     public PacketHomeResourceTakeFetterExpRsp(Player player) {
@@ -14,15 +14,17 @@ public class PacketHomeResourceTakeFetterExpRsp extends BasePacket {
 
         home.takeHomeFetter(player);
 
-        var fetterExp = HomeResource.newBuilder()
-                .setNextRefreshTime(home.getNextUpdateTime())
-                .setStoreLimit(home.getMaxFetter(home.getLevel()))
-                .setStoreValue(0)
-                .build();
+        var fetterExp =
+                HomeResource.newBuilder()
+                        .setNextRefreshTime(home.getNextUpdateTime())
+                        .setStoreLimit(home.getMaxFetter(home.getLevel()))
+                        .setStoreValue(0)
+                        .build();
 
-        var proto = HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp.newBuilder()
-                .setFetterExp(fetterExp)
-                .build();
+        var proto =
+                HomeResourceTakeFetterExpRspOuterClass.HomeResourceTakeFetterExpRsp.newBuilder()
+                        .setFetterExp(fetterExp)
+                        .build();
 
         this.setData(proto);
     }

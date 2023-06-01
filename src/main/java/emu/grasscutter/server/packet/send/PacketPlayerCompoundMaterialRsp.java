@@ -14,23 +14,23 @@ public class PacketPlayerCompoundMaterialRsp extends BasePacket {
      */
     public PacketPlayerCompoundMaterialRsp(CompoundQueueData compoundQueueData) {
         super(PacketOpcodes.PlayerCompoundMaterialRsp);
-        PlayerCompoundMaterialRsp proto = PlayerCompoundMaterialRsp.newBuilder()
-            .setCompoundQueueData(compoundQueueData)
-            .setRetcode(Retcode.RET_SUCC_VALUE)
-            .build();
+        PlayerCompoundMaterialRsp proto =
+                PlayerCompoundMaterialRsp.newBuilder()
+                        .setCompoundQueueData(compoundQueueData)
+                        .setRetcode(Retcode.RET_SUCC_VALUE)
+                        .build();
         setData(proto);
     }
 
     /**
      * Builder for failed message.
+     *
      * @param retcode error code
      */
     public PacketPlayerCompoundMaterialRsp(int retcode) {
         super(PacketOpcodes.PlayerCompoundMaterialRsp);
-        PlayerCompoundMaterialRsp proto = PlayerCompoundMaterialRsp.newBuilder()
-            .setRetcode(retcode)
-            .build();
+        PlayerCompoundMaterialRsp proto =
+                PlayerCompoundMaterialRsp.newBuilder().setRetcode(retcode).build();
         setData(proto);
     }
-
 }

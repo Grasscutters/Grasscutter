@@ -1,15 +1,18 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
-
 import java.util.List;
 
-import static emu.grasscutter.utils.Language.translate;
-
-@Command(label = "teleportAll", aliases = {"tpall"}, permission = "player.tpall", permissionTargeted = "player.tpall.others")
+@Command(
+        label = "teleportAll",
+        aliases = {"tpall"},
+        permission = "player.tpall",
+        permissionTargeted = "player.tpall.others")
 public final class TeleportAllCommand implements CommandHandler {
 
     @Override
@@ -20,10 +23,12 @@ public final class TeleportAllCommand implements CommandHandler {
         }
 
         for (Player player : targetPlayer.getWorld().getPlayers()) {
-            if (player.equals(targetPlayer))
-                continue;
+            if (player.equals(targetPlayer)) continue;
 
-            player.getWorld().transferPlayerToScene(player, targetPlayer.getSceneId(), TeleportType.COMMAND, targetPlayer.getPosition());
+            player
+                    .getWorld()
+                    .transferPlayerToScene(
+                            player, targetPlayer.getSceneId(), TeleportType.COMMAND, targetPlayer.getPosition());
         }
 
         CommandHandler.sendMessage(sender, translate(sender, "commands.teleportAll.success"));

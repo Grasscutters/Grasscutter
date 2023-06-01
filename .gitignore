@@ -66,6 +66,8 @@ tmp/
 /*.sh
 
 GM Handbook*.txt
+handbook.html
+
 config.json
 mitmdump.exe
 mongod.exe
@@ -73,6 +75,7 @@ mongod.exe
 gacha-mapping.js
 mappings.js
 BuildConfig.java
+data/hk4e/announcement/
 
 # lombok
 /.apt_generated/
@@ -80,4 +83,12 @@ BuildConfig.java
 # macOS
 .DS_Store
 .directory
-data/hk4e/announcement/
+
+# Hotswap Agent
+hotswap-agent.properties
+
+# Debug patches
+patches/*.patch
+
+# Artifact Signatures
+*.asc

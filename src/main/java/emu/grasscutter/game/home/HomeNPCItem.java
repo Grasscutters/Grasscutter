@@ -1,9 +1,8 @@
 package emu.grasscutter.game.home;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.net.proto.HomeAnimalDataOuterClass;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeNpcDataOuterClass;
-import emu.grasscutter.utils.Position;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -19,21 +18,21 @@ public class HomeNPCItem {
     Position spawnRot;
     int costumeId;
 
-    public HomeNpcDataOuterClass.HomeNpcData toProto(){
-        return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
-                .setAvatarId(avatarId)
-                .setSpawnPos(spawnPos.toProto())
-                .setSpawnRot(spawnRot.toProto())
-                .setCostumeId(costumeId)
-                .build();
-    }
-
     public static HomeNPCItem parseFrom(HomeNpcDataOuterClass.HomeNpcData homeNpcData) {
         return HomeNPCItem.of()
                 .avatarId(homeNpcData.getAvatarId())
                 .spawnPos(new Position(homeNpcData.getSpawnPos()))
                 .spawnRot(new Position(homeNpcData.getSpawnRot()))
                 .costumeId(homeNpcData.getCostumeId())
+                .build();
+    }
+
+    public HomeNpcDataOuterClass.HomeNpcData toProto() {
+        return HomeNpcDataOuterClass.HomeNpcData.newBuilder()
+                .setAvatarId(avatarId)
+                .setSpawnPos(spawnPos.toProto())
+                .setSpawnRot(spawnRot.toProto())
+                .setCostumeId(costumeId)
                 .build();
     }
 }

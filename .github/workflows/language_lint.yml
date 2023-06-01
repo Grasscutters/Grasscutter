@@ -6,16 +6,17 @@ on:
       - ".github/workflows/**"
       - "src/main/**.java"
       - "**.json"
-      - "manage_languages.py"
+      - "scripts/manage_languages.py"
     branches:
       - "stable"
       - "development"
+      - "unstable"
   pull_request:
     paths:
       - ".github/workflows/**"
       - "src/main/**.java"
       - "**.json"
-      - "manage_languages.py"
+      - "scripts/manage_languages.py"
     types:
       - opened
       - synchronize
@@ -28,4 +29,4 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-      - run: python3 manage_languages.py -l
+      - run: python3 scripts/manage_languages.py -l

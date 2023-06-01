@@ -1,18 +1,12 @@
 package emu.grasscutter.game.props;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Consumer;
-
 import static java.util.Map.entry;
-
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
 import lombok.Getter;
 
 public enum FightProperty {
@@ -113,25 +107,110 @@ public enum FightProperty {
     FIGHT_PROP_NONEXTRA_SHIELD_COST_MINUS_RATIO(3023),
     FIGHT_PROP_NONEXTRA_PHYSICAL_ADD_HURT(3024);
 
-    private final int id;
+    public static final int[] fightProps =
+            new int[] {
+                1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54,
+                55, 56, 2000, 2001, 2002, 2003, 1010
+            };
     private static final Int2ObjectMap<FightProperty> map = new Int2ObjectOpenHashMap<>();
     private static final Map<String, FightProperty> stringMap = new HashMap<>();
-
-    public static final int[] fightProps = new int[] {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, 2000, 2001, 2002, 2003, 1010};
+    // This was originally for relic properties so some names might not be applicable for e.g.
+    // setstats
+    private static final Map<String, FightProperty> shortNameMap =
+            Map.ofEntries(
+                    // Normal relic stats
+                    entry("hp", FIGHT_PROP_HP),
+                    entry("atk", FIGHT_PROP_ATTACK),
+                    entry("def", FIGHT_PROP_DEFENSE),
+                    entry("hp%", FIGHT_PROP_HP_PERCENT),
+                    entry("atk%", FIGHT_PROP_ATTACK_PERCENT),
+                    entry("def%", FIGHT_PROP_DEFENSE_PERCENT),
+                    entry("em", FIGHT_PROP_ELEMENT_MASTERY),
+                    entry("er", FIGHT_PROP_CHARGE_EFFICIENCY),
+                    entry("hb", FIGHT_PROP_HEAL_ADD),
+                    entry("heal", FIGHT_PROP_HEAL_ADD),
+                    entry("cd", FIGHT_PROP_CRITICAL_HURT),
+                    entry("cdmg", FIGHT_PROP_CRITICAL_HURT),
+                    entry("cr", FIGHT_PROP_CRITICAL),
+                    entry("crate", FIGHT_PROP_CRITICAL),
+                    entry("phys%", FIGHT_PROP_PHYSICAL_ADD_HURT),
+                    entry("dendro%", FIGHT_PROP_GRASS_ADD_HURT),
+                    entry("geo%", FIGHT_PROP_ROCK_ADD_HURT),
+                    entry("anemo%", FIGHT_PROP_WIND_ADD_HURT),
+                    entry("hydro%", FIGHT_PROP_WATER_ADD_HURT),
+                    entry("cryo%", FIGHT_PROP_ICE_ADD_HURT),
+                    entry("electro%", FIGHT_PROP_ELEC_ADD_HURT),
+                    entry("pyro%", FIGHT_PROP_FIRE_ADD_HURT),
+                    // Other stats
+                    entry("maxhp", FIGHT_PROP_MAX_HP),
+                    entry("dmg", FIGHT_PROP_ADD_HURT), // This seems to get reset after attacks
+                    entry("cdr", FIGHT_PROP_SKILL_CD_MINUS_RATIO),
+                    entry("heali", FIGHT_PROP_HEALED_ADD),
+                    entry("shield", FIGHT_PROP_SHIELD_COST_MINUS_RATIO),
+                    entry("defi", FIGHT_PROP_DEFENCE_IGNORE_RATIO),
+                    entry("resall", FIGHT_PROP_SUB_HURT), // This seems to get reset after attacks
+                    entry("resanemo", FIGHT_PROP_WIND_SUB_HURT),
+                    entry("rescryo", FIGHT_PROP_ICE_SUB_HURT),
+                    entry("resdendro", FIGHT_PROP_GRASS_SUB_HURT),
+                    entry("reselectro", FIGHT_PROP_ELEC_SUB_HURT),
+                    entry("resgeo", FIGHT_PROP_ROCK_SUB_HURT),
+                    entry("reshydro", FIGHT_PROP_WATER_SUB_HURT),
+                    entry("respyro", FIGHT_PROP_FIRE_SUB_HURT),
+                    entry("resphys", FIGHT_PROP_PHYSICAL_SUB_HURT));
+    private static final List<FightProperty> flatProps =
+            Arrays.asList(
+                    FIGHT_PROP_BASE_HP,
+                    FIGHT_PROP_HP,
+                    FIGHT_PROP_BASE_ATTACK,
+                    FIGHT_PROP_ATTACK,
+                    FIGHT_PROP_BASE_DEFENSE,
+                    FIGHT_PROP_DEFENSE,
+                    FIGHT_PROP_HEALED_ADD,
+                    FIGHT_PROP_CUR_FIRE_ENERGY,
+                    FIGHT_PROP_CUR_ELEC_ENERGY,
+                    FIGHT_PROP_CUR_WATER_ENERGY,
+                    FIGHT_PROP_CUR_GRASS_ENERGY,
+                    FIGHT_PROP_CUR_WIND_ENERGY,
+                    FIGHT_PROP_CUR_ICE_ENERGY,
+                    FIGHT_PROP_CUR_ROCK_ENERGY,
+                    FIGHT_PROP_CUR_HP,
+                    FIGHT_PROP_MAX_HP,
+                    FIGHT_PROP_CUR_ATTACK,
+                    FIGHT_PROP_CUR_DEFENSE);
+    private static final Map<FightProperty, CompoundProperty> compoundProperties =
+            Map.ofEntries(
+                    entry(
+                            FIGHT_PROP_MAX_HP,
+                            new CompoundProperty(
+                                    FIGHT_PROP_MAX_HP, FIGHT_PROP_BASE_HP, FIGHT_PROP_HP_PERCENT, FIGHT_PROP_HP)),
+                    entry(
+                            FIGHT_PROP_CUR_ATTACK,
+                            new CompoundProperty(
+                                    FIGHT_PROP_CUR_ATTACK,
+                                    FIGHT_PROP_BASE_ATTACK,
+                                    FIGHT_PROP_ATTACK_PERCENT,
+                                    FIGHT_PROP_ATTACK)),
+                    entry(
+                            FIGHT_PROP_CUR_DEFENSE,
+                            new CompoundProperty(
+                                    FIGHT_PROP_CUR_DEFENSE,
+                                    FIGHT_PROP_BASE_DEFENSE,
+                                    FIGHT_PROP_DEFENSE_PERCENT,
+                                    FIGHT_PROP_DEFENSE)));
 
     static {
-        Stream.of(values()).forEach(e -> {
-            map.put(e.getId(), e);
-            stringMap.put(e.name(), e);
-        });
+        Stream.of(values())
+                .forEach(
+                        e -> {
+                            map.put(e.getId(), e);
+                            stringMap.put(e.name(), e);
+                        });
     }
 
-    private FightProperty(int id) {
+    private final int id;
+
+    FightProperty(int id) {
         this.id = id;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public static FightProperty getPropById(int value) {
@@ -150,76 +229,6 @@ public enum FightProperty {
         return shortNameMap.keySet();
     }
 
-    // This was originally for relic properties so some names might not be applicable for e.g. setstats
-    private static final Map<String, FightProperty> shortNameMap = Map.ofEntries(
-        // Normal relic stats
-        entry("hp", FIGHT_PROP_HP),
-        entry("atk", FIGHT_PROP_ATTACK),
-        entry("def", FIGHT_PROP_DEFENSE),
-        entry("hp%", FIGHT_PROP_HP_PERCENT),
-        entry("atk%", FIGHT_PROP_ATTACK_PERCENT),
-        entry("def%", FIGHT_PROP_DEFENSE_PERCENT),
-        entry("em", FIGHT_PROP_ELEMENT_MASTERY),
-        entry("er", FIGHT_PROP_CHARGE_EFFICIENCY),
-        entry("hb", FIGHT_PROP_HEAL_ADD),
-        entry("heal", FIGHT_PROP_HEAL_ADD),
-        entry("cd", FIGHT_PROP_CRITICAL_HURT),
-        entry("cdmg", FIGHT_PROP_CRITICAL_HURT),
-        entry("cr", FIGHT_PROP_CRITICAL),
-        entry("crate", FIGHT_PROP_CRITICAL),
-        entry("phys%", FIGHT_PROP_PHYSICAL_ADD_HURT),
-        entry("dendro%", FIGHT_PROP_GRASS_ADD_HURT),
-        entry("geo%", FIGHT_PROP_ROCK_ADD_HURT),
-        entry("anemo%", FIGHT_PROP_WIND_ADD_HURT),
-        entry("hydro%", FIGHT_PROP_WATER_ADD_HURT),
-        entry("cryo%", FIGHT_PROP_ICE_ADD_HURT),
-        entry("electro%", FIGHT_PROP_ELEC_ADD_HURT),
-        entry("pyro%", FIGHT_PROP_FIRE_ADD_HURT),
-        // Other stats
-        entry("maxhp", FIGHT_PROP_MAX_HP),
-        entry("dmg", FIGHT_PROP_ADD_HURT),  // This seems to get reset after attacks
-        entry("cdr", FIGHT_PROP_SKILL_CD_MINUS_RATIO),
-        entry("heali", FIGHT_PROP_HEALED_ADD),
-        entry("shield", FIGHT_PROP_SHIELD_COST_MINUS_RATIO),
-        entry("defi", FIGHT_PROP_DEFENCE_IGNORE_RATIO),
-        entry("resall", FIGHT_PROP_SUB_HURT),  // This seems to get reset after attacks
-        entry("resanemo", FIGHT_PROP_WIND_SUB_HURT),
-        entry("rescryo", FIGHT_PROP_ICE_SUB_HURT),
-        entry("resdendro", FIGHT_PROP_GRASS_SUB_HURT),
-        entry("reselectro", FIGHT_PROP_ELEC_SUB_HURT),
-        entry("resgeo", FIGHT_PROP_ROCK_SUB_HURT),
-        entry("reshydro", FIGHT_PROP_WATER_SUB_HURT),
-        entry("respyro", FIGHT_PROP_FIRE_SUB_HURT),
-        entry("resphys", FIGHT_PROP_PHYSICAL_SUB_HURT)
-    );
-
-    private static final List<FightProperty> flatProps = Arrays.asList(
-        FIGHT_PROP_BASE_HP, FIGHT_PROP_HP, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK, FIGHT_PROP_BASE_DEFENSE,
-        FIGHT_PROP_DEFENSE, FIGHT_PROP_HEALED_ADD, FIGHT_PROP_CUR_FIRE_ENERGY, FIGHT_PROP_CUR_ELEC_ENERGY,
-        FIGHT_PROP_CUR_WATER_ENERGY, FIGHT_PROP_CUR_GRASS_ENERGY, FIGHT_PROP_CUR_WIND_ENERGY, FIGHT_PROP_CUR_ICE_ENERGY,
-        FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE);
-
-    @Getter
-    public static class CompoundProperty {
-        private FightProperty result;
-        private FightProperty base;
-        private FightProperty percent;
-        private FightProperty flat;
-
-        public CompoundProperty(FightProperty result, FightProperty base, FightProperty percent, FightProperty flat) {
-            this.result = result;
-            this.base = base;
-            this.percent = percent;
-            this.flat = flat;
-        }
-    }
-
-    private static Map<FightProperty, CompoundProperty> compoundProperties = Map.ofEntries(
-        entry(FIGHT_PROP_MAX_HP, new CompoundProperty(FIGHT_PROP_MAX_HP, FIGHT_PROP_BASE_HP, FIGHT_PROP_HP_PERCENT, FIGHT_PROP_HP)),
-        entry(FIGHT_PROP_CUR_ATTACK, new CompoundProperty(FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK_PERCENT, FIGHT_PROP_ATTACK)),
-        entry(FIGHT_PROP_CUR_DEFENSE, new CompoundProperty(FIGHT_PROP_CUR_DEFENSE, FIGHT_PROP_BASE_DEFENSE, FIGHT_PROP_DEFENSE_PERCENT, FIGHT_PROP_DEFENSE))
-    );
-
     public static CompoundProperty getCompoundProperty(FightProperty result) {
         return compoundProperties.get(result);
     }
@@ -230,5 +239,25 @@ public enum FightProperty {
 
     public static boolean isPercentage(FightProperty prop) {
         return !flatProps.contains(prop);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Getter
+    public static class CompoundProperty {
+        private final FightProperty result;
+        private final FightProperty base;
+        private final FightProperty percent;
+        private final FightProperty flat;
+
+        public CompoundProperty(
+                FightProperty result, FightProperty base, FightProperty percent, FightProperty flat) {
+            this.result = result;
+            this.base = base;
+            this.percent = percent;
+            this.flat = flat;
+        }
     }
 }

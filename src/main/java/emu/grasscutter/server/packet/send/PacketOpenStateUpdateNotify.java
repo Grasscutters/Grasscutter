@@ -1,7 +1,5 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.game.player.Player;
@@ -9,6 +7,8 @@ import emu.grasscutter.game.player.PlayerProgressManager;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 /*
     Must be sent on login for openStates to work

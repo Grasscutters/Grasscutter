@@ -1,16 +1,15 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class TeamInfo {
+public final class TeamInfo {
     private String name;
     private List<Integer> avatars;
 
@@ -84,8 +83,7 @@ public class TeamInfo {
     }
 
     public AvatarTeam toProto(Player player) {
-        AvatarTeam.Builder avatarTeam = AvatarTeam.newBuilder()
-            .setTeamName(this.getName());
+        AvatarTeam.Builder avatarTeam = AvatarTeam.newBuilder().setTeamName(this.getName());
 
         for (int i = 0; i < this.getAvatars().size(); i++) {
             Avatar avatar = player.getAvatars().getAvatarById(this.getAvatars().get(i));

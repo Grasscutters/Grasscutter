@@ -1,51 +1,51 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.command.CommandHelpers.*;
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.MonsterData;
+import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.utils.Position;
-import lombok.Setter;
-
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-import static emu.grasscutter.utils.Language.translate;
+import lombok.Setter;
 
 @Command(
-    label = "spawn",
-    aliases = {"drop", "s"},
-    usage = {
-        "<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
-        "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
-        "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>"},
-    permission = "server.spawn",
-    permissionTargeted = "server.spawn.others")
+        label = "spawn",
+        aliases = {"drop", "s"},
+        usage = {
+            "<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
+            "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>",
+            "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>"
+        },
+        permission = "server.spawn",
+        permissionTargeted = "server.spawn.others")
 public final class SpawnCommand implements CommandHandler {
-    private static final Map<Pattern, BiConsumer<SpawnParameters, Integer>> intCommandHandlers = Map.ofEntries(
-        Map.entry(lvlRegex, SpawnParameters::setLvl),
-        Map.entry(amountRegex, SpawnParameters::setAmount),
-        Map.entry(stateRegex, SpawnParameters::setState),
-        Map.entry(blockRegex, SpawnParameters::setBlockId),
-        Map.entry(groupRegex, SpawnParameters::setGroupId),
-        Map.entry(configRegex, SpawnParameters::setConfigId),
-        Map.entry(maxHPRegex, SpawnParameters::setMaxHP),
-        Map.entry(hpRegex, SpawnParameters::setHp),
-        Map.entry(defRegex, SpawnParameters::setDef),
-        Map.entry(atkRegex, SpawnParameters::setAtk),
-        Map.entry(aiRegex, SpawnParameters::setAi)
-    );
+    private static final Map<Pattern, BiConsumer<SpawnParameters, Integer>> intCommandHandlers =
+            Map.ofEntries(
+                    Map.entry(lvlRegex, SpawnParameters::setLvl),
+                    Map.entry(amountRegex, SpawnParameters::setAmount),
+                    Map.entry(stateRegex, SpawnParameters::setState),
+                    Map.entry(blockRegex, SpawnParameters::setBlockId),
+                    Map.entry(groupRegex, SpawnParameters::setGroupId),
+                    Map.entry(configRegex, SpawnParameters::setConfigId),
+                    Map.entry(maxHPRegex, SpawnParameters::setMaxHP),
+                    Map.entry(hpRegex, SpawnParameters::setHp),
+                    Map.entry(defRegex, SpawnParameters::setDef),
+                    Map.entry(atkRegex, SpawnParameters::setAtk),
+                    Map.entry(aiRegex, SpawnParameters::setAi));
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
@@ -55,7 +55,7 @@ public final class SpawnCommand implements CommandHandler {
 
         // At this point, first remaining argument MUST be the id and the rest the pos
         if (args.size() < 1) {
-            sendUsageMessage(sender);  // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
             throw new IllegalArgumentException();
         }
         switch (args.size()) {
@@ -67,13 +67,15 @@ public final class SpawnCommand implements CommandHandler {
                     z = Float.parseFloat(args.get(3));
                     param.pos = new Position(x, y, z);
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
-                }  // Fallthrough
+                    CommandHandler.sendMessage(
+                            sender, translate(sender, "commands.execution.argument_error"));
+                } // Fallthrough
             case 1:
                 try {
                     param.id = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.entityId"));
+                    CommandHandler.sendMessage(
+                            sender, translate(sender, "commands.generic.invalid.entityId"));
                 }
                 break;
             default:
@@ -92,8 +94,13 @@ public final class SpawnCommand implements CommandHandler {
         param.scene = targetPlayer.getScene();
 
         if (param.scene.getEntities().size() + param.amount > GAME_OPTIONS.sceneEntityLimit) {
-            param.amount = Math.max(Math.min(GAME_OPTIONS.sceneEntityLimit - param.scene.getEntities().size(), param.amount), 0);
-            CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.limit_reached", param.amount));
+            param.amount =
+                    Math.max(
+                            Math.min(
+                                    GAME_OPTIONS.sceneEntityLimit - param.scene.getEntities().size(), param.amount),
+                            0);
+            CommandHandler.sendMessage(
+                    sender, translate(sender, "commands.spawn.limit_reached", param.amount));
             if (param.amount <= 0) {
                 return;
             }
@@ -121,16 +128,16 @@ public final class SpawnCommand implements CommandHandler {
 
             param.scene.addEntity(entity);
         }
-        CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.success", param.amount, param.id));
+        CommandHandler.sendMessage(
+                sender, translate(sender, "commands.spawn.success", param.amount, param.id));
     }
-
-    ;
 
     private EntityItem createItem(ItemData itemData, SpawnParameters param, Position pos) {
         return new EntityItem(param.scene, null, itemData, pos, 1, true);
     }
 
-    private EntityMonster createMonster(MonsterData monsterData, SpawnParameters param, Position pos) {
+    private EntityMonster createMonster(
+            MonsterData monsterData, SpawnParameters param, Position pos) {
         var entity = new EntityMonster(param.scene, monsterData, pos, param.lvl);
         if (param.ai != -1) {
             entity.setAiId(param.ai);
@@ -138,10 +145,13 @@ public final class SpawnCommand implements CommandHandler {
         return entity;
     }
 
-    private EntityBaseGadget createGadget(GadgetData gadgetData, SpawnParameters param, Position pos, Player targetPlayer) {
+    private EntityBaseGadget createGadget(
+            GadgetData gadgetData, SpawnParameters param, Position pos, Player targetPlayer) {
         EntityBaseGadget entity;
         if (gadgetData.getType() == EntityType.Vehicle) {
-            entity = new EntityVehicle(param.scene, targetPlayer, param.id, 0, pos, targetPlayer.getRotation());
+            entity =
+                    new EntityVehicle(
+                            param.scene, targetPlayer, param.id, 0, pos, targetPlayer.getRotation());
         } else {
             entity = new EntityGadget(param.scene, param.id, pos, targetPlayer.getRotation());
             if (param.state != -1) {
@@ -167,7 +177,8 @@ public final class SpawnCommand implements CommandHandler {
             entity.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, param.maxHP);
         }
         if (param.hp != -1) {
-            entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, param.hp == 0 ? Float.MAX_VALUE : param.hp);
+            entity.setFightProperty(
+                    FightProperty.FIGHT_PROP_CUR_HP, param.hp == 0 ? Float.MAX_VALUE : param.hp);
         }
         if (param.atk != -1) {
             entity.setFightProperty(FightProperty.FIGHT_PROP_ATTACK, param.atk);

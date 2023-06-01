@@ -20,8 +20,8 @@ public final class CloseCommonTipsNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3168
-   * Name: JDJGBNOMMCP
+   * CmdId: 3063
+   * Obf: MKKMNMNIBPK
    * </pre>
    *
    * Protobuf type {@code CloseCommonTipsNotify}
@@ -246,8 +246,8 @@ public final class CloseCommonTipsNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3168
-     * Name: JDJGBNOMMCP
+     * CmdId: 3063
+     * Obf: MKKMNMNIBPK
      * </pre>
      *
      * Protobuf type {@code CloseCommonTipsNotify}
@@ -457,8 +457,8 @@ public final class CloseCommonTipsNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033CloseCommonTipsNotify.proto\"\027\n\025CloseCo" +
-      "mmonTipsNotifyB!\n\031emu.grasscutter.net.pr" +
-      "otoZ\004/genb\006proto3"
+      "mmonTipsNotifyB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

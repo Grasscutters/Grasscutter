@@ -6,8 +6,11 @@ import emu.grasscutter.net.proto.BlossomBriefInfoNotifyOuterClass;
 import emu.grasscutter.net.proto.BlossomBriefInfoOuterClass;
 
 public class PacketBlossomBriefInfoNotify extends BasePacket {
-    public PacketBlossomBriefInfoNotify(Iterable<BlossomBriefInfoOuterClass.BlossomBriefInfo> blossoms) {
+    public PacketBlossomBriefInfoNotify(
+            Iterable<BlossomBriefInfoOuterClass.BlossomBriefInfo> blossoms) {
         super(PacketOpcodes.BlossomBriefInfoNotify);
-        this.setData(BlossomBriefInfoNotifyOuterClass.BlossomBriefInfoNotify.newBuilder().addAllBriefInfoList(blossoms));
+        this.setData(
+                BlossomBriefInfoNotifyOuterClass.BlossomBriefInfoNotify.newBuilder()
+                        .addAllBriefInfoList(blossoms));
     }
 }

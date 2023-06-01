@@ -12,8 +12,25 @@ public class PacketAvatarTeamUpdateNotify extends BasePacket {
 
         AvatarTeamUpdateNotify.Builder proto = AvatarTeamUpdateNotify.newBuilder();
 
-        player.getTeamManager().getTeams().forEach((id, teamInfo) -> proto.putAvatarTeamMap(id, teamInfo.toProto(player)));
+        var teamManager = player.getTeamManager();
+        if (teamManager.isUsingTrialTeam()) {
+            proto.addAllTempAvatarGuidList(
+                    teamManager.getActiveTeam().stream()
+                            .map(entity -> entity.getAvatar().getGuid())
+                            .toList());
+        } else {
+            teamManager
+                    .getTeams()
+                    .forEach((key, value) -> proto.putAvatarTeamMap(key, value.toProto(player)));
+        }
 
         this.setData(proto);
+    }
+
+    /** Used for locking/unlocking team modification. */
+    public PacketAvatarTeamUpdateNotify() {
+        super(PacketOpcodes.AvatarTeamUpdateNotify);
+
+        this.setData(AvatarTeamUpdateNotify.newBuilder().build());
     }
 }

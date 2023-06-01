@@ -1,13 +1,14 @@
-//package emu.grasscutter.server.packet.send;
+// package emu.grasscutter.server.packet.send;
 //
-//import emu.grasscutter.net.packet.BasePacket;
-//import emu.grasscutter.net.packet.PacketOpcodes;
-//import emu.grasscutter.net.proto.MusicGameCreateBeatmapRspOuterClass;
-//import emu.grasscutter.net.proto.MusicGameUnknown1EnumOuterClass;
+// import emu.grasscutter.net.packet.BasePacket;
+// import emu.grasscutter.net.packet.PacketOpcodes;
+// import emu.grasscutter.net.proto.MusicGameCreateBeatmapRspOuterClass;
+// import emu.grasscutter.net.proto.MusicGameUnknown1EnumOuterClass;
 //
-//public class PacketMusicGameCreateBeatmapRsp extends BasePacket {
+// public class PacketMusicGameCreateBeatmapRsp extends BasePacket {
 //
-//	public PacketMusicGameCreateBeatmapRsp(long musicShareId, MusicGameUnknown1EnumOuterClass.MusicGameUnknown1Enum unknownEnum1) {
+//	public PacketMusicGameCreateBeatmapRsp(long musicShareId,
+// MusicGameUnknown1EnumOuterClass.MusicGameUnknown1Enum unknownEnum1) {
 //		super(PacketOpcodes.MusicGameCreateBeatmapRsp);
 //
 //        var proto = MusicGameCreateBeatmapRspOuterClass.MusicGameCreateBeatmapRsp.newBuilder();
@@ -17,4 +18,4 @@
 //
 //        this.setData(proto);
 //	}
-//}
+// }

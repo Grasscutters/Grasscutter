@@ -1,0 +1,47 @@
+.MiniCard {
+    display: flex;
+
+    width: 64px;
+    height: 64px;
+
+    overflow: hidden;
+    justify-content: center;
+
+    transition: 0.1s ease-in-out all;
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(0.9);
+    }
+}
+
+.MiniCard_Background {
+    display: flex;
+    align-items: center;
+
+    max-width: 64px;
+    max-height: 64px;
+
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.MiniCard_Icon {
+    max-width: 64px;
+    max-height: 64px;
+    object-fit: scale-down;
+    border-radius: 10px;
+}
+
+.MiniCard_Label {
+    width: 64px;
+    max-height: 64px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-primary-color);
+}
+
+.MiniCard_Info {
+    position: absolute;
+    display: flex;
+}

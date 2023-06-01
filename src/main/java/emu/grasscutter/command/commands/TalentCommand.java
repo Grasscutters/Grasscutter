@@ -3,24 +3,24 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.utils.Language;
-
+import emu.grasscutter.utils.lang.Language;
 import java.util.List;
 
 @Command(
-    label = "talent",
-    usage = {"set <talentId> <level>", "(n|e|q|all) <level>", "getid"},
-    permission = "player.settalent",
-    permissionTargeted = "player.settalent.others")
+        label = "talent",
+        usage = {"set <talentId> <level>", "(n|e|q|all) <level>", "getid"},
+        permission = "player.settalent",
+        permissionTargeted = "player.settalent.others")
 public final class TalentCommand implements CommandHandler {
     private void setTalentLevel(Player sender, Avatar avatar, int skillId, int newLevel) {
         if (avatar.setSkillLevel(skillId, newLevel)) {
             long nameHash = GameData.getAvatarSkillDataMap().get(skillId).getNameTextMapHash();
             var name = Language.getTextMapKey(nameHash);
-            CommandHandler.sendTranslatedMessage(sender, "commands.talent.set_id", skillId, name, newLevel);
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.talent.set_id", skillId, name, newLevel);
         } else {
             CommandHandler.sendTranslatedMessage(sender, "commands.talent.out_of_range");
         }
@@ -35,7 +35,9 @@ public final class TalentCommand implements CommandHandler {
 
         Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
         AvatarSkillDepotData skillDepot = avatar.getSkillDepot();
-        if (skillDepot == null) {  // Avatars without skill depots aren't a suitable target even with manual skillId specified
+        if (skillDepot
+                == null) { // Avatars without skill depots aren't a suitable target even with manual skillId
+            // specified
             CommandHandler.sendTranslatedMessage(sender, "commands.talent.invalid_skill_id");
             return;
         }
@@ -46,7 +48,6 @@ public final class TalentCommand implements CommandHandler {
         switch (cmdSwitch) {
             default -> {
                 sendUsageMessage(sender);
-                return;
             }
             case "set" -> {
                 if (args.size() < 3) {
@@ -80,11 +81,12 @@ public final class TalentCommand implements CommandHandler {
                     return;
                 }
 
-                skillId = switch (cmdSwitch) {
-                    default -> skillDepot.getSkills().get(0);
-                    case "e" -> skillDepot.getSkills().get(1);
-                    case "q" -> skillDepot.getEnergySkill();
-                };
+                skillId =
+                        switch (cmdSwitch) {
+                            default -> skillDepot.getSkills().get(0);
+                            case "e" -> skillDepot.getSkills().get(1);
+                            case "q" -> skillDepot.getEnergySkill();
+                        };
                 setTalentLevel(sender, avatar, skillId, newLevel);
             }
             case "all" -> {
@@ -104,17 +106,23 @@ public final class TalentCommand implements CommandHandler {
                     return;
                 }
                 int finalNewLevel = newLevel;
-                skillDepot.getSkillsAndEnergySkill().forEach(id -> setTalentLevel(sender, avatar, id, finalNewLevel));
+                skillDepot
+                        .getSkillsAndEnergySkill()
+                        .forEach(id -> setTalentLevel(sender, avatar, id, finalNewLevel));
             }
             case "getid" -> {
                 var map = GameData.getAvatarSkillDataMap();
-                skillDepot.getSkillsAndEnergySkill().forEach(id -> {
-                    var talent = map.get(id);
-                    if (talent == null) return;
-                    var talentName = Language.getTextMapKey(talent.getNameTextMapHash());
-                    var talentDesc = Language.getTextMapKey(talent.getDescTextMapHash());
-                    CommandHandler.sendTranslatedMessage(sender, "commands.talent.id_desc", id, talentName, talentDesc);
-                });
+                skillDepot
+                        .getSkillsAndEnergySkill()
+                        .forEach(
+                                id -> {
+                                    var talent = map.get(id);
+                                    if (talent == null) return;
+                                    var talentName = Language.getTextMapKey(talent.getNameTextMapHash());
+                                    var talentDesc = Language.getTextMapKey(talent.getDescTextMapHash());
+                                    CommandHandler.sendTranslatedMessage(
+                                            sender, "commands.talent.id_desc", id, talentName, talentDesc);
+                                });
             }
         }
     }

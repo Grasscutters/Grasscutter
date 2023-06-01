@@ -1,11 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import java.util.Map;
-
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarExpeditionStartRspOuterClass.AvatarExpeditionStartRsp;
+import java.util.Map;
 
 public class PacketAvatarExpeditionStartRsp extends BasePacket {
     public PacketAvatarExpeditionStartRsp(Map<Long, ExpeditionInfo> expeditionInfo) {

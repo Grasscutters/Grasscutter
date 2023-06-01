@@ -1,22 +1,20 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketChangeMpTeamAvatarRsp;
-
-import java.util.List;
-
-import static emu.grasscutter.config.Configuration.*;
-
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 @Command(
-    label = "team",
-    usage = {"add <avatarId,...>", "(remove|set) [index|first|last|index-index,...]"},
-    permission = "player.team",
-    permissionTargeted = "player.team.others")
+        label = "team",
+        usage = {"add <avatarId,...>", "(remove|set) [index|first|last|index-index,...]"},
+        permission = "player.team",
+        permissionTargeted = "player.team.others")
 public final class TeamCommand implements CommandHandler {
     private static final int BASE_AVATARID = 10000000;
 
@@ -46,8 +44,11 @@ public final class TeamCommand implements CommandHandler {
                 return;
         }
 
-        targetPlayer.getTeamManager().updateTeamEntities(
-                new PacketChangeMpTeamAvatarRsp(targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
+        targetPlayer
+                .getTeamManager()
+                .updateTeamEntities(
+                        new PacketChangeMpTeamAvatarRsp(
+                                targetPlayer, targetPlayer.getTeamManager().getCurrentTeamInfo()));
     }
 
     private boolean addCommand(Player sender, Player targetPlayer, List<String> args) {
@@ -72,14 +73,16 @@ public final class TeamCommand implements CommandHandler {
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
 
         if (currentTeamAvatars.size() + avatarIds.length > GAME_OPTIONS.avatarLimits.singlePlayerTeam) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.add_too_much", GAME_OPTIONS.avatarLimits.singlePlayerTeam);
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.team.add_too_much", GAME_OPTIONS.avatarLimits.singlePlayerTeam);
             return false;
         }
 
-        for (var avatarId: avatarIds) {
+        for (var avatarId : avatarIds) {
             int id = Integer.parseInt(avatarId);
             if (!addAvatar(sender, targetPlayer, id, index))
-                CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_add_avatar", avatarId);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.team.failed_to_add_avatar", avatarId);
             if (index > 0) ++index;
         }
         return true;
@@ -98,16 +101,17 @@ public final class TeamCommand implements CommandHandler {
         var metaIndexList = args.get(1).split(",");
         var indexes = new HashSet<Integer>();
         var ignoreList = new ArrayList<Integer>();
-        for (var metaIndex: metaIndexList) {
+        for (var metaIndex : metaIndexList) {
             // step 1: parse metaIndex to indexes
             var subIndexes = transformToIndexes(metaIndex, avatarCount);
             if (subIndexes == null) {
-                CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", metaIndex);
+                CommandHandler.sendTranslatedMessage(
+                        sender, "commands.team.failed_to_parse_index", metaIndex);
                 continue;
             }
 
             // step 2: get all of the avatar id through indexes
-            for (var avatarIndex: subIndexes) {
+            for (var avatarIndex : subIndexes) {
                 try {
                     indexes.add(currentTeamAvatars.get(avatarIndex - 1));
                 } catch (Exception e) {
@@ -147,7 +151,8 @@ public final class TeamCommand implements CommandHandler {
             index = Integer.parseInt(args.get(1)) - 1;
             if (index < 0) index = 0;
         } catch (Exception e) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_to_parse_index", args.get(1));
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.team.failed_to_parse_index", args.get(1));
             return false;
         }
 
@@ -160,7 +165,8 @@ public final class TeamCommand implements CommandHandler {
         try {
             avatarId = Integer.parseInt(args.get(2));
         } catch (Exception e) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.failed_parse_avatar_id", args.get(2));
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.team.failed_parse_avatar_id", args.get(2));
             return false;
         }
         if (avatarId < BASE_AVATARID) {
@@ -168,7 +174,8 @@ public final class TeamCommand implements CommandHandler {
         }
 
         if (currentTeamAvatars.contains(avatarId)) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
         }
 
@@ -187,7 +194,8 @@ public final class TeamCommand implements CommandHandler {
         }
         var currentTeamAvatars = targetPlayer.getTeamManager().getCurrentTeamInfo().getAvatars();
         if (currentTeamAvatars.contains(avatarId)) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.team.avatar_already_in_team", avatarId);
+            CommandHandler.sendTranslatedMessage(
+                    sender, "commands.team.avatar_already_in_team", avatarId);
             return false;
         }
         if (!targetPlayer.getAvatars().hasAvatar(avatarId)) {
@@ -219,17 +227,19 @@ public final class TeamCommand implements CommandHandler {
 
             int min, max;
             try {
-                min = switch (range[0]) {
-                    case "first" -> 1;
-                    case "last" -> listLength;
-                    default -> Integer.parseInt(range[0]);
-                };
+                min =
+                        switch (range[0]) {
+                            case "first" -> 1;
+                            case "last" -> listLength;
+                            default -> Integer.parseInt(range[0]);
+                        };
 
-                max = switch (range[1]) {
-                    case "first" -> 1;
-                    case "last" -> listLength;
-                    default -> Integer.parseInt(range[1]);
-                };
+                max =
+                        switch (range[1]) {
+                            case "first" -> 1;
+                            case "last" -> listLength;
+                            default -> Integer.parseInt(range[1]);
+                        };
             } catch (Exception e) {
                 return null;
             }
@@ -255,5 +265,4 @@ public final class TeamCommand implements CommandHandler {
             return null;
         }
     }
-
 }

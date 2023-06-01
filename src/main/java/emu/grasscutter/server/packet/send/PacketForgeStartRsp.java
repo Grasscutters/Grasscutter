@@ -10,9 +10,7 @@ public class PacketForgeStartRsp extends BasePacket {
     public PacketForgeStartRsp(Retcode retcode) {
         super(PacketOpcodes.ForgeStartRsp);
 
-        ForgeStartRsp proto = ForgeStartRsp.newBuilder()
-                .setRetcode(retcode.getNumber())
-                .build();
+        ForgeStartRsp proto = ForgeStartRsp.newBuilder().setRetcode(retcode.getNumber()).build();
 
         this.setData(proto);
     }

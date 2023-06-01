@@ -5,7 +5,6 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AnnounceDataOuterClass;
 import emu.grasscutter.net.proto.ServerAnnounceNotifyOuterClass;
 import emu.grasscutter.utils.Utils;
-
 import java.util.List;
 
 public class PacketServerAnnounceNotify extends BasePacket {
@@ -20,19 +19,20 @@ public class PacketServerAnnounceNotify extends BasePacket {
         this.setData(proto);
     }
 
-	public PacketServerAnnounceNotify(String msg, int configId) {
-		super(PacketOpcodes.ServerAnnounceNotify);
+    public PacketServerAnnounceNotify(String msg, int configId) {
+        super(PacketOpcodes.ServerAnnounceNotify);
 
         var proto = ServerAnnounceNotifyOuterClass.ServerAnnounceNotify.newBuilder();
 
-        proto.addAnnounceDataList(AnnounceDataOuterClass.AnnounceData.newBuilder()
-            .setConfigId(configId)
-            .setBeginTime(Utils.getCurrentSeconds() + 1)
-            .setEndTime(Utils.getCurrentSeconds() + 2)
-            .setCenterSystemText(msg)
-            .setCenterSystemFrequency(1)
-            .build());
+        proto.addAnnounceDataList(
+                AnnounceDataOuterClass.AnnounceData.newBuilder()
+                        .setConfigId(configId)
+                        .setBeginTime(Utils.getCurrentSeconds() + 1)
+                        .setEndTime(Utils.getCurrentSeconds() + 2)
+                        .setCenterSystemText(msg)
+                        .setCenterSystemFrequency(1)
+                        .build());
 
         this.setData(proto);
-	}
+    }
 }

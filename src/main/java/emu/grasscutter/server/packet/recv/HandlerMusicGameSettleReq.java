@@ -7,53 +7,69 @@ import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.MusicGameSettleReqOuterClass;
+import emu.grasscutter.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq;
+import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
 import emu.grasscutter.server.packet.send.PacketMusicGameSettleRsp;
+import lombok.val;
 
 @Opcodes(PacketOpcodes.MusicGameSettleReq)
 public class HandlerMusicGameSettleReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        var req = MusicGameSettleReqOuterClass.MusicGameSettleReq.parseFrom(payload);
+        val req = MusicGameSettleReq.parseFrom(payload);
 
-        var playerData = session.getPlayer().getActivityManager().getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
-        if (playerData.isEmpty()) {
+        val activityManager = session.getPlayer().getActivityManager();
+
+        val playerDataOpt =
+                activityManager.getPlayerActivityDataByActivityType(ActivityType.NEW_ACTIVITY_MUSIC_GAME);
+        if (playerDataOpt.isEmpty()) {
+            session.send(
+                    new PacketMusicGameSettleRsp(
+                            RetcodeOuterClass.Retcode.RET_MUSIC_GAME_LEVEL_CONFIG_NOT_FOUND, req));
             return;
         }
-        var handler = (MusicGameActivityHandler) playerData.get().getActivityHandler();
+
+        val playerData = playerDataOpt.get();
+        val handler = (MusicGameActivityHandler) playerData.getActivityHandler();
         boolean isNewRecord = false;
+
         // check if custom beatmap
-
         if (req.getUgcGuid() == 0) {
-            session.getPlayer().getActivityManager().triggerWatcher(
-                WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE,
-                String.valueOf(req.getMusicBasicId()),
-                String.valueOf(req.getScore())
-            );
+            session
+                    .getPlayer()
+                    .getActivityManager()
+                    .triggerWatcher(
+                            WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE,
+                            String.valueOf(req.getMusicBasicId()),
+                            String.valueOf(req.getScore()));
 
-            isNewRecord = handler.setMusicGameRecord(playerData.get(),
-                MusicGamePlayerData.MusicGameRecord.of()
-                    .musicId(req.getMusicBasicId())
-                    .maxCombo(req.getMaxCombo())
-                    .maxScore(req.getScore())
-                    .build());
+            isNewRecord =
+                    handler.setMusicGameRecord(
+                            playerData,
+                            MusicGamePlayerData.MusicGameRecord.of()
+                                    .musicId(req.getMusicBasicId())
+                                    .maxCombo(req.getMaxCombo())
+                                    .maxScore(req.getScore())
+                                    .build());
 
             // update activity info
-            session.send(new PacketActivityInfoNotify(handler.toProto(playerData.get())));
-        }else {
-            handler.setMusicGameCustomBeatmapRecord(playerData.get(),
-                MusicGamePlayerData.CustomBeatmapRecord.of()
-                    .musicShareId(req.getUgcGuid())
-                    .score(req.getMaxCombo())
-//                    .settle(req.getSuccess())
-                    .build());
+            session.send(
+                    new PacketActivityInfoNotify(
+                            handler.toProto(playerData, activityManager.getConditionExecutor())));
+        } else {
+            handler.setMusicGameCustomBeatmapRecord(
+                    playerData,
+                    MusicGamePlayerData.CustomBeatmapRecord.of()
+                            .musicShareId(req.getUgcGuid())
+                            .score(req.getMaxCombo())
+                            .settle(req.getIsSaveScore())
+                            .build());
         }
 
-
-        session.send(new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getUgcGuid(), isNewRecord));
+        session.send(
+                new PacketMusicGameSettleRsp(req.getMusicBasicId(), req.getUgcGuid(), isNewRecord));
     }
-
 }

@@ -1,23 +1,21 @@
 package emu.grasscutter.data.binout;
 
 public class AbilityEmbryoEntry {
-	private String name;
-	private String[] abilities;
-	
-	public AbilityEmbryoEntry() {
+    private String name;
+    private String[] abilities;
 
-	}
-	
-	public AbilityEmbryoEntry(String avatarName, String[] array) {
-		this.name = avatarName;
-		this.abilities = array;
-	}
+    public AbilityEmbryoEntry() {}
 
-	public String getName() {
-		return name;
-	}
-	
-	public String[] getAbilities() {
-		return abilities;
-	}
+    public AbilityEmbryoEntry(String avatarName, String[] array) {
+        this.name = avatarName;
+        this.abilities = array;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String[] getAbilities() {
+        return abilities;
+    }
 }
