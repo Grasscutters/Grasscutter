@@ -709,8 +709,7 @@ public class Player implements PlayerHook, FieldFetch {
     public void onEnterRegion(SceneRegion region) {
         this.getQuestManager().forEachActiveQuest(quest -> {
             if (quest.getTriggerData() != null &&
-                quest.getTriggers().containsKey("ENTER_REGION_"+ region.config_id) &&
-                    region.getGroupId() == quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getGroupId()) {
+                quest.getTriggers().containsKey("ENTER_REGION_"+ region.config_id)) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_" + region.config_id, true))) {
                     this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
@@ -724,8 +723,7 @@ public class Player implements PlayerHook, FieldFetch {
 
     public void onLeaveRegion(SceneRegion region) {
         this.getQuestManager().forEachActiveQuest(quest -> {
-            if (quest.getTriggers().containsKey("LEAVE_REGION_" + region.config_id) &&
-                region.getGroupId() == quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getGroupId()) {
+            if (quest.getTriggers().containsKey("LEAVE_REGION_" + region.config_id)) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_" + region.config_id, true))) {
                     this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
