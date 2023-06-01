@@ -1,34 +1,21 @@
 package emu.grasscutter.game.avatar;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.SkillPointModifier;
 import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.excels.EquipAffixData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.ItemData.WeaponProperty;
-import emu.grasscutter.data.excels.ProudSkillData;
-import emu.grasscutter.data.excels.avatar.AvatarData;
-import emu.grasscutter.data.excels.avatar.AvatarSkillData;
-import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
+import emu.grasscutter.data.excels.avatar.*;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData.InherentProudSkillOpens;
-import emu.grasscutter.data.excels.avatar.AvatarTalentData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryAffixData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryLevelData;
-import emu.grasscutter.data.excels.reliquary.ReliquaryMainPropData;
-import emu.grasscutter.data.excels.reliquary.ReliquarySetData;
+import emu.grasscutter.data.excels.reliquary.*;
 import emu.grasscutter.data.excels.trial.TrialAvatarTemplateData;
-import emu.grasscutter.data.excels.weapon.WeaponCurveData;
-import emu.grasscutter.data.excels.weapon.WeaponPromoteData;
+import emu.grasscutter.data.excels.weapon.*;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityWeapon;
-import emu.grasscutter.game.inventory.EquipType;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo;
@@ -43,15 +30,14 @@ import emu.grasscutter.net.proto.TrialAvatarInfoOuterClass.TrialAvatarInfo;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+import org.bson.types.ObjectId;
+
+import javax.annotation.*;
 import java.util.*;
 import java.util.stream.Stream;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
-import org.bson.types.ObjectId;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity(value = "avatars", useDiscriminator = false)
 public class Avatar {
@@ -241,8 +227,20 @@ public class Avatar {
         return this.getEquips().get(slotId);
     }
 
+    /**
+     * @return The avatar's equipped weapon.
+     */
+    @Nullable
     public GameItem getWeapon() {
         return this.getEquipBySlot(EquipType.EQUIP_WEAPON);
+    }
+
+    /**
+     * @return The avatar's equipped weapon.
+     * @throws NullPointerException If the avatar does not have a weapon.
+     */
+    public GameItem getWeaponNotNull() {
+        return Objects.requireNonNull(this.getWeapon(), "Avatar does not have a weapon.");
     }
 
     protected void setSkillDepot(AvatarSkillDepotData skillDepot) {

@@ -22,7 +22,7 @@ public class PacketSceneTeamUpdateNotify extends BasePacket {
                                 .setSceneId(p.getSceneId())
                                 .setEntityId(entityAvatar.getId())
                                 .setSceneEntityInfo(entityAvatar.toProto())
-                                .setWeaponGuid(entityAvatar.getAvatar().getWeapon().getGuid())
+                                .setWeaponGuid(entityAvatar.getAvatar().getWeaponNotNull().getGuid())
                                 .setWeaponEntityId(entityAvatar.getWeaponEntityId())
                                 .setIsPlayerCurAvatar(p.getTeamManager().getCurrentAvatarEntity() == entityAvatar)
                                 .setIsOnScene(p.getTeamManager().getCurrentAvatarEntity() == entityAvatar)

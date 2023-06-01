@@ -1,31 +1,24 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.avatar.AvatarStorage;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.avatar.*;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.server.packet.send.*;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
-import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.*;
+import it.unimi.dsi.fastutil.longs.*;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -535,6 +528,11 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     public void loadFromDatabase() {
+        if (this.isLoaded()) return;
+
+        // Wait for avatars to load.
+        Utils.waitFor(this.getPlayer().getAvatars()::isLoaded);
+
         List<GameItem> items = DatabaseHelper.getInventoryItems(getPlayer());
 
         for (GameItem item : items) {
@@ -575,6 +573,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
         // Load avatars after inventory.
         this.getPlayer().getAvatars().postLoad();
+        this.setLoaded(true);
     }
 
     @Override

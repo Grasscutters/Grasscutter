@@ -1325,11 +1325,20 @@ public class Player implements PlayerHook, FieldFetch {
 
         runner.submit(this::loadBattlePassManager);
 
+        // Wait for all tasks to finish.
+        Utils.waitFor(() ->
+            this.getAvatars().isLoaded() &&
+                this.getInventory().isLoaded());
+
         this.getPlayerProgress().setPlayer(this); // Add reference to the player.
     }
 
+    /**
+     * Invoked when the player selects their avatar.
+     */
     public void onPlayerBorn() {
-        getQuestManager().onPlayerBorn();
+        Grasscutter.getThreadPool().submit(
+            this.getQuestManager()::onPlayerBorn);
     }
 
     public void onLogin() {

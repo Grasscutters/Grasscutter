@@ -129,6 +129,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
     }
 
     public void loadFromDatabase() {
+        if (this.isLoaded()) return;
+
         List<Avatar> avatars = DatabaseHelper.getAvatars(getPlayer());
 
         for (Avatar avatar : avatars) {
@@ -156,6 +158,8 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             this.avatars.put(avatar.getAvatarId(), avatar);
             this.avatarsGuid.put(avatar.getGuid(), avatar);
         }
+
+        this.setLoaded(true);
     }
 
     public void postLoad() {
