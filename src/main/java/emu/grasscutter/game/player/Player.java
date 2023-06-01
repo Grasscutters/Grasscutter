@@ -710,9 +710,12 @@ public class Player implements PlayerHook, FieldFetch {
         this.getQuestManager().forEachActiveQuest(quest -> {
             if (quest.getTriggerData() != null &&
                 quest.getTriggers().containsKey("ENTER_REGION_"+ region.config_id)) {
-                this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
-                this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
-                    quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getId(), 0);
+                // If trigger hasn't been fired yet
+                if (!Boolean.TRUE.equals(quest.getTriggers().put("ENTER_REGION_" + region.config_id, true))) {
+                    this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
+                        quest.getTriggerData().get("ENTER_REGION_" + region.config_id).getId(), 0);
+                }
             }
         });
 
@@ -721,9 +724,12 @@ public class Player implements PlayerHook, FieldFetch {
     public void onLeaveRegion(SceneRegion region) {
         this.getQuestManager().forEachActiveQuest(quest -> {
             if (quest.getTriggers().containsKey("LEAVE_REGION_" + region.config_id)) {
-                this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
-                this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
-                    quest.getTriggerData().get("LEAVE_REGION_" + region.config_id).getId(), 0);
+                // If trigger hasn't been fired yet
+                if (!Boolean.TRUE.equals(quest.getTriggers().put("LEAVE_REGION_" + region.config_id, true))) {
+                    this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
+                    this.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TRIGGER_FIRE,
+                        quest.getTriggerData().get("LEAVE_REGION_" + region.config_id).getId(), 0);
+                }
             }
         });
     }
