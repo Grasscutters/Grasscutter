@@ -317,7 +317,9 @@ public class StaminaManager extends BasePlayerManager {
         entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
         entity.getWorld().broadcastPacket(new PacketLifeStateChangeNotify(0, entity, LifeState.LIFE_DEAD));
         player.getScene().removeEntity(entity);
-        ((EntityAvatar) entity).onDeath(dieType, 0);
+
+        if (entity instanceof EntityAvatar avatar)
+            avatar.onDeath(dieType, 0);
     }
 
     public void startSustainedStaminaHandler() {
