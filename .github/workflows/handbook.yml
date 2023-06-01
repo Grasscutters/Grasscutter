@@ -105,6 +105,16 @@ jobs:
         with:
           url: https://api.grasscutter.io/static/scenes.csv
           target: src/handbook/data/
+      - name: Download Quest Data
+        uses: suisei-cn/actions-download-file@v1.4.0
+        with:
+          url: https://api.grasscutter.io/static/quests.csv
+          target: src/handbook/data/
+      - name: Download Main Quest Data
+        uses: suisei-cn/actions-download-file@v1.4.0
+        with:
+          url: https://api.grasscutter.io/static/mainquests.csv
+          target: src/handbook/data/
 
       - name: Build handbook
         working-directory: src/handbook
