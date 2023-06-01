@@ -1,27 +1,21 @@
 package emu.grasscutter.server.game;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.SendPacketEvent;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
+import emu.grasscutter.utils.*;
+import io.netty.buffer.*;
+import lombok.*;
+
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.file.Path;
-import lombok.Getter;
-import lombok.Setter;
+
+import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 public class GameSession implements GameSessionManager.KcpChannel {
     private final GameServer server;
@@ -139,7 +133,11 @@ public class GameSession implements GameSessionManager.KcpChannel {
         SendPacketEvent event = new SendPacketEvent(this, packet);
         event.call();
         if (!event.isCanceled()) { // If event is not cancelled, continue.
-            tunnel.writeData(event.getPacket().build());
+            try {
+                tunnel.writeData(event.getPacket().build());
+            } catch (Exception ignored) {
+                Grasscutter.getLogger().debug("Unable to send packet to client.");
+            }
         }
     }
 
