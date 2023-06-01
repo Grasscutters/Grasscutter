@@ -1,22 +1,20 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScenePointEntry;
 import emu.grasscutter.data.excels.OpenStateData;
 import emu.grasscutter.data.excels.OpenStateData.OpenStateCondType;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.quest.enums.ParentQuestState;
-import emu.grasscutter.game.quest.enums.QuestCond;
-import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.game.quest.enums.QuestState;
+import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.*;
+
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.scripts.constants.EventType.EVENT_UNLOCK_TRANS_POINT;
 
 // @Entity
 public final class PlayerProgressManager extends BasePlayerDataManager {
@@ -32,6 +30,12 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                     48 // blacklist OPEN_STATE_LIMIT_REGION_GLOBAL to make Meledy happy. =D Remove this as
                     // soon as quest unlocks are fully implemented.
                     );
+    public static final Set<Integer> IGNORED_OPEN_STATES = Set.of(
+        1404, // OPEN_STATE_MENGDE_INFUSEDCRYSTAL, causes quest 'Mine Craft' to be given to the player at the start of the game.
+              // This should be removed when city reputation is implemented.
+        57    // OPEN_STATE_PERSONAL_LINE, causes the prompt for showing character hangout quests to be permanently shown.
+              // This should be removed when character story quests are implemented.
+    );
     // Set of open states that are set per default for all accounts. Can be overwritten by an entry in
     // `map`.
     public static final Set<Integer> DEFAULT_OPEN_STATES =
@@ -53,10 +57,11 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                                             // Always unlock OPEN_STATE_PAIMON, otherwise the player will not have a
                                             // working chat.
                                             || s.getId() == 1)
+                    .map(OpenStateData::getId)
                     .filter(
                             s ->
-                                    !BLACKLIST_OPEN_STATES.contains(s.getId())) // Filter out states in the blacklist.
-                    .map(OpenStateData::getId)
+                                    !BLACKLIST_OPEN_STATES.contains(s)) // Filter out states in the blacklist.
+                    .filter(s -> !IGNORED_OPEN_STATES.contains(s)) // Filter out states in the default ignore list.
                     .collect(Collectors.toSet());
 
     public PlayerProgressManager(Player player) {
