@@ -75,6 +75,7 @@ public class GadgetChest extends GadgetContent {
                 } else if (chest.chest_drop_id != 0) {
                     status = dropSystem.handleChestDrop(chest.chest_drop_id, chest.drop_count, getGadget());
                 }
+
                 if (status) {
                     getGadget().updateState(ScriptGadgetState.ChestOpened);
                     player.sendPacket(
