@@ -1,25 +1,21 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.http.Router;
-import emu.grasscutter.utils.DispatchUtils;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import io.javalin.Javalin;
-import io.javalin.http.ContentType;
-import io.javalin.http.Context;
+import io.javalin.http.*;
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import lombok.Getter;
+import java.nio.file.*;
+import java.util.*;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {
@@ -48,14 +44,14 @@ public final class GachaHandler implements Router {
 
         // Make request to dispatch server.
         var data = DispatchUtils.fetchGachaRecords(account.getId(), page, gachaType);
-        var records = data.get("records").getAsJsonArray();
+        var records = data.get("records").getAsString();
         var maxPage = data.get("maxPage").getAsLong();
 
         var locale = account.getLocale();
         var template =
                 new String(
                                 FileUtils.read(FileUtils.getDataPath("gacha/records.html")), StandardCharsets.UTF_8)
-                        .replace("'{{REPLACE_RECORDS}}'", records.toString())
+                        .replace("'{{REPLACE_RECORDS}}'", Utils.unescapeJson(records))
                         .replace("'{{REPLACE_MAXPAGE}}'", String.valueOf(maxPage))
                         .replace("{{TITLE}}", translate(locale, "gacha.records.title"))
                         .replace("{{DATE}}", translate(locale, "gacha.records.date"))

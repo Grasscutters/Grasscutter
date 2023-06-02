@@ -525,4 +525,14 @@ public final class Utils {
         } catch (InterruptedException ignored) {
         }
     }
+
+    /**
+     * Unescapes a JSON string.
+     *
+     * @param json The JSON string to unescape.
+     * @return The unescaped JSON string.
+     */
+    public static String unescapeJson(String json) {
+        return json.replaceAll("\"", "\"");
+    }
 }
