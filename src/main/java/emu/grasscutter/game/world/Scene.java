@@ -22,8 +22,8 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.*;
 import emu.grasscutter.scripts.constants.EventType;
@@ -33,11 +33,12 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.*;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.*;
 
 public final class Scene {
     @Getter private final World world;
@@ -540,11 +541,18 @@ public final class Scene {
         }
 
         var sceneTime = getSceneTimeSeconds();
-        getEntities().forEach((eid, e) -> e.onTick(sceneTime));
+
+        var entities = Map.copyOf(this.getEntities());
+        entities.forEach(
+                (eid, e) -> {
+                    if (!e.isAlive()) {
+                        this.getEntities().remove(eid);
+                    } else e.onTick(sceneTime);
+                });
 
         blossomManager.onTick();
 
-        checkNpcGroup();
+        this.checkNpcGroup();
 
         this.finishLoading();
         this.checkPlayerRespawn();
