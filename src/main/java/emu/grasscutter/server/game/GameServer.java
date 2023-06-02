@@ -1,5 +1,8 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.*;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.database.DatabaseHelper;
@@ -30,17 +33,13 @@ import emu.grasscutter.server.event.types.ServerEvent;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.task.TaskMap;
 import emu.grasscutter.utils.Utils;
-import kcp.highway.*;
-import lombok.*;
-import org.jetbrains.annotations.NotNull;
-
 import java.net.*;
 import java.time.*;
 import java.util.*;
 import java.util.concurrent.*;
-
-import static emu.grasscutter.config.Configuration.*;
-import static emu.grasscutter.utils.lang.Language.translate;
+import kcp.highway.*;
+import lombok.*;
+import org.jetbrains.annotations.NotNull;
 
 @Getter
 public final class GameServer extends KcpServer implements Iterable<Player> {
@@ -331,9 +330,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         var event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
         event.call();
 
-        this.getPlayers()
-            .forEach(
-                (uid, player) -> player.getSession().close());
+        this.getPlayers().forEach((uid, player) -> player.getSession().close());
 
         this.getWorlds().forEach(World::save);
 
@@ -348,7 +345,8 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
             if (!threadPool.awaitTermination(5, TimeUnit.SECONDS)) {
                 Grasscutter.getLogger().error("Logic thread did not terminate!");
             }
-        } catch (InterruptedException ignored) { }
+        } catch (InterruptedException ignored) {
+        }
     }
 
     @NotNull @Override

@@ -1,12 +1,12 @@
 package emu.grasscutter.game.talk;
 
+import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
+import static emu.grasscutter.game.quest.enums.QuestContent.*;
+
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData.TalkData;
 import emu.grasscutter.game.player.*;
 import lombok.NonNull;
-
-import static emu.grasscutter.game.quest.enums.QuestCond.QUEST_COND_COMPLETE_TALK;
-import static emu.grasscutter.game.quest.enums.QuestContent.*;
 
 public final class TalkManager extends BasePlayerManager {
     public TalkManager(@NonNull Player player) {
@@ -33,8 +33,8 @@ public final class TalkManager extends BasePlayerManager {
 
             // Execute the talk action on associated handlers.
             talkData
-                .getFinishExec()
-                .forEach(e -> player.getServer().getTalkSystem().triggerExec(player, talkData, e));
+                    .getFinishExec()
+                    .forEach(e -> player.getServer().getTalkSystem().triggerExec(player, talkData, e));
 
             // Save the talk value to the quest's data.
             this.saveTalkToQuest(talkId, talkData.getQuestId());

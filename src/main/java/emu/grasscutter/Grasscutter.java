@@ -1,5 +1,8 @@
 package emu.grasscutter;
 
+import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import ch.qos.logback.classic.*;
 import emu.grasscutter.auth.*;
 import emu.grasscutter.command.*;
@@ -18,19 +21,15 @@ import emu.grasscutter.tools.Tools;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import java.io.*;
+import java.util.Calendar;
+import java.util.concurrent.*;
+import javax.annotation.Nullable;
 import lombok.*;
 import org.jline.reader.*;
 import org.jline.terminal.*;
 import org.reflections.Reflections;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nullable;
-import java.io.*;
-import java.util.Calendar;
-import java.util.concurrent.*;
-
-import static emu.grasscutter.config.Configuration.SERVER;
-import static emu.grasscutter.utils.lang.Language.translate;
 
 public final class Grasscutter {
     public static final File configFile = new File("./config.json");
@@ -199,7 +198,8 @@ public final class Grasscutter {
             if (!dbExecutor.awaitTermination(5, TimeUnit.SECONDS)) {
                 dbExecutor.shutdownNow();
             }
-        } catch (InterruptedException ignored) { }
+        } catch (InterruptedException ignored) {
+        }
     }
 
     /*

@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.talk.TalkExec;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @ResourceType(name = "TalkExcelConfigData.json")
 @EqualsAndHashCode(callSuper = false)
@@ -40,10 +39,7 @@ public final class TalkConfigData extends GameResource {
 
         if (this.questId <= 0) {
             var id = String.valueOf(this.getId());
-            this.questId = Integer.parseInt(
-                id.length() < 5 ? "0" :
-                    id.substring(0, 3)
-            );
+            this.questId = Integer.parseInt(id.length() < 5 ? "0" : id.substring(0, 3));
         }
     }
 
