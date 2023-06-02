@@ -1,12 +1,13 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameQuest;
+
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "quest",
@@ -130,6 +131,22 @@ public final class QuestCommand implements CommandHandler {
                         sender,
                         "Triggers registered for %s: %s."
                                 .formatted(questId, String.join(", ", quest.getTriggers().keySet())));
+            }
+            case "grouptriggers" -> {
+                var scene = targetPlayer.getScene();
+                var scriptManager = scene.getScriptManager();
+
+                var group = scriptManager.getGroupById(questId);
+                if (group == null) {
+                    CommandHandler.sendMessage(sender, "The group does not exist.");
+                    return;
+                }
+
+                CommandHandler.sendMessage(sender,
+                    group.triggers.entrySet().stream()
+                        .map(entry -> "%s: %s".formatted(entry.getKey(), entry.getValue()))
+                        .collect(Collectors.joining(", "))
+                );
             }
             default -> this.sendUsageMessage(sender);
         }
