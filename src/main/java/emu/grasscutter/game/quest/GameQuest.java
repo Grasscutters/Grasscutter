@@ -51,10 +51,12 @@ public class GameQuest {
         this.state = QuestState.QUEST_STATE_UNSTARTED;
         this.triggerData = new HashMap<>();
         this.triggers = new HashMap<>();
+        this.finishProgressList = new int[questData.getFinishCond().size()];
+        this.failProgressList = new int[questData.getFailCond().size()];
+        this.finishTime = 0;
     }
 
     public void start() {
-        this.clearProgress(false);
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
