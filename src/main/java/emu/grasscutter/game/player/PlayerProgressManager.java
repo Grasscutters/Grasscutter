@@ -300,7 +300,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
     /** Quest progress */
     public void addQuestProgress(int id, int count) {
-        var newCount = player.getPlayerProgress().addToCurrentProgress(id, count);
+        var newCount = player.getPlayerProgress().addToCurrentProgress(String.valueOf(id), count);
         player.save();
         player
                 .getQuestManager()
