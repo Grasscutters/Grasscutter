@@ -350,12 +350,6 @@ public class Player implements PlayerHook, FieldFetch {
             world.changeTime(gameTime);
         }
 
-        // Trigger the script event for game time update.
-        var questManager = this.getQuestManager();
-        questManager.queueEvent(QuestCond.QUEST_COND_IS_DAYTIME);
-        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_GT_EQ);
-        questManager.queueEvent(QuestCond.QUEST_COND_TIME_VAR_PASS_DAY);
-
         this.save();
     }
 

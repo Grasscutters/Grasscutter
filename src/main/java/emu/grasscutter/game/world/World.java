@@ -522,10 +522,6 @@ public class World implements Iterable<Player> {
      */
     public void changeTime(long gameTime) {
         this.currentWorldTime = gameTime;
-
-        // Trigger script events.
-        this.players.forEach(
-                player -> player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK));
     }
 
     /**
