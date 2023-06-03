@@ -3,7 +3,7 @@ package emu.grasscutter.data.server;
 import lombok.Data;
 
 @Data
-public class DropTableExcelConfigData {
+public final class DropTableExcelConfigData {
     private int id;
     private int randomType;
     private int dropLevel;
@@ -16,7 +16,7 @@ public class DropTableExcelConfigData {
     private int activityLimit;
 
     @Data
-    public class DropVectorEntry {
+    public static class DropVectorEntry {
         private int itemId;
         private String countRange;
         private int weight;
