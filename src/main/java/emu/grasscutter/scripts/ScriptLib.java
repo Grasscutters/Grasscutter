@@ -667,6 +667,7 @@ public class ScriptLib {
             var1);
 
         for(var player : getSceneScriptManager().getScene().getPlayers()){
+            player.getPlayerProgress().addToCurrentProgress(var1, 1);
             player.getQuestManager().queueEvent(QuestCond.QUEST_COND_LUA_NOTIFY, var1);
             player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_LUA_NOTIFY, var1);
         }
