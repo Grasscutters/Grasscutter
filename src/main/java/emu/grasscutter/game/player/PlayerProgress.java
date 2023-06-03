@@ -4,10 +4,10 @@ import dev.morphia.annotations.Entity;
 import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.quest.enums.QuestContent;
-import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,10 +29,10 @@ public class PlayerProgress {
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
     // it will be hard to loop and compare
-    private Map<Integer, Integer> questProgressCountMap;
+    private Map<String, Integer> questProgressCountMap;
 
     public PlayerProgress() {
-        this.questProgressCountMap = new Int2IntOpenHashMap();
+        this.questProgressCountMap = new ConcurrentHashMap<>();
         this.completedDungeons = new IntArrayList();
         this.itemHistory = new Int2ObjectOpenHashMap<>();
     }
@@ -70,15 +70,15 @@ public class PlayerProgress {
         return itemEntry.addToObtainedCount(count);
     }
 
-    public int getCurrentProgress(int progressId) {
+    public int getCurrentProgress(String progressId) {
         return questProgressCountMap.getOrDefault(progressId, -1);
     }
 
-    public int addToCurrentProgress(int progressId, int count) {
+    public int addToCurrentProgress(String progressId, int count) {
         return questProgressCountMap.merge(progressId, count, Integer::sum);
     }
 
-    public int resetCurrentProgress(int progressId) {
+    public int resetCurrentProgress(String progressId) {
         return questProgressCountMap.merge(progressId, 0, Integer::min);
     }
 

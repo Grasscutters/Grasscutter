@@ -14,7 +14,8 @@ public class ContentAddQuestProgress extends BaseContent {
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         val progressId = condition.getParam()[0];
-        val currentCount = quest.getOwner().getPlayerProgress().getCurrentProgress(progressId);
+        val currentCount =
+                quest.getOwner().getPlayerProgress().getCurrentProgress(String.valueOf(progressId));
 
         // if the condition count is 0 I think it is safe to assume that the
         // condition count from EXEC only needs to be 1

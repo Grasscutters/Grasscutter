@@ -51,10 +51,12 @@ public class GameQuest {
         this.state = QuestState.QUEST_STATE_UNSTARTED;
         this.triggerData = new HashMap<>();
         this.triggers = new HashMap<>();
+        this.finishProgressList = new int[questData.getFinishCond().size()];
+        this.failProgressList = new int[questData.getFailCond().size()];
+        this.finishTime = 0;
     }
 
     public void start() {
-        this.clearProgress(false);
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
@@ -153,17 +155,30 @@ public class GameQuest {
         // TODO improve
         var oldState = state;
         if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
+            for (var condition : questData.getFinishCond()) {
+                if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
+                    this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
+                }
+            }
             this.finishProgressList = new int[questData.getFinishCond().size()];
         }
 
         if (questData.getFailCond() != null && questData.getFailCond().size() != 0) {
+            for (var condition : questData.getFailCond()) {
+                if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
+                    this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
+                }
+            }
             this.failProgressList = new int[questData.getFailCond().size()];
         }
+
+        this.getOwner().getPlayerProgress().resetCurrentProgress(String.valueOf(this.subQuestId));
+
         setState(QuestState.QUEST_STATE_UNSTARTED);
         finishTime = 0;
         acceptTime = 0;
         startTime = 0;
-        this.getOwner().getPlayerProgress().resetCurrentProgress(this.subQuestId);
+
         if (oldState == QuestState.QUEST_STATE_UNSTARTED) {
             return false;
         }
