@@ -155,8 +155,8 @@ public class GameQuest {
         // TODO improve
         var oldState = state;
         if (questData.getFinishCond() != null && questData.getFinishCond().size() != 0) {
-            for(var condition : questData.getFinishCond()) {
-                if(condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
+            for (var condition : questData.getFinishCond()) {
+                if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
                     this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
                 }
             }
@@ -164,8 +164,8 @@ public class GameQuest {
         }
 
         if (questData.getFailCond() != null && questData.getFailCond().size() != 0) {
-            for(var condition : questData.getFailCond()) {
-                if(condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
+            for (var condition : questData.getFailCond()) {
+                if (condition.getType() == QuestContent.QUEST_CONTENT_LUA_NOTIFY) {
                     this.getOwner().getPlayerProgress().resetCurrentProgress(condition.getParamStr());
                 }
             }
