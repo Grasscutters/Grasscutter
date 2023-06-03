@@ -335,18 +335,48 @@ tasks.register('generateHandbook') {
         return
     }
 
-    def nodeVersion = {
+    def npmVersion = {
         try {
-            return 'node --version'.execute().text.trim()
+            return 'npm --version'.execute().text.trim()
         } catch (ignored) {
-            return 'NODE_NOT_FOUND'
+            return 'NPM_NOT_FOUND'
         }
     }
 
     // Check if Node is installed.
-    if (nodeVersion() == 'NODE_NOT_FOUND') {
-        println('Node is not installed. Skipping handbook generation.')
+    if (npmVersion() == 'NPM_NOT_FOUND') {
+        println('NPM is not installed. Skipping handbook generation.')
     } else {
+        // Check if the handbook resources are present.
+        if (!file('src/handbook/data/commands.json')) {
+            println('Command data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/avatars.csv')) {
+            println('Avatar data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/entities.csv')) {
+            println('Entity data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/items.csv')) {
+            println('Item data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/mainquests.csv')) {
+            println('Main quest data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/quests.csv')) {
+            println('Quest data was not found. Skipping handbook generation.')
+            return
+        }
+        if (!file('src/handbook/data/scenes.csv')) {
+            println('Scene data was not found. Skipping handbook generation.')
+            return
+        }
+
         // Build the handbook.
         var npm = 'npm'
         if (Os.isFamily(Os.FAMILY_WINDOWS))
