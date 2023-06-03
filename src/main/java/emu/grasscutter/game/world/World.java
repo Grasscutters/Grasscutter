@@ -1,7 +1,5 @@
 package emu.grasscutter.game.world;
 
-import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
-
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
 import emu.grasscutter.game.entity.*;
@@ -11,7 +9,7 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.SystemHint;
+import emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.*;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
@@ -20,9 +18,12 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
 import it.unimi.dsi.fastutil.ints.*;
-import java.util.*;
 import lombok.*;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
+
+import static emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType.SCRIPT;
 
 public class World implements Iterable<Player> {
     @Getter private final GameServer server;
@@ -158,7 +159,12 @@ public class World implements Iterable<Player> {
 
             if (player != this.getHost()) {
                 this.broadcastPacket(
-                        new PacketPlayerChatNotify(player, 0, SystemHint.newBuilder().setType(1).build()));
+                        new PacketPlayerChatNotify(
+                                player,
+                                0,
+                                SystemHint.newBuilder()
+                                        .setType(SystemHintType.SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD.getNumber())
+                                        .build()));
             }
         }
 
@@ -215,7 +221,12 @@ public class World implements Iterable<Player> {
             }
         } else {
             this.broadcastPacket(
-                    new PacketPlayerChatNotify(player, 0, SystemHint.newBuilder().setType(2).build()));
+                    new PacketPlayerChatNotify(
+                            player,
+                            0,
+                            SystemHint.newBuilder()
+                                    .setType(SystemHintType.SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD.getNumber())
+                                    .build()));
         }
     }
 

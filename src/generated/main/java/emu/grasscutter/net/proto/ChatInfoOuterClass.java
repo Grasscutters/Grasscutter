@@ -224,6 +224,123 @@ public final class ChatInfoOuterClass {
               emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.class, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder.class);
     }
 
+    /**
+     * Protobuf enum {@code ChatInfo.SystemHintType}
+     */
+    public enum SystemHintType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_NONE = 0;</code>
+       */
+      SYSTEM_HINT_TYPE_CHAT_NONE(0),
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD = 1;</code>
+       */
+      SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD(1),
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD = 2;</code>
+       */
+      SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_NONE = 0;</code>
+       */
+      public static final int SYSTEM_HINT_TYPE_CHAT_NONE_VALUE = 0;
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD = 1;</code>
+       */
+      public static final int SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD_VALUE = 1;
+      /**
+       * <code>SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD = 2;</code>
+       */
+      public static final int SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD_VALUE = 2;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SystemHintType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SystemHintType forNumber(int value) {
+        switch (value) {
+          case 0: return SYSTEM_HINT_TYPE_CHAT_NONE;
+          case 1: return SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD;
+          case 2: return SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SystemHintType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          SystemHintType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SystemHintType>() {
+              public SystemHintType findValueByNumber(int number) {
+                return SystemHintType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final SystemHintType[] VALUES = values();
+
+      public static SystemHintType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SystemHintType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:ChatInfo.SystemHintType)
+    }
+
     public interface SystemHintOrBuilder extends
         // @@protoc_insertion_point(interface_extends:ChatInfo.SystemHint)
         com.google.protobuf.MessageOrBuilder {
@@ -1907,13 +2024,16 @@ public final class ChatInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016ChatInfo.proto\"\317\001\n\010ChatInfo\022\014\n\004time\030\007 " +
+      "\n\016ChatInfo.proto\"\317\002\n\010ChatInfo\022\014\n\004time\030\007 " +
       "\001(\r\022\016\n\006to_uid\030\006 \001(\r\022\017\n\007is_read\030\004 \001(\010\022\013\n\003" +
       "uid\030\005 \001(\r\022\020\n\010sequence\030\014 \001(\r\022\017\n\004text\030\230\003 \001" +
       "(\tH\000\022\017\n\004icon\030\234\n \001(\rH\000\022,\n\013system_hint\030\246\001 " +
       "\001(\0132\024.ChatInfo.SystemHintH\000\032\032\n\nSystemHin" +
-      "t\022\014\n\004type\030\r \001(\rB\t\n\007contentB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "t\022\014\n\004type\030\r \001(\r\"~\n\016SystemHintType\022\036\n\032SYS" +
+      "TEM_HINT_TYPE_CHAT_NONE\020\000\022%\n!SYSTEM_HINT" +
+      "_TYPE_CHAT_ENTER_WORLD\020\001\022%\n!SYSTEM_HINT_" +
+      "TYPE_CHAT_LEAVE_WORLD\020\002B\t\n\007contentB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
