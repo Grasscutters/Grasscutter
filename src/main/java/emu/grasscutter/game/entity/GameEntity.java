@@ -15,9 +15,8 @@ import emu.grasscutter.scripts.data.controller.EntityController;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
+import lombok.*;
 
 public abstract class GameEntity {
     @Getter private final Scene scene;
@@ -230,40 +229,45 @@ public abstract class GameEntity {
 
     private int[] parseCountRange(String range) {
         var split = range.split(";");
-        if(split.length == 1) return new int[] {Integer.parseInt(split[0]), Integer.parseInt(split[0])};
+        if (split.length == 1)
+            return new int[] {Integer.parseInt(split[0]), Integer.parseInt(split[0])};
         return new int[] {Integer.parseInt(split[0]), Integer.parseInt(split[1])};
     }
 
     public boolean dropSubfieldItem(int dropId) {
         var drop = GameData.getDropSubfieldMappingMap().get(dropId);
-        if(drop == null) return false;
+        if (drop == null) return false;
         var dropTableEntry = GameData.getDropTableExcelConfigDataMap().get(drop.getItemId());
-        if(dropTableEntry == null) return false;
+        if (dropTableEntry == null) return false;
 
         Int2ObjectMap<Integer> itemsToDrop = new Int2ObjectOpenHashMap<>();
         switch (dropTableEntry.getRandomType()) {
-            case 0: //select one
+            case 0: // select one
                 {
                     int weightCount = 0;
-                    for(var entry : dropTableEntry.getDropVec()) weightCount += entry.getWeight();
+                    for (var entry : dropTableEntry.getDropVec()) weightCount += entry.getWeight();
 
                     int randomValue = new Random().nextInt(weightCount);
 
                     weightCount = 0;
-                    for(var entry : dropTableEntry.getDropVec()) {
-                        if(randomValue >= weightCount && randomValue < (weightCount + entry.getWeight())) {
+                    for (var entry : dropTableEntry.getDropVec()) {
+                        if (randomValue >= weightCount && randomValue < (weightCount + entry.getWeight())) {
                             var countRange = parseCountRange(entry.getCountRange());
-                            itemsToDrop.put(entry.getItemId(), Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
+                            itemsToDrop.put(
+                                    entry.getItemId(),
+                                    Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
                         }
                     }
                 }
                 break;
-            case 1: //Select various
+            case 1: // Select various
                 {
-                    for(var entry : dropTableEntry.getDropVec()) {
-                        if(entry.getWeight() < new Random().nextInt(10000)) {
+                    for (var entry : dropTableEntry.getDropVec()) {
+                        if (entry.getWeight() < new Random().nextInt(10000)) {
                             var countRange = parseCountRange(entry.getCountRange());
-                            itemsToDrop.put(entry.getItemId(), Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
+                            itemsToDrop.put(
+                                    entry.getItemId(),
+                                    Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
                         }
                     }
                 }
@@ -271,13 +275,14 @@ public abstract class GameEntity {
         }
 
         for (var entry : itemsToDrop.int2ObjectEntrySet()) {
-            var item = new EntityItem(
-                scene,
-                null,
-                GameData.getItemDataMap().get(entry.getIntKey()),
-                getPosition().nearby2d(1f).addY(0.5f),
-                entry.getValue(),
-                true);
+            var item =
+                    new EntityItem(
+                            scene,
+                            null,
+                            GameData.getItemDataMap().get(entry.getIntKey()),
+                            getPosition().nearby2d(1f).addY(0.5f),
+                            entry.getValue(),
+                            true);
 
             scene.addEntity(item);
         }

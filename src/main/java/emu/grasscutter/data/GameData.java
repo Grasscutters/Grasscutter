@@ -454,9 +454,17 @@ public final class GameData {
     private static final Int2ObjectMap<GadgetMapping> gadgetMappingMap =
             new Int2ObjectOpenHashMap<>();
 
-    @Getter private static final Int2ObjectMap<SubfieldMapping> subfieldMappingMap = new Int2ObjectOpenHashMap<>();
-    @Getter private static final Int2ObjectMap<DropSubfieldMapping> dropSubfieldMappingMap = new Int2ObjectOpenHashMap<>();
-    @Getter private static final Int2ObjectMap<DropTableExcelConfigData> dropTableExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
+    @Getter
+    private static final Int2ObjectMap<SubfieldMapping> subfieldMappingMap =
+            new Int2ObjectOpenHashMap<>();
+
+    @Getter
+    private static final Int2ObjectMap<DropSubfieldMapping> dropSubfieldMappingMap =
+            new Int2ObjectOpenHashMap<>();
+
+    @Getter
+    private static final Int2ObjectMap<DropTableExcelConfigData> dropTableExcelConfigDataMap =
+            new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<MonsterMapping> monsterMappingMap =
