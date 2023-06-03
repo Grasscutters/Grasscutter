@@ -1599,6 +1599,16 @@ public class ScriptLib {
         return 0;
     }
 
+    public int DropSubfield(LuaTable table) {
+        String subfield_name = table.get("subfield_name").toString();
+        var entity = getCurrentEntity();
+        if(!entity.isPresent()) return -1;
+
+        entity.get().dropSubfield(subfield_name);
+
+        return -1;
+    }
+
     public int[] GetGatherConfigIdList() {
         EntityGadget gadget = getCurrentEntityGadget();
 

@@ -37,8 +37,11 @@ import emu.grasscutter.data.excels.world.WeatherData;
 import emu.grasscutter.data.excels.world.WorldAreaData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.data.server.ActivityCondGroup;
+import emu.grasscutter.data.server.DropSubfieldMapping;
+import emu.grasscutter.data.server.DropTableExcelConfigData;
 import emu.grasscutter.data.server.GadgetMapping;
 import emu.grasscutter.data.server.MonsterMapping;
+import emu.grasscutter.data.server.SubfieldMapping;
 import emu.grasscutter.game.dungeons.DungeonDropEntry;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.quest.RewindData;
@@ -450,6 +453,10 @@ public final class GameData {
     @Getter
     private static final Int2ObjectMap<GadgetMapping> gadgetMappingMap =
             new Int2ObjectOpenHashMap<>();
+
+    @Getter private static final Int2ObjectMap<SubfieldMapping> subfieldMappingMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<DropSubfieldMapping> dropSubfieldMappingMap = new Int2ObjectOpenHashMap<>();
+    @Getter private static final Int2ObjectMap<DropTableExcelConfigData> dropTableExcelConfigDataMap = new Int2ObjectOpenHashMap<>();
 
     @Getter
     private static final Int2ObjectMap<MonsterMapping> monsterMappingMap =
