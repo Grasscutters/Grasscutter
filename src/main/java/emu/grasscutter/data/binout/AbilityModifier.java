@@ -333,6 +333,10 @@ public class AbilityModifier implements Serializable {
         public DynamicFloat ratio = DynamicFloat.ONE;
         public int configID;
 
+        public DynamicFloat valueRangeMin;
+        public DynamicFloat valueRangeMax;
+        public String overrideMapKey;
+
         public int param1;
         public int param2;
         public int param3;
