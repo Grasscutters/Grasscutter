@@ -12,6 +12,7 @@ import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.IntStream;
 
 @Command(
@@ -222,20 +223,23 @@ public final class SetPropCommand implements CommandHandler {
         GameData.getScenePointsPerScene()
                 .forEach(
                         (sceneId, scenePoints) -> {
-                            for (var p : scenePoints) {
-                                var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
-
+                            var scenePointsBackup = new CopyOnWriteArrayList<>(scenePoints);
+                            for (var p : scenePointsBackup) {
+                                var scenePointEentry =
+                                    GameData.getScenePointEntryById(sceneId, p);
                                 var pointData = scenePointEentry.getPointData();
 
                                 boolean forbidSimpleUnlock = pointData.isForbidSimpleUnlock();
                                 boolean sceneBuildingPointLocked =
-                                        pointData.getType().equals("SceneBuildingPoint") && !pointData.isUnlocked();
+                                        pointData.getType().equals("SceneBuildingPoint") &&
+                                        !pointData.isUnlocked();
 
-                                if (forbidSimpleUnlock || sceneBuildingPointLocked) scenePoints.remove(p);
+                                if (forbidSimpleUnlock || sceneBuildingPointLocked)
+                                    scenePointsBackup.remove(p);
                             }
 
                             // Unlock trans points.
-                            targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
+                            targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePointsBackup);
 
                             // Unlock map areas.
                             targetPlayer.getUnlockedSceneAreas(sceneId).addAll(sceneAreas);
