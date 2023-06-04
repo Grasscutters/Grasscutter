@@ -1,14 +1,14 @@
 package emu.grasscutter.command;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import java.util.*;
+import it.unimi.dsi.fastutil.objects.*;
 import org.reflections.Reflections;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
