@@ -3,23 +3,27 @@ package emu.grasscutter.utils;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.data.common.DynamicFloat;
-import emu.grasscutter.game.world.*;
+import emu.grasscutter.game.world.GridPosition;
+import emu.grasscutter.game.world.Position;
 import emu.grasscutter.utils.JsonAdapters.*;
-import emu.grasscutter.utils.objects.*;
+import emu.grasscutter.utils.objects.JObject;
 import it.unimi.dsi.fastutil.ints.IntList;
-
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.util.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.Map;
 
 public final class JsonUtils {
     static final Gson gson =
             new GsonBuilder()
                     .setPrettyPrinting()
                     .registerTypeAdapter(DynamicFloat.class, new DynamicFloatAdapter())
-                    .registerTypeAdapter(DropType.class, new DropTypeAdapter())
                     .registerTypeAdapter(IntList.class, new IntListAdapter())
                     .registerTypeAdapter(Position.class, new PositionAdapter())
                     .registerTypeAdapter(GridPosition.class, new GridPositionAdapter())
