@@ -3,8 +3,9 @@ package emu.grasscutter.game.ability;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityMixinData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import java.util.Map;
 import lombok.AllArgsConstructor;
+
+import java.util.Map;
 
 @SuppressWarnings("ALL")
 public class AbilityLocalIdGenerator {
@@ -29,10 +30,17 @@ public class AbilityLocalIdGenerator {
         this.type = type;
     }
 
+    public void initializeActionLocalIds(AbilityModifierAction actions[], Map<Integer, AbilityModifierAction> localIdToAction)
+    {
+        this.initializeActionLocalIds(actions, localIdToAction, false);
+    }
+
     public void initializeActionLocalIds(
-            AbilityModifierAction[] actions, Map<Integer, AbilityModifierAction> localIdToAction) {
+            AbilityModifierAction[] actions,
+            Map<Integer, AbilityModifierAction> localIdToAction,
+            boolean preserveActionIndex) {
         if (actions == null) return;
-        this.actionIndex = 0;
+        if (!preserveActionIndex) this.actionIndex = 0;
         for (int i = 0; i < actions.length; i++) {
             this.actionIndex++;
 
@@ -40,17 +48,17 @@ public class AbilityLocalIdGenerator {
             localIdToAction.put((int) id, actions[i]);
 
             if (actions[i].actions != null)
-                this.initializeActionLocalIds(actions[i].actions, localIdToAction);
+                this.initializeActionLocalIds(actions[i].actions, localIdToAction, true);
             else {
                 if (actions[i].successActions != null)
                     this.initializeActionLocalIds(
-                            actions[i].successActions, localIdToAction); // Need to check this specific order
+                            actions[i].successActions, localIdToAction, true); // Need to check this specific order
                 if (actions[i].failActions != null)
-                    this.initializeActionLocalIds(actions[i].failActions, localIdToAction);
+                    this.initializeActionLocalIds(actions[i].failActions, localIdToAction, true);
             }
         }
 
-        actionIndex = 0;
+        if (!preserveActionIndex) actionIndex = 0;
     }
 
     public void initializeMixinsLocalIds(
