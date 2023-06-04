@@ -4,9 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.utils.objects.DropType;
-import lombok.ToString;
-
 import java.io.Serializable;
+import lombok.ToString;
 
 public class AbilityModifier implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;

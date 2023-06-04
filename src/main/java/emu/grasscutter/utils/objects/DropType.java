@@ -14,10 +14,11 @@ public final class DropType {
 
     public DropType(String value) {
         this.raw = value;
-        this.value = switch (value) {
-            default -> Integer.parseInt(value);
-            case "ForceDrop" -> 2;
-        };
+        this.value =
+                switch (value) {
+                    default -> Integer.parseInt(value);
+                    case "ForceDrop" -> 2;
+                };
     }
 
     /**
@@ -31,8 +32,7 @@ public final class DropType {
      * @return The drop type value as a string.
      */
     public String getAsString() {
-        if (this.raw instanceof String)
-            return (String) this.raw;
+        if (this.raw instanceof String) return (String) this.raw;
         throw new UnsupportedOperationException();
     }
 
@@ -40,8 +40,7 @@ public final class DropType {
      * @return The drop type value as an integer.
      */
     public int getAsInt() {
-        if (this.raw instanceof Integer)
-            return (int) this.raw;
+        if (this.raw instanceof Integer) return (int) this.raw;
         throw new UnsupportedOperationException();
     }
 }
