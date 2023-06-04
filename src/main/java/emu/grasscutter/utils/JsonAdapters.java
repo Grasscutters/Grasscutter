@@ -8,10 +8,11 @@ import emu.grasscutter.game.world.*;
 import emu.grasscutter.utils.objects.DropType;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.val;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
-import lombok.val;
 
 public interface JsonAdapters {
     class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -55,7 +56,8 @@ public interface JsonAdapters {
     class DropTypeAdapter extends TypeAdapter<DropType> {
         @Override
         public void write(JsonWriter out, DropType value) throws IOException {
-            if (value.isString()) out.value(value.getAsString());
+            if (value.isString())
+                out.value(value.getAsString());
             else out.value(value.getAsInt());
         }
 
