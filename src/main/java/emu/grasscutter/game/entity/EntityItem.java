@@ -37,14 +37,19 @@ public class EntityItem extends EntityBaseGadget {
         this(scene, player, itemData, pos, count, true);
     }
 
-    // In official game, some drop items are shared to all players, and some other items are
-    // independent to all players
-    // For example, if you killed a monster in MP mode, all players could get drops but rarity and
-    // number of them are different
+    public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, Position rotation, int count) {
+        this(scene, player, itemData, pos, rotation, count, true);
+    }
+
+    public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
+        this(scene, player, itemData, pos, null, count, share);
+    }
+
+    // In official game, some drop items are shared to all players, and some other items are independent to all players
+    // For example, if you killed a monster in MP mode, all players could get drops but rarity and number of them are different
     // but if you broke regional mine, when someone picked up the drop then it disappeared
-    public EntityItem(
-            Scene scene, Player player, ItemData itemData, Position pos, int count, boolean share) {
-        super(scene, pos, null);
+    public EntityItem(Scene scene, Player player, ItemData itemData, Position pos, Position rotation, int count, boolean share) {
+        super(scene, pos, rotation);
         this.id = getScene().getWorld().getNextEntityId(EntityIdType.GADGET);
         this.guid =
                 player == null ? scene.getWorld().getHost().getNextGameGuid() : player.getNextGameGuid();
