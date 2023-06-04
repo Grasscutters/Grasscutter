@@ -327,6 +327,11 @@ public class AbilityModifier implements Serializable {
         public AbilityModifierAction[] successActions;
         public AbilityModifierAction[] failActions;
 
+        public int dropType;
+        public DynamicFloat baseEnergy;
+        public DynamicFloat ratio;
+        public int configID;
+
         public int param1;
         public int param2;
         public int param3;
