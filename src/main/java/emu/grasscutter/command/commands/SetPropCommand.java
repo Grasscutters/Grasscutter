@@ -223,18 +223,15 @@ public final class SetPropCommand implements CommandHandler {
                 .forEach(
                         (sceneId, scenePoints) -> {
                             for (var p : scenePoints) {
-                                var scenePointEentry =
-                                    GameData.getScenePointEntryById(sceneId, p);
+                                var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
 
                                 var pointData = scenePointEentry.getPointData();
 
                                 boolean forbidSimpleUnlock = pointData.isForbidSimpleUnlock();
                                 boolean sceneBuildingPointLocked =
-                                    pointData.getType().equals("SceneBuildingPoint") &&
-                                    !pointData.isUnlocked();
+                                        pointData.getType().equals("SceneBuildingPoint") && !pointData.isUnlocked();
 
-                                if (forbidSimpleUnlock || sceneBuildingPointLocked)
-                                    scenePoints.remove(p);
+                                if (forbidSimpleUnlock || sceneBuildingPointLocked) scenePoints.remove(p);
                             }
 
                             // Unlock trans points.
