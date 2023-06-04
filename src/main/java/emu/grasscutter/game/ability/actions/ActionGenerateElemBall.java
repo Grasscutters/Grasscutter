@@ -29,8 +29,8 @@ public final class ActionGenerateElemBall extends AbilityActionHandler {
             return false;
         }
 
-        //Check if we should allow elem ball generation
-        if(action.dropType == DropType.LevelControl) {
+        // Check if we should allow elem ball generation
+        if (action.dropType == DropType.LevelControl) {
             String levelEntityConfig = owner.getScene().getSceneData().getLevelEntityConfig();
             ConfigLevelEntity config = GameData.getConfigLevelEntityDataMap().get(levelEntityConfig);
             if (config != null
@@ -39,8 +39,8 @@ public final class ActionGenerateElemBall extends AbilityActionHandler {
                 Grasscutter.getLogger().warn("This level config don't allow element balls");
                 return true;
             }
-        } else if(action.dropType == DropType.BigWorldOnly) {
-            if(owner.getScene().getSceneData().getSceneType() != SceneType.SCENE_WORLD) {
+        } else if (action.dropType == DropType.BigWorldOnly) {
+            if (owner.getScene().getSceneData().getSceneType() != SceneType.SCENE_WORLD) {
                 Grasscutter.getLogger().warn("This level config only allows element balls on big world");
                 return true;
             }

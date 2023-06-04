@@ -3,9 +3,8 @@ package emu.grasscutter.game.ability;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityMixinData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
-import lombok.AllArgsConstructor;
-
 import java.util.Map;
+import lombok.AllArgsConstructor;
 
 @SuppressWarnings("ALL")
 public class AbilityLocalIdGenerator {
@@ -30,8 +29,8 @@ public class AbilityLocalIdGenerator {
         this.type = type;
     }
 
-    public void initializeActionLocalIds(AbilityModifierAction actions[], Map<Integer, AbilityModifierAction> localIdToAction)
-    {
+    public void initializeActionLocalIds(
+            AbilityModifierAction actions[], Map<Integer, AbilityModifierAction> localIdToAction) {
         this.initializeActionLocalIds(actions, localIdToAction, false);
     }
 
@@ -52,7 +51,9 @@ public class AbilityLocalIdGenerator {
             else {
                 if (actions[i].successActions != null)
                     this.initializeActionLocalIds(
-                            actions[i].successActions, localIdToAction, true); // Need to check this specific order
+                            actions[i].successActions,
+                            localIdToAction,
+                            true); // Need to check this specific order
                 if (actions[i].failActions != null)
                     this.initializeActionLocalIds(actions[i].failActions, localIdToAction, true);
             }
