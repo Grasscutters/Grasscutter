@@ -1,24 +1,18 @@
 package emu.grasscutter.utils;
 
-import com.google.gson.Gson;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.JsonWriter;
+import com.google.gson.stream.*;
 import emu.grasscutter.data.common.DynamicFloat;
-import emu.grasscutter.game.world.GridPosition;
-import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.utils.objects.DropType;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.val;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
-import lombok.val;
+import java.util.*;
 
 public interface JsonAdapters {
     class DynamicFloatAdapter extends TypeAdapter<DynamicFloat> {
@@ -57,6 +51,24 @@ public interface JsonAdapters {
 
         @Override
         public void write(JsonWriter writer, DynamicFloat f) {}
+    }
+
+    class DropTypeAdapter extends TypeAdapter<DropType> {
+        @Override
+        public void write(JsonWriter out, DropType value) throws IOException {
+            if (value.isString())
+                out.value(value.getAsString());
+            else out.value(value.getAsInt());
+        }
+
+        @Override
+        public DropType read(JsonReader in) throws IOException {
+            return switch (in.peek()) {
+                default -> new DropType(0);
+                case STRING -> new DropType(in.nextString());
+                case NUMBER -> new DropType(in.nextInt());
+            };
+        }
     }
 
     class IntListAdapter extends TypeAdapter<IntList> {
