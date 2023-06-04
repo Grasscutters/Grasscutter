@@ -329,7 +329,7 @@ public class AbilityModifier implements Serializable {
 
         public int dropType;
         public DynamicFloat baseEnergy;
-        public DynamicFloat ratio;
+        public DynamicFloat ratio = DynamicFloat.ONE;
         public int configID;
 
         public int param1;
