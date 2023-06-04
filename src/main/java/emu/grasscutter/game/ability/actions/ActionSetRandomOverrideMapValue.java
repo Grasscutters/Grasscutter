@@ -2,7 +2,6 @@ package emu.grasscutter.game.ability.actions;
 
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
@@ -12,7 +11,8 @@ import emu.grasscutter.net.proto.AbilityActionSetRandomOverrideMapValueOuterClas
 @AbilityAction(AbilityModifierAction.Type.SetRandomOverrideMapValue)
 public class ActionSetRandomOverrideMapValue extends AbilityActionHandler {
     @Override
-    public boolean execute(Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
+    public boolean execute(
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         AbilityActionSetRandomOverrideMapValue valueProto;
         try {
             valueProto = AbilityActionSetRandomOverrideMapValue.parseFrom(abilityData);
@@ -24,8 +24,13 @@ public class ActionSetRandomOverrideMapValue extends AbilityActionHandler {
         float valueRangeMin = action.valueRangeMin.get(ability);
         float valueRangeMax = action.valueRangeMax.get(ability);
 
-        if(value < valueRangeMin || value > valueRangeMax) {
-            Grasscutter.getLogger().warn("Tried setting value out of range: {} inside [{}, {}]", value, valueRangeMin, valueRangeMax);
+        if (value < valueRangeMin || value > valueRangeMax) {
+            Grasscutter.getLogger()
+                    .warn(
+                            "Tried setting value out of range: {} inside [{}, {}]",
+                            value,
+                            valueRangeMin,
+                            valueRangeMax);
             return true;
         }
 
