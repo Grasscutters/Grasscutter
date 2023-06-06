@@ -9,18 +9,21 @@ import emu.grasscutter.game.ability.actions.*;
 import emu.grasscutter.game.ability.mixins.*;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaAddAbilityOuterClass.AbilityMetaAddAbility;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
 import emu.grasscutter.net.proto.AbilityMetaReInitOverrideMapOuterClass.AbilityMetaReInitOverrideMap;
+import emu.grasscutter.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState;
 import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import java.util.HashMap;
-import java.util.concurrent.*;
 import lombok.Getter;
 import org.reflections.Reflections;
+
+import java.util.HashMap;
+import java.util.concurrent.*;
 
 public final class AbilityManager extends BasePlayerManager {
 
@@ -174,6 +177,7 @@ public final class AbilityManager extends BasePlayerManager {
             case ABILITY_INVOKE_ARGUMENT_META_MODIFIER_DURABILITY_CHANGE -> this
                     .handleModifierDurabilityChange(invoke);
             case ABILITY_INVOKE_ARGUMENT_META_ADD_NEW_ABILITY -> this.handleAddNewAbility(invoke);
+            case ABILITY_INVOKE_ARGUMENT_META_SET_KILLED_SETATE -> this.handleKillState(invoke);
             default -> {}
         }
     }
@@ -533,6 +537,24 @@ public final class AbilityManager extends BasePlayerManager {
                         "Ability added to entity {} at index {}",
                         entity.getId(),
                         entity.getInstancedAbilities().size());
+    }
+
+    private void handleKillState(AbilityInvokeEntry invoke) throws InvalidProtocolBufferException {
+        var scene = this.getPlayer().getScene();
+        var entity = scene.getEntityById(invoke.getEntityId());
+        if (entity == null) {
+            Grasscutter.getLogger().trace("Entity of ID {} was not found in the scene.",
+                invoke.getEntityId());
+            return;
+        }
+
+        var killState = AbilityMetaSetKilledState.parseFrom(invoke.getAbilityData());
+        if (killState.getKilled()) {
+            scene.killEntity(entity);
+        } else if (!entity.isAlive()) {
+            entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP,
+                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));
+        }
     }
 
     public void addAbilityToEntity(GameEntity entity, String name) {
