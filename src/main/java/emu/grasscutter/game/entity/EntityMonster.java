@@ -114,6 +114,7 @@ public class EntityMonster extends GameEntity {
             }
 
             if (monsterData != null) {
+                // TODO: Research if group affixes goes first
                 if (affixes == null) affixes = monsterData.getAffix();
                 else affixes.addAll(monsterData.getAffix());
             }
