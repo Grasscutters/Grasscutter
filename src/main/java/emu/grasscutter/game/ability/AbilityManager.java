@@ -19,11 +19,10 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
 
@@ -543,8 +542,8 @@ public final class AbilityManager extends BasePlayerManager {
         var scene = this.getPlayer().getScene();
         var entity = scene.getEntityById(invoke.getEntityId());
         if (entity == null) {
-            Grasscutter.getLogger().trace("Entity of ID {} was not found in the scene.",
-                invoke.getEntityId());
+            Grasscutter.getLogger()
+                    .trace("Entity of ID {} was not found in the scene.", invoke.getEntityId());
             return;
         }
 
@@ -552,8 +551,9 @@ public final class AbilityManager extends BasePlayerManager {
         if (killState.getKilled()) {
             scene.killEntity(entity);
         } else if (!entity.isAlive()) {
-            entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP,
-                entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));
+            entity.setFightProperty(
+                    FightProperty.FIGHT_PROP_CUR_HP,
+                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));
         }
     }
 
