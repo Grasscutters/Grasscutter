@@ -3,7 +3,7 @@ package emu.grasscutter.game.ability.actions;
 import com.google.protobuf.ByteString;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
-import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.*;
 
 @AbilityAction(AbilityModifierAction.Type.ExecuteGadgetLua)
 public class ActionExecuteGadgetLua extends AbilityActionHandler {
