@@ -108,6 +108,7 @@ public final class SetPropCommand implements CommandHandler {
                         case "on", "true" -> 1;
                         case "off", "false" -> 0;
                         case "toggle" -> -1;
+                        case "all" -> -2;
                         default -> Integer.parseInt(valueStr);
                     };
         } catch (NumberFormatException ignored) {
@@ -127,7 +128,7 @@ public final class SetPropCommand implements CommandHandler {
                             sender, targetPlayer, prop.pseudoProp, value);
                     case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
                     case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
-                    case UNLOCK_MAP -> unlockMap(targetPlayer);
+                    case UNLOCK_MAP -> unlockMap(targetPlayer, value);
                     default -> targetPlayer.setProperty(prop.prop, value);
                 };
 
@@ -218,25 +219,30 @@ public final class SetPropCommand implements CommandHandler {
         return true;
     }
 
-    private boolean unlockMap(Player targetPlayer) {
+    private boolean unlockMap(Player targetPlayer, int value) {
         // Unlock.
         GameData.getScenePointsPerScene()
                 .forEach(
                         (sceneId, scenePoints) -> {
-                            var scenePointsBackup = new CopyOnWriteArrayList<>(scenePoints);
-                            for (var p : scenePointsBackup) {
-                                var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
-                                var pointData = scenePointEentry.getPointData();
+                            if (value == -2) {
+                                // Unlock trans points.
+                                targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
+                            } else {
+                                var scenePointsBackup = new CopyOnWriteArrayList<>(scenePoints);
+                                for (var p : scenePointsBackup) {
+                                    var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
+                                    var pointData = scenePointEentry.getPointData();
 
-                                boolean forbidSimpleUnlock = pointData.isForbidSimpleUnlock();
-                                boolean sceneBuildingPointLocked =
-                                        pointData.getType().equals("SceneBuildingPoint") && !pointData.isUnlocked();
+                                    boolean forbidSimpleUnlock = pointData.isForbidSimpleUnlock();
+                                    boolean sceneBuildingPointLocked =
+                                            pointData.getType().equals("SceneBuildingPoint") && !pointData.isUnlocked();
 
-                                if (forbidSimpleUnlock || sceneBuildingPointLocked) scenePointsBackup.remove(p);
+                                    if (forbidSimpleUnlock || sceneBuildingPointLocked) scenePointsBackup.remove(p);
+                                }
+
+                                // Unlock trans points.
+                                targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePointsBackup);
                             }
-
-                            // Unlock trans points.
-                            targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePointsBackup);
 
                             // Unlock map areas.
                             targetPlayer.getUnlockedSceneAreas(sceneId).addAll(sceneAreas);
