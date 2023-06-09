@@ -1153,19 +1153,22 @@ public final class Scene {
 
         List<SceneNpcBornEntry> sceneNpcBornEntries = new ArrayList<>();
         sceneNpcBornCanidates.forEach(
-            i -> {
-                var groupInstance = scriptManager.getGroupInstanceById(i.getGroupId());
-                if (groupInstance == null) return;
-                if (i.getSuiteIdList() != null && !i.getSuiteIdList().contains(groupInstance.getActiveSuiteId())) return;
-                sceneNpcBornEntries.add(i);
-            });
+                i -> {
+                    var groupInstance = scriptManager.getGroupInstanceById(i.getGroupId());
+                    if (groupInstance == null) return;
+                    if (i.getSuiteIdList() != null
+                            && !i.getSuiteIdList().contains(groupInstance.getActiveSuiteId())) return;
+                    sceneNpcBornEntries.add(i);
+                });
 
         if (sceneNpcBornEntries.size() > 0) {
             this.broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
             Grasscutter.getLogger().trace("Loaded Npc Group Suite {}", sceneNpcBornEntries);
         }
 
-        return npcList.stream().filter(i -> this.npcBornEntrySet.contains(i) || sceneNpcBornEntries.contains(i)).toList();
+        return npcList.stream()
+                .filter(i -> this.npcBornEntrySet.contains(i) || sceneNpcBornEntries.contains(i))
+                .toList();
     }
 
     public void loadGroupForQuest(List<QuestGroupSuite> sceneGroupSuite) {
