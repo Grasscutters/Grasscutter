@@ -30,7 +30,7 @@
 
 • Download the latest Cultivation version. Install the .msi: https://github.com/Grasscutters/Cultivation/releases/latest
 • After opening Culivation (as admin), press the download button in the upper right corner. 
-• Click Download All-in-One
+• Click `Download All-in-One`
 • Click the gear in the upper right corner
 • Set the game Install path to where Genshin Impact\Genshin Impact game\GenshinImpact.exe is.
 • Set the Custom Java Path to `C:\Program Files\Java\jdk-17\bin\java.exe`
