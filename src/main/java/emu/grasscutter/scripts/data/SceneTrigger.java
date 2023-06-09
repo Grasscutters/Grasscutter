@@ -27,7 +27,7 @@ public final class SceneTrigger {
 
     @Override
     public int hashCode() {
-        return (currentGroup.id+name).hashCode();
+        return (currentGroup.id + name).hashCode();
     }
 
     @Override
