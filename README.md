@@ -31,7 +31,7 @@
 • Click Download All-in-One
 • Click the gear in the upper right corner
 • Set the game Install path to where Genshin Impact\Genshin Impact game\GenshinImpact.exe is.
-• Set the Custom Java Path to C:\Program Files\Java\jdk-17\bin\java.exe
+• Set the Custom Java Path to `C:\Program Files\Java\jdk-17\bin\java.exe`
 • Leave all other settings on default
 
 • Click the small button next to launch.
