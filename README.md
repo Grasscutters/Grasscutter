@@ -23,7 +23,7 @@
 **Note**: For support please join our [Discord](https://discord.gg/T5vZU6UyeG).
 
 • Get Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-• Get MongoDB Community Server: https://www.mongodb.com/try/download/community
+• Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 • Get Genshin version 3.7 (Genshin 3.7 client can be found here if you don't have it): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md)
 
 • Download the latest Cultivation version. Install the .msi: https://github.com/Grasscutters/Cultivation/releases/latest
