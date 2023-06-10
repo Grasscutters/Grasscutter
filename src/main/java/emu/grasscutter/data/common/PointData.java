@@ -19,6 +19,8 @@ public final class PointData {
     @Getter private Position pos;
     @Getter private Position rot;
     @Getter private Position size;
+    @Getter private boolean forbidSimpleUnlock;
+    @Getter private boolean unlocked;
 
     @SerializedName(
             value = "dungeonIds",

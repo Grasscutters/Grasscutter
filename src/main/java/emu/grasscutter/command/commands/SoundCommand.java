@@ -14,8 +14,8 @@ import lombok.val;
         label = "sound",
         aliases = {"s", "audio"},
         usage = {"[<audioname>] [<x><y><z>]"},
-        permission = "player.group",
-        permissionTargeted = "player.group.others")
+        permission = "player.sound",
+        permissionTargeted = "player.sound.others")
 public final class SoundCommand implements CommandHandler {
 
     @Override

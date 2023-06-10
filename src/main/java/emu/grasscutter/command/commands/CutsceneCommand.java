@@ -11,8 +11,8 @@ import lombok.val;
         label = "cutscene",
         aliases = {"c"},
         usage = {"[<cutsceneId>]"},
-        permission = "player.group",
-        permissionTargeted = "player.group.others")
+        permission = "player.cutscene",
+        permissionTargeted = "player.cutscene.others")
 public final class CutsceneCommand implements CommandHandler {
 
     @Override
