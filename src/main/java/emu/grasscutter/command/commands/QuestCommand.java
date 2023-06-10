@@ -21,7 +21,7 @@ public final class QuestCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() != 2  || (args.size() == 1 && !args.get(0).toLowerCase().equals("dungeons")))
+        if (args.size() != 2  || (args.size() == 1 && !args.get(0).toLowerCase().equals("dungeons"))) {
             sendUsageMessage(sender);
             return;
         }
