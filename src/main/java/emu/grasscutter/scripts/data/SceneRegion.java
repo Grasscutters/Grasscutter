@@ -32,9 +32,9 @@ public class SceneRegion {
     public boolean contains(Position position) {
         switch (shape) {
             case ScriptRegionShape.CUBIC:
-                return (Math.abs(pos.getX() - position.getX()) <= size.getX())
-                        && (Math.abs(pos.getY() - position.getY()) <= size.getY())
-                        && (Math.abs(pos.getZ() - position.getZ()) <= size.getZ());
+                return (Math.abs(pos.getX() - position.getX()) <= size.getX() / 2f)
+                        && (Math.abs(pos.getY() - position.getY()) <= size.getY() / 2f)
+                        && (Math.abs(pos.getZ() - position.getZ()) <= size.getZ() / 2f);
             case ScriptRegionShape.SPHERE:
                 var x = Math.pow(pos.getX() - position.getX(), 2);
                 var y = Math.pow(pos.getY() - position.getY(), 2);
