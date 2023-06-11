@@ -24,21 +24,21 @@
 
 ### Quick Start (automatic)
 
-• Get Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
-• Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
-• Get game version REL3.7 (3.7 client can be found here if you don't have it): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md)
+- Get Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- Get [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+- Get game version REL3.7 (3.7 client can be found here if you don't have it): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md)
 
-• Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
-• After opening Culivation (as admin), press the download button in the upper right corner. 
-• Click `Download All-in-One`
-• Click the gear in the upper right corner
-• Set the game Install path to where your game is located.
-• Set the Custom Java Path to `C:\Program Files\Java\jdk-17\bin\java.exe`
-• Leave all other settings on default
+- Download the [latest Cultivation version](https://github.com/Grasscutters/Cultivation/releases/latest). Use the `.msi` installer.
+- After opening Culivation (as admin), press the download button in the upper right corner. 
+- Click `Download All-in-One`
+- Click the gear in the upper right corner
+- Set the game Install path to where your game is located.
+- Set the Custom Java Path to `C:\Program Files\Java\jdk-17\bin\java.exe`
+- Leave all other settings on default
 
-• Click the small button next to launch.
-• Click the launch button.
-• Log in with whatever username you want. Password doesn't matter.
+- Click the small button next to launch.
+- Click the launch button.
+- Log in with whatever username you want. Password doesn't matter.
 
 ### Building
 
