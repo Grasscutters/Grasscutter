@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
@@ -11,6 +12,8 @@ public final class HandlerClientLockGameTimeNotify extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var packet = ClientLockGameTimeNotify.parseFrom(payload);
-        session.getPlayer().getWorld().lockTime(packet.getIsLock());
+        // session.getPlayer().getWorld().lockTime(packet.getIsLock());
+        // TODO: figure out what to implement here
+        if (packet.getIsLock()) Grasscutter.getLogger().warn("Invalid 'ClientLockGameTimeNotify' received; value is true. (please report to development channel)");
     }
 }
