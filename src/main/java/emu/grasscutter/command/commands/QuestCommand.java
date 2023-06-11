@@ -11,14 +11,17 @@ import java.util.stream.Collectors;
 @Command(
         label = "quest",
         aliases = {"q"},
-        usage = {"(add|finish) [<questId>]"},
+        usage = {
+            "(add|finish|running|talking|debug|triggers|grouptriggers) [<questId>]",
+            "dungeons"        
+        },
         permission = "player.quest",
         permissionTargeted = "player.quest.others")
 public final class QuestCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
-        if (args.size() != 2) {
+        if (args.size() != 2  || (args.size() == 1 && !args.get(0).toLowerCase().equals("dungeons"))) {
             sendUsageMessage(sender);
             return;
         }

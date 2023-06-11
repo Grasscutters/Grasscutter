@@ -12,7 +12,7 @@ import java.util.Map;
 @Command(
         label = "list",
         aliases = {"players"},
-        usage = {"[<UID>]"},
+        usage = {"[uid]"},
         targetRequirement = Command.TargetRequirement.NONE)
 public final class ListCommand implements CommandHandler {
 
