@@ -201,8 +201,11 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         // Dont add items that dont have a valid item definition.
         var data = item.getItemData();
         if (data == null) return null;
-
-        this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
+        try {
+            this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         if (data.isUseOnGain()) {
             var params = new UseItemParams(this.player, data.getUseTarget());
