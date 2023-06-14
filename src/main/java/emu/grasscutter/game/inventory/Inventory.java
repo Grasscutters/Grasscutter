@@ -155,22 +155,30 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     private void triggerAddItemEvents(GameItem result) {
-        getPlayer()
-                .getBattlePassManager()
-                .triggerMission(
-                        WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
-        getPlayer()
-                .getQuestManager()
-                .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+        try {
+            getPlayer()
+                    .getBattlePassManager()
+                    .triggerMission(
+                            WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
+            getPlayer()
+                    .getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void triggerRemItemEvents(GameItem item, int removeCount) {
-        getPlayer()
-                .getBattlePassManager()
-                .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
-        getPlayer()
-                .getQuestManager()
-                .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
+        try {
+            getPlayer()
+                    .getBattlePassManager()
+                    .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
+            getPlayer()
+                    .getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void addItemParams(Collection<ItemParam> items) {
