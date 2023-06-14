@@ -81,7 +81,7 @@ public final class PluginManager {
                     if (pluginConfig.api == null) {
                         Grasscutter.getLogger()
                                 .warn(translate("plugin.invalid_api.not_present", plugin.getName()));
-                        return;
+                        continue;
                     } else if (pluginConfig.api != API_VERSION) {
                         Grasscutter.getLogger()
                                 .warn(
@@ -90,13 +90,13 @@ public final class PluginManager {
                                                 plugin.getName(),
                                                 pluginConfig.api,
                                                 API_VERSION));
-                        return;
+                        continue;
                     }
 
                     // Check if the plugin config is valid.
                     if (!pluginConfig.validate()) {
                         Grasscutter.getLogger().warn(translate("plugin.invalid_config", plugin.getName()));
-                        return;
+                        continue;
                     }
 
                     // Create a JAR file instance from the plugin's URL.
