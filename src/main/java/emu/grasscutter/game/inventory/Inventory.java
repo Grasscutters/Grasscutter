@@ -133,13 +133,9 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         for (var item : items) {
             if (item.getItemId() == 0) continue;
             GameItem result = null;
-            try {
-                // putItem might throw exception
-                // ignore that exception and continue
-                result = putItem(item);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+
+            result = putItem(item);
+
             if (result != null) {
                 this.triggerAddItemEvents(result);
                 changedItems.add(result);
@@ -155,22 +151,30 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     private void triggerAddItemEvents(GameItem result) {
-        getPlayer()
-                .getBattlePassManager()
-                .triggerMission(
-                        WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
-        getPlayer()
-                .getQuestManager()
-                .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+        try {
+            getPlayer()
+                    .getBattlePassManager()
+                    .triggerMission(
+                            WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
+            getPlayer()
+                    .getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+        } catch (Exception e) {
+            Grasscutter.getLogger().debug("triggerAddItemEvents failed", e);
+        }
     }
 
     private void triggerRemItemEvents(GameItem item, int removeCount) {
-        getPlayer()
-                .getBattlePassManager()
-                .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
-        getPlayer()
-                .getQuestManager()
-                .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
+        try {
+            getPlayer()
+                    .getBattlePassManager()
+                    .triggerMission(WatcherTriggerType.TRIGGER_COST_MATERIAL, item.getItemId(), removeCount);
+            getPlayer()
+                    .getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
+        } catch (Exception e) {
+            Grasscutter.getLogger().debug("triggerRemItemEvents failed", e);
+        }
     }
 
     public void addItemParams(Collection<ItemParam> items) {
@@ -193,8 +197,11 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         // Dont add items that dont have a valid item definition.
         var data = item.getItemData();
         if (data == null) return null;
-
-        this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
+        try {
+            this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
+        } catch (Exception e) {
+            Grasscutter.getLogger().debug("addItemObtainedHistory failed", e);
+        }
 
         if (data.isUseOnGain()) {
             var params = new UseItemParams(this.player, data.getUseTarget());
