@@ -160,7 +160,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                     .getQuestManager()
                     .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("triggerAddItemEvents failed", e);
+            Grasscutter.getLogger().debug("triggerAddItemEvents failed", e);
         }
     }
 
@@ -173,7 +173,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                     .getQuestManager()
                     .queueEvent(QuestContent.QUEST_CONTENT_ITEM_LESS_THAN, item.getItemId(), item.getCount());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("triggerRemItemEvents failed", e);
+            Grasscutter.getLogger().debug("triggerRemItemEvents failed", e);
         }
     }
 
@@ -200,7 +200,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         try {
             this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
         } catch (Exception e) {
-            Grasscutter.getLogger().error("addItemObtainedHistory failed", e);
+            Grasscutter.getLogger().debug("addItemObtainedHistory failed", e);
         }
 
         if (data.isUseOnGain()) {
