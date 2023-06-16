@@ -155,10 +155,13 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             getPlayer()
                     .getBattlePassManager()
                     .triggerMission(
-                            WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM, result.getItemId(), result.getCount());
+                            WatcherTriggerType.TRIGGER_OBTAIN_MATERIAL_NUM,
+                            result.getItemId(),
+                            result.getCount());
             getPlayer()
                     .getQuestManager()
-                    .queueEvent(QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
+                    .queueEvent(
+                            QuestContent.QUEST_CONTENT_OBTAIN_ITEM, result.getItemId(), result.getCount());
         } catch (Exception e) {
             Grasscutter.getLogger().debug("triggerAddItemEvents failed", e);
         }
