@@ -266,15 +266,15 @@ public class SceneScriptManager {
                             suiteId,
                             groupId,
                             getScene().getId());
-        } else {
-            Grasscutter.getLogger().debug("Refreshing group {} suite {}", groupId, suiteId);
-            suiteId =
-                    refreshGroup(
-                            targetGroupInstance,
-                            suiteId,
-                            false); // If suiteId is zero, the value of suiteId changes
-            scene.broadcastPacket(new PacketGroupSuiteNotify(groupId, suiteId));
+            if (targetGroupInstance == null) return false;
         }
+        Grasscutter.getLogger().debug("Refreshing group {} suite {}", groupId, suiteId);
+        suiteId =
+                refreshGroup(
+                        targetGroupInstance,
+                        suiteId,
+                        false); // If suiteId is zero, the value of suiteId changes
+        scene.broadcastPacket(new PacketGroupSuiteNotify(groupId, suiteId));
 
         return true;
     }
