@@ -437,7 +437,9 @@ public class World implements Iterable<Player> {
         // Check if there are players in this world.
         if (this.getPlayerCount() == 0) return true;
         // Tick all associated scenes.
-        this.getScenes().forEach((k, scene) -> scene.onTick());
+        this.getScenes().forEach((k, scene) -> {
+            if (scene.getPlayerCount() > 0) scene.onTick();
+        });
 
         // sync time every 10 seconds
         if (this.tickCount % 10 == 0) {
