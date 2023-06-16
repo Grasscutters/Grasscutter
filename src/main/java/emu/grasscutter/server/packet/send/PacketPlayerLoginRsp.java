@@ -35,12 +35,12 @@ public class PacketPlayerLoginRsp extends BasePacket {
                             RegionInfo.newBuilder()
                                     .setGateserverIp(lr(GAME_INFO.accessAddress, GAME_INFO.bindAddress))
                                     .setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
-                                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                                     .build();
 
-                    regionCache =
+                    var regionCache =
                             QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.newBuilder()
                                     .setRegionInfo(serverRegion)
+                                    .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                                     .build();
                 } catch (Exception e) {
                     Grasscutter.getLogger().error("Error while initializing region cache!", e);

@@ -13,7 +13,6 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerTokenRsp, true);
 
         this.setUseDispatchKey(true);
-        this.shouldEncrypt = false;
 
         GetPlayerTokenRsp p =
                 GetPlayerTokenRsp.newBuilder()
@@ -39,7 +38,6 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerTokenRsp, true);
 
         this.setUseDispatchKey(true);
-        this.shouldEncrypt = false;
 
         GetPlayerTokenRsp p =
                 GetPlayerTokenRsp.newBuilder()
@@ -61,7 +59,6 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerTokenRsp, true);
 
         this.setUseDispatchKey(true);
-        this.shouldEncrypt = false;
 
         GetPlayerTokenRsp p =
                 GetPlayerTokenRsp.newBuilder()
