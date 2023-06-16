@@ -40,6 +40,7 @@ public final class SceneGroup {
     public SceneGarbage garbages;
     public SceneInitConfig init_config;
     @Getter public boolean dynamic_load = false;
+    public boolean dontUnload = false;
 
     public SceneReplaceable is_replaceable;
 

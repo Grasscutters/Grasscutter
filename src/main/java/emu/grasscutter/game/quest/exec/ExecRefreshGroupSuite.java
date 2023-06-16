@@ -25,6 +25,7 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
             if (!scriptManager.refreshGroupSuite(groupId, suiteId, quest)) {
                 result = false;
             }
+            scriptManager.getGroupById(groupId).dontUnload = true;
         }
 
         return result;

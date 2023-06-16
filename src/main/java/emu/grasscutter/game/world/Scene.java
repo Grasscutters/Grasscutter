@@ -838,7 +838,7 @@ public final class Scene {
                         .collect(Collectors.toSet());
 
         for (var group : this.loadedGroups) {
-            if (!visible.contains(group.id) && !group.dynamic_load)
+            if (!visible.contains(group.id) && !group.dynamic_load && !group.dontUnload)
                 unloadGroup(scriptManager.getBlocks().get(group.block_id), group.id);
         }
 
