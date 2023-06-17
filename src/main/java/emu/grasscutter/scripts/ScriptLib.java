@@ -171,6 +171,7 @@ public class ScriptLib {
         }
 
         worktop.addWorktopOptions(worktopOptions);
+        var scene = this.getSceneScriptManager().getScene();
         // Done in order to synchronize with addEntities in Scene.class.
         synchronized (this.getSceneScriptManager().getScene()) {
             scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
