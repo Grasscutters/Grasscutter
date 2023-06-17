@@ -134,9 +134,13 @@ public final class DungeonManager {
         }
 
         // Get and roll rewards.
-        List<GameItem> rewards = player.getServer().getDropSystem().handleDungeonRewardDrop(dungeonData.getStatueDrop(), useCondensed);
+        List<GameItem> rewards =
+                player
+                        .getServer()
+                        .getDropSystem()
+                        .handleDungeonRewardDrop(dungeonData.getStatueDrop(), useCondensed);
         if (rewards.isEmpty()) {
-            //fallback to legacy drop system
+            // fallback to legacy drop system
             Grasscutter.getLogger().debug("dungeon drop failed for {}", dungeonData.getId());
             rewards = new ArrayList<>(this.rollRewards(useCondensed));
         }
