@@ -152,18 +152,17 @@ public class ScriptLib {
         logger.debug("[LUA] Call SetWorktopOptions with {}", printTable(table));
         var callParams = this.callParams.getIfExists();
         var group = this.currentGroup.getIfExists();
-        if(callParams == null || group == null){
+        if (callParams == null || group == null) {
             return 1;
         }
         var configId = callParams.param1;
         var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
 
-
-        int[] worktopOptions = new int[table.length()];
-        for(int i = 1 ;i<=table.length() ;i++){
+        var worktopOptions = new int[table.length()];
+        for (int i = 1; i<=table.length(); i++) {
             worktopOptions[i-1] = table.get(i).optint(-1);
         }
-        if(!(entity instanceof EntityGadget gadget)|| worktopOptions.length == 0){
+        if (!(entity instanceof EntityGadget gadget) || worktopOptions.length == 0) {
             return 2;
         }
 
@@ -172,9 +171,10 @@ public class ScriptLib {
         }
 
         worktop.addWorktopOptions(worktopOptions);
-
-        var scene = getSceneScriptManager().getScene();
-        scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
+        // Done in order to synchronize with addEntities in Scene.class.
+        synchronized (this.getSceneScriptManager().getScene()) {
+            scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
+        }
         return 0;
     }
 
