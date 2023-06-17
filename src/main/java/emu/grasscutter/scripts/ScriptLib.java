@@ -174,7 +174,10 @@ public class ScriptLib {
         worktop.addWorktopOptions(worktopOptions);
 
         var scene = getSceneScriptManager().getScene();
-        scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
+        //Done in order to synchronize with addEntities in Scene.class
+        synchronized (getSceneScriptManager().getScene()) {
+            scene.broadcastPacket(new PacketWorktopOptionNotify(gadget));
+        }
         return 0;
     }
 
