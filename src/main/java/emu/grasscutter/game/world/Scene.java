@@ -508,7 +508,7 @@ public final class Scene {
         }
 
         // Remove entity from world
-        this.removeEntity(target);
+        this.removeEntity(target,VisionType.VISION_TYPE_DIE);
 
         // Death event
         target.onDeath(attackerId);
