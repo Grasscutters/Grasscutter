@@ -131,7 +131,7 @@ public final class ClearCommand implements CommandHandler {
                     }
                     if (param.amount != -1) {
                         playerInventory.removeItems(getId(param.id, playerInventory, param).toList().subList(0, param.amount));
-                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.id", playerString, param.id, param.amount);
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.id", playerString, param.amount, param.id);
                     } else {
                         playerInventory.removeItems(getId(param.id, playerInventory, param).toList());
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.id_all", playerString, param.id);
