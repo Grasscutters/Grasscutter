@@ -401,7 +401,7 @@ public final class Scene {
     }
 
     public void removeEntity(GameEntity entity) {
-        this.removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
+        this.removeEntity(entity, VisionType.VISION_TYPE_DIE);
     }
 
     public synchronized void removeEntity(GameEntity entity, VisionType visionType) {
@@ -508,7 +508,7 @@ public final class Scene {
         }
 
         // Remove entity from world
-        this.removeEntity(target,VisionType.VISION_TYPE_DIE);
+        this.removeEntity(target);
 
         // Death event
         target.onDeath(attackerId);

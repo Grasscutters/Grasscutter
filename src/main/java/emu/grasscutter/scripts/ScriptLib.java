@@ -747,7 +747,7 @@ public class ScriptLib {
             return 1;
         }
 
-        getSceneScriptManager().getScene().removeEntity(entity);
+        getSceneScriptManager().getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
 
         return 0;
     }
