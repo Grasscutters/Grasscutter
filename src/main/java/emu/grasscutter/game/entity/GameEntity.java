@@ -52,7 +52,7 @@ public abstract class GameEntity {
 
     public abstract void initAbilities();
 
-    public int getEntityType() {
+    public EntityType getEntityType() {
         return EntityIdType.toEntityType(this.getId() >> 24);
     }
 

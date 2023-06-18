@@ -710,7 +710,7 @@ public class ScriptLib {
             return EntityType.None.getValue();
         }
 
-        return entity.getEntityType();
+        return entity.getEntityType().getValue();
     }
 
     public int GetQuestState(int entityId, int questId){
@@ -745,7 +745,7 @@ public class ScriptLib {
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
 
-        if(entity == null || entity.getEntityType() != entityType){
+        if(entity == null || entity.getEntityType().getValue() != entityType){
             return 1;
         }
 
@@ -825,7 +825,7 @@ public class ScriptLib {
     }
     public int IsPlayerAllAvatarDie(int sceneUid){
         logger.warn("[LUA] Call unimplemented IsPlayerAllAvatarDie {}", sceneUid);
-        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityIdType.AVATAR.getId()).toList();
+        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityType.Avatar).toList();
         for (GameEntity p : playerEntities){
             var player = (EntityAvatar)p;
             if(player.isAlive()){

@@ -32,8 +32,8 @@ public enum EntityIdType {
         this.id = id;
     }
 
-    public static int toEntityType(int entityId) {
-        return map.getOrDefault(entityId, EntityType.None).getValue();
+    public static EntityType toEntityType(int entityId) {
+        return map.getOrDefault(entityId, EntityType.None);
     }
 
     public int getId() {

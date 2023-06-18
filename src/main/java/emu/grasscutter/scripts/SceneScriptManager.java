@@ -629,7 +629,7 @@ public class SceneScriptManager {
                     getScene().getEntities().values().stream()
                             .filter(
                                     e ->
-                                            e.getEntityType() == EntityType.Avatar.getValue()
+                                            e.getEntityType() == EntityType.Avatar
                                                     && region.getMetaRegion().contains(e.getPosition()))
                             .toList();
             entities.forEach(region::addEntity);
