@@ -18,6 +18,7 @@ import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.net.proto.EnterTypeOuterClass;
+import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.GroupKillPolicy;
 import emu.grasscutter.scripts.data.SceneGroup;
