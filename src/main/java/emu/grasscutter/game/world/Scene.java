@@ -495,16 +495,8 @@ public final class Scene {
 
         // Reward drop
         var world = this.getWorld();
-        if (target instanceof EntityMonster monster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            if (monster.getMetaMonster() != null
-                    && !world.getServer().getDropSystem().handleMonsterDrop(monster)) {
-                Grasscutter.getLogger()
-                        .debug(
-                                "Can not solve monster drop: drop_id = {}, drop_tag = {}. Falling back to legacy drop system.",
-                                monster.getMetaMonster().drop_id,
-                                monster.getMetaMonster().drop_tag);
-                getWorld().getServer().getDropSystemLegacy().callDrop(monster);
-            }
+        if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
+            world.getServer().getDropSystem().callDrop((EntityMonster) target);
         }
 
         // Remove entity from world
