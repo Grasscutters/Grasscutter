@@ -151,14 +151,20 @@
       "description": "發送公告給所有在線玩家，或者是更改伺服器的公告。"
     },
     "clear": {
-      "weapons": "已將 %s 的武器清空。",
-      "artifacts": "已將 %s 的聖遺物清空。",
-      "materials": "已將 %s 的材料清空。",
-      "furniture": "已將 %s 的塵歌壺家具清空。",
-      "displays": "已清除 %s 的顯示。",
-      "virtuals": "已將 %s 的所有貨幣和經驗值清空。",
-      "everything": "已將 %s 的所有物品清空。",
-      "description": "從你的背包中刪除所有未裝備且未上鎖的物品，包括稀有物品。"
+      "id_all": "已清除 %s 的所有 %s。",
+      "id": "已清除 %s 的 %s 個 %s。",
+      "weapons_all": "已清除 %s 的全部武器。",
+      "weapons": "已清除 %s 的 %s 個武器。",
+      "artifacts_all": "已清除 %s 的聖遺物。",
+      "artifacts": "已清除 %s 的 %s 個聖遺物。",
+      "materials_all": "已清除 %s 的材料。",
+      "materials": "已清除 %s 的 %s 個材料。",
+      "furniture": "已清除 %s 的塵歌壺家具。",
+      "displays": "已清空 %s 的屏幕。",
+      "virtuals": "已清除 %s 的所有貨幣和經驗值。",
+      "amount_error": "物品數量不足。",
+      "everything": "已清除 %s 的所有物品。",
+      "description": "從你的背包中刪除所有未裝備且已解鎖的物品，包括稀有物品"
     },
     "coop": {
       "success": "召喚了 %s 到 %s 的世界。",

@@ -151,12 +151,18 @@
       "description": "向所有在线玩家发送公告，或者管理服务器的公告"
     },
     "clear": {
-      "weapons": "已清除 %s 的武器。",
-      "artifacts": "已清除 %s 的圣遗物。",
-      "materials": "已清除 %s 的材料。",
+      "id_all": "已清除 %s 的所有 %s。",
+      "id": "已清除 %s 的 %s 个 %s。",
+      "weapons_all": "已清除 %s 的全部武器。",
+      "weapons": "已清除 %s 的 %s 个武器。",
+      "artifacts_all": "已清除 %s 的圣遗物。",
+      "artifacts": "已清除 %s 的 %s 个圣遗物。",
+      "materials_all": "已清除 %s 的材料。",
+      "materials": "已清除 %s 的 %s 个材料。",
       "furniture": "已清除 %s 的尘歌壶家具。",
       "displays": "已清空 %s 的屏幕。",
       "virtuals": "已清除 %s 的所有货币和经验值。",
+      "amount_error": "物品数量不足。",
       "everything": "已清除 %s 的所有物品。",
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },
