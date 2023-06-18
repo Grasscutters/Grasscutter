@@ -613,6 +613,7 @@ public class ScriptLib {
         var configId = table.get("config_id").toint();
         //TODO: figure out what creating gadget configId 0 does
         if (configId == 0){
+            Grasscutter.getLogger().warn("Tried to CreateGadget with config_id 0: {}", printTable(table));
             return 0;
         }
 
