@@ -496,7 +496,7 @@ public final class Scene {
         // Reward drop
         var world = this.getWorld();
         if (target instanceof EntityMonster && this.getSceneType() != SceneType.SCENE_DUNGEON) {
-            world.getServer().getDropSystem().callDrop((EntityMonster) target);
+            world.getServer().getDropSystemLegacy().callDrop((EntityMonster) target);
         }
 
         // Remove entity from world
