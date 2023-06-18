@@ -401,7 +401,7 @@ public final class Scene {
     }
 
     public void removeEntity(GameEntity entity) {
-        this.removeEntity(entity, VisionType.VISION_TYPE_DIE);
+        this.removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
     }
 
     public synchronized void removeEntity(GameEntity entity, VisionType visionType) {

@@ -610,6 +610,10 @@ public class ScriptLib {
         logger.debug("[LUA] Call CreateGadget with {}",
             printTable(table));
         var configId = table.get("config_id").toint();
+        //TODO: figure out what creating gadget configId 0 does
+        if (configId == 0){
+            return 0;
+        }
 
         var group = getCurrentGroup();
 
