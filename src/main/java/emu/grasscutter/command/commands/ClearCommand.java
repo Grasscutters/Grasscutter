@@ -17,13 +17,14 @@ import lombok.Setter;
 
 @Command(
         label = "clear",
-        usage = {"(all|wp|art|mat) [lv<max level>] [r<max refinement>] [<max rarity>*]"},
+        usage = {"(all|wp|art|mat|<itemId>) [x<amount>] [lv<max level>] [r<max refinement>] [<max rarity>*]"},
         permission = "player.clearinv",
         permissionTargeted = "player.clearinv.others")
 public final class ClearCommand implements CommandHandler {
 
     private static final Map<Pattern, BiConsumer<ClearItemParameters, Integer>> intCommandHandlers =
             Map.ofEntries(
+                    Map.entry(amountRegex, ClearItemParameters::setAmount),
                     Map.entry(lvlRegex, ClearItemParameters::setLvl),
                     Map.entry(refineRegex, ClearItemParameters::setRefinement),
                     Map.entry(rankRegex, ClearItemParameters::setRank));
@@ -47,6 +48,13 @@ public final class ClearCommand implements CommandHandler {
                 .filter(item -> item.getLevel() <= param.lvl + 1);
     }
 
+    private Stream<GameItem> getId(int id, Inventory playerInventory, ClearItemParameters param) {
+        return playerInventory.getItems().values().stream()
+                .filter(item -> item.getItemId() == id)
+                .filter(item -> item.getItemData().getRankLevel() <= param.rank)
+                .filter(item -> !item.isLocked() && !item.isEquipped());
+    }
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         Inventory playerInventory = targetPlayer.getInventory();
@@ -61,43 +69,84 @@ public final class ClearCommand implements CommandHandler {
         }
 
         String playerString = targetPlayer.getNickname(); // Should probably be UID instead but whatever
-        switch (args.get(0)) {
-            case "wp" -> {
-                playerInventory.removeItems(getWeapons(playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString);
-            }
-            case "art" -> {
-                playerInventory.removeItems(getRelics(playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString);
-            }
-            case "mat" -> {
-                playerInventory.removeItems(
+
+        String id = args.remove(0);
+
+        try {
+            switch (id) {
+                case "wp" -> {
+                    if (param.amount != -1) {
+                        playerInventory.removeItems(getWeapons(playerInventory, param).toList().subList(0, param.amount));
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString, param.amount);
+                    } else {
+                        playerInventory.removeItems(getWeapons(playerInventory, param).toList());
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons_all", playerString);
+                    }
+
+                }
+                case "art" -> {
+                    if (param.amount != -1) {
+                        playerInventory.removeItems(getRelics(playerInventory, param).toList().subList(0, param.amount));
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString, param.amount);
+                    } else {
+                        playerInventory.removeItems(getRelics(playerInventory, param).toList());
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts_all", playerString);
+                    }
+                }
+                case "mat" -> {
+                    if (param.amount != -1) {
+                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList().subList(0, param.amount));
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString, param.amount);
+                    } else {
+                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials_all", playerString);
+                    }
+                }
+                case "all" -> {
+                    playerInventory.removeItems(getRelics(playerInventory, param).toList());
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString);
+                    playerInventory.removeItems(getWeapons(playerInventory, param).toList());
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString);
+                    playerInventory.removeItems(
                         getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString);
-            }
-            case "all" -> {
-                playerInventory.removeItems(getRelics(playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString);
-                playerInventory.removeItems(getWeapons(playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString);
-                playerInventory.removeItems(
-                        getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString);
-                playerInventory.removeItems(
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString);
+                    playerInventory.removeItems(
                         getOther(ItemType.ITEM_FURNITURE, playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.furniture", playerString);
-                playerInventory.removeItems(
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.furniture", playerString);
+                    playerInventory.removeItems(
                         getOther(ItemType.ITEM_DISPLAY, playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.displays", playerString);
-                playerInventory.removeItems(
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.displays", playerString);
+                    playerInventory.removeItems(
                         getOther(ItemType.ITEM_VIRTUAL, playerInventory, param).toList());
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.virtuals", playerString);
-                CommandHandler.sendTranslatedMessage(sender, "commands.clear.everything", playerString);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.virtuals", playerString);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.everything", playerString);
+                }
+                default -> {
+                    try {
+                        param.id = Integer.parseInt(id);
+                    } catch (NumberFormatException e) {
+                        // TODO: Parse from item name using GM Handbook.
+                        CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.itemId");
+                        throw e;
+                    }
+                    if (param.amount != -1) {
+                        playerInventory.removeItems(getId(param.id, playerInventory, param).toList().subList(0, param.amount));
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.id", playerString, param.id, param.amount);
+                    } else {
+                        playerInventory.removeItems(getId(param.id, playerInventory, param).toList());
+                        CommandHandler.sendTranslatedMessage(sender, "commands.clear.id_all", playerString, param.id);
+                    }
+                }
             }
+        }
+        catch(IndexOutOfBoundsException e) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.clear.amount_error");
         }
     }
 
     private static class ClearItemParameters {
+        public int id;
+        @Setter public int amount = -1;
         @Setter public int lvl = 1;
         @Setter public int refinement = 1;
         @Setter public int rank = 4;
