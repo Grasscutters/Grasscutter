@@ -104,12 +104,12 @@ public final class ClearCommand implements CommandHandler {
                 }
                 case "all" -> {
                     playerInventory.removeItems(getRelics(playerInventory, param).toList());
-                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts_all", playerString);
                     playerInventory.removeItems(getWeapons(playerInventory, param).toList());
-                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons_all", playerString);
                     playerInventory.removeItems(
                         getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
-                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString);
+                    CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials_all", playerString);
                     playerInventory.removeItems(
                         getOther(ItemType.ITEM_FURNITURE, playerInventory, param).toList());
                     CommandHandler.sendTranslatedMessage(sender, "commands.clear.furniture", playerString);
