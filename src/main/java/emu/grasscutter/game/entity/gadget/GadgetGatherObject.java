@@ -63,7 +63,8 @@ public final class GadgetGatherObject extends GadgetContent {
                 .getScene()
                 .getScriptManager()
                 .callEvent(
-                        new ScriptArgs(getGadget().getGroupId(), EventType.EVENT_GATHER, getGadget().getConfigId()));
+                        new ScriptArgs(
+                                getGadget().getGroupId(), EventType.EVENT_GATHER, getGadget().getConfigId()));
 
         getGadget()
                 .getScene()

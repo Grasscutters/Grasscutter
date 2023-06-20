@@ -18,14 +18,14 @@ public enum EntityIdType {
     private static final Map<Integer, EntityType> map = new HashMap<>();
 
     static {
-        map.put(EntityIdType.AVATAR.getId(),EntityType.Avatar);
-        map.put(EntityIdType.MONSTER.getId(),EntityType.Monster);
-        map.put(EntityIdType.NPC.getId(),EntityType.NPC);
-        map.put(EntityIdType.GADGET.getId(),EntityType.Gadget);
-        map.put(EntityIdType.REGION.getId(),EntityType.Region);
-        map.put(EntityIdType.WEAPON.getId(),EntityType.Equip);
-        map.put(EntityIdType.TEAM.getId(),EntityType.Team);
-        map.put(EntityIdType.MPLEVEL.getId(),EntityType.MPLevel);
+        map.put(EntityIdType.AVATAR.getId(), EntityType.Avatar);
+        map.put(EntityIdType.MONSTER.getId(), EntityType.Monster);
+        map.put(EntityIdType.NPC.getId(), EntityType.NPC);
+        map.put(EntityIdType.GADGET.getId(), EntityType.Gadget);
+        map.put(EntityIdType.REGION.getId(), EntityType.Region);
+        map.put(EntityIdType.WEAPON.getId(), EntityType.Equip);
+        map.put(EntityIdType.TEAM.getId(), EntityType.Team);
+        map.put(EntityIdType.MPLEVEL.getId(), EntityType.MPLevel);
     }
 
     EntityIdType(int id) {
