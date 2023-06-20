@@ -18,6 +18,7 @@ import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.net.proto.EnterTypeOuterClass;
+import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.constants.GroupKillPolicy;
 import emu.grasscutter.scripts.data.SceneGroup;
@@ -610,6 +611,11 @@ public class ScriptLib {
         logger.debug("[LUA] Call CreateGadget with {}",
             printTable(table));
         var configId = table.get("config_id").toint();
+        //TODO: figure out what creating gadget configId 0 does
+        if (configId == 0){
+            Grasscutter.getLogger().warn("Tried to CreateGadget with config_id 0: {}", printTable(table));
+            return 0;
+        }
 
         var group = getCurrentGroup();
 
@@ -704,7 +710,7 @@ public class ScriptLib {
             return EntityType.None.getValue();
         }
 
-        return entity.getEntityType();
+        return entity.getEntityType().getValue();
     }
 
     public int GetQuestState(int entityId, int questId){
@@ -739,11 +745,11 @@ public class ScriptLib {
 
         val entity = getSceneScriptManager().getScene().getEntityByConfigId(configId, groupId);
 
-        if(entity == null || entity.getEntityType() != entityType){
+        if(entity == null || entity.getEntityType().getValue() != entityType){
             return 1;
         }
 
-        getSceneScriptManager().getScene().removeEntity(entity);
+        getSceneScriptManager().getScene().removeEntity(entity, VisionType.VISION_TYPE_REMOVE);
 
         return 0;
     }
@@ -819,7 +825,7 @@ public class ScriptLib {
     }
     public int IsPlayerAllAvatarDie(int sceneUid){
         logger.warn("[LUA] Call unimplemented IsPlayerAllAvatarDie {}", sceneUid);
-        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityIdType.AVATAR.getId()).toList();
+        var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityType.Avatar).toList();
         for (GameEntity p : playerEntities){
             var player = (EntityAvatar)p;
             if(player.isAlive()){
