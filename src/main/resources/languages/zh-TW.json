@@ -162,7 +162,7 @@
       "furniture": "已清除 %s 的塵歌壺家具。",
       "displays": "已清空 %s 的屏幕。",
       "virtuals": "已清除 %s 的所有貨幣和經驗值。",
-      "amount_error": "物品數量不足。",
+      "amount_error": "物品數量錯誤。",
       "everything": "已清除 %s 的所有物品。",
       "description": "從你的背包中刪除所有未裝備且已解鎖的物品，包括稀有物品"
     },

@@ -151,12 +151,18 @@
       "description": "Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
-      "weapons": "Cleared weapons for %s.",
-      "artifacts": "Cleared artifacts for %s.",
-      "materials": "Cleared materials for %s.",
+      "id_all": "Cleared %s for %s.",
+      "id": "%s's %s %s cleared.",
+      "weapons_all": "Cleared weapons for %s.",
+      "weapons": "%s's %s weapons cleared.",
+      "artifacts_all": "Cleared artifacts for %s.",
+      "artifacts": "%s's %s artifacts cleared.",
+      "materials_all": "Cleared materials for %s.",
+      "materials": "%s's %s materials cleared.",
       "furniture": "Cleared furniture for %s.",
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
+      "amount_error": "The amount is incorrect.",
       "everything": "Cleared everything for %s.",
       "description": "Deletes unequipped unlocked items from your inventory. Defaults to 4* level 1 refinement 1 or lower, but can be set higher."
     },

@@ -151,12 +151,18 @@
       "description": "Wysyłaj i zarządzaj ogłoszeniami."
     },
     "clear": {
-      "weapons": "Usunięto bronie gracza %s.",
-      "artifacts": "Usunięto artefakty gracza %s.",
-      "materials": "Usunięto materiały gracza %s.",
+      "id_all": "Cleared %s for %s.",
+      "id": "%s's %s %s cleared.",
+      "weapons_all": "Usunięto bronie gracza %s.",
+      "weapons": "%s's %s weapons cleared.",
+      "artifacts_all": "Usunięto artefakty gracza %s.",
+      "artifacts": "%s's %s artifacts cleared.",
+      "materials_all": "Usunięto materiały gracza %s.",
+      "materials": "%s's %s materials cleared.",
       "furniture": "Usunięto meble gracza %s.",
       "displays": "Usunięto displaye gracza %s.",
       "virtuals": "Usunięto virtuale gracza %s.",
+      "amount_error": "The amount is incorrect.",
       "everything": "Usunięto wszystkie niewyposażone przedmioty gracza %s.",
       "description": "Usuń niewyposażone przedmioty wskazanego gracza."
     },

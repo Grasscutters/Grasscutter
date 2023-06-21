@@ -151,12 +151,18 @@
       "description": "Envía un anuncio a todos los jugadores activos, o gestiona anuncios del server"
     },
     "clear": {
-      "weapons": "Eliminadas las armas para %s.",
-      "artifacts": "Eliminados los artefactos para %s.",
-      "materials": "Eliminados los materiales para %s.",
+      "id_all": "Cleared %s for %s.",
+      "id": "%s's %s %s cleared.",
+      "weapons_all": "Eliminadas las armas para %s.",
+      "weapons": "%s's %s weapons cleared.",
+      "artifacts_all": "Eliminados los artefactos para %s.",
+      "artifacts": "%s's %s artifacts cleared.",
+      "materials_all": "Eliminados los materiales para %s.",
+      "materials": "%s's %s materials cleared.",
       "furniture": "Eliminados los muebles para %s.",
       "displays": "Eliminadas las vistas para %s.",
       "virtuals": "Eliminados los virtuales para %s.",
+      "amount_error": "The amount is incorrect.",
       "everything": "Eliminado todo para %s.",
       "description": "Elimina objetos desbloqueados no equipados, incluyendo objetos de rareza dorada, de tu inventario"
     },

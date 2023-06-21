@@ -151,12 +151,18 @@
       "description": "🇺🇸Send announcement to all online players, or manage server's announcement"
     },
     "clear": {
-      "weapons": "Arme șterse pentru %s.",
-      "artifacts": "Artefacte șterse pentru %s.",
-      "materials": "Materiale șterse pentru %s.",
+      "id_all": "Cleared %s for %s.",
+      "id": "%s's %s %s cleared.",
+      "weapons_all": "Arme șterse pentru %s.",
+      "weapons": "%s's %s weapons cleared.",
+      "artifacts_all": "Artefacte șterse pentru %s.",
+      "artifacts": "%s's %s artifacts cleared.",
+      "materials_all": "Materiale șterse pentru %s.",
+      "materials": "%s's %s materials cleared.",
       "furniture": "Mobilier șters pentru %s.",
       "displays": "Afișaje șterse pentru %s.",
       "virtuals": "Virtuali șterși pentru %s.",
+      "amount_error": "The amount is incorrect.",
       "everything": "Totul a fost șters pentru %s.",
       "description": "Șterge obiectele deblocate neechipate, inlusiv cele cu raritate galbenă din inventarul tău."
     },

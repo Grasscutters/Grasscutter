@@ -151,12 +151,18 @@
       "description": "Показывает объявление всем игрокам в сети и позволяет управлять серверными объявлениями"
     },
     "clear": {
-      "weapons": "Удалены оружия у %s.",
-      "artifacts": "Удалены артефакты у %s.",
-      "materials": "Удалены материалы у %s.",
+      "id_all": "Cleared %s for %s.",
+      "id": "%s's %s %s cleared.",
+      "weapons_all": "Удалены оружия у %s.",
+      "weapons": "%s's %s weapons cleared.",
+      "artifacts_all": "Удалены артефакты у %s.",
+      "artifacts": "%s's %s artifacts cleared.",
+      "materials_all": "Удалены материалы у %s.",
+      "materials": "%s's %s materials cleared.",
       "furniture": "Удалена мебель у %s.",
       "displays": "Удалены дисплеи у %s.",
       "virtuals": "Удалены виртуалы у %s.",
+      "amount_error": "The amount is incorrect.",
       "everything": "Удалено всё у %s.",
       "description": "Удаляет все доступные неэкипированные предметы из вашего инвентаря. По умолчанию удаляет 4* предметы 1-го уровня предмета 1-го ранга пробуждения и ниже, однако, возможно задать более высокие параметры."
     },
