@@ -7,9 +7,11 @@ import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.actions.*;
 import emu.grasscutter.game.ability.mixins.*;
+import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaAddAbilityOuterClass.AbilityMetaAddAbility;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
@@ -364,18 +366,27 @@ public final class AbilityManager extends BasePlayerManager {
         var modChange = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
         var head = invoke.getHead();
 
+        var entity = this.player.getScene().getEntityById(invoke.getEntityId());
+        if (entity == null) {
+            Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
+            return;
+        }
+
+        // Destroying rocks
+        if (entity instanceof EntityGadget targetGadget
+            && targetGadget.getContent() instanceof GadgetGatherObject gatherObject) {
+            if (modChange.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
+                gatherObject.dropItems(this.getPlayer());
+                return;
+            }
+        }
+
         if (head.getInstancedAbilityId() == 0 || head.getInstancedModifierId() > 2000)
             return; // Error: TODO: display error
 
         if (head.getIsServerbuffModifier()) {
             // TODO
             Grasscutter.getLogger().trace("TODO: Handle serverbuff modifier");
-            return;
-        }
-
-        var entity = this.player.getScene().getEntityById(invoke.getEntityId());
-        if (entity == null) {
-            Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
             return;
         }
 
