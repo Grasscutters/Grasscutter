@@ -9,9 +9,9 @@ import emu.grasscutter.game.ability.actions.*;
 import emu.grasscutter.game.ability.mixins.*;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.entity.gadget.GadgetGatherObject;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AbilityMetaAddAbilityOuterClass.AbilityMetaAddAbility;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange;
@@ -369,7 +369,9 @@ public final class AbilityManager extends BasePlayerManager {
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
         if (entity == null) {
             Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
-            return;
+            entity = this.player.getScene().getRemovedEntityById(invoke.getEntityId());
+            if (entity == null) return;
+            Grasscutter.getLogger().debug("Using removed Entity: {}", invoke.getEntityId());
         }
 
         // Destroying rocks

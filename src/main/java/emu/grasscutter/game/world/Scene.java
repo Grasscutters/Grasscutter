@@ -44,6 +44,7 @@ public final class Scene {
     @Getter private final SceneData sceneData;
     @Getter private final List<Player> players;
     @Getter private final Map<Integer, GameEntity> entities;
+    @Getter private final LinkedHashMap<Integer, GameEntity> removedEntities;
     @Getter private final Map<Integer, GameEntity> weaponEntities;
     @Getter private final Set<SpawnDataEntry> spawnedEntities;
     @Getter private final Set<SpawnDataEntry> deadSpawnedEntities;
@@ -75,6 +76,12 @@ public final class Scene {
         this.sceneData = sceneData;
         this.players = new CopyOnWriteArrayList<>();
         this.entities = new ConcurrentHashMap<>();
+        this.removedEntities = new LinkedHashMap<>(){
+            protected boolean removeEldestEntry(Map.Entry<Integer, GameEntity> eldest) {
+                // Fit to taste. 500 entities is about two loading zones.
+                return size() > 500;
+            }
+        };
         this.weaponEntities = new ConcurrentHashMap<>();
 
         this.prevScene = 3;
@@ -136,6 +143,10 @@ public final class Scene {
         }
 
         return entity;
+    }
+
+    public GameEntity getRemovedEntityById(int id) {
+        return this.removedEntities.get(id);
     }
 
     public GameEntity getEntityByConfigId(int configId) {
@@ -396,6 +407,7 @@ public final class Scene {
         var removed = getEntities().remove(entity.getId());
         if (removed != null) {
             removed.onRemoved(); // Call entity remove event
+            getRemovedEntities().put(entity.getId(), removed);
         }
         return removed;
     }
