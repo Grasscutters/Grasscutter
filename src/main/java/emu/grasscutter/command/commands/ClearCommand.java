@@ -77,7 +77,7 @@ public final class ClearCommand implements CommandHandler {
             switch (id) {
                 case "wp" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getWeapons(playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
+                        playerInventory.removeItems(getWeapons(playerInventory, param).limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getWeapons(playerInventory, param).toList());
@@ -87,7 +87,7 @@ public final class ClearCommand implements CommandHandler {
                 }
                 case "art" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getRelics(playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
+                        playerInventory.removeItems(getRelics(playerInventory, param).limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getRelics(playerInventory, param).toList());
@@ -96,7 +96,7 @@ public final class ClearCommand implements CommandHandler {
                 }
                 case "mat" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
+                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
@@ -131,7 +131,7 @@ public final class ClearCommand implements CommandHandler {
                         return;
                     }
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getId(param.id, playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
+                        playerInventory.removeItem(getId(param.id, playerInventory, param).toList().get(0), param.amount);
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.id", playerString, param.amount, param.id);
                     } else {
                         playerInventory.removeItems(getId(param.id, playerInventory, param).toList());
