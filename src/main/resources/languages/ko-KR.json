@@ -158,11 +158,10 @@
       "artifacts_all": "%s의 성유물을 초기화했습니다.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "%s의 재료를 초기화했습니다.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "%s의 가구를 초기화했습니다.",
       "displays": "%s의 Display를 초기화했습니다.",
       "virtuals": "%s의 Virtuals를 초기화했습니다.",
-      "amount_error": "The amount is incorrect.",
       "everything": "%s의 모든 아이템을 초기화했습니다.",
       "description": "인벤토레에서 잠금된 물건을 제외한 항목을 삭제합니다. 기본적으로 4성, 1레벨, 1재련보다 낮은것만을 기준으로 하지만, 더 높게 설정할 수 있습니다."
     },

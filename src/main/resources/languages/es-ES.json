@@ -158,11 +158,10 @@
       "artifacts_all": "Eliminados los artefactos para %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Eliminados los materiales para %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Eliminados los muebles para %s.",
       "displays": "Eliminadas las vistas para %s.",
       "virtuals": "Eliminados los virtuales para %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Eliminado todo para %s.",
       "description": "Elimina objetos desbloqueados no equipados, incluyendo objetos de rareza dorada, de tu inventario"
     },

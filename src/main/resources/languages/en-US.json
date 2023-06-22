@@ -158,11 +158,10 @@
       "artifacts_all": "Cleared artifacts for %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Cleared materials for %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Cleared furniture for %s.",
       "displays": "Cleared displays for %s.",
       "virtuals": "Cleared virtuals for %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Cleared everything for %s.",
       "description": "Deletes unequipped unlocked items from your inventory. Defaults to 4* level 1 refinement 1 or lower, but can be set higher."
     },

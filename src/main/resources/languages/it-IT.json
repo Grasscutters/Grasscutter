@@ -158,11 +158,10 @@
       "artifacts_all": "Ripuliti artefatti per %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Materiali cancellati per %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Mobili cancellati per %s.",
       "displays": "Display cancellati per %s.",
       "virtuals": "Virtuali cancellate per %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Cancellato tutto per %s.",
       "description": "Elimina gli oggetti sbloccati non equipaggiati dal tuo inventario. Il valore predefinito è 4* livello 1 raffinamento 1 o inferiore, ma può essere impostato su un livello superiore."
     },

@@ -158,11 +158,10 @@
       "artifacts_all": "Artefacte șterse pentru %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Materiale șterse pentru %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Mobilier șters pentru %s.",
       "displays": "Afișaje șterse pentru %s.",
       "virtuals": "Virtuali șterși pentru %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Totul a fost șters pentru %s.",
       "description": "Șterge obiectele deblocate neechipate, inlusiv cele cu raritate galbenă din inventarul tău."
     },

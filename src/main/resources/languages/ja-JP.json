@@ -158,11 +158,10 @@
       "artifacts_all": "%s の聖遺物を消去しました｡",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "%s の素材を消去しました｡",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "%s の家具アイテムを消去しました｡",
       "displays": "%s の表示を消去しました｡",
       "virtuals": "%s の仮想を消去しました｡",
-      "amount_error": "The amount is incorrect.",
       "everything": "%s の全てのアイテムを消去しました｡",
       "description": "装備していないまたはロックされてないアイテムをバックの中から消去します｡ デフォルトでは星4以下でレベル1､精錬ランク1以下のアイテムを削除します｡"
     },

@@ -158,11 +158,10 @@
       "artifacts_all": "已清除 %s 的圣遗物。",
       "artifacts": "已清除 %s 的 %s 个圣遗物。",
       "materials_all": "已清除 %s 的材料。",
-      "materials": "已清除 %s 的 %s 个材料。",
+      "materials": "已清除 %s 的 %s 种材料。",
       "furniture": "已清除 %s 的尘歌壶家具。",
       "displays": "已清空 %s 的屏幕。",
       "virtuals": "已清除 %s 的所有货币和经验值。",
-      "amount_error": "物品数量错误。",
       "everything": "已清除 %s 的所有物品。",
       "description": "从你的背包中删除所有未装备且已解锁的物品，包括稀有物品"
     },

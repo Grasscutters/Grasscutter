@@ -76,7 +76,7 @@ public final class ClearCommand implements CommandHandler {
             switch (id) {
                 case "wp" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getWeapons(playerInventory, param).toList().subList(0, param.amount));
+                        playerInventory.removeItems(getWeapons(playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getWeapons(playerInventory, param).toList());
@@ -86,7 +86,7 @@ public final class ClearCommand implements CommandHandler {
                 }
                 case "art" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getRelics(playerInventory, param).toList().subList(0, param.amount));
+                        playerInventory.removeItems(getRelics(playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getRelics(playerInventory, param).toList());
@@ -95,7 +95,7 @@ public final class ClearCommand implements CommandHandler {
                 }
                 case "mat" -> {
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList().subList(0, param.amount));
+                        playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", playerString, param.amount);
                     } else {
                         playerInventory.removeItems(getOther(ItemType.ITEM_MATERIAL, playerInventory, param).toList());
@@ -127,10 +127,10 @@ public final class ClearCommand implements CommandHandler {
                     } catch (NumberFormatException e) {
                         // TODO: Parse from item name using GM Handbook.
                         CommandHandler.sendTranslatedMessage(sender, "commands.generic.invalid.itemId");
-                        throw e;
+                        return;
                     }
                     if (param.amount != -1) {
-                        playerInventory.removeItems(getId(param.id, playerInventory, param).toList().subList(0, param.amount));
+                        playerInventory.removeItems(getId(param.id, playerInventory, param).toList().stream().limit(param.amount).collect(Collectors.toList()));
                         CommandHandler.sendTranslatedMessage(sender, "commands.clear.id", playerString, param.amount, param.id);
                     } else {
                         playerInventory.removeItems(getId(param.id, playerInventory, param).toList());
@@ -139,8 +139,8 @@ public final class ClearCommand implements CommandHandler {
                 }
             }
         }
-        catch(IndexOutOfBoundsException e) {
-            CommandHandler.sendTranslatedMessage(sender, "commands.clear.amount_error");
+        catch(Exception e) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.execution.argument_error");
         }
     }
 

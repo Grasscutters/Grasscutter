@@ -158,11 +158,10 @@
       "artifacts_all": "Удалены артефакты у %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Удалены материалы у %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Удалена мебель у %s.",
       "displays": "Удалены дисплеи у %s.",
       "virtuals": "Удалены виртуалы у %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Удалено всё у %s.",
       "description": "Удаляет все доступные неэкипированные предметы из вашего инвентаря. По умолчанию удаляет 4* предметы 1-го уровня предмета 1-го ранга пробуждения и ниже, однако, возможно задать более высокие параметры."
     },

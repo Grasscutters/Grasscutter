@@ -158,11 +158,10 @@
       "artifacts_all": "Les artéfacts de %s ont été supprimés.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Les matériaux de %s ont été supprimés.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Les décoration de %s ont été supprimés.",
       "displays": "Les display de %s ont été supprimés.",
       "virtuals": "Les virtuals de %s ont été supprimés.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Tous les objets de  %s ont été supprimés.",
       "description": "Supprime les objets débloqués et non équipés, y compris ceux de rareté 5* de votre inventaire"
     },

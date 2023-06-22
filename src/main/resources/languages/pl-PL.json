@@ -158,11 +158,10 @@
       "artifacts_all": "Usunięto artefakty gracza %s.",
       "artifacts": "%s's %s artifacts cleared.",
       "materials_all": "Usunięto materiały gracza %s.",
-      "materials": "%s's %s materials cleared.",
+      "materials": "%s's %s species materials cleared.",
       "furniture": "Usunięto meble gracza %s.",
       "displays": "Usunięto displaye gracza %s.",
       "virtuals": "Usunięto virtuale gracza %s.",
-      "amount_error": "The amount is incorrect.",
       "everything": "Usunięto wszystkie niewyposażone przedmioty gracza %s.",
       "description": "Usuń niewyposażone przedmioty wskazanego gracza."
     },
