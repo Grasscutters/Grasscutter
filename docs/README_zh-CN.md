@@ -33,7 +33,7 @@
 - 点击“下载 Grasscutter 一体化”
 - 点击右上角的齿轮
 - 将游戏安装路径设置为你游戏所在的位置。
-- 将自定义Java路径设置为“C:\Program Files\Java\jdk-17\bin\java.exe”
+- 将自定义Java路径设置为`C:\Program Files\Java\jdk-17\bin\java.exe`
 - 保持所有其它设置为默认值
 
 - 点击“启动”按钮旁边的小按钮。
@@ -46,7 +46,7 @@ Grasscutter使用Gradle来处理依赖和构建。
 
 **前置：**
 
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) or higher
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)或更高版本
 - [Git](https://git-scm.com/downloads)
 
 ##### Windows
