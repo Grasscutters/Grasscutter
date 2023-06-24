@@ -1,6 +1,7 @@
 package emu.grasscutter.server.http.handlers;
 
 import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.SERVER;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -13,7 +14,11 @@ import io.javalin.http.Context;
 /** Handles all generic, hard-coded responses. */
 public final class GenericHandler implements Router {
     private static void serverStatus(Context ctx) {
-        int playerCount = Grasscutter.getGameServer().getPlayers().size();
+        int playerCount;
+        if (SERVER.runMode != Grasscutter.ServerRunMode.HYBRID )
+            playerCount = 0;
+        else
+            playerCount = Grasscutter.getGameServer().getPlayers().size();
         int maxPlayer = ACCOUNT.maxPlayer;
         String version = GameConstants.VERSION;
 
@@ -24,6 +29,8 @@ public final class GenericHandler implements Router {
                         + maxPlayer
                         + ",\"version\":\""
                         + version
+                        + ",\"runmode\":\""
+                        + SERVER.runMode
                         + "\"}}");
     }
 
