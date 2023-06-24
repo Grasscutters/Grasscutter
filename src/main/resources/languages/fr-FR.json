@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] Serveur de répartition démarré à l'adresse \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Serveur de répartition démarré sur le port %s",
       "request": "[Dispatch] Le client %s %s demande : %s",
+      "connection_failed": "Échec de la connexion !",
+      "old_client": "client obsolète !",
+      "old_server": "serveur obsolète !",
+      "Outdated_version": "\nIncohérence de version, client obsolète ! \n\nVersion du serveur : %s\nVersion du client : %s",
+      "Outdated_server": "\nIncohérence de version, serveur obsolète ! \n\nVersion du serveur : %s\nVersion du client : %s",
+      "connection_Rejected": "Connexion refusée pour %s en raison de %s",
       "keystore": {
         "general_error": "[Dispatch] Erreur lors du chargement de keystore!",
         "password_error": "[Dispatch] Impossible de charger keystore. Essai avec le mot de passe de keystore par défaut...",

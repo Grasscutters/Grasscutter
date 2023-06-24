@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] ディスパッチサーバーが \u001b[1m\u001b[33m%s:%s\u001b[0m 番で開始されました",
       "port_bind": "[Dispatch] ディスパッチサーバーがポート %s 番で開始されました",
       "request": "[Dispatch] クライアント %s %s リクエスト: %s",
+      "connection_failed": "接続に失敗しました！",
+      "old_client": "古いクライアント！",
+      "old_server": "古いサーバー！",
+      "Outdated_version": "\nバージョンの不一致、古いクライアント！\n\nサーバーバージョン：%s\nクライアントバージョン：%s",
+      "Outdated_server": "\nバージョンの不一致、古いサーバー！\n\nサーバーバージョン：%s\nクライアントバージョン：%s",
+      "connection_Rejected": "[Dispatch] %sへの接続が%sにより拒否されました",
       "keystore": {
         "general_error": "[Dispatch] keystoreファイルの読み込み中にエラーが発生しました!",
         "password_error": "[Dispatch] keystoreファイルを読み込めません｡ デフォルトのkeystoreパスワードを試行しています...",

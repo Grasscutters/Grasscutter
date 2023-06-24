@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] Распределительный Сервер запущен по адресу \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Распределительный сервер запущен на порте %s",
       "request": "[Dispatch] Клиент %s %s, запрос: %s",
+      "connection_failed": "Ошибка подключения!",
+      "old_client": "устаревший клиент!",
+      "old_server": "устаревший сервер!",
+      "Outdated_version": "\nНесоответствие версий, устаревший клиент! \n\nВерсия сервера: %s\nВерсия клиента: %s",
+      "Outdated_server": "\nНесоответствие версий, устаревший сервер! \n\nВерсия сервера: %s\nВерсия клиента: %s",
+      "connection_Rejected": "[Dispatch] Соединение отклонено для %s из-за %s",
       "keystore": {
         "general_error": "[Dispatch] Возникла ошибка при загрузке keystore!",
         "password_error": "[Dispatch] Не удалось загрузить keystore. Пытаемся использовать пароль для keystore по умолчанию...",

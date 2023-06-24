@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] Dispatch server avviato su \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Dispatch server avviato sulla porta %s",
       "request": "[Dispatch] Client %s %s richiesta: %s",
+      "connection_failed": "Connessione fallita!",
+      "old_client": "client obsoleto!",
+      "old_server": "server obsoleto!",
+      "Outdated_version": "\nDiscrepanza di versione, client obsoleto! \n\nVersione del server: %s\nVersione del client: %s",
+      "Outdated_server": "\nDiscrepanza di versione, server obsoleto! \n\nVersione del server: %s\nVersione del client: %s",
+      "connection_Rejected": "[Dispatch] Connessione rifiutata per %s a causa di %s",
       "keystore": {
         "general_error": "[Dispatch] Errore nel caricamento di keystore!",
         "password_error": "[Dispatch] Impossibile caricare il keystore. Provando passwrd di default keystore...",

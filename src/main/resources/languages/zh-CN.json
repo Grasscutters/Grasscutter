@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Dispatch 服务器已在端口 %s 上启动",
       "request": "[Dispatch] 客户端 %s 请求：%s %s",
+      "connection_failed": "连接失败！",
+      "old_client": "客户端版本低于服务器版本",
+      "old_server": "服务器版本低于客户端版本",
+      "Outdated_version": "\n版本不匹配，客户端版本低于服务器版本！\n\n服务器版本：%s\n客户端版本：%s",
+      "Outdated_server": "\n版本不匹配，服务器版本低于客户端版本！\n\n客户端版本：%s\n服务器版本：%s",
+      "connection_Rejected": "[Dispatch] 由于 %s 的 %s，所以连接被拒绝。",
       "keystore": {
         "general_error": "[Dispatch] 加载 keystore 文件时发生错误！",
         "password_error": "[Dispatch] 加载 keystore 文件失败。正在尝试使用 keystore 默认密码...",
@@ -462,9 +468,9 @@
     "disabling_plugin": "正在禁用插件：%s",
     "disabling_failed": "无法禁用插件：%s",
     "invalid_api": {
-      "not_present": "🇺🇸Plugin %s does not specify an API version.",
-      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
-      "outdated": "🇺🇸Plugin %s is using an outdated API method."
+      "not_present": "插件 %s 未指定 API 版本。",
+      "lower": "插件 %s 使用的 API 版本为 %s，而服务器使用的 API 版本为 %s。",
+      "outdated": "插件 %s 使用了过时的 API 方法。"
     }
   }
 }

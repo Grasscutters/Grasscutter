@@ -12,6 +12,12 @@
       "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] Server de dispecerat pornit pe portul %s",
       "request": "[Dispatch] Clientul %s %s cere: %s",
+      "connection_failed": "Conexiune eșuată!",
+      "old_client": "client învechit!",
+      "old_server": "server învechit!",
+      "Outdated_version": "\nDiscrepanță de versiune, client învechit! \n\nVersiune server: %s\nVersiune client: %s",
+      "Outdated_server": "\nDiscrepanță de versiune, server învechit! \n\nVersiune server: %s\nVersiune client: %s",
+      "connection_Rejected": "[Dispatch] Conexiune respinsă pentru %s datorită %s",
       "keystore": {
         "general_error": "[Dispatch] Eroare la încărcarea keystore!",
         "password_error": "[Dispatch] Nu s-a putut încărca keystore. Se încearcă parola implicită pentru keystore...",

@@ -12,6 +12,12 @@
       "address_bind": "🇺🇸[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",
       "port_bind": "[Dispatch] 伺服器已在端口 %s 上開啟。",
       "request": "[Dispatch] 客戶端 %s 請求： %s %s",
+      "connection_failed": "連線失敗！",
+      "old_client": "客戶端版本低於伺服器版本",
+      "old_server": "伺服器版本低於客戶端版本",
+      "Outdated_version": "\n版本不匹配，客戶端版本低於伺服器版本！\n\n伺服器版本：%s\n客戶端版本：%s",
+      "Outdated_server": "\n版本不匹配，伺服器版本低於客戶端版本！\n\n客戶端版本：%s\n伺服器版本：%s",
+      "connection_Rejected": "[Dispatch] 由於 %s 的 %s，所以連接被拒絕。",
       "keystore": {
         "general_error": "[Dispatch] 加載keystore文件時發生錯誤！",
         "password_error": "[Dispatch] 加載 keystore 失敗。正在嘗試使用預設 keystore 密碼...",
@@ -447,24 +453,24 @@
     }
   },
   "plugin": {
-    "directory_failed": "🇺🇸Failed to create plugins directory: ",
-    "unable_to_load": "🇺🇸Unable to load plugin.",
-    "invalid_config": "🇺🇸Plugin %s has an invalid config file.",
-    "invalid_main_class": "🇺🇸Plugin %s has an invalid main class.",
-    "missing_config": "🇺🇸Plugin %s lacks a valid config file.",
-    "failed_to_load_plugin": "🇺🇸Failed to load plugin: %s",
-    "failed_to_load": "🇺🇸Failed to load a plugin.",
-    "failed_to_load_dependencies": "🇺🇸Failed to load plugins with dependencies.",
-    "loading_plugin": "🇺🇸Loading plugin: %s",
-    "failed_add_id": "🇺🇸Failed to add plugin identifier: %s",
-    "enabling_plugin": "🇺🇸Enabling plugin: %s",
-    "enabling_failed": "🇺🇸Failed to enable plugin: %s",
-    "disabling_plugin": "🇺🇸Disabling plugin: %s",
-    "disabling_failed": "🇺🇸Failed to disable plugin: %s",
+    "directory_failed": "無法創建插件目錄：",
+    "unable_to_load": "無法加載插件。",
+    "invalid_config": "插件 %s 的配置文件無效。",
+    "invalid_main_class": "插件 %s 的主類無效。",
+    "missing_config": "插件 %s 缺少有效的配置文件。",
+    "failed_to_load_plugin": "無法加載插件：%s",
+    "failed_to_load": "無法加載插件。",
+    "failed_to_load_dependencies": "無法加載插件依賴。",
+    "loading_plugin": "正在加載插件：%s",
+    "failed_add_id": "無法添加插件標識符：%s",
+    "enabling_plugin": "啟用插件：%s",
+    "enabling_failed": "無法啟用插件：%s",
+    "disabling_plugin": "正在禁用插件：%s",
+    "disabling_failed": "無法禁用插件：%s",
     "invalid_api": {
-      "not_present": "🇺🇸Plugin %s does not specify an API version.",
-      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
-      "outdated": "🇺🇸Plugin %s is using an outdated API method."
+      "not_present": "插件 %s 未指定 API 版本。",
+      "lower": "插件 %s 使用的 API 版本為 %s，而伺服器使用的 API 版本為 %s。",
+      "outdated": "插件 %s 使用了過時的 API 方法。"
     }
   }
 }
