@@ -29,7 +29,7 @@ public final class GenericHandler implements Router {
                         + maxPlayer
                         + ",\"version\":\""
                         + version
-                        + ",\"runmode\":\""
+                        + "\",\"runmode\":\""
                         + SERVER.runMode
                         + "\"}}");
     }
