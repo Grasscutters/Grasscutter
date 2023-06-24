@@ -1,6 +1,7 @@
 package emu.grasscutter.server.http.dispatch;
 
 import static emu.grasscutter.config.Configuration.*;
+import static emu.grasscutter.utils.lang.Language.translate;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -264,28 +265,23 @@ public final class RegionHandler implements Router {
                     QueryCurrRegionHttpRsp rsp =
                             QueryCurrRegionHttpRsp.newBuilder()
                                     .setRetcode(Retcode.RET_STOP_SERVER_VALUE)
-                                    .setMsg("Connection Failed!")
+                                    .setMsg(translate("messages.dispatch.connection_failed"))
                                     .setRegionInfo(RegionInfo.newBuilder())
                                     .setStopServer(
                                             StopServerInfo.newBuilder()
                                                     .setUrl("https://discord.gg/grasscutters")
                                                     .setStopBeginTime((int) Instant.now().getEpochSecond())
                                                     .setStopEndTime((int) Instant.now().getEpochSecond() * 2)
-                                                    .setContentMsg(
-                                                            updateClient
-                                                                    ? "\nVersion mismatch outdated client! \n\nServer version: %s\nClient version: %s"
-                                                                            .formatted(GameConstants.VERSION, clientVersion)
-                                                                    : "\nVersion mismatch outdated server! \n\nServer version: %s\nClient version: %s"
-                                                                            .formatted(GameConstants.VERSION, clientVersion))
+                                                    .setContentMsg(updateClient
+                                                        ? translate("messages.dispatch.Outdated_version", GameConstants.VERSION, clientVersion)
+                                                        : translate("messages.dispatch.Outdated_server", clientVersion, GameConstants.VERSION))
                                                     .build())
                                     .buildPartial();
 
-                    Grasscutter.getLogger()
-                            .info(
-                                    String.format(
-                                            "Connection denied for %s due to %s.",
-                                            Utils.address(ctx), updateClient ? "outdated client!" : "outdated server!"));
-
+                    Grasscutter.getLogger().info(
+                        translate("messages.dispatch.connection_Rejected",
+                        Utils.address(ctx),
+                        updateClient ? translate("messages.dispatch.old_client") : translate("messages.dispatch.old_server")));
                     ctx.json(Crypto.encryptAndSignRegionData(rsp.toByteArray(), key_id));
                     return;
                 }

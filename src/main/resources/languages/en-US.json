@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] Dispatch server started at \u001B[1m\u001B[33m%s:%s\u001B[0m",
       "port_bind": "[Dispatch] Dispatch server started on port %s",
       "request": "[Dispatch] Client %s %s request: %s",
+      "connection_failed": "Connection Failed!",
+      "old_client": "outdated client!",
+      "old_server": "outdated server!",
+      "Outdated_version": "\nVersion mismatch outdated client! \n\nServer version: %s\nClient version: %s",
+      "Outdated_server": "\nVersion mismatch outdated server! \n\nServer version: %s\nClient version: %s",
+      "connection_Rejected": "[Dispatch] Connection denied for %s due to %s",
       "keystore": {
         "general_error": "[Dispatch] Error while loading keystore!",
         "password_error": "[Dispatch] Unable to load keystore. Trying default keystore password...",

@@ -12,6 +12,12 @@
       "address_bind": "[Dispatch] 디스패치 서버가 \u001b[1m\u001b[33m%s:%s\u001b[0m에서 열렸습니다.",
       "port_bind": "[Dispatch] 디스패치 서버가 포트 %s에서 열렸습니다.",
       "request": "[Dispatch] 클라이언트 %s %s 응답: %s",
+      "connection_failed": "연결 실패!",
+      "old_client": "오래된 클라이언트!",
+      "old_server": "오래된 서버!",
+      "Outdated_version": "\n버전 불일치, 오래된 클라이언트! \n\n서버 버전: %s\n클라이언트 버전: %s",
+      "Outdated_server": "\n버전 불일치, 오래된 서버! \n\n서버 버전: %s\n클라이언트 버전: %s",
+      "connection_Rejected": "[Dispatch] %s에 대한 연결이 %s로 인해 거부되었습니다",
       "keystore": {
         "general_error": "[Dispatch] 키스토어 로딩중 오류가 발생했습니다!",
         "password_error": "[Dispatch] 키스토어를 로딩할 수 없습니다. 기본 키스토어 암호로 시도 중...",
