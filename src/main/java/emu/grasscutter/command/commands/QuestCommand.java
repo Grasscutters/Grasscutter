@@ -112,7 +112,7 @@ public final class QuestCommand implements CommandHandler {
                 var shouldAdd = !loggedQuests.contains(questId);
 
                 if (shouldAdd) loggedQuests.add(questId);
-                else loggedQuests.remove(questId);
+                else loggedQuests.remove(loggedQuests.indexOf(questId));
 
                 CommandHandler.sendMessage(
                         sender,
