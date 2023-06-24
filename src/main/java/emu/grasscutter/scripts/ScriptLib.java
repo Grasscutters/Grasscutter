@@ -823,17 +823,17 @@ public class ScriptLib {
         //TODO implement
         return 0;
     }
-    public int IsPlayerAllAvatarDie(int sceneUid){
+    public boolean IsPlayerAllAvatarDie(int sceneUid){
         logger.warn("[LUA] Call unimplemented IsPlayerAllAvatarDie {}", sceneUid);
         var playerEntities = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> e.getEntityType() == EntityType.Avatar).toList();
         for (GameEntity p : playerEntities){
             var player = (EntityAvatar)p;
             if(player.isAlive()){
-                return 0;
+                return false;
             }
         }
         //TODO check
-        return 1;
+        return true;
     }
 
     public int sendShowCommonTipsToClient(String title, String content, int closeTime) {
@@ -867,6 +867,11 @@ public class ScriptLib {
     public int AttachChildChallenge(int var1, int var2, int var3, int[] var4, LuaTable var5, LuaTable var6){
         logger.warn("[LUA] Call unimplemented AttachChildChallenge with {} {} {} {} {} {}", var1, var2, var3, var4, var5, var6);
         //TODO implement var6 object has int success, int fail, bool fail_on_wipe
+        return 0;
+    }
+    public int StopChallenge(int var1, int var2){
+        logger.warn("[LUA] Call unimplemented StopChallenge with {} {}", var1, var2);
+        //TODO implement
         return 0;
     }
     public int CreateEffigyChallengeMonster(int var1, int[] var2){
