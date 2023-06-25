@@ -125,9 +125,9 @@ public final class Grasscutter {
         permissionHandler = new DefaultPermissionHandler();
 
         // Create server instances.
-        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.GAME_ONLY)
-            Grasscutter.gameServer = new GameServer();
-        if (runMode == ServerRunMode.HYBRID || runMode == ServerRunMode.DISPATCH_ONLY)
+        Grasscutter.gameServer = new GameServer();
+
+        if (runMode != ServerRunMode.GAME_ONLY)
             Grasscutter.httpServer = new HttpServer();
 
         // Create a server hook instance with both servers.

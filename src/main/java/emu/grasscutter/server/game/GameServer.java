@@ -96,7 +96,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
             this.address = null;
             this.packetHandler = null;
             this.dispatchClient = null;
-            this.players = null;
             this.worlds = null;
 
             this.inventorySystem = null;
@@ -114,6 +113,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
             this.announcementSystem = null;
             this.questSystem = null;
             this.talkSystem = null;
+
+            // This setting is related to the playerCount in serverStatus. It is not recommended to set it as null.
+            this.players = new ConcurrentHashMap<>();
             return;
         }
 
