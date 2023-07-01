@@ -75,6 +75,7 @@ public enum EntityType implements IntValueEnum {
     Screen(64),
     EchoShell(65),
     UIInteractGadget(66),
+    Region(98),
     PlaceHolder(99);
 
     private static final Int2ObjectMap<EntityType> map = new Int2ObjectOpenHashMap<>();

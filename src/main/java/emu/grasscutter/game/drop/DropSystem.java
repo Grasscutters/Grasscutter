@@ -80,6 +80,14 @@ public final class DropSystem extends BaseGameSystem {
         return dropData.getDropId();
     }
 
+    public List<GameItem> handleDungeonRewardDrop(int dropId, boolean doubleReward) {
+        if (!dropTable.containsKey(dropId)) return List.of();
+        var dropData = dropTable.get(dropId);
+        List<GameItem> items = new ArrayList<>();
+        processDrop(dropData, doubleReward ? 2 : 1, items);
+        return items;
+    }
+
     public boolean handleMonsterDrop(EntityMonster monster) {
         int dropId;
         int level = monster.getLevel();

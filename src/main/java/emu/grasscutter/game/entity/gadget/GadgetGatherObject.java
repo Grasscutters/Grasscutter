@@ -14,6 +14,8 @@ import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.GatherGadgetInfoOuterClass.GatherGadgetInfo;
 import emu.grasscutter.net.proto.InteractTypeOuterClass.InteractType;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
+import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.Utils;
 
@@ -56,6 +58,13 @@ public final class GadgetGatherObject extends GadgetContent {
 
         GameItem item = new GameItem(itemData, 1);
         player.getInventory().addItem(item, ActionReason.Gather);
+
+        getGadget()
+                .getScene()
+                .getScriptManager()
+                .callEvent(
+                        new ScriptArgs(
+                                getGadget().getGroupId(), EventType.EVENT_GATHER, getGadget().getConfigId()));
 
         getGadget()
                 .getScene()

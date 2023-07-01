@@ -52,8 +52,8 @@ public abstract class GameEntity {
 
     public abstract void initAbilities();
 
-    public int getEntityType() {
-        return this.getId() >> 24;
+    public EntityType getEntityType() {
+        return EntityIdType.toEntityType(this.getId() >> 24);
     }
 
     public abstract int getEntityTypeId();

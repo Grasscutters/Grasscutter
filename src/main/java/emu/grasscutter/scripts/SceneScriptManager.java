@@ -629,7 +629,7 @@ public class SceneScriptManager {
                     getScene().getEntities().values().stream()
                             .filter(
                                     e ->
-                                            e.getEntityType() == EntityType.Avatar.getValue()
+                                            e.getEntityType() == EntityType.Avatar
                                                     && region.getMetaRegion().contains(e.getPosition()))
                             .toList();
             entities.forEach(region::addEntity);
@@ -644,6 +644,7 @@ public class SceneScriptManager {
                         .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_ENTER_REGION, region.getConfigId())
+                                .setEventSource(EntityType.Avatar.getValue())
                                 .setSourceEntityId(region.getId())
                                 .setTargetEntityId(targetId));
 
@@ -660,6 +661,7 @@ public class SceneScriptManager {
             if (region.entityHasLeft()) {
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_LEAVE_REGION, region.getConfigId())
+                                .setEventSource(EntityType.Avatar.getValue())
                                 .setSourceEntityId(region.getId())
                                 .setTargetEntityId(region.getFirstEntityId()));
 
@@ -810,8 +812,7 @@ public class SceneScriptManager {
                                 .stream()
                                 .filter(
                                         t ->
-                                                !t.getCondition().isEmpty()
-                                                        && t.getCondition().substring(29).equals(String.valueOf(params.param1))
+                                                t.getName().substring(13).equals(String.valueOf(params.param1))
                                                         && (t.getSource().isEmpty()
                                                                 || t.getSource().equals(params.getEventSource())))
                                 .collect(Collectors.toSet());
