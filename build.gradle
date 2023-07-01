@@ -57,7 +57,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'io.grasscutter'
-version = '1.6.1'
+version = '1.6.2'
 
 java {
     withJavadocJar()
@@ -335,10 +335,16 @@ tasks.register('generateHandbook') {
         return
     }
 
+    // Resolve the NPM command.
+    var npm = 'npm'
+    if (Os.isFamily(Os.FAMILY_WINDOWS))
+        npm = 'npm.cmd'
+
     def npmVersion = {
         try {
-            return 'npm --version'.execute().text.trim()
+            return "${npm} --version".execute()
         } catch (ignored) {
+            ignored.printStackTrace()
             return 'NPM_NOT_FOUND'
         }
     }
@@ -378,10 +384,6 @@ tasks.register('generateHandbook') {
         }
 
         // Build the handbook.
-        var npm = 'npm'
-        if (Os.isFamily(Os.FAMILY_WINDOWS))
-            npm = 'npm.cmd'
-
         exec {
             workingDir 'src/handbook'
             commandLine npm, 'run', 'build'
