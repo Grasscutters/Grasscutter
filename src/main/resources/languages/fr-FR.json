@@ -64,9 +64,9 @@
       "resources": {
         "loading": "Chargement des ressources...",
         "finish": "Chargement des ressources terminé.",
-        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
-        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
-        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
+        "custom": "Obtenez des ressources additionelles à: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "Pour utiliser pleinement les quetes, il est recommendé d'ajouter le dossier 'Server'.",
+        "missing_scenes": "Pour utiliser pleinement les quetes, il est recommendé d'ajouter le dossier 'ScriptSceneData'."
       }
     }
   },
@@ -87,7 +87,7 @@
         "artifactId": "ID de l'artéfact invalide.",
         "avatarId": "ID de l'avatar invalide.",
         "avatarLevel": "avatarLevel invalide.",
-        "cfgId": "🇺🇸Invalid cfg ID.",
+        "cfgId": "ID de cfg invalide.",
         "entityId": "ID de l'entité invalide.",
         "itemId": "ID de l'objet invalide.",
         "itemLevel": "Niveau de l'objet invalide.",
@@ -171,8 +171,8 @@
       "description": "Entrer dans un donjon"
     },
     "entity": {
-      "description": "🇺🇸Modify an existing entity's properties",
-      "not_found_error": "🇺🇸Entity does not exist"
+      "description": "Modifie les propriétés d'une entité existante",
+      "not_found_error": "L'entité n'existe pas"
     },
     "give": {
       "usage_relic": "Utilisation: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
@@ -239,31 +239,31 @@
       "not_found": "Quête introuvable.",
       "invalid_id": "ID de la quête invalide.",
       "description": "Ajoute ou termine une quête",
-      "running": "🇺🇸Quest %s is %s (%s).",
-      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "running": "La quête %s est %s (%s).",
+      "talking": "Le dialogue %s est %s pour la quête principale %s (%s).",
       "state": {
-        "none": "🇺🇸unknown (none)",
-        "unstarted": "🇺🇸unfinished (not started, not completed)",
-        "unfinished": "🇺🇸unfinished (started, not completed)",
-        "finished": "🇺🇸finished (completed)",
-        "failed": "🇺🇸finished (completed, but failed)",
-        "exists": "🇺🇸found",
-        "not_exists": "🇺🇸not found"
+        "none": "Inconnu (none)",
+        "unstarted": "Pas finie (pas démarée, pas complêtée)",
+        "unfinished": "Pas finie (Démarée, pas complêtée)",
+        "finished": "Terminée (complêtée)",
+        "failed": "Terminée (complêtée, mais échouée)",
+        "exists": "Trouvée",
+        "not_exists": "Introuvable"
       },
       "enabled": "Quêtes activées."
     },
     "group": {
-      "invalid_groupid": "🇺🇸Invalid group ID.",
-      "invalid_suiteid": "🇺🇸Invalid suite ID.",
-      "group_not_found": "🇺🇸Group not found.",
-      "description": "🇺🇸Alter group loading",
-      "refreshed": "🇺🇸Group %s refreshed."
+      "invalid_groupid": "ID de groupe invalide.",
+      "invalid_suiteid": "ID de suite invalide.",
+      "group_not_found": "Groupe introuvable",
+      "description": "Altère le chargement de groupe",
+      "refreshed": "Groupe %s actualisé"
     },
     "cutscene": {
       "description": "Joue une cinématique"
     },
     "sound": {
-      "description": "🇺🇸Plays a sound"
+      "description": "Joue un son"
     },
     "reload": {
       "reload_start": "Rechargement de la configuration.",
@@ -408,7 +408,7 @@
       "description": "Retire le bannissement d'un joueur"
     },
     "troubleshoot": {
-      "description": "🇺🇸Generate debugging information for troubleshooting."
+      "description": "Génère des informations de déboguage pour le dépannage."
     }
   },
   "gacha": {
@@ -462,9 +462,9 @@
     "disabling_plugin": "Désactivation du plugin %s",
     "disabling_failed": "Impossible de désactiver le plugin %s",
     "invalid_api": {
-      "not_present": "🇺🇸Plugin %s does not specify an API version.",
-      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
-      "outdated": "🇺🇸Plugin %s is using an outdated API method."
+      "not_present": "Le plugin %s ne spécifie pas de version d'API.",
+      "lower": "Le plugin %s utilise la version %s de l'API, alors que le serveur utilise la version %s.",
+      "outdated": "Le plugin %s utilise une fonction obsolète de l'API."
     }
   }
 }
