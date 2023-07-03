@@ -1,0 +1,470 @@
+{
+    "messages": {
+        "game": {
+            "address_bind": "guranyan",
+            "port_bind": "mao",
+            "connect": "mao",
+            "disconnect": "maow",
+            "game_update_error": "meow meow meow",
+            "command_error": "meow"
+        },
+        "dispatch": {
+            "address_bind": "meow meow meow",
+            "port_bind": "nyan",
+            "request": "meow meow",
+            "keystore": {
+                "general_error": "maow",
+                "password_error": "mao",
+                "no_keystore_error": "nyan",
+                "default_password": "meow meow meow"
+            },
+            "authentication": {
+                "default_unable_to_verify": "meow meow"
+            },
+            "no_commands_error": "meow meow meow",
+            "unhandled_request_error": "nyan",
+            "account": {
+                "login_attempt": "mao",
+                "login_success": "guranyan",
+                "login_max_player_limit": "mao",
+                "login_token_attempt": "maow",
+                "login_token_error": "meow meow meow",
+                "login_token_success": "nyan",
+                "login_password_error": "nyan",
+                "login_password_storage_error": "meow meow meow",
+                "combo_token_success": "meow",
+                "combo_token_error": "meow",
+                "account_login_create_success": "meow meow meow",
+                "account_login_create_error": "meow meow",
+                "account_login_exist_error": "maow",
+                "account_cache_error": "meow",
+                "session_key_error": "meow!",
+                "username_error": "guranyan",
+                "username_create_error": "meow!",
+                "password_error": "meow!",
+                "password_length_error": "maow",
+                "password_storage_error": "meow meow",
+                "server_max_player_limit": "mao"
+            },
+            "router_error": "meow meow"
+        },
+        "status": {
+            "free_software": "meow",
+            "starting": "meow meow",
+            "shutdown": "meow",
+            "done": "mao",
+            "error": "maow",
+            "welcome": "meow!",
+            "run_mode_error": "meow",
+            "run_mode_help": "maow",
+            "create_resources": "meow meow",
+            "resources_error": "guranyan",
+            "version": "nyan",
+            "game_version": "meow meow meow",
+            "resources": {
+                "loading": "meow",
+                "finish": "meow meow meow",
+                "custom": "meow meow meow",
+                "missing_server": "meow",
+                "missing_scenes": "guranyan"
+            }
+        }
+    },
+    "commands": {
+        "generic": {
+            "not_specified": "maow",
+            "unknown_command": "meow meow meow",
+            "permission_error": "mao",
+            "console_execute_error": "guranyan",
+            "player_execute_error": "meow meow",
+            "command_exist_error": "maow",
+            "no_usage_specified": "nyan",
+            "no_description_specified": "meow meow",
+            "set_to": "meow meow",
+            "set_for_to": "meow meow",
+            "invalid": {
+                "amount": "mao",
+                "artifactId": "guranyan",
+                "avatarId": "meow meow meow",
+                "avatarLevel": "guranyan",
+                "cfgId": "nyan",
+                "entityId": "mao",
+                "itemId": "nyan",
+                "itemLevel": "meow",
+                "itemRefinement": "meow meow",
+                "statValue": "meow meow",
+                "value_between": "nyan",
+                "playerId": "meow!",
+                "uid": "maow",
+                "id": "meow"
+            }
+        },
+        "execution": {
+            "usage_prefix": "meow meow meow",
+            "player_exist_error": "meow meow",
+            "player_offline_error": "guranyan",
+            "item_player_exist_error": "guranyan",
+            "player_exist_offline_error": "guranyan",
+            "argument_error": "meow!",
+            "clear_target": "guranyan",
+            "set_target": "meow!",
+            "set_target_online": "meow meow",
+            "set_target_offline": "guranyan",
+            "need_target": "maow",
+            "need_target_online": "meow",
+            "need_target_offline": "meow"
+        },
+        "status": {
+            "enabled": "maow",
+            "disabled": "maow",
+            "help": "guranyan",
+            "success": "nyan"
+        },
+        "account": {
+            "invalid": "guranyan",
+            "exists": "maow",
+            "create": "nyan",
+            "delete": "guranyan",
+            "no_account": "mao",
+            "description": "meow!"
+        },
+        "achievement": {
+            "success": {
+                "grant": "meow meow",
+                "revoke": "maow",
+                "progress": "meow",
+                "grantall": "guranyan",
+                "revokeall": "meow meow"
+            },
+            "fail": {
+                "achievement_not_found": "mao",
+                "already_achieved": "maow",
+                "not_yet_achieved": "meow!"
+            },
+            "description": "guranyan"
+        },
+        "announce": {
+            "send_success": "guranyan",
+            "refresh_success": "meow",
+            "revoke_done": "maow",
+            "not_found": "meow meow",
+            "description": "nyan"
+        },
+        "clear": {
+            "weapons": "guranyan",
+            "artifacts": "nyan",
+            "materials": "mao",
+            "furniture": "mao",
+            "displays": "meow",
+            "virtuals": "guranyan",
+            "everything": "maow",
+            "description": "meow"
+        },
+        "coop": {
+            "success": "maow",
+            "description": "meow!"
+        },
+        "enter_dungeon": {
+            "changed": "meow meow meow",
+            "not_found_error": "meow!",
+            "in_dungeon_error": "meow meow",
+            "description": "meow meow meow"
+        },
+        "entity": {
+            "description": "meow meow meow",
+            "not_found_error": "nyan"
+        },
+        "give": {
+            "usage_relic": "meow",
+            "illegal_relic": "meow",
+            "given": "nyan",
+            "given_with_level_and_refinement": "guranyan",
+            "given_level": "meow",
+            "given_avatar": "meow meow meow",
+            "giveall_success": "guranyan",
+            "description": "meow meow meow"
+        },
+        "heal": {
+            "success": "guranyan",
+            "description": "meow"
+        },
+        "help": {
+            "aliases": "nyan",
+            "available_commands": "guranyan",
+            "tip_need_permission": "maow",
+            "tip_need_no_permission": "mao",
+            "tip_permission_targeted": "guranyan",
+            "warn_player_has_no_permission": "meow",
+            "description": "meow"
+        },
+        "kick": {
+            "player_kick_player": "nyan",
+            "server_kick_player": "meow meow",
+            "description": "meow meow meow"
+        },
+        "killall": {
+            "scene_not_found_in_player_world": "maow",
+            "kill_monsters_in_scene": "guranyan",
+            "description": "maow"
+        },
+        "killCharacter": {
+            "success": "meow",
+            "description": "meow!"
+        },
+        "language": {
+            "current_language": "maow",
+            "language_changed": "mao",
+            "language_not_found": "maow",
+            "description": "meow meow"
+        },
+        "list": {
+            "success": "meow!",
+            "description": "nyan"
+        },
+        "permission": {
+            "add": "meow meow meow",
+            "has_error": "meow meow meow",
+            "remove": "mao",
+            "not_have_error": "meow!",
+            "account_error": "maow",
+            "description": "meow"
+        },
+        "position": {
+            "success": "meow",
+            "description": "meow meow meow"
+        },
+        "quest": {
+            "added": "nyan",
+            "finished": "meow meow meow",
+            "not_found": "meow!",
+            "invalid_id": "mao",
+            "description": "meow",
+            "running": "maow",
+            "talking": "maow",
+            "state": {
+                "none": "guranyan",
+                "unstarted": "mao",
+                "unfinished": "guranyan",
+                "finished": "meow!",
+                "failed": "maow",
+                "exists": "guranyan",
+                "not_exists": "meow!"
+            },
+            "enabled": "meow!"
+        },
+        "group": {
+            "invalid_groupid": "meow meow meow",
+            "invalid_suiteid": "nyan",
+            "group_not_found": "meow!",
+            "description": "meow",
+            "refreshed": "mao"
+        },
+        "cutscene": {
+            "description": "guranyan"
+        },
+        "sound": {
+            "description": "meow!"
+        },
+        "reload": {
+            "reload_start": "nyan",
+            "reload_done": "meow!",
+            "description": "meow meow"
+        },
+        "resetConst": {
+            "reset_all": "meow",
+            "success": "meow meow",
+            "description": "meow"
+        },
+        "resetShopLimit": {
+            "success": "guranyan",
+            "description": "maow"
+        },
+        "sendMail": {
+            "give_usage": "meow meow",
+            "user_not_exist": "nyan",
+            "start_composition": "mao",
+            "templates": "guranyan",
+            "invalid_arguments": "meow!",
+            "send_cancel": "maow",
+            "send_done": "meow meow meow",
+            "send_all_done": "meow meow",
+            "not_composition_end": "meow meow meow",
+            "please_use": "meow meow",
+            "set_title": "guranyan",
+            "set_contents": "meow meow",
+            "set_message_sender": "meow meow",
+            "send": "mao",
+            "invalid_arguments_please_use": "meow meow meow",
+            "title": "meow meow",
+            "message": "meow",
+            "sender": "meow!",
+            "arguments": "meow!",
+            "error": "guranyan",
+            "description": "meow meow meow"
+        },
+        "sendMessage": {
+            "success": "maow",
+            "description": "meow!"
+        },
+        "setConst": {
+            "range_error": "meow meow",
+            "level_error": "guranyan",
+            "fail": "meow!",
+            "failed_success": "meow meow",
+            "success": "meow meow",
+            "successall": "maow",
+            "description": "meow meow"
+        },
+        "setFetterLevel": {
+            "range_error": "meow",
+            "success": "guranyan",
+            "level_error": "maow",
+            "description": "nyan"
+        },
+        "setProp": {
+            "description": "maow"
+        },
+        "setStats": {
+            "description": "nyan",
+            "locked_to": "nyan",
+            "locked_for_to": "mao",
+            "unlocked": "meow",
+            "unlocked_for": "mao"
+        },
+        "spawn": {
+            "success": "meow meow",
+            "limit_reached": "meow meow meow",
+            "description": "meow meow meow"
+        },
+        "stop": {
+            "success": "nyan",
+            "description": "meow!"
+        },
+        "talent": {
+            "out_of_range": "meow meow meow",
+            "set_id": "maow",
+            "id_desc": "meow meow meow",
+            "invalid_skill_id": "mao",
+            "invalid_level": "guranyan",
+            "normal_attack_id": "meow",
+            "e_skill_id": "meow!",
+            "q_skill_id": "meow meow",
+            "description": "meow meow meow"
+        },
+        "team": {
+            "invalid_usage": "meow meow meow",
+            "invalid_index": "meow",
+            "add_too_much": "meow meow meow",
+            "failed_to_add_avatar": "meow!",
+            "failed_to_parse_index": "mao",
+            "remove_too_much": "guranyan",
+            "ignore_index": "meow",
+            "index_out_of_range": "maow",
+            "failed_parse_avatar_id": "meow!",
+            "avatar_already_in_team": "meow",
+            "avatar_not_found": "meow!",
+            "description": "meow"
+        },
+        "teleportAll": {
+            "success": "mao",
+            "error": "meow",
+            "description": "maow"
+        },
+        "teleport": {
+            "invalid_position": "meow!",
+            "exists_error": "meow!",
+            "success": "guranyan",
+            "description": "meow meow meow"
+        },
+        "trialAvatarActivity": {
+            "description": "guranyan",
+            "not_found": "nyan",
+            "invalid_param": "maow",
+            "schedule_not_found": "meow meow meow",
+            "success_schedule": "nyan",
+            "success_dungeon": "maow",
+            "success_dungeon_all": "meow!",
+            "success_reward": "meow",
+            "success_reward_all": "mao"
+        },
+        "weather": {
+            "success": "meow",
+            "status": "meow",
+            "description": "meow meow meow"
+        },
+        "ban": {
+            "success": "meow",
+            "failure": "meow meow",
+            "invalid_time": "meow meow",
+            "description": "meow meow"
+        },
+        "unlockall": {
+            "success": "nyan",
+            "description": "mao"
+        },
+        "unban": {
+            "success": "guranyan",
+            "failure": "meow meow",
+            "description": "maow"
+        },
+        "troubleshoot": {
+            "description": "mao"
+        }
+    },
+    "gacha": {
+        "details": {
+            "title": "meow",
+            "available_five_stars": "meow!",
+            "available_four_stars": "meow meow",
+            "available_three_stars": "meow meow"
+        },
+        "records": {
+            "title": "meow meow",
+            "date": "meow meow",
+            "item": "meow!"
+        }
+    },
+    "documentation": {
+        "handbook": {
+            "title": "meow",
+            "title_commands": "meow",
+            "title_avatars": "meow meow",
+            "title_items": "guranyan",
+            "title_scenes": "nyan",
+            "title_monsters": "mao",
+            "header_id": "meow meow",
+            "header_command": "maow",
+            "header_description": "meow meow meow",
+            "header_avatar": "nyan",
+            "header_item": "maow",
+            "header_scene": "meow meow",
+            "header_monster": "meow meow meow"
+        },
+        "index": {
+            "title": "meow meow",
+            "handbook": "nyan",
+            "gacha_mapping": "nyan"
+        }
+    },
+    "plugin": {
+        "directory_failed": "meow",
+        "unable_to_load": "meow meow meow",
+        "invalid_config": "meow meow meow",
+        "invalid_main_class": "meow",
+        "missing_config": "meow meow",
+        "failed_to_load_plugin": "meow!",
+        "failed_to_load": "meow meow",
+        "failed_to_load_dependencies": "meow meow meow",
+        "loading_plugin": "meow",
+        "failed_add_id": "meow meow",
+        "enabling_plugin": "nyan",
+        "enabling_failed": "mao",
+        "disabling_plugin": "meow!",
+        "disabling_failed": "meow meow",
+        "invalid_api": {
+            "not_present": "meow",
+            "lower": "guranyan",
+            "outdated": "meow"
+        }
+    }
+}
