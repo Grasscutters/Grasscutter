@@ -89,7 +89,7 @@ public class ItemData extends GameResource {
 
     @SerializedName(
             value = "roomSceneId",
-            alternate = {"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF"})
+            alternate = {"BMEPAMCNABE", "DANFGGLKLNO", "JFDLJGDFIGL", "OHIANNAEEAK", "MFGACDIOHGF", "roomSceneID"})
     private int roomSceneId;
 
     // Custom
