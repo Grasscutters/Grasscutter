@@ -18,90 +18,57 @@
 * Apparition de monstres via la console
 * Inventaire (obtention d'objets/de personnages, amélioration d'objets/personnages, etc)
 
-## Guide de démarrage rapide
+## Guide d'installation rapide
 
 **Note:** Pour obtenir un support, rejoignez notre serveur [Discord](https://discord.gg/T5vZU6UyeG) (en anglais).
 
-### Logiciels requis
+### Démarage rapide (Automatique)
 
-* Java SE - 17 ([link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+- Téléchargez Java 17: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- Téléchargez [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+- Téléchargez la version du jeu REL3.7 (Le client de jeut peut être obtenu ici si vous ne l'avez pas): https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md
 
-  **Note:** Si vous voulez juste **l'exécuter**, Alors vous pouvez télécharger seulement le **jre**
+- Téléchargez la [dernière version de Cultivation](https://github.com/Grasscutters/Cultivation/releases/latest). Ulilisez l'installateur en `.msi`.
+- Après avoir ouvert Cultivation (en administrateur), appuyez sur le bouton de téléchargement en haut a droite. 
+- Cliquez sur le bouton `Téléchargez tout-en-un`
+- Cliquez sur l'engrenage dans le coin en haut a droite.
+- Définisez l'emplacement d'installation du jeu.
+- Définisez le chemin Java personnalisé à `C:\Program Files\Java\jdk-17\bin\java.exe`
+- Laissez tous les autres paramètes par défauts
 
-* MongoDB  (4.0+ recommandé)
+- Appuyez sur le bouton a coté de Lancer.
+- Appuyez sur le bouton Lancer.
+- Connectez vous avec le nom d'utilisateur que vous voulez. Le mot de passe n'a pas d'importance.
 
-* Proxy daemon: mitmproxy (mitmdump, recommended), Fiddler Classic, etc.
+### Compilation
 
-### Lancement
+Grasscutter utilise Gradle pour la gestion des dépendances et la compilation.
 
-**Note:** Si vous avez mis à jour depuis une ancienne version, supprimez `config.json` pour le regénérer.
+**Prérequis**
 
-1. Obtenez `grasscutter.jar`
-   - Téléchargez le depuis les [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
-   - [Buildez le par vous-même](#Building)
-2. Créez un dossier `resources` dans le dossier où grasscutter.jar est situé et déplacez vos dossiers `BinOutput` et `ExcelBinOutput` ici *(Vérifiez le [wiki](https://github.com/Grasscutters/Grasscutter/wiki) pour plus de détails sur comment les obtenir.)*
-3. Exécutez Grasscutter avec `java -jar grasscutter.jar`. **Soyez sûr que le service MongoDB est en cours d'exécution.**
-
-### Connection avec le client
-
-½. Créez un compte avec la [console de commande du serveur](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
-
-1. Redirection du traffic: (Choisissez-en un)
-    - mitmdump: `mitmdump -s proxy.py -k`
-
-      Approuvez le certificat CA:
-
-      ​	**Note:**Le certificat CA est généralement stocké sous `%USERPROFILE%\ .mitmproxy`, ou vous pouvez le télécharger depuis `http://mitm.it`
-
-      ​	Double-cliquez pour [installer](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) oo ...
-
-      - Via la ligne de commande
-
-        ```shell
-        certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
-        ```
-
-    - Fiddler Classic: Exécutez Fiddler Classic, Activez `Decrypt https traffic` dans les paramètres et changez le port par défaut ici (Tools -> Options -> Connections) à autre chose que `8888`, et chargez [ce script](https://github.lunatic.moe/fiddlerscript).
-
-    - [Fichier hosts](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
-
-2. Définissez le proxy du réseau comme `127.0.0.1:8080` ou le port du proxy que vous avez spécifié.
-
-**Vous pouvez aussi utiliser `start.cmd` to démarrer les serveurs et le proxy automatiquement, mais vous devez mettre en place la variable d'environnement JAVA_HOME**
-
-### Building
-
-Grasscutter utilise Gradle pour gérer les dépendances et la construction.
-
-**Logiciels requis:**
-
-- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Java SE Development Kits - 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) ou plus récent
 - [Git](https://git-scm.com/downloads)
 
 ##### Windows
 
 ```shell
-git clone https://github.com/Grasscutters/Grasscutter.git
+git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
-.\gradlew.bat # Mettre en place l'environnement
-.\gradlew jar # Compiler
+.\gradlew.bat # Setting up environments
+.\gradlew jar # Compile
 ```
 
-##### Linux
+##### Linux (GNU)
 
 ```bash
-git clone https://github.com/Grasscutters/Grasscutter.git
+git clone --recurse-submodules https://github.com/Grasscutters/Grasscutter.git
 cd Grasscutter
 chmod +x gradlew
-./gradlew jar # Compiler
+./gradlew jar # Compile
 ```
 
-Vous trouverez le fichier jar compilé à la racine du dossier du projet.
+Vous pouvez trouver le jar de sortie dans la racine du dossier du projet.
 
-### Les commandes ont été déplacé vers le [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)! (en anglais)
+### Dépanage
 
-# Dépannage rapide
-
-* Si la compilation a échoué, veuillez vérifier votre installation de votre JDK (JDK 17 et le bon dossier bin du JDK dans la variable PATH)
-* Mon client ne se connecte pas au serveur, impossible de se connecter a mon compte, 4206, etc... - La plupart du temps, *le problème* vient de la configuration de votre proxy. Si vous utilisez Fiddler, vérifiez s'il est exécuté sur un port autre que 8888
-* Séquence de démarrage : MongoDB > Grasscutter > Proxy (mitmdump, fiddler, etc...) > Jeu
+Pour une liste des problèmes communs et leur solution et pour demander de l'aide, veuillez rejoindre [notre serveur Discord](https://discord.gg/T5vZU6UyeG) (en anglais) et dirigez vous vers le salon de support.
