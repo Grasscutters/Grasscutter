@@ -49,7 +49,7 @@
       "router_error": "[Dispatch] Impossibile collegare il router."
     },
     "status": {
-      "free_software": "Grasscutter è un software GRATUITO. Se hai lo hai pagato, potresti essere stato truffato. Homepage: https://github.com/Grasscutters/Grasscutter",
+      "free_software": "Grasscutter è un software GRATUITO. Se lo hai pagato, potresti essere stato truffato. Homepage: https://github.com/Grasscutters/Grasscutter",
       "starting": "Avvio di Grasscutter...",
       "shutdown": "Chiusura in corso...",
       "done": "Fatto! Per aiuto, digita \"help\"",
@@ -64,7 +64,7 @@
       "resources": {
         "loading": "Caricamento risorse...",
         "finish": "Terminato il caricamento delle risorse.",
-        "custom": "Risorse usFind aggiuntive a: 'Anime-Game-Servers/CustomGCResources'.",
+        "custom": "Puoi trovare risorse aggiuntive a: 'Anime-Game-Servers/CustomGCResources'.",
         "missing_server": "Per usare questing al completo, è consigliato aggiungere la cartella 'Server'.",
         "missing_scenes": "Per usare questing al completo, è consigliato aggiungere la cartella 'ScriptSceneData'."
       }
