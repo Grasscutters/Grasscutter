@@ -812,7 +812,8 @@ public class SceneScriptManager {
                                 .stream()
                                 .filter(
                                         t ->
-                                                t.getName().substring(13).equals(String.valueOf(params.param1))
+                                                !t.getCondition().isEmpty()
+                                                        && t.getCondition().substring(29).equals(String.valueOf(params.param1))
                                                         && (t.getSource().isEmpty()
                                                                 || t.getSource().equals(params.getEventSource())))
                                 .collect(Collectors.toSet());
