@@ -5,7 +5,7 @@
 
 [EN](../README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [FR](README_fr-FR.md) | [ES](README_es-ES.md) | [HE](README_HE.md) | [RU](README_ru-RU.md) | [PL](README_pl-PL.md) | [ID](README_id-ID.md) | [KR](README_ko-KR.md) | [FIL/PH](README_fil-PH.md) | [NL](README_NL.md) | [JP](README_ja-JP.md) | [IT](README_it-IT.md) | [VI](README_vi-VN.md)
 
-**Attenzione:** Diamo sempre il benvenuto ai contributori del progetto. Prima di aggiungere il tuo contributo, leggi attentamente il nostro [Codice di condotta](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
+**Attenzione:** Diamo sempre il benvenuto ai contributori del progetto. Prima di contribuire, leggi attentamente il nostro [Codice di condotta](https://github.com/Grasscutters/Grasscutter/blob/stable/CONTRIBUTING.md).
 
 ## Funzionalità attuali
 
@@ -15,12 +15,12 @@
 * Teletrasporto
 * Sistema Gacha
 * Cooperativa *parzialmente* funzionale
-* Evoca mostri dalla console
-* Funzionalità dell'inventario (ricevi oggetti/personaggi, aggiorna oggetti/personaggi, ecc.)
+* Evocazione nemici usando la console
+* Inventario (ricevi e aggiorna oggetti/personaggi, ecc.)
 
 ## Guida rapida all'installazione
 
-**Nota:** Per il supporto, unisciti al nostro [Discord](https://discord.gg/T5vZU6UyeG).
+**Nota:** Se hai bisogno di aiuto, unisciti al nostro [Discord](https://discord.gg/T5vZU6UyeG).
 
 ### Requisiti
 
@@ -30,30 +30,30 @@
 
 * [MongoDB](https://www.mongodb.com/try/download/community) (consigliato 4.0+)
 
-* Servizio proxy: mitmproxy (mitmdump, consigliato), Fiddler Classic, ecc.
+* Servizi proxy: mitmproxy (mitmdump, consigliato), Fiddler Classic, ecc.
 
 ### Esecuzione
 
-**Nota:** Se hai eseguito l'aggiornamento da una versione precedente, rimuovi `config.json` in modo che venga generato di nuovo.
+**Nota:** Se hai aggiornato da una versione precedente, elimina `config.json` in modo che venga generato di nuovo.
 
 1. Ottieni "grasscutter.jar".
    - Scarica da [azioni](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297)
    - [Compilalo tu stesso](#Compilazione)
-2. Crea una cartella `resources` nella directory in cui si trova grasscutter.jar e sposta lì le cartelle `BinOutput` ed `ExcelBinOutput` *(Vedi il [wiki](https://github.com/Grasscutters/Grasscutter/wiki ) per maggiori dettagli su come ottenerli.)*
-3. Eseguire Grasscutter con `java -jar grasscutter.jar`. **Assicurati che il servizio mongodb sia attivo.**
+2. Crea una cartella chiamata `resources` nella directory in cui si trova grasscutter.jar e sposta lì le cartelle `BinOutput` ed `ExcelBinOutput` *(Vedi il [wiki](https://github.com/Grasscutters/Grasscutter/wiki ) per maggiori dettagli su come ottenerli.)*
+3. Esegui Grasscutter con `java -jar grasscutter.jar`. **Assicurati che il servizio mongodb sia attivo.**
 
-### Connessione client
+### Connessione al client
 
 ½. Crea un account usando [il comando corrispondente nella console del server](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting).
 
 1. Reindirizza il traffico: (scegli uno)
-    - mitmdump: `mitmdump -s proxy.py -k`
+    - Con mitmdump: `mitmdump -s proxy.py -k`
 
       Autorizza il certificato CA:
 
       ​ **Nota:**Il certificato CA si trova solitamente in `%USERPROFILE%\ .mitmproxy`, oppure puoi scaricarlo da `http://mitm.it`
 
-      Fare doppio clic su [installa](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) o ...
+      Fai doppio clic su [installa](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate) o ...
 
       - Con riga di comando
 
@@ -61,11 +61,11 @@
         certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
         ```
 
-    - Fiddler Classic: esegui Fiddler Classic, abilita `Decrypt https traffic` nelle opzioni e cambia la porta predefinita in (Strumenti -> Opzioni -> Connessioni) in qualcosa di diverso da `8888`, e carica [questo script](https :/ /github.lunatic.moe/fiddlerscript).
+    - Con Fiddler Classic: esegui Fiddler Classic, abilita `Decrypt https traffic` nelle opzioni e cambia la porta predefinita in (Strumenti -> Opzioni -> Connessioni) in qualcosa di diverso da `8888`, e carica [questo script](https://github.lunatic.moe/fiddlerscript).
 
     - [File host](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
 
-2. Impostare il proxy di rete su `127.0.0.1:8080` o la porta proxy impostata.
+2. Imposta il proxy di rete a `127.0.0.1:8080` o la porta proxy impostata.
 
 **Puoi anche usare `start.cmd` per avviare automaticamente il server e il servizio proxy, ma devi impostare l'ambiente JAVA_HOME**
 
@@ -98,11 +98,11 @@ chmod +x gradlew
 
 Puoi trovare il jar generato nella cartella principale del progetto.
 
-### I comandi sono stati spostati nel [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
+### I comandi sono stati spostati al [wiki](https://github.com/Grasscutters/Grasscutter/wiki/Commands)!
 
 # Soluzioni agli errori comuni
 
 * Se la compilazione non riesce, controlla l'installazione di JDK (JDK 17 e convalida la variabile JDK bin PATH)
-* Il mio client non si connette, non accede, 4206, ecc... - Probabilmente le tue impostazioni proxy sono *il problema*, se usi
+* Se il tuo client non si connette, non accede, da errore 4206, ecc... - Probabilmente *il problema* sono le tue impostazioni proxy, se usi
   Fiddler assicurati di utilizzare una porta diversa da 8888
 * Sequenza di avvio: MongoDB > Grasscutter > Servizio proxy (mitmdump, fiddler, ecc.) > Gioco
