@@ -21,7 +21,6 @@ public class HandlerUnlockPersonalLineReq extends PacketHandler {
             return;
         }
 
-        session.getPlayer().getQuestManager().addQuest(data.getStartQuestId());
         session.getPlayer().addPersonalLine(data.getId());
         session.getPlayer().useLegendaryKey(1);
 
