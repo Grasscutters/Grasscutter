@@ -244,12 +244,6 @@ public class ScriptLib {
             Grasscutter.getLogger().warn("trying to get suite that doesn't exist: {} {}", groupId, suite);
             return 1;
         }
-        // avoid spawn wrong monster
-        if(getSceneScriptManager().getScene().getChallenge() != null)
-            if(!getSceneScriptManager().getScene().getChallenge().inProgress() ||
-                getSceneScriptManager().getScene().getChallenge().getGroup().id != groupId){
-                return 0;
-            }
         this.getSceneScriptManager().addGroupSuite(groupInstance, suiteData);
 
         return 0;

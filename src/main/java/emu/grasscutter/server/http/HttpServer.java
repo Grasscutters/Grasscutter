@@ -113,6 +113,7 @@ public final class HttpServer {
         }
 
         serverConnector.setPort(HTTP_INFO.bindPort);
+        serverConnector.setHost(HTTP_INFO.bindAddress);
         server.setConnectors(new ServerConnector[]{serverConnector});
 
         return server;

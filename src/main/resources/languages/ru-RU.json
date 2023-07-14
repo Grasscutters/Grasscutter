@@ -64,9 +64,9 @@
       "resources": {
         "loading": "Загружаем ресурсы...",
         "finish": "Загрузка ресурсов завершена.",
-        "custom": "🇺🇸Find additional resources at: 'Anime-Game-Servers/CustomGCResources'.",
-        "missing_server": "🇺🇸To fully use questing, it is recommended to add the 'Server' folder.",
-        "missing_scenes": "🇺🇸To fully use questing, it is recommended to add the 'ScriptSceneData' folder."
+        "custom": "Ищите дополнительные ресурсы в репозитории: 'Anime-Game-Servers/CustomGCResources'.",
+        "missing_server": "Для полноценной поддержки квестов, рекомендуется добавить папку 'Server'.",
+        "missing_scenes": "Для полноценной поддержки квестов, рекомендуется добавить папку 'ScriptSceneData'."
       }
     }
   },
@@ -87,7 +87,7 @@
         "artifactId": "Некорректный ID артефакта.",
         "avatarId": "Некорректный ID персонажа.",
         "avatarLevel": "Некорректный уровень персонажа (avatarLevel).",
-        "cfgId": "🇺🇸Invalid cfg ID.",
+        "cfgId": "Некорректный ID конфига.",
         "entityId": "Некорректный ID сущности.",
         "itemId": "Некорректный ID предмета.",
         "itemLevel": "Некорректный уровень предмета (itemLevel).",
@@ -171,8 +171,8 @@
       "description": "Позволяет войти в подземелье"
     },
     "entity": {
-      "description": "🇺🇸Modify an existing entity's properties",
-      "not_found_error": "🇺🇸Entity does not exist"
+      "description": "Изменяет свойства выбранной сущности",
+      "not_found_error": "Сущность не найдена"
     },
     "give": {
       "usage_relic": "Применение: give <ID_артефакта> [ID_глав_хар-ки] [<ID доп_хар-ки>[,<раз>]]... [lv<уровень 0-20>]",
@@ -239,31 +239,31 @@
       "not_found": "Квест не найден.",
       "invalid_id": "Некорректный ID квеста.",
       "description": "Добавляет (add) или завершает (finish) квесты",
-      "running": "🇺🇸Quest %s is %s (%s).",
-      "talking": "🇺🇸Talk %s is %s for main quest %s (%s).",
+      "running": "Квест %s %s (%s).",
+      "talking": "Разговор %s %s для главного квеста %s (%s).",
       "state": {
-        "none": "🇺🇸unknown (none)",
-        "unstarted": "🇺🇸unfinished (not started, not completed)",
-        "unfinished": "🇺🇸unfinished (started, not completed)",
-        "finished": "🇺🇸finished (completed)",
-        "failed": "🇺🇸finished (completed, but failed)",
-        "exists": "🇺🇸found",
-        "not_exists": "🇺🇸not found"
+        "none": "неизвестно (none)",
+        "unstarted": "незавершен (не начат)",
+        "unfinished": "незавершен (начат, но не закончен)",
+        "finished": "завершен",
+        "failed": "завершен (но провален)",
+        "exists": "найден",
+        "not_exists": "не найден"
       },
-      "enabled": "🇺🇸Questing enabled."
+      "enabled": "Квестинг включен."
     },
     "group": {
-      "invalid_groupid": "🇺🇸Invalid group ID.",
-      "invalid_suiteid": "🇺🇸Invalid suite ID.",
-      "group_not_found": "🇺🇸Group not found.",
-      "description": "🇺🇸Alter group loading",
-      "refreshed": "🇺🇸Group %s refreshed."
+      "invalid_groupid": "Некорректный ID Группы.",
+      "invalid_suiteid": "Некорректный ID Комплекта.",
+      "group_not_found": "Группа не найдена.",
+      "description": "Меняет загрузку группы",
+      "refreshed": "Группа %s обновлена."
     },
     "cutscene": {
       "description": "Odtwarza przerywnik filmowy"
     },
     "sound": {
-      "description": "🇺🇸Plays a sound"
+      "description": "Проигрывает звук"
     },
     "reload": {
       "reload_start": "Перезагружаем файл конфигурации.",
@@ -408,7 +408,7 @@
       "description": "Разблокировывает доступ к серверу (\"разбанивает\")"
     },
     "troubleshoot": {
-      "description": "🇺🇸Generate debugging information for troubleshooting."
+      "description": "Генерирует отладочную информацию для решения проблем."
     }
   },
   "gacha": {
@@ -462,9 +462,9 @@
     "disabling_plugin": "Отключаем Плагин: %s",
     "disabling_failed": "Ошибка отключения Плагина: %s",
     "invalid_api": {
-      "not_present": "🇺🇸Plugin %s does not specify an API version.",
-      "lower": "🇺🇸Plugin %s is using API version %s, while the server is using API version %s.",
-      "outdated": "🇺🇸Plugin %s is using an outdated API method."
+      "not_present": "В Плагине %s не указана версия API.",
+      "lower": "Плагин %s использует версию API %s, однако сервер работает на версии API %s.",
+      "outdated": "Плагин %s использует устаревший API метод."
     }
   }
 }

@@ -99,7 +99,13 @@ public class SceneScriptManager {
     }
 
     public SceneConfig getConfig() {
-        return this.isInit ? this.meta.config : null;
+        for (int i = 0; i < 10; ++i) {
+            if (this.isInit) {
+                return this.meta.config;
+            }
+            Utils.sleep(100);
+        }
+        return null;
     }
 
     public Map<Integer, SceneBlock> getBlocks() {

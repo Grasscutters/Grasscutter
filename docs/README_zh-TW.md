@@ -22,52 +22,23 @@
 
 **注意:** 如需幫助請加入 [Discord](https://discord.gg/T5vZU6UyeG)
 
-### 環境需求
+### 快速開始（全自動）
 
-* Java SE - 17 ([連結](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+- 下載 Java 17：https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+- 下載 [MongoDB 社區伺服器](https://www.mongodb.com/try/download/community)
+- 下載遊戲版本 REL3.7（如果你沒有的話，可以在[這裡](https://github.com/MAnggiarMustofa/GI-Download-Library/blob/main/GenshinImpact/Client/3.7.0.md)找到 3.7 客戶端）
 
-  **注意:** 如果僅想**執行服務端**, 使用 **jre** 即可
+- 下載 [最新的 Cultivation 版本](https://github.com/Grasscutters/Cultivation/releases/latest)。使用 `.msi` 安裝程式。
+- 以管理員身分打開 Culivation，按右上角的下載按鈕。
+- 點擊 `Download All-in-One`
+- 點擊右上角的齒輪
+- 將遊戲安裝路徑設置為你的遊戲所在的位置。
+- 將自定義 Java 路徑設置為 `C:\Program Files\Java\jdk-17\bin\java.exe`
+- 其他設置保持預設
 
-* [MongoDB](https://www.mongodb.com/try/download/community) (推薦 4.0+)
-
-* 代理程式: mitmproxy (推薦 mitmdump), Fiddler Classic 等
-
-### 執行
-
-**注意:** 從舊版本升級到新版本, 需要刪除 `config.json`
-
-1. 獲取 `grasscutter.jar`
-   - 從 [actions](https://github.com/Grasscutters/Grasscutter/suites/6895963598/artifacts/267483297) 下載
-   - [自行編譯](#編譯)
-2. 在 JAR 檔案根目錄中建立 `resources` 資料夾並複製 `BinOutput` 和 `ExcelBinOutput` *(查看 [wiki](https://github.com/Grasscutters/Grasscutter/wiki) 瞭解更多)*
-3. 命令列 `java -jar grasscutter.jar` 執行 Grasscutter。**在此之前請確認 MongoDB 服務執行正常**
-
-### 客戶端連線
-
-½. 在伺服器控制台[建立賬戶](https://github.com/Grasscutters/Grasscutter/wiki/Commands#targeting)
-
-1. 重定向流量: (選擇其中一個)
-    - mitmdump: `mitmdump -s proxy.py -k`
-
-      信任 CA 證書:
-
-      ​	**注意:** mitmproxy 的 CA 證書通常存放在 `%USERPROFILE%\ .mitmproxy`, 或者在 `http://mitm.it` 下載證書
-
-      ​ 雙擊[安裝根證書](https://docs.microsoft.com/en-us/skype-sdk/sdn/articles/installing-the-trusted-root-certificate#installing-a-trusted-root-certificate)或者...
-
-      - 使用命令列
-
-        ```shell
-        certutil -addstore root %USERPROFILE%\.mitmproxy\mitmproxy-ca-cert.cer
-        ```
-
-    - Fiddler Classic: 執行 Fiddler Classic, 在設定中開啟 `解密 https 通訊` 並將通訊埠設為除 `8888` 以外的任意通訊埠 (工具 -> 選項 -> 連線) 並載入[此指令碼](https://github.lunatic.moe/fiddlerscript)
-
-    - [Hosts 檔案](https://github.com/Grasscutters/Grasscutter/wiki/Running#traffic-route-map)
-
-2. 設定代理為 `127.0.0.1:8080` 或你設定的通訊埠
-
-**也可直接執行 `start.cmd` 一鍵啟動服務端並設定代理, 但必須設定 `JAVA_HOME` 環境變數**
+- 點擊啟動旁邊的小按鈕。
+- 點擊啟動按鈕。
+- 用你想要的用戶名登錄，密碼無所謂。
 
 ### 編譯
 
