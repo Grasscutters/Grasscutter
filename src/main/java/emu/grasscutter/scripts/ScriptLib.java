@@ -8,37 +8,25 @@ import emu.grasscutter.game.dungeons.challenge.enums.FatherChallengeProperty;
 import emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactory;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
-import emu.grasscutter.game.entity.gadget.platform.ConfigRoute;
-import emu.grasscutter.game.entity.gadget.platform.PointArrayRoute;
-import emu.grasscutter.game.props.ClimateType;
-import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.props.EntityType;
-import emu.grasscutter.game.quest.enums.QuestCond;
-import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.game.quest.enums.QuestState;
-import emu.grasscutter.game.world.SceneGroupInstance;
+import emu.grasscutter.game.entity.gadget.platform.*;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.quest.enums.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.EnterTypeOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
-import emu.grasscutter.scripts.constants.EventType;
-import emu.grasscutter.scripts.constants.GroupKillPolicy;
-import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.SceneObject;
-import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.scripts.constants.*;
+import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.game.world.Position;
 import io.netty.util.concurrent.FastThreadLocal;
 import lombok.val;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.luaj.vm2.*;
+import org.slf4j.*;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
 import static emu.grasscutter.game.props.EnterReason.Lua;
-import static emu.grasscutter.scripts.ScriptUtils.luaToPos;
-import static emu.grasscutter.scripts.ScriptUtils.posToLua;
+import static emu.grasscutter.scripts.ScriptUtils.*;
 import static emu.grasscutter.scripts.constants.GroupKillPolicy.*;
 
 @SuppressWarnings("unused")
@@ -530,6 +518,22 @@ public class ScriptLib {
 
         var scene = scriptManager.getScene();
         var entity = scene.getEntityByConfigId(cfgId);
+        if (entity == null) return 2;
+
+        scene.broadcastPacket(
+            new PacketServerGlobalValueChangeNotify(entity, sgvName, value));
+        return 0;
+    }
+
+    public int SetEntityServerGlobalValueByEntityId(int entityId, String sgvName, int value) {
+        logger.debug("[LUA] Call SetEntityServerGlobalValueByEntityId with {}, {}, {}",
+            entityId, sgvName, value);
+
+        var scriptManager = this.getSceneScriptManager();
+        if (scriptManager == null) return 1;
+
+        var scene = scriptManager.getScene();
+        var entity = scene.getEntityById(entityId);
         if (entity == null) return 2;
 
         scene.broadcastPacket(
