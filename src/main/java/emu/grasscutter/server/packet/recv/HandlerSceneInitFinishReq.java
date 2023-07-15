@@ -13,28 +13,33 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var player = session.getPlayer();
+        var world = player.getWorld();
+
         // Info packets
         session.send(new PacketServerTimeNotify());
-        session.send(new PacketWorldPlayerInfoNotify(session.getPlayer().getWorld()));
-        session.send(new PacketWorldDataNotify(session.getPlayer().getWorld()));
+        session.send(new PacketWorldPlayerInfoNotify(world));
+        session.send(new PacketWorldDataNotify(world));
         session.send(new PacketPlayerWorldSceneInfoListNotify());
         session.send(new BasePacket(PacketOpcodes.SceneForceUnlockNotify));
-        session.send(new PacketHostPlayerNotify(session.getPlayer().getWorld()));
+        session.send(new PacketHostPlayerNotify(world));
 
-        session.send(new PacketSceneTimeNotify(session.getPlayer()));
-        session.send(new PacketPlayerGameTimeNotify(session.getPlayer()));
-        session.send(new PacketPlayerEnterSceneInfoNotify(session.getPlayer()));
-        session.send(new PacketSceneAreaWeatherNotify(session.getPlayer()));
-        session.send(new PacketScenePlayerInfoNotify(session.getPlayer().getWorld()));
-        session.send(new PacketSceneTeamUpdateNotify(session.getPlayer()));
+        session.send(new PacketSceneTimeNotify(player));
+        session.send(new PacketPlayerGameTimeNotify(player));
+        session.send(new PacketPlayerEnterSceneInfoNotify(player));
+        session.send(new PacketSceneAreaWeatherNotify(player));
+        session.send(new PacketScenePlayerInfoNotify(world));
+        session.send(new PacketSceneTeamUpdateNotify(player));
 
-        session.send(new PacketSyncTeamEntityNotify(session.getPlayer()));
-        session.send(new PacketSyncScenePlayTeamEntityNotify(session.getPlayer()));
+        session.send(new PacketSyncTeamEntityNotify(player));
+        session.send(new PacketSyncScenePlayTeamEntityNotify(player));
 
         // Done Packet
-        session.send(new PacketSceneInitFinishRsp(session.getPlayer()));
+        session.send(new PacketSceneInitFinishRsp(player));
 
-        // Set state
-        session.getPlayer().setSceneLoadState(SceneLoadState.INIT);
+        // Set scene load state.
+        player.setSceneLoadState(SceneLoadState.INIT);
+        // Run scene initialization.
+        player.getScene().playerSceneInitialized(player);
     }
 }

@@ -514,8 +514,8 @@ public class ScriptLib {
         var entity = scene.getEntityByConfigId(cfgId);
         if (entity == null) return 2;
 
-        scene.broadcastPacket(
-            new PacketServerGlobalValueChangeNotify(entity, sgvName, value));
+        scene.runWhenHostInitialized(() -> scene.broadcastPacket(
+            new PacketServerGlobalValueChangeNotify(entity, sgvName, value)));
         return 0;
     }
 
@@ -528,7 +528,7 @@ public class ScriptLib {
 
         var scene = scriptManager.getScene();
 
-        scene.runWhenFinished(() -> scene.broadcastPacket(
+        scene.runWhenHostInitialized(() -> scene.broadcastPacket(
             new PacketServerGlobalValueChangeNotify(entityId, sgvName, value)));
         return 0;
     }

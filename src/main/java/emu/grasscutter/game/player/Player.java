@@ -1536,6 +1536,12 @@ public class Player implements PlayerHook, FieldFetch {
         }
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Player otherPlayer &&
+            this.id == otherPlayer.getUid();
+    }
+
     public enum SceneLoadState {
         NONE(0), LOADING(1), INIT(2), LOADED(3);
 
@@ -1546,5 +1552,4 @@ public class Player implements PlayerHook, FieldFetch {
             this.value = value;
         }
     }
-
 }

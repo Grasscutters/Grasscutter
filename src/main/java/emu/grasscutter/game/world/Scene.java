@@ -22,8 +22,8 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.*;
 import emu.grasscutter.scripts.constants.EventType;
@@ -33,11 +33,12 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import lombok.*;
+
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
-import lombok.*;
 
 public final class Scene {
     @Getter private final World world;
@@ -51,7 +52,6 @@ public final class Scene {
     @Getter private final Set<SceneGroup> loadedGroups;
     @Getter private final BlossomManager blossomManager;
     private final HashSet<Integer> unlockedForces;
-    private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
     private final long startWorldTime;
     @Getter @Setter DungeonManager dungeonManager;
     @Getter Int2ObjectMap<Route> sceneRoutes;
@@ -67,6 +67,9 @@ public final class Scene {
     @Getter private boolean finishedLoading = false;
     @Getter private int tickCount = 0;
     @Getter private boolean isPaused = false;
+
+    private final List<Runnable> afterLoadedCallbacks = new ArrayList<>();
+    private final List<Runnable> afterHostInitCallbacks = new ArrayList<>();
 
     @Getter private GameEntity sceneEntity;
 
@@ -104,6 +107,13 @@ public final class Scene {
 
     public int getPlayerCount() {
         return this.getPlayers().size();
+    }
+
+    /**
+     * @return The scene's world's host.
+     */
+    public Player getHost() {
+        return this.getWorld().getHost();
     }
 
     public GameEntity getEntityById(int id) {
@@ -676,6 +686,29 @@ public final class Scene {
         }
 
         this.afterLoadedCallbacks.add(runnable);
+    }
+
+    /**
+     * Invoked when a player initializes loading the scene.
+     *
+     * @param player The player that initialized loading the scene.
+     */
+    public void playerSceneInitialized(Player player) {
+        // Check if the player is the host.
+        if (!player.equals(this.getHost())) return;
+
+        // Run all callbacks.
+        this.afterHostInitCallbacks.forEach(Runnable::run);
+        this.afterHostInitCallbacks.clear();
+    }
+
+    /**
+     * Run a callback when the host initializes loading the scene.
+     *
+     * @param runnable The callback to be executed.
+     */
+    public void runWhenHostInitialized(Runnable runnable) {
+        this.afterHostInitCallbacks.add(runnable);
     }
 
     public int getEntityLevel(int baseLevel, int worldLevelOverride) {

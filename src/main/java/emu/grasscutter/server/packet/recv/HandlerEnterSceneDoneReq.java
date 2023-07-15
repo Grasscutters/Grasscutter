@@ -13,42 +13,45 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        var player = session.getPlayer();
+
         // Finished loading
-        session.getPlayer().setSceneLoadState(SceneLoadState.LOADED);
+        player.setSceneLoadState(SceneLoadState.LOADED);
 
         // Done
 
-        session.send(new PacketPlayerTimeNotify(session.getPlayer())); // Probably not the right place
+        session.send(new PacketPlayerTimeNotify(player)); // Probably not the right place
 
         // Spawn player in world
-        session.getPlayer().getScene().spawnPlayer(session.getPlayer());
+        player.getScene().spawnPlayer(player);
 
         // Spawn other entites already in world
-        session.getPlayer().getScene().showOtherEntities(session.getPlayer());
+        player.getScene().showOtherEntities(player);
 
         // Locations
-        session.send(new PacketWorldPlayerLocationNotify(session.getPlayer().getWorld()));
-        session.send(new PacketScenePlayerLocationNotify(session.getPlayer().getScene()));
-        session.send(new PacketWorldPlayerRTTNotify(session.getPlayer().getWorld()));
+        session.send(new PacketWorldPlayerLocationNotify(player.getWorld()));
+        session.send(new PacketScenePlayerLocationNotify(player.getScene()));
+        session.send(new PacketWorldPlayerRTTNotify(player.getWorld()));
 
         // spawn NPC
-        session.getPlayer().getScene().loadNpcForPlayerEnter(session.getPlayer());
+        player.getScene().loadNpcForPlayerEnter(player);
 
         // notify client to load the npc for quest
         var questGroupSuites =
-                session.getPlayer().getQuestManager().getSceneGroupSuite(session.getPlayer().getSceneId());
+                player.getQuestManager().getSceneGroupSuite(player.getSceneId());
 
-        session.getPlayer().getScene().loadGroupForQuest(questGroupSuites);
+        player.getScene().loadGroupForQuest(questGroupSuites);
         Grasscutter.getLogger()
                 .trace(
                         "Loaded Scene {} Quest(s) Groupsuite(s): {}",
-                        session.getPlayer().getSceneId(),
+                        player.getSceneId(),
                         questGroupSuites);
         session.send(new PacketGroupSuiteNotify(questGroupSuites));
 
         // Reset timer for sending player locations
-        session.getPlayer().resetSendPlayerLocTime();
+        player.resetSendPlayerLocTime();
+
         // Rsp
-        session.send(new PacketEnterSceneDoneRsp(session.getPlayer()));
+        session.send(new PacketEnterSceneDoneRsp(player));
     }
 }
