@@ -21,9 +21,9 @@ public final class PacketServerGlobalValueChangeNotify extends BasePacket {
         super(PacketOpcodes.ServerGlobalValueChangeNotify);
 
         this.setData(
-            ServerGlobalValueChangeNotify.newBuilder()
-                .setEntityId(entityId)
-                .setValue(value)
-                .setKeyHash(Utils.abilityHash(abilityHash)));
+                ServerGlobalValueChangeNotify.newBuilder()
+                        .setEntityId(entityId)
+                        .setValue(value)
+                        .setKeyHash(Utils.abilityHash(abilityHash)));
     }
 }
