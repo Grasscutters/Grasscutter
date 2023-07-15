@@ -16,4 +16,14 @@ public final class PacketServerGlobalValueChangeNotify extends BasePacket {
                         .setValue(value)
                         .setKeyHash(Utils.abilityHash(abilityHash)));
     }
+
+    public PacketServerGlobalValueChangeNotify(int entityId, String abilityHash, int value) {
+        super(PacketOpcodes.ServerGlobalValueChangeNotify);
+
+        this.setData(
+            ServerGlobalValueChangeNotify.newBuilder()
+                .setEntityId(entityId)
+                .setValue(value)
+                .setKeyHash(Utils.abilityHash(abilityHash)));
+    }
 }
