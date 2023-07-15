@@ -11,38 +11,38 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HomeworldDefaultSaveData {
 
-    @SerializedName(value = "KFHBFNPDJBE", alternate = "PKACPHDGGEI")
+    @SerializedName(value = "KFHBFNPDJBE", alternate = {"PKACPHDGGEI", "AKOLOBLHDFK"})
     List<HomeBlock> homeBlockLists;
 
-    @SerializedName(value = "IJNPADKGNKE", alternate = "MINCKHBNING")
+    @SerializedName(value = "IJNPADKGNKE", alternate = {"MINCKHBNING", "MBICDPDEKDM"})
     Position bornPos;
 
-    @SerializedName("IPIIGEMFLHK")
+    @SerializedName(value = "IPIIGEMFLHK", alternate = {"EJJIOJKFKCO"})
     Position bornRot;
 
-    @SerializedName("HHOLBNPIHEM")
+    @SerializedName(value = "HHOLBNPIHEM", alternate = {"CJAKHCIFHNP"})
     Position djinPos;
 
-    @SerializedName("KNHCJKHCOAN")
+    @SerializedName(value = "KNHCJKHCOAN", alternate = {"AMDNOHPGKMI"})
     HomeFurniture mainhouse;
 
-    @SerializedName("NIHOJFEKFPG")
+    @SerializedName(value = "NIHOJFEKFPG", alternate = {"BHCPEAOPIDC"})
     List<HomeFurniture> doorLists;
 
-    @SerializedName("EPGELGEFJFK")
+    @SerializedName(value = "EPGELGEFJFK", alternate = {"AABEPENIFLN"})
     List<HomeFurniture> stairLists;
 
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class HomeBlock {
 
-        @SerializedName(value = "FGIJCELCGFI", alternate = "PGDPDIDJEEL")
+        @SerializedName(value = "FGIJCELCGFI", alternate = {"PGDPDIDJEEL", "ANICBLBOBKD"})
         int blockId;
 
-        @SerializedName("BEAPOFELABD")
+        @SerializedName(value = "BEAPOFELABD", alternate = {"NCIMIKKFLOH"})
         List<HomeFurniture> furnitures;
 
-        @SerializedName("MLIODLGDFHJ")
+        @SerializedName(value = "MLIODLGDFHJ", alternate = {"GJGNLIINBGB"})
         List<HomeFurniture> persistentFurnitures;
     }
 
@@ -50,10 +50,10 @@ public class HomeworldDefaultSaveData {
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class HomeFurniture {
 
-        @SerializedName(value = "ENHNGKJBJAB", alternate = "KMAAJJHPNBA")
+        @SerializedName(value = "ENHNGKJBJAB", alternate = {"KMAAJJHPNBA", "FFLCGFGGGND"})
         int id;
 
-        @SerializedName(value = "NGIEEIOLPPO", alternate = "JFKAHNCPDME")
+        @SerializedName(value = "NGIEEIOLPPO", alternate = {"JFKAHNCPDME", "BPCGGBKIAMG"})
         Position pos;
         // @SerializedName(value = "HEOCEHKEBFM", alternate = "LKCKOOGFDBM")
         Position rot;
