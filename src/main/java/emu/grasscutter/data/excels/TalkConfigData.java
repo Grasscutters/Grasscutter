@@ -39,7 +39,7 @@ public final class TalkConfigData extends GameResource {
 
         if (this.questId <= 0) {
             var id = String.valueOf(this.getId());
-            this.questId = Integer.parseInt(id.length() < 5 ? "0" : id.substring(0, 3));
+            this.questId = Integer.parseInt(id.length() < 5 ? "0" : id.substring(0, id.length() - 2));
         }
     }
 
