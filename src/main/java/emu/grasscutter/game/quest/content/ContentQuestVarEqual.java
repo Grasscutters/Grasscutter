@@ -13,8 +13,8 @@ public class ContentQuestVarEqual extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        int questVarValue = quest.getMainQuest().getQuestVars()[params[0]];
-        Grasscutter.getLogger().debug("questVar {} : {}", params[0], questVarValue);
-        return questVarValue == params[1];
+        int questVarValue = quest.getMainQuest().getQuestVars()[condition.getParam()[0]];
+        Grasscutter.getLogger().debug("questVar {} : {}", condition.getParam()[0], questVarValue);
+        return questVarValue == condition.getParam()[1];
     }
 }

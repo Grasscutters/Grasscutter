@@ -215,7 +215,13 @@ public class SceneScriptManager {
         var suiteData = group.getSuiteByIndex(suiteIndex);
         if (suiteData == null) {
             Grasscutter.getLogger().warn("Group {} suite {} not found", group.id, suiteIndex);
-            return 0;
+            group.setLoaded(false);
+            group.load(this.scene.getId());
+            suiteData = group.getSuiteByIndex(suiteIndex);
+            if (suiteData == null) {
+                return 0;
+            }
+            Grasscutter.getLogger().warn("Group {} suite {} nvm, I found it.", group.id, suiteIndex);
         }
 
         int prevSuiteIndex = groupInstance.getActiveSuiteId();

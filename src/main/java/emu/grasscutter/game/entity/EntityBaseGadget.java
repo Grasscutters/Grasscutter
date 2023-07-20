@@ -70,7 +70,7 @@ public abstract class EntityBaseGadget extends GameEntity {
                                         getGadgetId())
                                 .setSourceEntityId(getId())
                                 .setParam3((int) this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP))
-                                .setEventSource(Integer.toString(getConfigId())));
+                                .setEventSource(getConfigId()));
     }
 
     protected void fillFightProps(ConfigEntityGadget configGadget) {
