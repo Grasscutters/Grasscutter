@@ -221,7 +221,7 @@ public class SceneScriptManager {
             if (suiteData == null) {
                 return 0;
             }
-            Grasscutter.getLogger().warn("Group {} suite {} nvm, I found it.", group.id, suiteIndex);
+            Grasscutter.getLogger().error("Group {} suite {} nvm, I found it. This is BAD", group.id, suiteIndex);
         }
 
         int prevSuiteIndex = groupInstance.getActiveSuiteId();
