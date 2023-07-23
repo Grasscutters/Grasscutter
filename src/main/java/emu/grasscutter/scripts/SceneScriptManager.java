@@ -10,7 +10,7 @@ import emu.grasscutter.data.server.Grid;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.platform.BaseRoute;
-import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.game.props.EntityIdType;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.VisionTypeOuterClass;
@@ -634,27 +634,24 @@ public class SceneScriptManager {
             var entities =
                     getScene().getEntities().values().stream()
                             .filter(
-                                    e ->
-                                            e.getEntityType() == EntityType.Avatar
-                                                    && region.getMetaRegion().contains(e.getPosition()))
+                                    e -> 
+                                            region.getMetaRegion().contains(e.getPosition()))
                             .toList();
+
+            var entitiesIds = entities.stream().map(GameEntity::getId).toList();
+            var enterEntities = entitiesIds.stream().filter(e -> !region.getEntities().contains(e)).toList();
+            var leaveEntities = region.getEntities().stream().filter(e -> !entitiesIds.contains(e)).toList();
+
             entities.forEach(region::addEntity);
 
-            var targetId = 0;
-            if (entities.size() > 0) {
-                targetId = entities.get(0).getId();
-            }
-
-            if (region.entityHasEntered()) {
+            for (var targetId : enterEntities){
                 Grasscutter.getLogger()
                         .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_ENTER_REGION, region.getConfigId())
-                                .setEventSource(EntityType.Avatar.getValue())
+                                .setEventSource(EntityIdType.toEntityType(targetId>>24).getValue())
                                 .setSourceEntityId(region.getId())
                                 .setTargetEntityId(targetId));
-
-                region.resetNewEntities();
             }
 
             for (var entityId : region.getEntities()) {
@@ -664,14 +661,12 @@ public class SceneScriptManager {
                 }
             }
 
-            if (region.entityHasLeft()) {
+            for (var targetId : leaveEntities) {
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_LEAVE_REGION, region.getConfigId())
-                                .setEventSource(EntityType.Avatar.getValue())
+                                .setEventSource(EntityIdType.toEntityType(targetId>>24).getValue())
                                 .setSourceEntityId(region.getId())
-                                .setTargetEntityId(region.getFirstEntityId()));
-
-                region.resetNewEntities();
+                                .setTargetEntityId(targetId));
             }
         }
     }
@@ -899,7 +894,6 @@ public class SceneScriptManager {
                             .toList()
                             .get(0);
             this.getScene().getPlayers().forEach(p -> p.onEnterRegion(region.getMetaRegion()));
-            this.deregisterRegion(region.getMetaRegion());
         } else if (trigger.getEvent() == EventType.EVENT_LEAVE_REGION) {
             var region =
                     this.regions.values().stream()
@@ -907,7 +901,6 @@ public class SceneScriptManager {
                             .toList()
                             .get(0);
             this.getScene().getPlayers().forEach(p -> p.onLeaveRegion(region.getMetaRegion()));
-            this.deregisterRegion(region.getMetaRegion());
         }
 
         if (trigger.getEvent() == EVENT_TIMER_EVENT) {
