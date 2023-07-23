@@ -639,23 +639,23 @@ public class SceneScriptManager {
             // add other types of entity
             var entities =
                     getScene().getEntities().values().stream()
-                            .filter(
-                                    e -> 
-                                            region.getMetaRegion().contains(e.getPosition()))
+                            .filter(e -> region.getMetaRegion().contains(e.getPosition()))
                             .toList();
 
             var entitiesIds = entities.stream().map(GameEntity::getId).toList();
-            var enterEntities = entitiesIds.stream().filter(e -> !region.getEntities().contains(e)).toList();
-            var leaveEntities = region.getEntities().stream().filter(e -> !entitiesIds.contains(e)).toList();
+            var enterEntities =
+                    entitiesIds.stream().filter(e -> !region.getEntities().contains(e)).toList();
+            var leaveEntities =
+                    region.getEntities().stream().filter(e -> !entitiesIds.contains(e)).toList();
 
             entities.forEach(region::addEntity);
 
-            for (var targetId : enterEntities){
+            for (var targetId : enterEntities) {
                 Grasscutter.getLogger()
                         .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_ENTER_REGION, region.getConfigId())
-                                .setEventSource(EntityIdType.toEntityType(targetId>>24).getValue())
+                                .setEventSource(EntityIdType.toEntityType(targetId >> 24).getValue())
                                 .setSourceEntityId(region.getId())
                                 .setTargetEntityId(targetId));
             }
@@ -670,7 +670,7 @@ public class SceneScriptManager {
             for (var targetId : leaveEntities) {
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_LEAVE_REGION, region.getConfigId())
-                                .setEventSource(EntityIdType.toEntityType(targetId>>24).getValue())
+                                .setEventSource(EntityIdType.toEntityType(targetId >> 24).getValue())
                                 .setSourceEntityId(region.getId())
                                 .setTargetEntityId(targetId));
             }
