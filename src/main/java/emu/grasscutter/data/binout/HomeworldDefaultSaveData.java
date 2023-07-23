@@ -11,38 +11,58 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class HomeworldDefaultSaveData {
 
-    @SerializedName(value = "KFHBFNPDJBE", alternate = {"PKACPHDGGEI", "AKOLOBLHDFK"})
+    @SerializedName(
+            value = "KFHBFNPDJBE",
+            alternate = {"PKACPHDGGEI", "AKOLOBLHDFK"})
     List<HomeBlock> homeBlockLists;
 
-    @SerializedName(value = "IJNPADKGNKE", alternate = {"MINCKHBNING", "MBICDPDEKDM"})
+    @SerializedName(
+            value = "IJNPADKGNKE",
+            alternate = {"MINCKHBNING", "MBICDPDEKDM"})
     Position bornPos;
 
-    @SerializedName(value = "IPIIGEMFLHK", alternate = {"EJJIOJKFKCO"})
+    @SerializedName(
+            value = "IPIIGEMFLHK",
+            alternate = {"EJJIOJKFKCO"})
     Position bornRot;
 
-    @SerializedName(value = "HHOLBNPIHEM", alternate = {"CJAKHCIFHNP"})
+    @SerializedName(
+            value = "HHOLBNPIHEM",
+            alternate = {"CJAKHCIFHNP"})
     Position djinPos;
 
-    @SerializedName(value = "KNHCJKHCOAN", alternate = {"AMDNOHPGKMI"})
+    @SerializedName(
+            value = "KNHCJKHCOAN",
+            alternate = {"AMDNOHPGKMI"})
     HomeFurniture mainhouse;
 
-    @SerializedName(value = "NIHOJFEKFPG", alternate = {"BHCPEAOPIDC"})
+    @SerializedName(
+            value = "NIHOJFEKFPG",
+            alternate = {"BHCPEAOPIDC"})
     List<HomeFurniture> doorLists;
 
-    @SerializedName(value = "EPGELGEFJFK", alternate = {"AABEPENIFLN"})
+    @SerializedName(
+            value = "EPGELGEFJFK",
+            alternate = {"AABEPENIFLN"})
     List<HomeFurniture> stairLists;
 
     @Data
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class HomeBlock {
 
-        @SerializedName(value = "FGIJCELCGFI", alternate = {"PGDPDIDJEEL", "ANICBLBOBKD"})
+        @SerializedName(
+                value = "FGIJCELCGFI",
+                alternate = {"PGDPDIDJEEL", "ANICBLBOBKD"})
         int blockId;
 
-        @SerializedName(value = "BEAPOFELABD", alternate = {"NCIMIKKFLOH"})
+        @SerializedName(
+                value = "BEAPOFELABD",
+                alternate = {"NCIMIKKFLOH"})
         List<HomeFurniture> furnitures;
 
-        @SerializedName(value = "MLIODLGDFHJ", alternate = {"GJGNLIINBGB"})
+        @SerializedName(
+                value = "MLIODLGDFHJ",
+                alternate = {"GJGNLIINBGB"})
         List<HomeFurniture> persistentFurnitures;
     }
 
@@ -50,10 +70,14 @@ public class HomeworldDefaultSaveData {
     @FieldDefaults(level = AccessLevel.PRIVATE)
     public static class HomeFurniture {
 
-        @SerializedName(value = "ENHNGKJBJAB", alternate = {"KMAAJJHPNBA", "FFLCGFGGGND"})
+        @SerializedName(
+                value = "ENHNGKJBJAB",
+                alternate = {"KMAAJJHPNBA", "FFLCGFGGGND"})
         int id;
 
-        @SerializedName(value = "NGIEEIOLPPO", alternate = {"JFKAHNCPDME", "BPCGGBKIAMG"})
+        @SerializedName(
+                value = "NGIEEIOLPPO",
+                alternate = {"JFKAHNCPDME", "BPCGGBKIAMG"})
         Position pos;
         // @SerializedName(value = "HEOCEHKEBFM", alternate = "LKCKOOGFDBM")
         Position rot;
