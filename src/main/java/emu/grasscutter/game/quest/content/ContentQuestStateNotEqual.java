@@ -12,12 +12,12 @@ public class ContentQuestStateNotEqual extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        GameQuest checkQuest = quest.getOwner().getQuestManager().getQuestById(params[0]);
+        GameQuest checkQuest = quest.getOwner().getQuestManager().getQuestById(condition.getParam()[0]);
 
-        if (checkQuest != null) {
-            return checkQuest.getState().getValue() != params[1];
+        if (checkQuest == null) {
+            return false;
         }
 
-        return false;
+        return checkQuest.getState().getValue() != condition.getParam()[1];
     }
 }

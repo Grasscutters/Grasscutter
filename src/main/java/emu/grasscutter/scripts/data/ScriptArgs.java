@@ -19,10 +19,10 @@ public class ScriptArgs {
     }
 
     public ScriptArgs(int groupId, int eventType, int param1, int param2) {
+        this.group_id = groupId;
         this.type = eventType;
         this.param1 = param1;
         this.param2 = param2;
-        this.group_id = groupId;
     }
 
     public int getParam1() {

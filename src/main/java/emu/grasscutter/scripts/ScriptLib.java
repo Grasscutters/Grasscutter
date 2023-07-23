@@ -380,7 +380,7 @@ public class ScriptLib {
         logger.debug("[LUA] Call SetGroupVariableValue with {},{}",
             var, value);
 
-        val groupId= currentGroup.get().id;
+        val groupId = currentGroup.get().id;
         val variables = getSceneScriptManager().getVariables(groupId);
 
         val old = variables.getOrDefault(var, value);
@@ -393,7 +393,7 @@ public class ScriptLib {
         logger.debug("[LUA] Call ChangeGroupVariableValue with {},{}",
             var, value);
 
-        val groupId= currentGroup.get().id;
+        val groupId = currentGroup.get().id;
         val variables = getSceneScriptManager().getVariables(groupId);
 
         val old = variables.getOrDefault(var, 0);
@@ -962,7 +962,7 @@ public class ScriptLib {
         return 0;
     }
     public int EndTimeAxis(String var1){
-        logger.warn("[LUA] Call unimplemented EndTimeAxis with {} {} {}", var1);
+        logger.warn("[LUA] Call unimplemented EndTimeAxis with {}", var1);
         //TODO implement var1 == name?
         return 0;
     }
@@ -1078,6 +1078,12 @@ public class ScriptLib {
         return 0;
     }
 
+    public int ClearPlayerEyePoint(int var1){
+        logger.warn("[LUA] Call unimplemented ClearPlayerEyePoint with {}", var1);
+        //TODO implement
+        return 0;
+    }
+
     public int MoveAvatarByPointArray(int uid, int targetId, LuaTable var3, String var4){
         logger.warn("[LUA] Call unimplemented MoveAvatarByPointArray with {} {} {} {}", uid, targetId, printTable(var3), var4);
         //TODO implement var3 contains int speed, var4 is a json string
@@ -1136,7 +1142,7 @@ public class ScriptLib {
     }
 
     public int PlayCutSceneWithParam(int cutsceneId, int var2, LuaTable var3){
-        logger.warn("[LUA] Call unimplemented PlayCutScene with {} {}", cutsceneId, var2, var3);
+        logger.warn("[LUA] Call unimplemented PlayCutScene with {} {} {}", cutsceneId, var2, var3);
         //TODO implement
         return 0;
     }
