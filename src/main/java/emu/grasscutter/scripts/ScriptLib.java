@@ -398,10 +398,39 @@ public class ScriptLib {
 
         val old = variables.getOrDefault(var, 0);
         variables.put(var, old + value);
-        logger.debug("[LUA] Call ChangeGroupVariableValue with {},{}",
-            old, old+value);
         getSceneScriptManager().callEvent(new ScriptArgs(groupId, EventType.EVENT_VARIABLE_CHANGE, old+value, old).setEventSource(var));
         return LuaValue.ZERO;
+    }
+
+    public int GetGroupVariableValueByGroup(String var, int groupId){
+        logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}",
+            var,groupId);
+
+        return getSceneScriptManager().getVariables(groupId).getOrDefault(var, 0);
+    }
+
+    public int SetGroupVariableValueByGroup(String var, int value, int groupId){
+        logger.debug("[LUA] Call SetGroupVariableValueByGroup with {},{},{}",
+            var,value,groupId);
+
+        val variables = getSceneScriptManager().getVariables(groupId);
+
+        val old = variables.getOrDefault(var, value);
+        variables.put(var, value);
+        getSceneScriptManager().callEvent(new ScriptArgs(groupId, EventType.EVENT_VARIABLE_CHANGE, value, old).setEventSource(var));
+        return 0;
+    }
+
+    public int ChangeGroupVariableValueByGroup(String var, int value, int groupId){
+        logger.debug("[LUA] Call ChangeGroupVariableValueByGroup with {},{}",
+            var,groupId);
+
+        val variables = getSceneScriptManager().getVariables(groupId);
+
+        val old = variables.getOrDefault(var, 0);
+        variables.put(var, old + value);
+        getSceneScriptManager().callEvent(new ScriptArgs(groupId, EventType.EVENT_VARIABLE_CHANGE, old+value, old).setEventSource(var));
+        return 0;
     }
 
     /**
@@ -533,20 +562,6 @@ public class ScriptLib {
         return 0;
     }
 
-    public int GetGroupVariableValueByGroup(String name, int groupId){
-        logger.debug("[LUA] Call GetGroupVariableValueByGroup with {},{}",
-            name,groupId);
-
-        return getSceneScriptManager().getVariables(groupId).getOrDefault(name, 0);
-    }
-    public int ChangeGroupVariableValueByGroup(String name, int value, int groupId){
-        logger.debug("[LUA] Call ChangeGroupVariableValueByGroup with {},{}",
-            name,groupId);
-        //TODO test
-        getSceneScriptManager().getVariables(groupId).put(name, value);
-        return 0;
-    }
-
     public int SetIsAllowUseSkill(int canUse){
         logger.debug("[LUA] Call SetIsAllowUseSkill with {}",
             canUse);
@@ -568,14 +583,6 @@ public class ScriptLib {
             return 0;
         }
         getSceneScriptManager().getScene().killEntity(entity, 0);
-        return 0;
-    }
-
-    public int SetGroupVariableValueByGroup(String key, int value, int groupId){
-        logger.debug("[LUA] Call SetGroupVariableValueByGroup with {},{},{}",
-            key,value,groupId);
-
-        getSceneScriptManager().getVariables(groupId).put(key, value);
         return 0;
     }
 
