@@ -36,16 +36,18 @@ public class GadgetObject extends GadgetContent {
         GameItem item = new GameItem(itemData, 1);
         player.getInventory().addItem(item, ActionReason.Gather);
 
-        var ScriptArgs = new ScriptArgs(getGadget().getGroupId(), EventType.EVENT_GATHER, getGadget().getConfigId());
-        if(getGadget().getMetaGadget() != null){
+        var ScriptArgs =
+                new ScriptArgs(getGadget().getGroupId(), EventType.EVENT_GATHER, getGadget().getConfigId());
+        if (getGadget().getMetaGadget() != null) {
             ScriptArgs.setEventSource(getGadget().getMetaGadget().config_id);
         }
         getGadget().getScene().getScriptManager().callEvent(ScriptArgs);
 
         getGadget()
-            .getScene()
-            .broadcastPacket(
-                new PacketGadgetInteractRsp(getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_GATHER));
+                .getScene()
+                .broadcastPacket(
+                        new PacketGadgetInteractRsp(
+                                getGadget(), InteractTypeOuterClass.InteractType.INTERACT_TYPE_GATHER));
         return true;
     }
 
