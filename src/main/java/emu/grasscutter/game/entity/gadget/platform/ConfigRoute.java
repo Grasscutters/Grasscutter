@@ -6,25 +6,34 @@ import emu.grasscutter.net.proto.PlatformInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneGadget;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConfigRoute extends BaseRoute {
 
     @Getter @Setter private int routeId;
+    @Getter @Setter private int startIndex;
+    @Getter @Setter private List<Integer> scheduledIndexes;
 
     public ConfigRoute(SceneGadget gadget) {
         super(gadget);
         this.routeId = gadget.route_id;
+        startIndex = 0;
+        scheduledIndexes = new ArrayList<>();
     }
 
     public ConfigRoute(Position startRot, boolean startRoute, boolean isActive, int routeId) {
         super(startRot, startRoute, isActive);
         this.routeId = routeId;
+        startIndex = 0;
+        scheduledIndexes = new ArrayList<>();
     }
 
     @Override
     public PlatformInfoOuterClass.PlatformInfo.Builder toProto() {
         return super.toProto()
                 .setRouteId(routeId)
+                .setStartIndex(startIndex)
                 .setMovingPlatformType(
                         MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_USE_CONFIG);
     }
