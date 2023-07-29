@@ -9,6 +9,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.config.*;
+import emu.grasscutter.data.binout.routes.*;
 import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.custom.*;
 import emu.grasscutter.data.excels.trial.TrialAvatarActivityDataData;
@@ -107,6 +108,7 @@ public final class ResourceLoader {
         // Load default home layout
         loadHomeworldDefaultSaveData();
         loadNpcBornData();
+        loadRoutes();
         loadBlossomResources();
         cacheTalentLevelSets();
         // Load activities.
@@ -261,6 +263,30 @@ public final class ResourceLoader {
         } catch (IOException ignored) {
             Grasscutter.getLogger()
                     .error("Scene point files cannot be found, you cannot use teleport waypoints!");
+        }
+    }
+
+    private static void loadRoutes() {
+        try {
+            Files.newDirectoryStream(getResourcePath("BinOutput/LevelDesign/Routes/"),"*.json")
+                    .forEach(
+                            path -> {
+                                try {
+                                    val data = JsonUtils.loadToClass(path, SceneRoutes.class);
+                                    val routesArray = data.getRoutes();
+                                    if (routesArray == null) return;
+                                    val routesMap = GameData.getSceneRouteData().getOrDefault(data.getSceneId(), new Int2ObjectOpenHashMap<>());
+                                    for (Route route : routesArray) {
+                                        routesMap.put(route.getLocalId(), route);
+                                    }
+                                    GameData.getSceneRouteData().put(data.getSceneId(), routesMap);
+                                } catch (IOException ignored) {
+                                }
+                            });
+            Grasscutter.getLogger()
+                .debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneRouteDatas.");
+        } catch (IOException e) {
+            Grasscutter.getLogger().error("Failed to load SceneRouteData folder.");
         }
     }
 

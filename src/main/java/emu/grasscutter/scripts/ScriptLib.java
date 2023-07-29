@@ -1319,6 +1319,13 @@ public class ScriptLib {
         }
 
         configRoute.setRouteId(routeId);
+        configRoute.setStartIndex(0);
+        configRoute.setStarted(false);
+        for(var task : configRoute.getScheduledIndexes()) {
+            sceneScriptManager.get().getScene().getScheduler().cancelTask(task);
+        }
+        configRoute.getScheduledIndexes().clear();
+
         sceneScriptManager.get().getScene().broadcastPacket(new PacketPlatformChangeRouteNotify(entityGadget));
         return 0;
     }

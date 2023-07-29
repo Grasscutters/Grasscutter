@@ -36,7 +36,7 @@ public final class ServerTask implements Runnable {
      */
     public boolean shouldRun() {
         // Increase tick count.
-        var ticks = this.ticks++;
+        ++this.ticks;
         if (this.delay != -1 && this.considerDelay) {
             // Check if the task should run.
             var shouldRun = ticks >= this.delay;

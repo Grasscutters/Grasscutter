@@ -31,6 +31,7 @@ import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
+import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.util.*;
@@ -71,6 +72,7 @@ public final class Scene {
     private final List<Runnable> afterHostInitCallbacks = new ArrayList<>();
 
     @Getter private GameEntity sceneEntity;
+    @Getter private final ServerTaskScheduler scheduler;
 
     public Scene(World world, SceneData sceneData) {
         this.world = world;
@@ -94,6 +96,7 @@ public final class Scene {
         this.blossomManager = new BlossomManager(this);
         this.unlockedForces = new HashSet<>();
         this.sceneEntity = new EntityScene(this);
+        this.scheduler = new ServerTaskScheduler();
     }
 
     public int getId() {
@@ -531,6 +534,10 @@ public final class Scene {
                 || this.getSceneType() == SceneType.SCENE_HOME_ROOM) {
             this.finishLoading();
             return;
+        }
+
+        if(!isPaused) {
+            this.getScheduler().runTasks();
         }
 
         if (this.getScriptManager().isInit()) {
