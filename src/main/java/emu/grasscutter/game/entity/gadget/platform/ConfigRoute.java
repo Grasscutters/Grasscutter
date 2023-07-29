@@ -18,22 +18,22 @@ public class ConfigRoute extends BaseRoute {
     public ConfigRoute(SceneGadget gadget) {
         super(gadget);
         this.routeId = gadget.route_id;
-        startIndex = 0;
-        scheduledIndexes = new ArrayList<>();
+        this.startIndex = 0;
+        this.scheduledIndexes = new ArrayList<>();
     }
 
     public ConfigRoute(Position startRot, boolean startRoute, boolean isActive, int routeId) {
         super(startRot, startRoute, isActive);
         this.routeId = routeId;
-        startIndex = 0;
-        scheduledIndexes = new ArrayList<>();
+        this.startIndex = 0;
+        this.scheduledIndexes = new ArrayList<>();
     }
 
     @Override
     public PlatformInfoOuterClass.PlatformInfo.Builder toProto() {
         return super.toProto()
-                .setRouteId(routeId)
-                .setStartIndex(startIndex)
+                .setRouteId(this.routeId)
+                .setStartIndex(this.startIndex)
                 .setMovingPlatformType(
                         MovingPlatformTypeOuterClass.MovingPlatformType.MOVING_PLATFORM_TYPE_USE_CONFIG);
     }
