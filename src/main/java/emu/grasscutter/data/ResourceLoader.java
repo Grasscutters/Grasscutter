@@ -268,14 +268,16 @@ public final class ResourceLoader {
 
     private static void loadRoutes() {
         try {
-            Files.newDirectoryStream(getResourcePath("BinOutput/LevelDesign/Routes/"),"*.json")
+            Files.newDirectoryStream(getResourcePath("BinOutput/LevelDesign/Routes/"), "*.json")
                     .forEach(
                             path -> {
                                 try {
                                     val data = JsonUtils.loadToClass(path, SceneRoutes.class);
                                     val routesArray = data.getRoutes();
                                     if (routesArray == null) return;
-                                    val routesMap = GameData.getSceneRouteData().getOrDefault(data.getSceneId(), new Int2ObjectOpenHashMap<>());
+                                    val routesMap =
+                                            GameData.getSceneRouteData()
+                                                    .getOrDefault(data.getSceneId(), new Int2ObjectOpenHashMap<>());
                                     for (Route route : routesArray) {
                                         routesMap.put(route.getLocalId(), route);
                                     }
@@ -284,7 +286,7 @@ public final class ResourceLoader {
                                 }
                             });
             Grasscutter.getLogger()
-                .debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneRouteDatas.");
+                    .debug("Loaded " + GameData.getSceneNpcBornData().size() + " SceneRouteDatas.");
         } catch (IOException e) {
             Grasscutter.getLogger().error("Failed to load SceneRouteData folder.");
         }

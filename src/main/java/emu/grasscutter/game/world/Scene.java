@@ -536,7 +536,7 @@ public final class Scene {
             return;
         }
 
-        if(!isPaused) {
+        if (!isPaused) {
             this.getScheduler().runTasks();
         }
 

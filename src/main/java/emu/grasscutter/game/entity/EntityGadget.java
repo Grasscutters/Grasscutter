@@ -248,32 +248,57 @@ public class EntityGadget extends EntityBaseGadget {
             return true;
         }
 
-        if(routeConfig instanceof ConfigRoute configRoute) {
+        if (routeConfig instanceof ConfigRoute configRoute) {
             var route = this.getScene().getSceneRouteById(configRoute.getRouteId());
-            if(route != null) {
+            if (route != null) {
                 var points = route.getPoints();
                 val currIndex = configRoute.getStartIndex();
 
                 Position prevpos;
-                if(currIndex == 0) {
+                if (currIndex == 0) {
                     prevpos = getPosition();
-                    this.getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_PLATFORM_REACH_POINT, this.getConfigId(), configRoute.getRouteId()).setParam3(0).setEventSource(this.getConfigId()));
-                }else {
+                    this.getScene()
+                            .getScriptManager()
+                            .callEvent(
+                                    new ScriptArgs(
+                                                    this.getGroupId(),
+                                                    EventType.EVENT_PLATFORM_REACH_POINT,
+                                                    this.getConfigId(),
+                                                    configRoute.getRouteId())
+                                            .setParam3(0)
+                                            .setEventSource(this.getConfigId()));
+                } else {
                     prevpos = points[currIndex].getPos();
                 }
 
                 double time = 0;
-                for(var i = currIndex; i < points.length;++i) {
+                for (var i = currIndex; i < points.length; ++i) {
                     time += points[i].getPos().computeDistance(prevpos) / points[i].getTargetVelocity();
                     prevpos = points[i].getPos();
                     val I = i;
-                    configRoute.getScheduledIndexes().add(this.getScene().getScheduler().scheduleDelayedTask(() -> {
-                        if(points[I].isHasReachEvent() && I > currIndex) {
-                            this.getScene().getScriptManager().callEvent(new ScriptArgs(this.getGroupId(), EventType.EVENT_PLATFORM_REACH_POINT, this.getConfigId(), configRoute.getRouteId()).setParam3(I).setEventSource(this.getConfigId()));
-                        }
-                        configRoute.setStartIndex(I);
-                        this.position.set(points[I].getPos());
-                    },(int)time));
+                    configRoute
+                            .getScheduledIndexes()
+                            .add(
+                                    this.getScene()
+                                            .getScheduler()
+                                            .scheduleDelayedTask(
+                                                    () -> {
+                                                        if (points[I].isHasReachEvent() && I > currIndex) {
+                                                            this.getScene()
+                                                                    .getScriptManager()
+                                                                    .callEvent(
+                                                                            new ScriptArgs(
+                                                                                            this.getGroupId(),
+                                                                                            EventType.EVENT_PLATFORM_REACH_POINT,
+                                                                                            this.getConfigId(),
+                                                                                            configRoute.getRouteId())
+                                                                                    .setParam3(I)
+                                                                                    .setEventSource(this.getConfigId()));
+                                                        }
+                                                        configRoute.setStartIndex(I);
+                                                        this.position.set(points[I].getPos());
+                                                    },
+                                                    (int) time));
                 }
             }
         }
@@ -294,8 +319,8 @@ public class EntityGadget extends EntityBaseGadget {
             return true;
         }
 
-        if(routeConfig instanceof ConfigRoute configRoute) {
-            for(var task : configRoute.getScheduledIndexes()) {
+        if (routeConfig instanceof ConfigRoute configRoute) {
+            for (var task : configRoute.getScheduledIndexes()) {
                 this.getScene().getScheduler().cancelTask(task);
             }
             configRoute.getScheduledIndexes().clear();
