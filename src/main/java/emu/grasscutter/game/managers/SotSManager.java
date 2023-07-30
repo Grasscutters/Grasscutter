@@ -2,26 +2,24 @@ package emu.grasscutter.game.managers;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.CityData;
 import emu.grasscutter.data.excels.RewardData;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.player.BasePlayerManager;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLevelupCityRsp;
 import emu.grasscutter.server.packet.send.PacketSceneForceUnlockNotify;
-
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.Optional;
 
 // Statue of the Seven Manager
 public class SotSManager extends BasePlayerManager {
@@ -221,7 +219,7 @@ public class SotSManager extends BasePlayerManager {
         return GameData.getCityDataMap().values().stream()
                 .filter(city -> city.getAreaIdVec().contains(areaId))
                 .findFirst()
-            .orElse(null);
+                .orElse(null);
     }
 
     public int getCurrentCrystal(int cityId) {
@@ -274,16 +272,20 @@ public class SotSManager extends BasePlayerManager {
     public void levelupCurrentStatue(int cityId) {
         switch (cityId) {
             case 1:
-                player.setProperty(PlayerProperty.PROP_PLAYER_ANEMOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                player.setProperty(
+                        PlayerProperty.PROP_PLAYER_ANEMOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
                 break;
             case 2:
-                player.setProperty(PlayerProperty.PROP_PLAYER_GEOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                player.setProperty(
+                        PlayerProperty.PROP_PLAYER_GEOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
                 break;
             case 3:
-                player.setProperty(PlayerProperty.PROP_PLAYER_ELECTROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                player.setProperty(
+                        PlayerProperty.PROP_PLAYER_ELECTROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
                 break;
             case 4:
-                player.setProperty(PlayerProperty.PROP_PLAYER_DENDROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                player.setProperty(
+                        PlayerProperty.PROP_PLAYER_DENDROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
                 break;
         }
     }
@@ -298,13 +300,16 @@ public class SotSManager extends BasePlayerManager {
         var cityId = city.getCityId();
 
         // check data level up
-        var nextStatuePromoteData = GameData.getStatuePromoteData(cityId, this.getCurrentLevel(cityId) + 1);
+        var nextStatuePromoteData =
+                GameData.getStatuePromoteData(cityId, this.getCurrentLevel(cityId) + 1);
         if (nextStatuePromoteData == null) return;
         var nextLevelCrystal = nextStatuePromoteData.getCostItems()[0].getCount();
 
         // delete item from inventory
         var itemNumrequired = Math.min(itemNum, nextLevelCrystal - this.getCurrentCrystal(cityId));
-        player.getInventory().removeItemById(nextStatuePromoteData.getCostItems()[0].getId(), itemNumrequired);
+        player
+                .getInventory()
+                .removeItemById(nextStatuePromoteData.getCostItems()[0].getId(), itemNumrequired);
 
         // update number oculi
         this.setCurrentCrystal(cityId, this.getCurrentCrystal(cityId) + itemNumrequired);
@@ -314,7 +319,10 @@ public class SotSManager extends BasePlayerManager {
             this.levelupCurrentStatue(cityId);
 
             // update max stamina and notify client
-            player.setProperty(PlayerProperty.PROP_MAX_STAMINA, player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + nextStatuePromoteData.getStamina(), true);
+            player.setProperty(
+                    PlayerProperty.PROP_MAX_STAMINA,
+                    player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + nextStatuePromoteData.getStamina(),
+                    true);
 
             // Add items to inventory
             if (nextStatuePromoteData.getRewardIdList() != null) {
@@ -322,7 +330,9 @@ public class SotSManager extends BasePlayerManager {
                     RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
                     if (rewardData == null) continue;
 
-                    player.getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.CityLevelupReward);
+                    player
+                            .getInventory()
+                            .addItemParamDatas(rewardData.getRewardItemList(), ActionReason.CityLevelupReward);
                 }
             }
 
@@ -331,6 +341,13 @@ public class SotSManager extends BasePlayerManager {
         }
 
         // Packets
-        player.sendPacket(new PacketLevelupCityRsp(sceneId, this.getCurrentLevel(cityId), cityId, this.getCurrentCrystal(cityId), areaId, 0));
+        player.sendPacket(
+                new PacketLevelupCityRsp(
+                        sceneId,
+                        this.getCurrentLevel(cityId),
+                        cityId,
+                        this.getCurrentCrystal(cityId),
+                        areaId,
+                        0));
     }
 }

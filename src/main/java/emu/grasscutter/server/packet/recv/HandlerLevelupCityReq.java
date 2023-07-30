@@ -14,6 +14,9 @@ public class HandlerLevelupCityReq extends PacketHandler {
         LevelupCityReq req = LevelupCityReq.parseFrom(payload);
 
         // Level up city
-        session.getPlayer().getSotsManager().levelUpSotS(req.getAreaId(), req.getSceneId(), req.getItemNum());
+        session
+                .getPlayer()
+                .getSotsManager()
+                .levelUpSotS(req.getAreaId(), req.getSceneId(), req.getItemNum());
     }
 }

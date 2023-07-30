@@ -70,8 +70,6 @@ public enum PlayerProperty {
     PROP_PLAYER_DENDROCULUS(10054, 0), // Amount of Dendroculus collected [0, 270]
     PROP_PLAYER_DENDROCULUS_LEVEL(10055, 1, 10); // level of Dendroculus collected [1, 10]
 
-
-
     private static final int inf = Integer.MAX_VALUE; // Maybe this should be something else?
     private static final Int2ObjectMap<PlayerProperty> map = new Int2ObjectOpenHashMap<>();
 
