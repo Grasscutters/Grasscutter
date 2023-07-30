@@ -7,13 +7,21 @@ import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.CityData;
+import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketLevelupCityRsp;
+import emu.grasscutter.server.packet.send.PacketSceneForceUnlockNotify;
+
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Optional;
 
 // Statue of the Seven Manager
 public class SotSManager extends BasePlayerManager {
@@ -207,5 +215,122 @@ public class SotSManager extends BasePlayerManager {
                 }
             }
         }
+    }
+
+    public CityData getCityByAreaId(int areaId) {
+        return GameData.getCityDataMap().values().stream()
+                .filter(city -> city.getAreaIdVec().contains(areaId))
+                .findFirst()
+            .orElse(null);
+    }
+
+    public int getCurrentCrystal(int cityId) {
+        switch (cityId) {
+            case 1:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_ANEMOCULUS);
+            case 2:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_GEOCULUS);
+            case 3:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_ELECTROCULUS);
+            case 4:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_DENDROCULUS);
+            default:
+                return 0;
+        }
+    }
+
+    public void setCurrentCrystal(int cityId, int value) {
+        switch (cityId) {
+            case 1:
+                player.setProperty(PlayerProperty.PROP_PLAYER_ANEMOCULUS, value);
+                break;
+            case 2:
+                player.setProperty(PlayerProperty.PROP_PLAYER_GEOCULUS, value);
+                break;
+            case 3:
+                player.setProperty(PlayerProperty.PROP_PLAYER_ELECTROCULUS, value);
+                break;
+            case 4:
+                player.setProperty(PlayerProperty.PROP_PLAYER_DENDROCULUS, value);
+                break;
+        }
+    }
+
+    public int getCurrentLevel(int cityId) {
+        switch (cityId) {
+            case 1:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_ANEMOCULUS_LEVEL);
+            case 2:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_GEOCULUS_LEVEL);
+            case 3:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_ELECTROCULUS_LEVEL);
+            case 4:
+                return player.getProperty(PlayerProperty.PROP_PLAYER_DENDROCULUS_LEVEL);
+            default:
+                return 0;
+        }
+    }
+
+    public void levelupCurrentStatue(int cityId) {
+        switch (cityId) {
+            case 1:
+                player.setProperty(PlayerProperty.PROP_PLAYER_ANEMOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                break;
+            case 2:
+                player.setProperty(PlayerProperty.PROP_PLAYER_GEOCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                break;
+            case 3:
+                player.setProperty(PlayerProperty.PROP_PLAYER_ELECTROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                break;
+            case 4:
+                player.setProperty(PlayerProperty.PROP_PLAYER_DENDROCULUS_LEVEL, this.getCurrentLevel(cityId) + 1);
+                break;
+        }
+    }
+
+    public void levelUpSotS(int areaId, int sceneId, int itemNum) {
+        if (itemNum <= 0) return;
+        Grasscutter.getLogger().debug("Level up SotS: " + areaId + " " + sceneId + " " + itemNum);
+
+        // search city by areaId
+        var city = this.getCityByAreaId(areaId);
+        if (city == null) return;
+        var cityId = city.getCityId();
+
+        // check data level up
+        var nextStatuePromoteData = GameData.getStatuePromoteData(cityId, this.getCurrentLevel(cityId) + 1);
+        if (nextStatuePromoteData == null) return;
+        var nextLevelCrystal = nextStatuePromoteData.getCostItems()[0].getCount();
+
+        // delete item from inventory
+        var itemNumrequired = Math.min(itemNum, nextLevelCrystal - this.getCurrentCrystal(cityId));
+        player.getInventory().removeItemById(nextStatuePromoteData.getCostItems()[0].getId(), itemNumrequired);
+
+        // update number oculi
+        this.setCurrentCrystal(cityId, this.getCurrentCrystal(cityId) + itemNumrequired);
+        // handle oculi overflow
+        if (this.getCurrentCrystal(cityId) >= nextLevelCrystal) {
+            this.setCurrentCrystal(cityId, this.getCurrentCrystal(cityId) - nextLevelCrystal);
+            this.levelupCurrentStatue(cityId);
+
+            // update max stamina and notify client
+            player.setProperty(PlayerProperty.PROP_MAX_STAMINA, player.getProperty(PlayerProperty.PROP_MAX_STAMINA) + nextStatuePromoteData.getStamina(), true);
+
+            // Add items to inventory
+            if (nextStatuePromoteData.getRewardIdList() != null) {
+                for (int rewardId : nextStatuePromoteData.getRewardIdList()) {
+                    RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
+                    if (rewardData == null) continue;
+
+                    player.getInventory().addItemParamDatas(rewardData.getRewardItemList(), ActionReason.CityLevelupReward);
+                }
+            }
+
+            // unlock forcescene
+            player.sendPacket(new PacketSceneForceUnlockNotify(1, true));
+        }
+
+        // Packets
+        player.sendPacket(new PacketLevelupCityRsp(sceneId, this.getCurrentLevel(cityId), cityId, this.getCurrentCrystal(cityId), areaId, 0));
     }
 }

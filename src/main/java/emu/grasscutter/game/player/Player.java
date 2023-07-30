@@ -580,6 +580,16 @@ public class Player implements PlayerHook, FieldFetch {
             withQuesting ? 10000 : 24000);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 160);
 
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_ANEMOCULUS_LEVEL, 1);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_GEOCULUS_LEVEL, 1);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_ELECTROCULUS_LEVEL, 1);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_DENDROCULUS_LEVEL, 1);
+
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_ANEMOCULUS, 0);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_GEOCULUS, 0);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_ELECTROCULUS, 0);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_DENDROCULUS, 0);
+
         // The player's current stamina is always their max stamina.
         this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
             this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
@@ -1520,6 +1530,8 @@ public class Player implements PlayerHook, FieldFetch {
                         PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
                     case PROP_PLAYER_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
                         PropChangeReason.PROP_CHANGE_REASON_LEVELUP));
+                    case PROP_MAX_STAMINA -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                        PropChangeReason.PROP_CHANGE_REASON_CITY_LEVELUP));
 
                     // TODO: Handle world level changing.
                     // case PROP_PLAYER_WORLD_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,

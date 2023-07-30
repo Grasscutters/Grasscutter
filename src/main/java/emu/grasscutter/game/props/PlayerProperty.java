@@ -60,7 +60,17 @@ public enum PlayerProperty {
     PROP_IS_AUTO_UNLOCK_SPECIFIC_EQUIP(10044), // New; unknown/un-used.
     PROP_PLAYER_GCG_COIN(10045), // New; unknown/un-used.
     PROP_PLAYER_WAIT_SUB_GCG_COIN(10046), // New; unknown/un-used.
-    PROP_PLAYER_ONLINE_TIME(10047); // New; unknown/un-used.
+    PROP_PLAYER_ONLINE_TIME(10047), // New; unknown/un-used.
+    PROP_PLAYER_ANEMOCULUS(10048, 0), // Amount of Anemoculus collected [0, 65]
+    PROP_PLAYER_ANEMOCULUS_LEVEL(10049, 1, 10), // level of Anemoculus collected [1, 10]
+    PROP_PLAYER_GEOCULUS(10050, 0), // Amount of Geoculus collected [0, 131]
+    PROP_PLAYER_GEOCULUS_LEVEL(10051, 1, 10), // level of Geoculus collected [1, 10]
+    PROP_PLAYER_ELECTROCULUS(10052, 0), // Amount of Electroculus collected [0, 180]
+    PROP_PLAYER_ELECTROCULUS_LEVEL(10053, 1, 10), // level of Electroculus collected [1, 10]
+    PROP_PLAYER_DENDROCULUS(10054, 0), // Amount of Dendroculus collected [0, 270]
+    PROP_PLAYER_DENDROCULUS_LEVEL(10055, 1, 10); // level of Dendroculus collected [1, 10]
+
+
 
     private static final int inf = Integer.MAX_VALUE; // Maybe this should be something else?
     private static final Int2ObjectMap<PlayerProperty> map = new Int2ObjectOpenHashMap<>();
