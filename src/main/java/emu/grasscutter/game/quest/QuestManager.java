@@ -1,6 +1,5 @@
 package emu.grasscutter.game.quest;
 
-import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.MainQuestData;
@@ -31,10 +30,13 @@ import static emu.grasscutter.GameConstants.DEBUG;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 import static emu.grasscutter.config.Configuration.SERVER;
 
-public class QuestManager extends BasePlayerManager {
+public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
+
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
-    @Transient @Getter private final List<Integer> loggedQuests;
+    @Getter private final List<Integer> loggedQuests;
+
+    @Getter private final List<Integer> activeGivings = new ArrayList<>();
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
@@ -45,6 +47,7 @@ public class QuestManager extends BasePlayerManager {
             60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
             FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
     }
+
     /*
         On SetPlayerBornDataReq, the server sends FinishedParentQuestNotify, with this exact
         parentQuestList. Captured on Game version 2.7
