@@ -30,9 +30,11 @@ public final class GivingData extends GameResource {
     private GiveType giveType;
 
     public enum GiveMethod {
+        @SerializedName("GIVING_METHOD_NONE") NONE,
         @SerializedName("GIVING_METHOD_EXACT") EXACT,
         @SerializedName("GIVING_METHOD_GROUP") GROUP,
-        @SerializedName("GIVING_METHOD_VAGUE_GROUP") GROUP_VAGUE
+        @SerializedName("GIVING_METHOD_VAGUE_GROUP") GROUP_VAGUE,
+        @SerializedName("GIVING_METHOD_ANY_NO_FINISH") ANY
     }
 
     public enum GiveType {
