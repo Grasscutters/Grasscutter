@@ -53,10 +53,10 @@ public final class DungeonManager {
     public DungeonManager(@NonNull Scene scene, @NonNull DungeonData dungeonData) {
         this.scene = scene;
         this.dungeonData = dungeonData;
-        if(dungeonData.getPassCond() == 0){
+        if (dungeonData.getPassCond() == 0) {
             this.passConfigData = new DungeonPassConfigData();
             this.passConfigData.setConds(new ArrayList<>());
-        }else {
+        } else {
             this.passConfigData = GameData.getDungeonPassConfigDataMap().get(dungeonData.getPassCond());
         }
         this.finishedConditions = new int[this.passConfigData.getConds().size()];
@@ -81,7 +81,7 @@ public final class DungeonManager {
     }
 
     public boolean isFinishedSuccessfully() {
-        if(passConfigData.getLogicType()==null) return false;
+        if (passConfigData.getLogicType() == null) return false;
         return LogicType.calculate(passConfigData.getLogicType(), finishedConditions);
     }
 
