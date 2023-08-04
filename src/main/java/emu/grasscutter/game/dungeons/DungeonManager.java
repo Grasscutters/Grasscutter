@@ -53,8 +53,13 @@ public final class DungeonManager {
     public DungeonManager(@NonNull Scene scene, @NonNull DungeonData dungeonData) {
         this.scene = scene;
         this.dungeonData = dungeonData;
-        this.passConfigData = GameData.getDungeonPassConfigDataMap().get(dungeonData.getPassCond());
-        this.finishedConditions = new int[passConfigData.getConds().size()];
+        if (dungeonData.getPassCond() == 0) {
+            this.passConfigData = new DungeonPassConfigData();
+            this.passConfigData.setConds(new ArrayList<>());
+        } else {
+            this.passConfigData = GameData.getDungeonPassConfigDataMap().get(dungeonData.getPassCond());
+        }
+        this.finishedConditions = new int[this.passConfigData.getConds().size()];
     }
 
     public void triggerEvent(DungeonPassConditionType conditionType, int... params) {
@@ -76,6 +81,7 @@ public final class DungeonManager {
     }
 
     public boolean isFinishedSuccessfully() {
+        if (passConfigData.getLogicType() == null) return false;
         return LogicType.calculate(passConfigData.getLogicType(), finishedConditions);
     }
 

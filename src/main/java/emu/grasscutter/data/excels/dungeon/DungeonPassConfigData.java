@@ -6,12 +6,13 @@ import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.quest.enums.LogicType;
 import java.util.List;
 import lombok.Getter;
+import lombok.Setter;
 
 @ResourceType(name = "DungeonPassExcelConfigData.json")
 public class DungeonPassConfigData extends GameResource {
     @Getter private int id;
     @Getter private LogicType logicType;
-    @Getter private List<DungeonPassCondition> conds;
+    @Getter @Setter private List<DungeonPassCondition> conds;
 
     public static class DungeonPassCondition {
         @Getter private DungeonPassConditionType condType;
