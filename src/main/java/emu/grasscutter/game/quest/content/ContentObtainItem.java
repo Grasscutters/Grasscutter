@@ -17,8 +17,7 @@ public class ContentObtainItem extends BaseContent {
         if (targetAmount == 0) {
             targetAmount = 1;
         }
-        val checkItem = quest.getOwner().getInventory().getItemById(itemId);
         val amount = quest.getOwner().getInventory().getItemCountById(itemId);
-        return checkItem != null && amount >= targetAmount;
+        return amount >= targetAmount;
     }
 }

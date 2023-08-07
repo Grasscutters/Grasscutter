@@ -18,9 +18,11 @@ public class ConditionPackHaveItem extends BaseCondition {
             String paramStr,
             int... params) {
         val itemId = condition.getParam()[0];
-        val targetAmount = condition.getParam()[1];
-        val checkItem = owner.getInventory().getItemById(itemId);
+        var targetAmount = condition.getParam()[1];
+        if (targetAmount == 0) {
+            targetAmount = 1;
+        }
         val amount = owner.getInventory().getItemCountById(itemId);
-        return checkItem != null && amount >= targetAmount;
+        return amount >= targetAmount;
     }
 }

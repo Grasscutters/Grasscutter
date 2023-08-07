@@ -19,8 +19,7 @@ public class ConditionItemNumLessThan extends BaseCondition {
             int... params) {
         val itemId = condition.getParam()[0];
         val targetAmount = condition.getParam()[1];
-        val checkItem = owner.getInventory().getItemById(itemId);
         val amount = owner.getInventory().getItemCountById(itemId);
-        return checkItem == null || amount < targetAmount;
+        return amount < targetAmount;
     }
 }

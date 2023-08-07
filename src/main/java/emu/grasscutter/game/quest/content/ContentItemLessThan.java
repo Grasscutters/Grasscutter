@@ -14,8 +14,7 @@ public class ContentItemLessThan extends BaseContent {
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         val itemId = condition.getParam()[0];
         val targetAmount = condition.getParam()[1];
-        val checkItem = quest.getOwner().getInventory().getItemById(itemId);
         val amount = quest.getOwner().getInventory().getItemCountById(itemId);
-        return checkItem == null || amount < targetAmount;
+        return amount < targetAmount;
     }
 }
