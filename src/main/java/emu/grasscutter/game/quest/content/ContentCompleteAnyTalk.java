@@ -4,8 +4,8 @@ import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_COMPLE
 
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
-import lombok.val;
 import java.util.Arrays;
+import lombok.val;
 
 @QuestValueContent(QUEST_CONTENT_COMPLETE_ANY_TALK)
 public class ContentCompleteAnyTalk extends BaseContent {
@@ -13,9 +13,8 @@ public class ContentCompleteAnyTalk extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        var conditionTalk = Arrays.stream(condition.getParamStr().split(","))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        var conditionTalk =
+                Arrays.stream(condition.getParamStr().split(",")).mapToInt(Integer::parseInt).toArray();
 
         for (var talkId : conditionTalk) {
             val checkMainQuest = quest.getOwner().getQuestManager().getMainQuestByTalkId(talkId);

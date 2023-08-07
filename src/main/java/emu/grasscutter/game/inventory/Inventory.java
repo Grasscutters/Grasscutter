@@ -17,10 +17,9 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.longs.*;
-import lombok.val;
-import javax.annotation.Nullable;
-
 import java.util.*;
+import javax.annotation.Nullable;
+import lombok.val;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -65,8 +64,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         return this.getItems().get(id);
     }
 
-    @Nullable
-    public InventoryTab getInventoryTabByItemId(int itemId) {
+    @Nullable public InventoryTab getInventoryTabByItemId(int itemId) {
         val itemData = GameData.getItemDataMap().get(itemId);
         if (itemData == null || itemData.getItemType() == null) {
             return null;
@@ -74,8 +72,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         return getInventoryTab(itemData.getItemType());
     }
 
-    @Nullable
-    public GameItem getItemById(int itemId) {
+    @Nullable public GameItem getItemById(int itemId) {
         val inventoryTab = this.getInventoryTabByItemId(itemId);
         return inventoryTab != null ? inventoryTab.getItemById(itemId) : null;
     }

@@ -16,6 +16,7 @@ public class ContentLuaNotify extends BaseContent {
         if (targetAmount == 0) {
             targetAmount = 1;
         }
-        return targetAmount <= quest.getOwner().getPlayerProgress().getCurrentProgress(condition.getParamStr());
+        return targetAmount
+                <= quest.getOwner().getPlayerProgress().getCurrentProgress(condition.getParamStr());
     }
 }

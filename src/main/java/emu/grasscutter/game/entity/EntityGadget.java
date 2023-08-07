@@ -158,7 +158,11 @@ public class EntityGadget extends EntityBaseGadget {
                 .getScriptManager()
                 .callEvent(
                         new ScriptArgs(
-                                this.getGroupId(), EventType.EVENT_GADGET_STATE_CHANGE, state, this.getConfigId()).setParam3(oldState));
+                                        this.getGroupId(),
+                                        EventType.EVENT_GADGET_STATE_CHANGE,
+                                        state,
+                                        this.getConfigId())
+                                .setParam3(oldState));
     }
 
     @Deprecated(forRemoval = true) // Dont use!
