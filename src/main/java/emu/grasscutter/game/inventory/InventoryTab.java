@@ -10,4 +10,6 @@ public interface InventoryTab {
     int getSize();
 
     int getMaxCapacity();
+
+    int getItemCountById(int itemId);
 }

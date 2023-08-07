@@ -17,6 +17,9 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.longs.*;
+import lombok.val;
+import javax.annotation.Nullable;
+
 import java.util.*;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
@@ -60,6 +63,26 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
     public GameItem getItemByGuid(long id) {
         return this.getItems().get(id);
+    }
+
+    @Nullable
+    public InventoryTab getInventoryTabByItemId(int itemId) {
+        val itemData = GameData.getItemDataMap().get(itemId);
+        if (itemData == null || itemData.getItemType() == null) {
+            return null;
+        }
+        return getInventoryTab(itemData.getItemType());
+    }
+
+    @Nullable
+    public GameItem getItemById(int itemId) {
+        val inventoryTab = this.getInventoryTabByItemId(itemId);
+        return inventoryTab != null ? inventoryTab.getItemById(itemId) : null;
+    }
+
+    public int getItemCountById(int itemId) {
+        val inventoryTab = this.getInventoryTabByItemId(itemId);
+        return inventoryTab != null ? inventoryTab.getItemCountById(itemId) : 0;
     }
 
     public boolean addItem(int itemId) {
@@ -562,7 +585,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                 tab = getInventoryTab(item.getItemData().getItemType());
             }
 
-            putItem(item, tab);
+            this.putItem(item, tab);
 
             // Equip to a character if possible
             if (item.isEquipped()) {
