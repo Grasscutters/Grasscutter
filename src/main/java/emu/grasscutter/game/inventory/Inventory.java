@@ -66,7 +66,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     @Nullable
-    public InventoryTab getInventoryTabByItemId(int itemId){
+    public InventoryTab getInventoryTabByItemId(int itemId) {
         val itemData = GameData.getItemDataMap().get(itemId);
         if (itemData == null || itemData.getItemType() == null) {
             return null;
@@ -76,13 +76,13 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
 
     @Nullable
     public GameItem getItemById(int itemId) {
-        val inventoryTab = getInventoryTabByItemId(itemId);
-        return inventoryTab!=null ? inventoryTab.getItemById(itemId) : null;
+        val inventoryTab = this.getInventoryTabByItemId(itemId);
+        return inventoryTab != null ? inventoryTab.getItemById(itemId) : null;
     }
 
-    public int getItemCountById(int itemId){
-        val inventoryTab = getInventoryTabByItemId(itemId);
-        return inventoryTab!=null ? inventoryTab.getItemCountById(itemId) : 0;
+    public int getItemCountById(int itemId) {
+        val inventoryTab = this.getInventoryTabByItemId(itemId);
+        return inventoryTab != null ? inventoryTab.getItemCountById(itemId) : 0;
     }
 
     public boolean addItem(int itemId) {
