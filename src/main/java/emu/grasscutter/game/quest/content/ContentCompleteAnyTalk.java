@@ -23,8 +23,9 @@ public class ContentCompleteAnyTalk extends BaseContent {
                 if (talkId == params[0]) return true;
                 continue;
             }
+
             val talkData = checkMainQuest.getTalks().get(talkId);
-            if(talkData != null) {
+            if (talkData != null) {
                 return true;
             }
         }
