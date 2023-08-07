@@ -10,7 +10,12 @@ import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 public class ExecRandomQuestVar extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
-        quest.getMainQuest().randomQuestVar(Integer.parseInt(paramStr[0]), Integer.parseInt(paramStr[1]), Integer.parseInt(paramStr[2]));
+        quest
+                .getMainQuest()
+                .randomQuestVar(
+                        Integer.parseInt(paramStr[0]),
+                        Integer.parseInt(paramStr[1]),
+                        Integer.parseInt(paramStr[2]));
         return true;
     }
 }

@@ -125,8 +125,7 @@ public class GameMainQuest {
         int previousValue = this.questVars[i];
         this.questVars[i] = Utils.random.nextInt(low, high);
         Grasscutter.getLogger()
-                .debug(
-                        "questVar {} value randomized from {} to {}", i, previousValue, this.questVars[i]);
+                .debug("questVar {} value randomized from {} to {}", i, previousValue, this.questVars[i]);
 
         this.triggerQuestVarAction(i, this.questVars[i]);
     }
