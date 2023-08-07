@@ -286,18 +286,18 @@ public final class DungeonManager {
     }
 
     public void finishDungeon() {
-        notifyEndDungeon(true);
-        endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
+        this.notifyEndDungeon(true);
+        this.endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
     }
 
     public void quitDungeon() {
-        notifyEndDungeon(false);
-        endDungeon(BaseDungeonResult.DungeonEndReason.QUIT);
+        this.notifyEndDungeon(false);
+        this.endDungeon(BaseDungeonResult.DungeonEndReason.QUIT);
     }
 
     public void failDungeon() {
-        notifyEndDungeon(false);
-        endDungeon(BaseDungeonResult.DungeonEndReason.FAILED);
+        this.notifyEndDungeon(false);
+        this.endDungeon(BaseDungeonResult.DungeonEndReason.FAILED);
     }
 
     public void notifyEndDungeon(boolean successfully) {
@@ -309,7 +309,7 @@ public final class DungeonManager {
                             if (successfully) {
                                 var dungeonId = this.getDungeonData().getId();
                                 p.getPlayerProgress().markDungeonAsComplete(dungeonId);
-                            }else{
+                            } else {
                                 p.getQuestManager()
                                         .queueEvent(QuestContent.QUEST_CONTENT_FAIL_DUNGEON, dungeonData.getId());
                             }
