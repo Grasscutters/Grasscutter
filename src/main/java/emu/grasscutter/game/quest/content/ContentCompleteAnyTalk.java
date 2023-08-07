@@ -17,7 +17,7 @@ public class ContentCompleteAnyTalk extends BaseContent {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        for(var talkId : conditionTalk) {
+        for (var talkId : conditionTalk) {
             val checkMainQuest = quest.getOwner().getQuestManager().getMainQuestByTalkId(talkId);
             if (checkMainQuest == null) {
                 if (talkId == params[0]) return true;
