@@ -23,6 +23,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
 
 public class CombineManger extends BaseGameSystem {
@@ -148,23 +149,20 @@ public class CombineManger extends BaseGameSystem {
                     // for yae miko, "Has a 25% chance to get 1 regional Character Talent Material (base
                     // material excluded) when crafting. The rarity is that of the base material." from wiki
                     // map of material id to region id
-                    HashMap<Integer, Integer> itemToRegion =
-                            new HashMap<>() {
-                                {
-                                    put(104301, 1);
-                                    put(104304, 1);
-                                    put(104307, 1);
-                                    put(104310, 2);
-                                    put(104313, 2);
-                                    put(104316, 2);
-                                    put(104320, 3);
-                                    put(104323, 3);
-                                    put(104326, 3);
-                                    put(104329, 4);
-                                    put(104332, 4);
-                                    put(104335, 4);
-                                }
-                            };
+                    Map<Integer, Integer> itemToRegion = Map.of(
+                            104301, 1,
+                            104304, 1,
+                            104307, 1,
+                            104310, 2,
+                            104313, 2,
+                            104316, 2,
+                            104320, 3,
+                            104323, 3,
+                            104326, 3,
+                            104329, 4,
+                            104332, 4,
+                            104335, 4
+                    );
 
                     // get list of material id with every region
                     HashMap<Integer, List<Integer>> regionToId = new HashMap<>();
