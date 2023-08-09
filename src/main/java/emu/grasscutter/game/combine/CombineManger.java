@@ -115,7 +115,7 @@ public class CombineManger extends BaseGameSystem {
         if (luckyCount > 0) {
             switch (combineBonusData.getBonusType()) {
                 case "COMBINE_BONUS_DOUBLE" -> {
-                    var combineExtra = new ItemParamData(combineData.getResultItemId(), luckyCount * 2);
+                    var combineExtra = new ItemParamData(combineData.getResultItemId(), luckyCount);
                     player.getInventory().addItem(combineExtra);
                     result.getExtra().add(combineExtra);
                 }
