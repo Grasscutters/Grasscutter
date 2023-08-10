@@ -81,7 +81,7 @@ public final class DungeonManager {
     }
 
     public boolean isFinishedSuccessfully() {
-        if (passConfigData.getLogicType() == null) return false;
+        if (passConfigData.getConds() == null) return false;
         return LogicType.calculate(passConfigData.getLogicType(), finishedConditions);
     }
 
