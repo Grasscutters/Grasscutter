@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @ResourceType(
-        name = {"CombineBonusExcelConfigData.json"},
+        name = "CombineBonusExcelConfigData.json",
         loadPriority = LoadPriority.LOW)
 public class CombineBonusData extends GameResource {
     @Getter @Setter private int avatarId;

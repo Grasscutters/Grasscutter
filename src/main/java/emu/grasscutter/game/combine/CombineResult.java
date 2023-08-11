@@ -4,11 +4,11 @@ import emu.grasscutter.data.common.ItemParamData;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-
+@Setter @Getter
 public class CombineResult {
-    @Getter @Setter private List<ItemParamData> material;
-    @Getter @Setter private List<ItemParamData> result;
-    @Getter @Setter private List<ItemParamData> extra;
-    @Getter @Setter private List<ItemParamData> back;
-    @Getter @Setter private List<ItemParamData> random;
+    private List<ItemParamData> material;
+    private List<ItemParamData> result;
+    private List<ItemParamData> extra;
+    private List<ItemParamData> back;
+    private List<ItemParamData> random;
 }
