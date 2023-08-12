@@ -4,6 +4,7 @@ import emu.grasscutter.data.common.ItemParamData;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+
 @Setter @Getter
 public class CombineResult {
     private List<ItemParamData> material;
