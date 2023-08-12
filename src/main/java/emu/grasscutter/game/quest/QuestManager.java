@@ -113,7 +113,10 @@ public class QuestManager extends BasePlayerManager {
 
                 47001, 47002, 47003, 47004,
 
-                2010103, 2010144 // Prologue Act 2: Chasing Shadows
+                2010103, 2010144, // Prologue Act 2: Chasing Shadows,
+
+                2012 // This is the main quest ID for Chapter 2 Act 1.
+                     // Used for debugging giving items.
             ));
         }
     }
