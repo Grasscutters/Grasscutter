@@ -4,11 +4,9 @@ import static emu.grasscutter.utils.lang.Language.translate;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.config.Configuration;
-import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.database.DatabaseManager;
+import emu.grasscutter.database.*;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import java.util.List;
@@ -31,17 +29,17 @@ public final class AccountCommand implements CommandHandler {
             return;
         }
 
-        if (args.size() < 2) {
-            sendUsageMessage(sender);
-            return;
-        }
-
         String action = args.get(0);
-        String username = args.get(1);
 
         switch (action) {
             default -> this.sendUsageMessage(sender);
             case "create" -> {
+                if (args.size() < 2) {
+                    this.sendUsageMessage(sender);
+                    return;
+                }
+                var username = args.get(1);
+
                 int uid = 0;
                 String password = "";
                 if (Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
@@ -94,6 +92,12 @@ public final class AccountCommand implements CommandHandler {
                 }
             }
             case "delete" -> {
+                if (args.size() < 2) {
+                    this.sendUsageMessage(sender);
+                    return;
+                }
+                var username = args.get(1);
+
                 // Get the account we want to delete.
                 Account toDelete = DatabaseHelper.getAccountByName(username);
                 if (toDelete == null) {
@@ -104,6 +108,12 @@ public final class AccountCommand implements CommandHandler {
                 CommandHandler.sendMessage(sender, translate(sender, "commands.account.delete"));
             }
             case "resetpass" -> {
+                if (args.size() < 2) {
+                    this.sendUsageMessage(sender);
+                    return;
+                }
+                var username = args.get(1);
+
                 if (!Configuration.ACCOUNT.EXPERIMENTAL_RealPassword) {
                     CommandHandler.sendMessage(
                             sender, "resetpass requires EXPERIMENTAL_RealPassword to be true.");
