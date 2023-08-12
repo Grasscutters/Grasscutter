@@ -405,6 +405,10 @@ public final class GameData {
             new Int2ObjectOpenHashMap<>();
 
     @Getter
+    private static final Int2ObjectMap<StatuePromoteData> statuePromoteDataMap =
+            new Int2ObjectOpenHashMap<>();
+
+    @Getter
     private static final Int2ObjectMap<WeatherData> weatherDataMap = new Int2ObjectOpenHashMap<>();
 
     @Getter
@@ -565,6 +569,10 @@ public final class GameData {
 
     public static WeaponPromoteData getWeaponPromoteData(int promoteId, int promoteLevel) {
         return weaponPromoteDataMap.get((promoteId << 8) + promoteLevel);
+    }
+
+    public static StatuePromoteData getStatuePromoteData(int cityId, int promoteLevel) {
+        return statuePromoteDataMap.get((cityId << 8) + promoteLevel);
     }
 
     public static ReliquaryLevelData getRelicLevelData(int rankLevel, int level) {
