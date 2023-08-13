@@ -956,14 +956,27 @@ public class ScriptLib {
         return 0;
     }
 
-    public int InitTimeAxis(String var1, int[] var2, boolean var3){
-        logger.warn("[LUA] Call unimplemented InitTimeAxis with {} {} {}", var1, var2, var3);
-        //TODO implement var1 == name? var2 == delay? var3 == should loop?
+    public int InitTimeAxis(String identifier, int[] delays, boolean shouldLoop) {
+        if (this.getCurrentGroup().isEmpty()) {
+            logger.warn("[LUA] Call InitTimeAxis without a group");
+            return 0;
+        }
+
+        var scriptManager = this.getSceneScriptManager();
+        var group = this.getCurrentGroup().get();
+
+        // Create a new time axis instance.
+        scriptManager.initTimeAxis(new SceneTimeAxis(
+                scriptManager, group.id,
+                identifier, delays[0], shouldLoop
+        ));
+
         return 0;
     }
-    public int EndTimeAxis(String var1){
-        logger.warn("[LUA] Call unimplemented EndTimeAxis with {}", var1);
-        //TODO implement var1 == name?
+
+    public int EndTimeAxis(String identifier) {
+        this.getSceneScriptManager().stopTimeAxis(identifier);
+
         return 0;
     }
 

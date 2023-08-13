@@ -1,7 +1,5 @@
 package emu.grasscutter.scripts;
 
-import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
-
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
@@ -21,23 +19,29 @@ import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 import emu.grasscutter.utils.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
+import kotlin.Pair;
+import lombok.val;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import javax.annotation.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import javax.annotation.*;
-import kotlin.Pair;
-import lombok.val;
-import org.luaj.vm2.*;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+
+import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
 
 public class SceneScriptManager {
     private final Scene scene;
     private final Map<String, Integer> variables;
     private SceneMeta meta;
     private boolean isInit;
+
+    private final Map<String, SceneTimeAxis> timeAxis
+            = new ConcurrentHashMap<>();
 
     /** current triggers controlled by RefreshGroup */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
@@ -1196,6 +1200,28 @@ public class SceneScriptManager {
                             val entity = scene.getEntityByConfigId(m.config_id);
                             return entity != null && entity.getGroupId() == groupId;
                         });
+    }
+
+    /**
+     * Registers a new time axis for this scene.
+     * Starts the time axis after.
+     *
+     * @param timeAxis The time axis.
+     */
+    public void initTimeAxis(SceneTimeAxis timeAxis) {
+        this.timeAxis.put(timeAxis.getIdentifier(), timeAxis);
+    }
+
+    /**
+     * Terminates a time axis.
+     *
+     * @param identifier The identifier of the time axis.
+     */
+    public void stopTimeAxis(String identifier) {
+        var timeAxis = this.timeAxis.get(identifier);
+        if (timeAxis != null) {
+            timeAxis.stop();
+        }
     }
 
     public void onDestroy() {
