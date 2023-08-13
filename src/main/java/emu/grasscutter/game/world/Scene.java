@@ -910,8 +910,8 @@ public final class Scene {
 
     public int loadDynamicGroup(int group_id) {
         SceneGroup group = getScriptManager().getGroupById(group_id);
-        if (group == null || getScriptManager().getGroupInstanceById(group_id) != null)
-            return -1; // Group not found or already instanced
+        if (group == null)
+            return -1; // Group not found
 
         this.onLoadGroup(new ArrayList<>(List.of(group)));
 
