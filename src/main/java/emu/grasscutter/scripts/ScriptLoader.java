@@ -45,17 +45,10 @@ public class ScriptLoader {
 
         // Lua stuff
         serializer = new LuaSerializer();
+        var ctx = (LuajContext) engine.getContext();
 
-        // Set engine to replace require as a temporary fix to missing scripts
-        LuajContext ctx = (LuajContext) engine.getContext();
-        ctx.globals.set(
-                "require",
-                new OneArgFunction() {
-                    @Override
-                    public LuaValue call(LuaValue arg0) {
-                        return LuaValue.ZERO;
-                    }
-                });
+        // Set the 'require' function handler.
+        ctx.globals.set("require", new RequireFunction());
 
         addEnumByIntValue(ctx, EntityType.values(), "EntityType");
         addEnumByIntValue(ctx, QuestState.values(), "QuestState");
@@ -109,6 +102,34 @@ public class ScriptLoader {
             return Optional.ofNullable(softReference.get());
         } catch (NullPointerException npe) {
             return Optional.empty();
+        }
+    }
+
+    static final class RequireFunction extends OneArgFunction {
+        @Override
+        public LuaValue call(LuaValue arg) {
+            // Resolve the script path.
+            var scriptName = arg.checkjstring();
+            var scriptPath = FileUtils.getScriptPath(
+                    "Common/" + scriptName + ".lua");
+
+            // Load & compile the script.
+            var script = ScriptLoader.getScript(scriptPath.toString());
+            if (script == null) {
+                return LuaValue.NONE;
+            }
+
+            // Append the script to the context.
+            try {
+                script.eval();
+            } catch (Exception exception) {
+                Grasscutter.getLogger()
+                        .error("Loading script {} failed! - {}",
+                                scriptPath, exception.getLocalizedMessage());
+            }
+
+            // TODO: What is the proper return value?
+            return LuaValue.NONE;
         }
     }
 
