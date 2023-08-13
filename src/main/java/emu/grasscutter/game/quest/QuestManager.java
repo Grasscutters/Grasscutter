@@ -170,7 +170,54 @@ public final class QuestManager extends BasePlayerManager {
     }
 
     /**
-     * Attempts to remove the giving action.
+     * Attempts to start the bargain.
+     *
+     * @param bargainId The bargain ID.
+     */
+    public void startBargain(int bargainId) {
+        var progress = this.player.getPlayerProgress();
+        var bargains = progress.getBargains();
+
+        // Check if the bargain is already present.
+        if (bargains.containsKey(bargainId)) {
+            throw new IllegalStateException("Bargain " + bargainId + " is already active.");
+        }
+
+        // Add the action.
+        var bargain = BargainRecord.resolve(bargainId);
+        bargains.put(bargainId, bargain);
+        // Save the bargains.
+        this.player.save();
+
+        // Send the player the start packet.
+        this.player.sendPacket(new PacketBargainStartNotify(bargain));
+    }
+
+    /**
+     * Attempts to stop the bargain.
+     *
+     * @param bargainId The bargain ID.
+     */
+    public void stopBargain(int bargainId) {
+            var progress = this.player.getPlayerProgress();
+        var bargains = progress.getBargains();
+
+        // Check if the bargain is already present.
+        if (!bargains.containsKey(bargainId)) {
+            throw new IllegalStateException("Bargain " + bargainId + " is not active.");
+        }
+
+        // Remove the action.
+        bargains.remove(bargainId);
+        // Save the bargains.
+        this.player.save();
+
+        // Send the player the stop packet.
+        this.player.sendPacket(new PacketBargainTerminateNotify(bargainId));
+    }
+
+    /**
+     * Sends the giving records to the player.
      */
     public void sendGivingRecords() {
         // Send the record to the player.

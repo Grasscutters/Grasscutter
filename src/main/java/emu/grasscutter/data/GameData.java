@@ -141,6 +141,10 @@ public final class GameData {
             new Int2ObjectOpenHashMap<>();
 
     @Getter
+    private static final Int2ObjectMap<BargainData> bargainDataMap
+        = new Int2ObjectOpenHashMap<>();
+
+    @Getter
     private static final Int2ObjectMap<BattlePassMissionData> battlePassMissionDataMap =
             new Int2ObjectOpenHashMap<>();
 

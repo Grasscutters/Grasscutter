@@ -2,7 +2,7 @@ package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.quest.ItemGiveRecord;
+import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.*;
 import lombok.*;
@@ -29,12 +29,14 @@ public class PlayerProgress {
     private Map<String, Integer> questProgressCountMap;
 
     private Map<Integer, ItemGiveRecord> itemGivings;
+    private Map<Integer, BargainRecord> bargains;
 
     public PlayerProgress() {
         this.questProgressCountMap = new ConcurrentHashMap<>();
         this.completedDungeons = new IntArrayList();
         this.itemHistory = new Int2ObjectOpenHashMap<>();
         this.itemGivings = new Int2ObjectOpenHashMap<>();
+        this.bargains = new Int2ObjectOpenHashMap<>();
     }
 
     /**
