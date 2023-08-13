@@ -346,6 +346,8 @@ public class AbilityModifier implements Serializable {
         public int[] callParamList;
         public String funcName;
 
+        public String content;
+
         public enum LuaCallType {
             FromGroup,
             CurGalleryControlGroup,
