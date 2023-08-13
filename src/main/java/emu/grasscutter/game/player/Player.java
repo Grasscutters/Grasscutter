@@ -15,6 +15,7 @@ import emu.grasscutter.game.activity.ActivityManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarStorage;
 import emu.grasscutter.game.battlepass.BattlePassManager;
+import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.FriendsList;
@@ -28,7 +29,6 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.SatiationManager;
-import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.cooking.ActiveCookCompoundData;
 import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
 import emu.grasscutter.game.managers.cooking.CookingManager;
@@ -38,6 +38,7 @@ import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.forging.ForgingManager;
 import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.game.managers.mapmark.MapMarksManager;
+import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
@@ -221,6 +222,8 @@ public class Player implements PlayerHook, FieldFetch {
 
     @Getter @Setter private ElementType mainCharacterElement = ElementType.None;
 
+    @Getter @Setter private Map<Integer, CityInfoData> cityInfoData; // cityId -> CityData
+
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"}) // Morphia only!
     public Player() {
@@ -267,6 +270,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.chatEmojiIdList = new ArrayList<>();
         this.playerProgress = new PlayerProgress();
         this.activeQuestTimers = new HashSet<>();
+        this.cityInfoData = new HashMap<>();
 
         this.attackResults = new LinkedBlockingQueue<>();
         this.coopRequests = new Int2ObjectOpenHashMap<>();
@@ -1520,6 +1524,8 @@ public class Player implements PlayerHook, FieldFetch {
                         PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
                     case PROP_PLAYER_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
                         PropChangeReason.PROP_CHANGE_REASON_LEVELUP));
+                    case PROP_MAX_STAMINA -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,
+                        PropChangeReason.PROP_CHANGE_REASON_CITY_LEVELUP));
 
                     // TODO: Handle world level changing.
                     // case PROP_PLAYER_WORLD_LEVEL -> this.sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value,

@@ -36,4 +36,9 @@ public class EquipInventoryTab implements InventoryTab {
     public int getMaxCapacity() {
         return this.maxCapacity;
     }
+
+    @Override
+    public int getItemCountById(int itemId) {
+        return (int) items.stream().filter(item -> item.getItemId() == itemId).count();
+    }
 }

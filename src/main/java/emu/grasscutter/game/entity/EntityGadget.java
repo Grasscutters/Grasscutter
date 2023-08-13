@@ -150,6 +150,7 @@ public class EntityGadget extends EntityBaseGadget {
     public void updateState(int state) {
         if (state == this.getState()) return; // Don't triggers events
 
+        var oldState = this.getState();
         this.setState(state);
         ticksSinceChange = getScene().getSceneTimeSeconds();
         this.getScene().broadcastPacket(new PacketGadgetStateNotify(this, state));
@@ -157,7 +158,11 @@ public class EntityGadget extends EntityBaseGadget {
                 .getScriptManager()
                 .callEvent(
                         new ScriptArgs(
-                                this.getGroupId(), EventType.EVENT_GADGET_STATE_CHANGE, state, this.getConfigId()));
+                                        this.getGroupId(),
+                                        EventType.EVENT_GADGET_STATE_CHANGE,
+                                        state,
+                                        this.getConfigId())
+                                .setParam3(oldState));
     }
 
     @Deprecated(forRemoval = true) // Dont use!

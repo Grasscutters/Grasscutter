@@ -2,15 +2,24 @@ package emu.grasscutter.game.managers;
 
 import ch.qos.logback.classic.Logger;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.CityData;
+import emu.grasscutter.data.excels.RewardData;
+import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketLevelupCityRsp;
+import emu.grasscutter.server.packet.send.PacketSceneForceUnlockNotify;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -207,5 +216,92 @@ public class SotSManager extends BasePlayerManager {
                 }
             }
         }
+    }
+
+    public CityData getCityByAreaId(int areaId) {
+        return GameData.getCityDataMap().values().stream()
+                .filter(city -> city.getAreaIdVec().contains(areaId))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public CityInfoData getCityInfo(int cityId) {
+        if (player.getCityInfoData() == null) player.setCityInfoData(new HashMap<>());
+        var cityInfo = player.getCityInfoData().get(cityId);
+        if (cityInfo == null) {
+            cityInfo = new CityInfoData(cityId);
+            player.getCityInfoData().put(cityId, cityInfo);
+        }
+        return cityInfo;
+    }
+
+    public void addCityInfo(CityInfoData cityInfoData) {
+        if (player.getCityInfoData() == null) player.setCityInfoData(new HashMap<>());
+
+        player.getCityInfoData().put(cityInfoData.getCityId(), cityInfoData);
+    }
+
+    public void levelUpSotS(int areaId, int sceneId, int itemNum) {
+        if (itemNum <= 0) return;
+
+        // search city by areaId
+        var city = this.getCityByAreaId(areaId);
+        if (city == null) return;
+        var cityId = city.getCityId();
+
+        // check data level up
+        var cityInfo = this.getCityInfo(cityId);
+        var nextStatuePromoteData = GameData.getStatuePromoteData(cityId, cityInfo.getLevel() + 1);
+        if (nextStatuePromoteData == null) return;
+        var nextLevelCrystal = nextStatuePromoteData.getCostItems()[0].getCount();
+
+        // delete item from inventory
+        var itemNumrequired = Math.min(itemNum, nextLevelCrystal - cityInfo.getNumCrystal());
+        player
+                .getInventory()
+                .removeItemById(nextStatuePromoteData.getCostItems()[0].getId(), itemNumrequired);
+
+        // update number oculi
+        cityInfo.setNumCrystal(cityInfo.getNumCrystal() + itemNumrequired);
+
+        // hanble quest
+        if (itemNumrequired >= 1)
+            player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_CITY_LEVEL_UP, cityId, areaId);
+
+        // handle oculi overflow
+        if (cityInfo.getNumCrystal() >= nextLevelCrystal) {
+            cityInfo.setNumCrystal(cityInfo.getNumCrystal() - nextLevelCrystal);
+            cityInfo.setLevel(cityInfo.getLevel() + 1);
+
+            // update max stamina and notify client
+            player.setProperty(
+                    PlayerProperty.PROP_MAX_STAMINA,
+                    player.getProperty(PlayerProperty.PROP_MAX_STAMINA)
+                            + nextStatuePromoteData.getStamina() * 100,
+                    true);
+
+            // Add items to inventory
+            if (nextStatuePromoteData.getRewardIdList() != null) {
+                for (var rewardId : nextStatuePromoteData.getRewardIdList()) {
+                    RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
+                    if (rewardData == null) continue;
+
+                    player
+                            .getInventory()
+                            .addItemParamDatas(rewardData.getRewardItemList(), ActionReason.CityLevelupReward);
+                }
+            }
+
+            // unlock forcescene
+            player.sendPacket(new PacketSceneForceUnlockNotify(1, true));
+        }
+
+        // update data
+        this.addCityInfo(cityInfo);
+
+        // Packets
+        player.sendPacket(
+                new PacketLevelupCityRsp(
+                        sceneId, cityInfo.getLevel(), cityId, cityInfo.getNumCrystal(), areaId, 0));
     }
 }

@@ -12,10 +12,9 @@ public class ContentCompleteTalk extends BaseContent {
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
         val talkId = condition.getParam()[0];
-        if (talkId != params[0]) return false;
         val checkMainQuest = quest.getOwner().getQuestManager().getMainQuestByTalkId(talkId);
         if (checkMainQuest == null) {
-            return false;
+            return talkId == params[0];
         }
 
         val talkData = checkMainQuest.getTalks().get(talkId);

@@ -12,8 +12,11 @@ public class ContentLuaNotify extends BaseContent {
     @Override
     public boolean execute(
             GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        return condition.getParamStr().equals(paramStr)
-                && condition.getCount()
-                        <= quest.getOwner().getPlayerProgress().getCurrentProgress(paramStr);
+        var targetAmount = condition.getCount();
+        if (targetAmount == 0) {
+            targetAmount = 1;
+        }
+        return targetAmount
+                <= quest.getOwner().getPlayerProgress().getCurrentProgress(condition.getParamStr());
     }
 }

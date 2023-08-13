@@ -16,6 +16,7 @@ import emu.grasscutter.net.proto.ChildQuestOuterClass.ChildQuest;
 import emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.ConversionUtils;
+import emu.grasscutter.utils.Utils;
 import java.util.*;
 import java.util.stream.Collectors;
 import lombok.*;
@@ -116,6 +117,15 @@ public class GameMainQuest {
         Grasscutter.getLogger()
                 .debug(
                         "questVar {} value decremented from {} to {}", i, previousValue, previousValue - dec);
+
+        this.triggerQuestVarAction(i, this.questVars[i]);
+    }
+
+    public void randomQuestVar(int i, int low, int high) {
+        int previousValue = this.questVars[i];
+        this.questVars[i] = Utils.random.nextInt(low, high);
+        Grasscutter.getLogger()
+                .debug("questVar {} value randomized from {} to {}", i, previousValue, this.questVars[i]);
 
         this.triggerQuestVarAction(i, this.questVars[i]);
     }

@@ -129,7 +129,7 @@ public class GameItem {
 
     public void checkIsNew(Inventory inventory) {
         // display notification when player obtain new item
-        if (inventory.getItemByGuid(this.itemId) == null) {
+        if (inventory.getItemById(this.itemId) == null) {
             this.newItem = true;
         }
     }

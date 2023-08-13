@@ -389,6 +389,9 @@ public class StaminaManager extends BasePlayerManager {
             return;
         }
 
+        // Update previous motion state
+        this.previousState = currentState;
+
         // Update the current state.
         this.currentState = motionState;
         // logger.trace(currentState + "\t" + (notifyEntityId == currentAvatarEntityId ? "character" : "vehicle"));
@@ -417,6 +420,11 @@ public class StaminaManager extends BasePlayerManager {
     // Internal handler
 
     private void handleImmediateStamina(GameSession session, @NotNull MotionState motionState) {
+        // Don't double dip on sustained stamina start costs
+        if (previousState == currentState) {
+            return;
+        }
+
         switch (motionState) {
             case MOTION_STATE_CLIMB ->
                 updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_START), true);

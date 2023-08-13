@@ -59,7 +59,7 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_SET_QUEST_VAR(48),
     QUEST_EXEC_INC_QUEST_VAR(49),
     QUEST_EXEC_DEC_QUEST_VAR(50),
-    QUEST_EXEC_RANDOM_QUEST_VAR(51), // missing
+    QUEST_EXEC_RANDOM_QUEST_VAR(51),
     QUEST_EXEC_ACTIVATE_SCANNING_PIC(52), // missing, currently unused
     QUEST_EXEC_RELOAD_SCENE_TAG(53), // missing
     QUEST_EXEC_REGISTER_DYNAMIC_GROUP_ONLY(54), // missing

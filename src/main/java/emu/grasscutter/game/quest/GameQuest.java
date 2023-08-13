@@ -172,6 +172,8 @@ public class GameQuest {
             this.failProgressList = new int[questData.getFailCond().size()];
         }
 
+        this.getMainQuest().getTalks().values().removeIf(talk -> talk.getId() == this.getSubQuestId());
+
         this.getOwner().getPlayerProgress().resetCurrentProgress(String.valueOf(this.subQuestId));
 
         setState(QuestState.QUEST_STATE_UNSTARTED);
