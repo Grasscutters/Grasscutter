@@ -1,32 +1,24 @@
 package emu.grasscutter.scripts;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.dungeons.challenge.enums.ChallengeEventMarkType;
-import emu.grasscutter.game.dungeons.challenge.enums.FatherChallengeProperty;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.EntityType;
+import emu.grasscutter.game.dungeons.challenge.enums.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestState;
 import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
-import emu.grasscutter.scripts.serializer.LuaSerializer;
-import emu.grasscutter.scripts.serializer.Serializer;
+import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
-import java.io.File;
-import java.io.FileReader;
-import java.lang.ref.SoftReference;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ConcurrentHashMap;
-import javax.script.*;
 import lombok.Getter;
-import org.luaj.vm2.LuaTable;
-import org.luaj.vm2.LuaValue;
+import org.luaj.vm2.*;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.script.LuajContext;
+
+import javax.script.*;
+import java.lang.ref.SoftReference;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
@@ -117,29 +109,6 @@ public class ScriptLoader {
             return Optional.ofNullable(softReference.get());
         } catch (NullPointerException npe) {
             return Optional.empty();
-        }
-    }
-
-    @Deprecated(forRemoval = true)
-    public static CompiledScript getScriptByPath(String path) {
-        var sc = tryGet(scriptsCache.get(path));
-        if (sc.isPresent()) {
-            return sc.get();
-        }
-
-        // Grasscutter.getLogger().debug("Loading script " + path);
-
-        File file = new File(path);
-
-        if (!file.exists()) return null;
-
-        try (FileReader fr = new FileReader(file)) {
-            var script = ((Compilable) getEngine()).compile(fr);
-            scriptsCache.put(path, new SoftReference<>(script));
-            return script;
-        } catch (Exception e) {
-            Grasscutter.getLogger().error("Loading script {} failed!", path, e);
-            return null;
         }
     }
 
