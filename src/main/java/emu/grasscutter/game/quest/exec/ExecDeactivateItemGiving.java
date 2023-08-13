@@ -11,16 +11,15 @@ public final class ExecDeactivateItemGiving extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
         var questManager = quest.getOwner().getQuestManager();
-        var activeGivings = questManager.getActiveGivings();
 
         var givingId = Integer.parseInt(condition.getParam()[0]);
-        if (!activeGivings.contains(givingId)) {
-            Grasscutter.getLogger().debug("Quest {} attempted to remove give action {} when it isn't active.",
+        try {
+            questManager.removeGivingItemAction(givingId);
+            return true;
+        } catch (IllegalStateException ignored) {
+            Grasscutter.getLogger().warn("Quest {} attempted to remove give action {} twice.",
                 quest.getSubQuestId(), givingId);
             return false;
-        } else {
-            activeGivings.remove(givingId);
-            return true;
         }
     }
 }

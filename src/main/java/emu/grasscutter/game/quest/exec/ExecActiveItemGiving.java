@@ -10,17 +10,20 @@ import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 public final class ExecActiveItemGiving extends QuestExecHandler {
     @Override
     public boolean execute(GameQuest quest, QuestExecParam condition, String... paramStr) {
-        var questManager = quest.getOwner().getQuestManager();
-        var activeGivings = questManager.getActiveGivings();
+        var player = quest.getOwner();
+        var questManager = player.getQuestManager();
 
         var givingId = Integer.parseInt(condition.getParam()[0]);
-        if (activeGivings.contains(givingId)) {
-            Grasscutter.getLogger().debug("Quest {} attempted to add give action {} twice.",
+        try {
+            questManager.addGiveItemAction(givingId);
+
+            Grasscutter.getLogger().debug("Quest {} added give action {}.",
+                quest.getSubQuestId(), givingId);
+            return true;
+        } catch (IllegalStateException ignored) {
+            Grasscutter.getLogger().warn("Quest {} attempted to add give action {} twice.",
                 quest.getSubQuestId(), givingId);
             return false;
-        } else {
-            activeGivings.add(givingId);
-            return true;
         }
     }
 }
