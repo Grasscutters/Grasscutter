@@ -2,7 +2,7 @@ package emu.grasscutter.game.ability.actions;
 
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction.DropType;
@@ -81,8 +81,11 @@ public final class ActionGenerateElemBall extends AbilityActionHandler {
             return false;
         }
 
-        Grasscutter.getLogger()
-                .debug("Generating {} of {} element balls", amountGenerated, action.configID);
+        if (DebugConstants.LOG_ABILITIES) {
+            Grasscutter.getLogger()
+                    .debug("Generating {} of {} element balls", amountGenerated, action.configID);
+        }
+
         for (int i = 0; i < amountGenerated; i++) {
             EntityItem energyBall =
                     new EntityItem(
