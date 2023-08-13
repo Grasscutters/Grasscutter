@@ -9,12 +9,7 @@ import emu.grasscutter.net.proto.BargainResultTypeOuterClass.BargainResultType;
 public final class ContentBargainFail extends BaseContent {
     @Override
     public boolean execute(GameQuest quest, QuestData.QuestContentCondition condition, String paramStr, int... params) {
-        var bargain = quest.getOwner()
-                .getPlayerProgress()
-                .getBargains()
-                .get(condition.getParam()[0]);
-        if (bargain == null) return false;
-
-        return bargain.getResult() == BargainResultType.BARGAIN_COMPLETE_FAIL;
+        return condition.getParam()[0] == params[0] &&
+                condition.getParam()[1] == params[1];
     }
 }
