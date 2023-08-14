@@ -5,17 +5,14 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.GameEntity;
-import org.luaj.vm2.LuaFunction;
-
 import javax.script.Bindings;
+import org.luaj.vm2.LuaFunction;
 
 @AbilityAction(AbilityModifierAction.Type.ServerLuaCall)
 public final class ActionServerLuaCall extends AbilityActionHandler {
     @Override
     public boolean execute(
-            Ability ability, AbilityModifierAction action,
-            ByteString abilityData, GameEntity target
-    ) {
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         var scene = target.getScene();
         var scriptManager = scene.getScriptManager();
         var functionName = action.funcName;
@@ -58,8 +55,7 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
 
             return true;
         } catch (Exception exception) {
-            Grasscutter.getLogger().warn("Unable to invoke {}.",
-                    functionName, exception);
+            Grasscutter.getLogger().warn("Unable to invoke {}.", functionName, exception);
             return false;
         }
     }

@@ -8,17 +8,16 @@ import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
+import java.lang.ref.SoftReference;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import javax.script.*;
 import lombok.Getter;
 import org.luaj.vm2.*;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.script.LuajContext;
-
-import javax.script.*;
-import java.lang.ref.SoftReference;
-import java.nio.file.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
@@ -110,8 +109,7 @@ public class ScriptLoader {
         public LuaValue call(LuaValue arg) {
             // Resolve the script path.
             var scriptName = arg.checkjstring();
-            var scriptPath = FileUtils.getScriptPath(
-                    "Common/" + scriptName + ".lua");
+            var scriptPath = FileUtils.getScriptPath("Common/" + scriptName + ".lua");
 
             // Load & compile the script.
             var script = ScriptLoader.getScript(scriptPath.toString());
@@ -124,8 +122,7 @@ public class ScriptLoader {
                 script.eval();
             } catch (Exception exception) {
                 Grasscutter.getLogger()
-                        .error("Loading script {} failed! - {}",
-                                scriptPath, exception.getLocalizedMessage());
+                        .error("Loading script {} failed! - {}", scriptPath, exception.getLocalizedMessage());
             }
 
             // TODO: What is the proper return value?

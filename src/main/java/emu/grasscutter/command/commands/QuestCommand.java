@@ -1,14 +1,13 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameQuest;
 import emu.grasscutter.game.quest.enums.*;
-
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "quest",
@@ -155,19 +154,21 @@ public final class QuestCommand implements CommandHandler {
             case "list" -> {
                 var questManager = targetPlayer.getQuestManager();
                 var mainQuests = questManager.getActiveMainQuests();
-                var allQuestIds = mainQuests.stream()
-                    .filter(quest -> questManager.getLoggedQuests().contains(quest.getParentQuestId()))
-                    .filter(quest -> quest.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED)
-                    .map(quest -> quest.getChildQuests().values())
-                    .flatMap(Collection::stream)
-                    .filter(quest -> quest.getState() == QuestState.QUEST_STATE_UNFINISHED)
-                    .map(GameQuest::getSubQuestId)
-                    .map(String::valueOf)
-                    .toList();
+                var allQuestIds =
+                        mainQuests.stream()
+                                .filter(quest -> questManager.getLoggedQuests().contains(quest.getParentQuestId()))
+                                .filter(quest -> quest.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED)
+                                .map(quest -> quest.getChildQuests().values())
+                                .flatMap(Collection::stream)
+                                .filter(quest -> quest.getState() == QuestState.QUEST_STATE_UNFINISHED)
+                                .map(GameQuest::getSubQuestId)
+                                .map(String::valueOf)
+                                .toList();
 
-                CommandHandler.sendMessage(sender, "Quests: " +
-                    (allQuestIds.isEmpty() ? "(no active quests)" :
-                    String.join(", ", allQuestIds)));
+                CommandHandler.sendMessage(
+                        sender,
+                        "Quests: "
+                                + (allQuestIds.isEmpty() ? "(no active quests)" : String.join(", ", allQuestIds)));
             }
             default -> this.sendUsageMessage(sender);
         }

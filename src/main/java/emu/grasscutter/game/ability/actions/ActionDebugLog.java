@@ -10,9 +10,7 @@ import emu.grasscutter.game.entity.GameEntity;
 public final class ActionDebugLog extends AbilityActionHandler {
     @Override
     public boolean execute(
-            Ability ability, AbilityModifierAction action,
-            ByteString abilityData, GameEntity target
-    ) {
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         Grasscutter.getLogger().debug("[Ability] DebugLog: {}", action.content);
         return true;
     }

@@ -1,5 +1,7 @@
 package emu.grasscutter.scripts;
 
+import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
+
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
@@ -19,20 +21,17 @@ import emu.grasscutter.server.packet.send.PacketGroupSuiteNotify;
 import emu.grasscutter.utils.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
-import kotlin.Pair;
-import lombok.val;
-import org.luaj.vm2.*;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-
-import javax.annotation.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-
-import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
+import javax.annotation.*;
+import kotlin.Pair;
+import lombok.val;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 
 public class SceneScriptManager {
     private final Scene scene;
@@ -40,8 +39,7 @@ public class SceneScriptManager {
     private SceneMeta meta;
     private boolean isInit;
 
-    private final Map<String, SceneTimeAxis> timeAxis
-            = new ConcurrentHashMap<>();
+    private final Map<String, SceneTimeAxis> timeAxis = new ConcurrentHashMap<>();
 
     /** current triggers controlled by RefreshGroup */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
@@ -399,7 +397,7 @@ public class SceneScriptManager {
         var instance = cachedSceneGroupsInstances.getOrDefault(groupId, null);
         if (instance == null) {
             instance = DatabaseHelper.loadGroupInstance(groupId, scene.getWorld().getHost());
-            if (instance != null){
+            if (instance != null) {
                 cachedSceneGroupsInstances.put(groupId, instance);
                 this.cachedSceneGroupsInstances.get(groupId).setCached(false);
                 this.cachedSceneGroupsInstances.get(groupId).setLuaGroup(getGroupById(groupId));
@@ -833,9 +831,9 @@ public class SceneScriptManager {
                                 .filter(
                                         t ->
                                                 (t.getName().length() <= 12
-                                                        || t.getName().substring(13).equals(String.valueOf(params.param1)))
-                                                                && (t.getSource().isEmpty()
-                                                                        || t.getSource().equals(params.getEventSource())))
+                                                                || t.getName().substring(13).equals(String.valueOf(params.param1)))
+                                                        && (t.getSource().isEmpty()
+                                                                || t.getSource().equals(params.getEventSource())))
                                 .collect(Collectors.toSet());
                         default -> this.getTriggersByEvent(eventType).stream()
                                 .filter(
@@ -1203,8 +1201,7 @@ public class SceneScriptManager {
     }
 
     /**
-     * Registers a new time axis for this scene.
-     * Starts the time axis after.
+     * Registers a new time axis for this scene. Starts the time axis after.
      *
      * @param timeAxis The time axis.
      */
