@@ -9,10 +9,11 @@ import emu.grasscutter.tools.Tools;
 
 import java.util.List;
 
-@Command(label = "troubleshoot", aliases = {"helpme"},
-    usage = "/troubleshoot", permission = "grasscutter.command.troubleshoot",
-    targetRequirement = Command.TargetRequirement.NONE)
-public final class TroubleshootCommand implements CommandHandler {
+@Command(label = "info", aliases = {"info", "helpme"},
+    usage = "/info", targetRequirement = Command.TargetRequirement.NONE)
+public final class InfoCommand implements CommandHandler {
+    // This command can use the 'grasscutter.command.troubleshoot' permission to show sensitive information.
+
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         // Collect server information.
@@ -30,7 +31,12 @@ public final class TroubleshootCommand implements CommandHandler {
 
         // TODO: Send to remote server (Grasscutter API) and send dump link.
         CommandHandler.sendMessage(sender, """
-            Troubleshooting/Debug Information
+            Credits
+            - Slushy Team (akio, azzu, Areha11Fz, tamilp)
+            - Yuki (resource minifying & packaging)
+            - Dimbreath (dumping most resources)
+
+            Server Information
             Revision: %s
             Player Count: %d
             Questing Enabled: %s
