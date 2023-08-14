@@ -20,8 +20,8 @@ public final class ChessManualRefreshCardsReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5360
-   * Obf: DGEKJFNDJJN
+   * CmdId: 9762
+   * Obf: HEDEBDIHKAP
    * </pre>
    *
    * Protobuf type {@code ChessManualRefreshCardsReq}
@@ -246,8 +246,8 @@ public final class ChessManualRefreshCardsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5360
-     * Obf: DGEKJFNDJJN
+     * CmdId: 9762
+     * Obf: HEDEBDIHKAP
      * </pre>
      *
      * Protobuf type {@code ChessManualRefreshCardsReq}

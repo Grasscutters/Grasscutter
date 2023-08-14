@@ -19,92 +19,92 @@ public final class BrickBreakerSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
-        getUpdateSkillListList();
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getUpdateSkillList(int index);
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    int getUpdateSkillListCount();
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getUpdateSkillListOrBuilderList();
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getUpdateSkillListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 combo = 12;</code>
-     * @return The combo.
-     */
-    int getCombo();
-
-    /**
-     * <code>uint32 score = 13;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>bool is_dungeon = 7;</code>
-     * @return The isDungeon.
-     */
-    boolean getIsDungeon();
-
-    /**
-     * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
+     * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
+     * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
      * @return The reason.
      */
     emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason();
 
     /**
-     * <code>uint32 level_id = 1;</code>
-     * @return The levelId.
+     * <code>uint32 combo = 14;</code>
+     * @return The combo.
      */
-    int getLevelId();
+    int getCombo();
 
     /**
-     * <code>uint32 gallery_id = 15;</code>
-     * @return The galleryId.
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
      */
-    int getGalleryId();
+    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
+        getUpdateSkillListList();
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getUpdateSkillList(int index);
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    int getUpdateSkillListCount();
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getUpdateSkillListOrBuilderList();
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getUpdateSkillListOrBuilder(
+        int index);
 
     /**
-     * <code>uint32 time = 14;</code>
+     * <code>uint32 time = 1;</code>
      * @return The time.
      */
     int getTime();
 
     /**
-     * <code>bool is_single_mode = 9;</code>
+     * <code>uint32 score = 10;</code>
+     * @return The score.
+     */
+    int getScore();
+
+    /**
+     * <code>bool is_single_mode = 2;</code>
      * @return The isSingleMode.
      */
     boolean getIsSingleMode();
 
     /**
-     * <code>bool is_new_record = 2;</code>
+     * <code>bool is_dungeon = 4;</code>
+     * @return The isDungeon.
+     */
+    boolean getIsDungeon();
+
+    /**
+     * <code>uint32 gallery_id = 13;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
+
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
+
+    /**
+     * <code>bool is_new_record = 15;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
   }
   /**
    * <pre>
-   * CmdId: 21157
-   * Obf: IHELNMAAFMI
+   * CmdId: 5789
+   * Obf: BIICAPPJJBM
    * </pre>
    *
    * Protobuf type {@code BrickBreakerSettleNotify}
@@ -119,8 +119,8 @@ public final class BrickBreakerSettleNotifyOuterClass {
       super(builder);
     }
     private BrickBreakerSettleNotify() {
-      updateSkillList_ = java.util.Collections.emptyList();
       reason_ = 0;
+      updateSkillList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -156,31 +156,36 @@ public final class BrickBreakerSettleNotifyOuterClass {
               break;
             case 8: {
 
-              levelId_ = input.readUInt32();
+              time_ = input.readUInt32();
               break;
             }
             case 16: {
 
-              isNewRecord_ = input.readBool();
+              isSingleMode_ = input.readBool();
               break;
             }
             case 24: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              isDungeon_ = input.readBool();
+              break;
+            }
+            case 40: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 56: {
+            case 80: {
 
-              isDungeon_ = input.readBool();
+              score_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              isSingleMode_ = input.readBool();
-              break;
-            }
-            case 90: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 updateSkillList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
                 mutable_bitField0_ |= 0x00000001;
@@ -189,24 +194,19 @@ public final class BrickBreakerSettleNotifyOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
               break;
             }
-            case 96: {
-
-              combo_ = input.readUInt32();
-              break;
-            }
             case 104: {
 
-              score_ = input.readUInt32();
+              galleryId_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              time_ = input.readUInt32();
+              combo_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              galleryId_ = input.readUInt32();
+              isNewRecord_ = input.readBool();
               break;
             }
             default: {
@@ -246,7 +246,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
 
     /**
      * <pre>
-     * Obf: FNHLFJPMOFA
+     * Obf: DIAJCONBEOL
      * </pre>
      *
      * Protobuf enum {@code BrickBreakerSettleNotify.SettleReason}
@@ -374,90 +374,17 @@ public final class BrickBreakerSettleNotifyOuterClass {
       // @@protoc_insertion_point(enum_scope:BrickBreakerSettleNotify.SettleReason)
     }
 
-    public static final int UPDATE_SKILL_LIST_FIELD_NUMBER = 11;
-    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> updateSkillList_;
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getUpdateSkillListList() {
-      return updateSkillList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getUpdateSkillListOrBuilderList() {
-      return updateSkillList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    @java.lang.Override
-    public int getUpdateSkillListCount() {
-      return updateSkillList_.size();
-    }
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getUpdateSkillList(int index) {
-      return updateSkillList_.get(index);
-    }
-    /**
-     * <code>repeated .Uint32Pair update_skill_list = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getUpdateSkillListOrBuilder(
-        int index) {
-      return updateSkillList_.get(index);
-    }
-
-    public static final int COMBO_FIELD_NUMBER = 12;
-    private int combo_;
-    /**
-     * <code>uint32 combo = 12;</code>
-     * @return The combo.
-     */
-    @java.lang.Override
-    public int getCombo() {
-      return combo_;
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 13;
-    private int score_;
-    /**
-     * <code>uint32 score = 13;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int IS_DUNGEON_FIELD_NUMBER = 7;
-    private boolean isDungeon_;
-    /**
-     * <code>bool is_dungeon = 7;</code>
-     * @return The isDungeon.
-     */
-    @java.lang.Override
-    public boolean getIsDungeon() {
-      return isDungeon_;
-    }
-
-    public static final int REASON_FIELD_NUMBER = 3;
+    public static final int REASON_FIELD_NUMBER = 5;
     private int reason_;
     /**
-     * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
+     * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
+     * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
      * @return The reason.
      */
     @java.lang.Override public emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason() {
@@ -466,32 +393,61 @@ public final class BrickBreakerSettleNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.UNRECOGNIZED : result;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 1;
-    private int levelId_;
+    public static final int COMBO_FIELD_NUMBER = 14;
+    private int combo_;
     /**
-     * <code>uint32 level_id = 1;</code>
-     * @return The levelId.
+     * <code>uint32 combo = 14;</code>
+     * @return The combo.
      */
     @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
+    public int getCombo() {
+      return combo_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 15;
-    private int galleryId_;
+    public static final int UPDATE_SKILL_LIST_FIELD_NUMBER = 12;
+    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> updateSkillList_;
     /**
-     * <code>uint32 gallery_id = 15;</code>
-     * @return The galleryId.
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
      */
     @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
+    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getUpdateSkillListList() {
+      return updateSkillList_;
+    }
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getUpdateSkillListOrBuilderList() {
+      return updateSkillList_;
+    }
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    @java.lang.Override
+    public int getUpdateSkillListCount() {
+      return updateSkillList_.size();
+    }
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getUpdateSkillList(int index) {
+      return updateSkillList_.get(index);
+    }
+    /**
+     * <code>repeated .Uint32Pair update_skill_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getUpdateSkillListOrBuilder(
+        int index) {
+      return updateSkillList_.get(index);
     }
 
-    public static final int TIME_FIELD_NUMBER = 14;
+    public static final int TIME_FIELD_NUMBER = 1;
     private int time_;
     /**
-     * <code>uint32 time = 14;</code>
+     * <code>uint32 time = 1;</code>
      * @return The time.
      */
     @java.lang.Override
@@ -499,10 +455,21 @@ public final class BrickBreakerSettleNotifyOuterClass {
       return time_;
     }
 
-    public static final int IS_SINGLE_MODE_FIELD_NUMBER = 9;
+    public static final int SCORE_FIELD_NUMBER = 10;
+    private int score_;
+    /**
+     * <code>uint32 score = 10;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
+    }
+
+    public static final int IS_SINGLE_MODE_FIELD_NUMBER = 2;
     private boolean isSingleMode_;
     /**
-     * <code>bool is_single_mode = 9;</code>
+     * <code>bool is_single_mode = 2;</code>
      * @return The isSingleMode.
      */
     @java.lang.Override
@@ -510,10 +477,43 @@ public final class BrickBreakerSettleNotifyOuterClass {
       return isSingleMode_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 2;
+    public static final int IS_DUNGEON_FIELD_NUMBER = 4;
+    private boolean isDungeon_;
+    /**
+     * <code>bool is_dungeon = 4;</code>
+     * @return The isDungeon.
+     */
+    @java.lang.Override
+    public boolean getIsDungeon() {
+      return isDungeon_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 13;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 13;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
+
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 15;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 2;</code>
+     * <code>bool is_new_record = 15;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -535,35 +535,35 @@ public final class BrickBreakerSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (levelId_ != 0) {
-        output.writeUInt32(1, levelId_);
-      }
-      if (isNewRecord_ != false) {
-        output.writeBool(2, isNewRecord_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.SETTLE_REASON_TIME_OUT.getNumber()) {
-        output.writeEnum(3, reason_);
-      }
-      if (isDungeon_ != false) {
-        output.writeBool(7, isDungeon_);
+      if (time_ != 0) {
+        output.writeUInt32(1, time_);
       }
       if (isSingleMode_ != false) {
-        output.writeBool(9, isSingleMode_);
+        output.writeBool(2, isSingleMode_);
       }
-      for (int i = 0; i < updateSkillList_.size(); i++) {
-        output.writeMessage(11, updateSkillList_.get(i));
+      if (levelId_ != 0) {
+        output.writeUInt32(3, levelId_);
       }
-      if (combo_ != 0) {
-        output.writeUInt32(12, combo_);
+      if (isDungeon_ != false) {
+        output.writeBool(4, isDungeon_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.SETTLE_REASON_TIME_OUT.getNumber()) {
+        output.writeEnum(5, reason_);
       }
       if (score_ != 0) {
-        output.writeUInt32(13, score_);
+        output.writeUInt32(10, score_);
       }
-      if (time_ != 0) {
-        output.writeUInt32(14, time_);
+      for (int i = 0; i < updateSkillList_.size(); i++) {
+        output.writeMessage(12, updateSkillList_.get(i));
       }
       if (galleryId_ != 0) {
-        output.writeUInt32(15, galleryId_);
+        output.writeUInt32(13, galleryId_);
+      }
+      if (combo_ != 0) {
+        output.writeUInt32(14, combo_);
+      }
+      if (isNewRecord_ != false) {
+        output.writeBool(15, isNewRecord_);
       }
       unknownFields.writeTo(output);
     }
@@ -574,45 +574,45 @@ public final class BrickBreakerSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
+      if (time_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, levelId_);
-      }
-      if (isNewRecord_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isNewRecord_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.SETTLE_REASON_TIME_OUT.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, reason_);
-      }
-      if (isDungeon_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isDungeon_);
+          .computeUInt32Size(1, time_);
       }
       if (isSingleMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isSingleMode_);
+          .computeBoolSize(2, isSingleMode_);
       }
-      for (int i = 0; i < updateSkillList_.size(); i++) {
+      if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, updateSkillList_.get(i));
+          .computeUInt32Size(3, levelId_);
       }
-      if (combo_ != 0) {
+      if (isDungeon_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, combo_);
+          .computeBoolSize(4, isDungeon_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.SETTLE_REASON_TIME_OUT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, reason_);
       }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, score_);
+          .computeUInt32Size(10, score_);
       }
-      if (time_ != 0) {
+      for (int i = 0; i < updateSkillList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, time_);
+          .computeMessageSize(12, updateSkillList_.get(i));
       }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, galleryId_);
+          .computeUInt32Size(13, galleryId_);
+      }
+      if (combo_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, combo_);
+      }
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isNewRecord_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -629,23 +629,23 @@ public final class BrickBreakerSettleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify other = (emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify) obj;
 
-      if (!getUpdateSkillListList()
-          .equals(other.getUpdateSkillListList())) return false;
+      if (reason_ != other.reason_) return false;
       if (getCombo()
           != other.getCombo()) return false;
-      if (getScore()
-          != other.getScore()) return false;
-      if (getIsDungeon()
-          != other.getIsDungeon()) return false;
-      if (reason_ != other.reason_) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
+      if (!getUpdateSkillListList()
+          .equals(other.getUpdateSkillListList())) return false;
       if (getTime()
           != other.getTime()) return false;
+      if (getScore()
+          != other.getScore()) return false;
       if (getIsSingleMode()
           != other.getIsSingleMode()) return false;
+      if (getIsDungeon()
+          != other.getIsDungeon()) return false;
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -659,28 +659,28 @@ public final class BrickBreakerSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
+      hash = (37 * hash) + COMBO_FIELD_NUMBER;
+      hash = (53 * hash) + getCombo();
       if (getUpdateSkillListCount() > 0) {
         hash = (37 * hash) + UPDATE_SKILL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateSkillListList().hashCode();
       }
-      hash = (37 * hash) + COMBO_FIELD_NUMBER;
-      hash = (53 * hash) + getCombo();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
-      hash = (37 * hash) + IS_DUNGEON_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsDungeon());
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + reason_;
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + TIME_FIELD_NUMBER;
       hash = (53 * hash) + getTime();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
       hash = (37 * hash) + IS_SINGLE_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSingleMode());
+      hash = (37 * hash) + IS_DUNGEON_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsDungeon());
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
@@ -781,8 +781,8 @@ public final class BrickBreakerSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21157
-     * Obf: IHELNMAAFMI
+     * CmdId: 5789
+     * Obf: BIICAPPJJBM
      * </pre>
      *
      * Protobuf type {@code BrickBreakerSettleNotify}
@@ -823,27 +823,27 @@ public final class BrickBreakerSettleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        reason_ = 0;
+
+        combo_ = 0;
+
         if (updateSkillListBuilder_ == null) {
           updateSkillList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           updateSkillListBuilder_.clear();
         }
-        combo_ = 0;
+        time_ = 0;
 
         score_ = 0;
 
+        isSingleMode_ = false;
+
         isDungeon_ = false;
-
-        reason_ = 0;
-
-        levelId_ = 0;
 
         galleryId_ = 0;
 
-        time_ = 0;
-
-        isSingleMode_ = false;
+        levelId_ = 0;
 
         isNewRecord_ = false;
 
@@ -874,6 +874,8 @@ public final class BrickBreakerSettleNotifyOuterClass {
       public emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify buildPartial() {
         emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify result = new emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify(this);
         int from_bitField0_ = bitField0_;
+        result.reason_ = reason_;
+        result.combo_ = combo_;
         if (updateSkillListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             updateSkillList_ = java.util.Collections.unmodifiableList(updateSkillList_);
@@ -883,14 +885,12 @@ public final class BrickBreakerSettleNotifyOuterClass {
         } else {
           result.updateSkillList_ = updateSkillListBuilder_.build();
         }
-        result.combo_ = combo_;
-        result.score_ = score_;
-        result.isDungeon_ = isDungeon_;
-        result.reason_ = reason_;
-        result.levelId_ = levelId_;
-        result.galleryId_ = galleryId_;
         result.time_ = time_;
+        result.score_ = score_;
         result.isSingleMode_ = isSingleMode_;
+        result.isDungeon_ = isDungeon_;
+        result.galleryId_ = galleryId_;
+        result.levelId_ = levelId_;
         result.isNewRecord_ = isNewRecord_;
         onBuilt();
         return result;
@@ -940,6 +940,12 @@ public final class BrickBreakerSettleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify other) {
         if (other == emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.getDefaultInstance()) return this;
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
+        if (other.getCombo() != 0) {
+          setCombo(other.getCombo());
+        }
         if (updateSkillListBuilder_ == null) {
           if (!other.updateSkillList_.isEmpty()) {
             if (updateSkillList_.isEmpty()) {
@@ -966,29 +972,23 @@ public final class BrickBreakerSettleNotifyOuterClass {
             }
           }
         }
-        if (other.getCombo() != 0) {
-          setCombo(other.getCombo());
+        if (other.getTime() != 0) {
+          setTime(other.getTime());
         }
         if (other.getScore() != 0) {
           setScore(other.getScore());
         }
+        if (other.getIsSingleMode() != false) {
+          setIsSingleMode(other.getIsSingleMode());
+        }
         if (other.getIsDungeon() != false) {
           setIsDungeon(other.getIsDungeon());
-        }
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
-        }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
         }
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        if (other.getTime() != 0) {
-          setTime(other.getTime());
-        }
-        if (other.getIsSingleMode() != false) {
-          setIsSingleMode(other.getIsSingleMode());
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
@@ -1023,6 +1023,91 @@ public final class BrickBreakerSettleNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int reason_ = 0;
+      /**
+       * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override public int getReasonValue() {
+        return reason_;
+      }
+      /**
+       * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.BrickBreakerSettleNotify.SettleReason reason = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int combo_ ;
+      /**
+       * <code>uint32 combo = 14;</code>
+       * @return The combo.
+       */
+      @java.lang.Override
+      public int getCombo() {
+        return combo_;
+      }
+      /**
+       * <code>uint32 combo = 14;</code>
+       * @param value The combo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCombo(int value) {
+        
+        combo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 combo = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCombo() {
+        
+        combo_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> updateSkillList_ =
         java.util.Collections.emptyList();
       private void ensureUpdateSkillListIsMutable() {
@@ -1036,7 +1121,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> updateSkillListBuilder_;
 
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getUpdateSkillListList() {
         if (updateSkillListBuilder_ == null) {
@@ -1046,7 +1131,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public int getUpdateSkillListCount() {
         if (updateSkillListBuilder_ == null) {
@@ -1056,7 +1141,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getUpdateSkillList(int index) {
         if (updateSkillListBuilder_ == null) {
@@ -1066,7 +1151,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder setUpdateSkillList(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
@@ -1083,7 +1168,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder setUpdateSkillList(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -1097,7 +1182,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder addUpdateSkillList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
         if (updateSkillListBuilder_ == null) {
@@ -1113,7 +1198,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder addUpdateSkillList(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
@@ -1130,7 +1215,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder addUpdateSkillList(
           emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -1144,7 +1229,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder addUpdateSkillList(
           int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
@@ -1158,7 +1243,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder addAllUpdateSkillList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
@@ -1173,7 +1258,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder clearUpdateSkillList() {
         if (updateSkillListBuilder_ == null) {
@@ -1186,7 +1271,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public Builder removeUpdateSkillList(int index) {
         if (updateSkillListBuilder_ == null) {
@@ -1199,14 +1284,14 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getUpdateSkillListBuilder(
           int index) {
         return getUpdateSkillListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getUpdateSkillListOrBuilder(
           int index) {
@@ -1216,7 +1301,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
            getUpdateSkillListOrBuilderList() {
@@ -1227,14 +1312,14 @@ public final class BrickBreakerSettleNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addUpdateSkillListBuilder() {
         return getUpdateSkillListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addUpdateSkillListBuilder(
           int index) {
@@ -1242,7 +1327,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
             index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair update_skill_list = 11;</code>
+       * <code>repeated .Uint32Pair update_skill_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
            getUpdateSkillListBuilderList() {
@@ -1263,218 +1348,9 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return updateSkillListBuilder_;
       }
 
-      private int combo_ ;
-      /**
-       * <code>uint32 combo = 12;</code>
-       * @return The combo.
-       */
-      @java.lang.Override
-      public int getCombo() {
-        return combo_;
-      }
-      /**
-       * <code>uint32 combo = 12;</code>
-       * @param value The combo to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCombo(int value) {
-        
-        combo_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 combo = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCombo() {
-        
-        combo_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int score_ ;
-      /**
-       * <code>uint32 score = 13;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 13;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isDungeon_ ;
-      /**
-       * <code>bool is_dungeon = 7;</code>
-       * @return The isDungeon.
-       */
-      @java.lang.Override
-      public boolean getIsDungeon() {
-        return isDungeon_;
-      }
-      /**
-       * <code>bool is_dungeon = 7;</code>
-       * @param value The isDungeon to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsDungeon(boolean value) {
-        
-        isDungeon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_dungeon = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsDungeon() {
-        
-        isDungeon_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int reason_ = 0;
-      /**
-       * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
-       * @return The enum numeric value on the wire for reason.
-       */
-      @java.lang.Override public int getReasonValue() {
-        return reason_;
-      }
-      /**
-       * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
-       * @param value The enum numeric value on the wire for reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReasonValue(int value) {
-        
-        reason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
-       * @return The reason.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason result = emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
-       * @param value The reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReason(emu.grasscutter.net.proto.BrickBreakerSettleNotifyOuterClass.BrickBreakerSettleNotify.SettleReason value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        reason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.BrickBreakerSettleNotify.SettleReason reason = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReason() {
-        
-        reason_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 15;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 15;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int time_ ;
       /**
-       * <code>uint32 time = 14;</code>
+       * <code>uint32 time = 1;</code>
        * @return The time.
        */
       @java.lang.Override
@@ -1482,7 +1358,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return time_;
       }
       /**
-       * <code>uint32 time = 14;</code>
+       * <code>uint32 time = 1;</code>
        * @param value The time to set.
        * @return This builder for chaining.
        */
@@ -1493,7 +1369,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 time = 14;</code>
+       * <code>uint32 time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearTime() {
@@ -1503,9 +1379,40 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
 
+      private int score_ ;
+      /**
+       * <code>uint32 score = 10;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>uint32 score = 10;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isSingleMode_ ;
       /**
-       * <code>bool is_single_mode = 9;</code>
+       * <code>bool is_single_mode = 2;</code>
        * @return The isSingleMode.
        */
       @java.lang.Override
@@ -1513,7 +1420,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return isSingleMode_;
       }
       /**
-       * <code>bool is_single_mode = 9;</code>
+       * <code>bool is_single_mode = 2;</code>
        * @param value The isSingleMode to set.
        * @return This builder for chaining.
        */
@@ -1524,7 +1431,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_single_mode = 9;</code>
+       * <code>bool is_single_mode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSingleMode() {
@@ -1534,9 +1441,102 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
 
+      private boolean isDungeon_ ;
+      /**
+       * <code>bool is_dungeon = 4;</code>
+       * @return The isDungeon.
+       */
+      @java.lang.Override
+      public boolean getIsDungeon() {
+        return isDungeon_;
+      }
+      /**
+       * <code>bool is_dungeon = 4;</code>
+       * @param value The isDungeon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsDungeon(boolean value) {
+        
+        isDungeon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_dungeon = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsDungeon() {
+        
+        isDungeon_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 2;</code>
+       * <code>bool is_new_record = 15;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -1544,7 +1544,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 2;</code>
+       * <code>bool is_new_record = 15;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -1555,7 +1555,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 2;</code>
+       * <code>bool is_new_record = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -1633,12 +1633,12 @@ public final class BrickBreakerSettleNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036BrickBreakerSettleNotify.proto\032\020Uint32" +
       "Pair.proto\"\377\002\n\030BrickBreakerSettleNotify\022" +
-      "&\n\021update_skill_list\030\013 \003(\0132\013.Uint32Pair\022" +
-      "\r\n\005combo\030\014 \001(\r\022\r\n\005score\030\r \001(\r\022\022\n\nis_dung" +
-      "eon\030\007 \001(\010\0226\n\006reason\030\003 \001(\0162&.BrickBreaker" +
-      "SettleNotify.SettleReason\022\020\n\010level_id\030\001 " +
-      "\001(\r\022\022\n\ngallery_id\030\017 \001(\r\022\014\n\004time\030\016 \001(\r\022\026\n" +
-      "\016is_single_mode\030\t \001(\010\022\025\n\ris_new_record\030\002" +
+      "6\n\006reason\030\005 \001(\0162&.BrickBreakerSettleNoti" +
+      "fy.SettleReason\022\r\n\005combo\030\016 \001(\r\022&\n\021update" +
+      "_skill_list\030\014 \003(\0132\013.Uint32Pair\022\014\n\004time\030\001" +
+      " \001(\r\022\r\n\005score\030\n \001(\r\022\026\n\016is_single_mode\030\002 " +
+      "\001(\010\022\022\n\nis_dungeon\030\004 \001(\010\022\022\n\ngallery_id\030\r " +
+      "\001(\r\022\020\n\010level_id\030\003 \001(\r\022\025\n\ris_new_record\030\017" +
       " \001(\010\"n\n\014SettleReason\022\032\n\026SETTLE_REASON_TI" +
       "ME_OUT\020\000\022\023\n\017SETTLE_PLAY_END\020\001\022\026\n\022SETTLE_" +
       "PLAYER_QUIT\020\002\022\025\n\021SETTLE_LIFE_COUNT\020\003B\033\n\031" +
@@ -1654,7 +1654,7 @@ public final class BrickBreakerSettleNotifyOuterClass {
     internal_static_BrickBreakerSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BrickBreakerSettleNotify_descriptor,
-        new java.lang.String[] { "UpdateSkillList", "Combo", "Score", "IsDungeon", "Reason", "LevelId", "GalleryId", "Time", "IsSingleMode", "IsNewRecord", });
+        new java.lang.String[] { "Reason", "Combo", "UpdateSkillList", "Time", "Score", "IsSingleMode", "IsDungeon", "GalleryId", "LevelId", "IsNewRecord", });
     emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor();
   }
 

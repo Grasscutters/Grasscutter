@@ -19,27 +19,27 @@ public final class FungusRenameRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 fungus_id = 8;</code>
+     * <code>uint32 fungus_id = 7;</code>
      * @return The fungusId.
      */
     int getFungusId();
 
     /**
-     * <code>uint32 name_id = 7;</code>
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 name_id = 5;</code>
      * @return The nameId.
      */
     int getNameId();
   }
   /**
    * <pre>
-   * CmdId: 20037
-   * Obf: PLDPOKBIPFE
+   * CmdId: 5576
+   * Obf: BHOCNKMDEJE
    * </pre>
    *
    * Protobuf type {@code FungusRenameRsp}
@@ -86,17 +86,17 @@ public final class FungusRenameRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
 
               nameId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 56: {
 
               fungusId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
@@ -133,21 +133,10 @@ public final class FungusRenameRspOuterClass {
               emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp.class, emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 15;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int FUNGUS_ID_FIELD_NUMBER = 8;
+    public static final int FUNGUS_ID_FIELD_NUMBER = 7;
     private int fungusId_;
     /**
-     * <code>uint32 fungus_id = 8;</code>
+     * <code>uint32 fungus_id = 7;</code>
      * @return The fungusId.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class FungusRenameRspOuterClass {
       return fungusId_;
     }
 
-    public static final int NAME_ID_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 9;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int NAME_ID_FIELD_NUMBER = 5;
     private int nameId_;
     /**
-     * <code>uint32 name_id = 7;</code>
+     * <code>uint32 name_id = 5;</code>
      * @return The nameId.
      */
     @java.lang.Override
@@ -181,13 +181,13 @@ public final class FungusRenameRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (nameId_ != 0) {
-        output.writeUInt32(7, nameId_);
+        output.writeUInt32(5, nameId_);
       }
       if (fungusId_ != 0) {
-        output.writeUInt32(8, fungusId_);
+        output.writeUInt32(7, fungusId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class FungusRenameRspOuterClass {
       size = 0;
       if (nameId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, nameId_);
+          .computeUInt32Size(5, nameId_);
       }
       if (fungusId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, fungusId_);
+          .computeUInt32Size(7, fungusId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class FungusRenameRspOuterClass {
       }
       emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp other = (emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getFungusId()
           != other.getFungusId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getNameId()
           != other.getNameId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class FungusRenameRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + FUNGUS_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFungusId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NAME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class FungusRenameRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20037
-     * Obf: PLDPOKBIPFE
+     * CmdId: 5576
+     * Obf: BHOCNKMDEJE
      * </pre>
      *
      * Protobuf type {@code FungusRenameRsp}
@@ -386,9 +386,9 @@ public final class FungusRenameRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         fungusId_ = 0;
+
+        retcode_ = 0;
 
         nameId_ = 0;
 
@@ -418,8 +418,8 @@ public final class FungusRenameRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp buildPartial() {
         emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp result = new emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp(this);
-        result.retcode_ = retcode_;
         result.fungusId_ = fungusId_;
+        result.retcode_ = retcode_;
         result.nameId_ = nameId_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class FungusRenameRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp other) {
         if (other == emu.grasscutter.net.proto.FungusRenameRspOuterClass.FungusRenameRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getFungusId() != 0) {
           setFungusId(other.getFungusId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         if (other.getNameId() != 0) {
           setNameId(other.getNameId());
@@ -507,40 +507,9 @@ public final class FungusRenameRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int fungusId_ ;
       /**
-       * <code>uint32 fungus_id = 8;</code>
+       * <code>uint32 fungus_id = 7;</code>
        * @return The fungusId.
        */
       @java.lang.Override
@@ -548,7 +517,7 @@ public final class FungusRenameRspOuterClass {
         return fungusId_;
       }
       /**
-       * <code>uint32 fungus_id = 8;</code>
+       * <code>uint32 fungus_id = 7;</code>
        * @param value The fungusId to set.
        * @return This builder for chaining.
        */
@@ -559,7 +528,7 @@ public final class FungusRenameRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 fungus_id = 8;</code>
+       * <code>uint32 fungus_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearFungusId() {
@@ -569,9 +538,40 @@ public final class FungusRenameRspOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int nameId_ ;
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 5;</code>
        * @return The nameId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class FungusRenameRspOuterClass {
         return nameId_;
       }
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 5;</code>
        * @param value The nameId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class FungusRenameRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
@@ -667,8 +667,8 @@ public final class FungusRenameRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025FungusRenameRsp.proto\"F\n\017FungusRenameR" +
-      "sp\022\017\n\007retcode\030\017 \001(\005\022\021\n\tfungus_id\030\010 \001(\r\022\017" +
-      "\n\007name_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "sp\022\021\n\tfungus_id\030\007 \001(\r\022\017\n\007retcode\030\t \001(\005\022\017" +
+      "\n\007name_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -680,7 +680,7 @@ public final class FungusRenameRspOuterClass {
     internal_static_FungusRenameRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FungusRenameRsp_descriptor,
-        new java.lang.String[] { "Retcode", "FungusId", "NameId", });
+        new java.lang.String[] { "FungusId", "Retcode", "NameId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

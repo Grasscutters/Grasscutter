@@ -19,21 +19,21 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 7;</code>
-     * @return The avatarId.
-     */
-    int getAvatarId();
-
-    /**
-     * <code>uint32 costume_id = 2;</code>
+     * <code>uint32 costume_id = 7;</code>
      * @return The costumeId.
      */
     int getCostumeId();
+
+    /**
+     * <code>uint32 avatar_id = 11;</code>
+     * @return The avatarId.
+     */
+    int getAvatarId();
   }
   /**
    * <pre>
-   * CmdId: 4577
-   * Obf: NENKFONOFIM
+   * CmdId: 28208
+   * Obf: BKMJMAFFLFP
    * </pre>
    *
    * Protobuf type {@code HomeAvatarCostumeChangeNotify}
@@ -80,12 +80,12 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 56: {
 
               costumeId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 88: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
               emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.class, emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 7;
-    private int avatarId_;
-    /**
-     * <code>uint32 avatar_id = 7;</code>
-     * @return The avatarId.
-     */
-    @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
-    }
-
-    public static final int COSTUME_ID_FIELD_NUMBER = 2;
+    public static final int COSTUME_ID_FIELD_NUMBER = 7;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 2;</code>
+     * <code>uint32 costume_id = 7;</code>
      * @return The costumeId.
      */
     @java.lang.Override
     public int getCostumeId() {
       return costumeId_;
+    }
+
+    public static final int AVATAR_ID_FIELD_NUMBER = 11;
+    private int avatarId_;
+    /**
+     * <code>uint32 avatar_id = 11;</code>
+     * @return The avatarId.
+     */
+    @java.lang.Override
+    public int getAvatarId() {
+      return avatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (costumeId_ != 0) {
-        output.writeUInt32(2, costumeId_);
+        output.writeUInt32(7, costumeId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(7, avatarId_);
+        output.writeUInt32(11, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       size = 0;
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, costumeId_);
+          .computeUInt32Size(7, costumeId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, avatarId_);
+          .computeUInt32Size(11, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify other = (emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify) obj;
 
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
       if (getCostumeId()
           != other.getCostumeId()) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4577
-     * Obf: NENKFONOFIM
+     * CmdId: 28208
+     * Obf: BKMJMAFFLFP
      * </pre>
      *
      * Protobuf type {@code HomeAvatarCostumeChangeNotify}
@@ -353,9 +353,9 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarId_ = 0;
-
         costumeId_ = 0;
+
+        avatarId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify buildPartial() {
         emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify result = new emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify(this);
-        result.avatarId_ = avatarId_;
         result.costumeId_ = costumeId_;
+        result.avatarId_ = avatarId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify other) {
         if (other == emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.getDefaultInstance()) return this;
-        if (other.getAvatarId() != 0) {
-          setAvatarId(other.getAvatarId());
-        }
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
+        }
+        if (other.getAvatarId() != 0) {
+          setAvatarId(other.getAvatarId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return this;
       }
 
-      private int avatarId_ ;
-      /**
-       * <code>uint32 avatar_id = 7;</code>
-       * @return The avatarId.
-       */
-      @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
-      }
-      /**
-       * <code>uint32 avatar_id = 7;</code>
-       * @param value The avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarId(int value) {
-        
-        avatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 avatar_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarId() {
-        
-        avatarId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int costumeId_ ;
       /**
-       * <code>uint32 costume_id = 2;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costume_id = 2;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costume_id = 2;</code>
+       * <code>uint32 costume_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
         
         costumeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int avatarId_ ;
+      /**
+       * <code>uint32 avatar_id = 11;</code>
+       * @return The avatarId.
+       */
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
+      }
+      /**
+       * <code>uint32 avatar_id = 11;</code>
+       * @param value The avatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarId(int value) {
+        
+        avatarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 avatar_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarId() {
+        
+        avatarId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#HomeAvatarCostumeChangeNotify.proto\"F\n" +
-      "\035HomeAvatarCostumeChangeNotify\022\021\n\tavatar" +
-      "_id\030\007 \001(\r\022\022\n\ncostume_id\030\002 \001(\rB\033\n\031emu.gra" +
+      "\035HomeAvatarCostumeChangeNotify\022\022\n\ncostum" +
+      "e_id\030\007 \001(\r\022\021\n\tavatar_id\030\013 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     internal_static_HomeAvatarCostumeChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeAvatarCostumeChangeNotify_descriptor,
-        new java.lang.String[] { "AvatarId", "CostumeId", });
+        new java.lang.String[] { "CostumeId", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

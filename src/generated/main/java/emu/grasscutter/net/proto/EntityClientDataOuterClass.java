@@ -38,7 +38,7 @@ public final class EntityClientDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: MIMMOJNHFCB
+   * Obf: GCALEOBNFFH
    * </pre>
    *
    * Protobuf type {@code EntityClientData}
@@ -346,7 +346,7 @@ public final class EntityClientDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: MIMMOJNHFCB
+     * Obf: GCALEOBNFFH
      * </pre>
      *
      * Protobuf type {@code EntityClientData}

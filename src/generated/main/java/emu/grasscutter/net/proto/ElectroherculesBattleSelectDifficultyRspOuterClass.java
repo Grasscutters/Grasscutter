@@ -19,33 +19,33 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 4;</code>
-     * @return The stageId.
+     * <code>uint32 diffculty = 3;</code>
+     * @return The diffculty.
      */
-    int getStageId();
+    int getDiffculty();
 
     /**
-     * <code>uint32 gallery_id = 5;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
-
-    /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 BNMHJGCJAPB = 2;</code>
-     * @return The bNMHJGCJAPB.
+     * <code>uint32 stage_id = 12;</code>
+     * @return The stageId.
      */
-    int getBNMHJGCJAPB();
+    int getStageId();
+
+    /**
+     * <code>uint32 gallery_id = 1;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 24886
-   * Obf: FFKACKPHECC
+   * CmdId: 2828
+   * Obf: GOOLHDCAIKG
    * </pre>
    *
    * Protobuf type {@code ElectroherculesBattleSelectDifficultyRsp}
@@ -92,24 +92,24 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              bNMHJGCJAPB_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+            case 8: {
 
               galleryId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 16: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              diffculty_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,32 +144,21 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp.class, emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
-    private int stageId_;
+    public static final int DIFFCULTY_FIELD_NUMBER = 3;
+    private int diffculty_;
     /**
-     * <code>uint32 stage_id = 4;</code>
-     * @return The stageId.
+     * <code>uint32 diffculty = 3;</code>
+     * @return The diffculty.
      */
     @java.lang.Override
-    public int getStageId() {
-      return stageId_;
+    public int getDiffculty() {
+      return diffculty_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 5;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 5;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -177,15 +166,26 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       return retcode_;
     }
 
-    public static final int BNMHJGCJAPB_FIELD_NUMBER = 2;
-    private int bNMHJGCJAPB_;
+    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    private int stageId_;
     /**
-     * <code>uint32 BNMHJGCJAPB = 2;</code>
-     * @return The bNMHJGCJAPB.
+     * <code>uint32 stage_id = 12;</code>
+     * @return The stageId.
      */
     @java.lang.Override
-    public int getBNMHJGCJAPB() {
-      return bNMHJGCJAPB_;
+    public int getStageId() {
+      return stageId_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 1;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 1;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bNMHJGCJAPB_ != 0) {
-        output.writeUInt32(2, bNMHJGCJAPB_);
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
-      }
       if (galleryId_ != 0) {
-        output.writeUInt32(5, galleryId_);
+        output.writeUInt32(1, galleryId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (diffculty_ != 0) {
+        output.writeUInt32(3, diffculty_);
+      }
+      if (stageId_ != 0) {
+        output.writeUInt32(12, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bNMHJGCJAPB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, bNMHJGCJAPB_);
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
-      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, galleryId_);
+          .computeUInt32Size(1, galleryId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (diffculty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, diffculty_);
+      }
+      if (stageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       }
       emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp other = (emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp) obj;
 
+      if (getDiffculty()
+          != other.getDiffculty()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getBNMHJGCJAPB()
-          != other.getBNMHJGCJAPB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DIFFCULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDiffculty();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + BNMHJGCJAPB_FIELD_NUMBER;
-      hash = (53 * hash) + getBNMHJGCJAPB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24886
-     * Obf: FFKACKPHECC
+     * CmdId: 2828
+     * Obf: GOOLHDCAIKG
      * </pre>
      *
      * Protobuf type {@code ElectroherculesBattleSelectDifficultyRsp}
@@ -419,13 +419,13 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        stageId_ = 0;
-
-        galleryId_ = 0;
+        diffculty_ = 0;
 
         retcode_ = 0;
 
-        bNMHJGCJAPB_ = 0;
+        stageId_ = 0;
+
+        galleryId_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp buildPartial() {
         emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp result = new emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp(this);
+        result.diffculty_ = diffculty_;
+        result.retcode_ = retcode_;
         result.stageId_ = stageId_;
         result.galleryId_ = galleryId_;
-        result.retcode_ = retcode_;
-        result.bNMHJGCJAPB_ = bNMHJGCJAPB_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp other) {
         if (other == emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyRspOuterClass.ElectroherculesBattleSelectDifficultyRsp.getDefaultInstance()) return this;
+        if (other.getDiffculty() != 0) {
+          setDiffculty(other.getDiffculty());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (other.getBNMHJGCJAPB() != 0) {
-          setBNMHJGCJAPB(other.getBNMHJGCJAPB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,9 +546,71 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
         return this;
       }
 
+      private int diffculty_ ;
+      /**
+       * <code>uint32 diffculty = 3;</code>
+       * @return The diffculty.
+       */
+      @java.lang.Override
+      public int getDiffculty() {
+        return diffculty_;
+      }
+      /**
+       * <code>uint32 diffculty = 3;</code>
+       * @param value The diffculty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiffculty(int value) {
+        
+        diffculty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 diffculty = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDiffculty() {
+        
+        diffculty_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 12;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -556,7 +618,7 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 12;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -567,7 +629,7 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -579,7 +641,7 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 1;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -587,7 +649,7 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 1;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -598,74 +660,12 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 5;</code>
+       * <code>uint32 gallery_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
         
         galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int bNMHJGCJAPB_ ;
-      /**
-       * <code>uint32 BNMHJGCJAPB = 2;</code>
-       * @return The bNMHJGCJAPB.
-       */
-      @java.lang.Override
-      public int getBNMHJGCJAPB() {
-        return bNMHJGCJAPB_;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 2;</code>
-       * @param value The bNMHJGCJAPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBNMHJGCJAPB(int value) {
-        
-        bNMHJGCJAPB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BNMHJGCJAPB = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBNMHJGCJAPB() {
-        
-        bNMHJGCJAPB_ = 0;
         onChanged();
         return this;
       }
@@ -737,11 +737,11 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n.ElectroherculesBattleSelectDifficultyR" +
-      "sp.proto\"v\n(ElectroherculesBattleSelectD" +
-      "ifficultyRsp\022\020\n\010stage_id\030\004 \001(\r\022\022\n\ngaller" +
-      "y_id\030\005 \001(\r\022\017\n\007retcode\030\007 \001(\005\022\023\n\013BNMHJGCJA" +
-      "PB\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
-      "roto3"
+      "sp.proto\"t\n(ElectroherculesBattleSelectD" +
+      "ifficultyRsp\022\021\n\tdiffculty\030\003 \001(\r\022\017\n\007retco" +
+      "de\030\002 \001(\005\022\020\n\010stage_id\030\014 \001(\r\022\022\n\ngallery_id" +
+      "\030\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -752,7 +752,7 @@ public final class ElectroherculesBattleSelectDifficultyRspOuterClass {
     internal_static_ElectroherculesBattleSelectDifficultyRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ElectroherculesBattleSelectDifficultyRsp_descriptor,
-        new java.lang.String[] { "StageId", "GalleryId", "Retcode", "BNMHJGCJAPB", });
+        new java.lang.String[] { "Diffculty", "Retcode", "StageId", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

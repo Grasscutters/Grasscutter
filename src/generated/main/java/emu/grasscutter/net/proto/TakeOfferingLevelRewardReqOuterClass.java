@@ -19,21 +19,21 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level = 14;</code>
-     * @return The level.
-     */
-    int getLevel();
-
-    /**
-     * <code>uint32 offering_id = 5;</code>
+     * <code>uint32 offering_id = 15;</code>
      * @return The offeringId.
      */
     int getOfferingId();
+
+    /**
+     * <code>uint32 level = 12;</code>
+     * @return The level.
+     */
+    int getLevel();
   }
   /**
    * <pre>
-   * CmdId: 2903
-   * Obf: GNECELBMOBC
+   * CmdId: 20499
+   * Obf: HBNBPABDFFF
    * </pre>
    *
    * Protobuf type {@code TakeOfferingLevelRewardReq}
@@ -80,14 +80,14 @@ public final class TakeOfferingLevelRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              offeringId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 96: {
 
               level_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              offeringId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class TakeOfferingLevelRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq.class, emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq.Builder.class);
     }
 
-    public static final int LEVEL_FIELD_NUMBER = 14;
-    private int level_;
-    /**
-     * <code>uint32 level = 14;</code>
-     * @return The level.
-     */
-    @java.lang.Override
-    public int getLevel() {
-      return level_;
-    }
-
-    public static final int OFFERING_ID_FIELD_NUMBER = 5;
+    public static final int OFFERING_ID_FIELD_NUMBER = 15;
     private int offeringId_;
     /**
-     * <code>uint32 offering_id = 5;</code>
+     * <code>uint32 offering_id = 15;</code>
      * @return The offeringId.
      */
     @java.lang.Override
     public int getOfferingId() {
       return offeringId_;
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 12;
+    private int level_;
+    /**
+     * <code>uint32 level = 12;</code>
+     * @return The level.
+     */
+    @java.lang.Override
+    public int getLevel() {
+      return level_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class TakeOfferingLevelRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (offeringId_ != 0) {
-        output.writeUInt32(5, offeringId_);
-      }
       if (level_ != 0) {
-        output.writeUInt32(14, level_);
+        output.writeUInt32(12, level_);
+      }
+      if (offeringId_ != 0) {
+        output.writeUInt32(15, offeringId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (offeringId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, offeringId_);
-      }
       if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, level_);
+          .computeUInt32Size(12, level_);
+      }
+      if (offeringId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, offeringId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       }
       emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq other = (emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq) obj;
 
-      if (getLevel()
-          != other.getLevel()) return false;
       if (getOfferingId()
           != other.getOfferingId()) return false;
+      if (getLevel()
+          != other.getLevel()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
       hash = (37 * hash) + OFFERING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOfferingId();
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevel();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class TakeOfferingLevelRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2903
-     * Obf: GNECELBMOBC
+     * CmdId: 20499
+     * Obf: HBNBPABDFFF
      * </pre>
      *
      * Protobuf type {@code TakeOfferingLevelRewardReq}
@@ -353,9 +353,9 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        level_ = 0;
-
         offeringId_ = 0;
+
+        level_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class TakeOfferingLevelRewardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq buildPartial() {
         emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq result = new emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq(this);
-        result.level_ = level_;
         result.offeringId_ = offeringId_;
+        result.level_ = level_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class TakeOfferingLevelRewardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq other) {
         if (other == emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq.getDefaultInstance()) return this;
-        if (other.getLevel() != 0) {
-          setLevel(other.getLevel());
-        }
         if (other.getOfferingId() != 0) {
           setOfferingId(other.getOfferingId());
+        }
+        if (other.getLevel() != 0) {
+          setLevel(other.getLevel());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class TakeOfferingLevelRewardReqOuterClass {
         return this;
       }
 
-      private int level_ ;
-      /**
-       * <code>uint32 level = 14;</code>
-       * @return The level.
-       */
-      @java.lang.Override
-      public int getLevel() {
-        return level_;
-      }
-      /**
-       * <code>uint32 level = 14;</code>
-       * @param value The level to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevel(int value) {
-        
-        level_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevel() {
-        
-        level_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int offeringId_ ;
       /**
-       * <code>uint32 offering_id = 5;</code>
+       * <code>uint32 offering_id = 15;</code>
        * @return The offeringId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class TakeOfferingLevelRewardReqOuterClass {
         return offeringId_;
       }
       /**
-       * <code>uint32 offering_id = 5;</code>
+       * <code>uint32 offering_id = 15;</code>
        * @param value The offeringId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class TakeOfferingLevelRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 offering_id = 5;</code>
+       * <code>uint32 offering_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearOfferingId() {
         
         offeringId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int level_ ;
+      /**
+       * <code>uint32 level = 12;</code>
+       * @return The level.
+       */
+      @java.lang.Override
+      public int getLevel() {
+        return level_;
+      }
+      /**
+       * <code>uint32 level = 12;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevel(int value) {
+        
+        level_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevel() {
+        
+        level_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class TakeOfferingLevelRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n TakeOfferingLevelRewardReq.proto\"@\n\032Ta" +
-      "keOfferingLevelRewardReq\022\r\n\005level\030\016 \001(\r\022" +
-      "\023\n\013offering_id\030\005 \001(\rB\033\n\031emu.grasscutter." +
+      "keOfferingLevelRewardReq\022\023\n\013offering_id\030" +
+      "\017 \001(\r\022\r\n\005level\030\014 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class TakeOfferingLevelRewardReqOuterClass {
     internal_static_TakeOfferingLevelRewardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeOfferingLevelRewardReq_descriptor,
-        new java.lang.String[] { "Level", "OfferingId", });
+        new java.lang.String[] { "OfferingId", "Level", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

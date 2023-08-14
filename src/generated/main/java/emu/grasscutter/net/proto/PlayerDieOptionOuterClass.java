@@ -16,7 +16,7 @@ public final class PlayerDieOptionOuterClass {
   }
   /**
    * <pre>
-   * Obf: DOMJGLDFCKC
+   * Obf: FEBNBMEEDHK
    * </pre>
    *
    * Protobuf enum {@code PlayerDieOption}

@@ -16,7 +16,7 @@ public final class FireworksReformParamTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: HPKCINCADAL
+   * Obf: FPEFLILOLGL
    * </pre>
    *
    * Protobuf enum {@code FireworksReformParamType}

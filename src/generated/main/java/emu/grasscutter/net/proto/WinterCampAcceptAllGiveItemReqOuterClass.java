@@ -20,8 +20,8 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8002
-   * Obf: PGDMGFMKDBM
+   * CmdId: 6397
+   * Obf: HPLLPIMMLLJ
    * </pre>
    *
    * Protobuf type {@code WinterCampAcceptAllGiveItemReq}
@@ -246,8 +246,8 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8002
-     * Obf: PGDMGFMKDBM
+     * CmdId: 6397
+     * Obf: HPLLPIMMLLJ
      * </pre>
      *
      * Protobuf type {@code WinterCampAcceptAllGiveItemReq}

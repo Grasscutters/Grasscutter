@@ -26,8 +26,8 @@ public final class ResumeRogueDiaryDungeonRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8145
-   * Obf: HBBDJAPLOKK
+   * CmdId: 21442
+   * Obf: IPGBEANOLHH
    * </pre>
    *
    * Protobuf type {@code ResumeRogueDiaryDungeonRsp}
@@ -279,8 +279,8 @@ public final class ResumeRogueDiaryDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8145
-     * Obf: HBBDJAPLOKK
+     * CmdId: 21442
+     * Obf: IPGBEANOLHH
      * </pre>
      *
      * Protobuf type {@code ResumeRogueDiaryDungeonRsp}

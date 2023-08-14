@@ -52,36 +52,6 @@ public final class QueryCurrRegionHttpRspOuterClass {
     emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfoOrBuilder getRegionInfoOrBuilder();
 
     /**
-     * <code>bytes client_secret_key = 11;</code>
-     * @return The clientSecretKey.
-     */
-    com.google.protobuf.ByteString getClientSecretKey();
-
-    /**
-     * <code>bytes region_custom_config_encrypted = 12;</code>
-     * @return The regionCustomConfigEncrypted.
-     */
-    com.google.protobuf.ByteString getRegionCustomConfigEncrypted();
-
-    /**
-     * <code>bytes client_region_custom_config_encrypted = 13;</code>
-     * @return The clientRegionCustomConfigEncrypted.
-     */
-    com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted();
-
-    /**
-     * <code>string AKEBLCKKHJK = 14;</code>
-     * @return The aKEBLCKKHJK.
-     */
-    java.lang.String getAKEBLCKKHJK();
-    /**
-     * <code>string AKEBLCKKHJK = 14;</code>
-     * @return The bytes for aKEBLCKKHJK.
-     */
-    com.google.protobuf.ByteString
-        getAKEBLCKKHJKBytes();
-
-    /**
      * <code>.ForceUpdateInfo force_update = 4;</code>
      * @return Whether the forceUpdate field is set.
      */
@@ -111,11 +81,41 @@ public final class QueryCurrRegionHttpRspOuterClass {
      */
     emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfoOrBuilder getStopServerOrBuilder();
 
+    /**
+     * <code>bytes client_secret_key = 11;</code>
+     * @return The clientSecretKey.
+     */
+    com.google.protobuf.ByteString getClientSecretKey();
+
+    /**
+     * <code>bytes region_custom_config_encrypted = 12;</code>
+     * @return The regionCustomConfigEncrypted.
+     */
+    com.google.protobuf.ByteString getRegionCustomConfigEncrypted();
+
+    /**
+     * <code>bytes client_region_custom_config_encrypted = 13;</code>
+     * @return The clientRegionCustomConfigEncrypted.
+     */
+    com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted();
+
+    /**
+     * <code>string LDOHCJJALDK = 14;</code>
+     * @return The lDOHCJJALDK.
+     */
+    java.lang.String getLDOHCJJALDK();
+    /**
+     * <code>string LDOHCJJALDK = 14;</code>
+     * @return The bytes for lDOHCJJALDK.
+     */
+    com.google.protobuf.ByteString
+        getLDOHCJJALDKBytes();
+
     public emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.DetailCase getDetailCase();
   }
   /**
    * <pre>
-   * Obf: EBEJJGCKFNF
+   * Obf: LMDOBCJAKIH
    * </pre>
    *
    * Protobuf type {@code QueryCurrRegionHttpRsp}
@@ -134,7 +134,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
       clientSecretKey_ = com.google.protobuf.ByteString.EMPTY;
       regionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
       clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
-      aKEBLCKKHJK_ = "";
+      lDOHCJJALDK_ = "";
     }
 
     @java.lang.Override
@@ -237,7 +237,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
             case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              aKEBLCKKHJK_ = s;
+              lDOHCJJALDK_ = s;
               break;
             }
             default: {
@@ -388,77 +388,6 @@ public final class QueryCurrRegionHttpRspOuterClass {
       return getRegionInfo();
     }
 
-    public static final int CLIENT_SECRET_KEY_FIELD_NUMBER = 11;
-    private com.google.protobuf.ByteString clientSecretKey_;
-    /**
-     * <code>bytes client_secret_key = 11;</code>
-     * @return The clientSecretKey.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getClientSecretKey() {
-      return clientSecretKey_;
-    }
-
-    public static final int REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER = 12;
-    private com.google.protobuf.ByteString regionCustomConfigEncrypted_;
-    /**
-     * <code>bytes region_custom_config_encrypted = 12;</code>
-     * @return The regionCustomConfigEncrypted.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getRegionCustomConfigEncrypted() {
-      return regionCustomConfigEncrypted_;
-    }
-
-    public static final int CLIENT_REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER = 13;
-    private com.google.protobuf.ByteString clientRegionCustomConfigEncrypted_;
-    /**
-     * <code>bytes client_region_custom_config_encrypted = 13;</code>
-     * @return The clientRegionCustomConfigEncrypted.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted() {
-      return clientRegionCustomConfigEncrypted_;
-    }
-
-    public static final int AKEBLCKKHJK_FIELD_NUMBER = 14;
-    private volatile java.lang.Object aKEBLCKKHJK_;
-    /**
-     * <code>string AKEBLCKKHJK = 14;</code>
-     * @return The aKEBLCKKHJK.
-     */
-    @java.lang.Override
-    public java.lang.String getAKEBLCKKHJK() {
-      java.lang.Object ref = aKEBLCKKHJK_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        aKEBLCKKHJK_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string AKEBLCKKHJK = 14;</code>
-     * @return The bytes for aKEBLCKKHJK.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAKEBLCKKHJKBytes() {
-      java.lang.Object ref = aKEBLCKKHJK_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        aKEBLCKKHJK_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int FORCE_UPDATE_FIELD_NUMBER = 4;
     /**
      * <code>.ForceUpdateInfo force_update = 4;</code>
@@ -521,6 +450,77 @@ public final class QueryCurrRegionHttpRspOuterClass {
       return emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo.getDefaultInstance();
     }
 
+    public static final int CLIENT_SECRET_KEY_FIELD_NUMBER = 11;
+    private com.google.protobuf.ByteString clientSecretKey_;
+    /**
+     * <code>bytes client_secret_key = 11;</code>
+     * @return The clientSecretKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClientSecretKey() {
+      return clientSecretKey_;
+    }
+
+    public static final int REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER = 12;
+    private com.google.protobuf.ByteString regionCustomConfigEncrypted_;
+    /**
+     * <code>bytes region_custom_config_encrypted = 12;</code>
+     * @return The regionCustomConfigEncrypted.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionCustomConfigEncrypted() {
+      return regionCustomConfigEncrypted_;
+    }
+
+    public static final int CLIENT_REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER = 13;
+    private com.google.protobuf.ByteString clientRegionCustomConfigEncrypted_;
+    /**
+     * <code>bytes client_region_custom_config_encrypted = 13;</code>
+     * @return The clientRegionCustomConfigEncrypted.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted() {
+      return clientRegionCustomConfigEncrypted_;
+    }
+
+    public static final int LDOHCJJALDK_FIELD_NUMBER = 14;
+    private volatile java.lang.Object lDOHCJJALDK_;
+    /**
+     * <code>string LDOHCJJALDK = 14;</code>
+     * @return The lDOHCJJALDK.
+     */
+    @java.lang.Override
+    public java.lang.String getLDOHCJJALDK() {
+      java.lang.Object ref = lDOHCJJALDK_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lDOHCJJALDK_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string LDOHCJJALDK = 14;</code>
+     * @return The bytes for lDOHCJJALDK.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLDOHCJJALDKBytes() {
+      java.lang.Object ref = lDOHCJJALDK_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lDOHCJJALDK_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -559,8 +559,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
       if (!clientRegionCustomConfigEncrypted_.isEmpty()) {
         output.writeBytes(13, clientRegionCustomConfigEncrypted_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aKEBLCKKHJK_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, aKEBLCKKHJK_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lDOHCJJALDK_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, lDOHCJJALDK_);
       }
       unknownFields.writeTo(output);
     }
@@ -602,8 +602,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, clientRegionCustomConfigEncrypted_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aKEBLCKKHJK_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, aKEBLCKKHJK_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lDOHCJJALDK_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, lDOHCJJALDK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -635,8 +635,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
           .equals(other.getRegionCustomConfigEncrypted())) return false;
       if (!getClientRegionCustomConfigEncrypted()
           .equals(other.getClientRegionCustomConfigEncrypted())) return false;
-      if (!getAKEBLCKKHJK()
-          .equals(other.getAKEBLCKKHJK())) return false;
+      if (!getLDOHCJJALDK()
+          .equals(other.getLDOHCJJALDK())) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
         case 4:
@@ -675,8 +675,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
       hash = (53 * hash) + getRegionCustomConfigEncrypted().hashCode();
       hash = (37 * hash) + CLIENT_REGION_CUSTOM_CONFIG_ENCRYPTED_FIELD_NUMBER;
       hash = (53 * hash) + getClientRegionCustomConfigEncrypted().hashCode();
-      hash = (37 * hash) + AKEBLCKKHJK_FIELD_NUMBER;
-      hash = (53 * hash) + getAKEBLCKKHJK().hashCode();
+      hash = (37 * hash) + LDOHCJJALDK_FIELD_NUMBER;
+      hash = (53 * hash) + getLDOHCJJALDK().hashCode();
       switch (detailCase_) {
         case 4:
           hash = (37 * hash) + FORCE_UPDATE_FIELD_NUMBER;
@@ -786,7 +786,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
     }
     /**
      * <pre>
-     * Obf: EBEJJGCKFNF
+     * Obf: LMDOBCJAKIH
      * </pre>
      *
      * Protobuf type {@code QueryCurrRegionHttpRsp}
@@ -842,7 +842,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
 
         clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
 
-        aKEBLCKKHJK_ = "";
+        lDOHCJJALDK_ = "";
 
         detailCase_ = 0;
         detail_ = null;
@@ -879,10 +879,6 @@ public final class QueryCurrRegionHttpRspOuterClass {
         } else {
           result.regionInfo_ = regionInfoBuilder_.build();
         }
-        result.clientSecretKey_ = clientSecretKey_;
-        result.regionCustomConfigEncrypted_ = regionCustomConfigEncrypted_;
-        result.clientRegionCustomConfigEncrypted_ = clientRegionCustomConfigEncrypted_;
-        result.aKEBLCKKHJK_ = aKEBLCKKHJK_;
         if (detailCase_ == 4) {
           if (forceUpdateBuilder_ == null) {
             result.detail_ = detail_;
@@ -897,6 +893,10 @@ public final class QueryCurrRegionHttpRspOuterClass {
             result.detail_ = stopServerBuilder_.build();
           }
         }
+        result.clientSecretKey_ = clientSecretKey_;
+        result.regionCustomConfigEncrypted_ = regionCustomConfigEncrypted_;
+        result.clientRegionCustomConfigEncrypted_ = clientRegionCustomConfigEncrypted_;
+        result.lDOHCJJALDK_ = lDOHCJJALDK_;
         result.detailCase_ = detailCase_;
         onBuilt();
         return result;
@@ -965,8 +965,8 @@ public final class QueryCurrRegionHttpRspOuterClass {
         if (other.getClientRegionCustomConfigEncrypted() != com.google.protobuf.ByteString.EMPTY) {
           setClientRegionCustomConfigEncrypted(other.getClientRegionCustomConfigEncrypted());
         }
-        if (!other.getAKEBLCKKHJK().isEmpty()) {
-          aKEBLCKKHJK_ = other.aKEBLCKKHJK_;
+        if (!other.getLDOHCJJALDK().isEmpty()) {
+          lDOHCJJALDK_ = other.lDOHCJJALDK_;
           onChanged();
         }
         switch (other.getDetailCase()) {
@@ -1252,184 +1252,6 @@ public final class QueryCurrRegionHttpRspOuterClass {
         return regionInfoBuilder_;
       }
 
-      private com.google.protobuf.ByteString clientSecretKey_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes client_secret_key = 11;</code>
-       * @return The clientSecretKey.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getClientSecretKey() {
-        return clientSecretKey_;
-      }
-      /**
-       * <code>bytes client_secret_key = 11;</code>
-       * @param value The clientSecretKey to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientSecretKey(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientSecretKey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes client_secret_key = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientSecretKey() {
-        
-        clientSecretKey_ = getDefaultInstance().getClientSecretKey();
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString regionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes region_custom_config_encrypted = 12;</code>
-       * @return The regionCustomConfigEncrypted.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getRegionCustomConfigEncrypted() {
-        return regionCustomConfigEncrypted_;
-      }
-      /**
-       * <code>bytes region_custom_config_encrypted = 12;</code>
-       * @param value The regionCustomConfigEncrypted to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRegionCustomConfigEncrypted(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        regionCustomConfigEncrypted_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes region_custom_config_encrypted = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRegionCustomConfigEncrypted() {
-        
-        regionCustomConfigEncrypted_ = getDefaultInstance().getRegionCustomConfigEncrypted();
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.ByteString clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>bytes client_region_custom_config_encrypted = 13;</code>
-       * @return The clientRegionCustomConfigEncrypted.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted() {
-        return clientRegionCustomConfigEncrypted_;
-      }
-      /**
-       * <code>bytes client_region_custom_config_encrypted = 13;</code>
-       * @param value The clientRegionCustomConfigEncrypted to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientRegionCustomConfigEncrypted(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        clientRegionCustomConfigEncrypted_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bytes client_region_custom_config_encrypted = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientRegionCustomConfigEncrypted() {
-        
-        clientRegionCustomConfigEncrypted_ = getDefaultInstance().getClientRegionCustomConfigEncrypted();
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object aKEBLCKKHJK_ = "";
-      /**
-       * <code>string AKEBLCKKHJK = 14;</code>
-       * @return The aKEBLCKKHJK.
-       */
-      public java.lang.String getAKEBLCKKHJK() {
-        java.lang.Object ref = aKEBLCKKHJK_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          aKEBLCKKHJK_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string AKEBLCKKHJK = 14;</code>
-       * @return The bytes for aKEBLCKKHJK.
-       */
-      public com.google.protobuf.ByteString
-          getAKEBLCKKHJKBytes() {
-        java.lang.Object ref = aKEBLCKKHJK_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          aKEBLCKKHJK_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string AKEBLCKKHJK = 14;</code>
-       * @param value The aKEBLCKKHJK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAKEBLCKKHJK(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        aKEBLCKKHJK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string AKEBLCKKHJK = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAKEBLCKKHJK() {
-        
-        aKEBLCKKHJK_ = getDefaultInstance().getAKEBLCKKHJK();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string AKEBLCKKHJK = 14;</code>
-       * @param value The bytes for aKEBLCKKHJK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAKEBLCKKHJKBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        aKEBLCKKHJK_ = value;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.ForceUpdateInfoOuterClass.ForceUpdateInfo, emu.grasscutter.net.proto.ForceUpdateInfoOuterClass.ForceUpdateInfo.Builder, emu.grasscutter.net.proto.ForceUpdateInfoOuterClass.ForceUpdateInfoOrBuilder> forceUpdateBuilder_;
       /**
@@ -1711,6 +1533,184 @@ public final class QueryCurrRegionHttpRspOuterClass {
         onChanged();;
         return stopServerBuilder_;
       }
+
+      private com.google.protobuf.ByteString clientSecretKey_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes client_secret_key = 11;</code>
+       * @return The clientSecretKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getClientSecretKey() {
+        return clientSecretKey_;
+      }
+      /**
+       * <code>bytes client_secret_key = 11;</code>
+       * @param value The clientSecretKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientSecretKey(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientSecretKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes client_secret_key = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientSecretKey() {
+        
+        clientSecretKey_ = getDefaultInstance().getClientSecretKey();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString regionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes region_custom_config_encrypted = 12;</code>
+       * @return The regionCustomConfigEncrypted.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRegionCustomConfigEncrypted() {
+        return regionCustomConfigEncrypted_;
+      }
+      /**
+       * <code>bytes region_custom_config_encrypted = 12;</code>
+       * @param value The regionCustomConfigEncrypted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionCustomConfigEncrypted(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        regionCustomConfigEncrypted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes region_custom_config_encrypted = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRegionCustomConfigEncrypted() {
+        
+        regionCustomConfigEncrypted_ = getDefaultInstance().getRegionCustomConfigEncrypted();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString clientRegionCustomConfigEncrypted_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes client_region_custom_config_encrypted = 13;</code>
+       * @return The clientRegionCustomConfigEncrypted.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getClientRegionCustomConfigEncrypted() {
+        return clientRegionCustomConfigEncrypted_;
+      }
+      /**
+       * <code>bytes client_region_custom_config_encrypted = 13;</code>
+       * @param value The clientRegionCustomConfigEncrypted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientRegionCustomConfigEncrypted(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientRegionCustomConfigEncrypted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes client_region_custom_config_encrypted = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientRegionCustomConfigEncrypted() {
+        
+        clientRegionCustomConfigEncrypted_ = getDefaultInstance().getClientRegionCustomConfigEncrypted();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lDOHCJJALDK_ = "";
+      /**
+       * <code>string LDOHCJJALDK = 14;</code>
+       * @return The lDOHCJJALDK.
+       */
+      public java.lang.String getLDOHCJJALDK() {
+        java.lang.Object ref = lDOHCJJALDK_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lDOHCJJALDK_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string LDOHCJJALDK = 14;</code>
+       * @return The bytes for lDOHCJJALDK.
+       */
+      public com.google.protobuf.ByteString
+          getLDOHCJJALDKBytes() {
+        java.lang.Object ref = lDOHCJJALDK_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lDOHCJJALDK_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string LDOHCJJALDK = 14;</code>
+       * @param value The lDOHCJJALDK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLDOHCJJALDK(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lDOHCJJALDK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string LDOHCJJALDK = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLDOHCJJALDK() {
+        
+        lDOHCJJALDK_ = getDefaultInstance().getLDOHCJJALDK();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string LDOHCJJALDK = 14;</code>
+       * @param value The bytes for lDOHCJJALDK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLDOHCJJALDKBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lDOHCJJALDK_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1782,13 +1782,13 @@ public final class QueryCurrRegionHttpRspOuterClass {
       "fo.proto\032\025ForceUpdateInfo.proto\032\024StopSer" +
       "verInfo.proto\"\273\002\n\026QueryCurrRegionHttpRsp" +
       "\022\017\n\007retcode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022 \n\013region" +
-      "_info\030\003 \001(\0132\013.RegionInfo\022\031\n\021client_secre" +
-      "t_key\030\013 \001(\014\022&\n\036region_custom_config_encr" +
-      "ypted\030\014 \001(\014\022-\n%client_region_custom_conf" +
-      "ig_encrypted\030\r \001(\014\022\023\n\013AKEBLCKKHJK\030\016 \001(\t\022" +
-      "(\n\014force_update\030\004 \001(\0132\020.ForceUpdateInfoH" +
-      "\000\022&\n\013stop_server\030\005 \001(\0132\017.StopServerInfoH" +
-      "\000B\010\n\006detailB\033\n\031emu.grasscutter.net.proto" +
+      "_info\030\003 \001(\0132\013.RegionInfo\022(\n\014force_update" +
+      "\030\004 \001(\0132\020.ForceUpdateInfoH\000\022&\n\013stop_serve" +
+      "r\030\005 \001(\0132\017.StopServerInfoH\000\022\031\n\021client_sec" +
+      "ret_key\030\013 \001(\014\022&\n\036region_custom_config_en" +
+      "crypted\030\014 \001(\014\022-\n%client_region_custom_co" +
+      "nfig_encrypted\030\r \001(\014\022\023\n\013LDOHCJJALDK\030\016 \001(" +
+      "\tB\010\n\006detailB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1803,7 +1803,7 @@ public final class QueryCurrRegionHttpRspOuterClass {
     internal_static_QueryCurrRegionHttpRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryCurrRegionHttpRsp_descriptor,
-        new java.lang.String[] { "Retcode", "Msg", "RegionInfo", "ClientSecretKey", "RegionCustomConfigEncrypted", "ClientRegionCustomConfigEncrypted", "AKEBLCKKHJK", "ForceUpdate", "StopServer", "Detail", });
+        new java.lang.String[] { "Retcode", "Msg", "RegionInfo", "ForceUpdate", "StopServer", "ClientSecretKey", "RegionCustomConfigEncrypted", "ClientRegionCustomConfigEncrypted", "LDOHCJJALDK", "Detail", });
     emu.grasscutter.net.proto.RegionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ForceUpdateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.StopServerInfoOuterClass.getDescriptor();

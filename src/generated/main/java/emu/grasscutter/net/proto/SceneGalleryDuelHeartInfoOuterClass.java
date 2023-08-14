@@ -19,14 +19,14 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 15;</code>
+     * <code>uint32 difficulty = 14;</code>
      * @return The difficulty.
      */
     int getDifficulty();
   }
   /**
    * <pre>
-   * Obf: IMPKEBNAIPJ
+   * Obf: FNNGJDPGKJL
    * </pre>
    *
    * Protobuf type {@code SceneGalleryDuelHeartInfo}
@@ -73,7 +73,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 112: {
 
               difficulty_ = input.readUInt32();
               break;
@@ -110,10 +110,10 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryDuelHeartInfoOuterClass.SceneGalleryDuelHeartInfo.class, emu.grasscutter.net.proto.SceneGalleryDuelHeartInfoOuterClass.SceneGalleryDuelHeartInfo.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 15;
+    public static final int DIFFICULTY_FIELD_NUMBER = 14;
     private int difficulty_;
     /**
-     * <code>uint32 difficulty = 15;</code>
+     * <code>uint32 difficulty = 14;</code>
      * @return The difficulty.
      */
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (difficulty_ != 0) {
-        output.writeUInt32(15, difficulty_);
+        output.writeUInt32(14, difficulty_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
       size = 0;
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, difficulty_);
+          .computeUInt32Size(14, difficulty_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,7 +278,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: IMPKEBNAIPJ
+     * Obf: FNNGJDPGKJL
      * </pre>
      *
      * Protobuf type {@code SceneGalleryDuelHeartInfo}
@@ -429,7 +429,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
 
       private int difficulty_ ;
       /**
-       * <code>uint32 difficulty = 15;</code>
+       * <code>uint32 difficulty = 14;</code>
        * @return The difficulty.
        */
       @java.lang.Override
@@ -437,7 +437,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
         return difficulty_;
       }
       /**
-       * <code>uint32 difficulty = 15;</code>
+       * <code>uint32 difficulty = 14;</code>
        * @param value The difficulty to set.
        * @return This builder for chaining.
        */
@@ -448,7 +448,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficulty = 15;</code>
+       * <code>uint32 difficulty = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
@@ -525,7 +525,7 @@ public final class SceneGalleryDuelHeartInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037SceneGalleryDuelHeartInfo.proto\"/\n\031Sce" +
-      "neGalleryDuelHeartInfo\022\022\n\ndifficulty\030\017 \001" +
+      "neGalleryDuelHeartInfo\022\022\n\ndifficulty\030\016 \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

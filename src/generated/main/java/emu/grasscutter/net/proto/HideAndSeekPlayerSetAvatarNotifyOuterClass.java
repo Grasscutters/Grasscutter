@@ -19,27 +19,27 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 6;</code>
-     * @return The avatarId.
+     * <code>uint32 uid = 11;</code>
+     * @return The uid.
      */
-    int getAvatarId();
+    int getUid();
 
     /**
-     * <code>uint32 costume_id = 14;</code>
+     * <code>uint32 costume_id = 2;</code>
      * @return The costumeId.
      */
     int getCostumeId();
 
     /**
-     * <code>uint32 uid = 3;</code>
-     * @return The uid.
+     * <code>uint32 avatar_id = 4;</code>
+     * @return The avatarId.
      */
-    int getUid();
+    int getAvatarId();
   }
   /**
    * <pre>
-   * CmdId: 5310
-   * Obf: GFLMJBMGIPF
+   * CmdId: 27442
+   * Obf: PBAMJDOBGEK
    * </pre>
    *
    * Protobuf type {@code HideAndSeekPlayerSetAvatarNotify}
@@ -86,19 +86,19 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
-              uid_ = input.readUInt32();
+              costumeId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 32: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 88: {
 
-              costumeId_ = input.readUInt32();
+              uid_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
               emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify.class, emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 6;
-    private int avatarId_;
+    public static final int UID_FIELD_NUMBER = 11;
+    private int uid_;
     /**
-     * <code>uint32 avatar_id = 6;</code>
-     * @return The avatarId.
+     * <code>uint32 uid = 11;</code>
+     * @return The uid.
      */
     @java.lang.Override
-    public int getAvatarId() {
-      return avatarId_;
+    public int getUid() {
+      return uid_;
     }
 
-    public static final int COSTUME_ID_FIELD_NUMBER = 14;
+    public static final int COSTUME_ID_FIELD_NUMBER = 2;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 14;</code>
+     * <code>uint32 costume_id = 2;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       return costumeId_;
     }
 
-    public static final int UID_FIELD_NUMBER = 3;
-    private int uid_;
+    public static final int AVATAR_ID_FIELD_NUMBER = 4;
+    private int avatarId_;
     /**
-     * <code>uint32 uid = 3;</code>
-     * @return The uid.
+     * <code>uint32 avatar_id = 4;</code>
+     * @return The avatarId.
      */
     @java.lang.Override
-    public int getUid() {
-      return uid_;
+    public int getAvatarId() {
+      return avatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (uid_ != 0) {
-        output.writeUInt32(3, uid_);
+      if (costumeId_ != 0) {
+        output.writeUInt32(2, costumeId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(6, avatarId_);
+        output.writeUInt32(4, avatarId_);
       }
-      if (costumeId_ != 0) {
-        output.writeUInt32(14, costumeId_);
+      if (uid_ != 0) {
+        output.writeUInt32(11, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (uid_ != 0) {
+      if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, uid_);
+          .computeUInt32Size(2, costumeId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, avatarId_);
+          .computeUInt32Size(4, avatarId_);
       }
-      if (costumeId_ != 0) {
+      if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, costumeId_);
+          .computeUInt32Size(11, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       }
       emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify other = (emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify) obj;
 
-      if (getAvatarId()
-          != other.getAvatarId()) return false;
-      if (getCostumeId()
-          != other.getCostumeId()) return false;
       if (getUid()
           != other.getUid()) return false;
+      if (getCostumeId()
+          != other.getCostumeId()) return false;
+      if (getAvatarId()
+          != other.getAvatarId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarId();
-      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCostumeId();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
+      hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCostumeId();
+      hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5310
-     * Obf: GFLMJBMGIPF
+     * CmdId: 27442
+     * Obf: PBAMJDOBGEK
      * </pre>
      *
      * Protobuf type {@code HideAndSeekPlayerSetAvatarNotify}
@@ -386,11 +386,11 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarId_ = 0;
+        uid_ = 0;
 
         costumeId_ = 0;
 
-        uid_ = 0;
+        avatarId_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify buildPartial() {
         emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify result = new emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify(this);
-        result.avatarId_ = avatarId_;
-        result.costumeId_ = costumeId_;
         result.uid_ = uid_;
+        result.costumeId_ = costumeId_;
+        result.avatarId_ = avatarId_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify other) {
         if (other == emu.grasscutter.net.proto.HideAndSeekPlayerSetAvatarNotifyOuterClass.HideAndSeekPlayerSetAvatarNotify.getDefaultInstance()) return this;
-        if (other.getAvatarId() != 0) {
-          setAvatarId(other.getAvatarId());
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
         }
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
+        if (other.getAvatarId() != 0) {
+          setAvatarId(other.getAvatarId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,71 +507,9 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
         return this;
       }
 
-      private int avatarId_ ;
-      /**
-       * <code>uint32 avatar_id = 6;</code>
-       * @return The avatarId.
-       */
-      @java.lang.Override
-      public int getAvatarId() {
-        return avatarId_;
-      }
-      /**
-       * <code>uint32 avatar_id = 6;</code>
-       * @param value The avatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAvatarId(int value) {
-        
-        avatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 avatar_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAvatarId() {
-        
-        avatarId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int costumeId_ ;
-      /**
-       * <code>uint32 costume_id = 14;</code>
-       * @return The costumeId.
-       */
-      @java.lang.Override
-      public int getCostumeId() {
-        return costumeId_;
-      }
-      /**
-       * <code>uint32 costume_id = 14;</code>
-       * @param value The costumeId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCostumeId(int value) {
-        
-        costumeId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 costume_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCostumeId() {
-        
-        costumeId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int uid_ ;
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 11;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -579,7 +517,7 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 11;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -590,12 +528,74 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
         
         uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int costumeId_ ;
+      /**
+       * <code>uint32 costume_id = 2;</code>
+       * @return The costumeId.
+       */
+      @java.lang.Override
+      public int getCostumeId() {
+        return costumeId_;
+      }
+      /**
+       * <code>uint32 costume_id = 2;</code>
+       * @param value The costumeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostumeId(int value) {
+        
+        costumeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 costume_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostumeId() {
+        
+        costumeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int avatarId_ ;
+      /**
+       * <code>uint32 avatar_id = 4;</code>
+       * @return The avatarId.
+       */
+      @java.lang.Override
+      public int getAvatarId() {
+        return avatarId_;
+      }
+      /**
+       * <code>uint32 avatar_id = 4;</code>
+       * @param value The avatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvatarId(int value) {
+        
+        avatarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 avatar_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvatarId() {
+        
+        avatarId_ = 0;
         onChanged();
         return this;
       }
@@ -667,9 +667,9 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&HideAndSeekPlayerSetAvatarNotify.proto" +
-      "\"V\n HideAndSeekPlayerSetAvatarNotify\022\021\n\t" +
-      "avatar_id\030\006 \001(\r\022\022\n\ncostume_id\030\016 \001(\r\022\013\n\003u" +
-      "id\030\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "\"V\n HideAndSeekPlayerSetAvatarNotify\022\013\n\003" +
+      "uid\030\013 \001(\r\022\022\n\ncostume_id\030\002 \001(\r\022\021\n\tavatar_" +
+      "id\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class HideAndSeekPlayerSetAvatarNotifyOuterClass {
     internal_static_HideAndSeekPlayerSetAvatarNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HideAndSeekPlayerSetAvatarNotify_descriptor,
-        new java.lang.String[] { "AvatarId", "CostumeId", "Uid", });
+        new java.lang.String[] { "Uid", "CostumeId", "AvatarId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

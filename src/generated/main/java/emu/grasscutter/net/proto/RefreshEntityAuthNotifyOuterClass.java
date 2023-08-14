@@ -37,8 +37,8 @@ public final class RefreshEntityAuthNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3016
-   * Obf: JMOLGNNDBKB
+   * CmdId: 5604
+   * Obf: EDMKDPALDGP
    * </pre>
    *
    * Protobuf type {@code RefreshEntityAuthNotify}
@@ -345,8 +345,8 @@ public final class RefreshEntityAuthNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3016
-     * Obf: JMOLGNNDBKB
+     * CmdId: 5604
+     * Obf: EDMKDPALDGP
      * </pre>
      *
      * Protobuf type {@code RefreshEntityAuthNotify}

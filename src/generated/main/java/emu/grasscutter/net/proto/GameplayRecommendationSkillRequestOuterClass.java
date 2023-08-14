@@ -19,14 +19,14 @@ public final class GameplayRecommendationSkillRequestOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 skill_depot_id = 5;</code>
+     * <code>uint32 skill_depot_id = 7;</code>
      * @return The skillDepotId.
      */
     int getSkillDepotId();
   }
   /**
    * <pre>
-   * Obf: AJLLMEBCFIB
+   * Obf: ALBDDCMFKKJ
    * </pre>
    *
    * Protobuf type {@code GameplayRecommendationSkillRequest}
@@ -73,7 +73,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               skillDepotId_ = input.readUInt32();
               break;
@@ -110,10 +110,10 @@ public final class GameplayRecommendationSkillRequestOuterClass {
               emu.grasscutter.net.proto.GameplayRecommendationSkillRequestOuterClass.GameplayRecommendationSkillRequest.class, emu.grasscutter.net.proto.GameplayRecommendationSkillRequestOuterClass.GameplayRecommendationSkillRequest.Builder.class);
     }
 
-    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 5;
+    public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 7;
     private int skillDepotId_;
     /**
-     * <code>uint32 skill_depot_id = 5;</code>
+     * <code>uint32 skill_depot_id = 7;</code>
      * @return The skillDepotId.
      */
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (skillDepotId_ != 0) {
-        output.writeUInt32(5, skillDepotId_);
+        output.writeUInt32(7, skillDepotId_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
       size = 0;
       if (skillDepotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, skillDepotId_);
+          .computeUInt32Size(7, skillDepotId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,7 +278,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
     }
     /**
      * <pre>
-     * Obf: AJLLMEBCFIB
+     * Obf: ALBDDCMFKKJ
      * </pre>
      *
      * Protobuf type {@code GameplayRecommendationSkillRequest}
@@ -429,7 +429,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
 
       private int skillDepotId_ ;
       /**
-       * <code>uint32 skill_depot_id = 5;</code>
+       * <code>uint32 skill_depot_id = 7;</code>
        * @return The skillDepotId.
        */
       @java.lang.Override
@@ -437,7 +437,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
         return skillDepotId_;
       }
       /**
-       * <code>uint32 skill_depot_id = 5;</code>
+       * <code>uint32 skill_depot_id = 7;</code>
        * @param value The skillDepotId to set.
        * @return This builder for chaining.
        */
@@ -448,7 +448,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
         return this;
       }
       /**
-       * <code>uint32 skill_depot_id = 5;</code>
+       * <code>uint32 skill_depot_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
@@ -526,7 +526,7 @@ public final class GameplayRecommendationSkillRequestOuterClass {
     java.lang.String[] descriptorData = {
       "\n(GameplayRecommendationSkillRequest.pro" +
       "to\"<\n\"GameplayRecommendationSkillRequest" +
-      "\022\026\n\016skill_depot_id\030\005 \001(\rB\033\n\031emu.grasscut" +
+      "\022\026\n\016skill_depot_id\030\007 \001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

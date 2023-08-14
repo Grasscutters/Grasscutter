@@ -19,54 +19,54 @@ public final class HomePlantSubFieldDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-     * @return The enum numeric value on the wire for mMNMLFLBMCF.
-     */
-    int getMMNMLFLBMCFValue();
-    /**
-     * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-     * @return The mMNMLFLBMCF.
-     */
-    emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getMMNMLFLBMCF();
-
-    /**
-     * <code>uint32 JBCOCICMEJE = 4;</code>
-     * @return The jBCOCICMEJE.
-     */
-    int getJBCOCICMEJE();
-
-    /**
-     * <code>fixed32 end_time = 15;</code>
-     * @return The endTime.
-     */
-    int getEndTime();
-
-    /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @return A list containing the entityIdList.
      */
     java.util.List<java.lang.Integer> getEntityIdListList();
     /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @return The count of entityIdList.
      */
     int getEntityIdListCount();
     /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The entityIdList at the given index.
      */
     int getEntityIdList(int index);
 
     /**
-     * <code>uint32 FDCENJDIOCF = 9;</code>
-     * @return The fDCENJDIOCF.
+     * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+     * @return The enum numeric value on the wire for cAKDDMKAIMD.
      */
-    int getFDCENJDIOCF();
+    int getCAKDDMKAIMDValue();
+    /**
+     * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+     * @return The cAKDDMKAIMD.
+     */
+    emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getCAKDDMKAIMD();
+
+    /**
+     * <code>uint32 JHFNDBIHLNB = 8;</code>
+     * @return The jHFNDBIHLNB.
+     */
+    int getJHFNDBIHLNB();
+
+    /**
+     * <code>fixed32 end_time = 14;</code>
+     * @return The endTime.
+     */
+    int getEndTime();
+
+    /**
+     * <code>uint32 KHFGOPCOAGM = 3;</code>
+     * @return The kHFGOPCOAGM.
+     */
+    int getKHFGOPCOAGM();
   }
   /**
    * <pre>
-   * Obf: JICIBIJIHAB
+   * Obf: EAFGKPCFDCI
    * </pre>
    *
    * Protobuf type {@code HomePlantSubFieldData}
@@ -81,8 +81,8 @@ public final class HomePlantSubFieldDataOuterClass {
       super(builder);
     }
     private HomePlantSubFieldData() {
-      mMNMLFLBMCF_ = 0;
       entityIdList_ = emptyIntList();
+      cAKDDMKAIMD_ = 0;
     }
 
     @java.lang.Override
@@ -116,7 +116,12 @@ public final class HomePlantSubFieldDataOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
+
+              kHFGOPCOAGM_ = input.readUInt32();
+              break;
+            }
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 entityIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -124,7 +129,7 @@ public final class HomePlantSubFieldDataOuterClass {
               entityIdList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -137,23 +142,18 @@ public final class HomePlantSubFieldDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
+            case 56: {
               int rawValue = input.readEnum();
 
-              mMNMLFLBMCF_ = rawValue;
+              cAKDDMKAIMD_ = rawValue;
               break;
             }
-            case 32: {
+            case 64: {
 
-              jBCOCICMEJE_ = input.readUInt32();
+              jHFNDBIHLNB_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              fDCENJDIOCF_ = input.readUInt32();
-              break;
-            }
-            case 125: {
+            case 117: {
 
               endTime_ = input.readFixed32();
               break;
@@ -193,51 +193,10 @@ public final class HomePlantSubFieldDataOuterClass {
               emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.class, emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.Builder.class);
     }
 
-    public static final int MMNMLFLBMCF_FIELD_NUMBER = 3;
-    private int mMNMLFLBMCF_;
-    /**
-     * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-     * @return The enum numeric value on the wire for mMNMLFLBMCF.
-     */
-    @java.lang.Override public int getMMNMLFLBMCFValue() {
-      return mMNMLFLBMCF_;
-    }
-    /**
-     * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-     * @return The mMNMLFLBMCF.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getMMNMLFLBMCF() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(mMNMLFLBMCF_);
-      return result == null ? emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
-    }
-
-    public static final int JBCOCICMEJE_FIELD_NUMBER = 4;
-    private int jBCOCICMEJE_;
-    /**
-     * <code>uint32 JBCOCICMEJE = 4;</code>
-     * @return The jBCOCICMEJE.
-     */
-    @java.lang.Override
-    public int getJBCOCICMEJE() {
-      return jBCOCICMEJE_;
-    }
-
-    public static final int END_TIME_FIELD_NUMBER = 15;
-    private int endTime_;
-    /**
-     * <code>fixed32 end_time = 15;</code>
-     * @return The endTime.
-     */
-    @java.lang.Override
-    public int getEndTime() {
-      return endTime_;
-    }
-
-    public static final int ENTITY_ID_LIST_FIELD_NUMBER = 2;
+    public static final int ENTITY_ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList entityIdList_;
     /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @return A list containing the entityIdList.
      */
     @java.lang.Override
@@ -246,14 +205,14 @@ public final class HomePlantSubFieldDataOuterClass {
       return entityIdList_;
     }
     /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @return The count of entityIdList.
      */
     public int getEntityIdListCount() {
       return entityIdList_.size();
     }
     /**
-     * <code>repeated uint32 entity_id_list = 2;</code>
+     * <code>repeated uint32 entity_id_list = 6;</code>
      * @param index The index of the element to return.
      * @return The entityIdList at the given index.
      */
@@ -262,15 +221,56 @@ public final class HomePlantSubFieldDataOuterClass {
     }
     private int entityIdListMemoizedSerializedSize = -1;
 
-    public static final int FDCENJDIOCF_FIELD_NUMBER = 9;
-    private int fDCENJDIOCF_;
+    public static final int CAKDDMKAIMD_FIELD_NUMBER = 7;
+    private int cAKDDMKAIMD_;
     /**
-     * <code>uint32 FDCENJDIOCF = 9;</code>
-     * @return The fDCENJDIOCF.
+     * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+     * @return The enum numeric value on the wire for cAKDDMKAIMD.
+     */
+    @java.lang.Override public int getCAKDDMKAIMDValue() {
+      return cAKDDMKAIMD_;
+    }
+    /**
+     * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+     * @return The cAKDDMKAIMD.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getCAKDDMKAIMD() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(cAKDDMKAIMD_);
+      return result == null ? emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
+    }
+
+    public static final int JHFNDBIHLNB_FIELD_NUMBER = 8;
+    private int jHFNDBIHLNB_;
+    /**
+     * <code>uint32 JHFNDBIHLNB = 8;</code>
+     * @return The jHFNDBIHLNB.
      */
     @java.lang.Override
-    public int getFDCENJDIOCF() {
-      return fDCENJDIOCF_;
+    public int getJHFNDBIHLNB() {
+      return jHFNDBIHLNB_;
+    }
+
+    public static final int END_TIME_FIELD_NUMBER = 14;
+    private int endTime_;
+    /**
+     * <code>fixed32 end_time = 14;</code>
+     * @return The endTime.
+     */
+    @java.lang.Override
+    public int getEndTime() {
+      return endTime_;
+    }
+
+    public static final int KHFGOPCOAGM_FIELD_NUMBER = 3;
+    private int kHFGOPCOAGM_;
+    /**
+     * <code>uint32 KHFGOPCOAGM = 3;</code>
+     * @return The kHFGOPCOAGM.
+     */
+    @java.lang.Override
+    public int getKHFGOPCOAGM() {
+      return kHFGOPCOAGM_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -288,24 +288,24 @@ public final class HomePlantSubFieldDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (kHFGOPCOAGM_ != 0) {
+        output.writeUInt32(3, kHFGOPCOAGM_);
+      }
       if (getEntityIdListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(entityIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < entityIdList_.size(); i++) {
         output.writeUInt32NoTag(entityIdList_.getInt(i));
       }
-      if (mMNMLFLBMCF_ != emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.HOME_FIELD_STATUE_NONE.getNumber()) {
-        output.writeEnum(3, mMNMLFLBMCF_);
+      if (cAKDDMKAIMD_ != emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.HOME_FIELD_STATUE_NONE.getNumber()) {
+        output.writeEnum(7, cAKDDMKAIMD_);
       }
-      if (jBCOCICMEJE_ != 0) {
-        output.writeUInt32(4, jBCOCICMEJE_);
-      }
-      if (fDCENJDIOCF_ != 0) {
-        output.writeUInt32(9, fDCENJDIOCF_);
+      if (jHFNDBIHLNB_ != 0) {
+        output.writeUInt32(8, jHFNDBIHLNB_);
       }
       if (endTime_ != 0) {
-        output.writeFixed32(15, endTime_);
+        output.writeFixed32(14, endTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -316,6 +316,10 @@ public final class HomePlantSubFieldDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (kHFGOPCOAGM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, kHFGOPCOAGM_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < entityIdList_.size(); i++) {
@@ -330,21 +334,17 @@ public final class HomePlantSubFieldDataOuterClass {
         }
         entityIdListMemoizedSerializedSize = dataSize;
       }
-      if (mMNMLFLBMCF_ != emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.HOME_FIELD_STATUE_NONE.getNumber()) {
+      if (cAKDDMKAIMD_ != emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.HOME_FIELD_STATUE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, mMNMLFLBMCF_);
+          .computeEnumSize(7, cAKDDMKAIMD_);
       }
-      if (jBCOCICMEJE_ != 0) {
+      if (jHFNDBIHLNB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, jBCOCICMEJE_);
-      }
-      if (fDCENJDIOCF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, fDCENJDIOCF_);
+          .computeUInt32Size(8, jHFNDBIHLNB_);
       }
       if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(15, endTime_);
+          .computeFixed32Size(14, endTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -361,15 +361,15 @@ public final class HomePlantSubFieldDataOuterClass {
       }
       emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData other = (emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData) obj;
 
-      if (mMNMLFLBMCF_ != other.mMNMLFLBMCF_) return false;
-      if (getJBCOCICMEJE()
-          != other.getJBCOCICMEJE()) return false;
-      if (getEndTime()
-          != other.getEndTime()) return false;
       if (!getEntityIdListList()
           .equals(other.getEntityIdListList())) return false;
-      if (getFDCENJDIOCF()
-          != other.getFDCENJDIOCF()) return false;
+      if (cAKDDMKAIMD_ != other.cAKDDMKAIMD_) return false;
+      if (getJHFNDBIHLNB()
+          != other.getJHFNDBIHLNB()) return false;
+      if (getEndTime()
+          != other.getEndTime()) return false;
+      if (getKHFGOPCOAGM()
+          != other.getKHFGOPCOAGM()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -381,18 +381,18 @@ public final class HomePlantSubFieldDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MMNMLFLBMCF_FIELD_NUMBER;
-      hash = (53 * hash) + mMNMLFLBMCF_;
-      hash = (37 * hash) + JBCOCICMEJE_FIELD_NUMBER;
-      hash = (53 * hash) + getJBCOCICMEJE();
-      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getEndTime();
       if (getEntityIdListCount() > 0) {
         hash = (37 * hash) + ENTITY_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEntityIdListList().hashCode();
       }
-      hash = (37 * hash) + FDCENJDIOCF_FIELD_NUMBER;
-      hash = (53 * hash) + getFDCENJDIOCF();
+      hash = (37 * hash) + CAKDDMKAIMD_FIELD_NUMBER;
+      hash = (53 * hash) + cAKDDMKAIMD_;
+      hash = (37 * hash) + JHFNDBIHLNB_FIELD_NUMBER;
+      hash = (53 * hash) + getJHFNDBIHLNB();
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
+      hash = (37 * hash) + KHFGOPCOAGM_FIELD_NUMBER;
+      hash = (53 * hash) + getKHFGOPCOAGM();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -490,7 +490,7 @@ public final class HomePlantSubFieldDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: JICIBIJIHAB
+     * Obf: EAFGKPCFDCI
      * </pre>
      *
      * Protobuf type {@code HomePlantSubFieldData}
@@ -530,15 +530,15 @@ public final class HomePlantSubFieldDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mMNMLFLBMCF_ = 0;
+        entityIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cAKDDMKAIMD_ = 0;
 
-        jBCOCICMEJE_ = 0;
+        jHFNDBIHLNB_ = 0;
 
         endTime_ = 0;
 
-        entityIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fDCENJDIOCF_ = 0;
+        kHFGOPCOAGM_ = 0;
 
         return this;
       }
@@ -567,15 +567,15 @@ public final class HomePlantSubFieldDataOuterClass {
       public emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData buildPartial() {
         emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData result = new emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData(this);
         int from_bitField0_ = bitField0_;
-        result.mMNMLFLBMCF_ = mMNMLFLBMCF_;
-        result.jBCOCICMEJE_ = jBCOCICMEJE_;
-        result.endTime_ = endTime_;
         if (((bitField0_ & 0x00000001) != 0)) {
           entityIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.entityIdList_ = entityIdList_;
-        result.fDCENJDIOCF_ = fDCENJDIOCF_;
+        result.cAKDDMKAIMD_ = cAKDDMKAIMD_;
+        result.jHFNDBIHLNB_ = jHFNDBIHLNB_;
+        result.endTime_ = endTime_;
+        result.kHFGOPCOAGM_ = kHFGOPCOAGM_;
         onBuilt();
         return result;
       }
@@ -624,15 +624,6 @@ public final class HomePlantSubFieldDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData other) {
         if (other == emu.grasscutter.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.getDefaultInstance()) return this;
-        if (other.mMNMLFLBMCF_ != 0) {
-          setMMNMLFLBMCFValue(other.getMMNMLFLBMCFValue());
-        }
-        if (other.getJBCOCICMEJE() != 0) {
-          setJBCOCICMEJE(other.getJBCOCICMEJE());
-        }
-        if (other.getEndTime() != 0) {
-          setEndTime(other.getEndTime());
-        }
         if (!other.entityIdList_.isEmpty()) {
           if (entityIdList_.isEmpty()) {
             entityIdList_ = other.entityIdList_;
@@ -643,8 +634,17 @@ public final class HomePlantSubFieldDataOuterClass {
           }
           onChanged();
         }
-        if (other.getFDCENJDIOCF() != 0) {
-          setFDCENJDIOCF(other.getFDCENJDIOCF());
+        if (other.cAKDDMKAIMD_ != 0) {
+          setCAKDDMKAIMDValue(other.getCAKDDMKAIMDValue());
+        }
+        if (other.getJHFNDBIHLNB() != 0) {
+          setJHFNDBIHLNB(other.getJHFNDBIHLNB());
+        }
+        if (other.getEndTime() != 0) {
+          setEndTime(other.getEndTime());
+        }
+        if (other.getKHFGOPCOAGM() != 0) {
+          setKHFGOPCOAGM(other.getKHFGOPCOAGM());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -676,122 +676,6 @@ public final class HomePlantSubFieldDataOuterClass {
       }
       private int bitField0_;
 
-      private int mMNMLFLBMCF_ = 0;
-      /**
-       * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-       * @return The enum numeric value on the wire for mMNMLFLBMCF.
-       */
-      @java.lang.Override public int getMMNMLFLBMCFValue() {
-        return mMNMLFLBMCF_;
-      }
-      /**
-       * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-       * @param value The enum numeric value on the wire for mMNMLFLBMCF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMMNMLFLBMCFValue(int value) {
-        
-        mMNMLFLBMCF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-       * @return The mMNMLFLBMCF.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getMMNMLFLBMCF() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(mMNMLFLBMCF_);
-        return result == null ? emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-       * @param value The mMNMLFLBMCF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMMNMLFLBMCF(emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        mMNMLFLBMCF_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HomePlantFieldStatus MMNMLFLBMCF = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMMNMLFLBMCF() {
-        
-        mMNMLFLBMCF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jBCOCICMEJE_ ;
-      /**
-       * <code>uint32 JBCOCICMEJE = 4;</code>
-       * @return The jBCOCICMEJE.
-       */
-      @java.lang.Override
-      public int getJBCOCICMEJE() {
-        return jBCOCICMEJE_;
-      }
-      /**
-       * <code>uint32 JBCOCICMEJE = 4;</code>
-       * @param value The jBCOCICMEJE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJBCOCICMEJE(int value) {
-        
-        jBCOCICMEJE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JBCOCICMEJE = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJBCOCICMEJE() {
-        
-        jBCOCICMEJE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int endTime_ ;
-      /**
-       * <code>fixed32 end_time = 15;</code>
-       * @return The endTime.
-       */
-      @java.lang.Override
-      public int getEndTime() {
-        return endTime_;
-      }
-      /**
-       * <code>fixed32 end_time = 15;</code>
-       * @param value The endTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEndTime(int value) {
-        
-        endTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>fixed32 end_time = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEndTime() {
-        
-        endTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList entityIdList_ = emptyIntList();
       private void ensureEntityIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -800,7 +684,7 @@ public final class HomePlantSubFieldDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @return A list containing the entityIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -809,14 +693,14 @@ public final class HomePlantSubFieldDataOuterClass {
                  java.util.Collections.unmodifiableList(entityIdList_) : entityIdList_;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @return The count of entityIdList.
        */
       public int getEntityIdListCount() {
         return entityIdList_.size();
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @param index The index of the element to return.
        * @return The entityIdList at the given index.
        */
@@ -824,7 +708,7 @@ public final class HomePlantSubFieldDataOuterClass {
         return entityIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The entityIdList to set.
        * @return This builder for chaining.
@@ -837,7 +721,7 @@ public final class HomePlantSubFieldDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @param value The entityIdList to add.
        * @return This builder for chaining.
        */
@@ -848,7 +732,7 @@ public final class HomePlantSubFieldDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @param values The entityIdList to add.
        * @return This builder for chaining.
        */
@@ -861,7 +745,7 @@ public final class HomePlantSubFieldDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 entity_id_list = 2;</code>
+       * <code>repeated uint32 entity_id_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityIdList() {
@@ -871,33 +755,149 @@ public final class HomePlantSubFieldDataOuterClass {
         return this;
       }
 
-      private int fDCENJDIOCF_ ;
+      private int cAKDDMKAIMD_ = 0;
       /**
-       * <code>uint32 FDCENJDIOCF = 9;</code>
-       * @return The fDCENJDIOCF.
+       * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+       * @return The enum numeric value on the wire for cAKDDMKAIMD.
        */
-      @java.lang.Override
-      public int getFDCENJDIOCF() {
-        return fDCENJDIOCF_;
+      @java.lang.Override public int getCAKDDMKAIMDValue() {
+        return cAKDDMKAIMD_;
       }
       /**
-       * <code>uint32 FDCENJDIOCF = 9;</code>
-       * @param value The fDCENJDIOCF to set.
+       * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+       * @param value The enum numeric value on the wire for cAKDDMKAIMD to set.
        * @return This builder for chaining.
        */
-      public Builder setFDCENJDIOCF(int value) {
+      public Builder setCAKDDMKAIMDValue(int value) {
         
-        fDCENJDIOCF_ = value;
+        cAKDDMKAIMD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FDCENJDIOCF = 9;</code>
+       * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+       * @return The cAKDDMKAIMD.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus getCAKDDMKAIMD() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus result = emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.valueOf(cAKDDMKAIMD_);
+        return result == null ? emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+       * @param value The cAKDDMKAIMD to set.
        * @return This builder for chaining.
        */
-      public Builder clearFDCENJDIOCF() {
+      public Builder setCAKDDMKAIMD(emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.HomePlantFieldStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        fDCENJDIOCF_ = 0;
+        cAKDDMKAIMD_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HomePlantFieldStatus CAKDDMKAIMD = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCAKDDMKAIMD() {
+        
+        cAKDDMKAIMD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int jHFNDBIHLNB_ ;
+      /**
+       * <code>uint32 JHFNDBIHLNB = 8;</code>
+       * @return The jHFNDBIHLNB.
+       */
+      @java.lang.Override
+      public int getJHFNDBIHLNB() {
+        return jHFNDBIHLNB_;
+      }
+      /**
+       * <code>uint32 JHFNDBIHLNB = 8;</code>
+       * @param value The jHFNDBIHLNB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJHFNDBIHLNB(int value) {
+        
+        jHFNDBIHLNB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 JHFNDBIHLNB = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJHFNDBIHLNB() {
+        
+        jHFNDBIHLNB_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endTime_ ;
+      /**
+       * <code>fixed32 end_time = 14;</code>
+       * @return The endTime.
+       */
+      @java.lang.Override
+      public int getEndTime() {
+        return endTime_;
+      }
+      /**
+       * <code>fixed32 end_time = 14;</code>
+       * @param value The endTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndTime(int value) {
+        
+        endTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>fixed32 end_time = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEndTime() {
+        
+        endTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kHFGOPCOAGM_ ;
+      /**
+       * <code>uint32 KHFGOPCOAGM = 3;</code>
+       * @return The kHFGOPCOAGM.
+       */
+      @java.lang.Override
+      public int getKHFGOPCOAGM() {
+        return kHFGOPCOAGM_;
+      }
+      /**
+       * <code>uint32 KHFGOPCOAGM = 3;</code>
+       * @param value The kHFGOPCOAGM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKHFGOPCOAGM(int value) {
+        
+        kHFGOPCOAGM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KHFGOPCOAGM = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKHFGOPCOAGM() {
+        
+        kHFGOPCOAGM_ = 0;
         onChanged();
         return this;
       }
@@ -970,10 +970,10 @@ public final class HomePlantSubFieldDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033HomePlantSubFieldData.proto\032\032HomePlant" +
       "FieldStatus.proto\"\227\001\n\025HomePlantSubFieldD" +
-      "ata\022*\n\013MMNMLFLBMCF\030\003 \001(\0162\025.HomePlantFiel" +
-      "dStatus\022\023\n\013JBCOCICMEJE\030\004 \001(\r\022\020\n\010end_time" +
-      "\030\017 \001(\007\022\026\n\016entity_id_list\030\002 \003(\r\022\023\n\013FDCENJ" +
-      "DIOCF\030\t \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "ata\022\026\n\016entity_id_list\030\006 \003(\r\022*\n\013CAKDDMKAI" +
+      "MD\030\007 \001(\0162\025.HomePlantFieldStatus\022\023\n\013JHFND" +
+      "BIHLNB\030\010 \001(\r\022\020\n\010end_time\030\016 \001(\007\022\023\n\013KHFGOP" +
+      "COAGM\030\003 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -986,7 +986,7 @@ public final class HomePlantSubFieldDataOuterClass {
     internal_static_HomePlantSubFieldData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomePlantSubFieldData_descriptor,
-        new java.lang.String[] { "MMNMLFLBMCF", "JBCOCICMEJE", "EndTime", "EntityIdList", "FDCENJDIOCF", });
+        new java.lang.String[] { "EntityIdList", "CAKDDMKAIMD", "JHFNDBIHLNB", "EndTime", "KHFGOPCOAGM", });
     emu.grasscutter.net.proto.HomePlantFieldStatusOuterClass.getDescriptor();
   }
 

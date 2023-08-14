@@ -44,7 +44,7 @@ public final class CustomCommonNodeInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: COEBLBLIGHJ
+   * Obf: IGADMBECIDG
    * </pre>
    *
    * Protobuf type {@code CustomCommonNodeInfo}
@@ -378,7 +378,7 @@ public final class CustomCommonNodeInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: COEBLBLIGHJ
+     * Obf: IGADMBECIDG
      * </pre>
      *
      * Protobuf type {@code CustomCommonNodeInfo}

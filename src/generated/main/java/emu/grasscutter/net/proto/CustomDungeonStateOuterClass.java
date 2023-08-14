@@ -16,7 +16,7 @@ public final class CustomDungeonStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: NNKLFCELDGG
+   * Obf: FNOIEOJLKAB
    * </pre>
    *
    * Protobuf enum {@code CustomDungeonState}

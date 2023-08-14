@@ -19,15 +19,15 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 8435
-   * Obf: DHIKDGNBKEG
+   * CmdId: 6858
+   * Obf: HNGKKIHKFMA
    * </pre>
    *
    * Protobuf type {@code DigActivityChangeGadgetStateReq}
@@ -74,7 +74,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 96: {
 
               entityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
               emu.grasscutter.net.proto.DigActivityChangeGadgetStateReqOuterClass.DigActivityChangeGadgetStateReq.class, emu.grasscutter.net.proto.DigActivityChangeGadgetStateReqOuterClass.DigActivityChangeGadgetStateReq.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int ENTITY_ID_FIELD_NUMBER = 12;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(7, entityId_);
+        output.writeUInt32(12, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, entityId_);
+          .computeUInt32Size(12, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8435
-     * Obf: DHIKDGNBKEG
+     * CmdId: 6858
+     * Obf: HNGKKIHKFMA
      * </pre>
      *
      * Protobuf type {@code DigActivityChangeGadgetStateReq}
@@ -431,7 +431,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -528,7 +528,7 @@ public final class DigActivityChangeGadgetStateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n%DigActivityChangeGadgetStateReq.proto\"" +
       "4\n\037DigActivityChangeGadgetStateReq\022\021\n\ten" +
-      "tity_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tity_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

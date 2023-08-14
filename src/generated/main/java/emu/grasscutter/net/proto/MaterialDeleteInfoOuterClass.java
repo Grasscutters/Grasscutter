@@ -73,7 +73,7 @@ public final class MaterialDeleteInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: LDGCGEKOPNP
+   * Obf: FNECFKCJNOG
    * </pre>
    *
    * Protobuf type {@code MaterialDeleteInfo}
@@ -245,7 +245,7 @@ public final class MaterialDeleteInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CGLLDOGBCHF
+     * Obf: OKEMONGEMOM
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteInfo.CountDownDelete}
@@ -626,7 +626,7 @@ public final class MaterialDeleteInfoOuterClass {
       }
       /**
        * <pre>
-       * Obf: CGLLDOGBCHF
+       * Obf: OKEMONGEMOM
        * </pre>
        *
        * Protobuf type {@code MaterialDeleteInfo.CountDownDelete}
@@ -1027,7 +1027,7 @@ public final class MaterialDeleteInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AGGPDECMMIG
+     * Obf: FBKLFJIOOPN
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteInfo.DateTimeDelete}
@@ -1279,7 +1279,7 @@ public final class MaterialDeleteInfoOuterClass {
       }
       /**
        * <pre>
-       * Obf: AGGPDECMMIG
+       * Obf: FBKLFJIOOPN
        * </pre>
        *
        * Protobuf type {@code MaterialDeleteInfo.DateTimeDelete}
@@ -1563,7 +1563,7 @@ public final class MaterialDeleteInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GIAAHILNMBN
+     * Obf: HMLHBMKPHCA
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteInfo.DelayWeekCountDownDelete}
@@ -1971,7 +1971,7 @@ public final class MaterialDeleteInfoOuterClass {
       }
       /**
        * <pre>
-       * Obf: GIAAHILNMBN
+       * Obf: HMLHBMKPHCA
        * </pre>
        *
        * Protobuf type {@code MaterialDeleteInfo.DelayWeekCountDownDelete}
@@ -2756,7 +2756,7 @@ public final class MaterialDeleteInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: LDGCGEKOPNP
+     * Obf: FNECFKCJNOG
      * </pre>
      *
      * Protobuf type {@code MaterialDeleteInfo}

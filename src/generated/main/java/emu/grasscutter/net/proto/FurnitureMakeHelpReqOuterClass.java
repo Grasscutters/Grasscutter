@@ -20,8 +20,8 @@ public final class FurnitureMakeHelpReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4756
-   * Obf: JKNCMMEKFNK
+   * CmdId: 27122
+   * Obf: DALFEONAJCG
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeHelpReq}
@@ -246,8 +246,8 @@ public final class FurnitureMakeHelpReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4756
-     * Obf: JKNCMMEKFNK
+     * CmdId: 27122
+     * Obf: DALFEONAJCG
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeHelpReq}

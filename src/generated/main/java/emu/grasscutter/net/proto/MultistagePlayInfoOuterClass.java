@@ -19,202 +19,217 @@ public final class MultistagePlayInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_id = 14;</code>
-     * @return The groupId.
-     */
-    int getGroupId();
-
-    /**
-     * <code>uint32 stage_type = 8;</code>
-     * @return The stageType.
-     */
-    int getStageType();
-
-    /**
-     * <code>uint32 stage_index = 1;</code>
-     * @return The stageIndex.
-     */
-    int getStageIndex();
-
-    /**
-     * <code>uint32 duration = 11;</code>
-     * @return The duration.
-     */
-    int getDuration();
-
-    /**
-     * <code>uint32 begin_time = 9;</code>
+     * <code>uint32 begin_time = 8;</code>
      * @return The beginTime.
      */
     int getBeginTime();
 
     /**
-     * <code>uint32 play_index = 13;</code>
-     * @return The playIndex.
+     * <code>uint32 stage_index = 6;</code>
+     * @return The stageIndex.
      */
-    int getPlayIndex();
+    int getStageIndex();
 
     /**
-     * <code>uint32 play_type = 4;</code>
+     * <code>uint32 stage_type = 15;</code>
+     * @return The stageType.
+     */
+    int getStageType();
+
+    /**
+     * <code>uint32 play_type = 7;</code>
      * @return The playType.
      */
     int getPlayType();
 
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>uint32 duration = 9;</code>
+     * @return The duration.
+     */
+    int getDuration();
+
+    /**
+     * <code>uint32 group_id = 4;</code>
+     * @return The groupId.
+     */
+    int getGroupId();
+
+    /**
+     * <code>uint32 play_index = 11;</code>
+     * @return The playIndex.
+     */
+    int getPlayIndex();
+
+    /**
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      * @return Whether the mechanicusInfo field is set.
      */
     boolean hasMechanicusInfo();
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      * @return The mechanicusInfo.
      */
     emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo getMechanicusInfo();
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      */
     emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfoOrBuilder getMechanicusInfoOrBuilder();
 
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      * @return Whether the fleurFairInfo field is set.
      */
     boolean hasFleurFairInfo();
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      * @return The fleurFairInfo.
      */
     emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo getFleurFairInfo();
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      */
     emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfoOrBuilder getFleurFairInfoOrBuilder();
 
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      * @return Whether the hideAndSeekInfo field is set.
      */
     boolean hasHideAndSeekInfo();
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      * @return The hideAndSeekInfo.
      */
     emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo getHideAndSeekInfo();
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      */
     emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfoOrBuilder getHideAndSeekInfoOrBuilder();
 
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      * @return Whether the chessInfo field is set.
      */
     boolean hasChessInfo();
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      * @return The chessInfo.
      */
     emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo getChessInfo();
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      */
     emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfoOrBuilder getChessInfoOrBuilder();
 
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      * @return Whether the irodoriChessInfo field is set.
      */
     boolean hasIrodoriChessInfo();
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      * @return The irodoriChessInfo.
      */
     emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo getIrodoriChessInfo();
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      */
     emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfoOrBuilder getIrodoriChessInfoOrBuilder();
 
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      * @return Whether the charAmusementInfo field is set.
      */
     boolean hasCharAmusementInfo();
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      * @return The charAmusementInfo.
      */
     emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo getCharAmusementInfo();
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      */
     emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfoOrBuilder getCharAmusementInfoOrBuilder();
 
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      * @return Whether the brickBreakerInfo field is set.
      */
     boolean hasBrickBreakerInfo();
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      * @return The brickBreakerInfo.
      */
     emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo getBrickBreakerInfo();
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      */
     emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfoOrBuilder getBrickBreakerInfoOrBuilder();
 
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      * @return Whether the coinCollectInfo field is set.
      */
     boolean hasCoinCollectInfo();
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      * @return The coinCollectInfo.
      */
     emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo getCoinCollectInfo();
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      */
     emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder();
 
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      * @return Whether the lanV3BoatInfo field is set.
      */
     boolean hasLanV3BoatInfo();
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      * @return The lanV3BoatInfo.
      */
     emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo getLanV3BoatInfo();
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      */
     emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfoOrBuilder getLanV3BoatInfoOrBuilder();
 
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      * @return Whether the fleurFairV2PacmanInfo field is set.
      */
     boolean hasFleurFairV2PacmanInfo();
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      * @return The fleurFairV2PacmanInfo.
      */
     emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo getFleurFairV2PacmanInfo();
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      */
     emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfoOrBuilder getFleurFairV2PacmanInfoOrBuilder();
+
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     * @return Whether the targetShootingInfo field is set.
+     */
+    boolean hasTargetShootingInfo();
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     * @return The targetShootingInfo.
+     */
+    emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo getTargetShootingInfo();
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     */
+    emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder getTargetShootingInfoOrBuilder();
 
     public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.DetailCase getDetailCase();
   }
   /**
    * <pre>
-   * Obf: ONMCDEPPIOB
+   * Obf: EGPGHBCHGMA
    * </pre>
    *
    * Protobuf type {@code MultistagePlayInfo}
@@ -261,114 +276,44 @@ public final class MultistagePlayInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 32: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
 
               stageIndex_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 56: {
 
               playType_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              stageType_ = input.readUInt32();
+              beginTime_ = input.readUInt32();
               break;
             }
             case 72: {
 
-              beginTime_ = input.readUInt32();
+              duration_ = input.readUInt32();
               break;
             }
             case 88: {
 
-              duration_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
               playIndex_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 120: {
 
-              groupId_ = input.readUInt32();
+              stageType_ = input.readUInt32();
               break;
             }
-            case 1730: {
-              emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 216) {
-                subBuilder = ((emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 216;
-              break;
-            }
-            case 6794: {
-              emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder subBuilder = null;
-              if (detailCase_ == 849) {
-                subBuilder = ((emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 849;
-              break;
-            }
-            case 7226: {
-              emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 903) {
-                subBuilder = ((emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 903;
-              break;
-            }
-            case 8266: {
-              emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 1033) {
-                subBuilder = ((emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1033;
-              break;
-            }
-            case 8818: {
-              emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 1102) {
-                subBuilder = ((emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1102;
-              break;
-            }
-            case 12306: {
+            case 242: {
               emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder subBuilder = null;
-              if (detailCase_ == 1538) {
+              if (detailCase_ == 30) {
                 subBuilder = ((emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_).toBuilder();
               }
               detail_ =
@@ -377,26 +322,26 @@ public final class MultistagePlayInfoOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 1538;
+              detailCase_ = 30;
               break;
             }
-            case 13042: {
-              emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder subBuilder = null;
-              if (detailCase_ == 1630) {
-                subBuilder = ((emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_).toBuilder();
+            case 3394: {
+              emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder subBuilder = null;
+              if (detailCase_ == 424) {
+                subBuilder = ((emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 1630;
+              detailCase_ = 424;
               break;
             }
-            case 14010: {
+            case 3434: {
               emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder subBuilder = null;
-              if (detailCase_ == 1751) {
+              if (detailCase_ == 429) {
                 subBuilder = ((emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_).toBuilder();
               }
               detail_ =
@@ -405,26 +350,26 @@ public final class MultistagePlayInfoOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 1751;
+              detailCase_ = 429;
               break;
             }
-            case 16050: {
-              emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 2006) {
-                subBuilder = ((emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_).toBuilder();
+            case 5530: {
+              emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder subBuilder = null;
+              if (detailCase_ == 691) {
+                subBuilder = ((emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 2006;
+              detailCase_ = 691;
               break;
             }
-            case 16090: {
+            case 6026: {
               emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder subBuilder = null;
-              if (detailCase_ == 2011) {
+              if (detailCase_ == 753) {
                 subBuilder = ((emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_).toBuilder();
               }
               detail_ =
@@ -433,7 +378,91 @@ public final class MultistagePlayInfoOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 2011;
+              detailCase_ = 753;
+              break;
+            }
+            case 9530: {
+              emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder subBuilder = null;
+              if (detailCase_ == 1191) {
+                subBuilder = ((emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1191;
+              break;
+            }
+            case 9826: {
+              emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder subBuilder = null;
+              if (detailCase_ == 1228) {
+                subBuilder = ((emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1228;
+              break;
+            }
+            case 10970: {
+              emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder subBuilder = null;
+              if (detailCase_ == 1371) {
+                subBuilder = ((emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1371;
+              break;
+            }
+            case 12882: {
+              emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder subBuilder = null;
+              if (detailCase_ == 1610) {
+                subBuilder = ((emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1610;
+              break;
+            }
+            case 13738: {
+              emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder subBuilder = null;
+              if (detailCase_ == 1717) {
+                subBuilder = ((emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1717;
+              break;
+            }
+            case 13778: {
+              emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder subBuilder = null;
+              if (detailCase_ == 1722) {
+                subBuilder = ((emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1722;
               break;
             }
             default: {
@@ -473,16 +502,17 @@ public final class MultistagePlayInfoOuterClass {
     public enum DetailCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      MECHANICUS_INFO(1751),
-      FLEUR_FAIR_INFO(1630),
-      HIDE_AND_SEEK_INFO(216),
-      CHESS_INFO(849),
-      IRODORI_CHESS_INFO(2011),
-      CHAR_AMUSEMENT_INFO(1538),
-      BRICK_BREAKER_INFO(903),
-      COIN_COLLECT_INFO(1102),
-      LAN_V3_BOAT_INFO(1033),
-      FLEUR_FAIR_V2_PACMAN_INFO(2006),
+      MECHANICUS_INFO(429),
+      FLEUR_FAIR_INFO(1722),
+      HIDE_AND_SEEK_INFO(1717),
+      CHESS_INFO(1610),
+      IRODORI_CHESS_INFO(753),
+      CHAR_AMUSEMENT_INFO(30),
+      BRICK_BREAKER_INFO(1228),
+      COIN_COLLECT_INFO(424),
+      LAN_V3_BOAT_INFO(691),
+      FLEUR_FAIR_V2_PACMAN_INFO(1371),
+      TARGET_SHOOTING_INFO(1191),
       DETAIL_NOT_SET(0);
       private final int value;
       private DetailCase(int value) {
@@ -500,16 +530,17 @@ public final class MultistagePlayInfoOuterClass {
 
       public static DetailCase forNumber(int value) {
         switch (value) {
-          case 1751: return MECHANICUS_INFO;
-          case 1630: return FLEUR_FAIR_INFO;
-          case 216: return HIDE_AND_SEEK_INFO;
-          case 849: return CHESS_INFO;
-          case 2011: return IRODORI_CHESS_INFO;
-          case 1538: return CHAR_AMUSEMENT_INFO;
-          case 903: return BRICK_BREAKER_INFO;
-          case 1102: return COIN_COLLECT_INFO;
-          case 1033: return LAN_V3_BOAT_INFO;
-          case 2006: return FLEUR_FAIR_V2_PACMAN_INFO;
+          case 429: return MECHANICUS_INFO;
+          case 1722: return FLEUR_FAIR_INFO;
+          case 1717: return HIDE_AND_SEEK_INFO;
+          case 1610: return CHESS_INFO;
+          case 753: return IRODORI_CHESS_INFO;
+          case 30: return CHAR_AMUSEMENT_INFO;
+          case 1228: return BRICK_BREAKER_INFO;
+          case 424: return COIN_COLLECT_INFO;
+          case 691: return LAN_V3_BOAT_INFO;
+          case 1371: return FLEUR_FAIR_V2_PACMAN_INFO;
+          case 1191: return TARGET_SHOOTING_INFO;
           case 0: return DETAIL_NOT_SET;
           default: return null;
         }
@@ -525,54 +556,10 @@ public final class MultistagePlayInfoOuterClass {
           detailCase_);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 14;
-    private int groupId_;
-    /**
-     * <code>uint32 group_id = 14;</code>
-     * @return The groupId.
-     */
-    @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
-    }
-
-    public static final int STAGE_TYPE_FIELD_NUMBER = 8;
-    private int stageType_;
-    /**
-     * <code>uint32 stage_type = 8;</code>
-     * @return The stageType.
-     */
-    @java.lang.Override
-    public int getStageType() {
-      return stageType_;
-    }
-
-    public static final int STAGE_INDEX_FIELD_NUMBER = 1;
-    private int stageIndex_;
-    /**
-     * <code>uint32 stage_index = 1;</code>
-     * @return The stageIndex.
-     */
-    @java.lang.Override
-    public int getStageIndex() {
-      return stageIndex_;
-    }
-
-    public static final int DURATION_FIELD_NUMBER = 11;
-    private int duration_;
-    /**
-     * <code>uint32 duration = 11;</code>
-     * @return The duration.
-     */
-    @java.lang.Override
-    public int getDuration() {
-      return duration_;
-    }
-
-    public static final int BEGIN_TIME_FIELD_NUMBER = 9;
+    public static final int BEGIN_TIME_FIELD_NUMBER = 8;
     private int beginTime_;
     /**
-     * <code>uint32 begin_time = 9;</code>
+     * <code>uint32 begin_time = 8;</code>
      * @return The beginTime.
      */
     @java.lang.Override
@@ -580,21 +567,32 @@ public final class MultistagePlayInfoOuterClass {
       return beginTime_;
     }
 
-    public static final int PLAY_INDEX_FIELD_NUMBER = 13;
-    private int playIndex_;
+    public static final int STAGE_INDEX_FIELD_NUMBER = 6;
+    private int stageIndex_;
     /**
-     * <code>uint32 play_index = 13;</code>
-     * @return The playIndex.
+     * <code>uint32 stage_index = 6;</code>
+     * @return The stageIndex.
      */
     @java.lang.Override
-    public int getPlayIndex() {
-      return playIndex_;
+    public int getStageIndex() {
+      return stageIndex_;
     }
 
-    public static final int PLAY_TYPE_FIELD_NUMBER = 4;
+    public static final int STAGE_TYPE_FIELD_NUMBER = 15;
+    private int stageType_;
+    /**
+     * <code>uint32 stage_type = 15;</code>
+     * @return The stageType.
+     */
+    @java.lang.Override
+    public int getStageType() {
+      return stageType_;
+    }
+
+    public static final int PLAY_TYPE_FIELD_NUMBER = 7;
     private int playType_;
     /**
-     * <code>uint32 play_type = 4;</code>
+     * <code>uint32 play_type = 7;</code>
      * @return The playType.
      */
     @java.lang.Override
@@ -602,314 +600,378 @@ public final class MultistagePlayInfoOuterClass {
       return playType_;
     }
 
-    public static final int MECHANICUS_INFO_FIELD_NUMBER = 1751;
+    public static final int DURATION_FIELD_NUMBER = 9;
+    private int duration_;
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>uint32 duration = 9;</code>
+     * @return The duration.
+     */
+    @java.lang.Override
+    public int getDuration() {
+      return duration_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 4;
+    private int groupId_;
+    /**
+     * <code>uint32 group_id = 4;</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public int getGroupId() {
+      return groupId_;
+    }
+
+    public static final int PLAY_INDEX_FIELD_NUMBER = 11;
+    private int playIndex_;
+    /**
+     * <code>uint32 play_index = 11;</code>
+     * @return The playIndex.
+     */
+    @java.lang.Override
+    public int getPlayIndex() {
+      return playIndex_;
+    }
+
+    public static final int MECHANICUS_INFO_FIELD_NUMBER = 429;
+    /**
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      * @return Whether the mechanicusInfo field is set.
      */
     @java.lang.Override
     public boolean hasMechanicusInfo() {
-      return detailCase_ == 1751;
+      return detailCase_ == 429;
     }
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      * @return The mechanicusInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo getMechanicusInfo() {
-      if (detailCase_ == 1751) {
+      if (detailCase_ == 429) {
          return (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
     }
     /**
-     * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+     * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfoOrBuilder getMechanicusInfoOrBuilder() {
-      if (detailCase_ == 1751) {
+      if (detailCase_ == 429) {
          return (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
     }
 
-    public static final int FLEUR_FAIR_INFO_FIELD_NUMBER = 1630;
+    public static final int FLEUR_FAIR_INFO_FIELD_NUMBER = 1722;
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      * @return Whether the fleurFairInfo field is set.
      */
     @java.lang.Override
     public boolean hasFleurFairInfo() {
-      return detailCase_ == 1630;
+      return detailCase_ == 1722;
     }
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      * @return The fleurFairInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo getFleurFairInfo() {
-      if (detailCase_ == 1630) {
+      if (detailCase_ == 1722) {
          return (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
     }
     /**
-     * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+     * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfoOrBuilder getFleurFairInfoOrBuilder() {
-      if (detailCase_ == 1630) {
+      if (detailCase_ == 1722) {
          return (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
     }
 
-    public static final int HIDE_AND_SEEK_INFO_FIELD_NUMBER = 216;
+    public static final int HIDE_AND_SEEK_INFO_FIELD_NUMBER = 1717;
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      * @return Whether the hideAndSeekInfo field is set.
      */
     @java.lang.Override
     public boolean hasHideAndSeekInfo() {
-      return detailCase_ == 216;
+      return detailCase_ == 1717;
     }
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      * @return The hideAndSeekInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo getHideAndSeekInfo() {
-      if (detailCase_ == 216) {
+      if (detailCase_ == 1717) {
          return (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
     }
     /**
-     * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+     * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfoOrBuilder getHideAndSeekInfoOrBuilder() {
-      if (detailCase_ == 216) {
+      if (detailCase_ == 1717) {
          return (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
     }
 
-    public static final int CHESS_INFO_FIELD_NUMBER = 849;
+    public static final int CHESS_INFO_FIELD_NUMBER = 1610;
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      * @return Whether the chessInfo field is set.
      */
     @java.lang.Override
     public boolean hasChessInfo() {
-      return detailCase_ == 849;
+      return detailCase_ == 1610;
     }
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      * @return The chessInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo getChessInfo() {
-      if (detailCase_ == 849) {
+      if (detailCase_ == 1610) {
          return (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
     }
     /**
-     * <code>.InBattleChessInfo chess_info = 849;</code>
+     * <code>.InBattleChessInfo chess_info = 1610;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfoOrBuilder getChessInfoOrBuilder() {
-      if (detailCase_ == 849) {
+      if (detailCase_ == 1610) {
          return (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
     }
 
-    public static final int IRODORI_CHESS_INFO_FIELD_NUMBER = 2011;
+    public static final int IRODORI_CHESS_INFO_FIELD_NUMBER = 753;
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      * @return Whether the irodoriChessInfo field is set.
      */
     @java.lang.Override
     public boolean hasIrodoriChessInfo() {
-      return detailCase_ == 2011;
+      return detailCase_ == 753;
     }
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      * @return The irodoriChessInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo getIrodoriChessInfo() {
-      if (detailCase_ == 2011) {
+      if (detailCase_ == 753) {
          return (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
     }
     /**
-     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+     * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfoOrBuilder getIrodoriChessInfoOrBuilder() {
-      if (detailCase_ == 2011) {
+      if (detailCase_ == 753) {
          return (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_;
       }
       return emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
     }
 
-    public static final int CHAR_AMUSEMENT_INFO_FIELD_NUMBER = 1538;
+    public static final int CHAR_AMUSEMENT_INFO_FIELD_NUMBER = 30;
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      * @return Whether the charAmusementInfo field is set.
      */
     @java.lang.Override
     public boolean hasCharAmusementInfo() {
-      return detailCase_ == 1538;
+      return detailCase_ == 30;
     }
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      * @return The charAmusementInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo getCharAmusementInfo() {
-      if (detailCase_ == 1538) {
+      if (detailCase_ == 30) {
          return (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_;
       }
       return emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
     }
     /**
-     * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+     * <code>.CharAmusementInfo char_amusement_info = 30;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfoOrBuilder getCharAmusementInfoOrBuilder() {
-      if (detailCase_ == 1538) {
+      if (detailCase_ == 30) {
          return (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_;
       }
       return emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
     }
 
-    public static final int BRICK_BREAKER_INFO_FIELD_NUMBER = 903;
+    public static final int BRICK_BREAKER_INFO_FIELD_NUMBER = 1228;
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      * @return Whether the brickBreakerInfo field is set.
      */
     @java.lang.Override
     public boolean hasBrickBreakerInfo() {
-      return detailCase_ == 903;
+      return detailCase_ == 1228;
     }
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      * @return The brickBreakerInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo getBrickBreakerInfo() {
-      if (detailCase_ == 903) {
+      if (detailCase_ == 1228) {
          return (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
     }
     /**
-     * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+     * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfoOrBuilder getBrickBreakerInfoOrBuilder() {
-      if (detailCase_ == 903) {
+      if (detailCase_ == 1228) {
          return (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
     }
 
-    public static final int COIN_COLLECT_INFO_FIELD_NUMBER = 1102;
+    public static final int COIN_COLLECT_INFO_FIELD_NUMBER = 424;
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      * @return Whether the coinCollectInfo field is set.
      */
     @java.lang.Override
     public boolean hasCoinCollectInfo() {
-      return detailCase_ == 1102;
+      return detailCase_ == 424;
     }
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      * @return The coinCollectInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo getCoinCollectInfo() {
-      if (detailCase_ == 1102) {
+      if (detailCase_ == 424) {
          return (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
     }
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder() {
-      if (detailCase_ == 1102) {
+      if (detailCase_ == 424) {
          return (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
     }
 
-    public static final int LAN_V3_BOAT_INFO_FIELD_NUMBER = 1033;
+    public static final int LAN_V3_BOAT_INFO_FIELD_NUMBER = 691;
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      * @return Whether the lanV3BoatInfo field is set.
      */
     @java.lang.Override
     public boolean hasLanV3BoatInfo() {
-      return detailCase_ == 1033;
+      return detailCase_ == 691;
     }
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      * @return The lanV3BoatInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo getLanV3BoatInfo() {
-      if (detailCase_ == 1033) {
+      if (detailCase_ == 691) {
          return (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
     }
     /**
-     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+     * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfoOrBuilder getLanV3BoatInfoOrBuilder() {
-      if (detailCase_ == 1033) {
+      if (detailCase_ == 691) {
          return (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
     }
 
-    public static final int FLEUR_FAIR_V2_PACMAN_INFO_FIELD_NUMBER = 2006;
+    public static final int FLEUR_FAIR_V2_PACMAN_INFO_FIELD_NUMBER = 1371;
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      * @return Whether the fleurFairV2PacmanInfo field is set.
      */
     @java.lang.Override
     public boolean hasFleurFairV2PacmanInfo() {
-      return detailCase_ == 2006;
+      return detailCase_ == 1371;
     }
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      * @return The fleurFairV2PacmanInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo getFleurFairV2PacmanInfo() {
-      if (detailCase_ == 2006) {
+      if (detailCase_ == 1371) {
          return (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
     }
     /**
-     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+     * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfoOrBuilder getFleurFairV2PacmanInfoOrBuilder() {
-      if (detailCase_ == 2006) {
+      if (detailCase_ == 1371) {
          return (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_;
       }
       return emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
+    }
+
+    public static final int TARGET_SHOOTING_INFO_FIELD_NUMBER = 1191;
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     * @return Whether the targetShootingInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetShootingInfo() {
+      return detailCase_ == 1191;
+    }
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     * @return The targetShootingInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo getTargetShootingInfo() {
+      if (detailCase_ == 1191) {
+         return (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
+    }
+    /**
+     * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder getTargetShootingInfoOrBuilder() {
+      if (detailCase_ == 1191) {
+         return (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -926,56 +988,59 @@ public final class MultistagePlayInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (groupId_ != 0) {
+        output.writeUInt32(4, groupId_);
+      }
       if (stageIndex_ != 0) {
-        output.writeUInt32(1, stageIndex_);
+        output.writeUInt32(6, stageIndex_);
       }
       if (playType_ != 0) {
-        output.writeUInt32(4, playType_);
-      }
-      if (stageType_ != 0) {
-        output.writeUInt32(8, stageType_);
+        output.writeUInt32(7, playType_);
       }
       if (beginTime_ != 0) {
-        output.writeUInt32(9, beginTime_);
+        output.writeUInt32(8, beginTime_);
       }
       if (duration_ != 0) {
-        output.writeUInt32(11, duration_);
+        output.writeUInt32(9, duration_);
       }
       if (playIndex_ != 0) {
-        output.writeUInt32(13, playIndex_);
+        output.writeUInt32(11, playIndex_);
       }
-      if (groupId_ != 0) {
-        output.writeUInt32(14, groupId_);
+      if (stageType_ != 0) {
+        output.writeUInt32(15, stageType_);
       }
-      if (detailCase_ == 216) {
-        output.writeMessage(216, (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
+      if (detailCase_ == 30) {
+        output.writeMessage(30, (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
       }
-      if (detailCase_ == 849) {
-        output.writeMessage(849, (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
+      if (detailCase_ == 424) {
+        output.writeMessage(424, (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
       }
-      if (detailCase_ == 903) {
-        output.writeMessage(903, (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
+      if (detailCase_ == 429) {
+        output.writeMessage(429, (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
       }
-      if (detailCase_ == 1033) {
-        output.writeMessage(1033, (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
+      if (detailCase_ == 691) {
+        output.writeMessage(691, (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
       }
-      if (detailCase_ == 1102) {
-        output.writeMessage(1102, (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
+      if (detailCase_ == 753) {
+        output.writeMessage(753, (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
       }
-      if (detailCase_ == 1538) {
-        output.writeMessage(1538, (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
+      if (detailCase_ == 1191) {
+        output.writeMessage(1191, (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_);
       }
-      if (detailCase_ == 1630) {
-        output.writeMessage(1630, (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
+      if (detailCase_ == 1228) {
+        output.writeMessage(1228, (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
       }
-      if (detailCase_ == 1751) {
-        output.writeMessage(1751, (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
+      if (detailCase_ == 1371) {
+        output.writeMessage(1371, (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
       }
-      if (detailCase_ == 2006) {
-        output.writeMessage(2006, (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
+      if (detailCase_ == 1610) {
+        output.writeMessage(1610, (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
       }
-      if (detailCase_ == 2011) {
-        output.writeMessage(2011, (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
+      if (detailCase_ == 1717) {
+        output.writeMessage(1717, (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
+      }
+      if (detailCase_ == 1722) {
+        output.writeMessage(1722, (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -986,73 +1051,77 @@ public final class MultistagePlayInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (groupId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, groupId_);
+      }
       if (stageIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, stageIndex_);
+          .computeUInt32Size(6, stageIndex_);
       }
       if (playType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, playType_);
-      }
-      if (stageType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, stageType_);
+          .computeUInt32Size(7, playType_);
       }
       if (beginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, beginTime_);
+          .computeUInt32Size(8, beginTime_);
       }
       if (duration_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, duration_);
+          .computeUInt32Size(9, duration_);
       }
       if (playIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, playIndex_);
+          .computeUInt32Size(11, playIndex_);
       }
-      if (groupId_ != 0) {
+      if (stageType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, groupId_);
+          .computeUInt32Size(15, stageType_);
       }
-      if (detailCase_ == 216) {
+      if (detailCase_ == 30) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(216, (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
+          .computeMessageSize(30, (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
       }
-      if (detailCase_ == 849) {
+      if (detailCase_ == 424) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(849, (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
+          .computeMessageSize(424, (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
       }
-      if (detailCase_ == 903) {
+      if (detailCase_ == 429) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(903, (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
+          .computeMessageSize(429, (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
       }
-      if (detailCase_ == 1033) {
+      if (detailCase_ == 691) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1033, (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
+          .computeMessageSize(691, (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_);
       }
-      if (detailCase_ == 1102) {
+      if (detailCase_ == 753) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1102, (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
+          .computeMessageSize(753, (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
       }
-      if (detailCase_ == 1538) {
+      if (detailCase_ == 1191) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1538, (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
+          .computeMessageSize(1191, (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_);
       }
-      if (detailCase_ == 1630) {
+      if (detailCase_ == 1228) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1630, (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
+          .computeMessageSize(1228, (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
       }
-      if (detailCase_ == 1751) {
+      if (detailCase_ == 1371) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1751, (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
+          .computeMessageSize(1371, (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
       }
-      if (detailCase_ == 2006) {
+      if (detailCase_ == 1610) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2006, (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_);
+          .computeMessageSize(1610, (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
       }
-      if (detailCase_ == 2011) {
+      if (detailCase_ == 1717) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2011, (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
+          .computeMessageSize(1717, (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
+      }
+      if (detailCase_ == 1722) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1722, (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1069,61 +1138,65 @@ public final class MultistagePlayInfoOuterClass {
       }
       emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo other = (emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo) obj;
 
-      if (getGroupId()
-          != other.getGroupId()) return false;
-      if (getStageType()
-          != other.getStageType()) return false;
-      if (getStageIndex()
-          != other.getStageIndex()) return false;
-      if (getDuration()
-          != other.getDuration()) return false;
       if (getBeginTime()
           != other.getBeginTime()) return false;
-      if (getPlayIndex()
-          != other.getPlayIndex()) return false;
+      if (getStageIndex()
+          != other.getStageIndex()) return false;
+      if (getStageType()
+          != other.getStageType()) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
+      if (getDuration()
+          != other.getDuration()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
+      if (getPlayIndex()
+          != other.getPlayIndex()) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
-        case 1751:
+        case 429:
           if (!getMechanicusInfo()
               .equals(other.getMechanicusInfo())) return false;
           break;
-        case 1630:
+        case 1722:
           if (!getFleurFairInfo()
               .equals(other.getFleurFairInfo())) return false;
           break;
-        case 216:
+        case 1717:
           if (!getHideAndSeekInfo()
               .equals(other.getHideAndSeekInfo())) return false;
           break;
-        case 849:
+        case 1610:
           if (!getChessInfo()
               .equals(other.getChessInfo())) return false;
           break;
-        case 2011:
+        case 753:
           if (!getIrodoriChessInfo()
               .equals(other.getIrodoriChessInfo())) return false;
           break;
-        case 1538:
+        case 30:
           if (!getCharAmusementInfo()
               .equals(other.getCharAmusementInfo())) return false;
           break;
-        case 903:
+        case 1228:
           if (!getBrickBreakerInfo()
               .equals(other.getBrickBreakerInfo())) return false;
           break;
-        case 1102:
+        case 424:
           if (!getCoinCollectInfo()
               .equals(other.getCoinCollectInfo())) return false;
           break;
-        case 1033:
+        case 691:
           if (!getLanV3BoatInfo()
               .equals(other.getLanV3BoatInfo())) return false;
           break;
-        case 2006:
+        case 1371:
           if (!getFleurFairV2PacmanInfo()
               .equals(other.getFleurFairV2PacmanInfo())) return false;
+          break;
+        case 1191:
+          if (!getTargetShootingInfo()
+              .equals(other.getTargetShootingInfo())) return false;
           break;
         case 0:
         default:
@@ -1139,60 +1212,64 @@ public final class MultistagePlayInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
-      hash = (37 * hash) + STAGE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getStageType();
-      hash = (37 * hash) + STAGE_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getStageIndex();
-      hash = (37 * hash) + DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDuration();
       hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getBeginTime();
-      hash = (37 * hash) + PLAY_INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayIndex();
+      hash = (37 * hash) + STAGE_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStageIndex();
+      hash = (37 * hash) + STAGE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getStageType();
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + PLAY_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayIndex();
       switch (detailCase_) {
-        case 1751:
+        case 429:
           hash = (37 * hash) + MECHANICUS_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getMechanicusInfo().hashCode();
           break;
-        case 1630:
+        case 1722:
           hash = (37 * hash) + FLEUR_FAIR_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getFleurFairInfo().hashCode();
           break;
-        case 216:
+        case 1717:
           hash = (37 * hash) + HIDE_AND_SEEK_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getHideAndSeekInfo().hashCode();
           break;
-        case 849:
+        case 1610:
           hash = (37 * hash) + CHESS_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getChessInfo().hashCode();
           break;
-        case 2011:
+        case 753:
           hash = (37 * hash) + IRODORI_CHESS_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getIrodoriChessInfo().hashCode();
           break;
-        case 1538:
+        case 30:
           hash = (37 * hash) + CHAR_AMUSEMENT_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getCharAmusementInfo().hashCode();
           break;
-        case 903:
+        case 1228:
           hash = (37 * hash) + BRICK_BREAKER_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getBrickBreakerInfo().hashCode();
           break;
-        case 1102:
+        case 424:
           hash = (37 * hash) + COIN_COLLECT_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getCoinCollectInfo().hashCode();
           break;
-        case 1033:
+        case 691:
           hash = (37 * hash) + LAN_V3_BOAT_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getLanV3BoatInfo().hashCode();
           break;
-        case 2006:
+        case 1371:
           hash = (37 * hash) + FLEUR_FAIR_V2_PACMAN_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getFleurFairV2PacmanInfo().hashCode();
+          break;
+        case 1191:
+          hash = (37 * hash) + TARGET_SHOOTING_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getTargetShootingInfo().hashCode();
           break;
         case 0:
         default:
@@ -1294,7 +1371,7 @@ public final class MultistagePlayInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ONMCDEPPIOB
+     * Obf: EGPGHBCHGMA
      * </pre>
      *
      * Protobuf type {@code MultistagePlayInfo}
@@ -1334,19 +1411,19 @@ public final class MultistagePlayInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        groupId_ = 0;
-
-        stageType_ = 0;
+        beginTime_ = 0;
 
         stageIndex_ = 0;
 
-        duration_ = 0;
-
-        beginTime_ = 0;
-
-        playIndex_ = 0;
+        stageType_ = 0;
 
         playType_ = 0;
+
+        duration_ = 0;
+
+        groupId_ = 0;
+
+        playIndex_ = 0;
 
         detailCase_ = 0;
         detail_ = null;
@@ -1376,81 +1453,88 @@ public final class MultistagePlayInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo buildPartial() {
         emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo result = new emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo(this);
-        result.groupId_ = groupId_;
-        result.stageType_ = stageType_;
-        result.stageIndex_ = stageIndex_;
-        result.duration_ = duration_;
         result.beginTime_ = beginTime_;
-        result.playIndex_ = playIndex_;
+        result.stageIndex_ = stageIndex_;
+        result.stageType_ = stageType_;
         result.playType_ = playType_;
-        if (detailCase_ == 1751) {
+        result.duration_ = duration_;
+        result.groupId_ = groupId_;
+        result.playIndex_ = playIndex_;
+        if (detailCase_ == 429) {
           if (mechanicusInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = mechanicusInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 1630) {
+        if (detailCase_ == 1722) {
           if (fleurFairInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = fleurFairInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 216) {
+        if (detailCase_ == 1717) {
           if (hideAndSeekInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = hideAndSeekInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 849) {
+        if (detailCase_ == 1610) {
           if (chessInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = chessInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 2011) {
+        if (detailCase_ == 753) {
           if (irodoriChessInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = irodoriChessInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 1538) {
+        if (detailCase_ == 30) {
           if (charAmusementInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = charAmusementInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 903) {
+        if (detailCase_ == 1228) {
           if (brickBreakerInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = brickBreakerInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 1102) {
+        if (detailCase_ == 424) {
           if (coinCollectInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = coinCollectInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 1033) {
+        if (detailCase_ == 691) {
           if (lanV3BoatInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = lanV3BoatInfoBuilder_.build();
           }
         }
-        if (detailCase_ == 2006) {
+        if (detailCase_ == 1371) {
           if (fleurFairV2PacmanInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = fleurFairV2PacmanInfoBuilder_.build();
+          }
+        }
+        if (detailCase_ == 1191) {
+          if (targetShootingInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = targetShootingInfoBuilder_.build();
           }
         }
         result.detailCase_ = detailCase_;
@@ -1502,26 +1586,26 @@ public final class MultistagePlayInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo other) {
         if (other == emu.grasscutter.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.getDefaultInstance()) return this;
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
-        }
-        if (other.getStageType() != 0) {
-          setStageType(other.getStageType());
+        if (other.getBeginTime() != 0) {
+          setBeginTime(other.getBeginTime());
         }
         if (other.getStageIndex() != 0) {
           setStageIndex(other.getStageIndex());
         }
-        if (other.getDuration() != 0) {
-          setDuration(other.getDuration());
-        }
-        if (other.getBeginTime() != 0) {
-          setBeginTime(other.getBeginTime());
-        }
-        if (other.getPlayIndex() != 0) {
-          setPlayIndex(other.getPlayIndex());
+        if (other.getStageType() != 0) {
+          setStageType(other.getStageType());
         }
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
+        }
+        if (other.getDuration() != 0) {
+          setDuration(other.getDuration());
+        }
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
+        }
+        if (other.getPlayIndex() != 0) {
+          setPlayIndex(other.getPlayIndex());
         }
         switch (other.getDetailCase()) {
           case MECHANICUS_INFO: {
@@ -1562,6 +1646,10 @@ public final class MultistagePlayInfoOuterClass {
           }
           case FLEUR_FAIR_V2_PACMAN_INFO: {
             mergeFleurFairV2PacmanInfo(other.getFleurFairV2PacmanInfo());
+            break;
+          }
+          case TARGET_SHOOTING_INFO: {
+            mergeTargetShootingInfo(other.getTargetShootingInfo());
             break;
           }
           case DETAIL_NOT_SET: {
@@ -1612,133 +1700,9 @@ public final class MultistagePlayInfoOuterClass {
       }
 
 
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 14;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 14;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int stageType_ ;
-      /**
-       * <code>uint32 stage_type = 8;</code>
-       * @return The stageType.
-       */
-      @java.lang.Override
-      public int getStageType() {
-        return stageType_;
-      }
-      /**
-       * <code>uint32 stage_type = 8;</code>
-       * @param value The stageType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageType(int value) {
-        
-        stageType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_type = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageType() {
-        
-        stageType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int stageIndex_ ;
-      /**
-       * <code>uint32 stage_index = 1;</code>
-       * @return The stageIndex.
-       */
-      @java.lang.Override
-      public int getStageIndex() {
-        return stageIndex_;
-      }
-      /**
-       * <code>uint32 stage_index = 1;</code>
-       * @param value The stageIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageIndex(int value) {
-        
-        stageIndex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_index = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageIndex() {
-        
-        stageIndex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int duration_ ;
-      /**
-       * <code>uint32 duration = 11;</code>
-       * @return The duration.
-       */
-      @java.lang.Override
-      public int getDuration() {
-        return duration_;
-      }
-      /**
-       * <code>uint32 duration = 11;</code>
-       * @param value The duration to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDuration(int value) {
-        
-        duration_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 duration = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDuration() {
-        
-        duration_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int beginTime_ ;
       /**
-       * <code>uint32 begin_time = 9;</code>
+       * <code>uint32 begin_time = 8;</code>
        * @return The beginTime.
        */
       @java.lang.Override
@@ -1746,7 +1710,7 @@ public final class MultistagePlayInfoOuterClass {
         return beginTime_;
       }
       /**
-       * <code>uint32 begin_time = 9;</code>
+       * <code>uint32 begin_time = 8;</code>
        * @param value The beginTime to set.
        * @return This builder for chaining.
        */
@@ -1757,7 +1721,7 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 begin_time = 9;</code>
+       * <code>uint32 begin_time = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
@@ -1767,40 +1731,71 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
 
-      private int playIndex_ ;
+      private int stageIndex_ ;
       /**
-       * <code>uint32 play_index = 13;</code>
-       * @return The playIndex.
+       * <code>uint32 stage_index = 6;</code>
+       * @return The stageIndex.
        */
       @java.lang.Override
-      public int getPlayIndex() {
-        return playIndex_;
+      public int getStageIndex() {
+        return stageIndex_;
       }
       /**
-       * <code>uint32 play_index = 13;</code>
-       * @param value The playIndex to set.
+       * <code>uint32 stage_index = 6;</code>
+       * @param value The stageIndex to set.
        * @return This builder for chaining.
        */
-      public Builder setPlayIndex(int value) {
+      public Builder setStageIndex(int value) {
         
-        playIndex_ = value;
+        stageIndex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 play_index = 13;</code>
+       * <code>uint32 stage_index = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPlayIndex() {
+      public Builder clearStageIndex() {
         
-        playIndex_ = 0;
+        stageIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int stageType_ ;
+      /**
+       * <code>uint32 stage_type = 15;</code>
+       * @return The stageType.
+       */
+      @java.lang.Override
+      public int getStageType() {
+        return stageType_;
+      }
+      /**
+       * <code>uint32 stage_type = 15;</code>
+       * @param value The stageType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageType(int value) {
+        
+        stageType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_type = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageType() {
+        
+        stageType_ = 0;
         onChanged();
         return this;
       }
 
       private int playType_ ;
       /**
-       * <code>uint32 play_type = 4;</code>
+       * <code>uint32 play_type = 7;</code>
        * @return The playType.
        */
       @java.lang.Override
@@ -1808,7 +1803,7 @@ public final class MultistagePlayInfoOuterClass {
         return playType_;
       }
       /**
-       * <code>uint32 play_type = 4;</code>
+       * <code>uint32 play_type = 7;</code>
        * @param value The playType to set.
        * @return This builder for chaining.
        */
@@ -1819,7 +1814,7 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_type = 4;</code>
+       * <code>uint32 play_type = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
@@ -1829,36 +1824,129 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
 
+      private int duration_ ;
+      /**
+       * <code>uint32 duration = 9;</code>
+       * @return The duration.
+       */
+      @java.lang.Override
+      public int getDuration() {
+        return duration_;
+      }
+      /**
+       * <code>uint32 duration = 9;</code>
+       * @param value The duration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDuration(int value) {
+        
+        duration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 duration = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDuration() {
+        
+        duration_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 4;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 4;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int playIndex_ ;
+      /**
+       * <code>uint32 play_index = 11;</code>
+       * @return The playIndex.
+       */
+      @java.lang.Override
+      public int getPlayIndex() {
+        return playIndex_;
+      }
+      /**
+       * <code>uint32 play_index = 11;</code>
+       * @param value The playIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayIndex(int value) {
+        
+        playIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 play_index = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayIndex() {
+        
+        playIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo, emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder, emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfoOrBuilder> mechanicusInfoBuilder_;
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        * @return Whether the mechanicusInfo field is set.
        */
       @java.lang.Override
       public boolean hasMechanicusInfo() {
-        return detailCase_ == 1751;
+        return detailCase_ == 429;
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        * @return The mechanicusInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo getMechanicusInfo() {
         if (mechanicusInfoBuilder_ == null) {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             return (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             return mechanicusInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       public Builder setMechanicusInfo(emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo value) {
         if (mechanicusInfoBuilder_ == null) {
@@ -1870,11 +1958,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           mechanicusInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1751;
+        detailCase_ = 429;
         return this;
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       public Builder setMechanicusInfo(
           emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder builderForValue) {
@@ -1884,15 +1972,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           mechanicusInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1751;
+        detailCase_ = 429;
         return this;
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       public Builder mergeMechanicusInfo(emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo value) {
         if (mechanicusInfoBuilder_ == null) {
-          if (detailCase_ == 1751 &&
+          if (detailCase_ == 429 &&
               detail_ != emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.newBuilder((emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -1901,26 +1989,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             mechanicusInfoBuilder_.mergeFrom(value);
           }
           mechanicusInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1751;
+        detailCase_ = 429;
         return this;
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       public Builder clearMechanicusInfo() {
         if (mechanicusInfoBuilder_ == null) {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -1929,33 +2017,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       public emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder getMechanicusInfoBuilder() {
         return getMechanicusInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfoOrBuilder getMechanicusInfoOrBuilder() {
-        if ((detailCase_ == 1751) && (mechanicusInfoBuilder_ != null)) {
+        if ((detailCase_ == 429) && (mechanicusInfoBuilder_ != null)) {
           return mechanicusInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1751) {
+          if (detailCase_ == 429) {
             return (emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleMechanicusInfo mechanicus_info = 1751;</code>
+       * <code>.InBattleMechanicusInfo mechanicus_info = 429;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo, emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder, emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfoOrBuilder> 
           getMechanicusInfoFieldBuilder() {
         if (mechanicusInfoBuilder_ == null) {
-          if (!(detailCase_ == 1751)) {
+          if (!(detailCase_ == 429)) {
             detail_ = emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.getDefaultInstance();
           }
           mechanicusInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1965,7 +2053,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1751;
+        detailCase_ = 429;
         onChanged();;
         return mechanicusInfoBuilder_;
       }
@@ -1973,33 +2061,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo, emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder, emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfoOrBuilder> fleurFairInfoBuilder_;
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        * @return Whether the fleurFairInfo field is set.
        */
       @java.lang.Override
       public boolean hasFleurFairInfo() {
-        return detailCase_ == 1630;
+        return detailCase_ == 1722;
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        * @return The fleurFairInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo getFleurFairInfo() {
         if (fleurFairInfoBuilder_ == null) {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             return (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             return fleurFairInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       public Builder setFleurFairInfo(emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo value) {
         if (fleurFairInfoBuilder_ == null) {
@@ -2011,11 +2099,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           fleurFairInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1630;
+        detailCase_ = 1722;
         return this;
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       public Builder setFleurFairInfo(
           emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder builderForValue) {
@@ -2025,15 +2113,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           fleurFairInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1630;
+        detailCase_ = 1722;
         return this;
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       public Builder mergeFleurFairInfo(emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo value) {
         if (fleurFairInfoBuilder_ == null) {
-          if (detailCase_ == 1630 &&
+          if (detailCase_ == 1722 &&
               detail_ != emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.newBuilder((emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2042,26 +2130,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             fleurFairInfoBuilder_.mergeFrom(value);
           }
           fleurFairInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1630;
+        detailCase_ = 1722;
         return this;
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       public Builder clearFleurFairInfo() {
         if (fleurFairInfoBuilder_ == null) {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2070,33 +2158,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       public emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder getFleurFairInfoBuilder() {
         return getFleurFairInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfoOrBuilder getFleurFairInfoOrBuilder() {
-        if ((detailCase_ == 1630) && (fleurFairInfoBuilder_ != null)) {
+        if ((detailCase_ == 1722) && (fleurFairInfoBuilder_ != null)) {
           return fleurFairInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1630) {
+          if (detailCase_ == 1722) {
             return (emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleFleurFairInfo fleur_fair_info = 1630;</code>
+       * <code>.InBattleFleurFairInfo fleur_fair_info = 1722;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo, emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder, emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfoOrBuilder> 
           getFleurFairInfoFieldBuilder() {
         if (fleurFairInfoBuilder_ == null) {
-          if (!(detailCase_ == 1630)) {
+          if (!(detailCase_ == 1722)) {
             detail_ = emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.getDefaultInstance();
           }
           fleurFairInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2106,7 +2194,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1630;
+        detailCase_ = 1722;
         onChanged();;
         return fleurFairInfoBuilder_;
       }
@@ -2114,33 +2202,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo, emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder, emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfoOrBuilder> hideAndSeekInfoBuilder_;
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        * @return Whether the hideAndSeekInfo field is set.
        */
       @java.lang.Override
       public boolean hasHideAndSeekInfo() {
-        return detailCase_ == 216;
+        return detailCase_ == 1717;
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        * @return The hideAndSeekInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo getHideAndSeekInfo() {
         if (hideAndSeekInfoBuilder_ == null) {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             return (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             return hideAndSeekInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       public Builder setHideAndSeekInfo(emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo value) {
         if (hideAndSeekInfoBuilder_ == null) {
@@ -2152,11 +2240,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           hideAndSeekInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 216;
+        detailCase_ = 1717;
         return this;
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       public Builder setHideAndSeekInfo(
           emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder builderForValue) {
@@ -2166,15 +2254,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           hideAndSeekInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 216;
+        detailCase_ = 1717;
         return this;
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       public Builder mergeHideAndSeekInfo(emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo value) {
         if (hideAndSeekInfoBuilder_ == null) {
-          if (detailCase_ == 216 &&
+          if (detailCase_ == 1717 &&
               detail_ != emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.newBuilder((emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2183,26 +2271,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             hideAndSeekInfoBuilder_.mergeFrom(value);
           }
           hideAndSeekInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 216;
+        detailCase_ = 1717;
         return this;
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       public Builder clearHideAndSeekInfo() {
         if (hideAndSeekInfoBuilder_ == null) {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2211,33 +2299,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       public emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder getHideAndSeekInfoBuilder() {
         return getHideAndSeekInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfoOrBuilder getHideAndSeekInfoOrBuilder() {
-        if ((detailCase_ == 216) && (hideAndSeekInfoBuilder_ != null)) {
+        if ((detailCase_ == 1717) && (hideAndSeekInfoBuilder_ != null)) {
           return hideAndSeekInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 216) {
+          if (detailCase_ == 1717) {
             return (emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.HideAndSeekStageInfo hide_and_seek_info = 216;</code>
+       * <code>.HideAndSeekStageInfo hide_and_seek_info = 1717;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo, emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder, emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfoOrBuilder> 
           getHideAndSeekInfoFieldBuilder() {
         if (hideAndSeekInfoBuilder_ == null) {
-          if (!(detailCase_ == 216)) {
+          if (!(detailCase_ == 1717)) {
             detail_ = emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.getDefaultInstance();
           }
           hideAndSeekInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2247,7 +2335,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 216;
+        detailCase_ = 1717;
         onChanged();;
         return hideAndSeekInfoBuilder_;
       }
@@ -2255,33 +2343,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo, emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder, emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfoOrBuilder> chessInfoBuilder_;
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        * @return Whether the chessInfo field is set.
        */
       @java.lang.Override
       public boolean hasChessInfo() {
-        return detailCase_ == 849;
+        return detailCase_ == 1610;
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        * @return The chessInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo getChessInfo() {
         if (chessInfoBuilder_ == null) {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             return (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             return chessInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       public Builder setChessInfo(emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo value) {
         if (chessInfoBuilder_ == null) {
@@ -2293,11 +2381,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           chessInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 849;
+        detailCase_ = 1610;
         return this;
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       public Builder setChessInfo(
           emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder builderForValue) {
@@ -2307,15 +2395,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           chessInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 849;
+        detailCase_ = 1610;
         return this;
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       public Builder mergeChessInfo(emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo value) {
         if (chessInfoBuilder_ == null) {
-          if (detailCase_ == 849 &&
+          if (detailCase_ == 1610 &&
               detail_ != emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.newBuilder((emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2324,26 +2412,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             chessInfoBuilder_.mergeFrom(value);
           }
           chessInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 849;
+        detailCase_ = 1610;
         return this;
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       public Builder clearChessInfo() {
         if (chessInfoBuilder_ == null) {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2352,33 +2440,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       public emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder getChessInfoBuilder() {
         return getChessInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfoOrBuilder getChessInfoOrBuilder() {
-        if ((detailCase_ == 849) && (chessInfoBuilder_ != null)) {
+        if ((detailCase_ == 1610) && (chessInfoBuilder_ != null)) {
           return chessInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 849) {
+          if (detailCase_ == 1610) {
             return (emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleChessInfo chess_info = 849;</code>
+       * <code>.InBattleChessInfo chess_info = 1610;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo, emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder, emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfoOrBuilder> 
           getChessInfoFieldBuilder() {
         if (chessInfoBuilder_ == null) {
-          if (!(detailCase_ == 849)) {
+          if (!(detailCase_ == 1610)) {
             detail_ = emu.grasscutter.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.getDefaultInstance();
           }
           chessInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2388,7 +2476,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 849;
+        detailCase_ = 1610;
         onChanged();;
         return chessInfoBuilder_;
       }
@@ -2396,33 +2484,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo, emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder, emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfoOrBuilder> irodoriChessInfoBuilder_;
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        * @return Whether the irodoriChessInfo field is set.
        */
       @java.lang.Override
       public boolean hasIrodoriChessInfo() {
-        return detailCase_ == 2011;
+        return detailCase_ == 753;
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        * @return The irodoriChessInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo getIrodoriChessInfo() {
         if (irodoriChessInfoBuilder_ == null) {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             return (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             return irodoriChessInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       public Builder setIrodoriChessInfo(emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo value) {
         if (irodoriChessInfoBuilder_ == null) {
@@ -2434,11 +2522,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           irodoriChessInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 2011;
+        detailCase_ = 753;
         return this;
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       public Builder setIrodoriChessInfo(
           emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder builderForValue) {
@@ -2448,15 +2536,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           irodoriChessInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 2011;
+        detailCase_ = 753;
         return this;
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       public Builder mergeIrodoriChessInfo(emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo value) {
         if (irodoriChessInfoBuilder_ == null) {
-          if (detailCase_ == 2011 &&
+          if (detailCase_ == 753 &&
               detail_ != emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.newBuilder((emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2465,26 +2553,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             irodoriChessInfoBuilder_.mergeFrom(value);
           }
           irodoriChessInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 2011;
+        detailCase_ = 753;
         return this;
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       public Builder clearIrodoriChessInfo() {
         if (irodoriChessInfoBuilder_ == null) {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2493,33 +2581,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       public emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder getIrodoriChessInfoBuilder() {
         return getIrodoriChessInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfoOrBuilder getIrodoriChessInfoOrBuilder() {
-        if ((detailCase_ == 2011) && (irodoriChessInfoBuilder_ != null)) {
+        if ((detailCase_ == 753) && (irodoriChessInfoBuilder_ != null)) {
           return irodoriChessInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 2011) {
+          if (detailCase_ == 753) {
             return (emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_;
           }
           return emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 2011;</code>
+       * <code>.InBattleIrodoriChessInfo irodori_chess_info = 753;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo, emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder, emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfoOrBuilder> 
           getIrodoriChessInfoFieldBuilder() {
         if (irodoriChessInfoBuilder_ == null) {
-          if (!(detailCase_ == 2011)) {
+          if (!(detailCase_ == 753)) {
             detail_ = emu.grasscutter.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.getDefaultInstance();
           }
           irodoriChessInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2529,7 +2617,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 2011;
+        detailCase_ = 753;
         onChanged();;
         return irodoriChessInfoBuilder_;
       }
@@ -2537,33 +2625,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo, emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder, emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfoOrBuilder> charAmusementInfoBuilder_;
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        * @return Whether the charAmusementInfo field is set.
        */
       @java.lang.Override
       public boolean hasCharAmusementInfo() {
-        return detailCase_ == 1538;
+        return detailCase_ == 30;
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        * @return The charAmusementInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo getCharAmusementInfo() {
         if (charAmusementInfoBuilder_ == null) {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             return (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_;
           }
           return emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             return charAmusementInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       public Builder setCharAmusementInfo(emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo value) {
         if (charAmusementInfoBuilder_ == null) {
@@ -2575,11 +2663,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           charAmusementInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1538;
+        detailCase_ = 30;
         return this;
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       public Builder setCharAmusementInfo(
           emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder builderForValue) {
@@ -2589,15 +2677,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           charAmusementInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1538;
+        detailCase_ = 30;
         return this;
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       public Builder mergeCharAmusementInfo(emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo value) {
         if (charAmusementInfoBuilder_ == null) {
-          if (detailCase_ == 1538 &&
+          if (detailCase_ == 30 &&
               detail_ != emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.newBuilder((emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2606,26 +2694,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             charAmusementInfoBuilder_.mergeFrom(value);
           }
           charAmusementInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1538;
+        detailCase_ = 30;
         return this;
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       public Builder clearCharAmusementInfo() {
         if (charAmusementInfoBuilder_ == null) {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2634,33 +2722,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       public emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder getCharAmusementInfoBuilder() {
         return getCharAmusementInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfoOrBuilder getCharAmusementInfoOrBuilder() {
-        if ((detailCase_ == 1538) && (charAmusementInfoBuilder_ != null)) {
+        if ((detailCase_ == 30) && (charAmusementInfoBuilder_ != null)) {
           return charAmusementInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1538) {
+          if (detailCase_ == 30) {
             return (emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_;
           }
           return emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.CharAmusementInfo char_amusement_info = 1538;</code>
+       * <code>.CharAmusementInfo char_amusement_info = 30;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo, emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder, emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfoOrBuilder> 
           getCharAmusementInfoFieldBuilder() {
         if (charAmusementInfoBuilder_ == null) {
-          if (!(detailCase_ == 1538)) {
+          if (!(detailCase_ == 30)) {
             detail_ = emu.grasscutter.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.getDefaultInstance();
           }
           charAmusementInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2670,7 +2758,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1538;
+        detailCase_ = 30;
         onChanged();;
         return charAmusementInfoBuilder_;
       }
@@ -2678,33 +2766,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo, emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder, emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfoOrBuilder> brickBreakerInfoBuilder_;
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        * @return Whether the brickBreakerInfo field is set.
        */
       @java.lang.Override
       public boolean hasBrickBreakerInfo() {
-        return detailCase_ == 903;
+        return detailCase_ == 1228;
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        * @return The brickBreakerInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo getBrickBreakerInfo() {
         if (brickBreakerInfoBuilder_ == null) {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             return (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             return brickBreakerInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       public Builder setBrickBreakerInfo(emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo value) {
         if (brickBreakerInfoBuilder_ == null) {
@@ -2716,11 +2804,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           brickBreakerInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 903;
+        detailCase_ = 1228;
         return this;
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       public Builder setBrickBreakerInfo(
           emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder builderForValue) {
@@ -2730,15 +2818,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           brickBreakerInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 903;
+        detailCase_ = 1228;
         return this;
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       public Builder mergeBrickBreakerInfo(emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo value) {
         if (brickBreakerInfoBuilder_ == null) {
-          if (detailCase_ == 903 &&
+          if (detailCase_ == 1228 &&
               detail_ != emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.newBuilder((emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2747,26 +2835,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             brickBreakerInfoBuilder_.mergeFrom(value);
           }
           brickBreakerInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 903;
+        detailCase_ = 1228;
         return this;
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       public Builder clearBrickBreakerInfo() {
         if (brickBreakerInfoBuilder_ == null) {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2775,33 +2863,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       public emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder getBrickBreakerInfoBuilder() {
         return getBrickBreakerInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfoOrBuilder getBrickBreakerInfoOrBuilder() {
-        if ((detailCase_ == 903) && (brickBreakerInfoBuilder_ != null)) {
+        if ((detailCase_ == 1228) && (brickBreakerInfoBuilder_ != null)) {
           return brickBreakerInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 903) {
+          if (detailCase_ == 1228) {
             return (emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.BrickBreakerStageInfo brick_breaker_info = 903;</code>
+       * <code>.BrickBreakerStageInfo brick_breaker_info = 1228;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo, emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder, emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfoOrBuilder> 
           getBrickBreakerInfoFieldBuilder() {
         if (brickBreakerInfoBuilder_ == null) {
-          if (!(detailCase_ == 903)) {
+          if (!(detailCase_ == 1228)) {
             detail_ = emu.grasscutter.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.getDefaultInstance();
           }
           brickBreakerInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2811,7 +2899,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 903;
+        detailCase_ = 1228;
         onChanged();;
         return brickBreakerInfoBuilder_;
       }
@@ -2819,33 +2907,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder> coinCollectInfoBuilder_;
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        * @return Whether the coinCollectInfo field is set.
        */
       @java.lang.Override
       public boolean hasCoinCollectInfo() {
-        return detailCase_ == 1102;
+        return detailCase_ == 424;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        * @return The coinCollectInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo getCoinCollectInfo() {
         if (coinCollectInfoBuilder_ == null) {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             return (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             return coinCollectInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       public Builder setCoinCollectInfo(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo value) {
         if (coinCollectInfoBuilder_ == null) {
@@ -2857,11 +2945,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           coinCollectInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1102;
+        detailCase_ = 424;
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       public Builder setCoinCollectInfo(
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder builderForValue) {
@@ -2871,15 +2959,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           coinCollectInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1102;
+        detailCase_ = 424;
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       public Builder mergeCoinCollectInfo(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo value) {
         if (coinCollectInfoBuilder_ == null) {
-          if (detailCase_ == 1102 &&
+          if (detailCase_ == 424 &&
               detail_ != emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.newBuilder((emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -2888,26 +2976,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             coinCollectInfoBuilder_.mergeFrom(value);
           }
           coinCollectInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1102;
+        detailCase_ = 424;
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       public Builder clearCoinCollectInfo() {
         if (coinCollectInfoBuilder_ == null) {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -2916,33 +3004,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder getCoinCollectInfoBuilder() {
         return getCoinCollectInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder() {
-        if ((detailCase_ == 1102) && (coinCollectInfoBuilder_ != null)) {
+        if ((detailCase_ == 424) && (coinCollectInfoBuilder_ != null)) {
           return coinCollectInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1102) {
+          if (detailCase_ == 424) {
             return (emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 1102;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 424;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder> 
           getCoinCollectInfoFieldBuilder() {
         if (coinCollectInfoBuilder_ == null) {
-          if (!(detailCase_ == 1102)) {
+          if (!(detailCase_ == 424)) {
             detail_ = emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance();
           }
           coinCollectInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -2952,7 +3040,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1102;
+        detailCase_ = 424;
         onChanged();;
         return coinCollectInfoBuilder_;
       }
@@ -2960,33 +3048,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo, emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder, emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfoOrBuilder> lanV3BoatInfoBuilder_;
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        * @return Whether the lanV3BoatInfo field is set.
        */
       @java.lang.Override
       public boolean hasLanV3BoatInfo() {
-        return detailCase_ == 1033;
+        return detailCase_ == 691;
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        * @return The lanV3BoatInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo getLanV3BoatInfo() {
         if (lanV3BoatInfoBuilder_ == null) {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             return (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             return lanV3BoatInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       public Builder setLanV3BoatInfo(emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo value) {
         if (lanV3BoatInfoBuilder_ == null) {
@@ -2998,11 +3086,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           lanV3BoatInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1033;
+        detailCase_ = 691;
         return this;
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       public Builder setLanV3BoatInfo(
           emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder builderForValue) {
@@ -3012,15 +3100,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           lanV3BoatInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1033;
+        detailCase_ = 691;
         return this;
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       public Builder mergeLanV3BoatInfo(emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo value) {
         if (lanV3BoatInfoBuilder_ == null) {
-          if (detailCase_ == 1033 &&
+          if (detailCase_ == 691 &&
               detail_ != emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.newBuilder((emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -3029,26 +3117,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             lanV3BoatInfoBuilder_.mergeFrom(value);
           }
           lanV3BoatInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 1033;
+        detailCase_ = 691;
         return this;
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       public Builder clearLanV3BoatInfo() {
         if (lanV3BoatInfoBuilder_ == null) {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -3057,33 +3145,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       public emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder getLanV3BoatInfoBuilder() {
         return getLanV3BoatInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfoOrBuilder getLanV3BoatInfoOrBuilder() {
-        if ((detailCase_ == 1033) && (lanV3BoatInfoBuilder_ != null)) {
+        if ((detailCase_ == 691) && (lanV3BoatInfoBuilder_ != null)) {
           return lanV3BoatInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1033) {
+          if (detailCase_ == 691) {
             return (emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 1033;</code>
+       * <code>.LanV3BoatStageInfo lan_v3_boat_info = 691;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo, emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.Builder, emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfoOrBuilder> 
           getLanV3BoatInfoFieldBuilder() {
         if (lanV3BoatInfoBuilder_ == null) {
-          if (!(detailCase_ == 1033)) {
+          if (!(detailCase_ == 691)) {
             detail_ = emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.LanV3BoatStageInfo.getDefaultInstance();
           }
           lanV3BoatInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3093,7 +3181,7 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1033;
+        detailCase_ = 691;
         onChanged();;
         return lanV3BoatInfoBuilder_;
       }
@@ -3101,33 +3189,33 @@ public final class MultistagePlayInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo, emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder, emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfoOrBuilder> fleurFairV2PacmanInfoBuilder_;
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        * @return Whether the fleurFairV2PacmanInfo field is set.
        */
       @java.lang.Override
       public boolean hasFleurFairV2PacmanInfo() {
-        return detailCase_ == 2006;
+        return detailCase_ == 1371;
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        * @return The fleurFairV2PacmanInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo getFleurFairV2PacmanInfo() {
         if (fleurFairV2PacmanInfoBuilder_ == null) {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             return (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             return fleurFairV2PacmanInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       public Builder setFleurFairV2PacmanInfo(emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo value) {
         if (fleurFairV2PacmanInfoBuilder_ == null) {
@@ -3139,11 +3227,11 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           fleurFairV2PacmanInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 2006;
+        detailCase_ = 1371;
         return this;
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       public Builder setFleurFairV2PacmanInfo(
           emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder builderForValue) {
@@ -3153,15 +3241,15 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           fleurFairV2PacmanInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 2006;
+        detailCase_ = 1371;
         return this;
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       public Builder mergeFleurFairV2PacmanInfo(emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo value) {
         if (fleurFairV2PacmanInfoBuilder_ == null) {
-          if (detailCase_ == 2006 &&
+          if (detailCase_ == 1371 &&
               detail_ != emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.newBuilder((emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -3170,26 +3258,26 @@ public final class MultistagePlayInfoOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             fleurFairV2PacmanInfoBuilder_.mergeFrom(value);
           }
           fleurFairV2PacmanInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 2006;
+        detailCase_ = 1371;
         return this;
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       public Builder clearFleurFairV2PacmanInfo() {
         if (fleurFairV2PacmanInfoBuilder_ == null) {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -3198,33 +3286,33 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       public emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder getFleurFairV2PacmanInfoBuilder() {
         return getFleurFairV2PacmanInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfoOrBuilder getFleurFairV2PacmanInfoOrBuilder() {
-        if ((detailCase_ == 2006) && (fleurFairV2PacmanInfoBuilder_ != null)) {
+        if ((detailCase_ == 1371) && (fleurFairV2PacmanInfoBuilder_ != null)) {
           return fleurFairV2PacmanInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 2006) {
+          if (detailCase_ == 1371) {
             return (emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo) detail_;
           }
           return emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 2006;</code>
+       * <code>.FleurFairV2PacmanStageInfo fleur_fair_v2_pacman_info = 1371;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo, emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.Builder, emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfoOrBuilder> 
           getFleurFairV2PacmanInfoFieldBuilder() {
         if (fleurFairV2PacmanInfoBuilder_ == null) {
-          if (!(detailCase_ == 2006)) {
+          if (!(detailCase_ == 1371)) {
             detail_ = emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.FleurFairV2PacmanStageInfo.getDefaultInstance();
           }
           fleurFairV2PacmanInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -3234,9 +3322,150 @@ public final class MultistagePlayInfoOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 2006;
+        detailCase_ = 1371;
         onChanged();;
         return fleurFairV2PacmanInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder> targetShootingInfoBuilder_;
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       * @return Whether the targetShootingInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasTargetShootingInfo() {
+        return detailCase_ == 1191;
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       * @return The targetShootingInfo.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo getTargetShootingInfo() {
+        if (targetShootingInfoBuilder_ == null) {
+          if (detailCase_ == 1191) {
+            return (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
+        } else {
+          if (detailCase_ == 1191) {
+            return targetShootingInfoBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      public Builder setTargetShootingInfo(emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo value) {
+        if (targetShootingInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          targetShootingInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 1191;
+        return this;
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      public Builder setTargetShootingInfo(
+          emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder builderForValue) {
+        if (targetShootingInfoBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetShootingInfoBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 1191;
+        return this;
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      public Builder mergeTargetShootingInfo(emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo value) {
+        if (targetShootingInfoBuilder_ == null) {
+          if (detailCase_ == 1191 &&
+              detail_ != emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.newBuilder((emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 1191) {
+            targetShootingInfoBuilder_.mergeFrom(value);
+          }
+          targetShootingInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 1191;
+        return this;
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      public Builder clearTargetShootingInfo() {
+        if (targetShootingInfoBuilder_ == null) {
+          if (detailCase_ == 1191) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 1191) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          targetShootingInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      public emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder getTargetShootingInfoBuilder() {
+        return getTargetShootingInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder getTargetShootingInfoOrBuilder() {
+        if ((detailCase_ == 1191) && (targetShootingInfoBuilder_ != null)) {
+          return targetShootingInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 1191) {
+            return (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TargetShootingInfo target_shooting_info = 1191;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder> 
+          getTargetShootingInfoFieldBuilder() {
+        if (targetShootingInfoBuilder_ == null) {
+          if (!(detailCase_ == 1191)) {
+            detail_ = emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.getDefaultInstance();
+          }
+          targetShootingInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo.Builder, emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.TargetShootingInfoOuterClass.TargetShootingInfo) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 1191;
+        onChanged();;
+        return targetShootingInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -3312,26 +3541,28 @@ public final class MultistagePlayInfoOuterClass {
       "Info.proto\032\027CharAmusementInfo.proto\032\033Bri" +
       "ckBreakerStageInfo.proto\032\032CoinCollectSta" +
       "geInfo.proto\032\030LanV3BoatStageInfo.proto\032 " +
-      "FleurFairV2PacmanStageInfo.proto\"\277\005\n\022Mul" +
-      "tistagePlayInfo\022\020\n\010group_id\030\016 \001(\r\022\022\n\nsta" +
-      "ge_type\030\010 \001(\r\022\023\n\013stage_index\030\001 \001(\r\022\020\n\010du" +
-      "ration\030\013 \001(\r\022\022\n\nbegin_time\030\t \001(\r\022\022\n\nplay" +
-      "_index\030\r \001(\r\022\021\n\tplay_type\030\004 \001(\r\0223\n\017mecha" +
-      "nicus_info\030\327\r \001(\0132\027.InBattleMechanicusIn" +
-      "foH\000\0222\n\017fleur_fair_info\030\336\014 \001(\0132\026.InBattl" +
-      "eFleurFairInfoH\000\0224\n\022hide_and_seek_info\030\330" +
-      "\001 \001(\0132\025.HideAndSeekStageInfoH\000\022)\n\nchess_" +
-      "info\030\321\006 \001(\0132\022.InBattleChessInfoH\000\0228\n\022iro" +
-      "dori_chess_info\030\333\017 \001(\0132\031.InBattleIrodori" +
-      "ChessInfoH\000\0222\n\023char_amusement_info\030\202\014 \001(" +
-      "\0132\022.CharAmusementInfoH\000\0225\n\022brick_breaker" +
-      "_info\030\207\007 \001(\0132\026.BrickBreakerStageInfoH\000\0223" +
-      "\n\021coin_collect_info\030\316\010 \001(\0132\025.CoinCollect" +
-      "StageInfoH\000\0220\n\020lan_v3_boat_info\030\211\010 \001(\0132\023" +
-      ".LanV3BoatStageInfoH\000\022A\n\031fleur_fair_v2_p" +
-      "acman_info\030\326\017 \001(\0132\033.FleurFairV2PacmanSta" +
-      "geInfoH\000B\010\n\006detailB\033\n\031emu.grasscutter.ne" +
-      "t.protob\006proto3"
+      "FleurFairV2PacmanStageInfo.proto\032\030Target" +
+      "ShootingInfo.proto\"\364\005\n\022MultistagePlayInf" +
+      "o\022\022\n\nbegin_time\030\010 \001(\r\022\023\n\013stage_index\030\006 \001" +
+      "(\r\022\022\n\nstage_type\030\017 \001(\r\022\021\n\tplay_type\030\007 \001(" +
+      "\r\022\020\n\010duration\030\t \001(\r\022\020\n\010group_id\030\004 \001(\r\022\022\n" +
+      "\nplay_index\030\013 \001(\r\0223\n\017mechanicus_info\030\255\003 " +
+      "\001(\0132\027.InBattleMechanicusInfoH\000\0222\n\017fleur_" +
+      "fair_info\030\272\r \001(\0132\026.InBattleFleurFairInfo" +
+      "H\000\0224\n\022hide_and_seek_info\030\265\r \001(\0132\025.HideAn" +
+      "dSeekStageInfoH\000\022)\n\nchess_info\030\312\014 \001(\0132\022." +
+      "InBattleChessInfoH\000\0228\n\022irodori_chess_inf" +
+      "o\030\361\005 \001(\0132\031.InBattleIrodoriChessInfoH\000\0221\n" +
+      "\023char_amusement_info\030\036 \001(\0132\022.CharAmuseme" +
+      "ntInfoH\000\0225\n\022brick_breaker_info\030\314\t \001(\0132\026." +
+      "BrickBreakerStageInfoH\000\0223\n\021coin_collect_" +
+      "info\030\250\003 \001(\0132\025.CoinCollectStageInfoH\000\0220\n\020" +
+      "lan_v3_boat_info\030\263\005 \001(\0132\023.LanV3BoatStage" +
+      "InfoH\000\022A\n\031fleur_fair_v2_pacman_info\030\333\n \001" +
+      "(\0132\033.FleurFairV2PacmanStageInfoH\000\0224\n\024tar" +
+      "get_shooting_info\030\247\t \001(\0132\023.TargetShootin" +
+      "gInfoH\000B\010\n\006detailB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3346,13 +3577,14 @@ public final class MultistagePlayInfoOuterClass {
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.TargetShootingInfoOuterClass.getDescriptor(),
         });
     internal_static_MultistagePlayInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_MultistagePlayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MultistagePlayInfo_descriptor,
-        new java.lang.String[] { "GroupId", "StageType", "StageIndex", "Duration", "BeginTime", "PlayIndex", "PlayType", "MechanicusInfo", "FleurFairInfo", "HideAndSeekInfo", "ChessInfo", "IrodoriChessInfo", "CharAmusementInfo", "BrickBreakerInfo", "CoinCollectInfo", "LanV3BoatInfo", "FleurFairV2PacmanInfo", "Detail", });
+        new java.lang.String[] { "BeginTime", "StageIndex", "StageType", "PlayType", "Duration", "GroupId", "PlayIndex", "MechanicusInfo", "FleurFairInfo", "HideAndSeekInfo", "ChessInfo", "IrodoriChessInfo", "CharAmusementInfo", "BrickBreakerInfo", "CoinCollectInfo", "LanV3BoatInfo", "FleurFairV2PacmanInfo", "TargetShootingInfo", "Detail", });
     emu.grasscutter.net.proto.InBattleMechanicusInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.InBattleFleurFairInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.HideAndSeekStageInfoOuterClass.getDescriptor();
@@ -3363,6 +3595,7 @@ public final class MultistagePlayInfoOuterClass {
     emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.LanV3BoatStageInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FleurFairV2PacmanStageInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.TargetShootingInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

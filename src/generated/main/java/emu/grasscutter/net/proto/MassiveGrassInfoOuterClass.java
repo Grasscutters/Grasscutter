@@ -56,7 +56,7 @@ public final class MassiveGrassInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: EACNKHKNNDA
+   * Obf: GGNBMDPHDAN
    * </pre>
    *
    * Protobuf type {@code MassiveGrassInfo}
@@ -418,7 +418,7 @@ public final class MassiveGrassInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: EACNKHKNNDA
+     * Obf: GGNBMDPHDAN
      * </pre>
      *
      * Protobuf type {@code MassiveGrassInfo}

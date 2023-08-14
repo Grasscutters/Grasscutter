@@ -19,15 +19,15 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 privilege_id = 11;</code>
+     * <code>uint32 privilege_id = 8;</code>
      * @return The privilegeId.
      */
     int getPrivilegeId();
   }
   /**
    * <pre>
-   * CmdId: 5081
-   * Obf: JAJBNECFOPB
+   * CmdId: 29305
+   * Obf: FFFELNHNAFJ
    * </pre>
    *
    * Protobuf type {@code GetReunionPrivilegeInfoReq}
@@ -74,7 +74,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 64: {
 
               privilegeId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
               emu.grasscutter.net.proto.GetReunionPrivilegeInfoReqOuterClass.GetReunionPrivilegeInfoReq.class, emu.grasscutter.net.proto.GetReunionPrivilegeInfoReqOuterClass.GetReunionPrivilegeInfoReq.Builder.class);
     }
 
-    public static final int PRIVILEGE_ID_FIELD_NUMBER = 11;
+    public static final int PRIVILEGE_ID_FIELD_NUMBER = 8;
     private int privilegeId_;
     /**
-     * <code>uint32 privilege_id = 11;</code>
+     * <code>uint32 privilege_id = 8;</code>
      * @return The privilegeId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (privilegeId_ != 0) {
-        output.writeUInt32(11, privilegeId_);
+        output.writeUInt32(8, privilegeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
       size = 0;
       if (privilegeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, privilegeId_);
+          .computeUInt32Size(8, privilegeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5081
-     * Obf: JAJBNECFOPB
+     * CmdId: 29305
+     * Obf: FFFELNHNAFJ
      * </pre>
      *
      * Protobuf type {@code GetReunionPrivilegeInfoReq}
@@ -431,7 +431,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
 
       private int privilegeId_ ;
       /**
-       * <code>uint32 privilege_id = 11;</code>
+       * <code>uint32 privilege_id = 8;</code>
        * @return The privilegeId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
         return privilegeId_;
       }
       /**
-       * <code>uint32 privilege_id = 11;</code>
+       * <code>uint32 privilege_id = 8;</code>
        * @param value The privilegeId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 privilege_id = 11;</code>
+       * <code>uint32 privilege_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearPrivilegeId() {
@@ -528,7 +528,7 @@ public final class GetReunionPrivilegeInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n GetReunionPrivilegeInfoReq.proto\"2\n\032Ge" +
       "tReunionPrivilegeInfoReq\022\024\n\014privilege_id" +
-      "\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "\030\010 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

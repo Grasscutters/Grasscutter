@@ -19,27 +19,27 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 total_kill_monster_count = 15;</code>
-     * @return The totalKillMonsterCount.
-     */
-    int getTotalKillMonsterCount();
-
-    /**
-     * <code>uint32 coin = 12;</code>
+     * <code>uint32 coin = 15;</code>
      * @return The coin.
      */
     int getCoin();
 
     /**
-     * <code>uint32 gallery_id = 11;</code>
+     * <code>uint32 total_kill_monster_count = 1;</code>
+     * @return The totalKillMonsterCount.
+     */
+    int getTotalKillMonsterCount();
+
+    /**
+     * <code>uint32 gallery_id = 9;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 5506
-   * Obf: MIDGPBFAFOO
+   * CmdId: 24942
+   * Obf: GOAEODGCNEO
    * </pre>
    *
    * Protobuf type {@code GalleryIslandPartyDownHillInfoNotify}
@@ -86,19 +86,19 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
+
+              totalKillMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 72: {
 
               galleryId_ = input.readUInt32();
               break;
             }
-            case 96: {
-
-              coin_ = input.readUInt32();
-              break;
-            }
             case 120: {
 
-              totalKillMonsterCount_ = input.readUInt32();
+              coin_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,10 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
               emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify.class, emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify.Builder.class);
     }
 
-    public static final int TOTAL_KILL_MONSTER_COUNT_FIELD_NUMBER = 15;
-    private int totalKillMonsterCount_;
-    /**
-     * <code>uint32 total_kill_monster_count = 15;</code>
-     * @return The totalKillMonsterCount.
-     */
-    @java.lang.Override
-    public int getTotalKillMonsterCount() {
-      return totalKillMonsterCount_;
-    }
-
-    public static final int COIN_FIELD_NUMBER = 12;
+    public static final int COIN_FIELD_NUMBER = 15;
     private int coin_;
     /**
-     * <code>uint32 coin = 12;</code>
+     * <code>uint32 coin = 15;</code>
      * @return The coin.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       return coin_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 11;
+    public static final int TOTAL_KILL_MONSTER_COUNT_FIELD_NUMBER = 1;
+    private int totalKillMonsterCount_;
+    /**
+     * <code>uint32 total_kill_monster_count = 1;</code>
+     * @return The totalKillMonsterCount.
+     */
+    @java.lang.Override
+    public int getTotalKillMonsterCount() {
+      return totalKillMonsterCount_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 9;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 11;</code>
+     * <code>uint32 gallery_id = 9;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (totalKillMonsterCount_ != 0) {
+        output.writeUInt32(1, totalKillMonsterCount_);
+      }
       if (galleryId_ != 0) {
-        output.writeUInt32(11, galleryId_);
+        output.writeUInt32(9, galleryId_);
       }
       if (coin_ != 0) {
-        output.writeUInt32(12, coin_);
-      }
-      if (totalKillMonsterCount_ != 0) {
-        output.writeUInt32(15, totalKillMonsterCount_);
+        output.writeUInt32(15, coin_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (totalKillMonsterCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, totalKillMonsterCount_);
+      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, galleryId_);
+          .computeUInt32Size(9, galleryId_);
       }
       if (coin_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, coin_);
-      }
-      if (totalKillMonsterCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, totalKillMonsterCount_);
+          .computeUInt32Size(15, coin_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify other = (emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify) obj;
 
-      if (getTotalKillMonsterCount()
-          != other.getTotalKillMonsterCount()) return false;
       if (getCoin()
           != other.getCoin()) return false;
+      if (getTotalKillMonsterCount()
+          != other.getTotalKillMonsterCount()) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOTAL_KILL_MONSTER_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalKillMonsterCount();
       hash = (37 * hash) + COIN_FIELD_NUMBER;
       hash = (53 * hash) + getCoin();
+      hash = (37 * hash) + TOTAL_KILL_MONSTER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalKillMonsterCount();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5506
-     * Obf: MIDGPBFAFOO
+     * CmdId: 24942
+     * Obf: GOAEODGCNEO
      * </pre>
      *
      * Protobuf type {@code GalleryIslandPartyDownHillInfoNotify}
@@ -386,9 +386,9 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        totalKillMonsterCount_ = 0;
-
         coin_ = 0;
+
+        totalKillMonsterCount_ = 0;
 
         galleryId_ = 0;
 
@@ -418,8 +418,8 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify buildPartial() {
         emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify result = new emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify(this);
-        result.totalKillMonsterCount_ = totalKillMonsterCount_;
         result.coin_ = coin_;
+        result.totalKillMonsterCount_ = totalKillMonsterCount_;
         result.galleryId_ = galleryId_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify other) {
         if (other == emu.grasscutter.net.proto.GalleryIslandPartyDownHillInfoNotifyOuterClass.GalleryIslandPartyDownHillInfoNotify.getDefaultInstance()) return this;
-        if (other.getTotalKillMonsterCount() != 0) {
-          setTotalKillMonsterCount(other.getTotalKillMonsterCount());
-        }
         if (other.getCoin() != 0) {
           setCoin(other.getCoin());
+        }
+        if (other.getTotalKillMonsterCount() != 0) {
+          setTotalKillMonsterCount(other.getTotalKillMonsterCount());
         }
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
@@ -507,40 +507,9 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return this;
       }
 
-      private int totalKillMonsterCount_ ;
-      /**
-       * <code>uint32 total_kill_monster_count = 15;</code>
-       * @return The totalKillMonsterCount.
-       */
-      @java.lang.Override
-      public int getTotalKillMonsterCount() {
-        return totalKillMonsterCount_;
-      }
-      /**
-       * <code>uint32 total_kill_monster_count = 15;</code>
-       * @param value The totalKillMonsterCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalKillMonsterCount(int value) {
-        
-        totalKillMonsterCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_kill_monster_count = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalKillMonsterCount() {
-        
-        totalKillMonsterCount_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int coin_ ;
       /**
-       * <code>uint32 coin = 12;</code>
+       * <code>uint32 coin = 15;</code>
        * @return The coin.
        */
       @java.lang.Override
@@ -548,7 +517,7 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return coin_;
       }
       /**
-       * <code>uint32 coin = 12;</code>
+       * <code>uint32 coin = 15;</code>
        * @param value The coin to set.
        * @return This builder for chaining.
        */
@@ -559,7 +528,7 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 coin = 12;</code>
+       * <code>uint32 coin = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
@@ -569,9 +538,40 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return this;
       }
 
+      private int totalKillMonsterCount_ ;
+      /**
+       * <code>uint32 total_kill_monster_count = 1;</code>
+       * @return The totalKillMonsterCount.
+       */
+      @java.lang.Override
+      public int getTotalKillMonsterCount() {
+        return totalKillMonsterCount_;
+      }
+      /**
+       * <code>uint32 total_kill_monster_count = 1;</code>
+       * @param value The totalKillMonsterCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalKillMonsterCount(int value) {
+        
+        totalKillMonsterCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 total_kill_monster_count = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalKillMonsterCount() {
+        
+        totalKillMonsterCount_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 11;</code>
+       * <code>uint32 gallery_id = 9;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 11;</code>
+       * <code>uint32 gallery_id = 9;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 11;</code>
+       * <code>uint32 gallery_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -668,8 +668,8 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n*GalleryIslandPartyDownHillInfoNotify.p" +
       "roto\"j\n$GalleryIslandPartyDownHillInfoNo" +
-      "tify\022 \n\030total_kill_monster_count\030\017 \001(\r\022\014" +
-      "\n\004coin\030\014 \001(\r\022\022\n\ngallery_id\030\013 \001(\rB\033\n\031emu." +
+      "tify\022\014\n\004coin\030\017 \001(\r\022 \n\030total_kill_monster" +
+      "_count\030\001 \001(\r\022\022\n\ngallery_id\030\t \001(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class GalleryIslandPartyDownHillInfoNotifyOuterClass {
     internal_static_GalleryIslandPartyDownHillInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GalleryIslandPartyDownHillInfoNotify_descriptor,
-        new java.lang.String[] { "TotalKillMonsterCount", "Coin", "GalleryId", });
+        new java.lang.String[] { "Coin", "TotalKillMonsterCount", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

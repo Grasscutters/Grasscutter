@@ -19,26 +19,26 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 kill_monster_count = 13;</code>
+     * <code>uint32 kill_special_monster_count = 6;</code>
+     * @return The killSpecialMonsterCount.
+     */
+    int getKillSpecialMonsterCount();
+
+    /**
+     * <code>uint32 kill_monster_count = 8;</code>
      * @return The killMonsterCount.
      */
     int getKillMonsterCount();
 
     /**
-     * <code>uint32 score = 6;</code>
+     * <code>uint32 score = 11;</code>
      * @return The score.
      */
     int getScore();
-
-    /**
-     * <code>uint32 kill_special_monster_count = 8;</code>
-     * @return The killSpecialMonsterCount.
-     */
-    int getKillSpecialMonsterCount();
   }
   /**
    * <pre>
-   * Obf: HDHABJDINKO
+   * Obf: JIODPPMMGPA
    * </pre>
    *
    * Protobuf type {@code SceneGalleryBuoyantCombatInfo}
@@ -87,17 +87,17 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
               break;
             case 48: {
 
-              score_ = input.readUInt32();
+              killSpecialMonsterCount_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              killSpecialMonsterCount_ = input.readUInt32();
+              killMonsterCount_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 88: {
 
-              killMonsterCount_ = input.readUInt32();
+              score_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,10 +132,21 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.class, emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.Builder.class);
     }
 
-    public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 13;
+    public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 6;
+    private int killSpecialMonsterCount_;
+    /**
+     * <code>uint32 kill_special_monster_count = 6;</code>
+     * @return The killSpecialMonsterCount.
+     */
+    @java.lang.Override
+    public int getKillSpecialMonsterCount() {
+      return killSpecialMonsterCount_;
+    }
+
+    public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 8;
     private int killMonsterCount_;
     /**
-     * <code>uint32 kill_monster_count = 13;</code>
+     * <code>uint32 kill_monster_count = 8;</code>
      * @return The killMonsterCount.
      */
     @java.lang.Override
@@ -143,26 +154,15 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       return killMonsterCount_;
     }
 
-    public static final int SCORE_FIELD_NUMBER = 6;
+    public static final int SCORE_FIELD_NUMBER = 11;
     private int score_;
     /**
-     * <code>uint32 score = 6;</code>
+     * <code>uint32 score = 11;</code>
      * @return The score.
      */
     @java.lang.Override
     public int getScore() {
       return score_;
-    }
-
-    public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 8;
-    private int killSpecialMonsterCount_;
-    /**
-     * <code>uint32 kill_special_monster_count = 8;</code>
-     * @return The killSpecialMonsterCount.
-     */
-    @java.lang.Override
-    public int getKillSpecialMonsterCount() {
-      return killSpecialMonsterCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (score_ != 0) {
-        output.writeUInt32(6, score_);
-      }
       if (killSpecialMonsterCount_ != 0) {
-        output.writeUInt32(8, killSpecialMonsterCount_);
+        output.writeUInt32(6, killSpecialMonsterCount_);
       }
       if (killMonsterCount_ != 0) {
-        output.writeUInt32(13, killMonsterCount_);
+        output.writeUInt32(8, killMonsterCount_);
+      }
+      if (score_ != 0) {
+        output.writeUInt32(11, score_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (score_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, score_);
-      }
       if (killSpecialMonsterCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, killSpecialMonsterCount_);
+          .computeUInt32Size(6, killSpecialMonsterCount_);
       }
       if (killMonsterCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, killMonsterCount_);
+          .computeUInt32Size(8, killMonsterCount_);
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo other = (emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo) obj;
 
+      if (getKillSpecialMonsterCount()
+          != other.getKillSpecialMonsterCount()) return false;
       if (getKillMonsterCount()
           != other.getKillMonsterCount()) return false;
       if (getScore()
           != other.getScore()) return false;
-      if (getKillSpecialMonsterCount()
-          != other.getKillSpecialMonsterCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +241,12 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getKillSpecialMonsterCount();
       hash = (37 * hash) + KILL_MONSTER_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getKillMonsterCount();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getScore();
-      hash = (37 * hash) + KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getKillSpecialMonsterCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: HDHABJDINKO
+     * Obf: JIODPPMMGPA
      * </pre>
      *
      * Protobuf type {@code SceneGalleryBuoyantCombatInfo}
@@ -384,11 +384,11 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        killSpecialMonsterCount_ = 0;
+
         killMonsterCount_ = 0;
 
         score_ = 0;
-
-        killSpecialMonsterCount_ = 0;
 
         return this;
       }
@@ -416,9 +416,9 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo result = new emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo(this);
+        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
         result.killMonsterCount_ = killMonsterCount_;
         result.score_ = score_;
-        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
         onBuilt();
         return result;
       }
@@ -467,14 +467,14 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.getDefaultInstance()) return this;
+        if (other.getKillSpecialMonsterCount() != 0) {
+          setKillSpecialMonsterCount(other.getKillSpecialMonsterCount());
+        }
         if (other.getKillMonsterCount() != 0) {
           setKillMonsterCount(other.getKillMonsterCount());
         }
         if (other.getScore() != 0) {
           setScore(other.getScore());
-        }
-        if (other.getKillSpecialMonsterCount() != 0) {
-          setKillSpecialMonsterCount(other.getKillSpecialMonsterCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -505,9 +505,40 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return this;
       }
 
+      private int killSpecialMonsterCount_ ;
+      /**
+       * <code>uint32 kill_special_monster_count = 6;</code>
+       * @return The killSpecialMonsterCount.
+       */
+      @java.lang.Override
+      public int getKillSpecialMonsterCount() {
+        return killSpecialMonsterCount_;
+      }
+      /**
+       * <code>uint32 kill_special_monster_count = 6;</code>
+       * @param value The killSpecialMonsterCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKillSpecialMonsterCount(int value) {
+        
+        killSpecialMonsterCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 kill_special_monster_count = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKillSpecialMonsterCount() {
+        
+        killSpecialMonsterCount_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int killMonsterCount_ ;
       /**
-       * <code>uint32 kill_monster_count = 13;</code>
+       * <code>uint32 kill_monster_count = 8;</code>
        * @return The killMonsterCount.
        */
       @java.lang.Override
@@ -515,7 +546,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return killMonsterCount_;
       }
       /**
-       * <code>uint32 kill_monster_count = 13;</code>
+       * <code>uint32 kill_monster_count = 8;</code>
        * @param value The killMonsterCount to set.
        * @return This builder for chaining.
        */
@@ -526,7 +557,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 kill_monster_count = 13;</code>
+       * <code>uint32 kill_monster_count = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterCount() {
@@ -538,7 +569,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
 
       private int score_ ;
       /**
-       * <code>uint32 score = 6;</code>
+       * <code>uint32 score = 11;</code>
        * @return The score.
        */
       @java.lang.Override
@@ -546,7 +577,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return score_;
       }
       /**
-       * <code>uint32 score = 6;</code>
+       * <code>uint32 score = 11;</code>
        * @param value The score to set.
        * @return This builder for chaining.
        */
@@ -557,43 +588,12 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 score = 6;</code>
+       * <code>uint32 score = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearScore() {
         
         score_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int killSpecialMonsterCount_ ;
-      /**
-       * <code>uint32 kill_special_monster_count = 8;</code>
-       * @return The killSpecialMonsterCount.
-       */
-      @java.lang.Override
-      public int getKillSpecialMonsterCount() {
-        return killSpecialMonsterCount_;
-      }
-      /**
-       * <code>uint32 kill_special_monster_count = 8;</code>
-       * @param value The killSpecialMonsterCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKillSpecialMonsterCount(int value) {
-        
-        killSpecialMonsterCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 kill_special_monster_count = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKillSpecialMonsterCount() {
-        
-        killSpecialMonsterCount_ = 0;
         onChanged();
         return this;
       }
@@ -665,9 +665,9 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#SceneGalleryBuoyantCombatInfo.proto\"n\n" +
-      "\035SceneGalleryBuoyantCombatInfo\022\032\n\022kill_m" +
-      "onster_count\030\r \001(\r\022\r\n\005score\030\006 \001(\r\022\"\n\032kil" +
-      "l_special_monster_count\030\010 \001(\rB\033\n\031emu.gra" +
+      "\035SceneGalleryBuoyantCombatInfo\022\"\n\032kill_s" +
+      "pecial_monster_count\030\006 \001(\r\022\032\n\022kill_monst" +
+      "er_count\030\010 \001(\r\022\r\n\005score\030\013 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -679,7 +679,7 @@ public final class SceneGalleryBuoyantCombatInfoOuterClass {
     internal_static_SceneGalleryBuoyantCombatInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryBuoyantCombatInfo_descriptor,
-        new java.lang.String[] { "KillMonsterCount", "Score", "KillSpecialMonsterCount", });
+        new java.lang.String[] { "KillSpecialMonsterCount", "KillMonsterCount", "Score", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

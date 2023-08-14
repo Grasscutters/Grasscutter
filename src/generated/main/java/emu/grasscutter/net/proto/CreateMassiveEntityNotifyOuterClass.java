@@ -19,33 +19,33 @@ public final class CreateMassiveEntityNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity> 
         getMassiveEntityListList();
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity getMassiveEntityList(int index);
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     int getMassiveEntityListCount();
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder> 
         getMassiveEntityListOrBuilderList();
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 353
-   * Obf: AHGAIMBKGGG
+   * CmdId: 27278
+   * Obf: MOGACMBGKBA
    * </pre>
    *
    * Protobuf type {@code CreateMassiveEntityNotify}
@@ -94,7 +94,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 massiveEntityList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class CreateMassiveEntityNotifyOuterClass {
               emu.grasscutter.net.proto.CreateMassiveEntityNotifyOuterClass.CreateMassiveEntityNotify.class, emu.grasscutter.net.proto.CreateMassiveEntityNotifyOuterClass.CreateMassiveEntityNotify.Builder.class);
     }
 
-    public static final int MASSIVE_ENTITY_LIST_FIELD_NUMBER = 14;
+    public static final int MASSIVE_ENTITY_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity> massiveEntityList_;
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity> getMassiveEntityListList() {
       return massiveEntityList_;
     }
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder> 
@@ -156,21 +156,21 @@ public final class CreateMassiveEntityNotifyOuterClass {
       return massiveEntityList_;
     }
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     @java.lang.Override
     public int getMassiveEntityListCount() {
       return massiveEntityList_.size();
     }
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity getMassiveEntityList(int index) {
       return massiveEntityList_.get(index);
     }
     /**
-     * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+     * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
@@ -193,7 +193,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < massiveEntityList_.size(); i++) {
-        output.writeMessage(14, massiveEntityList_.get(i));
+        output.writeMessage(6, massiveEntityList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
       size = 0;
       for (int i = 0; i < massiveEntityList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, massiveEntityList_.get(i));
+          .computeMessageSize(6, massiveEntityList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class CreateMassiveEntityNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 353
-     * Obf: AHGAIMBKGGG
+     * CmdId: 27278
+     * Obf: MOGACMBGKBA
      * </pre>
      *
      * Protobuf type {@code CreateMassiveEntityNotify}
@@ -538,7 +538,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
           emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder> massiveEntityListBuilder_;
 
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity> getMassiveEntityListList() {
         if (massiveEntityListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public int getMassiveEntityListCount() {
         if (massiveEntityListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity getMassiveEntityList(int index) {
         if (massiveEntityListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder setMassiveEntityList(
           int index, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity value) {
@@ -585,7 +585,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder setMassiveEntityList(
           int index, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder addMassiveEntityList(emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity value) {
         if (massiveEntityListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder addMassiveEntityList(
           int index, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity value) {
@@ -632,7 +632,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder addMassiveEntityList(
           emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder addMassiveEntityList(
           int index, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder addAllMassiveEntityList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity> values) {
@@ -675,7 +675,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder clearMassiveEntityList() {
         if (massiveEntityListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public Builder removeMassiveEntityList(int index) {
         if (massiveEntityListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class CreateMassiveEntityNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder getMassiveEntityListBuilder(
           int index) {
         return getMassiveEntityListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder getMassiveEntityListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntityOrBuilder> 
            getMassiveEntityListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class CreateMassiveEntityNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder addMassiveEntityListBuilder() {
         return getMassiveEntityListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder addMassiveEntityListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
             index, emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .ServerMassiveEntity massive_entity_list = 14;</code>
+       * <code>repeated .ServerMassiveEntity massive_entity_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ServerMassiveEntityOuterClass.ServerMassiveEntity.Builder> 
            getMassiveEntityListBuilderList() {
@@ -833,7 +833,7 @@ public final class CreateMassiveEntityNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037CreateMassiveEntityNotify.proto\032\031Serve" +
       "rMassiveEntity.proto\"N\n\031CreateMassiveEnt" +
-      "ityNotify\0221\n\023massive_entity_list\030\016 \003(\0132\024" +
+      "ityNotify\0221\n\023massive_entity_list\030\006 \003(\0132\024" +
       ".ServerMassiveEntityB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };

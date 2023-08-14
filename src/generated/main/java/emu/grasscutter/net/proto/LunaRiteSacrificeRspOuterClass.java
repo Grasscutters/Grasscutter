@@ -19,21 +19,10 @@ public final class LunaRiteSacrificeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @return A list containing the sacrificeList.
+     * <code>uint32 area_id = 10;</code>
+     * @return The areaId.
      */
-    java.util.List<java.lang.Integer> getSacrificeListList();
-    /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @return The count of sacrificeList.
-     */
-    int getSacrificeListCount();
-    /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @param index The index of the element to return.
-     * @return The sacrificeList at the given index.
-     */
-    int getSacrificeList(int index);
+    int getAreaId();
 
     /**
      * <code>int32 retcode = 13;</code>
@@ -42,21 +31,32 @@ public final class LunaRiteSacrificeRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>uint32 index = 9;</code>
+     * <code>uint32 index = 5;</code>
      * @return The index.
      */
     int getIndex();
 
     /**
-     * <code>uint32 area_id = 6;</code>
-     * @return The areaId.
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @return A list containing the sacrificeList.
      */
-    int getAreaId();
+    java.util.List<java.lang.Integer> getSacrificeListList();
+    /**
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @return The count of sacrificeList.
+     */
+    int getSacrificeListCount();
+    /**
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The sacrificeList at the given index.
+     */
+    int getSacrificeList(int index);
   }
   /**
    * <pre>
-   * CmdId: 8010
-   * Obf: EPHPECBJIOE
+   * CmdId: 5864
+   * Obf: CMGOALCMBFK
    * </pre>
    *
    * Protobuf type {@code LunaRiteSacrificeRsp}
@@ -105,7 +105,12 @@ public final class LunaRiteSacrificeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
+
+              index_ = input.readUInt32();
+              break;
+            }
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 sacrificeList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -113,7 +118,7 @@ public final class LunaRiteSacrificeRspOuterClass {
               sacrificeList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -126,14 +131,9 @@ public final class LunaRiteSacrificeRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 48: {
+            case 80: {
 
               areaId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              index_ = input.readUInt32();
               break;
             }
             case 104: {
@@ -176,33 +176,16 @@ public final class LunaRiteSacrificeRspOuterClass {
               emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp.class, emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp.Builder.class);
     }
 
-    public static final int SACRIFICE_LIST_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.IntList sacrificeList_;
+    public static final int AREA_ID_FIELD_NUMBER = 10;
+    private int areaId_;
     /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @return A list containing the sacrificeList.
+     * <code>uint32 area_id = 10;</code>
+     * @return The areaId.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getSacrificeListList() {
-      return sacrificeList_;
+    public int getAreaId() {
+      return areaId_;
     }
-    /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @return The count of sacrificeList.
-     */
-    public int getSacrificeListCount() {
-      return sacrificeList_.size();
-    }
-    /**
-     * <code>repeated uint32 sacrifice_list = 1;</code>
-     * @param index The index of the element to return.
-     * @return The sacrificeList at the given index.
-     */
-    public int getSacrificeList(int index) {
-      return sacrificeList_.getInt(index);
-    }
-    private int sacrificeListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
@@ -215,10 +198,10 @@ public final class LunaRiteSacrificeRspOuterClass {
       return retcode_;
     }
 
-    public static final int INDEX_FIELD_NUMBER = 9;
+    public static final int INDEX_FIELD_NUMBER = 5;
     private int index_;
     /**
-     * <code>uint32 index = 9;</code>
+     * <code>uint32 index = 5;</code>
      * @return The index.
      */
     @java.lang.Override
@@ -226,16 +209,33 @@ public final class LunaRiteSacrificeRspOuterClass {
       return index_;
     }
 
-    public static final int AREA_ID_FIELD_NUMBER = 6;
-    private int areaId_;
+    public static final int SACRIFICE_LIST_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList sacrificeList_;
     /**
-     * <code>uint32 area_id = 6;</code>
-     * @return The areaId.
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @return A list containing the sacrificeList.
      */
     @java.lang.Override
-    public int getAreaId() {
-      return areaId_;
+    public java.util.List<java.lang.Integer>
+        getSacrificeListList() {
+      return sacrificeList_;
     }
+    /**
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @return The count of sacrificeList.
+     */
+    public int getSacrificeListCount() {
+      return sacrificeList_.size();
+    }
+    /**
+     * <code>repeated uint32 sacrifice_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The sacrificeList at the given index.
+     */
+    public int getSacrificeList(int index) {
+      return sacrificeList_.getInt(index);
+    }
+    private int sacrificeListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -252,18 +252,18 @@ public final class LunaRiteSacrificeRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (index_ != 0) {
+        output.writeUInt32(5, index_);
+      }
       if (getSacrificeListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(sacrificeListMemoizedSerializedSize);
       }
       for (int i = 0; i < sacrificeList_.size(); i++) {
         output.writeUInt32NoTag(sacrificeList_.getInt(i));
       }
       if (areaId_ != 0) {
-        output.writeUInt32(6, areaId_);
-      }
-      if (index_ != 0) {
-        output.writeUInt32(9, index_);
+        output.writeUInt32(10, areaId_);
       }
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
@@ -277,6 +277,10 @@ public final class LunaRiteSacrificeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (index_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, index_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < sacrificeList_.size(); i++) {
@@ -293,11 +297,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       }
       if (areaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, areaId_);
-      }
-      if (index_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, index_);
+          .computeUInt32Size(10, areaId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -318,14 +318,14 @@ public final class LunaRiteSacrificeRspOuterClass {
       }
       emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp other = (emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp) obj;
 
-      if (!getSacrificeListList()
-          .equals(other.getSacrificeListList())) return false;
+      if (getAreaId()
+          != other.getAreaId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (getAreaId()
-          != other.getAreaId()) return false;
+      if (!getSacrificeListList()
+          .equals(other.getSacrificeListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,16 +337,16 @@ public final class LunaRiteSacrificeRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getSacrificeListCount() > 0) {
-        hash = (37 * hash) + SACRIFICE_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSacrificeListList().hashCode();
-      }
+      hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAreaId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAreaId();
+      if (getSacrificeListCount() > 0) {
+        hash = (37 * hash) + SACRIFICE_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSacrificeListList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -444,8 +444,8 @@ public final class LunaRiteSacrificeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8010
-     * Obf: EPHPECBJIOE
+     * CmdId: 5864
+     * Obf: CMGOALCMBFK
      * </pre>
      *
      * Protobuf type {@code LunaRiteSacrificeRsp}
@@ -485,14 +485,14 @@ public final class LunaRiteSacrificeRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sacrificeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        areaId_ = 0;
+
         retcode_ = 0;
 
         index_ = 0;
 
-        areaId_ = 0;
-
+        sacrificeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -520,14 +520,14 @@ public final class LunaRiteSacrificeRspOuterClass {
       public emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp buildPartial() {
         emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp result = new emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp(this);
         int from_bitField0_ = bitField0_;
+        result.areaId_ = areaId_;
+        result.retcode_ = retcode_;
+        result.index_ = index_;
         if (((bitField0_ & 0x00000001) != 0)) {
           sacrificeList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.sacrificeList_ = sacrificeList_;
-        result.retcode_ = retcode_;
-        result.index_ = index_;
-        result.areaId_ = areaId_;
         onBuilt();
         return result;
       }
@@ -576,6 +576,15 @@ public final class LunaRiteSacrificeRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp other) {
         if (other == emu.grasscutter.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp.getDefaultInstance()) return this;
+        if (other.getAreaId() != 0) {
+          setAreaId(other.getAreaId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
+        }
         if (!other.sacrificeList_.isEmpty()) {
           if (sacrificeList_.isEmpty()) {
             sacrificeList_ = other.sacrificeList_;
@@ -585,15 +594,6 @@ public final class LunaRiteSacrificeRspOuterClass {
             sacrificeList_.addAll(other.sacrificeList_);
           }
           onChanged();
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
-        if (other.getAreaId() != 0) {
-          setAreaId(other.getAreaId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -625,81 +625,33 @@ public final class LunaRiteSacrificeRspOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList sacrificeList_ = emptyIntList();
-      private void ensureSacrificeListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          sacrificeList_ = mutableCopy(sacrificeList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private int areaId_ ;
       /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @return A list containing the sacrificeList.
+       * <code>uint32 area_id = 10;</code>
+       * @return The areaId.
        */
-      public java.util.List<java.lang.Integer>
-          getSacrificeListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(sacrificeList_) : sacrificeList_;
+      @java.lang.Override
+      public int getAreaId() {
+        return areaId_;
       }
       /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @return The count of sacrificeList.
-       */
-      public int getSacrificeListCount() {
-        return sacrificeList_.size();
-      }
-      /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @param index The index of the element to return.
-       * @return The sacrificeList at the given index.
-       */
-      public int getSacrificeList(int index) {
-        return sacrificeList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @param index The index to set the value at.
-       * @param value The sacrificeList to set.
+       * <code>uint32 area_id = 10;</code>
+       * @param value The areaId to set.
        * @return This builder for chaining.
        */
-      public Builder setSacrificeList(
-          int index, int value) {
-        ensureSacrificeListIsMutable();
-        sacrificeList_.setInt(index, value);
+      public Builder setAreaId(int value) {
+        
+        areaId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @param value The sacrificeList to add.
+       * <code>uint32 area_id = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder addSacrificeList(int value) {
-        ensureSacrificeListIsMutable();
-        sacrificeList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @param values The sacrificeList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllSacrificeList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureSacrificeListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, sacrificeList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 sacrifice_list = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSacrificeList() {
-        sacrificeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearAreaId() {
+        
+        areaId_ = 0;
         onChanged();
         return this;
       }
@@ -737,7 +689,7 @@ public final class LunaRiteSacrificeRspOuterClass {
 
       private int index_ ;
       /**
-       * <code>uint32 index = 9;</code>
+       * <code>uint32 index = 5;</code>
        * @return The index.
        */
       @java.lang.Override
@@ -745,7 +697,7 @@ public final class LunaRiteSacrificeRspOuterClass {
         return index_;
       }
       /**
-       * <code>uint32 index = 9;</code>
+       * <code>uint32 index = 5;</code>
        * @param value The index to set.
        * @return This builder for chaining.
        */
@@ -756,7 +708,7 @@ public final class LunaRiteSacrificeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 index = 9;</code>
+       * <code>uint32 index = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
@@ -766,33 +718,81 @@ public final class LunaRiteSacrificeRspOuterClass {
         return this;
       }
 
-      private int areaId_ ;
-      /**
-       * <code>uint32 area_id = 6;</code>
-       * @return The areaId.
-       */
-      @java.lang.Override
-      public int getAreaId() {
-        return areaId_;
+      private com.google.protobuf.Internal.IntList sacrificeList_ = emptyIntList();
+      private void ensureSacrificeListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          sacrificeList_ = mutableCopy(sacrificeList_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
-       * <code>uint32 area_id = 6;</code>
-       * @param value The areaId to set.
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @return A list containing the sacrificeList.
+       */
+      public java.util.List<java.lang.Integer>
+          getSacrificeListList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(sacrificeList_) : sacrificeList_;
+      }
+      /**
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @return The count of sacrificeList.
+       */
+      public int getSacrificeListCount() {
+        return sacrificeList_.size();
+      }
+      /**
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @param index The index of the element to return.
+       * @return The sacrificeList at the given index.
+       */
+      public int getSacrificeList(int index) {
+        return sacrificeList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The sacrificeList to set.
        * @return This builder for chaining.
        */
-      public Builder setAreaId(int value) {
-        
-        areaId_ = value;
+      public Builder setSacrificeList(
+          int index, int value) {
+        ensureSacrificeListIsMutable();
+        sacrificeList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 area_id = 6;</code>
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @param value The sacrificeList to add.
        * @return This builder for chaining.
        */
-      public Builder clearAreaId() {
-        
-        areaId_ = 0;
+      public Builder addSacrificeList(int value) {
+        ensureSacrificeListIsMutable();
+        sacrificeList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @param values The sacrificeList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSacrificeList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSacrificeListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, sacrificeList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 sacrifice_list = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSacrificeList() {
+        sacrificeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -864,9 +864,9 @@ public final class LunaRiteSacrificeRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032LunaRiteSacrificeRsp.proto\"_\n\024LunaRite" +
-      "SacrificeRsp\022\026\n\016sacrifice_list\030\001 \003(\r\022\017\n\007" +
-      "retcode\030\r \001(\005\022\r\n\005index\030\t \001(\r\022\017\n\007area_id\030" +
-      "\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "SacrificeRsp\022\017\n\007area_id\030\n \001(\r\022\017\n\007retcode" +
+      "\030\r \001(\005\022\r\n\005index\030\005 \001(\r\022\026\n\016sacrifice_list\030" +
+      "\007 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -878,7 +878,7 @@ public final class LunaRiteSacrificeRspOuterClass {
     internal_static_LunaRiteSacrificeRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LunaRiteSacrificeRsp_descriptor,
-        new java.lang.String[] { "SacrificeList", "Retcode", "Index", "AreaId", });
+        new java.lang.String[] { "AreaId", "Retcode", "Index", "SacrificeList", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

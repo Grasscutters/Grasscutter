@@ -19,23 +19,23 @@ public final class RoguelikeCardGachaNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_can_refresh = 8;</code>
+     * <code>bool is_can_refresh = 1;</code>
      * @return The isCanRefresh.
      */
     boolean getIsCanRefresh();
 
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @return A list containing the cardList.
      */
     java.util.List<java.lang.Integer> getCardListList();
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @return The count of cardList.
      */
     int getCardListCount();
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @param index The index of the element to return.
      * @return The cardList at the given index.
      */
@@ -43,8 +43,8 @@ public final class RoguelikeCardGachaNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8541
-   * Obf: JMGALLDLCCN
+   * CmdId: 20313
+   * Obf: KGNIJMKAGLF
    * </pre>
    *
    * Protobuf type {@code RoguelikeCardGachaNotify}
@@ -93,12 +93,12 @@ public final class RoguelikeCardGachaNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               isCanRefresh_ = input.readBool();
               break;
             }
-            case 96: {
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
               cardList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,10 +154,10 @@ public final class RoguelikeCardGachaNotifyOuterClass {
               emu.grasscutter.net.proto.RoguelikeCardGachaNotifyOuterClass.RoguelikeCardGachaNotify.class, emu.grasscutter.net.proto.RoguelikeCardGachaNotifyOuterClass.RoguelikeCardGachaNotify.Builder.class);
     }
 
-    public static final int IS_CAN_REFRESH_FIELD_NUMBER = 8;
+    public static final int IS_CAN_REFRESH_FIELD_NUMBER = 1;
     private boolean isCanRefresh_;
     /**
-     * <code>bool is_can_refresh = 8;</code>
+     * <code>bool is_can_refresh = 1;</code>
      * @return The isCanRefresh.
      */
     @java.lang.Override
@@ -165,10 +165,10 @@ public final class RoguelikeCardGachaNotifyOuterClass {
       return isCanRefresh_;
     }
 
-    public static final int CARD_LIST_FIELD_NUMBER = 12;
+    public static final int CARD_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList cardList_;
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @return A list containing the cardList.
      */
     @java.lang.Override
@@ -177,14 +177,14 @@ public final class RoguelikeCardGachaNotifyOuterClass {
       return cardList_;
     }
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @return The count of cardList.
      */
     public int getCardListCount() {
       return cardList_.size();
     }
     /**
-     * <code>repeated uint32 card_list = 12;</code>
+     * <code>repeated uint32 card_list = 14;</code>
      * @param index The index of the element to return.
      * @return The cardList at the given index.
      */
@@ -209,10 +209,10 @@ public final class RoguelikeCardGachaNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (isCanRefresh_ != false) {
-        output.writeBool(8, isCanRefresh_);
+        output.writeBool(1, isCanRefresh_);
       }
       if (getCardListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(cardListMemoizedSerializedSize);
       }
       for (int i = 0; i < cardList_.size(); i++) {
@@ -229,7 +229,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
       size = 0;
       if (isCanRefresh_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isCanRefresh_);
+          .computeBoolSize(1, isCanRefresh_);
       }
       {
         int dataSize = 0;
@@ -379,8 +379,8 @@ public final class RoguelikeCardGachaNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8541
-     * Obf: JMGALLDLCCN
+     * CmdId: 20313
+     * Obf: KGNIJMKAGLF
      * </pre>
      *
      * Protobuf type {@code RoguelikeCardGachaNotify}
@@ -550,7 +550,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
 
       private boolean isCanRefresh_ ;
       /**
-       * <code>bool is_can_refresh = 8;</code>
+       * <code>bool is_can_refresh = 1;</code>
        * @return The isCanRefresh.
        */
       @java.lang.Override
@@ -558,7 +558,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return isCanRefresh_;
       }
       /**
-       * <code>bool is_can_refresh = 8;</code>
+       * <code>bool is_can_refresh = 1;</code>
        * @param value The isCanRefresh to set.
        * @return This builder for chaining.
        */
@@ -569,7 +569,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_can_refresh = 8;</code>
+       * <code>bool is_can_refresh = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsCanRefresh() {
@@ -587,7 +587,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @return A list containing the cardList.
        */
       public java.util.List<java.lang.Integer>
@@ -596,14 +596,14 @@ public final class RoguelikeCardGachaNotifyOuterClass {
                  java.util.Collections.unmodifiableList(cardList_) : cardList_;
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @return The count of cardList.
        */
       public int getCardListCount() {
         return cardList_.size();
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @param index The index of the element to return.
        * @return The cardList at the given index.
        */
@@ -611,7 +611,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return cardList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The cardList to set.
        * @return This builder for chaining.
@@ -624,7 +624,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @param value The cardList to add.
        * @return This builder for chaining.
        */
@@ -635,7 +635,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @param values The cardList to add.
        * @return This builder for chaining.
        */
@@ -648,7 +648,7 @@ public final class RoguelikeCardGachaNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 card_list = 12;</code>
+       * <code>repeated uint32 card_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardList() {
@@ -725,8 +725,8 @@ public final class RoguelikeCardGachaNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036RoguelikeCardGachaNotify.proto\"E\n\030Rogu" +
-      "elikeCardGachaNotify\022\026\n\016is_can_refresh\030\010" +
-      " \001(\010\022\021\n\tcard_list\030\014 \003(\rB\033\n\031emu.grasscutt" +
+      "elikeCardGachaNotify\022\026\n\016is_can_refresh\030\001" +
+      " \001(\010\022\021\n\tcard_list\030\016 \003(\rB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

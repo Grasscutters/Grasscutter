@@ -19,27 +19,27 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 interrupt_state = 3;</code>
-     * @return The interruptState.
-     */
-    int getInterruptState();
-
-    /**
-     * <code>uint32 play_type = 10;</code>
+     * <code>uint32 play_type = 4;</code>
      * @return The playType.
      */
     int getPlayType();
 
     /**
-     * <code>uint32 play_id = 11;</code>
+     * <code>uint32 interrupt_state = 14;</code>
+     * @return The interruptState.
+     */
+    int getInterruptState();
+
+    /**
+     * <code>uint32 play_id = 5;</code>
      * @return The playId.
      */
     int getPlayId();
   }
   /**
    * <pre>
-   * CmdId: 4414
-   * Obf: DMLMFFCPOKO
+   * CmdId: 26908
+   * Obf: BNNBEGMGKGN
    * </pre>
    *
    * Protobuf type {@code ScenePlayBattleInterruptNotify}
@@ -86,19 +86,19 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              interruptState_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 32: {
 
               playType_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 40: {
 
               playId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              interruptState_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,21 +133,10 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
               emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify.class, emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify.Builder.class);
     }
 
-    public static final int INTERRUPT_STATE_FIELD_NUMBER = 3;
-    private int interruptState_;
-    /**
-     * <code>uint32 interrupt_state = 3;</code>
-     * @return The interruptState.
-     */
-    @java.lang.Override
-    public int getInterruptState() {
-      return interruptState_;
-    }
-
-    public static final int PLAY_TYPE_FIELD_NUMBER = 10;
+    public static final int PLAY_TYPE_FIELD_NUMBER = 4;
     private int playType_;
     /**
-     * <code>uint32 play_type = 10;</code>
+     * <code>uint32 play_type = 4;</code>
      * @return The playType.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       return playType_;
     }
 
-    public static final int PLAY_ID_FIELD_NUMBER = 11;
+    public static final int INTERRUPT_STATE_FIELD_NUMBER = 14;
+    private int interruptState_;
+    /**
+     * <code>uint32 interrupt_state = 14;</code>
+     * @return The interruptState.
+     */
+    @java.lang.Override
+    public int getInterruptState() {
+      return interruptState_;
+    }
+
+    public static final int PLAY_ID_FIELD_NUMBER = 5;
     private int playId_;
     /**
-     * <code>uint32 play_id = 11;</code>
+     * <code>uint32 play_id = 5;</code>
      * @return The playId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (interruptState_ != 0) {
-        output.writeUInt32(3, interruptState_);
-      }
       if (playType_ != 0) {
-        output.writeUInt32(10, playType_);
+        output.writeUInt32(4, playType_);
       }
       if (playId_ != 0) {
-        output.writeUInt32(11, playId_);
+        output.writeUInt32(5, playId_);
+      }
+      if (interruptState_ != 0) {
+        output.writeUInt32(14, interruptState_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (interruptState_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, interruptState_);
-      }
       if (playType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, playType_);
+          .computeUInt32Size(4, playType_);
       }
       if (playId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, playId_);
+          .computeUInt32Size(5, playId_);
+      }
+      if (interruptState_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, interruptState_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify other = (emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify) obj;
 
-      if (getInterruptState()
-          != other.getInterruptState()) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
+      if (getInterruptState()
+          != other.getInterruptState()) return false;
       if (getPlayId()
           != other.getPlayId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INTERRUPT_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getInterruptState();
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
+      hash = (37 * hash) + INTERRUPT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getInterruptState();
       hash = (37 * hash) + PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -345,8 +345,8 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4414
-     * Obf: DMLMFFCPOKO
+     * CmdId: 26908
+     * Obf: BNNBEGMGKGN
      * </pre>
      *
      * Protobuf type {@code ScenePlayBattleInterruptNotify}
@@ -386,9 +386,9 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        interruptState_ = 0;
-
         playType_ = 0;
+
+        interruptState_ = 0;
 
         playId_ = 0;
 
@@ -418,8 +418,8 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify buildPartial() {
         emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify result = new emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify(this);
-        result.interruptState_ = interruptState_;
         result.playType_ = playType_;
+        result.interruptState_ = interruptState_;
         result.playId_ = playId_;
         onBuilt();
         return result;
@@ -469,11 +469,11 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify other) {
         if (other == emu.grasscutter.net.proto.ScenePlayBattleInterruptNotifyOuterClass.ScenePlayBattleInterruptNotify.getDefaultInstance()) return this;
-        if (other.getInterruptState() != 0) {
-          setInterruptState(other.getInterruptState());
-        }
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
+        }
+        if (other.getInterruptState() != 0) {
+          setInterruptState(other.getInterruptState());
         }
         if (other.getPlayId() != 0) {
           setPlayId(other.getPlayId());
@@ -507,40 +507,9 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return this;
       }
 
-      private int interruptState_ ;
-      /**
-       * <code>uint32 interrupt_state = 3;</code>
-       * @return The interruptState.
-       */
-      @java.lang.Override
-      public int getInterruptState() {
-        return interruptState_;
-      }
-      /**
-       * <code>uint32 interrupt_state = 3;</code>
-       * @param value The interruptState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInterruptState(int value) {
-        
-        interruptState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 interrupt_state = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInterruptState() {
-        
-        interruptState_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int playType_ ;
       /**
-       * <code>uint32 play_type = 10;</code>
+       * <code>uint32 play_type = 4;</code>
        * @return The playType.
        */
       @java.lang.Override
@@ -548,7 +517,7 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return playType_;
       }
       /**
-       * <code>uint32 play_type = 10;</code>
+       * <code>uint32 play_type = 4;</code>
        * @param value The playType to set.
        * @return This builder for chaining.
        */
@@ -559,7 +528,7 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_type = 10;</code>
+       * <code>uint32 play_type = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
@@ -569,9 +538,40 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return this;
       }
 
+      private int interruptState_ ;
+      /**
+       * <code>uint32 interrupt_state = 14;</code>
+       * @return The interruptState.
+       */
+      @java.lang.Override
+      public int getInterruptState() {
+        return interruptState_;
+      }
+      /**
+       * <code>uint32 interrupt_state = 14;</code>
+       * @param value The interruptState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInterruptState(int value) {
+        
+        interruptState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 interrupt_state = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInterruptState() {
+        
+        interruptState_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int playId_ ;
       /**
-       * <code>uint32 play_id = 11;</code>
+       * <code>uint32 play_id = 5;</code>
        * @return The playId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return playId_;
       }
       /**
-       * <code>uint32 play_id = 11;</code>
+       * <code>uint32 play_id = 5;</code>
        * @param value The playId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_id = 11;</code>
+       * <code>uint32 play_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
@@ -667,9 +667,9 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n$ScenePlayBattleInterruptNotify.proto\"]" +
-      "\n\036ScenePlayBattleInterruptNotify\022\027\n\017inte" +
-      "rrupt_state\030\003 \001(\r\022\021\n\tplay_type\030\n \001(\r\022\017\n\007" +
-      "play_id\030\013 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "\n\036ScenePlayBattleInterruptNotify\022\021\n\tplay" +
+      "_type\030\004 \001(\r\022\027\n\017interrupt_state\030\016 \001(\r\022\017\n\007" +
+      "play_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class ScenePlayBattleInterruptNotifyOuterClass {
     internal_static_ScenePlayBattleInterruptNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ScenePlayBattleInterruptNotify_descriptor,
-        new java.lang.String[] { "InterruptState", "PlayType", "PlayId", });
+        new java.lang.String[] { "PlayType", "InterruptState", "PlayId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

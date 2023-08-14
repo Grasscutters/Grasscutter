@@ -19,15 +19,15 @@ public final class BartenderStartLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 3;</code>
+     * <code>uint32 level_id = 2;</code>
      * @return The levelId.
      */
     int getLevelId();
   }
   /**
    * <pre>
-   * CmdId: 8117
-   * Obf: KANBANEPONI
+   * CmdId: 7285
+   * Obf: MENLEBLHBIA
    * </pre>
    *
    * Protobuf type {@code BartenderStartLevelReq}
@@ -74,7 +74,7 @@ public final class BartenderStartLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               levelId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class BartenderStartLevelReqOuterClass {
               emu.grasscutter.net.proto.BartenderStartLevelReqOuterClass.BartenderStartLevelReq.class, emu.grasscutter.net.proto.BartenderStartLevelReqOuterClass.BartenderStartLevelReq.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    public static final int LEVEL_ID_FIELD_NUMBER = 2;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 3;</code>
+     * <code>uint32 level_id = 2;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class BartenderStartLevelReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
-        output.writeUInt32(3, levelId_);
+        output.writeUInt32(2, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class BartenderStartLevelReqOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, levelId_);
+          .computeUInt32Size(2, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class BartenderStartLevelReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8117
-     * Obf: KANBANEPONI
+     * CmdId: 7285
+     * Obf: MENLEBLHBIA
      * </pre>
      *
      * Protobuf type {@code BartenderStartLevelReq}
@@ -431,7 +431,7 @@ public final class BartenderStartLevelReqOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 3;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class BartenderStartLevelReqOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 3;</code>
+       * <code>uint32 level_id = 2;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class BartenderStartLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 3;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -527,7 +527,7 @@ public final class BartenderStartLevelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034BartenderStartLevelReq.proto\"*\n\026Barten" +
-      "derStartLevelReq\022\020\n\010level_id\030\003 \001(\rB\033\n\031em" +
+      "derStartLevelReq\022\020\n\010level_id\030\002 \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

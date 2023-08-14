@@ -19,12 +19,12 @@ public final class HomeSearchBlueprintReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string share_code = 5;</code>
+     * <code>string share_code = 14;</code>
      * @return The shareCode.
      */
     java.lang.String getShareCode();
     /**
-     * <code>string share_code = 5;</code>
+     * <code>string share_code = 14;</code>
      * @return The bytes for shareCode.
      */
     com.google.protobuf.ByteString
@@ -32,8 +32,8 @@ public final class HomeSearchBlueprintReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4644
-   * Obf: PHOFGHHDLJC
+   * CmdId: 1240
+   * Obf: EJOPLCKJMCO
    * </pre>
    *
    * Protobuf type {@code HomeSearchBlueprintReq}
@@ -81,7 +81,7 @@ public final class HomeSearchBlueprintReqOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 114: {
               java.lang.String s = input.readStringRequireUtf8();
 
               shareCode_ = s;
@@ -119,10 +119,10 @@ public final class HomeSearchBlueprintReqOuterClass {
               emu.grasscutter.net.proto.HomeSearchBlueprintReqOuterClass.HomeSearchBlueprintReq.class, emu.grasscutter.net.proto.HomeSearchBlueprintReqOuterClass.HomeSearchBlueprintReq.Builder.class);
     }
 
-    public static final int SHARE_CODE_FIELD_NUMBER = 5;
+    public static final int SHARE_CODE_FIELD_NUMBER = 14;
     private volatile java.lang.Object shareCode_;
     /**
-     * <code>string share_code = 5;</code>
+     * <code>string share_code = 14;</code>
      * @return The shareCode.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class HomeSearchBlueprintReqOuterClass {
       }
     }
     /**
-     * <code>string share_code = 5;</code>
+     * <code>string share_code = 14;</code>
      * @return The bytes for shareCode.
      */
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class HomeSearchBlueprintReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, shareCode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, shareCode_);
       }
       unknownFields.writeTo(output);
     }
@@ -184,7 +184,7 @@ public final class HomeSearchBlueprintReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shareCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, shareCode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, shareCode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class HomeSearchBlueprintReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4644
-     * Obf: PHOFGHHDLJC
+     * CmdId: 1240
+     * Obf: EJOPLCKJMCO
      * </pre>
      *
      * Protobuf type {@code HomeSearchBlueprintReq}
@@ -466,7 +466,7 @@ public final class HomeSearchBlueprintReqOuterClass {
 
       private java.lang.Object shareCode_ = "";
       /**
-       * <code>string share_code = 5;</code>
+       * <code>string share_code = 14;</code>
        * @return The shareCode.
        */
       public java.lang.String getShareCode() {
@@ -482,7 +482,7 @@ public final class HomeSearchBlueprintReqOuterClass {
         }
       }
       /**
-       * <code>string share_code = 5;</code>
+       * <code>string share_code = 14;</code>
        * @return The bytes for shareCode.
        */
       public com.google.protobuf.ByteString
@@ -499,7 +499,7 @@ public final class HomeSearchBlueprintReqOuterClass {
         }
       }
       /**
-       * <code>string share_code = 5;</code>
+       * <code>string share_code = 14;</code>
        * @param value The shareCode to set.
        * @return This builder for chaining.
        */
@@ -514,7 +514,7 @@ public final class HomeSearchBlueprintReqOuterClass {
         return this;
       }
       /**
-       * <code>string share_code = 5;</code>
+       * <code>string share_code = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
@@ -524,7 +524,7 @@ public final class HomeSearchBlueprintReqOuterClass {
         return this;
       }
       /**
-       * <code>string share_code = 5;</code>
+       * <code>string share_code = 14;</code>
        * @param value The bytes for shareCode to set.
        * @return This builder for chaining.
        */
@@ -607,7 +607,7 @@ public final class HomeSearchBlueprintReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034HomeSearchBlueprintReq.proto\",\n\026HomeSe" +
-      "archBlueprintReq\022\022\n\nshare_code\030\005 \001(\tB\033\n\031" +
+      "archBlueprintReq\022\022\n\nshare_code\030\016 \001(\tB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,15 +19,15 @@ public final class PotionRestartDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8337
-   * Obf: DEJPNMPGAAM
+   * CmdId: 4156
+   * Obf: PBOHEKLOJMH
    * </pre>
    *
    * Protobuf type {@code PotionRestartDungeonRsp}
@@ -74,7 +74,7 @@ public final class PotionRestartDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class PotionRestartDungeonRspOuterClass {
               emu.grasscutter.net.proto.PotionRestartDungeonRspOuterClass.PotionRestartDungeonRsp.class, emu.grasscutter.net.proto.PotionRestartDungeonRspOuterClass.PotionRestartDungeonRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PotionRestartDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PotionRestartDungeonRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PotionRestartDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8337
-     * Obf: DEJPNMPGAAM
+     * CmdId: 4156
+     * Obf: PBOHEKLOJMH
      * </pre>
      *
      * Protobuf type {@code PotionRestartDungeonRsp}
@@ -431,7 +431,7 @@ public final class PotionRestartDungeonRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PotionRestartDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PotionRestartDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class PotionRestartDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035PotionRestartDungeonRsp.proto\"*\n\027Potio" +
-      "nRestartDungeonRsp\022\017\n\007retcode\030\005 \001(\005B\033\n\031e" +
+      "nRestartDungeonRsp\022\017\n\007retcode\030\016 \001(\005B\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -41,7 +41,7 @@ public final class PropPairOuterClass {
   }
   /**
    * <pre>
-   * Obf: NIJPPOKHJEH
+   * Obf: OIKHOKIPKDK
    * </pre>
    *
    * Protobuf type {@code PropPair}
@@ -348,7 +348,7 @@ public final class PropPairOuterClass {
     }
     /**
      * <pre>
-     * Obf: NIJPPOKHJEH
+     * Obf: OIKHOKIPKDK
      * </pre>
      *
      * Protobuf type {@code PropPair}

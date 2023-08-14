@@ -19,15 +19,15 @@ public final class PotionSaveDungeonResultRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8102
-   * Obf: HOBNMKGPJEL
+   * CmdId: 4568
+   * Obf: PADOHAHKNKK
    * </pre>
    *
    * Protobuf type {@code PotionSaveDungeonResultRsp}
@@ -74,7 +74,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 120: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class PotionSaveDungeonResultRspOuterClass {
               emu.grasscutter.net.proto.PotionSaveDungeonResultRspOuterClass.PotionSaveDungeonResultRsp.class, emu.grasscutter.net.proto.PotionSaveDungeonResultRspOuterClass.PotionSaveDungeonResultRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PotionSaveDungeonResultRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8102
-     * Obf: HOBNMKGPJEL
+     * CmdId: 4568
+     * Obf: PADOHAHKNKK
      * </pre>
      *
      * Protobuf type {@code PotionSaveDungeonResultRsp}
@@ -431,7 +431,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class PotionSaveDungeonResultRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n PotionSaveDungeonResultRsp.proto\"-\n\032Po" +
-      "tionSaveDungeonResultRsp\022\017\n\007retcode\030\016 \001(" +
+      "tionSaveDungeonResultRsp\022\017\n\007retcode\030\017 \001(" +
       "\005B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

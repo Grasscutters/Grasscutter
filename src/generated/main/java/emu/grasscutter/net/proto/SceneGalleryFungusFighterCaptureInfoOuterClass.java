@@ -19,14 +19,14 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_hide_progress = 14;</code>
+     * <code>bool is_hide_progress = 6;</code>
      * @return The isHideProgress.
      */
     boolean getIsHideProgress();
   }
   /**
    * <pre>
-   * Obf: NKBJKDFPOMC
+   * Obf: DOOLKCBOOBG
    * </pre>
    *
    * Protobuf type {@code SceneGalleryFungusFighterCaptureInfo}
@@ -73,7 +73,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 48: {
 
               isHideProgress_ = input.readBool();
               break;
@@ -110,10 +110,10 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo.class, emu.grasscutter.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo.Builder.class);
     }
 
-    public static final int IS_HIDE_PROGRESS_FIELD_NUMBER = 14;
+    public static final int IS_HIDE_PROGRESS_FIELD_NUMBER = 6;
     private boolean isHideProgress_;
     /**
-     * <code>bool is_hide_progress = 14;</code>
+     * <code>bool is_hide_progress = 6;</code>
      * @return The isHideProgress.
      */
     @java.lang.Override
@@ -136,7 +136,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isHideProgress_ != false) {
-        output.writeBool(14, isHideProgress_);
+        output.writeBool(6, isHideProgress_);
       }
       unknownFields.writeTo(output);
     }
@@ -149,7 +149,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
       size = 0;
       if (isHideProgress_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isHideProgress_);
+          .computeBoolSize(6, isHideProgress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,7 +279,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: NKBJKDFPOMC
+     * Obf: DOOLKCBOOBG
      * </pre>
      *
      * Protobuf type {@code SceneGalleryFungusFighterCaptureInfo}
@@ -430,7 +430,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
 
       private boolean isHideProgress_ ;
       /**
-       * <code>bool is_hide_progress = 14;</code>
+       * <code>bool is_hide_progress = 6;</code>
        * @return The isHideProgress.
        */
       @java.lang.Override
@@ -438,7 +438,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
         return isHideProgress_;
       }
       /**
-       * <code>bool is_hide_progress = 14;</code>
+       * <code>bool is_hide_progress = 6;</code>
        * @param value The isHideProgress to set.
        * @return This builder for chaining.
        */
@@ -449,7 +449,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_hide_progress = 14;</code>
+       * <code>bool is_hide_progress = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsHideProgress() {
@@ -527,7 +527,7 @@ public final class SceneGalleryFungusFighterCaptureInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n*SceneGalleryFungusFighterCaptureInfo.p" +
       "roto\"@\n$SceneGalleryFungusFighterCapture" +
-      "Info\022\030\n\020is_hide_progress\030\016 \001(\010B\033\n\031emu.gr" +
+      "Info\022\030\n\020is_hide_progress\030\006 \001(\010B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

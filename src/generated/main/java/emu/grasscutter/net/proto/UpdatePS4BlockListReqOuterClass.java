@@ -19,24 +19,24 @@ public final class UpdatePS4BlockListReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @return A list containing the psnIdList.
      */
     java.util.List<java.lang.String>
         getPsnIdListList();
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @return The count of psnIdList.
      */
     int getPsnIdListCount();
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The psnIdList at the given index.
      */
     java.lang.String getPsnIdList(int index);
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the psnIdList at the given index.
      */
@@ -45,8 +45,8 @@ public final class UpdatePS4BlockListReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4080
-   * Obf: OEMJDMOKIGJ
+   * CmdId: 21934
+   * Obf: PDLEAFOICGK
    * </pre>
    *
    * Protobuf type {@code UpdatePS4BlockListReq}
@@ -95,7 +95,7 @@ public final class UpdatePS4BlockListReqOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 psnIdList_ = new com.google.protobuf.LazyStringArrayList();
@@ -139,10 +139,10 @@ public final class UpdatePS4BlockListReqOuterClass {
               emu.grasscutter.net.proto.UpdatePS4BlockListReqOuterClass.UpdatePS4BlockListReq.class, emu.grasscutter.net.proto.UpdatePS4BlockListReqOuterClass.UpdatePS4BlockListReq.Builder.class);
     }
 
-    public static final int PSN_ID_LIST_FIELD_NUMBER = 9;
+    public static final int PSN_ID_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.LazyStringList psnIdList_;
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @return A list containing the psnIdList.
      */
     public com.google.protobuf.ProtocolStringList
@@ -150,14 +150,14 @@ public final class UpdatePS4BlockListReqOuterClass {
       return psnIdList_;
     }
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @return The count of psnIdList.
      */
     public int getPsnIdListCount() {
       return psnIdList_.size();
     }
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @param index The index of the element to return.
      * @return The psnIdList at the given index.
      */
@@ -165,7 +165,7 @@ public final class UpdatePS4BlockListReqOuterClass {
       return psnIdList_.get(index);
     }
     /**
-     * <code>repeated string psn_id_list = 9;</code>
+     * <code>repeated string psn_id_list = 2;</code>
      * @param index The index of the value to return.
      * @return The bytes of the psnIdList at the given index.
      */
@@ -189,7 +189,7 @@ public final class UpdatePS4BlockListReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < psnIdList_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, psnIdList_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, psnIdList_.getRaw(i));
       }
       unknownFields.writeTo(output);
     }
@@ -337,8 +337,8 @@ public final class UpdatePS4BlockListReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4080
-     * Obf: OEMJDMOKIGJ
+     * CmdId: 21934
+     * Obf: PDLEAFOICGK
      * </pre>
      *
      * Protobuf type {@code UpdatePS4BlockListReq}
@@ -508,7 +508,7 @@ public final class UpdatePS4BlockListReqOuterClass {
          }
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @return A list containing the psnIdList.
        */
       public com.google.protobuf.ProtocolStringList
@@ -516,14 +516,14 @@ public final class UpdatePS4BlockListReqOuterClass {
         return psnIdList_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @return The count of psnIdList.
        */
       public int getPsnIdListCount() {
         return psnIdList_.size();
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param index The index of the element to return.
        * @return The psnIdList at the given index.
        */
@@ -531,7 +531,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return psnIdList_.get(index);
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param index The index of the value to return.
        * @return The bytes of the psnIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return psnIdList_.getByteString(index);
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param index The index to set the value at.
        * @param value The psnIdList to set.
        * @return This builder for chaining.
@@ -556,7 +556,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param value The psnIdList to add.
        * @return This builder for chaining.
        */
@@ -571,7 +571,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param values The psnIdList to add.
        * @return This builder for chaining.
        */
@@ -584,7 +584,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPsnIdList() {
@@ -594,7 +594,7 @@ public final class UpdatePS4BlockListReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated string psn_id_list = 9;</code>
+       * <code>repeated string psn_id_list = 2;</code>
        * @param value The bytes of the psnIdList to add.
        * @return This builder for chaining.
        */
@@ -677,7 +677,7 @@ public final class UpdatePS4BlockListReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033UpdatePS4BlockListReq.proto\",\n\025UpdateP" +
-      "S4BlockListReq\022\023\n\013psn_id_list\030\t \003(\tB\033\n\031e" +
+      "S4BlockListReq\022\023\n\013psn_id_list\030\002 \003(\tB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

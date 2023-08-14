@@ -19,32 +19,32 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 GKFJJMPJCMK = 11;</code>
-     * @return The gKFJJMPJCMK.
-     */
-    int getGKFJJMPJCMK();
-
-    /**
-     * <code>uint32 score = 12;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>uint32 capture_weakness_count = 14;</code>
+     * <code>uint32 capture_weakness_count = 8;</code>
      * @return The captureWeaknessCount.
      */
     int getCaptureWeaknessCount();
 
     /**
-     * <code>uint32 FNAEKILFJLD = 7;</code>
-     * @return The fNAEKILFJLD.
+     * <code>uint32 score = 14;</code>
+     * @return The score.
      */
-    int getFNAEKILFJLD();
+    int getScore();
+
+    /**
+     * <code>uint32 DINDBMDOMNK = 1;</code>
+     * @return The dINDBMDOMNK.
+     */
+    int getDINDBMDOMNK();
+
+    /**
+     * <code>uint32 GBPLMILEILK = 3;</code>
+     * @return The gBPLMILEILK.
+     */
+    int getGBPLMILEILK();
   }
   /**
    * <pre>
-   * Obf: ILLHNCAJNLB
+   * Obf: JGHLPIEADFI
    * </pre>
    *
    * Protobuf type {@code SceneGalleryMuqadasPotionInfo}
@@ -91,24 +91,24 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
-              fNAEKILFJLD_ = input.readUInt32();
+              dINDBMDOMNK_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 24: {
 
-              gKFJJMPJCMK_ = input.readUInt32();
+              gBPLMILEILK_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
-              score_ = input.readUInt32();
+              captureWeaknessCount_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              captureWeaknessCount_ = input.readUInt32();
+              score_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,32 +143,10 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.class, emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.Builder.class);
     }
 
-    public static final int GKFJJMPJCMK_FIELD_NUMBER = 11;
-    private int gKFJJMPJCMK_;
-    /**
-     * <code>uint32 GKFJJMPJCMK = 11;</code>
-     * @return The gKFJJMPJCMK.
-     */
-    @java.lang.Override
-    public int getGKFJJMPJCMK() {
-      return gKFJJMPJCMK_;
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 12;
-    private int score_;
-    /**
-     * <code>uint32 score = 12;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER = 14;
+    public static final int CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER = 8;
     private int captureWeaknessCount_;
     /**
-     * <code>uint32 capture_weakness_count = 14;</code>
+     * <code>uint32 capture_weakness_count = 8;</code>
      * @return The captureWeaknessCount.
      */
     @java.lang.Override
@@ -176,15 +154,37 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       return captureWeaknessCount_;
     }
 
-    public static final int FNAEKILFJLD_FIELD_NUMBER = 7;
-    private int fNAEKILFJLD_;
+    public static final int SCORE_FIELD_NUMBER = 14;
+    private int score_;
     /**
-     * <code>uint32 FNAEKILFJLD = 7;</code>
-     * @return The fNAEKILFJLD.
+     * <code>uint32 score = 14;</code>
+     * @return The score.
      */
     @java.lang.Override
-    public int getFNAEKILFJLD() {
-      return fNAEKILFJLD_;
+    public int getScore() {
+      return score_;
+    }
+
+    public static final int DINDBMDOMNK_FIELD_NUMBER = 1;
+    private int dINDBMDOMNK_;
+    /**
+     * <code>uint32 DINDBMDOMNK = 1;</code>
+     * @return The dINDBMDOMNK.
+     */
+    @java.lang.Override
+    public int getDINDBMDOMNK() {
+      return dINDBMDOMNK_;
+    }
+
+    public static final int GBPLMILEILK_FIELD_NUMBER = 3;
+    private int gBPLMILEILK_;
+    /**
+     * <code>uint32 GBPLMILEILK = 3;</code>
+     * @return The gBPLMILEILK.
+     */
+    @java.lang.Override
+    public int getGBPLMILEILK() {
+      return gBPLMILEILK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (fNAEKILFJLD_ != 0) {
-        output.writeUInt32(7, fNAEKILFJLD_);
+      if (dINDBMDOMNK_ != 0) {
+        output.writeUInt32(1, dINDBMDOMNK_);
       }
-      if (gKFJJMPJCMK_ != 0) {
-        output.writeUInt32(11, gKFJJMPJCMK_);
-      }
-      if (score_ != 0) {
-        output.writeUInt32(12, score_);
+      if (gBPLMILEILK_ != 0) {
+        output.writeUInt32(3, gBPLMILEILK_);
       }
       if (captureWeaknessCount_ != 0) {
-        output.writeUInt32(14, captureWeaknessCount_);
+        output.writeUInt32(8, captureWeaknessCount_);
+      }
+      if (score_ != 0) {
+        output.writeUInt32(14, score_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fNAEKILFJLD_ != 0) {
+      if (dINDBMDOMNK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, fNAEKILFJLD_);
+          .computeUInt32Size(1, dINDBMDOMNK_);
       }
-      if (gKFJJMPJCMK_ != 0) {
+      if (gBPLMILEILK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, gKFJJMPJCMK_);
-      }
-      if (score_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, score_);
+          .computeUInt32Size(3, gBPLMILEILK_);
       }
       if (captureWeaknessCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, captureWeaknessCount_);
+          .computeUInt32Size(8, captureWeaknessCount_);
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo other = (emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo) obj;
 
-      if (getGKFJJMPJCMK()
-          != other.getGKFJJMPJCMK()) return false;
-      if (getScore()
-          != other.getScore()) return false;
       if (getCaptureWeaknessCount()
           != other.getCaptureWeaknessCount()) return false;
-      if (getFNAEKILFJLD()
-          != other.getFNAEKILFJLD()) return false;
+      if (getScore()
+          != other.getScore()) return false;
+      if (getDINDBMDOMNK()
+          != other.getDINDBMDOMNK()) return false;
+      if (getGBPLMILEILK()
+          != other.getGBPLMILEILK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GKFJJMPJCMK_FIELD_NUMBER;
-      hash = (53 * hash) + getGKFJJMPJCMK();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
       hash = (37 * hash) + CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCaptureWeaknessCount();
-      hash = (37 * hash) + FNAEKILFJLD_FIELD_NUMBER;
-      hash = (53 * hash) + getFNAEKILFJLD();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
+      hash = (37 * hash) + DINDBMDOMNK_FIELD_NUMBER;
+      hash = (53 * hash) + getDINDBMDOMNK();
+      hash = (37 * hash) + GBPLMILEILK_FIELD_NUMBER;
+      hash = (53 * hash) + getGBPLMILEILK();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ILLHNCAJNLB
+     * Obf: JGHLPIEADFI
      * </pre>
      *
      * Protobuf type {@code SceneGalleryMuqadasPotionInfo}
@@ -417,13 +417,13 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gKFJJMPJCMK_ = 0;
+        captureWeaknessCount_ = 0;
 
         score_ = 0;
 
-        captureWeaknessCount_ = 0;
+        dINDBMDOMNK_ = 0;
 
-        fNAEKILFJLD_ = 0;
+        gBPLMILEILK_ = 0;
 
         return this;
       }
@@ -451,10 +451,10 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo result = new emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo(this);
-        result.gKFJJMPJCMK_ = gKFJJMPJCMK_;
-        result.score_ = score_;
         result.captureWeaknessCount_ = captureWeaknessCount_;
-        result.fNAEKILFJLD_ = fNAEKILFJLD_;
+        result.score_ = score_;
+        result.dINDBMDOMNK_ = dINDBMDOMNK_;
+        result.gBPLMILEILK_ = gBPLMILEILK_;
         onBuilt();
         return result;
       }
@@ -503,17 +503,17 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.getDefaultInstance()) return this;
-        if (other.getGKFJJMPJCMK() != 0) {
-          setGKFJJMPJCMK(other.getGKFJJMPJCMK());
+        if (other.getCaptureWeaknessCount() != 0) {
+          setCaptureWeaknessCount(other.getCaptureWeaknessCount());
         }
         if (other.getScore() != 0) {
           setScore(other.getScore());
         }
-        if (other.getCaptureWeaknessCount() != 0) {
-          setCaptureWeaknessCount(other.getCaptureWeaknessCount());
+        if (other.getDINDBMDOMNK() != 0) {
+          setDINDBMDOMNK(other.getDINDBMDOMNK());
         }
-        if (other.getFNAEKILFJLD() != 0) {
-          setFNAEKILFJLD(other.getFNAEKILFJLD());
+        if (other.getGBPLMILEILK() != 0) {
+          setGBPLMILEILK(other.getGBPLMILEILK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -544,71 +544,9 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         return this;
       }
 
-      private int gKFJJMPJCMK_ ;
-      /**
-       * <code>uint32 GKFJJMPJCMK = 11;</code>
-       * @return The gKFJJMPJCMK.
-       */
-      @java.lang.Override
-      public int getGKFJJMPJCMK() {
-        return gKFJJMPJCMK_;
-      }
-      /**
-       * <code>uint32 GKFJJMPJCMK = 11;</code>
-       * @param value The gKFJJMPJCMK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGKFJJMPJCMK(int value) {
-        
-        gKFJJMPJCMK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GKFJJMPJCMK = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGKFJJMPJCMK() {
-        
-        gKFJJMPJCMK_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int score_ ;
-      /**
-       * <code>uint32 score = 12;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 12;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int captureWeaknessCount_ ;
       /**
-       * <code>uint32 capture_weakness_count = 14;</code>
+       * <code>uint32 capture_weakness_count = 8;</code>
        * @return The captureWeaknessCount.
        */
       @java.lang.Override
@@ -616,7 +554,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         return captureWeaknessCount_;
       }
       /**
-       * <code>uint32 capture_weakness_count = 14;</code>
+       * <code>uint32 capture_weakness_count = 8;</code>
        * @param value The captureWeaknessCount to set.
        * @return This builder for chaining.
        */
@@ -627,7 +565,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 capture_weakness_count = 14;</code>
+       * <code>uint32 capture_weakness_count = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCaptureWeaknessCount() {
@@ -637,33 +575,95 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         return this;
       }
 
-      private int fNAEKILFJLD_ ;
+      private int score_ ;
       /**
-       * <code>uint32 FNAEKILFJLD = 7;</code>
-       * @return The fNAEKILFJLD.
+       * <code>uint32 score = 14;</code>
+       * @return The score.
        */
       @java.lang.Override
-      public int getFNAEKILFJLD() {
-        return fNAEKILFJLD_;
+      public int getScore() {
+        return score_;
       }
       /**
-       * <code>uint32 FNAEKILFJLD = 7;</code>
-       * @param value The fNAEKILFJLD to set.
+       * <code>uint32 score = 14;</code>
+       * @param value The score to set.
        * @return This builder for chaining.
        */
-      public Builder setFNAEKILFJLD(int value) {
+      public Builder setScore(int value) {
         
-        fNAEKILFJLD_ = value;
+        score_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FNAEKILFJLD = 7;</code>
+       * <code>uint32 score = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFNAEKILFJLD() {
+      public Builder clearScore() {
         
-        fNAEKILFJLD_ = 0;
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dINDBMDOMNK_ ;
+      /**
+       * <code>uint32 DINDBMDOMNK = 1;</code>
+       * @return The dINDBMDOMNK.
+       */
+      @java.lang.Override
+      public int getDINDBMDOMNK() {
+        return dINDBMDOMNK_;
+      }
+      /**
+       * <code>uint32 DINDBMDOMNK = 1;</code>
+       * @param value The dINDBMDOMNK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDINDBMDOMNK(int value) {
+        
+        dINDBMDOMNK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 DINDBMDOMNK = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDINDBMDOMNK() {
+        
+        dINDBMDOMNK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gBPLMILEILK_ ;
+      /**
+       * <code>uint32 GBPLMILEILK = 3;</code>
+       * @return The gBPLMILEILK.
+       */
+      @java.lang.Override
+      public int getGBPLMILEILK() {
+        return gBPLMILEILK_;
+      }
+      /**
+       * <code>uint32 GBPLMILEILK = 3;</code>
+       * @param value The gBPLMILEILK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGBPLMILEILK(int value) {
+        
+        gBPLMILEILK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GBPLMILEILK = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGBPLMILEILK() {
+        
+        gBPLMILEILK_ = 0;
         onChanged();
         return this;
       }
@@ -735,9 +735,9 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#SceneGalleryMuqadasPotionInfo.proto\"x\n" +
-      "\035SceneGalleryMuqadasPotionInfo\022\023\n\013GKFJJM" +
-      "PJCMK\030\013 \001(\r\022\r\n\005score\030\014 \001(\r\022\036\n\026capture_we" +
-      "akness_count\030\016 \001(\r\022\023\n\013FNAEKILFJLD\030\007 \001(\rB" +
+      "\035SceneGalleryMuqadasPotionInfo\022\036\n\026captur" +
+      "e_weakness_count\030\010 \001(\r\022\r\n\005score\030\016 \001(\r\022\023\n" +
+      "\013DINDBMDOMNK\030\001 \001(\r\022\023\n\013GBPLMILEILK\030\003 \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +749,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     internal_static_SceneGalleryMuqadasPotionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryMuqadasPotionInfo_descriptor,
-        new java.lang.String[] { "GKFJJMPJCMK", "Score", "CaptureWeaknessCount", "FNAEKILFJLD", });
+        new java.lang.String[] { "CaptureWeaknessCount", "Score", "DINDBMDOMNK", "GBPLMILEILK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

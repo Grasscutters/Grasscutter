@@ -19,20 +19,20 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 FOAFDGFNCFL = 12;</code>
-     * @return The fOAFDGFNCFL.
+     * <code>uint32 DKPANNIJPEN = 8;</code>
+     * @return The dKPANNIJPEN.
      */
-    int getFOAFDGFNCFL();
+    int getDKPANNIJPEN();
 
     /**
-     * <code>uint32 HCDKJFMNMAM = 5;</code>
-     * @return The hCDKJFMNMAM.
+     * <code>uint32 LAJGLFDJOFN = 1;</code>
+     * @return The lAJGLFDJOFN.
      */
-    int getHCDKJFMNMAM();
+    int getLAJGLFDJOFN();
   }
   /**
    * <pre>
-   * Obf: OHLHMAEDCHF
+   * Obf: HEKOMNEEHCO
    * </pre>
    *
    * Protobuf type {@code SceneGalleryCoinCollectInfo}
@@ -79,14 +79,14 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 8: {
 
-              hCDKJFMNMAM_ = input.readUInt32();
+              lAJGLFDJOFN_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
-              fOAFDGFNCFL_ = input.readUInt32();
+              dKPANNIJPEN_ = input.readUInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo.class, emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo.Builder.class);
     }
 
-    public static final int FOAFDGFNCFL_FIELD_NUMBER = 12;
-    private int fOAFDGFNCFL_;
+    public static final int DKPANNIJPEN_FIELD_NUMBER = 8;
+    private int dKPANNIJPEN_;
     /**
-     * <code>uint32 FOAFDGFNCFL = 12;</code>
-     * @return The fOAFDGFNCFL.
+     * <code>uint32 DKPANNIJPEN = 8;</code>
+     * @return The dKPANNIJPEN.
      */
     @java.lang.Override
-    public int getFOAFDGFNCFL() {
-      return fOAFDGFNCFL_;
+    public int getDKPANNIJPEN() {
+      return dKPANNIJPEN_;
     }
 
-    public static final int HCDKJFMNMAM_FIELD_NUMBER = 5;
-    private int hCDKJFMNMAM_;
+    public static final int LAJGLFDJOFN_FIELD_NUMBER = 1;
+    private int lAJGLFDJOFN_;
     /**
-     * <code>uint32 HCDKJFMNMAM = 5;</code>
-     * @return The hCDKJFMNMAM.
+     * <code>uint32 LAJGLFDJOFN = 1;</code>
+     * @return The lAJGLFDJOFN.
      */
     @java.lang.Override
-    public int getHCDKJFMNMAM() {
-      return hCDKJFMNMAM_;
+    public int getLAJGLFDJOFN() {
+      return lAJGLFDJOFN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hCDKJFMNMAM_ != 0) {
-        output.writeUInt32(5, hCDKJFMNMAM_);
+      if (lAJGLFDJOFN_ != 0) {
+        output.writeUInt32(1, lAJGLFDJOFN_);
       }
-      if (fOAFDGFNCFL_ != 0) {
-        output.writeUInt32(12, fOAFDGFNCFL_);
+      if (dKPANNIJPEN_ != 0) {
+        output.writeUInt32(8, dKPANNIJPEN_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hCDKJFMNMAM_ != 0) {
+      if (lAJGLFDJOFN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, hCDKJFMNMAM_);
+          .computeUInt32Size(1, lAJGLFDJOFN_);
       }
-      if (fOAFDGFNCFL_ != 0) {
+      if (dKPANNIJPEN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, fOAFDGFNCFL_);
+          .computeUInt32Size(8, dKPANNIJPEN_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo other = (emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo) obj;
 
-      if (getFOAFDGFNCFL()
-          != other.getFOAFDGFNCFL()) return false;
-      if (getHCDKJFMNMAM()
-          != other.getHCDKJFMNMAM()) return false;
+      if (getDKPANNIJPEN()
+          != other.getDKPANNIJPEN()) return false;
+      if (getLAJGLFDJOFN()
+          != other.getLAJGLFDJOFN()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FOAFDGFNCFL_FIELD_NUMBER;
-      hash = (53 * hash) + getFOAFDGFNCFL();
-      hash = (37 * hash) + HCDKJFMNMAM_FIELD_NUMBER;
-      hash = (53 * hash) + getHCDKJFMNMAM();
+      hash = (37 * hash) + DKPANNIJPEN_FIELD_NUMBER;
+      hash = (53 * hash) + getDKPANNIJPEN();
+      hash = (37 * hash) + LAJGLFDJOFN_FIELD_NUMBER;
+      hash = (53 * hash) + getLAJGLFDJOFN();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: OHLHMAEDCHF
+     * Obf: HEKOMNEEHCO
      * </pre>
      *
      * Protobuf type {@code SceneGalleryCoinCollectInfo}
@@ -351,9 +351,9 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fOAFDGFNCFL_ = 0;
+        dKPANNIJPEN_ = 0;
 
-        hCDKJFMNMAM_ = 0;
+        lAJGLFDJOFN_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo result = new emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo(this);
-        result.fOAFDGFNCFL_ = fOAFDGFNCFL_;
-        result.hCDKJFMNMAM_ = hCDKJFMNMAM_;
+        result.dKPANNIJPEN_ = dKPANNIJPEN_;
+        result.lAJGLFDJOFN_ = lAJGLFDJOFN_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo.getDefaultInstance()) return this;
-        if (other.getFOAFDGFNCFL() != 0) {
-          setFOAFDGFNCFL(other.getFOAFDGFNCFL());
+        if (other.getDKPANNIJPEN() != 0) {
+          setDKPANNIJPEN(other.getDKPANNIJPEN());
         }
-        if (other.getHCDKJFMNMAM() != 0) {
-          setHCDKJFMNMAM(other.getHCDKJFMNMAM());
+        if (other.getLAJGLFDJOFN() != 0) {
+          setLAJGLFDJOFN(other.getLAJGLFDJOFN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
         return this;
       }
 
-      private int fOAFDGFNCFL_ ;
+      private int dKPANNIJPEN_ ;
       /**
-       * <code>uint32 FOAFDGFNCFL = 12;</code>
-       * @return The fOAFDGFNCFL.
+       * <code>uint32 DKPANNIJPEN = 8;</code>
+       * @return The dKPANNIJPEN.
        */
       @java.lang.Override
-      public int getFOAFDGFNCFL() {
-        return fOAFDGFNCFL_;
+      public int getDKPANNIJPEN() {
+        return dKPANNIJPEN_;
       }
       /**
-       * <code>uint32 FOAFDGFNCFL = 12;</code>
-       * @param value The fOAFDGFNCFL to set.
+       * <code>uint32 DKPANNIJPEN = 8;</code>
+       * @param value The dKPANNIJPEN to set.
        * @return This builder for chaining.
        */
-      public Builder setFOAFDGFNCFL(int value) {
+      public Builder setDKPANNIJPEN(int value) {
         
-        fOAFDGFNCFL_ = value;
+        dKPANNIJPEN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FOAFDGFNCFL = 12;</code>
+       * <code>uint32 DKPANNIJPEN = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFOAFDGFNCFL() {
+      public Builder clearDKPANNIJPEN() {
         
-        fOAFDGFNCFL_ = 0;
+        dKPANNIJPEN_ = 0;
         onChanged();
         return this;
       }
 
-      private int hCDKJFMNMAM_ ;
+      private int lAJGLFDJOFN_ ;
       /**
-       * <code>uint32 HCDKJFMNMAM = 5;</code>
-       * @return The hCDKJFMNMAM.
+       * <code>uint32 LAJGLFDJOFN = 1;</code>
+       * @return The lAJGLFDJOFN.
        */
       @java.lang.Override
-      public int getHCDKJFMNMAM() {
-        return hCDKJFMNMAM_;
+      public int getLAJGLFDJOFN() {
+        return lAJGLFDJOFN_;
       }
       /**
-       * <code>uint32 HCDKJFMNMAM = 5;</code>
-       * @param value The hCDKJFMNMAM to set.
+       * <code>uint32 LAJGLFDJOFN = 1;</code>
+       * @param value The lAJGLFDJOFN to set.
        * @return This builder for chaining.
        */
-      public Builder setHCDKJFMNMAM(int value) {
+      public Builder setLAJGLFDJOFN(int value) {
         
-        hCDKJFMNMAM_ = value;
+        lAJGLFDJOFN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HCDKJFMNMAM = 5;</code>
+       * <code>uint32 LAJGLFDJOFN = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHCDKJFMNMAM() {
+      public Builder clearLAJGLFDJOFN() {
         
-        hCDKJFMNMAM_ = 0;
+        lAJGLFDJOFN_ = 0;
         onChanged();
         return this;
       }
@@ -595,8 +595,8 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!SceneGalleryCoinCollectInfo.proto\"G\n\033S" +
-      "ceneGalleryCoinCollectInfo\022\023\n\013FOAFDGFNCF" +
-      "L\030\014 \001(\r\022\023\n\013HCDKJFMNMAM\030\005 \001(\rB\033\n\031emu.gras" +
+      "ceneGalleryCoinCollectInfo\022\023\n\013DKPANNIJPE" +
+      "N\030\010 \001(\r\022\023\n\013LAJGLFDJOFN\030\001 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -608,7 +608,7 @@ public final class SceneGalleryCoinCollectInfoOuterClass {
     internal_static_SceneGalleryCoinCollectInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryCoinCollectInfo_descriptor,
-        new java.lang.String[] { "FOAFDGFNCFL", "HCDKJFMNMAM", });
+        new java.lang.String[] { "DKPANNIJPEN", "LAJGLFDJOFN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

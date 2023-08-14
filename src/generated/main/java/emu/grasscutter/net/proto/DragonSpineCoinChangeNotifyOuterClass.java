@@ -19,33 +19,33 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 BCMDOANABLH = 7;</code>
+     * @return The bCMDOANABLH.
+     */
+    int getBCMDOANABLH();
+
+    /**
+     * <code>uint32 GKBIMMMIGNF = 15;</code>
+     * @return The gKBIMMMIGNF.
+     */
+    int getGKBIMMMIGNF();
+
+    /**
+     * <code>uint32 NIBHAJNIAIC = 8;</code>
+     * @return The nIBHAJNIAIC.
+     */
+    int getNIBHAJNIAIC();
+
+    /**
+     * <code>uint32 schedule_id = 13;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
-
-    /**
-     * <code>uint32 EFJOFMJNHEM = 3;</code>
-     * @return The eFJOFMJNHEM.
-     */
-    int getEFJOFMJNHEM();
-
-    /**
-     * <code>uint32 BFHMDKOEJPC = 2;</code>
-     * @return The bFHMDKOEJPC.
-     */
-    int getBFHMDKOEJPC();
-
-    /**
-     * <code>uint32 LNHGDOBIBFH = 14;</code>
-     * @return The lNHGDOBIBFH.
-     */
-    int getLNHGDOBIBFH();
   }
   /**
    * <pre>
-   * CmdId: 2134
-   * Obf: KMCHADDNELL
+   * CmdId: 5502
+   * Obf: FGIKEIFBNPC
    * </pre>
    *
    * Protobuf type {@code DragonSpineCoinChangeNotify}
@@ -92,24 +92,24 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 56: {
 
-              bFHMDKOEJPC_ = input.readUInt32();
+              bCMDOANABLH_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 64: {
 
-              eFJOFMJNHEM_ = input.readUInt32();
+              nIBHAJNIAIC_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 104: {
 
               scheduleId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 120: {
 
-              lNHGDOBIBFH_ = input.readUInt32();
+              gKBIMMMIGNF_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,48 +144,48 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
               emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify.class, emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
+    public static final int BCMDOANABLH_FIELD_NUMBER = 7;
+    private int bCMDOANABLH_;
+    /**
+     * <code>uint32 BCMDOANABLH = 7;</code>
+     * @return The bCMDOANABLH.
+     */
+    @java.lang.Override
+    public int getBCMDOANABLH() {
+      return bCMDOANABLH_;
+    }
+
+    public static final int GKBIMMMIGNF_FIELD_NUMBER = 15;
+    private int gKBIMMMIGNF_;
+    /**
+     * <code>uint32 GKBIMMMIGNF = 15;</code>
+     * @return The gKBIMMMIGNF.
+     */
+    @java.lang.Override
+    public int getGKBIMMMIGNF() {
+      return gKBIMMMIGNF_;
+    }
+
+    public static final int NIBHAJNIAIC_FIELD_NUMBER = 8;
+    private int nIBHAJNIAIC_;
+    /**
+     * <code>uint32 NIBHAJNIAIC = 8;</code>
+     * @return The nIBHAJNIAIC.
+     */
+    @java.lang.Override
+    public int getNIBHAJNIAIC() {
+      return nIBHAJNIAIC_;
+    }
+
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 13;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 schedule_id = 13;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
     public int getScheduleId() {
       return scheduleId_;
-    }
-
-    public static final int EFJOFMJNHEM_FIELD_NUMBER = 3;
-    private int eFJOFMJNHEM_;
-    /**
-     * <code>uint32 EFJOFMJNHEM = 3;</code>
-     * @return The eFJOFMJNHEM.
-     */
-    @java.lang.Override
-    public int getEFJOFMJNHEM() {
-      return eFJOFMJNHEM_;
-    }
-
-    public static final int BFHMDKOEJPC_FIELD_NUMBER = 2;
-    private int bFHMDKOEJPC_;
-    /**
-     * <code>uint32 BFHMDKOEJPC = 2;</code>
-     * @return The bFHMDKOEJPC.
-     */
-    @java.lang.Override
-    public int getBFHMDKOEJPC() {
-      return bFHMDKOEJPC_;
-    }
-
-    public static final int LNHGDOBIBFH_FIELD_NUMBER = 14;
-    private int lNHGDOBIBFH_;
-    /**
-     * <code>uint32 LNHGDOBIBFH = 14;</code>
-     * @return The lNHGDOBIBFH.
-     */
-    @java.lang.Override
-    public int getLNHGDOBIBFH() {
-      return lNHGDOBIBFH_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,17 +202,17 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bFHMDKOEJPC_ != 0) {
-        output.writeUInt32(2, bFHMDKOEJPC_);
+      if (bCMDOANABLH_ != 0) {
+        output.writeUInt32(7, bCMDOANABLH_);
       }
-      if (eFJOFMJNHEM_ != 0) {
-        output.writeUInt32(3, eFJOFMJNHEM_);
+      if (nIBHAJNIAIC_ != 0) {
+        output.writeUInt32(8, nIBHAJNIAIC_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(9, scheduleId_);
+        output.writeUInt32(13, scheduleId_);
       }
-      if (lNHGDOBIBFH_ != 0) {
-        output.writeUInt32(14, lNHGDOBIBFH_);
+      if (gKBIMMMIGNF_ != 0) {
+        output.writeUInt32(15, gKBIMMMIGNF_);
       }
       unknownFields.writeTo(output);
     }
@@ -223,21 +223,21 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bFHMDKOEJPC_ != 0) {
+      if (bCMDOANABLH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, bFHMDKOEJPC_);
+          .computeUInt32Size(7, bCMDOANABLH_);
       }
-      if (eFJOFMJNHEM_ != 0) {
+      if (nIBHAJNIAIC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, eFJOFMJNHEM_);
+          .computeUInt32Size(8, nIBHAJNIAIC_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, scheduleId_);
+          .computeUInt32Size(13, scheduleId_);
       }
-      if (lNHGDOBIBFH_ != 0) {
+      if (gKBIMMMIGNF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, lNHGDOBIBFH_);
+          .computeUInt32Size(15, gKBIMMMIGNF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -254,14 +254,14 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify other = (emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify) obj;
 
+      if (getBCMDOANABLH()
+          != other.getBCMDOANABLH()) return false;
+      if (getGKBIMMMIGNF()
+          != other.getGKBIMMMIGNF()) return false;
+      if (getNIBHAJNIAIC()
+          != other.getNIBHAJNIAIC()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (getEFJOFMJNHEM()
-          != other.getEFJOFMJNHEM()) return false;
-      if (getBFHMDKOEJPC()
-          != other.getBFHMDKOEJPC()) return false;
-      if (getLNHGDOBIBFH()
-          != other.getLNHGDOBIBFH()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,14 +273,14 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BCMDOANABLH_FIELD_NUMBER;
+      hash = (53 * hash) + getBCMDOANABLH();
+      hash = (37 * hash) + GKBIMMMIGNF_FIELD_NUMBER;
+      hash = (53 * hash) + getGKBIMMMIGNF();
+      hash = (37 * hash) + NIBHAJNIAIC_FIELD_NUMBER;
+      hash = (53 * hash) + getNIBHAJNIAIC();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (37 * hash) + EFJOFMJNHEM_FIELD_NUMBER;
-      hash = (53 * hash) + getEFJOFMJNHEM();
-      hash = (37 * hash) + BFHMDKOEJPC_FIELD_NUMBER;
-      hash = (53 * hash) + getBFHMDKOEJPC();
-      hash = (37 * hash) + LNHGDOBIBFH_FIELD_NUMBER;
-      hash = (53 * hash) + getLNHGDOBIBFH();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2134
-     * Obf: KMCHADDNELL
+     * CmdId: 5502
+     * Obf: FGIKEIFBNPC
      * </pre>
      *
      * Protobuf type {@code DragonSpineCoinChangeNotify}
@@ -419,13 +419,13 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bCMDOANABLH_ = 0;
+
+        gKBIMMMIGNF_ = 0;
+
+        nIBHAJNIAIC_ = 0;
+
         scheduleId_ = 0;
-
-        eFJOFMJNHEM_ = 0;
-
-        bFHMDKOEJPC_ = 0;
-
-        lNHGDOBIBFH_ = 0;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify buildPartial() {
         emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify result = new emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify(this);
+        result.bCMDOANABLH_ = bCMDOANABLH_;
+        result.gKBIMMMIGNF_ = gKBIMMMIGNF_;
+        result.nIBHAJNIAIC_ = nIBHAJNIAIC_;
         result.scheduleId_ = scheduleId_;
-        result.eFJOFMJNHEM_ = eFJOFMJNHEM_;
-        result.bFHMDKOEJPC_ = bFHMDKOEJPC_;
-        result.lNHGDOBIBFH_ = lNHGDOBIBFH_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify other) {
         if (other == emu.grasscutter.net.proto.DragonSpineCoinChangeNotifyOuterClass.DragonSpineCoinChangeNotify.getDefaultInstance()) return this;
+        if (other.getBCMDOANABLH() != 0) {
+          setBCMDOANABLH(other.getBCMDOANABLH());
+        }
+        if (other.getGKBIMMMIGNF() != 0) {
+          setGKBIMMMIGNF(other.getGKBIMMMIGNF());
+        }
+        if (other.getNIBHAJNIAIC() != 0) {
+          setNIBHAJNIAIC(other.getNIBHAJNIAIC());
+        }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
-        }
-        if (other.getEFJOFMJNHEM() != 0) {
-          setEFJOFMJNHEM(other.getEFJOFMJNHEM());
-        }
-        if (other.getBFHMDKOEJPC() != 0) {
-          setBFHMDKOEJPC(other.getBFHMDKOEJPC());
-        }
-        if (other.getLNHGDOBIBFH() != 0) {
-          setLNHGDOBIBFH(other.getLNHGDOBIBFH());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,9 +546,102 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
         return this;
       }
 
+      private int bCMDOANABLH_ ;
+      /**
+       * <code>uint32 BCMDOANABLH = 7;</code>
+       * @return The bCMDOANABLH.
+       */
+      @java.lang.Override
+      public int getBCMDOANABLH() {
+        return bCMDOANABLH_;
+      }
+      /**
+       * <code>uint32 BCMDOANABLH = 7;</code>
+       * @param value The bCMDOANABLH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBCMDOANABLH(int value) {
+        
+        bCMDOANABLH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BCMDOANABLH = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBCMDOANABLH() {
+        
+        bCMDOANABLH_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gKBIMMMIGNF_ ;
+      /**
+       * <code>uint32 GKBIMMMIGNF = 15;</code>
+       * @return The gKBIMMMIGNF.
+       */
+      @java.lang.Override
+      public int getGKBIMMMIGNF() {
+        return gKBIMMMIGNF_;
+      }
+      /**
+       * <code>uint32 GKBIMMMIGNF = 15;</code>
+       * @param value The gKBIMMMIGNF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGKBIMMMIGNF(int value) {
+        
+        gKBIMMMIGNF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GKBIMMMIGNF = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGKBIMMMIGNF() {
+        
+        gKBIMMMIGNF_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nIBHAJNIAIC_ ;
+      /**
+       * <code>uint32 NIBHAJNIAIC = 8;</code>
+       * @return The nIBHAJNIAIC.
+       */
+      @java.lang.Override
+      public int getNIBHAJNIAIC() {
+        return nIBHAJNIAIC_;
+      }
+      /**
+       * <code>uint32 NIBHAJNIAIC = 8;</code>
+       * @param value The nIBHAJNIAIC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNIBHAJNIAIC(int value) {
+        
+        nIBHAJNIAIC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NIBHAJNIAIC = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNIBHAJNIAIC() {
+        
+        nIBHAJNIAIC_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 13;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -556,7 +649,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 13;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -567,105 +660,12 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
         
         scheduleId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int eFJOFMJNHEM_ ;
-      /**
-       * <code>uint32 EFJOFMJNHEM = 3;</code>
-       * @return The eFJOFMJNHEM.
-       */
-      @java.lang.Override
-      public int getEFJOFMJNHEM() {
-        return eFJOFMJNHEM_;
-      }
-      /**
-       * <code>uint32 EFJOFMJNHEM = 3;</code>
-       * @param value The eFJOFMJNHEM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEFJOFMJNHEM(int value) {
-        
-        eFJOFMJNHEM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EFJOFMJNHEM = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEFJOFMJNHEM() {
-        
-        eFJOFMJNHEM_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int bFHMDKOEJPC_ ;
-      /**
-       * <code>uint32 BFHMDKOEJPC = 2;</code>
-       * @return The bFHMDKOEJPC.
-       */
-      @java.lang.Override
-      public int getBFHMDKOEJPC() {
-        return bFHMDKOEJPC_;
-      }
-      /**
-       * <code>uint32 BFHMDKOEJPC = 2;</code>
-       * @param value The bFHMDKOEJPC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBFHMDKOEJPC(int value) {
-        
-        bFHMDKOEJPC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BFHMDKOEJPC = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBFHMDKOEJPC() {
-        
-        bFHMDKOEJPC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lNHGDOBIBFH_ ;
-      /**
-       * <code>uint32 LNHGDOBIBFH = 14;</code>
-       * @return The lNHGDOBIBFH.
-       */
-      @java.lang.Override
-      public int getLNHGDOBIBFH() {
-        return lNHGDOBIBFH_;
-      }
-      /**
-       * <code>uint32 LNHGDOBIBFH = 14;</code>
-       * @param value The lNHGDOBIBFH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLNHGDOBIBFH(int value) {
-        
-        lNHGDOBIBFH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LNHGDOBIBFH = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLNHGDOBIBFH() {
-        
-        lNHGDOBIBFH_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +737,9 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!DragonSpineCoinChangeNotify.proto\"q\n\033D" +
-      "ragonSpineCoinChangeNotify\022\023\n\013schedule_i" +
-      "d\030\t \001(\r\022\023\n\013EFJOFMJNHEM\030\003 \001(\r\022\023\n\013BFHMDKOE" +
-      "JPC\030\002 \001(\r\022\023\n\013LNHGDOBIBFH\030\016 \001(\rB\033\n\031emu.gr" +
+      "ragonSpineCoinChangeNotify\022\023\n\013BCMDOANABL" +
+      "H\030\007 \001(\r\022\023\n\013GKBIMMMIGNF\030\017 \001(\r\022\023\n\013NIBHAJNI" +
+      "AIC\030\010 \001(\r\022\023\n\013schedule_id\030\r \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -751,7 +751,7 @@ public final class DragonSpineCoinChangeNotifyOuterClass {
     internal_static_DragonSpineCoinChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DragonSpineCoinChangeNotify_descriptor,
-        new java.lang.String[] { "ScheduleId", "EFJOFMJNHEM", "BFHMDKOEJPC", "LNHGDOBIBFH", });
+        new java.lang.String[] { "BCMDOANABLH", "GKBIMMMIGNF", "NIBHAJNIAIC", "ScheduleId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

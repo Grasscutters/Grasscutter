@@ -19,32 +19,32 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> 
-        getScInfoList();
+        getPlayerDataList();
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
-    emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getScInfo(int index);
+    emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getPlayerData(int index);
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
-    int getScInfoCount();
+    int getPlayerDataCount();
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> 
-        getScInfoOrBuilderList();
+        getPlayerDataOrBuilderList();
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
-    emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getScInfoOrBuilder(
+    emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getPlayerDataOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: OGJDCOJNONF
+   * Obf: GBFOPLLOEJF
    * </pre>
    *
    * Protobuf type {@code SceneGalleryBoatMultiInfo}
@@ -59,7 +59,7 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       super(builder);
     }
     private SceneGalleryBoatMultiInfo() {
-      scInfo_ = java.util.Collections.emptyList();
+      playerData_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -93,12 +93,12 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                scInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData>();
+                playerData_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              scInfo_.add(
+              playerData_.add(
                   input.readMessage(emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.parser(), extensionRegistry));
               break;
             }
@@ -118,7 +118,7 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          scInfo_ = java.util.Collections.unmodifiableList(scInfo_);
+          playerData_ = java.util.Collections.unmodifiableList(playerData_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -137,44 +137,44 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo.class, emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo.Builder.class);
     }
 
-    public static final int SCINFO_FIELD_NUMBER = 12;
-    private java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> scInfo_;
+    public static final int PLAYER_DATA_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> playerData_;
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> getScInfoList() {
-      return scInfo_;
+    public java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> getPlayerDataList() {
+      return playerData_;
     }
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> 
-        getScInfoOrBuilderList() {
-      return scInfo_;
+        getPlayerDataOrBuilderList() {
+      return playerData_;
     }
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     @java.lang.Override
-    public int getScInfoCount() {
-      return scInfo_.size();
+    public int getPlayerDataCount() {
+      return playerData_.size();
     }
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getScInfo(int index) {
-      return scInfo_.get(index);
+    public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getPlayerData(int index) {
+      return playerData_.get(index);
     }
     /**
-     * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+     * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getScInfoOrBuilder(
+    public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getPlayerDataOrBuilder(
         int index) {
-      return scInfo_.get(index);
+      return playerData_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,8 +191,8 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < scInfo_.size(); i++) {
-        output.writeMessage(12, scInfo_.get(i));
+      for (int i = 0; i < playerData_.size(); i++) {
+        output.writeMessage(8, playerData_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -203,9 +203,9 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < scInfo_.size(); i++) {
+      for (int i = 0; i < playerData_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, scInfo_.get(i));
+          .computeMessageSize(8, playerData_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -222,8 +222,8 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo other = (emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo) obj;
 
-      if (!getScInfoList()
-          .equals(other.getScInfoList())) return false;
+      if (!getPlayerDataList()
+          .equals(other.getPlayerDataList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -235,9 +235,9 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getScInfoCount() > 0) {
-        hash = (37 * hash) + SCINFO_FIELD_NUMBER;
-        hash = (53 * hash) + getScInfoList().hashCode();
+      if (getPlayerDataCount() > 0) {
+        hash = (37 * hash) + PLAYER_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPlayerDataList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -336,7 +336,7 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: OGJDCOJNONF
+     * Obf: GBFOPLLOEJF
      * </pre>
      *
      * Protobuf type {@code SceneGalleryBoatMultiInfo}
@@ -371,17 +371,17 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getScInfoFieldBuilder();
+          getPlayerDataFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (scInfoBuilder_ == null) {
-          scInfo_ = java.util.Collections.emptyList();
+        if (playerDataBuilder_ == null) {
+          playerData_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          scInfoBuilder_.clear();
+          playerDataBuilder_.clear();
         }
         return this;
       }
@@ -410,14 +410,14 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       public emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo result = new emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo(this);
         int from_bitField0_ = bitField0_;
-        if (scInfoBuilder_ == null) {
+        if (playerDataBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            scInfo_ = java.util.Collections.unmodifiableList(scInfo_);
+            playerData_ = java.util.Collections.unmodifiableList(playerData_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.scInfo_ = scInfo_;
+          result.playerData_ = playerData_;
         } else {
-          result.scInfo_ = scInfoBuilder_.build();
+          result.playerData_ = playerDataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -467,29 +467,29 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryBoatMultiInfoOuterClass.SceneGalleryBoatMultiInfo.getDefaultInstance()) return this;
-        if (scInfoBuilder_ == null) {
-          if (!other.scInfo_.isEmpty()) {
-            if (scInfo_.isEmpty()) {
-              scInfo_ = other.scInfo_;
+        if (playerDataBuilder_ == null) {
+          if (!other.playerData_.isEmpty()) {
+            if (playerData_.isEmpty()) {
+              playerData_ = other.playerData_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureScInfoIsMutable();
-              scInfo_.addAll(other.scInfo_);
+              ensurePlayerDataIsMutable();
+              playerData_.addAll(other.playerData_);
             }
             onChanged();
           }
         } else {
-          if (!other.scInfo_.isEmpty()) {
-            if (scInfoBuilder_.isEmpty()) {
-              scInfoBuilder_.dispose();
-              scInfoBuilder_ = null;
-              scInfo_ = other.scInfo_;
+          if (!other.playerData_.isEmpty()) {
+            if (playerDataBuilder_.isEmpty()) {
+              playerDataBuilder_.dispose();
+              playerDataBuilder_ = null;
+              playerData_ = other.playerData_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              scInfoBuilder_ = 
+              playerDataBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getScInfoFieldBuilder() : null;
+                   getPlayerDataFieldBuilder() : null;
             } else {
-              scInfoBuilder_.addAllMessages(other.scInfo_);
+              playerDataBuilder_.addAllMessages(other.playerData_);
             }
           }
         }
@@ -523,244 +523,244 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> scInfo_ =
+      private java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> playerData_ =
         java.util.Collections.emptyList();
-      private void ensureScInfoIsMutable() {
+      private void ensurePlayerDataIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          scInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData>(scInfo_);
+          playerData_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData>(playerData_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> scInfoBuilder_;
+          emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> playerDataBuilder_;
 
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> getScInfoList() {
-        if (scInfoBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(scInfo_);
+      public java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> getPlayerDataList() {
+        if (playerDataBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(playerData_);
         } else {
-          return scInfoBuilder_.getMessageList();
+          return playerDataBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public int getScInfoCount() {
-        if (scInfoBuilder_ == null) {
-          return scInfo_.size();
+      public int getPlayerDataCount() {
+        if (playerDataBuilder_ == null) {
+          return playerData_.size();
         } else {
-          return scInfoBuilder_.getCount();
+          return playerDataBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getScInfo(int index) {
-        if (scInfoBuilder_ == null) {
-          return scInfo_.get(index);
+      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData getPlayerData(int index) {
+        if (playerDataBuilder_ == null) {
+          return playerData_.get(index);
         } else {
-          return scInfoBuilder_.getMessage(index);
+          return playerDataBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder setScInfo(
+      public Builder setPlayerData(
           int index, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData value) {
-        if (scInfoBuilder_ == null) {
+        if (playerDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureScInfoIsMutable();
-          scInfo_.set(index, value);
+          ensurePlayerDataIsMutable();
+          playerData_.set(index, value);
           onChanged();
         } else {
-          scInfoBuilder_.setMessage(index, value);
+          playerDataBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder setScInfo(
+      public Builder setPlayerData(
           int index, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder builderForValue) {
-        if (scInfoBuilder_ == null) {
-          ensureScInfoIsMutable();
-          scInfo_.set(index, builderForValue.build());
+        if (playerDataBuilder_ == null) {
+          ensurePlayerDataIsMutable();
+          playerData_.set(index, builderForValue.build());
           onChanged();
         } else {
-          scInfoBuilder_.setMessage(index, builderForValue.build());
+          playerDataBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder addScInfo(emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData value) {
-        if (scInfoBuilder_ == null) {
+      public Builder addPlayerData(emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData value) {
+        if (playerDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureScInfoIsMutable();
-          scInfo_.add(value);
+          ensurePlayerDataIsMutable();
+          playerData_.add(value);
           onChanged();
         } else {
-          scInfoBuilder_.addMessage(value);
+          playerDataBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder addScInfo(
+      public Builder addPlayerData(
           int index, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData value) {
-        if (scInfoBuilder_ == null) {
+        if (playerDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureScInfoIsMutable();
-          scInfo_.add(index, value);
+          ensurePlayerDataIsMutable();
+          playerData_.add(index, value);
           onChanged();
         } else {
-          scInfoBuilder_.addMessage(index, value);
+          playerDataBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder addScInfo(
+      public Builder addPlayerData(
           emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder builderForValue) {
-        if (scInfoBuilder_ == null) {
-          ensureScInfoIsMutable();
-          scInfo_.add(builderForValue.build());
+        if (playerDataBuilder_ == null) {
+          ensurePlayerDataIsMutable();
+          playerData_.add(builderForValue.build());
           onChanged();
         } else {
-          scInfoBuilder_.addMessage(builderForValue.build());
+          playerDataBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder addScInfo(
+      public Builder addPlayerData(
           int index, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder builderForValue) {
-        if (scInfoBuilder_ == null) {
-          ensureScInfoIsMutable();
-          scInfo_.add(index, builderForValue.build());
+        if (playerDataBuilder_ == null) {
+          ensurePlayerDataIsMutable();
+          playerData_.add(index, builderForValue.build());
           onChanged();
         } else {
-          scInfoBuilder_.addMessage(index, builderForValue.build());
+          playerDataBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder addAllScInfo(
+      public Builder addAllPlayerData(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData> values) {
-        if (scInfoBuilder_ == null) {
-          ensureScInfoIsMutable();
+        if (playerDataBuilder_ == null) {
+          ensurePlayerDataIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, scInfo_);
+              values, playerData_);
           onChanged();
         } else {
-          scInfoBuilder_.addAllMessages(values);
+          playerDataBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder clearScInfo() {
-        if (scInfoBuilder_ == null) {
-          scInfo_ = java.util.Collections.emptyList();
+      public Builder clearPlayerData() {
+        if (playerDataBuilder_ == null) {
+          playerData_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          scInfoBuilder_.clear();
+          playerDataBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public Builder removeScInfo(int index) {
-        if (scInfoBuilder_ == null) {
-          ensureScInfoIsMutable();
-          scInfo_.remove(index);
+      public Builder removePlayerData(int index) {
+        if (playerDataBuilder_ == null) {
+          ensurePlayerDataIsMutable();
+          playerData_.remove(index);
           onChanged();
         } else {
-          scInfoBuilder_.remove(index);
+          playerDataBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder getScInfoBuilder(
+      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder getPlayerDataBuilder(
           int index) {
-        return getScInfoFieldBuilder().getBuilder(index);
+        return getPlayerDataFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getScInfoOrBuilder(
+      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder getPlayerDataOrBuilder(
           int index) {
-        if (scInfoBuilder_ == null) {
-          return scInfo_.get(index);  } else {
-          return scInfoBuilder_.getMessageOrBuilder(index);
+        if (playerDataBuilder_ == null) {
+          return playerData_.get(index);  } else {
+          return playerDataBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> 
-           getScInfoOrBuilderList() {
-        if (scInfoBuilder_ != null) {
-          return scInfoBuilder_.getMessageOrBuilderList();
+           getPlayerDataOrBuilderList() {
+        if (playerDataBuilder_ != null) {
+          return playerDataBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(scInfo_);
+          return java.util.Collections.unmodifiableList(playerData_);
         }
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder addScInfoBuilder() {
-        return getScInfoFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder addPlayerDataBuilder() {
+        return getPlayerDataFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
-      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder addScInfoBuilder(
+      public emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder addPlayerDataBuilder(
           int index) {
-        return getScInfoFieldBuilder().addBuilder(
+        return getPlayerDataFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.getDefaultInstance());
       }
       /**
-       * <code>repeated .LanV3BoatMultiPlayerData scInfo = 12;</code>
+       * <code>repeated .LanV3BoatMultiPlayerData player_data = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder> 
-           getScInfoBuilderList() {
-        return getScInfoFieldBuilder().getBuilderList();
+           getPlayerDataBuilderList() {
+        return getPlayerDataFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder> 
-          getScInfoFieldBuilder() {
-        if (scInfoBuilder_ == null) {
-          scInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getPlayerDataFieldBuilder() {
+        if (playerDataBuilder_ == null) {
+          playerDataBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerData.Builder, emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.LanV3BoatMultiPlayerDataOrBuilder>(
-                  scInfo_,
+                  playerData_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          scInfo_ = null;
+          playerData_ = null;
         }
-        return scInfoBuilder_;
+        return playerDataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -830,10 +830,10 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037SceneGalleryBoatMultiInfo.proto\032\036LanV3" +
-      "BoatMultiPlayerData.proto\"F\n\031SceneGaller" +
-      "yBoatMultiInfo\022)\n\006scInfo\030\014 \003(\0132\031.LanV3Bo" +
-      "atMultiPlayerDataB\033\n\031emu.grasscutter.net" +
-      ".protob\006proto3"
+      "BoatMultiPlayerData.proto\"K\n\031SceneGaller" +
+      "yBoatMultiInfo\022.\n\013player_data\030\010 \003(\0132\031.La" +
+      "nV3BoatMultiPlayerDataB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -845,7 +845,7 @@ public final class SceneGalleryBoatMultiInfoOuterClass {
     internal_static_SceneGalleryBoatMultiInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryBoatMultiInfo_descriptor,
-        new java.lang.String[] { "ScInfo", });
+        new java.lang.String[] { "PlayerData", });
     emu.grasscutter.net.proto.LanV3BoatMultiPlayerDataOuterClass.getDescriptor();
   }
 

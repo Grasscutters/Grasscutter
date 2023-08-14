@@ -16,7 +16,7 @@ public final class InBattleMechanicusStageTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: OJEGAOGCPNM
+   * Obf: MPJAFJCKMDI
    * </pre>
    *
    * Protobuf enum {@code InBattleMechanicusStageType}

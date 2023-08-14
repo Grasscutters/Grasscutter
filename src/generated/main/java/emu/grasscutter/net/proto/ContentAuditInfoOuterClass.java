@@ -37,21 +37,21 @@ public final class ContentAuditInfoOuterClass {
         getContentBytes();
 
     /**
-     * <code>uint32 PPHEKAGMMLG = 3;</code>
-     * @return The pPHEKAGMMLG.
+     * <code>uint32 submit_count = 3;</code>
+     * @return The submitCount.
      */
-    int getPPHEKAGMMLG();
+    int getSubmitCount();
 
     /**
-     * <code>.AuditState JLICCDMDPJH = 4;</code>
-     * @return The enum numeric value on the wire for jLICCDMDPJH.
+     * <code>.AuditState audit_state = 4;</code>
+     * @return The enum numeric value on the wire for auditState.
      */
-    int getJLICCDMDPJHValue();
+    int getAuditStateValue();
     /**
-     * <code>.AuditState JLICCDMDPJH = 4;</code>
-     * @return The jLICCDMDPJH.
+     * <code>.AuditState audit_state = 4;</code>
+     * @return The auditState.
      */
-    emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getJLICCDMDPJH();
+    emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getAuditState();
 
     /**
      * <code>uint32 submit_limit = 5;</code>
@@ -61,7 +61,7 @@ public final class ContentAuditInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: FLGMEOPENJA
+   * Obf: MOIJAPOKNPK
    * </pre>
    *
    * Protobuf type {@code ContentAuditInfo}
@@ -77,7 +77,7 @@ public final class ContentAuditInfoOuterClass {
     }
     private ContentAuditInfo() {
       content_ = "";
-      jLICCDMDPJH_ = 0;
+      auditState_ = 0;
     }
 
     @java.lang.Override
@@ -123,13 +123,13 @@ public final class ContentAuditInfoOuterClass {
             }
             case 24: {
 
-              pPHEKAGMMLG_ = input.readUInt32();
+              submitCount_ = input.readUInt32();
               break;
             }
             case 32: {
               int rawValue = input.readEnum();
 
-              jLICCDMDPJH_ = rawValue;
+              auditState_ = rawValue;
               break;
             }
             case 40: {
@@ -218,33 +218,33 @@ public final class ContentAuditInfoOuterClass {
       }
     }
 
-    public static final int PPHEKAGMMLG_FIELD_NUMBER = 3;
-    private int pPHEKAGMMLG_;
+    public static final int SUBMIT_COUNT_FIELD_NUMBER = 3;
+    private int submitCount_;
     /**
-     * <code>uint32 PPHEKAGMMLG = 3;</code>
-     * @return The pPHEKAGMMLG.
+     * <code>uint32 submit_count = 3;</code>
+     * @return The submitCount.
      */
     @java.lang.Override
-    public int getPPHEKAGMMLG() {
-      return pPHEKAGMMLG_;
+    public int getSubmitCount() {
+      return submitCount_;
     }
 
-    public static final int JLICCDMDPJH_FIELD_NUMBER = 4;
-    private int jLICCDMDPJH_;
+    public static final int AUDIT_STATE_FIELD_NUMBER = 4;
+    private int auditState_;
     /**
-     * <code>.AuditState JLICCDMDPJH = 4;</code>
-     * @return The enum numeric value on the wire for jLICCDMDPJH.
+     * <code>.AuditState audit_state = 4;</code>
+     * @return The enum numeric value on the wire for auditState.
      */
-    @java.lang.Override public int getJLICCDMDPJHValue() {
-      return jLICCDMDPJH_;
+    @java.lang.Override public int getAuditStateValue() {
+      return auditState_;
     }
     /**
-     * <code>.AuditState JLICCDMDPJH = 4;</code>
-     * @return The jLICCDMDPJH.
+     * <code>.AuditState audit_state = 4;</code>
+     * @return The auditState.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getJLICCDMDPJH() {
+    @java.lang.Override public emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getAuditState() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.AuditStateOuterClass.AuditState result = emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.valueOf(jLICCDMDPJH_);
+      emu.grasscutter.net.proto.AuditStateOuterClass.AuditState result = emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.valueOf(auditState_);
       return result == null ? emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.UNRECOGNIZED : result;
     }
 
@@ -279,11 +279,11 @@ public final class ContentAuditInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
       }
-      if (pPHEKAGMMLG_ != 0) {
-        output.writeUInt32(3, pPHEKAGMMLG_);
+      if (submitCount_ != 0) {
+        output.writeUInt32(3, submitCount_);
       }
-      if (jLICCDMDPJH_ != emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.AUDIT_NONE.getNumber()) {
-        output.writeEnum(4, jLICCDMDPJH_);
+      if (auditState_ != emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.AUDIT_NONE.getNumber()) {
+        output.writeEnum(4, auditState_);
       }
       if (submitLimit_ != 0) {
         output.writeUInt32(5, submitLimit_);
@@ -304,13 +304,13 @@ public final class ContentAuditInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
       }
-      if (pPHEKAGMMLG_ != 0) {
+      if (submitCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pPHEKAGMMLG_);
+          .computeUInt32Size(3, submitCount_);
       }
-      if (jLICCDMDPJH_ != emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.AUDIT_NONE.getNumber()) {
+      if (auditState_ != emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.AUDIT_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, jLICCDMDPJH_);
+          .computeEnumSize(4, auditState_);
       }
       if (submitLimit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -335,9 +335,9 @@ public final class ContentAuditInfoOuterClass {
           != other.getIsOpen()) return false;
       if (!getContent()
           .equals(other.getContent())) return false;
-      if (getPPHEKAGMMLG()
-          != other.getPPHEKAGMMLG()) return false;
-      if (jLICCDMDPJH_ != other.jLICCDMDPJH_) return false;
+      if (getSubmitCount()
+          != other.getSubmitCount()) return false;
+      if (auditState_ != other.auditState_) return false;
       if (getSubmitLimit()
           != other.getSubmitLimit()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -356,10 +356,10 @@ public final class ContentAuditInfoOuterClass {
           getIsOpen());
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
-      hash = (37 * hash) + PPHEKAGMMLG_FIELD_NUMBER;
-      hash = (53 * hash) + getPPHEKAGMMLG();
-      hash = (37 * hash) + JLICCDMDPJH_FIELD_NUMBER;
-      hash = (53 * hash) + jLICCDMDPJH_;
+      hash = (37 * hash) + SUBMIT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getSubmitCount();
+      hash = (37 * hash) + AUDIT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + auditState_;
       hash = (37 * hash) + SUBMIT_LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getSubmitLimit();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -459,7 +459,7 @@ public final class ContentAuditInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FLGMEOPENJA
+     * Obf: MOIJAPOKNPK
      * </pre>
      *
      * Protobuf type {@code ContentAuditInfo}
@@ -503,9 +503,9 @@ public final class ContentAuditInfoOuterClass {
 
         content_ = "";
 
-        pPHEKAGMMLG_ = 0;
+        submitCount_ = 0;
 
-        jLICCDMDPJH_ = 0;
+        auditState_ = 0;
 
         submitLimit_ = 0;
 
@@ -537,8 +537,8 @@ public final class ContentAuditInfoOuterClass {
         emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo result = new emu.grasscutter.net.proto.ContentAuditInfoOuterClass.ContentAuditInfo(this);
         result.isOpen_ = isOpen_;
         result.content_ = content_;
-        result.pPHEKAGMMLG_ = pPHEKAGMMLG_;
-        result.jLICCDMDPJH_ = jLICCDMDPJH_;
+        result.submitCount_ = submitCount_;
+        result.auditState_ = auditState_;
         result.submitLimit_ = submitLimit_;
         onBuilt();
         return result;
@@ -595,11 +595,11 @@ public final class ContentAuditInfoOuterClass {
           content_ = other.content_;
           onChanged();
         }
-        if (other.getPPHEKAGMMLG() != 0) {
-          setPPHEKAGMMLG(other.getPPHEKAGMMLG());
+        if (other.getSubmitCount() != 0) {
+          setSubmitCount(other.getSubmitCount());
         }
-        if (other.jLICCDMDPJH_ != 0) {
-          setJLICCDMDPJHValue(other.getJLICCDMDPJHValue());
+        if (other.auditState_ != 0) {
+          setAuditStateValue(other.getAuditStateValue());
         }
         if (other.getSubmitLimit() != 0) {
           setSubmitLimit(other.getSubmitLimit());
@@ -740,87 +740,87 @@ public final class ContentAuditInfoOuterClass {
         return this;
       }
 
-      private int pPHEKAGMMLG_ ;
+      private int submitCount_ ;
       /**
-       * <code>uint32 PPHEKAGMMLG = 3;</code>
-       * @return The pPHEKAGMMLG.
+       * <code>uint32 submit_count = 3;</code>
+       * @return The submitCount.
        */
       @java.lang.Override
-      public int getPPHEKAGMMLG() {
-        return pPHEKAGMMLG_;
+      public int getSubmitCount() {
+        return submitCount_;
       }
       /**
-       * <code>uint32 PPHEKAGMMLG = 3;</code>
-       * @param value The pPHEKAGMMLG to set.
+       * <code>uint32 submit_count = 3;</code>
+       * @param value The submitCount to set.
        * @return This builder for chaining.
        */
-      public Builder setPPHEKAGMMLG(int value) {
+      public Builder setSubmitCount(int value) {
         
-        pPHEKAGMMLG_ = value;
+        submitCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PPHEKAGMMLG = 3;</code>
+       * <code>uint32 submit_count = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPPHEKAGMMLG() {
+      public Builder clearSubmitCount() {
         
-        pPHEKAGMMLG_ = 0;
+        submitCount_ = 0;
         onChanged();
         return this;
       }
 
-      private int jLICCDMDPJH_ = 0;
+      private int auditState_ = 0;
       /**
-       * <code>.AuditState JLICCDMDPJH = 4;</code>
-       * @return The enum numeric value on the wire for jLICCDMDPJH.
+       * <code>.AuditState audit_state = 4;</code>
+       * @return The enum numeric value on the wire for auditState.
        */
-      @java.lang.Override public int getJLICCDMDPJHValue() {
-        return jLICCDMDPJH_;
+      @java.lang.Override public int getAuditStateValue() {
+        return auditState_;
       }
       /**
-       * <code>.AuditState JLICCDMDPJH = 4;</code>
-       * @param value The enum numeric value on the wire for jLICCDMDPJH to set.
+       * <code>.AuditState audit_state = 4;</code>
+       * @param value The enum numeric value on the wire for auditState to set.
        * @return This builder for chaining.
        */
-      public Builder setJLICCDMDPJHValue(int value) {
+      public Builder setAuditStateValue(int value) {
         
-        jLICCDMDPJH_ = value;
+        auditState_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.AuditState JLICCDMDPJH = 4;</code>
-       * @return The jLICCDMDPJH.
+       * <code>.AuditState audit_state = 4;</code>
+       * @return The auditState.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getJLICCDMDPJH() {
+      public emu.grasscutter.net.proto.AuditStateOuterClass.AuditState getAuditState() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.AuditStateOuterClass.AuditState result = emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.valueOf(jLICCDMDPJH_);
+        emu.grasscutter.net.proto.AuditStateOuterClass.AuditState result = emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.valueOf(auditState_);
         return result == null ? emu.grasscutter.net.proto.AuditStateOuterClass.AuditState.UNRECOGNIZED : result;
       }
       /**
-       * <code>.AuditState JLICCDMDPJH = 4;</code>
-       * @param value The jLICCDMDPJH to set.
+       * <code>.AuditState audit_state = 4;</code>
+       * @param value The auditState to set.
        * @return This builder for chaining.
        */
-      public Builder setJLICCDMDPJH(emu.grasscutter.net.proto.AuditStateOuterClass.AuditState value) {
+      public Builder setAuditState(emu.grasscutter.net.proto.AuditStateOuterClass.AuditState value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        jLICCDMDPJH_ = value.getNumber();
+        auditState_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.AuditState JLICCDMDPJH = 4;</code>
+       * <code>.AuditState audit_state = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJLICCDMDPJH() {
+      public Builder clearAuditState() {
         
-        jLICCDMDPJH_ = 0;
+        auditState_ = 0;
         onChanged();
         return this;
       }
@@ -923,11 +923,11 @@ public final class ContentAuditInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ContentAuditInfo.proto\032\020AuditState.pro" +
-      "to\"\201\001\n\020ContentAuditInfo\022\017\n\007is_open\030\001 \001(\010" +
-      "\022\017\n\007content\030\002 \001(\t\022\023\n\013PPHEKAGMMLG\030\003 \001(\r\022 " +
-      "\n\013JLICCDMDPJH\030\004 \001(\0162\013.AuditState\022\024\n\014subm" +
-      "it_limit\030\005 \001(\rB\033\n\031emu.grasscutter.net.pr" +
-      "otob\006proto3"
+      "to\"\202\001\n\020ContentAuditInfo\022\017\n\007is_open\030\001 \001(\010" +
+      "\022\017\n\007content\030\002 \001(\t\022\024\n\014submit_count\030\003 \001(\r\022" +
+      " \n\013audit_state\030\004 \001(\0162\013.AuditState\022\024\n\014sub" +
+      "mit_limit\030\005 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -939,7 +939,7 @@ public final class ContentAuditInfoOuterClass {
     internal_static_ContentAuditInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ContentAuditInfo_descriptor,
-        new java.lang.String[] { "IsOpen", "Content", "PPHEKAGMMLG", "JLICCDMDPJH", "SubmitLimit", });
+        new java.lang.String[] { "IsOpen", "Content", "SubmitCount", "AuditState", "SubmitLimit", });
     emu.grasscutter.net.proto.AuditStateOuterClass.getDescriptor();
   }
 

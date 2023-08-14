@@ -20,8 +20,8 @@ public final class WaterSpritePhaseFinishNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2016
-   * Obf: JNDHKGFAPJI
+   * CmdId: 22107
+   * Obf: GDGFKLEKPHP
    * </pre>
    *
    * Protobuf type {@code WaterSpritePhaseFinishNotify}
@@ -246,8 +246,8 @@ public final class WaterSpritePhaseFinishNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2016
-     * Obf: JNDHKGFAPJI
+     * CmdId: 22107
+     * Obf: GDGFKLEKPHP
      * </pre>
      *
      * Protobuf type {@code WaterSpritePhaseFinishNotify}

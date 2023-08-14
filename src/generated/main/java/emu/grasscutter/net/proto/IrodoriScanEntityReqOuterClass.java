@@ -26,8 +26,8 @@ public final class IrodoriScanEntityReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8287
-   * Obf: CODPKLBKKHB
+   * CmdId: 1642
+   * Obf: BHCMKHMCMGD
    * </pre>
    *
    * Protobuf type {@code IrodoriScanEntityReq}
@@ -279,8 +279,8 @@ public final class IrodoriScanEntityReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8287
-     * Obf: CODPKLBKKHB
+     * CmdId: 1642
+     * Obf: BHCMKHMCMGD
      * </pre>
      *
      * Protobuf type {@code IrodoriScanEntityReq}

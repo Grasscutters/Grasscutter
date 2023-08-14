@@ -19,21 +19,21 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 id = 13;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     int getId();
+
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8217
-   * Obf: PNDOPBIHBCP
+   * CmdId: 25618
+   * Obf: NCHONJICMAG
    * </pre>
    *
    * Protobuf type {@code WinterCampTakeBattleRewardRsp}
@@ -80,12 +80,12 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 56: {
 
               id_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
               emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp.class, emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 8;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int ID_FIELD_NUMBER = 13;
+    public static final int ID_FIELD_NUMBER = 7;
     private int id_;
     /**
-     * <code>uint32 id = 13;</code>
+     * <code>uint32 id = 7;</code>
      * @return The id.
      */
     @java.lang.Override
     public int getId() {
       return id_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 1;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 1;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(8, retcode_);
+        output.writeInt32(1, retcode_);
       }
       if (id_ != 0) {
-        output.writeUInt32(13, id_);
+        output.writeUInt32(7, id_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, id_);
+          .computeUInt32Size(7, id_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp other = (emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getId()
           != other.getId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8217
-     * Obf: PNDOPBIHBCP
+     * CmdId: 25618
+     * Obf: NCHONJICMAG
      * </pre>
      *
      * Protobuf type {@code WinterCampTakeBattleRewardRsp}
@@ -353,9 +353,9 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         id_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp buildPartial() {
         emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp result = new emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp(this);
-        result.retcode_ = retcode_;
         result.id_ = id_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp other) {
         if (other == emu.grasscutter.net.proto.WinterCampTakeBattleRewardRspOuterClass.WinterCampTakeBattleRewardRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getId() != 0) {
           setId(other.getId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int id_ ;
       /**
-       * <code>uint32 id = 13;</code>
+       * <code>uint32 id = 7;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 13;</code>
+       * <code>uint32 id = 7;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 13;</code>
+       * <code>uint32 id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         
         id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#WinterCampTakeBattleRewardRsp.proto\"<\n" +
-      "\035WinterCampTakeBattleRewardRsp\022\017\n\007retcod" +
-      "e\030\010 \001(\005\022\n\n\002id\030\r \001(\rB\033\n\031emu.grasscutter.n" +
+      "\035WinterCampTakeBattleRewardRsp\022\n\n\002id\030\007 \001" +
+      "(\r\022\017\n\007retcode\030\001 \001(\005B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class WinterCampTakeBattleRewardRspOuterClass {
     internal_static_WinterCampTakeBattleRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WinterCampTakeBattleRewardRsp_descriptor,
-        new java.lang.String[] { "Retcode", "Id", });
+        new java.lang.String[] { "Id", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

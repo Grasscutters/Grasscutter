@@ -19,43 +19,43 @@ public final class AllShareCDDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
-    int getShareCdInfoMapCount();
+    int getGCDFANCJJOACount();
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
-    boolean containsShareCdInfoMap(
+    boolean containsGCDFANCJJOA(
         int key);
     /**
-     * Use {@link #getShareCdInfoMapMap()} instead.
+     * Use {@link #getGCDFANCJJOAMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-    getShareCdInfoMap();
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+    getGCDFANCJJOA();
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-    getShareCdInfoMapMap();
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+    getGCDFANCJJOAMap();
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
 
-    emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+    emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrDefault(
         int key,
-        emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue);
+        emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA defaultValue);
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
 
-    emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
+    emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrThrow(
         int key);
   }
   /**
    * <pre>
-   * CmdId: 9075
-   * Obf: EBEACBANELN
+   * CmdId: 3440
+   * Obf: BAIIFJOGPBL
    * </pre>
    *
    * Protobuf type {@code AllShareCDDataNotify}
@@ -103,17 +103,17 @@ public final class AllShareCDDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                shareCdInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    ShareCdInfoMapDefaultEntryHolder.defaultEntry);
+                gCDFANCJJOA_ = com.google.protobuf.MapField.newMapField(
+                    GCDFANCJJOADefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-              shareCdInfoMap__ = input.readMessage(
-                  ShareCdInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              shareCdInfoMap_.getMutableMap().put(
-                  shareCdInfoMap__.getKey(), shareCdInfoMap__.getValue());
+              com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+              gCDFANCJJOA__ = input.readMessage(
+                  GCDFANCJJOADefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              gCDFANCJJOA_.getMutableMap().put(
+                  gCDFANCJJOA__.getKey(), gCDFANCJJOA__.getValue());
               break;
             }
             default: {
@@ -145,8 +145,8 @@ public final class AllShareCDDataNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 11:
-          return internalGetShareCdInfoMap();
+        case 12:
+          return internalGetGCDFANCJJOA();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -160,81 +160,81 @@ public final class AllShareCDDataNotifyOuterClass {
               emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify.class, emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify.Builder.class);
     }
 
-    public static final int SHARE_CD_INFO_MAP_FIELD_NUMBER = 11;
-    private static final class ShareCdInfoMapDefaultEntryHolder {
+    public static final int GCDFANCJJOA_FIELD_NUMBER = 12;
+    private static final class GCDFANCJJOADefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> defaultEntry =
+          java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>newDefaultInstance(
-                  emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_descriptor, 
+              .<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>newDefaultInstance(
+                  emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo.getDefaultInstance());
+                  emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA.getDefaultInstance());
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> shareCdInfoMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-    internalGetShareCdInfoMap() {
-      if (shareCdInfoMap_ == null) {
+        java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> gCDFANCJJOA_;
+    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+    internalGetGCDFANCJJOA() {
+      if (gCDFANCJJOA_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            ShareCdInfoMapDefaultEntryHolder.defaultEntry);
+            GCDFANCJJOADefaultEntryHolder.defaultEntry);
       }
-      return shareCdInfoMap_;
+      return gCDFANCJJOA_;
     }
 
-    public int getShareCdInfoMapCount() {
-      return internalGetShareCdInfoMap().getMap().size();
+    public int getGCDFANCJJOACount() {
+      return internalGetGCDFANCJJOA().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
 
     @java.lang.Override
-    public boolean containsShareCdInfoMap(
+    public boolean containsGCDFANCJJOA(
         int key) {
       
-      return internalGetShareCdInfoMap().getMap().containsKey(key);
+      return internalGetGCDFANCJJOA().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getShareCdInfoMapMap()} instead.
+     * Use {@link #getGCDFANCJJOAMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMap() {
-      return getShareCdInfoMapMap();
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> getGCDFANCJJOA() {
+      return getGCDFANCJJOAMap();
     }
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMapMap() {
-      return internalGetShareCdInfoMap().getMap();
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> getGCDFANCJJOAMap() {
+      return internalGetGCDFANCJJOA().getMap();
     }
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
     @java.lang.Override
 
-    public emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+    public emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrDefault(
         int key,
-        emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
+        emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA defaultValue) {
       
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
-          internalGetShareCdInfoMap().getMap();
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> map =
+          internalGetGCDFANCJJOA().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+     * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
      */
     @java.lang.Override
 
-    public emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
+    public emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrThrow(
         int key) {
       
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
-          internalGetShareCdInfoMap().getMap();
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> map =
+          internalGetGCDFANCJJOA().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -258,9 +258,9 @@ public final class AllShareCDDataNotifyOuterClass {
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
-          internalGetShareCdInfoMap(),
-          ShareCdInfoMapDefaultEntryHolder.defaultEntry,
-          11);
+          internalGetGCDFANCJJOA(),
+          GCDFANCJJOADefaultEntryHolder.defaultEntry,
+          12);
       unknownFields.writeTo(output);
     }
 
@@ -270,15 +270,15 @@ public final class AllShareCDDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> entry
-           : internalGetShareCdInfoMap().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-        shareCdInfoMap__ = ShareCdInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+      for (java.util.Map.Entry<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> entry
+           : internalGetGCDFANCJJOA().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+        gCDFANCJJOA__ = GCDFANCJJOADefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(11, shareCdInfoMap__);
+            .computeMessageSize(12, gCDFANCJJOA__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -295,8 +295,8 @@ public final class AllShareCDDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify other = (emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify) obj;
 
-      if (!internalGetShareCdInfoMap().equals(
-          other.internalGetShareCdInfoMap())) return false;
+      if (!internalGetGCDFANCJJOA().equals(
+          other.internalGetGCDFANCJJOA())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -308,9 +308,9 @@ public final class AllShareCDDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetShareCdInfoMap().getMap().isEmpty()) {
-        hash = (37 * hash) + SHARE_CD_INFO_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetShareCdInfoMap().hashCode();
+      if (!internalGetGCDFANCJJOA().getMap().isEmpty()) {
+        hash = (37 * hash) + GCDFANCJJOA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetGCDFANCJJOA().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -409,8 +409,8 @@ public final class AllShareCDDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 9075
-     * Obf: EBEACBANELN
+     * CmdId: 3440
+     * Obf: BAIIFJOGPBL
      * </pre>
      *
      * Protobuf type {@code AllShareCDDataNotify}
@@ -428,8 +428,8 @@ public final class AllShareCDDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 11:
-            return internalGetShareCdInfoMap();
+          case 12:
+            return internalGetGCDFANCJJOA();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -439,8 +439,8 @@ public final class AllShareCDDataNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 11:
-            return internalGetMutableShareCdInfoMap();
+          case 12:
+            return internalGetMutableGCDFANCJJOA();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -472,7 +472,7 @@ public final class AllShareCDDataNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableShareCdInfoMap().clear();
+        internalGetMutableGCDFANCJJOA().clear();
         return this;
       }
 
@@ -500,8 +500,8 @@ public final class AllShareCDDataNotifyOuterClass {
       public emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify buildPartial() {
         emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify result = new emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify(this);
         int from_bitField0_ = bitField0_;
-        result.shareCdInfoMap_ = internalGetShareCdInfoMap();
-        result.shareCdInfoMap_.makeImmutable();
+        result.gCDFANCJJOA_ = internalGetGCDFANCJJOA();
+        result.gCDFANCJJOA_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -550,8 +550,8 @@ public final class AllShareCDDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify other) {
         if (other == emu.grasscutter.net.proto.AllShareCDDataNotifyOuterClass.AllShareCDDataNotify.getDefaultInstance()) return this;
-        internalGetMutableShareCdInfoMap().mergeFrom(
-            other.internalGetShareCdInfoMap());
+        internalGetMutableGCDFANCJJOA().mergeFrom(
+            other.internalGetGCDFANCJJOA());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -583,99 +583,99 @@ public final class AllShareCDDataNotifyOuterClass {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> shareCdInfoMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-      internalGetShareCdInfoMap() {
-        if (shareCdInfoMap_ == null) {
+          java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> gCDFANCJJOA_;
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+      internalGetGCDFANCJJOA() {
+        if (gCDFANCJJOA_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              ShareCdInfoMapDefaultEntryHolder.defaultEntry);
+              GCDFANCJJOADefaultEntryHolder.defaultEntry);
         }
-        return shareCdInfoMap_;
+        return gCDFANCJJOA_;
       }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-      internalGetMutableShareCdInfoMap() {
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+      internalGetMutableGCDFANCJJOA() {
         onChanged();;
-        if (shareCdInfoMap_ == null) {
-          shareCdInfoMap_ = com.google.protobuf.MapField.newMapField(
-              ShareCdInfoMapDefaultEntryHolder.defaultEntry);
+        if (gCDFANCJJOA_ == null) {
+          gCDFANCJJOA_ = com.google.protobuf.MapField.newMapField(
+              GCDFANCJJOADefaultEntryHolder.defaultEntry);
         }
-        if (!shareCdInfoMap_.isMutable()) {
-          shareCdInfoMap_ = shareCdInfoMap_.copy();
+        if (!gCDFANCJJOA_.isMutable()) {
+          gCDFANCJJOA_ = gCDFANCJJOA_.copy();
         }
-        return shareCdInfoMap_;
+        return gCDFANCJJOA_;
       }
 
-      public int getShareCdInfoMapCount() {
-        return internalGetShareCdInfoMap().getMap().size();
+      public int getGCDFANCJJOACount() {
+        return internalGetGCDFANCJJOA().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
 
       @java.lang.Override
-      public boolean containsShareCdInfoMap(
+      public boolean containsGCDFANCJJOA(
           int key) {
         
-        return internalGetShareCdInfoMap().getMap().containsKey(key);
+        return internalGetGCDFANCJJOA().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getShareCdInfoMapMap()} instead.
+       * Use {@link #getGCDFANCJJOAMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMap() {
-        return getShareCdInfoMapMap();
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> getGCDFANCJJOA() {
+        return getGCDFANCJJOAMap();
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> getShareCdInfoMapMap() {
-        return internalGetShareCdInfoMap().getMap();
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> getGCDFANCJJOAMap() {
+        return internalGetGCDFANCJJOA().getMap();
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
       @java.lang.Override
 
-      public emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrDefault(
+      public emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrDefault(
           int key,
-          emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo defaultValue) {
+          emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA defaultValue) {
         
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
-            internalGetShareCdInfoMap().getMap();
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> map =
+            internalGetGCDFANCJJOA().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
       @java.lang.Override
 
-      public emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo getShareCdInfoMapOrThrow(
+      public emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA getGCDFANCJJOAOrThrow(
           int key) {
         
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> map =
-            internalGetShareCdInfoMap().getMap();
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> map =
+            internalGetGCDFANCJJOA().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearShareCdInfoMap() {
-        internalGetMutableShareCdInfoMap().getMutableMap()
+      public Builder clearGCDFANCJJOA() {
+        internalGetMutableGCDFANCJJOA().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
 
-      public Builder removeShareCdInfoMap(
+      public Builder removeGCDFANCJJOA(
           int key) {
         
-        internalGetMutableShareCdInfoMap().getMutableMap()
+        internalGetMutableGCDFANCJJOA().getMutableMap()
             .remove(key);
         return this;
       }
@@ -683,29 +683,29 @@ public final class AllShareCDDataNotifyOuterClass {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo>
-      getMutableShareCdInfoMap() {
-        return internalGetMutableShareCdInfoMap().getMutableMap();
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA>
+      getMutableGCDFANCJJOA() {
+        return internalGetMutableGCDFANCJJOA().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
-      public Builder putShareCdInfoMap(
+      public Builder putGCDFANCJJOA(
           int key,
-          emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo value) {
+          emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA value) {
         
         if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableShareCdInfoMap().getMutableMap()
+        internalGetMutableGCDFANCJJOA().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;uint32, .ShareCDInfo&gt; share_cd_info_map = 11;</code>
+       * <code>map&lt;uint32, .JHBKKCOELHA&gt; GCDFANCJJOA = 12;</code>
        */
 
-      public Builder putAllShareCdInfoMap(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.ShareCDInfoOuterClass.ShareCDInfo> values) {
-        internalGetMutableShareCdInfoMap().getMutableMap()
+      public Builder putAllGCDFANCJJOA(
+          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.JHBKKCOELHA> values) {
+        internalGetMutableGCDFANCJJOA().getMutableMap()
             .putAll(values);
         return this;
       }
@@ -768,10 +768,10 @@ public final class AllShareCDDataNotifyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_AllShareCDDataNotify_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_descriptor;
+    internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_fieldAccessorTable;
+      internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -781,32 +781,31 @@ public final class AllShareCDDataNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032AllShareCDDataNotify.proto\032\021ShareCDInf" +
-      "o.proto\"\241\001\n\024AllShareCDDataNotify\022D\n\021shar" +
-      "e_cd_info_map\030\013 \003(\0132).AllShareCDDataNoti" +
-      "fy.ShareCdInfoMapEntry\032C\n\023ShareCdInfoMap" +
-      "Entry\022\013\n\003key\030\001 \001(\r\022\033\n\005value\030\002 \001(\0132\014.Shar" +
-      "eCDInfo:\0028\001B\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "\n\032AllShareCDDataNotify.proto\032\021JHBKKCOELH" +
+      "A.proto\"\225\001\n\024AllShareCDDataNotify\022;\n\013GCDF" +
+      "ANCJJOA\030\014 \003(\0132&.AllShareCDDataNotify.GCD" +
+      "FANCJJOAEntry\032@\n\020GCDFANCJJOAEntry\022\013\n\003key" +
+      "\030\001 \001(\r\022\033\n\005value\030\002 \001(\0132\014.JHBKKCOELHA:\0028\001B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ShareCDInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.getDescriptor(),
         });
     internal_static_AllShareCDDataNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_AllShareCDDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AllShareCDDataNotify_descriptor,
-        new java.lang.String[] { "ShareCdInfoMap", });
-    internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_descriptor =
+        new java.lang.String[] { "GCDFANCJJOA", });
+    internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_descriptor =
       internal_static_AllShareCDDataNotify_descriptor.getNestedTypes().get(0);
-    internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_fieldAccessorTable = new
+    internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_AllShareCDDataNotify_ShareCdInfoMapEntry_descriptor,
+        internal_static_AllShareCDDataNotify_GCDFANCJJOAEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    emu.grasscutter.net.proto.ShareCDInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.JHBKKCOELHAOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

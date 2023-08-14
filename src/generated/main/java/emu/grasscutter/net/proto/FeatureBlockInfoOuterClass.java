@@ -32,7 +32,7 @@ public final class FeatureBlockInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: CIBFPNBELMG
+   * Obf: NGEGAFNJIFO
    * </pre>
    *
    * Protobuf type {@code FeatureBlockInfo}
@@ -311,7 +311,7 @@ public final class FeatureBlockInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CIBFPNBELMG
+     * Obf: NGEGAFNJIFO
      * </pre>
      *
      * Protobuf type {@code FeatureBlockInfo}

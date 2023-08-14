@@ -74,7 +74,7 @@ public final class ShopConcertProductOuterClass {
   }
   /**
    * <pre>
-   * Obf: CKIBKCAKBNI
+   * Obf: ABHPGEAODHI
    * </pre>
    *
    * Protobuf type {@code ShopConcertProduct}
@@ -544,7 +544,7 @@ public final class ShopConcertProductOuterClass {
     }
     /**
      * <pre>
-     * Obf: CKIBKCAKBNI
+     * Obf: ABHPGEAODHI
      * </pre>
      *
      * Protobuf type {@code ShopConcertProduct}

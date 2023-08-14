@@ -19,15 +19,15 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 quest_id = 8;</code>
+     * <code>uint32 quest_id = 2;</code>
      * @return The questId.
      */
     int getQuestId();
   }
   /**
    * <pre>
-   * CmdId: 1917
-   * Obf: DFPKMHAMAHL
+   * CmdId: 6368
+   * Obf: PCALDFEGFGJ
    * </pre>
    *
    * Protobuf type {@code TakeInvestigationTargetRewardReq}
@@ -74,7 +74,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 16: {
 
               questId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
               emu.grasscutter.net.proto.TakeInvestigationTargetRewardReqOuterClass.TakeInvestigationTargetRewardReq.class, emu.grasscutter.net.proto.TakeInvestigationTargetRewardReqOuterClass.TakeInvestigationTargetRewardReq.Builder.class);
     }
 
-    public static final int QUEST_ID_FIELD_NUMBER = 8;
+    public static final int QUEST_ID_FIELD_NUMBER = 2;
     private int questId_;
     /**
-     * <code>uint32 quest_id = 8;</code>
+     * <code>uint32 quest_id = 2;</code>
      * @return The questId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (questId_ != 0) {
-        output.writeUInt32(8, questId_);
+        output.writeUInt32(2, questId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
       size = 0;
       if (questId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, questId_);
+          .computeUInt32Size(2, questId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1917
-     * Obf: DFPKMHAMAHL
+     * CmdId: 6368
+     * Obf: PCALDFEGFGJ
      * </pre>
      *
      * Protobuf type {@code TakeInvestigationTargetRewardReq}
@@ -431,7 +431,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
 
       private int questId_ ;
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 2;</code>
        * @return The questId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
         return questId_;
       }
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 2;</code>
        * @param value The questId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 quest_id = 8;</code>
+       * <code>uint32 quest_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
@@ -528,7 +528,7 @@ public final class TakeInvestigationTargetRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n&TakeInvestigationTargetRewardReq.proto" +
       "\"4\n TakeInvestigationTargetRewardReq\022\020\n\010" +
-      "quest_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "quest_id\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

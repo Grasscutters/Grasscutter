@@ -36,15 +36,15 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
     int getExploreIdList(int index);
 
     /**
-     * <code>uint32 city_id = 11;</code>
+     * <code>uint32 city_id = 8;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
    * <pre>
-   * CmdId: 2834
-   * Obf: GMFGIEFMNMC
+   * CmdId: 24844
+   * Obf: JAOEMELOGIB
    * </pre>
    *
    * Protobuf type {@code TakeCityReputationExploreRewardReq}
@@ -93,6 +93,11 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
             case 0:
               done = true;
               break;
+            case 64: {
+
+              cityId_ = input.readUInt32();
+              break;
+            }
             case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 exploreIdList_ = newIntList();
@@ -112,11 +117,6 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
                 exploreIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              cityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -182,10 +182,10 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
     }
     private int exploreIdListMemoizedSerializedSize = -1;
 
-    public static final int CITY_ID_FIELD_NUMBER = 11;
+    public static final int CITY_ID_FIELD_NUMBER = 8;
     private int cityId_;
     /**
-     * <code>uint32 city_id = 11;</code>
+     * <code>uint32 city_id = 8;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -208,15 +208,15 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (cityId_ != 0) {
+        output.writeUInt32(8, cityId_);
+      }
       if (getExploreIdListList().size() > 0) {
         output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(exploreIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < exploreIdList_.size(); i++) {
         output.writeUInt32NoTag(exploreIdList_.getInt(i));
-      }
-      if (cityId_ != 0) {
-        output.writeUInt32(11, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,6 +227,10 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (cityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, cityId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < exploreIdList_.size(); i++) {
@@ -240,10 +244,6 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         exploreIdListMemoizedSerializedSize = dataSize;
-      }
-      if (cityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,8 +378,8 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2834
-     * Obf: GMFGIEFMNMC
+     * CmdId: 24844
+     * Obf: JAOEMELOGIB
      * </pre>
      *
      * Protobuf type {@code TakeCityReputationExploreRewardReq}
@@ -628,7 +628,7 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 city_id = 11;</code>
+       * <code>uint32 city_id = 8;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -636,7 +636,7 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 city_id = 11;</code>
+       * <code>uint32 city_id = 8;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -647,7 +647,7 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 city_id = 11;</code>
+       * <code>uint32 city_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -725,7 +725,7 @@ public final class TakeCityReputationExploreRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n(TakeCityReputationExploreRewardReq.pro" +
       "to\"N\n\"TakeCityReputationExploreRewardReq" +
-      "\022\027\n\017explore_id_list\030\t \003(\r\022\017\n\007city_id\030\013 \001" +
+      "\022\027\n\017explore_id_list\030\t \003(\r\022\017\n\007city_id\030\010 \001" +
       "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

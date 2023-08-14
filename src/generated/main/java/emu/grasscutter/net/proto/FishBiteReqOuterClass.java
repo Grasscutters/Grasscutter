@@ -20,8 +20,8 @@ public final class FishBiteReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5823
-   * Obf: NIBDPFNBOEJ
+   * CmdId: 3118
+   * Obf: ABBFKLGIAJG
    * </pre>
    *
    * Protobuf type {@code FishBiteReq}
@@ -246,8 +246,8 @@ public final class FishBiteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5823
-     * Obf: NIBDPFNBOEJ
+     * CmdId: 3118
+     * Obf: ABBFKLGIAJG
      * </pre>
      *
      * Protobuf type {@code FishBiteReq}

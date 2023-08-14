@@ -19,33 +19,33 @@ public final class ClientReportNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string FKBNBKFNBDK = 13;</code>
-     * @return The fKBNBKFNBDK.
+     * <code>string report_type = 3;</code>
+     * @return The reportType.
      */
-    java.lang.String getFKBNBKFNBDK();
+    java.lang.String getReportType();
     /**
-     * <code>string FKBNBKFNBDK = 13;</code>
-     * @return The bytes for fKBNBKFNBDK.
+     * <code>string report_type = 3;</code>
+     * @return The bytes for reportType.
      */
     com.google.protobuf.ByteString
-        getFKBNBKFNBDKBytes();
+        getReportTypeBytes();
 
     /**
-     * <code>string HGDGHCLHDMG = 7;</code>
-     * @return The hGDGHCLHDMG.
+     * <code>string report_value = 12;</code>
+     * @return The reportValue.
      */
-    java.lang.String getHGDGHCLHDMG();
+    java.lang.String getReportValue();
     /**
-     * <code>string HGDGHCLHDMG = 7;</code>
-     * @return The bytes for hGDGHCLHDMG.
+     * <code>string report_value = 12;</code>
+     * @return The bytes for reportValue.
      */
     com.google.protobuf.ByteString
-        getHGDGHCLHDMGBytes();
+        getReportValueBytes();
   }
   /**
    * <pre>
-   * CmdId: 94
-   * Obf: JPGJCONIBGC
+   * CmdId: 29196
+   * Obf: FNLJHKJGODK
    * </pre>
    *
    * Protobuf type {@code ClientReportNotify}
@@ -60,8 +60,8 @@ public final class ClientReportNotifyOuterClass {
       super(builder);
     }
     private ClientReportNotify() {
-      fKBNBKFNBDK_ = "";
-      hGDGHCLHDMG_ = "";
+      reportType_ = "";
+      reportValue_ = "";
     }
 
     @java.lang.Override
@@ -94,16 +94,16 @@ public final class ClientReportNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              hGDGHCLHDMG_ = s;
+              reportType_ = s;
               break;
             }
-            case 106: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              fKBNBKFNBDK_ = s;
+              reportValue_ = s;
               break;
             }
             default: {
@@ -138,76 +138,76 @@ public final class ClientReportNotifyOuterClass {
               emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify.class, emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify.Builder.class);
     }
 
-    public static final int FKBNBKFNBDK_FIELD_NUMBER = 13;
-    private volatile java.lang.Object fKBNBKFNBDK_;
+    public static final int REPORT_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object reportType_;
     /**
-     * <code>string FKBNBKFNBDK = 13;</code>
-     * @return The fKBNBKFNBDK.
+     * <code>string report_type = 3;</code>
+     * @return The reportType.
      */
     @java.lang.Override
-    public java.lang.String getFKBNBKFNBDK() {
-      java.lang.Object ref = fKBNBKFNBDK_;
+    public java.lang.String getReportType() {
+      java.lang.Object ref = reportType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        fKBNBKFNBDK_ = s;
+        reportType_ = s;
         return s;
       }
     }
     /**
-     * <code>string FKBNBKFNBDK = 13;</code>
-     * @return The bytes for fKBNBKFNBDK.
+     * <code>string report_type = 3;</code>
+     * @return The bytes for reportType.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getFKBNBKFNBDKBytes() {
-      java.lang.Object ref = fKBNBKFNBDK_;
+        getReportTypeBytes() {
+      java.lang.Object ref = reportType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        fKBNBKFNBDK_ = b;
+        reportType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int HGDGHCLHDMG_FIELD_NUMBER = 7;
-    private volatile java.lang.Object hGDGHCLHDMG_;
+    public static final int REPORT_VALUE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object reportValue_;
     /**
-     * <code>string HGDGHCLHDMG = 7;</code>
-     * @return The hGDGHCLHDMG.
+     * <code>string report_value = 12;</code>
+     * @return The reportValue.
      */
     @java.lang.Override
-    public java.lang.String getHGDGHCLHDMG() {
-      java.lang.Object ref = hGDGHCLHDMG_;
+    public java.lang.String getReportValue() {
+      java.lang.Object ref = reportValue_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hGDGHCLHDMG_ = s;
+        reportValue_ = s;
         return s;
       }
     }
     /**
-     * <code>string HGDGHCLHDMG = 7;</code>
-     * @return The bytes for hGDGHCLHDMG.
+     * <code>string report_value = 12;</code>
+     * @return The bytes for reportValue.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHGDGHCLHDMGBytes() {
-      java.lang.Object ref = hGDGHCLHDMG_;
+        getReportValueBytes() {
+      java.lang.Object ref = reportValue_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hGDGHCLHDMG_ = b;
+        reportValue_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -228,11 +228,11 @@ public final class ClientReportNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hGDGHCLHDMG_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, hGDGHCLHDMG_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reportType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fKBNBKFNBDK_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, fKBNBKFNBDK_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportValue_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, reportValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,11 +243,11 @@ public final class ClientReportNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hGDGHCLHDMG_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, hGDGHCLHDMG_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reportType_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fKBNBKFNBDK_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, fKBNBKFNBDK_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reportValue_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, reportValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -264,10 +264,10 @@ public final class ClientReportNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify other = (emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify) obj;
 
-      if (!getFKBNBKFNBDK()
-          .equals(other.getFKBNBKFNBDK())) return false;
-      if (!getHGDGHCLHDMG()
-          .equals(other.getHGDGHCLHDMG())) return false;
+      if (!getReportType()
+          .equals(other.getReportType())) return false;
+      if (!getReportValue()
+          .equals(other.getReportValue())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -279,10 +279,10 @@ public final class ClientReportNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FKBNBKFNBDK_FIELD_NUMBER;
-      hash = (53 * hash) + getFKBNBKFNBDK().hashCode();
-      hash = (37 * hash) + HGDGHCLHDMG_FIELD_NUMBER;
-      hash = (53 * hash) + getHGDGHCLHDMG().hashCode();
+      hash = (37 * hash) + REPORT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getReportType().hashCode();
+      hash = (37 * hash) + REPORT_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getReportValue().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,8 +380,8 @@ public final class ClientReportNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 94
-     * Obf: JPGJCONIBGC
+     * CmdId: 29196
+     * Obf: FNLJHKJGODK
      * </pre>
      *
      * Protobuf type {@code ClientReportNotify}
@@ -421,9 +421,9 @@ public final class ClientReportNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fKBNBKFNBDK_ = "";
+        reportType_ = "";
 
-        hGDGHCLHDMG_ = "";
+        reportValue_ = "";
 
         return this;
       }
@@ -451,8 +451,8 @@ public final class ClientReportNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify buildPartial() {
         emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify result = new emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify(this);
-        result.fKBNBKFNBDK_ = fKBNBKFNBDK_;
-        result.hGDGHCLHDMG_ = hGDGHCLHDMG_;
+        result.reportType_ = reportType_;
+        result.reportValue_ = reportValue_;
         onBuilt();
         return result;
       }
@@ -501,12 +501,12 @@ public final class ClientReportNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify other) {
         if (other == emu.grasscutter.net.proto.ClientReportNotifyOuterClass.ClientReportNotify.getDefaultInstance()) return this;
-        if (!other.getFKBNBKFNBDK().isEmpty()) {
-          fKBNBKFNBDK_ = other.fKBNBKFNBDK_;
+        if (!other.getReportType().isEmpty()) {
+          reportType_ = other.reportType_;
           onChanged();
         }
-        if (!other.getHGDGHCLHDMG().isEmpty()) {
-          hGDGHCLHDMG_ = other.hGDGHCLHDMG_;
+        if (!other.getReportValue().isEmpty()) {
+          reportValue_ = other.reportValue_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -538,154 +538,154 @@ public final class ClientReportNotifyOuterClass {
         return this;
       }
 
-      private java.lang.Object fKBNBKFNBDK_ = "";
+      private java.lang.Object reportType_ = "";
       /**
-       * <code>string FKBNBKFNBDK = 13;</code>
-       * @return The fKBNBKFNBDK.
+       * <code>string report_type = 3;</code>
+       * @return The reportType.
        */
-      public java.lang.String getFKBNBKFNBDK() {
-        java.lang.Object ref = fKBNBKFNBDK_;
+      public java.lang.String getReportType() {
+        java.lang.Object ref = reportType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          fKBNBKFNBDK_ = s;
+          reportType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string FKBNBKFNBDK = 13;</code>
-       * @return The bytes for fKBNBKFNBDK.
+       * <code>string report_type = 3;</code>
+       * @return The bytes for reportType.
        */
       public com.google.protobuf.ByteString
-          getFKBNBKFNBDKBytes() {
-        java.lang.Object ref = fKBNBKFNBDK_;
+          getReportTypeBytes() {
+        java.lang.Object ref = reportType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          fKBNBKFNBDK_ = b;
+          reportType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string FKBNBKFNBDK = 13;</code>
-       * @param value The fKBNBKFNBDK to set.
+       * <code>string report_type = 3;</code>
+       * @param value The reportType to set.
        * @return This builder for chaining.
        */
-      public Builder setFKBNBKFNBDK(
+      public Builder setReportType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        fKBNBKFNBDK_ = value;
+        reportType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string FKBNBKFNBDK = 13;</code>
+       * <code>string report_type = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFKBNBKFNBDK() {
+      public Builder clearReportType() {
         
-        fKBNBKFNBDK_ = getDefaultInstance().getFKBNBKFNBDK();
+        reportType_ = getDefaultInstance().getReportType();
         onChanged();
         return this;
       }
       /**
-       * <code>string FKBNBKFNBDK = 13;</code>
-       * @param value The bytes for fKBNBKFNBDK to set.
+       * <code>string report_type = 3;</code>
+       * @param value The bytes for reportType to set.
        * @return This builder for chaining.
        */
-      public Builder setFKBNBKFNBDKBytes(
+      public Builder setReportTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        fKBNBKFNBDK_ = value;
+        reportType_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object hGDGHCLHDMG_ = "";
+      private java.lang.Object reportValue_ = "";
       /**
-       * <code>string HGDGHCLHDMG = 7;</code>
-       * @return The hGDGHCLHDMG.
+       * <code>string report_value = 12;</code>
+       * @return The reportValue.
        */
-      public java.lang.String getHGDGHCLHDMG() {
-        java.lang.Object ref = hGDGHCLHDMG_;
+      public java.lang.String getReportValue() {
+        java.lang.Object ref = reportValue_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hGDGHCLHDMG_ = s;
+          reportValue_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string HGDGHCLHDMG = 7;</code>
-       * @return The bytes for hGDGHCLHDMG.
+       * <code>string report_value = 12;</code>
+       * @return The bytes for reportValue.
        */
       public com.google.protobuf.ByteString
-          getHGDGHCLHDMGBytes() {
-        java.lang.Object ref = hGDGHCLHDMG_;
+          getReportValueBytes() {
+        java.lang.Object ref = reportValue_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hGDGHCLHDMG_ = b;
+          reportValue_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string HGDGHCLHDMG = 7;</code>
-       * @param value The hGDGHCLHDMG to set.
+       * <code>string report_value = 12;</code>
+       * @param value The reportValue to set.
        * @return This builder for chaining.
        */
-      public Builder setHGDGHCLHDMG(
+      public Builder setReportValue(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        hGDGHCLHDMG_ = value;
+        reportValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string HGDGHCLHDMG = 7;</code>
+       * <code>string report_value = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHGDGHCLHDMG() {
+      public Builder clearReportValue() {
         
-        hGDGHCLHDMG_ = getDefaultInstance().getHGDGHCLHDMG();
+        reportValue_ = getDefaultInstance().getReportValue();
         onChanged();
         return this;
       }
       /**
-       * <code>string HGDGHCLHDMG = 7;</code>
-       * @param value The bytes for hGDGHCLHDMG to set.
+       * <code>string report_value = 12;</code>
+       * @param value The bytes for reportValue to set.
        * @return This builder for chaining.
        */
-      public Builder setHGDGHCLHDMGBytes(
+      public Builder setReportValueBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        hGDGHCLHDMG_ = value;
+        reportValue_ = value;
         onChanged();
         return this;
       }
@@ -756,10 +756,10 @@ public final class ClientReportNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030ClientReportNotify.proto\">\n\022ClientRepo" +
-      "rtNotify\022\023\n\013FKBNBKFNBDK\030\r \001(\t\022\023\n\013HGDGHCL" +
-      "HDMG\030\007 \001(\tB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "\n\030ClientReportNotify.proto\"?\n\022ClientRepo" +
+      "rtNotify\022\023\n\013report_type\030\003 \001(\t\022\024\n\014report_" +
+      "value\030\014 \001(\tB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -770,7 +770,7 @@ public final class ClientReportNotifyOuterClass {
     internal_static_ClientReportNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientReportNotify_descriptor,
-        new java.lang.String[] { "FKBNBKFNBDK", "HGDGHCLHDMG", });
+        new java.lang.String[] { "ReportType", "ReportValue", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

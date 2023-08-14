@@ -26,8 +26,8 @@ public final class ViewLanternProjectionLevelTipsReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8953
-   * Obf: MKGJEKLFPLE
+   * CmdId: 29565
+   * Obf: EEHBOOBGHJP
    * </pre>
    *
    * Protobuf type {@code ViewLanternProjectionLevelTipsReq}
@@ -279,8 +279,8 @@ public final class ViewLanternProjectionLevelTipsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8953
-     * Obf: MKGJEKLFPLE
+     * CmdId: 29565
+     * Obf: EEHBOOBGHJP
      * </pre>
      *
      * Protobuf type {@code ViewLanternProjectionLevelTipsReq}

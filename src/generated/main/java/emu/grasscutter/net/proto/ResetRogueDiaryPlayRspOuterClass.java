@@ -19,15 +19,15 @@ public final class ResetRogueDiaryPlayRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8447
-   * Obf: HFJDJDNAKKJ
+   * CmdId: 28628
+   * Obf: HIIKCIHEEFD
    * </pre>
    *
    * Protobuf type {@code ResetRogueDiaryPlayRsp}
@@ -74,7 +74,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class ResetRogueDiaryPlayRspOuterClass {
               emu.grasscutter.net.proto.ResetRogueDiaryPlayRspOuterClass.ResetRogueDiaryPlayRsp.class, emu.grasscutter.net.proto.ResetRogueDiaryPlayRspOuterClass.ResetRogueDiaryPlayRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(14, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(14, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ResetRogueDiaryPlayRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8447
-     * Obf: HFJDJDNAKKJ
+     * CmdId: 28628
+     * Obf: HIIKCIHEEFD
      * </pre>
      *
      * Protobuf type {@code ResetRogueDiaryPlayRsp}
@@ -431,7 +431,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class ResetRogueDiaryPlayRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ResetRogueDiaryPlayRsp.proto\")\n\026ResetR" +
-      "ogueDiaryPlayRsp\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu" +
+      "ogueDiaryPlayRsp\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,31 +19,31 @@ public final class CustomDungeonBanInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 dungeon_guid = 6;</code>
-     * @return The dungeonGuid.
+     * <code>.CustomDungeonBanType ban_type = 1;</code>
+     * @return The enum numeric value on the wire for banType.
      */
-    long getDungeonGuid();
+    int getBanTypeValue();
+    /**
+     * <code>.CustomDungeonBanType ban_type = 1;</code>
+     * @return The banType.
+     */
+    emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType();
 
     /**
-     * <code>uint32 expire_time = 14;</code>
+     * <code>uint32 expire_time = 5;</code>
      * @return The expireTime.
      */
     int getExpireTime();
 
     /**
-     * <code>.CustomDungeonBanType ban_type = 4;</code>
-     * @return The enum numeric value on the wire for banType.
+     * <code>uint64 dungeon_guid = 3;</code>
+     * @return The dungeonGuid.
      */
-    int getBanTypeValue();
-    /**
-     * <code>.CustomDungeonBanType ban_type = 4;</code>
-     * @return The banType.
-     */
-    emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType();
+    long getDungeonGuid();
   }
   /**
    * <pre>
-   * Obf: ENKNOGJDHFK
+   * Obf: PPEOHCONOAA
    * </pre>
    *
    * Protobuf type {@code CustomDungeonBanInfo}
@@ -91,18 +91,18 @@ public final class CustomDungeonBanInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
               int rawValue = input.readEnum();
 
               banType_ = rawValue;
               break;
             }
-            case 48: {
+            case 24: {
 
               dungeonGuid_ = input.readUInt64();
               break;
             }
-            case 112: {
+            case 40: {
 
               expireTime_ = input.readUInt32();
               break;
@@ -139,21 +139,29 @@ public final class CustomDungeonBanInfoOuterClass {
               emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.class, emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.Builder.class);
     }
 
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 6;
-    private long dungeonGuid_;
+    public static final int BAN_TYPE_FIELD_NUMBER = 1;
+    private int banType_;
     /**
-     * <code>uint64 dungeon_guid = 6;</code>
-     * @return The dungeonGuid.
+     * <code>.CustomDungeonBanType ban_type = 1;</code>
+     * @return The enum numeric value on the wire for banType.
      */
-    @java.lang.Override
-    public long getDungeonGuid() {
-      return dungeonGuid_;
+    @java.lang.Override public int getBanTypeValue() {
+      return banType_;
+    }
+    /**
+     * <code>.CustomDungeonBanType ban_type = 1;</code>
+     * @return The banType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.valueOf(banType_);
+      return result == null ? emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.UNRECOGNIZED : result;
     }
 
-    public static final int EXPIRE_TIME_FIELD_NUMBER = 14;
+    public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
     private int expireTime_;
     /**
-     * <code>uint32 expire_time = 14;</code>
+     * <code>uint32 expire_time = 5;</code>
      * @return The expireTime.
      */
     @java.lang.Override
@@ -161,23 +169,15 @@ public final class CustomDungeonBanInfoOuterClass {
       return expireTime_;
     }
 
-    public static final int BAN_TYPE_FIELD_NUMBER = 4;
-    private int banType_;
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 3;
+    private long dungeonGuid_;
     /**
-     * <code>.CustomDungeonBanType ban_type = 4;</code>
-     * @return The enum numeric value on the wire for banType.
+     * <code>uint64 dungeon_guid = 3;</code>
+     * @return The dungeonGuid.
      */
-    @java.lang.Override public int getBanTypeValue() {
-      return banType_;
-    }
-    /**
-     * <code>.CustomDungeonBanType ban_type = 4;</code>
-     * @return The banType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType getBanType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType result = emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.valueOf(banType_);
-      return result == null ? emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.UNRECOGNIZED : result;
+    @java.lang.Override
+    public long getDungeonGuid() {
+      return dungeonGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -195,13 +195,13 @@ public final class CustomDungeonBanInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (banType_ != emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.CUSTOM_DUNGEON_BAN_TYPE_NONE.getNumber()) {
-        output.writeEnum(4, banType_);
+        output.writeEnum(1, banType_);
       }
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(6, dungeonGuid_);
+        output.writeUInt64(3, dungeonGuid_);
       }
       if (expireTime_ != 0) {
-        output.writeUInt32(14, expireTime_);
+        output.writeUInt32(5, expireTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -214,15 +214,15 @@ public final class CustomDungeonBanInfoOuterClass {
       size = 0;
       if (banType_ != emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.CUSTOM_DUNGEON_BAN_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, banType_);
+          .computeEnumSize(1, banType_);
       }
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, dungeonGuid_);
+          .computeUInt64Size(3, dungeonGuid_);
       }
       if (expireTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, expireTime_);
+          .computeUInt32Size(5, expireTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -239,11 +239,11 @@ public final class CustomDungeonBanInfoOuterClass {
       }
       emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo other = (emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo) obj;
 
-      if (getDungeonGuid()
-          != other.getDungeonGuid()) return false;
+      if (banType_ != other.banType_) return false;
       if (getExpireTime()
           != other.getExpireTime()) return false;
-      if (banType_ != other.banType_) return false;
+      if (getDungeonGuid()
+          != other.getDungeonGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -255,13 +255,13 @@ public final class CustomDungeonBanInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BAN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + banType_;
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime();
       hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDungeonGuid());
-      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getExpireTime();
-      hash = (37 * hash) + BAN_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + banType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -359,7 +359,7 @@ public final class CustomDungeonBanInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: ENKNOGJDHFK
+     * Obf: PPEOHCONOAA
      * </pre>
      *
      * Protobuf type {@code CustomDungeonBanInfo}
@@ -399,11 +399,11 @@ public final class CustomDungeonBanInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dungeonGuid_ = 0L;
+        banType_ = 0;
 
         expireTime_ = 0;
 
-        banType_ = 0;
+        dungeonGuid_ = 0L;
 
         return this;
       }
@@ -431,9 +431,9 @@ public final class CustomDungeonBanInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo buildPartial() {
         emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo result = new emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo(this);
-        result.dungeonGuid_ = dungeonGuid_;
-        result.expireTime_ = expireTime_;
         result.banType_ = banType_;
+        result.expireTime_ = expireTime_;
+        result.dungeonGuid_ = dungeonGuid_;
         onBuilt();
         return result;
       }
@@ -482,14 +482,14 @@ public final class CustomDungeonBanInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo other) {
         if (other == emu.grasscutter.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.getDefaultInstance()) return this;
-        if (other.getDungeonGuid() != 0L) {
-          setDungeonGuid(other.getDungeonGuid());
+        if (other.banType_ != 0) {
+          setBanTypeValue(other.getBanTypeValue());
         }
         if (other.getExpireTime() != 0) {
           setExpireTime(other.getExpireTime());
         }
-        if (other.banType_ != 0) {
-          setBanTypeValue(other.getBanTypeValue());
+        if (other.getDungeonGuid() != 0L) {
+          setDungeonGuid(other.getDungeonGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -520,78 +520,16 @@ public final class CustomDungeonBanInfoOuterClass {
         return this;
       }
 
-      private long dungeonGuid_ ;
-      /**
-       * <code>uint64 dungeon_guid = 6;</code>
-       * @return The dungeonGuid.
-       */
-      @java.lang.Override
-      public long getDungeonGuid() {
-        return dungeonGuid_;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 6;</code>
-       * @param value The dungeonGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonGuid(long value) {
-        
-        dungeonGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonGuid() {
-        
-        dungeonGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int expireTime_ ;
-      /**
-       * <code>uint32 expire_time = 14;</code>
-       * @return The expireTime.
-       */
-      @java.lang.Override
-      public int getExpireTime() {
-        return expireTime_;
-      }
-      /**
-       * <code>uint32 expire_time = 14;</code>
-       * @param value The expireTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExpireTime(int value) {
-        
-        expireTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 expire_time = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExpireTime() {
-        
-        expireTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int banType_ = 0;
       /**
-       * <code>.CustomDungeonBanType ban_type = 4;</code>
+       * <code>.CustomDungeonBanType ban_type = 1;</code>
        * @return The enum numeric value on the wire for banType.
        */
       @java.lang.Override public int getBanTypeValue() {
         return banType_;
       }
       /**
-       * <code>.CustomDungeonBanType ban_type = 4;</code>
+       * <code>.CustomDungeonBanType ban_type = 1;</code>
        * @param value The enum numeric value on the wire for banType to set.
        * @return This builder for chaining.
        */
@@ -602,7 +540,7 @@ public final class CustomDungeonBanInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBanType ban_type = 4;</code>
+       * <code>.CustomDungeonBanType ban_type = 1;</code>
        * @return The banType.
        */
       @java.lang.Override
@@ -612,7 +550,7 @@ public final class CustomDungeonBanInfoOuterClass {
         return result == null ? emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.CustomDungeonBanType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.CustomDungeonBanType ban_type = 4;</code>
+       * <code>.CustomDungeonBanType ban_type = 1;</code>
        * @param value The banType to set.
        * @return This builder for chaining.
        */
@@ -626,12 +564,74 @@ public final class CustomDungeonBanInfoOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonBanType ban_type = 4;</code>
+       * <code>.CustomDungeonBanType ban_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearBanType() {
         
         banType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int expireTime_ ;
+      /**
+       * <code>uint32 expire_time = 5;</code>
+       * @return The expireTime.
+       */
+      @java.lang.Override
+      public int getExpireTime() {
+        return expireTime_;
+      }
+      /**
+       * <code>uint32 expire_time = 5;</code>
+       * @param value The expireTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpireTime(int value) {
+        
+        expireTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 expire_time = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExpireTime() {
+        
+        expireTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long dungeonGuid_ ;
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @return The dungeonGuid.
+       */
+      @java.lang.Override
+      public long getDungeonGuid() {
+        return dungeonGuid_;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @param value The dungeonGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonGuid(long value) {
+        
+        dungeonGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 dungeon_guid = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonGuid() {
+        
+        dungeonGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -704,9 +704,9 @@ public final class CustomDungeonBanInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032CustomDungeonBanInfo.proto\032\032CustomDung" +
       "eonBanType.proto\"j\n\024CustomDungeonBanInfo" +
-      "\022\024\n\014dungeon_guid\030\006 \001(\004\022\023\n\013expire_time\030\016 " +
-      "\001(\r\022\'\n\010ban_type\030\004 \001(\0162\025.CustomDungeonBan" +
-      "TypeB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "\022\'\n\010ban_type\030\001 \001(\0162\025.CustomDungeonBanTyp" +
+      "e\022\023\n\013expire_time\030\005 \001(\r\022\024\n\014dungeon_guid\030\003" +
+      " \001(\004B\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -719,7 +719,7 @@ public final class CustomDungeonBanInfoOuterClass {
     internal_static_CustomDungeonBanInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CustomDungeonBanInfo_descriptor,
-        new java.lang.String[] { "DungeonGuid", "ExpireTime", "BanType", });
+        new java.lang.String[] { "BanType", "ExpireTime", "DungeonGuid", });
     emu.grasscutter.net.proto.CustomDungeonBanTypeOuterClass.getDescriptor();
   }
 

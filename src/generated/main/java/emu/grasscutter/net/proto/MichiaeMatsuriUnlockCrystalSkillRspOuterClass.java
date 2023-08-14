@@ -19,21 +19,21 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 7;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 crystal_skill_id = 9;</code>
+     * <code>uint32 crystal_skill_id = 5;</code>
      * @return The crystalSkillId.
      */
     int getCrystalSkillId();
+
+    /**
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8847
-   * Obf: PNJOBMNDGME
+   * CmdId: 22931
+   * Obf: KBBFBHOLEPP
    * </pre>
    *
    * Protobuf type {@code MichiaeMatsuriUnlockCrystalSkillRsp}
@@ -80,14 +80,14 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
+            case 40: {
 
               crystalSkillId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp.class, emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 7;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int CRYSTAL_SKILL_ID_FIELD_NUMBER = 9;
+    public static final int CRYSTAL_SKILL_ID_FIELD_NUMBER = 5;
     private int crystalSkillId_;
     /**
-     * <code>uint32 crystal_skill_id = 9;</code>
+     * <code>uint32 crystal_skill_id = 5;</code>
      * @return The crystalSkillId.
      */
     @java.lang.Override
     public int getCrystalSkillId() {
       return crystalSkillId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 6;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
-      }
       if (crystalSkillId_ != 0) {
-        output.writeUInt32(9, crystalSkillId_);
+        output.writeUInt32(5, crystalSkillId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(6, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
-      }
       if (crystalSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, crystalSkillId_);
+          .computeUInt32Size(5, crystalSkillId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       }
       emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp other = (emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getCrystalSkillId()
           != other.getCrystalSkillId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CRYSTAL_SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCrystalSkillId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8847
-     * Obf: PNJOBMNDGME
+     * CmdId: 22931
+     * Obf: KBBFBHOLEPP
      * </pre>
      *
      * Protobuf type {@code MichiaeMatsuriUnlockCrystalSkillRsp}
@@ -353,9 +353,9 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         crystalSkillId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp buildPartial() {
         emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp result = new emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp(this);
-        result.retcode_ = retcode_;
         result.crystalSkillId_ = crystalSkillId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp other) {
         if (other == emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillRspOuterClass.MichiaeMatsuriUnlockCrystalSkillRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getCrystalSkillId() != 0) {
           setCrystalSkillId(other.getCrystalSkillId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int crystalSkillId_ ;
       /**
-       * <code>uint32 crystal_skill_id = 9;</code>
+       * <code>uint32 crystal_skill_id = 5;</code>
        * @return The crystalSkillId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
         return crystalSkillId_;
       }
       /**
-       * <code>uint32 crystal_skill_id = 9;</code>
+       * <code>uint32 crystal_skill_id = 5;</code>
        * @param value The crystalSkillId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 crystal_skill_id = 9;</code>
+       * <code>uint32 crystal_skill_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCrystalSkillId() {
         
         crystalSkillId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n)MichiaeMatsuriUnlockCrystalSkillRsp.pr" +
       "oto\"P\n#MichiaeMatsuriUnlockCrystalSkillR" +
-      "sp\022\017\n\007retcode\030\007 \001(\005\022\030\n\020crystal_skill_id\030" +
-      "\t \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "sp\022\030\n\020crystal_skill_id\030\005 \001(\r\022\017\n\007retcode\030" +
+      "\006 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillRspOuterClass {
     internal_static_MichiaeMatsuriUnlockCrystalSkillRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MichiaeMatsuriUnlockCrystalSkillRsp_descriptor,
-        new java.lang.String[] { "Retcode", "CrystalSkillId", });
+        new java.lang.String[] { "CrystalSkillId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,51 +19,75 @@ public final class GCGCostReviseInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> 
-        getAttackCostListList();
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo getAttackCostList(int index);
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    int getAttackCostListCount();
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> 
-        getAttackCostListOrBuilderList();
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder getAttackCostListOrBuilder(
-        int index);
-
-    /**
-     * <code>bool is_can_attack = 15;</code>
+     * <code>bool is_can_attack = 4;</code>
      * @return The isCanAttack.
      */
     boolean getIsCanAttack();
 
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> 
+        getAttackCostListList();
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo getAttackCostList(int index);
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    int getAttackCostListCount();
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> 
+        getAttackCostListOrBuilderList();
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder getAttackCostListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @return A list containing the canUseHandCardIdList.
      */
     java.util.List<java.lang.Integer> getCanUseHandCardIdListList();
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @return The count of canUseHandCardIdList.
      */
     int getCanUseHandCardIdListCount();
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The canUseHandCardIdList at the given index.
      */
     int getCanUseHandCardIdList(int index);
+
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> 
+        getPlayCardCostListList();
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index);
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    int getPlayCardCostListCount();
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
+        getPlayCardCostListOrBuilderList();
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
+        int index);
 
     /**
      * <code>repeated .GCGSelectOnStageCostInfo select_on_stage_cost_list = 1;</code>
@@ -88,34 +112,10 @@ public final class GCGCostReviseInfoOuterClass {
      */
     emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfoOrBuilder getSelectOnStageCostListOrBuilder(
         int index);
-
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> 
-        getPlayCardCostListList();
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index);
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    int getPlayCardCostListCount();
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
-        getPlayCardCostListOrBuilderList();
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
-        int index);
   }
   /**
    * <pre>
-   * Obf: FKDHOACPGNF
+   * Obf: IHIBNCDNGPC
    * </pre>
    *
    * Protobuf type {@code GCGCostReviseInfo}
@@ -132,8 +132,8 @@ public final class GCGCostReviseInfoOuterClass {
     private GCGCostReviseInfo() {
       attackCostList_ = java.util.Collections.emptyList();
       canUseHandCardIdList_ = emptyIntList();
-      selectOnStageCostList_ = java.util.Collections.emptyList();
       playCardCostList_ = java.util.Collections.emptyList();
+      selectOnStageCostList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -168,15 +168,38 @@ public final class GCGCostReviseInfoOuterClass {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 selectOnStageCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               selectOnStageCostList_.add(
                   input.readMessage(emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                attackCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              attackCostList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              isCanAttack_ = input.readBool();
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                playCardCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              playCardCostList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 canUseHandCardIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -184,7 +207,7 @@ public final class GCGCostReviseInfoOuterClass {
               canUseHandCardIdList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -195,29 +218,6 @@ public final class GCGCostReviseInfoOuterClass {
                 canUseHandCardIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                attackCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              attackCostList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                playCardCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              playCardCostList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              isCanAttack_ = input.readBool();
               break;
             }
             default: {
@@ -235,17 +235,17 @@ public final class GCGCostReviseInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           selectOnStageCostList_ = java.util.Collections.unmodifiableList(selectOnStageCostList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          canUseHandCardIdList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           attackCostList_ = java.util.Collections.unmodifiableList(attackCostList_);
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           playCardCostList_ = java.util.Collections.unmodifiableList(playCardCostList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          canUseHandCardIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -264,50 +264,10 @@ public final class GCGCostReviseInfoOuterClass {
               emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.class, emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder.class);
     }
 
-    public static final int ATTACK_COST_LIST_FIELD_NUMBER = 12;
-    private java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> attackCostList_;
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> getAttackCostListList() {
-      return attackCostList_;
-    }
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> 
-        getAttackCostListOrBuilderList() {
-      return attackCostList_;
-    }
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    @java.lang.Override
-    public int getAttackCostListCount() {
-      return attackCostList_.size();
-    }
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo getAttackCostList(int index) {
-      return attackCostList_.get(index);
-    }
-    /**
-     * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder getAttackCostListOrBuilder(
-        int index) {
-      return attackCostList_.get(index);
-    }
-
-    public static final int IS_CAN_ATTACK_FIELD_NUMBER = 15;
+    public static final int IS_CAN_ATTACK_FIELD_NUMBER = 4;
     private boolean isCanAttack_;
     /**
-     * <code>bool is_can_attack = 15;</code>
+     * <code>bool is_can_attack = 4;</code>
      * @return The isCanAttack.
      */
     @java.lang.Override
@@ -315,10 +275,50 @@ public final class GCGCostReviseInfoOuterClass {
       return isCanAttack_;
     }
 
-    public static final int CAN_USE_HAND_CARD_ID_LIST_FIELD_NUMBER = 9;
+    public static final int ATTACK_COST_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> attackCostList_;
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> getAttackCostListList() {
+      return attackCostList_;
+    }
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> 
+        getAttackCostListOrBuilderList() {
+      return attackCostList_;
+    }
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getAttackCostListCount() {
+      return attackCostList_.size();
+    }
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo getAttackCostList(int index) {
+      return attackCostList_.get(index);
+    }
+    /**
+     * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder getAttackCostListOrBuilder(
+        int index) {
+      return attackCostList_.get(index);
+    }
+
+    public static final int CAN_USE_HAND_CARD_ID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList canUseHandCardIdList_;
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @return A list containing the canUseHandCardIdList.
      */
     @java.lang.Override
@@ -327,14 +327,14 @@ public final class GCGCostReviseInfoOuterClass {
       return canUseHandCardIdList_;
     }
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @return The count of canUseHandCardIdList.
      */
     public int getCanUseHandCardIdListCount() {
       return canUseHandCardIdList_.size();
     }
     /**
-     * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+     * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The canUseHandCardIdList at the given index.
      */
@@ -342,6 +342,46 @@ public final class GCGCostReviseInfoOuterClass {
       return canUseHandCardIdList_.getInt(index);
     }
     private int canUseHandCardIdListMemoizedSerializedSize = -1;
+
+    public static final int PLAY_CARD_COST_LIST_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> playCardCostList_;
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getPlayCardCostListList() {
+      return playCardCostList_;
+    }
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
+        getPlayCardCostListOrBuilderList() {
+      return playCardCostList_;
+    }
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    @java.lang.Override
+    public int getPlayCardCostListCount() {
+      return playCardCostList_.size();
+    }
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index) {
+      return playCardCostList_.get(index);
+    }
+    /**
+     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
+        int index) {
+      return playCardCostList_.get(index);
+    }
 
     public static final int SELECT_ON_STAGE_COST_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo> selectOnStageCostList_;
@@ -383,46 +423,6 @@ public final class GCGCostReviseInfoOuterClass {
       return selectOnStageCostList_.get(index);
     }
 
-    public static final int PLAY_CARD_COST_LIST_FIELD_NUMBER = 13;
-    private java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> playCardCostList_;
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getPlayCardCostListList() {
-      return playCardCostList_;
-    }
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
-        getPlayCardCostListOrBuilderList() {
-      return playCardCostList_;
-    }
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    @java.lang.Override
-    public int getPlayCardCostListCount() {
-      return playCardCostList_.size();
-    }
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index) {
-      return playCardCostList_.get(index);
-    }
-    /**
-     * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
-        int index) {
-      return playCardCostList_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -441,21 +441,21 @@ public final class GCGCostReviseInfoOuterClass {
       for (int i = 0; i < selectOnStageCostList_.size(); i++) {
         output.writeMessage(1, selectOnStageCostList_.get(i));
       }
+      for (int i = 0; i < attackCostList_.size(); i++) {
+        output.writeMessage(3, attackCostList_.get(i));
+      }
+      if (isCanAttack_ != false) {
+        output.writeBool(4, isCanAttack_);
+      }
+      for (int i = 0; i < playCardCostList_.size(); i++) {
+        output.writeMessage(8, playCardCostList_.get(i));
+      }
       if (getCanUseHandCardIdListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(canUseHandCardIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < canUseHandCardIdList_.size(); i++) {
         output.writeUInt32NoTag(canUseHandCardIdList_.getInt(i));
-      }
-      for (int i = 0; i < attackCostList_.size(); i++) {
-        output.writeMessage(12, attackCostList_.get(i));
-      }
-      for (int i = 0; i < playCardCostList_.size(); i++) {
-        output.writeMessage(13, playCardCostList_.get(i));
-      }
-      if (isCanAttack_ != false) {
-        output.writeBool(15, isCanAttack_);
       }
       unknownFields.writeTo(output);
     }
@@ -470,6 +470,18 @@ public final class GCGCostReviseInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, selectOnStageCostList_.get(i));
       }
+      for (int i = 0; i < attackCostList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, attackCostList_.get(i));
+      }
+      if (isCanAttack_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isCanAttack_);
+      }
+      for (int i = 0; i < playCardCostList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, playCardCostList_.get(i));
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < canUseHandCardIdList_.size(); i++) {
@@ -483,18 +495,6 @@ public final class GCGCostReviseInfoOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         canUseHandCardIdListMemoizedSerializedSize = dataSize;
-      }
-      for (int i = 0; i < attackCostList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, attackCostList_.get(i));
-      }
-      for (int i = 0; i < playCardCostList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, playCardCostList_.get(i));
-      }
-      if (isCanAttack_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isCanAttack_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -511,16 +511,16 @@ public final class GCGCostReviseInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo other = (emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo) obj;
 
-      if (!getAttackCostListList()
-          .equals(other.getAttackCostListList())) return false;
       if (getIsCanAttack()
           != other.getIsCanAttack()) return false;
+      if (!getAttackCostListList()
+          .equals(other.getAttackCostListList())) return false;
       if (!getCanUseHandCardIdListList()
           .equals(other.getCanUseHandCardIdListList())) return false;
-      if (!getSelectOnStageCostListList()
-          .equals(other.getSelectOnStageCostListList())) return false;
       if (!getPlayCardCostListList()
           .equals(other.getPlayCardCostListList())) return false;
+      if (!getSelectOnStageCostListList()
+          .equals(other.getSelectOnStageCostListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -532,24 +532,24 @@ public final class GCGCostReviseInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_CAN_ATTACK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCanAttack());
       if (getAttackCostListCount() > 0) {
         hash = (37 * hash) + ATTACK_COST_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAttackCostListList().hashCode();
       }
-      hash = (37 * hash) + IS_CAN_ATTACK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsCanAttack());
       if (getCanUseHandCardIdListCount() > 0) {
         hash = (37 * hash) + CAN_USE_HAND_CARD_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCanUseHandCardIdListList().hashCode();
       }
-      if (getSelectOnStageCostListCount() > 0) {
-        hash = (37 * hash) + SELECT_ON_STAGE_COST_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectOnStageCostListList().hashCode();
-      }
       if (getPlayCardCostListCount() > 0) {
         hash = (37 * hash) + PLAY_CARD_COST_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayCardCostListList().hashCode();
+      }
+      if (getSelectOnStageCostListCount() > 0) {
+        hash = (37 * hash) + SELECT_ON_STAGE_COST_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectOnStageCostListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -648,7 +648,7 @@ public final class GCGCostReviseInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FKDHOACPGNF
+     * Obf: IHIBNCDNGPC
      * </pre>
      *
      * Protobuf type {@code GCGCostReviseInfo}
@@ -684,34 +684,34 @@ public final class GCGCostReviseInfoOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getAttackCostListFieldBuilder();
-          getSelectOnStageCostListFieldBuilder();
           getPlayCardCostListFieldBuilder();
+          getSelectOnStageCostListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isCanAttack_ = false;
+
         if (attackCostListBuilder_ == null) {
           attackCostList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           attackCostListBuilder_.clear();
         }
-        isCanAttack_ = false;
-
         canUseHandCardIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        if (selectOnStageCostListBuilder_ == null) {
-          selectOnStageCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          selectOnStageCostListBuilder_.clear();
-        }
         if (playCardCostListBuilder_ == null) {
           playCardCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           playCardCostListBuilder_.clear();
+        }
+        if (selectOnStageCostListBuilder_ == null) {
+          selectOnStageCostList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          selectOnStageCostListBuilder_.clear();
         }
         return this;
       }
@@ -740,6 +740,7 @@ public final class GCGCostReviseInfoOuterClass {
       public emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo buildPartial() {
         emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo result = new emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo(this);
         int from_bitField0_ = bitField0_;
+        result.isCanAttack_ = isCanAttack_;
         if (attackCostListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             attackCostList_ = java.util.Collections.unmodifiableList(attackCostList_);
@@ -749,29 +750,28 @@ public final class GCGCostReviseInfoOuterClass {
         } else {
           result.attackCostList_ = attackCostListBuilder_.build();
         }
-        result.isCanAttack_ = isCanAttack_;
         if (((bitField0_ & 0x00000002) != 0)) {
           canUseHandCardIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.canUseHandCardIdList_ = canUseHandCardIdList_;
-        if (selectOnStageCostListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            selectOnStageCostList_ = java.util.Collections.unmodifiableList(selectOnStageCostList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.selectOnStageCostList_ = selectOnStageCostList_;
-        } else {
-          result.selectOnStageCostList_ = selectOnStageCostListBuilder_.build();
-        }
         if (playCardCostListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             playCardCostList_ = java.util.Collections.unmodifiableList(playCardCostList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.playCardCostList_ = playCardCostList_;
         } else {
           result.playCardCostList_ = playCardCostListBuilder_.build();
+        }
+        if (selectOnStageCostListBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            selectOnStageCostList_ = java.util.Collections.unmodifiableList(selectOnStageCostList_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.selectOnStageCostList_ = selectOnStageCostList_;
+        } else {
+          result.selectOnStageCostList_ = selectOnStageCostListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -821,6 +821,9 @@ public final class GCGCostReviseInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo other) {
         if (other == emu.grasscutter.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance()) return this;
+        if (other.getIsCanAttack() != false) {
+          setIsCanAttack(other.getIsCanAttack());
+        }
         if (attackCostListBuilder_ == null) {
           if (!other.attackCostList_.isEmpty()) {
             if (attackCostList_.isEmpty()) {
@@ -847,9 +850,6 @@ public final class GCGCostReviseInfoOuterClass {
             }
           }
         }
-        if (other.getIsCanAttack() != false) {
-          setIsCanAttack(other.getIsCanAttack());
-        }
         if (!other.canUseHandCardIdList_.isEmpty()) {
           if (canUseHandCardIdList_.isEmpty()) {
             canUseHandCardIdList_ = other.canUseHandCardIdList_;
@@ -860,37 +860,11 @@ public final class GCGCostReviseInfoOuterClass {
           }
           onChanged();
         }
-        if (selectOnStageCostListBuilder_ == null) {
-          if (!other.selectOnStageCostList_.isEmpty()) {
-            if (selectOnStageCostList_.isEmpty()) {
-              selectOnStageCostList_ = other.selectOnStageCostList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureSelectOnStageCostListIsMutable();
-              selectOnStageCostList_.addAll(other.selectOnStageCostList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.selectOnStageCostList_.isEmpty()) {
-            if (selectOnStageCostListBuilder_.isEmpty()) {
-              selectOnStageCostListBuilder_.dispose();
-              selectOnStageCostListBuilder_ = null;
-              selectOnStageCostList_ = other.selectOnStageCostList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              selectOnStageCostListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSelectOnStageCostListFieldBuilder() : null;
-            } else {
-              selectOnStageCostListBuilder_.addAllMessages(other.selectOnStageCostList_);
-            }
-          }
-        }
         if (playCardCostListBuilder_ == null) {
           if (!other.playCardCostList_.isEmpty()) {
             if (playCardCostList_.isEmpty()) {
               playCardCostList_ = other.playCardCostList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePlayCardCostListIsMutable();
               playCardCostList_.addAll(other.playCardCostList_);
@@ -903,12 +877,38 @@ public final class GCGCostReviseInfoOuterClass {
               playCardCostListBuilder_.dispose();
               playCardCostListBuilder_ = null;
               playCardCostList_ = other.playCardCostList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000004);
               playCardCostListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayCardCostListFieldBuilder() : null;
             } else {
               playCardCostListBuilder_.addAllMessages(other.playCardCostList_);
+            }
+          }
+        }
+        if (selectOnStageCostListBuilder_ == null) {
+          if (!other.selectOnStageCostList_.isEmpty()) {
+            if (selectOnStageCostList_.isEmpty()) {
+              selectOnStageCostList_ = other.selectOnStageCostList_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureSelectOnStageCostListIsMutable();
+              selectOnStageCostList_.addAll(other.selectOnStageCostList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.selectOnStageCostList_.isEmpty()) {
+            if (selectOnStageCostListBuilder_.isEmpty()) {
+              selectOnStageCostListBuilder_.dispose();
+              selectOnStageCostListBuilder_ = null;
+              selectOnStageCostList_ = other.selectOnStageCostList_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              selectOnStageCostListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSelectOnStageCostListFieldBuilder() : null;
+            } else {
+              selectOnStageCostListBuilder_.addAllMessages(other.selectOnStageCostList_);
             }
           }
         }
@@ -942,6 +942,37 @@ public final class GCGCostReviseInfoOuterClass {
       }
       private int bitField0_;
 
+      private boolean isCanAttack_ ;
+      /**
+       * <code>bool is_can_attack = 4;</code>
+       * @return The isCanAttack.
+       */
+      @java.lang.Override
+      public boolean getIsCanAttack() {
+        return isCanAttack_;
+      }
+      /**
+       * <code>bool is_can_attack = 4;</code>
+       * @param value The isCanAttack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsCanAttack(boolean value) {
+        
+        isCanAttack_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_can_attack = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsCanAttack() {
+        
+        isCanAttack_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> attackCostList_ =
         java.util.Collections.emptyList();
       private void ensureAttackCostListIsMutable() {
@@ -955,7 +986,7 @@ public final class GCGCostReviseInfoOuterClass {
           emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> attackCostListBuilder_;
 
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> getAttackCostListList() {
         if (attackCostListBuilder_ == null) {
@@ -965,7 +996,7 @@ public final class GCGCostReviseInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public int getAttackCostListCount() {
         if (attackCostListBuilder_ == null) {
@@ -975,7 +1006,7 @@ public final class GCGCostReviseInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo getAttackCostList(int index) {
         if (attackCostListBuilder_ == null) {
@@ -985,7 +1016,7 @@ public final class GCGCostReviseInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder setAttackCostList(
           int index, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo value) {
@@ -1002,7 +1033,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder setAttackCostList(
           int index, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder builderForValue) {
@@ -1016,7 +1047,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder addAttackCostList(emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo value) {
         if (attackCostListBuilder_ == null) {
@@ -1032,7 +1063,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder addAttackCostList(
           int index, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo value) {
@@ -1049,7 +1080,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder addAttackCostList(
           emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder builderForValue) {
@@ -1063,7 +1094,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder addAttackCostList(
           int index, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder builderForValue) {
@@ -1077,7 +1108,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder addAllAttackCostList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> values) {
@@ -1092,7 +1123,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder clearAttackCostList() {
         if (attackCostListBuilder_ == null) {
@@ -1105,7 +1136,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public Builder removeAttackCostList(int index) {
         if (attackCostListBuilder_ == null) {
@@ -1118,14 +1149,14 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder getAttackCostListBuilder(
           int index) {
         return getAttackCostListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder getAttackCostListOrBuilder(
           int index) {
@@ -1135,7 +1166,7 @@ public final class GCGCostReviseInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfoOrBuilder> 
            getAttackCostListOrBuilderList() {
@@ -1146,14 +1177,14 @@ public final class GCGCostReviseInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder addAttackCostListBuilder() {
         return getAttackCostListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder addAttackCostListBuilder(
           int index) {
@@ -1161,7 +1192,7 @@ public final class GCGCostReviseInfoOuterClass {
             index, emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
+       * <code>repeated .GCGAttackCostInfo attack_cost_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.Builder> 
            getAttackCostListBuilderList() {
@@ -1182,37 +1213,6 @@ public final class GCGCostReviseInfoOuterClass {
         return attackCostListBuilder_;
       }
 
-      private boolean isCanAttack_ ;
-      /**
-       * <code>bool is_can_attack = 15;</code>
-       * @return The isCanAttack.
-       */
-      @java.lang.Override
-      public boolean getIsCanAttack() {
-        return isCanAttack_;
-      }
-      /**
-       * <code>bool is_can_attack = 15;</code>
-       * @param value The isCanAttack to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsCanAttack(boolean value) {
-        
-        isCanAttack_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_can_attack = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsCanAttack() {
-        
-        isCanAttack_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList canUseHandCardIdList_ = emptyIntList();
       private void ensureCanUseHandCardIdListIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
@@ -1221,7 +1221,7 @@ public final class GCGCostReviseInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @return A list containing the canUseHandCardIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -1230,14 +1230,14 @@ public final class GCGCostReviseInfoOuterClass {
                  java.util.Collections.unmodifiableList(canUseHandCardIdList_) : canUseHandCardIdList_;
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @return The count of canUseHandCardIdList.
        */
       public int getCanUseHandCardIdListCount() {
         return canUseHandCardIdList_.size();
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @param index The index of the element to return.
        * @return The canUseHandCardIdList at the given index.
        */
@@ -1245,7 +1245,7 @@ public final class GCGCostReviseInfoOuterClass {
         return canUseHandCardIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @param index The index to set the value at.
        * @param value The canUseHandCardIdList to set.
        * @return This builder for chaining.
@@ -1258,7 +1258,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @param value The canUseHandCardIdList to add.
        * @return This builder for chaining.
        */
@@ -1269,7 +1269,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @param values The canUseHandCardIdList to add.
        * @return This builder for chaining.
        */
@@ -1282,7 +1282,7 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 can_use_hand_card_id_list = 9;</code>
+       * <code>repeated uint32 can_use_hand_card_id_list = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearCanUseHandCardIdList() {
@@ -1292,12 +1292,252 @@ public final class GCGCostReviseInfoOuterClass {
         return this;
       }
 
+      private java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> playCardCostList_ =
+        java.util.Collections.emptyList();
+      private void ensurePlayCardCostListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          playCardCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>(playCardCostList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> playCardCostListBuilder_;
+
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getPlayCardCostListList() {
+        if (playCardCostListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(playCardCostList_);
+        } else {
+          return playCardCostListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public int getPlayCardCostListCount() {
+        if (playCardCostListBuilder_ == null) {
+          return playCardCostList_.size();
+        } else {
+          return playCardCostListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index) {
+        if (playCardCostListBuilder_ == null) {
+          return playCardCostList_.get(index);
+        } else {
+          return playCardCostListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder setPlayCardCostList(
+          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
+        if (playCardCostListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.set(index, value);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder setPlayCardCostList(
+          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
+        if (playCardCostListBuilder_ == null) {
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          playCardCostListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder addPlayCardCostList(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
+        if (playCardCostListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.add(value);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder addPlayCardCostList(
+          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
+        if (playCardCostListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.add(index, value);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder addPlayCardCostList(
+          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
+        if (playCardCostListBuilder_ == null) {
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          playCardCostListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder addPlayCardCostList(
+          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
+        if (playCardCostListBuilder_ == null) {
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          playCardCostListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder addAllPlayCardCostList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> values) {
+        if (playCardCostListBuilder_ == null) {
+          ensurePlayCardCostListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, playCardCostList_);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder clearPlayCardCostList() {
+        if (playCardCostListBuilder_ == null) {
+          playCardCostList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public Builder removePlayCardCostList(int index) {
+        if (playCardCostListBuilder_ == null) {
+          ensurePlayCardCostListIsMutable();
+          playCardCostList_.remove(index);
+          onChanged();
+        } else {
+          playCardCostListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder getPlayCardCostListBuilder(
+          int index) {
+        return getPlayCardCostListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
+          int index) {
+        if (playCardCostListBuilder_ == null) {
+          return playCardCostList_.get(index);  } else {
+          return playCardCostListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
+           getPlayCardCostListOrBuilderList() {
+        if (playCardCostListBuilder_ != null) {
+          return playCardCostListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(playCardCostList_);
+        }
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addPlayCardCostListBuilder() {
+        return getPlayCardCostListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addPlayCardCostListBuilder(
+          int index) {
+        return getPlayCardCostListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder> 
+           getPlayCardCostListBuilderList() {
+        return getPlayCardCostListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
+          getPlayCardCostListFieldBuilder() {
+        if (playCardCostListBuilder_ == null) {
+          playCardCostListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder>(
+                  playCardCostList_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          playCardCostList_ = null;
+        }
+        return playCardCostListBuilder_;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo> selectOnStageCostList_ =
         java.util.Collections.emptyList();
       private void ensureSelectOnStageCostListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           selectOnStageCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo>(selectOnStageCostList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1447,7 +1687,7 @@ public final class GCGCostReviseInfoOuterClass {
       public Builder clearSelectOnStageCostList() {
         if (selectOnStageCostListBuilder_ == null) {
           selectOnStageCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           selectOnStageCostListBuilder_.clear();
@@ -1524,252 +1764,12 @@ public final class GCGCostReviseInfoOuterClass {
           selectOnStageCostListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo, emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo.Builder, emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfoOrBuilder>(
                   selectOnStageCostList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           selectOnStageCostList_ = null;
         }
         return selectOnStageCostListBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> playCardCostList_ =
-        java.util.Collections.emptyList();
-      private void ensurePlayCardCostListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          playCardCostList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>(playCardCostList_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> playCardCostListBuilder_;
-
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getPlayCardCostListList() {
-        if (playCardCostListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(playCardCostList_);
-        } else {
-          return playCardCostListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public int getPlayCardCostListCount() {
-        if (playCardCostListBuilder_ == null) {
-          return playCardCostList_.size();
-        } else {
-          return playCardCostListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getPlayCardCostList(int index) {
-        if (playCardCostListBuilder_ == null) {
-          return playCardCostList_.get(index);
-        } else {
-          return playCardCostListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder setPlayCardCostList(
-          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
-        if (playCardCostListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.set(index, value);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder setPlayCardCostList(
-          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
-        if (playCardCostListBuilder_ == null) {
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          playCardCostListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder addPlayCardCostList(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
-        if (playCardCostListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.add(value);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder addPlayCardCostList(
-          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
-        if (playCardCostListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.add(index, value);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder addPlayCardCostList(
-          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
-        if (playCardCostListBuilder_ == null) {
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          playCardCostListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder addPlayCardCostList(
-          int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
-        if (playCardCostListBuilder_ == null) {
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          playCardCostListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder addAllPlayCardCostList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> values) {
-        if (playCardCostListBuilder_ == null) {
-          ensurePlayCardCostListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, playCardCostList_);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder clearPlayCardCostList() {
-        if (playCardCostListBuilder_ == null) {
-          playCardCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public Builder removePlayCardCostList(int index) {
-        if (playCardCostListBuilder_ == null) {
-          ensurePlayCardCostListIsMutable();
-          playCardCostList_.remove(index);
-          onChanged();
-        } else {
-          playCardCostListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder getPlayCardCostListBuilder(
-          int index) {
-        return getPlayCardCostListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getPlayCardCostListOrBuilder(
-          int index) {
-        if (playCardCostListBuilder_ == null) {
-          return playCardCostList_.get(index);  } else {
-          return playCardCostListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
-           getPlayCardCostListOrBuilderList() {
-        if (playCardCostListBuilder_ != null) {
-          return playCardCostListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(playCardCostList_);
-        }
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addPlayCardCostListBuilder() {
-        return getPlayCardCostListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addPlayCardCostListBuilder(
-          int index) {
-        return getPlayCardCostListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 13;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder> 
-           getPlayCardCostListBuilderList() {
-        return getPlayCardCostListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
-          getPlayCardCostListFieldBuilder() {
-        if (playCardCostListBuilder_ == null) {
-          playCardCostListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder>(
-                  playCardCostList_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          playCardCostList_ = null;
-        }
-        return playCardCostListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1839,32 +1839,32 @@ public final class GCGCostReviseInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GCGCostReviseInfo.proto\032\027GCGAttackCost" +
-      "Info.proto\032\036GCGSelectOnStageCostInfo.pro" +
-      "to\032\031GCGPlayCardCostInfo.proto\"\354\001\n\021GCGCos" +
-      "tReviseInfo\022,\n\020attack_cost_list\030\014 \003(\0132\022." +
-      "GCGAttackCostInfo\022\025\n\ris_can_attack\030\017 \001(\010" +
-      "\022!\n\031can_use_hand_card_id_list\030\t \003(\r\022<\n\031s" +
-      "elect_on_stage_cost_list\030\001 \003(\0132\031.GCGSele" +
-      "ctOnStageCostInfo\0221\n\023play_card_cost_list" +
-      "\030\r \003(\0132\024.GCGPlayCardCostInfoB\033\n\031emu.gras" +
+      "Info.proto\032\031GCGPlayCardCostInfo.proto\032\036G" +
+      "CGSelectOnStageCostInfo.proto\"\354\001\n\021GCGCos" +
+      "tReviseInfo\022\025\n\ris_can_attack\030\004 \001(\010\022,\n\020at" +
+      "tack_cost_list\030\003 \003(\0132\022.GCGAttackCostInfo" +
+      "\022!\n\031can_use_hand_card_id_list\030\014 \003(\r\0221\n\023p" +
+      "lay_card_cost_list\030\010 \003(\0132\024.GCGPlayCardCo" +
+      "stInfo\022<\n\031select_on_stage_cost_list\030\001 \003(" +
+      "\0132\031.GCGSelectOnStageCostInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.getDescriptor(),
         });
     internal_static_GCGCostReviseInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGCostReviseInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGCostReviseInfo_descriptor,
-        new java.lang.String[] { "AttackCostList", "IsCanAttack", "CanUseHandCardIdList", "SelectOnStageCostList", "PlayCardCostList", });
+        new java.lang.String[] { "IsCanAttack", "AttackCostList", "CanUseHandCardIdList", "PlayCardCostList", "SelectOnStageCostList", });
     emu.grasscutter.net.proto.GCGAttackCostInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.GCGSelectOnStageCostInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

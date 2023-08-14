@@ -32,7 +32,7 @@ public final class ServantInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: KJENNHPPHLL
+   * Obf: CILIBMDMDLK
    * </pre>
    *
    * Protobuf type {@code ServantInfo}
@@ -311,7 +311,7 @@ public final class ServantInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: KJENNHPPHLL
+     * Obf: CILIBMDMDLK
      * </pre>
      *
      * Protobuf type {@code ServantInfo}

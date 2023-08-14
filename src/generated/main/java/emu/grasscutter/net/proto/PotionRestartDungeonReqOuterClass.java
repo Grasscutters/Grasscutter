@@ -20,8 +20,8 @@ public final class PotionRestartDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8444
-   * Obf: GIBLCBGEFEO
+   * CmdId: 465
+   * Obf: KNFAPFPMPNF
    * </pre>
    *
    * Protobuf type {@code PotionRestartDungeonReq}
@@ -246,8 +246,8 @@ public final class PotionRestartDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8444
-     * Obf: GIBLCBGEFEO
+     * CmdId: 465
+     * Obf: KNFAPFPMPNF
      * </pre>
      *
      * Protobuf type {@code PotionRestartDungeonReq}

@@ -20,8 +20,8 @@ public final class TowerRecordHandbookReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2442
-   * Obf: FPDKGNBJLDE
+   * CmdId: 2953
+   * Obf: CAOMBJNDNGD
    * </pre>
    *
    * Protobuf type {@code TowerRecordHandbookReq}
@@ -246,8 +246,8 @@ public final class TowerRecordHandbookReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2442
-     * Obf: FPDKGNBJLDE
+     * CmdId: 2953
+     * Obf: CAOMBJNDNGD
      * </pre>
      *
      * Protobuf type {@code TowerRecordHandbookReq}

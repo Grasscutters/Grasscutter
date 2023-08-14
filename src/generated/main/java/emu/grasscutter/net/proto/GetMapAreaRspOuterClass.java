@@ -19,39 +19,39 @@ public final class GetMapAreaRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo> 
         getMapAreaInfoListList();
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo getMapAreaInfoList(int index);
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     int getMapAreaInfoListCount();
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder> 
         getMapAreaInfoListOrBuilderList();
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder getMapAreaInfoListOrBuilder(
         int index);
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 3376
-   * Obf: PPDLJELFPEJ
+   * CmdId: 9654
+   * Obf: ILDNIMHNDKG
    * </pre>
    *
    * Protobuf type {@code GetMapAreaRsp}
@@ -100,18 +100,18 @@ public final class GetMapAreaRspOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 56: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mapAreaInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               mapAreaInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -149,17 +149,17 @@ public final class GetMapAreaRspOuterClass {
               emu.grasscutter.net.proto.GetMapAreaRspOuterClass.GetMapAreaRsp.class, emu.grasscutter.net.proto.GetMapAreaRspOuterClass.GetMapAreaRsp.Builder.class);
     }
 
-    public static final int MAP_AREA_INFO_LIST_FIELD_NUMBER = 3;
+    public static final int MAP_AREA_INFO_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo> mapAreaInfoList_;
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo> getMapAreaInfoListList() {
       return mapAreaInfoList_;
     }
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder> 
@@ -167,21 +167,21 @@ public final class GetMapAreaRspOuterClass {
       return mapAreaInfoList_;
     }
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     @java.lang.Override
     public int getMapAreaInfoListCount() {
       return mapAreaInfoList_.size();
     }
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo getMapAreaInfoList(int index) {
       return mapAreaInfoList_.get(index);
     }
     /**
-     * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+     * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder getMapAreaInfoListOrBuilder(
@@ -189,10 +189,10 @@ public final class GetMapAreaRspOuterClass {
       return mapAreaInfoList_.get(index);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -214,11 +214,11 @@ public final class GetMapAreaRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < mapAreaInfoList_.size(); i++) {
-        output.writeMessage(3, mapAreaInfoList_.get(i));
-      }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(7, retcode_);
+      }
+      for (int i = 0; i < mapAreaInfoList_.size(); i++) {
+        output.writeMessage(10, mapAreaInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class GetMapAreaRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < mapAreaInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, mapAreaInfoList_.get(i));
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(7, retcode_);
+      }
+      for (int i = 0; i < mapAreaInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, mapAreaInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,8 +370,8 @@ public final class GetMapAreaRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3376
-     * Obf: PPDLJELFPEJ
+     * CmdId: 9654
+     * Obf: ILDNIMHNDKG
      * </pre>
      *
      * Protobuf type {@code GetMapAreaRsp}
@@ -577,7 +577,7 @@ public final class GetMapAreaRspOuterClass {
           emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder> mapAreaInfoListBuilder_;
 
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo> getMapAreaInfoListList() {
         if (mapAreaInfoListBuilder_ == null) {
@@ -587,7 +587,7 @@ public final class GetMapAreaRspOuterClass {
         }
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public int getMapAreaInfoListCount() {
         if (mapAreaInfoListBuilder_ == null) {
@@ -597,7 +597,7 @@ public final class GetMapAreaRspOuterClass {
         }
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo getMapAreaInfoList(int index) {
         if (mapAreaInfoListBuilder_ == null) {
@@ -607,7 +607,7 @@ public final class GetMapAreaRspOuterClass {
         }
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder setMapAreaInfoList(
           int index, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo value) {
@@ -624,7 +624,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder setMapAreaInfoList(
           int index, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder builderForValue) {
@@ -638,7 +638,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder addMapAreaInfoList(emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo value) {
         if (mapAreaInfoListBuilder_ == null) {
@@ -654,7 +654,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder addMapAreaInfoList(
           int index, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo value) {
@@ -671,7 +671,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder addMapAreaInfoList(
           emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder builderForValue) {
@@ -685,7 +685,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder addMapAreaInfoList(
           int index, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder builderForValue) {
@@ -699,7 +699,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder addAllMapAreaInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo> values) {
@@ -714,7 +714,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder clearMapAreaInfoList() {
         if (mapAreaInfoListBuilder_ == null) {
@@ -727,7 +727,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public Builder removeMapAreaInfoList(int index) {
         if (mapAreaInfoListBuilder_ == null) {
@@ -740,14 +740,14 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder getMapAreaInfoListBuilder(
           int index) {
         return getMapAreaInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder getMapAreaInfoListOrBuilder(
           int index) {
@@ -757,7 +757,7 @@ public final class GetMapAreaRspOuterClass {
         }
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfoOrBuilder> 
            getMapAreaInfoListOrBuilderList() {
@@ -768,14 +768,14 @@ public final class GetMapAreaRspOuterClass {
         }
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder addMapAreaInfoListBuilder() {
         return getMapAreaInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder addMapAreaInfoListBuilder(
           int index) {
@@ -783,7 +783,7 @@ public final class GetMapAreaRspOuterClass {
             index, emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapAreaInfo map_area_info_list = 3;</code>
+       * <code>repeated .MapAreaInfo map_area_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MapAreaInfoOuterClass.MapAreaInfo.Builder> 
            getMapAreaInfoListBuilderList() {
@@ -806,7 +806,7 @@ public final class GetMapAreaRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -814,7 +814,7 @@ public final class GetMapAreaRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -825,7 +825,7 @@ public final class GetMapAreaRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -903,7 +903,7 @@ public final class GetMapAreaRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023GetMapAreaRsp.proto\032\021MapAreaInfo.proto" +
       "\"J\n\rGetMapAreaRsp\022(\n\022map_area_info_list\030" +
-      "\003 \003(\0132\014.MapAreaInfo\022\017\n\007retcode\030\013 \001(\005B\033\n\031" +
+      "\n \003(\0132\014.MapAreaInfo\022\017\n\007retcode\030\007 \001(\005B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

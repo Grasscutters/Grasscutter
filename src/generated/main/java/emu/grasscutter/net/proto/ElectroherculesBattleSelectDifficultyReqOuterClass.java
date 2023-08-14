@@ -19,21 +19,21 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 BNMHJGCJAPB = 9;</code>
-     * @return The bNMHJGCJAPB.
+     * <code>uint32 diffculty = 1;</code>
+     * @return The diffculty.
      */
-    int getBNMHJGCJAPB();
+    int getDiffculty();
 
     /**
-     * <code>uint32 stage_id = 4;</code>
+     * <code>uint32 stage_id = 5;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 20048
-   * Obf: HELJKHOOFLK
+   * CmdId: 21706
+   * Obf: NOOEPHBPPND
    * </pre>
    *
    * Protobuf type {@code ElectroherculesBattleSelectDifficultyReq}
@@ -80,14 +80,14 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
 
-              stageId_ = input.readUInt32();
+              diffculty_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 40: {
 
-              bNMHJGCJAPB_ = input.readUInt32();
+              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,21 +122,21 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
               emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq.class, emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq.Builder.class);
     }
 
-    public static final int BNMHJGCJAPB_FIELD_NUMBER = 9;
-    private int bNMHJGCJAPB_;
+    public static final int DIFFCULTY_FIELD_NUMBER = 1;
+    private int diffculty_;
     /**
-     * <code>uint32 BNMHJGCJAPB = 9;</code>
-     * @return The bNMHJGCJAPB.
+     * <code>uint32 diffculty = 1;</code>
+     * @return The diffculty.
      */
     @java.lang.Override
-    public int getBNMHJGCJAPB() {
-      return bNMHJGCJAPB_;
+    public int getDiffculty() {
+      return diffculty_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 4;
+    public static final int STAGE_ID_FIELD_NUMBER = 5;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 4;</code>
+     * <code>uint32 stage_id = 5;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (stageId_ != 0) {
-        output.writeUInt32(4, stageId_);
+      if (diffculty_ != 0) {
+        output.writeUInt32(1, diffculty_);
       }
-      if (bNMHJGCJAPB_ != 0) {
-        output.writeUInt32(9, bNMHJGCJAPB_);
+      if (stageId_ != 0) {
+        output.writeUInt32(5, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (diffculty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, diffculty_);
+      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, stageId_);
-      }
-      if (bNMHJGCJAPB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, bNMHJGCJAPB_);
+          .computeUInt32Size(5, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,8 +196,8 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       }
       emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq other = (emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq) obj;
 
-      if (getBNMHJGCJAPB()
-          != other.getBNMHJGCJAPB()) return false;
+      if (getDiffculty()
+          != other.getDiffculty()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -211,8 +211,8 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BNMHJGCJAPB_FIELD_NUMBER;
-      hash = (53 * hash) + getBNMHJGCJAPB();
+      hash = (37 * hash) + DIFFCULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDiffculty();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -312,8 +312,8 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20048
-     * Obf: HELJKHOOFLK
+     * CmdId: 21706
+     * Obf: NOOEPHBPPND
      * </pre>
      *
      * Protobuf type {@code ElectroherculesBattleSelectDifficultyReq}
@@ -353,7 +353,7 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bNMHJGCJAPB_ = 0;
+        diffculty_ = 0;
 
         stageId_ = 0;
 
@@ -383,7 +383,7 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq buildPartial() {
         emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq result = new emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq(this);
-        result.bNMHJGCJAPB_ = bNMHJGCJAPB_;
+        result.diffculty_ = diffculty_;
         result.stageId_ = stageId_;
         onBuilt();
         return result;
@@ -433,8 +433,8 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq other) {
         if (other == emu.grasscutter.net.proto.ElectroherculesBattleSelectDifficultyReqOuterClass.ElectroherculesBattleSelectDifficultyReq.getDefaultInstance()) return this;
-        if (other.getBNMHJGCJAPB() != 0) {
-          setBNMHJGCJAPB(other.getBNMHJGCJAPB());
+        if (other.getDiffculty() != 0) {
+          setDiffculty(other.getDiffculty());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
@@ -468,40 +468,40 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
         return this;
       }
 
-      private int bNMHJGCJAPB_ ;
+      private int diffculty_ ;
       /**
-       * <code>uint32 BNMHJGCJAPB = 9;</code>
-       * @return The bNMHJGCJAPB.
+       * <code>uint32 diffculty = 1;</code>
+       * @return The diffculty.
        */
       @java.lang.Override
-      public int getBNMHJGCJAPB() {
-        return bNMHJGCJAPB_;
+      public int getDiffculty() {
+        return diffculty_;
       }
       /**
-       * <code>uint32 BNMHJGCJAPB = 9;</code>
-       * @param value The bNMHJGCJAPB to set.
+       * <code>uint32 diffculty = 1;</code>
+       * @param value The diffculty to set.
        * @return This builder for chaining.
        */
-      public Builder setBNMHJGCJAPB(int value) {
+      public Builder setDiffculty(int value) {
         
-        bNMHJGCJAPB_ = value;
+        diffculty_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 BNMHJGCJAPB = 9;</code>
+       * <code>uint32 diffculty = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBNMHJGCJAPB() {
+      public Builder clearDiffculty() {
         
-        bNMHJGCJAPB_ = 0;
+        diffculty_ = 0;
         onChanged();
         return this;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 4;</code>
+       * <code>uint32 stage_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -597,10 +597,10 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n.ElectroherculesBattleSelectDifficultyR" +
-      "eq.proto\"Q\n(ElectroherculesBattleSelectD" +
-      "ifficultyReq\022\023\n\013BNMHJGCJAPB\030\t \001(\r\022\020\n\010sta" +
-      "ge_id\030\004 \001(\rB\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "eq.proto\"O\n(ElectroherculesBattleSelectD" +
+      "ifficultyReq\022\021\n\tdiffculty\030\001 \001(\r\022\020\n\010stage" +
+      "_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -611,7 +611,7 @@ public final class ElectroherculesBattleSelectDifficultyReqOuterClass {
     internal_static_ElectroherculesBattleSelectDifficultyReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ElectroherculesBattleSelectDifficultyReq_descriptor,
-        new java.lang.String[] { "BNMHJGCJAPB", "StageId", });
+        new java.lang.String[] { "Diffculty", "StageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

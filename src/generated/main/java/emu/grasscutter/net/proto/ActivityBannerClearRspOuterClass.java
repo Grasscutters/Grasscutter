@@ -19,27 +19,27 @@ public final class ActivityBannerClearRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 10;</code>
      * @return The activityId.
      */
     int getActivityId();
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 schedule_id = 2;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 2069
-   * Obf: DAKEIIHELME
+   * CmdId: 24680
+   * Obf: IDPPBEIEGLL
    * </pre>
    *
    * Protobuf type {@code ActivityBannerClearRsp}
@@ -86,19 +86,19 @@ public final class ActivityBannerClearRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 80: {
 
-              scheduleId_ = input.readUInt32();
+              activityId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 112: {
 
-              activityId_ = input.readUInt32();
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class ActivityBannerClearRspOuterClass {
               emu.grasscutter.net.proto.ActivityBannerClearRspOuterClass.ActivityBannerClearRsp.class, emu.grasscutter.net.proto.ActivityBannerClearRspOuterClass.ActivityBannerClearRsp.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 10;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 9;</code>
+     * <code>uint32 activity_id = 10;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -144,10 +144,10 @@ public final class ActivityBannerClearRspOuterClass {
       return activityId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class ActivityBannerClearRspOuterClass {
       return retcode_;
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 2;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 2;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class ActivityBannerClearRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (scheduleId_ != 0) {
-        output.writeUInt32(2, scheduleId_);
+      if (activityId_ != 0) {
+        output.writeUInt32(10, activityId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
+        output.writeInt32(13, retcode_);
       }
-      if (activityId_ != 0) {
-        output.writeUInt32(9, activityId_);
+      if (scheduleId_ != 0) {
+        output.writeUInt32(14, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class ActivityBannerClearRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
+      if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, scheduleId_);
+          .computeUInt32Size(10, activityId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
+          .computeInt32Size(13, retcode_);
       }
-      if (activityId_ != 0) {
+      if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, activityId_);
+          .computeUInt32Size(14, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,8 +345,8 @@ public final class ActivityBannerClearRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2069
-     * Obf: DAKEIIHELME
+     * CmdId: 24680
+     * Obf: IDPPBEIEGLL
      * </pre>
      *
      * Protobuf type {@code ActivityBannerClearRsp}
@@ -509,7 +509,7 @@ public final class ActivityBannerClearRspOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 10;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -517,7 +517,7 @@ public final class ActivityBannerClearRspOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 10;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
@@ -528,7 +528,7 @@ public final class ActivityBannerClearRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 activity_id = 9;</code>
+       * <code>uint32 activity_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
@@ -540,7 +540,7 @@ public final class ActivityBannerClearRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class ActivityBannerClearRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class ActivityBannerClearRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -571,7 +571,7 @@ public final class ActivityBannerClearRspOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class ActivityBannerClearRspOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class ActivityBannerClearRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 2;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -667,8 +667,8 @@ public final class ActivityBannerClearRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ActivityBannerClearRsp.proto\"S\n\026Activi" +
-      "tyBannerClearRsp\022\023\n\013activity_id\030\t \001(\r\022\017\n" +
-      "\007retcode\030\004 \001(\005\022\023\n\013schedule_id\030\002 \001(\rB\033\n\031e" +
+      "tyBannerClearRsp\022\023\n\013activity_id\030\n \001(\r\022\017\n" +
+      "\007retcode\030\r \001(\005\022\023\n\013schedule_id\030\016 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,62 +19,62 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_id = 10;</code>
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> 
+        getSelectAvatarIndexListList();
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex getSelectAvatarIndexList(int index);
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    int getSelectAvatarIndexListCount();
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> 
+        getSelectAvatarIndexListOrBuilderList();
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder getSelectAvatarIndexListOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 trial_id = 4;</code>
      * @return The trialId.
      */
     int getTrialId();
 
     /**
-     * <code>uint32 enter_point_id = 5;</code>
+     * <code>uint32 enter_point_id = 7;</code>
      * @return The enterPointId.
      */
     int getEnterPointId();
 
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @return A list containing the selectTrialAvatarIdList.
      */
     java.util.List<java.lang.Integer> getSelectTrialAvatarIdListList();
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @return The count of selectTrialAvatarIdList.
      */
     int getSelectTrialAvatarIdListCount();
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The selectTrialAvatarIdList at the given index.
      */
     int getSelectTrialAvatarIdList(int index);
-
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> 
-        getSelectAvatarIndexListList();
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex getSelectAvatarIndexList(int index);
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    int getSelectAvatarIndexListCount();
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> 
-        getSelectAvatarIndexListOrBuilderList();
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder getSelectAvatarIndexListOrBuilder(
-        int index);
   }
   /**
    * <pre>
-   * CmdId: 8665
-   * Obf: CFLPMAIKDFA
+   * CmdId: 29677
+   * Obf: MHLEOJINLKK
    * </pre>
    *
    * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonReq}
@@ -89,8 +89,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       super(builder);
     }
     private MistTrialSelectAvatarAndEnterDungeonReq() {
-      selectTrialAvatarIdList_ = emptyIntList();
       selectAvatarIndexList_ = java.util.Collections.emptyList();
+      selectTrialAvatarIdList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -124,44 +124,44 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectTrialAvatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selectTrialAvatarIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                selectTrialAvatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                selectTrialAvatarIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 selectAvatarIndexList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               selectAvatarIndexList_.add(
                   input.readMessage(emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.parser(), extensionRegistry));
               break;
             }
-            case 40: {
+            case 32: {
+
+              trialId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
 
               enterPointId_ = input.readUInt32();
               break;
             }
-            case 80: {
-
-              trialId_ = input.readUInt32();
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                selectTrialAvatarIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              selectTrialAvatarIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                selectTrialAvatarIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                selectTrialAvatarIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             default: {
@@ -180,10 +180,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selectTrialAvatarIdList_.makeImmutable(); // C
+          selectAvatarIndexList_ = java.util.Collections.unmodifiableList(selectAvatarIndexList_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          selectAvatarIndexList_ = java.util.Collections.unmodifiableList(selectAvatarIndexList_);
+          selectTrialAvatarIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -207,32 +207,32 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 mist_trial_avatar_id = 4;</code>
+       * <code>uint32 mist_trial_avatar_id = 5;</code>
        * @return Whether the mistTrialAvatarId field is set.
        */
       boolean hasMistTrialAvatarId();
       /**
-       * <code>uint32 mist_trial_avatar_id = 4;</code>
+       * <code>uint32 mist_trial_avatar_id = 5;</code>
        * @return The mistTrialAvatarId.
        */
       int getMistTrialAvatarId();
 
       /**
-       * <code>uint64 formal_avatar_guid = 5;</code>
+       * <code>uint64 formal_avatar_guid = 14;</code>
        * @return Whether the formalAvatarGuid field is set.
        */
       boolean hasFormalAvatarGuid();
       /**
-       * <code>uint64 formal_avatar_guid = 5;</code>
+       * <code>uint64 formal_avatar_guid = 14;</code>
        * @return The formalAvatarGuid.
        */
       long getFormalAvatarGuid();
 
-      public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.LMDJFNHPDIKCase getLMDJFNHPDIKCase();
+      public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.DetailCase getDetailCase();
     }
     /**
      * <pre>
-     * Obf: FGPIFIDBMKL
+     * Obf: JBBKIALOJOI
      * </pre>
      *
      * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex}
@@ -279,14 +279,14 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
               case 0:
                 done = true;
                 break;
-              case 32: {
-                lMDJFNHPDIKCase_ = 4;
-                lMDJFNHPDIK_ = input.readUInt32();
+              case 40: {
+                detailCase_ = 5;
+                detail_ = input.readUInt32();
                 break;
               }
-              case 40: {
-                lMDJFNHPDIKCase_ = 5;
-                lMDJFNHPDIK_ = input.readUInt64();
+              case 112: {
+                detailCase_ = 14;
+                detail_ = input.readUInt64();
                 break;
               }
               default: {
@@ -321,16 +321,16 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
                 emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.class, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder.class);
       }
 
-      private int lMDJFNHPDIKCase_ = 0;
-      private java.lang.Object lMDJFNHPDIK_;
-      public enum LMDJFNHPDIKCase
+      private int detailCase_ = 0;
+      private java.lang.Object detail_;
+      public enum DetailCase
           implements com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-        MIST_TRIAL_AVATAR_ID(4),
-        FORMAL_AVATAR_GUID(5),
-        LMDJFNHPDIK_NOT_SET(0);
+        MIST_TRIAL_AVATAR_ID(5),
+        FORMAL_AVATAR_GUID(14),
+        DETAIL_NOT_SET(0);
         private final int value;
-        private LMDJFNHPDIKCase(int value) {
+        private DetailCase(int value) {
           this.value = value;
         }
         /**
@@ -339,15 +339,15 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
          * @deprecated Use {@link #forNumber(int)} instead.
          */
         @java.lang.Deprecated
-        public static LMDJFNHPDIKCase valueOf(int value) {
+        public static DetailCase valueOf(int value) {
           return forNumber(value);
         }
 
-        public static LMDJFNHPDIKCase forNumber(int value) {
+        public static DetailCase forNumber(int value) {
           switch (value) {
-            case 4: return MIST_TRIAL_AVATAR_ID;
-            case 5: return FORMAL_AVATAR_GUID;
-            case 0: return LMDJFNHPDIK_NOT_SET;
+            case 5: return MIST_TRIAL_AVATAR_ID;
+            case 14: return FORMAL_AVATAR_GUID;
+            case 0: return DETAIL_NOT_SET;
             default: return null;
           }
         }
@@ -356,50 +356,50 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       };
 
-      public LMDJFNHPDIKCase
-      getLMDJFNHPDIKCase() {
-        return LMDJFNHPDIKCase.forNumber(
-            lMDJFNHPDIKCase_);
+      public DetailCase
+      getDetailCase() {
+        return DetailCase.forNumber(
+            detailCase_);
       }
 
-      public static final int MIST_TRIAL_AVATAR_ID_FIELD_NUMBER = 4;
+      public static final int MIST_TRIAL_AVATAR_ID_FIELD_NUMBER = 5;
       /**
-       * <code>uint32 mist_trial_avatar_id = 4;</code>
+       * <code>uint32 mist_trial_avatar_id = 5;</code>
        * @return Whether the mistTrialAvatarId field is set.
        */
       @java.lang.Override
       public boolean hasMistTrialAvatarId() {
-        return lMDJFNHPDIKCase_ == 4;
+        return detailCase_ == 5;
       }
       /**
-       * <code>uint32 mist_trial_avatar_id = 4;</code>
+       * <code>uint32 mist_trial_avatar_id = 5;</code>
        * @return The mistTrialAvatarId.
        */
       @java.lang.Override
       public int getMistTrialAvatarId() {
-        if (lMDJFNHPDIKCase_ == 4) {
-          return (java.lang.Integer) lMDJFNHPDIK_;
+        if (detailCase_ == 5) {
+          return (java.lang.Integer) detail_;
         }
         return 0;
       }
 
-      public static final int FORMAL_AVATAR_GUID_FIELD_NUMBER = 5;
+      public static final int FORMAL_AVATAR_GUID_FIELD_NUMBER = 14;
       /**
-       * <code>uint64 formal_avatar_guid = 5;</code>
+       * <code>uint64 formal_avatar_guid = 14;</code>
        * @return Whether the formalAvatarGuid field is set.
        */
       @java.lang.Override
       public boolean hasFormalAvatarGuid() {
-        return lMDJFNHPDIKCase_ == 5;
+        return detailCase_ == 14;
       }
       /**
-       * <code>uint64 formal_avatar_guid = 5;</code>
+       * <code>uint64 formal_avatar_guid = 14;</code>
        * @return The formalAvatarGuid.
        */
       @java.lang.Override
       public long getFormalAvatarGuid() {
-        if (lMDJFNHPDIKCase_ == 5) {
-          return (java.lang.Long) lMDJFNHPDIK_;
+        if (detailCase_ == 14) {
+          return (java.lang.Long) detail_;
         }
         return 0L;
       }
@@ -418,13 +418,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (lMDJFNHPDIKCase_ == 4) {
+        if (detailCase_ == 5) {
           output.writeUInt32(
-              4, (int)((java.lang.Integer) lMDJFNHPDIK_));
+              5, (int)((java.lang.Integer) detail_));
         }
-        if (lMDJFNHPDIKCase_ == 5) {
+        if (detailCase_ == 14) {
           output.writeUInt64(
-              5, (long)((java.lang.Long) lMDJFNHPDIK_));
+              14, (long)((java.lang.Long) detail_));
         }
         unknownFields.writeTo(output);
       }
@@ -435,15 +435,15 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (lMDJFNHPDIKCase_ == 4) {
+        if (detailCase_ == 5) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(
-                4, (int)((java.lang.Integer) lMDJFNHPDIK_));
+                5, (int)((java.lang.Integer) detail_));
         }
-        if (lMDJFNHPDIKCase_ == 5) {
+        if (detailCase_ == 14) {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt64Size(
-                5, (long)((java.lang.Long) lMDJFNHPDIK_));
+                14, (long)((java.lang.Long) detail_));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -460,13 +460,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
         emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex other = (emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex) obj;
 
-        if (!getLMDJFNHPDIKCase().equals(other.getLMDJFNHPDIKCase())) return false;
-        switch (lMDJFNHPDIKCase_) {
-          case 4:
+        if (!getDetailCase().equals(other.getDetailCase())) return false;
+        switch (detailCase_) {
+          case 5:
             if (getMistTrialAvatarId()
                 != other.getMistTrialAvatarId()) return false;
             break;
-          case 5:
+          case 14:
             if (getFormalAvatarGuid()
                 != other.getFormalAvatarGuid()) return false;
             break;
@@ -484,12 +484,12 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        switch (lMDJFNHPDIKCase_) {
-          case 4:
+        switch (detailCase_) {
+          case 5:
             hash = (37 * hash) + MIST_TRIAL_AVATAR_ID_FIELD_NUMBER;
             hash = (53 * hash) + getMistTrialAvatarId();
             break;
-          case 5:
+          case 14:
             hash = (37 * hash) + FORMAL_AVATAR_GUID_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
                 getFormalAvatarGuid());
@@ -594,7 +594,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       }
       /**
        * <pre>
-       * Obf: FGPIFIDBMKL
+       * Obf: JBBKIALOJOI
        * </pre>
        *
        * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex}
@@ -634,8 +634,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          lMDJFNHPDIKCase_ = 0;
-          lMDJFNHPDIK_ = null;
+          detailCase_ = 0;
+          detail_ = null;
           return this;
         }
 
@@ -662,13 +662,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         @java.lang.Override
         public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex buildPartial() {
           emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex result = new emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex(this);
-          if (lMDJFNHPDIKCase_ == 4) {
-            result.lMDJFNHPDIK_ = lMDJFNHPDIK_;
+          if (detailCase_ == 5) {
+            result.detail_ = detail_;
           }
-          if (lMDJFNHPDIKCase_ == 5) {
-            result.lMDJFNHPDIK_ = lMDJFNHPDIK_;
+          if (detailCase_ == 14) {
+            result.detail_ = detail_;
           }
-          result.lMDJFNHPDIKCase_ = lMDJFNHPDIKCase_;
+          result.detailCase_ = detailCase_;
           onBuilt();
           return result;
         }
@@ -717,7 +717,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
         public Builder mergeFrom(emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex other) {
           if (other == emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.getDefaultInstance()) return this;
-          switch (other.getLMDJFNHPDIKCase()) {
+          switch (other.getDetailCase()) {
             case MIST_TRIAL_AVATAR_ID: {
               setMistTrialAvatarId(other.getMistTrialAvatarId());
               break;
@@ -726,7 +726,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
               setFormalAvatarGuid(other.getFormalAvatarGuid());
               break;
             }
-            case LMDJFNHPDIK_NOT_SET: {
+            case DETAIL_NOT_SET: {
               break;
             }
           }
@@ -758,99 +758,99 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           }
           return this;
         }
-        private int lMDJFNHPDIKCase_ = 0;
-        private java.lang.Object lMDJFNHPDIK_;
-        public LMDJFNHPDIKCase
-            getLMDJFNHPDIKCase() {
-          return LMDJFNHPDIKCase.forNumber(
-              lMDJFNHPDIKCase_);
+        private int detailCase_ = 0;
+        private java.lang.Object detail_;
+        public DetailCase
+            getDetailCase() {
+          return DetailCase.forNumber(
+              detailCase_);
         }
 
-        public Builder clearLMDJFNHPDIK() {
-          lMDJFNHPDIKCase_ = 0;
-          lMDJFNHPDIK_ = null;
+        public Builder clearDetail() {
+          detailCase_ = 0;
+          detail_ = null;
           onChanged();
           return this;
         }
 
 
         /**
-         * <code>uint32 mist_trial_avatar_id = 4;</code>
+         * <code>uint32 mist_trial_avatar_id = 5;</code>
          * @return Whether the mistTrialAvatarId field is set.
          */
         public boolean hasMistTrialAvatarId() {
-          return lMDJFNHPDIKCase_ == 4;
+          return detailCase_ == 5;
         }
         /**
-         * <code>uint32 mist_trial_avatar_id = 4;</code>
+         * <code>uint32 mist_trial_avatar_id = 5;</code>
          * @return The mistTrialAvatarId.
          */
         public int getMistTrialAvatarId() {
-          if (lMDJFNHPDIKCase_ == 4) {
-            return (java.lang.Integer) lMDJFNHPDIK_;
+          if (detailCase_ == 5) {
+            return (java.lang.Integer) detail_;
           }
           return 0;
         }
         /**
-         * <code>uint32 mist_trial_avatar_id = 4;</code>
+         * <code>uint32 mist_trial_avatar_id = 5;</code>
          * @param value The mistTrialAvatarId to set.
          * @return This builder for chaining.
          */
         public Builder setMistTrialAvatarId(int value) {
-          lMDJFNHPDIKCase_ = 4;
-          lMDJFNHPDIK_ = value;
+          detailCase_ = 5;
+          detail_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>uint32 mist_trial_avatar_id = 4;</code>
+         * <code>uint32 mist_trial_avatar_id = 5;</code>
          * @return This builder for chaining.
          */
         public Builder clearMistTrialAvatarId() {
-          if (lMDJFNHPDIKCase_ == 4) {
-            lMDJFNHPDIKCase_ = 0;
-            lMDJFNHPDIK_ = null;
+          if (detailCase_ == 5) {
+            detailCase_ = 0;
+            detail_ = null;
             onChanged();
           }
           return this;
         }
 
         /**
-         * <code>uint64 formal_avatar_guid = 5;</code>
+         * <code>uint64 formal_avatar_guid = 14;</code>
          * @return Whether the formalAvatarGuid field is set.
          */
         public boolean hasFormalAvatarGuid() {
-          return lMDJFNHPDIKCase_ == 5;
+          return detailCase_ == 14;
         }
         /**
-         * <code>uint64 formal_avatar_guid = 5;</code>
+         * <code>uint64 formal_avatar_guid = 14;</code>
          * @return The formalAvatarGuid.
          */
         public long getFormalAvatarGuid() {
-          if (lMDJFNHPDIKCase_ == 5) {
-            return (java.lang.Long) lMDJFNHPDIK_;
+          if (detailCase_ == 14) {
+            return (java.lang.Long) detail_;
           }
           return 0L;
         }
         /**
-         * <code>uint64 formal_avatar_guid = 5;</code>
+         * <code>uint64 formal_avatar_guid = 14;</code>
          * @param value The formalAvatarGuid to set.
          * @return This builder for chaining.
          */
         public Builder setFormalAvatarGuid(long value) {
-          lMDJFNHPDIKCase_ = 5;
-          lMDJFNHPDIK_ = value;
+          detailCase_ = 14;
+          detail_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>uint64 formal_avatar_guid = 5;</code>
+         * <code>uint64 formal_avatar_guid = 14;</code>
          * @return This builder for chaining.
          */
         public Builder clearFormalAvatarGuid() {
-          if (lMDJFNHPDIKCase_ == 5) {
-            lMDJFNHPDIKCase_ = 0;
-            lMDJFNHPDIK_ = null;
+          if (detailCase_ == 14) {
+            detailCase_ = 0;
+            detail_ = null;
             onChanged();
           }
           return this;
@@ -908,10 +908,50 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
     }
 
-    public static final int TRIAL_ID_FIELD_NUMBER = 10;
+    public static final int SELECT_AVATAR_INDEX_LIST_FIELD_NUMBER = 2;
+    private java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> selectAvatarIndexList_;
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> getSelectAvatarIndexListList() {
+      return selectAvatarIndexList_;
+    }
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> 
+        getSelectAvatarIndexListOrBuilderList() {
+      return selectAvatarIndexList_;
+    }
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    @java.lang.Override
+    public int getSelectAvatarIndexListCount() {
+      return selectAvatarIndexList_.size();
+    }
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex getSelectAvatarIndexList(int index) {
+      return selectAvatarIndexList_.get(index);
+    }
+    /**
+     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder getSelectAvatarIndexListOrBuilder(
+        int index) {
+      return selectAvatarIndexList_.get(index);
+    }
+
+    public static final int TRIAL_ID_FIELD_NUMBER = 4;
     private int trialId_;
     /**
-     * <code>uint32 trial_id = 10;</code>
+     * <code>uint32 trial_id = 4;</code>
      * @return The trialId.
      */
     @java.lang.Override
@@ -919,10 +959,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       return trialId_;
     }
 
-    public static final int ENTER_POINT_ID_FIELD_NUMBER = 5;
+    public static final int ENTER_POINT_ID_FIELD_NUMBER = 7;
     private int enterPointId_;
     /**
-     * <code>uint32 enter_point_id = 5;</code>
+     * <code>uint32 enter_point_id = 7;</code>
      * @return The enterPointId.
      */
     @java.lang.Override
@@ -930,10 +970,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       return enterPointId_;
     }
 
-    public static final int SELECT_TRIAL_AVATAR_ID_LIST_FIELD_NUMBER = 3;
+    public static final int SELECT_TRIAL_AVATAR_ID_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList selectTrialAvatarIdList_;
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @return A list containing the selectTrialAvatarIdList.
      */
     @java.lang.Override
@@ -942,14 +982,14 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       return selectTrialAvatarIdList_;
     }
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @return The count of selectTrialAvatarIdList.
      */
     public int getSelectTrialAvatarIdListCount() {
       return selectTrialAvatarIdList_.size();
     }
     /**
-     * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
+     * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
      * @param index The index of the element to return.
      * @return The selectTrialAvatarIdList at the given index.
      */
@@ -957,46 +997,6 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       return selectTrialAvatarIdList_.getInt(index);
     }
     private int selectTrialAvatarIdListMemoizedSerializedSize = -1;
-
-    public static final int SELECT_AVATAR_INDEX_LIST_FIELD_NUMBER = 4;
-    private java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> selectAvatarIndexList_;
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> getSelectAvatarIndexListList() {
-      return selectAvatarIndexList_;
-    }
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> 
-        getSelectAvatarIndexListOrBuilderList() {
-      return selectAvatarIndexList_;
-    }
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    @java.lang.Override
-    public int getSelectAvatarIndexListCount() {
-      return selectAvatarIndexList_.size();
-    }
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex getSelectAvatarIndexList(int index) {
-      return selectAvatarIndexList_.get(index);
-    }
-    /**
-     * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder getSelectAvatarIndexListOrBuilder(
-        int index) {
-      return selectAvatarIndexList_.get(index);
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -1013,21 +1013,21 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      for (int i = 0; i < selectAvatarIndexList_.size(); i++) {
+        output.writeMessage(2, selectAvatarIndexList_.get(i));
+      }
+      if (trialId_ != 0) {
+        output.writeUInt32(4, trialId_);
+      }
+      if (enterPointId_ != 0) {
+        output.writeUInt32(7, enterPointId_);
+      }
       if (getSelectTrialAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(selectTrialAvatarIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < selectTrialAvatarIdList_.size(); i++) {
         output.writeUInt32NoTag(selectTrialAvatarIdList_.getInt(i));
-      }
-      for (int i = 0; i < selectAvatarIndexList_.size(); i++) {
-        output.writeMessage(4, selectAvatarIndexList_.get(i));
-      }
-      if (enterPointId_ != 0) {
-        output.writeUInt32(5, enterPointId_);
-      }
-      if (trialId_ != 0) {
-        output.writeUInt32(10, trialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1038,6 +1038,18 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      for (int i = 0; i < selectAvatarIndexList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, selectAvatarIndexList_.get(i));
+      }
+      if (trialId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, trialId_);
+      }
+      if (enterPointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, enterPointId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < selectTrialAvatarIdList_.size(); i++) {
@@ -1051,18 +1063,6 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         selectTrialAvatarIdListMemoizedSerializedSize = dataSize;
-      }
-      for (int i = 0; i < selectAvatarIndexList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, selectAvatarIndexList_.get(i));
-      }
-      if (enterPointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, enterPointId_);
-      }
-      if (trialId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, trialId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1079,14 +1079,14 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       }
       emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq other = (emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq) obj;
 
+      if (!getSelectAvatarIndexListList()
+          .equals(other.getSelectAvatarIndexListList())) return false;
       if (getTrialId()
           != other.getTrialId()) return false;
       if (getEnterPointId()
           != other.getEnterPointId()) return false;
       if (!getSelectTrialAvatarIdListList()
           .equals(other.getSelectTrialAvatarIdListList())) return false;
-      if (!getSelectAvatarIndexListList()
-          .equals(other.getSelectAvatarIndexListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1098,6 +1098,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSelectAvatarIndexListCount() > 0) {
+        hash = (37 * hash) + SELECT_AVATAR_INDEX_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectAvatarIndexListList().hashCode();
+      }
       hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTrialId();
       hash = (37 * hash) + ENTER_POINT_ID_FIELD_NUMBER;
@@ -1105,10 +1109,6 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       if (getSelectTrialAvatarIdListCount() > 0) {
         hash = (37 * hash) + SELECT_TRIAL_AVATAR_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSelectTrialAvatarIdListList().hashCode();
-      }
-      if (getSelectAvatarIndexListCount() > 0) {
-        hash = (37 * hash) + SELECT_AVATAR_INDEX_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSelectAvatarIndexListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1207,8 +1207,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8665
-     * Obf: CFLPMAIKDFA
+     * CmdId: 29677
+     * Obf: MHLEOJINLKK
      * </pre>
      *
      * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonReq}
@@ -1249,18 +1249,18 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (selectAvatarIndexListBuilder_ == null) {
+          selectAvatarIndexList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          selectAvatarIndexListBuilder_.clear();
+        }
         trialId_ = 0;
 
         enterPointId_ = 0;
 
         selectTrialAvatarIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (selectAvatarIndexListBuilder_ == null) {
-          selectAvatarIndexList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          selectAvatarIndexListBuilder_.clear();
-        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -1288,22 +1288,22 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq buildPartial() {
         emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq result = new emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq(this);
         int from_bitField0_ = bitField0_;
-        result.trialId_ = trialId_;
-        result.enterPointId_ = enterPointId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          selectTrialAvatarIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.selectTrialAvatarIdList_ = selectTrialAvatarIdList_;
         if (selectAvatarIndexListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             selectAvatarIndexList_ = java.util.Collections.unmodifiableList(selectAvatarIndexList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.selectAvatarIndexList_ = selectAvatarIndexList_;
         } else {
           result.selectAvatarIndexList_ = selectAvatarIndexListBuilder_.build();
         }
+        result.trialId_ = trialId_;
+        result.enterPointId_ = enterPointId_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          selectTrialAvatarIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.selectTrialAvatarIdList_ = selectTrialAvatarIdList_;
         onBuilt();
         return result;
       }
@@ -1352,27 +1352,11 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq other) {
         if (other == emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.getDefaultInstance()) return this;
-        if (other.getTrialId() != 0) {
-          setTrialId(other.getTrialId());
-        }
-        if (other.getEnterPointId() != 0) {
-          setEnterPointId(other.getEnterPointId());
-        }
-        if (!other.selectTrialAvatarIdList_.isEmpty()) {
-          if (selectTrialAvatarIdList_.isEmpty()) {
-            selectTrialAvatarIdList_ = other.selectTrialAvatarIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureSelectTrialAvatarIdListIsMutable();
-            selectTrialAvatarIdList_.addAll(other.selectTrialAvatarIdList_);
-          }
-          onChanged();
-        }
         if (selectAvatarIndexListBuilder_ == null) {
           if (!other.selectAvatarIndexList_.isEmpty()) {
             if (selectAvatarIndexList_.isEmpty()) {
               selectAvatarIndexList_ = other.selectAvatarIndexList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureSelectAvatarIndexListIsMutable();
               selectAvatarIndexList_.addAll(other.selectAvatarIndexList_);
@@ -1385,7 +1369,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
               selectAvatarIndexListBuilder_.dispose();
               selectAvatarIndexListBuilder_ = null;
               selectAvatarIndexList_ = other.selectAvatarIndexList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               selectAvatarIndexListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSelectAvatarIndexListFieldBuilder() : null;
@@ -1393,6 +1377,22 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
               selectAvatarIndexListBuilder_.addAllMessages(other.selectAvatarIndexList_);
             }
           }
+        }
+        if (other.getTrialId() != 0) {
+          setTrialId(other.getTrialId());
+        }
+        if (other.getEnterPointId() != 0) {
+          setEnterPointId(other.getEnterPointId());
+        }
+        if (!other.selectTrialAvatarIdList_.isEmpty()) {
+          if (selectTrialAvatarIdList_.isEmpty()) {
+            selectTrialAvatarIdList_ = other.selectTrialAvatarIdList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSelectTrialAvatarIdListIsMutable();
+            selectTrialAvatarIdList_.addAll(other.selectTrialAvatarIdList_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1424,153 +1424,12 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       }
       private int bitField0_;
 
-      private int trialId_ ;
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @return The trialId.
-       */
-      @java.lang.Override
-      public int getTrialId() {
-        return trialId_;
-      }
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @param value The trialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTrialId(int value) {
-        
-        trialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTrialId() {
-        
-        trialId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int enterPointId_ ;
-      /**
-       * <code>uint32 enter_point_id = 5;</code>
-       * @return The enterPointId.
-       */
-      @java.lang.Override
-      public int getEnterPointId() {
-        return enterPointId_;
-      }
-      /**
-       * <code>uint32 enter_point_id = 5;</code>
-       * @param value The enterPointId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnterPointId(int value) {
-        
-        enterPointId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 enter_point_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnterPointId() {
-        
-        enterPointId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList selectTrialAvatarIdList_ = emptyIntList();
-      private void ensureSelectTrialAvatarIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          selectTrialAvatarIdList_ = mutableCopy(selectTrialAvatarIdList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @return A list containing the selectTrialAvatarIdList.
-       */
-      public java.util.List<java.lang.Integer>
-          getSelectTrialAvatarIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(selectTrialAvatarIdList_) : selectTrialAvatarIdList_;
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @return The count of selectTrialAvatarIdList.
-       */
-      public int getSelectTrialAvatarIdListCount() {
-        return selectTrialAvatarIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @param index The index of the element to return.
-       * @return The selectTrialAvatarIdList at the given index.
-       */
-      public int getSelectTrialAvatarIdList(int index) {
-        return selectTrialAvatarIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The selectTrialAvatarIdList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSelectTrialAvatarIdList(
-          int index, int value) {
-        ensureSelectTrialAvatarIdListIsMutable();
-        selectTrialAvatarIdList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @param value The selectTrialAvatarIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addSelectTrialAvatarIdList(int value) {
-        ensureSelectTrialAvatarIdListIsMutable();
-        selectTrialAvatarIdList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @param values The selectTrialAvatarIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllSelectTrialAvatarIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureSelectTrialAvatarIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, selectTrialAvatarIdList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 select_trial_avatar_id_list = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSelectTrialAvatarIdList() {
-        selectTrialAvatarIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> selectAvatarIndexList_ =
         java.util.Collections.emptyList();
       private void ensureSelectAvatarIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           selectAvatarIndexList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex>(selectAvatarIndexList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1578,7 +1437,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> selectAvatarIndexListBuilder_;
 
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> getSelectAvatarIndexListList() {
         if (selectAvatarIndexListBuilder_ == null) {
@@ -1588,7 +1447,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public int getSelectAvatarIndexListCount() {
         if (selectAvatarIndexListBuilder_ == null) {
@@ -1598,7 +1457,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex getSelectAvatarIndexList(int index) {
         if (selectAvatarIndexListBuilder_ == null) {
@@ -1608,7 +1467,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder setSelectAvatarIndexList(
           int index, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex value) {
@@ -1625,7 +1484,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder setSelectAvatarIndexList(
           int index, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder builderForValue) {
@@ -1639,7 +1498,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder addSelectAvatarIndexList(emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex value) {
         if (selectAvatarIndexListBuilder_ == null) {
@@ -1655,7 +1514,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder addSelectAvatarIndexList(
           int index, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex value) {
@@ -1672,7 +1531,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder addSelectAvatarIndexList(
           emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder builderForValue) {
@@ -1686,7 +1545,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder addSelectAvatarIndexList(
           int index, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder builderForValue) {
@@ -1700,7 +1559,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder addAllSelectAvatarIndexList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> values) {
@@ -1715,12 +1574,12 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder clearSelectAvatarIndexList() {
         if (selectAvatarIndexListBuilder_ == null) {
           selectAvatarIndexList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           selectAvatarIndexListBuilder_.clear();
@@ -1728,7 +1587,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public Builder removeSelectAvatarIndexList(int index) {
         if (selectAvatarIndexListBuilder_ == null) {
@@ -1741,14 +1600,14 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder getSelectAvatarIndexListBuilder(
           int index) {
         return getSelectAvatarIndexListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder getSelectAvatarIndexListOrBuilder(
           int index) {
@@ -1758,7 +1617,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder> 
            getSelectAvatarIndexListOrBuilderList() {
@@ -1769,14 +1628,14 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder addSelectAvatarIndexListBuilder() {
         return getSelectAvatarIndexListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.getDefaultInstance());
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder addSelectAvatarIndexListBuilder(
           int index) {
@@ -1784,7 +1643,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
             index, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.getDefaultInstance());
       }
       /**
-       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 4;</code>
+       * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder> 
            getSelectAvatarIndexListBuilderList() {
@@ -1797,12 +1656,153 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           selectAvatarIndexListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.Builder, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndexOrBuilder>(
                   selectAvatarIndexList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           selectAvatarIndexList_ = null;
         }
         return selectAvatarIndexListBuilder_;
+      }
+
+      private int trialId_ ;
+      /**
+       * <code>uint32 trial_id = 4;</code>
+       * @return The trialId.
+       */
+      @java.lang.Override
+      public int getTrialId() {
+        return trialId_;
+      }
+      /**
+       * <code>uint32 trial_id = 4;</code>
+       * @param value The trialId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialId(int value) {
+        
+        trialId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 trial_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrialId() {
+        
+        trialId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int enterPointId_ ;
+      /**
+       * <code>uint32 enter_point_id = 7;</code>
+       * @return The enterPointId.
+       */
+      @java.lang.Override
+      public int getEnterPointId() {
+        return enterPointId_;
+      }
+      /**
+       * <code>uint32 enter_point_id = 7;</code>
+       * @param value The enterPointId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnterPointId(int value) {
+        
+        enterPointId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 enter_point_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnterPointId() {
+        
+        enterPointId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList selectTrialAvatarIdList_ = emptyIntList();
+      private void ensureSelectTrialAvatarIdListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          selectTrialAvatarIdList_ = mutableCopy(selectTrialAvatarIdList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @return A list containing the selectTrialAvatarIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getSelectTrialAvatarIdListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(selectTrialAvatarIdList_) : selectTrialAvatarIdList_;
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @return The count of selectTrialAvatarIdList.
+       */
+      public int getSelectTrialAvatarIdListCount() {
+        return selectTrialAvatarIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @param index The index of the element to return.
+       * @return The selectTrialAvatarIdList at the given index.
+       */
+      public int getSelectTrialAvatarIdList(int index) {
+        return selectTrialAvatarIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The selectTrialAvatarIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSelectTrialAvatarIdList(
+          int index, int value) {
+        ensureSelectTrialAvatarIdListIsMutable();
+        selectTrialAvatarIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @param value The selectTrialAvatarIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSelectTrialAvatarIdList(int value) {
+        ensureSelectTrialAvatarIdListIsMutable();
+        selectTrialAvatarIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @param values The selectTrialAvatarIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSelectTrialAvatarIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureSelectTrialAvatarIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, selectTrialAvatarIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 select_trial_avatar_id_list = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSelectTrialAvatarIdList() {
+        selectTrialAvatarIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1877,15 +1877,15 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n-MistTrialSelectAvatarAndEnterDungeonRe" +
-      "q.proto\"\270\002\n\'MistTrialSelectAvatarAndEnte" +
-      "rDungeonReq\022\020\n\010trial_id\030\n \001(\r\022\026\n\016enter_p" +
-      "oint_id\030\005 \001(\r\022#\n\033select_trial_avatar_id_" +
-      "list\030\003 \003(\r\022\\\n\030select_avatar_index_list\030\004" +
-      " \003(\0132:.MistTrialSelectAvatarAndEnterDung" +
-      "eonReq.SelectAvatarIndex\032`\n\021SelectAvatar" +
-      "Index\022\036\n\024mist_trial_avatar_id\030\004 \001(\rH\000\022\034\n" +
-      "\022formal_avatar_guid\030\005 \001(\004H\000B\r\n\013LMDJFNHPD" +
-      "IKB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "q.proto\"\263\002\n\'MistTrialSelectAvatarAndEnte" +
+      "rDungeonReq\022\\\n\030select_avatar_index_list\030" +
+      "\002 \003(\0132:.MistTrialSelectAvatarAndEnterDun" +
+      "geonReq.SelectAvatarIndex\022\020\n\010trial_id\030\004 " +
+      "\001(\r\022\026\n\016enter_point_id\030\007 \001(\r\022#\n\033select_tr" +
+      "ial_avatar_id_list\030\014 \003(\r\032[\n\021SelectAvatar" +
+      "Index\022\036\n\024mist_trial_avatar_id\030\005 \001(\rH\000\022\034\n" +
+      "\022formal_avatar_guid\030\016 \001(\004H\000B\010\n\006detailB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1896,13 +1896,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     internal_static_MistTrialSelectAvatarAndEnterDungeonReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MistTrialSelectAvatarAndEnterDungeonReq_descriptor,
-        new java.lang.String[] { "TrialId", "EnterPointId", "SelectTrialAvatarIdList", "SelectAvatarIndexList", });
+        new java.lang.String[] { "SelectAvatarIndexList", "TrialId", "EnterPointId", "SelectTrialAvatarIdList", });
     internal_static_MistTrialSelectAvatarAndEnterDungeonReq_SelectAvatarIndex_descriptor =
       internal_static_MistTrialSelectAvatarAndEnterDungeonReq_descriptor.getNestedTypes().get(0);
     internal_static_MistTrialSelectAvatarAndEnterDungeonReq_SelectAvatarIndex_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MistTrialSelectAvatarAndEnterDungeonReq_SelectAvatarIndex_descriptor,
-        new java.lang.String[] { "MistTrialAvatarId", "FormalAvatarGuid", "LMDJFNHPDIK", });
+        new java.lang.String[] { "MistTrialAvatarId", "FormalAvatarGuid", "Detail", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 3;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8313
-   * Obf: DKKHNAGFGPB
+   * CmdId: 25362
+   * Obf: DDEKGJEIGAN
    * </pre>
    *
    * Protobuf type {@code ActivityAcceptGiveGiftReq}
@@ -80,12 +80,12 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 72: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
               emu.grasscutter.net.proto.ActivityAcceptGiveGiftReqOuterClass.ActivityAcceptGiveGiftReq.class, emu.grasscutter.net.proto.ActivityAcceptGiveGiftReqOuterClass.ActivityAcceptGiveGiftReq.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 3;
+    public static final int UID_FIELD_NUMBER = 2;
     private int uid_;
     /**
-     * <code>uint32 uid = 3;</code>
+     * <code>uint32 uid = 2;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
       return uid_;
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 6;</code>
+     * <code>uint32 schedule_id = 9;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(3, uid_);
+        output.writeUInt32(2, uid_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(6, scheduleId_);
+        output.writeUInt32(9, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, uid_);
+          .computeUInt32Size(2, uid_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, scheduleId_);
+          .computeUInt32Size(9, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8313
-     * Obf: DKKHNAGFGPB
+     * CmdId: 25362
+     * Obf: DDEKGJEIGAN
      * </pre>
      *
      * Protobuf type {@code ActivityAcceptGiveGiftReq}
@@ -470,7 +470,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 2;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 2;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 3;</code>
+       * <code>uint32 uid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -501,7 +501,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 6;</code>
+       * <code>uint32 schedule_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -597,8 +597,8 @@ public final class ActivityAcceptGiveGiftReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037ActivityAcceptGiveGiftReq.proto\"=\n\031Act" +
-      "ivityAcceptGiveGiftReq\022\013\n\003uid\030\003 \001(\r\022\023\n\013s" +
-      "chedule_id\030\006 \001(\rB\033\n\031emu.grasscutter.net." +
+      "ivityAcceptGiveGiftReq\022\013\n\003uid\030\002 \001(\r\022\023\n\013s" +
+      "chedule_id\030\t \001(\rB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

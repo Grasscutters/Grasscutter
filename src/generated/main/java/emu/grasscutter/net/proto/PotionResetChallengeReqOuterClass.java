@@ -19,15 +19,15 @@ public final class PotionResetChallengeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 10;</code>
+     * <code>uint32 stage_id = 3;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
    * <pre>
-   * CmdId: 8298
-   * Obf: FDHEHHCPHPH
+   * CmdId: 2937
+   * Obf: NJKOPJFKKIH
    * </pre>
    *
    * Protobuf type {@code PotionResetChallengeReq}
@@ -74,7 +74,7 @@ public final class PotionResetChallengeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 24: {
 
               stageId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class PotionResetChallengeReqOuterClass {
               emu.grasscutter.net.proto.PotionResetChallengeReqOuterClass.PotionResetChallengeReq.class, emu.grasscutter.net.proto.PotionResetChallengeReqOuterClass.PotionResetChallengeReq.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 10;
+    public static final int STAGE_ID_FIELD_NUMBER = 3;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 10;</code>
+     * <code>uint32 stage_id = 3;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PotionResetChallengeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (stageId_ != 0) {
-        output.writeUInt32(10, stageId_);
+        output.writeUInt32(3, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PotionResetChallengeReqOuterClass {
       size = 0;
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, stageId_);
+          .computeUInt32Size(3, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PotionResetChallengeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8298
-     * Obf: FDHEHHCPHPH
+     * CmdId: 2937
+     * Obf: NJKOPJFKKIH
      * </pre>
      *
      * Protobuf type {@code PotionResetChallengeReq}
@@ -431,7 +431,7 @@ public final class PotionResetChallengeReqOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PotionResetChallengeReqOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PotionResetChallengeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 10;</code>
+       * <code>uint32 stage_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -527,7 +527,7 @@ public final class PotionResetChallengeReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035PotionResetChallengeReq.proto\"+\n\027Potio" +
-      "nResetChallengeReq\022\020\n\010stage_id\030\n \001(\rB\033\n\031" +
+      "nResetChallengeReq\022\020\n\010stage_id\030\003 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

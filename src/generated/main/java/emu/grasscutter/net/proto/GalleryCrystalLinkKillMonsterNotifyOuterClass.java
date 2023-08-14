@@ -19,21 +19,21 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 3;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
-
-    /**
      * <code>uint32 score = 7;</code>
      * @return The score.
      */
     int getScore();
+
+    /**
+     * <code>uint32 gallery_id = 15;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 5538
-   * Obf: OFPJGBIFBAI
+   * CmdId: 8962
+   * Obf: ACEOJCLEDFE
    * </pre>
    *
    * Protobuf type {@code GalleryCrystalLinkKillMonsterNotify}
@@ -80,14 +80,14 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
             case 56: {
 
               score_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              galleryId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,17 +122,6 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
               emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify.class, emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 3;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 3;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
     public static final int SCORE_FIELD_NUMBER = 7;
     private int score_;
     /**
@@ -142,6 +131,17 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
     @java.lang.Override
     public int getScore() {
       return score_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 15;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 15;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (galleryId_ != 0) {
-        output.writeUInt32(3, galleryId_);
-      }
       if (score_ != 0) {
         output.writeUInt32(7, score_);
+      }
+      if (galleryId_ != 0) {
+        output.writeUInt32(15, galleryId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (galleryId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, galleryId_);
-      }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, score_);
+      }
+      if (galleryId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, galleryId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify other = (emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify) obj;
 
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
       if (getScore()
           != other.getScore()) return false;
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getScore();
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5538
-     * Obf: OFPJGBIFBAI
+     * CmdId: 8962
+     * Obf: ACEOJCLEDFE
      * </pre>
      *
      * Protobuf type {@code GalleryCrystalLinkKillMonsterNotify}
@@ -353,9 +353,9 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        galleryId_ = 0;
-
         score_ = 0;
+
+        galleryId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify buildPartial() {
         emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify result = new emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify(this);
-        result.galleryId_ = galleryId_;
         result.score_ = score_;
+        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify other) {
         if (other == emu.grasscutter.net.proto.GalleryCrystalLinkKillMonsterNotifyOuterClass.GalleryCrystalLinkKillMonsterNotify.getDefaultInstance()) return this;
-        if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
-        }
         if (other.getScore() != 0) {
           setScore(other.getScore());
+        }
+        if (other.getGalleryId() != 0) {
+          setGalleryId(other.getGalleryId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
         return this;
       }
 
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int score_ ;
       /**
        * <code>uint32 score = 7;</code>
@@ -526,6 +495,37 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
       public Builder clearScore() {
         
         score_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 15;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 15;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
         onChanged();
         return this;
       }
@@ -598,7 +598,7 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)GalleryCrystalLinkKillMonsterNotify.pr" +
       "oto\"H\n#GalleryCrystalLinkKillMonsterNoti" +
-      "fy\022\022\n\ngallery_id\030\003 \001(\r\022\r\n\005score\030\007 \001(\rB\033\n" +
+      "fy\022\r\n\005score\030\007 \001(\r\022\022\n\ngallery_id\030\017 \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class GalleryCrystalLinkKillMonsterNotifyOuterClass {
     internal_static_GalleryCrystalLinkKillMonsterNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GalleryCrystalLinkKillMonsterNotify_descriptor,
-        new java.lang.String[] { "GalleryId", "Score", });
+        new java.lang.String[] { "Score", "GalleryId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

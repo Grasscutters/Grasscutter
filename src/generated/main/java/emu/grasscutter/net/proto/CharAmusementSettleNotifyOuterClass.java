@@ -25,21 +25,21 @@ public final class CharAmusementSettleNotifyOuterClass {
     int getFinishTime();
 
     /**
-     * <code>bool is_new_record = 1;</code>
+     * <code>bool is_new_record = 8;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>bool is_succ = 10;</code>
+     * <code>bool is_succ = 3;</code>
      * @return The isSucc.
      */
     boolean getIsSucc();
   }
   /**
    * <pre>
-   * CmdId: 24679
-   * Obf: MJNLBIPJLKF
+   * CmdId: 7004
+   * Obf: POCEIGICBMH
    * </pre>
    *
    * Protobuf type {@code CharAmusementSettleNotify}
@@ -86,7 +86,12 @@ public final class CharAmusementSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
+
+              isSucc_ = input.readBool();
+              break;
+            }
+            case 64: {
 
               isNewRecord_ = input.readBool();
               break;
@@ -94,11 +99,6 @@ public final class CharAmusementSettleNotifyOuterClass {
             case 72: {
 
               finishTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              isSucc_ = input.readBool();
               break;
             }
             default: {
@@ -144,10 +144,10 @@ public final class CharAmusementSettleNotifyOuterClass {
       return finishTime_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 1;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 8;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 1;</code>
+     * <code>bool is_new_record = 8;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class CharAmusementSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int IS_SUCC_FIELD_NUMBER = 10;
+    public static final int IS_SUCC_FIELD_NUMBER = 3;
     private boolean isSucc_;
     /**
-     * <code>bool is_succ = 10;</code>
+     * <code>bool is_succ = 3;</code>
      * @return The isSucc.
      */
     @java.lang.Override
@@ -180,14 +180,14 @@ public final class CharAmusementSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (isSucc_ != false) {
+        output.writeBool(3, isSucc_);
+      }
       if (isNewRecord_ != false) {
-        output.writeBool(1, isNewRecord_);
+        output.writeBool(8, isNewRecord_);
       }
       if (finishTime_ != 0) {
         output.writeUInt32(9, finishTime_);
-      }
-      if (isSucc_ != false) {
-        output.writeBool(10, isSucc_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class CharAmusementSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isSucc_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isSucc_);
+      }
       if (isNewRecord_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isNewRecord_);
+          .computeBoolSize(8, isNewRecord_);
       }
       if (finishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, finishTime_);
-      }
-      if (isSucc_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isSucc_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,8 +347,8 @@ public final class CharAmusementSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24679
-     * Obf: MJNLBIPJLKF
+     * CmdId: 7004
+     * Obf: POCEIGICBMH
      * </pre>
      *
      * Protobuf type {@code CharAmusementSettleNotify}
@@ -542,7 +542,7 @@ public final class CharAmusementSettleNotifyOuterClass {
 
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -550,7 +550,7 @@ public final class CharAmusementSettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 8;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -561,7 +561,7 @@ public final class CharAmusementSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 1;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -573,7 +573,7 @@ public final class CharAmusementSettleNotifyOuterClass {
 
       private boolean isSucc_ ;
       /**
-       * <code>bool is_succ = 10;</code>
+       * <code>bool is_succ = 3;</code>
        * @return The isSucc.
        */
       @java.lang.Override
@@ -581,7 +581,7 @@ public final class CharAmusementSettleNotifyOuterClass {
         return isSucc_;
       }
       /**
-       * <code>bool is_succ = 10;</code>
+       * <code>bool is_succ = 3;</code>
        * @param value The isSucc to set.
        * @return This builder for chaining.
        */
@@ -592,7 +592,7 @@ public final class CharAmusementSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_succ = 10;</code>
+       * <code>bool is_succ = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSucc() {
@@ -670,7 +670,7 @@ public final class CharAmusementSettleNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037CharAmusementSettleNotify.proto\"X\n\031Cha" +
       "rAmusementSettleNotify\022\023\n\013finish_time\030\t " +
-      "\001(\r\022\025\n\ris_new_record\030\001 \001(\010\022\017\n\007is_succ\030\n " +
+      "\001(\r\022\025\n\ris_new_record\030\010 \001(\010\022\017\n\007is_succ\030\003 " +
       "\001(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

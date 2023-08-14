@@ -19,21 +19,21 @@ public final class SceneEntityDrownRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 9;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 226
-   * Obf: EEFFCNDKIIC
+   * CmdId: 23727
+   * Obf: BFJPILGBDJK
    * </pre>
    *
    * Protobuf type {@code SceneEntityDrownRsp}
@@ -80,12 +80,12 @@ public final class SceneEntityDrownRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 120: {
 
               entityId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class SceneEntityDrownRspOuterClass {
               emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp.class, emu.grasscutter.net.proto.SceneEntityDrownRspOuterClass.SceneEntityDrownRsp.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 9;
+    public static final int ENTITY_ID_FIELD_NUMBER = 15;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 9;</code>
+     * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class SceneEntityDrownRspOuterClass {
       return entityId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class SceneEntityDrownRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(9, entityId_);
+        output.writeUInt32(15, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SceneEntityDrownRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, entityId_);
+          .computeUInt32Size(15, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class SceneEntityDrownRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 226
-     * Obf: EEFFCNDKIIC
+     * CmdId: 23727
+     * Obf: BFJPILGBDJK
      * </pre>
      *
      * Protobuf type {@code SceneEntityDrownRsp}
@@ -470,7 +470,7 @@ public final class SceneEntityDrownRspOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 9;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class SceneEntityDrownRspOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 9;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class SceneEntityDrownRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 9;</code>
+       * <code>uint32 entity_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -501,7 +501,7 @@ public final class SceneEntityDrownRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class SceneEntityDrownRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class SceneEntityDrownRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class SceneEntityDrownRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031SceneEntityDrownRsp.proto\"9\n\023SceneEnti" +
-      "tyDrownRsp\022\021\n\tentity_id\030\t \001(\r\022\017\n\007retcode" +
-      "\030\003 \001(\005B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "tyDrownRsp\022\021\n\tentity_id\030\017 \001(\r\022\017\n\007retcode" +
+      "\030\006 \001(\005B\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

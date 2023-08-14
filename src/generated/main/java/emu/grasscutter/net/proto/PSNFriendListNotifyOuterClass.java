@@ -19,33 +19,33 @@ public final class PSNFriendListNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> 
         getPsnFriendListList();
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief getPsnFriendList(int index);
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     int getPsnFriendListCount();
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder> 
         getPsnFriendListOrBuilderList();
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder getPsnFriendListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 4017
-   * Obf: KOGGDBKKKLD
+   * CmdId: 25239
+   * Obf: AEJPFHJJMJD
    * </pre>
    *
    * Protobuf type {@code PSNFriendListNotify}
@@ -94,7 +94,7 @@ public final class PSNFriendListNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 psnFriendList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class PSNFriendListNotifyOuterClass {
               emu.grasscutter.net.proto.PSNFriendListNotifyOuterClass.PSNFriendListNotify.class, emu.grasscutter.net.proto.PSNFriendListNotifyOuterClass.PSNFriendListNotify.Builder.class);
     }
 
-    public static final int PSN_FRIEND_LIST_FIELD_NUMBER = 9;
+    public static final int PSN_FRIEND_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> psnFriendList_;
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> getPsnFriendListList() {
       return psnFriendList_;
     }
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder> 
@@ -156,21 +156,21 @@ public final class PSNFriendListNotifyOuterClass {
       return psnFriendList_;
     }
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     @java.lang.Override
     public int getPsnFriendListCount() {
       return psnFriendList_.size();
     }
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief getPsnFriendList(int index) {
       return psnFriendList_.get(index);
     }
     /**
-     * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+     * <code>repeated .FriendBrief psn_friend_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder getPsnFriendListOrBuilder(
@@ -193,7 +193,7 @@ public final class PSNFriendListNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < psnFriendList_.size(); i++) {
-        output.writeMessage(9, psnFriendList_.get(i));
+        output.writeMessage(7, psnFriendList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class PSNFriendListNotifyOuterClass {
       size = 0;
       for (int i = 0; i < psnFriendList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, psnFriendList_.get(i));
+          .computeMessageSize(7, psnFriendList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class PSNFriendListNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4017
-     * Obf: KOGGDBKKKLD
+     * CmdId: 25239
+     * Obf: AEJPFHJJMJD
      * </pre>
      *
      * Protobuf type {@code PSNFriendListNotify}
@@ -538,7 +538,7 @@ public final class PSNFriendListNotifyOuterClass {
           emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder> psnFriendListBuilder_;
 
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> getPsnFriendListList() {
         if (psnFriendListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class PSNFriendListNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public int getPsnFriendListCount() {
         if (psnFriendListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class PSNFriendListNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief getPsnFriendList(int index) {
         if (psnFriendListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class PSNFriendListNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder setPsnFriendList(
           int index, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief value) {
@@ -585,7 +585,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder setPsnFriendList(
           int index, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder addPsnFriendList(emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief value) {
         if (psnFriendListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder addPsnFriendList(
           int index, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief value) {
@@ -632,7 +632,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder addPsnFriendList(
           emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder addPsnFriendList(
           int index, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder addAllPsnFriendList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief> values) {
@@ -675,7 +675,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder clearPsnFriendList() {
         if (psnFriendListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public Builder removePsnFriendList(int index) {
         if (psnFriendListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class PSNFriendListNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder getPsnFriendListBuilder(
           int index) {
         return getPsnFriendListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder getPsnFriendListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class PSNFriendListNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBriefOrBuilder> 
            getPsnFriendListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class PSNFriendListNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder addPsnFriendListBuilder() {
         return getPsnFriendListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.getDefaultInstance());
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder addPsnFriendListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class PSNFriendListNotifyOuterClass {
             index, emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.getDefaultInstance());
       }
       /**
-       * <code>repeated .FriendBrief psn_friend_list = 9;</code>
+       * <code>repeated .FriendBrief psn_friend_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief.Builder> 
            getPsnFriendListBuilderList() {
@@ -833,7 +833,7 @@ public final class PSNFriendListNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031PSNFriendListNotify.proto\032\021FriendBrief" +
       ".proto\"<\n\023PSNFriendListNotify\022%\n\017psn_fri" +
-      "end_list\030\t \003(\0132\014.FriendBriefB\033\n\031emu.gras" +
+      "end_list\030\007 \003(\0132\014.FriendBriefB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

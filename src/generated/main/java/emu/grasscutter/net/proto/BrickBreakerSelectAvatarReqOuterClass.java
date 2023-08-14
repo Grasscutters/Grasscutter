@@ -19,17 +19,17 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @return A list containing the avatarId.
      */
     java.util.List<java.lang.Integer> getAvatarIdList();
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @return The count of avatarId.
      */
     int getAvatarIdCount();
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @param index The index of the element to return.
      * @return The avatarId at the given index.
      */
@@ -37,8 +37,8 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5381
-   * Obf: IMMPAKBFGBD
+   * CmdId: 2047
+   * Obf: CGAIMPHPHLB
    * </pre>
    *
    * Protobuf type {@code BrickBreakerSelectAvatarReq}
@@ -87,7 +87,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 96: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarId_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
               avatarId_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
               emu.grasscutter.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq.class, emu.grasscutter.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 6;
+    public static final int AVATAR_ID_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList avatarId_;
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @return A list containing the avatarId.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
       return avatarId_;
     }
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @return The count of avatarId.
      */
     public int getAvatarIdCount() {
       return avatarId_.size();
     }
     /**
-     * <code>repeated uint32 avatar_id = 6;</code>
+     * <code>repeated uint32 avatar_id = 12;</code>
      * @param index The index of the element to return.
      * @return The avatarId at the given index.
      */
@@ -187,7 +187,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getAvatarIdList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(avatarIdMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarId_.size(); i++) {
@@ -345,8 +345,8 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5381
-     * Obf: IMMPAKBFGBD
+     * CmdId: 2047
+     * Obf: CGAIMPHPHLB
      * </pre>
      *
      * Protobuf type {@code BrickBreakerSelectAvatarReq}
@@ -516,7 +516,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @return A list containing the avatarId.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
                  java.util.Collections.unmodifiableList(avatarId_) : avatarId_;
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @return The count of avatarId.
        */
       public int getAvatarIdCount() {
         return avatarId_.size();
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @param index The index of the element to return.
        * @return The avatarId at the given index.
        */
@@ -540,7 +540,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         return avatarId_.getInt(index);
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @param index The index to set the value at.
        * @param value The avatarId to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @param value The avatarId to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @param values The avatarId to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id = 6;</code>
+       * <code>repeated uint32 avatar_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -655,7 +655,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!BrickBreakerSelectAvatarReq.proto\"0\n\033B" +
       "rickBreakerSelectAvatarReq\022\021\n\tavatar_id\030" +
-      "\006 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\014 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

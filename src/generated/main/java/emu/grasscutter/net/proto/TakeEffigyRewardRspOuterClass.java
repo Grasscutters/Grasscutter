@@ -19,21 +19,21 @@ public final class TakeEffigyRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_index = 8;</code>
+     * <code>uint32 reward_index = 11;</code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
 
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2165
-   * Obf: GHKLNGOGMHJ
+   * CmdId: 1345
+   * Obf: HJHDANAOMAB
    * </pre>
    *
    * Protobuf type {@code TakeEffigyRewardRsp}
@@ -80,12 +80,12 @@ public final class TakeEffigyRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
+            case 88: {
 
               rewardIndex_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class TakeEffigyRewardRspOuterClass {
               emu.grasscutter.net.proto.TakeEffigyRewardRspOuterClass.TakeEffigyRewardRsp.class, emu.grasscutter.net.proto.TakeEffigyRewardRspOuterClass.TakeEffigyRewardRsp.Builder.class);
     }
 
-    public static final int REWARD_INDEX_FIELD_NUMBER = 8;
+    public static final int REWARD_INDEX_FIELD_NUMBER = 11;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 8;</code>
+     * <code>uint32 reward_index = 11;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class TakeEffigyRewardRspOuterClass {
       return rewardIndex_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 5;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 5;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class TakeEffigyRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
+        output.writeInt32(9, retcode_);
       }
       if (rewardIndex_ != 0) {
-        output.writeUInt32(8, rewardIndex_);
+        output.writeUInt32(11, rewardIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class TakeEffigyRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       if (rewardIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, rewardIndex_);
+          .computeUInt32Size(11, rewardIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class TakeEffigyRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2165
-     * Obf: GHKLNGOGMHJ
+     * CmdId: 1345
+     * Obf: HJHDANAOMAB
      * </pre>
      *
      * Protobuf type {@code TakeEffigyRewardRsp}
@@ -470,7 +470,7 @@ public final class TakeEffigyRewardRspOuterClass {
 
       private int rewardIndex_ ;
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 11;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class TakeEffigyRewardRspOuterClass {
         return rewardIndex_;
       }
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 11;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class TakeEffigyRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
@@ -501,7 +501,7 @@ public final class TakeEffigyRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class TakeEffigyRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class TakeEffigyRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 5;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -597,8 +597,8 @@ public final class TakeEffigyRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TakeEffigyRewardRsp.proto\"<\n\023TakeEffig" +
-      "yRewardRsp\022\024\n\014reward_index\030\010 \001(\r\022\017\n\007retc" +
-      "ode\030\005 \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
+      "yRewardRsp\022\024\n\014reward_index\030\013 \001(\r\022\017\n\007retc" +
+      "ode\030\t \001(\005B\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

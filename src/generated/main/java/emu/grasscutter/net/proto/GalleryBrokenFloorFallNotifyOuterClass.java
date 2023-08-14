@@ -19,7 +19,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 fall_count = 6;</code>
+     * <code>uint32 fall_count = 1;</code>
      * @return The fallCount.
      */
     int getFallCount();
@@ -32,8 +32,8 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5564
-   * Obf: KIHFMBALOIK
+   * CmdId: 9913
+   * Obf: NNKNOOLCKMB
    * </pre>
    *
    * Protobuf type {@code GalleryBrokenFloorFallNotify}
@@ -80,14 +80,14 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              fallCount_ = input.readUInt32();
+              break;
+            }
             case 16: {
 
               galleryId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              fallCount_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
               emu.grasscutter.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify.class, emu.grasscutter.net.proto.GalleryBrokenFloorFallNotifyOuterClass.GalleryBrokenFloorFallNotify.Builder.class);
     }
 
-    public static final int FALL_COUNT_FIELD_NUMBER = 6;
+    public static final int FALL_COUNT_FIELD_NUMBER = 1;
     private int fallCount_;
     /**
-     * <code>uint32 fall_count = 6;</code>
+     * <code>uint32 fall_count = 1;</code>
      * @return The fallCount.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (fallCount_ != 0) {
+        output.writeUInt32(1, fallCount_);
+      }
       if (galleryId_ != 0) {
         output.writeUInt32(2, galleryId_);
-      }
-      if (fallCount_ != 0) {
-        output.writeUInt32(6, fallCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (fallCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, fallCount_);
+      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, galleryId_);
-      }
-      if (fallCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, fallCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5564
-     * Obf: KIHFMBALOIK
+     * CmdId: 9913
+     * Obf: NNKNOOLCKMB
      * </pre>
      *
      * Protobuf type {@code GalleryBrokenFloorFallNotify}
@@ -470,7 +470,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
 
       private int fallCount_ ;
       /**
-       * <code>uint32 fall_count = 6;</code>
+       * <code>uint32 fall_count = 1;</code>
        * @return The fallCount.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
         return fallCount_;
       }
       /**
-       * <code>uint32 fall_count = 6;</code>
+       * <code>uint32 fall_count = 1;</code>
        * @param value The fallCount to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 fall_count = 6;</code>
+       * <code>uint32 fall_count = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearFallCount() {
@@ -598,7 +598,7 @@ public final class GalleryBrokenFloorFallNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"GalleryBrokenFloorFallNotify.proto\"F\n\034" +
       "GalleryBrokenFloorFallNotify\022\022\n\nfall_cou" +
-      "nt\030\006 \001(\r\022\022\n\ngallery_id\030\002 \001(\rB\033\n\031emu.gras" +
+      "nt\030\001 \001(\r\022\022\n\ngallery_id\030\002 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

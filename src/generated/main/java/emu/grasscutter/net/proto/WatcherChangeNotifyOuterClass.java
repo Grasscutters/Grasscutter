@@ -19,43 +19,43 @@ public final class WatcherChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-     * @return A list containing the lJOHAPLDDIA.
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+     * @return A list containing the lDFBKBABEDG.
      */
-    java.util.List<java.lang.Integer> getLJOHAPLDDIAList();
+    java.util.List<java.lang.Integer> getLDFBKBABEDGList();
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-     * @return The count of lJOHAPLDDIA.
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+     * @return The count of lDFBKBABEDG.
      */
-    int getLJOHAPLDDIACount();
+    int getLDFBKBABEDGCount();
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
      * @param index The index of the element to return.
-     * @return The lJOHAPLDDIA at the given index.
+     * @return The lDFBKBABEDG at the given index.
      */
-    int getLJOHAPLDDIA(int index);
+    int getLDFBKBABEDG(int index);
 
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-     * @return A list containing the nEHBGOHNHLJ.
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+     * @return A list containing the iFEGPHMIGMG.
      */
-    java.util.List<java.lang.Integer> getNEHBGOHNHLJList();
+    java.util.List<java.lang.Integer> getIFEGPHMIGMGList();
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-     * @return The count of nEHBGOHNHLJ.
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+     * @return The count of iFEGPHMIGMG.
      */
-    int getNEHBGOHNHLJCount();
+    int getIFEGPHMIGMGCount();
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
      * @param index The index of the element to return.
-     * @return The nEHBGOHNHLJ at the given index.
+     * @return The iFEGPHMIGMG at the given index.
      */
-    int getNEHBGOHNHLJ(int index);
+    int getIFEGPHMIGMG(int index);
   }
   /**
    * <pre>
-   * CmdId: 2296
-   * Obf: BJBFEMJBFOA
+   * CmdId: 26993
+   * Obf: OLBHOEIEMMI
    * </pre>
    *
    * Protobuf type {@code WatcherChangeNotify}
@@ -70,8 +70,8 @@ public final class WatcherChangeNotifyOuterClass {
       super(builder);
     }
     private WatcherChangeNotify() {
-      lJOHAPLDDIA_ = emptyIntList();
-      nEHBGOHNHLJ_ = emptyIntList();
+      lDFBKBABEDG_ = emptyIntList();
+      iFEGPHMIGMG_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -105,44 +105,44 @@ public final class WatcherChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                lJOHAPLDDIA_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+            case 40: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                iFEGPHMIGMG_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
-              lJOHAPLDDIA_.addInt(input.readUInt32());
+              iFEGPHMIGMG_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                lJOHAPLDDIA_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                iFEGPHMIGMG_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                lJOHAPLDDIA_.addInt(input.readUInt32());
+                iFEGPHMIGMG_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nEHBGOHNHLJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                lDFBKBABEDG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
-              nEHBGOHNHLJ_.addInt(input.readUInt32());
+              lDFBKBABEDG_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                nEHBGOHNHLJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                lDFBKBABEDG_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                nEHBGOHNHLJ_.addInt(input.readUInt32());
+                lDFBKBABEDG_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -162,11 +162,11 @@ public final class WatcherChangeNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          lJOHAPLDDIA_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nEHBGOHNHLJ_.makeImmutable(); // C
+          iFEGPHMIGMG_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          lDFBKBABEDG_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -185,61 +185,61 @@ public final class WatcherChangeNotifyOuterClass {
               emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify.class, emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify.Builder.class);
     }
 
-    public static final int LJOHAPLDDIA_FIELD_NUMBER = 9;
-    private com.google.protobuf.Internal.IntList lJOHAPLDDIA_;
+    public static final int LDFBKBABEDG_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList lDFBKBABEDG_;
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-     * @return A list containing the lJOHAPLDDIA.
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+     * @return A list containing the lDFBKBABEDG.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getLJOHAPLDDIAList() {
-      return lJOHAPLDDIA_;
+        getLDFBKBABEDGList() {
+      return lDFBKBABEDG_;
     }
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-     * @return The count of lJOHAPLDDIA.
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+     * @return The count of lDFBKBABEDG.
      */
-    public int getLJOHAPLDDIACount() {
-      return lJOHAPLDDIA_.size();
+    public int getLDFBKBABEDGCount() {
+      return lDFBKBABEDG_.size();
     }
     /**
-     * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
+     * <code>repeated uint32 LDFBKBABEDG = 13;</code>
      * @param index The index of the element to return.
-     * @return The lJOHAPLDDIA at the given index.
+     * @return The lDFBKBABEDG at the given index.
      */
-    public int getLJOHAPLDDIA(int index) {
-      return lJOHAPLDDIA_.getInt(index);
+    public int getLDFBKBABEDG(int index) {
+      return lDFBKBABEDG_.getInt(index);
     }
-    private int lJOHAPLDDIAMemoizedSerializedSize = -1;
+    private int lDFBKBABEDGMemoizedSerializedSize = -1;
 
-    public static final int NEHBGOHNHLJ_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList nEHBGOHNHLJ_;
+    public static final int IFEGPHMIGMG_FIELD_NUMBER = 5;
+    private com.google.protobuf.Internal.IntList iFEGPHMIGMG_;
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-     * @return A list containing the nEHBGOHNHLJ.
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+     * @return A list containing the iFEGPHMIGMG.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getNEHBGOHNHLJList() {
-      return nEHBGOHNHLJ_;
+        getIFEGPHMIGMGList() {
+      return iFEGPHMIGMG_;
     }
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-     * @return The count of nEHBGOHNHLJ.
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+     * @return The count of iFEGPHMIGMG.
      */
-    public int getNEHBGOHNHLJCount() {
-      return nEHBGOHNHLJ_.size();
+    public int getIFEGPHMIGMGCount() {
+      return iFEGPHMIGMG_.size();
     }
     /**
-     * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
+     * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
      * @param index The index of the element to return.
-     * @return The nEHBGOHNHLJ at the given index.
+     * @return The iFEGPHMIGMG at the given index.
      */
-    public int getNEHBGOHNHLJ(int index) {
-      return nEHBGOHNHLJ_.getInt(index);
+    public int getIFEGPHMIGMG(int index) {
+      return iFEGPHMIGMG_.getInt(index);
     }
-    private int nEHBGOHNHLJMemoizedSerializedSize = -1;
+    private int iFEGPHMIGMGMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -256,19 +256,19 @@ public final class WatcherChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getLJOHAPLDDIAList().size() > 0) {
-        output.writeUInt32NoTag(74);
-        output.writeUInt32NoTag(lJOHAPLDDIAMemoizedSerializedSize);
+      if (getIFEGPHMIGMGList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(iFEGPHMIGMGMemoizedSerializedSize);
       }
-      for (int i = 0; i < lJOHAPLDDIA_.size(); i++) {
-        output.writeUInt32NoTag(lJOHAPLDDIA_.getInt(i));
+      for (int i = 0; i < iFEGPHMIGMG_.size(); i++) {
+        output.writeUInt32NoTag(iFEGPHMIGMG_.getInt(i));
       }
-      if (getNEHBGOHNHLJList().size() > 0) {
-        output.writeUInt32NoTag(98);
-        output.writeUInt32NoTag(nEHBGOHNHLJMemoizedSerializedSize);
+      if (getLDFBKBABEDGList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(lDFBKBABEDGMemoizedSerializedSize);
       }
-      for (int i = 0; i < nEHBGOHNHLJ_.size(); i++) {
-        output.writeUInt32NoTag(nEHBGOHNHLJ_.getInt(i));
+      for (int i = 0; i < lDFBKBABEDG_.size(); i++) {
+        output.writeUInt32NoTag(lDFBKBABEDG_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -281,31 +281,31 @@ public final class WatcherChangeNotifyOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < lJOHAPLDDIA_.size(); i++) {
+        for (int i = 0; i < iFEGPHMIGMG_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(lJOHAPLDDIA_.getInt(i));
+            .computeUInt32SizeNoTag(iFEGPHMIGMG_.getInt(i));
         }
         size += dataSize;
-        if (!getLJOHAPLDDIAList().isEmpty()) {
+        if (!getIFEGPHMIGMGList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        lJOHAPLDDIAMemoizedSerializedSize = dataSize;
+        iFEGPHMIGMGMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < nEHBGOHNHLJ_.size(); i++) {
+        for (int i = 0; i < lDFBKBABEDG_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(nEHBGOHNHLJ_.getInt(i));
+            .computeUInt32SizeNoTag(lDFBKBABEDG_.getInt(i));
         }
         size += dataSize;
-        if (!getNEHBGOHNHLJList().isEmpty()) {
+        if (!getLDFBKBABEDGList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        nEHBGOHNHLJMemoizedSerializedSize = dataSize;
+        lDFBKBABEDGMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -322,10 +322,10 @@ public final class WatcherChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify other = (emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify) obj;
 
-      if (!getLJOHAPLDDIAList()
-          .equals(other.getLJOHAPLDDIAList())) return false;
-      if (!getNEHBGOHNHLJList()
-          .equals(other.getNEHBGOHNHLJList())) return false;
+      if (!getLDFBKBABEDGList()
+          .equals(other.getLDFBKBABEDGList())) return false;
+      if (!getIFEGPHMIGMGList()
+          .equals(other.getIFEGPHMIGMGList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,13 +337,13 @@ public final class WatcherChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getLJOHAPLDDIACount() > 0) {
-        hash = (37 * hash) + LJOHAPLDDIA_FIELD_NUMBER;
-        hash = (53 * hash) + getLJOHAPLDDIAList().hashCode();
+      if (getLDFBKBABEDGCount() > 0) {
+        hash = (37 * hash) + LDFBKBABEDG_FIELD_NUMBER;
+        hash = (53 * hash) + getLDFBKBABEDGList().hashCode();
       }
-      if (getNEHBGOHNHLJCount() > 0) {
-        hash = (37 * hash) + NEHBGOHNHLJ_FIELD_NUMBER;
-        hash = (53 * hash) + getNEHBGOHNHLJList().hashCode();
+      if (getIFEGPHMIGMGCount() > 0) {
+        hash = (37 * hash) + IFEGPHMIGMG_FIELD_NUMBER;
+        hash = (53 * hash) + getIFEGPHMIGMGList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -442,8 +442,8 @@ public final class WatcherChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2296
-     * Obf: BJBFEMJBFOA
+     * CmdId: 26993
+     * Obf: OLBHOEIEMMI
      * </pre>
      *
      * Protobuf type {@code WatcherChangeNotify}
@@ -483,9 +483,9 @@ public final class WatcherChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lJOHAPLDDIA_ = emptyIntList();
+        lDFBKBABEDG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        nEHBGOHNHLJ_ = emptyIntList();
+        iFEGPHMIGMG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -515,15 +515,15 @@ public final class WatcherChangeNotifyOuterClass {
         emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify result = new emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          lJOHAPLDDIA_.makeImmutable();
+          lDFBKBABEDG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.lJOHAPLDDIA_ = lJOHAPLDDIA_;
+        result.lDFBKBABEDG_ = lDFBKBABEDG_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          nEHBGOHNHLJ_.makeImmutable();
+          iFEGPHMIGMG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.nEHBGOHNHLJ_ = nEHBGOHNHLJ_;
+        result.iFEGPHMIGMG_ = iFEGPHMIGMG_;
         onBuilt();
         return result;
       }
@@ -572,23 +572,23 @@ public final class WatcherChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify other) {
         if (other == emu.grasscutter.net.proto.WatcherChangeNotifyOuterClass.WatcherChangeNotify.getDefaultInstance()) return this;
-        if (!other.lJOHAPLDDIA_.isEmpty()) {
-          if (lJOHAPLDDIA_.isEmpty()) {
-            lJOHAPLDDIA_ = other.lJOHAPLDDIA_;
+        if (!other.lDFBKBABEDG_.isEmpty()) {
+          if (lDFBKBABEDG_.isEmpty()) {
+            lDFBKBABEDG_ = other.lDFBKBABEDG_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureLJOHAPLDDIAIsMutable();
-            lJOHAPLDDIA_.addAll(other.lJOHAPLDDIA_);
+            ensureLDFBKBABEDGIsMutable();
+            lDFBKBABEDG_.addAll(other.lDFBKBABEDG_);
           }
           onChanged();
         }
-        if (!other.nEHBGOHNHLJ_.isEmpty()) {
-          if (nEHBGOHNHLJ_.isEmpty()) {
-            nEHBGOHNHLJ_ = other.nEHBGOHNHLJ_;
+        if (!other.iFEGPHMIGMG_.isEmpty()) {
+          if (iFEGPHMIGMG_.isEmpty()) {
+            iFEGPHMIGMG_ = other.iFEGPHMIGMG_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureNEHBGOHNHLJIsMutable();
-            nEHBGOHNHLJ_.addAll(other.nEHBGOHNHLJ_);
+            ensureIFEGPHMIGMGIsMutable();
+            iFEGPHMIGMG_.addAll(other.iFEGPHMIGMG_);
           }
           onChanged();
         }
@@ -622,159 +622,159 @@ public final class WatcherChangeNotifyOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList lJOHAPLDDIA_ = emptyIntList();
-      private void ensureLJOHAPLDDIAIsMutable() {
+      private com.google.protobuf.Internal.IntList lDFBKBABEDG_ = emptyIntList();
+      private void ensureLDFBKBABEDGIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          lJOHAPLDDIA_ = mutableCopy(lJOHAPLDDIA_);
+          lDFBKBABEDG_ = mutableCopy(lDFBKBABEDG_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-       * @return A list containing the lJOHAPLDDIA.
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+       * @return A list containing the lDFBKBABEDG.
        */
       public java.util.List<java.lang.Integer>
-          getLJOHAPLDDIAList() {
+          getLDFBKBABEDGList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(lJOHAPLDDIA_) : lJOHAPLDDIA_;
+                 java.util.Collections.unmodifiableList(lDFBKBABEDG_) : lDFBKBABEDG_;
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-       * @return The count of lJOHAPLDDIA.
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+       * @return The count of lDFBKBABEDG.
        */
-      public int getLJOHAPLDDIACount() {
-        return lJOHAPLDDIA_.size();
+      public int getLDFBKBABEDGCount() {
+        return lDFBKBABEDG_.size();
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
        * @param index The index of the element to return.
-       * @return The lJOHAPLDDIA at the given index.
+       * @return The lDFBKBABEDG at the given index.
        */
-      public int getLJOHAPLDDIA(int index) {
-        return lJOHAPLDDIA_.getInt(index);
+      public int getLDFBKBABEDG(int index) {
+        return lDFBKBABEDG_.getInt(index);
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
        * @param index The index to set the value at.
-       * @param value The lJOHAPLDDIA to set.
+       * @param value The lDFBKBABEDG to set.
        * @return This builder for chaining.
        */
-      public Builder setLJOHAPLDDIA(
+      public Builder setLDFBKBABEDG(
           int index, int value) {
-        ensureLJOHAPLDDIAIsMutable();
-        lJOHAPLDDIA_.setInt(index, value);
+        ensureLDFBKBABEDGIsMutable();
+        lDFBKBABEDG_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-       * @param value The lJOHAPLDDIA to add.
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+       * @param value The lDFBKBABEDG to add.
        * @return This builder for chaining.
        */
-      public Builder addLJOHAPLDDIA(int value) {
-        ensureLJOHAPLDDIAIsMutable();
-        lJOHAPLDDIA_.addInt(value);
+      public Builder addLDFBKBABEDG(int value) {
+        ensureLDFBKBABEDGIsMutable();
+        lDFBKBABEDG_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
-       * @param values The lJOHAPLDDIA to add.
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
+       * @param values The lDFBKBABEDG to add.
        * @return This builder for chaining.
        */
-      public Builder addAllLJOHAPLDDIA(
+      public Builder addAllLDFBKBABEDG(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureLJOHAPLDDIAIsMutable();
+        ensureLDFBKBABEDGIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, lJOHAPLDDIA_);
+            values, lDFBKBABEDG_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 LJOHAPLDDIA = 9;</code>
+       * <code>repeated uint32 LDFBKBABEDG = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLJOHAPLDDIA() {
-        lJOHAPLDDIA_ = emptyIntList();
+      public Builder clearLDFBKBABEDG() {
+        lDFBKBABEDG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList nEHBGOHNHLJ_ = emptyIntList();
-      private void ensureNEHBGOHNHLJIsMutable() {
+      private com.google.protobuf.Internal.IntList iFEGPHMIGMG_ = emptyIntList();
+      private void ensureIFEGPHMIGMGIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          nEHBGOHNHLJ_ = mutableCopy(nEHBGOHNHLJ_);
+          iFEGPHMIGMG_ = mutableCopy(iFEGPHMIGMG_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-       * @return A list containing the nEHBGOHNHLJ.
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+       * @return A list containing the iFEGPHMIGMG.
        */
       public java.util.List<java.lang.Integer>
-          getNEHBGOHNHLJList() {
+          getIFEGPHMIGMGList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(nEHBGOHNHLJ_) : nEHBGOHNHLJ_;
+                 java.util.Collections.unmodifiableList(iFEGPHMIGMG_) : iFEGPHMIGMG_;
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-       * @return The count of nEHBGOHNHLJ.
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+       * @return The count of iFEGPHMIGMG.
        */
-      public int getNEHBGOHNHLJCount() {
-        return nEHBGOHNHLJ_.size();
+      public int getIFEGPHMIGMGCount() {
+        return iFEGPHMIGMG_.size();
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
        * @param index The index of the element to return.
-       * @return The nEHBGOHNHLJ at the given index.
+       * @return The iFEGPHMIGMG at the given index.
        */
-      public int getNEHBGOHNHLJ(int index) {
-        return nEHBGOHNHLJ_.getInt(index);
+      public int getIFEGPHMIGMG(int index) {
+        return iFEGPHMIGMG_.getInt(index);
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
        * @param index The index to set the value at.
-       * @param value The nEHBGOHNHLJ to set.
+       * @param value The iFEGPHMIGMG to set.
        * @return This builder for chaining.
        */
-      public Builder setNEHBGOHNHLJ(
+      public Builder setIFEGPHMIGMG(
           int index, int value) {
-        ensureNEHBGOHNHLJIsMutable();
-        nEHBGOHNHLJ_.setInt(index, value);
+        ensureIFEGPHMIGMGIsMutable();
+        iFEGPHMIGMG_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-       * @param value The nEHBGOHNHLJ to add.
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+       * @param value The iFEGPHMIGMG to add.
        * @return This builder for chaining.
        */
-      public Builder addNEHBGOHNHLJ(int value) {
-        ensureNEHBGOHNHLJIsMutable();
-        nEHBGOHNHLJ_.addInt(value);
+      public Builder addIFEGPHMIGMG(int value) {
+        ensureIFEGPHMIGMGIsMutable();
+        iFEGPHMIGMG_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
-       * @param values The nEHBGOHNHLJ to add.
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
+       * @param values The iFEGPHMIGMG to add.
        * @return This builder for chaining.
        */
-      public Builder addAllNEHBGOHNHLJ(
+      public Builder addAllIFEGPHMIGMG(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNEHBGOHNHLJIsMutable();
+        ensureIFEGPHMIGMGIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nEHBGOHNHLJ_);
+            values, iFEGPHMIGMG_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEHBGOHNHLJ = 12;</code>
+       * <code>repeated uint32 IFEGPHMIGMG = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNEHBGOHNHLJ() {
-        nEHBGOHNHLJ_ = emptyIntList();
+      public Builder clearIFEGPHMIGMG() {
+        iFEGPHMIGMG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -847,8 +847,8 @@ public final class WatcherChangeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031WatcherChangeNotify.proto\"?\n\023WatcherCh" +
-      "angeNotify\022\023\n\013LJOHAPLDDIA\030\t \003(\r\022\023\n\013NEHBG" +
-      "OHNHLJ\030\014 \003(\rB\033\n\031emu.grasscutter.net.prot" +
+      "angeNotify\022\023\n\013LDFBKBABEDG\030\r \003(\r\022\023\n\013IFEGP" +
+      "HMIGMG\030\005 \003(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -860,7 +860,7 @@ public final class WatcherChangeNotifyOuterClass {
     internal_static_WatcherChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WatcherChangeNotify_descriptor,
-        new java.lang.String[] { "LJOHAPLDDIA", "NEHBGOHNHLJ", });
+        new java.lang.String[] { "LDFBKBABEDG", "IFEGPHMIGMG", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -20,8 +20,8 @@ public final class HomeGetOnlineStatusReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4729
-   * Obf: DBADDFDJKAK
+   * CmdId: 2120
+   * Obf: ICENLMBOJAI
    * </pre>
    *
    * Protobuf type {@code HomeGetOnlineStatusReq}
@@ -246,8 +246,8 @@ public final class HomeGetOnlineStatusReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4729
-     * Obf: DBADDFDJKAK
+     * CmdId: 2120
+     * Obf: ICENLMBOJAI
      * </pre>
      *
      * Protobuf type {@code HomeGetOnlineStatusReq}

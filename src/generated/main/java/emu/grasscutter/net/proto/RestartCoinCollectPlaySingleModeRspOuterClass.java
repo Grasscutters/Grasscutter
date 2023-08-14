@@ -19,21 +19,21 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     int getLevelId();
   }
   /**
    * <pre>
-   * CmdId: 24881
-   * Obf: PIBIDKICNIP
+   * CmdId: 1628
+   * Obf: MLPLJOEGFGN
    * </pre>
    *
    * Protobuf type {@code RestartCoinCollectPlaySingleModeRsp}
@@ -80,14 +80,14 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
+            case 56: {
 
               levelId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
               emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeRspOuterClass.RestartCoinCollectPlaySingleModeRsp.class, emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeRspOuterClass.RestartCoinCollectPlaySingleModeRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
       return retcode_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 15;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 15;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(15, levelId_);
+        output.writeUInt32(7, levelId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, levelId_);
+          .computeUInt32Size(7, levelId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24881
-     * Obf: PIBIDKICNIP
+     * CmdId: 1628
+     * Obf: MLPLJOEGFGN
      * </pre>
      *
      * Protobuf type {@code RestartCoinCollectPlaySingleModeRsp}
@@ -470,7 +470,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 15;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -598,7 +598,7 @@ public final class RestartCoinCollectPlaySingleModeRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n)RestartCoinCollectPlaySingleModeRsp.pr" +
       "oto\"H\n#RestartCoinCollectPlaySingleModeR" +
-      "sp\022\017\n\007retcode\030\004 \001(\005\022\020\n\010level_id\030\017 \001(\rB\033\n" +
+      "sp\022\017\n\007retcode\030\t \001(\005\022\020\n\010level_id\030\007 \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

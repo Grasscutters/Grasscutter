@@ -26,8 +26,8 @@ public final class EndCoinCollectPlaySingleModeReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 21573
-   * Obf: CNCBKBCGLAI
+   * CmdId: 24718
+   * Obf: PMKEDCJEGKN
    * </pre>
    *
    * Protobuf type {@code EndCoinCollectPlaySingleModeReq}
@@ -279,8 +279,8 @@ public final class EndCoinCollectPlaySingleModeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21573
-     * Obf: CNCBKBCGLAI
+     * CmdId: 24718
+     * Obf: PMKEDCJEGKN
      * </pre>
      *
      * Protobuf type {@code EndCoinCollectPlaySingleModeReq}

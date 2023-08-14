@@ -16,7 +16,7 @@ public final class GCGSkillHpChangeTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: GNIOPBMHDHB
+   * Obf: EIJGIMEOODA
    * </pre>
    *
    * Protobuf enum {@code GCGSkillHpChangeType}

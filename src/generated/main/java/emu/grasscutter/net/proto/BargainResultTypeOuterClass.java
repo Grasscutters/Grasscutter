@@ -16,7 +16,7 @@ public final class BargainResultTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: ODJEENMANEG
+   * Obf: AGEMDFOGNBD
    * </pre>
    *
    * Protobuf enum {@code BargainResultType}

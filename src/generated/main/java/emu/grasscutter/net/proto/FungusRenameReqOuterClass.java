@@ -19,21 +19,21 @@ public final class FungusRenameReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 name_id = 7;</code>
+     * <code>uint32 name_id = 13;</code>
      * @return The nameId.
      */
     int getNameId();
 
     /**
-     * <code>uint32 fungus_id = 3;</code>
+     * <code>uint32 fungus_id = 9;</code>
      * @return The fungusId.
      */
     int getFungusId();
   }
   /**
    * <pre>
-   * CmdId: 20104
-   * Obf: AIGBCOCJCGN
+   * CmdId: 29655
+   * Obf: NDEPPHOPDCD
    * </pre>
    *
    * Protobuf type {@code FungusRenameReq}
@@ -80,12 +80,12 @@ public final class FungusRenameReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               fungusId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 104: {
 
               nameId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class FungusRenameReqOuterClass {
               emu.grasscutter.net.proto.FungusRenameReqOuterClass.FungusRenameReq.class, emu.grasscutter.net.proto.FungusRenameReqOuterClass.FungusRenameReq.Builder.class);
     }
 
-    public static final int NAME_ID_FIELD_NUMBER = 7;
+    public static final int NAME_ID_FIELD_NUMBER = 13;
     private int nameId_;
     /**
-     * <code>uint32 name_id = 7;</code>
+     * <code>uint32 name_id = 13;</code>
      * @return The nameId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class FungusRenameReqOuterClass {
       return nameId_;
     }
 
-    public static final int FUNGUS_ID_FIELD_NUMBER = 3;
+    public static final int FUNGUS_ID_FIELD_NUMBER = 9;
     private int fungusId_;
     /**
-     * <code>uint32 fungus_id = 3;</code>
+     * <code>uint32 fungus_id = 9;</code>
      * @return The fungusId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class FungusRenameReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (fungusId_ != 0) {
-        output.writeUInt32(3, fungusId_);
+        output.writeUInt32(9, fungusId_);
       }
       if (nameId_ != 0) {
-        output.writeUInt32(7, nameId_);
+        output.writeUInt32(13, nameId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class FungusRenameReqOuterClass {
       size = 0;
       if (fungusId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, fungusId_);
+          .computeUInt32Size(9, fungusId_);
       }
       if (nameId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, nameId_);
+          .computeUInt32Size(13, nameId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class FungusRenameReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20104
-     * Obf: AIGBCOCJCGN
+     * CmdId: 29655
+     * Obf: NDEPPHOPDCD
      * </pre>
      *
      * Protobuf type {@code FungusRenameReq}
@@ -470,7 +470,7 @@ public final class FungusRenameReqOuterClass {
 
       private int nameId_ ;
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 13;</code>
        * @return The nameId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class FungusRenameReqOuterClass {
         return nameId_;
       }
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 13;</code>
        * @param value The nameId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class FungusRenameReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 name_id = 7;</code>
+       * <code>uint32 name_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearNameId() {
@@ -501,7 +501,7 @@ public final class FungusRenameReqOuterClass {
 
       private int fungusId_ ;
       /**
-       * <code>uint32 fungus_id = 3;</code>
+       * <code>uint32 fungus_id = 9;</code>
        * @return The fungusId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class FungusRenameReqOuterClass {
         return fungusId_;
       }
       /**
-       * <code>uint32 fungus_id = 3;</code>
+       * <code>uint32 fungus_id = 9;</code>
        * @param value The fungusId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class FungusRenameReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 fungus_id = 3;</code>
+       * <code>uint32 fungus_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearFungusId() {
@@ -597,7 +597,7 @@ public final class FungusRenameReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025FungusRenameReq.proto\"5\n\017FungusRenameR" +
-      "eq\022\017\n\007name_id\030\007 \001(\r\022\021\n\tfungus_id\030\003 \001(\rB\033" +
+      "eq\022\017\n\007name_id\030\r \001(\r\022\021\n\tfungus_id\030\t \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,21 +19,21 @@ public final class ClientAIStateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 cur_tactic = 5;</code>
+     * @return The curTactic.
+     */
+    int getCurTactic();
+
+    /**
      * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     int getEntityId();
-
-    /**
-     * <code>uint32 cur_tactic = 4;</code>
-     * @return The curTactic.
-     */
-    int getCurTactic();
   }
   /**
    * <pre>
-   * CmdId: 1194
-   * Obf: IDPNCKHFLNL
+   * CmdId: 6944
+   * Obf: FCKHNNLKPOI
    * </pre>
    *
    * Protobuf type {@code ClientAIStateNotify}
@@ -80,7 +80,7 @@ public final class ClientAIStateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               curTactic_ = input.readUInt32();
               break;
@@ -122,6 +122,17 @@ public final class ClientAIStateNotifyOuterClass {
               emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify.class, emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify.Builder.class);
     }
 
+    public static final int CUR_TACTIC_FIELD_NUMBER = 5;
+    private int curTactic_;
+    /**
+     * <code>uint32 cur_tactic = 5;</code>
+     * @return The curTactic.
+     */
+    @java.lang.Override
+    public int getCurTactic() {
+      return curTactic_;
+    }
+
     public static final int ENTITY_ID_FIELD_NUMBER = 13;
     private int entityId_;
     /**
@@ -131,17 +142,6 @@ public final class ClientAIStateNotifyOuterClass {
     @java.lang.Override
     public int getEntityId() {
       return entityId_;
-    }
-
-    public static final int CUR_TACTIC_FIELD_NUMBER = 4;
-    private int curTactic_;
-    /**
-     * <code>uint32 cur_tactic = 4;</code>
-     * @return The curTactic.
-     */
-    @java.lang.Override
-    public int getCurTactic() {
-      return curTactic_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,7 +159,7 @@ public final class ClientAIStateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (curTactic_ != 0) {
-        output.writeUInt32(4, curTactic_);
+        output.writeUInt32(5, curTactic_);
       }
       if (entityId_ != 0) {
         output.writeUInt32(13, entityId_);
@@ -175,7 +175,7 @@ public final class ClientAIStateNotifyOuterClass {
       size = 0;
       if (curTactic_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, curTactic_);
+          .computeUInt32Size(5, curTactic_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -196,10 +196,10 @@ public final class ClientAIStateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify other = (emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (getCurTactic()
           != other.getCurTactic()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class ClientAIStateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + CUR_TACTIC_FIELD_NUMBER;
       hash = (53 * hash) + getCurTactic();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class ClientAIStateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1194
-     * Obf: IDPNCKHFLNL
+     * CmdId: 6944
+     * Obf: FCKHNNLKPOI
      * </pre>
      *
      * Protobuf type {@code ClientAIStateNotify}
@@ -353,9 +353,9 @@ public final class ClientAIStateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         curTactic_ = 0;
+
+        entityId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class ClientAIStateNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify buildPartial() {
         emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify result = new emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify(this);
-        result.entityId_ = entityId_;
         result.curTactic_ = curTactic_;
+        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class ClientAIStateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify other) {
         if (other == emu.grasscutter.net.proto.ClientAIStateNotifyOuterClass.ClientAIStateNotify.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.getCurTactic() != 0) {
           setCurTactic(other.getCurTactic());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,6 +468,37 @@ public final class ClientAIStateNotifyOuterClass {
         return this;
       }
 
+      private int curTactic_ ;
+      /**
+       * <code>uint32 cur_tactic = 5;</code>
+       * @return The curTactic.
+       */
+      @java.lang.Override
+      public int getCurTactic() {
+        return curTactic_;
+      }
+      /**
+       * <code>uint32 cur_tactic = 5;</code>
+       * @param value The curTactic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurTactic(int value) {
+        
+        curTactic_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_tactic = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurTactic() {
+        
+        curTactic_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int entityId_ ;
       /**
        * <code>uint32 entity_id = 13;</code>
@@ -495,37 +526,6 @@ public final class ClientAIStateNotifyOuterClass {
       public Builder clearEntityId() {
         
         entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int curTactic_ ;
-      /**
-       * <code>uint32 cur_tactic = 4;</code>
-       * @return The curTactic.
-       */
-      @java.lang.Override
-      public int getCurTactic() {
-        return curTactic_;
-      }
-      /**
-       * <code>uint32 cur_tactic = 4;</code>
-       * @param value The curTactic to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurTactic(int value) {
-        
-        curTactic_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_tactic = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurTactic() {
-        
-        curTactic_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class ClientAIStateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ClientAIStateNotify.proto\"<\n\023ClientAIS" +
-      "tateNotify\022\021\n\tentity_id\030\r \001(\r\022\022\n\ncur_tac" +
-      "tic\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "tateNotify\022\022\n\ncur_tactic\030\005 \001(\r\022\021\n\tentity" +
+      "_id\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class ClientAIStateNotifyOuterClass {
     internal_static_ClientAIStateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientAIStateNotify_descriptor,
-        new java.lang.String[] { "EntityId", "CurTactic", });
+        new java.lang.String[] { "CurTactic", "EntityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

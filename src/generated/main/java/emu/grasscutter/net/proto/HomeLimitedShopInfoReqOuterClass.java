@@ -20,8 +20,8 @@ public final class HomeLimitedShopInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4741
-   * Obf: KKICFPCDONF
+   * CmdId: 23396
+   * Obf: FKEGCNDKLJN
    * </pre>
    *
    * Protobuf type {@code HomeLimitedShopInfoReq}
@@ -246,8 +246,8 @@ public final class HomeLimitedShopInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4741
-     * Obf: KKICFPCDONF
+     * CmdId: 23396
+     * Obf: FKEGCNDKLJN
      * </pre>
      *
      * Protobuf type {@code HomeLimitedShopInfoReq}

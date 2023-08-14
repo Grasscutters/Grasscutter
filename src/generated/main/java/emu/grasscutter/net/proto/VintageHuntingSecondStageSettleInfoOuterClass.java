@@ -19,23 +19,11 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 capture_animal_num = 4;</code>
-     * @return The captureAnimalNum.
-     */
-    int getCaptureAnimalNum();
-
-    /**
-     * <code>uint32 total_num = 7;</code>
-     * @return The totalNum.
-     */
-    int getTotalNum();
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     int getAnimalCountMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     boolean containsAnimalCountMap(
         int key);
@@ -46,27 +34,39 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAnimalCountMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getAnimalCountMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
 
     int getAnimalCountMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
 
     int getAnimalCountMapOrThrow(
         int key);
+
+    /**
+     * <code>uint32 capture_animal_num = 13;</code>
+     * @return The captureAnimalNum.
+     */
+    int getCaptureAnimalNum();
+
+    /**
+     * <code>uint32 total_num = 8;</code>
+     * @return The totalNum.
+     */
+    int getTotalNum();
   }
   /**
    * <pre>
-   * Obf: OGILNLELDED
+   * Obf: FGOPOLCODBO
    * </pre>
    *
    * Protobuf type {@code VintageHuntingSecondStageSettleInfo}
@@ -114,17 +114,17 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              captureAnimalNum_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 64: {
 
               totalNum_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 104: {
+
+              captureAnimalNum_ = input.readUInt32();
+              break;
+            }
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 animalCountMap_ = com.google.protobuf.MapField.newMapField(
                     AnimalCountMapDefaultEntryHolder.defaultEntry);
@@ -166,7 +166,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 12:
+        case 15:
           return internalGetAnimalCountMap();
         default:
           throw new RuntimeException(
@@ -181,29 +181,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
               emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.class, emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder.class);
     }
 
-    public static final int CAPTURE_ANIMAL_NUM_FIELD_NUMBER = 4;
-    private int captureAnimalNum_;
-    /**
-     * <code>uint32 capture_animal_num = 4;</code>
-     * @return The captureAnimalNum.
-     */
-    @java.lang.Override
-    public int getCaptureAnimalNum() {
-      return captureAnimalNum_;
-    }
-
-    public static final int TOTAL_NUM_FIELD_NUMBER = 7;
-    private int totalNum_;
-    /**
-     * <code>uint32 total_num = 7;</code>
-     * @return The totalNum.
-     */
-    @java.lang.Override
-    public int getTotalNum() {
-      return totalNum_;
-    }
-
-    public static final int ANIMAL_COUNT_MAP_FIELD_NUMBER = 12;
+    public static final int ANIMAL_COUNT_MAP_FIELD_NUMBER = 15;
     private static final class AnimalCountMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -230,7 +208,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       return internalGetAnimalCountMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
 
     @java.lang.Override
@@ -248,7 +226,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       return getAnimalCountMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     @java.lang.Override
 
@@ -256,7 +234,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       return internalGetAnimalCountMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     @java.lang.Override
 
@@ -269,7 +247,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+     * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
      */
     @java.lang.Override
 
@@ -282,6 +260,28 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
+    }
+
+    public static final int CAPTURE_ANIMAL_NUM_FIELD_NUMBER = 13;
+    private int captureAnimalNum_;
+    /**
+     * <code>uint32 capture_animal_num = 13;</code>
+     * @return The captureAnimalNum.
+     */
+    @java.lang.Override
+    public int getCaptureAnimalNum() {
+      return captureAnimalNum_;
+    }
+
+    public static final int TOTAL_NUM_FIELD_NUMBER = 8;
+    private int totalNum_;
+    /**
+     * <code>uint32 total_num = 8;</code>
+     * @return The totalNum.
+     */
+    @java.lang.Override
+    public int getTotalNum() {
+      return totalNum_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -298,18 +298,18 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (captureAnimalNum_ != 0) {
-        output.writeUInt32(4, captureAnimalNum_);
-      }
       if (totalNum_ != 0) {
-        output.writeUInt32(7, totalNum_);
+        output.writeUInt32(8, totalNum_);
+      }
+      if (captureAnimalNum_ != 0) {
+        output.writeUInt32(13, captureAnimalNum_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetAnimalCountMap(),
           AnimalCountMapDefaultEntryHolder.defaultEntry,
-          12);
+          15);
       unknownFields.writeTo(output);
     }
 
@@ -319,13 +319,13 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (captureAnimalNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, captureAnimalNum_);
-      }
       if (totalNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, totalNum_);
+          .computeUInt32Size(8, totalNum_);
+      }
+      if (captureAnimalNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, captureAnimalNum_);
       }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetAnimalCountMap().getMap().entrySet()) {
@@ -335,7 +335,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(12, animalCountMap__);
+            .computeMessageSize(15, animalCountMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -352,12 +352,12 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       }
       emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo other = (emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) obj;
 
+      if (!internalGetAnimalCountMap().equals(
+          other.internalGetAnimalCountMap())) return false;
       if (getCaptureAnimalNum()
           != other.getCaptureAnimalNum()) return false;
       if (getTotalNum()
           != other.getTotalNum()) return false;
-      if (!internalGetAnimalCountMap().equals(
-          other.internalGetAnimalCountMap())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -369,14 +369,14 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CAPTURE_ANIMAL_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getCaptureAnimalNum();
-      hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalNum();
       if (!internalGetAnimalCountMap().getMap().isEmpty()) {
         hash = (37 * hash) + ANIMAL_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAnimalCountMap().hashCode();
       }
+      hash = (37 * hash) + CAPTURE_ANIMAL_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getCaptureAnimalNum();
+      hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalNum();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -474,7 +474,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: OGILNLELDED
+     * Obf: FGOPOLCODBO
      * </pre>
      *
      * Protobuf type {@code VintageHuntingSecondStageSettleInfo}
@@ -492,7 +492,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 12:
+          case 15:
             return internalGetAnimalCountMap();
           default:
             throw new RuntimeException(
@@ -503,7 +503,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 12:
+          case 15:
             return internalGetMutableAnimalCountMap();
           default:
             throw new RuntimeException(
@@ -536,11 +536,11 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        internalGetMutableAnimalCountMap().clear();
         captureAnimalNum_ = 0;
 
         totalNum_ = 0;
 
-        internalGetMutableAnimalCountMap().clear();
         return this;
       }
 
@@ -568,10 +568,10 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       public emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo buildPartial() {
         emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo result = new emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo(this);
         int from_bitField0_ = bitField0_;
-        result.captureAnimalNum_ = captureAnimalNum_;
-        result.totalNum_ = totalNum_;
         result.animalCountMap_ = internalGetAnimalCountMap();
         result.animalCountMap_.makeImmutable();
+        result.captureAnimalNum_ = captureAnimalNum_;
+        result.totalNum_ = totalNum_;
         onBuilt();
         return result;
       }
@@ -620,14 +620,14 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo other) {
         if (other == emu.grasscutter.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.getDefaultInstance()) return this;
+        internalGetMutableAnimalCountMap().mergeFrom(
+            other.internalGetAnimalCountMap());
         if (other.getCaptureAnimalNum() != 0) {
           setCaptureAnimalNum(other.getCaptureAnimalNum());
         }
         if (other.getTotalNum() != 0) {
           setTotalNum(other.getTotalNum());
         }
-        internalGetMutableAnimalCountMap().mergeFrom(
-            other.internalGetAnimalCountMap());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -658,68 +658,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       }
       private int bitField0_;
 
-      private int captureAnimalNum_ ;
-      /**
-       * <code>uint32 capture_animal_num = 4;</code>
-       * @return The captureAnimalNum.
-       */
-      @java.lang.Override
-      public int getCaptureAnimalNum() {
-        return captureAnimalNum_;
-      }
-      /**
-       * <code>uint32 capture_animal_num = 4;</code>
-       * @param value The captureAnimalNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCaptureAnimalNum(int value) {
-        
-        captureAnimalNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 capture_animal_num = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCaptureAnimalNum() {
-        
-        captureAnimalNum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int totalNum_ ;
-      /**
-       * <code>uint32 total_num = 7;</code>
-       * @return The totalNum.
-       */
-      @java.lang.Override
-      public int getTotalNum() {
-        return totalNum_;
-      }
-      /**
-       * <code>uint32 total_num = 7;</code>
-       * @param value The totalNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalNum(int value) {
-        
-        totalNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_num = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalNum() {
-        
-        totalNum_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> animalCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -747,7 +685,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return internalGetAnimalCountMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
 
       @java.lang.Override
@@ -765,7 +703,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return getAnimalCountMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
       @java.lang.Override
 
@@ -773,7 +711,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return internalGetAnimalCountMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
       @java.lang.Override
 
@@ -786,7 +724,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
       @java.lang.Override
 
@@ -807,7 +745,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
 
       public Builder removeAnimalCountMap(
@@ -826,7 +764,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return internalGetMutableAnimalCountMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
       public Builder putAnimalCountMap(
           int key,
@@ -838,13 +776,75 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; animal_count_map = 12;</code>
+       * <code>map&lt;uint32, uint32&gt; animal_count_map = 15;</code>
        */
 
       public Builder putAllAnimalCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableAnimalCountMap().getMutableMap()
             .putAll(values);
+        return this;
+      }
+
+      private int captureAnimalNum_ ;
+      /**
+       * <code>uint32 capture_animal_num = 13;</code>
+       * @return The captureAnimalNum.
+       */
+      @java.lang.Override
+      public int getCaptureAnimalNum() {
+        return captureAnimalNum_;
+      }
+      /**
+       * <code>uint32 capture_animal_num = 13;</code>
+       * @param value The captureAnimalNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCaptureAnimalNum(int value) {
+        
+        captureAnimalNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 capture_animal_num = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCaptureAnimalNum() {
+        
+        captureAnimalNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalNum_ ;
+      /**
+       * <code>uint32 total_num = 8;</code>
+       * @return The totalNum.
+       */
+      @java.lang.Override
+      public int getTotalNum() {
+        return totalNum_;
+      }
+      /**
+       * <code>uint32 total_num = 8;</code>
+       * @param value The totalNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalNum(int value) {
+        
+        totalNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 total_num = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalNum() {
+        
+        totalNum_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -921,10 +921,10 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n)VintageHuntingSecondStageSettleInfo.pr" +
       "oto\"\337\001\n#VintageHuntingSecondStageSettleI" +
-      "nfo\022\032\n\022capture_animal_num\030\004 \001(\r\022\021\n\ttotal" +
-      "_num\030\007 \001(\r\022R\n\020animal_count_map\030\014 \003(\01328.V" +
-      "intageHuntingSecondStageSettleInfo.Anima" +
-      "lCountMapEntry\0325\n\023AnimalCountMapEntry\022\013\n" +
+      "nfo\022R\n\020animal_count_map\030\017 \003(\01328.VintageH" +
+      "untingSecondStageSettleInfo.AnimalCountM" +
+      "apEntry\022\032\n\022capture_animal_num\030\r \001(\r\022\021\n\tt" +
+      "otal_num\030\010 \001(\r\0325\n\023AnimalCountMapEntry\022\013\n" +
       "\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
@@ -937,7 +937,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     internal_static_VintageHuntingSecondStageSettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageHuntingSecondStageSettleInfo_descriptor,
-        new java.lang.String[] { "CaptureAnimalNum", "TotalNum", "AnimalCountMap", });
+        new java.lang.String[] { "AnimalCountMap", "CaptureAnimalNum", "TotalNum", });
     internal_static_VintageHuntingSecondStageSettleInfo_AnimalCountMapEntry_descriptor =
       internal_static_VintageHuntingSecondStageSettleInfo_descriptor.getNestedTypes().get(0);
     internal_static_VintageHuntingSecondStageSettleInfo_AnimalCountMapEntry_fieldAccessorTable = new

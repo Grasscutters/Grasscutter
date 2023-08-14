@@ -19,21 +19,21 @@ public final class LanV3RaceRestartRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 gallery_id = 12;</code>
+     * <code>uint32 gallery_id = 2;</code>
      * @return The galleryId.
      */
     int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 20595
-   * Obf: DAACKJELOBN
+   * CmdId: 7062
+   * Obf: HIJCDJOGCHE
    * </pre>
    *
    * Protobuf type {@code LanV3RaceRestartRsp}
@@ -80,14 +80,14 @@ public final class LanV3RaceRestartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
+            case 16: {
 
               galleryId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class LanV3RaceRestartRspOuterClass {
               emu.grasscutter.net.proto.LanV3RaceRestartRspOuterClass.LanV3RaceRestartRsp.class, emu.grasscutter.net.proto.LanV3RaceRestartRspOuterClass.LanV3RaceRestartRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
+    public static final int RETCODE_FIELD_NUMBER = 7;
     private int retcode_;
     /**
-     * <code>int32 retcode = 4;</code>
+     * <code>int32 retcode = 7;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class LanV3RaceRestartRspOuterClass {
       return retcode_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 12;
+    public static final int GALLERY_ID_FIELD_NUMBER = 2;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 12;</code>
+     * <code>uint32 gallery_id = 2;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class LanV3RaceRestartRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
       if (galleryId_ != 0) {
-        output.writeUInt32(12, galleryId_);
+        output.writeUInt32(2, galleryId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(7, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class LanV3RaceRestartRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, galleryId_);
+          .computeUInt32Size(2, galleryId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class LanV3RaceRestartRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20595
-     * Obf: DAACKJELOBN
+     * CmdId: 7062
+     * Obf: HIJCDJOGCHE
      * </pre>
      *
      * Protobuf type {@code LanV3RaceRestartRsp}
@@ -470,7 +470,7 @@ public final class LanV3RaceRestartRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class LanV3RaceRestartRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class LanV3RaceRestartRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 4;</code>
+       * <code>int32 retcode = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class LanV3RaceRestartRspOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class LanV3RaceRestartRspOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class LanV3RaceRestartRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 12;</code>
+       * <code>uint32 gallery_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -597,8 +597,8 @@ public final class LanV3RaceRestartRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031LanV3RaceRestartRsp.proto\":\n\023LanV3Race" +
-      "RestartRsp\022\017\n\007retcode\030\004 \001(\005\022\022\n\ngallery_i" +
-      "d\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "RestartRsp\022\017\n\007retcode\030\007 \001(\005\022\022\n\ngallery_i" +
+      "d\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
       "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

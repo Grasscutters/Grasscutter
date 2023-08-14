@@ -25,15 +25,15 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
     int getSlotId();
 
     /**
-     * <code>bool is_allow_copy = 14;</code>
+     * <code>bool is_allow_copy = 4;</code>
      * @return The isAllowCopy.
      */
     boolean getIsAllowCopy();
   }
   /**
    * <pre>
-   * CmdId: 4841
-   * Obf: IKPMJLAIAJM
+   * CmdId: 1990
+   * Obf: BEIGKDCMHAH
    * </pre>
    *
    * Protobuf type {@code HomeSetBlueprintSlotOptionReq}
@@ -85,7 +85,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
               slotId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 32: {
 
               isAllowCopy_ = input.readBool();
               break;
@@ -133,10 +133,10 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
       return slotId_;
     }
 
-    public static final int IS_ALLOW_COPY_FIELD_NUMBER = 14;
+    public static final int IS_ALLOW_COPY_FIELD_NUMBER = 4;
     private boolean isAllowCopy_;
     /**
-     * <code>bool is_allow_copy = 14;</code>
+     * <code>bool is_allow_copy = 4;</code>
      * @return The isAllowCopy.
      */
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
         output.writeUInt32(1, slotId_);
       }
       if (isAllowCopy_ != false) {
-        output.writeBool(14, isAllowCopy_);
+        output.writeBool(4, isAllowCopy_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
       }
       if (isAllowCopy_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isAllowCopy_);
+          .computeBoolSize(4, isAllowCopy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4841
-     * Obf: IKPMJLAIAJM
+     * CmdId: 1990
+     * Obf: BEIGKDCMHAH
      * </pre>
      *
      * Protobuf type {@code HomeSetBlueprintSlotOptionReq}
@@ -502,7 +502,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
 
       private boolean isAllowCopy_ ;
       /**
-       * <code>bool is_allow_copy = 14;</code>
+       * <code>bool is_allow_copy = 4;</code>
        * @return The isAllowCopy.
        */
       @java.lang.Override
@@ -510,7 +510,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
         return isAllowCopy_;
       }
       /**
-       * <code>bool is_allow_copy = 14;</code>
+       * <code>bool is_allow_copy = 4;</code>
        * @param value The isAllowCopy to set.
        * @return This builder for chaining.
        */
@@ -521,7 +521,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_allow_copy = 14;</code>
+       * <code>bool is_allow_copy = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAllowCopy() {
@@ -599,7 +599,7 @@ public final class HomeSetBlueprintSlotOptionReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n#HomeSetBlueprintSlotOptionReq.proto\"G\n" +
       "\035HomeSetBlueprintSlotOptionReq\022\017\n\007slot_i" +
-      "d\030\001 \001(\r\022\025\n\ris_allow_copy\030\016 \001(\010B\033\n\031emu.gr" +
+      "d\030\001 \001(\r\022\025\n\ris_allow_copy\030\004 \001(\010B\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

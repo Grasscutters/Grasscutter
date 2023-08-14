@@ -19,27 +19,27 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 guest_uid = 11;</code>
-     * @return The guestUid.
-     */
-    int getGuestUid();
-
-    /**
-     * <code>uint32 draft_id = 12;</code>
+     * <code>uint32 draft_id = 13;</code>
      * @return The draftId.
      */
     int getDraftId();
 
     /**
-     * <code>bool is_agree = 14;</code>
+     * <code>bool is_agree = 6;</code>
      * @return The isAgree.
      */
     boolean getIsAgree();
+
+    /**
+     * <code>uint32 guest_uid = 11;</code>
+     * @return The guestUid.
+     */
+    int getGuestUid();
   }
   /**
    * <pre>
-   * CmdId: 5434
-   * Obf: GODFJAPAHNI
+   * CmdId: 8578
+   * Obf: MPOOBJMHCMD
    * </pre>
    *
    * Protobuf type {@code DraftGuestReplyTwiceConfirmNotify}
@@ -86,19 +86,19 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 48: {
+
+              isAgree_ = input.readBool();
+              break;
+            }
             case 88: {
 
               guestUid_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 104: {
 
               draftId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isAgree_ = input.readBool();
               break;
             }
             default: {
@@ -133,6 +133,28 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
               emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify.class, emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify.Builder.class);
     }
 
+    public static final int DRAFT_ID_FIELD_NUMBER = 13;
+    private int draftId_;
+    /**
+     * <code>uint32 draft_id = 13;</code>
+     * @return The draftId.
+     */
+    @java.lang.Override
+    public int getDraftId() {
+      return draftId_;
+    }
+
+    public static final int IS_AGREE_FIELD_NUMBER = 6;
+    private boolean isAgree_;
+    /**
+     * <code>bool is_agree = 6;</code>
+     * @return The isAgree.
+     */
+    @java.lang.Override
+    public boolean getIsAgree() {
+      return isAgree_;
+    }
+
     public static final int GUEST_UID_FIELD_NUMBER = 11;
     private int guestUid_;
     /**
@@ -142,28 +164,6 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     @java.lang.Override
     public int getGuestUid() {
       return guestUid_;
-    }
-
-    public static final int DRAFT_ID_FIELD_NUMBER = 12;
-    private int draftId_;
-    /**
-     * <code>uint32 draft_id = 12;</code>
-     * @return The draftId.
-     */
-    @java.lang.Override
-    public int getDraftId() {
-      return draftId_;
-    }
-
-    public static final int IS_AGREE_FIELD_NUMBER = 14;
-    private boolean isAgree_;
-    /**
-     * <code>bool is_agree = 14;</code>
-     * @return The isAgree.
-     */
-    @java.lang.Override
-    public boolean getIsAgree() {
-      return isAgree_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (isAgree_ != false) {
+        output.writeBool(6, isAgree_);
+      }
       if (guestUid_ != 0) {
         output.writeUInt32(11, guestUid_);
       }
       if (draftId_ != 0) {
-        output.writeUInt32(12, draftId_);
-      }
-      if (isAgree_ != false) {
-        output.writeBool(14, isAgree_);
+        output.writeUInt32(13, draftId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isAgree_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, isAgree_);
+      }
       if (guestUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, guestUid_);
       }
       if (draftId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, draftId_);
-      }
-      if (isAgree_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isAgree_);
+          .computeUInt32Size(13, draftId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       }
       emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify other = (emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify) obj;
 
-      if (getGuestUid()
-          != other.getGuestUid()) return false;
       if (getDraftId()
           != other.getDraftId()) return false;
       if (getIsAgree()
           != other.getIsAgree()) return false;
+      if (getGuestUid()
+          != other.getGuestUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GUEST_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getGuestUid();
       hash = (37 * hash) + DRAFT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDraftId();
       hash = (37 * hash) + IS_AGREE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgree());
+      hash = (37 * hash) + GUEST_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getGuestUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5434
-     * Obf: GODFJAPAHNI
+     * CmdId: 8578
+     * Obf: MPOOBJMHCMD
      * </pre>
      *
      * Protobuf type {@code DraftGuestReplyTwiceConfirmNotify}
@@ -387,11 +387,11 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        guestUid_ = 0;
-
         draftId_ = 0;
 
         isAgree_ = false;
+
+        guestUid_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify buildPartial() {
         emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify result = new emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify(this);
-        result.guestUid_ = guestUid_;
         result.draftId_ = draftId_;
         result.isAgree_ = isAgree_;
+        result.guestUid_ = guestUid_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify other) {
         if (other == emu.grasscutter.net.proto.DraftGuestReplyTwiceConfirmNotifyOuterClass.DraftGuestReplyTwiceConfirmNotify.getDefaultInstance()) return this;
-        if (other.getGuestUid() != 0) {
-          setGuestUid(other.getGuestUid());
-        }
         if (other.getDraftId() != 0) {
           setDraftId(other.getDraftId());
         }
         if (other.getIsAgree() != false) {
           setIsAgree(other.getIsAgree());
+        }
+        if (other.getGuestUid() != 0) {
+          setGuestUid(other.getGuestUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,6 +508,68 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
         return this;
       }
 
+      private int draftId_ ;
+      /**
+       * <code>uint32 draft_id = 13;</code>
+       * @return The draftId.
+       */
+      @java.lang.Override
+      public int getDraftId() {
+        return draftId_;
+      }
+      /**
+       * <code>uint32 draft_id = 13;</code>
+       * @param value The draftId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDraftId(int value) {
+        
+        draftId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 draft_id = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDraftId() {
+        
+        draftId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAgree_ ;
+      /**
+       * <code>bool is_agree = 6;</code>
+       * @return The isAgree.
+       */
+      @java.lang.Override
+      public boolean getIsAgree() {
+        return isAgree_;
+      }
+      /**
+       * <code>bool is_agree = 6;</code>
+       * @param value The isAgree to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAgree(boolean value) {
+        
+        isAgree_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_agree = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAgree() {
+        
+        isAgree_ = false;
+        onChanged();
+        return this;
+      }
+
       private int guestUid_ ;
       /**
        * <code>uint32 guest_uid = 11;</code>
@@ -535,68 +597,6 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
       public Builder clearGuestUid() {
         
         guestUid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int draftId_ ;
-      /**
-       * <code>uint32 draft_id = 12;</code>
-       * @return The draftId.
-       */
-      @java.lang.Override
-      public int getDraftId() {
-        return draftId_;
-      }
-      /**
-       * <code>uint32 draft_id = 12;</code>
-       * @param value The draftId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDraftId(int value) {
-        
-        draftId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 draft_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDraftId() {
-        
-        draftId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isAgree_ ;
-      /**
-       * <code>bool is_agree = 14;</code>
-       * @return The isAgree.
-       */
-      @java.lang.Override
-      public boolean getIsAgree() {
-        return isAgree_;
-      }
-      /**
-       * <code>bool is_agree = 14;</code>
-       * @param value The isAgree to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsAgree(boolean value) {
-        
-        isAgree_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_agree = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsAgree() {
-        
-        isAgree_ = false;
         onChanged();
         return this;
       }
@@ -668,9 +668,9 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'DraftGuestReplyTwiceConfirmNotify.prot" +
-      "o\"Z\n!DraftGuestReplyTwiceConfirmNotify\022\021" +
-      "\n\tguest_uid\030\013 \001(\r\022\020\n\010draft_id\030\014 \001(\r\022\020\n\010i" +
-      "s_agree\030\016 \001(\010B\033\n\031emu.grasscutter.net.pro" +
+      "o\"Z\n!DraftGuestReplyTwiceConfirmNotify\022\020" +
+      "\n\010draft_id\030\r \001(\r\022\020\n\010is_agree\030\006 \001(\010\022\021\n\tgu" +
+      "est_uid\030\013 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -682,7 +682,7 @@ public final class DraftGuestReplyTwiceConfirmNotifyOuterClass {
     internal_static_DraftGuestReplyTwiceConfirmNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DraftGuestReplyTwiceConfirmNotify_descriptor,
-        new java.lang.String[] { "GuestUid", "DraftId", "IsAgree", });
+        new java.lang.String[] { "DraftId", "IsAgree", "GuestUid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

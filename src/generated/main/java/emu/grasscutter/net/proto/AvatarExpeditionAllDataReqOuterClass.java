@@ -20,8 +20,8 @@ public final class AvatarExpeditionAllDataReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1665
-   * Obf: PNEIGBDCOON
+   * CmdId: 24160
+   * Obf: IKHOKBJEAGP
    * </pre>
    *
    * Protobuf type {@code AvatarExpeditionAllDataReq}
@@ -246,8 +246,8 @@ public final class AvatarExpeditionAllDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1665
-     * Obf: PNEIGBDCOON
+     * CmdId: 24160
+     * Obf: IKHOKBJEAGP
      * </pre>
      *
      * Protobuf type {@code AvatarExpeditionAllDataReq}

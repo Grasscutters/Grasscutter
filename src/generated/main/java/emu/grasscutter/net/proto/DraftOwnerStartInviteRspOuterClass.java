@@ -19,51 +19,51 @@ public final class DraftOwnerStartInviteRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 draft_id = 7;</code>
+     * <code>uint32 draft_id = 14;</code>
      * @return The draftId.
      */
     int getDraftId();
 
     /**
-     * <code>uint32 wrong_uid = 6;</code>
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 wrong_uid = 4;</code>
      * @return The wrongUid.
      */
     int getWrongUid();
 
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     java.util.List<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> 
         getInviteFailInfoListList();
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo getInviteFailInfoList(int index);
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     int getInviteFailInfoListCount();
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder> 
         getInviteFailInfoListOrBuilderList();
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder getInviteFailInfoListOrBuilder(
         int index);
-
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 5472
-   * Obf: CFPGNABGCLK
+   * CmdId: 23377
+   * Obf: LPNHHBLOLKK
    * </pre>
    *
    * Protobuf type {@code DraftOwnerStartInviteRsp}
@@ -112,7 +112,12 @@ public final class DraftOwnerStartInviteRspOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 32: {
+
+              wrongUid_ = input.readUInt32();
+              break;
+            }
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 inviteFailInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -121,19 +126,14 @@ public final class DraftOwnerStartInviteRspOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.parser(), extensionRegistry));
               break;
             }
-            case 48: {
+            case 104: {
 
-              wrongUid_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              draftId_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             case 112: {
 
-              retcode_ = input.readInt32();
+              draftId_ = input.readUInt32();
               break;
             }
             default: {
@@ -171,10 +171,10 @@ public final class DraftOwnerStartInviteRspOuterClass {
               emu.grasscutter.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp.class, emu.grasscutter.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp.Builder.class);
     }
 
-    public static final int DRAFT_ID_FIELD_NUMBER = 7;
+    public static final int DRAFT_ID_FIELD_NUMBER = 14;
     private int draftId_;
     /**
-     * <code>uint32 draft_id = 7;</code>
+     * <code>uint32 draft_id = 14;</code>
      * @return The draftId.
      */
     @java.lang.Override
@@ -182,10 +182,21 @@ public final class DraftOwnerStartInviteRspOuterClass {
       return draftId_;
     }
 
-    public static final int WRONG_UID_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int WRONG_UID_FIELD_NUMBER = 4;
     private int wrongUid_;
     /**
-     * <code>uint32 wrong_uid = 6;</code>
+     * <code>uint32 wrong_uid = 4;</code>
      * @return The wrongUid.
      */
     @java.lang.Override
@@ -193,17 +204,17 @@ public final class DraftOwnerStartInviteRspOuterClass {
       return wrongUid_;
     }
 
-    public static final int INVITE_FAIL_INFO_LIST_FIELD_NUMBER = 4;
+    public static final int INVITE_FAIL_INFO_LIST_FIELD_NUMBER = 9;
     private java.util.List<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> inviteFailInfoList_;
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> getInviteFailInfoListList() {
       return inviteFailInfoList_;
     }
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder> 
@@ -211,37 +222,26 @@ public final class DraftOwnerStartInviteRspOuterClass {
       return inviteFailInfoList_;
     }
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     @java.lang.Override
     public int getInviteFailInfoListCount() {
       return inviteFailInfoList_.size();
     }
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo getInviteFailInfoList(int index) {
       return inviteFailInfoList_.get(index);
     }
     /**
-     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+     * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder getInviteFailInfoListOrBuilder(
         int index) {
       return inviteFailInfoList_.get(index);
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 14;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -258,17 +258,17 @@ public final class DraftOwnerStartInviteRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < inviteFailInfoList_.size(); i++) {
-        output.writeMessage(4, inviteFailInfoList_.get(i));
-      }
       if (wrongUid_ != 0) {
-        output.writeUInt32(6, wrongUid_);
+        output.writeUInt32(4, wrongUid_);
       }
-      if (draftId_ != 0) {
-        output.writeUInt32(7, draftId_);
+      for (int i = 0; i < inviteFailInfoList_.size(); i++) {
+        output.writeMessage(9, inviteFailInfoList_.get(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(13, retcode_);
+      }
+      if (draftId_ != 0) {
+        output.writeUInt32(14, draftId_);
       }
       unknownFields.writeTo(output);
     }
@@ -279,21 +279,21 @@ public final class DraftOwnerStartInviteRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < inviteFailInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, inviteFailInfoList_.get(i));
-      }
       if (wrongUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, wrongUid_);
+          .computeUInt32Size(4, wrongUid_);
       }
-      if (draftId_ != 0) {
+      for (int i = 0; i < inviteFailInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, draftId_);
+          .computeMessageSize(9, inviteFailInfoList_.get(i));
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(13, retcode_);
+      }
+      if (draftId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, draftId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,12 +312,12 @@ public final class DraftOwnerStartInviteRspOuterClass {
 
       if (getDraftId()
           != other.getDraftId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getWrongUid()
           != other.getWrongUid()) return false;
       if (!getInviteFailInfoListList()
           .equals(other.getInviteFailInfoListList())) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -331,14 +331,14 @@ public final class DraftOwnerStartInviteRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DRAFT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDraftId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + WRONG_UID_FIELD_NUMBER;
       hash = (53 * hash) + getWrongUid();
       if (getInviteFailInfoListCount() > 0) {
         hash = (37 * hash) + INVITE_FAIL_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInviteFailInfoListList().hashCode();
       }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -436,8 +436,8 @@ public final class DraftOwnerStartInviteRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5472
-     * Obf: CFPGNABGCLK
+     * CmdId: 23377
+     * Obf: LPNHHBLOLKK
      * </pre>
      *
      * Protobuf type {@code DraftOwnerStartInviteRsp}
@@ -480,6 +480,8 @@ public final class DraftOwnerStartInviteRspOuterClass {
         super.clear();
         draftId_ = 0;
 
+        retcode_ = 0;
+
         wrongUid_ = 0;
 
         if (inviteFailInfoListBuilder_ == null) {
@@ -488,8 +490,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
         } else {
           inviteFailInfoListBuilder_.clear();
         }
-        retcode_ = 0;
-
         return this;
       }
 
@@ -518,6 +518,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         emu.grasscutter.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp result = new emu.grasscutter.net.proto.DraftOwnerStartInviteRspOuterClass.DraftOwnerStartInviteRsp(this);
         int from_bitField0_ = bitField0_;
         result.draftId_ = draftId_;
+        result.retcode_ = retcode_;
         result.wrongUid_ = wrongUid_;
         if (inviteFailInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
@@ -528,7 +529,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
         } else {
           result.inviteFailInfoList_ = inviteFailInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -580,6 +580,9 @@ public final class DraftOwnerStartInviteRspOuterClass {
         if (other.getDraftId() != 0) {
           setDraftId(other.getDraftId());
         }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         if (other.getWrongUid() != 0) {
           setWrongUid(other.getWrongUid());
         }
@@ -608,9 +611,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
               inviteFailInfoListBuilder_.addAllMessages(other.inviteFailInfoList_);
             }
           }
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -644,7 +644,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
 
       private int draftId_ ;
       /**
-       * <code>uint32 draft_id = 7;</code>
+       * <code>uint32 draft_id = 14;</code>
        * @return The draftId.
        */
       @java.lang.Override
@@ -652,7 +652,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return draftId_;
       }
       /**
-       * <code>uint32 draft_id = 7;</code>
+       * <code>uint32 draft_id = 14;</code>
        * @param value The draftId to set.
        * @return This builder for chaining.
        */
@@ -663,7 +663,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 draft_id = 7;</code>
+       * <code>uint32 draft_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
@@ -673,9 +673,40 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int wrongUid_ ;
       /**
-       * <code>uint32 wrong_uid = 6;</code>
+       * <code>uint32 wrong_uid = 4;</code>
        * @return The wrongUid.
        */
       @java.lang.Override
@@ -683,7 +714,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return wrongUid_;
       }
       /**
-       * <code>uint32 wrong_uid = 6;</code>
+       * <code>uint32 wrong_uid = 4;</code>
        * @param value The wrongUid to set.
        * @return This builder for chaining.
        */
@@ -694,7 +725,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wrong_uid = 6;</code>
+       * <code>uint32 wrong_uid = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearWrongUid() {
@@ -717,7 +748,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
           emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder> inviteFailInfoListBuilder_;
 
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> getInviteFailInfoListList() {
         if (inviteFailInfoListBuilder_ == null) {
@@ -727,7 +758,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public int getInviteFailInfoListCount() {
         if (inviteFailInfoListBuilder_ == null) {
@@ -737,7 +768,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo getInviteFailInfoList(int index) {
         if (inviteFailInfoListBuilder_ == null) {
@@ -747,7 +778,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder setInviteFailInfoList(
           int index, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo value) {
@@ -764,7 +795,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder setInviteFailInfoList(
           int index, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder builderForValue) {
@@ -778,7 +809,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder addInviteFailInfoList(emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo value) {
         if (inviteFailInfoListBuilder_ == null) {
@@ -794,7 +825,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder addInviteFailInfoList(
           int index, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo value) {
@@ -811,7 +842,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder addInviteFailInfoList(
           emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder builderForValue) {
@@ -825,7 +856,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder addInviteFailInfoList(
           int index, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder builderForValue) {
@@ -839,7 +870,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder addAllInviteFailInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo> values) {
@@ -854,7 +885,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder clearInviteFailInfoList() {
         if (inviteFailInfoListBuilder_ == null) {
@@ -867,7 +898,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public Builder removeInviteFailInfoList(int index) {
         if (inviteFailInfoListBuilder_ == null) {
@@ -880,14 +911,14 @@ public final class DraftOwnerStartInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder getInviteFailInfoListBuilder(
           int index) {
         return getInviteFailInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder getInviteFailInfoListOrBuilder(
           int index) {
@@ -897,7 +928,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfoOrBuilder> 
            getInviteFailInfoListOrBuilderList() {
@@ -908,14 +939,14 @@ public final class DraftOwnerStartInviteRspOuterClass {
         }
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder addInviteFailInfoListBuilder() {
         return getInviteFailInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder addInviteFailInfoListBuilder(
           int index) {
@@ -923,7 +954,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
             index, emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 4;</code>
+       * <code>repeated .DraftInviteFailInfo invite_fail_info_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.DraftInviteFailInfo.Builder> 
            getInviteFailInfoListBuilderList() {
@@ -942,37 +973,6 @@ public final class DraftOwnerStartInviteRspOuterClass {
           inviteFailInfoList_ = null;
         }
         return inviteFailInfoListBuilder_;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1043,9 +1043,9 @@ public final class DraftOwnerStartInviteRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036DraftOwnerStartInviteRsp.proto\032\031DraftI" +
       "nviteFailInfo.proto\"\205\001\n\030DraftOwnerStartI" +
-      "nviteRsp\022\020\n\010draft_id\030\007 \001(\r\022\021\n\twrong_uid\030" +
-      "\006 \001(\r\0223\n\025invite_fail_info_list\030\004 \003(\0132\024.D" +
-      "raftInviteFailInfo\022\017\n\007retcode\030\016 \001(\005B\033\n\031e" +
+      "nviteRsp\022\020\n\010draft_id\030\016 \001(\r\022\017\n\007retcode\030\r " +
+      "\001(\005\022\021\n\twrong_uid\030\004 \001(\r\0223\n\025invite_fail_in" +
+      "fo_list\030\t \003(\0132\024.DraftInviteFailInfoB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1058,7 +1058,7 @@ public final class DraftOwnerStartInviteRspOuterClass {
     internal_static_DraftOwnerStartInviteRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DraftOwnerStartInviteRsp_descriptor,
-        new java.lang.String[] { "DraftId", "WrongUid", "InviteFailInfoList", "Retcode", });
+        new java.lang.String[] { "DraftId", "Retcode", "WrongUid", "InviteFailInfoList", });
     emu.grasscutter.net.proto.DraftInviteFailInfoOuterClass.getDescriptor();
   }
 

@@ -20,8 +20,8 @@ public final class ReadNicknameAuditReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 152
-   * Obf: OKCMDAIBGNO
+   * CmdId: 8131
+   * Obf: APEFFPOJEKC
    * </pre>
    *
    * Protobuf type {@code ReadNicknameAuditReq}
@@ -246,8 +246,8 @@ public final class ReadNicknameAuditReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 152
-     * Obf: OKCMDAIBGNO
+     * CmdId: 8131
+     * Obf: APEFFPOJEKC
      * </pre>
      *
      * Protobuf type {@code ReadNicknameAuditReq}

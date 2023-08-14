@@ -19,15 +19,15 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 dungeon_id = 2;</code>
+     * <code>uint32 dungeon_id = 6;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
   }
   /**
    * <pre>
-   * CmdId: 21220
-   * Obf: GCKOBEFLAEF
+   * CmdId: 9440
+   * Obf: IGBDKDJEPMO
    * </pre>
    *
    * Protobuf type {@code EnterFungusFighterTrainingDungeonReq}
@@ -74,7 +74,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
               dungeonId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
               emu.grasscutter.net.proto.EnterFungusFighterTrainingDungeonReqOuterClass.EnterFungusFighterTrainingDungeonReq.class, emu.grasscutter.net.proto.EnterFungusFighterTrainingDungeonReqOuterClass.EnterFungusFighterTrainingDungeonReq.Builder.class);
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 2;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 6;
     private int dungeonId_;
     /**
-     * <code>uint32 dungeon_id = 2;</code>
+     * <code>uint32 dungeon_id = 6;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonId_ != 0) {
-        output.writeUInt32(2, dungeonId_);
+        output.writeUInt32(6, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
       size = 0;
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, dungeonId_);
+          .computeUInt32Size(6, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21220
-     * Obf: GCKOBEFLAEF
+     * CmdId: 9440
+     * Obf: IGBDKDJEPMO
      * </pre>
      *
      * Protobuf type {@code EnterFungusFighterTrainingDungeonReq}
@@ -431,7 +431,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
 
       private int dungeonId_ ;
       /**
-       * <code>uint32 dungeon_id = 2;</code>
+       * <code>uint32 dungeon_id = 6;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>uint32 dungeon_id = 2;</code>
+       * <code>uint32 dungeon_id = 6;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dungeon_id = 2;</code>
+       * <code>uint32 dungeon_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -528,7 +528,7 @@ public final class EnterFungusFighterTrainingDungeonReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n*EnterFungusFighterTrainingDungeonReq.p" +
       "roto\":\n$EnterFungusFighterTrainingDungeo" +
-      "nReq\022\022\n\ndungeon_id\030\002 \001(\rB\033\n\031emu.grasscut" +
+      "nReq\022\022\n\ndungeon_id\030\006 \001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

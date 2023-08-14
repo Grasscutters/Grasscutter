@@ -19,15 +19,15 @@ public final class GetBonusActivityRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 bonus_activity_id = 13;</code>
+     * <code>uint32 bonus_activity_id = 5;</code>
      * @return The bonusActivityId.
      */
     int getBonusActivityId();
   }
   /**
    * <pre>
-   * CmdId: 2594
-   * Obf: OEOGMGDLIGK
+   * CmdId: 29874
+   * Obf: NIKAOPNGPPH
    * </pre>
    *
    * Protobuf type {@code GetBonusActivityRewardReq}
@@ -74,7 +74,7 @@ public final class GetBonusActivityRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 40: {
 
               bonusActivityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetBonusActivityRewardReqOuterClass {
               emu.grasscutter.net.proto.GetBonusActivityRewardReqOuterClass.GetBonusActivityRewardReq.class, emu.grasscutter.net.proto.GetBonusActivityRewardReqOuterClass.GetBonusActivityRewardReq.Builder.class);
     }
 
-    public static final int BONUS_ACTIVITY_ID_FIELD_NUMBER = 13;
+    public static final int BONUS_ACTIVITY_ID_FIELD_NUMBER = 5;
     private int bonusActivityId_;
     /**
-     * <code>uint32 bonus_activity_id = 13;</code>
+     * <code>uint32 bonus_activity_id = 5;</code>
      * @return The bonusActivityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetBonusActivityRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bonusActivityId_ != 0) {
-        output.writeUInt32(13, bonusActivityId_);
+        output.writeUInt32(5, bonusActivityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetBonusActivityRewardReqOuterClass {
       size = 0;
       if (bonusActivityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, bonusActivityId_);
+          .computeUInt32Size(5, bonusActivityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetBonusActivityRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2594
-     * Obf: OEOGMGDLIGK
+     * CmdId: 29874
+     * Obf: NIKAOPNGPPH
      * </pre>
      *
      * Protobuf type {@code GetBonusActivityRewardReq}
@@ -431,7 +431,7 @@ public final class GetBonusActivityRewardReqOuterClass {
 
       private int bonusActivityId_ ;
       /**
-       * <code>uint32 bonus_activity_id = 13;</code>
+       * <code>uint32 bonus_activity_id = 5;</code>
        * @return The bonusActivityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetBonusActivityRewardReqOuterClass {
         return bonusActivityId_;
       }
       /**
-       * <code>uint32 bonus_activity_id = 13;</code>
+       * <code>uint32 bonus_activity_id = 5;</code>
        * @param value The bonusActivityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetBonusActivityRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bonus_activity_id = 13;</code>
+       * <code>uint32 bonus_activity_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearBonusActivityId() {
@@ -528,7 +528,7 @@ public final class GetBonusActivityRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037GetBonusActivityRewardReq.proto\"6\n\031Get" +
       "BonusActivityRewardReq\022\031\n\021bonus_activity" +
-      "_id\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

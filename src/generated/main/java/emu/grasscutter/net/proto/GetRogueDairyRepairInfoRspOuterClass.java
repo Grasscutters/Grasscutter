@@ -26,8 +26,8 @@ public final class GetRogueDairyRepairInfoRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8474
-   * Obf: DEPDCABIIMH
+   * CmdId: 133
+   * Obf: LLHECDBHABH
    * </pre>
    *
    * Protobuf type {@code GetRogueDairyRepairInfoRsp}
@@ -279,8 +279,8 @@ public final class GetRogueDairyRepairInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8474
-     * Obf: DEPDCABIIMH
+     * CmdId: 133
+     * Obf: LLHECDBHABH
      * </pre>
      *
      * Protobuf type {@code GetRogueDairyRepairInfoRsp}

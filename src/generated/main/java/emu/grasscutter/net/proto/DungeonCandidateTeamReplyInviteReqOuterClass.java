@@ -26,8 +26,8 @@ public final class DungeonCandidateTeamReplyInviteReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 959
-   * Obf: MJMBLIAIAKH
+   * CmdId: 4838
+   * Obf: NBECIALIFBA
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamReplyInviteReq}
@@ -280,8 +280,8 @@ public final class DungeonCandidateTeamReplyInviteReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 959
-     * Obf: MJMBLIAIAKH
+     * CmdId: 4838
+     * Obf: NBECIALIFBA
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamReplyInviteReq}

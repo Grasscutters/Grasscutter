@@ -19,42 +19,42 @@ public final class GCGMsgCostDiceOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.MNDCMMKBIBP reason = 4;</code>
+     * <code>.GCGReason reason = 4;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.MNDCMMKBIBP reason = 4;</code>
+     * <code>.GCGReason reason = 4;</code>
      * @return The reason.
      */
-    emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason();
+    emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason();
 
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>uint32 controller_id = 3;</code>
+     * @return The controllerId.
+     */
+    int getControllerId();
+
+    /**
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @return A list containing the selectDiceIndexList.
      */
     java.util.List<java.lang.Integer> getSelectDiceIndexListList();
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @return The count of selectDiceIndexList.
      */
     int getSelectDiceIndexListCount();
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @param index The index of the element to return.
      * @return The selectDiceIndexList at the given index.
      */
     int getSelectDiceIndexList(int index);
-
-    /**
-     * <code>uint32 controller_id = 9;</code>
-     * @return The controllerId.
-     */
-    int getControllerId();
   }
   /**
    * <pre>
-   * Obf: BPICLNJFDNB
+   * Obf: GOGOIEAGGHH
    * </pre>
    *
    * Protobuf type {@code GCGMsgCostDice}
@@ -104,13 +104,18 @@ public final class GCGMsgCostDiceOuterClass {
             case 0:
               done = true;
               break;
+            case 24: {
+
+              controllerId_ = input.readUInt32();
+              break;
+            }
             case 32: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 48: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 selectDiceIndexList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -118,7 +123,7 @@ public final class GCGMsgCostDiceOuterClass {
               selectDiceIndexList_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -129,11 +134,6 @@ public final class GCGMsgCostDiceOuterClass {
                 selectDiceIndexList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 72: {
-
-              controllerId_ = input.readUInt32();
               break;
             }
             default: {
@@ -174,26 +174,37 @@ public final class GCGMsgCostDiceOuterClass {
     public static final int REASON_FIELD_NUMBER = 4;
     private int reason_;
     /**
-     * <code>.MNDCMMKBIBP reason = 4;</code>
+     * <code>.GCGReason reason = 4;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.MNDCMMKBIBP reason = 4;</code>
+     * <code>.GCGReason reason = 4;</code>
      * @return The reason.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason() {
+    @java.lang.Override public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP result = emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
-    public static final int SELECT_DICE_INDEX_LIST_FIELD_NUMBER = 6;
+    public static final int CONTROLLER_ID_FIELD_NUMBER = 3;
+    private int controllerId_;
+    /**
+     * <code>uint32 controller_id = 3;</code>
+     * @return The controllerId.
+     */
+    @java.lang.Override
+    public int getControllerId() {
+      return controllerId_;
+    }
+
+    public static final int SELECT_DICE_INDEX_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList selectDiceIndexList_;
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @return A list containing the selectDiceIndexList.
      */
     @java.lang.Override
@@ -202,14 +213,14 @@ public final class GCGMsgCostDiceOuterClass {
       return selectDiceIndexList_;
     }
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @return The count of selectDiceIndexList.
      */
     public int getSelectDiceIndexListCount() {
       return selectDiceIndexList_.size();
     }
     /**
-     * <code>repeated uint32 select_dice_index_list = 6;</code>
+     * <code>repeated uint32 select_dice_index_list = 11;</code>
      * @param index The index of the element to return.
      * @return The selectDiceIndexList at the given index.
      */
@@ -217,17 +228,6 @@ public final class GCGMsgCostDiceOuterClass {
       return selectDiceIndexList_.getInt(index);
     }
     private int selectDiceIndexListMemoizedSerializedSize = -1;
-
-    public static final int CONTROLLER_ID_FIELD_NUMBER = 9;
-    private int controllerId_;
-    /**
-     * <code>uint32 controller_id = 9;</code>
-     * @return The controllerId.
-     */
-    @java.lang.Override
-    public int getControllerId() {
-      return controllerId_;
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -244,18 +244,18 @@ public final class GCGMsgCostDiceOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (reason_ != emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.MNDCMMKBIBP_Default.getNumber()) {
+      if (controllerId_ != 0) {
+        output.writeUInt32(3, controllerId_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.MNDCMMKBIBP_Default.getNumber()) {
         output.writeEnum(4, reason_);
       }
       if (getSelectDiceIndexListList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(selectDiceIndexListMemoizedSerializedSize);
       }
       for (int i = 0; i < selectDiceIndexList_.size(); i++) {
         output.writeUInt32NoTag(selectDiceIndexList_.getInt(i));
-      }
-      if (controllerId_ != 0) {
-        output.writeUInt32(9, controllerId_);
       }
       unknownFields.writeTo(output);
     }
@@ -266,7 +266,11 @@ public final class GCGMsgCostDiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (reason_ != emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.MNDCMMKBIBP_Default.getNumber()) {
+      if (controllerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, controllerId_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.MNDCMMKBIBP_Default.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, reason_);
       }
@@ -284,10 +288,6 @@ public final class GCGMsgCostDiceOuterClass {
         }
         selectDiceIndexListMemoizedSerializedSize = dataSize;
       }
-      if (controllerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, controllerId_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -304,10 +304,10 @@ public final class GCGMsgCostDiceOuterClass {
       emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice other = (emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice) obj;
 
       if (reason_ != other.reason_) return false;
-      if (!getSelectDiceIndexListList()
-          .equals(other.getSelectDiceIndexListList())) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
+      if (!getSelectDiceIndexListList()
+          .equals(other.getSelectDiceIndexListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -321,12 +321,12 @@ public final class GCGMsgCostDiceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
+      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getControllerId();
       if (getSelectDiceIndexListCount() > 0) {
         hash = (37 * hash) + SELECT_DICE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSelectDiceIndexListList().hashCode();
       }
-      hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getControllerId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -424,7 +424,7 @@ public final class GCGMsgCostDiceOuterClass {
     }
     /**
      * <pre>
-     * Obf: BPICLNJFDNB
+     * Obf: GOGOIEAGGHH
      * </pre>
      *
      * Protobuf type {@code GCGMsgCostDice}
@@ -466,10 +466,10 @@ public final class GCGMsgCostDiceOuterClass {
         super.clear();
         reason_ = 0;
 
-        selectDiceIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
 
+        selectDiceIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -498,12 +498,12 @@ public final class GCGMsgCostDiceOuterClass {
         emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice result = new emu.grasscutter.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice(this);
         int from_bitField0_ = bitField0_;
         result.reason_ = reason_;
+        result.controllerId_ = controllerId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           selectDiceIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.selectDiceIndexList_ = selectDiceIndexList_;
-        result.controllerId_ = controllerId_;
         onBuilt();
         return result;
       }
@@ -555,6 +555,9 @@ public final class GCGMsgCostDiceOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
+        if (other.getControllerId() != 0) {
+          setControllerId(other.getControllerId());
+        }
         if (!other.selectDiceIndexList_.isEmpty()) {
           if (selectDiceIndexList_.isEmpty()) {
             selectDiceIndexList_ = other.selectDiceIndexList_;
@@ -564,9 +567,6 @@ public final class GCGMsgCostDiceOuterClass {
             selectDiceIndexList_.addAll(other.selectDiceIndexList_);
           }
           onChanged();
-        }
-        if (other.getControllerId() != 0) {
-          setControllerId(other.getControllerId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -600,14 +600,14 @@ public final class GCGMsgCostDiceOuterClass {
 
       private int reason_ = 0;
       /**
-       * <code>.MNDCMMKBIBP reason = 4;</code>
+       * <code>.GCGReason reason = 4;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.MNDCMMKBIBP reason = 4;</code>
+       * <code>.GCGReason reason = 4;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -618,21 +618,21 @@ public final class GCGMsgCostDiceOuterClass {
         return this;
       }
       /**
-       * <code>.MNDCMMKBIBP reason = 4;</code>
+       * <code>.GCGReason reason = 4;</code>
        * @return The reason.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP getReason() {
+      public emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason getReason() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP result = emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason result = emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.MNDCMMKBIBP reason = 4;</code>
+       * <code>.GCGReason reason = 4;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.MNDCMMKBIBP value) {
+      public Builder setReason(emu.grasscutter.net.proto.GCGReasonOuterClass.GCGReason value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -642,12 +642,43 @@ public final class GCGMsgCostDiceOuterClass {
         return this;
       }
       /**
-       * <code>.MNDCMMKBIBP reason = 4;</code>
+       * <code>.GCGReason reason = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
         
         reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int controllerId_ ;
+      /**
+       * <code>uint32 controller_id = 3;</code>
+       * @return The controllerId.
+       */
+      @java.lang.Override
+      public int getControllerId() {
+        return controllerId_;
+      }
+      /**
+       * <code>uint32 controller_id = 3;</code>
+       * @param value The controllerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setControllerId(int value) {
+        
+        controllerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 controller_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearControllerId() {
+        
+        controllerId_ = 0;
         onChanged();
         return this;
       }
@@ -660,7 +691,7 @@ public final class GCGMsgCostDiceOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @return A list containing the selectDiceIndexList.
        */
       public java.util.List<java.lang.Integer>
@@ -669,14 +700,14 @@ public final class GCGMsgCostDiceOuterClass {
                  java.util.Collections.unmodifiableList(selectDiceIndexList_) : selectDiceIndexList_;
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @return The count of selectDiceIndexList.
        */
       public int getSelectDiceIndexListCount() {
         return selectDiceIndexList_.size();
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @param index The index of the element to return.
        * @return The selectDiceIndexList at the given index.
        */
@@ -684,7 +715,7 @@ public final class GCGMsgCostDiceOuterClass {
         return selectDiceIndexList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The selectDiceIndexList to set.
        * @return This builder for chaining.
@@ -697,7 +728,7 @@ public final class GCGMsgCostDiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @param value The selectDiceIndexList to add.
        * @return This builder for chaining.
        */
@@ -708,7 +739,7 @@ public final class GCGMsgCostDiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @param values The selectDiceIndexList to add.
        * @return This builder for chaining.
        */
@@ -721,43 +752,12 @@ public final class GCGMsgCostDiceOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 select_dice_index_list = 6;</code>
+       * <code>repeated uint32 select_dice_index_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSelectDiceIndexList() {
         selectDiceIndexList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private int controllerId_ ;
-      /**
-       * <code>uint32 controller_id = 9;</code>
-       * @return The controllerId.
-       */
-      @java.lang.Override
-      public int getControllerId() {
-        return controllerId_;
-      }
-      /**
-       * <code>uint32 controller_id = 9;</code>
-       * @param value The controllerId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setControllerId(int value) {
-        
-        controllerId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 controller_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearControllerId() {
-        
-        controllerId_ = 0;
         onChanged();
         return this;
       }
@@ -828,24 +828,24 @@ public final class GCGMsgCostDiceOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024GCGMsgCostDice.proto\032\021MNDCMMKBIBP.prot" +
-      "o\"e\n\016GCGMsgCostDice\022\034\n\006reason\030\004 \001(\0162\014.MN" +
-      "DCMMKBIBP\022\036\n\026select_dice_index_list\030\006 \003(" +
-      "\r\022\025\n\rcontroller_id\030\t \001(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\024GCGMsgCostDice.proto\032\017GCGReason.proto\"" +
+      "c\n\016GCGMsgCostDice\022\032\n\006reason\030\004 \001(\0162\n.GCGR" +
+      "eason\022\025\n\rcontroller_id\030\003 \001(\r\022\036\n\026select_d" +
+      "ice_index_list\030\013 \003(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.GCGReasonOuterClass.getDescriptor(),
         });
     internal_static_GCGMsgCostDice_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_GCGMsgCostDice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGMsgCostDice_descriptor,
-        new java.lang.String[] { "Reason", "SelectDiceIndexList", "ControllerId", });
-    emu.grasscutter.net.proto.MNDCMMKBIBPOuterClass.getDescriptor();
+        new java.lang.String[] { "Reason", "ControllerId", "SelectDiceIndexList", });
+    emu.grasscutter.net.proto.GCGReasonOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

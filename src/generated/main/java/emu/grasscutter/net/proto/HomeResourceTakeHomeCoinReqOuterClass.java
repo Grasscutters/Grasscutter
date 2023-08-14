@@ -20,8 +20,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4773
-   * Obf: JBHKJDLNHDJ
+   * CmdId: 4728
+   * Obf: LCHACOIBHAH
    * </pre>
    *
    * Protobuf type {@code HomeResourceTakeHomeCoinReq}
@@ -246,8 +246,8 @@ public final class HomeResourceTakeHomeCoinReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4773
-     * Obf: JBHKJDLNHDJ
+     * CmdId: 4728
+     * Obf: LCHACOIBHAH
      * </pre>
      *
      * Protobuf type {@code HomeResourceTakeHomeCoinReq}

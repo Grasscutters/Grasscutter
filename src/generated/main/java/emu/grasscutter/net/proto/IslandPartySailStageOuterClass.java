@@ -16,7 +16,7 @@ public final class IslandPartySailStageOuterClass {
   }
   /**
    * <pre>
-   * Obf: CMBIHEEBLBL
+   * Obf: IAJMOMGBODC
    * </pre>
    *
    * Protobuf enum {@code IslandPartySailStage}

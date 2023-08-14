@@ -50,7 +50,7 @@ public final class PlayProductOuterClass {
   }
   /**
    * <pre>
-   * Obf: FDKNIMMOPEO
+   * Obf: JHHADHKEAAD
    * </pre>
    *
    * Protobuf type {@code PlayProduct}
@@ -412,7 +412,7 @@ public final class PlayProductOuterClass {
     }
     /**
      * <pre>
-     * Obf: FDKNIMMOPEO
+     * Obf: JHHADHKEAAD
      * </pre>
      *
      * Protobuf type {@code PlayProduct}

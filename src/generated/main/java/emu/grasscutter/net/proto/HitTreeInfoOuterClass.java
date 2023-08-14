@@ -19,29 +19,29 @@ public final class HitTreeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>uint32 tree_type = 11;</code>
+     * @return The treeType.
+     */
+    int getTreeType();
+
+    /**
+     * <code>.Vector tree_pos = 9;</code>
      * @return Whether the treePos field is set.
      */
     boolean hasTreePos();
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>.Vector tree_pos = 9;</code>
      * @return The treePos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getTreePos();
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>.Vector tree_pos = 9;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getTreePosOrBuilder();
-
-    /**
-     * <code>uint32 tree_type = 2;</code>
-     * @return The treeType.
-     */
-    int getTreeType();
   }
   /**
    * <pre>
-   * Obf: DOLGGMJGBMF
+   * Obf: KNNHCELBHOF
    * </pre>
    *
    * Protobuf type {@code HitTreeInfo}
@@ -88,12 +88,7 @@ public final class HitTreeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              treeType_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 74: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (treePos_ != null) {
                 subBuilder = treePos_.toBuilder();
@@ -104,6 +99,11 @@ public final class HitTreeInfoOuterClass {
                 treePos_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 88: {
+
+              treeType_ = input.readUInt32();
               break;
             }
             default: {
@@ -138,10 +138,21 @@ public final class HitTreeInfoOuterClass {
               emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo.class, emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo.Builder.class);
     }
 
-    public static final int TREE_POS_FIELD_NUMBER = 15;
+    public static final int TREE_TYPE_FIELD_NUMBER = 11;
+    private int treeType_;
+    /**
+     * <code>uint32 tree_type = 11;</code>
+     * @return The treeType.
+     */
+    @java.lang.Override
+    public int getTreeType() {
+      return treeType_;
+    }
+
+    public static final int TREE_POS_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector treePos_;
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>.Vector tree_pos = 9;</code>
      * @return Whether the treePos field is set.
      */
     @java.lang.Override
@@ -149,7 +160,7 @@ public final class HitTreeInfoOuterClass {
       return treePos_ != null;
     }
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>.Vector tree_pos = 9;</code>
      * @return The treePos.
      */
     @java.lang.Override
@@ -157,22 +168,11 @@ public final class HitTreeInfoOuterClass {
       return treePos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : treePos_;
     }
     /**
-     * <code>.Vector tree_pos = 15;</code>
+     * <code>.Vector tree_pos = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getTreePosOrBuilder() {
       return getTreePos();
-    }
-
-    public static final int TREE_TYPE_FIELD_NUMBER = 2;
-    private int treeType_;
-    /**
-     * <code>uint32 tree_type = 2;</code>
-     * @return The treeType.
-     */
-    @java.lang.Override
-    public int getTreeType() {
-      return treeType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -189,11 +189,11 @@ public final class HitTreeInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (treeType_ != 0) {
-        output.writeUInt32(2, treeType_);
-      }
       if (treePos_ != null) {
-        output.writeMessage(15, getTreePos());
+        output.writeMessage(9, getTreePos());
+      }
+      if (treeType_ != 0) {
+        output.writeUInt32(11, treeType_);
       }
       unknownFields.writeTo(output);
     }
@@ -204,13 +204,13 @@ public final class HitTreeInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (treeType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, treeType_);
-      }
       if (treePos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getTreePos());
+          .computeMessageSize(9, getTreePos());
+      }
+      if (treeType_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, treeType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -227,13 +227,13 @@ public final class HitTreeInfoOuterClass {
       }
       emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo other = (emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo) obj;
 
+      if (getTreeType()
+          != other.getTreeType()) return false;
       if (hasTreePos() != other.hasTreePos()) return false;
       if (hasTreePos()) {
         if (!getTreePos()
             .equals(other.getTreePos())) return false;
       }
-      if (getTreeType()
-          != other.getTreeType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -245,12 +245,12 @@ public final class HitTreeInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TREE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTreeType();
       if (hasTreePos()) {
         hash = (37 * hash) + TREE_POS_FIELD_NUMBER;
         hash = (53 * hash) + getTreePos().hashCode();
       }
-      hash = (37 * hash) + TREE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getTreeType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -348,7 +348,7 @@ public final class HitTreeInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DOLGGMJGBMF
+     * Obf: KNNHCELBHOF
      * </pre>
      *
      * Protobuf type {@code HitTreeInfo}
@@ -388,14 +388,14 @@ public final class HitTreeInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        treeType_ = 0;
+
         if (treePosBuilder_ == null) {
           treePos_ = null;
         } else {
           treePos_ = null;
           treePosBuilder_ = null;
         }
-        treeType_ = 0;
-
         return this;
       }
 
@@ -422,12 +422,12 @@ public final class HitTreeInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo buildPartial() {
         emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo result = new emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo(this);
+        result.treeType_ = treeType_;
         if (treePosBuilder_ == null) {
           result.treePos_ = treePos_;
         } else {
           result.treePos_ = treePosBuilder_.build();
         }
-        result.treeType_ = treeType_;
         onBuilt();
         return result;
       }
@@ -476,11 +476,11 @@ public final class HitTreeInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo other) {
         if (other == emu.grasscutter.net.proto.HitTreeInfoOuterClass.HitTreeInfo.getDefaultInstance()) return this;
-        if (other.hasTreePos()) {
-          mergeTreePos(other.getTreePos());
-        }
         if (other.getTreeType() != 0) {
           setTreeType(other.getTreeType());
+        }
+        if (other.hasTreePos()) {
+          mergeTreePos(other.getTreePos());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -511,18 +511,49 @@ public final class HitTreeInfoOuterClass {
         return this;
       }
 
+      private int treeType_ ;
+      /**
+       * <code>uint32 tree_type = 11;</code>
+       * @return The treeType.
+       */
+      @java.lang.Override
+      public int getTreeType() {
+        return treeType_;
+      }
+      /**
+       * <code>uint32 tree_type = 11;</code>
+       * @param value The treeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTreeType(int value) {
+        
+        treeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 tree_type = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTreeType() {
+        
+        treeType_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.VectorOuterClass.Vector treePos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> treePosBuilder_;
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        * @return Whether the treePos field is set.
        */
       public boolean hasTreePos() {
         return treePosBuilder_ != null || treePos_ != null;
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        * @return The treePos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getTreePos() {
@@ -533,7 +564,7 @@ public final class HitTreeInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public Builder setTreePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (treePosBuilder_ == null) {
@@ -549,7 +580,7 @@ public final class HitTreeInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public Builder setTreePos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -563,7 +594,7 @@ public final class HitTreeInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public Builder mergeTreePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (treePosBuilder_ == null) {
@@ -581,7 +612,7 @@ public final class HitTreeInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public Builder clearTreePos() {
         if (treePosBuilder_ == null) {
@@ -595,7 +626,7 @@ public final class HitTreeInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getTreePosBuilder() {
         
@@ -603,7 +634,7 @@ public final class HitTreeInfoOuterClass {
         return getTreePosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getTreePosOrBuilder() {
         if (treePosBuilder_ != null) {
@@ -614,7 +645,7 @@ public final class HitTreeInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector tree_pos = 15;</code>
+       * <code>.Vector tree_pos = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -628,37 +659,6 @@ public final class HitTreeInfoOuterClass {
           treePos_ = null;
         }
         return treePosBuilder_;
-      }
-
-      private int treeType_ ;
-      /**
-       * <code>uint32 tree_type = 2;</code>
-       * @return The treeType.
-       */
-      @java.lang.Override
-      public int getTreeType() {
-        return treeType_;
-      }
-      /**
-       * <code>uint32 tree_type = 2;</code>
-       * @param value The treeType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTreeType(int value) {
-        
-        treeType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 tree_type = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTreeType() {
-        
-        treeType_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -728,8 +728,8 @@ public final class HitTreeInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HitTreeInfo.proto\032\014Vector.proto\";\n\013Hit" +
-      "TreeInfo\022\031\n\010tree_pos\030\017 \001(\0132\007.Vector\022\021\n\tt" +
-      "ree_type\030\002 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "TreeInfo\022\021\n\ttree_type\030\013 \001(\r\022\031\n\010tree_pos\030" +
+      "\t \001(\0132\007.VectorB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -742,7 +742,7 @@ public final class HitTreeInfoOuterClass {
     internal_static_HitTreeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HitTreeInfo_descriptor,
-        new java.lang.String[] { "TreePos", "TreeType", });
+        new java.lang.String[] { "TreeType", "TreePos", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

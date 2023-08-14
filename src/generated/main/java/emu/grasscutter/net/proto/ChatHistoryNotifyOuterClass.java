@@ -19,39 +19,39 @@ public final class ChatHistoryNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>uint32 channel_id = 15;</code>
+     * @return The channelId.
+     */
+    int getChannelId();
+
+    /**
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> 
         getChatInfoList();
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo getChatInfo(int index);
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     int getChatInfoCount();
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> 
         getChatInfoOrBuilderList();
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 channel_id = 9;</code>
-     * @return The channelId.
-     */
-    int getChannelId();
   }
   /**
    * <pre>
-   * CmdId: 3186
-   * Obf: MEILMNEMNHA
+   * CmdId: 4425
+   * Obf: DMBCIMODKGA
    * </pre>
    *
    * Protobuf type {@code ChatHistoryNotify}
@@ -100,18 +100,18 @@ public final class ChatHistoryNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              channelId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chatInfo_ = new java.util.ArrayList<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               chatInfo_.add(
                   input.readMessage(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+
+              channelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -149,17 +149,28 @@ public final class ChatHistoryNotifyOuterClass {
               emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify.class, emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify.Builder.class);
     }
 
-    public static final int CHAT_INFO_FIELD_NUMBER = 12;
+    public static final int CHANNEL_ID_FIELD_NUMBER = 15;
+    private int channelId_;
+    /**
+     * <code>uint32 channel_id = 15;</code>
+     * @return The channelId.
+     */
+    @java.lang.Override
+    public int getChannelId() {
+      return channelId_;
+    }
+
+    public static final int CHAT_INFO_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> chatInfo_;
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> getChatInfoList() {
       return chatInfo_;
     }
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> 
@@ -167,37 +178,26 @@ public final class ChatHistoryNotifyOuterClass {
       return chatInfo_;
     }
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     @java.lang.Override
     public int getChatInfoCount() {
       return chatInfo_.size();
     }
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo getChatInfo(int index) {
       return chatInfo_.get(index);
     }
     /**
-     * <code>repeated .ChatInfo chat_info = 12;</code>
+     * <code>repeated .ChatInfo chat_info = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder(
         int index) {
       return chatInfo_.get(index);
-    }
-
-    public static final int CHANNEL_ID_FIELD_NUMBER = 9;
-    private int channelId_;
-    /**
-     * <code>uint32 channel_id = 9;</code>
-     * @return The channelId.
-     */
-    @java.lang.Override
-    public int getChannelId() {
-      return channelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -214,11 +214,11 @@ public final class ChatHistoryNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (channelId_ != 0) {
-        output.writeUInt32(9, channelId_);
-      }
       for (int i = 0; i < chatInfo_.size(); i++) {
-        output.writeMessage(12, chatInfo_.get(i));
+        output.writeMessage(5, chatInfo_.get(i));
+      }
+      if (channelId_ != 0) {
+        output.writeUInt32(15, channelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -229,13 +229,13 @@ public final class ChatHistoryNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (channelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, channelId_);
-      }
       for (int i = 0; i < chatInfo_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, chatInfo_.get(i));
+          .computeMessageSize(5, chatInfo_.get(i));
+      }
+      if (channelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, channelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,10 +252,10 @@ public final class ChatHistoryNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify other = (emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify) obj;
 
-      if (!getChatInfoList()
-          .equals(other.getChatInfoList())) return false;
       if (getChannelId()
           != other.getChannelId()) return false;
+      if (!getChatInfoList()
+          .equals(other.getChatInfoList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +267,12 @@ public final class ChatHistoryNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelId();
       if (getChatInfoCount() > 0) {
         hash = (37 * hash) + CHAT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getChatInfoList().hashCode();
       }
-      hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChannelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -370,8 +370,8 @@ public final class ChatHistoryNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3186
-     * Obf: MEILMNEMNHA
+     * CmdId: 4425
+     * Obf: DMBCIMODKGA
      * </pre>
      *
      * Protobuf type {@code ChatHistoryNotify}
@@ -412,14 +412,14 @@ public final class ChatHistoryNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        channelId_ = 0;
+
         if (chatInfoBuilder_ == null) {
           chatInfo_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           chatInfoBuilder_.clear();
         }
-        channelId_ = 0;
-
         return this;
       }
 
@@ -447,6 +447,7 @@ public final class ChatHistoryNotifyOuterClass {
       public emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify buildPartial() {
         emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify result = new emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify(this);
         int from_bitField0_ = bitField0_;
+        result.channelId_ = channelId_;
         if (chatInfoBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             chatInfo_ = java.util.Collections.unmodifiableList(chatInfo_);
@@ -456,7 +457,6 @@ public final class ChatHistoryNotifyOuterClass {
         } else {
           result.chatInfo_ = chatInfoBuilder_.build();
         }
-        result.channelId_ = channelId_;
         onBuilt();
         return result;
       }
@@ -505,6 +505,9 @@ public final class ChatHistoryNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify other) {
         if (other == emu.grasscutter.net.proto.ChatHistoryNotifyOuterClass.ChatHistoryNotify.getDefaultInstance()) return this;
+        if (other.getChannelId() != 0) {
+          setChannelId(other.getChannelId());
+        }
         if (chatInfoBuilder_ == null) {
           if (!other.chatInfo_.isEmpty()) {
             if (chatInfo_.isEmpty()) {
@@ -530,9 +533,6 @@ public final class ChatHistoryNotifyOuterClass {
               chatInfoBuilder_.addAllMessages(other.chatInfo_);
             }
           }
-        }
-        if (other.getChannelId() != 0) {
-          setChannelId(other.getChannelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -564,6 +564,37 @@ public final class ChatHistoryNotifyOuterClass {
       }
       private int bitField0_;
 
+      private int channelId_ ;
+      /**
+       * <code>uint32 channel_id = 15;</code>
+       * @return The channelId.
+       */
+      @java.lang.Override
+      public int getChannelId() {
+        return channelId_;
+      }
+      /**
+       * <code>uint32 channel_id = 15;</code>
+       * @param value The channelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChannelId(int value) {
+        
+        channelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 channel_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChannelId() {
+        
+        channelId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> chatInfo_ =
         java.util.Collections.emptyList();
       private void ensureChatInfoIsMutable() {
@@ -577,7 +608,7 @@ public final class ChatHistoryNotifyOuterClass {
           emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> chatInfoBuilder_;
 
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> getChatInfoList() {
         if (chatInfoBuilder_ == null) {
@@ -587,7 +618,7 @@ public final class ChatHistoryNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public int getChatInfoCount() {
         if (chatInfoBuilder_ == null) {
@@ -597,7 +628,7 @@ public final class ChatHistoryNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo getChatInfo(int index) {
         if (chatInfoBuilder_ == null) {
@@ -607,7 +638,7 @@ public final class ChatHistoryNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder setChatInfo(
           int index, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo value) {
@@ -624,7 +655,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder setChatInfo(
           int index, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder builderForValue) {
@@ -638,7 +669,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder addChatInfo(emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo value) {
         if (chatInfoBuilder_ == null) {
@@ -654,7 +685,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder addChatInfo(
           int index, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo value) {
@@ -671,7 +702,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder addChatInfo(
           emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder builderForValue) {
@@ -685,7 +716,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder addChatInfo(
           int index, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder builderForValue) {
@@ -699,7 +730,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder addAllChatInfo(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo> values) {
@@ -714,7 +745,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder clearChatInfo() {
         if (chatInfoBuilder_ == null) {
@@ -727,7 +758,7 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public Builder removeChatInfo(int index) {
         if (chatInfoBuilder_ == null) {
@@ -740,14 +771,14 @@ public final class ChatHistoryNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder getChatInfoBuilder(
           int index) {
         return getChatInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder(
           int index) {
@@ -757,7 +788,7 @@ public final class ChatHistoryNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder> 
            getChatInfoOrBuilderList() {
@@ -768,14 +799,14 @@ public final class ChatHistoryNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder addChatInfoBuilder() {
         return getChatInfoFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder addChatInfoBuilder(
           int index) {
@@ -783,7 +814,7 @@ public final class ChatHistoryNotifyOuterClass {
             index, emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ChatInfo chat_info = 12;</code>
+       * <code>repeated .ChatInfo chat_info = 5;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.Builder> 
            getChatInfoBuilderList() {
@@ -802,37 +833,6 @@ public final class ChatHistoryNotifyOuterClass {
           chatInfo_ = null;
         }
         return chatInfoBuilder_;
-      }
-
-      private int channelId_ ;
-      /**
-       * <code>uint32 channel_id = 9;</code>
-       * @return The channelId.
-       */
-      @java.lang.Override
-      public int getChannelId() {
-        return channelId_;
-      }
-      /**
-       * <code>uint32 channel_id = 9;</code>
-       * @param value The channelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChannelId(int value) {
-        
-        channelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 channel_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChannelId() {
-        
-        channelId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -902,8 +902,8 @@ public final class ChatHistoryNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ChatHistoryNotify.proto\032\016ChatInfo.prot" +
-      "o\"E\n\021ChatHistoryNotify\022\034\n\tchat_info\030\014 \003(" +
-      "\0132\t.ChatInfo\022\022\n\nchannel_id\030\t \001(\rB\033\n\031emu." +
+      "o\"E\n\021ChatHistoryNotify\022\022\n\nchannel_id\030\017 \001" +
+      "(\r\022\034\n\tchat_info\030\005 \003(\0132\t.ChatInfoB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -916,7 +916,7 @@ public final class ChatHistoryNotifyOuterClass {
     internal_static_ChatHistoryNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChatHistoryNotify_descriptor,
-        new java.lang.String[] { "ChatInfo", "ChannelId", });
+        new java.lang.String[] { "ChannelId", "ChatInfo", });
     emu.grasscutter.net.proto.ChatInfoOuterClass.getDescriptor();
   }
 

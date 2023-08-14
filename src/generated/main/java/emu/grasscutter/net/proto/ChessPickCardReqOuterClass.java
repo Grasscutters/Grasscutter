@@ -19,21 +19,21 @@ public final class ChessPickCardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_id = 10;</code>
-     * @return The cardId.
-     */
-    int getCardId();
-
-    /**
-     * <code>uint32 card_index = 3;</code>
+     * <code>uint32 card_index = 5;</code>
      * @return The cardIndex.
      */
     int getCardIndex();
+
+    /**
+     * <code>uint32 card_id = 1;</code>
+     * @return The cardId.
+     */
+    int getCardId();
   }
   /**
    * <pre>
-   * CmdId: 5315
-   * Obf: GHBDOONGKGK
+   * CmdId: 25527
+   * Obf: DEKGJEHKMBF
    * </pre>
    *
    * Protobuf type {@code ChessPickCardReq}
@@ -80,14 +80,14 @@ public final class ChessPickCardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              cardIndex_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 8: {
 
               cardId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              cardIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class ChessPickCardReqOuterClass {
               emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq.class, emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq.Builder.class);
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 10;
-    private int cardId_;
-    /**
-     * <code>uint32 card_id = 10;</code>
-     * @return The cardId.
-     */
-    @java.lang.Override
-    public int getCardId() {
-      return cardId_;
-    }
-
-    public static final int CARD_INDEX_FIELD_NUMBER = 3;
+    public static final int CARD_INDEX_FIELD_NUMBER = 5;
     private int cardIndex_;
     /**
-     * <code>uint32 card_index = 3;</code>
+     * <code>uint32 card_index = 5;</code>
      * @return The cardIndex.
      */
     @java.lang.Override
     public int getCardIndex() {
       return cardIndex_;
+    }
+
+    public static final int CARD_ID_FIELD_NUMBER = 1;
+    private int cardId_;
+    /**
+     * <code>uint32 card_id = 1;</code>
+     * @return The cardId.
+     */
+    @java.lang.Override
+    public int getCardId() {
+      return cardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class ChessPickCardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cardIndex_ != 0) {
-        output.writeUInt32(3, cardIndex_);
-      }
       if (cardId_ != 0) {
-        output.writeUInt32(10, cardId_);
+        output.writeUInt32(1, cardId_);
+      }
+      if (cardIndex_ != 0) {
+        output.writeUInt32(5, cardIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class ChessPickCardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cardIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, cardIndex_);
-      }
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, cardId_);
+          .computeUInt32Size(1, cardId_);
+      }
+      if (cardIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, cardIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class ChessPickCardReqOuterClass {
       }
       emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq other = (emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq) obj;
 
-      if (getCardId()
-          != other.getCardId()) return false;
       if (getCardIndex()
           != other.getCardIndex()) return false;
+      if (getCardId()
+          != other.getCardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class ChessPickCardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardId();
       hash = (37 * hash) + CARD_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getCardIndex();
+      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class ChessPickCardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5315
-     * Obf: GHBDOONGKGK
+     * CmdId: 25527
+     * Obf: DEKGJEHKMBF
      * </pre>
      *
      * Protobuf type {@code ChessPickCardReq}
@@ -353,9 +353,9 @@ public final class ChessPickCardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardId_ = 0;
-
         cardIndex_ = 0;
+
+        cardId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class ChessPickCardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq buildPartial() {
         emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq result = new emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq(this);
-        result.cardId_ = cardId_;
         result.cardIndex_ = cardIndex_;
+        result.cardId_ = cardId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class ChessPickCardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq other) {
         if (other == emu.grasscutter.net.proto.ChessPickCardReqOuterClass.ChessPickCardReq.getDefaultInstance()) return this;
-        if (other.getCardId() != 0) {
-          setCardId(other.getCardId());
-        }
         if (other.getCardIndex() != 0) {
           setCardIndex(other.getCardIndex());
+        }
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class ChessPickCardReqOuterClass {
         return this;
       }
 
-      private int cardId_ ;
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @return The cardId.
-       */
-      @java.lang.Override
-      public int getCardId() {
-        return cardId_;
-      }
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @param value The cardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardId(int value) {
-        
-        cardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 card_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardId() {
-        
-        cardId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int cardIndex_ ;
       /**
-       * <code>uint32 card_index = 3;</code>
+       * <code>uint32 card_index = 5;</code>
        * @return The cardIndex.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class ChessPickCardReqOuterClass {
         return cardIndex_;
       }
       /**
-       * <code>uint32 card_index = 3;</code>
+       * <code>uint32 card_index = 5;</code>
        * @param value The cardIndex to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class ChessPickCardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_index = 3;</code>
+       * <code>uint32 card_index = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardIndex() {
         
         cardIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cardId_ ;
+      /**
+       * <code>uint32 card_id = 1;</code>
+       * @return The cardId.
+       */
+      @java.lang.Override
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <code>uint32 card_id = 1;</code>
+       * @param value The cardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 card_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
         onChanged();
         return this;
       }
@@ -597,7 +597,7 @@ public final class ChessPickCardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026ChessPickCardReq.proto\"7\n\020ChessPickCar" +
-      "dReq\022\017\n\007card_id\030\n \001(\r\022\022\n\ncard_index\030\003 \001(" +
+      "dReq\022\022\n\ncard_index\030\005 \001(\r\022\017\n\007card_id\030\001 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -609,7 +609,7 @@ public final class ChessPickCardReqOuterClass {
     internal_static_ChessPickCardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChessPickCardReq_descriptor,
-        new java.lang.String[] { "CardId", "CardIndex", });
+        new java.lang.String[] { "CardIndex", "CardId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,15 +19,15 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 23191
-   * Obf: CHFFLLNADHL
+   * CmdId: 3102
+   * Obf: FBCMJOGLAPC
    * </pre>
    *
    * Protobuf type {@code FungusFighterClearTrainingRuntimeDataRsp}
@@ -74,7 +74,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
               emu.grasscutter.net.proto.FungusFighterClearTrainingRuntimeDataRspOuterClass.FungusFighterClearTrainingRuntimeDataRsp.class, emu.grasscutter.net.proto.FungusFighterClearTrainingRuntimeDataRspOuterClass.FungusFighterClearTrainingRuntimeDataRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23191
-     * Obf: CHFFLLNADHL
+     * CmdId: 3102
+     * Obf: FBCMJOGLAPC
      * </pre>
      *
      * Protobuf type {@code FungusFighterClearTrainingRuntimeDataRsp}
@@ -431,7 +431,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -528,7 +528,7 @@ public final class FungusFighterClearTrainingRuntimeDataRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n.FungusFighterClearTrainingRuntimeDataR" +
       "sp.proto\";\n(FungusFighterClearTrainingRu" +
-      "ntimeDataRsp\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu.gra" +
+      "ntimeDataRsp\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

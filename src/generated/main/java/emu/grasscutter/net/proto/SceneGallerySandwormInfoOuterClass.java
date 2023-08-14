@@ -19,37 +19,37 @@ public final class SceneGallerySandwormInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool GHAOEGPFCIN = 6;</code>
-     * @return The gHAOEGPFCIN.
+     * <code>bool EOFIKOMIALM = 9;</code>
+     * @return The eOFIKOMIALM.
      */
-    boolean getGHAOEGPFCIN();
+    boolean getEOFIKOMIALM();
 
     /**
-     * <code>uint32 energy = 1;</code>
+     * <code>uint32 energy = 15;</code>
      * @return The energy.
      */
     int getEnergy();
 
     /**
-     * <code>uint32 MGAACMOKFJC = 2;</code>
-     * @return The mGAACMOKFJC.
+     * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+     * @return The enum numeric value on the wire for aOHLJOMAPLN.
      */
-    int getMGAACMOKFJC();
+    int getAOHLJOMAPLNValue();
+    /**
+     * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+     * @return The aOHLJOMAPLN.
+     */
+    emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP getAOHLJOMAPLN();
 
     /**
-     * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-     * @return The enum numeric value on the wire for kJGHIGCOBPJ.
+     * <code>uint32 ACAODPCJIOP = 7;</code>
+     * @return The aCAODPCJIOP.
      */
-    int getKJGHIGCOBPJValue();
-    /**
-     * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-     * @return The kJGHIGCOBPJ.
-     */
-    emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD getKJGHIGCOBPJ();
+    int getACAODPCJIOP();
   }
   /**
    * <pre>
-   * Obf: DFJLPKHALNG
+   * Obf: DAJEIAADGGF
    * </pre>
    *
    * Protobuf type {@code SceneGallerySandwormInfo}
@@ -64,7 +64,7 @@ public final class SceneGallerySandwormInfoOuterClass {
       super(builder);
     }
     private SceneGallerySandwormInfo() {
-      kJGHIGCOBPJ_ = 0;
+      aOHLJOMAPLN_ = 0;
     }
 
     @java.lang.Override
@@ -97,25 +97,25 @@ public final class SceneGallerySandwormInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 56: {
 
-              energy_ = input.readUInt32();
+              aCAODPCJIOP_ = input.readUInt32();
               break;
             }
-            case 16: {
+            case 72: {
 
-              mGAACMOKFJC_ = input.readUInt32();
+              eOFIKOMIALM_ = input.readBool();
               break;
             }
-            case 24: {
+            case 104: {
               int rawValue = input.readEnum();
 
-              kJGHIGCOBPJ_ = rawValue;
+              aOHLJOMAPLN_ = rawValue;
               break;
             }
-            case 48: {
+            case 120: {
 
-              gHAOEGPFCIN_ = input.readBool();
+              energy_ = input.readUInt32();
               break;
             }
             default: {
@@ -150,21 +150,21 @@ public final class SceneGallerySandwormInfoOuterClass {
               emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo.class, emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo.Builder.class);
     }
 
-    public static final int GHAOEGPFCIN_FIELD_NUMBER = 6;
-    private boolean gHAOEGPFCIN_;
+    public static final int EOFIKOMIALM_FIELD_NUMBER = 9;
+    private boolean eOFIKOMIALM_;
     /**
-     * <code>bool GHAOEGPFCIN = 6;</code>
-     * @return The gHAOEGPFCIN.
+     * <code>bool EOFIKOMIALM = 9;</code>
+     * @return The eOFIKOMIALM.
      */
     @java.lang.Override
-    public boolean getGHAOEGPFCIN() {
-      return gHAOEGPFCIN_;
+    public boolean getEOFIKOMIALM() {
+      return eOFIKOMIALM_;
     }
 
-    public static final int ENERGY_FIELD_NUMBER = 1;
+    public static final int ENERGY_FIELD_NUMBER = 15;
     private int energy_;
     /**
-     * <code>uint32 energy = 1;</code>
+     * <code>uint32 energy = 15;</code>
      * @return The energy.
      */
     @java.lang.Override
@@ -172,34 +172,34 @@ public final class SceneGallerySandwormInfoOuterClass {
       return energy_;
     }
 
-    public static final int MGAACMOKFJC_FIELD_NUMBER = 2;
-    private int mGAACMOKFJC_;
+    public static final int AOHLJOMAPLN_FIELD_NUMBER = 13;
+    private int aOHLJOMAPLN_;
     /**
-     * <code>uint32 MGAACMOKFJC = 2;</code>
-     * @return The mGAACMOKFJC.
+     * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+     * @return The enum numeric value on the wire for aOHLJOMAPLN.
      */
-    @java.lang.Override
-    public int getMGAACMOKFJC() {
-      return mGAACMOKFJC_;
+    @java.lang.Override public int getAOHLJOMAPLNValue() {
+      return aOHLJOMAPLN_;
+    }
+    /**
+     * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+     * @return The aOHLJOMAPLN.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP getAOHLJOMAPLN() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP result = emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.valueOf(aOHLJOMAPLN_);
+      return result == null ? emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.UNRECOGNIZED : result;
     }
 
-    public static final int KJGHIGCOBPJ_FIELD_NUMBER = 3;
-    private int kJGHIGCOBPJ_;
+    public static final int ACAODPCJIOP_FIELD_NUMBER = 7;
+    private int aCAODPCJIOP_;
     /**
-     * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-     * @return The enum numeric value on the wire for kJGHIGCOBPJ.
+     * <code>uint32 ACAODPCJIOP = 7;</code>
+     * @return The aCAODPCJIOP.
      */
-    @java.lang.Override public int getKJGHIGCOBPJValue() {
-      return kJGHIGCOBPJ_;
-    }
-    /**
-     * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-     * @return The kJGHIGCOBPJ.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD getKJGHIGCOBPJ() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD result = emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.valueOf(kJGHIGCOBPJ_);
-      return result == null ? emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.UNRECOGNIZED : result;
+    @java.lang.Override
+    public int getACAODPCJIOP() {
+      return aCAODPCJIOP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -216,17 +216,17 @@ public final class SceneGallerySandwormInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (aCAODPCJIOP_ != 0) {
+        output.writeUInt32(7, aCAODPCJIOP_);
+      }
+      if (eOFIKOMIALM_ != false) {
+        output.writeBool(9, eOFIKOMIALM_);
+      }
+      if (aOHLJOMAPLN_ != emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.DNKNPOGNOFP_SandwormCannonNoneEffect.getNumber()) {
+        output.writeEnum(13, aOHLJOMAPLN_);
+      }
       if (energy_ != 0) {
-        output.writeUInt32(1, energy_);
-      }
-      if (mGAACMOKFJC_ != 0) {
-        output.writeUInt32(2, mGAACMOKFJC_);
-      }
-      if (kJGHIGCOBPJ_ != emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.JJKBPBNAGAD_SandwormCannonNoneEffect.getNumber()) {
-        output.writeEnum(3, kJGHIGCOBPJ_);
-      }
-      if (gHAOEGPFCIN_ != false) {
-        output.writeBool(6, gHAOEGPFCIN_);
+        output.writeUInt32(15, energy_);
       }
       unknownFields.writeTo(output);
     }
@@ -237,21 +237,21 @@ public final class SceneGallerySandwormInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (aCAODPCJIOP_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, aCAODPCJIOP_);
+      }
+      if (eOFIKOMIALM_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, eOFIKOMIALM_);
+      }
+      if (aOHLJOMAPLN_ != emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.DNKNPOGNOFP_SandwormCannonNoneEffect.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, aOHLJOMAPLN_);
+      }
       if (energy_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, energy_);
-      }
-      if (mGAACMOKFJC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, mGAACMOKFJC_);
-      }
-      if (kJGHIGCOBPJ_ != emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.JJKBPBNAGAD_SandwormCannonNoneEffect.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, kJGHIGCOBPJ_);
-      }
-      if (gHAOEGPFCIN_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, gHAOEGPFCIN_);
+          .computeUInt32Size(15, energy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -268,13 +268,13 @@ public final class SceneGallerySandwormInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo other = (emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo) obj;
 
-      if (getGHAOEGPFCIN()
-          != other.getGHAOEGPFCIN()) return false;
+      if (getEOFIKOMIALM()
+          != other.getEOFIKOMIALM()) return false;
       if (getEnergy()
           != other.getEnergy()) return false;
-      if (getMGAACMOKFJC()
-          != other.getMGAACMOKFJC()) return false;
-      if (kJGHIGCOBPJ_ != other.kJGHIGCOBPJ_) return false;
+      if (aOHLJOMAPLN_ != other.aOHLJOMAPLN_) return false;
+      if (getACAODPCJIOP()
+          != other.getACAODPCJIOP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -286,15 +286,15 @@ public final class SceneGallerySandwormInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GHAOEGPFCIN_FIELD_NUMBER;
+      hash = (37 * hash) + EOFIKOMIALM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGHAOEGPFCIN());
+          getEOFIKOMIALM());
       hash = (37 * hash) + ENERGY_FIELD_NUMBER;
       hash = (53 * hash) + getEnergy();
-      hash = (37 * hash) + MGAACMOKFJC_FIELD_NUMBER;
-      hash = (53 * hash) + getMGAACMOKFJC();
-      hash = (37 * hash) + KJGHIGCOBPJ_FIELD_NUMBER;
-      hash = (53 * hash) + kJGHIGCOBPJ_;
+      hash = (37 * hash) + AOHLJOMAPLN_FIELD_NUMBER;
+      hash = (53 * hash) + aOHLJOMAPLN_;
+      hash = (37 * hash) + ACAODPCJIOP_FIELD_NUMBER;
+      hash = (53 * hash) + getACAODPCJIOP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -392,7 +392,7 @@ public final class SceneGallerySandwormInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DFJLPKHALNG
+     * Obf: DAJEIAADGGF
      * </pre>
      *
      * Protobuf type {@code SceneGallerySandwormInfo}
@@ -432,13 +432,13 @@ public final class SceneGallerySandwormInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gHAOEGPFCIN_ = false;
+        eOFIKOMIALM_ = false;
 
         energy_ = 0;
 
-        mGAACMOKFJC_ = 0;
+        aOHLJOMAPLN_ = 0;
 
-        kJGHIGCOBPJ_ = 0;
+        aCAODPCJIOP_ = 0;
 
         return this;
       }
@@ -466,10 +466,10 @@ public final class SceneGallerySandwormInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo result = new emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo(this);
-        result.gHAOEGPFCIN_ = gHAOEGPFCIN_;
+        result.eOFIKOMIALM_ = eOFIKOMIALM_;
         result.energy_ = energy_;
-        result.mGAACMOKFJC_ = mGAACMOKFJC_;
-        result.kJGHIGCOBPJ_ = kJGHIGCOBPJ_;
+        result.aOHLJOMAPLN_ = aOHLJOMAPLN_;
+        result.aCAODPCJIOP_ = aCAODPCJIOP_;
         onBuilt();
         return result;
       }
@@ -518,17 +518,17 @@ public final class SceneGallerySandwormInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGallerySandwormInfoOuterClass.SceneGallerySandwormInfo.getDefaultInstance()) return this;
-        if (other.getGHAOEGPFCIN() != false) {
-          setGHAOEGPFCIN(other.getGHAOEGPFCIN());
+        if (other.getEOFIKOMIALM() != false) {
+          setEOFIKOMIALM(other.getEOFIKOMIALM());
         }
         if (other.getEnergy() != 0) {
           setEnergy(other.getEnergy());
         }
-        if (other.getMGAACMOKFJC() != 0) {
-          setMGAACMOKFJC(other.getMGAACMOKFJC());
+        if (other.aOHLJOMAPLN_ != 0) {
+          setAOHLJOMAPLNValue(other.getAOHLJOMAPLNValue());
         }
-        if (other.kJGHIGCOBPJ_ != 0) {
-          setKJGHIGCOBPJValue(other.getKJGHIGCOBPJValue());
+        if (other.getACAODPCJIOP() != 0) {
+          setACAODPCJIOP(other.getACAODPCJIOP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -559,40 +559,40 @@ public final class SceneGallerySandwormInfoOuterClass {
         return this;
       }
 
-      private boolean gHAOEGPFCIN_ ;
+      private boolean eOFIKOMIALM_ ;
       /**
-       * <code>bool GHAOEGPFCIN = 6;</code>
-       * @return The gHAOEGPFCIN.
+       * <code>bool EOFIKOMIALM = 9;</code>
+       * @return The eOFIKOMIALM.
        */
       @java.lang.Override
-      public boolean getGHAOEGPFCIN() {
-        return gHAOEGPFCIN_;
+      public boolean getEOFIKOMIALM() {
+        return eOFIKOMIALM_;
       }
       /**
-       * <code>bool GHAOEGPFCIN = 6;</code>
-       * @param value The gHAOEGPFCIN to set.
+       * <code>bool EOFIKOMIALM = 9;</code>
+       * @param value The eOFIKOMIALM to set.
        * @return This builder for chaining.
        */
-      public Builder setGHAOEGPFCIN(boolean value) {
+      public Builder setEOFIKOMIALM(boolean value) {
         
-        gHAOEGPFCIN_ = value;
+        eOFIKOMIALM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool GHAOEGPFCIN = 6;</code>
+       * <code>bool EOFIKOMIALM = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGHAOEGPFCIN() {
+      public Builder clearEOFIKOMIALM() {
         
-        gHAOEGPFCIN_ = false;
+        eOFIKOMIALM_ = false;
         onChanged();
         return this;
       }
 
       private int energy_ ;
       /**
-       * <code>uint32 energy = 1;</code>
+       * <code>uint32 energy = 15;</code>
        * @return The energy.
        */
       @java.lang.Override
@@ -600,7 +600,7 @@ public final class SceneGallerySandwormInfoOuterClass {
         return energy_;
       }
       /**
-       * <code>uint32 energy = 1;</code>
+       * <code>uint32 energy = 15;</code>
        * @param value The energy to set.
        * @return This builder for chaining.
        */
@@ -611,7 +611,7 @@ public final class SceneGallerySandwormInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 energy = 1;</code>
+       * <code>uint32 energy = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnergy() {
@@ -621,87 +621,87 @@ public final class SceneGallerySandwormInfoOuterClass {
         return this;
       }
 
-      private int mGAACMOKFJC_ ;
+      private int aOHLJOMAPLN_ = 0;
       /**
-       * <code>uint32 MGAACMOKFJC = 2;</code>
-       * @return The mGAACMOKFJC.
+       * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+       * @return The enum numeric value on the wire for aOHLJOMAPLN.
+       */
+      @java.lang.Override public int getAOHLJOMAPLNValue() {
+        return aOHLJOMAPLN_;
+      }
+      /**
+       * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+       * @param value The enum numeric value on the wire for aOHLJOMAPLN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAOHLJOMAPLNValue(int value) {
+        
+        aOHLJOMAPLN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+       * @return The aOHLJOMAPLN.
        */
       @java.lang.Override
-      public int getMGAACMOKFJC() {
-        return mGAACMOKFJC_;
-      }
-      /**
-       * <code>uint32 MGAACMOKFJC = 2;</code>
-       * @param value The mGAACMOKFJC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMGAACMOKFJC(int value) {
-        
-        mGAACMOKFJC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MGAACMOKFJC = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMGAACMOKFJC() {
-        
-        mGAACMOKFJC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int kJGHIGCOBPJ_ = 0;
-      /**
-       * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-       * @return The enum numeric value on the wire for kJGHIGCOBPJ.
-       */
-      @java.lang.Override public int getKJGHIGCOBPJValue() {
-        return kJGHIGCOBPJ_;
-      }
-      /**
-       * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-       * @param value The enum numeric value on the wire for kJGHIGCOBPJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKJGHIGCOBPJValue(int value) {
-        
-        kJGHIGCOBPJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-       * @return The kJGHIGCOBPJ.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD getKJGHIGCOBPJ() {
+      public emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP getAOHLJOMAPLN() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD result = emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.valueOf(kJGHIGCOBPJ_);
-        return result == null ? emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP result = emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.valueOf(aOHLJOMAPLN_);
+        return result == null ? emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP.UNRECOGNIZED : result;
       }
       /**
-       * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
-       * @param value The kJGHIGCOBPJ to set.
+       * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
+       * @param value The aOHLJOMAPLN to set.
        * @return This builder for chaining.
        */
-      public Builder setKJGHIGCOBPJ(emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.JJKBPBNAGAD value) {
+      public Builder setAOHLJOMAPLN(emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.DNKNPOGNOFP value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        kJGHIGCOBPJ_ = value.getNumber();
+        aOHLJOMAPLN_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.JJKBPBNAGAD KJGHIGCOBPJ = 3;</code>
+       * <code>.DNKNPOGNOFP AOHLJOMAPLN = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKJGHIGCOBPJ() {
+      public Builder clearAOHLJOMAPLN() {
         
-        kJGHIGCOBPJ_ = 0;
+        aOHLJOMAPLN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aCAODPCJIOP_ ;
+      /**
+       * <code>uint32 ACAODPCJIOP = 7;</code>
+       * @return The aCAODPCJIOP.
+       */
+      @java.lang.Override
+      public int getACAODPCJIOP() {
+        return aCAODPCJIOP_;
+      }
+      /**
+       * <code>uint32 ACAODPCJIOP = 7;</code>
+       * @param value The aCAODPCJIOP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setACAODPCJIOP(int value) {
+        
+        aCAODPCJIOP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 ACAODPCJIOP = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearACAODPCJIOP() {
+        
+        aCAODPCJIOP_ = 0;
         onChanged();
         return this;
       }
@@ -772,25 +772,25 @@ public final class SceneGallerySandwormInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036SceneGallerySandwormInfo.proto\032\021JJKBPB" +
-      "NAGAD.proto\"w\n\030SceneGallerySandwormInfo\022" +
-      "\023\n\013GHAOEGPFCIN\030\006 \001(\010\022\016\n\006energy\030\001 \001(\r\022\023\n\013" +
-      "MGAACMOKFJC\030\002 \001(\r\022!\n\013KJGHIGCOBPJ\030\003 \001(\0162\014" +
-      ".JJKBPBNAGADB\033\n\031emu.grasscutter.net.prot" +
+      "\n\036SceneGallerySandwormInfo.proto\032\021DNKNPO" +
+      "GNOFP.proto\"w\n\030SceneGallerySandwormInfo\022" +
+      "\023\n\013EOFIKOMIALM\030\t \001(\010\022\016\n\006energy\030\017 \001(\r\022!\n\013" +
+      "AOHLJOMAPLN\030\r \001(\0162\014.DNKNPOGNOFP\022\023\n\013ACAOD" +
+      "PCJIOP\030\007 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.getDescriptor(),
         });
     internal_static_SceneGallerySandwormInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_SceneGallerySandwormInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGallerySandwormInfo_descriptor,
-        new java.lang.String[] { "GHAOEGPFCIN", "Energy", "MGAACMOKFJC", "KJGHIGCOBPJ", });
-    emu.grasscutter.net.proto.JJKBPBNAGADOuterClass.getDescriptor();
+        new java.lang.String[] { "EOFIKOMIALM", "Energy", "AOHLJOMAPLN", "ACAODPCJIOP", });
+    emu.grasscutter.net.proto.DNKNPOGNOFPOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

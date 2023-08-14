@@ -19,32 +19,32 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> 
         getTokenChangeListList();
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo getTokenChangeList(int index);
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     int getTokenChangeListCount();
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder> 
         getTokenChangeListOrBuilderList();
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder getTokenChangeListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * Obf: MCBCFJBPNAP
+   * Obf: GDMPPAMGPHK
    * </pre>
    *
    * Protobuf type {@code GCGSkillPreviewTokenChangeInfo}
@@ -93,7 +93,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tokenChangeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -137,17 +137,17 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
               emu.grasscutter.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo.class, emu.grasscutter.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo.Builder.class);
     }
 
-    public static final int TOKEN_CHANGE_LIST_FIELD_NUMBER = 9;
+    public static final int TOKEN_CHANGE_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> tokenChangeList_;
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> getTokenChangeListList() {
       return tokenChangeList_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder> 
@@ -155,21 +155,21 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       return tokenChangeList_;
     }
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     @java.lang.Override
     public int getTokenChangeListCount() {
       return tokenChangeList_.size();
     }
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo getTokenChangeList(int index) {
       return tokenChangeList_.get(index);
     }
     /**
-     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+     * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder getTokenChangeListOrBuilder(
@@ -192,7 +192,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < tokenChangeList_.size(); i++) {
-        output.writeMessage(9, tokenChangeList_.get(i));
+        output.writeMessage(8, tokenChangeList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -205,7 +205,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       size = 0;
       for (int i = 0; i < tokenChangeList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, tokenChangeList_.get(i));
+          .computeMessageSize(8, tokenChangeList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -336,7 +336,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MCBCFJBPNAP
+     * Obf: GDMPPAMGPHK
      * </pre>
      *
      * Protobuf type {@code GCGSkillPreviewTokenChangeInfo}
@@ -536,7 +536,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
           emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder> tokenChangeListBuilder_;
 
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> getTokenChangeListList() {
         if (tokenChangeListBuilder_ == null) {
@@ -546,7 +546,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public int getTokenChangeListCount() {
         if (tokenChangeListBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo getTokenChangeList(int index) {
         if (tokenChangeListBuilder_ == null) {
@@ -566,7 +566,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder setTokenChangeList(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo value) {
@@ -583,7 +583,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder setTokenChangeList(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder builderForValue) {
@@ -597,7 +597,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder addTokenChangeList(emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo value) {
         if (tokenChangeListBuilder_ == null) {
@@ -613,7 +613,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder addTokenChangeList(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo value) {
@@ -630,7 +630,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder addTokenChangeList(
           emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder builderForValue) {
@@ -644,7 +644,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder addTokenChangeList(
           int index, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder builderForValue) {
@@ -658,7 +658,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder addAllTokenChangeList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> values) {
@@ -673,7 +673,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder clearTokenChangeList() {
         if (tokenChangeListBuilder_ == null) {
@@ -686,7 +686,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public Builder removeTokenChangeList(int index) {
         if (tokenChangeListBuilder_ == null) {
@@ -699,14 +699,14 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder getTokenChangeListBuilder(
           int index) {
         return getTokenChangeListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder getTokenChangeListOrBuilder(
           int index) {
@@ -716,7 +716,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfoOrBuilder> 
            getTokenChangeListOrBuilderList() {
@@ -727,14 +727,14 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder addTokenChangeListBuilder() {
         return getTokenChangeListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder addTokenChangeListBuilder(
           int index) {
@@ -742,7 +742,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
             index, emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 9;</code>
+       * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.Builder> 
            getTokenChangeListBuilderList() {
@@ -832,7 +832,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       "\n$GCGSkillPreviewTokenChangeInfo.proto\032\036" +
       "GCGSkillPreviewTokenInfo.proto\"V\n\036GCGSki" +
       "llPreviewTokenChangeInfo\0224\n\021token_change" +
-      "_list\030\t \003(\0132\031.GCGSkillPreviewTokenInfoB\033" +
+      "_list\030\010 \003(\0132\031.GCGSkillPreviewTokenInfoB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

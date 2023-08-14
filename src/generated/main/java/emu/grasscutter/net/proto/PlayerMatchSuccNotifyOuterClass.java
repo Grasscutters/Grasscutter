@@ -19,63 +19,46 @@ public final class PlayerMatchSuccNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     * @return Whether the gcgMatchInfo field is set.
-     */
-    boolean hasGcgMatchInfo();
-    /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     * @return The gcgMatchInfo.
-     */
-    emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo();
-    /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     */
-    emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder();
-
-    /**
-     * <code>.MatchType match_type = 10;</code>
-     * @return The enum numeric value on the wire for matchType.
-     */
-    int getMatchTypeValue();
-    /**
-     * <code>.MatchType match_type = 10;</code>
-     * @return The matchType.
-     */
-    emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType();
-
-    /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      * @return Whether the generalMatchInfo field is set.
      */
     boolean hasGeneralMatchInfo();
     /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      * @return The generalMatchInfo.
      */
     emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo getGeneralMatchInfo();
     /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      */
     emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfoOrBuilder getGeneralMatchInfoOrBuilder();
 
     /**
-     * <code>uint32 mp_play_id = 11;</code>
+     * <code>uint32 mp_play_id = 2;</code>
      * @return The mpPlayId.
      */
     int getMpPlayId();
 
     /**
-     * <code>uint32 mechanicus_difficult_level = 13;</code>
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     * @return Whether the gcgMatchInfo field is set.
+     */
+    boolean hasGcgMatchInfo();
+    /**
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     * @return The gcgMatchInfo.
+     */
+    emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo();
+    /**
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     */
+    emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder();
+
+    /**
+     * <code>uint32 mechanicus_difficult_level = 6;</code>
      * @return The mechanicusDifficultLevel.
      */
     int getMechanicusDifficultLevel();
-
-    /**
-     * <code>uint32 dungeon_id = 15;</code>
-     * @return The dungeonId.
-     */
-    int getDungeonId();
 
     /**
      * <code>uint32 confirm_end_time = 14;</code>
@@ -84,15 +67,32 @@ public final class PlayerMatchSuccNotifyOuterClass {
     int getConfirmEndTime();
 
     /**
-     * <code>uint32 host_uid = 8;</code>
+     * <code>uint32 dungeon_id = 4;</code>
+     * @return The dungeonId.
+     */
+    int getDungeonId();
+
+    /**
+     * <code>uint32 host_uid = 13;</code>
      * @return The hostUid.
      */
     int getHostUid();
+
+    /**
+     * <code>.MatchType match_type = 5;</code>
+     * @return The enum numeric value on the wire for matchType.
+     */
+    int getMatchTypeValue();
+    /**
+     * <code>.MatchType match_type = 5;</code>
+     * @return The matchType.
+     */
+    emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType();
   }
   /**
    * <pre>
-   * CmdId: 4175
-   * Obf: NNALIHFBBCP
+   * CmdId: 29434
+   * Obf: JLBLCFHLPLB
    * </pre>
    *
    * Protobuf type {@code PlayerMatchSuccNotify}
@@ -140,7 +140,12 @@ public final class PlayerMatchSuccNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 16: {
+
+              mpPlayId_ = input.readUInt32();
+              break;
+            }
+            case 26: {
               emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.Builder subBuilder = null;
               if (generalMatchInfo_ != null) {
                 subBuilder = generalMatchInfo_.toBuilder();
@@ -153,7 +158,23 @@ public final class PlayerMatchSuccNotifyOuterClass {
 
               break;
             }
-            case 34: {
+            case 32: {
+
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              matchType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              mechanicusDifficultLevel_ = input.readUInt32();
+              break;
+            }
+            case 90: {
               emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder subBuilder = null;
               if (gcgMatchInfo_ != null) {
                 subBuilder = gcgMatchInfo_.toBuilder();
@@ -166,35 +187,14 @@ public final class PlayerMatchSuccNotifyOuterClass {
 
               break;
             }
-            case 64: {
-
-              hostUid_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              matchType_ = rawValue;
-              break;
-            }
-            case 88: {
-
-              mpPlayId_ = input.readUInt32();
-              break;
-            }
             case 104: {
 
-              mechanicusDifficultLevel_ = input.readUInt32();
+              hostUid_ = input.readUInt32();
               break;
             }
             case 112: {
 
               confirmEndTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              dungeonId_ = input.readUInt32();
               break;
             }
             default: {
@@ -229,55 +229,10 @@ public final class PlayerMatchSuccNotifyOuterClass {
               emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify.class, emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify.Builder.class);
     }
 
-    public static final int GCG_MATCH_INFO_FIELD_NUMBER = 4;
-    private emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo gcgMatchInfo_;
-    /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     * @return Whether the gcgMatchInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasGcgMatchInfo() {
-      return gcgMatchInfo_ != null;
-    }
-    /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     * @return The gcgMatchInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo() {
-      return gcgMatchInfo_ == null ? emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
-    }
-    /**
-     * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder() {
-      return getGcgMatchInfo();
-    }
-
-    public static final int MATCH_TYPE_FIELD_NUMBER = 10;
-    private int matchType_;
-    /**
-     * <code>.MatchType match_type = 10;</code>
-     * @return The enum numeric value on the wire for matchType.
-     */
-    @java.lang.Override public int getMatchTypeValue() {
-      return matchType_;
-    }
-    /**
-     * <code>.MatchType match_type = 10;</code>
-     * @return The matchType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType result = emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
-      return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
-    }
-
-    public static final int GENERAL_MATCH_INFO_FIELD_NUMBER = 2;
+    public static final int GENERAL_MATCH_INFO_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo generalMatchInfo_;
     /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      * @return Whether the generalMatchInfo field is set.
      */
     @java.lang.Override
@@ -285,7 +240,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
       return generalMatchInfo_ != null;
     }
     /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      * @return The generalMatchInfo.
      */
     @java.lang.Override
@@ -293,17 +248,17 @@ public final class PlayerMatchSuccNotifyOuterClass {
       return generalMatchInfo_ == null ? emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.getDefaultInstance() : generalMatchInfo_;
     }
     /**
-     * <code>.GeneralMatchInfo general_match_info = 2;</code>
+     * <code>.GeneralMatchInfo general_match_info = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfoOrBuilder getGeneralMatchInfoOrBuilder() {
       return getGeneralMatchInfo();
     }
 
-    public static final int MP_PLAY_ID_FIELD_NUMBER = 11;
+    public static final int MP_PLAY_ID_FIELD_NUMBER = 2;
     private int mpPlayId_;
     /**
-     * <code>uint32 mp_play_id = 11;</code>
+     * <code>uint32 mp_play_id = 2;</code>
      * @return The mpPlayId.
      */
     @java.lang.Override
@@ -311,26 +266,41 @@ public final class PlayerMatchSuccNotifyOuterClass {
       return mpPlayId_;
     }
 
-    public static final int MECHANICUS_DIFFICULT_LEVEL_FIELD_NUMBER = 13;
+    public static final int GCG_MATCH_INFO_FIELD_NUMBER = 11;
+    private emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo gcgMatchInfo_;
+    /**
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     * @return Whether the gcgMatchInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcgMatchInfo() {
+      return gcgMatchInfo_ != null;
+    }
+    /**
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     * @return The gcgMatchInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo() {
+      return gcgMatchInfo_ == null ? emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
+    }
+    /**
+     * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder() {
+      return getGcgMatchInfo();
+    }
+
+    public static final int MECHANICUS_DIFFICULT_LEVEL_FIELD_NUMBER = 6;
     private int mechanicusDifficultLevel_;
     /**
-     * <code>uint32 mechanicus_difficult_level = 13;</code>
+     * <code>uint32 mechanicus_difficult_level = 6;</code>
      * @return The mechanicusDifficultLevel.
      */
     @java.lang.Override
     public int getMechanicusDifficultLevel() {
       return mechanicusDifficultLevel_;
-    }
-
-    public static final int DUNGEON_ID_FIELD_NUMBER = 15;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeon_id = 15;</code>
-     * @return The dungeonId.
-     */
-    @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
     }
 
     public static final int CONFIRM_END_TIME_FIELD_NUMBER = 14;
@@ -344,15 +314,45 @@ public final class PlayerMatchSuccNotifyOuterClass {
       return confirmEndTime_;
     }
 
-    public static final int HOST_UID_FIELD_NUMBER = 8;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 4;
+    private int dungeonId_;
+    /**
+     * <code>uint32 dungeon_id = 4;</code>
+     * @return The dungeonId.
+     */
+    @java.lang.Override
+    public int getDungeonId() {
+      return dungeonId_;
+    }
+
+    public static final int HOST_UID_FIELD_NUMBER = 13;
     private int hostUid_;
     /**
-     * <code>uint32 host_uid = 8;</code>
+     * <code>uint32 host_uid = 13;</code>
      * @return The hostUid.
      */
     @java.lang.Override
     public int getHostUid() {
       return hostUid_;
+    }
+
+    public static final int MATCH_TYPE_FIELD_NUMBER = 5;
+    private int matchType_;
+    /**
+     * <code>.MatchType match_type = 5;</code>
+     * @return The enum numeric value on the wire for matchType.
+     */
+    @java.lang.Override public int getMatchTypeValue() {
+      return matchType_;
+    }
+    /**
+     * <code>.MatchType match_type = 5;</code>
+     * @return The matchType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType result = emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
+      return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -369,29 +369,29 @@ public final class PlayerMatchSuccNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (mpPlayId_ != 0) {
+        output.writeUInt32(2, mpPlayId_);
+      }
       if (generalMatchInfo_ != null) {
-        output.writeMessage(2, getGeneralMatchInfo());
+        output.writeMessage(3, getGeneralMatchInfo());
       }
-      if (gcgMatchInfo_ != null) {
-        output.writeMessage(4, getGcgMatchInfo());
-      }
-      if (hostUid_ != 0) {
-        output.writeUInt32(8, hostUid_);
+      if (dungeonId_ != 0) {
+        output.writeUInt32(4, dungeonId_);
       }
       if (matchType_ != emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.MATCH_TYPE_NONE.getNumber()) {
-        output.writeEnum(10, matchType_);
-      }
-      if (mpPlayId_ != 0) {
-        output.writeUInt32(11, mpPlayId_);
+        output.writeEnum(5, matchType_);
       }
       if (mechanicusDifficultLevel_ != 0) {
-        output.writeUInt32(13, mechanicusDifficultLevel_);
+        output.writeUInt32(6, mechanicusDifficultLevel_);
+      }
+      if (gcgMatchInfo_ != null) {
+        output.writeMessage(11, getGcgMatchInfo());
+      }
+      if (hostUid_ != 0) {
+        output.writeUInt32(13, hostUid_);
       }
       if (confirmEndTime_ != 0) {
         output.writeUInt32(14, confirmEndTime_);
-      }
-      if (dungeonId_ != 0) {
-        output.writeUInt32(15, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -402,37 +402,37 @@ public final class PlayerMatchSuccNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (mpPlayId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, mpPlayId_);
+      }
       if (generalMatchInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getGeneralMatchInfo());
+          .computeMessageSize(3, getGeneralMatchInfo());
       }
-      if (gcgMatchInfo_ != null) {
+      if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getGcgMatchInfo());
-      }
-      if (hostUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, hostUid_);
+          .computeUInt32Size(4, dungeonId_);
       }
       if (matchType_ != emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.MATCH_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, matchType_);
-      }
-      if (mpPlayId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, mpPlayId_);
+          .computeEnumSize(5, matchType_);
       }
       if (mechanicusDifficultLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, mechanicusDifficultLevel_);
+          .computeUInt32Size(6, mechanicusDifficultLevel_);
+      }
+      if (gcgMatchInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getGcgMatchInfo());
+      }
+      if (hostUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, hostUid_);
       }
       if (confirmEndTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, confirmEndTime_);
-      }
-      if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -449,12 +449,6 @@ public final class PlayerMatchSuccNotifyOuterClass {
       }
       emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify other = (emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify) obj;
 
-      if (hasGcgMatchInfo() != other.hasGcgMatchInfo()) return false;
-      if (hasGcgMatchInfo()) {
-        if (!getGcgMatchInfo()
-            .equals(other.getGcgMatchInfo())) return false;
-      }
-      if (matchType_ != other.matchType_) return false;
       if (hasGeneralMatchInfo() != other.hasGeneralMatchInfo()) return false;
       if (hasGeneralMatchInfo()) {
         if (!getGeneralMatchInfo()
@@ -462,14 +456,20 @@ public final class PlayerMatchSuccNotifyOuterClass {
       }
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
+      if (hasGcgMatchInfo() != other.hasGcgMatchInfo()) return false;
+      if (hasGcgMatchInfo()) {
+        if (!getGcgMatchInfo()
+            .equals(other.getGcgMatchInfo())) return false;
+      }
       if (getMechanicusDifficultLevel()
           != other.getMechanicusDifficultLevel()) return false;
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
       if (getConfirmEndTime()
           != other.getConfirmEndTime()) return false;
+      if (getDungeonId()
+          != other.getDungeonId()) return false;
       if (getHostUid()
           != other.getHostUid()) return false;
+      if (matchType_ != other.matchType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -481,26 +481,26 @@ public final class PlayerMatchSuccNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasGcgMatchInfo()) {
-        hash = (37 * hash) + GCG_MATCH_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getGcgMatchInfo().hashCode();
-      }
-      hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + matchType_;
       if (hasGeneralMatchInfo()) {
         hash = (37 * hash) + GENERAL_MATCH_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getGeneralMatchInfo().hashCode();
       }
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
+      if (hasGcgMatchInfo()) {
+        hash = (37 * hash) + GCG_MATCH_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getGcgMatchInfo().hashCode();
+      }
       hash = (37 * hash) + MECHANICUS_DIFFICULT_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getMechanicusDifficultLevel();
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
       hash = (37 * hash) + CONFIRM_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getConfirmEndTime();
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
       hash = (37 * hash) + HOST_UID_FIELD_NUMBER;
       hash = (53 * hash) + getHostUid();
+      hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + matchType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -598,8 +598,8 @@ public final class PlayerMatchSuccNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4175
-     * Obf: NNALIHFBBCP
+     * CmdId: 29434
+     * Obf: JLBLCFHLPLB
      * </pre>
      *
      * Protobuf type {@code PlayerMatchSuccNotify}
@@ -639,14 +639,6 @@ public final class PlayerMatchSuccNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (gcgMatchInfoBuilder_ == null) {
-          gcgMatchInfo_ = null;
-        } else {
-          gcgMatchInfo_ = null;
-          gcgMatchInfoBuilder_ = null;
-        }
-        matchType_ = 0;
-
         if (generalMatchInfoBuilder_ == null) {
           generalMatchInfo_ = null;
         } else {
@@ -655,13 +647,21 @@ public final class PlayerMatchSuccNotifyOuterClass {
         }
         mpPlayId_ = 0;
 
+        if (gcgMatchInfoBuilder_ == null) {
+          gcgMatchInfo_ = null;
+        } else {
+          gcgMatchInfo_ = null;
+          gcgMatchInfoBuilder_ = null;
+        }
         mechanicusDifficultLevel_ = 0;
-
-        dungeonId_ = 0;
 
         confirmEndTime_ = 0;
 
+        dungeonId_ = 0;
+
         hostUid_ = 0;
+
+        matchType_ = 0;
 
         return this;
       }
@@ -689,22 +689,22 @@ public final class PlayerMatchSuccNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify buildPartial() {
         emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify result = new emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify(this);
-        if (gcgMatchInfoBuilder_ == null) {
-          result.gcgMatchInfo_ = gcgMatchInfo_;
-        } else {
-          result.gcgMatchInfo_ = gcgMatchInfoBuilder_.build();
-        }
-        result.matchType_ = matchType_;
         if (generalMatchInfoBuilder_ == null) {
           result.generalMatchInfo_ = generalMatchInfo_;
         } else {
           result.generalMatchInfo_ = generalMatchInfoBuilder_.build();
         }
         result.mpPlayId_ = mpPlayId_;
+        if (gcgMatchInfoBuilder_ == null) {
+          result.gcgMatchInfo_ = gcgMatchInfo_;
+        } else {
+          result.gcgMatchInfo_ = gcgMatchInfoBuilder_.build();
+        }
         result.mechanicusDifficultLevel_ = mechanicusDifficultLevel_;
-        result.dungeonId_ = dungeonId_;
         result.confirmEndTime_ = confirmEndTime_;
+        result.dungeonId_ = dungeonId_;
         result.hostUid_ = hostUid_;
+        result.matchType_ = matchType_;
         onBuilt();
         return result;
       }
@@ -753,29 +753,29 @@ public final class PlayerMatchSuccNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify other) {
         if (other == emu.grasscutter.net.proto.PlayerMatchSuccNotifyOuterClass.PlayerMatchSuccNotify.getDefaultInstance()) return this;
-        if (other.hasGcgMatchInfo()) {
-          mergeGcgMatchInfo(other.getGcgMatchInfo());
-        }
-        if (other.matchType_ != 0) {
-          setMatchTypeValue(other.getMatchTypeValue());
-        }
         if (other.hasGeneralMatchInfo()) {
           mergeGeneralMatchInfo(other.getGeneralMatchInfo());
         }
         if (other.getMpPlayId() != 0) {
           setMpPlayId(other.getMpPlayId());
         }
+        if (other.hasGcgMatchInfo()) {
+          mergeGcgMatchInfo(other.getGcgMatchInfo());
+        }
         if (other.getMechanicusDifficultLevel() != 0) {
           setMechanicusDifficultLevel(other.getMechanicusDifficultLevel());
-        }
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
         }
         if (other.getConfirmEndTime() != 0) {
           setConfirmEndTime(other.getConfirmEndTime());
         }
+        if (other.getDungeonId() != 0) {
+          setDungeonId(other.getDungeonId());
+        }
         if (other.getHostUid() != 0) {
           setHostUid(other.getHostUid());
+        }
+        if (other.matchType_ != 0) {
+          setMatchTypeValue(other.getMatchTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -806,191 +806,18 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo gcgMatchInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder> gcgMatchInfoBuilder_;
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       * @return Whether the gcgMatchInfo field is set.
-       */
-      public boolean hasGcgMatchInfo() {
-        return gcgMatchInfoBuilder_ != null || gcgMatchInfo_ != null;
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       * @return The gcgMatchInfo.
-       */
-      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo() {
-        if (gcgMatchInfoBuilder_ == null) {
-          return gcgMatchInfo_ == null ? emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
-        } else {
-          return gcgMatchInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public Builder setGcgMatchInfo(emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo value) {
-        if (gcgMatchInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          gcgMatchInfo_ = value;
-          onChanged();
-        } else {
-          gcgMatchInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public Builder setGcgMatchInfo(
-          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder builderForValue) {
-        if (gcgMatchInfoBuilder_ == null) {
-          gcgMatchInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          gcgMatchInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public Builder mergeGcgMatchInfo(emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo value) {
-        if (gcgMatchInfoBuilder_ == null) {
-          if (gcgMatchInfo_ != null) {
-            gcgMatchInfo_ =
-              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.newBuilder(gcgMatchInfo_).mergeFrom(value).buildPartial();
-          } else {
-            gcgMatchInfo_ = value;
-          }
-          onChanged();
-        } else {
-          gcgMatchInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public Builder clearGcgMatchInfo() {
-        if (gcgMatchInfoBuilder_ == null) {
-          gcgMatchInfo_ = null;
-          onChanged();
-        } else {
-          gcgMatchInfo_ = null;
-          gcgMatchInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder getGcgMatchInfoBuilder() {
-        
-        onChanged();
-        return getGcgMatchInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder() {
-        if (gcgMatchInfoBuilder_ != null) {
-          return gcgMatchInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return gcgMatchInfo_ == null ?
-              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
-        }
-      }
-      /**
-       * <code>.GCGMatchInfo gcg_match_info = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder> 
-          getGcgMatchInfoFieldBuilder() {
-        if (gcgMatchInfoBuilder_ == null) {
-          gcgMatchInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder>(
-                  getGcgMatchInfo(),
-                  getParentForChildren(),
-                  isClean());
-          gcgMatchInfo_ = null;
-        }
-        return gcgMatchInfoBuilder_;
-      }
-
-      private int matchType_ = 0;
-      /**
-       * <code>.MatchType match_type = 10;</code>
-       * @return The enum numeric value on the wire for matchType.
-       */
-      @java.lang.Override public int getMatchTypeValue() {
-        return matchType_;
-      }
-      /**
-       * <code>.MatchType match_type = 10;</code>
-       * @param value The enum numeric value on the wire for matchType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMatchTypeValue(int value) {
-        
-        matchType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MatchType match_type = 10;</code>
-       * @return The matchType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType result = emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
-        return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.MatchType match_type = 10;</code>
-       * @param value The matchType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMatchType(emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        matchType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MatchType match_type = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMatchType() {
-        
-        matchType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo generalMatchInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo, emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.Builder, emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfoOrBuilder> generalMatchInfoBuilder_;
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        * @return Whether the generalMatchInfo field is set.
        */
       public boolean hasGeneralMatchInfo() {
         return generalMatchInfoBuilder_ != null || generalMatchInfo_ != null;
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        * @return The generalMatchInfo.
        */
       public emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo getGeneralMatchInfo() {
@@ -1001,7 +828,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         }
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public Builder setGeneralMatchInfo(emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo value) {
         if (generalMatchInfoBuilder_ == null) {
@@ -1017,7 +844,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public Builder setGeneralMatchInfo(
           emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.Builder builderForValue) {
@@ -1031,7 +858,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public Builder mergeGeneralMatchInfo(emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo value) {
         if (generalMatchInfoBuilder_ == null) {
@@ -1049,7 +876,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public Builder clearGeneralMatchInfo() {
         if (generalMatchInfoBuilder_ == null) {
@@ -1063,7 +890,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.Builder getGeneralMatchInfoBuilder() {
         
@@ -1071,7 +898,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return getGeneralMatchInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       public emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfoOrBuilder getGeneralMatchInfoOrBuilder() {
         if (generalMatchInfoBuilder_ != null) {
@@ -1082,7 +909,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         }
       }
       /**
-       * <code>.GeneralMatchInfo general_match_info = 2;</code>
+       * <code>.GeneralMatchInfo general_match_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo, emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfo.Builder, emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.GeneralMatchInfoOrBuilder> 
@@ -1100,7 +927,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
 
       private int mpPlayId_ ;
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 2;</code>
        * @return The mpPlayId.
        */
       @java.lang.Override
@@ -1108,7 +935,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return mpPlayId_;
       }
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 2;</code>
        * @param value The mpPlayId to set.
        * @return This builder for chaining.
        */
@@ -1119,7 +946,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mp_play_id = 11;</code>
+       * <code>uint32 mp_play_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
@@ -1129,9 +956,128 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
 
+      private emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo gcgMatchInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder> gcgMatchInfoBuilder_;
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       * @return Whether the gcgMatchInfo field is set.
+       */
+      public boolean hasGcgMatchInfo() {
+        return gcgMatchInfoBuilder_ != null || gcgMatchInfo_ != null;
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       * @return The gcgMatchInfo.
+       */
+      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo getGcgMatchInfo() {
+        if (gcgMatchInfoBuilder_ == null) {
+          return gcgMatchInfo_ == null ? emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
+        } else {
+          return gcgMatchInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public Builder setGcgMatchInfo(emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo value) {
+        if (gcgMatchInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gcgMatchInfo_ = value;
+          onChanged();
+        } else {
+          gcgMatchInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public Builder setGcgMatchInfo(
+          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder builderForValue) {
+        if (gcgMatchInfoBuilder_ == null) {
+          gcgMatchInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          gcgMatchInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public Builder mergeGcgMatchInfo(emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo value) {
+        if (gcgMatchInfoBuilder_ == null) {
+          if (gcgMatchInfo_ != null) {
+            gcgMatchInfo_ =
+              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.newBuilder(gcgMatchInfo_).mergeFrom(value).buildPartial();
+          } else {
+            gcgMatchInfo_ = value;
+          }
+          onChanged();
+        } else {
+          gcgMatchInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public Builder clearGcgMatchInfo() {
+        if (gcgMatchInfoBuilder_ == null) {
+          gcgMatchInfo_ = null;
+          onChanged();
+        } else {
+          gcgMatchInfo_ = null;
+          gcgMatchInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder getGcgMatchInfoBuilder() {
+        
+        onChanged();
+        return getGcgMatchInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      public emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder getGcgMatchInfoOrBuilder() {
+        if (gcgMatchInfoBuilder_ != null) {
+          return gcgMatchInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return gcgMatchInfo_ == null ?
+              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.getDefaultInstance() : gcgMatchInfo_;
+        }
+      }
+      /**
+       * <code>.GCGMatchInfo gcg_match_info = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder> 
+          getGcgMatchInfoFieldBuilder() {
+        if (gcgMatchInfoBuilder_ == null) {
+          gcgMatchInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfo.Builder, emu.grasscutter.net.proto.GCGMatchInfoOuterClass.GCGMatchInfoOrBuilder>(
+                  getGcgMatchInfo(),
+                  getParentForChildren(),
+                  isClean());
+          gcgMatchInfo_ = null;
+        }
+        return gcgMatchInfoBuilder_;
+      }
+
       private int mechanicusDifficultLevel_ ;
       /**
-       * <code>uint32 mechanicus_difficult_level = 13;</code>
+       * <code>uint32 mechanicus_difficult_level = 6;</code>
        * @return The mechanicusDifficultLevel.
        */
       @java.lang.Override
@@ -1139,7 +1085,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return mechanicusDifficultLevel_;
       }
       /**
-       * <code>uint32 mechanicus_difficult_level = 13;</code>
+       * <code>uint32 mechanicus_difficult_level = 6;</code>
        * @param value The mechanicusDifficultLevel to set.
        * @return This builder for chaining.
        */
@@ -1150,43 +1096,12 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mechanicus_difficult_level = 13;</code>
+       * <code>uint32 mechanicus_difficult_level = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearMechanicusDifficultLevel() {
         
         mechanicusDifficultLevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeon_id = 15;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeon_id = 15;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeon_id = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
         onChanged();
         return this;
       }
@@ -1222,9 +1137,40 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
 
+      private int dungeonId_ ;
+      /**
+       * <code>uint32 dungeon_id = 4;</code>
+       * @return The dungeonId.
+       */
+      @java.lang.Override
+      public int getDungeonId() {
+        return dungeonId_;
+      }
+      /**
+       * <code>uint32 dungeon_id = 4;</code>
+       * @param value The dungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonId(int value) {
+        
+        dungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dungeon_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonId() {
+        
+        dungeonId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int hostUid_ ;
       /**
-       * <code>uint32 host_uid = 8;</code>
+       * <code>uint32 host_uid = 13;</code>
        * @return The hostUid.
        */
       @java.lang.Override
@@ -1232,7 +1178,7 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return hostUid_;
       }
       /**
-       * <code>uint32 host_uid = 8;</code>
+       * <code>uint32 host_uid = 13;</code>
        * @param value The hostUid to set.
        * @return This builder for chaining.
        */
@@ -1243,12 +1189,66 @@ public final class PlayerMatchSuccNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 host_uid = 8;</code>
+       * <code>uint32 host_uid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearHostUid() {
         
         hostUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int matchType_ = 0;
+      /**
+       * <code>.MatchType match_type = 5;</code>
+       * @return The enum numeric value on the wire for matchType.
+       */
+      @java.lang.Override public int getMatchTypeValue() {
+        return matchType_;
+      }
+      /**
+       * <code>.MatchType match_type = 5;</code>
+       * @param value The enum numeric value on the wire for matchType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchTypeValue(int value) {
+        
+        matchType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.MatchType match_type = 5;</code>
+       * @return The matchType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType result = emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
+        return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.MatchType match_type = 5;</code>
+       * @param value The matchType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchType(emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        matchType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.MatchType match_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchType() {
+        
+        matchType_ = 0;
         onChanged();
         return this;
       }
@@ -1319,33 +1319,33 @@ public final class PlayerMatchSuccNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033PlayerMatchSuccNotify.proto\032\022GCGMatchI" +
-      "nfo.proto\032\017MatchType.proto\032\026GeneralMatch" +
-      "Info.proto\"\205\002\n\025PlayerMatchSuccNotify\022%\n\016" +
-      "gcg_match_info\030\004 \001(\0132\r.GCGMatchInfo\022\036\n\nm" +
-      "atch_type\030\n \001(\0162\n.MatchType\022-\n\022general_m" +
-      "atch_info\030\002 \001(\0132\021.GeneralMatchInfo\022\022\n\nmp" +
-      "_play_id\030\013 \001(\r\022\"\n\032mechanicus_difficult_l" +
-      "evel\030\r \001(\r\022\022\n\ndungeon_id\030\017 \001(\r\022\030\n\020confir" +
-      "m_end_time\030\016 \001(\r\022\020\n\010host_uid\030\010 \001(\rB\033\n\031em" +
+      "\n\033PlayerMatchSuccNotify.proto\032\026GeneralMa" +
+      "tchInfo.proto\032\022GCGMatchInfo.proto\032\017Match" +
+      "Type.proto\"\205\002\n\025PlayerMatchSuccNotify\022-\n\022" +
+      "general_match_info\030\003 \001(\0132\021.GeneralMatchI" +
+      "nfo\022\022\n\nmp_play_id\030\002 \001(\r\022%\n\016gcg_match_inf" +
+      "o\030\013 \001(\0132\r.GCGMatchInfo\022\"\n\032mechanicus_dif" +
+      "ficult_level\030\006 \001(\r\022\030\n\020confirm_end_time\030\016" +
+      " \001(\r\022\022\n\ndungeon_id\030\004 \001(\r\022\020\n\010host_uid\030\r \001" +
+      "(\r\022\036\n\nmatch_type\030\005 \001(\0162\n.MatchTypeB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.GCGMatchInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.MatchTypeOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.getDescriptor(),
         });
     internal_static_PlayerMatchSuccNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerMatchSuccNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerMatchSuccNotify_descriptor,
-        new java.lang.String[] { "GcgMatchInfo", "MatchType", "GeneralMatchInfo", "MpPlayId", "MechanicusDifficultLevel", "DungeonId", "ConfirmEndTime", "HostUid", });
+        new java.lang.String[] { "GeneralMatchInfo", "MpPlayId", "GcgMatchInfo", "MechanicusDifficultLevel", "ConfirmEndTime", "DungeonId", "HostUid", "MatchType", });
+    emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.GCGMatchInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MatchTypeOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.GeneralMatchInfoOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,15 +19,15 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 energy = 10;</code>
+     * <code>uint32 energy = 14;</code>
      * @return The energy.
      */
     int getEnergy();
   }
   /**
    * <pre>
-   * CmdId: 5371
-   * Obf: IPNPGOAMLNC
+   * CmdId: 8363
+   * Obf: FNJECIMONEP
    * </pre>
    *
    * Protobuf type {@code FleurFairBuffEnergyNotify}
@@ -74,7 +74,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 112: {
 
               energy_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
               emu.grasscutter.net.proto.FleurFairBuffEnergyNotifyOuterClass.FleurFairBuffEnergyNotify.class, emu.grasscutter.net.proto.FleurFairBuffEnergyNotifyOuterClass.FleurFairBuffEnergyNotify.Builder.class);
     }
 
-    public static final int ENERGY_FIELD_NUMBER = 10;
+    public static final int ENERGY_FIELD_NUMBER = 14;
     private int energy_;
     /**
-     * <code>uint32 energy = 10;</code>
+     * <code>uint32 energy = 14;</code>
      * @return The energy.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (energy_ != 0) {
-        output.writeUInt32(10, energy_);
+        output.writeUInt32(14, energy_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
       size = 0;
       if (energy_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, energy_);
+          .computeUInt32Size(14, energy_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5371
-     * Obf: IPNPGOAMLNC
+     * CmdId: 8363
+     * Obf: FNJECIMONEP
      * </pre>
      *
      * Protobuf type {@code FleurFairBuffEnergyNotify}
@@ -431,7 +431,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
 
       private int energy_ ;
       /**
-       * <code>uint32 energy = 10;</code>
+       * <code>uint32 energy = 14;</code>
        * @return The energy.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
         return energy_;
       }
       /**
-       * <code>uint32 energy = 10;</code>
+       * <code>uint32 energy = 14;</code>
        * @param value The energy to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 energy = 10;</code>
+       * <code>uint32 energy = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnergy() {
@@ -527,7 +527,7 @@ public final class FleurFairBuffEnergyNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037FleurFairBuffEnergyNotify.proto\"+\n\031Fle" +
-      "urFairBuffEnergyNotify\022\016\n\006energy\030\n \001(\rB\033" +
+      "urFairBuffEnergyNotify\022\016\n\006energy\030\016 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

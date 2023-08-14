@@ -16,7 +16,7 @@ public final class WidgetSlotTagOuterClass {
   }
   /**
    * <pre>
-   * Obf: GMCPLJCPMGC
+   * Obf: BOCCJPKHICL
    * </pre>
    *
    * Protobuf enum {@code WidgetSlotTag}

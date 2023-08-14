@@ -19,21 +19,21 @@ public final class GalleryPreStartNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gallery_id = 14;</code>
+     * <code>uint32 gallery_id = 5;</code>
      * @return The galleryId.
      */
     int getGalleryId();
 
     /**
-     * <code>uint32 pre_start_end_time = 4;</code>
+     * <code>uint32 pre_start_end_time = 9;</code>
      * @return The preStartEndTime.
      */
     int getPreStartEndTime();
   }
   /**
    * <pre>
-   * CmdId: 5530
-   * Obf: PDBEBEOPLME
+   * CmdId: 29335
+   * Obf: LGFCPBKCNHC
    * </pre>
    *
    * Protobuf type {@code GalleryPreStartNotify}
@@ -80,14 +80,14 @@ public final class GalleryPreStartNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              preStartEndTime_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 40: {
 
               galleryId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              preStartEndTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class GalleryPreStartNotifyOuterClass {
               emu.grasscutter.net.proto.GalleryPreStartNotifyOuterClass.GalleryPreStartNotify.class, emu.grasscutter.net.proto.GalleryPreStartNotifyOuterClass.GalleryPreStartNotify.Builder.class);
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 14;
+    public static final int GALLERY_ID_FIELD_NUMBER = 5;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 14;</code>
+     * <code>uint32 gallery_id = 5;</code>
      * @return The galleryId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class GalleryPreStartNotifyOuterClass {
       return galleryId_;
     }
 
-    public static final int PRE_START_END_TIME_FIELD_NUMBER = 4;
+    public static final int PRE_START_END_TIME_FIELD_NUMBER = 9;
     private int preStartEndTime_;
     /**
-     * <code>uint32 pre_start_end_time = 4;</code>
+     * <code>uint32 pre_start_end_time = 9;</code>
      * @return The preStartEndTime.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class GalleryPreStartNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (preStartEndTime_ != 0) {
-        output.writeUInt32(4, preStartEndTime_);
-      }
       if (galleryId_ != 0) {
-        output.writeUInt32(14, galleryId_);
+        output.writeUInt32(5, galleryId_);
+      }
+      if (preStartEndTime_ != 0) {
+        output.writeUInt32(9, preStartEndTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GalleryPreStartNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (preStartEndTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, preStartEndTime_);
-      }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, galleryId_);
+          .computeUInt32Size(5, galleryId_);
+      }
+      if (preStartEndTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, preStartEndTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class GalleryPreStartNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5530
-     * Obf: PDBEBEOPLME
+     * CmdId: 29335
+     * Obf: LGFCPBKCNHC
      * </pre>
      *
      * Protobuf type {@code GalleryPreStartNotify}
@@ -470,7 +470,7 @@ public final class GalleryPreStartNotifyOuterClass {
 
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class GalleryPreStartNotifyOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class GalleryPreStartNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 14;</code>
+       * <code>uint32 gallery_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
@@ -501,7 +501,7 @@ public final class GalleryPreStartNotifyOuterClass {
 
       private int preStartEndTime_ ;
       /**
-       * <code>uint32 pre_start_end_time = 4;</code>
+       * <code>uint32 pre_start_end_time = 9;</code>
        * @return The preStartEndTime.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GalleryPreStartNotifyOuterClass {
         return preStartEndTime_;
       }
       /**
-       * <code>uint32 pre_start_end_time = 4;</code>
+       * <code>uint32 pre_start_end_time = 9;</code>
        * @param value The preStartEndTime to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GalleryPreStartNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 pre_start_end_time = 4;</code>
+       * <code>uint32 pre_start_end_time = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreStartEndTime() {
@@ -597,8 +597,8 @@ public final class GalleryPreStartNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033GalleryPreStartNotify.proto\"G\n\025Gallery" +
-      "PreStartNotify\022\022\n\ngallery_id\030\016 \001(\r\022\032\n\022pr" +
-      "e_start_end_time\030\004 \001(\rB\033\n\031emu.grasscutte" +
+      "PreStartNotify\022\022\n\ngallery_id\030\005 \001(\r\022\032\n\022pr" +
+      "e_start_end_time\030\t \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

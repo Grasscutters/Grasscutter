@@ -19,27 +19,27 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 buff_id = 3;</code>
+     * <code>uint32 gallery_id = 7;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
+
+    /**
+     * <code>uint32 buff_id = 12;</code>
      * @return The buffId.
      */
     int getBuffId();
 
     /**
-     * <code>bool is_buff_valid = 7;</code>
+     * <code>bool is_buff_valid = 6;</code>
      * @return The isBuffValid.
      */
     boolean getIsBuffValid();
-
-    /**
-     * <code>uint32 gallery_id = 10;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
   }
   /**
    * <pre>
-   * CmdId: 5588
-   * Obf: CBJBKNGAOCB
+   * CmdId: 22914
+   * Obf: MMMDDLLNLJL
    * </pre>
    *
    * Protobuf type {@code GalleryCrystalLinkBuffInfoNotify}
@@ -86,19 +86,19 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              buffId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 48: {
 
               isBuffValid_ = input.readBool();
               break;
             }
-            case 80: {
+            case 56: {
 
               galleryId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              buffId_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,21 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
               emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify.class, emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify.Builder.class);
     }
 
-    public static final int BUFF_ID_FIELD_NUMBER = 3;
+    public static final int GALLERY_ID_FIELD_NUMBER = 7;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 7;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
+    }
+
+    public static final int BUFF_ID_FIELD_NUMBER = 12;
     private int buffId_;
     /**
-     * <code>uint32 buff_id = 3;</code>
+     * <code>uint32 buff_id = 12;</code>
      * @return The buffId.
      */
     @java.lang.Override
@@ -144,26 +155,15 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       return buffId_;
     }
 
-    public static final int IS_BUFF_VALID_FIELD_NUMBER = 7;
+    public static final int IS_BUFF_VALID_FIELD_NUMBER = 6;
     private boolean isBuffValid_;
     /**
-     * <code>bool is_buff_valid = 7;</code>
+     * <code>bool is_buff_valid = 6;</code>
      * @return The isBuffValid.
      */
     @java.lang.Override
     public boolean getIsBuffValid() {
       return isBuffValid_;
-    }
-
-    public static final int GALLERY_ID_FIELD_NUMBER = 10;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 10;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (buffId_ != 0) {
-        output.writeUInt32(3, buffId_);
-      }
       if (isBuffValid_ != false) {
-        output.writeBool(7, isBuffValid_);
+        output.writeBool(6, isBuffValid_);
       }
       if (galleryId_ != 0) {
-        output.writeUInt32(10, galleryId_);
+        output.writeUInt32(7, galleryId_);
+      }
+      if (buffId_ != 0) {
+        output.writeUInt32(12, buffId_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (buffId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, buffId_);
-      }
       if (isBuffValid_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isBuffValid_);
+          .computeBoolSize(6, isBuffValid_);
       }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, galleryId_);
+          .computeUInt32Size(7, galleryId_);
+      }
+      if (buffId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, buffId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify other = (emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify) obj;
 
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
       if (getBuffId()
           != other.getBuffId()) return false;
       if (getIsBuffValid()
           != other.getIsBuffValid()) return false;
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + BUFF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBuffId();
       hash = (37 * hash) + IS_BUFF_VALID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBuffValid());
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5588
-     * Obf: CBJBKNGAOCB
+     * CmdId: 22914
+     * Obf: MMMDDLLNLJL
      * </pre>
      *
      * Protobuf type {@code GalleryCrystalLinkBuffInfoNotify}
@@ -387,11 +387,11 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        galleryId_ = 0;
+
         buffId_ = 0;
 
         isBuffValid_ = false;
-
-        galleryId_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify buildPartial() {
         emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify result = new emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify(this);
+        result.galleryId_ = galleryId_;
         result.buffId_ = buffId_;
         result.isBuffValid_ = isBuffValid_;
-        result.galleryId_ = galleryId_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify other) {
         if (other == emu.grasscutter.net.proto.GalleryCrystalLinkBuffInfoNotifyOuterClass.GalleryCrystalLinkBuffInfoNotify.getDefaultInstance()) return this;
+        if (other.getGalleryId() != 0) {
+          setGalleryId(other.getGalleryId());
+        }
         if (other.getBuffId() != 0) {
           setBuffId(other.getBuffId());
         }
         if (other.getIsBuffValid() != false) {
           setIsBuffValid(other.getIsBuffValid());
-        }
-        if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,9 +508,40 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
         return this;
       }
 
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 7;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 7;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int buffId_ ;
       /**
-       * <code>uint32 buff_id = 3;</code>
+       * <code>uint32 buff_id = 12;</code>
        * @return The buffId.
        */
       @java.lang.Override
@@ -518,7 +549,7 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
         return buffId_;
       }
       /**
-       * <code>uint32 buff_id = 3;</code>
+       * <code>uint32 buff_id = 12;</code>
        * @param value The buffId to set.
        * @return This builder for chaining.
        */
@@ -529,7 +560,7 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buff_id = 3;</code>
+       * <code>uint32 buff_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuffId() {
@@ -541,7 +572,7 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
 
       private boolean isBuffValid_ ;
       /**
-       * <code>bool is_buff_valid = 7;</code>
+       * <code>bool is_buff_valid = 6;</code>
        * @return The isBuffValid.
        */
       @java.lang.Override
@@ -549,7 +580,7 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
         return isBuffValid_;
       }
       /**
-       * <code>bool is_buff_valid = 7;</code>
+       * <code>bool is_buff_valid = 6;</code>
        * @param value The isBuffValid to set.
        * @return This builder for chaining.
        */
@@ -560,43 +591,12 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_buff_valid = 7;</code>
+       * <code>bool is_buff_valid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsBuffValid() {
         
         isBuffValid_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 10;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 10;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
         onChanged();
         return this;
       }
@@ -668,9 +668,9 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&GalleryCrystalLinkBuffInfoNotify.proto" +
-      "\"^\n GalleryCrystalLinkBuffInfoNotify\022\017\n\007" +
-      "buff_id\030\003 \001(\r\022\025\n\ris_buff_valid\030\007 \001(\010\022\022\n\n" +
-      "gallery_id\030\n \001(\rB\033\n\031emu.grasscutter.net." +
+      "\"^\n GalleryCrystalLinkBuffInfoNotify\022\022\n\n" +
+      "gallery_id\030\007 \001(\r\022\017\n\007buff_id\030\014 \001(\r\022\025\n\ris_" +
+      "buff_valid\030\006 \001(\010B\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -682,7 +682,7 @@ public final class GalleryCrystalLinkBuffInfoNotifyOuterClass {
     internal_static_GalleryCrystalLinkBuffInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GalleryCrystalLinkBuffInfoNotify_descriptor,
-        new java.lang.String[] { "BuffId", "IsBuffValid", "GalleryId", });
+        new java.lang.String[] { "GalleryId", "BuffId", "IsBuffValid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,32 +19,32 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 kill_special_monster_count = 14;</code>
-     * @return The killSpecialMonsterCount.
-     */
-    int getKillSpecialMonsterCount();
-
-    /**
-     * <code>uint32 score = 9;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>uint32 clean_mud_count = 10;</code>
+     * <code>uint32 clean_mud_count = 13;</code>
      * @return The cleanMudCount.
      */
     int getCleanMudCount();
 
     /**
-     * <code>uint32 kill_monster_count = 3;</code>
+     * <code>uint32 kill_special_monster_count = 11;</code>
+     * @return The killSpecialMonsterCount.
+     */
+    int getKillSpecialMonsterCount();
+
+    /**
+     * <code>uint32 kill_monster_count = 12;</code>
      * @return The killMonsterCount.
      */
     int getKillMonsterCount();
+
+    /**
+     * <code>uint32 score = 3;</code>
+     * @return The score.
+     */
+    int getScore();
   }
   /**
    * <pre>
-   * Obf: MEAPFOFCDHP
+   * Obf: AFACAJFBFBI
    * </pre>
    *
    * Protobuf type {@code SceneGalleryLuminanceStoneChallengeInfo}
@@ -93,22 +93,22 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
               break;
             case 24: {
 
-              killMonsterCount_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
               score_ = input.readUInt32();
               break;
             }
-            case 80: {
-
-              cleanMudCount_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 88: {
 
               killSpecialMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              killMonsterCount_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              cleanMudCount_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,32 +143,10 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
               emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo.class, emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo.Builder.class);
     }
 
-    public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 14;
-    private int killSpecialMonsterCount_;
-    /**
-     * <code>uint32 kill_special_monster_count = 14;</code>
-     * @return The killSpecialMonsterCount.
-     */
-    @java.lang.Override
-    public int getKillSpecialMonsterCount() {
-      return killSpecialMonsterCount_;
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 9;
-    private int score_;
-    /**
-     * <code>uint32 score = 9;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int CLEAN_MUD_COUNT_FIELD_NUMBER = 10;
+    public static final int CLEAN_MUD_COUNT_FIELD_NUMBER = 13;
     private int cleanMudCount_;
     /**
-     * <code>uint32 clean_mud_count = 10;</code>
+     * <code>uint32 clean_mud_count = 13;</code>
      * @return The cleanMudCount.
      */
     @java.lang.Override
@@ -176,15 +154,37 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       return cleanMudCount_;
     }
 
-    public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 3;
+    public static final int KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER = 11;
+    private int killSpecialMonsterCount_;
+    /**
+     * <code>uint32 kill_special_monster_count = 11;</code>
+     * @return The killSpecialMonsterCount.
+     */
+    @java.lang.Override
+    public int getKillSpecialMonsterCount() {
+      return killSpecialMonsterCount_;
+    }
+
+    public static final int KILL_MONSTER_COUNT_FIELD_NUMBER = 12;
     private int killMonsterCount_;
     /**
-     * <code>uint32 kill_monster_count = 3;</code>
+     * <code>uint32 kill_monster_count = 12;</code>
      * @return The killMonsterCount.
      */
     @java.lang.Override
     public int getKillMonsterCount() {
       return killMonsterCount_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 3;
+    private int score_;
+    /**
+     * <code>uint32 score = 3;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (killMonsterCount_ != 0) {
-        output.writeUInt32(3, killMonsterCount_);
-      }
       if (score_ != 0) {
-        output.writeUInt32(9, score_);
-      }
-      if (cleanMudCount_ != 0) {
-        output.writeUInt32(10, cleanMudCount_);
+        output.writeUInt32(3, score_);
       }
       if (killSpecialMonsterCount_ != 0) {
-        output.writeUInt32(14, killSpecialMonsterCount_);
+        output.writeUInt32(11, killSpecialMonsterCount_);
+      }
+      if (killMonsterCount_ != 0) {
+        output.writeUInt32(12, killMonsterCount_);
+      }
+      if (cleanMudCount_ != 0) {
+        output.writeUInt32(13, cleanMudCount_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (killMonsterCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, killMonsterCount_);
-      }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, score_);
-      }
-      if (cleanMudCount_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, cleanMudCount_);
+          .computeUInt32Size(3, score_);
       }
       if (killSpecialMonsterCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, killSpecialMonsterCount_);
+          .computeUInt32Size(11, killSpecialMonsterCount_);
+      }
+      if (killMonsterCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, killMonsterCount_);
+      }
+      if (cleanMudCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, cleanMudCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo other = (emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo) obj;
 
-      if (getKillSpecialMonsterCount()
-          != other.getKillSpecialMonsterCount()) return false;
-      if (getScore()
-          != other.getScore()) return false;
       if (getCleanMudCount()
           != other.getCleanMudCount()) return false;
+      if (getKillSpecialMonsterCount()
+          != other.getKillSpecialMonsterCount()) return false;
       if (getKillMonsterCount()
           != other.getKillMonsterCount()) return false;
+      if (getScore()
+          != other.getScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getKillSpecialMonsterCount();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
       hash = (37 * hash) + CLEAN_MUD_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCleanMudCount();
+      hash = (37 * hash) + KILL_SPECIAL_MONSTER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getKillSpecialMonsterCount();
       hash = (37 * hash) + KILL_MONSTER_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getKillMonsterCount();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MEAPFOFCDHP
+     * Obf: AFACAJFBFBI
      * </pre>
      *
      * Protobuf type {@code SceneGalleryLuminanceStoneChallengeInfo}
@@ -417,13 +417,13 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        killSpecialMonsterCount_ = 0;
-
-        score_ = 0;
-
         cleanMudCount_ = 0;
 
+        killSpecialMonsterCount_ = 0;
+
         killMonsterCount_ = 0;
+
+        score_ = 0;
 
         return this;
       }
@@ -451,10 +451,10 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo result = new emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo(this);
-        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
-        result.score_ = score_;
         result.cleanMudCount_ = cleanMudCount_;
+        result.killSpecialMonsterCount_ = killSpecialMonsterCount_;
         result.killMonsterCount_ = killMonsterCount_;
+        result.score_ = score_;
         onBuilt();
         return result;
       }
@@ -503,17 +503,17 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo.getDefaultInstance()) return this;
-        if (other.getKillSpecialMonsterCount() != 0) {
-          setKillSpecialMonsterCount(other.getKillSpecialMonsterCount());
-        }
-        if (other.getScore() != 0) {
-          setScore(other.getScore());
-        }
         if (other.getCleanMudCount() != 0) {
           setCleanMudCount(other.getCleanMudCount());
         }
+        if (other.getKillSpecialMonsterCount() != 0) {
+          setKillSpecialMonsterCount(other.getKillSpecialMonsterCount());
+        }
         if (other.getKillMonsterCount() != 0) {
           setKillMonsterCount(other.getKillMonsterCount());
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -544,71 +544,9 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return this;
       }
 
-      private int killSpecialMonsterCount_ ;
-      /**
-       * <code>uint32 kill_special_monster_count = 14;</code>
-       * @return The killSpecialMonsterCount.
-       */
-      @java.lang.Override
-      public int getKillSpecialMonsterCount() {
-        return killSpecialMonsterCount_;
-      }
-      /**
-       * <code>uint32 kill_special_monster_count = 14;</code>
-       * @param value The killSpecialMonsterCount to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKillSpecialMonsterCount(int value) {
-        
-        killSpecialMonsterCount_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 kill_special_monster_count = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKillSpecialMonsterCount() {
-        
-        killSpecialMonsterCount_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int score_ ;
-      /**
-       * <code>uint32 score = 9;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 9;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int cleanMudCount_ ;
       /**
-       * <code>uint32 clean_mud_count = 10;</code>
+       * <code>uint32 clean_mud_count = 13;</code>
        * @return The cleanMudCount.
        */
       @java.lang.Override
@@ -616,7 +554,7 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return cleanMudCount_;
       }
       /**
-       * <code>uint32 clean_mud_count = 10;</code>
+       * <code>uint32 clean_mud_count = 13;</code>
        * @param value The cleanMudCount to set.
        * @return This builder for chaining.
        */
@@ -627,7 +565,7 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 clean_mud_count = 10;</code>
+       * <code>uint32 clean_mud_count = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearCleanMudCount() {
@@ -637,9 +575,40 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return this;
       }
 
+      private int killSpecialMonsterCount_ ;
+      /**
+       * <code>uint32 kill_special_monster_count = 11;</code>
+       * @return The killSpecialMonsterCount.
+       */
+      @java.lang.Override
+      public int getKillSpecialMonsterCount() {
+        return killSpecialMonsterCount_;
+      }
+      /**
+       * <code>uint32 kill_special_monster_count = 11;</code>
+       * @param value The killSpecialMonsterCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKillSpecialMonsterCount(int value) {
+        
+        killSpecialMonsterCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 kill_special_monster_count = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKillSpecialMonsterCount() {
+        
+        killSpecialMonsterCount_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int killMonsterCount_ ;
       /**
-       * <code>uint32 kill_monster_count = 3;</code>
+       * <code>uint32 kill_monster_count = 12;</code>
        * @return The killMonsterCount.
        */
       @java.lang.Override
@@ -647,7 +616,7 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return killMonsterCount_;
       }
       /**
-       * <code>uint32 kill_monster_count = 3;</code>
+       * <code>uint32 kill_monster_count = 12;</code>
        * @param value The killMonsterCount to set.
        * @return This builder for chaining.
        */
@@ -658,12 +627,43 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 kill_monster_count = 3;</code>
+       * <code>uint32 kill_monster_count = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterCount() {
         
         killMonsterCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>uint32 score = 3;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>uint32 score = 3;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
         onChanged();
         return this;
       }
@@ -736,9 +736,9 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n-SceneGalleryLuminanceStoneChallengeInf" +
       "o.proto\"\221\001\n\'SceneGalleryLuminanceStoneCh" +
-      "allengeInfo\022\"\n\032kill_special_monster_coun" +
-      "t\030\016 \001(\r\022\r\n\005score\030\t \001(\r\022\027\n\017clean_mud_coun" +
-      "t\030\n \001(\r\022\032\n\022kill_monster_count\030\003 \001(\rB\033\n\031e" +
+      "allengeInfo\022\027\n\017clean_mud_count\030\r \001(\r\022\"\n\032" +
+      "kill_special_monster_count\030\013 \001(\r\022\032\n\022kill" +
+      "_monster_count\030\014 \001(\r\022\r\n\005score\030\003 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -750,7 +750,7 @@ public final class SceneGalleryLuminanceStoneChallengeInfoOuterClass {
     internal_static_SceneGalleryLuminanceStoneChallengeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGalleryLuminanceStoneChallengeInfo_descriptor,
-        new java.lang.String[] { "KillSpecialMonsterCount", "Score", "CleanMudCount", "KillMonsterCount", });
+        new java.lang.String[] { "CleanMudCount", "KillSpecialMonsterCount", "KillMonsterCount", "Score", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

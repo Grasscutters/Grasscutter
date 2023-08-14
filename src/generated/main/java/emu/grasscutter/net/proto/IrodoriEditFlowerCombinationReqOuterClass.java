@@ -34,15 +34,15 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder();
 
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 8621
-   * Obf: JMFEFNENDAN
+   * CmdId: 3931
+   * Obf: GBOKDBEHDLN
    * </pre>
    *
    * Protobuf type {@code IrodoriEditFlowerCombinationReq}
@@ -89,7 +89,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -165,10 +165,10 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
       return getCombinationInfo();
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 7;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 7;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -191,7 +191,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entityId_ != 0) {
-        output.writeUInt32(7, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       if (combinationInfo_ != null) {
         output.writeMessage(14, getCombinationInfo());
@@ -207,7 +207,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
       size = 0;
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       if (combinationInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -349,8 +349,8 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8621
-     * Obf: JMFEFNENDAN
+     * CmdId: 3931
+     * Obf: GBOKDBEHDLN
      * </pre>
      *
      * Protobuf type {@code IrodoriEditFlowerCombinationReq}
@@ -634,7 +634,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -642,7 +642,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -653,7 +653,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 7;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -733,7 +733,7 @@ public final class IrodoriEditFlowerCombinationReqOuterClass {
       "\032CustomGadgetTreeInfo.proto\"e\n\037IrodoriEd" +
       "itFlowerCombinationReq\022/\n\020combination_in" +
       "fo\030\016 \001(\0132\025.CustomGadgetTreeInfo\022\021\n\tentit" +
-      "y_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "y_id\030\013 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

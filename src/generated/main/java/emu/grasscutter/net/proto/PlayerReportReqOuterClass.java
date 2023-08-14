@@ -19,67 +19,67 @@ public final class PlayerReportReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 2;</code>
-     * @return The targetUid.
+     * <code>.ReportReasonType reason = 10;</code>
+     * @return The enum numeric value on the wire for reason.
      */
-    int getTargetUid();
+    int getReasonValue();
+    /**
+     * <code>.ReportReasonType reason = 10;</code>
+     * @return The reason.
+     */
+    emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason();
 
     /**
-     * <code>string content = 15;</code>
+     * <code>string LOINCLOGOKL = 11;</code>
+     * @return The lOINCLOGOKL.
+     */
+    java.lang.String getLOINCLOGOKL();
+    /**
+     * <code>string LOINCLOGOKL = 11;</code>
+     * @return The bytes for lOINCLOGOKL.
+     */
+    com.google.protobuf.ByteString
+        getLOINCLOGOKLBytes();
+
+    /**
+     * <code>string content = 2;</code>
      * @return The content.
      */
     java.lang.String getContent();
     /**
-     * <code>string content = 15;</code>
+     * <code>string content = 2;</code>
      * @return The bytes for content.
      */
     com.google.protobuf.ByteString
         getContentBytes();
 
     /**
-     * <code>.ReportReasonType reason = 13;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+     * @return The enum numeric value on the wire for hMENDHHKIPN.
      */
-    int getReasonValue();
+    int getHMENDHHKIPNValue();
     /**
-     * <code>.ReportReasonType reason = 13;</code>
-     * @return The reason.
+     * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+     * @return The hMENDHHKIPN.
      */
-    emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason();
+    emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP getHMENDHHKIPN();
 
     /**
-     * <code>uint32 HLDOCCEEDNB = 7;</code>
-     * @return The hLDOCCEEDNB.
+     * <code>uint32 MJKCNIILBEE = 6;</code>
+     * @return The mJKCNIILBEE.
      */
-    int getHLDOCCEEDNB();
+    int getMJKCNIILBEE();
 
     /**
-     * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-     * @return The enum numeric value on the wire for cJKENNIFJCO.
+     * <code>uint32 target_uid = 7;</code>
+     * @return The targetUid.
      */
-    int getCJKENNIFJCOValue();
-    /**
-     * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-     * @return The cJKENNIFJCO.
-     */
-    emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH getCJKENNIFJCO();
-
-    /**
-     * <code>string MNKLMBKOOBK = 11;</code>
-     * @return The mNKLMBKOOBK.
-     */
-    java.lang.String getMNKLMBKOOBK();
-    /**
-     * <code>string MNKLMBKOOBK = 11;</code>
-     * @return The bytes for mNKLMBKOOBK.
-     */
-    com.google.protobuf.ByteString
-        getMNKLMBKOOBKBytes();
+    int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4071
-   * Obf: AENEOIIELKC
+   * CmdId: 28063
+   * Obf: MKOJEJGODLD
    * </pre>
    *
    * Protobuf type {@code PlayerReportReq}
@@ -94,10 +94,10 @@ public final class PlayerReportReqOuterClass {
       super(builder);
     }
     private PlayerReportReq() {
-      content_ = "";
       reason_ = 0;
-      cJKENNIFJCO_ = 0;
-      mNKLMBKOOBK_ = "";
+      lOINCLOGOKL_ = "";
+      content_ = "";
+      hMENDHHKIPN_ = 0;
     }
 
     @java.lang.Override
@@ -130,38 +130,38 @@ public final class PlayerReportReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              targetUid_ = input.readUInt32();
+              content_ = s;
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              hMENDHHKIPN_ = rawValue;
               break;
             }
             case 48: {
-              int rawValue = input.readEnum();
 
-              cJKENNIFJCO_ = rawValue;
+              mJKCNIILBEE_ = input.readUInt32();
               break;
             }
             case 56: {
 
-              hLDOCCEEDNB_ = input.readUInt32();
+              targetUid_ = input.readUInt32();
               break;
             }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              mNKLMBKOOBK_ = s;
-              break;
-            }
-            case 104: {
+            case 80: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 122: {
+            case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              content_ = s;
+              lOINCLOGOKL_ = s;
               break;
             }
             default: {
@@ -196,21 +196,67 @@ public final class PlayerReportReqOuterClass {
               emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq.class, emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 2;
-    private int targetUid_;
+    public static final int REASON_FIELD_NUMBER = 10;
+    private int reason_;
     /**
-     * <code>uint32 target_uid = 2;</code>
-     * @return The targetUid.
+     * <code>.ReportReasonType reason = 10;</code>
+     * @return The enum numeric value on the wire for reason.
      */
-    @java.lang.Override
-    public int getTargetUid() {
-      return targetUid_;
+    @java.lang.Override public int getReasonValue() {
+      return reason_;
+    }
+    /**
+     * <code>.ReportReasonType reason = 10;</code>
+     * @return The reason.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
     }
 
-    public static final int CONTENT_FIELD_NUMBER = 15;
+    public static final int LOINCLOGOKL_FIELD_NUMBER = 11;
+    private volatile java.lang.Object lOINCLOGOKL_;
+    /**
+     * <code>string LOINCLOGOKL = 11;</code>
+     * @return The lOINCLOGOKL.
+     */
+    @java.lang.Override
+    public java.lang.String getLOINCLOGOKL() {
+      java.lang.Object ref = lOINCLOGOKL_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lOINCLOGOKL_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string LOINCLOGOKL = 11;</code>
+     * @return The bytes for lOINCLOGOKL.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLOINCLOGOKLBytes() {
+      java.lang.Object ref = lOINCLOGOKL_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lOINCLOGOKL_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 2;
     private volatile java.lang.Object content_;
     /**
-     * <code>string content = 15;</code>
+     * <code>string content = 2;</code>
      * @return The content.
      */
     @java.lang.Override
@@ -227,7 +273,7 @@ public final class PlayerReportReqOuterClass {
       }
     }
     /**
-     * <code>string content = 15;</code>
+     * <code>string content = 2;</code>
      * @return The bytes for content.
      */
     @java.lang.Override
@@ -245,91 +291,45 @@ public final class PlayerReportReqOuterClass {
       }
     }
 
-    public static final int REASON_FIELD_NUMBER = 13;
-    private int reason_;
+    public static final int HMENDHHKIPN_FIELD_NUMBER = 5;
+    private int hMENDHHKIPN_;
     /**
-     * <code>.ReportReasonType reason = 13;</code>
-     * @return The enum numeric value on the wire for reason.
+     * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+     * @return The enum numeric value on the wire for hMENDHHKIPN.
      */
-    @java.lang.Override public int getReasonValue() {
-      return reason_;
+    @java.lang.Override public int getHMENDHHKIPNValue() {
+      return hMENDHHKIPN_;
     }
     /**
-     * <code>.ReportReasonType reason = 13;</code>
-     * @return The reason.
+     * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+     * @return The hMENDHHKIPN.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
+    @java.lang.Override public emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP getHMENDHHKIPN() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP result = emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.valueOf(hMENDHHKIPN_);
+      return result == null ? emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.UNRECOGNIZED : result;
     }
 
-    public static final int HLDOCCEEDNB_FIELD_NUMBER = 7;
-    private int hLDOCCEEDNB_;
+    public static final int MJKCNIILBEE_FIELD_NUMBER = 6;
+    private int mJKCNIILBEE_;
     /**
-     * <code>uint32 HLDOCCEEDNB = 7;</code>
-     * @return The hLDOCCEEDNB.
+     * <code>uint32 MJKCNIILBEE = 6;</code>
+     * @return The mJKCNIILBEE.
      */
     @java.lang.Override
-    public int getHLDOCCEEDNB() {
-      return hLDOCCEEDNB_;
+    public int getMJKCNIILBEE() {
+      return mJKCNIILBEE_;
     }
 
-    public static final int CJKENNIFJCO_FIELD_NUMBER = 6;
-    private int cJKENNIFJCO_;
+    public static final int TARGET_UID_FIELD_NUMBER = 7;
+    private int targetUid_;
     /**
-     * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-     * @return The enum numeric value on the wire for cJKENNIFJCO.
-     */
-    @java.lang.Override public int getCJKENNIFJCOValue() {
-      return cJKENNIFJCO_;
-    }
-    /**
-     * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-     * @return The cJKENNIFJCO.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH getCJKENNIFJCO() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH result = emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.valueOf(cJKENNIFJCO_);
-      return result == null ? emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.UNRECOGNIZED : result;
-    }
-
-    public static final int MNKLMBKOOBK_FIELD_NUMBER = 11;
-    private volatile java.lang.Object mNKLMBKOOBK_;
-    /**
-     * <code>string MNKLMBKOOBK = 11;</code>
-     * @return The mNKLMBKOOBK.
+     * <code>uint32 target_uid = 7;</code>
+     * @return The targetUid.
      */
     @java.lang.Override
-    public java.lang.String getMNKLMBKOOBK() {
-      java.lang.Object ref = mNKLMBKOOBK_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        mNKLMBKOOBK_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string MNKLMBKOOBK = 11;</code>
-     * @return The bytes for mNKLMBKOOBK.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMNKLMBKOOBKBytes() {
-      java.lang.Object ref = mNKLMBKOOBK_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        mNKLMBKOOBK_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getTargetUid() {
+      return targetUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -346,23 +346,23 @@ public final class PlayerReportReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
+      }
+      if (hMENDHHKIPN_ != emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.HPJLDBHCMDP_ReportReasonSubtypeNone.getNumber()) {
+        output.writeEnum(5, hMENDHHKIPN_);
+      }
+      if (mJKCNIILBEE_ != 0) {
+        output.writeUInt32(6, mJKCNIILBEE_);
+      }
       if (targetUid_ != 0) {
-        output.writeUInt32(2, targetUid_);
-      }
-      if (cJKENNIFJCO_ != emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.IFFLGKMOMBH_ReportReasonSubtypeNone.getNumber()) {
-        output.writeEnum(6, cJKENNIFJCO_);
-      }
-      if (hLDOCCEEDNB_ != 0) {
-        output.writeUInt32(7, hLDOCCEEDNB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mNKLMBKOOBK_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, mNKLMBKOOBK_);
+        output.writeUInt32(7, targetUid_);
       }
       if (reason_ != emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.REPORT_REASON_NONE.getNumber()) {
-        output.writeEnum(13, reason_);
+        output.writeEnum(10, reason_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, content_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lOINCLOGOKL_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, lOINCLOGOKL_);
       }
       unknownFields.writeTo(output);
     }
@@ -373,27 +373,27 @@ public final class PlayerReportReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
+      }
+      if (hMENDHHKIPN_ != emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.HPJLDBHCMDP_ReportReasonSubtypeNone.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, hMENDHHKIPN_);
+      }
+      if (mJKCNIILBEE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, mJKCNIILBEE_);
+      }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, targetUid_);
-      }
-      if (cJKENNIFJCO_ != emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.IFFLGKMOMBH_ReportReasonSubtypeNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, cJKENNIFJCO_);
-      }
-      if (hLDOCCEEDNB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, hLDOCCEEDNB_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mNKLMBKOOBK_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, mNKLMBKOOBK_);
+          .computeUInt32Size(7, targetUid_);
       }
       if (reason_ != emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.REPORT_REASON_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(13, reason_);
+          .computeEnumSize(10, reason_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, content_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lOINCLOGOKL_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, lOINCLOGOKL_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -410,16 +410,16 @@ public final class PlayerReportReqOuterClass {
       }
       emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq other = (emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq) obj;
 
-      if (getTargetUid()
-          != other.getTargetUid()) return false;
+      if (reason_ != other.reason_) return false;
+      if (!getLOINCLOGOKL()
+          .equals(other.getLOINCLOGOKL())) return false;
       if (!getContent()
           .equals(other.getContent())) return false;
-      if (reason_ != other.reason_) return false;
-      if (getHLDOCCEEDNB()
-          != other.getHLDOCCEEDNB()) return false;
-      if (cJKENNIFJCO_ != other.cJKENNIFJCO_) return false;
-      if (!getMNKLMBKOOBK()
-          .equals(other.getMNKLMBKOOBK())) return false;
+      if (hMENDHHKIPN_ != other.hMENDHHKIPN_) return false;
+      if (getMJKCNIILBEE()
+          != other.getMJKCNIILBEE()) return false;
+      if (getTargetUid()
+          != other.getTargetUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -431,18 +431,18 @@ public final class PlayerReportReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetUid();
-      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getContent().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + HLDOCCEEDNB_FIELD_NUMBER;
-      hash = (53 * hash) + getHLDOCCEEDNB();
-      hash = (37 * hash) + CJKENNIFJCO_FIELD_NUMBER;
-      hash = (53 * hash) + cJKENNIFJCO_;
-      hash = (37 * hash) + MNKLMBKOOBK_FIELD_NUMBER;
-      hash = (53 * hash) + getMNKLMBKOOBK().hashCode();
+      hash = (37 * hash) + LOINCLOGOKL_FIELD_NUMBER;
+      hash = (53 * hash) + getLOINCLOGOKL().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + HMENDHHKIPN_FIELD_NUMBER;
+      hash = (53 * hash) + hMENDHHKIPN_;
+      hash = (37 * hash) + MJKCNIILBEE_FIELD_NUMBER;
+      hash = (53 * hash) + getMJKCNIILBEE();
+      hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -540,8 +540,8 @@ public final class PlayerReportReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4071
-     * Obf: AENEOIIELKC
+     * CmdId: 28063
+     * Obf: MKOJEJGODLD
      * </pre>
      *
      * Protobuf type {@code PlayerReportReq}
@@ -581,17 +581,17 @@ public final class PlayerReportReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        targetUid_ = 0;
+        reason_ = 0;
+
+        lOINCLOGOKL_ = "";
 
         content_ = "";
 
-        reason_ = 0;
+        hMENDHHKIPN_ = 0;
 
-        hLDOCCEEDNB_ = 0;
+        mJKCNIILBEE_ = 0;
 
-        cJKENNIFJCO_ = 0;
-
-        mNKLMBKOOBK_ = "";
+        targetUid_ = 0;
 
         return this;
       }
@@ -619,12 +619,12 @@ public final class PlayerReportReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq buildPartial() {
         emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq result = new emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq(this);
-        result.targetUid_ = targetUid_;
-        result.content_ = content_;
         result.reason_ = reason_;
-        result.hLDOCCEEDNB_ = hLDOCCEEDNB_;
-        result.cJKENNIFJCO_ = cJKENNIFJCO_;
-        result.mNKLMBKOOBK_ = mNKLMBKOOBK_;
+        result.lOINCLOGOKL_ = lOINCLOGOKL_;
+        result.content_ = content_;
+        result.hMENDHHKIPN_ = hMENDHHKIPN_;
+        result.mJKCNIILBEE_ = mJKCNIILBEE_;
+        result.targetUid_ = targetUid_;
         onBuilt();
         return result;
       }
@@ -673,25 +673,25 @@ public final class PlayerReportReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq other) {
         if (other == emu.grasscutter.net.proto.PlayerReportReqOuterClass.PlayerReportReq.getDefaultInstance()) return this;
-        if (other.getTargetUid() != 0) {
-          setTargetUid(other.getTargetUid());
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
+        if (!other.getLOINCLOGOKL().isEmpty()) {
+          lOINCLOGOKL_ = other.lOINCLOGOKL_;
+          onChanged();
         }
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
           onChanged();
         }
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
+        if (other.hMENDHHKIPN_ != 0) {
+          setHMENDHHKIPNValue(other.getHMENDHHKIPNValue());
         }
-        if (other.getHLDOCCEEDNB() != 0) {
-          setHLDOCCEEDNB(other.getHLDOCCEEDNB());
+        if (other.getMJKCNIILBEE() != 0) {
+          setMJKCNIILBEE(other.getMJKCNIILBEE());
         }
-        if (other.cJKENNIFJCO_ != 0) {
-          setCJKENNIFJCOValue(other.getCJKENNIFJCOValue());
-        }
-        if (!other.getMNKLMBKOOBK().isEmpty()) {
-          mNKLMBKOOBK_ = other.mNKLMBKOOBK_;
-          onChanged();
+        if (other.getTargetUid() != 0) {
+          setTargetUid(other.getTargetUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -722,40 +722,139 @@ public final class PlayerReportReqOuterClass {
         return this;
       }
 
-      private int targetUid_ ;
+      private int reason_ = 0;
       /**
-       * <code>uint32 target_uid = 2;</code>
-       * @return The targetUid.
+       * <code>.ReportReasonType reason = 10;</code>
+       * @return The enum numeric value on the wire for reason.
        */
-      @java.lang.Override
-      public int getTargetUid() {
-        return targetUid_;
+      @java.lang.Override public int getReasonValue() {
+        return reason_;
       }
       /**
-       * <code>uint32 target_uid = 2;</code>
-       * @param value The targetUid to set.
+       * <code>.ReportReasonType reason = 10;</code>
+       * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
-      public Builder setTargetUid(int value) {
+      public Builder setReasonValue(int value) {
         
-        targetUid_ = value;
+        reason_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 target_uid = 2;</code>
+       * <code>.ReportReasonType reason = 10;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ReportReasonType reason = 10;</code>
+       * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder clearTargetUid() {
+      public Builder setReason(emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        targetUid_ = 0;
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ReportReasonType reason = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lOINCLOGOKL_ = "";
+      /**
+       * <code>string LOINCLOGOKL = 11;</code>
+       * @return The lOINCLOGOKL.
+       */
+      public java.lang.String getLOINCLOGOKL() {
+        java.lang.Object ref = lOINCLOGOKL_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lOINCLOGOKL_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string LOINCLOGOKL = 11;</code>
+       * @return The bytes for lOINCLOGOKL.
+       */
+      public com.google.protobuf.ByteString
+          getLOINCLOGOKLBytes() {
+        java.lang.Object ref = lOINCLOGOKL_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lOINCLOGOKL_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string LOINCLOGOKL = 11;</code>
+       * @param value The lOINCLOGOKL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLOINCLOGOKL(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lOINCLOGOKL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string LOINCLOGOKL = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLOINCLOGOKL() {
+        
+        lOINCLOGOKL_ = getDefaultInstance().getLOINCLOGOKL();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string LOINCLOGOKL = 11;</code>
+       * @param value The bytes for lOINCLOGOKL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLOINCLOGOKLBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lOINCLOGOKL_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object content_ = "";
       /**
-       * <code>string content = 15;</code>
+       * <code>string content = 2;</code>
        * @return The content.
        */
       public java.lang.String getContent() {
@@ -771,7 +870,7 @@ public final class PlayerReportReqOuterClass {
         }
       }
       /**
-       * <code>string content = 15;</code>
+       * <code>string content = 2;</code>
        * @return The bytes for content.
        */
       public com.google.protobuf.ByteString
@@ -788,7 +887,7 @@ public final class PlayerReportReqOuterClass {
         }
       }
       /**
-       * <code>string content = 15;</code>
+       * <code>string content = 2;</code>
        * @param value The content to set.
        * @return This builder for chaining.
        */
@@ -803,7 +902,7 @@ public final class PlayerReportReqOuterClass {
         return this;
       }
       /**
-       * <code>string content = 15;</code>
+       * <code>string content = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearContent() {
@@ -813,7 +912,7 @@ public final class PlayerReportReqOuterClass {
         return this;
       }
       /**
-       * <code>string content = 15;</code>
+       * <code>string content = 2;</code>
        * @param value The bytes for content to set.
        * @return This builder for chaining.
        */
@@ -829,217 +928,118 @@ public final class PlayerReportReqOuterClass {
         return this;
       }
 
-      private int reason_ = 0;
+      private int hMENDHHKIPN_ = 0;
       /**
-       * <code>.ReportReasonType reason = 13;</code>
-       * @return The enum numeric value on the wire for reason.
+       * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+       * @return The enum numeric value on the wire for hMENDHHKIPN.
        */
-      @java.lang.Override public int getReasonValue() {
-        return reason_;
+      @java.lang.Override public int getHMENDHHKIPNValue() {
+        return hMENDHHKIPN_;
       }
       /**
-       * <code>.ReportReasonType reason = 13;</code>
-       * @param value The enum numeric value on the wire for reason to set.
+       * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+       * @param value The enum numeric value on the wire for hMENDHHKIPN to set.
        * @return This builder for chaining.
        */
-      public Builder setReasonValue(int value) {
+      public Builder setHMENDHHKIPNValue(int value) {
         
-        reason_ = value;
+        hMENDHHKIPN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.ReportReasonType reason = 13;</code>
-       * @return The reason.
+       * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+       * @return The hMENDHHKIPN.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType getReason() {
+      public emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP getHMENDHHKIPN() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType result = emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP result = emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.valueOf(hMENDHHKIPN_);
+        return result == null ? emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ReportReasonType reason = 13;</code>
-       * @param value The reason to set.
+       * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
+       * @param value The hMENDHHKIPN to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.ReportReasonTypeOuterClass.ReportReasonType value) {
+      public Builder setHMENDHHKIPN(emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.HPJLDBHCMDP value) {
         if (value == null) {
           throw new NullPointerException();
         }
         
-        reason_ = value.getNumber();
+        hMENDHHKIPN_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.ReportReasonType reason = 13;</code>
+       * <code>.HPJLDBHCMDP HMENDHHKIPN = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearReason() {
+      public Builder clearHMENDHHKIPN() {
         
-        reason_ = 0;
+        hMENDHHKIPN_ = 0;
         onChanged();
         return this;
       }
 
-      private int hLDOCCEEDNB_ ;
+      private int mJKCNIILBEE_ ;
       /**
-       * <code>uint32 HLDOCCEEDNB = 7;</code>
-       * @return The hLDOCCEEDNB.
+       * <code>uint32 MJKCNIILBEE = 6;</code>
+       * @return The mJKCNIILBEE.
        */
       @java.lang.Override
-      public int getHLDOCCEEDNB() {
-        return hLDOCCEEDNB_;
+      public int getMJKCNIILBEE() {
+        return mJKCNIILBEE_;
       }
       /**
-       * <code>uint32 HLDOCCEEDNB = 7;</code>
-       * @param value The hLDOCCEEDNB to set.
+       * <code>uint32 MJKCNIILBEE = 6;</code>
+       * @param value The mJKCNIILBEE to set.
        * @return This builder for chaining.
        */
-      public Builder setHLDOCCEEDNB(int value) {
+      public Builder setMJKCNIILBEE(int value) {
         
-        hLDOCCEEDNB_ = value;
+        mJKCNIILBEE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HLDOCCEEDNB = 7;</code>
+       * <code>uint32 MJKCNIILBEE = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHLDOCCEEDNB() {
+      public Builder clearMJKCNIILBEE() {
         
-        hLDOCCEEDNB_ = 0;
+        mJKCNIILBEE_ = 0;
         onChanged();
         return this;
       }
 
-      private int cJKENNIFJCO_ = 0;
+      private int targetUid_ ;
       /**
-       * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-       * @return The enum numeric value on the wire for cJKENNIFJCO.
-       */
-      @java.lang.Override public int getCJKENNIFJCOValue() {
-        return cJKENNIFJCO_;
-      }
-      /**
-       * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-       * @param value The enum numeric value on the wire for cJKENNIFJCO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCJKENNIFJCOValue(int value) {
-        
-        cJKENNIFJCO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-       * @return The cJKENNIFJCO.
+       * <code>uint32 target_uid = 7;</code>
+       * @return The targetUid.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH getCJKENNIFJCO() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH result = emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.valueOf(cJKENNIFJCO_);
-        return result == null ? emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH.UNRECOGNIZED : result;
+      public int getTargetUid() {
+        return targetUid_;
       }
       /**
-       * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
-       * @param value The cJKENNIFJCO to set.
+       * <code>uint32 target_uid = 7;</code>
+       * @param value The targetUid to set.
        * @return This builder for chaining.
        */
-      public Builder setCJKENNIFJCO(emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.IFFLGKMOMBH value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setTargetUid(int value) {
         
-        cJKENNIFJCO_ = value.getNumber();
+        targetUid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.IFFLGKMOMBH CJKENNIFJCO = 6;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCJKENNIFJCO() {
+      public Builder clearTargetUid() {
         
-        cJKENNIFJCO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object mNKLMBKOOBK_ = "";
-      /**
-       * <code>string MNKLMBKOOBK = 11;</code>
-       * @return The mNKLMBKOOBK.
-       */
-      public java.lang.String getMNKLMBKOOBK() {
-        java.lang.Object ref = mNKLMBKOOBK_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          mNKLMBKOOBK_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string MNKLMBKOOBK = 11;</code>
-       * @return The bytes for mNKLMBKOOBK.
-       */
-      public com.google.protobuf.ByteString
-          getMNKLMBKOOBKBytes() {
-        java.lang.Object ref = mNKLMBKOOBK_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          mNKLMBKOOBK_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string MNKLMBKOOBK = 11;</code>
-       * @param value The mNKLMBKOOBK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMNKLMBKOOBK(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        mNKLMBKOOBK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MNKLMBKOOBK = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMNKLMBKOOBK() {
-        
-        mNKLMBKOOBK_ = getDefaultInstance().getMNKLMBKOOBK();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string MNKLMBKOOBK = 11;</code>
-       * @param value The bytes for mNKLMBKOOBK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMNKLMBKOOBKBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        mNKLMBKOOBK_ = value;
+        targetUid_ = 0;
         onChanged();
         return this;
       }
@@ -1111,27 +1111,27 @@ public final class PlayerReportReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025PlayerReportReq.proto\032\026ReportReasonTyp" +
-      "e.proto\032\021IFFLGKMOMBH.proto\"\246\001\n\017PlayerRep" +
-      "ortReq\022\022\n\ntarget_uid\030\002 \001(\r\022\017\n\007content\030\017 " +
-      "\001(\t\022!\n\006reason\030\r \001(\0162\021.ReportReasonType\022\023" +
-      "\n\013HLDOCCEEDNB\030\007 \001(\r\022!\n\013CJKENNIFJCO\030\006 \001(\016" +
-      "2\014.IFFLGKMOMBH\022\023\n\013MNKLMBKOOBK\030\013 \001(\tB\033\n\031e" +
+      "e.proto\032\021HPJLDBHCMDP.proto\"\246\001\n\017PlayerRep" +
+      "ortReq\022!\n\006reason\030\n \001(\0162\021.ReportReasonTyp" +
+      "e\022\023\n\013LOINCLOGOKL\030\013 \001(\t\022\017\n\007content\030\002 \001(\t\022" +
+      "!\n\013HMENDHHKIPN\030\005 \001(\0162\014.HPJLDBHCMDP\022\023\n\013MJ" +
+      "KCNIILBEE\030\006 \001(\r\022\022\n\ntarget_uid\030\007 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.ReportReasonTypeOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.getDescriptor(),
         });
     internal_static_PlayerReportReq_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerReportReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerReportReq_descriptor,
-        new java.lang.String[] { "TargetUid", "Content", "Reason", "HLDOCCEEDNB", "CJKENNIFJCO", "MNKLMBKOOBK", });
+        new java.lang.String[] { "Reason", "LOINCLOGOKL", "Content", "HMENDHHKIPN", "MJKCNIILBEE", "TargetUid", });
     emu.grasscutter.net.proto.ReportReasonTypeOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IFFLGKMOMBHOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.HPJLDBHCMDPOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

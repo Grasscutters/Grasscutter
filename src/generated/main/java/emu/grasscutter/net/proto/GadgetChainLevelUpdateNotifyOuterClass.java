@@ -19,11 +19,11 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     int getGadgetChainLevelMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     boolean containsGadgetChainLevelMap(
         int key);
@@ -34,19 +34,19 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGadgetChainLevelMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getGadgetChainLevelMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
 
     int getGadgetChainLevelMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
 
     int getGadgetChainLevelMapOrThrow(
@@ -54,8 +54,8 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 868
-   * Obf: FDLDDCKPHID
+   * CmdId: 25220
+   * Obf: GKLMOOALANM
    * </pre>
    *
    * Protobuf type {@code GadgetChainLevelUpdateNotify}
@@ -103,7 +103,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 gadgetChainLevelMap_ = com.google.protobuf.MapField.newMapField(
                     GadgetChainLevelMapDefaultEntryHolder.defaultEntry);
@@ -145,7 +145,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 10:
+        case 13:
           return internalGetGadgetChainLevelMap();
         default:
           throw new RuntimeException(
@@ -160,7 +160,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.GadgetChainLevelUpdateNotifyOuterClass.GadgetChainLevelUpdateNotify.class, emu.grasscutter.net.proto.GadgetChainLevelUpdateNotifyOuterClass.GadgetChainLevelUpdateNotify.Builder.class);
     }
 
-    public static final int GADGET_CHAIN_LEVEL_MAP_FIELD_NUMBER = 10;
+    public static final int GADGET_CHAIN_LEVEL_MAP_FIELD_NUMBER = 13;
     private static final class GadgetChainLevelMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -187,7 +187,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       return internalGetGadgetChainLevelMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
 
     @java.lang.Override
@@ -205,7 +205,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       return getGadgetChainLevelMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
 
@@ -213,7 +213,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       return internalGetGadgetChainLevelMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
 
@@ -226,7 +226,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+     * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
 
@@ -260,7 +260,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
           output,
           internalGetGadgetChainLevelMap(),
           GadgetChainLevelMapDefaultEntryHolder.defaultEntry,
-          10);
+          13);
       unknownFields.writeTo(output);
     }
 
@@ -278,7 +278,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(10, gadgetChainLevelMap__);
+            .computeMessageSize(13, gadgetChainLevelMap__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -409,8 +409,8 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 868
-     * Obf: FDLDDCKPHID
+     * CmdId: 25220
+     * Obf: GKLMOOALANM
      * </pre>
      *
      * Protobuf type {@code GadgetChainLevelUpdateNotify}
@@ -428,7 +428,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 10:
+          case 13:
             return internalGetGadgetChainLevelMap();
           default:
             throw new RuntimeException(
@@ -439,7 +439,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 10:
+          case 13:
             return internalGetMutableGadgetChainLevelMap();
           default:
             throw new RuntimeException(
@@ -609,7 +609,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return internalGetGadgetChainLevelMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
 
       @java.lang.Override
@@ -627,7 +627,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return getGadgetChainLevelMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
 
@@ -635,7 +635,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return internalGetGadgetChainLevelMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
 
@@ -648,7 +648,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
 
@@ -669,7 +669,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
 
       public Builder removeGadgetChainLevelMap(
@@ -688,7 +688,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return internalGetMutableGadgetChainLevelMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       public Builder putGadgetChainLevelMap(
           int key,
@@ -700,7 +700,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 10;</code>
+       * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
 
       public Builder putAllGadgetChainLevelMap(
@@ -783,7 +783,7 @@ public final class GadgetChainLevelUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"GadgetChainLevelUpdateNotify.proto\"\262\001\n" +
       "\034GadgetChainLevelUpdateNotify\022V\n\026gadget_" +
-      "chain_level_map\030\n \003(\01326.GadgetChainLevel" +
+      "chain_level_map\030\r \003(\01326.GadgetChainLevel" +
       "UpdateNotify.GadgetChainLevelMapEntry\032:\n" +
       "\030GadgetChainLevelMapEntry\022\013\n\003key\030\001 \001(\r\022\r" +
       "\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net" +

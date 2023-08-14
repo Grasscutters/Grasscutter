@@ -120,7 +120,7 @@ public final class SceneWeaponInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: KOGLLGKJBFG
+   * Obf: MGEGKKGBHPI
    * </pre>
    *
    * Protobuf type {@code SceneWeaponInfo}
@@ -747,7 +747,7 @@ public final class SceneWeaponInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: KOGLLGKJBFG
+     * Obf: MGEGKKGBHPI
      * </pre>
      *
      * Protobuf type {@code SceneWeaponInfo}

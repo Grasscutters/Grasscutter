@@ -19,21 +19,21 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 face_type = 9;</code>
+     * <code>uint32 face_type = 10;</code>
      * @return The faceType.
      */
     int getFaceType();
 
     /**
-     * <code>uint32 card_id = 5;</code>
+     * <code>uint32 card_id = 9;</code>
      * @return The cardId.
      */
     int getCardId();
   }
   /**
    * <pre>
-   * CmdId: 7557
-   * Obf: PKNJCAHHIBL
+   * CmdId: 20486
+   * Obf: DAMMINEAIJH
    * </pre>
    *
    * Protobuf type {@code GCGDSCardFaceUpdateNotify}
@@ -80,12 +80,12 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 72: {
 
               cardId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 80: {
 
               faceType_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.GCGDSCardFaceUpdateNotifyOuterClass.GCGDSCardFaceUpdateNotify.class, emu.grasscutter.net.proto.GCGDSCardFaceUpdateNotifyOuterClass.GCGDSCardFaceUpdateNotify.Builder.class);
     }
 
-    public static final int FACE_TYPE_FIELD_NUMBER = 9;
+    public static final int FACE_TYPE_FIELD_NUMBER = 10;
     private int faceType_;
     /**
-     * <code>uint32 face_type = 9;</code>
+     * <code>uint32 face_type = 10;</code>
      * @return The faceType.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
       return faceType_;
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 5;
+    public static final int CARD_ID_FIELD_NUMBER = 9;
     private int cardId_;
     /**
-     * <code>uint32 card_id = 5;</code>
+     * <code>uint32 card_id = 9;</code>
      * @return The cardId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cardId_ != 0) {
-        output.writeUInt32(5, cardId_);
+        output.writeUInt32(9, cardId_);
       }
       if (faceType_ != 0) {
-        output.writeUInt32(9, faceType_);
+        output.writeUInt32(10, faceType_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
       size = 0;
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, cardId_);
+          .computeUInt32Size(9, cardId_);
       }
       if (faceType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, faceType_);
+          .computeUInt32Size(10, faceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7557
-     * Obf: PKNJCAHHIBL
+     * CmdId: 20486
+     * Obf: DAMMINEAIJH
      * </pre>
      *
      * Protobuf type {@code GCGDSCardFaceUpdateNotify}
@@ -470,7 +470,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
 
       private int faceType_ ;
       /**
-       * <code>uint32 face_type = 9;</code>
+       * <code>uint32 face_type = 10;</code>
        * @return The faceType.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
         return faceType_;
       }
       /**
-       * <code>uint32 face_type = 9;</code>
+       * <code>uint32 face_type = 10;</code>
        * @param value The faceType to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 face_type = 9;</code>
+       * <code>uint32 face_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearFaceType() {
@@ -501,7 +501,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
 
       private int cardId_ ;
       /**
-       * <code>uint32 card_id = 5;</code>
+       * <code>uint32 card_id = 9;</code>
        * @return The cardId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
         return cardId_;
       }
       /**
-       * <code>uint32 card_id = 5;</code>
+       * <code>uint32 card_id = 9;</code>
        * @param value The cardId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 card_id = 5;</code>
+       * <code>uint32 card_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
@@ -597,8 +597,8 @@ public final class GCGDSCardFaceUpdateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037GCGDSCardFaceUpdateNotify.proto\"?\n\031GCG" +
-      "DSCardFaceUpdateNotify\022\021\n\tface_type\030\t \001(" +
-      "\r\022\017\n\007card_id\030\005 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "DSCardFaceUpdateNotify\022\021\n\tface_type\030\n \001(" +
+      "\r\022\017\n\007card_id\030\t \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

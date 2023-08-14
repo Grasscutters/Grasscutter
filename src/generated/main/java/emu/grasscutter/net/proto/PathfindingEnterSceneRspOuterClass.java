@@ -19,15 +19,15 @@ public final class PathfindingEnterSceneRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2348
-   * Obf: NEOFCFKGPFI
+   * CmdId: 2373
+   * Obf: GODJDKBPNGF
    * </pre>
    *
    * Protobuf type {@code PathfindingEnterSceneRsp}
@@ -74,7 +74,7 @@ public final class PathfindingEnterSceneRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class PathfindingEnterSceneRspOuterClass {
               emu.grasscutter.net.proto.PathfindingEnterSceneRspOuterClass.PathfindingEnterSceneRsp.class, emu.grasscutter.net.proto.PathfindingEnterSceneRspOuterClass.PathfindingEnterSceneRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PathfindingEnterSceneRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+        output.writeInt32(2, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PathfindingEnterSceneRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeInt32Size(2, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PathfindingEnterSceneRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2348
-     * Obf: NEOFCFKGPFI
+     * CmdId: 2373
+     * Obf: GODJDKBPNGF
      * </pre>
      *
      * Protobuf type {@code PathfindingEnterSceneRsp}
@@ -431,7 +431,7 @@ public final class PathfindingEnterSceneRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PathfindingEnterSceneRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PathfindingEnterSceneRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class PathfindingEnterSceneRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036PathfindingEnterSceneRsp.proto\"+\n\030Path" +
-      "findingEnterSceneRsp\022\017\n\007retcode\030\001 \001(\005B\033\n" +
+      "findingEnterSceneRsp\022\017\n\007retcode\030\002 \001(\005B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

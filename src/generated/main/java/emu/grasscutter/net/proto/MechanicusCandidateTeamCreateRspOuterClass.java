@@ -25,21 +25,21 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
     int getRetcode();
 
     /**
-     * <code>uint32 difficult_level = 3;</code>
+     * <code>uint32 difficult_level = 9;</code>
      * @return The difficultLevel.
      */
     int getDifficultLevel();
 
     /**
-     * <code>uint32 dungeon_id = 7;</code>
+     * <code>uint32 dungeon_id = 10;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
   }
   /**
    * <pre>
-   * CmdId: 3916
-   * Obf: KPKKFLAAGNM
+   * CmdId: 29756
+   * Obf: OBPEKPDBDNM
    * </pre>
    *
    * Protobuf type {@code MechanicusCandidateTeamCreateRsp}
@@ -86,12 +86,12 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               difficultLevel_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 80: {
 
               dungeonId_ = input.readUInt32();
               break;
@@ -144,10 +144,10 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
       return retcode_;
     }
 
-    public static final int DIFFICULT_LEVEL_FIELD_NUMBER = 3;
+    public static final int DIFFICULT_LEVEL_FIELD_NUMBER = 9;
     private int difficultLevel_;
     /**
-     * <code>uint32 difficult_level = 3;</code>
+     * <code>uint32 difficult_level = 9;</code>
      * @return The difficultLevel.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
       return difficultLevel_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 7;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 10;
     private int dungeonId_;
     /**
-     * <code>uint32 dungeon_id = 7;</code>
+     * <code>uint32 dungeon_id = 10;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -181,10 +181,10 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (difficultLevel_ != 0) {
-        output.writeUInt32(3, difficultLevel_);
+        output.writeUInt32(9, difficultLevel_);
       }
       if (dungeonId_ != 0) {
-        output.writeUInt32(7, dungeonId_);
+        output.writeUInt32(10, dungeonId_);
       }
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
@@ -200,11 +200,11 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
       size = 0;
       if (difficultLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, difficultLevel_);
+          .computeUInt32Size(9, difficultLevel_);
       }
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, dungeonId_);
+          .computeUInt32Size(10, dungeonId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -345,8 +345,8 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3916
-     * Obf: KPKKFLAAGNM
+     * CmdId: 29756
+     * Obf: OBPEKPDBDNM
      * </pre>
      *
      * Protobuf type {@code MechanicusCandidateTeamCreateRsp}
@@ -540,7 +540,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
 
       private int difficultLevel_ ;
       /**
-       * <code>uint32 difficult_level = 3;</code>
+       * <code>uint32 difficult_level = 9;</code>
        * @return The difficultLevel.
        */
       @java.lang.Override
@@ -548,7 +548,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
         return difficultLevel_;
       }
       /**
-       * <code>uint32 difficult_level = 3;</code>
+       * <code>uint32 difficult_level = 9;</code>
        * @param value The difficultLevel to set.
        * @return This builder for chaining.
        */
@@ -559,7 +559,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficult_level = 3;</code>
+       * <code>uint32 difficult_level = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficultLevel() {
@@ -571,7 +571,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
 
       private int dungeonId_ ;
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 10;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -579,7 +579,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 10;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +590,7 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dungeon_id = 7;</code>
+       * <code>uint32 dungeon_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -668,8 +668,8 @@ public final class MechanicusCandidateTeamCreateRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n&MechanicusCandidateTeamCreateRsp.proto" +
       "\"`\n MechanicusCandidateTeamCreateRsp\022\017\n\007" +
-      "retcode\030\r \001(\005\022\027\n\017difficult_level\030\003 \001(\r\022\022" +
-      "\n\ndungeon_id\030\007 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "retcode\030\r \001(\005\022\027\n\017difficult_level\030\t \001(\r\022\022" +
+      "\n\ndungeon_id\030\n \001(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

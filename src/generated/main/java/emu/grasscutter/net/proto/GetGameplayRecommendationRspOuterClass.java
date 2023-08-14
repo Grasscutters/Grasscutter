@@ -19,59 +19,59 @@ public final class GetGameplayRecommendationRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 4;</code>
+     * <code>uint32 avatar_id = 11;</code>
      * @return The avatarId.
      */
     int getAvatarId();
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      * @return Whether the skillResponse field is set.
      */
     boolean hasSkillResponse();
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      * @return The skillResponse.
      */
     emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse getSkillResponse();
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      */
     emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponseOrBuilder getSkillResponseOrBuilder();
 
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      * @return Whether the reliquaryResponse field is set.
      */
     boolean hasReliquaryResponse();
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      * @return The reliquaryResponse.
      */
     emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse getReliquaryResponse();
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      */
     emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponseOrBuilder getReliquaryResponseOrBuilder();
 
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      * @return Whether the elementReliquaryResponse field is set.
      */
     boolean hasElementReliquaryResponse();
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      * @return The elementReliquaryResponse.
      */
     emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse getElementReliquaryResponse();
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      */
     emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponseOrBuilder getElementReliquaryResponseOrBuilder();
 
@@ -79,8 +79,8 @@ public final class GetGameplayRecommendationRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 150
-   * Obf: MJABCIDLGDE
+   * CmdId: 23992
+   * Obf: HLFFKKKGBMN
    * </pre>
    *
    * Protobuf type {@code GetGameplayRecommendationRsp}
@@ -127,33 +127,19 @@ public final class GetGameplayRecommendationRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 88: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 4130: {
-              emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder subBuilder = null;
-              if (detailCase_ == 516) {
-                subBuilder = ((emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 516;
-              break;
-            }
-            case 5850: {
+            case 2042: {
               emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder subBuilder = null;
-              if (detailCase_ == 731) {
+              if (detailCase_ == 255) {
                 subBuilder = ((emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_).toBuilder();
               }
               detail_ =
@@ -162,12 +148,12 @@ public final class GetGameplayRecommendationRspOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 731;
+              detailCase_ = 255;
               break;
             }
-            case 11618: {
+            case 4002: {
               emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.Builder subBuilder = null;
-              if (detailCase_ == 1452) {
+              if (detailCase_ == 500) {
                 subBuilder = ((emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_).toBuilder();
               }
               detail_ =
@@ -176,7 +162,21 @@ public final class GetGameplayRecommendationRspOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 1452;
+              detailCase_ = 500;
+              break;
+            }
+            case 13698: {
+              emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder subBuilder = null;
+              if (detailCase_ == 1712) {
+                subBuilder = ((emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1712;
               break;
             }
             default: {
@@ -216,9 +216,9 @@ public final class GetGameplayRecommendationRspOuterClass {
     public enum DetailCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      SKILL_RESPONSE(516),
-      RELIQUARY_RESPONSE(731),
-      ELEMENT_RELIQUARY_RESPONSE(1452),
+      SKILL_RESPONSE(1712),
+      RELIQUARY_RESPONSE(255),
+      ELEMENT_RELIQUARY_RESPONSE(500),
       DETAIL_NOT_SET(0);
       private final int value;
       private DetailCase(int value) {
@@ -236,9 +236,9 @@ public final class GetGameplayRecommendationRspOuterClass {
 
       public static DetailCase forNumber(int value) {
         switch (value) {
-          case 516: return SKILL_RESPONSE;
-          case 731: return RELIQUARY_RESPONSE;
-          case 1452: return ELEMENT_RELIQUARY_RESPONSE;
+          case 1712: return SKILL_RESPONSE;
+          case 255: return RELIQUARY_RESPONSE;
+          case 500: return ELEMENT_RELIQUARY_RESPONSE;
           case 0: return DETAIL_NOT_SET;
           default: return null;
         }
@@ -254,10 +254,10 @@ public final class GetGameplayRecommendationRspOuterClass {
           detailCase_);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 4;
+    public static final int AVATAR_ID_FIELD_NUMBER = 11;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 4;</code>
+     * <code>uint32 avatar_id = 11;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -265,10 +265,10 @@ public final class GetGameplayRecommendationRspOuterClass {
       return avatarId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 14;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 14;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -276,94 +276,94 @@ public final class GetGameplayRecommendationRspOuterClass {
       return retcode_;
     }
 
-    public static final int SKILL_RESPONSE_FIELD_NUMBER = 516;
+    public static final int SKILL_RESPONSE_FIELD_NUMBER = 1712;
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      * @return Whether the skillResponse field is set.
      */
     @java.lang.Override
     public boolean hasSkillResponse() {
-      return detailCase_ == 516;
+      return detailCase_ == 1712;
     }
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      * @return The skillResponse.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse getSkillResponse() {
-      if (detailCase_ == 516) {
+      if (detailCase_ == 1712) {
          return (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
     }
     /**
-     * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+     * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponseOrBuilder getSkillResponseOrBuilder() {
-      if (detailCase_ == 516) {
+      if (detailCase_ == 1712) {
          return (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
     }
 
-    public static final int RELIQUARY_RESPONSE_FIELD_NUMBER = 731;
+    public static final int RELIQUARY_RESPONSE_FIELD_NUMBER = 255;
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      * @return Whether the reliquaryResponse field is set.
      */
     @java.lang.Override
     public boolean hasReliquaryResponse() {
-      return detailCase_ == 731;
+      return detailCase_ == 255;
     }
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      * @return The reliquaryResponse.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse getReliquaryResponse() {
-      if (detailCase_ == 731) {
+      if (detailCase_ == 255) {
          return (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
     }
     /**
-     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+     * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponseOrBuilder getReliquaryResponseOrBuilder() {
-      if (detailCase_ == 731) {
+      if (detailCase_ == 255) {
          return (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
     }
 
-    public static final int ELEMENT_RELIQUARY_RESPONSE_FIELD_NUMBER = 1452;
+    public static final int ELEMENT_RELIQUARY_RESPONSE_FIELD_NUMBER = 500;
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      * @return Whether the elementReliquaryResponse field is set.
      */
     @java.lang.Override
     public boolean hasElementReliquaryResponse() {
-      return detailCase_ == 1452;
+      return detailCase_ == 500;
     }
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      * @return The elementReliquaryResponse.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse getElementReliquaryResponse() {
-      if (detailCase_ == 1452) {
+      if (detailCase_ == 500) {
          return (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
     }
     /**
-     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+     * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponseOrBuilder getElementReliquaryResponseOrBuilder() {
-      if (detailCase_ == 1452) {
+      if (detailCase_ == 500) {
          return (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_;
       }
       return emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
@@ -384,19 +384,19 @@ public final class GetGameplayRecommendationRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(4, avatarId_);
+        output.writeUInt32(11, avatarId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(14, retcode_);
       }
-      if (detailCase_ == 516) {
-        output.writeMessage(516, (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
+      if (detailCase_ == 255) {
+        output.writeMessage(255, (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_);
       }
-      if (detailCase_ == 731) {
-        output.writeMessage(731, (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_);
+      if (detailCase_ == 500) {
+        output.writeMessage(500, (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_);
       }
-      if (detailCase_ == 1452) {
-        output.writeMessage(1452, (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_);
+      if (detailCase_ == 1712) {
+        output.writeMessage(1712, (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -409,23 +409,23 @@ public final class GetGameplayRecommendationRspOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, avatarId_);
+          .computeUInt32Size(11, avatarId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(14, retcode_);
       }
-      if (detailCase_ == 516) {
+      if (detailCase_ == 255) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(516, (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
+          .computeMessageSize(255, (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_);
       }
-      if (detailCase_ == 731) {
+      if (detailCase_ == 500) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(731, (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_);
+          .computeMessageSize(500, (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_);
       }
-      if (detailCase_ == 1452) {
+      if (detailCase_ == 1712) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1452, (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_);
+          .computeMessageSize(1712, (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -448,15 +448,15 @@ public final class GetGameplayRecommendationRspOuterClass {
           != other.getRetcode()) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
-        case 516:
+        case 1712:
           if (!getSkillResponse()
               .equals(other.getSkillResponse())) return false;
           break;
-        case 731:
+        case 255:
           if (!getReliquaryResponse()
               .equals(other.getReliquaryResponse())) return false;
           break;
-        case 1452:
+        case 500:
           if (!getElementReliquaryResponse()
               .equals(other.getElementReliquaryResponse())) return false;
           break;
@@ -479,15 +479,15 @@ public final class GetGameplayRecommendationRspOuterClass {
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       switch (detailCase_) {
-        case 516:
+        case 1712:
           hash = (37 * hash) + SKILL_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getSkillResponse().hashCode();
           break;
-        case 731:
+        case 255:
           hash = (37 * hash) + RELIQUARY_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getReliquaryResponse().hashCode();
           break;
-        case 1452:
+        case 500:
           hash = (37 * hash) + ELEMENT_RELIQUARY_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getElementReliquaryResponse().hashCode();
           break;
@@ -591,8 +591,8 @@ public final class GetGameplayRecommendationRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 150
-     * Obf: MJABCIDLGDE
+     * CmdId: 23992
+     * Obf: HLFFKKKGBMN
      * </pre>
      *
      * Protobuf type {@code GetGameplayRecommendationRsp}
@@ -666,21 +666,21 @@ public final class GetGameplayRecommendationRspOuterClass {
         emu.grasscutter.net.proto.GetGameplayRecommendationRspOuterClass.GetGameplayRecommendationRsp result = new emu.grasscutter.net.proto.GetGameplayRecommendationRspOuterClass.GetGameplayRecommendationRsp(this);
         result.avatarId_ = avatarId_;
         result.retcode_ = retcode_;
-        if (detailCase_ == 516) {
+        if (detailCase_ == 1712) {
           if (skillResponseBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = skillResponseBuilder_.build();
           }
         }
-        if (detailCase_ == 731) {
+        if (detailCase_ == 255) {
           if (reliquaryResponseBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = reliquaryResponseBuilder_.build();
           }
         }
-        if (detailCase_ == 1452) {
+        if (detailCase_ == 500) {
           if (elementReliquaryResponseBuilder_ == null) {
             result.detail_ = detail_;
           } else {
@@ -805,7 +805,7 @@ public final class GetGameplayRecommendationRspOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatar_id = 11;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -813,7 +813,7 @@ public final class GetGameplayRecommendationRspOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatar_id = 11;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -824,7 +824,7 @@ public final class GetGameplayRecommendationRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 4;</code>
+       * <code>uint32 avatar_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -836,7 +836,7 @@ public final class GetGameplayRecommendationRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 14;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -844,7 +844,7 @@ public final class GetGameplayRecommendationRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 14;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -855,7 +855,7 @@ public final class GetGameplayRecommendationRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -868,33 +868,33 @@ public final class GetGameplayRecommendationRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse, emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponseOrBuilder> skillResponseBuilder_;
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        * @return Whether the skillResponse field is set.
        */
       @java.lang.Override
       public boolean hasSkillResponse() {
-        return detailCase_ == 516;
+        return detailCase_ == 1712;
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        * @return The skillResponse.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse getSkillResponse() {
         if (skillResponseBuilder_ == null) {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             return (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
         } else {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             return skillResponseBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       public Builder setSkillResponse(emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse value) {
         if (skillResponseBuilder_ == null) {
@@ -906,11 +906,11 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           skillResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 516;
+        detailCase_ = 1712;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       public Builder setSkillResponse(
           emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder builderForValue) {
@@ -920,15 +920,15 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           skillResponseBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 516;
+        detailCase_ = 1712;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       public Builder mergeSkillResponse(emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse value) {
         if (skillResponseBuilder_ == null) {
-          if (detailCase_ == 516 &&
+          if (detailCase_ == 1712 &&
               detail_ != emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.newBuilder((emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_)
                 .mergeFrom(value).buildPartial();
@@ -937,26 +937,26 @@ public final class GetGameplayRecommendationRspOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             skillResponseBuilder_.mergeFrom(value);
           }
           skillResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 516;
+        detailCase_ = 1712;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       public Builder clearSkillResponse() {
         if (skillResponseBuilder_ == null) {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -965,33 +965,33 @@ public final class GetGameplayRecommendationRspOuterClass {
         return this;
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder getSkillResponseBuilder() {
         return getSkillResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponseOrBuilder getSkillResponseOrBuilder() {
-        if ((detailCase_ == 516) && (skillResponseBuilder_ != null)) {
+        if ((detailCase_ == 1712) && (skillResponseBuilder_ != null)) {
           return skillResponseBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 516) {
+          if (detailCase_ == 1712) {
             return (emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationSkillResponse skill_response = 516;</code>
+       * <code>.GameplayRecommendationSkillResponse skill_response = 1712;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse, emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponseOrBuilder> 
           getSkillResponseFieldBuilder() {
         if (skillResponseBuilder_ == null) {
-          if (!(detailCase_ == 516)) {
+          if (!(detailCase_ == 1712)) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationSkillResponseOuterClass.GameplayRecommendationSkillResponse.getDefaultInstance();
           }
           skillResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1001,7 +1001,7 @@ public final class GetGameplayRecommendationRspOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 516;
+        detailCase_ = 1712;
         onChanged();;
         return skillResponseBuilder_;
       }
@@ -1009,33 +1009,33 @@ public final class GetGameplayRecommendationRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponseOrBuilder> reliquaryResponseBuilder_;
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        * @return Whether the reliquaryResponse field is set.
        */
       @java.lang.Override
       public boolean hasReliquaryResponse() {
-        return detailCase_ == 731;
+        return detailCase_ == 255;
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        * @return The reliquaryResponse.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse getReliquaryResponse() {
         if (reliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             return (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
         } else {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             return reliquaryResponseBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       public Builder setReliquaryResponse(emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse value) {
         if (reliquaryResponseBuilder_ == null) {
@@ -1047,11 +1047,11 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           reliquaryResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 731;
+        detailCase_ = 255;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       public Builder setReliquaryResponse(
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder builderForValue) {
@@ -1061,15 +1061,15 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           reliquaryResponseBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 731;
+        detailCase_ = 255;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       public Builder mergeReliquaryResponse(emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse value) {
         if (reliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 731 &&
+          if (detailCase_ == 255 &&
               detail_ != emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.newBuilder((emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_)
                 .mergeFrom(value).buildPartial();
@@ -1078,26 +1078,26 @@ public final class GetGameplayRecommendationRspOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             reliquaryResponseBuilder_.mergeFrom(value);
           }
           reliquaryResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 731;
+        detailCase_ = 255;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       public Builder clearReliquaryResponse() {
         if (reliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -1106,33 +1106,33 @@ public final class GetGameplayRecommendationRspOuterClass {
         return this;
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder getReliquaryResponseBuilder() {
         return getReliquaryResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponseOrBuilder getReliquaryResponseOrBuilder() {
-        if ((detailCase_ == 731) && (reliquaryResponseBuilder_ != null)) {
+        if ((detailCase_ == 255) && (reliquaryResponseBuilder_ != null)) {
           return reliquaryResponseBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 731) {
+          if (detailCase_ == 255) {
             return (emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 731;</code>
+       * <code>.GameplayRecommendationReliquaryResponse reliquary_response = 255;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponseOrBuilder> 
           getReliquaryResponseFieldBuilder() {
         if (reliquaryResponseBuilder_ == null) {
-          if (!(detailCase_ == 731)) {
+          if (!(detailCase_ == 255)) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationReliquaryResponseOuterClass.GameplayRecommendationReliquaryResponse.getDefaultInstance();
           }
           reliquaryResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1142,7 +1142,7 @@ public final class GetGameplayRecommendationRspOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 731;
+        detailCase_ = 255;
         onChanged();;
         return reliquaryResponseBuilder_;
       }
@@ -1150,33 +1150,33 @@ public final class GetGameplayRecommendationRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse, emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponseOrBuilder> elementReliquaryResponseBuilder_;
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        * @return Whether the elementReliquaryResponse field is set.
        */
       @java.lang.Override
       public boolean hasElementReliquaryResponse() {
-        return detailCase_ == 1452;
+        return detailCase_ == 500;
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        * @return The elementReliquaryResponse.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse getElementReliquaryResponse() {
         if (elementReliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             return (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
         } else {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             return elementReliquaryResponseBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       public Builder setElementReliquaryResponse(emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse value) {
         if (elementReliquaryResponseBuilder_ == null) {
@@ -1188,11 +1188,11 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           elementReliquaryResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 1452;
+        detailCase_ = 500;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       public Builder setElementReliquaryResponse(
           emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.Builder builderForValue) {
@@ -1202,15 +1202,15 @@ public final class GetGameplayRecommendationRspOuterClass {
         } else {
           elementReliquaryResponseBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 1452;
+        detailCase_ = 500;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       public Builder mergeElementReliquaryResponse(emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse value) {
         if (elementReliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 1452 &&
+          if (detailCase_ == 500 &&
               detail_ != emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.newBuilder((emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_)
                 .mergeFrom(value).buildPartial();
@@ -1219,26 +1219,26 @@ public final class GetGameplayRecommendationRspOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             elementReliquaryResponseBuilder_.mergeFrom(value);
           }
           elementReliquaryResponseBuilder_.setMessage(value);
         }
-        detailCase_ = 1452;
+        detailCase_ = 500;
         return this;
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       public Builder clearElementReliquaryResponse() {
         if (elementReliquaryResponseBuilder_ == null) {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -1247,33 +1247,33 @@ public final class GetGameplayRecommendationRspOuterClass {
         return this;
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       public emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.Builder getElementReliquaryResponseBuilder() {
         return getElementReliquaryResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponseOrBuilder getElementReliquaryResponseOrBuilder() {
-        if ((detailCase_ == 1452) && (elementReliquaryResponseBuilder_ != null)) {
+        if ((detailCase_ == 500) && (elementReliquaryResponseBuilder_ != null)) {
           return elementReliquaryResponseBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 1452) {
+          if (detailCase_ == 500) {
             return (emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse) detail_;
           }
           return emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
         }
       }
       /**
-       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 1452;</code>
+       * <code>.GameplayRecommendationElementReliquaryResponse element_reliquary_response = 500;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse, emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.Builder, emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponseOrBuilder> 
           getElementReliquaryResponseFieldBuilder() {
         if (elementReliquaryResponseBuilder_ == null) {
-          if (!(detailCase_ == 1452)) {
+          if (!(detailCase_ == 500)) {
             detail_ = emu.grasscutter.net.proto.GameplayRecommendationElementReliquaryResponseOuterClass.GameplayRecommendationElementReliquaryResponse.getDefaultInstance();
           }
           elementReliquaryResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1283,7 +1283,7 @@ public final class GetGameplayRecommendationRspOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 1452;
+        detailCase_ = 500;
         onChanged();;
         return elementReliquaryResponseBuilder_;
       }
@@ -1359,12 +1359,12 @@ public final class GetGameplayRecommendationRspOuterClass {
       "-GameplayRecommendationReliquaryResponse" +
       ".proto\0324GameplayRecommendationElementRel" +
       "iquaryResponse.proto\"\256\002\n\034GetGameplayReco" +
-      "mmendationRsp\022\021\n\tavatar_id\030\004 \001(\r\022\017\n\007retc" +
-      "ode\030\017 \001(\005\022?\n\016skill_response\030\204\004 \001(\0132$.Gam" +
+      "mmendationRsp\022\021\n\tavatar_id\030\013 \001(\r\022\017\n\007retc" +
+      "ode\030\016 \001(\005\022?\n\016skill_response\030\260\r \001(\0132$.Gam" +
       "eplayRecommendationSkillResponseH\000\022G\n\022re" +
-      "liquary_response\030\333\005 \001(\0132(.GameplayRecomm" +
+      "liquary_response\030\377\001 \001(\0132(.GameplayRecomm" +
       "endationReliquaryResponseH\000\022V\n\032element_r" +
-      "eliquary_response\030\254\013 \001(\0132/.GameplayRecom" +
+      "eliquary_response\030\364\003 \001(\0132/.GameplayRecom" +
       "mendationElementReliquaryResponseH\000B\010\n\006d" +
       "etailB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"

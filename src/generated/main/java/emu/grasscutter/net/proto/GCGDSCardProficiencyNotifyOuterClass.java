@@ -25,15 +25,15 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
     int getCardId();
 
     /**
-     * <code>uint32 proficiency = 1;</code>
+     * <code>uint32 proficiency = 14;</code>
      * @return The proficiency.
      */
     int getProficiency();
   }
   /**
    * <pre>
-   * CmdId: 7774
-   * Obf: NKEGILJDAKE
+   * CmdId: 9282
+   * Obf: CKECGJCLCAO
    * </pre>
    *
    * Protobuf type {@code GCGDSCardProficiencyNotify}
@@ -80,14 +80,14 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              proficiency_ = input.readUInt32();
-              break;
-            }
             case 16: {
 
               cardId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              proficiency_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,10 +133,10 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
       return cardId_;
     }
 
-    public static final int PROFICIENCY_FIELD_NUMBER = 1;
+    public static final int PROFICIENCY_FIELD_NUMBER = 14;
     private int proficiency_;
     /**
-     * <code>uint32 proficiency = 1;</code>
+     * <code>uint32 proficiency = 14;</code>
      * @return The proficiency.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (proficiency_ != 0) {
-        output.writeUInt32(1, proficiency_);
-      }
       if (cardId_ != 0) {
         output.writeUInt32(2, cardId_);
+      }
+      if (proficiency_ != 0) {
+        output.writeUInt32(14, proficiency_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (proficiency_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, proficiency_);
-      }
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, cardId_);
+      }
+      if (proficiency_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, proficiency_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7774
-     * Obf: NKEGILJDAKE
+     * CmdId: 9282
+     * Obf: CKECGJCLCAO
      * </pre>
      *
      * Protobuf type {@code GCGDSCardProficiencyNotify}
@@ -501,7 +501,7 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
 
       private int proficiency_ ;
       /**
-       * <code>uint32 proficiency = 1;</code>
+       * <code>uint32 proficiency = 14;</code>
        * @return The proficiency.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
         return proficiency_;
       }
       /**
-       * <code>uint32 proficiency = 1;</code>
+       * <code>uint32 proficiency = 14;</code>
        * @param value The proficiency to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 proficiency = 1;</code>
+       * <code>uint32 proficiency = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearProficiency() {
@@ -598,7 +598,7 @@ public final class GCGDSCardProficiencyNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n GCGDSCardProficiencyNotify.proto\"B\n\032GC" +
       "GDSCardProficiencyNotify\022\017\n\007card_id\030\002 \001(" +
-      "\r\022\023\n\013proficiency\030\001 \001(\rB\033\n\031emu.grasscutte" +
+      "\r\022\023\n\013proficiency\030\016 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

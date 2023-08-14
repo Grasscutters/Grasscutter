@@ -19,21 +19,21 @@ public final class LikeCustomDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_cancel_like = 12;</code>
-     * @return The isCancelLike.
-     */
-    boolean getIsCancelLike();
-
-    /**
-     * <code>uint64 dungeon_guid = 9;</code>
+     * <code>uint64 dungeon_guid = 1;</code>
      * @return The dungeonGuid.
      */
     long getDungeonGuid();
+
+    /**
+     * <code>bool is_cancel_like = 9;</code>
+     * @return The isCancelLike.
+     */
+    boolean getIsCancelLike();
   }
   /**
    * <pre>
-   * CmdId: 6230
-   * Obf: LDFBPPEBIJA
+   * CmdId: 6450
+   * Obf: DMNLJNOKENH
    * </pre>
    *
    * Protobuf type {@code LikeCustomDungeonReq}
@@ -80,12 +80,12 @@ public final class LikeCustomDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               dungeonGuid_ = input.readUInt64();
               break;
             }
-            case 96: {
+            case 72: {
 
               isCancelLike_ = input.readBool();
               break;
@@ -122,26 +122,26 @@ public final class LikeCustomDungeonReqOuterClass {
               emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq.class, emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq.Builder.class);
     }
 
-    public static final int IS_CANCEL_LIKE_FIELD_NUMBER = 12;
-    private boolean isCancelLike_;
-    /**
-     * <code>bool is_cancel_like = 12;</code>
-     * @return The isCancelLike.
-     */
-    @java.lang.Override
-    public boolean getIsCancelLike() {
-      return isCancelLike_;
-    }
-
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 9;
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 1;
     private long dungeonGuid_;
     /**
-     * <code>uint64 dungeon_guid = 9;</code>
+     * <code>uint64 dungeon_guid = 1;</code>
      * @return The dungeonGuid.
      */
     @java.lang.Override
     public long getDungeonGuid() {
       return dungeonGuid_;
+    }
+
+    public static final int IS_CANCEL_LIKE_FIELD_NUMBER = 9;
+    private boolean isCancelLike_;
+    /**
+     * <code>bool is_cancel_like = 9;</code>
+     * @return The isCancelLike.
+     */
+    @java.lang.Override
+    public boolean getIsCancelLike() {
+      return isCancelLike_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class LikeCustomDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(9, dungeonGuid_);
+        output.writeUInt64(1, dungeonGuid_);
       }
       if (isCancelLike_ != false) {
-        output.writeBool(12, isCancelLike_);
+        output.writeBool(9, isCancelLike_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class LikeCustomDungeonReqOuterClass {
       size = 0;
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, dungeonGuid_);
+          .computeUInt64Size(1, dungeonGuid_);
       }
       if (isCancelLike_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isCancelLike_);
+          .computeBoolSize(9, isCancelLike_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class LikeCustomDungeonReqOuterClass {
       }
       emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq other = (emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq) obj;
 
-      if (getIsCancelLike()
-          != other.getIsCancelLike()) return false;
       if (getDungeonGuid()
           != other.getDungeonGuid()) return false;
+      if (getIsCancelLike()
+          != other.getIsCancelLike()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,12 +211,12 @@ public final class LikeCustomDungeonReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_CANCEL_LIKE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsCancelLike());
       hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getDungeonGuid());
+      hash = (37 * hash) + IS_CANCEL_LIKE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCancelLike());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -314,8 +314,8 @@ public final class LikeCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6230
-     * Obf: LDFBPPEBIJA
+     * CmdId: 6450
+     * Obf: DMNLJNOKENH
      * </pre>
      *
      * Protobuf type {@code LikeCustomDungeonReq}
@@ -355,9 +355,9 @@ public final class LikeCustomDungeonReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isCancelLike_ = false;
-
         dungeonGuid_ = 0L;
+
+        isCancelLike_ = false;
 
         return this;
       }
@@ -385,8 +385,8 @@ public final class LikeCustomDungeonReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq buildPartial() {
         emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq result = new emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq(this);
-        result.isCancelLike_ = isCancelLike_;
         result.dungeonGuid_ = dungeonGuid_;
+        result.isCancelLike_ = isCancelLike_;
         onBuilt();
         return result;
       }
@@ -435,11 +435,11 @@ public final class LikeCustomDungeonReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq other) {
         if (other == emu.grasscutter.net.proto.LikeCustomDungeonReqOuterClass.LikeCustomDungeonReq.getDefaultInstance()) return this;
-        if (other.getIsCancelLike() != false) {
-          setIsCancelLike(other.getIsCancelLike());
-        }
         if (other.getDungeonGuid() != 0L) {
           setDungeonGuid(other.getDungeonGuid());
+        }
+        if (other.getIsCancelLike() != false) {
+          setIsCancelLike(other.getIsCancelLike());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -470,40 +470,9 @@ public final class LikeCustomDungeonReqOuterClass {
         return this;
       }
 
-      private boolean isCancelLike_ ;
-      /**
-       * <code>bool is_cancel_like = 12;</code>
-       * @return The isCancelLike.
-       */
-      @java.lang.Override
-      public boolean getIsCancelLike() {
-        return isCancelLike_;
-      }
-      /**
-       * <code>bool is_cancel_like = 12;</code>
-       * @param value The isCancelLike to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsCancelLike(boolean value) {
-        
-        isCancelLike_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_cancel_like = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsCancelLike() {
-        
-        isCancelLike_ = false;
-        onChanged();
-        return this;
-      }
-
       private long dungeonGuid_ ;
       /**
-       * <code>uint64 dungeon_guid = 9;</code>
+       * <code>uint64 dungeon_guid = 1;</code>
        * @return The dungeonGuid.
        */
       @java.lang.Override
@@ -511,7 +480,7 @@ public final class LikeCustomDungeonReqOuterClass {
         return dungeonGuid_;
       }
       /**
-       * <code>uint64 dungeon_guid = 9;</code>
+       * <code>uint64 dungeon_guid = 1;</code>
        * @param value The dungeonGuid to set.
        * @return This builder for chaining.
        */
@@ -522,12 +491,43 @@ public final class LikeCustomDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 dungeon_guid = 9;</code>
+       * <code>uint64 dungeon_guid = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
         
         dungeonGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean isCancelLike_ ;
+      /**
+       * <code>bool is_cancel_like = 9;</code>
+       * @return The isCancelLike.
+       */
+      @java.lang.Override
+      public boolean getIsCancelLike() {
+        return isCancelLike_;
+      }
+      /**
+       * <code>bool is_cancel_like = 9;</code>
+       * @param value The isCancelLike to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsCancelLike(boolean value) {
+        
+        isCancelLike_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_cancel_like = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsCancelLike() {
+        
+        isCancelLike_ = false;
         onChanged();
         return this;
       }
@@ -599,8 +599,8 @@ public final class LikeCustomDungeonReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032LikeCustomDungeonReq.proto\"D\n\024LikeCust" +
-      "omDungeonReq\022\026\n\016is_cancel_like\030\014 \001(\010\022\024\n\014" +
-      "dungeon_guid\030\t \001(\004B\033\n\031emu.grasscutter.ne" +
+      "omDungeonReq\022\024\n\014dungeon_guid\030\001 \001(\004\022\026\n\016is" +
+      "_cancel_like\030\t \001(\010B\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -612,7 +612,7 @@ public final class LikeCustomDungeonReqOuterClass {
     internal_static_LikeCustomDungeonReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LikeCustomDungeonReq_descriptor,
-        new java.lang.String[] { "IsCancelLike", "DungeonGuid", });
+        new java.lang.String[] { "DungeonGuid", "IsCancelLike", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

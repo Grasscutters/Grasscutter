@@ -19,45 +19,45 @@ public final class HuntingRevealFinalNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     * @return Whether the huntingPair field is set.
-     */
-    boolean hasHuntingPair();
-    /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     * @return The huntingPair.
-     */
-    emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair();
-    /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     */
-    emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder();
-
-    /**
-     * <code>uint32 finished_group_id = 5;</code>
-     * @return The finishedGroupId.
-     */
-    int getFinishedGroupId();
-
-    /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      * @return Whether the finalPosition field is set.
      */
     boolean hasFinalPosition();
     /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      * @return The finalPosition.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getFinalPosition();
     /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getFinalPositionOrBuilder();
+
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     * @return Whether the huntingPair field is set.
+     */
+    boolean hasHuntingPair();
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     * @return The huntingPair.
+     */
+    emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair();
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     */
+    emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder();
+
+    /**
+     * <code>uint32 finished_group_id = 15;</code>
+     * @return The finishedGroupId.
+     */
+    int getFinishedGroupId();
   }
   /**
    * <pre>
-   * CmdId: 4323
-   * Obf: HCLMOEJPDHJ
+   * CmdId: 9240
+   * Obf: JCGMDEDDIEG
    * </pre>
    *
    * Protobuf type {@code HuntingRevealFinalNotify}
@@ -104,7 +104,20 @@ public final class HuntingRevealFinalNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 42: {
+              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder subBuilder = null;
+              if (huntingPair_ != null) {
+                subBuilder = huntingPair_.toBuilder();
+              }
+              huntingPair_ = input.readMessage(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(huntingPair_);
+                huntingPair_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (finalPosition_ != null) {
                 subBuilder = finalPosition_.toBuilder();
@@ -117,22 +130,9 @@ public final class HuntingRevealFinalNotifyOuterClass {
 
               break;
             }
-            case 40: {
+            case 120: {
 
               finishedGroupId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder subBuilder = null;
-              if (huntingPair_ != null) {
-                subBuilder = huntingPair_.toBuilder();
-              }
-              huntingPair_ = input.readMessage(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(huntingPair_);
-                huntingPair_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -167,47 +167,10 @@ public final class HuntingRevealFinalNotifyOuterClass {
               emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify.class, emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify.Builder.class);
     }
 
-    public static final int HUNTING_PAIR_FIELD_NUMBER = 13;
-    private emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
-    /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     * @return Whether the huntingPair field is set.
-     */
-    @java.lang.Override
-    public boolean hasHuntingPair() {
-      return huntingPair_ != null;
-    }
-    /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     * @return The huntingPair.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair() {
-      return huntingPair_ == null ? emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
-    }
-    /**
-     * <code>.HuntingPair hunting_pair = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
-      return getHuntingPair();
-    }
-
-    public static final int FINISHED_GROUP_ID_FIELD_NUMBER = 5;
-    private int finishedGroupId_;
-    /**
-     * <code>uint32 finished_group_id = 5;</code>
-     * @return The finishedGroupId.
-     */
-    @java.lang.Override
-    public int getFinishedGroupId() {
-      return finishedGroupId_;
-    }
-
-    public static final int FINAL_POSITION_FIELD_NUMBER = 4;
+    public static final int FINAL_POSITION_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector finalPosition_;
     /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      * @return Whether the finalPosition field is set.
      */
     @java.lang.Override
@@ -215,7 +178,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
       return finalPosition_ != null;
     }
     /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      * @return The finalPosition.
      */
     @java.lang.Override
@@ -223,11 +186,48 @@ public final class HuntingRevealFinalNotifyOuterClass {
       return finalPosition_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : finalPosition_;
     }
     /**
-     * <code>.Vector final_position = 4;</code>
+     * <code>.Vector final_position = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getFinalPositionOrBuilder() {
       return getFinalPosition();
+    }
+
+    public static final int HUNTING_PAIR_FIELD_NUMBER = 5;
+    private emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     * @return Whether the huntingPair field is set.
+     */
+    @java.lang.Override
+    public boolean hasHuntingPair() {
+      return huntingPair_ != null;
+    }
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     * @return The huntingPair.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair() {
+      return huntingPair_ == null ? emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
+    }
+    /**
+     * <code>.HuntingPair hunting_pair = 5;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
+      return getHuntingPair();
+    }
+
+    public static final int FINISHED_GROUP_ID_FIELD_NUMBER = 15;
+    private int finishedGroupId_;
+    /**
+     * <code>uint32 finished_group_id = 15;</code>
+     * @return The finishedGroupId.
+     */
+    @java.lang.Override
+    public int getFinishedGroupId() {
+      return finishedGroupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -244,14 +244,14 @@ public final class HuntingRevealFinalNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (huntingPair_ != null) {
+        output.writeMessage(5, getHuntingPair());
+      }
       if (finalPosition_ != null) {
-        output.writeMessage(4, getFinalPosition());
+        output.writeMessage(10, getFinalPosition());
       }
       if (finishedGroupId_ != 0) {
-        output.writeUInt32(5, finishedGroupId_);
-      }
-      if (huntingPair_ != null) {
-        output.writeMessage(13, getHuntingPair());
+        output.writeUInt32(15, finishedGroupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -262,17 +262,17 @@ public final class HuntingRevealFinalNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (huntingPair_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getHuntingPair());
+      }
       if (finalPosition_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getFinalPosition());
+          .computeMessageSize(10, getFinalPosition());
       }
       if (finishedGroupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, finishedGroupId_);
-      }
-      if (huntingPair_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getHuntingPair());
+          .computeUInt32Size(15, finishedGroupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,6 +289,11 @@ public final class HuntingRevealFinalNotifyOuterClass {
       }
       emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify other = (emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify) obj;
 
+      if (hasFinalPosition() != other.hasFinalPosition()) return false;
+      if (hasFinalPosition()) {
+        if (!getFinalPosition()
+            .equals(other.getFinalPosition())) return false;
+      }
       if (hasHuntingPair() != other.hasHuntingPair()) return false;
       if (hasHuntingPair()) {
         if (!getHuntingPair()
@@ -296,11 +301,6 @@ public final class HuntingRevealFinalNotifyOuterClass {
       }
       if (getFinishedGroupId()
           != other.getFinishedGroupId()) return false;
-      if (hasFinalPosition() != other.hasFinalPosition()) return false;
-      if (hasFinalPosition()) {
-        if (!getFinalPosition()
-            .equals(other.getFinalPosition())) return false;
-      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -312,16 +312,16 @@ public final class HuntingRevealFinalNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasFinalPosition()) {
+        hash = (37 * hash) + FINAL_POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getFinalPosition().hashCode();
+      }
       if (hasHuntingPair()) {
         hash = (37 * hash) + HUNTING_PAIR_FIELD_NUMBER;
         hash = (53 * hash) + getHuntingPair().hashCode();
       }
       hash = (37 * hash) + FINISHED_GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedGroupId();
-      if (hasFinalPosition()) {
-        hash = (37 * hash) + FINAL_POSITION_FIELD_NUMBER;
-        hash = (53 * hash) + getFinalPosition().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -419,8 +419,8 @@ public final class HuntingRevealFinalNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4323
-     * Obf: HCLMOEJPDHJ
+     * CmdId: 9240
+     * Obf: JCGMDEDDIEG
      * </pre>
      *
      * Protobuf type {@code HuntingRevealFinalNotify}
@@ -460,6 +460,12 @@ public final class HuntingRevealFinalNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (finalPositionBuilder_ == null) {
+          finalPosition_ = null;
+        } else {
+          finalPosition_ = null;
+          finalPositionBuilder_ = null;
+        }
         if (huntingPairBuilder_ == null) {
           huntingPair_ = null;
         } else {
@@ -468,12 +474,6 @@ public final class HuntingRevealFinalNotifyOuterClass {
         }
         finishedGroupId_ = 0;
 
-        if (finalPositionBuilder_ == null) {
-          finalPosition_ = null;
-        } else {
-          finalPosition_ = null;
-          finalPositionBuilder_ = null;
-        }
         return this;
       }
 
@@ -500,17 +500,17 @@ public final class HuntingRevealFinalNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify buildPartial() {
         emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify result = new emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify(this);
+        if (finalPositionBuilder_ == null) {
+          result.finalPosition_ = finalPosition_;
+        } else {
+          result.finalPosition_ = finalPositionBuilder_.build();
+        }
         if (huntingPairBuilder_ == null) {
           result.huntingPair_ = huntingPair_;
         } else {
           result.huntingPair_ = huntingPairBuilder_.build();
         }
         result.finishedGroupId_ = finishedGroupId_;
-        if (finalPositionBuilder_ == null) {
-          result.finalPosition_ = finalPosition_;
-        } else {
-          result.finalPosition_ = finalPositionBuilder_.build();
-        }
         onBuilt();
         return result;
       }
@@ -559,14 +559,14 @@ public final class HuntingRevealFinalNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify other) {
         if (other == emu.grasscutter.net.proto.HuntingRevealFinalNotifyOuterClass.HuntingRevealFinalNotify.getDefaultInstance()) return this;
+        if (other.hasFinalPosition()) {
+          mergeFinalPosition(other.getFinalPosition());
+        }
         if (other.hasHuntingPair()) {
           mergeHuntingPair(other.getHuntingPair());
         }
         if (other.getFinishedGroupId() != 0) {
           setFinishedGroupId(other.getFinishedGroupId());
-        }
-        if (other.hasFinalPosition()) {
-          mergeFinalPosition(other.getFinalPosition());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -597,168 +597,18 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> huntingPairBuilder_;
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       * @return Whether the huntingPair field is set.
-       */
-      public boolean hasHuntingPair() {
-        return huntingPairBuilder_ != null || huntingPair_ != null;
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       * @return The huntingPair.
-       */
-      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair() {
-        if (huntingPairBuilder_ == null) {
-          return huntingPair_ == null ? emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
-        } else {
-          return huntingPairBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public Builder setHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
-        if (huntingPairBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          huntingPair_ = value;
-          onChanged();
-        } else {
-          huntingPairBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public Builder setHuntingPair(
-          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder builderForValue) {
-        if (huntingPairBuilder_ == null) {
-          huntingPair_ = builderForValue.build();
-          onChanged();
-        } else {
-          huntingPairBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public Builder mergeHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
-        if (huntingPairBuilder_ == null) {
-          if (huntingPair_ != null) {
-            huntingPair_ =
-              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.newBuilder(huntingPair_).mergeFrom(value).buildPartial();
-          } else {
-            huntingPair_ = value;
-          }
-          onChanged();
-        } else {
-          huntingPairBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public Builder clearHuntingPair() {
-        if (huntingPairBuilder_ == null) {
-          huntingPair_ = null;
-          onChanged();
-        } else {
-          huntingPair_ = null;
-          huntingPairBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder getHuntingPairBuilder() {
-        
-        onChanged();
-        return getHuntingPairFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
-        if (huntingPairBuilder_ != null) {
-          return huntingPairBuilder_.getMessageOrBuilder();
-        } else {
-          return huntingPair_ == null ?
-              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
-        }
-      }
-      /**
-       * <code>.HuntingPair hunting_pair = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> 
-          getHuntingPairFieldBuilder() {
-        if (huntingPairBuilder_ == null) {
-          huntingPairBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder>(
-                  getHuntingPair(),
-                  getParentForChildren(),
-                  isClean());
-          huntingPair_ = null;
-        }
-        return huntingPairBuilder_;
-      }
-
-      private int finishedGroupId_ ;
-      /**
-       * <code>uint32 finished_group_id = 5;</code>
-       * @return The finishedGroupId.
-       */
-      @java.lang.Override
-      public int getFinishedGroupId() {
-        return finishedGroupId_;
-      }
-      /**
-       * <code>uint32 finished_group_id = 5;</code>
-       * @param value The finishedGroupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishedGroupId(int value) {
-        
-        finishedGroupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 finished_group_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishedGroupId() {
-        
-        finishedGroupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector finalPosition_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> finalPositionBuilder_;
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        * @return Whether the finalPosition field is set.
        */
       public boolean hasFinalPosition() {
         return finalPositionBuilder_ != null || finalPosition_ != null;
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        * @return The finalPosition.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getFinalPosition() {
@@ -769,7 +619,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public Builder setFinalPosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (finalPositionBuilder_ == null) {
@@ -785,7 +635,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public Builder setFinalPosition(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -799,7 +649,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public Builder mergeFinalPosition(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (finalPositionBuilder_ == null) {
@@ -817,7 +667,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public Builder clearFinalPosition() {
         if (finalPositionBuilder_ == null) {
@@ -831,7 +681,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getFinalPositionBuilder() {
         
@@ -839,7 +689,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         return getFinalPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getFinalPositionOrBuilder() {
         if (finalPositionBuilder_ != null) {
@@ -850,7 +700,7 @@ public final class HuntingRevealFinalNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector final_position = 4;</code>
+       * <code>.Vector final_position = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -864,6 +714,156 @@ public final class HuntingRevealFinalNotifyOuterClass {
           finalPosition_ = null;
         }
         return finalPositionBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> huntingPairBuilder_;
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       * @return Whether the huntingPair field is set.
+       */
+      public boolean hasHuntingPair() {
+        return huntingPairBuilder_ != null || huntingPair_ != null;
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       * @return The huntingPair.
+       */
+      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair getHuntingPair() {
+        if (huntingPairBuilder_ == null) {
+          return huntingPair_ == null ? emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
+        } else {
+          return huntingPairBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public Builder setHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
+        if (huntingPairBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          huntingPair_ = value;
+          onChanged();
+        } else {
+          huntingPairBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public Builder setHuntingPair(
+          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder builderForValue) {
+        if (huntingPairBuilder_ == null) {
+          huntingPair_ = builderForValue.build();
+          onChanged();
+        } else {
+          huntingPairBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public Builder mergeHuntingPair(emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair value) {
+        if (huntingPairBuilder_ == null) {
+          if (huntingPair_ != null) {
+            huntingPair_ =
+              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.newBuilder(huntingPair_).mergeFrom(value).buildPartial();
+          } else {
+            huntingPair_ = value;
+          }
+          onChanged();
+        } else {
+          huntingPairBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public Builder clearHuntingPair() {
+        if (huntingPairBuilder_ == null) {
+          huntingPair_ = null;
+          onChanged();
+        } else {
+          huntingPair_ = null;
+          huntingPairBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder getHuntingPairBuilder() {
+        
+        onChanged();
+        return getHuntingPairFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
+        if (huntingPairBuilder_ != null) {
+          return huntingPairBuilder_.getMessageOrBuilder();
+        } else {
+          return huntingPair_ == null ?
+              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
+        }
+      }
+      /**
+       * <code>.HuntingPair hunting_pair = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder> 
+          getHuntingPairFieldBuilder() {
+        if (huntingPairBuilder_ == null) {
+          huntingPairBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder>(
+                  getHuntingPair(),
+                  getParentForChildren(),
+                  isClean());
+          huntingPair_ = null;
+        }
+        return huntingPairBuilder_;
+      }
+
+      private int finishedGroupId_ ;
+      /**
+       * <code>uint32 finished_group_id = 15;</code>
+       * @return The finishedGroupId.
+       */
+      @java.lang.Override
+      public int getFinishedGroupId() {
+        return finishedGroupId_;
+      }
+      /**
+       * <code>uint32 finished_group_id = 15;</code>
+       * @param value The finishedGroupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishedGroupId(int value) {
+        
+        finishedGroupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 finished_group_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishedGroupId() {
+        
+        finishedGroupId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -932,27 +932,27 @@ public final class HuntingRevealFinalNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036HuntingRevealFinalNotify.proto\032\021Huntin" +
-      "gPair.proto\032\014Vector.proto\"z\n\030HuntingReve" +
-      "alFinalNotify\022\"\n\014hunting_pair\030\r \001(\0132\014.Hu" +
-      "ntingPair\022\031\n\021finished_group_id\030\005 \001(\r\022\037\n\016" +
-      "final_position\030\004 \001(\0132\007.VectorB\033\n\031emu.gra" +
+      "\n\036HuntingRevealFinalNotify.proto\032\014Vector" +
+      ".proto\032\021HuntingPair.proto\"z\n\030HuntingReve" +
+      "alFinalNotify\022\037\n\016final_position\030\n \001(\0132\007." +
+      "Vector\022\"\n\014hunting_pair\030\005 \001(\0132\014.HuntingPa" +
+      "ir\022\031\n\021finished_group_id\030\017 \001(\rB\033\n\031emu.gra" +
       "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.HuntingPairOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HuntingPairOuterClass.getDescriptor(),
         });
     internal_static_HuntingRevealFinalNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_HuntingRevealFinalNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HuntingRevealFinalNotify_descriptor,
-        new java.lang.String[] { "HuntingPair", "FinishedGroupId", "FinalPosition", });
-    emu.grasscutter.net.proto.HuntingPairOuterClass.getDescriptor();
+        new java.lang.String[] { "FinalPosition", "HuntingPair", "FinishedGroupId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.HuntingPairOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

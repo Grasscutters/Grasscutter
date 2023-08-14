@@ -19,27 +19,27 @@ public final class ClientNewMailNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 CDIKCAIGHAE = 2;</code>
-     * @return The cDIKCAIGHAE.
+     * <code>uint32 BEGBPFBABMD = 3;</code>
+     * @return The bEGBPFBABMD.
      */
-    int getCDIKCAIGHAE();
+    int getBEGBPFBABMD();
 
     /**
-     * <code>uint32 KJEEEDPFMFE = 6;</code>
-     * @return The kJEEEDPFMFE.
+     * <code>bool CLHPNHOHONM = 2;</code>
+     * @return The cLHPNHOHONM.
      */
-    int getKJEEEDPFMFE();
+    boolean getCLHPNHOHONM();
 
     /**
-     * <code>bool IGMALOKLIPP = 14;</code>
-     * @return The iGMALOKLIPP.
+     * <code>uint32 OEGCAHNJAMF = 14;</code>
+     * @return The oEGCAHNJAMF.
      */
-    boolean getIGMALOKLIPP();
+    int getOEGCAHNJAMF();
   }
   /**
    * <pre>
-   * CmdId: 1430
-   * Obf: BEBABNFCJIO
+   * CmdId: 2769
+   * Obf: HPLLHIPOLHA
    * </pre>
    *
    * Protobuf type {@code ClientNewMailNotify}
@@ -88,17 +88,17 @@ public final class ClientNewMailNotifyOuterClass {
               break;
             case 16: {
 
-              cDIKCAIGHAE_ = input.readUInt32();
+              cLHPNHOHONM_ = input.readBool();
               break;
             }
-            case 48: {
+            case 24: {
 
-              kJEEEDPFMFE_ = input.readUInt32();
+              bEGBPFBABMD_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              iGMALOKLIPP_ = input.readBool();
+              oEGCAHNJAMF_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,37 +133,37 @@ public final class ClientNewMailNotifyOuterClass {
               emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify.class, emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify.Builder.class);
     }
 
-    public static final int CDIKCAIGHAE_FIELD_NUMBER = 2;
-    private int cDIKCAIGHAE_;
+    public static final int BEGBPFBABMD_FIELD_NUMBER = 3;
+    private int bEGBPFBABMD_;
     /**
-     * <code>uint32 CDIKCAIGHAE = 2;</code>
-     * @return The cDIKCAIGHAE.
+     * <code>uint32 BEGBPFBABMD = 3;</code>
+     * @return The bEGBPFBABMD.
      */
     @java.lang.Override
-    public int getCDIKCAIGHAE() {
-      return cDIKCAIGHAE_;
+    public int getBEGBPFBABMD() {
+      return bEGBPFBABMD_;
     }
 
-    public static final int KJEEEDPFMFE_FIELD_NUMBER = 6;
-    private int kJEEEDPFMFE_;
+    public static final int CLHPNHOHONM_FIELD_NUMBER = 2;
+    private boolean cLHPNHOHONM_;
     /**
-     * <code>uint32 KJEEEDPFMFE = 6;</code>
-     * @return The kJEEEDPFMFE.
+     * <code>bool CLHPNHOHONM = 2;</code>
+     * @return The cLHPNHOHONM.
      */
     @java.lang.Override
-    public int getKJEEEDPFMFE() {
-      return kJEEEDPFMFE_;
+    public boolean getCLHPNHOHONM() {
+      return cLHPNHOHONM_;
     }
 
-    public static final int IGMALOKLIPP_FIELD_NUMBER = 14;
-    private boolean iGMALOKLIPP_;
+    public static final int OEGCAHNJAMF_FIELD_NUMBER = 14;
+    private int oEGCAHNJAMF_;
     /**
-     * <code>bool IGMALOKLIPP = 14;</code>
-     * @return The iGMALOKLIPP.
+     * <code>uint32 OEGCAHNJAMF = 14;</code>
+     * @return The oEGCAHNJAMF.
      */
     @java.lang.Override
-    public boolean getIGMALOKLIPP() {
-      return iGMALOKLIPP_;
+    public int getOEGCAHNJAMF() {
+      return oEGCAHNJAMF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class ClientNewMailNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cDIKCAIGHAE_ != 0) {
-        output.writeUInt32(2, cDIKCAIGHAE_);
+      if (cLHPNHOHONM_ != false) {
+        output.writeBool(2, cLHPNHOHONM_);
       }
-      if (kJEEEDPFMFE_ != 0) {
-        output.writeUInt32(6, kJEEEDPFMFE_);
+      if (bEGBPFBABMD_ != 0) {
+        output.writeUInt32(3, bEGBPFBABMD_);
       }
-      if (iGMALOKLIPP_ != false) {
-        output.writeBool(14, iGMALOKLIPP_);
+      if (oEGCAHNJAMF_ != 0) {
+        output.writeUInt32(14, oEGCAHNJAMF_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class ClientNewMailNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cDIKCAIGHAE_ != 0) {
+      if (cLHPNHOHONM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, cDIKCAIGHAE_);
+          .computeBoolSize(2, cLHPNHOHONM_);
       }
-      if (kJEEEDPFMFE_ != 0) {
+      if (bEGBPFBABMD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, kJEEEDPFMFE_);
+          .computeUInt32Size(3, bEGBPFBABMD_);
       }
-      if (iGMALOKLIPP_ != false) {
+      if (oEGCAHNJAMF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, iGMALOKLIPP_);
+          .computeUInt32Size(14, oEGCAHNJAMF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class ClientNewMailNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify other = (emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify) obj;
 
-      if (getCDIKCAIGHAE()
-          != other.getCDIKCAIGHAE()) return false;
-      if (getKJEEEDPFMFE()
-          != other.getKJEEEDPFMFE()) return false;
-      if (getIGMALOKLIPP()
-          != other.getIGMALOKLIPP()) return false;
+      if (getBEGBPFBABMD()
+          != other.getBEGBPFBABMD()) return false;
+      if (getCLHPNHOHONM()
+          != other.getCLHPNHOHONM()) return false;
+      if (getOEGCAHNJAMF()
+          != other.getOEGCAHNJAMF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,13 +242,13 @@ public final class ClientNewMailNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CDIKCAIGHAE_FIELD_NUMBER;
-      hash = (53 * hash) + getCDIKCAIGHAE();
-      hash = (37 * hash) + KJEEEDPFMFE_FIELD_NUMBER;
-      hash = (53 * hash) + getKJEEEDPFMFE();
-      hash = (37 * hash) + IGMALOKLIPP_FIELD_NUMBER;
+      hash = (37 * hash) + BEGBPFBABMD_FIELD_NUMBER;
+      hash = (53 * hash) + getBEGBPFBABMD();
+      hash = (37 * hash) + CLHPNHOHONM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIGMALOKLIPP());
+          getCLHPNHOHONM());
+      hash = (37 * hash) + OEGCAHNJAMF_FIELD_NUMBER;
+      hash = (53 * hash) + getOEGCAHNJAMF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,8 +346,8 @@ public final class ClientNewMailNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1430
-     * Obf: BEBABNFCJIO
+     * CmdId: 2769
+     * Obf: HPLLHIPOLHA
      * </pre>
      *
      * Protobuf type {@code ClientNewMailNotify}
@@ -387,11 +387,11 @@ public final class ClientNewMailNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cDIKCAIGHAE_ = 0;
+        bEGBPFBABMD_ = 0;
 
-        kJEEEDPFMFE_ = 0;
+        cLHPNHOHONM_ = false;
 
-        iGMALOKLIPP_ = false;
+        oEGCAHNJAMF_ = 0;
 
         return this;
       }
@@ -419,9 +419,9 @@ public final class ClientNewMailNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify buildPartial() {
         emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify result = new emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify(this);
-        result.cDIKCAIGHAE_ = cDIKCAIGHAE_;
-        result.kJEEEDPFMFE_ = kJEEEDPFMFE_;
-        result.iGMALOKLIPP_ = iGMALOKLIPP_;
+        result.bEGBPFBABMD_ = bEGBPFBABMD_;
+        result.cLHPNHOHONM_ = cLHPNHOHONM_;
+        result.oEGCAHNJAMF_ = oEGCAHNJAMF_;
         onBuilt();
         return result;
       }
@@ -470,14 +470,14 @@ public final class ClientNewMailNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify other) {
         if (other == emu.grasscutter.net.proto.ClientNewMailNotifyOuterClass.ClientNewMailNotify.getDefaultInstance()) return this;
-        if (other.getCDIKCAIGHAE() != 0) {
-          setCDIKCAIGHAE(other.getCDIKCAIGHAE());
+        if (other.getBEGBPFBABMD() != 0) {
+          setBEGBPFBABMD(other.getBEGBPFBABMD());
         }
-        if (other.getKJEEEDPFMFE() != 0) {
-          setKJEEEDPFMFE(other.getKJEEEDPFMFE());
+        if (other.getCLHPNHOHONM() != false) {
+          setCLHPNHOHONM(other.getCLHPNHOHONM());
         }
-        if (other.getIGMALOKLIPP() != false) {
-          setIGMALOKLIPP(other.getIGMALOKLIPP());
+        if (other.getOEGCAHNJAMF() != 0) {
+          setOEGCAHNJAMF(other.getOEGCAHNJAMF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -508,95 +508,95 @@ public final class ClientNewMailNotifyOuterClass {
         return this;
       }
 
-      private int cDIKCAIGHAE_ ;
+      private int bEGBPFBABMD_ ;
       /**
-       * <code>uint32 CDIKCAIGHAE = 2;</code>
-       * @return The cDIKCAIGHAE.
+       * <code>uint32 BEGBPFBABMD = 3;</code>
+       * @return The bEGBPFBABMD.
        */
       @java.lang.Override
-      public int getCDIKCAIGHAE() {
-        return cDIKCAIGHAE_;
+      public int getBEGBPFBABMD() {
+        return bEGBPFBABMD_;
       }
       /**
-       * <code>uint32 CDIKCAIGHAE = 2;</code>
-       * @param value The cDIKCAIGHAE to set.
+       * <code>uint32 BEGBPFBABMD = 3;</code>
+       * @param value The bEGBPFBABMD to set.
        * @return This builder for chaining.
        */
-      public Builder setCDIKCAIGHAE(int value) {
+      public Builder setBEGBPFBABMD(int value) {
         
-        cDIKCAIGHAE_ = value;
+        bEGBPFBABMD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CDIKCAIGHAE = 2;</code>
+       * <code>uint32 BEGBPFBABMD = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCDIKCAIGHAE() {
+      public Builder clearBEGBPFBABMD() {
         
-        cDIKCAIGHAE_ = 0;
+        bEGBPFBABMD_ = 0;
         onChanged();
         return this;
       }
 
-      private int kJEEEDPFMFE_ ;
+      private boolean cLHPNHOHONM_ ;
       /**
-       * <code>uint32 KJEEEDPFMFE = 6;</code>
-       * @return The kJEEEDPFMFE.
+       * <code>bool CLHPNHOHONM = 2;</code>
+       * @return The cLHPNHOHONM.
        */
       @java.lang.Override
-      public int getKJEEEDPFMFE() {
-        return kJEEEDPFMFE_;
+      public boolean getCLHPNHOHONM() {
+        return cLHPNHOHONM_;
       }
       /**
-       * <code>uint32 KJEEEDPFMFE = 6;</code>
-       * @param value The kJEEEDPFMFE to set.
+       * <code>bool CLHPNHOHONM = 2;</code>
+       * @param value The cLHPNHOHONM to set.
        * @return This builder for chaining.
        */
-      public Builder setKJEEEDPFMFE(int value) {
+      public Builder setCLHPNHOHONM(boolean value) {
         
-        kJEEEDPFMFE_ = value;
+        cLHPNHOHONM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 KJEEEDPFMFE = 6;</code>
+       * <code>bool CLHPNHOHONM = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKJEEEDPFMFE() {
+      public Builder clearCLHPNHOHONM() {
         
-        kJEEEDPFMFE_ = 0;
+        cLHPNHOHONM_ = false;
         onChanged();
         return this;
       }
 
-      private boolean iGMALOKLIPP_ ;
+      private int oEGCAHNJAMF_ ;
       /**
-       * <code>bool IGMALOKLIPP = 14;</code>
-       * @return The iGMALOKLIPP.
+       * <code>uint32 OEGCAHNJAMF = 14;</code>
+       * @return The oEGCAHNJAMF.
        */
       @java.lang.Override
-      public boolean getIGMALOKLIPP() {
-        return iGMALOKLIPP_;
+      public int getOEGCAHNJAMF() {
+        return oEGCAHNJAMF_;
       }
       /**
-       * <code>bool IGMALOKLIPP = 14;</code>
-       * @param value The iGMALOKLIPP to set.
+       * <code>uint32 OEGCAHNJAMF = 14;</code>
+       * @param value The oEGCAHNJAMF to set.
        * @return This builder for chaining.
        */
-      public Builder setIGMALOKLIPP(boolean value) {
+      public Builder setOEGCAHNJAMF(int value) {
         
-        iGMALOKLIPP_ = value;
+        oEGCAHNJAMF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool IGMALOKLIPP = 14;</code>
+       * <code>uint32 OEGCAHNJAMF = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIGMALOKLIPP() {
+      public Builder clearOEGCAHNJAMF() {
         
-        iGMALOKLIPP_ = false;
+        oEGCAHNJAMF_ = 0;
         onChanged();
         return this;
       }
@@ -668,8 +668,8 @@ public final class ClientNewMailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031ClientNewMailNotify.proto\"T\n\023ClientNew" +
-      "MailNotify\022\023\n\013CDIKCAIGHAE\030\002 \001(\r\022\023\n\013KJEEE" +
-      "DPFMFE\030\006 \001(\r\022\023\n\013IGMALOKLIPP\030\016 \001(\010B\033\n\031emu" +
+      "MailNotify\022\023\n\013BEGBPFBABMD\030\003 \001(\r\022\023\n\013CLHPN" +
+      "HOHONM\030\002 \001(\010\022\023\n\013OEGCAHNJAMF\030\016 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class ClientNewMailNotifyOuterClass {
     internal_static_ClientNewMailNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ClientNewMailNotify_descriptor,
-        new java.lang.String[] { "CDIKCAIGHAE", "KJEEEDPFMFE", "IGMALOKLIPP", });
+        new java.lang.String[] { "BEGBPFBABMD", "CLHPNHOHONM", "OEGCAHNJAMF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

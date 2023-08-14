@@ -133,7 +133,7 @@ public final class MotionInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: JELNCMPFEFL
+   * Obf: LJEPKMPIOKJ
    * </pre>
    *
    * Protobuf type {@code MotionInfo}
@@ -763,7 +763,7 @@ public final class MotionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JELNCMPFEFL
+     * Obf: LJEPKMPIOKJ
      * </pre>
      *
      * Protobuf type {@code MotionInfo}

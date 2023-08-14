@@ -20,8 +20,8 @@ public final class GCGGameMaxNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 7665
-   * Obf: IJPKGNKGLLB
+   * CmdId: 2039
+   * Obf: PEHBIAOIPHD
    * </pre>
    *
    * Protobuf type {@code GCGGameMaxNotify}
@@ -246,8 +246,8 @@ public final class GCGGameMaxNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7665
-     * Obf: IJPKGNKGLLB
+     * CmdId: 2039
+     * Obf: PEHBIAOIPHD
      * </pre>
      *
      * Protobuf type {@code GCGGameMaxNotify}

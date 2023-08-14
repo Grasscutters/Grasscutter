@@ -19,21 +19,21 @@ public final class FurnitureMakeStartReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 12;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     int getAvatarId();
 
     /**
-     * <code>uint32 make_id = 5;</code>
+     * <code>uint32 make_id = 7;</code>
      * @return The makeId.
      */
     int getMakeId();
   }
   /**
    * <pre>
-   * CmdId: 4849
-   * Obf: LAFHCNHLKPN
+   * CmdId: 27509
+   * Obf: PGBJFFDPDIA
    * </pre>
    *
    * Protobuf type {@code FurnitureMakeStartReq}
@@ -80,12 +80,12 @@ public final class FurnitureMakeStartReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 56: {
 
               makeId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
               avatarId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class FurnitureMakeStartReqOuterClass {
               emu.grasscutter.net.proto.FurnitureMakeStartReqOuterClass.FurnitureMakeStartReq.class, emu.grasscutter.net.proto.FurnitureMakeStartReqOuterClass.FurnitureMakeStartReq.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 12;
+    public static final int AVATAR_ID_FIELD_NUMBER = 8;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 12;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class FurnitureMakeStartReqOuterClass {
       return avatarId_;
     }
 
-    public static final int MAKE_ID_FIELD_NUMBER = 5;
+    public static final int MAKE_ID_FIELD_NUMBER = 7;
     private int makeId_;
     /**
-     * <code>uint32 make_id = 5;</code>
+     * <code>uint32 make_id = 7;</code>
      * @return The makeId.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class FurnitureMakeStartReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (makeId_ != 0) {
-        output.writeUInt32(5, makeId_);
+        output.writeUInt32(7, makeId_);
       }
       if (avatarId_ != 0) {
-        output.writeUInt32(12, avatarId_);
+        output.writeUInt32(8, avatarId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class FurnitureMakeStartReqOuterClass {
       size = 0;
       if (makeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, makeId_);
+          .computeUInt32Size(7, makeId_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, avatarId_);
+          .computeUInt32Size(8, avatarId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class FurnitureMakeStartReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4849
-     * Obf: LAFHCNHLKPN
+     * CmdId: 27509
+     * Obf: PGBJFFDPDIA
      * </pre>
      *
      * Protobuf type {@code FurnitureMakeStartReq}
@@ -470,7 +470,7 @@ public final class FurnitureMakeStartReqOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 12;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class FurnitureMakeStartReqOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 12;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class FurnitureMakeStartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 12;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -501,7 +501,7 @@ public final class FurnitureMakeStartReqOuterClass {
 
       private int makeId_ ;
       /**
-       * <code>uint32 make_id = 5;</code>
+       * <code>uint32 make_id = 7;</code>
        * @return The makeId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class FurnitureMakeStartReqOuterClass {
         return makeId_;
       }
       /**
-       * <code>uint32 make_id = 5;</code>
+       * <code>uint32 make_id = 7;</code>
        * @param value The makeId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class FurnitureMakeStartReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 make_id = 5;</code>
+       * <code>uint32 make_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMakeId() {
@@ -597,8 +597,8 @@ public final class FurnitureMakeStartReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033FurnitureMakeStartReq.proto\";\n\025Furnitu" +
-      "reMakeStartReq\022\021\n\tavatar_id\030\014 \001(\r\022\017\n\007mak" +
-      "e_id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "reMakeStartReq\022\021\n\tavatar_id\030\010 \001(\r\022\017\n\007mak" +
+      "e_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,15 +19,15 @@ public final class DungeonFollowNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>uint32 target_uid = 7;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 906
-   * Obf: DKCEAAMCAMO
+   * CmdId: 5420
+   * Obf: LPDEAGHMKHI
    * </pre>
    *
    * Protobuf type {@code DungeonFollowNotify}
@@ -74,7 +74,7 @@ public final class DungeonFollowNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 56: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class DungeonFollowNotifyOuterClass {
               emu.grasscutter.net.proto.DungeonFollowNotifyOuterClass.DungeonFollowNotify.class, emu.grasscutter.net.proto.DungeonFollowNotifyOuterClass.DungeonFollowNotify.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 8;
+    public static final int TARGET_UID_FIELD_NUMBER = 7;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 8;</code>
+     * <code>uint32 target_uid = 7;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class DungeonFollowNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(8, targetUid_);
+        output.writeUInt32(7, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class DungeonFollowNotifyOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, targetUid_);
+          .computeUInt32Size(7, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class DungeonFollowNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 906
-     * Obf: DKCEAAMCAMO
+     * CmdId: 5420
+     * Obf: LPDEAGHMKHI
      * </pre>
      *
      * Protobuf type {@code DungeonFollowNotify}
@@ -431,7 +431,7 @@ public final class DungeonFollowNotifyOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class DungeonFollowNotifyOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class DungeonFollowNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 8;</code>
+       * <code>uint32 target_uid = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -527,7 +527,7 @@ public final class DungeonFollowNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031DungeonFollowNotify.proto\")\n\023DungeonFo" +
-      "llowNotify\022\022\n\ntarget_uid\030\010 \001(\rB\033\n\031emu.gr" +
+      "llowNotify\022\022\n\ntarget_uid\030\007 \001(\rB\033\n\031emu.gr" +
       "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

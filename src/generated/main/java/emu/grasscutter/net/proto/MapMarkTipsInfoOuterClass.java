@@ -48,7 +48,7 @@ public final class MapMarkTipsInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: GADPFBOGKOD
+   * Obf: FCABMPGKCEL
    * </pre>
    *
    * Protobuf type {@code MapMarkTipsInfo}
@@ -391,7 +391,7 @@ public final class MapMarkTipsInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GADPFBOGKOD
+     * Obf: FCABMPGKCEL
      * </pre>
      *
      * Protobuf type {@code MapMarkTipsInfo}

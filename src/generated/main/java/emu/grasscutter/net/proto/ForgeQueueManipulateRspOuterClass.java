@@ -19,98 +19,98 @@ public final class ForgeQueueManipulateRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-     * @return The enum numeric value on the wire for manipulateType.
+     * <code>repeated .ItemParam output_item_list = 12;</code>
      */
-    int getManipulateTypeValue();
+    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
+        getOutputItemListList();
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-     * @return The manipulateType.
+     * <code>repeated .ItemParam output_item_list = 12;</code>
      */
-    emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType();
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getOutputItemList(int index);
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    int getOutputItemListCount();
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getOutputItemListOrBuilderList();
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(
+        int index);
 
     /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getExtraOutputItemListList();
     /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getExtraOutputItemList(int index);
     /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
      */
     int getExtraOutputItemListCount();
     /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getExtraOutputItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getExtraOutputItemListOrBuilder(
         int index);
 
     /**
-     * <code>int32 retcode = 5;</code>
-     * @return The retcode.
+     * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+     * @return The enum numeric value on the wire for manipulateType.
      */
-    int getRetcode();
+    int getManipulateTypeValue();
+    /**
+     * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+     * @return The manipulateType.
+     */
+    emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType();
 
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
         getReturnItemListList();
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getReturnItemList(int index);
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     int getReturnItemListCount();
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
         getReturnItemListOrBuilderList();
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getReturnItemListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
      */
-    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
-        getOutputItemListList();
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getOutputItemList(int index);
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    int getOutputItemListCount();
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getOutputItemListOrBuilderList();
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(
-        int index);
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 649
-   * Obf: DDDGJIMOHAN
+   * CmdId: 4194
+   * Obf: JDJJJGPEDHM
    * </pre>
    *
    * Protobuf type {@code ForgeQueueManipulateRsp}
@@ -125,10 +125,10 @@ public final class ForgeQueueManipulateRspOuterClass {
       super(builder);
     }
     private ForgeQueueManipulateRsp() {
-      manipulateType_ = 0;
-      extraOutputItemList_ = java.util.Collections.emptyList();
-      returnItemList_ = java.util.Collections.emptyList();
       outputItemList_ = java.util.Collections.emptyList();
+      extraOutputItemList_ = java.util.Collections.emptyList();
+      manipulateType_ = 0;
+      returnItemList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -162,41 +162,41 @@ public final class ForgeQueueManipulateRspOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                extraOutputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              extraOutputItemList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 returnItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               returnItemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
-            case 80: {
+            case 40: {
               int rawValue = input.readEnum();
 
               manipulateType_ = rawValue;
               break;
             }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            case 48: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 outputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000001;
               }
               outputItemList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                extraOutputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              extraOutputItemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
               break;
             }
@@ -215,14 +215,14 @@ public final class ForgeQueueManipulateRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -241,17 +241,97 @@ public final class ForgeQueueManipulateRspOuterClass {
               emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.class, emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.Builder.class);
     }
 
-    public static final int MANIPULATE_TYPE_FIELD_NUMBER = 10;
+    public static final int OUTPUT_ITEM_LIST_FIELD_NUMBER = 12;
+    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> outputItemList_;
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getOutputItemListList() {
+      return outputItemList_;
+    }
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getOutputItemListOrBuilderList() {
+      return outputItemList_;
+    }
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    @java.lang.Override
+    public int getOutputItemListCount() {
+      return outputItemList_.size();
+    }
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getOutputItemList(int index) {
+      return outputItemList_.get(index);
+    }
+    /**
+     * <code>repeated .ItemParam output_item_list = 12;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(
+        int index) {
+      return outputItemList_.get(index);
+    }
+
+    public static final int EXTRA_OUTPUT_ITEM_LIST_FIELD_NUMBER = 13;
+    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> extraOutputItemList_;
+    /**
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getExtraOutputItemListList() {
+      return extraOutputItemList_;
+    }
+    /**
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getExtraOutputItemListOrBuilderList() {
+      return extraOutputItemList_;
+    }
+    /**
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+     */
+    @java.lang.Override
+    public int getExtraOutputItemListCount() {
+      return extraOutputItemList_.size();
+    }
+    /**
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getExtraOutputItemList(int index) {
+      return extraOutputItemList_.get(index);
+    }
+    /**
+     * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getExtraOutputItemListOrBuilder(
+        int index) {
+      return extraOutputItemList_.get(index);
+    }
+
+    public static final int MANIPULATE_TYPE_FIELD_NUMBER = 5;
     private int manipulateType_;
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
+     * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
      * @return The enum numeric value on the wire for manipulateType.
      */
     @java.lang.Override public int getManipulateTypeValue() {
       return manipulateType_;
     }
     /**
-     * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
+     * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
      * @return The manipulateType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
@@ -260,68 +340,17 @@ public final class ForgeQueueManipulateRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
     }
 
-    public static final int EXTRA_OUTPUT_ITEM_LIST_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> extraOutputItemList_;
-    /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getExtraOutputItemListList() {
-      return extraOutputItemList_;
-    }
-    /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getExtraOutputItemListOrBuilderList() {
-      return extraOutputItemList_;
-    }
-    /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-     */
-    @java.lang.Override
-    public int getExtraOutputItemListCount() {
-      return extraOutputItemList_.size();
-    }
-    /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getExtraOutputItemList(int index) {
-      return extraOutputItemList_.get(index);
-    }
-    /**
-     * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getExtraOutputItemListOrBuilder(
-        int index) {
-      return extraOutputItemList_.get(index);
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 5;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int RETURN_ITEM_LIST_FIELD_NUMBER = 9;
+    public static final int RETURN_ITEM_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> returnItemList_;
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getReturnItemListList() {
       return returnItemList_;
     }
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
@@ -329,21 +358,21 @@ public final class ForgeQueueManipulateRspOuterClass {
       return returnItemList_;
     }
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     @java.lang.Override
     public int getReturnItemListCount() {
       return returnItemList_.size();
     }
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getReturnItemList(int index) {
       return returnItemList_.get(index);
     }
     /**
-     * <code>repeated .ItemParam return_item_list = 9;</code>
+     * <code>repeated .ItemParam return_item_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getReturnItemListOrBuilder(
@@ -351,44 +380,15 @@ public final class ForgeQueueManipulateRspOuterClass {
       return returnItemList_.get(index);
     }
 
-    public static final int OUTPUT_ITEM_LIST_FIELD_NUMBER = 14;
-    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> outputItemList_;
+    public static final int RETCODE_FIELD_NUMBER = 6;
+    private int retcode_;
     /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
+     * <code>int32 retcode = 6;</code>
+     * @return The retcode.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getOutputItemListList() {
-      return outputItemList_;
-    }
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getOutputItemListOrBuilderList() {
-      return outputItemList_;
-    }
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    @java.lang.Override
-    public int getOutputItemListCount() {
-      return outputItemList_.size();
-    }
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getOutputItemList(int index) {
-      return outputItemList_.get(index);
-    }
-    /**
-     * <code>repeated .ItemParam output_item_list = 14;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(
-        int index) {
-      return outputItemList_.get(index);
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -405,20 +405,20 @@ public final class ForgeQueueManipulateRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < extraOutputItemList_.size(); i++) {
-        output.writeMessage(1, extraOutputItemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(5, retcode_);
-      }
       for (int i = 0; i < returnItemList_.size(); i++) {
-        output.writeMessage(9, returnItemList_.get(i));
+        output.writeMessage(4, returnItemList_.get(i));
       }
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
-        output.writeEnum(10, manipulateType_);
+        output.writeEnum(5, manipulateType_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(6, retcode_);
       }
       for (int i = 0; i < outputItemList_.size(); i++) {
-        output.writeMessage(14, outputItemList_.get(i));
+        output.writeMessage(12, outputItemList_.get(i));
+      }
+      for (int i = 0; i < extraOutputItemList_.size(); i++) {
+        output.writeMessage(13, extraOutputItemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -429,25 +429,25 @@ public final class ForgeQueueManipulateRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < extraOutputItemList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, extraOutputItemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, retcode_);
-      }
       for (int i = 0; i < returnItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, returnItemList_.get(i));
+          .computeMessageSize(4, returnItemList_.get(i));
       }
       if (manipulateType_ != emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, manipulateType_);
+          .computeEnumSize(5, manipulateType_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, retcode_);
       }
       for (int i = 0; i < outputItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, outputItemList_.get(i));
+          .computeMessageSize(12, outputItemList_.get(i));
+      }
+      for (int i = 0; i < extraOutputItemList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, extraOutputItemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -464,15 +464,15 @@ public final class ForgeQueueManipulateRspOuterClass {
       }
       emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp other = (emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp) obj;
 
-      if (manipulateType_ != other.manipulateType_) return false;
-      if (!getExtraOutputItemListList()
-          .equals(other.getExtraOutputItemListList())) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (!getReturnItemListList()
-          .equals(other.getReturnItemListList())) return false;
       if (!getOutputItemListList()
           .equals(other.getOutputItemListList())) return false;
+      if (!getExtraOutputItemListList()
+          .equals(other.getExtraOutputItemListList())) return false;
+      if (manipulateType_ != other.manipulateType_) return false;
+      if (!getReturnItemListList()
+          .equals(other.getReturnItemListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -484,22 +484,22 @@ public final class ForgeQueueManipulateRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MANIPULATE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + manipulateType_;
-      if (getExtraOutputItemListCount() > 0) {
-        hash = (37 * hash) + EXTRA_OUTPUT_ITEM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getExtraOutputItemListList().hashCode();
-      }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      if (getReturnItemListCount() > 0) {
-        hash = (37 * hash) + RETURN_ITEM_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getReturnItemListList().hashCode();
-      }
       if (getOutputItemListCount() > 0) {
         hash = (37 * hash) + OUTPUT_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOutputItemListList().hashCode();
       }
+      if (getExtraOutputItemListCount() > 0) {
+        hash = (37 * hash) + EXTRA_OUTPUT_ITEM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getExtraOutputItemListList().hashCode();
+      }
+      hash = (37 * hash) + MANIPULATE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + manipulateType_;
+      if (getReturnItemListCount() > 0) {
+        hash = (37 * hash) + RETURN_ITEM_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnItemListList().hashCode();
+      }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -597,8 +597,8 @@ public final class ForgeQueueManipulateRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 649
-     * Obf: DDDGJIMOHAN
+     * CmdId: 4194
+     * Obf: JDJJJGPEDHM
      * </pre>
      *
      * Protobuf type {@code ForgeQueueManipulateRsp}
@@ -633,36 +633,36 @@ public final class ForgeQueueManipulateRspOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getOutputItemListFieldBuilder();
           getExtraOutputItemListFieldBuilder();
           getReturnItemListFieldBuilder();
-          getOutputItemListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        manipulateType_ = 0;
-
-        if (extraOutputItemListBuilder_ == null) {
-          extraOutputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          extraOutputItemListBuilder_.clear();
-        }
-        retcode_ = 0;
-
-        if (returnItemListBuilder_ == null) {
-          returnItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          returnItemListBuilder_.clear();
-        }
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           outputItemListBuilder_.clear();
         }
+        if (extraOutputItemListBuilder_ == null) {
+          extraOutputItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          extraOutputItemListBuilder_.clear();
+        }
+        manipulateType_ = 0;
+
+        if (returnItemListBuilder_ == null) {
+          returnItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          returnItemListBuilder_.clear();
+        }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -690,35 +690,35 @@ public final class ForgeQueueManipulateRspOuterClass {
       public emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp buildPartial() {
         emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp result = new emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp(this);
         int from_bitField0_ = bitField0_;
-        result.manipulateType_ = manipulateType_;
-        if (extraOutputItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.extraOutputItemList_ = extraOutputItemList_;
-        } else {
-          result.extraOutputItemList_ = extraOutputItemListBuilder_.build();
-        }
-        result.retcode_ = retcode_;
-        if (returnItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.returnItemList_ = returnItemList_;
-        } else {
-          result.returnItemList_ = returnItemListBuilder_.build();
-        }
         if (outputItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.outputItemList_ = outputItemList_;
         } else {
           result.outputItemList_ = outputItemListBuilder_.build();
         }
+        if (extraOutputItemListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.extraOutputItemList_ = extraOutputItemList_;
+        } else {
+          result.extraOutputItemList_ = extraOutputItemListBuilder_.build();
+        }
+        result.manipulateType_ = manipulateType_;
+        if (returnItemListBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.returnItemList_ = returnItemList_;
+        } else {
+          result.returnItemList_ = returnItemListBuilder_.build();
+        }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -767,69 +767,11 @@ public final class ForgeQueueManipulateRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp other) {
         if (other == emu.grasscutter.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.getDefaultInstance()) return this;
-        if (other.manipulateType_ != 0) {
-          setManipulateTypeValue(other.getManipulateTypeValue());
-        }
-        if (extraOutputItemListBuilder_ == null) {
-          if (!other.extraOutputItemList_.isEmpty()) {
-            if (extraOutputItemList_.isEmpty()) {
-              extraOutputItemList_ = other.extraOutputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureExtraOutputItemListIsMutable();
-              extraOutputItemList_.addAll(other.extraOutputItemList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.extraOutputItemList_.isEmpty()) {
-            if (extraOutputItemListBuilder_.isEmpty()) {
-              extraOutputItemListBuilder_.dispose();
-              extraOutputItemListBuilder_ = null;
-              extraOutputItemList_ = other.extraOutputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              extraOutputItemListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getExtraOutputItemListFieldBuilder() : null;
-            } else {
-              extraOutputItemListBuilder_.addAllMessages(other.extraOutputItemList_);
-            }
-          }
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (returnItemListBuilder_ == null) {
-          if (!other.returnItemList_.isEmpty()) {
-            if (returnItemList_.isEmpty()) {
-              returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureReturnItemListIsMutable();
-              returnItemList_.addAll(other.returnItemList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.returnItemList_.isEmpty()) {
-            if (returnItemListBuilder_.isEmpty()) {
-              returnItemListBuilder_.dispose();
-              returnItemListBuilder_ = null;
-              returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              returnItemListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getReturnItemListFieldBuilder() : null;
-            } else {
-              returnItemListBuilder_.addAllMessages(other.returnItemList_);
-            }
-          }
-        }
         if (outputItemListBuilder_ == null) {
           if (!other.outputItemList_.isEmpty()) {
             if (outputItemList_.isEmpty()) {
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureOutputItemListIsMutable();
               outputItemList_.addAll(other.outputItemList_);
@@ -842,7 +784,7 @@ public final class ForgeQueueManipulateRspOuterClass {
               outputItemListBuilder_.dispose();
               outputItemListBuilder_ = null;
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000001);
               outputItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputItemListFieldBuilder() : null;
@@ -850,6 +792,64 @@ public final class ForgeQueueManipulateRspOuterClass {
               outputItemListBuilder_.addAllMessages(other.outputItemList_);
             }
           }
+        }
+        if (extraOutputItemListBuilder_ == null) {
+          if (!other.extraOutputItemList_.isEmpty()) {
+            if (extraOutputItemList_.isEmpty()) {
+              extraOutputItemList_ = other.extraOutputItemList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureExtraOutputItemListIsMutable();
+              extraOutputItemList_.addAll(other.extraOutputItemList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.extraOutputItemList_.isEmpty()) {
+            if (extraOutputItemListBuilder_.isEmpty()) {
+              extraOutputItemListBuilder_.dispose();
+              extraOutputItemListBuilder_ = null;
+              extraOutputItemList_ = other.extraOutputItemList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              extraOutputItemListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getExtraOutputItemListFieldBuilder() : null;
+            } else {
+              extraOutputItemListBuilder_.addAllMessages(other.extraOutputItemList_);
+            }
+          }
+        }
+        if (other.manipulateType_ != 0) {
+          setManipulateTypeValue(other.getManipulateTypeValue());
+        }
+        if (returnItemListBuilder_ == null) {
+          if (!other.returnItemList_.isEmpty()) {
+            if (returnItemList_.isEmpty()) {
+              returnItemList_ = other.returnItemList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureReturnItemListIsMutable();
+              returnItemList_.addAll(other.returnItemList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.returnItemList_.isEmpty()) {
+            if (returnItemListBuilder_.isEmpty()) {
+              returnItemListBuilder_.dispose();
+              returnItemListBuilder_ = null;
+              returnItemList_ = other.returnItemList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              returnItemListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getReturnItemListFieldBuilder() : null;
+            } else {
+              returnItemListBuilder_.addAllMessages(other.returnItemList_);
+            }
+          }
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -881,577 +881,12 @@ public final class ForgeQueueManipulateRspOuterClass {
       }
       private int bitField0_;
 
-      private int manipulateType_ = 0;
-      /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-       * @return The enum numeric value on the wire for manipulateType.
-       */
-      @java.lang.Override public int getManipulateTypeValue() {
-        return manipulateType_;
-      }
-      /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-       * @param value The enum numeric value on the wire for manipulateType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setManipulateTypeValue(int value) {
-        
-        manipulateType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-       * @return The manipulateType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.valueOf(manipulateType_);
-        return result == null ? emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-       * @param value The manipulateType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setManipulateType(emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        manipulateType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForgeQueueManipulateType manipulate_type = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearManipulateType() {
-        
-        manipulateType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> extraOutputItemList_ =
-        java.util.Collections.emptyList();
-      private void ensureExtraOutputItemListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          extraOutputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(extraOutputItemList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> extraOutputItemListBuilder_;
-
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getExtraOutputItemListList() {
-        if (extraOutputItemListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(extraOutputItemList_);
-        } else {
-          return extraOutputItemListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public int getExtraOutputItemListCount() {
-        if (extraOutputItemListBuilder_ == null) {
-          return extraOutputItemList_.size();
-        } else {
-          return extraOutputItemListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getExtraOutputItemList(int index) {
-        if (extraOutputItemListBuilder_ == null) {
-          return extraOutputItemList_.get(index);
-        } else {
-          return extraOutputItemListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder setExtraOutputItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (extraOutputItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.set(index, value);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder setExtraOutputItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (extraOutputItemListBuilder_ == null) {
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder addExtraOutputItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (extraOutputItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.add(value);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder addExtraOutputItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (extraOutputItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.add(index, value);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder addExtraOutputItemList(
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (extraOutputItemListBuilder_ == null) {
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder addExtraOutputItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (extraOutputItemListBuilder_ == null) {
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder addAllExtraOutputItemList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
-        if (extraOutputItemListBuilder_ == null) {
-          ensureExtraOutputItemListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, extraOutputItemList_);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder clearExtraOutputItemList() {
-        if (extraOutputItemListBuilder_ == null) {
-          extraOutputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public Builder removeExtraOutputItemList(int index) {
-        if (extraOutputItemListBuilder_ == null) {
-          ensureExtraOutputItemListIsMutable();
-          extraOutputItemList_.remove(index);
-          onChanged();
-        } else {
-          extraOutputItemListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getExtraOutputItemListBuilder(
-          int index) {
-        return getExtraOutputItemListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getExtraOutputItemListOrBuilder(
-          int index) {
-        if (extraOutputItemListBuilder_ == null) {
-          return extraOutputItemList_.get(index);  } else {
-          return extraOutputItemListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-           getExtraOutputItemListOrBuilderList() {
-        if (extraOutputItemListBuilder_ != null) {
-          return extraOutputItemListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(extraOutputItemList_);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addExtraOutputItemListBuilder() {
-        return getExtraOutputItemListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addExtraOutputItemListBuilder(
-          int index) {
-        return getExtraOutputItemListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ItemParam extra_output_item_list = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
-           getExtraOutputItemListBuilderList() {
-        return getExtraOutputItemListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-          getExtraOutputItemListFieldBuilder() {
-        if (extraOutputItemListBuilder_ == null) {
-          extraOutputItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
-                  extraOutputItemList_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          extraOutputItemList_ = null;
-        }
-        return extraOutputItemListBuilder_;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 5;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 5;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> returnItemList_ =
-        java.util.Collections.emptyList();
-      private void ensureReturnItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          returnItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(returnItemList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> returnItemListBuilder_;
-
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getReturnItemListList() {
-        if (returnItemListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(returnItemList_);
-        } else {
-          return returnItemListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public int getReturnItemListCount() {
-        if (returnItemListBuilder_ == null) {
-          return returnItemList_.size();
-        } else {
-          return returnItemListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getReturnItemList(int index) {
-        if (returnItemListBuilder_ == null) {
-          return returnItemList_.get(index);
-        } else {
-          return returnItemListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder setReturnItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (returnItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureReturnItemListIsMutable();
-          returnItemList_.set(index, value);
-          onChanged();
-        } else {
-          returnItemListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder setReturnItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (returnItemListBuilder_ == null) {
-          ensureReturnItemListIsMutable();
-          returnItemList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          returnItemListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder addReturnItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (returnItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureReturnItemListIsMutable();
-          returnItemList_.add(value);
-          onChanged();
-        } else {
-          returnItemListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder addReturnItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
-        if (returnItemListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureReturnItemListIsMutable();
-          returnItemList_.add(index, value);
-          onChanged();
-        } else {
-          returnItemListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder addReturnItemList(
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (returnItemListBuilder_ == null) {
-          ensureReturnItemListIsMutable();
-          returnItemList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          returnItemListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder addReturnItemList(
-          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
-        if (returnItemListBuilder_ == null) {
-          ensureReturnItemListIsMutable();
-          returnItemList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          returnItemListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder addAllReturnItemList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
-        if (returnItemListBuilder_ == null) {
-          ensureReturnItemListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, returnItemList_);
-          onChanged();
-        } else {
-          returnItemListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder clearReturnItemList() {
-        if (returnItemListBuilder_ == null) {
-          returnItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          returnItemListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public Builder removeReturnItemList(int index) {
-        if (returnItemListBuilder_ == null) {
-          ensureReturnItemListIsMutable();
-          returnItemList_.remove(index);
-          onChanged();
-        } else {
-          returnItemListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getReturnItemListBuilder(
-          int index) {
-        return getReturnItemListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getReturnItemListOrBuilder(
-          int index) {
-        if (returnItemListBuilder_ == null) {
-          return returnItemList_.get(index);  } else {
-          return returnItemListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-           getReturnItemListOrBuilderList() {
-        if (returnItemListBuilder_ != null) {
-          return returnItemListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(returnItemList_);
-        }
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addReturnItemListBuilder() {
-        return getReturnItemListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addReturnItemListBuilder(
-          int index) {
-        return getReturnItemListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ItemParam return_item_list = 9;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
-           getReturnItemListBuilderList() {
-        return getReturnItemListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-          getReturnItemListFieldBuilder() {
-        if (returnItemListBuilder_ == null) {
-          returnItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
-                  returnItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          returnItemList_ = null;
-        }
-        return returnItemListBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> outputItemList_ =
         java.util.Collections.emptyList();
       private void ensureOutputItemListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           outputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(outputItemList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1459,7 +894,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> outputItemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getOutputItemListList() {
         if (outputItemListBuilder_ == null) {
@@ -1469,7 +904,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public int getOutputItemListCount() {
         if (outputItemListBuilder_ == null) {
@@ -1479,7 +914,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getOutputItemList(int index) {
         if (outputItemListBuilder_ == null) {
@@ -1489,7 +924,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder setOutputItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1506,7 +941,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder setOutputItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1520,7 +955,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder addOutputItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (outputItemListBuilder_ == null) {
@@ -1536,7 +971,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder addOutputItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -1553,7 +988,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder addOutputItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1567,7 +1002,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder addOutputItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -1581,7 +1016,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder addAllOutputItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -1596,12 +1031,12 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder clearOutputItemList() {
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           outputItemListBuilder_.clear();
@@ -1609,7 +1044,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public Builder removeOutputItemList(int index) {
         if (outputItemListBuilder_ == null) {
@@ -1622,14 +1057,14 @@ public final class ForgeQueueManipulateRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getOutputItemListBuilder(
           int index) {
         return getOutputItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(
           int index) {
@@ -1639,7 +1074,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getOutputItemListOrBuilderList() {
@@ -1650,14 +1085,14 @@ public final class ForgeQueueManipulateRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addOutputItemListBuilder() {
         return getOutputItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addOutputItemListBuilder(
           int index) {
@@ -1665,7 +1100,7 @@ public final class ForgeQueueManipulateRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam output_item_list = 14;</code>
+       * <code>repeated .ItemParam output_item_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getOutputItemListBuilderList() {
@@ -1678,12 +1113,577 @@ public final class ForgeQueueManipulateRspOuterClass {
           outputItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   outputItemList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           outputItemList_ = null;
         }
         return outputItemListBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> extraOutputItemList_ =
+        java.util.Collections.emptyList();
+      private void ensureExtraOutputItemListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          extraOutputItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(extraOutputItemList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> extraOutputItemListBuilder_;
+
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getExtraOutputItemListList() {
+        if (extraOutputItemListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(extraOutputItemList_);
+        } else {
+          return extraOutputItemListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public int getExtraOutputItemListCount() {
+        if (extraOutputItemListBuilder_ == null) {
+          return extraOutputItemList_.size();
+        } else {
+          return extraOutputItemListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getExtraOutputItemList(int index) {
+        if (extraOutputItemListBuilder_ == null) {
+          return extraOutputItemList_.get(index);
+        } else {
+          return extraOutputItemListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder setExtraOutputItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (extraOutputItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.set(index, value);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder setExtraOutputItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (extraOutputItemListBuilder_ == null) {
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder addExtraOutputItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (extraOutputItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.add(value);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder addExtraOutputItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (extraOutputItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.add(index, value);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder addExtraOutputItemList(
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (extraOutputItemListBuilder_ == null) {
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder addExtraOutputItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (extraOutputItemListBuilder_ == null) {
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder addAllExtraOutputItemList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
+        if (extraOutputItemListBuilder_ == null) {
+          ensureExtraOutputItemListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, extraOutputItemList_);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder clearExtraOutputItemList() {
+        if (extraOutputItemListBuilder_ == null) {
+          extraOutputItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public Builder removeExtraOutputItemList(int index) {
+        if (extraOutputItemListBuilder_ == null) {
+          ensureExtraOutputItemListIsMutable();
+          extraOutputItemList_.remove(index);
+          onChanged();
+        } else {
+          extraOutputItemListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getExtraOutputItemListBuilder(
+          int index) {
+        return getExtraOutputItemListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getExtraOutputItemListOrBuilder(
+          int index) {
+        if (extraOutputItemListBuilder_ == null) {
+          return extraOutputItemList_.get(index);  } else {
+          return extraOutputItemListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+           getExtraOutputItemListOrBuilderList() {
+        if (extraOutputItemListBuilder_ != null) {
+          return extraOutputItemListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(extraOutputItemList_);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addExtraOutputItemListBuilder() {
+        return getExtraOutputItemListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addExtraOutputItemListBuilder(
+          int index) {
+        return getExtraOutputItemListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ItemParam extra_output_item_list = 13;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
+           getExtraOutputItemListBuilderList() {
+        return getExtraOutputItemListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+          getExtraOutputItemListFieldBuilder() {
+        if (extraOutputItemListBuilder_ == null) {
+          extraOutputItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
+                  extraOutputItemList_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          extraOutputItemList_ = null;
+        }
+        return extraOutputItemListBuilder_;
+      }
+
+      private int manipulateType_ = 0;
+      /**
+       * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+       * @return The enum numeric value on the wire for manipulateType.
+       */
+      @java.lang.Override public int getManipulateTypeValue() {
+        return manipulateType_;
+      }
+      /**
+       * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+       * @param value The enum numeric value on the wire for manipulateType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManipulateTypeValue(int value) {
+        
+        manipulateType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+       * @return The manipulateType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.valueOf(manipulateType_);
+        return result == null ? emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+       * @param value The manipulateType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManipulateType(emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        manipulateType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForgeQueueManipulateType manipulate_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManipulateType() {
+        
+        manipulateType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> returnItemList_ =
+        java.util.Collections.emptyList();
+      private void ensureReturnItemListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          returnItemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(returnItemList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> returnItemListBuilder_;
+
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getReturnItemListList() {
+        if (returnItemListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(returnItemList_);
+        } else {
+          return returnItemListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public int getReturnItemListCount() {
+        if (returnItemListBuilder_ == null) {
+          return returnItemList_.size();
+        } else {
+          return returnItemListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getReturnItemList(int index) {
+        if (returnItemListBuilder_ == null) {
+          return returnItemList_.get(index);
+        } else {
+          return returnItemListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder setReturnItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (returnItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnItemListIsMutable();
+          returnItemList_.set(index, value);
+          onChanged();
+        } else {
+          returnItemListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder setReturnItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (returnItemListBuilder_ == null) {
+          ensureReturnItemListIsMutable();
+          returnItemList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnItemListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder addReturnItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (returnItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnItemListIsMutable();
+          returnItemList_.add(value);
+          onChanged();
+        } else {
+          returnItemListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder addReturnItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
+        if (returnItemListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReturnItemListIsMutable();
+          returnItemList_.add(index, value);
+          onChanged();
+        } else {
+          returnItemListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder addReturnItemList(
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (returnItemListBuilder_ == null) {
+          ensureReturnItemListIsMutable();
+          returnItemList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          returnItemListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder addReturnItemList(
+          int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
+        if (returnItemListBuilder_ == null) {
+          ensureReturnItemListIsMutable();
+          returnItemList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          returnItemListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder addAllReturnItemList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
+        if (returnItemListBuilder_ == null) {
+          ensureReturnItemListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, returnItemList_);
+          onChanged();
+        } else {
+          returnItemListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder clearReturnItemList() {
+        if (returnItemListBuilder_ == null) {
+          returnItemList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          returnItemListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public Builder removeReturnItemList(int index) {
+        if (returnItemListBuilder_ == null) {
+          ensureReturnItemListIsMutable();
+          returnItemList_.remove(index);
+          onChanged();
+        } else {
+          returnItemListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getReturnItemListBuilder(
+          int index) {
+        return getReturnItemListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getReturnItemListOrBuilder(
+          int index) {
+        if (returnItemListBuilder_ == null) {
+          return returnItemList_.get(index);  } else {
+          return returnItemListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+           getReturnItemListOrBuilderList() {
+        if (returnItemListBuilder_ != null) {
+          return returnItemListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(returnItemList_);
+        }
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addReturnItemListBuilder() {
+        return getReturnItemListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addReturnItemListBuilder(
+          int index) {
+        return getReturnItemListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ItemParam return_item_list = 4;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
+           getReturnItemListBuilderList() {
+        return getReturnItemListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+          getReturnItemListFieldBuilder() {
+        if (returnItemListBuilder_ == null) {
+          returnItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
+                  returnItemList_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          returnItemList_ = null;
+        }
+        return returnItemListBuilder_;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1752,30 +1752,30 @@ public final class ForgeQueueManipulateRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035ForgeQueueManipulateRsp.proto\032\036ForgeQu" +
-      "eueManipulateType.proto\032\017ItemParam.proto" +
-      "\"\326\001\n\027ForgeQueueManipulateRsp\0222\n\017manipula" +
-      "te_type\030\n \001(\0162\031.ForgeQueueManipulateType" +
-      "\022*\n\026extra_output_item_list\030\001 \003(\0132\n.ItemP" +
-      "aram\022\017\n\007retcode\030\005 \001(\005\022$\n\020return_item_lis" +
-      "t\030\t \003(\0132\n.ItemParam\022$\n\020output_item_list\030" +
-      "\016 \003(\0132\n.ItemParamB\033\n\031emu.grasscutter.net" +
+      "\n\035ForgeQueueManipulateRsp.proto\032\017ItemPar" +
+      "am.proto\032\036ForgeQueueManipulateType.proto" +
+      "\"\326\001\n\027ForgeQueueManipulateRsp\022$\n\020output_i" +
+      "tem_list\030\014 \003(\0132\n.ItemParam\022*\n\026extra_outp" +
+      "ut_item_list\030\r \003(\0132\n.ItemParam\0222\n\017manipu" +
+      "late_type\030\005 \001(\0162\031.ForgeQueueManipulateTy" +
+      "pe\022$\n\020return_item_list\030\004 \003(\0132\n.ItemParam" +
+      "\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.getDescriptor(),
         });
     internal_static_ForgeQueueManipulateRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_ForgeQueueManipulateRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ForgeQueueManipulateRsp_descriptor,
-        new java.lang.String[] { "ManipulateType", "ExtraOutputItemList", "Retcode", "ReturnItemList", "OutputItemList", });
-    emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.getDescriptor();
+        new java.lang.String[] { "OutputItemList", "ExtraOutputItemList", "ManipulateType", "ReturnItemList", "Retcode", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

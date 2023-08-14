@@ -19,27 +19,27 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 group_id = 3;</code>
+     * @return The groupId.
+     */
+    int getGroupId();
+
+    /**
      * <code>uint32 card_id = 8;</code>
      * @return The cardId.
      */
     int getCardId();
 
     /**
-     * <code>uint32 play_index = 1;</code>
+     * <code>uint32 play_index = 12;</code>
      * @return The playIndex.
      */
     int getPlayIndex();
-
-    /**
-     * <code>uint32 group_id = 3;</code>
-     * @return The groupId.
-     */
-    int getGroupId();
   }
   /**
    * <pre>
-   * CmdId: 5335
-   * Obf: DOAKLELLMLN
+   * CmdId: 23219
+   * Obf: CBAEIOIMNEL
    * </pre>
    *
    * Protobuf type {@code InBattleMechanicusPickCardReq}
@@ -86,11 +86,6 @@ public final class InBattleMechanicusPickCardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              playIndex_ = input.readUInt32();
-              break;
-            }
             case 24: {
 
               groupId_ = input.readUInt32();
@@ -99,6 +94,11 @@ public final class InBattleMechanicusPickCardReqOuterClass {
             case 64: {
 
               cardId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              playIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -133,6 +133,17 @@ public final class InBattleMechanicusPickCardReqOuterClass {
               emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq.class, emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq.Builder.class);
     }
 
+    public static final int GROUP_ID_FIELD_NUMBER = 3;
+    private int groupId_;
+    /**
+     * <code>uint32 group_id = 3;</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public int getGroupId() {
+      return groupId_;
+    }
+
     public static final int CARD_ID_FIELD_NUMBER = 8;
     private int cardId_;
     /**
@@ -144,26 +155,15 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       return cardId_;
     }
 
-    public static final int PLAY_INDEX_FIELD_NUMBER = 1;
+    public static final int PLAY_INDEX_FIELD_NUMBER = 12;
     private int playIndex_;
     /**
-     * <code>uint32 play_index = 1;</code>
+     * <code>uint32 play_index = 12;</code>
      * @return The playIndex.
      */
     @java.lang.Override
     public int getPlayIndex() {
       return playIndex_;
-    }
-
-    public static final int GROUP_ID_FIELD_NUMBER = 3;
-    private int groupId_;
-    /**
-     * <code>uint32 group_id = 3;</code>
-     * @return The groupId.
-     */
-    @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class InBattleMechanicusPickCardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (playIndex_ != 0) {
-        output.writeUInt32(1, playIndex_);
-      }
       if (groupId_ != 0) {
         output.writeUInt32(3, groupId_);
       }
       if (cardId_ != 0) {
         output.writeUInt32(8, cardId_);
+      }
+      if (playIndex_ != 0) {
+        output.writeUInt32(12, playIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,10 +198,6 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (playIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, playIndex_);
-      }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, groupId_);
@@ -209,6 +205,10 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, cardId_);
+      }
+      if (playIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, playIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       }
       emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq other = (emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq) obj;
 
+      if (getGroupId()
+          != other.getGroupId()) return false;
       if (getCardId()
           != other.getCardId()) return false;
       if (getPlayIndex()
           != other.getPlayIndex()) return false;
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,12 +242,12 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
       hash = (37 * hash) + PLAY_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPlayIndex();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,8 +345,8 @@ public final class InBattleMechanicusPickCardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5335
-     * Obf: DOAKLELLMLN
+     * CmdId: 23219
+     * Obf: CBAEIOIMNEL
      * </pre>
      *
      * Protobuf type {@code InBattleMechanicusPickCardReq}
@@ -386,11 +386,11 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        groupId_ = 0;
+
         cardId_ = 0;
 
         playIndex_ = 0;
-
-        groupId_ = 0;
 
         return this;
       }
@@ -418,9 +418,9 @@ public final class InBattleMechanicusPickCardReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq buildPartial() {
         emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq result = new emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq(this);
+        result.groupId_ = groupId_;
         result.cardId_ = cardId_;
         result.playIndex_ = playIndex_;
-        result.groupId_ = groupId_;
         onBuilt();
         return result;
       }
@@ -469,14 +469,14 @@ public final class InBattleMechanicusPickCardReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq other) {
         if (other == emu.grasscutter.net.proto.InBattleMechanicusPickCardReqOuterClass.InBattleMechanicusPickCardReq.getDefaultInstance()) return this;
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
+        }
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
         if (other.getPlayIndex() != 0) {
           setPlayIndex(other.getPlayIndex());
-        }
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -504,6 +504,37 @@ public final class InBattleMechanicusPickCardReqOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 3;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 3;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
+        onChanged();
         return this;
       }
 
@@ -540,7 +571,7 @@ public final class InBattleMechanicusPickCardReqOuterClass {
 
       private int playIndex_ ;
       /**
-       * <code>uint32 play_index = 1;</code>
+       * <code>uint32 play_index = 12;</code>
        * @return The playIndex.
        */
       @java.lang.Override
@@ -548,7 +579,7 @@ public final class InBattleMechanicusPickCardReqOuterClass {
         return playIndex_;
       }
       /**
-       * <code>uint32 play_index = 1;</code>
+       * <code>uint32 play_index = 12;</code>
        * @param value The playIndex to set.
        * @return This builder for chaining.
        */
@@ -559,43 +590,12 @@ public final class InBattleMechanicusPickCardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 play_index = 1;</code>
+       * <code>uint32 play_index = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
         
         playIndex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 3;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 3;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
         onChanged();
         return this;
       }
@@ -667,9 +667,9 @@ public final class InBattleMechanicusPickCardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n#InBattleMechanicusPickCardReq.proto\"V\n" +
-      "\035InBattleMechanicusPickCardReq\022\017\n\007card_i" +
-      "d\030\010 \001(\r\022\022\n\nplay_index\030\001 \001(\r\022\020\n\010group_id\030" +
-      "\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\035InBattleMechanicusPickCardReq\022\020\n\010group_" +
+      "id\030\003 \001(\r\022\017\n\007card_id\030\010 \001(\r\022\022\n\nplay_index\030" +
+      "\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class InBattleMechanicusPickCardReqOuterClass {
     internal_static_InBattleMechanicusPickCardReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InBattleMechanicusPickCardReq_descriptor,
-        new java.lang.String[] { "CardId", "PlayIndex", "GroupId", });
+        new java.lang.String[] { "GroupId", "CardId", "PlayIndex", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

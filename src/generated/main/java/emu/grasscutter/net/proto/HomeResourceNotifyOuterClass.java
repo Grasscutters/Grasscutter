@@ -50,8 +50,8 @@ public final class HomeResourceNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4867
-   * Obf: JKJJFACEADN
+   * CmdId: 5204
+   * Obf: MCCGNBOJCCK
    * </pre>
    *
    * Protobuf type {@code HomeResourceNotify}
@@ -386,8 +386,8 @@ public final class HomeResourceNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4867
-     * Obf: JKJJFACEADN
+     * CmdId: 5204
+     * Obf: MCCGNBOJCCK
      * </pre>
      *
      * Protobuf type {@code HomeResourceNotify}

@@ -19,39 +19,39 @@ public final class GMShowNavMeshRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> 
         getTilesList();
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile getTiles(int index);
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     int getTilesCount();
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder> 
         getTilesOrBuilderList();
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder getTilesOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 2309
-   * Obf: CKEFNCPEEKL
+   * CmdId: 2341
+   * Obf: HFCANNOCOEG
    * </pre>
    *
    * Protobuf type {@code GMShowNavMeshRsp}
@@ -100,12 +100,12 @@ public final class GMShowNavMeshRspOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 122: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tiles_ = new java.util.ArrayList<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile>();
                 mutable_bitField0_ |= 0x00000001;
@@ -149,10 +149,10 @@ public final class GMShowNavMeshRspOuterClass {
               emu.grasscutter.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp.class, emu.grasscutter.net.proto.GMShowNavMeshRspOuterClass.GMShowNavMeshRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -160,17 +160,17 @@ public final class GMShowNavMeshRspOuterClass {
       return retcode_;
     }
 
-    public static final int TILES_FIELD_NUMBER = 15;
+    public static final int TILES_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> tiles_;
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> getTilesList() {
       return tiles_;
     }
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder> 
@@ -178,21 +178,21 @@ public final class GMShowNavMeshRspOuterClass {
       return tiles_;
     }
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     @java.lang.Override
     public int getTilesCount() {
       return tiles_.size();
     }
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile getTiles(int index) {
       return tiles_.get(index);
     }
     /**
-     * <code>repeated .PBNavMeshTile tiles = 15;</code>
+     * <code>repeated .PBNavMeshTile tiles = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder getTilesOrBuilder(
@@ -215,10 +215,10 @@ public final class GMShowNavMeshRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+        output.writeInt32(1, retcode_);
       }
       for (int i = 0; i < tiles_.size(); i++) {
-        output.writeMessage(15, tiles_.get(i));
+        output.writeMessage(6, tiles_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -231,11 +231,11 @@ public final class GMShowNavMeshRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       for (int i = 0; i < tiles_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, tiles_.get(i));
+          .computeMessageSize(6, tiles_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,8 +370,8 @@ public final class GMShowNavMeshRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2309
-     * Obf: CKEFNCPEEKL
+     * CmdId: 2341
+     * Obf: HFCANNOCOEG
      * </pre>
      *
      * Protobuf type {@code GMShowNavMeshRsp}
@@ -566,7 +566,7 @@ public final class GMShowNavMeshRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -574,7 +574,7 @@ public final class GMShowNavMeshRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -585,7 +585,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -608,7 +608,7 @@ public final class GMShowNavMeshRspOuterClass {
           emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder> tilesBuilder_;
 
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> getTilesList() {
         if (tilesBuilder_ == null) {
@@ -618,7 +618,7 @@ public final class GMShowNavMeshRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public int getTilesCount() {
         if (tilesBuilder_ == null) {
@@ -628,7 +628,7 @@ public final class GMShowNavMeshRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile getTiles(int index) {
         if (tilesBuilder_ == null) {
@@ -638,7 +638,7 @@ public final class GMShowNavMeshRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder setTiles(
           int index, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile value) {
@@ -655,7 +655,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder setTiles(
           int index, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder builderForValue) {
@@ -669,7 +669,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder addTiles(emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile value) {
         if (tilesBuilder_ == null) {
@@ -685,7 +685,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder addTiles(
           int index, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile value) {
@@ -702,7 +702,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder addTiles(
           emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder builderForValue) {
@@ -716,7 +716,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder addTiles(
           int index, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder builderForValue) {
@@ -730,7 +730,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder addAllTiles(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile> values) {
@@ -745,7 +745,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder clearTiles() {
         if (tilesBuilder_ == null) {
@@ -758,7 +758,7 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public Builder removeTiles(int index) {
         if (tilesBuilder_ == null) {
@@ -771,14 +771,14 @@ public final class GMShowNavMeshRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder getTilesBuilder(
           int index) {
         return getTilesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder getTilesOrBuilder(
           int index) {
@@ -788,7 +788,7 @@ public final class GMShowNavMeshRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTileOrBuilder> 
            getTilesOrBuilderList() {
@@ -799,14 +799,14 @@ public final class GMShowNavMeshRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder addTilesBuilder() {
         return getTilesFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.getDefaultInstance());
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder addTilesBuilder(
           int index) {
@@ -814,7 +814,7 @@ public final class GMShowNavMeshRspOuterClass {
             index, emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.getDefaultInstance());
       }
       /**
-       * <code>repeated .PBNavMeshTile tiles = 15;</code>
+       * <code>repeated .PBNavMeshTile tiles = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PBNavMeshTileOuterClass.PBNavMeshTile.Builder> 
            getTilesBuilderList() {
@@ -902,8 +902,8 @@ public final class GMShowNavMeshRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GMShowNavMeshRsp.proto\032\023PBNavMeshTile." +
-      "proto\"B\n\020GMShowNavMeshRsp\022\017\n\007retcode\030\t \001" +
-      "(\005\022\035\n\005tiles\030\017 \003(\0132\016.PBNavMeshTileB\033\n\031emu" +
+      "proto\"B\n\020GMShowNavMeshRsp\022\017\n\007retcode\030\001 \001" +
+      "(\005\022\035\n\005tiles\030\006 \003(\0132\016.PBNavMeshTileB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

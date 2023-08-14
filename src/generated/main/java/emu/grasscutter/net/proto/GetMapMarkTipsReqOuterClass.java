@@ -20,8 +20,8 @@ public final class GetMapMarkTipsReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3074
-   * Obf: NGCNKNGABIB
+   * CmdId: 4445
+   * Obf: EFPLHMCHFDJ
    * </pre>
    *
    * Protobuf type {@code GetMapMarkTipsReq}
@@ -246,8 +246,8 @@ public final class GetMapMarkTipsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3074
-     * Obf: NGCNKNGABIB
+     * CmdId: 4445
+     * Obf: EFPLHMCHFDJ
      * </pre>
      *
      * Protobuf type {@code GetMapMarkTipsReq}

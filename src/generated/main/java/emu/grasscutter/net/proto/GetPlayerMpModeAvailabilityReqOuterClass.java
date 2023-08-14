@@ -20,8 +20,8 @@ public final class GetPlayerMpModeAvailabilityReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1823
-   * Obf: IBMNHOCANEB
+   * CmdId: 26251
+   * Obf: IEIHGELBNKF
    * </pre>
    *
    * Protobuf type {@code GetPlayerMpModeAvailabilityReq}
@@ -246,8 +246,8 @@ public final class GetPlayerMpModeAvailabilityReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1823
-     * Obf: IBMNHOCANEB
+     * CmdId: 26251
+     * Obf: IEIHGELBNKF
      * </pre>
      *
      * Protobuf type {@code GetPlayerMpModeAvailabilityReq}

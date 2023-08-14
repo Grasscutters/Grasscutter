@@ -19,38 +19,38 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @return A list containing the limitGiftList.
      */
     java.util.List<java.lang.Integer> getLimitGiftListList();
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @return The count of limitGiftList.
      */
     int getLimitGiftListCount();
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @param index The index of the element to return.
      * @return The limitGiftList at the given index.
      */
     int getLimitGiftList(int index);
 
     /**
-     * <code>uint32 schedule_id = 4;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
 
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8405
-   * Obf: KDLEFGMKHBK
+   * CmdId: 9446
+   * Obf: CDMMGNOJKAO
    * </pre>
    *
    * Protobuf type {@code ActivityGiveFriendGiftRsp}
@@ -99,12 +99,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 limitGiftList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +107,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
               limitGiftList_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -125,9 +120,14 @@ public final class ActivityGiveFriendGiftRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 120: {
+            case 88: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -165,10 +165,10 @@ public final class ActivityGiveFriendGiftRspOuterClass {
               emu.grasscutter.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp.class, emu.grasscutter.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp.Builder.class);
     }
 
-    public static final int LIMIT_GIFT_LIST_FIELD_NUMBER = 14;
+    public static final int LIMIT_GIFT_LIST_FIELD_NUMBER = 9;
     private com.google.protobuf.Internal.IntList limitGiftList_;
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @return A list containing the limitGiftList.
      */
     @java.lang.Override
@@ -177,14 +177,14 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       return limitGiftList_;
     }
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @return The count of limitGiftList.
      */
     public int getLimitGiftListCount() {
       return limitGiftList_.size();
     }
     /**
-     * <code>repeated uint32 limit_gift_list = 14;</code>
+     * <code>repeated uint32 limit_gift_list = 9;</code>
      * @param index The index of the element to return.
      * @return The limitGiftList at the given index.
      */
@@ -193,10 +193,10 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     }
     private int limitGiftListMemoizedSerializedSize = -1;
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 4;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 4;</code>
+     * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -204,10 +204,10 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       return scheduleId_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -230,18 +230,18 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (scheduleId_ != 0) {
-        output.writeUInt32(4, scheduleId_);
-      }
       if (getLimitGiftListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(limitGiftListMemoizedSerializedSize);
       }
       for (int i = 0; i < limitGiftList_.size(); i++) {
         output.writeUInt32NoTag(limitGiftList_.getInt(i));
       }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(11, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        output.writeUInt32(14, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,10 +252,6 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (scheduleId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, scheduleId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < limitGiftList_.size(); i++) {
@@ -272,7 +268,11 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(11, retcode_);
+      }
+      if (scheduleId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -411,8 +411,8 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8405
-     * Obf: KDLEFGMKHBK
+     * CmdId: 9446
+     * Obf: CDMMGNOJKAO
      * </pre>
      *
      * Protobuf type {@code ActivityGiveFriendGiftRsp}
@@ -594,7 +594,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @return A list containing the limitGiftList.
        */
       public java.util.List<java.lang.Integer>
@@ -603,14 +603,14 @@ public final class ActivityGiveFriendGiftRspOuterClass {
                  java.util.Collections.unmodifiableList(limitGiftList_) : limitGiftList_;
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @return The count of limitGiftList.
        */
       public int getLimitGiftListCount() {
         return limitGiftList_.size();
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @param index The index of the element to return.
        * @return The limitGiftList at the given index.
        */
@@ -618,7 +618,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return limitGiftList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @param index The index to set the value at.
        * @param value The limitGiftList to set.
        * @return This builder for chaining.
@@ -631,7 +631,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @param value The limitGiftList to add.
        * @return This builder for chaining.
        */
@@ -642,7 +642,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @param values The limitGiftList to add.
        * @return This builder for chaining.
        */
@@ -655,7 +655,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 limit_gift_list = 14;</code>
+       * <code>repeated uint32 limit_gift_list = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLimitGiftList() {
@@ -667,7 +667,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 4;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -675,7 +675,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 4;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -686,7 +686,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 4;</code>
+       * <code>uint32 schedule_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -698,7 +698,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 11;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -706,7 +706,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -717,7 +717,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -795,8 +795,8 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037ActivityGiveFriendGiftRsp.proto\"Z\n\031Act" +
       "ivityGiveFriendGiftRsp\022\027\n\017limit_gift_lis" +
-      "t\030\016 \003(\r\022\023\n\013schedule_id\030\004 \001(\r\022\017\n\007retcode\030" +
-      "\017 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "t\030\t \003(\r\022\023\n\013schedule_id\030\016 \001(\r\022\017\n\007retcode\030" +
+      "\013 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

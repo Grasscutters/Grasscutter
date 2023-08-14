@@ -26,8 +26,8 @@ public final class PlayerSetPauseReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 171
-   * Obf: HMKAEACPFJM
+   * CmdId: 4448
+   * Obf: LHFKJLJJEBC
    * </pre>
    *
    * Protobuf type {@code PlayerSetPauseReq}
@@ -280,8 +280,8 @@ public final class PlayerSetPauseReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 171
-     * Obf: HMKAEACPFJM
+     * CmdId: 4448
+     * Obf: LHFKJLJJEBC
      * </pre>
      *
      * Protobuf type {@code PlayerSetPauseReq}

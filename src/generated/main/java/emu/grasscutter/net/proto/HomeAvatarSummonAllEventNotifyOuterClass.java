@@ -44,8 +44,8 @@ public final class HomeAvatarSummonAllEventNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4512
-   * Obf: LHAAFGICCMJ
+   * CmdId: 6401
+   * Obf: BPCEHNJGDLB
    * </pre>
    *
    * Protobuf type {@code HomeAvatarSummonAllEventNotify}
@@ -337,8 +337,8 @@ public final class HomeAvatarSummonAllEventNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4512
-     * Obf: LHAAFGICCMJ
+     * CmdId: 6401
+     * Obf: BPCEHNJGDLB
      * </pre>
      *
      * Protobuf type {@code HomeAvatarSummonAllEventNotify}

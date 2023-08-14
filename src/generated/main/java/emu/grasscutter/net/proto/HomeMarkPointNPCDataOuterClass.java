@@ -32,7 +32,7 @@ public final class HomeMarkPointNPCDataOuterClass {
   }
   /**
    * <pre>
-   * Obf: PLGBNGCKFPJ
+   * Obf: DEEONIENNBB
    * </pre>
    *
    * Protobuf type {@code HomeMarkPointNPCData}
@@ -311,7 +311,7 @@ public final class HomeMarkPointNPCDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: PLGBNGCKFPJ
+     * Obf: DEEONIENNBB
      * </pre>
      *
      * Protobuf type {@code HomeMarkPointNPCData}

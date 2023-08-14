@@ -19,35 +19,35 @@ public final class EvtFaceToDirNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ForwardType forward_type = 6;</code>
-     * @return The enum numeric value on the wire for forwardType.
-     */
-    int getForwardTypeValue();
-    /**
-     * <code>.ForwardType forward_type = 6;</code>
-     * @return The forwardType.
-     */
-    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
-
-    /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      * @return Whether the evtFaceToDirInfo field is set.
      */
     boolean hasEvtFaceToDirInfo();
     /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      * @return The evtFaceToDirInfo.
      */
     emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo getEvtFaceToDirInfo();
     /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      */
     emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder getEvtFaceToDirInfoOrBuilder();
+
+    /**
+     * <code>.ForwardType forward_type = 11;</code>
+     * @return The enum numeric value on the wire for forwardType.
+     */
+    int getForwardTypeValue();
+    /**
+     * <code>.ForwardType forward_type = 11;</code>
+     * @return The forwardType.
+     */
+    emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
   }
   /**
    * <pre>
-   * CmdId: 335
-   * Obf: FHJEHIKEJMC
+   * CmdId: 3850
+   * Obf: ONOKEAPFKHE
    * </pre>
    *
    * Protobuf type {@code EvtFaceToDirNotify}
@@ -95,13 +95,7 @@ public final class EvtFaceToDirNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 90: {
+            case 50: {
               emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder subBuilder = null;
               if (evtFaceToDirInfo_ != null) {
                 subBuilder = evtFaceToDirInfo_.toBuilder();
@@ -112,6 +106,12 @@ public final class EvtFaceToDirNotifyOuterClass {
                 evtFaceToDirInfo_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 88: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
               break;
             }
             default: {
@@ -146,29 +146,10 @@ public final class EvtFaceToDirNotifyOuterClass {
               emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify.class, emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify.Builder.class);
     }
 
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 6;
-    private int forwardType_;
-    /**
-     * <code>.ForwardType forward_type = 6;</code>
-     * @return The enum numeric value on the wire for forwardType.
-     */
-    @java.lang.Override public int getForwardTypeValue() {
-      return forwardType_;
-    }
-    /**
-     * <code>.ForwardType forward_type = 6;</code>
-     * @return The forwardType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-    }
-
-    public static final int EVT_FACE_TO_DIR_INFO_FIELD_NUMBER = 11;
+    public static final int EVT_FACE_TO_DIR_INFO_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo evtFaceToDirInfo_;
     /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      * @return Whether the evtFaceToDirInfo field is set.
      */
     @java.lang.Override
@@ -176,7 +157,7 @@ public final class EvtFaceToDirNotifyOuterClass {
       return evtFaceToDirInfo_ != null;
     }
     /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      * @return The evtFaceToDirInfo.
      */
     @java.lang.Override
@@ -184,11 +165,30 @@ public final class EvtFaceToDirNotifyOuterClass {
       return evtFaceToDirInfo_ == null ? emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.getDefaultInstance() : evtFaceToDirInfo_;
     }
     /**
-     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+     * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder getEvtFaceToDirInfoOrBuilder() {
       return getEvtFaceToDirInfo();
+    }
+
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 11;
+    private int forwardType_;
+    /**
+     * <code>.ForwardType forward_type = 11;</code>
+     * @return The enum numeric value on the wire for forwardType.
+     */
+    @java.lang.Override public int getForwardTypeValue() {
+      return forwardType_;
+    }
+    /**
+     * <code>.ForwardType forward_type = 11;</code>
+     * @return The forwardType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -205,11 +205,11 @@ public final class EvtFaceToDirNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(6, forwardType_);
-      }
       if (evtFaceToDirInfo_ != null) {
-        output.writeMessage(11, getEvtFaceToDirInfo());
+        output.writeMessage(6, getEvtFaceToDirInfo());
+      }
+      if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
+        output.writeEnum(11, forwardType_);
       }
       unknownFields.writeTo(output);
     }
@@ -220,13 +220,13 @@ public final class EvtFaceToDirNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, forwardType_);
-      }
       if (evtFaceToDirInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getEvtFaceToDirInfo());
+          .computeMessageSize(6, getEvtFaceToDirInfo());
+      }
+      if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(11, forwardType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -243,12 +243,12 @@ public final class EvtFaceToDirNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify other = (emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify) obj;
 
-      if (forwardType_ != other.forwardType_) return false;
       if (hasEvtFaceToDirInfo() != other.hasEvtFaceToDirInfo()) return false;
       if (hasEvtFaceToDirInfo()) {
         if (!getEvtFaceToDirInfo()
             .equals(other.getEvtFaceToDirInfo())) return false;
       }
+      if (forwardType_ != other.forwardType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -260,12 +260,12 @@ public final class EvtFaceToDirNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + forwardType_;
       if (hasEvtFaceToDirInfo()) {
         hash = (37 * hash) + EVT_FACE_TO_DIR_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEvtFaceToDirInfo().hashCode();
       }
+      hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + forwardType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -363,8 +363,8 @@ public final class EvtFaceToDirNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 335
-     * Obf: FHJEHIKEJMC
+     * CmdId: 3850
+     * Obf: ONOKEAPFKHE
      * </pre>
      *
      * Protobuf type {@code EvtFaceToDirNotify}
@@ -404,14 +404,14 @@ public final class EvtFaceToDirNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        forwardType_ = 0;
-
         if (evtFaceToDirInfoBuilder_ == null) {
           evtFaceToDirInfo_ = null;
         } else {
           evtFaceToDirInfo_ = null;
           evtFaceToDirInfoBuilder_ = null;
         }
+        forwardType_ = 0;
+
         return this;
       }
 
@@ -438,12 +438,12 @@ public final class EvtFaceToDirNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify buildPartial() {
         emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify result = new emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify(this);
-        result.forwardType_ = forwardType_;
         if (evtFaceToDirInfoBuilder_ == null) {
           result.evtFaceToDirInfo_ = evtFaceToDirInfo_;
         } else {
           result.evtFaceToDirInfo_ = evtFaceToDirInfoBuilder_.build();
         }
+        result.forwardType_ = forwardType_;
         onBuilt();
         return result;
       }
@@ -492,11 +492,11 @@ public final class EvtFaceToDirNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify other) {
         if (other == emu.grasscutter.net.proto.EvtFaceToDirNotifyOuterClass.EvtFaceToDirNotify.getDefaultInstance()) return this;
-        if (other.forwardType_ != 0) {
-          setForwardTypeValue(other.getForwardTypeValue());
-        }
         if (other.hasEvtFaceToDirInfo()) {
           mergeEvtFaceToDirInfo(other.getEvtFaceToDirInfo());
+        }
+        if (other.forwardType_ != 0) {
+          setForwardTypeValue(other.getForwardTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -527,72 +527,18 @@ public final class EvtFaceToDirNotifyOuterClass {
         return this;
       }
 
-      private int forwardType_ = 0;
-      /**
-       * <code>.ForwardType forward_type = 6;</code>
-       * @return The enum numeric value on the wire for forwardType.
-       */
-      @java.lang.Override public int getForwardTypeValue() {
-        return forwardType_;
-      }
-      /**
-       * <code>.ForwardType forward_type = 6;</code>
-       * @param value The enum numeric value on the wire for forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardTypeValue(int value) {
-        
-        forwardType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 6;</code>
-       * @return The forwardType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
-        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ForwardType forward_type = 6;</code>
-       * @param value The forwardType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        forwardType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ForwardType forward_type = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForwardType() {
-        
-        forwardType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo evtFaceToDirInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo, emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder, emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder> evtFaceToDirInfoBuilder_;
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        * @return Whether the evtFaceToDirInfo field is set.
        */
       public boolean hasEvtFaceToDirInfo() {
         return evtFaceToDirInfoBuilder_ != null || evtFaceToDirInfo_ != null;
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        * @return The evtFaceToDirInfo.
        */
       public emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo getEvtFaceToDirInfo() {
@@ -603,7 +549,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         }
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public Builder setEvtFaceToDirInfo(emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo value) {
         if (evtFaceToDirInfoBuilder_ == null) {
@@ -619,7 +565,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public Builder setEvtFaceToDirInfo(
           emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder builderForValue) {
@@ -633,7 +579,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public Builder mergeEvtFaceToDirInfo(emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo value) {
         if (evtFaceToDirInfoBuilder_ == null) {
@@ -651,7 +597,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public Builder clearEvtFaceToDirInfo() {
         if (evtFaceToDirInfoBuilder_ == null) {
@@ -665,7 +611,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder getEvtFaceToDirInfoBuilder() {
         
@@ -673,7 +619,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         return getEvtFaceToDirInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       public emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder getEvtFaceToDirInfoOrBuilder() {
         if (evtFaceToDirInfoBuilder_ != null) {
@@ -684,7 +630,7 @@ public final class EvtFaceToDirNotifyOuterClass {
         }
       }
       /**
-       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 11;</code>
+       * <code>.EvtFaceToDirInfo evt_face_to_dir_info = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo, emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfo.Builder, emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.EvtFaceToDirInfoOrBuilder> 
@@ -698,6 +644,60 @@ public final class EvtFaceToDirNotifyOuterClass {
           evtFaceToDirInfo_ = null;
         }
         return evtFaceToDirInfoBuilder_;
+      }
+
+      private int forwardType_ = 0;
+      /**
+       * <code>.ForwardType forward_type = 11;</code>
+       * @return The enum numeric value on the wire for forwardType.
+       */
+      @java.lang.Override public int getForwardTypeValue() {
+        return forwardType_;
+      }
+      /**
+       * <code>.ForwardType forward_type = 11;</code>
+       * @param value The enum numeric value on the wire for forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardTypeValue(int value) {
+        
+        forwardType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 11;</code>
+       * @return The forwardType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType result = emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ForwardType forward_type = 11;</code>
+       * @param value The forwardType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardType(emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        forwardType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ForwardType forward_type = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForwardType() {
+        
+        forwardType_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -766,27 +766,27 @@ public final class EvtFaceToDirNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030EvtFaceToDirNotify.proto\032\021ForwardType." +
-      "proto\032\026EvtFaceToDirInfo.proto\"i\n\022EvtFace" +
-      "ToDirNotify\022\"\n\014forward_type\030\006 \001(\0162\014.Forw" +
-      "ardType\022/\n\024evt_face_to_dir_info\030\013 \001(\0132\021." +
-      "EvtFaceToDirInfoB\033\n\031emu.grasscutter.net." +
+      "\n\030EvtFaceToDirNotify.proto\032\026EvtFaceToDir" +
+      "Info.proto\032\021ForwardType.proto\"i\n\022EvtFace" +
+      "ToDirNotify\022/\n\024evt_face_to_dir_info\030\006 \001(" +
+      "\0132\021.EvtFaceToDirInfo\022\"\n\014forward_type\030\013 \001" +
+      "(\0162\014.ForwardTypeB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
         });
     internal_static_EvtFaceToDirNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EvtFaceToDirNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtFaceToDirNotify_descriptor,
-        new java.lang.String[] { "ForwardType", "EvtFaceToDirInfo", });
-    emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
+        new java.lang.String[] { "EvtFaceToDirInfo", "ForwardType", });
     emu.grasscutter.net.proto.EvtFaceToDirInfoOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

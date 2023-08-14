@@ -19,21 +19,21 @@ public final class PhotoActivityClientViewRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 pos_id = 5;</code>
-     * @return The posId.
-     */
-    int getPosId();
-
-    /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 pos_id = 14;</code>
+     * @return The posId.
+     */
+    int getPosId();
   }
   /**
    * <pre>
-   * CmdId: 8656
-   * Obf: ILMCGBCPBPA
+   * CmdId: 20737
+   * Obf: NLGPBPGNANF
    * </pre>
    *
    * Protobuf type {@code PhotoActivityClientViewRsp}
@@ -80,14 +80,14 @@ public final class PhotoActivityClientViewRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              posId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 96: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              posId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class PhotoActivityClientViewRspOuterClass {
               emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp.class, emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp.Builder.class);
     }
 
-    public static final int POS_ID_FIELD_NUMBER = 5;
-    private int posId_;
-    /**
-     * <code>uint32 pos_id = 5;</code>
-     * @return The posId.
-     */
-    @java.lang.Override
-    public int getPosId() {
-      return posId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 12;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int POS_ID_FIELD_NUMBER = 14;
+    private int posId_;
+    /**
+     * <code>uint32 pos_id = 14;</code>
+     * @return The posId.
+     */
+    @java.lang.Override
+    public int getPosId() {
+      return posId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class PhotoActivityClientViewRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (posId_ != 0) {
-        output.writeUInt32(5, posId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeInt32(12, retcode_);
+      }
+      if (posId_ != 0) {
+        output.writeUInt32(14, posId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class PhotoActivityClientViewRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (posId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, posId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeInt32Size(12, retcode_);
+      }
+      if (posId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, posId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class PhotoActivityClientViewRspOuterClass {
       }
       emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp other = (emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp) obj;
 
-      if (getPosId()
-          != other.getPosId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getPosId()
+          != other.getPosId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class PhotoActivityClientViewRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POS_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPosId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + POS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPosId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class PhotoActivityClientViewRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8656
-     * Obf: ILMCGBCPBPA
+     * CmdId: 20737
+     * Obf: NLGPBPGNANF
      * </pre>
      *
      * Protobuf type {@code PhotoActivityClientViewRsp}
@@ -353,9 +353,9 @@ public final class PhotoActivityClientViewRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        posId_ = 0;
-
         retcode_ = 0;
+
+        posId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class PhotoActivityClientViewRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp buildPartial() {
         emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp result = new emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp(this);
-        result.posId_ = posId_;
         result.retcode_ = retcode_;
+        result.posId_ = posId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class PhotoActivityClientViewRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp other) {
         if (other == emu.grasscutter.net.proto.PhotoActivityClientViewRspOuterClass.PhotoActivityClientViewRsp.getDefaultInstance()) return this;
-        if (other.getPosId() != 0) {
-          setPosId(other.getPosId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getPosId() != 0) {
+          setPosId(other.getPosId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class PhotoActivityClientViewRspOuterClass {
         return this;
       }
 
-      private int posId_ ;
-      /**
-       * <code>uint32 pos_id = 5;</code>
-       * @return The posId.
-       */
-      @java.lang.Override
-      public int getPosId() {
-        return posId_;
-      }
-      /**
-       * <code>uint32 pos_id = 5;</code>
-       * @param value The posId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPosId(int value) {
-        
-        posId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 pos_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPosId() {
-        
-        posId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 12;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class PhotoActivityClientViewRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 12;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class PhotoActivityClientViewRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int posId_ ;
+      /**
+       * <code>uint32 pos_id = 14;</code>
+       * @return The posId.
+       */
+      @java.lang.Override
+      public int getPosId() {
+        return posId_;
+      }
+      /**
+       * <code>uint32 pos_id = 14;</code>
+       * @param value The posId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPosId(int value) {
+        
+        posId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 pos_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPosId() {
+        
+        posId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class PhotoActivityClientViewRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n PhotoActivityClientViewRsp.proto\"=\n\032Ph" +
-      "otoActivityClientViewRsp\022\016\n\006pos_id\030\005 \001(\r" +
-      "\022\017\n\007retcode\030\017 \001(\005B\033\n\031emu.grasscutter.net" +
+      "otoActivityClientViewRsp\022\017\n\007retcode\030\014 \001(" +
+      "\005\022\016\n\006pos_id\030\016 \001(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class PhotoActivityClientViewRspOuterClass {
     internal_static_PhotoActivityClientViewRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhotoActivityClientViewRsp_descriptor,
-        new java.lang.String[] { "PosId", "Retcode", });
+        new java.lang.String[] { "Retcode", "PosId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

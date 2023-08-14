@@ -19,21 +19,21 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cell_id = 6;</code>
-     * @return The cellId.
-     */
-    int getCellId();
-
-    /**
      * <code>uint32 old_cell_id = 12;</code>
      * @return The oldCellId.
      */
     int getOldCellId();
+
+    /**
+     * <code>uint32 cell_id = 1;</code>
+     * @return The cellId.
+     */
+    int getCellId();
   }
   /**
    * <pre>
-   * CmdId: 8475
-   * Obf: OEDOIFNBBFB
+   * CmdId: 6884
+   * Obf: PACLNPPOHOD
    * </pre>
    *
    * Protobuf type {@code RogueDungeonPlayerCellChangeNotify}
@@ -80,7 +80,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 8: {
 
               cellId_ = input.readUInt32();
               break;
@@ -122,17 +122,6 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
               emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify.class, emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify.Builder.class);
     }
 
-    public static final int CELL_ID_FIELD_NUMBER = 6;
-    private int cellId_;
-    /**
-     * <code>uint32 cell_id = 6;</code>
-     * @return The cellId.
-     */
-    @java.lang.Override
-    public int getCellId() {
-      return cellId_;
-    }
-
     public static final int OLD_CELL_ID_FIELD_NUMBER = 12;
     private int oldCellId_;
     /**
@@ -142,6 +131,17 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     @java.lang.Override
     public int getOldCellId() {
       return oldCellId_;
+    }
+
+    public static final int CELL_ID_FIELD_NUMBER = 1;
+    private int cellId_;
+    /**
+     * <code>uint32 cell_id = 1;</code>
+     * @return The cellId.
+     */
+    @java.lang.Override
+    public int getCellId() {
+      return cellId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,7 +159,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cellId_ != 0) {
-        output.writeUInt32(6, cellId_);
+        output.writeUInt32(1, cellId_);
       }
       if (oldCellId_ != 0) {
         output.writeUInt32(12, oldCellId_);
@@ -175,7 +175,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       size = 0;
       if (cellId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, cellId_);
+          .computeUInt32Size(1, cellId_);
       }
       if (oldCellId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -196,10 +196,10 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify other = (emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify) obj;
 
-      if (getCellId()
-          != other.getCellId()) return false;
       if (getOldCellId()
           != other.getOldCellId()) return false;
+      if (getCellId()
+          != other.getCellId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CELL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCellId();
       hash = (37 * hash) + OLD_CELL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOldCellId();
+      hash = (37 * hash) + CELL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCellId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8475
-     * Obf: OEDOIFNBBFB
+     * CmdId: 6884
+     * Obf: PACLNPPOHOD
      * </pre>
      *
      * Protobuf type {@code RogueDungeonPlayerCellChangeNotify}
@@ -353,9 +353,9 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cellId_ = 0;
-
         oldCellId_ = 0;
+
+        cellId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify buildPartial() {
         emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify result = new emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify(this);
-        result.cellId_ = cellId_;
         result.oldCellId_ = oldCellId_;
+        result.cellId_ = cellId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify other) {
         if (other == emu.grasscutter.net.proto.RogueDungeonPlayerCellChangeNotifyOuterClass.RogueDungeonPlayerCellChangeNotify.getDefaultInstance()) return this;
-        if (other.getCellId() != 0) {
-          setCellId(other.getCellId());
-        }
         if (other.getOldCellId() != 0) {
           setOldCellId(other.getOldCellId());
+        }
+        if (other.getCellId() != 0) {
+          setCellId(other.getCellId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
         return this;
       }
 
-      private int cellId_ ;
-      /**
-       * <code>uint32 cell_id = 6;</code>
-       * @return The cellId.
-       */
-      @java.lang.Override
-      public int getCellId() {
-        return cellId_;
-      }
-      /**
-       * <code>uint32 cell_id = 6;</code>
-       * @param value The cellId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCellId(int value) {
-        
-        cellId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cell_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCellId() {
-        
-        cellId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int oldCellId_ ;
       /**
        * <code>uint32 old_cell_id = 12;</code>
@@ -526,6 +495,37 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
       public Builder clearOldCellId() {
         
         oldCellId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cellId_ ;
+      /**
+       * <code>uint32 cell_id = 1;</code>
+       * @return The cellId.
+       */
+      @java.lang.Override
+      public int getCellId() {
+        return cellId_;
+      }
+      /**
+       * <code>uint32 cell_id = 1;</code>
+       * @param value The cellId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCellId(int value) {
+        
+        cellId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cell_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCellId() {
+        
+        cellId_ = 0;
         onChanged();
         return this;
       }
@@ -598,7 +598,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n(RogueDungeonPlayerCellChangeNotify.pro" +
       "to\"J\n\"RogueDungeonPlayerCellChangeNotify" +
-      "\022\017\n\007cell_id\030\006 \001(\r\022\023\n\013old_cell_id\030\014 \001(\rB\033" +
+      "\022\023\n\013old_cell_id\030\014 \001(\r\022\017\n\007cell_id\030\001 \001(\rB\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class RogueDungeonPlayerCellChangeNotifyOuterClass {
     internal_static_RogueDungeonPlayerCellChangeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueDungeonPlayerCellChangeNotify_descriptor,
-        new java.lang.String[] { "CellId", "OldCellId", });
+        new java.lang.String[] { "OldCellId", "CellId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

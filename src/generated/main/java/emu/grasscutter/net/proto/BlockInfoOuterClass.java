@@ -44,7 +44,7 @@ public final class BlockInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: DHOCHCOHKNB
+   * Obf: EGHIPFGJCJG
    * </pre>
    *
    * Protobuf type {@code BlockInfo}
@@ -379,7 +379,7 @@ public final class BlockInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: DHOCHCOHKNB
+     * Obf: EGHIPFGJCJG
      * </pre>
      *
      * Protobuf type {@code BlockInfo}

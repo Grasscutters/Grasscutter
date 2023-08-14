@@ -19,47 +19,47 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> 
         getCardListList();
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index);
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     int getCardListCount();
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
         getCardListOrBuilderList();
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
         int index);
 
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      * @return Whether the playerInfo field is set.
      */
     boolean hasPlayerInfo();
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      * @return The playerInfo.
      */
     emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo();
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      */
     emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder();
   }
   /**
    * <pre>
-   * Obf: CIFECNBHAMI
+   * Obf: CHJLCBKEGPE
    * </pre>
    *
    * Protobuf type {@code IslandPartyGallerySettleInfo}
@@ -108,7 +108,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 10: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -117,7 +117,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
               break;
             }
-            case 114: {
+            case 42: {
               emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
               if (playerInfo_ != null) {
                 subBuilder = playerInfo_.toBuilder();
@@ -165,17 +165,17 @@ public final class IslandPartyGallerySettleInfoOuterClass {
               emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.class, emu.grasscutter.net.proto.IslandPartyGallerySettleInfoOuterClass.IslandPartyGallerySettleInfo.Builder.class);
     }
 
-    public static final int CARD_LIST_FIELD_NUMBER = 6;
+    public static final int CARD_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
       return cardList_;
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
@@ -183,21 +183,21 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       return cardList_;
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     @java.lang.Override
     public int getCardListCount() {
       return cardList_.size();
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index) {
       return cardList_.get(index);
     }
     /**
-     * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+     * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
@@ -205,10 +205,10 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       return cardList_.get(index);
     }
 
-    public static final int PLAYER_INFO_FIELD_NUMBER = 14;
+    public static final int PLAYER_INFO_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      * @return Whether the playerInfo field is set.
      */
     @java.lang.Override
@@ -216,7 +216,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       return playerInfo_ != null;
     }
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      * @return The playerInfo.
      */
     @java.lang.Override
@@ -224,7 +224,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       return playerInfo_ == null ? emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
     }
     /**
-     * <code>.OnlinePlayerInfo player_info = 14;</code>
+     * <code>.OnlinePlayerInfo player_info = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
@@ -246,10 +246,10 @@ public final class IslandPartyGallerySettleInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < cardList_.size(); i++) {
-        output.writeMessage(6, cardList_.get(i));
+        output.writeMessage(1, cardList_.get(i));
       }
       if (playerInfo_ != null) {
-        output.writeMessage(14, getPlayerInfo());
+        output.writeMessage(5, getPlayerInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -262,11 +262,11 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       size = 0;
       for (int i = 0; i < cardList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, cardList_.get(i));
+          .computeMessageSize(1, cardList_.get(i));
       }
       if (playerInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getPlayerInfo());
+          .computeMessageSize(5, getPlayerInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -406,7 +406,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CIFECNBHAMI
+     * Obf: CHJLCBKEGPE
      * </pre>
      *
      * Protobuf type {@code IslandPartyGallerySettleInfo}
@@ -620,7 +620,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> cardListBuilder_;
 
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
         if (cardListBuilder_ == null) {
@@ -630,7 +630,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public int getCardListCount() {
         if (cardListBuilder_ == null) {
@@ -640,7 +640,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int index) {
         if (cardListBuilder_ == null) {
@@ -650,7 +650,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder setCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -667,7 +667,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder setCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -681,7 +681,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder addCardList(emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
         if (cardListBuilder_ == null) {
@@ -697,7 +697,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder addCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo value) {
@@ -714,7 +714,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder addCardList(
           emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -728,7 +728,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder addCardList(
           int index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder builderForValue) {
@@ -742,7 +742,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder addAllCardList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> values) {
@@ -757,7 +757,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder clearCardList() {
         if (cardListBuilder_ == null) {
@@ -770,7 +770,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public Builder removeCardList(int index) {
         if (cardListBuilder_ == null) {
@@ -783,14 +783,14 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder getCardListBuilder(
           int index) {
         return getCardListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(
           int index) {
@@ -800,7 +800,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> 
            getCardListOrBuilderList() {
@@ -811,14 +811,14 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addCardListBuilder() {
         return getCardListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder addCardListBuilder(
           int index) {
@@ -826,7 +826,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
             index, emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ExhibitionDisplayInfo card_list = 6;</code>
+       * <code>repeated .ExhibitionDisplayInfo card_list = 1;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder> 
            getCardListBuilderList() {
@@ -851,14 +851,14 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> playerInfoBuilder_;
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
         return playerInfoBuilder_ != null || playerInfo_ != null;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        * @return The playerInfo.
        */
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
@@ -869,7 +869,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public Builder setPlayerInfo(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
@@ -885,7 +885,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public Builder setPlayerInfo(
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
@@ -899,7 +899,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public Builder mergePlayerInfo(emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
@@ -917,7 +917,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public Builder clearPlayerInfo() {
         if (playerInfoBuilder_ == null) {
@@ -931,7 +931,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
         
@@ -939,7 +939,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         return getPlayerInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       public emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
         if (playerInfoBuilder_ != null) {
@@ -950,7 +950,7 @@ public final class IslandPartyGallerySettleInfoOuterClass {
         }
       }
       /**
-       * <code>.OnlinePlayerInfo player_info = 14;</code>
+       * <code>.OnlinePlayerInfo player_info = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> 
@@ -1035,8 +1035,8 @@ public final class IslandPartyGallerySettleInfoOuterClass {
       "\n\"IslandPartyGallerySettleInfo.proto\032\033Ex" +
       "hibitionDisplayInfo.proto\032\026OnlinePlayerI" +
       "nfo.proto\"q\n\034IslandPartyGallerySettleInf" +
-      "o\022)\n\tcard_list\030\006 \003(\0132\026.ExhibitionDisplay" +
-      "Info\022&\n\013player_info\030\016 \001(\0132\021.OnlinePlayer" +
+      "o\022)\n\tcard_list\030\001 \003(\0132\026.ExhibitionDisplay" +
+      "Info\022&\n\013player_info\030\005 \001(\0132\021.OnlinePlayer" +
       "InfoB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };

@@ -19,45 +19,45 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>uint32 schedule_id = 4;</code>
+     * @return The scheduleId.
+     */
+    int getScheduleId();
+
+    /**
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo> 
         getAcceptFlowerResultInfoListList();
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo getAcceptFlowerResultInfoList(int index);
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     int getAcceptFlowerResultInfoListCount();
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder> 
         getAcceptFlowerResultInfoListOrBuilderList();
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder getAcceptFlowerResultInfoListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 schedule_id = 13;</code>
-     * @return The scheduleId.
-     */
-    int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8859
-   * Obf: AGCODFGBLNC
+   * CmdId: 5535
+   * Obf: AMHANECAGIA
    * </pre>
    *
    * Protobuf type {@code PlantFlowerAcceptAllGiveFlowerRsp}
@@ -106,23 +106,23 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 24: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 acceptFlowerResultInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               acceptFlowerResultInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -160,10 +160,10 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
               emu.grasscutter.net.proto.PlantFlowerAcceptAllGiveFlowerRspOuterClass.PlantFlowerAcceptAllGiveFlowerRsp.class, emu.grasscutter.net.proto.PlantFlowerAcceptAllGiveFlowerRspOuterClass.PlantFlowerAcceptAllGiveFlowerRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -171,17 +171,28 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       return retcode_;
     }
 
-    public static final int ACCEPT_FLOWER_RESULT_INFO_LIST_FIELD_NUMBER = 7;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 4;
+    private int scheduleId_;
+    /**
+     * <code>uint32 schedule_id = 4;</code>
+     * @return The scheduleId.
+     */
+    @java.lang.Override
+    public int getScheduleId() {
+      return scheduleId_;
+    }
+
+    public static final int ACCEPT_FLOWER_RESULT_INFO_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo> acceptFlowerResultInfoList_;
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo> getAcceptFlowerResultInfoListList() {
       return acceptFlowerResultInfoList_;
     }
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder> 
@@ -189,37 +200,26 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       return acceptFlowerResultInfoList_;
     }
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     @java.lang.Override
     public int getAcceptFlowerResultInfoListCount() {
       return acceptFlowerResultInfoList_.size();
     }
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo getAcceptFlowerResultInfoList(int index) {
       return acceptFlowerResultInfoList_.get(index);
     }
     /**
-     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+     * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder getAcceptFlowerResultInfoListOrBuilder(
         int index) {
       return acceptFlowerResultInfoList_.get(index);
-    }
-
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 13;
-    private int scheduleId_;
-    /**
-     * <code>uint32 schedule_id = 13;</code>
-     * @return The scheduleId.
-     */
-    @java.lang.Override
-    public int getScheduleId() {
-      return scheduleId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -236,14 +236,14 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < acceptFlowerResultInfoList_.size(); i++) {
-        output.writeMessage(7, acceptFlowerResultInfoList_.get(i));
-      }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(3, retcode_);
       }
       if (scheduleId_ != 0) {
-        output.writeUInt32(13, scheduleId_);
+        output.writeUInt32(4, scheduleId_);
+      }
+      for (int i = 0; i < acceptFlowerResultInfoList_.size(); i++) {
+        output.writeMessage(6, acceptFlowerResultInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -254,17 +254,17 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < acceptFlowerResultInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, acceptFlowerResultInfoList_.get(i));
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(3, retcode_);
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, scheduleId_);
+          .computeUInt32Size(4, scheduleId_);
+      }
+      for (int i = 0; i < acceptFlowerResultInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, acceptFlowerResultInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -283,10 +283,10 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
 
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!getAcceptFlowerResultInfoListList()
-          .equals(other.getAcceptFlowerResultInfoListList())) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
+      if (!getAcceptFlowerResultInfoListList()
+          .equals(other.getAcceptFlowerResultInfoListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -300,12 +300,12 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getScheduleId();
       if (getAcceptFlowerResultInfoListCount() > 0) {
         hash = (37 * hash) + ACCEPT_FLOWER_RESULT_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAcceptFlowerResultInfoListList().hashCode();
       }
-      hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getScheduleId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -403,8 +403,8 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8859
-     * Obf: AGCODFGBLNC
+     * CmdId: 5535
+     * Obf: AMHANECAGIA
      * </pre>
      *
      * Protobuf type {@code PlantFlowerAcceptAllGiveFlowerRsp}
@@ -447,14 +447,14 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         super.clear();
         retcode_ = 0;
 
+        scheduleId_ = 0;
+
         if (acceptFlowerResultInfoListBuilder_ == null) {
           acceptFlowerResultInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           acceptFlowerResultInfoListBuilder_.clear();
         }
-        scheduleId_ = 0;
-
         return this;
       }
 
@@ -483,6 +483,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         emu.grasscutter.net.proto.PlantFlowerAcceptAllGiveFlowerRspOuterClass.PlantFlowerAcceptAllGiveFlowerRsp result = new emu.grasscutter.net.proto.PlantFlowerAcceptAllGiveFlowerRspOuterClass.PlantFlowerAcceptAllGiveFlowerRsp(this);
         int from_bitField0_ = bitField0_;
         result.retcode_ = retcode_;
+        result.scheduleId_ = scheduleId_;
         if (acceptFlowerResultInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             acceptFlowerResultInfoList_ = java.util.Collections.unmodifiableList(acceptFlowerResultInfoList_);
@@ -492,7 +493,6 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         } else {
           result.acceptFlowerResultInfoList_ = acceptFlowerResultInfoListBuilder_.build();
         }
-        result.scheduleId_ = scheduleId_;
         onBuilt();
         return result;
       }
@@ -544,6 +544,9 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
+        if (other.getScheduleId() != 0) {
+          setScheduleId(other.getScheduleId());
+        }
         if (acceptFlowerResultInfoListBuilder_ == null) {
           if (!other.acceptFlowerResultInfoList_.isEmpty()) {
             if (acceptFlowerResultInfoList_.isEmpty()) {
@@ -569,9 +572,6 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
               acceptFlowerResultInfoListBuilder_.addAllMessages(other.acceptFlowerResultInfoList_);
             }
           }
-        }
-        if (other.getScheduleId() != 0) {
-          setScheduleId(other.getScheduleId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -605,7 +605,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -613,7 +613,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -624,12 +624,43 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int scheduleId_ ;
+      /**
+       * <code>uint32 schedule_id = 4;</code>
+       * @return The scheduleId.
+       */
+      @java.lang.Override
+      public int getScheduleId() {
+        return scheduleId_;
+      }
+      /**
+       * <code>uint32 schedule_id = 4;</code>
+       * @param value The scheduleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScheduleId(int value) {
+        
+        scheduleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 schedule_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScheduleId() {
+        
+        scheduleId_ = 0;
         onChanged();
         return this;
       }
@@ -647,7 +678,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
           emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder> acceptFlowerResultInfoListBuilder_;
 
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo> getAcceptFlowerResultInfoListList() {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -657,7 +688,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public int getAcceptFlowerResultInfoListCount() {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -667,7 +698,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo getAcceptFlowerResultInfoList(int index) {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -677,7 +708,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder setAcceptFlowerResultInfoList(
           int index, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo value) {
@@ -694,7 +725,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder setAcceptFlowerResultInfoList(
           int index, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder builderForValue) {
@@ -708,7 +739,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder addAcceptFlowerResultInfoList(emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo value) {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -724,7 +755,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder addAcceptFlowerResultInfoList(
           int index, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo value) {
@@ -741,7 +772,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder addAcceptFlowerResultInfoList(
           emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder builderForValue) {
@@ -755,7 +786,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder addAcceptFlowerResultInfoList(
           int index, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder builderForValue) {
@@ -769,7 +800,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder addAllAcceptFlowerResultInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo> values) {
@@ -784,7 +815,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder clearAcceptFlowerResultInfoList() {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -797,7 +828,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public Builder removeAcceptFlowerResultInfoList(int index) {
         if (acceptFlowerResultInfoListBuilder_ == null) {
@@ -810,14 +841,14 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder getAcceptFlowerResultInfoListBuilder(
           int index) {
         return getAcceptFlowerResultInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder getAcceptFlowerResultInfoListOrBuilder(
           int index) {
@@ -827,7 +858,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfoOrBuilder> 
            getAcceptFlowerResultInfoListOrBuilderList() {
@@ -838,14 +869,14 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
         }
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder addAcceptFlowerResultInfoListBuilder() {
         return getAcceptFlowerResultInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder addAcceptFlowerResultInfoListBuilder(
           int index) {
@@ -853,7 +884,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
             index, emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 7;</code>
+       * <code>repeated .PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.Builder> 
            getAcceptFlowerResultInfoListBuilderList() {
@@ -872,37 +903,6 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
           acceptFlowerResultInfoList_ = null;
         }
         return acceptFlowerResultInfoListBuilder_;
-      }
-
-      private int scheduleId_ ;
-      /**
-       * <code>uint32 schedule_id = 13;</code>
-       * @return The scheduleId.
-       */
-      @java.lang.Override
-      public int getScheduleId() {
-        return scheduleId_;
-      }
-      /**
-       * <code>uint32 schedule_id = 13;</code>
-       * @param value The scheduleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScheduleId(int value) {
-        
-        scheduleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 schedule_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScheduleId() {
-        
-        scheduleId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -974,9 +974,9 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
       "\n\'PlantFlowerAcceptAllGiveFlowerRsp.prot" +
       "o\032\'PlantFlowerAcceptFlowerResultInfo.pro" +
       "to\"\225\001\n!PlantFlowerAcceptAllGiveFlowerRsp" +
-      "\022\017\n\007retcode\030\014 \001(\005\022J\n\036accept_flower_resul" +
-      "t_info_list\030\007 \003(\0132\".PlantFlowerAcceptFlo" +
-      "werResultInfo\022\023\n\013schedule_id\030\r \001(\rB\033\n\031em" +
+      "\022\017\n\007retcode\030\003 \001(\005\022\023\n\013schedule_id\030\004 \001(\r\022J" +
+      "\n\036accept_flower_result_info_list\030\006 \003(\0132\"" +
+      ".PlantFlowerAcceptFlowerResultInfoB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -989,7 +989,7 @@ public final class PlantFlowerAcceptAllGiveFlowerRspOuterClass {
     internal_static_PlantFlowerAcceptAllGiveFlowerRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlantFlowerAcceptAllGiveFlowerRsp_descriptor,
-        new java.lang.String[] { "Retcode", "AcceptFlowerResultInfoList", "ScheduleId", });
+        new java.lang.String[] { "Retcode", "ScheduleId", "AcceptFlowerResultInfoList", });
     emu.grasscutter.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.getDescriptor();
   }
 

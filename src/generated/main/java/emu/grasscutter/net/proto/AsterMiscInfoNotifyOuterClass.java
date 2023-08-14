@@ -19,21 +19,21 @@ public final class AsterMiscInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 CBLMAGNNCGK = 5;</code>
-     * @return The cBLMAGNNCGK.
+     * <code>uint32 ADOPPAOJEAN = 14;</code>
+     * @return The aDOPPAOJEAN.
      */
-    int getCBLMAGNNCGK();
+    int getADOPPAOJEAN();
 
     /**
-     * <code>uint32 CGOCPLCJMBA = 10;</code>
-     * @return The cGOCPLCJMBA.
+     * <code>uint32 BLIJLCKCIJP = 11;</code>
+     * @return The bLIJLCKCIJP.
      */
-    int getCGOCPLCJMBA();
+    int getBLIJLCKCIJP();
   }
   /**
    * <pre>
-   * CmdId: 2181
-   * Obf: NIMHLANNJAE
+   * CmdId: 7912
+   * Obf: OPBCAJPHJCN
    * </pre>
    *
    * Protobuf type {@code AsterMiscInfoNotify}
@@ -80,14 +80,14 @@ public final class AsterMiscInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 88: {
 
-              cBLMAGNNCGK_ = input.readUInt32();
+              bLIJLCKCIJP_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 112: {
 
-              cGOCPLCJMBA_ = input.readUInt32();
+              aDOPPAOJEAN_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class AsterMiscInfoNotifyOuterClass {
               emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.class, emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.Builder.class);
     }
 
-    public static final int CBLMAGNNCGK_FIELD_NUMBER = 5;
-    private int cBLMAGNNCGK_;
+    public static final int ADOPPAOJEAN_FIELD_NUMBER = 14;
+    private int aDOPPAOJEAN_;
     /**
-     * <code>uint32 CBLMAGNNCGK = 5;</code>
-     * @return The cBLMAGNNCGK.
+     * <code>uint32 ADOPPAOJEAN = 14;</code>
+     * @return The aDOPPAOJEAN.
      */
     @java.lang.Override
-    public int getCBLMAGNNCGK() {
-      return cBLMAGNNCGK_;
+    public int getADOPPAOJEAN() {
+      return aDOPPAOJEAN_;
     }
 
-    public static final int CGOCPLCJMBA_FIELD_NUMBER = 10;
-    private int cGOCPLCJMBA_;
+    public static final int BLIJLCKCIJP_FIELD_NUMBER = 11;
+    private int bLIJLCKCIJP_;
     /**
-     * <code>uint32 CGOCPLCJMBA = 10;</code>
-     * @return The cGOCPLCJMBA.
+     * <code>uint32 BLIJLCKCIJP = 11;</code>
+     * @return The bLIJLCKCIJP.
      */
     @java.lang.Override
-    public int getCGOCPLCJMBA() {
-      return cGOCPLCJMBA_;
+    public int getBLIJLCKCIJP() {
+      return bLIJLCKCIJP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class AsterMiscInfoNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (cBLMAGNNCGK_ != 0) {
-        output.writeUInt32(5, cBLMAGNNCGK_);
+      if (bLIJLCKCIJP_ != 0) {
+        output.writeUInt32(11, bLIJLCKCIJP_);
       }
-      if (cGOCPLCJMBA_ != 0) {
-        output.writeUInt32(10, cGOCPLCJMBA_);
+      if (aDOPPAOJEAN_ != 0) {
+        output.writeUInt32(14, aDOPPAOJEAN_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class AsterMiscInfoNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cBLMAGNNCGK_ != 0) {
+      if (bLIJLCKCIJP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, cBLMAGNNCGK_);
+          .computeUInt32Size(11, bLIJLCKCIJP_);
       }
-      if (cGOCPLCJMBA_ != 0) {
+      if (aDOPPAOJEAN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, cGOCPLCJMBA_);
+          .computeUInt32Size(14, aDOPPAOJEAN_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class AsterMiscInfoNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify other = (emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify) obj;
 
-      if (getCBLMAGNNCGK()
-          != other.getCBLMAGNNCGK()) return false;
-      if (getCGOCPLCJMBA()
-          != other.getCGOCPLCJMBA()) return false;
+      if (getADOPPAOJEAN()
+          != other.getADOPPAOJEAN()) return false;
+      if (getBLIJLCKCIJP()
+          != other.getBLIJLCKCIJP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class AsterMiscInfoNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CBLMAGNNCGK_FIELD_NUMBER;
-      hash = (53 * hash) + getCBLMAGNNCGK();
-      hash = (37 * hash) + CGOCPLCJMBA_FIELD_NUMBER;
-      hash = (53 * hash) + getCGOCPLCJMBA();
+      hash = (37 * hash) + ADOPPAOJEAN_FIELD_NUMBER;
+      hash = (53 * hash) + getADOPPAOJEAN();
+      hash = (37 * hash) + BLIJLCKCIJP_FIELD_NUMBER;
+      hash = (53 * hash) + getBLIJLCKCIJP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class AsterMiscInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2181
-     * Obf: NIMHLANNJAE
+     * CmdId: 7912
+     * Obf: OPBCAJPHJCN
      * </pre>
      *
      * Protobuf type {@code AsterMiscInfoNotify}
@@ -353,9 +353,9 @@ public final class AsterMiscInfoNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cBLMAGNNCGK_ = 0;
+        aDOPPAOJEAN_ = 0;
 
-        cGOCPLCJMBA_ = 0;
+        bLIJLCKCIJP_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class AsterMiscInfoNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify buildPartial() {
         emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify result = new emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify(this);
-        result.cBLMAGNNCGK_ = cBLMAGNNCGK_;
-        result.cGOCPLCJMBA_ = cGOCPLCJMBA_;
+        result.aDOPPAOJEAN_ = aDOPPAOJEAN_;
+        result.bLIJLCKCIJP_ = bLIJLCKCIJP_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class AsterMiscInfoNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify other) {
         if (other == emu.grasscutter.net.proto.AsterMiscInfoNotifyOuterClass.AsterMiscInfoNotify.getDefaultInstance()) return this;
-        if (other.getCBLMAGNNCGK() != 0) {
-          setCBLMAGNNCGK(other.getCBLMAGNNCGK());
+        if (other.getADOPPAOJEAN() != 0) {
+          setADOPPAOJEAN(other.getADOPPAOJEAN());
         }
-        if (other.getCGOCPLCJMBA() != 0) {
-          setCGOCPLCJMBA(other.getCGOCPLCJMBA());
+        if (other.getBLIJLCKCIJP() != 0) {
+          setBLIJLCKCIJP(other.getBLIJLCKCIJP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class AsterMiscInfoNotifyOuterClass {
         return this;
       }
 
-      private int cBLMAGNNCGK_ ;
+      private int aDOPPAOJEAN_ ;
       /**
-       * <code>uint32 CBLMAGNNCGK = 5;</code>
-       * @return The cBLMAGNNCGK.
+       * <code>uint32 ADOPPAOJEAN = 14;</code>
+       * @return The aDOPPAOJEAN.
        */
       @java.lang.Override
-      public int getCBLMAGNNCGK() {
-        return cBLMAGNNCGK_;
+      public int getADOPPAOJEAN() {
+        return aDOPPAOJEAN_;
       }
       /**
-       * <code>uint32 CBLMAGNNCGK = 5;</code>
-       * @param value The cBLMAGNNCGK to set.
+       * <code>uint32 ADOPPAOJEAN = 14;</code>
+       * @param value The aDOPPAOJEAN to set.
        * @return This builder for chaining.
        */
-      public Builder setCBLMAGNNCGK(int value) {
+      public Builder setADOPPAOJEAN(int value) {
         
-        cBLMAGNNCGK_ = value;
+        aDOPPAOJEAN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CBLMAGNNCGK = 5;</code>
+       * <code>uint32 ADOPPAOJEAN = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCBLMAGNNCGK() {
+      public Builder clearADOPPAOJEAN() {
         
-        cBLMAGNNCGK_ = 0;
+        aDOPPAOJEAN_ = 0;
         onChanged();
         return this;
       }
 
-      private int cGOCPLCJMBA_ ;
+      private int bLIJLCKCIJP_ ;
       /**
-       * <code>uint32 CGOCPLCJMBA = 10;</code>
-       * @return The cGOCPLCJMBA.
+       * <code>uint32 BLIJLCKCIJP = 11;</code>
+       * @return The bLIJLCKCIJP.
        */
       @java.lang.Override
-      public int getCGOCPLCJMBA() {
-        return cGOCPLCJMBA_;
+      public int getBLIJLCKCIJP() {
+        return bLIJLCKCIJP_;
       }
       /**
-       * <code>uint32 CGOCPLCJMBA = 10;</code>
-       * @param value The cGOCPLCJMBA to set.
+       * <code>uint32 BLIJLCKCIJP = 11;</code>
+       * @param value The bLIJLCKCIJP to set.
        * @return This builder for chaining.
        */
-      public Builder setCGOCPLCJMBA(int value) {
+      public Builder setBLIJLCKCIJP(int value) {
         
-        cGOCPLCJMBA_ = value;
+        bLIJLCKCIJP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CGOCPLCJMBA = 10;</code>
+       * <code>uint32 BLIJLCKCIJP = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCGOCPLCJMBA() {
+      public Builder clearBLIJLCKCIJP() {
         
-        cGOCPLCJMBA_ = 0;
+        bLIJLCKCIJP_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class AsterMiscInfoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031AsterMiscInfoNotify.proto\"?\n\023AsterMisc" +
-      "InfoNotify\022\023\n\013CBLMAGNNCGK\030\005 \001(\r\022\023\n\013CGOCP" +
-      "LCJMBA\030\n \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "InfoNotify\022\023\n\013ADOPPAOJEAN\030\016 \001(\r\022\023\n\013BLIJL" +
+      "CKCIJP\030\013 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class AsterMiscInfoNotifyOuterClass {
     internal_static_AsterMiscInfoNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AsterMiscInfoNotify_descriptor,
-        new java.lang.String[] { "CBLMAGNNCGK", "CGOCPLCJMBA", });
+        new java.lang.String[] { "ADOPPAOJEAN", "BLIJLCKCIJP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

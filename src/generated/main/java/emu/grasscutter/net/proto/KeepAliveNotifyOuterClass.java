@@ -20,8 +20,8 @@ public final class KeepAliveNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 75
-   * Obf: OMHBPNAONJK
+   * CmdId: 28778
+   * Obf: HIHAGDONBOK
    * </pre>
    *
    * Protobuf type {@code KeepAliveNotify}
@@ -246,8 +246,8 @@ public final class KeepAliveNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 75
-     * Obf: OMHBPNAONJK
+     * CmdId: 28778
+     * Obf: HIHAGDONBOK
      * </pre>
      *
      * Protobuf type {@code KeepAliveNotify}

@@ -19,13 +19,13 @@ public final class BartenderGetFormulaRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>bool is_new = 13;</code>
+     * <code>bool is_new = 11;</code>
      * @return The isNew.
      */
     boolean getIsNew();
@@ -55,8 +55,8 @@ public final class BartenderGetFormulaRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8049
-   * Obf: GPACKHENEIO
+   * CmdId: 7404
+   * Obf: BLKCFDFEIEE
    * </pre>
    *
    * Protobuf type {@code BartenderGetFormulaRsp}
@@ -105,11 +105,6 @@ public final class BartenderGetFormulaRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 affixList_ = newIntList();
@@ -131,12 +126,17 @@ public final class BartenderGetFormulaRspOuterClass {
               input.popLimit(limit);
               break;
             }
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
             case 48: {
 
               formulaId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 88: {
 
               isNew_ = input.readBool();
               break;
@@ -176,10 +176,10 @@ public final class BartenderGetFormulaRspOuterClass {
               emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.class, emu.grasscutter.net.proto.BartenderGetFormulaRspOuterClass.BartenderGetFormulaRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 4;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -187,10 +187,10 @@ public final class BartenderGetFormulaRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_NEW_FIELD_NUMBER = 13;
+    public static final int IS_NEW_FIELD_NUMBER = 11;
     private boolean isNew_;
     /**
-     * <code>bool is_new = 13;</code>
+     * <code>bool is_new = 11;</code>
      * @return The isNew.
      */
     @java.lang.Override
@@ -252,9 +252,6 @@ public final class BartenderGetFormulaRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (getAffixListList().size() > 0) {
         output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(affixListMemoizedSerializedSize);
@@ -262,11 +259,14 @@ public final class BartenderGetFormulaRspOuterClass {
       for (int i = 0; i < affixList_.size(); i++) {
         output.writeUInt32NoTag(affixList_.getInt(i));
       }
+      if (retcode_ != 0) {
+        output.writeInt32(4, retcode_);
+      }
       if (formulaId_ != 0) {
         output.writeUInt32(6, formulaId_);
       }
       if (isNew_ != false) {
-        output.writeBool(13, isNew_);
+        output.writeBool(11, isNew_);
       }
       unknownFields.writeTo(output);
     }
@@ -277,10 +277,6 @@ public final class BartenderGetFormulaRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < affixList_.size(); i++) {
@@ -295,13 +291,17 @@ public final class BartenderGetFormulaRspOuterClass {
         }
         affixListMemoizedSerializedSize = dataSize;
       }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, retcode_);
+      }
       if (formulaId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, formulaId_);
       }
       if (isNew_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isNew_);
+          .computeBoolSize(11, isNew_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -445,8 +445,8 @@ public final class BartenderGetFormulaRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8049
-     * Obf: GPACKHENEIO
+     * CmdId: 7404
+     * Obf: BLKCFDFEIEE
      * </pre>
      *
      * Protobuf type {@code BartenderGetFormulaRsp}
@@ -628,7 +628,7 @@ public final class BartenderGetFormulaRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 4;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -636,7 +636,7 @@ public final class BartenderGetFormulaRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 4;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -647,7 +647,7 @@ public final class BartenderGetFormulaRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -659,7 +659,7 @@ public final class BartenderGetFormulaRspOuterClass {
 
       private boolean isNew_ ;
       /**
-       * <code>bool is_new = 13;</code>
+       * <code>bool is_new = 11;</code>
        * @return The isNew.
        */
       @java.lang.Override
@@ -667,7 +667,7 @@ public final class BartenderGetFormulaRspOuterClass {
         return isNew_;
       }
       /**
-       * <code>bool is_new = 13;</code>
+       * <code>bool is_new = 11;</code>
        * @param value The isNew to set.
        * @return This builder for chaining.
        */
@@ -678,7 +678,7 @@ public final class BartenderGetFormulaRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new = 13;</code>
+       * <code>bool is_new = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNew() {
@@ -865,8 +865,8 @@ public final class BartenderGetFormulaRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034BartenderGetFormulaRsp.proto\"a\n\026Barten" +
-      "derGetFormulaRsp\022\017\n\007retcode\030\001 \001(\005\022\016\n\006is_" +
-      "new\030\r \001(\010\022\022\n\naffix_list\030\003 \003(\r\022\022\n\nformula" +
+      "derGetFormulaRsp\022\017\n\007retcode\030\004 \001(\005\022\016\n\006is_" +
+      "new\030\013 \001(\010\022\022\n\naffix_list\030\003 \003(\r\022\022\n\nformula" +
       "_id\030\006 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
       "proto3"
     };

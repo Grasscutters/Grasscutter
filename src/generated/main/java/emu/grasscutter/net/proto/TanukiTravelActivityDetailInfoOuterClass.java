@@ -19,44 +19,44 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> 
-        getTanukiTravelLevelDataListList();
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData getTanukiTravelLevelDataList(int index);
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    int getTanukiTravelLevelDataListCount();
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> 
-        getTanukiTravelLevelDataListOrBuilderList();
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder getTanukiTravelLevelDataListOrBuilder(
-        int index);
-
-    /**
-     * <code>bool is_content_closed = 4;</code>
+     * <code>bool is_content_closed = 5;</code>
      * @return The isContentClosed.
      */
     boolean getIsContentClosed();
 
     /**
-     * <code>uint32 finished_level_index = 10;</code>
+     * <code>uint32 finished_level_index = 13;</code>
      * @return The finishedLevelIndex.
      */
     int getFinishedLevelIndex();
+
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> 
+        getTanukiTravelLevelDataListList();
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData getTanukiTravelLevelDataList(int index);
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    int getTanukiTravelLevelDataListCount();
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> 
+        getTanukiTravelLevelDataListOrBuilderList();
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder getTanukiTravelLevelDataListOrBuilder(
+        int index);
   }
   /**
    * <pre>
-   * Obf: BOOFCPHGDAK
+   * Obf: NBABIBMGAIM
    * </pre>
    *
    * Protobuf type {@code TanukiTravelActivityDetailInfo}
@@ -105,23 +105,23 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               isContentClosed_ = input.readBool();
               break;
             }
-            case 80: {
-
-              finishedLevelIndex_ = input.readUInt32();
-              break;
-            }
-            case 98: {
+            case 74: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tanukiTravelLevelDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData>();
                 mutable_bitField0_ |= 0x00000001;
               }
               tanukiTravelLevelDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.parser(), extensionRegistry));
+              break;
+            }
+            case 104: {
+
+              finishedLevelIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -159,50 +159,10 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.class, emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.Builder.class);
     }
 
-    public static final int TANUKI_TRAVEL_LEVEL_DATA_LIST_FIELD_NUMBER = 12;
-    private java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> tanukiTravelLevelDataList_;
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> getTanukiTravelLevelDataListList() {
-      return tanukiTravelLevelDataList_;
-    }
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> 
-        getTanukiTravelLevelDataListOrBuilderList() {
-      return tanukiTravelLevelDataList_;
-    }
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    @java.lang.Override
-    public int getTanukiTravelLevelDataListCount() {
-      return tanukiTravelLevelDataList_.size();
-    }
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData getTanukiTravelLevelDataList(int index) {
-      return tanukiTravelLevelDataList_.get(index);
-    }
-    /**
-     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder getTanukiTravelLevelDataListOrBuilder(
-        int index) {
-      return tanukiTravelLevelDataList_.get(index);
-    }
-
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 4;
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 5;
     private boolean isContentClosed_;
     /**
-     * <code>bool is_content_closed = 4;</code>
+     * <code>bool is_content_closed = 5;</code>
      * @return The isContentClosed.
      */
     @java.lang.Override
@@ -210,15 +170,55 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       return isContentClosed_;
     }
 
-    public static final int FINISHED_LEVEL_INDEX_FIELD_NUMBER = 10;
+    public static final int FINISHED_LEVEL_INDEX_FIELD_NUMBER = 13;
     private int finishedLevelIndex_;
     /**
-     * <code>uint32 finished_level_index = 10;</code>
+     * <code>uint32 finished_level_index = 13;</code>
      * @return The finishedLevelIndex.
      */
     @java.lang.Override
     public int getFinishedLevelIndex() {
       return finishedLevelIndex_;
+    }
+
+    public static final int TANUKI_TRAVEL_LEVEL_DATA_LIST_FIELD_NUMBER = 9;
+    private java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> tanukiTravelLevelDataList_;
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> getTanukiTravelLevelDataListList() {
+      return tanukiTravelLevelDataList_;
+    }
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> 
+        getTanukiTravelLevelDataListOrBuilderList() {
+      return tanukiTravelLevelDataList_;
+    }
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    @java.lang.Override
+    public int getTanukiTravelLevelDataListCount() {
+      return tanukiTravelLevelDataList_.size();
+    }
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData getTanukiTravelLevelDataList(int index) {
+      return tanukiTravelLevelDataList_.get(index);
+    }
+    /**
+     * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder getTanukiTravelLevelDataListOrBuilder(
+        int index) {
+      return tanukiTravelLevelDataList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -236,13 +236,13 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isContentClosed_ != false) {
-        output.writeBool(4, isContentClosed_);
-      }
-      if (finishedLevelIndex_ != 0) {
-        output.writeUInt32(10, finishedLevelIndex_);
+        output.writeBool(5, isContentClosed_);
       }
       for (int i = 0; i < tanukiTravelLevelDataList_.size(); i++) {
-        output.writeMessage(12, tanukiTravelLevelDataList_.get(i));
+        output.writeMessage(9, tanukiTravelLevelDataList_.get(i));
+      }
+      if (finishedLevelIndex_ != 0) {
+        output.writeUInt32(13, finishedLevelIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -255,15 +255,15 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       size = 0;
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isContentClosed_);
-      }
-      if (finishedLevelIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, finishedLevelIndex_);
+          .computeBoolSize(5, isContentClosed_);
       }
       for (int i = 0; i < tanukiTravelLevelDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, tanukiTravelLevelDataList_.get(i));
+          .computeMessageSize(9, tanukiTravelLevelDataList_.get(i));
+      }
+      if (finishedLevelIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, finishedLevelIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,12 +280,12 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo other = (emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo) obj;
 
-      if (!getTanukiTravelLevelDataListList()
-          .equals(other.getTanukiTravelLevelDataListList())) return false;
       if (getIsContentClosed()
           != other.getIsContentClosed()) return false;
       if (getFinishedLevelIndex()
           != other.getFinishedLevelIndex()) return false;
+      if (!getTanukiTravelLevelDataListList()
+          .equals(other.getTanukiTravelLevelDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -297,15 +297,15 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getTanukiTravelLevelDataListCount() > 0) {
-        hash = (37 * hash) + TANUKI_TRAVEL_LEVEL_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTanukiTravelLevelDataListList().hashCode();
-      }
       hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsContentClosed());
       hash = (37 * hash) + FINISHED_LEVEL_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedLevelIndex();
+      if (getTanukiTravelLevelDataListCount() > 0) {
+        hash = (37 * hash) + TANUKI_TRAVEL_LEVEL_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getTanukiTravelLevelDataListList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -403,7 +403,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: BOOFCPHGDAK
+     * Obf: NBABIBMGAIM
      * </pre>
      *
      * Protobuf type {@code TanukiTravelActivityDetailInfo}
@@ -444,16 +444,16 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isContentClosed_ = false;
+
+        finishedLevelIndex_ = 0;
+
         if (tanukiTravelLevelDataListBuilder_ == null) {
           tanukiTravelLevelDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           tanukiTravelLevelDataListBuilder_.clear();
         }
-        isContentClosed_ = false;
-
-        finishedLevelIndex_ = 0;
-
         return this;
       }
 
@@ -481,6 +481,8 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo result = new emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
+        result.isContentClosed_ = isContentClosed_;
+        result.finishedLevelIndex_ = finishedLevelIndex_;
         if (tanukiTravelLevelDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             tanukiTravelLevelDataList_ = java.util.Collections.unmodifiableList(tanukiTravelLevelDataList_);
@@ -490,8 +492,6 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         } else {
           result.tanukiTravelLevelDataList_ = tanukiTravelLevelDataListBuilder_.build();
         }
-        result.isContentClosed_ = isContentClosed_;
-        result.finishedLevelIndex_ = finishedLevelIndex_;
         onBuilt();
         return result;
       }
@@ -540,6 +540,12 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.getDefaultInstance()) return this;
+        if (other.getIsContentClosed() != false) {
+          setIsContentClosed(other.getIsContentClosed());
+        }
+        if (other.getFinishedLevelIndex() != 0) {
+          setFinishedLevelIndex(other.getFinishedLevelIndex());
+        }
         if (tanukiTravelLevelDataListBuilder_ == null) {
           if (!other.tanukiTravelLevelDataList_.isEmpty()) {
             if (tanukiTravelLevelDataList_.isEmpty()) {
@@ -565,12 +571,6 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
               tanukiTravelLevelDataListBuilder_.addAllMessages(other.tanukiTravelLevelDataList_);
             }
           }
-        }
-        if (other.getIsContentClosed() != false) {
-          setIsContentClosed(other.getIsContentClosed());
-        }
-        if (other.getFinishedLevelIndex() != 0) {
-          setFinishedLevelIndex(other.getFinishedLevelIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -602,6 +602,68 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
+      private boolean isContentClosed_ ;
+      /**
+       * <code>bool is_content_closed = 5;</code>
+       * @return The isContentClosed.
+       */
+      @java.lang.Override
+      public boolean getIsContentClosed() {
+        return isContentClosed_;
+      }
+      /**
+       * <code>bool is_content_closed = 5;</code>
+       * @param value The isContentClosed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsContentClosed(boolean value) {
+        
+        isContentClosed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_content_closed = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsContentClosed() {
+        
+        isContentClosed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int finishedLevelIndex_ ;
+      /**
+       * <code>uint32 finished_level_index = 13;</code>
+       * @return The finishedLevelIndex.
+       */
+      @java.lang.Override
+      public int getFinishedLevelIndex() {
+        return finishedLevelIndex_;
+      }
+      /**
+       * <code>uint32 finished_level_index = 13;</code>
+       * @param value The finishedLevelIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishedLevelIndex(int value) {
+        
+        finishedLevelIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 finished_level_index = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishedLevelIndex() {
+        
+        finishedLevelIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> tanukiTravelLevelDataList_ =
         java.util.Collections.emptyList();
       private void ensureTanukiTravelLevelDataListIsMutable() {
@@ -615,7 +677,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> tanukiTravelLevelDataListBuilder_;
 
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> getTanukiTravelLevelDataListList() {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -625,7 +687,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public int getTanukiTravelLevelDataListCount() {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -635,7 +697,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData getTanukiTravelLevelDataList(int index) {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -645,7 +707,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder setTanukiTravelLevelDataList(
           int index, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData value) {
@@ -662,7 +724,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder setTanukiTravelLevelDataList(
           int index, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder builderForValue) {
@@ -676,7 +738,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder addTanukiTravelLevelDataList(emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData value) {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -692,7 +754,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder addTanukiTravelLevelDataList(
           int index, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData value) {
@@ -709,7 +771,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder addTanukiTravelLevelDataList(
           emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder builderForValue) {
@@ -723,7 +785,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder addTanukiTravelLevelDataList(
           int index, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder builderForValue) {
@@ -737,7 +799,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder addAllTanukiTravelLevelDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> values) {
@@ -752,7 +814,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder clearTanukiTravelLevelDataList() {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -765,7 +827,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public Builder removeTanukiTravelLevelDataList(int index) {
         if (tanukiTravelLevelDataListBuilder_ == null) {
@@ -778,14 +840,14 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder getTanukiTravelLevelDataListBuilder(
           int index) {
         return getTanukiTravelLevelDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder getTanukiTravelLevelDataListOrBuilder(
           int index) {
@@ -795,7 +857,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder> 
            getTanukiTravelLevelDataListOrBuilderList() {
@@ -806,14 +868,14 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder addTanukiTravelLevelDataListBuilder() {
         return getTanukiTravelLevelDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder addTanukiTravelLevelDataListBuilder(
           int index) {
@@ -821,7 +883,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 12;</code>
+       * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.Builder> 
            getTanukiTravelLevelDataListBuilderList() {
@@ -840,68 +902,6 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           tanukiTravelLevelDataList_ = null;
         }
         return tanukiTravelLevelDataListBuilder_;
-      }
-
-      private boolean isContentClosed_ ;
-      /**
-       * <code>bool is_content_closed = 4;</code>
-       * @return The isContentClosed.
-       */
-      @java.lang.Override
-      public boolean getIsContentClosed() {
-        return isContentClosed_;
-      }
-      /**
-       * <code>bool is_content_closed = 4;</code>
-       * @param value The isContentClosed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsContentClosed(boolean value) {
-        
-        isContentClosed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_content_closed = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsContentClosed() {
-        
-        isContentClosed_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int finishedLevelIndex_ ;
-      /**
-       * <code>uint32 finished_level_index = 10;</code>
-       * @return The finishedLevelIndex.
-       */
-      @java.lang.Override
-      public int getFinishedLevelIndex() {
-        return finishedLevelIndex_;
-      }
-      /**
-       * <code>uint32 finished_level_index = 10;</code>
-       * @param value The finishedLevelIndex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFinishedLevelIndex(int value) {
-        
-        finishedLevelIndex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 finished_level_index = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFinishedLevelIndex() {
-        
-        finishedLevelIndex_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -972,10 +972,10 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n$TanukiTravelActivityDetailInfo.proto\032\033" +
       "TanukiTravelLevelData.proto\"\230\001\n\036TanukiTr" +
-      "avelActivityDetailInfo\022=\n\035tanuki_travel_" +
-      "level_data_list\030\014 \003(\0132\026.TanukiTravelLeve" +
-      "lData\022\031\n\021is_content_closed\030\004 \001(\010\022\034\n\024fini" +
-      "shed_level_index\030\n \001(\rB\033\n\031emu.grasscutte" +
+      "avelActivityDetailInfo\022\031\n\021is_content_clo" +
+      "sed\030\005 \001(\010\022\034\n\024finished_level_index\030\r \001(\r\022" +
+      "=\n\035tanuki_travel_level_data_list\030\t \003(\0132\026" +
+      ".TanukiTravelLevelDataB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -988,7 +988,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     internal_static_TanukiTravelActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TanukiTravelActivityDetailInfo_descriptor,
-        new java.lang.String[] { "TanukiTravelLevelDataList", "IsContentClosed", "FinishedLevelIndex", });
+        new java.lang.String[] { "IsContentClosed", "FinishedLevelIndex", "TanukiTravelLevelDataList", });
     emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.getDescriptor();
   }
 

@@ -19,21 +19,21 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 dungeon_id = 7;</code>
-     * @return The dungeonId.
-     */
-    int getDungeonId();
-
-    /**
-     * <code>uint32 cell_id = 15;</code>
+     * <code>uint32 cell_id = 11;</code>
      * @return The cellId.
      */
     int getCellId();
+
+    /**
+     * <code>uint32 dungeon_id = 3;</code>
+     * @return The dungeonId.
+     */
+    int getDungeonId();
   }
   /**
    * <pre>
-   * CmdId: 8292
-   * Obf: FILIJCCPELP
+   * CmdId: 27300
+   * Obf: DJNPHPIIDGK
    * </pre>
    *
    * Protobuf type {@code StartRogueNormalCellChallengeReq}
@@ -80,12 +80,12 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 24: {
 
               dungeonId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 88: {
 
               cellId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
               emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq.class, emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq.Builder.class);
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 7;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeon_id = 7;</code>
-     * @return The dungeonId.
-     */
-    @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
-    }
-
-    public static final int CELL_ID_FIELD_NUMBER = 15;
+    public static final int CELL_ID_FIELD_NUMBER = 11;
     private int cellId_;
     /**
-     * <code>uint32 cell_id = 15;</code>
+     * <code>uint32 cell_id = 11;</code>
      * @return The cellId.
      */
     @java.lang.Override
     public int getCellId() {
       return cellId_;
+    }
+
+    public static final int DUNGEON_ID_FIELD_NUMBER = 3;
+    private int dungeonId_;
+    /**
+     * <code>uint32 dungeon_id = 3;</code>
+     * @return The dungeonId.
+     */
+    @java.lang.Override
+    public int getDungeonId() {
+      return dungeonId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonId_ != 0) {
-        output.writeUInt32(7, dungeonId_);
+        output.writeUInt32(3, dungeonId_);
       }
       if (cellId_ != 0) {
-        output.writeUInt32(15, cellId_);
+        output.writeUInt32(11, cellId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       size = 0;
       if (dungeonId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, dungeonId_);
+          .computeUInt32Size(3, dungeonId_);
       }
       if (cellId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, cellId_);
+          .computeUInt32Size(11, cellId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       }
       emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq other = (emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq) obj;
 
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
       if (getCellId()
           != other.getCellId()) return false;
+      if (getDungeonId()
+          != other.getDungeonId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
       hash = (37 * hash) + CELL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCellId();
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8292
-     * Obf: FILIJCCPELP
+     * CmdId: 27300
+     * Obf: DJNPHPIIDGK
      * </pre>
      *
      * Protobuf type {@code StartRogueNormalCellChallengeReq}
@@ -353,9 +353,9 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dungeonId_ = 0;
-
         cellId_ = 0;
+
+        dungeonId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq buildPartial() {
         emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq result = new emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq(this);
-        result.dungeonId_ = dungeonId_;
         result.cellId_ = cellId_;
+        result.dungeonId_ = dungeonId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq other) {
         if (other == emu.grasscutter.net.proto.StartRogueNormalCellChallengeReqOuterClass.StartRogueNormalCellChallengeReq.getDefaultInstance()) return this;
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
-        }
         if (other.getCellId() != 0) {
           setCellId(other.getCellId());
+        }
+        if (other.getDungeonId() != 0) {
+          setDungeonId(other.getDungeonId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
         return this;
       }
 
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeon_id = 7;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeon_id = 7;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeon_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int cellId_ ;
       /**
-       * <code>uint32 cell_id = 15;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @return The cellId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
         return cellId_;
       }
       /**
-       * <code>uint32 cell_id = 15;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @param value The cellId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cell_id = 15;</code>
+       * <code>uint32 cell_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
         
         cellId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dungeonId_ ;
+      /**
+       * <code>uint32 dungeon_id = 3;</code>
+       * @return The dungeonId.
+       */
+      @java.lang.Override
+      public int getDungeonId() {
+        return dungeonId_;
+      }
+      /**
+       * <code>uint32 dungeon_id = 3;</code>
+       * @param value The dungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonId(int value) {
+        
+        dungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dungeon_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonId() {
+        
+        dungeonId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&StartRogueNormalCellChallengeReq.proto" +
-      "\"G\n StartRogueNormalCellChallengeReq\022\022\n\n" +
-      "dungeon_id\030\007 \001(\r\022\017\n\007cell_id\030\017 \001(\rB\033\n\031emu" +
+      "\"G\n StartRogueNormalCellChallengeReq\022\017\n\007" +
+      "cell_id\030\013 \001(\r\022\022\n\ndungeon_id\030\003 \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class StartRogueNormalCellChallengeReqOuterClass {
     internal_static_StartRogueNormalCellChallengeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StartRogueNormalCellChallengeReq_descriptor,
-        new java.lang.String[] { "DungeonId", "CellId", });
+        new java.lang.String[] { "CellId", "DungeonId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

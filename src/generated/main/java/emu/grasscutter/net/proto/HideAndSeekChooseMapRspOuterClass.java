@@ -19,32 +19,32 @@ public final class HideAndSeekChooseMapRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @return A list containing the mapList.
      */
     java.util.List<java.lang.Integer> getMapListList();
     /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @return The count of mapList.
      */
     int getMapListCount();
     /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @param index The index of the element to return.
      * @return The mapList at the given index.
      */
     int getMapList(int index);
+
+    /**
+     * <code>int32 retcode = 15;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8455
-   * Obf: GHHEELDLCFB
+   * CmdId: 7184
+   * Obf: GPDNNBHHBDF
    * </pre>
    *
    * Protobuf type {@code HideAndSeekChooseMapRsp}
@@ -93,12 +93,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 16: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 mapList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +101,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
               mapList_.addInt(input.readUInt32());
               break;
             }
-            case 18: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -117,6 +112,11 @@ public final class HideAndSeekChooseMapRspOuterClass {
                 mapList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 120: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -154,21 +154,10 @@ public final class HideAndSeekChooseMapRspOuterClass {
               emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp.class, emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int MAP_LIST_FIELD_NUMBER = 2;
+    public static final int MAP_LIST_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList mapList_;
     /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @return A list containing the mapList.
      */
     @java.lang.Override
@@ -177,14 +166,14 @@ public final class HideAndSeekChooseMapRspOuterClass {
       return mapList_;
     }
     /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @return The count of mapList.
      */
     public int getMapListCount() {
       return mapList_.size();
     }
     /**
-     * <code>repeated uint32 map_list = 2;</code>
+     * <code>repeated uint32 map_list = 10;</code>
      * @param index The index of the element to return.
      * @return The mapList at the given index.
      */
@@ -192,6 +181,17 @@ public final class HideAndSeekChooseMapRspOuterClass {
       return mapList_.getInt(index);
     }
     private int mapListMemoizedSerializedSize = -1;
+
+    public static final int RETCODE_FIELD_NUMBER = 15;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 15;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -208,15 +208,15 @@ public final class HideAndSeekChooseMapRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (getMapListList().size() > 0) {
-        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(mapListMemoizedSerializedSize);
       }
       for (int i = 0; i < mapList_.size(); i++) {
         output.writeUInt32NoTag(mapList_.getInt(i));
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,10 +227,6 @@ public final class HideAndSeekChooseMapRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < mapList_.size(); i++) {
@@ -244,6 +240,10 @@ public final class HideAndSeekChooseMapRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         mapListMemoizedSerializedSize = dataSize;
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -260,10 +260,10 @@ public final class HideAndSeekChooseMapRspOuterClass {
       }
       emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp other = (emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getMapListList()
           .equals(other.getMapListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,12 +275,12 @@ public final class HideAndSeekChooseMapRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getMapListCount() > 0) {
         hash = (37 * hash) + MAP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMapListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class HideAndSeekChooseMapRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8455
-     * Obf: GHHEELDLCFB
+     * CmdId: 7184
+     * Obf: GPDNNBHHBDF
      * </pre>
      *
      * Protobuf type {@code HideAndSeekChooseMapRsp}
@@ -419,10 +419,10 @@ public final class HideAndSeekChooseMapRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         mapList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        retcode_ = 0;
+
         return this;
       }
 
@@ -450,12 +450,12 @@ public final class HideAndSeekChooseMapRspOuterClass {
       public emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp buildPartial() {
         emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp result = new emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           mapList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.mapList_ = mapList_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -504,9 +504,6 @@ public final class HideAndSeekChooseMapRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp other) {
         if (other == emu.grasscutter.net.proto.HideAndSeekChooseMapRspOuterClass.HideAndSeekChooseMapRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.mapList_.isEmpty()) {
           if (mapList_.isEmpty()) {
             mapList_ = other.mapList_;
@@ -516,6 +513,9 @@ public final class HideAndSeekChooseMapRspOuterClass {
             mapList_.addAll(other.mapList_);
           }
           onChanged();
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -547,37 +547,6 @@ public final class HideAndSeekChooseMapRspOuterClass {
       }
       private int bitField0_;
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList mapList_ = emptyIntList();
       private void ensureMapListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -586,7 +555,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @return A list containing the mapList.
        */
       public java.util.List<java.lang.Integer>
@@ -595,14 +564,14 @@ public final class HideAndSeekChooseMapRspOuterClass {
                  java.util.Collections.unmodifiableList(mapList_) : mapList_;
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @return The count of mapList.
        */
       public int getMapListCount() {
         return mapList_.size();
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @param index The index of the element to return.
        * @return The mapList at the given index.
        */
@@ -610,7 +579,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
         return mapList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @param index The index to set the value at.
        * @param value The mapList to set.
        * @return This builder for chaining.
@@ -623,7 +592,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @param value The mapList to add.
        * @return This builder for chaining.
        */
@@ -634,7 +603,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @param values The mapList to add.
        * @return This builder for chaining.
        */
@@ -647,12 +616,43 @@ public final class HideAndSeekChooseMapRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 map_list = 2;</code>
+       * <code>repeated uint32 map_list = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearMapList() {
         mapList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -724,8 +724,8 @@ public final class HideAndSeekChooseMapRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035HideAndSeekChooseMapRsp.proto\"<\n\027HideA" +
-      "ndSeekChooseMapRsp\022\017\n\007retcode\030\001 \001(\005\022\020\n\010m" +
-      "ap_list\030\002 \003(\rB\033\n\031emu.grasscutter.net.pro" +
+      "ndSeekChooseMapRsp\022\020\n\010map_list\030\n \003(\r\022\017\n\007" +
+      "retcode\030\017 \001(\005B\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -737,7 +737,7 @@ public final class HideAndSeekChooseMapRspOuterClass {
     internal_static_HideAndSeekChooseMapRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HideAndSeekChooseMapRsp_descriptor,
-        new java.lang.String[] { "Retcode", "MapList", });
+        new java.lang.String[] { "MapList", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -20,8 +20,8 @@ public final class GetMapAreaReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3329
-   * Obf: COHLBLOGHFF
+   * CmdId: 8758
+   * Obf: IIOCEMHKDEF
    * </pre>
    *
    * Protobuf type {@code GetMapAreaReq}
@@ -246,8 +246,8 @@ public final class GetMapAreaReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3329
-     * Obf: COHLBLOGHFF
+     * CmdId: 8758
+     * Obf: IIOCEMHKDEF
      * </pre>
      *
      * Protobuf type {@code GetMapAreaReq}

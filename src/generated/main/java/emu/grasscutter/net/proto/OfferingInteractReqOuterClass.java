@@ -26,8 +26,8 @@ public final class OfferingInteractReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2904
-   * Obf: ABEPPJCNPLH
+   * CmdId: 4106
+   * Obf: BNJNJNEBANI
    * </pre>
    *
    * Protobuf type {@code OfferingInteractReq}
@@ -279,8 +279,8 @@ public final class OfferingInteractReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2904
-     * Obf: ABEPPJCNPLH
+     * CmdId: 4106
+     * Obf: BNJNJNEBANI
      * </pre>
      *
      * Protobuf type {@code OfferingInteractReq}

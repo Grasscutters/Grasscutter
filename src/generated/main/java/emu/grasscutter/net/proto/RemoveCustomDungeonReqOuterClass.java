@@ -19,15 +19,15 @@ public final class RemoveCustomDungeonReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 dungeon_guid = 1;</code>
+     * <code>uint64 dungeon_guid = 14;</code>
      * @return The dungeonGuid.
      */
     long getDungeonGuid();
   }
   /**
    * <pre>
-   * CmdId: 6216
-   * Obf: DJBBNPHABDJ
+   * CmdId: 24046
+   * Obf: GGBOHFJLLFJ
    * </pre>
    *
    * Protobuf type {@code RemoveCustomDungeonReq}
@@ -74,7 +74,7 @@ public final class RemoveCustomDungeonReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 112: {
 
               dungeonGuid_ = input.readUInt64();
               break;
@@ -111,10 +111,10 @@ public final class RemoveCustomDungeonReqOuterClass {
               emu.grasscutter.net.proto.RemoveCustomDungeonReqOuterClass.RemoveCustomDungeonReq.class, emu.grasscutter.net.proto.RemoveCustomDungeonReqOuterClass.RemoveCustomDungeonReq.Builder.class);
     }
 
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 1;
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 14;
     private long dungeonGuid_;
     /**
-     * <code>uint64 dungeon_guid = 1;</code>
+     * <code>uint64 dungeon_guid = 14;</code>
      * @return The dungeonGuid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class RemoveCustomDungeonReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(1, dungeonGuid_);
+        output.writeUInt64(14, dungeonGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class RemoveCustomDungeonReqOuterClass {
       size = 0;
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, dungeonGuid_);
+          .computeUInt64Size(14, dungeonGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class RemoveCustomDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6216
-     * Obf: DJBBNPHABDJ
+     * CmdId: 24046
+     * Obf: GGBOHFJLLFJ
      * </pre>
      *
      * Protobuf type {@code RemoveCustomDungeonReq}
@@ -432,7 +432,7 @@ public final class RemoveCustomDungeonReqOuterClass {
 
       private long dungeonGuid_ ;
       /**
-       * <code>uint64 dungeon_guid = 1;</code>
+       * <code>uint64 dungeon_guid = 14;</code>
        * @return The dungeonGuid.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class RemoveCustomDungeonReqOuterClass {
         return dungeonGuid_;
       }
       /**
-       * <code>uint64 dungeon_guid = 1;</code>
+       * <code>uint64 dungeon_guid = 14;</code>
        * @param value The dungeonGuid to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class RemoveCustomDungeonReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 dungeon_guid = 1;</code>
+       * <code>uint64 dungeon_guid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonGuid() {
@@ -528,7 +528,7 @@ public final class RemoveCustomDungeonReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034RemoveCustomDungeonReq.proto\".\n\026Remove" +
-      "CustomDungeonReq\022\024\n\014dungeon_guid\030\001 \001(\004B\033" +
+      "CustomDungeonReq\022\024\n\014dungeon_guid\030\016 \001(\004B\033" +
       "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

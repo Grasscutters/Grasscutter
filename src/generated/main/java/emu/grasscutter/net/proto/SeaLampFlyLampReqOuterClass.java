@@ -19,28 +19,28 @@ public final class SeaLampFlyLampReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      * @return The pos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>int32 param = 6;</code>
+     * <code>int32 param = 7;</code>
      * @return The param.
      */
     int getParam();
 
     /**
-     * <code>uint32 item_num = 1;</code>
+     * <code>uint32 item_num = 15;</code>
      * @return The itemNum.
      */
     int getItemNum();
@@ -53,8 +53,8 @@ public final class SeaLampFlyLampReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2144
-   * Obf: KDILEHOKEMA
+   * CmdId: 283
+   * Obf: IIMOKOHGGJJ
    * </pre>
    *
    * Protobuf type {@code SeaLampFlyLampReq}
@@ -101,22 +101,7 @@ public final class SeaLampFlyLampReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              itemNum_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              param_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 50: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -127,6 +112,21 @@ public final class SeaLampFlyLampReqOuterClass {
                 pos_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 56: {
+
+              param_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              itemId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              itemNum_ = input.readUInt32();
               break;
             }
             default: {
@@ -161,10 +161,10 @@ public final class SeaLampFlyLampReqOuterClass {
               emu.grasscutter.net.proto.SeaLampFlyLampReqOuterClass.SeaLampFlyLampReq.class, emu.grasscutter.net.proto.SeaLampFlyLampReqOuterClass.SeaLampFlyLampReq.Builder.class);
     }
 
-    public static final int POS_FIELD_NUMBER = 15;
+    public static final int POS_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      * @return Whether the pos field is set.
      */
     @java.lang.Override
@@ -172,7 +172,7 @@ public final class SeaLampFlyLampReqOuterClass {
       return pos_ != null;
     }
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      * @return The pos.
      */
     @java.lang.Override
@@ -180,17 +180,17 @@ public final class SeaLampFlyLampReqOuterClass {
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
     /**
-     * <code>.Vector pos = 15;</code>
+     * <code>.Vector pos = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
       return getPos();
     }
 
-    public static final int PARAM_FIELD_NUMBER = 6;
+    public static final int PARAM_FIELD_NUMBER = 7;
     private int param_;
     /**
-     * <code>int32 param = 6;</code>
+     * <code>int32 param = 7;</code>
      * @return The param.
      */
     @java.lang.Override
@@ -198,10 +198,10 @@ public final class SeaLampFlyLampReqOuterClass {
       return param_;
     }
 
-    public static final int ITEM_NUM_FIELD_NUMBER = 1;
+    public static final int ITEM_NUM_FIELD_NUMBER = 15;
     private int itemNum_;
     /**
-     * <code>uint32 item_num = 1;</code>
+     * <code>uint32 item_num = 15;</code>
      * @return The itemNum.
      */
     @java.lang.Override
@@ -234,17 +234,17 @@ public final class SeaLampFlyLampReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (itemNum_ != 0) {
-        output.writeUInt32(1, itemNum_);
+      if (pos_ != null) {
+        output.writeMessage(6, getPos());
       }
       if (param_ != 0) {
-        output.writeInt32(6, param_);
+        output.writeInt32(7, param_);
       }
       if (itemId_ != 0) {
         output.writeUInt32(8, itemId_);
       }
-      if (pos_ != null) {
-        output.writeMessage(15, getPos());
+      if (itemNum_ != 0) {
+        output.writeUInt32(15, itemNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -255,21 +255,21 @@ public final class SeaLampFlyLampReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (itemNum_ != 0) {
+      if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, itemNum_);
+          .computeMessageSize(6, getPos());
       }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, param_);
+          .computeInt32Size(7, param_);
       }
       if (itemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, itemId_);
       }
-      if (pos_ != null) {
+      if (itemNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getPos());
+          .computeUInt32Size(15, itemNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -415,8 +415,8 @@ public final class SeaLampFlyLampReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2144
-     * Obf: KDILEHOKEMA
+     * CmdId: 283
+     * Obf: IIMOKOHGGJJ
      * </pre>
      *
      * Protobuf type {@code SeaLampFlyLampReq}
@@ -595,14 +595,14 @@ public final class SeaLampFlyLampReqOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -613,7 +613,7 @@ public final class SeaLampFlyLampReqOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -629,7 +629,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -643,7 +643,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -661,7 +661,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public Builder clearPos() {
         if (posBuilder_ == null) {
@@ -675,7 +675,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         
@@ -683,7 +683,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return getPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -694,7 +694,7 @@ public final class SeaLampFlyLampReqOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 15;</code>
+       * <code>.Vector pos = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -712,7 +712,7 @@ public final class SeaLampFlyLampReqOuterClass {
 
       private int param_ ;
       /**
-       * <code>int32 param = 6;</code>
+       * <code>int32 param = 7;</code>
        * @return The param.
        */
       @java.lang.Override
@@ -720,7 +720,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return param_;
       }
       /**
-       * <code>int32 param = 6;</code>
+       * <code>int32 param = 7;</code>
        * @param value The param to set.
        * @return This builder for chaining.
        */
@@ -731,7 +731,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>int32 param = 6;</code>
+       * <code>int32 param = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam() {
@@ -743,7 +743,7 @@ public final class SeaLampFlyLampReqOuterClass {
 
       private int itemNum_ ;
       /**
-       * <code>uint32 item_num = 1;</code>
+       * <code>uint32 item_num = 15;</code>
        * @return The itemNum.
        */
       @java.lang.Override
@@ -751,7 +751,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return itemNum_;
       }
       /**
-       * <code>uint32 item_num = 1;</code>
+       * <code>uint32 item_num = 15;</code>
        * @param value The itemNum to set.
        * @return This builder for chaining.
        */
@@ -762,7 +762,7 @@ public final class SeaLampFlyLampReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 item_num = 1;</code>
+       * <code>uint32 item_num = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearItemNum() {
@@ -870,8 +870,8 @@ public final class SeaLampFlyLampReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027SeaLampFlyLampReq.proto\032\014Vector.proto\"" +
-      "[\n\021SeaLampFlyLampReq\022\024\n\003pos\030\017 \001(\0132\007.Vect" +
-      "or\022\r\n\005param\030\006 \001(\005\022\020\n\010item_num\030\001 \001(\r\022\017\n\007i" +
+      "[\n\021SeaLampFlyLampReq\022\024\n\003pos\030\006 \001(\0132\007.Vect" +
+      "or\022\r\n\005param\030\007 \001(\005\022\020\n\010item_num\030\017 \001(\r\022\017\n\007i" +
       "tem_id\030\010 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };

@@ -82,7 +82,7 @@ public final class GadgetPlayInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: CMNFEFNBLLD
+   * Obf: LJJODNPIMAI
    * </pre>
    *
    * Protobuf type {@code GadgetPlayInfo}
@@ -580,7 +580,7 @@ public final class GadgetPlayInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CMNFEFNBLLD
+     * Obf: LJJODNPIMAI
      * </pre>
      *
      * Protobuf type {@code GadgetPlayInfo}

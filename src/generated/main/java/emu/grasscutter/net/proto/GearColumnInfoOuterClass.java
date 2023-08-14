@@ -19,38 +19,38 @@ public final class GearColumnInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gear_id = 12;</code>
+     * <code>uint32 gear_id = 8;</code>
      * @return The gearId.
      */
     int getGearId();
 
     /**
-     * <code>bool BOCJOBKGFII = 4;</code>
-     * @return The bOCJOBKGFII.
+     * <code>uint32 KPGMKFOLJLN = 7;</code>
+     * @return The kPGMKFOLJLN.
      */
-    boolean getBOCJOBKGFII();
+    int getKPGMKFOLJLN();
 
     /**
-     * <code>bool JAPPFAKHOBL = 9;</code>
-     * @return The jAPPFAKHOBL.
+     * <code>bool BOMLCILIEMG = 4;</code>
+     * @return The bOMLCILIEMG.
      */
-    boolean getJAPPFAKHOBL();
+    boolean getBOMLCILIEMG();
 
     /**
-     * <code>uint32 NNEKELPHBAE = 11;</code>
-     * @return The nNEKELPHBAE.
+     * <code>bool FECKOAAIJKK = 15;</code>
+     * @return The fECKOAAIJKK.
      */
-    int getNNEKELPHBAE();
+    boolean getFECKOAAIJKK();
 
     /**
-     * <code>uint32 EGFFBAGNHFJ = 13;</code>
-     * @return The eGFFBAGNHFJ.
+     * <code>uint32 DIAJIFOBCHL = 14;</code>
+     * @return The dIAJIFOBCHL.
      */
-    int getEGFFBAGNHFJ();
+    int getDIAJIFOBCHL();
   }
   /**
    * <pre>
-   * Obf: FNCFKHNAFFN
+   * Obf: LEMINHIFLOG
    * </pre>
    *
    * Protobuf type {@code GearColumnInfo}
@@ -99,27 +99,27 @@ public final class GearColumnInfoOuterClass {
               break;
             case 32: {
 
-              bOCJOBKGFII_ = input.readBool();
+              bOMLCILIEMG_ = input.readBool();
               break;
             }
-            case 72: {
+            case 56: {
 
-              jAPPFAKHOBL_ = input.readBool();
+              kPGMKFOLJLN_ = input.readUInt32();
               break;
             }
-            case 88: {
-
-              nNEKELPHBAE_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 64: {
 
               gearId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
-              eGFFBAGNHFJ_ = input.readUInt32();
+              dIAJIFOBCHL_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              fECKOAAIJKK_ = input.readBool();
               break;
             }
             default: {
@@ -154,10 +154,10 @@ public final class GearColumnInfoOuterClass {
               emu.grasscutter.net.proto.GearColumnInfoOuterClass.GearColumnInfo.class, emu.grasscutter.net.proto.GearColumnInfoOuterClass.GearColumnInfo.Builder.class);
     }
 
-    public static final int GEAR_ID_FIELD_NUMBER = 12;
+    public static final int GEAR_ID_FIELD_NUMBER = 8;
     private int gearId_;
     /**
-     * <code>uint32 gear_id = 12;</code>
+     * <code>uint32 gear_id = 8;</code>
      * @return The gearId.
      */
     @java.lang.Override
@@ -165,48 +165,48 @@ public final class GearColumnInfoOuterClass {
       return gearId_;
     }
 
-    public static final int BOCJOBKGFII_FIELD_NUMBER = 4;
-    private boolean bOCJOBKGFII_;
+    public static final int KPGMKFOLJLN_FIELD_NUMBER = 7;
+    private int kPGMKFOLJLN_;
     /**
-     * <code>bool BOCJOBKGFII = 4;</code>
-     * @return The bOCJOBKGFII.
+     * <code>uint32 KPGMKFOLJLN = 7;</code>
+     * @return The kPGMKFOLJLN.
      */
     @java.lang.Override
-    public boolean getBOCJOBKGFII() {
-      return bOCJOBKGFII_;
+    public int getKPGMKFOLJLN() {
+      return kPGMKFOLJLN_;
     }
 
-    public static final int JAPPFAKHOBL_FIELD_NUMBER = 9;
-    private boolean jAPPFAKHOBL_;
+    public static final int BOMLCILIEMG_FIELD_NUMBER = 4;
+    private boolean bOMLCILIEMG_;
     /**
-     * <code>bool JAPPFAKHOBL = 9;</code>
-     * @return The jAPPFAKHOBL.
+     * <code>bool BOMLCILIEMG = 4;</code>
+     * @return The bOMLCILIEMG.
      */
     @java.lang.Override
-    public boolean getJAPPFAKHOBL() {
-      return jAPPFAKHOBL_;
+    public boolean getBOMLCILIEMG() {
+      return bOMLCILIEMG_;
     }
 
-    public static final int NNEKELPHBAE_FIELD_NUMBER = 11;
-    private int nNEKELPHBAE_;
+    public static final int FECKOAAIJKK_FIELD_NUMBER = 15;
+    private boolean fECKOAAIJKK_;
     /**
-     * <code>uint32 NNEKELPHBAE = 11;</code>
-     * @return The nNEKELPHBAE.
+     * <code>bool FECKOAAIJKK = 15;</code>
+     * @return The fECKOAAIJKK.
      */
     @java.lang.Override
-    public int getNNEKELPHBAE() {
-      return nNEKELPHBAE_;
+    public boolean getFECKOAAIJKK() {
+      return fECKOAAIJKK_;
     }
 
-    public static final int EGFFBAGNHFJ_FIELD_NUMBER = 13;
-    private int eGFFBAGNHFJ_;
+    public static final int DIAJIFOBCHL_FIELD_NUMBER = 14;
+    private int dIAJIFOBCHL_;
     /**
-     * <code>uint32 EGFFBAGNHFJ = 13;</code>
-     * @return The eGFFBAGNHFJ.
+     * <code>uint32 DIAJIFOBCHL = 14;</code>
+     * @return The dIAJIFOBCHL.
      */
     @java.lang.Override
-    public int getEGFFBAGNHFJ() {
-      return eGFFBAGNHFJ_;
+    public int getDIAJIFOBCHL() {
+      return dIAJIFOBCHL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,20 +223,20 @@ public final class GearColumnInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bOCJOBKGFII_ != false) {
-        output.writeBool(4, bOCJOBKGFII_);
+      if (bOMLCILIEMG_ != false) {
+        output.writeBool(4, bOMLCILIEMG_);
       }
-      if (jAPPFAKHOBL_ != false) {
-        output.writeBool(9, jAPPFAKHOBL_);
-      }
-      if (nNEKELPHBAE_ != 0) {
-        output.writeUInt32(11, nNEKELPHBAE_);
+      if (kPGMKFOLJLN_ != 0) {
+        output.writeUInt32(7, kPGMKFOLJLN_);
       }
       if (gearId_ != 0) {
-        output.writeUInt32(12, gearId_);
+        output.writeUInt32(8, gearId_);
       }
-      if (eGFFBAGNHFJ_ != 0) {
-        output.writeUInt32(13, eGFFBAGNHFJ_);
+      if (dIAJIFOBCHL_ != 0) {
+        output.writeUInt32(14, dIAJIFOBCHL_);
+      }
+      if (fECKOAAIJKK_ != false) {
+        output.writeBool(15, fECKOAAIJKK_);
       }
       unknownFields.writeTo(output);
     }
@@ -247,25 +247,25 @@ public final class GearColumnInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bOCJOBKGFII_ != false) {
+      if (bOMLCILIEMG_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, bOCJOBKGFII_);
+          .computeBoolSize(4, bOMLCILIEMG_);
       }
-      if (jAPPFAKHOBL_ != false) {
+      if (kPGMKFOLJLN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, jAPPFAKHOBL_);
-      }
-      if (nNEKELPHBAE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, nNEKELPHBAE_);
+          .computeUInt32Size(7, kPGMKFOLJLN_);
       }
       if (gearId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gearId_);
+          .computeUInt32Size(8, gearId_);
       }
-      if (eGFFBAGNHFJ_ != 0) {
+      if (dIAJIFOBCHL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, eGFFBAGNHFJ_);
+          .computeUInt32Size(14, dIAJIFOBCHL_);
+      }
+      if (fECKOAAIJKK_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, fECKOAAIJKK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,14 +284,14 @@ public final class GearColumnInfoOuterClass {
 
       if (getGearId()
           != other.getGearId()) return false;
-      if (getBOCJOBKGFII()
-          != other.getBOCJOBKGFII()) return false;
-      if (getJAPPFAKHOBL()
-          != other.getJAPPFAKHOBL()) return false;
-      if (getNNEKELPHBAE()
-          != other.getNNEKELPHBAE()) return false;
-      if (getEGFFBAGNHFJ()
-          != other.getEGFFBAGNHFJ()) return false;
+      if (getKPGMKFOLJLN()
+          != other.getKPGMKFOLJLN()) return false;
+      if (getBOMLCILIEMG()
+          != other.getBOMLCILIEMG()) return false;
+      if (getFECKOAAIJKK()
+          != other.getFECKOAAIJKK()) return false;
+      if (getDIAJIFOBCHL()
+          != other.getDIAJIFOBCHL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -305,16 +305,16 @@ public final class GearColumnInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GEAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGearId();
-      hash = (37 * hash) + BOCJOBKGFII_FIELD_NUMBER;
+      hash = (37 * hash) + KPGMKFOLJLN_FIELD_NUMBER;
+      hash = (53 * hash) + getKPGMKFOLJLN();
+      hash = (37 * hash) + BOMLCILIEMG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBOCJOBKGFII());
-      hash = (37 * hash) + JAPPFAKHOBL_FIELD_NUMBER;
+          getBOMLCILIEMG());
+      hash = (37 * hash) + FECKOAAIJKK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJAPPFAKHOBL());
-      hash = (37 * hash) + NNEKELPHBAE_FIELD_NUMBER;
-      hash = (53 * hash) + getNNEKELPHBAE();
-      hash = (37 * hash) + EGFFBAGNHFJ_FIELD_NUMBER;
-      hash = (53 * hash) + getEGFFBAGNHFJ();
+          getFECKOAAIJKK());
+      hash = (37 * hash) + DIAJIFOBCHL_FIELD_NUMBER;
+      hash = (53 * hash) + getDIAJIFOBCHL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -412,7 +412,7 @@ public final class GearColumnInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FNCFKHNAFFN
+     * Obf: LEMINHIFLOG
      * </pre>
      *
      * Protobuf type {@code GearColumnInfo}
@@ -454,13 +454,13 @@ public final class GearColumnInfoOuterClass {
         super.clear();
         gearId_ = 0;
 
-        bOCJOBKGFII_ = false;
+        kPGMKFOLJLN_ = 0;
 
-        jAPPFAKHOBL_ = false;
+        bOMLCILIEMG_ = false;
 
-        nNEKELPHBAE_ = 0;
+        fECKOAAIJKK_ = false;
 
-        eGFFBAGNHFJ_ = 0;
+        dIAJIFOBCHL_ = 0;
 
         return this;
       }
@@ -489,10 +489,10 @@ public final class GearColumnInfoOuterClass {
       public emu.grasscutter.net.proto.GearColumnInfoOuterClass.GearColumnInfo buildPartial() {
         emu.grasscutter.net.proto.GearColumnInfoOuterClass.GearColumnInfo result = new emu.grasscutter.net.proto.GearColumnInfoOuterClass.GearColumnInfo(this);
         result.gearId_ = gearId_;
-        result.bOCJOBKGFII_ = bOCJOBKGFII_;
-        result.jAPPFAKHOBL_ = jAPPFAKHOBL_;
-        result.nNEKELPHBAE_ = nNEKELPHBAE_;
-        result.eGFFBAGNHFJ_ = eGFFBAGNHFJ_;
+        result.kPGMKFOLJLN_ = kPGMKFOLJLN_;
+        result.bOMLCILIEMG_ = bOMLCILIEMG_;
+        result.fECKOAAIJKK_ = fECKOAAIJKK_;
+        result.dIAJIFOBCHL_ = dIAJIFOBCHL_;
         onBuilt();
         return result;
       }
@@ -544,17 +544,17 @@ public final class GearColumnInfoOuterClass {
         if (other.getGearId() != 0) {
           setGearId(other.getGearId());
         }
-        if (other.getBOCJOBKGFII() != false) {
-          setBOCJOBKGFII(other.getBOCJOBKGFII());
+        if (other.getKPGMKFOLJLN() != 0) {
+          setKPGMKFOLJLN(other.getKPGMKFOLJLN());
         }
-        if (other.getJAPPFAKHOBL() != false) {
-          setJAPPFAKHOBL(other.getJAPPFAKHOBL());
+        if (other.getBOMLCILIEMG() != false) {
+          setBOMLCILIEMG(other.getBOMLCILIEMG());
         }
-        if (other.getNNEKELPHBAE() != 0) {
-          setNNEKELPHBAE(other.getNNEKELPHBAE());
+        if (other.getFECKOAAIJKK() != false) {
+          setFECKOAAIJKK(other.getFECKOAAIJKK());
         }
-        if (other.getEGFFBAGNHFJ() != 0) {
-          setEGFFBAGNHFJ(other.getEGFFBAGNHFJ());
+        if (other.getDIAJIFOBCHL() != 0) {
+          setDIAJIFOBCHL(other.getDIAJIFOBCHL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -587,7 +587,7 @@ public final class GearColumnInfoOuterClass {
 
       private int gearId_ ;
       /**
-       * <code>uint32 gear_id = 12;</code>
+       * <code>uint32 gear_id = 8;</code>
        * @return The gearId.
        */
       @java.lang.Override
@@ -595,7 +595,7 @@ public final class GearColumnInfoOuterClass {
         return gearId_;
       }
       /**
-       * <code>uint32 gear_id = 12;</code>
+       * <code>uint32 gear_id = 8;</code>
        * @param value The gearId to set.
        * @return This builder for chaining.
        */
@@ -606,7 +606,7 @@ public final class GearColumnInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gear_id = 12;</code>
+       * <code>uint32 gear_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearGearId() {
@@ -616,126 +616,126 @@ public final class GearColumnInfoOuterClass {
         return this;
       }
 
-      private boolean bOCJOBKGFII_ ;
+      private int kPGMKFOLJLN_ ;
       /**
-       * <code>bool BOCJOBKGFII = 4;</code>
-       * @return The bOCJOBKGFII.
+       * <code>uint32 KPGMKFOLJLN = 7;</code>
+       * @return The kPGMKFOLJLN.
        */
       @java.lang.Override
-      public boolean getBOCJOBKGFII() {
-        return bOCJOBKGFII_;
+      public int getKPGMKFOLJLN() {
+        return kPGMKFOLJLN_;
       }
       /**
-       * <code>bool BOCJOBKGFII = 4;</code>
-       * @param value The bOCJOBKGFII to set.
+       * <code>uint32 KPGMKFOLJLN = 7;</code>
+       * @param value The kPGMKFOLJLN to set.
        * @return This builder for chaining.
        */
-      public Builder setBOCJOBKGFII(boolean value) {
+      public Builder setKPGMKFOLJLN(int value) {
         
-        bOCJOBKGFII_ = value;
+        kPGMKFOLJLN_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BOCJOBKGFII = 4;</code>
+       * <code>uint32 KPGMKFOLJLN = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBOCJOBKGFII() {
+      public Builder clearKPGMKFOLJLN() {
         
-        bOCJOBKGFII_ = false;
+        kPGMKFOLJLN_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean jAPPFAKHOBL_ ;
+      private boolean bOMLCILIEMG_ ;
       /**
-       * <code>bool JAPPFAKHOBL = 9;</code>
-       * @return The jAPPFAKHOBL.
+       * <code>bool BOMLCILIEMG = 4;</code>
+       * @return The bOMLCILIEMG.
        */
       @java.lang.Override
-      public boolean getJAPPFAKHOBL() {
-        return jAPPFAKHOBL_;
+      public boolean getBOMLCILIEMG() {
+        return bOMLCILIEMG_;
       }
       /**
-       * <code>bool JAPPFAKHOBL = 9;</code>
-       * @param value The jAPPFAKHOBL to set.
+       * <code>bool BOMLCILIEMG = 4;</code>
+       * @param value The bOMLCILIEMG to set.
        * @return This builder for chaining.
        */
-      public Builder setJAPPFAKHOBL(boolean value) {
+      public Builder setBOMLCILIEMG(boolean value) {
         
-        jAPPFAKHOBL_ = value;
+        bOMLCILIEMG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool JAPPFAKHOBL = 9;</code>
+       * <code>bool BOMLCILIEMG = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJAPPFAKHOBL() {
+      public Builder clearBOMLCILIEMG() {
         
-        jAPPFAKHOBL_ = false;
+        bOMLCILIEMG_ = false;
         onChanged();
         return this;
       }
 
-      private int nNEKELPHBAE_ ;
+      private boolean fECKOAAIJKK_ ;
       /**
-       * <code>uint32 NNEKELPHBAE = 11;</code>
-       * @return The nNEKELPHBAE.
+       * <code>bool FECKOAAIJKK = 15;</code>
+       * @return The fECKOAAIJKK.
        */
       @java.lang.Override
-      public int getNNEKELPHBAE() {
-        return nNEKELPHBAE_;
+      public boolean getFECKOAAIJKK() {
+        return fECKOAAIJKK_;
       }
       /**
-       * <code>uint32 NNEKELPHBAE = 11;</code>
-       * @param value The nNEKELPHBAE to set.
+       * <code>bool FECKOAAIJKK = 15;</code>
+       * @param value The fECKOAAIJKK to set.
        * @return This builder for chaining.
        */
-      public Builder setNNEKELPHBAE(int value) {
+      public Builder setFECKOAAIJKK(boolean value) {
         
-        nNEKELPHBAE_ = value;
+        fECKOAAIJKK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NNEKELPHBAE = 11;</code>
+       * <code>bool FECKOAAIJKK = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNNEKELPHBAE() {
+      public Builder clearFECKOAAIJKK() {
         
-        nNEKELPHBAE_ = 0;
+        fECKOAAIJKK_ = false;
         onChanged();
         return this;
       }
 
-      private int eGFFBAGNHFJ_ ;
+      private int dIAJIFOBCHL_ ;
       /**
-       * <code>uint32 EGFFBAGNHFJ = 13;</code>
-       * @return The eGFFBAGNHFJ.
+       * <code>uint32 DIAJIFOBCHL = 14;</code>
+       * @return The dIAJIFOBCHL.
        */
       @java.lang.Override
-      public int getEGFFBAGNHFJ() {
-        return eGFFBAGNHFJ_;
+      public int getDIAJIFOBCHL() {
+        return dIAJIFOBCHL_;
       }
       /**
-       * <code>uint32 EGFFBAGNHFJ = 13;</code>
-       * @param value The eGFFBAGNHFJ to set.
+       * <code>uint32 DIAJIFOBCHL = 14;</code>
+       * @param value The dIAJIFOBCHL to set.
        * @return This builder for chaining.
        */
-      public Builder setEGFFBAGNHFJ(int value) {
+      public Builder setDIAJIFOBCHL(int value) {
         
-        eGFFBAGNHFJ_ = value;
+        dIAJIFOBCHL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 EGFFBAGNHFJ = 13;</code>
+       * <code>uint32 DIAJIFOBCHL = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEGFFBAGNHFJ() {
+      public Builder clearDIAJIFOBCHL() {
         
-        eGFFBAGNHFJ_ = 0;
+        dIAJIFOBCHL_ = 0;
         onChanged();
         return this;
       }
@@ -807,9 +807,9 @@ public final class GearColumnInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GearColumnInfo.proto\"u\n\016GearColumnInfo" +
-      "\022\017\n\007gear_id\030\014 \001(\r\022\023\n\013BOCJOBKGFII\030\004 \001(\010\022\023" +
-      "\n\013JAPPFAKHOBL\030\t \001(\010\022\023\n\013NNEKELPHBAE\030\013 \001(\r" +
-      "\022\023\n\013EGFFBAGNHFJ\030\r \001(\rB\033\n\031emu.grasscutter" +
+      "\022\017\n\007gear_id\030\010 \001(\r\022\023\n\013KPGMKFOLJLN\030\007 \001(\r\022\023" +
+      "\n\013BOMLCILIEMG\030\004 \001(\010\022\023\n\013FECKOAAIJKK\030\017 \001(\010" +
+      "\022\023\n\013DIAJIFOBCHL\030\016 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -821,7 +821,7 @@ public final class GearColumnInfoOuterClass {
     internal_static_GearColumnInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GearColumnInfo_descriptor,
-        new java.lang.String[] { "GearId", "BOCJOBKGFII", "JAPPFAKHOBL", "NNEKELPHBAE", "EGFFBAGNHFJ", });
+        new java.lang.String[] { "GearId", "KPGMKFOLJLN", "BOMLCILIEMG", "FECKOAAIJKK", "DIAJIFOBCHL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

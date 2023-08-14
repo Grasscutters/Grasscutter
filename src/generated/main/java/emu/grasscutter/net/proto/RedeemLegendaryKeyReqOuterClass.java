@@ -20,8 +20,8 @@ public final class RedeemLegendaryKeyReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 480
-   * Obf: ELJILKEDOIG
+   * CmdId: 8427
+   * Obf: EMAMJFBPOLE
    * </pre>
    *
    * Protobuf type {@code RedeemLegendaryKeyReq}
@@ -246,8 +246,8 @@ public final class RedeemLegendaryKeyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 480
-     * Obf: ELJILKEDOIG
+     * CmdId: 8427
+     * Obf: EMAMJFBPOLE
      * </pre>
      *
      * Protobuf type {@code RedeemLegendaryKeyReq}

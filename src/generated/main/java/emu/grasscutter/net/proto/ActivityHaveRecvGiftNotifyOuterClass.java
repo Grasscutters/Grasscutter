@@ -19,15 +19,15 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
    * <pre>
-   * CmdId: 8733
-   * Obf: HAJLGICGADJ
+   * CmdId: 20546
+   * Obf: CHFGKDAEKLE
    * </pre>
    *
    * Protobuf type {@code ActivityHaveRecvGiftNotify}
@@ -74,7 +74,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 80: {
 
               scheduleId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityHaveRecvGiftNotifyOuterClass.ActivityHaveRecvGiftNotify.class, emu.grasscutter.net.proto.ActivityHaveRecvGiftNotifyOuterClass.ActivityHaveRecvGiftNotify.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 10;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 9;</code>
+     * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleId_ != 0) {
-        output.writeUInt32(9, scheduleId_);
+        output.writeUInt32(10, scheduleId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
       size = 0;
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, scheduleId_);
+          .computeUInt32Size(10, scheduleId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8733
-     * Obf: HAJLGICGADJ
+     * CmdId: 20546
+     * Obf: CHFGKDAEKLE
      * </pre>
      *
      * Protobuf type {@code ActivityHaveRecvGiftNotify}
@@ -431,7 +431,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 9;</code>
+       * <code>uint32 schedule_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -528,7 +528,7 @@ public final class ActivityHaveRecvGiftNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n ActivityHaveRecvGiftNotify.proto\"1\n\032Ac" +
       "tivityHaveRecvGiftNotify\022\023\n\013schedule_id\030" +
-      "\t \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\n \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

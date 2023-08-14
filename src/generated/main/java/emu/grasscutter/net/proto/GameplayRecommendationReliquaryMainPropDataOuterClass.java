@@ -19,20 +19,20 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 main_prop_id = 8;</code>
+     * <code>uint32 main_prop_id = 6;</code>
      * @return The mainPropId.
      */
     int getMainPropId();
 
     /**
-     * <code>uint32 permillage = 5;</code>
+     * <code>uint32 permillage = 3;</code>
      * @return The permillage.
      */
     int getPermillage();
   }
   /**
    * <pre>
-   * Obf: MAELGEKPEAL
+   * Obf: BDGBIAFBCBG
    * </pre>
    *
    * Protobuf type {@code GameplayRecommendationReliquaryMainPropData}
@@ -79,12 +79,12 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               permillage_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 48: {
 
               mainPropId_ = input.readUInt32();
               break;
@@ -121,10 +121,10 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
               emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.class, emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder.class);
     }
 
-    public static final int MAIN_PROP_ID_FIELD_NUMBER = 8;
+    public static final int MAIN_PROP_ID_FIELD_NUMBER = 6;
     private int mainPropId_;
     /**
-     * <code>uint32 main_prop_id = 8;</code>
+     * <code>uint32 main_prop_id = 6;</code>
      * @return The mainPropId.
      */
     @java.lang.Override
@@ -132,10 +132,10 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       return mainPropId_;
     }
 
-    public static final int PERMILLAGE_FIELD_NUMBER = 5;
+    public static final int PERMILLAGE_FIELD_NUMBER = 3;
     private int permillage_;
     /**
-     * <code>uint32 permillage = 5;</code>
+     * <code>uint32 permillage = 3;</code>
      * @return The permillage.
      */
     @java.lang.Override
@@ -158,10 +158,10 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (permillage_ != 0) {
-        output.writeUInt32(5, permillage_);
+        output.writeUInt32(3, permillage_);
       }
       if (mainPropId_ != 0) {
-        output.writeUInt32(8, mainPropId_);
+        output.writeUInt32(6, mainPropId_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
       size = 0;
       if (permillage_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, permillage_);
+          .computeUInt32Size(3, permillage_);
       }
       if (mainPropId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, mainPropId_);
+          .computeUInt32Size(6, mainPropId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -311,7 +311,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     }
     /**
      * <pre>
-     * Obf: MAELGEKPEAL
+     * Obf: BDGBIAFBCBG
      * </pre>
      *
      * Protobuf type {@code GameplayRecommendationReliquaryMainPropData}
@@ -468,7 +468,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
       private int mainPropId_ ;
       /**
-       * <code>uint32 main_prop_id = 8;</code>
+       * <code>uint32 main_prop_id = 6;</code>
        * @return The mainPropId.
        */
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         return mainPropId_;
       }
       /**
-       * <code>uint32 main_prop_id = 8;</code>
+       * <code>uint32 main_prop_id = 6;</code>
        * @param value The mainPropId to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 main_prop_id = 8;</code>
+       * <code>uint32 main_prop_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearMainPropId() {
@@ -499,7 +499,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
       private int permillage_ ;
       /**
-       * <code>uint32 permillage = 5;</code>
+       * <code>uint32 permillage = 3;</code>
        * @return The permillage.
        */
       @java.lang.Override
@@ -507,7 +507,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         return permillage_;
       }
       /**
-       * <code>uint32 permillage = 5;</code>
+       * <code>uint32 permillage = 3;</code>
        * @param value The permillage to set.
        * @return This builder for chaining.
        */
@@ -518,7 +518,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 permillage = 5;</code>
+       * <code>uint32 permillage = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPermillage() {
@@ -596,8 +596,8 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n1GameplayRecommendationReliquaryMainPro" +
       "pData.proto\"W\n+GameplayRecommendationRel" +
-      "iquaryMainPropData\022\024\n\014main_prop_id\030\010 \001(\r" +
-      "\022\022\n\npermillage\030\005 \001(\rB\033\n\031emu.grasscutter." +
+      "iquaryMainPropData\022\024\n\014main_prop_id\030\006 \001(\r" +
+      "\022\022\n\npermillage\030\003 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

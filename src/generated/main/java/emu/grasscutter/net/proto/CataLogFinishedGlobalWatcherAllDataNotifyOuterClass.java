@@ -44,8 +44,8 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 6353
-   * Obf: EEBGALKIANL
+   * CmdId: 6277
+   * Obf: INIFBMCNLFH
    * </pre>
    *
    * Protobuf type {@code CataLogFinishedGlobalWatcherAllDataNotify}
@@ -337,8 +337,8 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6353
-     * Obf: EEBGALKIANL
+     * CmdId: 6277
+     * Obf: INIFBMCNLFH
      * </pre>
      *
      * Protobuf type {@code CataLogFinishedGlobalWatcherAllDataNotify}

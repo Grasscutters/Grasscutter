@@ -19,15 +19,15 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8320
-   * Obf: BBLELPOANFE
+   * CmdId: 27459
+   * Obf: PIBGNDFDNAJ
    * </pre>
    *
    * Protobuf type {@code WinterCampEditSnowmanCombinationRsp}
@@ -74,7 +74,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
               emu.grasscutter.net.proto.WinterCampEditSnowmanCombinationRspOuterClass.WinterCampEditSnowmanCombinationRsp.class, emu.grasscutter.net.proto.WinterCampEditSnowmanCombinationRspOuterClass.WinterCampEditSnowmanCombinationRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8320
-     * Obf: BBLELPOANFE
+     * CmdId: 27459
+     * Obf: PIBGNDFDNAJ
      * </pre>
      *
      * Protobuf type {@code WinterCampEditSnowmanCombinationRsp}
@@ -431,7 +431,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -528,7 +528,7 @@ public final class WinterCampEditSnowmanCombinationRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n)WinterCampEditSnowmanCombinationRsp.pr" +
       "oto\"6\n#WinterCampEditSnowmanCombinationR" +
-      "sp\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grasscutter.n" +
+      "sp\022\017\n\007retcode\030\t \001(\005B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

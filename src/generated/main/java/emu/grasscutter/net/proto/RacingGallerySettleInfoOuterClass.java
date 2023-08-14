@@ -19,31 +19,31 @@ public final class RacingGallerySettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 use_time = 14;</code>
-     * @return The useTime.
-     */
-    int getUseTime();
-
-    /**
-     * <code>uint32 winner_uid = 10;</code>
+     * <code>uint32 winner_uid = 13;</code>
      * @return The winnerUid.
      */
     int getWinnerUid();
 
     /**
-     * <code>.HDDANIDHCMI reason = 11;</code>
+     * <code>uint32 use_time = 1;</code>
+     * @return The useTime.
+     */
+    int getUseTime();
+
+    /**
+     * <code>.KDHIAEFLGFM reason = 6;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.HDDANIDHCMI reason = 11;</code>
+     * <code>.KDHIAEFLGFM reason = 6;</code>
      * @return The reason.
      */
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason();
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason();
   }
   /**
    * <pre>
-   * Obf: IBEPMEHMFIP
+   * Obf: APOLMDBNNMP
    * </pre>
    *
    * Protobuf type {@code RacingGallerySettleInfo}
@@ -91,20 +91,20 @@ public final class RacingGallerySettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 8: {
 
-              winnerUid_ = input.readUInt32();
+              useTime_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 48: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 112: {
+            case 104: {
 
-              useTime_ = input.readUInt32();
+              winnerUid_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,21 +139,10 @@ public final class RacingGallerySettleInfoOuterClass {
               emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo.class, emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo.Builder.class);
     }
 
-    public static final int USE_TIME_FIELD_NUMBER = 14;
-    private int useTime_;
-    /**
-     * <code>uint32 use_time = 14;</code>
-     * @return The useTime.
-     */
-    @java.lang.Override
-    public int getUseTime() {
-      return useTime_;
-    }
-
-    public static final int WINNER_UID_FIELD_NUMBER = 10;
+    public static final int WINNER_UID_FIELD_NUMBER = 13;
     private int winnerUid_;
     /**
-     * <code>uint32 winner_uid = 10;</code>
+     * <code>uint32 winner_uid = 13;</code>
      * @return The winnerUid.
      */
     @java.lang.Override
@@ -161,23 +150,34 @@ public final class RacingGallerySettleInfoOuterClass {
       return winnerUid_;
     }
 
-    public static final int REASON_FIELD_NUMBER = 11;
+    public static final int USE_TIME_FIELD_NUMBER = 1;
+    private int useTime_;
+    /**
+     * <code>uint32 use_time = 1;</code>
+     * @return The useTime.
+     */
+    @java.lang.Override
+    public int getUseTime() {
+      return useTime_;
+    }
+
+    public static final int REASON_FIELD_NUMBER = 6;
     private int reason_;
     /**
-     * <code>.HDDANIDHCMI reason = 11;</code>
+     * <code>.KDHIAEFLGFM reason = 6;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.HDDANIDHCMI reason = 11;</code>
+     * <code>.KDHIAEFLGFM reason = 6;</code>
      * @return The reason.
      */
-    @java.lang.Override public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
+    @java.lang.Override public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
       @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
+      emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -194,14 +194,14 @@ public final class RacingGallerySettleInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (winnerUid_ != 0) {
-        output.writeUInt32(10, winnerUid_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        output.writeEnum(11, reason_);
-      }
       if (useTime_ != 0) {
-        output.writeUInt32(14, useTime_);
+        output.writeUInt32(1, useTime_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        output.writeEnum(6, reason_);
+      }
+      if (winnerUid_ != 0) {
+        output.writeUInt32(13, winnerUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -212,17 +212,17 @@ public final class RacingGallerySettleInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (winnerUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, winnerUid_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(11, reason_);
-      }
       if (useTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, useTime_);
+          .computeUInt32Size(1, useTime_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, reason_);
+      }
+      if (winnerUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, winnerUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -239,10 +239,10 @@ public final class RacingGallerySettleInfoOuterClass {
       }
       emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo other = (emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo) obj;
 
-      if (getUseTime()
-          != other.getUseTime()) return false;
       if (getWinnerUid()
           != other.getWinnerUid()) return false;
+      if (getUseTime()
+          != other.getUseTime()) return false;
       if (reason_ != other.reason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -255,10 +255,10 @@ public final class RacingGallerySettleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUseTime();
       hash = (37 * hash) + WINNER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getWinnerUid();
+      hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUseTime();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -358,7 +358,7 @@ public final class RacingGallerySettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: IBEPMEHMFIP
+     * Obf: APOLMDBNNMP
      * </pre>
      *
      * Protobuf type {@code RacingGallerySettleInfo}
@@ -398,9 +398,9 @@ public final class RacingGallerySettleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        useTime_ = 0;
-
         winnerUid_ = 0;
+
+        useTime_ = 0;
 
         reason_ = 0;
 
@@ -430,8 +430,8 @@ public final class RacingGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo buildPartial() {
         emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo result = new emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo(this);
-        result.useTime_ = useTime_;
         result.winnerUid_ = winnerUid_;
+        result.useTime_ = useTime_;
         result.reason_ = reason_;
         onBuilt();
         return result;
@@ -481,11 +481,11 @@ public final class RacingGallerySettleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo other) {
         if (other == emu.grasscutter.net.proto.RacingGallerySettleInfoOuterClass.RacingGallerySettleInfo.getDefaultInstance()) return this;
-        if (other.getUseTime() != 0) {
-          setUseTime(other.getUseTime());
-        }
         if (other.getWinnerUid() != 0) {
           setWinnerUid(other.getWinnerUid());
+        }
+        if (other.getUseTime() != 0) {
+          setUseTime(other.getUseTime());
         }
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
@@ -519,40 +519,9 @@ public final class RacingGallerySettleInfoOuterClass {
         return this;
       }
 
-      private int useTime_ ;
-      /**
-       * <code>uint32 use_time = 14;</code>
-       * @return The useTime.
-       */
-      @java.lang.Override
-      public int getUseTime() {
-        return useTime_;
-      }
-      /**
-       * <code>uint32 use_time = 14;</code>
-       * @param value The useTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUseTime(int value) {
-        
-        useTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 use_time = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUseTime() {
-        
-        useTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int winnerUid_ ;
       /**
-       * <code>uint32 winner_uid = 10;</code>
+       * <code>uint32 winner_uid = 13;</code>
        * @return The winnerUid.
        */
       @java.lang.Override
@@ -560,7 +529,7 @@ public final class RacingGallerySettleInfoOuterClass {
         return winnerUid_;
       }
       /**
-       * <code>uint32 winner_uid = 10;</code>
+       * <code>uint32 winner_uid = 13;</code>
        * @param value The winnerUid to set.
        * @return This builder for chaining.
        */
@@ -571,7 +540,7 @@ public final class RacingGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 winner_uid = 10;</code>
+       * <code>uint32 winner_uid = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearWinnerUid() {
@@ -581,16 +550,47 @@ public final class RacingGallerySettleInfoOuterClass {
         return this;
       }
 
+      private int useTime_ ;
+      /**
+       * <code>uint32 use_time = 1;</code>
+       * @return The useTime.
+       */
+      @java.lang.Override
+      public int getUseTime() {
+        return useTime_;
+      }
+      /**
+       * <code>uint32 use_time = 1;</code>
+       * @param value The useTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseTime(int value) {
+        
+        useTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 use_time = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUseTime() {
+        
+        useTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int reason_ = 0;
       /**
-       * <code>.HDDANIDHCMI reason = 11;</code>
+       * <code>.KDHIAEFLGFM reason = 6;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 11;</code>
+       * <code>.KDHIAEFLGFM reason = 6;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -601,21 +601,21 @@ public final class RacingGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 11;</code>
+       * <code>.KDHIAEFLGFM reason = 6;</code>
        * @return The reason.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
+      public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
         @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
+        emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 11;</code>
+       * <code>.KDHIAEFLGFM reason = 6;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
-      public Builder setReason(emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI value) {
+      public Builder setReason(emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -625,7 +625,7 @@ public final class RacingGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>.HDDANIDHCMI reason = 11;</code>
+       * <code>.KDHIAEFLGFM reason = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
@@ -701,24 +701,24 @@ public final class RacingGallerySettleInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035RacingGallerySettleInfo.proto\032\021HDDANID" +
-      "HCMI.proto\"]\n\027RacingGallerySettleInfo\022\020\n" +
-      "\010use_time\030\016 \001(\r\022\022\n\nwinner_uid\030\n \001(\r\022\034\n\006r" +
-      "eason\030\013 \001(\0162\014.HDDANIDHCMIB\033\n\031emu.grasscu" +
+      "\n\035RacingGallerySettleInfo.proto\032\021KDHIAEF" +
+      "LGFM.proto\"]\n\027RacingGallerySettleInfo\022\022\n" +
+      "\nwinner_uid\030\r \001(\r\022\020\n\010use_time\030\001 \001(\r\022\034\n\006r" +
+      "eason\030\006 \001(\0162\014.KDHIAEFLGFMB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor(),
         });
     internal_static_RacingGallerySettleInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_RacingGallerySettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RacingGallerySettleInfo_descriptor,
-        new java.lang.String[] { "UseTime", "WinnerUid", "Reason", });
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor();
+        new java.lang.String[] { "WinnerUid", "UseTime", "Reason", });
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

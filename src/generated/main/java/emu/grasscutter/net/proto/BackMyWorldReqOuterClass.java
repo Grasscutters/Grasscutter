@@ -20,8 +20,8 @@ public final class BackMyWorldReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 227
-   * Obf: NJJJKFGAGLD
+   * CmdId: 7284
+   * Obf: KMDLHONLMJH
    * </pre>
    *
    * Protobuf type {@code BackMyWorldReq}
@@ -246,8 +246,8 @@ public final class BackMyWorldReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 227
-     * Obf: NJJJKFGAGLD
+     * CmdId: 7284
+     * Obf: KMDLHONLMJH
      * </pre>
      *
      * Protobuf type {@code BackMyWorldReq}

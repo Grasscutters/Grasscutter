@@ -20,8 +20,8 @@ public final class TryEnterNextRogueDiaryDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8595
-   * Obf: GGPJGBHAIBH
+   * CmdId: 619
+   * Obf: OOIKACKGACB
    * </pre>
    *
    * Protobuf type {@code TryEnterNextRogueDiaryDungeonReq}
@@ -246,8 +246,8 @@ public final class TryEnterNextRogueDiaryDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8595
-     * Obf: GGPJGBHAIBH
+     * CmdId: 619
+     * Obf: OOIKACKGACB
      * </pre>
      *
      * Protobuf type {@code TryEnterNextRogueDiaryDungeonReq}

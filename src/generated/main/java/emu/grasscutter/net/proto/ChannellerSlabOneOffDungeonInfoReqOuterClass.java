@@ -20,8 +20,8 @@ public final class ChannellerSlabOneOffDungeonInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8017
-   * Obf: EAJEGEBCEOK
+   * CmdId: 26360
+   * Obf: EDKOBFIEMAG
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabOneOffDungeonInfoReq}
@@ -246,8 +246,8 @@ public final class ChannellerSlabOneOffDungeonInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8017
-     * Obf: EAJEGEBCEOK
+     * CmdId: 26360
+     * Obf: EDKOBFIEMAG
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabOneOffDungeonInfoReq}

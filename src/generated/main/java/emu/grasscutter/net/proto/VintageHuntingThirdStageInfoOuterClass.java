@@ -20,7 +20,7 @@ public final class VintageHuntingThirdStageInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: FMFCGDJGCIF
+   * Obf: ALBKMPFFDDE
    * </pre>
    *
    * Protobuf type {@code VintageHuntingThirdStageInfo}
@@ -245,7 +245,7 @@ public final class VintageHuntingThirdStageInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FMFCGDJGCIF
+     * Obf: ALBKMPFFDDE
      * </pre>
      *
      * Protobuf type {@code VintageHuntingThirdStageInfo}

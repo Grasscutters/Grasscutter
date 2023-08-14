@@ -44,8 +44,8 @@ public final class DigActivityMarkPointChangeNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8623
-   * Obf: ONGOKKLCBEL
+   * CmdId: 8406
+   * Obf: GBCGAEOAMAK
    * </pre>
    *
    * Protobuf type {@code DigActivityMarkPointChangeNotify}
@@ -337,8 +337,8 @@ public final class DigActivityMarkPointChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8623
-     * Obf: ONGOKKLCBEL
+     * CmdId: 8406
+     * Obf: GBCGAEOAMAK
      * </pre>
      *
      * Protobuf type {@code DigActivityMarkPointChangeNotify}

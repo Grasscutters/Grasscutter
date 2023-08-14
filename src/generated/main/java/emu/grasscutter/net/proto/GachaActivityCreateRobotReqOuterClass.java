@@ -20,8 +20,8 @@ public final class GachaActivityCreateRobotReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8734
-   * Obf: IILLFHIILNG
+   * CmdId: 24297
+   * Obf: HECONJKGHHN
    * </pre>
    *
    * Protobuf type {@code GachaActivityCreateRobotReq}
@@ -246,8 +246,8 @@ public final class GachaActivityCreateRobotReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8734
-     * Obf: IILLFHIILNG
+     * CmdId: 24297
+     * Obf: HECONJKGHHN
      * </pre>
      *
      * Protobuf type {@code GachaActivityCreateRobotReq}

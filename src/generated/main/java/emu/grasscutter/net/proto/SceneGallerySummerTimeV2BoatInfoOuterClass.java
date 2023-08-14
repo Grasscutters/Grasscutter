@@ -19,32 +19,32 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 used_time = 7;</code>
+     * <code>uint32 param3 = 15;</code>
+     * @return The param3.
+     */
+    int getParam3();
+
+    /**
+     * <code>uint32 used_time = 13;</code>
      * @return The usedTime.
      */
     int getUsedTime();
 
     /**
-     * <code>uint32 param2 = 12;</code>
-     * @return The param2.
-     */
-    int getParam2();
-
-    /**
-     * <code>uint32 param1 = 3;</code>
+     * <code>uint32 param1 = 6;</code>
      * @return The param1.
      */
     int getParam1();
 
     /**
-     * <code>uint32 param3 = 2;</code>
-     * @return The param3.
+     * <code>uint32 param2 = 7;</code>
+     * @return The param2.
      */
-    int getParam3();
+    int getParam2();
   }
   /**
    * <pre>
-   * Obf: AEECACOMNGK
+   * Obf: NHKMFGGHHMD
    * </pre>
    *
    * Protobuf type {@code SceneGallerySummerTimeV2BoatInfo}
@@ -91,24 +91,24 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              param3_ = input.readUInt32();
-              break;
-            }
-            case 24: {
+            case 48: {
 
               param1_ = input.readUInt32();
               break;
             }
             case 56: {
 
+              param2_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
               usedTime_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 120: {
 
-              param2_ = input.readUInt32();
+              param3_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,10 +143,21 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
               emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.class, emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.Builder.class);
     }
 
-    public static final int USED_TIME_FIELD_NUMBER = 7;
+    public static final int PARAM3_FIELD_NUMBER = 15;
+    private int param3_;
+    /**
+     * <code>uint32 param3 = 15;</code>
+     * @return The param3.
+     */
+    @java.lang.Override
+    public int getParam3() {
+      return param3_;
+    }
+
+    public static final int USED_TIME_FIELD_NUMBER = 13;
     private int usedTime_;
     /**
-     * <code>uint32 used_time = 7;</code>
+     * <code>uint32 used_time = 13;</code>
      * @return The usedTime.
      */
     @java.lang.Override
@@ -154,21 +165,10 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       return usedTime_;
     }
 
-    public static final int PARAM2_FIELD_NUMBER = 12;
-    private int param2_;
-    /**
-     * <code>uint32 param2 = 12;</code>
-     * @return The param2.
-     */
-    @java.lang.Override
-    public int getParam2() {
-      return param2_;
-    }
-
-    public static final int PARAM1_FIELD_NUMBER = 3;
+    public static final int PARAM1_FIELD_NUMBER = 6;
     private int param1_;
     /**
-     * <code>uint32 param1 = 3;</code>
+     * <code>uint32 param1 = 6;</code>
      * @return The param1.
      */
     @java.lang.Override
@@ -176,15 +176,15 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       return param1_;
     }
 
-    public static final int PARAM3_FIELD_NUMBER = 2;
-    private int param3_;
+    public static final int PARAM2_FIELD_NUMBER = 7;
+    private int param2_;
     /**
-     * <code>uint32 param3 = 2;</code>
-     * @return The param3.
+     * <code>uint32 param2 = 7;</code>
+     * @return The param2.
      */
     @java.lang.Override
-    public int getParam3() {
-      return param3_;
+    public int getParam2() {
+      return param2_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (param3_ != 0) {
-        output.writeUInt32(2, param3_);
-      }
       if (param1_ != 0) {
-        output.writeUInt32(3, param1_);
-      }
-      if (usedTime_ != 0) {
-        output.writeUInt32(7, usedTime_);
+        output.writeUInt32(6, param1_);
       }
       if (param2_ != 0) {
-        output.writeUInt32(12, param2_);
+        output.writeUInt32(7, param2_);
+      }
+      if (usedTime_ != 0) {
+        output.writeUInt32(13, usedTime_);
+      }
+      if (param3_ != 0) {
+        output.writeUInt32(15, param3_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (param3_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, param3_);
-      }
       if (param1_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, param1_);
-      }
-      if (usedTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, usedTime_);
+          .computeUInt32Size(6, param1_);
       }
       if (param2_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, param2_);
+          .computeUInt32Size(7, param2_);
+      }
+      if (usedTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, usedTime_);
+      }
+      if (param3_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, param3_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo other = (emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo) obj;
 
-      if (getUsedTime()
-          != other.getUsedTime()) return false;
-      if (getParam2()
-          != other.getParam2()) return false;
-      if (getParam1()
-          != other.getParam1()) return false;
       if (getParam3()
           != other.getParam3()) return false;
+      if (getUsedTime()
+          != other.getUsedTime()) return false;
+      if (getParam1()
+          != other.getParam1()) return false;
+      if (getParam2()
+          != other.getParam2()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USED_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsedTime();
-      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
-      hash = (53 * hash) + getParam2();
-      hash = (37 * hash) + PARAM1_FIELD_NUMBER;
-      hash = (53 * hash) + getParam1();
       hash = (37 * hash) + PARAM3_FIELD_NUMBER;
       hash = (53 * hash) + getParam3();
+      hash = (37 * hash) + USED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsedTime();
+      hash = (37 * hash) + PARAM1_FIELD_NUMBER;
+      hash = (53 * hash) + getParam1();
+      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
+      hash = (53 * hash) + getParam2();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AEECACOMNGK
+     * Obf: NHKMFGGHHMD
      * </pre>
      *
      * Protobuf type {@code SceneGallerySummerTimeV2BoatInfo}
@@ -417,13 +417,13 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        usedTime_ = 0;
+        param3_ = 0;
 
-        param2_ = 0;
+        usedTime_ = 0;
 
         param1_ = 0;
 
-        param3_ = 0;
+        param2_ = 0;
 
         return this;
       }
@@ -451,10 +451,10 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo result = new emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo(this);
-        result.usedTime_ = usedTime_;
-        result.param2_ = param2_;
-        result.param1_ = param1_;
         result.param3_ = param3_;
+        result.usedTime_ = usedTime_;
+        result.param1_ = param1_;
+        result.param2_ = param2_;
         onBuilt();
         return result;
       }
@@ -503,17 +503,17 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.getDefaultInstance()) return this;
+        if (other.getParam3() != 0) {
+          setParam3(other.getParam3());
+        }
         if (other.getUsedTime() != 0) {
           setUsedTime(other.getUsedTime());
-        }
-        if (other.getParam2() != 0) {
-          setParam2(other.getParam2());
         }
         if (other.getParam1() != 0) {
           setParam1(other.getParam1());
         }
-        if (other.getParam3() != 0) {
-          setParam3(other.getParam3());
+        if (other.getParam2() != 0) {
+          setParam2(other.getParam2());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -544,102 +544,9 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
         return this;
       }
 
-      private int usedTime_ ;
-      /**
-       * <code>uint32 used_time = 7;</code>
-       * @return The usedTime.
-       */
-      @java.lang.Override
-      public int getUsedTime() {
-        return usedTime_;
-      }
-      /**
-       * <code>uint32 used_time = 7;</code>
-       * @param value The usedTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsedTime(int value) {
-        
-        usedTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 used_time = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUsedTime() {
-        
-        usedTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int param2_ ;
-      /**
-       * <code>uint32 param2 = 12;</code>
-       * @return The param2.
-       */
-      @java.lang.Override
-      public int getParam2() {
-        return param2_;
-      }
-      /**
-       * <code>uint32 param2 = 12;</code>
-       * @param value The param2 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam2(int value) {
-        
-        param2_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param2 = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam2() {
-        
-        param2_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int param1_ ;
-      /**
-       * <code>uint32 param1 = 3;</code>
-       * @return The param1.
-       */
-      @java.lang.Override
-      public int getParam1() {
-        return param1_;
-      }
-      /**
-       * <code>uint32 param1 = 3;</code>
-       * @param value The param1 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam1(int value) {
-        
-        param1_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param1 = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam1() {
-        
-        param1_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int param3_ ;
       /**
-       * <code>uint32 param3 = 2;</code>
+       * <code>uint32 param3 = 15;</code>
        * @return The param3.
        */
       @java.lang.Override
@@ -647,7 +554,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
         return param3_;
       }
       /**
-       * <code>uint32 param3 = 2;</code>
+       * <code>uint32 param3 = 15;</code>
        * @param value The param3 to set.
        * @return This builder for chaining.
        */
@@ -658,12 +565,105 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param3 = 2;</code>
+       * <code>uint32 param3 = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
         
         param3_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int usedTime_ ;
+      /**
+       * <code>uint32 used_time = 13;</code>
+       * @return The usedTime.
+       */
+      @java.lang.Override
+      public int getUsedTime() {
+        return usedTime_;
+      }
+      /**
+       * <code>uint32 used_time = 13;</code>
+       * @param value The usedTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUsedTime(int value) {
+        
+        usedTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 used_time = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUsedTime() {
+        
+        usedTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int param1_ ;
+      /**
+       * <code>uint32 param1 = 6;</code>
+       * @return The param1.
+       */
+      @java.lang.Override
+      public int getParam1() {
+        return param1_;
+      }
+      /**
+       * <code>uint32 param1 = 6;</code>
+       * @param value The param1 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam1(int value) {
+        
+        param1_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param1 = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam1() {
+        
+        param1_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int param2_ ;
+      /**
+       * <code>uint32 param2 = 7;</code>
+       * @return The param2.
+       */
+      @java.lang.Override
+      public int getParam2() {
+        return param2_;
+      }
+      /**
+       * <code>uint32 param2 = 7;</code>
+       * @param value The param2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam2(int value) {
+        
+        param2_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param2 = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam2() {
+        
+        param2_ = 0;
         onChanged();
         return this;
       }
@@ -735,9 +735,9 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&SceneGallerySummerTimeV2BoatInfo.proto" +
-      "\"e\n SceneGallerySummerTimeV2BoatInfo\022\021\n\t" +
-      "used_time\030\007 \001(\r\022\016\n\006param2\030\014 \001(\r\022\016\n\006param" +
-      "1\030\003 \001(\r\022\016\n\006param3\030\002 \001(\rB\033\n\031emu.grasscutt" +
+      "\"e\n SceneGallerySummerTimeV2BoatInfo\022\016\n\006" +
+      "param3\030\017 \001(\r\022\021\n\tused_time\030\r \001(\r\022\016\n\006param" +
+      "1\030\006 \001(\r\022\016\n\006param2\030\007 \001(\rB\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -749,7 +749,7 @@ public final class SceneGallerySummerTimeV2BoatInfoOuterClass {
     internal_static_SceneGallerySummerTimeV2BoatInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGallerySummerTimeV2BoatInfo_descriptor,
-        new java.lang.String[] { "UsedTime", "Param2", "Param1", "Param3", });
+        new java.lang.String[] { "Param3", "UsedTime", "Param1", "Param2", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

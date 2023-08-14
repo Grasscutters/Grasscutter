@@ -16,7 +16,7 @@ public final class ChapterStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: OBEGIEJOPKH
+   * Obf: IGBMFOLFJLJ
    * </pre>
    *
    * Protobuf enum {@code ChapterState}

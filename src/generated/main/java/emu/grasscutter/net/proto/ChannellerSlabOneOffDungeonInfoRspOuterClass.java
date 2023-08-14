@@ -19,17 +19,17 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @return A list containing the schemeBuffIdList.
      */
     java.util.List<java.lang.Integer> getSchemeBuffIdListList();
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @return The count of schemeBuffIdList.
      */
     int getSchemeBuffIdListCount();
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The schemeBuffIdList at the given index.
      */
@@ -43,8 +43,8 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8450
-   * Obf: AEKBHAHIGAN
+   * CmdId: 23158
+   * Obf: DKKBAEDKIBD
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabOneOffDungeonInfoRsp}
@@ -98,7 +98,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
               retcode_ = input.readInt32();
               break;
             }
-            case 32: {
+            case 120: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 schemeBuffIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +106,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
               schemeBuffIdList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 122: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -154,10 +154,10 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
               emu.grasscutter.net.proto.ChannellerSlabOneOffDungeonInfoRspOuterClass.ChannellerSlabOneOffDungeonInfoRsp.class, emu.grasscutter.net.proto.ChannellerSlabOneOffDungeonInfoRspOuterClass.ChannellerSlabOneOffDungeonInfoRsp.Builder.class);
     }
 
-    public static final int SCHEME_BUFF_ID_LIST_FIELD_NUMBER = 4;
+    public static final int SCHEME_BUFF_ID_LIST_FIELD_NUMBER = 15;
     private com.google.protobuf.Internal.IntList schemeBuffIdList_;
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @return A list containing the schemeBuffIdList.
      */
     @java.lang.Override
@@ -166,14 +166,14 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
       return schemeBuffIdList_;
     }
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @return The count of schemeBuffIdList.
      */
     public int getSchemeBuffIdListCount() {
       return schemeBuffIdList_.size();
     }
     /**
-     * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+     * <code>repeated uint32 scheme_buff_id_list = 15;</code>
      * @param index The index of the element to return.
      * @return The schemeBuffIdList at the given index.
      */
@@ -212,7 +212,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
         output.writeInt32(2, retcode_);
       }
       if (getSchemeBuffIdListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(122);
         output.writeUInt32NoTag(schemeBuffIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < schemeBuffIdList_.size(); i++) {
@@ -378,8 +378,8 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8450
-     * Obf: AEKBHAHIGAN
+     * CmdId: 23158
+     * Obf: DKKBAEDKIBD
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabOneOffDungeonInfoRsp}
@@ -555,7 +555,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @return A list containing the schemeBuffIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -564,14 +564,14 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
                  java.util.Collections.unmodifiableList(schemeBuffIdList_) : schemeBuffIdList_;
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @return The count of schemeBuffIdList.
        */
       public int getSchemeBuffIdListCount() {
         return schemeBuffIdList_.size();
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @param index The index of the element to return.
        * @return The schemeBuffIdList at the given index.
        */
@@ -579,7 +579,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
         return schemeBuffIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @param index The index to set the value at.
        * @param value The schemeBuffIdList to set.
        * @return This builder for chaining.
@@ -592,7 +592,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @param value The schemeBuffIdList to add.
        * @return This builder for chaining.
        */
@@ -603,7 +603,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @param values The schemeBuffIdList to add.
        * @return This builder for chaining.
        */
@@ -616,7 +616,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 scheme_buff_id_list = 4;</code>
+       * <code>repeated uint32 scheme_buff_id_list = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearSchemeBuffIdList() {
@@ -725,7 +725,7 @@ public final class ChannellerSlabOneOffDungeonInfoRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n(ChannellerSlabOneOffDungeonInfoRsp.pro" +
       "to\"R\n\"ChannellerSlabOneOffDungeonInfoRsp" +
-      "\022\033\n\023scheme_buff_id_list\030\004 \003(\r\022\017\n\007retcode" +
+      "\022\033\n\023scheme_buff_id_list\030\017 \003(\r\022\017\n\007retcode" +
       "\030\002 \001(\005B\033\n\031emu.grasscutter.net.protob\006pro" +
       "to3"
     };

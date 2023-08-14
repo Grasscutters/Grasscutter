@@ -19,24 +19,24 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      * @return Whether the makeInfo field is set.
      */
     boolean hasMakeInfo();
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      * @return The makeInfo.
      */
     emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo getMakeInfo();
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      */
     emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfoOrBuilder getMakeInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 4556
-   * Obf: LNHFEHDEIIB
+   * CmdId: 25867
+   * Obf: ALGNKBPNMPA
    * </pre>
    *
    * Protobuf type {@code FunitureMakeMakeInfoChangeNotify}
@@ -83,7 +83,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 74: {
+            case 10: {
               emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder subBuilder = null;
               if (makeInfo_ != null) {
                 subBuilder = makeInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
               emu.grasscutter.net.proto.FunitureMakeMakeInfoChangeNotifyOuterClass.FunitureMakeMakeInfoChangeNotify.class, emu.grasscutter.net.proto.FunitureMakeMakeInfoChangeNotifyOuterClass.FunitureMakeMakeInfoChangeNotify.Builder.class);
     }
 
-    public static final int MAKE_INFO_FIELD_NUMBER = 9;
+    public static final int MAKE_INFO_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo makeInfo_;
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      * @return Whether the makeInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
       return makeInfo_ != null;
     }
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      * @return The makeInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
       return makeInfo_ == null ? emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.getDefaultInstance() : makeInfo_;
     }
     /**
-     * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+     * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfoOrBuilder getMakeInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (makeInfo_ != null) {
-        output.writeMessage(9, getMakeInfo());
+        output.writeMessage(1, getMakeInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
       size = 0;
       if (makeInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getMakeInfo());
+          .computeMessageSize(1, getMakeInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4556
-     * Obf: LNHFEHDEIIB
+     * CmdId: 25867
+     * Obf: ALGNKBPNMPA
      * </pre>
      *
      * Protobuf type {@code FunitureMakeMakeInfoChangeNotify}
@@ -478,14 +478,14 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo, emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder, emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfoOrBuilder> makeInfoBuilder_;
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        * @return Whether the makeInfo field is set.
        */
       public boolean hasMakeInfo() {
         return makeInfoBuilder_ != null || makeInfo_ != null;
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        * @return The makeInfo.
        */
       public emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo getMakeInfo() {
@@ -496,7 +496,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public Builder setMakeInfo(emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo value) {
         if (makeInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public Builder setMakeInfo(
           emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public Builder mergeMakeInfo(emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo value) {
         if (makeInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public Builder clearMakeInfo() {
         if (makeInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder getMakeInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         return getMakeInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       public emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfoOrBuilder getMakeInfoOrBuilder() {
         if (makeInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
         }
       }
       /**
-       * <code>.FurnitureMakeMakeInfo make_info = 9;</code>
+       * <code>.FurnitureMakeMakeInfo make_info = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo, emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfo.Builder, emu.grasscutter.net.proto.FurnitureMakeMakeInfoOuterClass.FurnitureMakeMakeInfoOrBuilder> 
@@ -661,7 +661,7 @@ public final class FunitureMakeMakeInfoChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n&FunitureMakeMakeInfoChangeNotify.proto" +
       "\032\033FurnitureMakeMakeInfo.proto\"M\n Funitur" +
-      "eMakeMakeInfoChangeNotify\022)\n\tmake_info\030\t" +
+      "eMakeMakeInfoChangeNotify\022)\n\tmake_info\030\001" +
       " \001(\0132\026.FurnitureMakeMakeInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };

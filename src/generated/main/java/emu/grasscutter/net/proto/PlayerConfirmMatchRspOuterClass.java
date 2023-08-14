@@ -19,38 +19,38 @@ public final class PlayerConfirmMatchRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 match_id = 1;</code>
-     * @return The matchId.
-     */
-    int getMatchId();
-
-    /**
-     * <code>.MatchType match_type = 6;</code>
+     * <code>.MatchType match_type = 1;</code>
      * @return The enum numeric value on the wire for matchType.
      */
     int getMatchTypeValue();
     /**
-     * <code>.MatchType match_type = 6;</code>
+     * <code>.MatchType match_type = 1;</code>
      * @return The matchType.
      */
     emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType();
 
     /**
-     * <code>bool is_agreed = 11;</code>
+     * <code>uint32 match_id = 5;</code>
+     * @return The matchId.
+     */
+    int getMatchId();
+
+    /**
+     * <code>bool is_agreed = 12;</code>
      * @return The isAgreed.
      */
     boolean getIsAgreed();
 
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 4173
-   * Obf: PMDNIAJFAFJ
+   * CmdId: 21369
+   * Obf: FGDKKCBNGMI
    * </pre>
    *
    * Protobuf type {@code PlayerConfirmMatchRsp}
@@ -99,24 +99,24 @@ public final class PlayerConfirmMatchRspOuterClass {
               done = true;
               break;
             case 8: {
-
-              matchId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
               int rawValue = input.readEnum();
 
               matchType_ = rawValue;
               break;
             }
-            case 72: {
+            case 40: {
 
-              retcode_ = input.readInt32();
+              matchId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 96: {
 
               isAgreed_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -151,28 +151,17 @@ public final class PlayerConfirmMatchRspOuterClass {
               emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp.class, emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp.Builder.class);
     }
 
-    public static final int MATCH_ID_FIELD_NUMBER = 1;
-    private int matchId_;
-    /**
-     * <code>uint32 match_id = 1;</code>
-     * @return The matchId.
-     */
-    @java.lang.Override
-    public int getMatchId() {
-      return matchId_;
-    }
-
-    public static final int MATCH_TYPE_FIELD_NUMBER = 6;
+    public static final int MATCH_TYPE_FIELD_NUMBER = 1;
     private int matchType_;
     /**
-     * <code>.MatchType match_type = 6;</code>
+     * <code>.MatchType match_type = 1;</code>
      * @return The enum numeric value on the wire for matchType.
      */
     @java.lang.Override public int getMatchTypeValue() {
       return matchType_;
     }
     /**
-     * <code>.MatchType match_type = 6;</code>
+     * <code>.MatchType match_type = 1;</code>
      * @return The matchType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
@@ -181,10 +170,21 @@ public final class PlayerConfirmMatchRspOuterClass {
       return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
     }
 
-    public static final int IS_AGREED_FIELD_NUMBER = 11;
+    public static final int MATCH_ID_FIELD_NUMBER = 5;
+    private int matchId_;
+    /**
+     * <code>uint32 match_id = 5;</code>
+     * @return The matchId.
+     */
+    @java.lang.Override
+    public int getMatchId() {
+      return matchId_;
+    }
+
+    public static final int IS_AGREED_FIELD_NUMBER = 12;
     private boolean isAgreed_;
     /**
-     * <code>bool is_agreed = 11;</code>
+     * <code>bool is_agreed = 12;</code>
      * @return The isAgreed.
      */
     @java.lang.Override
@@ -192,10 +192,10 @@ public final class PlayerConfirmMatchRspOuterClass {
       return isAgreed_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 9;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 9;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -217,17 +217,17 @@ public final class PlayerConfirmMatchRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (matchId_ != 0) {
-        output.writeUInt32(1, matchId_);
-      }
       if (matchType_ != emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.MATCH_TYPE_NONE.getNumber()) {
-        output.writeEnum(6, matchType_);
+        output.writeEnum(1, matchType_);
       }
-      if (retcode_ != 0) {
-        output.writeInt32(9, retcode_);
+      if (matchId_ != 0) {
+        output.writeUInt32(5, matchId_);
       }
       if (isAgreed_ != false) {
-        output.writeBool(11, isAgreed_);
+        output.writeBool(12, isAgreed_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -238,21 +238,21 @@ public final class PlayerConfirmMatchRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (matchId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, matchId_);
-      }
       if (matchType_ != emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.MATCH_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, matchType_);
+          .computeEnumSize(1, matchType_);
       }
-      if (retcode_ != 0) {
+      if (matchId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, retcode_);
+          .computeUInt32Size(5, matchId_);
       }
       if (isAgreed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isAgreed_);
+          .computeBoolSize(12, isAgreed_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -269,9 +269,9 @@ public final class PlayerConfirmMatchRspOuterClass {
       }
       emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp other = (emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp) obj;
 
+      if (matchType_ != other.matchType_) return false;
       if (getMatchId()
           != other.getMatchId()) return false;
-      if (matchType_ != other.matchType_) return false;
       if (getIsAgreed()
           != other.getIsAgreed()) return false;
       if (getRetcode()
@@ -287,10 +287,10 @@ public final class PlayerConfirmMatchRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMatchId();
       hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + matchType_;
+      hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMatchId();
       hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
@@ -393,8 +393,8 @@ public final class PlayerConfirmMatchRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4173
-     * Obf: PMDNIAJFAFJ
+     * CmdId: 21369
+     * Obf: FGDKKCBNGMI
      * </pre>
      *
      * Protobuf type {@code PlayerConfirmMatchRsp}
@@ -434,9 +434,9 @@ public final class PlayerConfirmMatchRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        matchId_ = 0;
-
         matchType_ = 0;
+
+        matchId_ = 0;
 
         isAgreed_ = false;
 
@@ -468,8 +468,8 @@ public final class PlayerConfirmMatchRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp buildPartial() {
         emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp result = new emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp(this);
-        result.matchId_ = matchId_;
         result.matchType_ = matchType_;
+        result.matchId_ = matchId_;
         result.isAgreed_ = isAgreed_;
         result.retcode_ = retcode_;
         onBuilt();
@@ -520,11 +520,11 @@ public final class PlayerConfirmMatchRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp other) {
         if (other == emu.grasscutter.net.proto.PlayerConfirmMatchRspOuterClass.PlayerConfirmMatchRsp.getDefaultInstance()) return this;
-        if (other.getMatchId() != 0) {
-          setMatchId(other.getMatchId());
-        }
         if (other.matchType_ != 0) {
           setMatchTypeValue(other.getMatchTypeValue());
+        }
+        if (other.getMatchId() != 0) {
+          setMatchId(other.getMatchId());
         }
         if (other.getIsAgreed() != false) {
           setIsAgreed(other.getIsAgreed());
@@ -561,47 +561,16 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
 
-      private int matchId_ ;
-      /**
-       * <code>uint32 match_id = 1;</code>
-       * @return The matchId.
-       */
-      @java.lang.Override
-      public int getMatchId() {
-        return matchId_;
-      }
-      /**
-       * <code>uint32 match_id = 1;</code>
-       * @param value The matchId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMatchId(int value) {
-        
-        matchId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 match_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMatchId() {
-        
-        matchId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int matchType_ = 0;
       /**
-       * <code>.MatchType match_type = 6;</code>
+       * <code>.MatchType match_type = 1;</code>
        * @return The enum numeric value on the wire for matchType.
        */
       @java.lang.Override public int getMatchTypeValue() {
         return matchType_;
       }
       /**
-       * <code>.MatchType match_type = 6;</code>
+       * <code>.MatchType match_type = 1;</code>
        * @param value The enum numeric value on the wire for matchType to set.
        * @return This builder for chaining.
        */
@@ -612,7 +581,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
       /**
-       * <code>.MatchType match_type = 6;</code>
+       * <code>.MatchType match_type = 1;</code>
        * @return The matchType.
        */
       @java.lang.Override
@@ -622,7 +591,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return result == null ? emu.grasscutter.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.MatchType match_type = 6;</code>
+       * <code>.MatchType match_type = 1;</code>
        * @param value The matchType to set.
        * @return This builder for chaining.
        */
@@ -636,7 +605,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
       /**
-       * <code>.MatchType match_type = 6;</code>
+       * <code>.MatchType match_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
@@ -646,9 +615,40 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
 
+      private int matchId_ ;
+      /**
+       * <code>uint32 match_id = 5;</code>
+       * @return The matchId.
+       */
+      @java.lang.Override
+      public int getMatchId() {
+        return matchId_;
+      }
+      /**
+       * <code>uint32 match_id = 5;</code>
+       * @param value The matchId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatchId(int value) {
+        
+        matchId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 match_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatchId() {
+        
+        matchId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isAgreed_ ;
       /**
-       * <code>bool is_agreed = 11;</code>
+       * <code>bool is_agreed = 12;</code>
        * @return The isAgreed.
        */
       @java.lang.Override
@@ -656,7 +656,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return isAgreed_;
       }
       /**
-       * <code>bool is_agreed = 11;</code>
+       * <code>bool is_agreed = 12;</code>
        * @param value The isAgreed to set.
        * @return This builder for chaining.
        */
@@ -667,7 +667,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_agreed = 11;</code>
+       * <code>bool is_agreed = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
@@ -679,7 +679,7 @@ public final class PlayerConfirmMatchRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -687,7 +687,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -698,7 +698,7 @@ public final class PlayerConfirmMatchRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 9;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -775,9 +775,9 @@ public final class PlayerConfirmMatchRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033PlayerConfirmMatchRsp.proto\032\017MatchType" +
-      ".proto\"m\n\025PlayerConfirmMatchRsp\022\020\n\010match" +
-      "_id\030\001 \001(\r\022\036\n\nmatch_type\030\006 \001(\0162\n.MatchTyp" +
-      "e\022\021\n\tis_agreed\030\013 \001(\010\022\017\n\007retcode\030\t \001(\005B\033\n" +
+      ".proto\"m\n\025PlayerConfirmMatchRsp\022\036\n\nmatch" +
+      "_type\030\001 \001(\0162\n.MatchType\022\020\n\010match_id\030\005 \001(" +
+      "\r\022\021\n\tis_agreed\030\014 \001(\010\022\017\n\007retcode\030\r \001(\005B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -790,7 +790,7 @@ public final class PlayerConfirmMatchRspOuterClass {
     internal_static_PlayerConfirmMatchRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerConfirmMatchRsp_descriptor,
-        new java.lang.String[] { "MatchId", "MatchType", "IsAgreed", "Retcode", });
+        new java.lang.String[] { "MatchType", "MatchId", "IsAgreed", "Retcode", });
     emu.grasscutter.net.proto.MatchTypeOuterClass.getDescriptor();
   }
 

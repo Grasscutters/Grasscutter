@@ -37,8 +37,8 @@ public final class GCGDSBanCardNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 7168
-   * Obf: LDBNFKGJEIL
+   * CmdId: 6451
+   * Obf: AOPLHLKEBNK
    * </pre>
    *
    * Protobuf type {@code GCGDSBanCardNotify}
@@ -345,8 +345,8 @@ public final class GCGDSBanCardNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7168
-     * Obf: LDBNFKGJEIL
+     * CmdId: 6451
+     * Obf: AOPLHLKEBNK
      * </pre>
      *
      * Protobuf type {@code GCGDSBanCardNotify}

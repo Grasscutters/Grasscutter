@@ -19,21 +19,21 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 7;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 multistage_play_index = 1;</code>
+     * <code>uint32 multistage_play_index = 13;</code>
      * @return The multistagePlayIndex.
      */
     int getMultistagePlayIndex();
+
+    /**
+     * <code>uint32 level_id = 10;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
    * <pre>
-   * CmdId: 22708
-   * Obf: JJAOHMJPPLF
+   * CmdId: 1251
+   * Obf: ANBGNFABIMN
    * </pre>
    *
    * Protobuf type {@code RestartCoinCollectPlaySingleModeReq}
@@ -80,14 +80,14 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              multistagePlayIndex_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 80: {
 
               levelId_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              multistagePlayIndex_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
               emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq.class, emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 7;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int MULTISTAGE_PLAY_INDEX_FIELD_NUMBER = 1;
+    public static final int MULTISTAGE_PLAY_INDEX_FIELD_NUMBER = 13;
     private int multistagePlayIndex_;
     /**
-     * <code>uint32 multistage_play_index = 1;</code>
+     * <code>uint32 multistage_play_index = 13;</code>
      * @return The multistagePlayIndex.
      */
     @java.lang.Override
     public int getMultistagePlayIndex() {
       return multistagePlayIndex_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 10;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 10;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (multistagePlayIndex_ != 0) {
-        output.writeUInt32(1, multistagePlayIndex_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(7, levelId_);
+        output.writeUInt32(10, levelId_);
+      }
+      if (multistagePlayIndex_ != 0) {
+        output.writeUInt32(13, multistagePlayIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (multistagePlayIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, multistagePlayIndex_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, levelId_);
+          .computeUInt32Size(10, levelId_);
+      }
+      if (multistagePlayIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, multistagePlayIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       }
       emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq other = (emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getMultistagePlayIndex()
           != other.getMultistagePlayIndex()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + MULTISTAGE_PLAY_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getMultistagePlayIndex();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22708
-     * Obf: JJAOHMJPPLF
+     * CmdId: 1251
+     * Obf: ANBGNFABIMN
      * </pre>
      *
      * Protobuf type {@code RestartCoinCollectPlaySingleModeReq}
@@ -353,9 +353,9 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
         multistagePlayIndex_ = 0;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq buildPartial() {
         emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq result = new emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq(this);
-        result.levelId_ = levelId_;
         result.multistagePlayIndex_ = multistagePlayIndex_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq other) {
         if (other == emu.grasscutter.net.proto.RestartCoinCollectPlaySingleModeReqOuterClass.RestartCoinCollectPlaySingleModeReq.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (other.getMultistagePlayIndex() != 0) {
           setMultistagePlayIndex(other.getMultistagePlayIndex());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 7;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 7;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int multistagePlayIndex_ ;
       /**
-       * <code>uint32 multistage_play_index = 1;</code>
+       * <code>uint32 multistage_play_index = 13;</code>
        * @return The multistagePlayIndex.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
         return multistagePlayIndex_;
       }
       /**
-       * <code>uint32 multistage_play_index = 1;</code>
+       * <code>uint32 multistage_play_index = 13;</code>
        * @param value The multistagePlayIndex to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 multistage_play_index = 1;</code>
+       * <code>uint32 multistage_play_index = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearMultistagePlayIndex() {
         
         multistagePlayIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 10;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 10;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n)RestartCoinCollectPlaySingleModeReq.pr" +
       "oto\"V\n#RestartCoinCollectPlaySingleModeR" +
-      "eq\022\020\n\010level_id\030\007 \001(\r\022\035\n\025multistage_play_" +
-      "index\030\001 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "eq\022\035\n\025multistage_play_index\030\r \001(\r\022\020\n\010lev" +
+      "el_id\030\n \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class RestartCoinCollectPlaySingleModeReqOuterClass {
     internal_static_RestartCoinCollectPlaySingleModeReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RestartCoinCollectPlaySingleModeReq_descriptor,
-        new java.lang.String[] { "LevelId", "MultistagePlayIndex", });
+        new java.lang.String[] { "MultistagePlayIndex", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

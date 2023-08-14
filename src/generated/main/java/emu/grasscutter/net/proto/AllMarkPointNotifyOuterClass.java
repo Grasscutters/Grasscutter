@@ -19,33 +19,33 @@ public final class AllMarkPointNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> 
         getMarkListList();
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index);
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     int getMarkListCount();
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder> 
         getMarkListOrBuilderList();
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 3044
-   * Obf: LNGMNLCIJPM
+   * CmdId: 2766
+   * Obf: KCCLLAGEBMD
    * </pre>
    *
    * Protobuf type {@code AllMarkPointNotify}
@@ -94,7 +94,7 @@ public final class AllMarkPointNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 markList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class AllMarkPointNotifyOuterClass {
               emu.grasscutter.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify.class, emu.grasscutter.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify.Builder.class);
     }
 
-    public static final int MARK_LIST_FIELD_NUMBER = 2;
+    public static final int MARK_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> markList_;
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> getMarkListList() {
       return markList_;
     }
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder> 
@@ -156,21 +156,21 @@ public final class AllMarkPointNotifyOuterClass {
       return markList_;
     }
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     @java.lang.Override
     public int getMarkListCount() {
       return markList_.size();
     }
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index) {
       return markList_.get(index);
     }
     /**
-     * <code>repeated .MapMarkPoint mark_list = 2;</code>
+     * <code>repeated .MapMarkPoint mark_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkListOrBuilder(
@@ -193,7 +193,7 @@ public final class AllMarkPointNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < markList_.size(); i++) {
-        output.writeMessage(2, markList_.get(i));
+        output.writeMessage(4, markList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class AllMarkPointNotifyOuterClass {
       size = 0;
       for (int i = 0; i < markList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, markList_.get(i));
+          .computeMessageSize(4, markList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class AllMarkPointNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3044
-     * Obf: LNGMNLCIJPM
+     * CmdId: 2766
+     * Obf: KCCLLAGEBMD
      * </pre>
      *
      * Protobuf type {@code AllMarkPointNotify}
@@ -538,7 +538,7 @@ public final class AllMarkPointNotifyOuterClass {
           emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder> markListBuilder_;
 
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> getMarkListList() {
         if (markListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class AllMarkPointNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public int getMarkListCount() {
         if (markListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class AllMarkPointNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint getMarkList(int index) {
         if (markListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class AllMarkPointNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder setMarkList(
           int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
@@ -585,7 +585,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder setMarkList(
           int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder addMarkList(emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
         if (markListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder addMarkList(
           int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint value) {
@@ -632,7 +632,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder addMarkList(
           emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder addMarkList(
           int index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder addAllMarkList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint> values) {
@@ -675,7 +675,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder clearMarkList() {
         if (markListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public Builder removeMarkList(int index) {
         if (markListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class AllMarkPointNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder getMarkListBuilder(
           int index) {
         return getMarkListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder getMarkListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class AllMarkPointNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPointOrBuilder> 
            getMarkListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class AllMarkPointNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder addMarkListBuilder() {
         return getMarkListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder addMarkListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class AllMarkPointNotifyOuterClass {
             index, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapMarkPoint mark_list = 2;</code>
+       * <code>repeated .MapMarkPoint mark_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder> 
            getMarkListBuilderList() {
@@ -833,7 +833,7 @@ public final class AllMarkPointNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030AllMarkPointNotify.proto\032\022MapMarkPoint" +
       ".proto\"6\n\022AllMarkPointNotify\022 \n\tmark_lis" +
-      "t\030\002 \003(\0132\r.MapMarkPointB\033\n\031emu.grasscutte" +
+      "t\030\004 \003(\0132\r.MapMarkPointB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,21 +19,21 @@ public final class MpPlayInviteResultNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 mp_play_id = 14;</code>
-     * @return The mpPlayId.
-     */
-    int getMpPlayId();
-
-    /**
-     * <code>bool all_argee = 4;</code>
+     * <code>bool all_argee = 3;</code>
      * @return The allArgee.
      */
     boolean getAllArgee();
+
+    /**
+     * <code>uint32 mp_play_id = 15;</code>
+     * @return The mpPlayId.
+     */
+    int getMpPlayId();
   }
   /**
    * <pre>
-   * CmdId: 1817
-   * Obf: IFFDIKELBNI
+   * CmdId: 23666
+   * Obf: LIPDOBOAING
    * </pre>
    *
    * Protobuf type {@code MpPlayInviteResultNotify}
@@ -80,12 +80,12 @@ public final class MpPlayInviteResultNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               allArgee_ = input.readBool();
               break;
             }
-            case 112: {
+            case 120: {
 
               mpPlayId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class MpPlayInviteResultNotifyOuterClass {
               emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify.class, emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify.Builder.class);
     }
 
-    public static final int MP_PLAY_ID_FIELD_NUMBER = 14;
-    private int mpPlayId_;
-    /**
-     * <code>uint32 mp_play_id = 14;</code>
-     * @return The mpPlayId.
-     */
-    @java.lang.Override
-    public int getMpPlayId() {
-      return mpPlayId_;
-    }
-
-    public static final int ALL_ARGEE_FIELD_NUMBER = 4;
+    public static final int ALL_ARGEE_FIELD_NUMBER = 3;
     private boolean allArgee_;
     /**
-     * <code>bool all_argee = 4;</code>
+     * <code>bool all_argee = 3;</code>
      * @return The allArgee.
      */
     @java.lang.Override
     public boolean getAllArgee() {
       return allArgee_;
+    }
+
+    public static final int MP_PLAY_ID_FIELD_NUMBER = 15;
+    private int mpPlayId_;
+    /**
+     * <code>uint32 mp_play_id = 15;</code>
+     * @return The mpPlayId.
+     */
+    @java.lang.Override
+    public int getMpPlayId() {
+      return mpPlayId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class MpPlayInviteResultNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (allArgee_ != false) {
-        output.writeBool(4, allArgee_);
+        output.writeBool(3, allArgee_);
       }
       if (mpPlayId_ != 0) {
-        output.writeUInt32(14, mpPlayId_);
+        output.writeUInt32(15, mpPlayId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class MpPlayInviteResultNotifyOuterClass {
       size = 0;
       if (allArgee_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, allArgee_);
+          .computeBoolSize(3, allArgee_);
       }
       if (mpPlayId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, mpPlayId_);
+          .computeUInt32Size(15, mpPlayId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MpPlayInviteResultNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify other = (emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify) obj;
 
-      if (getMpPlayId()
-          != other.getMpPlayId()) return false;
       if (getAllArgee()
           != other.getAllArgee()) return false;
+      if (getMpPlayId()
+          != other.getMpPlayId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,11 +211,11 @@ public final class MpPlayInviteResultNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMpPlayId();
       hash = (37 * hash) + ALL_ARGEE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getAllArgee());
+      hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMpPlayId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,8 +313,8 @@ public final class MpPlayInviteResultNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1817
-     * Obf: IFFDIKELBNI
+     * CmdId: 23666
+     * Obf: LIPDOBOAING
      * </pre>
      *
      * Protobuf type {@code MpPlayInviteResultNotify}
@@ -354,9 +354,9 @@ public final class MpPlayInviteResultNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mpPlayId_ = 0;
-
         allArgee_ = false;
+
+        mpPlayId_ = 0;
 
         return this;
       }
@@ -384,8 +384,8 @@ public final class MpPlayInviteResultNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify buildPartial() {
         emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify result = new emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify(this);
-        result.mpPlayId_ = mpPlayId_;
         result.allArgee_ = allArgee_;
+        result.mpPlayId_ = mpPlayId_;
         onBuilt();
         return result;
       }
@@ -434,11 +434,11 @@ public final class MpPlayInviteResultNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify other) {
         if (other == emu.grasscutter.net.proto.MpPlayInviteResultNotifyOuterClass.MpPlayInviteResultNotify.getDefaultInstance()) return this;
-        if (other.getMpPlayId() != 0) {
-          setMpPlayId(other.getMpPlayId());
-        }
         if (other.getAllArgee() != false) {
           setAllArgee(other.getAllArgee());
+        }
+        if (other.getMpPlayId() != 0) {
+          setMpPlayId(other.getMpPlayId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,40 +469,9 @@ public final class MpPlayInviteResultNotifyOuterClass {
         return this;
       }
 
-      private int mpPlayId_ ;
-      /**
-       * <code>uint32 mp_play_id = 14;</code>
-       * @return The mpPlayId.
-       */
-      @java.lang.Override
-      public int getMpPlayId() {
-        return mpPlayId_;
-      }
-      /**
-       * <code>uint32 mp_play_id = 14;</code>
-       * @param value The mpPlayId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMpPlayId(int value) {
-        
-        mpPlayId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 mp_play_id = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMpPlayId() {
-        
-        mpPlayId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean allArgee_ ;
       /**
-       * <code>bool all_argee = 4;</code>
+       * <code>bool all_argee = 3;</code>
        * @return The allArgee.
        */
       @java.lang.Override
@@ -510,7 +479,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
         return allArgee_;
       }
       /**
-       * <code>bool all_argee = 4;</code>
+       * <code>bool all_argee = 3;</code>
        * @param value The allArgee to set.
        * @return This builder for chaining.
        */
@@ -521,12 +490,43 @@ public final class MpPlayInviteResultNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool all_argee = 4;</code>
+       * <code>bool all_argee = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAllArgee() {
         
         allArgee_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int mpPlayId_ ;
+      /**
+       * <code>uint32 mp_play_id = 15;</code>
+       * @return The mpPlayId.
+       */
+      @java.lang.Override
+      public int getMpPlayId() {
+        return mpPlayId_;
+      }
+      /**
+       * <code>uint32 mp_play_id = 15;</code>
+       * @param value The mpPlayId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMpPlayId(int value) {
+        
+        mpPlayId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 mp_play_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMpPlayId() {
+        
+        mpPlayId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class MpPlayInviteResultNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036MpPlayInviteResultNotify.proto\"A\n\030MpPl" +
-      "ayInviteResultNotify\022\022\n\nmp_play_id\030\016 \001(\r" +
-      "\022\021\n\tall_argee\030\004 \001(\010B\033\n\031emu.grasscutter.n" +
+      "ayInviteResultNotify\022\021\n\tall_argee\030\003 \001(\010\022" +
+      "\022\n\nmp_play_id\030\017 \001(\rB\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class MpPlayInviteResultNotifyOuterClass {
     internal_static_MpPlayInviteResultNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MpPlayInviteResultNotify_descriptor,
-        new java.lang.String[] { "MpPlayId", "AllArgee", });
+        new java.lang.String[] { "AllArgee", "MpPlayId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

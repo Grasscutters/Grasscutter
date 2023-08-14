@@ -26,8 +26,8 @@ public final class TreasureMapRegionActiveNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2065
-   * Obf: MCFKLLABOAD
+   * CmdId: 20683
+   * Obf: CFEOAHDEJFD
    * </pre>
    *
    * Protobuf type {@code TreasureMapRegionActiveNotify}
@@ -279,8 +279,8 @@ public final class TreasureMapRegionActiveNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2065
-     * Obf: MCFKLLABOAD
+     * CmdId: 20683
+     * Obf: CFEOAHDEJFD
      * </pre>
      *
      * Protobuf type {@code TreasureMapRegionActiveNotify}

@@ -26,8 +26,8 @@ public final class ReformFireworksRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5966
-   * Obf: ECAPIEIEHEP
+   * CmdId: 8112
+   * Obf: ENGGIOOFAPL
    * </pre>
    *
    * Protobuf type {@code ReformFireworksRsp}
@@ -279,8 +279,8 @@ public final class ReformFireworksRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5966
-     * Obf: ECAPIEIEHEP
+     * CmdId: 8112
+     * Obf: ENGGIOOFAPL
      * </pre>
      *
      * Protobuf type {@code ReformFireworksRsp}

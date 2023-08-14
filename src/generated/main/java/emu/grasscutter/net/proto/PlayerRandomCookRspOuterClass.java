@@ -19,15 +19,15 @@ public final class PlayerRandomCookRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 136
-   * Obf: FKNNOLLMNME
+   * CmdId: 9489
+   * Obf: JJOOOKDKNLF
    * </pre>
    *
    * Protobuf type {@code PlayerRandomCookRsp}
@@ -74,7 +74,7 @@ public final class PlayerRandomCookRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class PlayerRandomCookRspOuterClass {
               emu.grasscutter.net.proto.PlayerRandomCookRspOuterClass.PlayerRandomCookRsp.class, emu.grasscutter.net.proto.PlayerRandomCookRspOuterClass.PlayerRandomCookRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
     /**
-     * <code>int32 retcode = 3;</code>
+     * <code>int32 retcode = 9;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class PlayerRandomCookRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(3, retcode_);
+        output.writeInt32(9, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class PlayerRandomCookRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, retcode_);
+          .computeInt32Size(9, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class PlayerRandomCookRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 136
-     * Obf: FKNNOLLMNME
+     * CmdId: 9489
+     * Obf: JJOOOKDKNLF
      * </pre>
      *
      * Protobuf type {@code PlayerRandomCookRsp}
@@ -431,7 +431,7 @@ public final class PlayerRandomCookRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class PlayerRandomCookRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class PlayerRandomCookRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 3;</code>
+       * <code>int32 retcode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -527,7 +527,7 @@ public final class PlayerRandomCookRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031PlayerRandomCookRsp.proto\"&\n\023PlayerRan" +
-      "domCookRsp\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grass" +
+      "domCookRsp\022\017\n\007retcode\030\t \001(\005B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

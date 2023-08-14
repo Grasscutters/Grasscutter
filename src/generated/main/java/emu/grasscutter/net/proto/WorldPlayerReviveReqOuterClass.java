@@ -20,8 +20,8 @@ public final class WorldPlayerReviveReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 273
-   * Obf: OBKKEOENCLB
+   * CmdId: 2639
+   * Obf: CLFPPNDBGLJ
    * </pre>
    *
    * Protobuf type {@code WorldPlayerReviveReq}
@@ -246,8 +246,8 @@ public final class WorldPlayerReviveReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 273
-     * Obf: OBKKEOENCLB
+     * CmdId: 2639
+     * Obf: CLFPPNDBGLJ
      * </pre>
      *
      * Protobuf type {@code WorldPlayerReviveReq}

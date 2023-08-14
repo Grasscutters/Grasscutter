@@ -19,15 +19,15 @@ public final class TowerAllDataReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_interact = 11;</code>
+     * <code>bool is_interact = 6;</code>
      * @return The isInteract.
      */
     boolean getIsInteract();
   }
   /**
    * <pre>
-   * CmdId: 2435
-   * Obf: BMOMJPFDKHO
+   * CmdId: 23009
+   * Obf: OBIBAPPDOKJ
    * </pre>
    *
    * Protobuf type {@code TowerAllDataReq}
@@ -74,7 +74,7 @@ public final class TowerAllDataReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 48: {
 
               isInteract_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class TowerAllDataReqOuterClass {
               emu.grasscutter.net.proto.TowerAllDataReqOuterClass.TowerAllDataReq.class, emu.grasscutter.net.proto.TowerAllDataReqOuterClass.TowerAllDataReq.Builder.class);
     }
 
-    public static final int IS_INTERACT_FIELD_NUMBER = 11;
+    public static final int IS_INTERACT_FIELD_NUMBER = 6;
     private boolean isInteract_;
     /**
-     * <code>bool is_interact = 11;</code>
+     * <code>bool is_interact = 6;</code>
      * @return The isInteract.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class TowerAllDataReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isInteract_ != false) {
-        output.writeBool(11, isInteract_);
+        output.writeBool(6, isInteract_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class TowerAllDataReqOuterClass {
       size = 0;
       if (isInteract_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isInteract_);
+          .computeBoolSize(6, isInteract_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class TowerAllDataReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2435
-     * Obf: BMOMJPFDKHO
+     * CmdId: 23009
+     * Obf: OBIBAPPDOKJ
      * </pre>
      *
      * Protobuf type {@code TowerAllDataReq}
@@ -432,7 +432,7 @@ public final class TowerAllDataReqOuterClass {
 
       private boolean isInteract_ ;
       /**
-       * <code>bool is_interact = 11;</code>
+       * <code>bool is_interact = 6;</code>
        * @return The isInteract.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class TowerAllDataReqOuterClass {
         return isInteract_;
       }
       /**
-       * <code>bool is_interact = 11;</code>
+       * <code>bool is_interact = 6;</code>
        * @param value The isInteract to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class TowerAllDataReqOuterClass {
         return this;
       }
       /**
-       * <code>bool is_interact = 11;</code>
+       * <code>bool is_interact = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInteract() {
@@ -528,7 +528,7 @@ public final class TowerAllDataReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025TowerAllDataReq.proto\"&\n\017TowerAllDataR" +
-      "eq\022\023\n\013is_interact\030\013 \001(\010B\033\n\031emu.grasscutt" +
+      "eq\022\023\n\013is_interact\030\006 \001(\010B\033\n\031emu.grasscutt" +
       "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

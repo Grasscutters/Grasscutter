@@ -19,26 +19,26 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OHCKIMGAALC = 11;</code>
-     * @return The oHCKIMGAALC.
+     * <code>uint32 FEHAAKFFENC = 13;</code>
+     * @return The fEHAAKFFENC.
      */
-    int getOHCKIMGAALC();
+    int getFEHAAKFFENC();
 
     /**
-     * <code>uint32 LJIOMIABKJC = 8;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 FMABDGMGDAM = 3;</code>
+     * @return The fMABDGMGDAM.
      */
-    int getLJIOMIABKJC();
+    int getFMABDGMGDAM();
 
     /**
-     * <code>uint32 LCGJJIKGFKK = 1;</code>
-     * @return The lCGJJIKGFKK.
+     * <code>uint32 JKGKCICKAKD = 8;</code>
+     * @return The jKGKCICKAKD.
      */
-    int getLCGJJIKGFKK();
+    int getJKGKCICKAKD();
   }
   /**
    * <pre>
-   * Obf: KFPDFBOIMFC
+   * Obf: BEJIBAAEBGJ
    * </pre>
    *
    * Protobuf type {@code RoguelikeSettleCoinInfo}
@@ -85,19 +85,19 @@ public final class RoguelikeSettleCoinInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
-              lCGJJIKGFKK_ = input.readUInt32();
+              fMABDGMGDAM_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              lJIOMIABKJC_ = input.readUInt32();
+              jKGKCICKAKD_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 104: {
 
-              oHCKIMGAALC_ = input.readUInt32();
+              fEHAAKFFENC_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,37 +132,37 @@ public final class RoguelikeSettleCoinInfoOuterClass {
               emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.class, emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.Builder.class);
     }
 
-    public static final int OHCKIMGAALC_FIELD_NUMBER = 11;
-    private int oHCKIMGAALC_;
+    public static final int FEHAAKFFENC_FIELD_NUMBER = 13;
+    private int fEHAAKFFENC_;
     /**
-     * <code>uint32 OHCKIMGAALC = 11;</code>
-     * @return The oHCKIMGAALC.
+     * <code>uint32 FEHAAKFFENC = 13;</code>
+     * @return The fEHAAKFFENC.
      */
     @java.lang.Override
-    public int getOHCKIMGAALC() {
-      return oHCKIMGAALC_;
+    public int getFEHAAKFFENC() {
+      return fEHAAKFFENC_;
     }
 
-    public static final int LJIOMIABKJC_FIELD_NUMBER = 8;
-    private int lJIOMIABKJC_;
+    public static final int FMABDGMGDAM_FIELD_NUMBER = 3;
+    private int fMABDGMGDAM_;
     /**
-     * <code>uint32 LJIOMIABKJC = 8;</code>
-     * @return The lJIOMIABKJC.
+     * <code>uint32 FMABDGMGDAM = 3;</code>
+     * @return The fMABDGMGDAM.
      */
     @java.lang.Override
-    public int getLJIOMIABKJC() {
-      return lJIOMIABKJC_;
+    public int getFMABDGMGDAM() {
+      return fMABDGMGDAM_;
     }
 
-    public static final int LCGJJIKGFKK_FIELD_NUMBER = 1;
-    private int lCGJJIKGFKK_;
+    public static final int JKGKCICKAKD_FIELD_NUMBER = 8;
+    private int jKGKCICKAKD_;
     /**
-     * <code>uint32 LCGJJIKGFKK = 1;</code>
-     * @return The lCGJJIKGFKK.
+     * <code>uint32 JKGKCICKAKD = 8;</code>
+     * @return The jKGKCICKAKD.
      */
     @java.lang.Override
-    public int getLCGJJIKGFKK() {
-      return lCGJJIKGFKK_;
+    public int getJKGKCICKAKD() {
+      return jKGKCICKAKD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class RoguelikeSettleCoinInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (lCGJJIKGFKK_ != 0) {
-        output.writeUInt32(1, lCGJJIKGFKK_);
+      if (fMABDGMGDAM_ != 0) {
+        output.writeUInt32(3, fMABDGMGDAM_);
       }
-      if (lJIOMIABKJC_ != 0) {
-        output.writeUInt32(8, lJIOMIABKJC_);
+      if (jKGKCICKAKD_ != 0) {
+        output.writeUInt32(8, jKGKCICKAKD_);
       }
-      if (oHCKIMGAALC_ != 0) {
-        output.writeUInt32(11, oHCKIMGAALC_);
+      if (fEHAAKFFENC_ != 0) {
+        output.writeUInt32(13, fEHAAKFFENC_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lCGJJIKGFKK_ != 0) {
+      if (fMABDGMGDAM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, lCGJJIKGFKK_);
+          .computeUInt32Size(3, fMABDGMGDAM_);
       }
-      if (lJIOMIABKJC_ != 0) {
+      if (jKGKCICKAKD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lJIOMIABKJC_);
+          .computeUInt32Size(8, jKGKCICKAKD_);
       }
-      if (oHCKIMGAALC_ != 0) {
+      if (fEHAAKFFENC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, oHCKIMGAALC_);
+          .computeUInt32Size(13, fEHAAKFFENC_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,12 +224,12 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       }
       emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo other = (emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo) obj;
 
-      if (getOHCKIMGAALC()
-          != other.getOHCKIMGAALC()) return false;
-      if (getLJIOMIABKJC()
-          != other.getLJIOMIABKJC()) return false;
-      if (getLCGJJIKGFKK()
-          != other.getLCGJJIKGFKK()) return false;
+      if (getFEHAAKFFENC()
+          != other.getFEHAAKFFENC()) return false;
+      if (getFMABDGMGDAM()
+          != other.getFMABDGMGDAM()) return false;
+      if (getJKGKCICKAKD()
+          != other.getJKGKCICKAKD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +241,12 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OHCKIMGAALC_FIELD_NUMBER;
-      hash = (53 * hash) + getOHCKIMGAALC();
-      hash = (37 * hash) + LJIOMIABKJC_FIELD_NUMBER;
-      hash = (53 * hash) + getLJIOMIABKJC();
-      hash = (37 * hash) + LCGJJIKGFKK_FIELD_NUMBER;
-      hash = (53 * hash) + getLCGJJIKGFKK();
+      hash = (37 * hash) + FEHAAKFFENC_FIELD_NUMBER;
+      hash = (53 * hash) + getFEHAAKFFENC();
+      hash = (37 * hash) + FMABDGMGDAM_FIELD_NUMBER;
+      hash = (53 * hash) + getFMABDGMGDAM();
+      hash = (37 * hash) + JKGKCICKAKD_FIELD_NUMBER;
+      hash = (53 * hash) + getJKGKCICKAKD();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class RoguelikeSettleCoinInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: KFPDFBOIMFC
+     * Obf: BEJIBAAEBGJ
      * </pre>
      *
      * Protobuf type {@code RoguelikeSettleCoinInfo}
@@ -384,11 +384,11 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oHCKIMGAALC_ = 0;
+        fEHAAKFFENC_ = 0;
 
-        lJIOMIABKJC_ = 0;
+        fMABDGMGDAM_ = 0;
 
-        lCGJJIKGFKK_ = 0;
+        jKGKCICKAKD_ = 0;
 
         return this;
       }
@@ -416,9 +416,9 @@ public final class RoguelikeSettleCoinInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo buildPartial() {
         emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo result = new emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo(this);
-        result.oHCKIMGAALC_ = oHCKIMGAALC_;
-        result.lJIOMIABKJC_ = lJIOMIABKJC_;
-        result.lCGJJIKGFKK_ = lCGJJIKGFKK_;
+        result.fEHAAKFFENC_ = fEHAAKFFENC_;
+        result.fMABDGMGDAM_ = fMABDGMGDAM_;
+        result.jKGKCICKAKD_ = jKGKCICKAKD_;
         onBuilt();
         return result;
       }
@@ -467,14 +467,14 @@ public final class RoguelikeSettleCoinInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo other) {
         if (other == emu.grasscutter.net.proto.RoguelikeSettleCoinInfoOuterClass.RoguelikeSettleCoinInfo.getDefaultInstance()) return this;
-        if (other.getOHCKIMGAALC() != 0) {
-          setOHCKIMGAALC(other.getOHCKIMGAALC());
+        if (other.getFEHAAKFFENC() != 0) {
+          setFEHAAKFFENC(other.getFEHAAKFFENC());
         }
-        if (other.getLJIOMIABKJC() != 0) {
-          setLJIOMIABKJC(other.getLJIOMIABKJC());
+        if (other.getFMABDGMGDAM() != 0) {
+          setFMABDGMGDAM(other.getFMABDGMGDAM());
         }
-        if (other.getLCGJJIKGFKK() != 0) {
-          setLCGJJIKGFKK(other.getLCGJJIKGFKK());
+        if (other.getJKGKCICKAKD() != 0) {
+          setJKGKCICKAKD(other.getJKGKCICKAKD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -505,95 +505,95 @@ public final class RoguelikeSettleCoinInfoOuterClass {
         return this;
       }
 
-      private int oHCKIMGAALC_ ;
+      private int fEHAAKFFENC_ ;
       /**
-       * <code>uint32 OHCKIMGAALC = 11;</code>
-       * @return The oHCKIMGAALC.
+       * <code>uint32 FEHAAKFFENC = 13;</code>
+       * @return The fEHAAKFFENC.
        */
       @java.lang.Override
-      public int getOHCKIMGAALC() {
-        return oHCKIMGAALC_;
+      public int getFEHAAKFFENC() {
+        return fEHAAKFFENC_;
       }
       /**
-       * <code>uint32 OHCKIMGAALC = 11;</code>
-       * @param value The oHCKIMGAALC to set.
+       * <code>uint32 FEHAAKFFENC = 13;</code>
+       * @param value The fEHAAKFFENC to set.
        * @return This builder for chaining.
        */
-      public Builder setOHCKIMGAALC(int value) {
+      public Builder setFEHAAKFFENC(int value) {
         
-        oHCKIMGAALC_ = value;
+        fEHAAKFFENC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OHCKIMGAALC = 11;</code>
+       * <code>uint32 FEHAAKFFENC = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOHCKIMGAALC() {
+      public Builder clearFEHAAKFFENC() {
         
-        oHCKIMGAALC_ = 0;
+        fEHAAKFFENC_ = 0;
         onChanged();
         return this;
       }
 
-      private int lJIOMIABKJC_ ;
+      private int fMABDGMGDAM_ ;
       /**
-       * <code>uint32 LJIOMIABKJC = 8;</code>
-       * @return The lJIOMIABKJC.
+       * <code>uint32 FMABDGMGDAM = 3;</code>
+       * @return The fMABDGMGDAM.
        */
       @java.lang.Override
-      public int getLJIOMIABKJC() {
-        return lJIOMIABKJC_;
+      public int getFMABDGMGDAM() {
+        return fMABDGMGDAM_;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 8;</code>
-       * @param value The lJIOMIABKJC to set.
+       * <code>uint32 FMABDGMGDAM = 3;</code>
+       * @param value The fMABDGMGDAM to set.
        * @return This builder for chaining.
        */
-      public Builder setLJIOMIABKJC(int value) {
+      public Builder setFMABDGMGDAM(int value) {
         
-        lJIOMIABKJC_ = value;
+        fMABDGMGDAM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LJIOMIABKJC = 8;</code>
+       * <code>uint32 FMABDGMGDAM = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLJIOMIABKJC() {
+      public Builder clearFMABDGMGDAM() {
         
-        lJIOMIABKJC_ = 0;
+        fMABDGMGDAM_ = 0;
         onChanged();
         return this;
       }
 
-      private int lCGJJIKGFKK_ ;
+      private int jKGKCICKAKD_ ;
       /**
-       * <code>uint32 LCGJJIKGFKK = 1;</code>
-       * @return The lCGJJIKGFKK.
+       * <code>uint32 JKGKCICKAKD = 8;</code>
+       * @return The jKGKCICKAKD.
        */
       @java.lang.Override
-      public int getLCGJJIKGFKK() {
-        return lCGJJIKGFKK_;
+      public int getJKGKCICKAKD() {
+        return jKGKCICKAKD_;
       }
       /**
-       * <code>uint32 LCGJJIKGFKK = 1;</code>
-       * @param value The lCGJJIKGFKK to set.
+       * <code>uint32 JKGKCICKAKD = 8;</code>
+       * @param value The jKGKCICKAKD to set.
        * @return This builder for chaining.
        */
-      public Builder setLCGJJIKGFKK(int value) {
+      public Builder setJKGKCICKAKD(int value) {
         
-        lCGJJIKGFKK_ = value;
+        jKGKCICKAKD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 LCGJJIKGFKK = 1;</code>
+       * <code>uint32 JKGKCICKAKD = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLCGJJIKGFKK() {
+      public Builder clearJKGKCICKAKD() {
         
-        lCGJJIKGFKK_ = 0;
+        jKGKCICKAKD_ = 0;
         onChanged();
         return this;
       }
@@ -665,8 +665,8 @@ public final class RoguelikeSettleCoinInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035RoguelikeSettleCoinInfo.proto\"X\n\027Rogue" +
-      "likeSettleCoinInfo\022\023\n\013OHCKIMGAALC\030\013 \001(\r\022" +
-      "\023\n\013LJIOMIABKJC\030\010 \001(\r\022\023\n\013LCGJJIKGFKK\030\001 \001(" +
+      "likeSettleCoinInfo\022\023\n\013FEHAAKFFENC\030\r \001(\r\022" +
+      "\023\n\013FMABDGMGDAM\030\003 \001(\r\022\023\n\013JKGKCICKAKD\030\010 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -678,7 +678,7 @@ public final class RoguelikeSettleCoinInfoOuterClass {
     internal_static_RoguelikeSettleCoinInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoguelikeSettleCoinInfo_descriptor,
-        new java.lang.String[] { "OHCKIMGAALC", "LJIOMIABKJC", "LCGJJIKGFKK", });
+        new java.lang.String[] { "FEHAAKFFENC", "FMABDGMGDAM", "JKGKCICKAKD", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

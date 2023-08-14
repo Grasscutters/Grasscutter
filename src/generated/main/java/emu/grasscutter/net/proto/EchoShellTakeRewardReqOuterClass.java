@@ -19,15 +19,15 @@ public final class EchoShellTakeRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_id = 8;</code>
+     * <code>uint32 reward_id = 12;</code>
      * @return The rewardId.
      */
     int getRewardId();
   }
   /**
    * <pre>
-   * CmdId: 8280
-   * Obf: IMBLMKPEOGP
+   * CmdId: 855
+   * Obf: IGMILGOOBGI
    * </pre>
    *
    * Protobuf type {@code EchoShellTakeRewardReq}
@@ -74,7 +74,7 @@ public final class EchoShellTakeRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 96: {
 
               rewardId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class EchoShellTakeRewardReqOuterClass {
               emu.grasscutter.net.proto.EchoShellTakeRewardReqOuterClass.EchoShellTakeRewardReq.class, emu.grasscutter.net.proto.EchoShellTakeRewardReqOuterClass.EchoShellTakeRewardReq.Builder.class);
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 8;
+    public static final int REWARD_ID_FIELD_NUMBER = 12;
     private int rewardId_;
     /**
-     * <code>uint32 reward_id = 8;</code>
+     * <code>uint32 reward_id = 12;</code>
      * @return The rewardId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class EchoShellTakeRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rewardId_ != 0) {
-        output.writeUInt32(8, rewardId_);
+        output.writeUInt32(12, rewardId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class EchoShellTakeRewardReqOuterClass {
       size = 0;
       if (rewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, rewardId_);
+          .computeUInt32Size(12, rewardId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class EchoShellTakeRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8280
-     * Obf: IMBLMKPEOGP
+     * CmdId: 855
+     * Obf: IGMILGOOBGI
      * </pre>
      *
      * Protobuf type {@code EchoShellTakeRewardReq}
@@ -431,7 +431,7 @@ public final class EchoShellTakeRewardReqOuterClass {
 
       private int rewardId_ ;
       /**
-       * <code>uint32 reward_id = 8;</code>
+       * <code>uint32 reward_id = 12;</code>
        * @return The rewardId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class EchoShellTakeRewardReqOuterClass {
         return rewardId_;
       }
       /**
-       * <code>uint32 reward_id = 8;</code>
+       * <code>uint32 reward_id = 12;</code>
        * @param value The rewardId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class EchoShellTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_id = 8;</code>
+       * <code>uint32 reward_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardId() {
@@ -527,7 +527,7 @@ public final class EchoShellTakeRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034EchoShellTakeRewardReq.proto\"+\n\026EchoSh" +
-      "ellTakeRewardReq\022\021\n\treward_id\030\010 \001(\rB\033\n\031e" +
+      "ellTakeRewardReq\022\021\n\treward_id\030\014 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

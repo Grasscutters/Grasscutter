@@ -19,20 +19,20 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool BAKIEFCCBOF = 7;</code>
-     * @return The bAKIEFCCBOF.
+     * <code>bool OKCBPHMHPGD = 10;</code>
+     * @return The oKCBPHMHPGD.
      */
-    boolean getBAKIEFCCBOF();
+    boolean getOKCBPHMHPGD();
 
     /**
-     * <code>bool GGDAMGGIEAD = 12;</code>
-     * @return The gGDAMGGIEAD.
+     * <code>bool HDJEBJJFDGD = 9;</code>
+     * @return The hDJEBJJFDGD.
      */
-    boolean getGGDAMGGIEAD();
+    boolean getHDJEBJJFDGD();
   }
   /**
    * <pre>
-   * Obf: BDEDFJCEACE
+   * Obf: AGGFCJPDIKK
    * </pre>
    *
    * Protobuf type {@code SceneGallerySorushTrialPhotoMatchInfo}
@@ -79,14 +79,14 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 72: {
 
-              bAKIEFCCBOF_ = input.readBool();
+              hDJEBJJFDGD_ = input.readBool();
               break;
             }
-            case 96: {
+            case 80: {
 
-              gGDAMGGIEAD_ = input.readBool();
+              oKCBPHMHPGD_ = input.readBool();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
               emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo.class, emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo.Builder.class);
     }
 
-    public static final int BAKIEFCCBOF_FIELD_NUMBER = 7;
-    private boolean bAKIEFCCBOF_;
+    public static final int OKCBPHMHPGD_FIELD_NUMBER = 10;
+    private boolean oKCBPHMHPGD_;
     /**
-     * <code>bool BAKIEFCCBOF = 7;</code>
-     * @return The bAKIEFCCBOF.
+     * <code>bool OKCBPHMHPGD = 10;</code>
+     * @return The oKCBPHMHPGD.
      */
     @java.lang.Override
-    public boolean getBAKIEFCCBOF() {
-      return bAKIEFCCBOF_;
+    public boolean getOKCBPHMHPGD() {
+      return oKCBPHMHPGD_;
     }
 
-    public static final int GGDAMGGIEAD_FIELD_NUMBER = 12;
-    private boolean gGDAMGGIEAD_;
+    public static final int HDJEBJJFDGD_FIELD_NUMBER = 9;
+    private boolean hDJEBJJFDGD_;
     /**
-     * <code>bool GGDAMGGIEAD = 12;</code>
-     * @return The gGDAMGGIEAD.
+     * <code>bool HDJEBJJFDGD = 9;</code>
+     * @return The hDJEBJJFDGD.
      */
     @java.lang.Override
-    public boolean getGGDAMGGIEAD() {
-      return gGDAMGGIEAD_;
+    public boolean getHDJEBJJFDGD() {
+      return hDJEBJJFDGD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bAKIEFCCBOF_ != false) {
-        output.writeBool(7, bAKIEFCCBOF_);
+      if (hDJEBJJFDGD_ != false) {
+        output.writeBool(9, hDJEBJJFDGD_);
       }
-      if (gGDAMGGIEAD_ != false) {
-        output.writeBool(12, gGDAMGGIEAD_);
+      if (oKCBPHMHPGD_ != false) {
+        output.writeBool(10, oKCBPHMHPGD_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bAKIEFCCBOF_ != false) {
+      if (hDJEBJJFDGD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, bAKIEFCCBOF_);
+          .computeBoolSize(9, hDJEBJJFDGD_);
       }
-      if (gGDAMGGIEAD_ != false) {
+      if (oKCBPHMHPGD_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, gGDAMGGIEAD_);
+          .computeBoolSize(10, oKCBPHMHPGD_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo other = (emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo) obj;
 
-      if (getBAKIEFCCBOF()
-          != other.getBAKIEFCCBOF()) return false;
-      if (getGGDAMGGIEAD()
-          != other.getGGDAMGGIEAD()) return false;
+      if (getOKCBPHMHPGD()
+          != other.getOKCBPHMHPGD()) return false;
+      if (getHDJEBJJFDGD()
+          != other.getHDJEBJJFDGD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,12 +210,12 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BAKIEFCCBOF_FIELD_NUMBER;
+      hash = (37 * hash) + OKCBPHMHPGD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBAKIEFCCBOF());
-      hash = (37 * hash) + GGDAMGGIEAD_FIELD_NUMBER;
+          getOKCBPHMHPGD());
+      hash = (37 * hash) + HDJEBJJFDGD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGGDAMGGIEAD());
+          getHDJEBJJFDGD());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -313,7 +313,7 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: BDEDFJCEACE
+     * Obf: AGGFCJPDIKK
      * </pre>
      *
      * Protobuf type {@code SceneGallerySorushTrialPhotoMatchInfo}
@@ -353,9 +353,9 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bAKIEFCCBOF_ = false;
+        oKCBPHMHPGD_ = false;
 
-        gGDAMGGIEAD_ = false;
+        hDJEBJJFDGD_ = false;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo buildPartial() {
         emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo result = new emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo(this);
-        result.bAKIEFCCBOF_ = bAKIEFCCBOF_;
-        result.gGDAMGGIEAD_ = gGDAMGGIEAD_;
+        result.oKCBPHMHPGD_ = oKCBPHMHPGD_;
+        result.hDJEBJJFDGD_ = hDJEBJJFDGD_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo other) {
         if (other == emu.grasscutter.net.proto.SceneGallerySorushTrialPhotoMatchInfoOuterClass.SceneGallerySorushTrialPhotoMatchInfo.getDefaultInstance()) return this;
-        if (other.getBAKIEFCCBOF() != false) {
-          setBAKIEFCCBOF(other.getBAKIEFCCBOF());
+        if (other.getOKCBPHMHPGD() != false) {
+          setOKCBPHMHPGD(other.getOKCBPHMHPGD());
         }
-        if (other.getGGDAMGGIEAD() != false) {
-          setGGDAMGGIEAD(other.getGGDAMGGIEAD());
+        if (other.getHDJEBJJFDGD() != false) {
+          setHDJEBJJFDGD(other.getHDJEBJJFDGD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
         return this;
       }
 
-      private boolean bAKIEFCCBOF_ ;
+      private boolean oKCBPHMHPGD_ ;
       /**
-       * <code>bool BAKIEFCCBOF = 7;</code>
-       * @return The bAKIEFCCBOF.
+       * <code>bool OKCBPHMHPGD = 10;</code>
+       * @return The oKCBPHMHPGD.
        */
       @java.lang.Override
-      public boolean getBAKIEFCCBOF() {
-        return bAKIEFCCBOF_;
+      public boolean getOKCBPHMHPGD() {
+        return oKCBPHMHPGD_;
       }
       /**
-       * <code>bool BAKIEFCCBOF = 7;</code>
-       * @param value The bAKIEFCCBOF to set.
+       * <code>bool OKCBPHMHPGD = 10;</code>
+       * @param value The oKCBPHMHPGD to set.
        * @return This builder for chaining.
        */
-      public Builder setBAKIEFCCBOF(boolean value) {
+      public Builder setOKCBPHMHPGD(boolean value) {
         
-        bAKIEFCCBOF_ = value;
+        oKCBPHMHPGD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BAKIEFCCBOF = 7;</code>
+       * <code>bool OKCBPHMHPGD = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBAKIEFCCBOF() {
+      public Builder clearOKCBPHMHPGD() {
         
-        bAKIEFCCBOF_ = false;
+        oKCBPHMHPGD_ = false;
         onChanged();
         return this;
       }
 
-      private boolean gGDAMGGIEAD_ ;
+      private boolean hDJEBJJFDGD_ ;
       /**
-       * <code>bool GGDAMGGIEAD = 12;</code>
-       * @return The gGDAMGGIEAD.
+       * <code>bool HDJEBJJFDGD = 9;</code>
+       * @return The hDJEBJJFDGD.
        */
       @java.lang.Override
-      public boolean getGGDAMGGIEAD() {
-        return gGDAMGGIEAD_;
+      public boolean getHDJEBJJFDGD() {
+        return hDJEBJJFDGD_;
       }
       /**
-       * <code>bool GGDAMGGIEAD = 12;</code>
-       * @param value The gGDAMGGIEAD to set.
+       * <code>bool HDJEBJJFDGD = 9;</code>
+       * @param value The hDJEBJJFDGD to set.
        * @return This builder for chaining.
        */
-      public Builder setGGDAMGGIEAD(boolean value) {
+      public Builder setHDJEBJJFDGD(boolean value) {
         
-        gGDAMGGIEAD_ = value;
+        hDJEBJJFDGD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool GGDAMGGIEAD = 12;</code>
+       * <code>bool HDJEBJJFDGD = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGGDAMGGIEAD() {
+      public Builder clearHDJEBJJFDGD() {
         
-        gGDAMGGIEAD_ = false;
+        hDJEBJJFDGD_ = false;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n+SceneGallerySorushTrialPhotoMatchInfo." +
       "proto\"Q\n%SceneGallerySorushTrialPhotoMat" +
-      "chInfo\022\023\n\013BAKIEFCCBOF\030\007 \001(\010\022\023\n\013GGDAMGGIE" +
-      "AD\030\014 \001(\010B\033\n\031emu.grasscutter.net.protob\006p" +
+      "chInfo\022\023\n\013OKCBPHMHPGD\030\n \001(\010\022\023\n\013HDJEBJJFD" +
+      "GD\030\t \001(\010B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class SceneGallerySorushTrialPhotoMatchInfoOuterClass {
     internal_static_SceneGallerySorushTrialPhotoMatchInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneGallerySorushTrialPhotoMatchInfo_descriptor,
-        new java.lang.String[] { "BAKIEFCCBOF", "GGDAMGGIEAD", });
+        new java.lang.String[] { "OKCBPHMHPGD", "HDJEBJJFDGD", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

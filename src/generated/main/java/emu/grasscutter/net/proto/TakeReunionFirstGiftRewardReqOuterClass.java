@@ -20,8 +20,8 @@ public final class TakeReunionFirstGiftRewardReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5087
-   * Obf: BBMNJDIPGIB
+   * CmdId: 24987
+   * Obf: NKLKOJKDGEH
    * </pre>
    *
    * Protobuf type {@code TakeReunionFirstGiftRewardReq}
@@ -246,8 +246,8 @@ public final class TakeReunionFirstGiftRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5087
-     * Obf: BBMNJDIPGIB
+     * CmdId: 24987
+     * Obf: NKLKOJKDGEH
      * </pre>
      *
      * Protobuf type {@code TakeReunionFirstGiftRewardReq}

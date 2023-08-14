@@ -19,21 +19,21 @@ public final class SaveCoopDialogReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 OHGJGOFMHNP = 9;</code>
-     * @return The oHGJGOFMHNP.
+     * <code>uint32 CMJNNOEEBKC = 2;</code>
+     * @return The cMJNNOEEBKC.
      */
-    int getOHGJGOFMHNP();
+    int getCMJNNOEEBKC();
 
     /**
-     * <code>uint32 IMOEGKJCNNL = 3;</code>
-     * @return The iMOEGKJCNNL.
+     * <code>uint32 HIJPOLONNOA = 12;</code>
+     * @return The hIJPOLONNOA.
      */
-    int getIMOEGKJCNNL();
+    int getHIJPOLONNOA();
   }
   /**
    * <pre>
-   * CmdId: 1988
-   * Obf: PIEJIMKNEBJ
+   * CmdId: 24551
+   * Obf: EOGGBCKOGIE
    * </pre>
    *
    * Protobuf type {@code SaveCoopDialogReq}
@@ -80,14 +80,14 @@ public final class SaveCoopDialogReqOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
-              iMOEGKJCNNL_ = input.readUInt32();
+              cMJNNOEEBKC_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 96: {
 
-              oHGJGOFMHNP_ = input.readUInt32();
+              hIJPOLONNOA_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class SaveCoopDialogReqOuterClass {
               emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq.class, emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq.Builder.class);
     }
 
-    public static final int OHGJGOFMHNP_FIELD_NUMBER = 9;
-    private int oHGJGOFMHNP_;
+    public static final int CMJNNOEEBKC_FIELD_NUMBER = 2;
+    private int cMJNNOEEBKC_;
     /**
-     * <code>uint32 OHGJGOFMHNP = 9;</code>
-     * @return The oHGJGOFMHNP.
+     * <code>uint32 CMJNNOEEBKC = 2;</code>
+     * @return The cMJNNOEEBKC.
      */
     @java.lang.Override
-    public int getOHGJGOFMHNP() {
-      return oHGJGOFMHNP_;
+    public int getCMJNNOEEBKC() {
+      return cMJNNOEEBKC_;
     }
 
-    public static final int IMOEGKJCNNL_FIELD_NUMBER = 3;
-    private int iMOEGKJCNNL_;
+    public static final int HIJPOLONNOA_FIELD_NUMBER = 12;
+    private int hIJPOLONNOA_;
     /**
-     * <code>uint32 IMOEGKJCNNL = 3;</code>
-     * @return The iMOEGKJCNNL.
+     * <code>uint32 HIJPOLONNOA = 12;</code>
+     * @return The hIJPOLONNOA.
      */
     @java.lang.Override
-    public int getIMOEGKJCNNL() {
-      return iMOEGKJCNNL_;
+    public int getHIJPOLONNOA() {
+      return hIJPOLONNOA_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class SaveCoopDialogReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (iMOEGKJCNNL_ != 0) {
-        output.writeUInt32(3, iMOEGKJCNNL_);
+      if (cMJNNOEEBKC_ != 0) {
+        output.writeUInt32(2, cMJNNOEEBKC_);
       }
-      if (oHGJGOFMHNP_ != 0) {
-        output.writeUInt32(9, oHGJGOFMHNP_);
+      if (hIJPOLONNOA_ != 0) {
+        output.writeUInt32(12, hIJPOLONNOA_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class SaveCoopDialogReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (iMOEGKJCNNL_ != 0) {
+      if (cMJNNOEEBKC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, iMOEGKJCNNL_);
+          .computeUInt32Size(2, cMJNNOEEBKC_);
       }
-      if (oHGJGOFMHNP_ != 0) {
+      if (hIJPOLONNOA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, oHGJGOFMHNP_);
+          .computeUInt32Size(12, hIJPOLONNOA_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SaveCoopDialogReqOuterClass {
       }
       emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq other = (emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq) obj;
 
-      if (getOHGJGOFMHNP()
-          != other.getOHGJGOFMHNP()) return false;
-      if (getIMOEGKJCNNL()
-          != other.getIMOEGKJCNNL()) return false;
+      if (getCMJNNOEEBKC()
+          != other.getCMJNNOEEBKC()) return false;
+      if (getHIJPOLONNOA()
+          != other.getHIJPOLONNOA()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SaveCoopDialogReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + OHGJGOFMHNP_FIELD_NUMBER;
-      hash = (53 * hash) + getOHGJGOFMHNP();
-      hash = (37 * hash) + IMOEGKJCNNL_FIELD_NUMBER;
-      hash = (53 * hash) + getIMOEGKJCNNL();
+      hash = (37 * hash) + CMJNNOEEBKC_FIELD_NUMBER;
+      hash = (53 * hash) + getCMJNNOEEBKC();
+      hash = (37 * hash) + HIJPOLONNOA_FIELD_NUMBER;
+      hash = (53 * hash) + getHIJPOLONNOA();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SaveCoopDialogReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1988
-     * Obf: PIEJIMKNEBJ
+     * CmdId: 24551
+     * Obf: EOGGBCKOGIE
      * </pre>
      *
      * Protobuf type {@code SaveCoopDialogReq}
@@ -353,9 +353,9 @@ public final class SaveCoopDialogReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oHGJGOFMHNP_ = 0;
+        cMJNNOEEBKC_ = 0;
 
-        iMOEGKJCNNL_ = 0;
+        hIJPOLONNOA_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SaveCoopDialogReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq buildPartial() {
         emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq result = new emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq(this);
-        result.oHGJGOFMHNP_ = oHGJGOFMHNP_;
-        result.iMOEGKJCNNL_ = iMOEGKJCNNL_;
+        result.cMJNNOEEBKC_ = cMJNNOEEBKC_;
+        result.hIJPOLONNOA_ = hIJPOLONNOA_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SaveCoopDialogReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq other) {
         if (other == emu.grasscutter.net.proto.SaveCoopDialogReqOuterClass.SaveCoopDialogReq.getDefaultInstance()) return this;
-        if (other.getOHGJGOFMHNP() != 0) {
-          setOHGJGOFMHNP(other.getOHGJGOFMHNP());
+        if (other.getCMJNNOEEBKC() != 0) {
+          setCMJNNOEEBKC(other.getCMJNNOEEBKC());
         }
-        if (other.getIMOEGKJCNNL() != 0) {
-          setIMOEGKJCNNL(other.getIMOEGKJCNNL());
+        if (other.getHIJPOLONNOA() != 0) {
+          setHIJPOLONNOA(other.getHIJPOLONNOA());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,64 +468,64 @@ public final class SaveCoopDialogReqOuterClass {
         return this;
       }
 
-      private int oHGJGOFMHNP_ ;
+      private int cMJNNOEEBKC_ ;
       /**
-       * <code>uint32 OHGJGOFMHNP = 9;</code>
-       * @return The oHGJGOFMHNP.
+       * <code>uint32 CMJNNOEEBKC = 2;</code>
+       * @return The cMJNNOEEBKC.
        */
       @java.lang.Override
-      public int getOHGJGOFMHNP() {
-        return oHGJGOFMHNP_;
+      public int getCMJNNOEEBKC() {
+        return cMJNNOEEBKC_;
       }
       /**
-       * <code>uint32 OHGJGOFMHNP = 9;</code>
-       * @param value The oHGJGOFMHNP to set.
+       * <code>uint32 CMJNNOEEBKC = 2;</code>
+       * @param value The cMJNNOEEBKC to set.
        * @return This builder for chaining.
        */
-      public Builder setOHGJGOFMHNP(int value) {
+      public Builder setCMJNNOEEBKC(int value) {
         
-        oHGJGOFMHNP_ = value;
+        cMJNNOEEBKC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OHGJGOFMHNP = 9;</code>
+       * <code>uint32 CMJNNOEEBKC = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOHGJGOFMHNP() {
+      public Builder clearCMJNNOEEBKC() {
         
-        oHGJGOFMHNP_ = 0;
+        cMJNNOEEBKC_ = 0;
         onChanged();
         return this;
       }
 
-      private int iMOEGKJCNNL_ ;
+      private int hIJPOLONNOA_ ;
       /**
-       * <code>uint32 IMOEGKJCNNL = 3;</code>
-       * @return The iMOEGKJCNNL.
+       * <code>uint32 HIJPOLONNOA = 12;</code>
+       * @return The hIJPOLONNOA.
        */
       @java.lang.Override
-      public int getIMOEGKJCNNL() {
-        return iMOEGKJCNNL_;
+      public int getHIJPOLONNOA() {
+        return hIJPOLONNOA_;
       }
       /**
-       * <code>uint32 IMOEGKJCNNL = 3;</code>
-       * @param value The iMOEGKJCNNL to set.
+       * <code>uint32 HIJPOLONNOA = 12;</code>
+       * @param value The hIJPOLONNOA to set.
        * @return This builder for chaining.
        */
-      public Builder setIMOEGKJCNNL(int value) {
+      public Builder setHIJPOLONNOA(int value) {
         
-        iMOEGKJCNNL_ = value;
+        hIJPOLONNOA_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IMOEGKJCNNL = 3;</code>
+       * <code>uint32 HIJPOLONNOA = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIMOEGKJCNNL() {
+      public Builder clearHIJPOLONNOA() {
         
-        iMOEGKJCNNL_ = 0;
+        hIJPOLONNOA_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SaveCoopDialogReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027SaveCoopDialogReq.proto\"=\n\021SaveCoopDia" +
-      "logReq\022\023\n\013OHGJGOFMHNP\030\t \001(\r\022\023\n\013IMOEGKJCN" +
-      "NL\030\003 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "logReq\022\023\n\013CMJNNOEEBKC\030\002 \001(\r\022\023\n\013HIJPOLONN" +
+      "OA\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SaveCoopDialogReqOuterClass {
     internal_static_SaveCoopDialogReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveCoopDialogReq_descriptor,
-        new java.lang.String[] { "OHGJGOFMHNP", "IMOEGKJCNNL", });
+        new java.lang.String[] { "CMJNNOEEBKC", "HIJPOLONNOA", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

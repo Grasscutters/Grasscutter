@@ -16,7 +16,7 @@ public final class AvatarExpeditionStateOuterClass {
   }
   /**
    * <pre>
-   * Obf: LICFNNPLLLA
+   * Obf: OJBIHADNECN
    * </pre>
    *
    * Protobuf enum {@code AvatarExpeditionState}

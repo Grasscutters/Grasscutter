@@ -19,15 +19,15 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 4640
-   * Obf: PIGODPPLHLK
+   * CmdId: 28093
+   * Obf: MFDGHKGNHHM
    * </pre>
    *
    * Protobuf type {@code HomeUpdateFishFarmingInfoRsp}
@@ -74,7 +74,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
               emu.grasscutter.net.proto.HomeUpdateFishFarmingInfoRspOuterClass.HomeUpdateFishFarmingInfoRsp.class, emu.grasscutter.net.proto.HomeUpdateFishFarmingInfoRspOuterClass.HomeUpdateFishFarmingInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 13;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 13;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4640
-     * Obf: PIGODPPLHLK
+     * CmdId: 28093
+     * Obf: MFDGHKGNHHM
      * </pre>
      *
      * Protobuf type {@code HomeUpdateFishFarmingInfoRsp}
@@ -431,7 +431,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -528,7 +528,7 @@ public final class HomeUpdateFishFarmingInfoRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"HomeUpdateFishFarmingInfoRsp.proto\"/\n\034" +
       "HomeUpdateFishFarmingInfoRsp\022\017\n\007retcode\030" +
-      "\016 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "\r \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

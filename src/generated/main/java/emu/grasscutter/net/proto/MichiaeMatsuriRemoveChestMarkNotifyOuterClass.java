@@ -19,21 +19,21 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 group_id = 7;</code>
-     * @return The groupId.
-     */
-    int getGroupId();
-
-    /**
-     * <code>uint32 config_id = 13;</code>
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     int getConfigId();
+
+    /**
+     * <code>uint32 group_id = 14;</code>
+     * @return The groupId.
+     */
+    int getGroupId();
   }
   /**
    * <pre>
-   * CmdId: 8539
-   * Obf: FNNPJOFGFNB
+   * CmdId: 7189
+   * Obf: POPBCJIFLJD
    * </pre>
    *
    * Protobuf type {@code MichiaeMatsuriRemoveChestMarkNotify}
@@ -80,14 +80,14 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
+            case 16: {
 
               configId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              groupId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify.class, emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify.Builder.class);
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 7;
-    private int groupId_;
-    /**
-     * <code>uint32 group_id = 7;</code>
-     * @return The groupId.
-     */
-    @java.lang.Override
-    public int getGroupId() {
-      return groupId_;
-    }
-
-    public static final int CONFIG_ID_FIELD_NUMBER = 13;
+    public static final int CONFIG_ID_FIELD_NUMBER = 2;
     private int configId_;
     /**
-     * <code>uint32 config_id = 13;</code>
+     * <code>uint32 config_id = 2;</code>
      * @return The configId.
      */
     @java.lang.Override
     public int getConfigId() {
       return configId_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 14;
+    private int groupId_;
+    /**
+     * <code>uint32 group_id = 14;</code>
+     * @return The groupId.
+     */
+    @java.lang.Override
+    public int getGroupId() {
+      return groupId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (groupId_ != 0) {
-        output.writeUInt32(7, groupId_);
-      }
       if (configId_ != 0) {
-        output.writeUInt32(13, configId_);
+        output.writeUInt32(2, configId_);
+      }
+      if (groupId_ != 0) {
+        output.writeUInt32(14, groupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (groupId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, groupId_);
-      }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, configId_);
+          .computeUInt32Size(2, configId_);
+      }
+      if (groupId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, groupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify other = (emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify) obj;
 
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8539
-     * Obf: FNNPJOFGFNB
+     * CmdId: 7189
+     * Obf: POPBCJIFLJD
      * </pre>
      *
      * Protobuf type {@code MichiaeMatsuriRemoveChestMarkNotify}
@@ -353,9 +353,9 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        groupId_ = 0;
-
         configId_ = 0;
+
+        groupId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify buildPartial() {
         emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify result = new emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify(this);
-        result.groupId_ = groupId_;
         result.configId_ = configId_;
+        result.groupId_ = groupId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify other) {
         if (other == emu.grasscutter.net.proto.MichiaeMatsuriRemoveChestMarkNotifyOuterClass.MichiaeMatsuriRemoveChestMarkNotify.getDefaultInstance()) return this;
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
-        }
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
+        }
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
         return this;
       }
 
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 7;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 7;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int configId_ ;
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 2;</code>
        * @return The configId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
         return configId_;
       }
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 2;</code>
        * @param value The configId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
         
         configId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
         onChanged();
         return this;
       }
@@ -598,7 +598,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)MichiaeMatsuriRemoveChestMarkNotify.pr" +
       "oto\"J\n#MichiaeMatsuriRemoveChestMarkNoti" +
-      "fy\022\020\n\010group_id\030\007 \001(\r\022\021\n\tconfig_id\030\r \001(\rB" +
+      "fy\022\021\n\tconfig_id\030\002 \001(\r\022\020\n\010group_id\030\016 \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class MichiaeMatsuriRemoveChestMarkNotifyOuterClass {
     internal_static_MichiaeMatsuriRemoveChestMarkNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MichiaeMatsuriRemoveChestMarkNotify_descriptor,
-        new java.lang.String[] { "GroupId", "ConfigId", });
+        new java.lang.String[] { "ConfigId", "GroupId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

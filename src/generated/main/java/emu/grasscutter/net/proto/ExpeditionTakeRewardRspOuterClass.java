@@ -19,22 +19,22 @@ public final class ExpeditionTakeRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_level = 10;</code>
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 reward_level = 3;</code>
      * @return The rewardLevel.
      */
     int getRewardLevel();
 
     /**
-     * <code>bool is_bonus = 4;</code>
+     * <code>bool is_bonus = 7;</code>
      * @return The isBonus.
      */
     boolean getIsBonus();
-
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
 
     /**
      * <code>uint32 path_id = 14;</code>
@@ -44,8 +44,8 @@ public final class ExpeditionTakeRewardRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2130
-   * Obf: GAKLPCILJLJ
+   * CmdId: 20403
+   * Obf: CODANKLOAKC
    * </pre>
    *
    * Protobuf type {@code ExpeditionTakeRewardRsp}
@@ -92,19 +92,19 @@ public final class ExpeditionTakeRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 24: {
 
-              retcode_ = input.readInt32();
+              rewardLevel_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 56: {
 
               isBonus_ = input.readBool();
               break;
             }
-            case 80: {
+            case 96: {
 
-              rewardLevel_ = input.readUInt32();
+              retcode_ = input.readInt32();
               break;
             }
             case 112: {
@@ -144,10 +144,21 @@ public final class ExpeditionTakeRewardRspOuterClass {
               emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp.class, emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp.Builder.class);
     }
 
-    public static final int REWARD_LEVEL_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 12;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 12;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int REWARD_LEVEL_FIELD_NUMBER = 3;
     private int rewardLevel_;
     /**
-     * <code>uint32 reward_level = 10;</code>
+     * <code>uint32 reward_level = 3;</code>
      * @return The rewardLevel.
      */
     @java.lang.Override
@@ -155,26 +166,15 @@ public final class ExpeditionTakeRewardRspOuterClass {
       return rewardLevel_;
     }
 
-    public static final int IS_BONUS_FIELD_NUMBER = 4;
+    public static final int IS_BONUS_FIELD_NUMBER = 7;
     private boolean isBonus_;
     /**
-     * <code>bool is_bonus = 4;</code>
+     * <code>bool is_bonus = 7;</code>
      * @return The isBonus.
      */
     @java.lang.Override
     public boolean getIsBonus() {
       return isBonus_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
     }
 
     public static final int PATH_ID_FIELD_NUMBER = 14;
@@ -202,14 +202,14 @@ public final class ExpeditionTakeRewardRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
+      if (rewardLevel_ != 0) {
+        output.writeUInt32(3, rewardLevel_);
       }
       if (isBonus_ != false) {
-        output.writeBool(4, isBonus_);
+        output.writeBool(7, isBonus_);
       }
-      if (rewardLevel_ != 0) {
-        output.writeUInt32(10, rewardLevel_);
+      if (retcode_ != 0) {
+        output.writeInt32(12, retcode_);
       }
       if (pathId_ != 0) {
         output.writeUInt32(14, pathId_);
@@ -223,17 +223,17 @@ public final class ExpeditionTakeRewardRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
+      if (rewardLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
+          .computeUInt32Size(3, rewardLevel_);
       }
       if (isBonus_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isBonus_);
+          .computeBoolSize(7, isBonus_);
       }
-      if (rewardLevel_ != 0) {
+      if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, rewardLevel_);
+          .computeInt32Size(12, retcode_);
       }
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -254,12 +254,12 @@ public final class ExpeditionTakeRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp other = (emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp) obj;
 
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (getRewardLevel()
           != other.getRewardLevel()) return false;
       if (getIsBonus()
           != other.getIsBonus()) return false;
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getPathId()
           != other.getPathId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -273,13 +273,13 @@ public final class ExpeditionTakeRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + REWARD_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getRewardLevel();
       hash = (37 * hash) + IS_BONUS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBonus());
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPathId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -379,8 +379,8 @@ public final class ExpeditionTakeRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2130
-     * Obf: GAKLPCILJLJ
+     * CmdId: 20403
+     * Obf: CODANKLOAKC
      * </pre>
      *
      * Protobuf type {@code ExpeditionTakeRewardRsp}
@@ -420,11 +420,11 @@ public final class ExpeditionTakeRewardRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        retcode_ = 0;
+
         rewardLevel_ = 0;
 
         isBonus_ = false;
-
-        retcode_ = 0;
 
         pathId_ = 0;
 
@@ -454,9 +454,9 @@ public final class ExpeditionTakeRewardRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp buildPartial() {
         emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp result = new emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp(this);
+        result.retcode_ = retcode_;
         result.rewardLevel_ = rewardLevel_;
         result.isBonus_ = isBonus_;
-        result.retcode_ = retcode_;
         result.pathId_ = pathId_;
         onBuilt();
         return result;
@@ -506,14 +506,14 @@ public final class ExpeditionTakeRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp other) {
         if (other == emu.grasscutter.net.proto.ExpeditionTakeRewardRspOuterClass.ExpeditionTakeRewardRsp.getDefaultInstance()) return this;
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         if (other.getRewardLevel() != 0) {
           setRewardLevel(other.getRewardLevel());
         }
         if (other.getIsBonus() != false) {
           setIsBonus(other.getIsBonus());
-        }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
         }
         if (other.getPathId() != 0) {
           setPathId(other.getPathId());
@@ -547,9 +547,40 @@ public final class ExpeditionTakeRewardRspOuterClass {
         return this;
       }
 
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int rewardLevel_ ;
       /**
-       * <code>uint32 reward_level = 10;</code>
+       * <code>uint32 reward_level = 3;</code>
        * @return The rewardLevel.
        */
       @java.lang.Override
@@ -557,7 +588,7 @@ public final class ExpeditionTakeRewardRspOuterClass {
         return rewardLevel_;
       }
       /**
-       * <code>uint32 reward_level = 10;</code>
+       * <code>uint32 reward_level = 3;</code>
        * @param value The rewardLevel to set.
        * @return This builder for chaining.
        */
@@ -568,7 +599,7 @@ public final class ExpeditionTakeRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_level = 10;</code>
+       * <code>uint32 reward_level = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardLevel() {
@@ -580,7 +611,7 @@ public final class ExpeditionTakeRewardRspOuterClass {
 
       private boolean isBonus_ ;
       /**
-       * <code>bool is_bonus = 4;</code>
+       * <code>bool is_bonus = 7;</code>
        * @return The isBonus.
        */
       @java.lang.Override
@@ -588,7 +619,7 @@ public final class ExpeditionTakeRewardRspOuterClass {
         return isBonus_;
       }
       /**
-       * <code>bool is_bonus = 4;</code>
+       * <code>bool is_bonus = 7;</code>
        * @param value The isBonus to set.
        * @return This builder for chaining.
        */
@@ -599,43 +630,12 @@ public final class ExpeditionTakeRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_bonus = 4;</code>
+       * <code>bool is_bonus = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsBonus() {
         
         isBonus_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -738,8 +738,8 @@ public final class ExpeditionTakeRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ExpeditionTakeRewardRsp.proto\"c\n\027Exped" +
-      "itionTakeRewardRsp\022\024\n\014reward_level\030\n \001(\r" +
-      "\022\020\n\010is_bonus\030\004 \001(\010\022\017\n\007retcode\030\001 \001(\005\022\017\n\007p" +
+      "itionTakeRewardRsp\022\017\n\007retcode\030\014 \001(\005\022\024\n\014r" +
+      "eward_level\030\003 \001(\r\022\020\n\010is_bonus\030\007 \001(\010\022\017\n\007p" +
       "ath_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
@@ -752,7 +752,7 @@ public final class ExpeditionTakeRewardRspOuterClass {
     internal_static_ExpeditionTakeRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExpeditionTakeRewardRsp_descriptor,
-        new java.lang.String[] { "RewardLevel", "IsBonus", "Retcode", "PathId", });
+        new java.lang.String[] { "Retcode", "RewardLevel", "IsBonus", "PathId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

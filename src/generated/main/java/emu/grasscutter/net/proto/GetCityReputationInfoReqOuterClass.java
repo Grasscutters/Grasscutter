@@ -19,15 +19,15 @@ public final class GetCityReputationInfoReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 city_id = 4;</code>
+     * <code>uint32 city_id = 15;</code>
      * @return The cityId.
      */
     int getCityId();
   }
   /**
    * <pre>
-   * CmdId: 2875
-   * Obf: CCKEGBEBNDG
+   * CmdId: 8549
+   * Obf: NGMPLHMNEFE
    * </pre>
    *
    * Protobuf type {@code GetCityReputationInfoReq}
@@ -74,7 +74,7 @@ public final class GetCityReputationInfoReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 120: {
 
               cityId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GetCityReputationInfoReqOuterClass {
               emu.grasscutter.net.proto.GetCityReputationInfoReqOuterClass.GetCityReputationInfoReq.class, emu.grasscutter.net.proto.GetCityReputationInfoReqOuterClass.GetCityReputationInfoReq.Builder.class);
     }
 
-    public static final int CITY_ID_FIELD_NUMBER = 4;
+    public static final int CITY_ID_FIELD_NUMBER = 15;
     private int cityId_;
     /**
-     * <code>uint32 city_id = 4;</code>
+     * <code>uint32 city_id = 15;</code>
      * @return The cityId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GetCityReputationInfoReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cityId_ != 0) {
-        output.writeUInt32(4, cityId_);
+        output.writeUInt32(15, cityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GetCityReputationInfoReqOuterClass {
       size = 0;
       if (cityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, cityId_);
+          .computeUInt32Size(15, cityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GetCityReputationInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2875
-     * Obf: CCKEGBEBNDG
+     * CmdId: 8549
+     * Obf: NGMPLHMNEFE
      * </pre>
      *
      * Protobuf type {@code GetCityReputationInfoReq}
@@ -431,7 +431,7 @@ public final class GetCityReputationInfoReqOuterClass {
 
       private int cityId_ ;
       /**
-       * <code>uint32 city_id = 4;</code>
+       * <code>uint32 city_id = 15;</code>
        * @return The cityId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GetCityReputationInfoReqOuterClass {
         return cityId_;
       }
       /**
-       * <code>uint32 city_id = 4;</code>
+       * <code>uint32 city_id = 15;</code>
        * @param value The cityId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GetCityReputationInfoReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 city_id = 4;</code>
+       * <code>uint32 city_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
@@ -527,7 +527,7 @@ public final class GetCityReputationInfoReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036GetCityReputationInfoReq.proto\"+\n\030GetC" +
-      "ityReputationInfoReq\022\017\n\007city_id\030\004 \001(\rB\033\n" +
+      "ityReputationInfoReq\022\017\n\007city_id\030\017 \001(\rB\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,17 +19,17 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @return A list containing the personalLineIdList.
      */
     java.util.List<java.lang.Integer> getPersonalLineIdListList();
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @return The count of personalLineIdList.
      */
     int getPersonalLineIdListCount();
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The personalLineIdList at the given index.
      */
@@ -37,8 +37,8 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 412
-   * Obf: BBADCCGIMHI
+   * CmdId: 8744
+   * Obf: GBNPJGGAOJP
    * </pre>
    *
    * Protobuf type {@code PersonalLineNewUnlockNotify}
@@ -87,7 +87,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 personalLineIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
               personalLineIdList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.PersonalLineNewUnlockNotifyOuterClass.PersonalLineNewUnlockNotify.class, emu.grasscutter.net.proto.PersonalLineNewUnlockNotifyOuterClass.PersonalLineNewUnlockNotify.Builder.class);
     }
 
-    public static final int PERSONAL_LINE_ID_LIST_FIELD_NUMBER = 15;
+    public static final int PERSONAL_LINE_ID_LIST_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList personalLineIdList_;
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @return A list containing the personalLineIdList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
       return personalLineIdList_;
     }
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @return The count of personalLineIdList.
      */
     public int getPersonalLineIdListCount() {
       return personalLineIdList_.size();
     }
     /**
-     * <code>repeated uint32 personal_line_id_list = 15;</code>
+     * <code>repeated uint32 personal_line_id_list = 5;</code>
      * @param index The index of the element to return.
      * @return The personalLineIdList at the given index.
      */
@@ -187,7 +187,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getPersonalLineIdListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(personalLineIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < personalLineIdList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 412
-     * Obf: BBADCCGIMHI
+     * CmdId: 8744
+     * Obf: GBNPJGGAOJP
      * </pre>
      *
      * Protobuf type {@code PersonalLineNewUnlockNotify}
@@ -516,7 +516,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @return A list containing the personalLineIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
                  java.util.Collections.unmodifiableList(personalLineIdList_) : personalLineIdList_;
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @return The count of personalLineIdList.
        */
       public int getPersonalLineIdListCount() {
         return personalLineIdList_.size();
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @param index The index of the element to return.
        * @return The personalLineIdList at the given index.
        */
@@ -540,7 +540,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
         return personalLineIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @param index The index to set the value at.
        * @param value The personalLineIdList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @param value The personalLineIdList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @param values The personalLineIdList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 personal_line_id_list = 15;</code>
+       * <code>repeated uint32 personal_line_id_list = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPersonalLineIdList() {
@@ -655,7 +655,7 @@ public final class PersonalLineNewUnlockNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!PersonalLineNewUnlockNotify.proto\"<\n\033P" +
       "ersonalLineNewUnlockNotify\022\035\n\025personal_l" +
-      "ine_id_list\030\017 \003(\rB\033\n\031emu.grasscutter.net" +
+      "ine_id_list\030\005 \003(\rB\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

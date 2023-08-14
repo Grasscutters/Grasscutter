@@ -19,21 +19,21 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_id = 10;</code>
-     * @return The trialId.
-     */
-    int getTrialId();
-
-    /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 trial_id = 1;</code>
+     * @return The trialId.
+     */
+    int getTrialId();
   }
   /**
    * <pre>
-   * CmdId: 8645
-   * Obf: BFOBHJIDIEL
+   * CmdId: 24511
+   * Obf: EGAGEBOJJAM
    * </pre>
    *
    * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonRsp}
@@ -80,12 +80,12 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 8: {
 
               trialId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,26 +122,26 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
               emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp.class, emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp.Builder.class);
     }
 
-    public static final int TRIAL_ID_FIELD_NUMBER = 10;
-    private int trialId_;
-    /**
-     * <code>uint32 trial_id = 10;</code>
-     * @return The trialId.
-     */
-    @java.lang.Override
-    public int getTrialId() {
-      return trialId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int TRIAL_ID_FIELD_NUMBER = 1;
+    private int trialId_;
+    /**
+     * <code>uint32 trial_id = 1;</code>
+     * @return The trialId.
+     */
+    @java.lang.Override
+    public int getTrialId() {
+      return trialId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialId_ != 0) {
-        output.writeUInt32(10, trialId_);
+        output.writeUInt32(1, trialId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(5, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       size = 0;
       if (trialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, trialId_);
+          .computeUInt32Size(1, trialId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       }
       emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp other = (emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp) obj;
 
-      if (getTrialId()
-          != other.getTrialId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getTrialId()
+          != other.getTrialId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTrialId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTrialId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8645
-     * Obf: BFOBHJIDIEL
+     * CmdId: 24511
+     * Obf: EGAGEBOJJAM
      * </pre>
      *
      * Protobuf type {@code MistTrialSelectAvatarAndEnterDungeonRsp}
@@ -353,9 +353,9 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        trialId_ = 0;
-
         retcode_ = 0;
+
+        trialId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp buildPartial() {
         emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp result = new emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp(this);
-        result.trialId_ = trialId_;
         result.retcode_ = retcode_;
+        result.trialId_ = trialId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp other) {
         if (other == emu.grasscutter.net.proto.MistTrialSelectAvatarAndEnterDungeonRspOuterClass.MistTrialSelectAvatarAndEnterDungeonRsp.getDefaultInstance()) return this;
-        if (other.getTrialId() != 0) {
-          setTrialId(other.getTrialId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getTrialId() != 0) {
+          setTrialId(other.getTrialId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
         return this;
       }
 
-      private int trialId_ ;
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @return The trialId.
-       */
-      @java.lang.Override
-      public int getTrialId() {
-        return trialId_;
-      }
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @param value The trialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTrialId(int value) {
-        
-        trialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 trial_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTrialId() {
-        
-        trialId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int trialId_ ;
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @return The trialId.
+       */
+      @java.lang.Override
+      public int getTrialId() {
+        return trialId_;
+      }
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @param value The trialId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialId(int value) {
+        
+        trialId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrialId() {
+        
+        trialId_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n-MistTrialSelectAvatarAndEnterDungeonRs" +
       "p.proto\"L\n\'MistTrialSelectAvatarAndEnter" +
-      "DungeonRsp\022\020\n\010trial_id\030\n \001(\r\022\017\n\007retcode\030" +
-      "\013 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "DungeonRsp\022\017\n\007retcode\030\005 \001(\005\022\020\n\010trial_id\030" +
+      "\001 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonRspOuterClass {
     internal_static_MistTrialSelectAvatarAndEnterDungeonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MistTrialSelectAvatarAndEnterDungeonRsp_descriptor,
-        new java.lang.String[] { "TrialId", "Retcode", });
+        new java.lang.String[] { "Retcode", "TrialId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

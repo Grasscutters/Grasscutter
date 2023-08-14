@@ -19,21 +19,21 @@ public final class DelBackupAvatarTeamRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 backup_avatar_team_id = 4;</code>
-     * @return The backupAvatarTeamId.
-     */
-    int getBackupAvatarTeamId();
-
-    /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 backup_avatar_team_id = 14;</code>
+     * @return The backupAvatarTeamId.
+     */
+    int getBackupAvatarTeamId();
   }
   /**
    * <pre>
-   * CmdId: 1777
-   * Obf: DJGKPJONOAN
+   * CmdId: 3661
+   * Obf: FFNGPJOGGAC
    * </pre>
    *
    * Protobuf type {@code DelBackupAvatarTeamRsp}
@@ -80,14 +80,14 @@ public final class DelBackupAvatarTeamRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              backupAvatarTeamId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 48: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              backupAvatarTeamId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,26 +122,26 @@ public final class DelBackupAvatarTeamRspOuterClass {
               emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.class, emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.Builder.class);
     }
 
-    public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 4;
-    private int backupAvatarTeamId_;
-    /**
-     * <code>uint32 backup_avatar_team_id = 4;</code>
-     * @return The backupAvatarTeamId.
-     */
-    @java.lang.Override
-    public int getBackupAvatarTeamId() {
-      return backupAvatarTeamId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 14;
+    private int backupAvatarTeamId_;
+    /**
+     * <code>uint32 backup_avatar_team_id = 14;</code>
+     * @return The backupAvatarTeamId.
+     */
+    @java.lang.Override
+    public int getBackupAvatarTeamId() {
+      return backupAvatarTeamId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (backupAvatarTeamId_ != 0) {
-        output.writeUInt32(4, backupAvatarTeamId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(6, retcode_);
+      }
+      if (backupAvatarTeamId_ != 0) {
+        output.writeUInt32(14, backupAvatarTeamId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class DelBackupAvatarTeamRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (backupAvatarTeamId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, backupAvatarTeamId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(6, retcode_);
+      }
+      if (backupAvatarTeamId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, backupAvatarTeamId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class DelBackupAvatarTeamRspOuterClass {
       }
       emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp other = (emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp) obj;
 
-      if (getBackupAvatarTeamId()
-          != other.getBackupAvatarTeamId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getBackupAvatarTeamId()
+          != other.getBackupAvatarTeamId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class DelBackupAvatarTeamRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBackupAvatarTeamId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupAvatarTeamId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class DelBackupAvatarTeamRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1777
-     * Obf: DJGKPJONOAN
+     * CmdId: 3661
+     * Obf: FFNGPJOGGAC
      * </pre>
      *
      * Protobuf type {@code DelBackupAvatarTeamRsp}
@@ -353,9 +353,9 @@ public final class DelBackupAvatarTeamRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        backupAvatarTeamId_ = 0;
-
         retcode_ = 0;
+
+        backupAvatarTeamId_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class DelBackupAvatarTeamRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp buildPartial() {
         emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp result = new emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp(this);
-        result.backupAvatarTeamId_ = backupAvatarTeamId_;
         result.retcode_ = retcode_;
+        result.backupAvatarTeamId_ = backupAvatarTeamId_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp other) {
         if (other == emu.grasscutter.net.proto.DelBackupAvatarTeamRspOuterClass.DelBackupAvatarTeamRsp.getDefaultInstance()) return this;
-        if (other.getBackupAvatarTeamId() != 0) {
-          setBackupAvatarTeamId(other.getBackupAvatarTeamId());
-        }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getBackupAvatarTeamId() != 0) {
+          setBackupAvatarTeamId(other.getBackupAvatarTeamId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return this;
       }
 
-      private int backupAvatarTeamId_ ;
-      /**
-       * <code>uint32 backup_avatar_team_id = 4;</code>
-       * @return The backupAvatarTeamId.
-       */
-      @java.lang.Override
-      public int getBackupAvatarTeamId() {
-        return backupAvatarTeamId_;
-      }
-      /**
-       * <code>uint32 backup_avatar_team_id = 4;</code>
-       * @param value The backupAvatarTeamId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBackupAvatarTeamId(int value) {
-        
-        backupAvatarTeamId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 backup_avatar_team_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBackupAvatarTeamId() {
-        
-        backupAvatarTeamId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class DelBackupAvatarTeamRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int backupAvatarTeamId_ ;
+      /**
+       * <code>uint32 backup_avatar_team_id = 14;</code>
+       * @return The backupAvatarTeamId.
+       */
+      @java.lang.Override
+      public int getBackupAvatarTeamId() {
+        return backupAvatarTeamId_;
+      }
+      /**
+       * <code>uint32 backup_avatar_team_id = 14;</code>
+       * @param value The backupAvatarTeamId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupAvatarTeamId(int value) {
+        
+        backupAvatarTeamId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 backup_avatar_team_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBackupAvatarTeamId() {
+        
+        backupAvatarTeamId_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class DelBackupAvatarTeamRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034DelBackupAvatarTeamRsp.proto\"H\n\026DelBac" +
-      "kupAvatarTeamRsp\022\035\n\025backup_avatar_team_i" +
-      "d\030\004 \001(\r\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.grasscut" +
+      "kupAvatarTeamRsp\022\017\n\007retcode\030\006 \001(\005\022\035\n\025bac" +
+      "kup_avatar_team_id\030\016 \001(\rB\033\n\031emu.grasscut" +
       "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
     internal_static_DelBackupAvatarTeamRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DelBackupAvatarTeamRsp_descriptor,
-        new java.lang.String[] { "BackupAvatarTeamId", "Retcode", });
+        new java.lang.String[] { "Retcode", "BackupAvatarTeamId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,21 +19,21 @@ public final class TowerBuffSelectRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
      * <code>uint32 tower_buff_id = 5;</code>
      * @return The towerBuffId.
      */
     int getTowerBuffId();
+
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 2434
-   * Obf: BKPCODJPJNO
+   * CmdId: 23137
+   * Obf: OKBNGKKGHIG
    * </pre>
    *
    * Protobuf type {@code TowerBuffSelectRsp}
@@ -80,14 +80,14 @@ public final class TowerBuffSelectRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 40: {
 
               towerBuffId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -122,17 +122,6 @@ public final class TowerBuffSelectRspOuterClass {
               emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp.class, emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 1;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
     public static final int TOWER_BUFF_ID_FIELD_NUMBER = 5;
     private int towerBuffId_;
     /**
@@ -142,6 +131,17 @@ public final class TowerBuffSelectRspOuterClass {
     @java.lang.Override
     public int getTowerBuffId() {
       return towerBuffId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 10;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -158,11 +158,11 @@ public final class TowerBuffSelectRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (towerBuffId_ != 0) {
         output.writeUInt32(5, towerBuffId_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class TowerBuffSelectRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       if (towerBuffId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, towerBuffId_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class TowerBuffSelectRspOuterClass {
       }
       emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp other = (emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getTowerBuffId()
           != other.getTowerBuffId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class TowerBuffSelectRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + TOWER_BUFF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTowerBuffId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class TowerBuffSelectRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2434
-     * Obf: BKPCODJPJNO
+     * CmdId: 23137
+     * Obf: OKBNGKKGHIG
      * </pre>
      *
      * Protobuf type {@code TowerBuffSelectRsp}
@@ -353,9 +353,9 @@ public final class TowerBuffSelectRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         towerBuffId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class TowerBuffSelectRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp buildPartial() {
         emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp result = new emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp(this);
-        result.retcode_ = retcode_;
         result.towerBuffId_ = towerBuffId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class TowerBuffSelectRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp other) {
         if (other == emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getTowerBuffId() != 0) {
           setTowerBuffId(other.getTowerBuffId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,37 +468,6 @@ public final class TowerBuffSelectRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int towerBuffId_ ;
       /**
        * <code>uint32 tower_buff_id = 5;</code>
@@ -526,6 +495,37 @@ public final class TowerBuffSelectRspOuterClass {
       public Builder clearTowerBuffId() {
         
         towerBuffId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class TowerBuffSelectRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030TowerBuffSelectRsp.proto\"<\n\022TowerBuffS" +
-      "electRsp\022\017\n\007retcode\030\001 \001(\005\022\025\n\rtower_buff_" +
-      "id\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "electRsp\022\025\n\rtower_buff_id\030\005 \001(\r\022\017\n\007retco" +
+      "de\030\n \001(\005B\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class TowerBuffSelectRspOuterClass {
     internal_static_TowerBuffSelectRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerBuffSelectRsp_descriptor,
-        new java.lang.String[] { "Retcode", "TowerBuffId", });
+        new java.lang.String[] { "TowerBuffId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

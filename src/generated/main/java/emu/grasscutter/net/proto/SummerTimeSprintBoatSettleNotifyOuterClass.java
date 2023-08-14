@@ -19,57 +19,57 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 score = 6;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>uint32 total_num = 5;</code>
-     * @return The totalNum.
-     */
-    int getTotalNum();
-
-    /**
-     * <code>uint32 DBIHJAJCNBC = 13;</code>
-     * @return The dBIHJAJCNBC.
-     */
-    int getDBIHJAJCNBC();
-
-    /**
-     * <code>bool is_new_record = 4;</code>
+     * <code>bool is_new_record = 8;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 PCEABJGNLBB = 3;</code>
-     * @return The pCEABJGNLBB.
-     */
-    int getPCEABJGNLBB();
-
-    /**
-     * <code>bool is_success = 14;</code>
-     * @return The isSuccess.
-     */
-    boolean getIsSuccess();
-
-    /**
-     * <code>uint32 left_time = 10;</code>
+     * <code>uint32 left_time = 5;</code>
      * @return The leftTime.
      */
     int getLeftTime();
 
     /**
-     * <code>uint32 group_id = 11;</code>
+     * <code>uint32 total_num = 7;</code>
+     * @return The totalNum.
+     */
+    int getTotalNum();
+
+    /**
+     * <code>uint32 KPCGAHJMMLB = 11;</code>
+     * @return The kPCGAHJMMLB.
+     */
+    int getKPCGAHJMMLB();
+
+    /**
+     * <code>uint32 group_id = 6;</code>
      * @return The groupId.
      */
     int getGroupId();
+
+    /**
+     * <code>bool is_success = 12;</code>
+     * @return The isSuccess.
+     */
+    boolean getIsSuccess();
+
+    /**
+     * <code>uint32 score = 9;</code>
+     * @return The score.
+     */
+    int getScore();
+
+    /**
+     * <code>uint32 MKOHDHLECBN = 10;</code>
+     * @return The mKOHDHLECBN.
+     */
+    int getMKOHDHLECBN();
   }
   /**
    * <pre>
-   * CmdId: 8942
-   * Obf: FKIAHBGANCL
+   * CmdId: 20382
+   * Obf: CHKPPPMCLBM
    * </pre>
    *
    * Protobuf type {@code SummerTimeSprintBoatSettleNotify}
@@ -116,42 +116,42 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              pCEABJGNLBB_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
             case 40: {
+
+              leftTime_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              groupId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
 
               totalNum_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 64: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 72: {
 
               score_ = input.readUInt32();
               break;
             }
             case 80: {
 
-              leftTime_ = input.readUInt32();
+              mKOHDHLECBN_ = input.readUInt32();
               break;
             }
             case 88: {
 
-              groupId_ = input.readUInt32();
+              kPCGAHJMMLB_ = input.readUInt32();
               break;
             }
-            case 104: {
-
-              dBIHJAJCNBC_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 96: {
 
               isSuccess_ = input.readBool();
               break;
@@ -188,43 +188,10 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
               emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify.class, emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify.Builder.class);
     }
 
-    public static final int SCORE_FIELD_NUMBER = 6;
-    private int score_;
-    /**
-     * <code>uint32 score = 6;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int TOTAL_NUM_FIELD_NUMBER = 5;
-    private int totalNum_;
-    /**
-     * <code>uint32 total_num = 5;</code>
-     * @return The totalNum.
-     */
-    @java.lang.Override
-    public int getTotalNum() {
-      return totalNum_;
-    }
-
-    public static final int DBIHJAJCNBC_FIELD_NUMBER = 13;
-    private int dBIHJAJCNBC_;
-    /**
-     * <code>uint32 DBIHJAJCNBC = 13;</code>
-     * @return The dBIHJAJCNBC.
-     */
-    @java.lang.Override
-    public int getDBIHJAJCNBC() {
-      return dBIHJAJCNBC_;
-    }
-
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 4;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 8;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 4;</code>
+     * <code>bool is_new_record = 8;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -232,32 +199,10 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int PCEABJGNLBB_FIELD_NUMBER = 3;
-    private int pCEABJGNLBB_;
-    /**
-     * <code>uint32 PCEABJGNLBB = 3;</code>
-     * @return The pCEABJGNLBB.
-     */
-    @java.lang.Override
-    public int getPCEABJGNLBB() {
-      return pCEABJGNLBB_;
-    }
-
-    public static final int IS_SUCCESS_FIELD_NUMBER = 14;
-    private boolean isSuccess_;
-    /**
-     * <code>bool is_success = 14;</code>
-     * @return The isSuccess.
-     */
-    @java.lang.Override
-    public boolean getIsSuccess() {
-      return isSuccess_;
-    }
-
-    public static final int LEFT_TIME_FIELD_NUMBER = 10;
+    public static final int LEFT_TIME_FIELD_NUMBER = 5;
     private int leftTime_;
     /**
-     * <code>uint32 left_time = 10;</code>
+     * <code>uint32 left_time = 5;</code>
      * @return The leftTime.
      */
     @java.lang.Override
@@ -265,15 +210,70 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       return leftTime_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 11;
+    public static final int TOTAL_NUM_FIELD_NUMBER = 7;
+    private int totalNum_;
+    /**
+     * <code>uint32 total_num = 7;</code>
+     * @return The totalNum.
+     */
+    @java.lang.Override
+    public int getTotalNum() {
+      return totalNum_;
+    }
+
+    public static final int KPCGAHJMMLB_FIELD_NUMBER = 11;
+    private int kPCGAHJMMLB_;
+    /**
+     * <code>uint32 KPCGAHJMMLB = 11;</code>
+     * @return The kPCGAHJMMLB.
+     */
+    @java.lang.Override
+    public int getKPCGAHJMMLB() {
+      return kPCGAHJMMLB_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 6;
     private int groupId_;
     /**
-     * <code>uint32 group_id = 11;</code>
+     * <code>uint32 group_id = 6;</code>
      * @return The groupId.
      */
     @java.lang.Override
     public int getGroupId() {
       return groupId_;
+    }
+
+    public static final int IS_SUCCESS_FIELD_NUMBER = 12;
+    private boolean isSuccess_;
+    /**
+     * <code>bool is_success = 12;</code>
+     * @return The isSuccess.
+     */
+    @java.lang.Override
+    public boolean getIsSuccess() {
+      return isSuccess_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 9;
+    private int score_;
+    /**
+     * <code>uint32 score = 9;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
+    }
+
+    public static final int MKOHDHLECBN_FIELD_NUMBER = 10;
+    private int mKOHDHLECBN_;
+    /**
+     * <code>uint32 MKOHDHLECBN = 10;</code>
+     * @return The mKOHDHLECBN.
+     */
+    @java.lang.Override
+    public int getMKOHDHLECBN() {
+      return mKOHDHLECBN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -290,29 +290,29 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pCEABJGNLBB_ != 0) {
-        output.writeUInt32(3, pCEABJGNLBB_);
-      }
-      if (isNewRecord_ != false) {
-        output.writeBool(4, isNewRecord_);
-      }
-      if (totalNum_ != 0) {
-        output.writeUInt32(5, totalNum_);
-      }
-      if (score_ != 0) {
-        output.writeUInt32(6, score_);
-      }
       if (leftTime_ != 0) {
-        output.writeUInt32(10, leftTime_);
+        output.writeUInt32(5, leftTime_);
       }
       if (groupId_ != 0) {
-        output.writeUInt32(11, groupId_);
+        output.writeUInt32(6, groupId_);
       }
-      if (dBIHJAJCNBC_ != 0) {
-        output.writeUInt32(13, dBIHJAJCNBC_);
+      if (totalNum_ != 0) {
+        output.writeUInt32(7, totalNum_);
+      }
+      if (isNewRecord_ != false) {
+        output.writeBool(8, isNewRecord_);
+      }
+      if (score_ != 0) {
+        output.writeUInt32(9, score_);
+      }
+      if (mKOHDHLECBN_ != 0) {
+        output.writeUInt32(10, mKOHDHLECBN_);
+      }
+      if (kPCGAHJMMLB_ != 0) {
+        output.writeUInt32(11, kPCGAHJMMLB_);
       }
       if (isSuccess_ != false) {
-        output.writeBool(14, isSuccess_);
+        output.writeBool(12, isSuccess_);
       }
       unknownFields.writeTo(output);
     }
@@ -323,37 +323,37 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pCEABJGNLBB_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pCEABJGNLBB_);
-      }
-      if (isNewRecord_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isNewRecord_);
-      }
-      if (totalNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, totalNum_);
-      }
-      if (score_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, score_);
-      }
       if (leftTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, leftTime_);
+          .computeUInt32Size(5, leftTime_);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, groupId_);
+          .computeUInt32Size(6, groupId_);
       }
-      if (dBIHJAJCNBC_ != 0) {
+      if (totalNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, dBIHJAJCNBC_);
+          .computeUInt32Size(7, totalNum_);
+      }
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isNewRecord_);
+      }
+      if (score_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, score_);
+      }
+      if (mKOHDHLECBN_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, mKOHDHLECBN_);
+      }
+      if (kPCGAHJMMLB_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, kPCGAHJMMLB_);
       }
       if (isSuccess_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isSuccess_);
+          .computeBoolSize(12, isSuccess_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -370,22 +370,22 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify other = (emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify) obj;
 
-      if (getScore()
-          != other.getScore()) return false;
-      if (getTotalNum()
-          != other.getTotalNum()) return false;
-      if (getDBIHJAJCNBC()
-          != other.getDBIHJAJCNBC()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (getPCEABJGNLBB()
-          != other.getPCEABJGNLBB()) return false;
-      if (getIsSuccess()
-          != other.getIsSuccess()) return false;
       if (getLeftTime()
           != other.getLeftTime()) return false;
+      if (getTotalNum()
+          != other.getTotalNum()) return false;
+      if (getKPCGAHJMMLB()
+          != other.getKPCGAHJMMLB()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
+      if (getIsSuccess()
+          != other.getIsSuccess()) return false;
+      if (getScore()
+          != other.getScore()) return false;
+      if (getMKOHDHLECBN()
+          != other.getMKOHDHLECBN()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -397,24 +397,24 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
-      hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalNum();
-      hash = (37 * hash) + DBIHJAJCNBC_FIELD_NUMBER;
-      hash = (53 * hash) + getDBIHJAJCNBC();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + PCEABJGNLBB_FIELD_NUMBER;
-      hash = (53 * hash) + getPCEABJGNLBB();
+      hash = (37 * hash) + LEFT_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLeftTime();
+      hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalNum();
+      hash = (37 * hash) + KPCGAHJMMLB_FIELD_NUMBER;
+      hash = (53 * hash) + getKPCGAHJMMLB();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuccess());
-      hash = (37 * hash) + LEFT_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getLeftTime();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
+      hash = (37 * hash) + MKOHDHLECBN_FIELD_NUMBER;
+      hash = (53 * hash) + getMKOHDHLECBN();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -512,8 +512,8 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8942
-     * Obf: FKIAHBGANCL
+     * CmdId: 20382
+     * Obf: CHKPPPMCLBM
      * </pre>
      *
      * Protobuf type {@code SummerTimeSprintBoatSettleNotify}
@@ -553,21 +553,21 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        score_ = 0;
-
-        totalNum_ = 0;
-
-        dBIHJAJCNBC_ = 0;
-
         isNewRecord_ = false;
-
-        pCEABJGNLBB_ = 0;
-
-        isSuccess_ = false;
 
         leftTime_ = 0;
 
+        totalNum_ = 0;
+
+        kPCGAHJMMLB_ = 0;
+
         groupId_ = 0;
+
+        isSuccess_ = false;
+
+        score_ = 0;
+
+        mKOHDHLECBN_ = 0;
 
         return this;
       }
@@ -595,14 +595,14 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify buildPartial() {
         emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify result = new emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify(this);
-        result.score_ = score_;
-        result.totalNum_ = totalNum_;
-        result.dBIHJAJCNBC_ = dBIHJAJCNBC_;
         result.isNewRecord_ = isNewRecord_;
-        result.pCEABJGNLBB_ = pCEABJGNLBB_;
-        result.isSuccess_ = isSuccess_;
         result.leftTime_ = leftTime_;
+        result.totalNum_ = totalNum_;
+        result.kPCGAHJMMLB_ = kPCGAHJMMLB_;
         result.groupId_ = groupId_;
+        result.isSuccess_ = isSuccess_;
+        result.score_ = score_;
+        result.mKOHDHLECBN_ = mKOHDHLECBN_;
         onBuilt();
         return result;
       }
@@ -651,29 +651,29 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify other) {
         if (other == emu.grasscutter.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify.getDefaultInstance()) return this;
-        if (other.getScore() != 0) {
-          setScore(other.getScore());
-        }
-        if (other.getTotalNum() != 0) {
-          setTotalNum(other.getTotalNum());
-        }
-        if (other.getDBIHJAJCNBC() != 0) {
-          setDBIHJAJCNBC(other.getDBIHJAJCNBC());
-        }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
-        }
-        if (other.getPCEABJGNLBB() != 0) {
-          setPCEABJGNLBB(other.getPCEABJGNLBB());
-        }
-        if (other.getIsSuccess() != false) {
-          setIsSuccess(other.getIsSuccess());
         }
         if (other.getLeftTime() != 0) {
           setLeftTime(other.getLeftTime());
         }
+        if (other.getTotalNum() != 0) {
+          setTotalNum(other.getTotalNum());
+        }
+        if (other.getKPCGAHJMMLB() != 0) {
+          setKPCGAHJMMLB(other.getKPCGAHJMMLB());
+        }
         if (other.getGroupId() != 0) {
           setGroupId(other.getGroupId());
+        }
+        if (other.getIsSuccess() != false) {
+          setIsSuccess(other.getIsSuccess());
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
+        }
+        if (other.getMKOHDHLECBN() != 0) {
+          setMKOHDHLECBN(other.getMKOHDHLECBN());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -704,102 +704,9 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
 
-      private int score_ ;
-      /**
-       * <code>uint32 score = 6;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 6;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int totalNum_ ;
-      /**
-       * <code>uint32 total_num = 5;</code>
-       * @return The totalNum.
-       */
-      @java.lang.Override
-      public int getTotalNum() {
-        return totalNum_;
-      }
-      /**
-       * <code>uint32 total_num = 5;</code>
-       * @param value The totalNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalNum(int value) {
-        
-        totalNum_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_num = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalNum() {
-        
-        totalNum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int dBIHJAJCNBC_ ;
-      /**
-       * <code>uint32 DBIHJAJCNBC = 13;</code>
-       * @return The dBIHJAJCNBC.
-       */
-      @java.lang.Override
-      public int getDBIHJAJCNBC() {
-        return dBIHJAJCNBC_;
-      }
-      /**
-       * <code>uint32 DBIHJAJCNBC = 13;</code>
-       * @param value The dBIHJAJCNBC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDBIHJAJCNBC(int value) {
-        
-        dBIHJAJCNBC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DBIHJAJCNBC = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDBIHJAJCNBC() {
-        
-        dBIHJAJCNBC_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 4;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -807,7 +714,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 4;</code>
+       * <code>bool is_new_record = 8;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -818,7 +725,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 4;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
@@ -828,71 +735,9 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
 
-      private int pCEABJGNLBB_ ;
-      /**
-       * <code>uint32 PCEABJGNLBB = 3;</code>
-       * @return The pCEABJGNLBB.
-       */
-      @java.lang.Override
-      public int getPCEABJGNLBB() {
-        return pCEABJGNLBB_;
-      }
-      /**
-       * <code>uint32 PCEABJGNLBB = 3;</code>
-       * @param value The pCEABJGNLBB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPCEABJGNLBB(int value) {
-        
-        pCEABJGNLBB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PCEABJGNLBB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPCEABJGNLBB() {
-        
-        pCEABJGNLBB_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isSuccess_ ;
-      /**
-       * <code>bool is_success = 14;</code>
-       * @return The isSuccess.
-       */
-      @java.lang.Override
-      public boolean getIsSuccess() {
-        return isSuccess_;
-      }
-      /**
-       * <code>bool is_success = 14;</code>
-       * @param value The isSuccess to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSuccess(boolean value) {
-        
-        isSuccess_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_success = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSuccess() {
-        
-        isSuccess_ = false;
-        onChanged();
-        return this;
-      }
-
       private int leftTime_ ;
       /**
-       * <code>uint32 left_time = 10;</code>
+       * <code>uint32 left_time = 5;</code>
        * @return The leftTime.
        */
       @java.lang.Override
@@ -900,7 +745,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return leftTime_;
       }
       /**
-       * <code>uint32 left_time = 10;</code>
+       * <code>uint32 left_time = 5;</code>
        * @param value The leftTime to set.
        * @return This builder for chaining.
        */
@@ -911,7 +756,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_time = 10;</code>
+       * <code>uint32 left_time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftTime() {
@@ -921,9 +766,71 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
 
+      private int totalNum_ ;
+      /**
+       * <code>uint32 total_num = 7;</code>
+       * @return The totalNum.
+       */
+      @java.lang.Override
+      public int getTotalNum() {
+        return totalNum_;
+      }
+      /**
+       * <code>uint32 total_num = 7;</code>
+       * @param value The totalNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalNum(int value) {
+        
+        totalNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 total_num = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalNum() {
+        
+        totalNum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kPCGAHJMMLB_ ;
+      /**
+       * <code>uint32 KPCGAHJMMLB = 11;</code>
+       * @return The kPCGAHJMMLB.
+       */
+      @java.lang.Override
+      public int getKPCGAHJMMLB() {
+        return kPCGAHJMMLB_;
+      }
+      /**
+       * <code>uint32 KPCGAHJMMLB = 11;</code>
+       * @param value The kPCGAHJMMLB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPCGAHJMMLB(int value) {
+        
+        kPCGAHJMMLB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KPCGAHJMMLB = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPCGAHJMMLB() {
+        
+        kPCGAHJMMLB_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int groupId_ ;
       /**
-       * <code>uint32 group_id = 11;</code>
+       * <code>uint32 group_id = 6;</code>
        * @return The groupId.
        */
       @java.lang.Override
@@ -931,7 +838,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return groupId_;
       }
       /**
-       * <code>uint32 group_id = 11;</code>
+       * <code>uint32 group_id = 6;</code>
        * @param value The groupId to set.
        * @return This builder for chaining.
        */
@@ -942,12 +849,105 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 group_id = 11;</code>
+       * <code>uint32 group_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
         
         groupId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isSuccess_ ;
+      /**
+       * <code>bool is_success = 12;</code>
+       * @return The isSuccess.
+       */
+      @java.lang.Override
+      public boolean getIsSuccess() {
+        return isSuccess_;
+      }
+      /**
+       * <code>bool is_success = 12;</code>
+       * @param value The isSuccess to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSuccess(boolean value) {
+        
+        isSuccess_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_success = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSuccess() {
+        
+        isSuccess_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>uint32 score = 9;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>uint32 score = 9;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mKOHDHLECBN_ ;
+      /**
+       * <code>uint32 MKOHDHLECBN = 10;</code>
+       * @return The mKOHDHLECBN.
+       */
+      @java.lang.Override
+      public int getMKOHDHLECBN() {
+        return mKOHDHLECBN_;
+      }
+      /**
+       * <code>uint32 MKOHDHLECBN = 10;</code>
+       * @param value The mKOHDHLECBN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMKOHDHLECBN(int value) {
+        
+        mKOHDHLECBN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MKOHDHLECBN = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMKOHDHLECBN() {
+        
+        mKOHDHLECBN_ = 0;
         onChanged();
         return this;
       }
@@ -1019,11 +1019,11 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&SummerTimeSprintBoatSettleNotify.proto" +
-      "\"\276\001\n SummerTimeSprintBoatSettleNotify\022\r\n" +
-      "\005score\030\006 \001(\r\022\021\n\ttotal_num\030\005 \001(\r\022\023\n\013DBIHJ" +
-      "AJCNBC\030\r \001(\r\022\025\n\ris_new_record\030\004 \001(\010\022\023\n\013P" +
-      "CEABJGNLBB\030\003 \001(\r\022\022\n\nis_success\030\016 \001(\010\022\021\n\t" +
-      "left_time\030\n \001(\r\022\020\n\010group_id\030\013 \001(\rB\033\n\031emu" +
+      "\"\276\001\n SummerTimeSprintBoatSettleNotify\022\025\n" +
+      "\ris_new_record\030\010 \001(\010\022\021\n\tleft_time\030\005 \001(\r\022" +
+      "\021\n\ttotal_num\030\007 \001(\r\022\023\n\013KPCGAHJMMLB\030\013 \001(\r\022" +
+      "\020\n\010group_id\030\006 \001(\r\022\022\n\nis_success\030\014 \001(\010\022\r\n" +
+      "\005score\030\t \001(\r\022\023\n\013MKOHDHLECBN\030\n \001(\rB\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1035,7 +1035,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     internal_static_SummerTimeSprintBoatSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SummerTimeSprintBoatSettleNotify_descriptor,
-        new java.lang.String[] { "Score", "TotalNum", "DBIHJAJCNBC", "IsNewRecord", "PCEABJGNLBB", "IsSuccess", "LeftTime", "GroupId", });
+        new java.lang.String[] { "IsNewRecord", "LeftTime", "TotalNum", "KPCGAHJMMLB", "GroupId", "IsSuccess", "Score", "MKOHDHLECBN", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

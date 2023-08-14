@@ -19,17 +19,17 @@ public final class CoopCgUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @return A list containing the cgList.
      */
     java.util.List<java.lang.Integer> getCgListList();
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @return The count of cgList.
      */
     int getCgListCount();
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @param index The index of the element to return.
      * @return The cgList at the given index.
      */
@@ -37,8 +37,8 @@ public final class CoopCgUpdateNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1973
-   * Obf: KJJAJFBNMMB
+   * CmdId: 25026
+   * Obf: GFIFBOOBGOP
    * </pre>
    *
    * Protobuf type {@code CoopCgUpdateNotify}
@@ -87,7 +87,7 @@ public final class CoopCgUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cgList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class CoopCgUpdateNotifyOuterClass {
               cgList_.addInt(input.readUInt32());
               break;
             }
-            case 34: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class CoopCgUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.CoopCgUpdateNotifyOuterClass.CoopCgUpdateNotify.class, emu.grasscutter.net.proto.CoopCgUpdateNotifyOuterClass.CoopCgUpdateNotify.Builder.class);
     }
 
-    public static final int CG_LIST_FIELD_NUMBER = 4;
+    public static final int CG_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList cgList_;
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @return A list containing the cgList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class CoopCgUpdateNotifyOuterClass {
       return cgList_;
     }
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @return The count of cgList.
      */
     public int getCgListCount() {
       return cgList_.size();
     }
     /**
-     * <code>repeated uint32 cg_list = 4;</code>
+     * <code>repeated uint32 cg_list = 6;</code>
      * @param index The index of the element to return.
      * @return The cgList at the given index.
      */
@@ -187,7 +187,7 @@ public final class CoopCgUpdateNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getCgListList().size() > 0) {
-        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(cgListMemoizedSerializedSize);
       }
       for (int i = 0; i < cgList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class CoopCgUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1973
-     * Obf: KJJAJFBNMMB
+     * CmdId: 25026
+     * Obf: GFIFBOOBGOP
      * </pre>
      *
      * Protobuf type {@code CoopCgUpdateNotify}
@@ -516,7 +516,7 @@ public final class CoopCgUpdateNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @return A list containing the cgList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class CoopCgUpdateNotifyOuterClass {
                  java.util.Collections.unmodifiableList(cgList_) : cgList_;
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @return The count of cgList.
        */
       public int getCgListCount() {
         return cgList_.size();
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @param index The index of the element to return.
        * @return The cgList at the given index.
        */
@@ -540,7 +540,7 @@ public final class CoopCgUpdateNotifyOuterClass {
         return cgList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The cgList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class CoopCgUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @param value The cgList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class CoopCgUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @param values The cgList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class CoopCgUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 cg_list = 4;</code>
+       * <code>repeated uint32 cg_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCgList() {
@@ -654,7 +654,7 @@ public final class CoopCgUpdateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030CoopCgUpdateNotify.proto\"%\n\022CoopCgUpda" +
-      "teNotify\022\017\n\007cg_list\030\004 \003(\rB\033\n\031emu.grasscu" +
+      "teNotify\022\017\n\007cg_list\030\006 \003(\rB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

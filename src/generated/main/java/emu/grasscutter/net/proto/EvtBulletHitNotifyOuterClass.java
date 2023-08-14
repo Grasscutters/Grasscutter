@@ -19,91 +19,91 @@ public final class EvtBulletHitNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 forward_peer = 9;</code>
-     * @return The forwardPeer.
-     */
-    int getForwardPeer();
-
-    /**
-     * <code>.HitColliderType hit_collider_type = 12;</code>
-     * @return The enum numeric value on the wire for hitColliderType.
-     */
-    int getHitColliderTypeValue();
-    /**
-     * <code>.HitColliderType hit_collider_type = 12;</code>
-     * @return The hitColliderType.
-     */
-    emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType();
-
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     * @return Whether the iKLAJLIJHPL field is set.
-     */
-    boolean hasIKLAJLIJHPL();
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     * @return The iKLAJLIJHPL.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getIKLAJLIJHPL();
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getIKLAJLIJHPLOrBuilder();
-
-    /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 3;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     int getForwardTypeValue();
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 3;</code>
      * @return The forwardType.
      */
     emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType();
 
     /**
-     * <code>uint32 IKCAFAGALFA = 3;</code>
-     * @return The iKCAFAGALFA.
+     * <code>.HitColliderType hit_collider_type = 5;</code>
+     * @return The enum numeric value on the wire for hitColliderType.
      */
-    int getIKCAFAGALFA();
+    int getHitColliderTypeValue();
+    /**
+     * <code>.HitColliderType hit_collider_type = 5;</code>
+     * @return The hitColliderType.
+     */
+    emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType();
 
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>uint32 KDBDDHAOOME = 6;</code>
+     * @return The kDBDDHAOOME.
+     */
+    int getKDBDDHAOOME();
+
+    /**
+     * <code>.Vector hit_point = 1;</code>
      * @return Whether the hitPoint field is set.
      */
     boolean hasHitPoint();
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>.Vector hit_point = 1;</code>
      * @return The hitPoint.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getHitPoint();
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>.Vector hit_point = 1;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder();
 
     /**
-     * <code>uint32 DAPDLJGIEOI = 4;</code>
-     * @return The dAPDLJGIEOI.
+     * <code>uint32 HNMABCLIAMB = 7;</code>
+     * @return The hNMABCLIAMB.
      */
-    int getDAPDLJGIEOI();
+    int getHNMABCLIAMB();
 
     /**
-     * <code>int32 hit_box_index = 6;</code>
+     * <code>.Vector hit_normal = 4;</code>
+     * @return Whether the hitNormal field is set.
+     */
+    boolean hasHitNormal();
+    /**
+     * <code>.Vector hit_normal = 4;</code>
+     * @return The hitNormal.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getHitNormal();
+    /**
+     * <code>.Vector hit_normal = 4;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitNormalOrBuilder();
+
+    /**
+     * <code>uint32 entity_id = 9;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>int32 hit_box_index = 12;</code>
      * @return The hitBoxIndex.
      */
     int getHitBoxIndex();
+
+    /**
+     * <code>uint32 forward_peer = 8;</code>
+     * @return The forwardPeer.
+     */
+    int getForwardPeer();
   }
   /**
    * <pre>
-   * CmdId: 321
-   * Obf: AGCEHPNLCLN
+   * CmdId: 23746
+   * Obf: LAFKEDKPKIM
    * </pre>
    *
    * Protobuf type {@code EvtBulletHitNotify}
@@ -118,8 +118,8 @@ public final class EvtBulletHitNotifyOuterClass {
       super(builder);
     }
     private EvtBulletHitNotify() {
-      hitColliderType_ = 0;
       forwardType_ = 0;
+      hitColliderType_ = 0;
     }
 
     @java.lang.Override
@@ -152,51 +152,7 @@ public final class EvtBulletHitNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              iKCAFAGALFA_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              dAPDLJGIEOI_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              hitBoxIndex_ = input.readInt32();
-              break;
-            }
-            case 58: {
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (iKLAJLIJHPL_ != null) {
-                subBuilder = iKLAJLIJHPL_.toBuilder();
-              }
-              iKLAJLIJHPL_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(iKLAJLIJHPL_);
-                iKLAJLIJHPL_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 72: {
-
-              forwardPeer_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
+            case 10: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (hitPoint_ != null) {
                 subBuilder = hitPoint_.toBuilder();
@@ -209,10 +165,54 @@ public final class EvtBulletHitNotifyOuterClass {
 
               break;
             }
-            case 96: {
+            case 24: {
+              int rawValue = input.readEnum();
+
+              forwardType_ = rawValue;
+              break;
+            }
+            case 34: {
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
+              if (hitNormal_ != null) {
+                subBuilder = hitNormal_.toBuilder();
+              }
+              hitNormal_ = input.readMessage(emu.grasscutter.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hitNormal_);
+                hitNormal_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 40: {
               int rawValue = input.readEnum();
 
               hitColliderType_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              kDBDDHAOOME_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              hNMABCLIAMB_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              forwardPeer_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              hitBoxIndex_ = input.readInt32();
               break;
             }
             default: {
@@ -247,84 +247,17 @@ public final class EvtBulletHitNotifyOuterClass {
               emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify.class, emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify.Builder.class);
     }
 
-    public static final int FORWARD_PEER_FIELD_NUMBER = 9;
-    private int forwardPeer_;
-    /**
-     * <code>uint32 forward_peer = 9;</code>
-     * @return The forwardPeer.
-     */
-    @java.lang.Override
-    public int getForwardPeer() {
-      return forwardPeer_;
-    }
-
-    public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 12;
-    private int hitColliderType_;
-    /**
-     * <code>.HitColliderType hit_collider_type = 12;</code>
-     * @return The enum numeric value on the wire for hitColliderType.
-     */
-    @java.lang.Override public int getHitColliderTypeValue() {
-      return hitColliderType_;
-    }
-    /**
-     * <code>.HitColliderType hit_collider_type = 12;</code>
-     * @return The hitColliderType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
-      return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
-    }
-
-    public static final int IKLAJLIJHPL_FIELD_NUMBER = 7;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector iKLAJLIJHPL_;
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     * @return Whether the iKLAJLIJHPL field is set.
-     */
-    @java.lang.Override
-    public boolean hasIKLAJLIJHPL() {
-      return iKLAJLIJHPL_ != null;
-    }
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     * @return The iKLAJLIJHPL.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getIKLAJLIJHPL() {
-      return iKLAJLIJHPL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : iKLAJLIJHPL_;
-    }
-    /**
-     * <code>.Vector IKLAJLIJHPL = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getIKLAJLIJHPLOrBuilder() {
-      return getIKLAJLIJHPL();
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int FORWARD_TYPE_FIELD_NUMBER = 8;
+    public static final int FORWARD_TYPE_FIELD_NUMBER = 3;
     private int forwardType_;
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 3;</code>
      * @return The enum numeric value on the wire for forwardType.
      */
     @java.lang.Override public int getForwardTypeValue() {
       return forwardType_;
     }
     /**
-     * <code>.ForwardType forward_type = 8;</code>
+     * <code>.ForwardType forward_type = 3;</code>
      * @return The forwardType.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
@@ -333,21 +266,40 @@ public final class EvtBulletHitNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
-    public static final int IKCAFAGALFA_FIELD_NUMBER = 3;
-    private int iKCAFAGALFA_;
+    public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 5;
+    private int hitColliderType_;
     /**
-     * <code>uint32 IKCAFAGALFA = 3;</code>
-     * @return The iKCAFAGALFA.
+     * <code>.HitColliderType hit_collider_type = 5;</code>
+     * @return The enum numeric value on the wire for hitColliderType.
      */
-    @java.lang.Override
-    public int getIKCAFAGALFA() {
-      return iKCAFAGALFA_;
+    @java.lang.Override public int getHitColliderTypeValue() {
+      return hitColliderType_;
+    }
+    /**
+     * <code>.HitColliderType hit_collider_type = 5;</code>
+     * @return The hitColliderType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
+      return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
     }
 
-    public static final int HIT_POINT_FIELD_NUMBER = 11;
+    public static final int KDBDDHAOOME_FIELD_NUMBER = 6;
+    private int kDBDDHAOOME_;
+    /**
+     * <code>uint32 KDBDDHAOOME = 6;</code>
+     * @return The kDBDDHAOOME.
+     */
+    @java.lang.Override
+    public int getKDBDDHAOOME() {
+      return kDBDDHAOOME_;
+    }
+
+    public static final int HIT_POINT_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector hitPoint_;
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>.Vector hit_point = 1;</code>
      * @return Whether the hitPoint field is set.
      */
     @java.lang.Override
@@ -355,7 +307,7 @@ public final class EvtBulletHitNotifyOuterClass {
       return hitPoint_ != null;
     }
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>.Vector hit_point = 1;</code>
      * @return The hitPoint.
      */
     @java.lang.Override
@@ -363,33 +315,81 @@ public final class EvtBulletHitNotifyOuterClass {
       return hitPoint_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitPoint_;
     }
     /**
-     * <code>.Vector hit_point = 11;</code>
+     * <code>.Vector hit_point = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder() {
       return getHitPoint();
     }
 
-    public static final int DAPDLJGIEOI_FIELD_NUMBER = 4;
-    private int dAPDLJGIEOI_;
+    public static final int HNMABCLIAMB_FIELD_NUMBER = 7;
+    private int hNMABCLIAMB_;
     /**
-     * <code>uint32 DAPDLJGIEOI = 4;</code>
-     * @return The dAPDLJGIEOI.
+     * <code>uint32 HNMABCLIAMB = 7;</code>
+     * @return The hNMABCLIAMB.
      */
     @java.lang.Override
-    public int getDAPDLJGIEOI() {
-      return dAPDLJGIEOI_;
+    public int getHNMABCLIAMB() {
+      return hNMABCLIAMB_;
     }
 
-    public static final int HIT_BOX_INDEX_FIELD_NUMBER = 6;
+    public static final int HIT_NORMAL_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector hitNormal_;
+    /**
+     * <code>.Vector hit_normal = 4;</code>
+     * @return Whether the hitNormal field is set.
+     */
+    @java.lang.Override
+    public boolean hasHitNormal() {
+      return hitNormal_ != null;
+    }
+    /**
+     * <code>.Vector hit_normal = 4;</code>
+     * @return The hitNormal.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitNormal() {
+      return hitNormal_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitNormal_;
+    }
+    /**
+     * <code>.Vector hit_normal = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitNormalOrBuilder() {
+      return getHitNormal();
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 9;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 9;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int HIT_BOX_INDEX_FIELD_NUMBER = 12;
     private int hitBoxIndex_;
     /**
-     * <code>int32 hit_box_index = 6;</code>
+     * <code>int32 hit_box_index = 12;</code>
      * @return The hitBoxIndex.
      */
     @java.lang.Override
     public int getHitBoxIndex() {
       return hitBoxIndex_;
+    }
+
+    public static final int FORWARD_PEER_FIELD_NUMBER = 8;
+    private int forwardPeer_;
+    /**
+     * <code>uint32 forward_peer = 8;</code>
+     * @return The forwardPeer.
+     */
+    @java.lang.Override
+    public int getForwardPeer() {
+      return forwardPeer_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -406,32 +406,32 @@ public final class EvtBulletHitNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (iKCAFAGALFA_ != 0) {
-        output.writeUInt32(3, iKCAFAGALFA_);
-      }
-      if (dAPDLJGIEOI_ != 0) {
-        output.writeUInt32(4, dAPDLJGIEOI_);
-      }
-      if (hitBoxIndex_ != 0) {
-        output.writeInt32(6, hitBoxIndex_);
-      }
-      if (iKLAJLIJHPL_ != null) {
-        output.writeMessage(7, getIKLAJLIJHPL());
+      if (hitPoint_ != null) {
+        output.writeMessage(1, getHitPoint());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-        output.writeEnum(8, forwardType_);
+        output.writeEnum(3, forwardType_);
       }
-      if (forwardPeer_ != 0) {
-        output.writeUInt32(9, forwardPeer_);
-      }
-      if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
-      }
-      if (hitPoint_ != null) {
-        output.writeMessage(11, getHitPoint());
+      if (hitNormal_ != null) {
+        output.writeMessage(4, getHitNormal());
       }
       if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_INVALID.getNumber()) {
-        output.writeEnum(12, hitColliderType_);
+        output.writeEnum(5, hitColliderType_);
+      }
+      if (kDBDDHAOOME_ != 0) {
+        output.writeUInt32(6, kDBDDHAOOME_);
+      }
+      if (hNMABCLIAMB_ != 0) {
+        output.writeUInt32(7, hNMABCLIAMB_);
+      }
+      if (forwardPeer_ != 0) {
+        output.writeUInt32(8, forwardPeer_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(9, entityId_);
+      }
+      if (hitBoxIndex_ != 0) {
+        output.writeInt32(12, hitBoxIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -442,41 +442,41 @@ public final class EvtBulletHitNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (iKCAFAGALFA_ != 0) {
+      if (hitPoint_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, iKCAFAGALFA_);
-      }
-      if (dAPDLJGIEOI_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dAPDLJGIEOI_);
-      }
-      if (hitBoxIndex_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, hitBoxIndex_);
-      }
-      if (iKLAJLIJHPL_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getIKLAJLIJHPL());
+          .computeMessageSize(1, getHitPoint());
       }
       if (forwardType_ != emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, forwardType_);
+          .computeEnumSize(3, forwardType_);
       }
-      if (forwardPeer_ != 0) {
+      if (hitNormal_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, forwardPeer_);
-      }
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
-      }
-      if (hitPoint_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getHitPoint());
+          .computeMessageSize(4, getHitNormal());
       }
       if (hitColliderType_ != emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_INVALID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, hitColliderType_);
+          .computeEnumSize(5, hitColliderType_);
+      }
+      if (kDBDDHAOOME_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, kDBDDHAOOME_);
+      }
+      if (hNMABCLIAMB_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, hNMABCLIAMB_);
+      }
+      if (forwardPeer_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, forwardPeer_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, entityId_);
+      }
+      if (hitBoxIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, hitBoxIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -493,28 +493,28 @@ public final class EvtBulletHitNotifyOuterClass {
       }
       emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify other = (emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify) obj;
 
-      if (getForwardPeer()
-          != other.getForwardPeer()) return false;
-      if (hitColliderType_ != other.hitColliderType_) return false;
-      if (hasIKLAJLIJHPL() != other.hasIKLAJLIJHPL()) return false;
-      if (hasIKLAJLIJHPL()) {
-        if (!getIKLAJLIJHPL()
-            .equals(other.getIKLAJLIJHPL())) return false;
-      }
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (forwardType_ != other.forwardType_) return false;
-      if (getIKCAFAGALFA()
-          != other.getIKCAFAGALFA()) return false;
+      if (hitColliderType_ != other.hitColliderType_) return false;
+      if (getKDBDDHAOOME()
+          != other.getKDBDDHAOOME()) return false;
       if (hasHitPoint() != other.hasHitPoint()) return false;
       if (hasHitPoint()) {
         if (!getHitPoint()
             .equals(other.getHitPoint())) return false;
       }
-      if (getDAPDLJGIEOI()
-          != other.getDAPDLJGIEOI()) return false;
+      if (getHNMABCLIAMB()
+          != other.getHNMABCLIAMB()) return false;
+      if (hasHitNormal() != other.hasHitNormal()) return false;
+      if (hasHitNormal()) {
+        if (!getHitNormal()
+            .equals(other.getHitNormal())) return false;
+      }
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (getHitBoxIndex()
           != other.getHitBoxIndex()) return false;
+      if (getForwardPeer()
+          != other.getForwardPeer()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -526,28 +526,28 @@ public final class EvtBulletHitNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FORWARD_PEER_FIELD_NUMBER;
-      hash = (53 * hash) + getForwardPeer();
-      hash = (37 * hash) + HIT_COLLIDER_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + hitColliderType_;
-      if (hasIKLAJLIJHPL()) {
-        hash = (37 * hash) + IKLAJLIJHPL_FIELD_NUMBER;
-        hash = (53 * hash) + getIKLAJLIJHPL().hashCode();
-      }
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
-      hash = (37 * hash) + IKCAFAGALFA_FIELD_NUMBER;
-      hash = (53 * hash) + getIKCAFAGALFA();
+      hash = (37 * hash) + HIT_COLLIDER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + hitColliderType_;
+      hash = (37 * hash) + KDBDDHAOOME_FIELD_NUMBER;
+      hash = (53 * hash) + getKDBDDHAOOME();
       if (hasHitPoint()) {
         hash = (37 * hash) + HIT_POINT_FIELD_NUMBER;
         hash = (53 * hash) + getHitPoint().hashCode();
       }
-      hash = (37 * hash) + DAPDLJGIEOI_FIELD_NUMBER;
-      hash = (53 * hash) + getDAPDLJGIEOI();
+      hash = (37 * hash) + HNMABCLIAMB_FIELD_NUMBER;
+      hash = (53 * hash) + getHNMABCLIAMB();
+      if (hasHitNormal()) {
+        hash = (37 * hash) + HIT_NORMAL_FIELD_NUMBER;
+        hash = (53 * hash) + getHitNormal().hashCode();
+      }
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + HIT_BOX_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getHitBoxIndex();
+      hash = (37 * hash) + FORWARD_PEER_FIELD_NUMBER;
+      hash = (53 * hash) + getForwardPeer();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -645,8 +645,8 @@ public final class EvtBulletHitNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 321
-     * Obf: AGCEHPNLCLN
+     * CmdId: 23746
+     * Obf: LAFKEDKPKIM
      * </pre>
      *
      * Protobuf type {@code EvtBulletHitNotify}
@@ -686,21 +686,11 @@ public final class EvtBulletHitNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        forwardPeer_ = 0;
+        forwardType_ = 0;
 
         hitColliderType_ = 0;
 
-        if (iKLAJLIJHPLBuilder_ == null) {
-          iKLAJLIJHPL_ = null;
-        } else {
-          iKLAJLIJHPL_ = null;
-          iKLAJLIJHPLBuilder_ = null;
-        }
-        entityId_ = 0;
-
-        forwardType_ = 0;
-
-        iKCAFAGALFA_ = 0;
+        kDBDDHAOOME_ = 0;
 
         if (hitPointBuilder_ == null) {
           hitPoint_ = null;
@@ -708,9 +698,19 @@ public final class EvtBulletHitNotifyOuterClass {
           hitPoint_ = null;
           hitPointBuilder_ = null;
         }
-        dAPDLJGIEOI_ = 0;
+        hNMABCLIAMB_ = 0;
+
+        if (hitNormalBuilder_ == null) {
+          hitNormal_ = null;
+        } else {
+          hitNormal_ = null;
+          hitNormalBuilder_ = null;
+        }
+        entityId_ = 0;
 
         hitBoxIndex_ = 0;
+
+        forwardPeer_ = 0;
 
         return this;
       }
@@ -738,23 +738,23 @@ public final class EvtBulletHitNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify buildPartial() {
         emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify result = new emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify(this);
-        result.forwardPeer_ = forwardPeer_;
-        result.hitColliderType_ = hitColliderType_;
-        if (iKLAJLIJHPLBuilder_ == null) {
-          result.iKLAJLIJHPL_ = iKLAJLIJHPL_;
-        } else {
-          result.iKLAJLIJHPL_ = iKLAJLIJHPLBuilder_.build();
-        }
-        result.entityId_ = entityId_;
         result.forwardType_ = forwardType_;
-        result.iKCAFAGALFA_ = iKCAFAGALFA_;
+        result.hitColliderType_ = hitColliderType_;
+        result.kDBDDHAOOME_ = kDBDDHAOOME_;
         if (hitPointBuilder_ == null) {
           result.hitPoint_ = hitPoint_;
         } else {
           result.hitPoint_ = hitPointBuilder_.build();
         }
-        result.dAPDLJGIEOI_ = dAPDLJGIEOI_;
+        result.hNMABCLIAMB_ = hNMABCLIAMB_;
+        if (hitNormalBuilder_ == null) {
+          result.hitNormal_ = hitNormal_;
+        } else {
+          result.hitNormal_ = hitNormalBuilder_.build();
+        }
+        result.entityId_ = entityId_;
         result.hitBoxIndex_ = hitBoxIndex_;
+        result.forwardPeer_ = forwardPeer_;
         onBuilt();
         return result;
       }
@@ -803,32 +803,32 @@ public final class EvtBulletHitNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify other) {
         if (other == emu.grasscutter.net.proto.EvtBulletHitNotifyOuterClass.EvtBulletHitNotify.getDefaultInstance()) return this;
-        if (other.getForwardPeer() != 0) {
-          setForwardPeer(other.getForwardPeer());
+        if (other.forwardType_ != 0) {
+          setForwardTypeValue(other.getForwardTypeValue());
         }
         if (other.hitColliderType_ != 0) {
           setHitColliderTypeValue(other.getHitColliderTypeValue());
         }
-        if (other.hasIKLAJLIJHPL()) {
-          mergeIKLAJLIJHPL(other.getIKLAJLIJHPL());
-        }
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
-        if (other.forwardType_ != 0) {
-          setForwardTypeValue(other.getForwardTypeValue());
-        }
-        if (other.getIKCAFAGALFA() != 0) {
-          setIKCAFAGALFA(other.getIKCAFAGALFA());
+        if (other.getKDBDDHAOOME() != 0) {
+          setKDBDDHAOOME(other.getKDBDDHAOOME());
         }
         if (other.hasHitPoint()) {
           mergeHitPoint(other.getHitPoint());
         }
-        if (other.getDAPDLJGIEOI() != 0) {
-          setDAPDLJGIEOI(other.getDAPDLJGIEOI());
+        if (other.getHNMABCLIAMB() != 0) {
+          setHNMABCLIAMB(other.getHNMABCLIAMB());
+        }
+        if (other.hasHitNormal()) {
+          mergeHitNormal(other.getHitNormal());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         if (other.getHitBoxIndex() != 0) {
           setHitBoxIndex(other.getHitBoxIndex());
+        }
+        if (other.getForwardPeer() != 0) {
+          setForwardPeer(other.getForwardPeer());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -859,251 +859,16 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
 
-      private int forwardPeer_ ;
-      /**
-       * <code>uint32 forward_peer = 9;</code>
-       * @return The forwardPeer.
-       */
-      @java.lang.Override
-      public int getForwardPeer() {
-        return forwardPeer_;
-      }
-      /**
-       * <code>uint32 forward_peer = 9;</code>
-       * @param value The forwardPeer to set.
-       * @return This builder for chaining.
-       */
-      public Builder setForwardPeer(int value) {
-        
-        forwardPeer_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 forward_peer = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearForwardPeer() {
-        
-        forwardPeer_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hitColliderType_ = 0;
-      /**
-       * <code>.HitColliderType hit_collider_type = 12;</code>
-       * @return The enum numeric value on the wire for hitColliderType.
-       */
-      @java.lang.Override public int getHitColliderTypeValue() {
-        return hitColliderType_;
-      }
-      /**
-       * <code>.HitColliderType hit_collider_type = 12;</code>
-       * @param value The enum numeric value on the wire for hitColliderType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHitColliderTypeValue(int value) {
-        
-        hitColliderType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HitColliderType hit_collider_type = 12;</code>
-       * @return The hitColliderType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
-        return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.HitColliderType hit_collider_type = 12;</code>
-       * @param value The hitColliderType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHitColliderType(emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        hitColliderType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HitColliderType hit_collider_type = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHitColliderType() {
-        
-        hitColliderType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector iKLAJLIJHPL_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> iKLAJLIJHPLBuilder_;
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       * @return Whether the iKLAJLIJHPL field is set.
-       */
-      public boolean hasIKLAJLIJHPL() {
-        return iKLAJLIJHPLBuilder_ != null || iKLAJLIJHPL_ != null;
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       * @return The iKLAJLIJHPL.
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getIKLAJLIJHPL() {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          return iKLAJLIJHPL_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : iKLAJLIJHPL_;
-        } else {
-          return iKLAJLIJHPLBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public Builder setIKLAJLIJHPL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          iKLAJLIJHPL_ = value;
-          onChanged();
-        } else {
-          iKLAJLIJHPLBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public Builder setIKLAJLIJHPL(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          iKLAJLIJHPL_ = builderForValue.build();
-          onChanged();
-        } else {
-          iKLAJLIJHPLBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public Builder mergeIKLAJLIJHPL(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          if (iKLAJLIJHPL_ != null) {
-            iKLAJLIJHPL_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(iKLAJLIJHPL_).mergeFrom(value).buildPartial();
-          } else {
-            iKLAJLIJHPL_ = value;
-          }
-          onChanged();
-        } else {
-          iKLAJLIJHPLBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public Builder clearIKLAJLIJHPL() {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          iKLAJLIJHPL_ = null;
-          onChanged();
-        } else {
-          iKLAJLIJHPL_ = null;
-          iKLAJLIJHPLBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getIKLAJLIJHPLBuilder() {
-        
-        onChanged();
-        return getIKLAJLIJHPLFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getIKLAJLIJHPLOrBuilder() {
-        if (iKLAJLIJHPLBuilder_ != null) {
-          return iKLAJLIJHPLBuilder_.getMessageOrBuilder();
-        } else {
-          return iKLAJLIJHPL_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : iKLAJLIJHPL_;
-        }
-      }
-      /**
-       * <code>.Vector IKLAJLIJHPL = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getIKLAJLIJHPLFieldBuilder() {
-        if (iKLAJLIJHPLBuilder_ == null) {
-          iKLAJLIJHPLBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getIKLAJLIJHPL(),
-                  getParentForChildren(),
-                  isClean());
-          iKLAJLIJHPL_ = null;
-        }
-        return iKLAJLIJHPLBuilder_;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int forwardType_ = 0;
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 3;</code>
        * @return The enum numeric value on the wire for forwardType.
        */
       @java.lang.Override public int getForwardTypeValue() {
         return forwardType_;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 3;</code>
        * @param value The enum numeric value on the wire for forwardType to set.
        * @return This builder for chaining.
        */
@@ -1114,7 +879,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 3;</code>
        * @return The forwardType.
        */
       @java.lang.Override
@@ -1124,7 +889,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 3;</code>
        * @param value The forwardType to set.
        * @return This builder for chaining.
        */
@@ -1138,7 +903,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ForwardType forward_type = 8;</code>
+       * <code>.ForwardType forward_type = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
@@ -1148,33 +913,87 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
 
-      private int iKCAFAGALFA_ ;
+      private int hitColliderType_ = 0;
       /**
-       * <code>uint32 IKCAFAGALFA = 3;</code>
-       * @return The iKCAFAGALFA.
+       * <code>.HitColliderType hit_collider_type = 5;</code>
+       * @return The enum numeric value on the wire for hitColliderType.
        */
-      @java.lang.Override
-      public int getIKCAFAGALFA() {
-        return iKCAFAGALFA_;
+      @java.lang.Override public int getHitColliderTypeValue() {
+        return hitColliderType_;
       }
       /**
-       * <code>uint32 IKCAFAGALFA = 3;</code>
-       * @param value The iKCAFAGALFA to set.
+       * <code>.HitColliderType hit_collider_type = 5;</code>
+       * @param value The enum numeric value on the wire for hitColliderType to set.
        * @return This builder for chaining.
        */
-      public Builder setIKCAFAGALFA(int value) {
+      public Builder setHitColliderTypeValue(int value) {
         
-        iKCAFAGALFA_ = value;
+        hitColliderType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IKCAFAGALFA = 3;</code>
+       * <code>.HitColliderType hit_collider_type = 5;</code>
+       * @return The hitColliderType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType result = emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.valueOf(hitColliderType_);
+        return result == null ? emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 5;</code>
+       * @param value The hitColliderType to set.
        * @return This builder for chaining.
        */
-      public Builder clearIKCAFAGALFA() {
+      public Builder setHitColliderType(emu.grasscutter.net.proto.HitColliderTypeOuterClass.HitColliderType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
         
-        iKCAFAGALFA_ = 0;
+        hitColliderType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.HitColliderType hit_collider_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHitColliderType() {
+        
+        hitColliderType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kDBDDHAOOME_ ;
+      /**
+       * <code>uint32 KDBDDHAOOME = 6;</code>
+       * @return The kDBDDHAOOME.
+       */
+      @java.lang.Override
+      public int getKDBDDHAOOME() {
+        return kDBDDHAOOME_;
+      }
+      /**
+       * <code>uint32 KDBDDHAOOME = 6;</code>
+       * @param value The kDBDDHAOOME to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKDBDDHAOOME(int value) {
+        
+        kDBDDHAOOME_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KDBDDHAOOME = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKDBDDHAOOME() {
+        
+        kDBDDHAOOME_ = 0;
         onChanged();
         return this;
       }
@@ -1183,14 +1002,14 @@ public final class EvtBulletHitNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> hitPointBuilder_;
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        * @return Whether the hitPoint field is set.
        */
       public boolean hasHitPoint() {
         return hitPointBuilder_ != null || hitPoint_ != null;
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        * @return The hitPoint.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitPoint() {
@@ -1201,7 +1020,7 @@ public final class EvtBulletHitNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public Builder setHitPoint(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (hitPointBuilder_ == null) {
@@ -1217,7 +1036,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public Builder setHitPoint(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -1231,7 +1050,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public Builder mergeHitPoint(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (hitPointBuilder_ == null) {
@@ -1249,7 +1068,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public Builder clearHitPoint() {
         if (hitPointBuilder_ == null) {
@@ -1263,7 +1082,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHitPointBuilder() {
         
@@ -1271,7 +1090,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return getHitPointFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitPointOrBuilder() {
         if (hitPointBuilder_ != null) {
@@ -1282,7 +1101,7 @@ public final class EvtBulletHitNotifyOuterClass {
         }
       }
       /**
-       * <code>.Vector hit_point = 11;</code>
+       * <code>.Vector hit_point = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -1298,40 +1117,190 @@ public final class EvtBulletHitNotifyOuterClass {
         return hitPointBuilder_;
       }
 
-      private int dAPDLJGIEOI_ ;
+      private int hNMABCLIAMB_ ;
       /**
-       * <code>uint32 DAPDLJGIEOI = 4;</code>
-       * @return The dAPDLJGIEOI.
+       * <code>uint32 HNMABCLIAMB = 7;</code>
+       * @return The hNMABCLIAMB.
        */
       @java.lang.Override
-      public int getDAPDLJGIEOI() {
-        return dAPDLJGIEOI_;
+      public int getHNMABCLIAMB() {
+        return hNMABCLIAMB_;
       }
       /**
-       * <code>uint32 DAPDLJGIEOI = 4;</code>
-       * @param value The dAPDLJGIEOI to set.
+       * <code>uint32 HNMABCLIAMB = 7;</code>
+       * @param value The hNMABCLIAMB to set.
        * @return This builder for chaining.
        */
-      public Builder setDAPDLJGIEOI(int value) {
+      public Builder setHNMABCLIAMB(int value) {
         
-        dAPDLJGIEOI_ = value;
+        hNMABCLIAMB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DAPDLJGIEOI = 4;</code>
+       * <code>uint32 HNMABCLIAMB = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDAPDLJGIEOI() {
+      public Builder clearHNMABCLIAMB() {
         
-        dAPDLJGIEOI_ = 0;
+        hNMABCLIAMB_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector hitNormal_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> hitNormalBuilder_;
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       * @return Whether the hitNormal field is set.
+       */
+      public boolean hasHitNormal() {
+        return hitNormalBuilder_ != null || hitNormal_ != null;
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       * @return The hitNormal.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getHitNormal() {
+        if (hitNormalBuilder_ == null) {
+          return hitNormal_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitNormal_;
+        } else {
+          return hitNormalBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public Builder setHitNormal(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (hitNormalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hitNormal_ = value;
+          onChanged();
+        } else {
+          hitNormalBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public Builder setHitNormal(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (hitNormalBuilder_ == null) {
+          hitNormal_ = builderForValue.build();
+          onChanged();
+        } else {
+          hitNormalBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public Builder mergeHitNormal(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (hitNormalBuilder_ == null) {
+          if (hitNormal_ != null) {
+            hitNormal_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(hitNormal_).mergeFrom(value).buildPartial();
+          } else {
+            hitNormal_ = value;
+          }
+          onChanged();
+        } else {
+          hitNormalBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public Builder clearHitNormal() {
+        if (hitNormalBuilder_ == null) {
+          hitNormal_ = null;
+          onChanged();
+        } else {
+          hitNormal_ = null;
+          hitNormalBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getHitNormalBuilder() {
+        
+        onChanged();
+        return getHitNormalFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getHitNormalOrBuilder() {
+        if (hitNormalBuilder_ != null) {
+          return hitNormalBuilder_.getMessageOrBuilder();
+        } else {
+          return hitNormal_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : hitNormal_;
+        }
+      }
+      /**
+       * <code>.Vector hit_normal = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getHitNormalFieldBuilder() {
+        if (hitNormalBuilder_ == null) {
+          hitNormalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getHitNormal(),
+                  getParentForChildren(),
+                  isClean());
+          hitNormal_ = null;
+        }
+        return hitNormalBuilder_;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 9;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 9;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
         onChanged();
         return this;
       }
 
       private int hitBoxIndex_ ;
       /**
-       * <code>int32 hit_box_index = 6;</code>
+       * <code>int32 hit_box_index = 12;</code>
        * @return The hitBoxIndex.
        */
       @java.lang.Override
@@ -1339,7 +1308,7 @@ public final class EvtBulletHitNotifyOuterClass {
         return hitBoxIndex_;
       }
       /**
-       * <code>int32 hit_box_index = 6;</code>
+       * <code>int32 hit_box_index = 12;</code>
        * @param value The hitBoxIndex to set.
        * @return This builder for chaining.
        */
@@ -1350,12 +1319,43 @@ public final class EvtBulletHitNotifyOuterClass {
         return this;
       }
       /**
-       * <code>int32 hit_box_index = 6;</code>
+       * <code>int32 hit_box_index = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearHitBoxIndex() {
         
         hitBoxIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int forwardPeer_ ;
+      /**
+       * <code>uint32 forward_peer = 8;</code>
+       * @return The forwardPeer.
+       */
+      @java.lang.Override
+      public int getForwardPeer() {
+        return forwardPeer_;
+      }
+      /**
+       * <code>uint32 forward_peer = 8;</code>
+       * @param value The forwardPeer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardPeer(int value) {
+        
+        forwardPeer_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 forward_peer = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForwardPeer() {
+        
+        forwardPeer_ = 0;
         onChanged();
         return this;
       }
@@ -1426,33 +1426,33 @@ public final class EvtBulletHitNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030EvtBulletHitNotify.proto\032\025HitColliderT" +
-      "ype.proto\032\014Vector.proto\032\021ForwardType.pro" +
-      "to\"\211\002\n\022EvtBulletHitNotify\022\024\n\014forward_pee" +
-      "r\030\t \001(\r\022+\n\021hit_collider_type\030\014 \001(\0162\020.Hit" +
-      "ColliderType\022\034\n\013IKLAJLIJHPL\030\007 \001(\0132\007.Vect" +
-      "or\022\021\n\tentity_id\030\n \001(\r\022\"\n\014forward_type\030\010 " +
-      "\001(\0162\014.ForwardType\022\023\n\013IKCAFAGALFA\030\003 \001(\r\022\032" +
-      "\n\thit_point\030\013 \001(\0132\007.Vector\022\023\n\013DAPDLJGIEO" +
-      "I\030\004 \001(\r\022\025\n\rhit_box_index\030\006 \001(\005B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\n\030EvtBulletHitNotify.proto\032\021ForwardType." +
+      "proto\032\025HitColliderType.proto\032\014Vector.pro" +
+      "to\"\210\002\n\022EvtBulletHitNotify\022\"\n\014forward_typ" +
+      "e\030\003 \001(\0162\014.ForwardType\022+\n\021hit_collider_ty" +
+      "pe\030\005 \001(\0162\020.HitColliderType\022\023\n\013KDBDDHAOOM" +
+      "E\030\006 \001(\r\022\032\n\thit_point\030\001 \001(\0132\007.Vector\022\023\n\013H" +
+      "NMABCLIAMB\030\007 \001(\r\022\033\n\nhit_normal\030\004 \001(\0132\007.V" +
+      "ector\022\021\n\tentity_id\030\t \001(\r\022\025\n\rhit_box_inde" +
+      "x\030\014 \001(\005\022\024\n\014forward_peer\030\010 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor(),
         });
     internal_static_EvtBulletHitNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_EvtBulletHitNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBulletHitNotify_descriptor,
-        new java.lang.String[] { "ForwardPeer", "HitColliderType", "IKLAJLIJHPL", "EntityId", "ForwardType", "IKCAFAGALFA", "HitPoint", "DAPDLJGIEOI", "HitBoxIndex", });
+        new java.lang.String[] { "ForwardType", "HitColliderType", "KDBDDHAOOME", "HitPoint", "HNMABCLIAMB", "HitNormal", "EntityId", "HitBoxIndex", "ForwardPeer", });
+    emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.HitColliderTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.ForwardTypeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

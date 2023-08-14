@@ -19,21 +19,21 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 1;</code>
+     * <code>uint32 level_id = 12;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 challenge_mode_skill_no = 14;</code>
+     * <code>uint32 challenge_mode_skill_no = 11;</code>
      * @return The challengeModeSkillNo.
      */
     int getChallengeModeSkillNo();
   }
   /**
    * <pre>
-   * CmdId: 20435
-   * Obf: HEMGEBCJFAB
+   * CmdId: 20097
+   * Obf: EMCCILFMEHJ
    * </pre>
    *
    * Protobuf type {@code EffigyChallengeV2ChooseSkillReq}
@@ -80,14 +80,14 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 88: {
 
               challengeModeSkillNo_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              levelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
               emu.grasscutter.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq.class, emu.grasscutter.net.proto.EffigyChallengeV2ChooseSkillReqOuterClass.EffigyChallengeV2ChooseSkillReq.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 1;
+    public static final int LEVEL_ID_FIELD_NUMBER = 12;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 1;</code>
+     * <code>uint32 level_id = 12;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       return levelId_;
     }
 
-    public static final int CHALLENGE_MODE_SKILL_NO_FIELD_NUMBER = 14;
+    public static final int CHALLENGE_MODE_SKILL_NO_FIELD_NUMBER = 11;
     private int challengeModeSkillNo_;
     /**
-     * <code>uint32 challenge_mode_skill_no = 14;</code>
+     * <code>uint32 challenge_mode_skill_no = 11;</code>
      * @return The challengeModeSkillNo.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (levelId_ != 0) {
-        output.writeUInt32(1, levelId_);
-      }
       if (challengeModeSkillNo_ != 0) {
-        output.writeUInt32(14, challengeModeSkillNo_);
+        output.writeUInt32(11, challengeModeSkillNo_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(12, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, levelId_);
-      }
       if (challengeModeSkillNo_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, challengeModeSkillNo_);
+          .computeUInt32Size(11, challengeModeSkillNo_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20435
-     * Obf: HEMGEBCJFAB
+     * CmdId: 20097
+     * Obf: EMCCILFMEHJ
      * </pre>
      *
      * Protobuf type {@code EffigyChallengeV2ChooseSkillReq}
@@ -470,7 +470,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 1;</code>
+       * <code>uint32 level_id = 12;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 1;</code>
+       * <code>uint32 level_id = 12;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 1;</code>
+       * <code>uint32 level_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -501,7 +501,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
 
       private int challengeModeSkillNo_ ;
       /**
-       * <code>uint32 challenge_mode_skill_no = 14;</code>
+       * <code>uint32 challenge_mode_skill_no = 11;</code>
        * @return The challengeModeSkillNo.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         return challengeModeSkillNo_;
       }
       /**
-       * <code>uint32 challenge_mode_skill_no = 14;</code>
+       * <code>uint32 challenge_mode_skill_no = 11;</code>
        * @param value The challengeModeSkillNo to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 challenge_mode_skill_no = 14;</code>
+       * <code>uint32 challenge_mode_skill_no = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearChallengeModeSkillNo() {
@@ -598,8 +598,8 @@ public final class EffigyChallengeV2ChooseSkillReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n%EffigyChallengeV2ChooseSkillReq.proto\"" +
       "T\n\037EffigyChallengeV2ChooseSkillReq\022\020\n\010le" +
-      "vel_id\030\001 \001(\r\022\037\n\027challenge_mode_skill_no\030" +
-      "\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "vel_id\030\014 \001(\r\022\037\n\027challenge_mode_skill_no\030" +
+      "\013 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

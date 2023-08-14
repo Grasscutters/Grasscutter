@@ -19,15 +19,15 @@ public final class AddBlacklistReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_uid = 5;</code>
+     * <code>uint32 target_uid = 12;</code>
      * @return The targetUid.
      */
     int getTargetUid();
   }
   /**
    * <pre>
-   * CmdId: 4020
-   * Obf: JHLJPPPLLJL
+   * CmdId: 27236
+   * Obf: OKNKMLEPCKN
    * </pre>
    *
    * Protobuf type {@code AddBlacklistReq}
@@ -74,7 +74,7 @@ public final class AddBlacklistReqOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 96: {
 
               targetUid_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class AddBlacklistReqOuterClass {
               emu.grasscutter.net.proto.AddBlacklistReqOuterClass.AddBlacklistReq.class, emu.grasscutter.net.proto.AddBlacklistReqOuterClass.AddBlacklistReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 5;
+    public static final int TARGET_UID_FIELD_NUMBER = 12;
     private int targetUid_;
     /**
-     * <code>uint32 target_uid = 5;</code>
+     * <code>uint32 target_uid = 12;</code>
      * @return The targetUid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class AddBlacklistReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetUid_ != 0) {
-        output.writeUInt32(5, targetUid_);
+        output.writeUInt32(12, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class AddBlacklistReqOuterClass {
       size = 0;
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, targetUid_);
+          .computeUInt32Size(12, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class AddBlacklistReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4020
-     * Obf: JHLJPPPLLJL
+     * CmdId: 27236
+     * Obf: OKNKMLEPCKN
      * </pre>
      *
      * Protobuf type {@code AddBlacklistReq}
@@ -431,7 +431,7 @@ public final class AddBlacklistReqOuterClass {
 
       private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 5;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @return The targetUid.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class AddBlacklistReqOuterClass {
         return targetUid_;
       }
       /**
-       * <code>uint32 target_uid = 5;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @param value The targetUid to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class AddBlacklistReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_uid = 5;</code>
+       * <code>uint32 target_uid = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
@@ -527,7 +527,7 @@ public final class AddBlacklistReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025AddBlacklistReq.proto\"%\n\017AddBlacklistR" +
-      "eq\022\022\n\ntarget_uid\030\005 \001(\rB\033\n\031emu.grasscutte" +
+      "eq\022\022\n\ntarget_uid\030\014 \001(\rB\033\n\031emu.grasscutte" +
       "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

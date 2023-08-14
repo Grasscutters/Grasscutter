@@ -35,8 +35,8 @@ public final class GrantRewardNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 636
-   * Obf: HDNFGCJEGDM
+   * CmdId: 24643
+   * Obf: IOHKNKAECHJ
    * </pre>
    *
    * Protobuf type {@code GrantRewardNotify}
@@ -316,8 +316,8 @@ public final class GrantRewardNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 636
-     * Obf: HDNFGCJEGDM
+     * CmdId: 24643
+     * Obf: IOHKNKAECHJ
      * </pre>
      *
      * Protobuf type {@code GrantRewardNotify}

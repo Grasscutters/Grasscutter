@@ -19,15 +19,15 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 field_id = 13;</code>
+     * <code>uint32 field_id = 7;</code>
      * @return The fieldId.
      */
     int getFieldId();
   }
   /**
    * <pre>
-   * CmdId: 7845
-   * Obf: PDIGPHKJHIC
+   * CmdId: 3674
+   * Obf: HIGKKKJFAFM
    * </pre>
    *
    * Protobuf type {@code GCGDSFieldUnlockNotify}
@@ -74,7 +74,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 56: {
 
               fieldId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
               emu.grasscutter.net.proto.GCGDSFieldUnlockNotifyOuterClass.GCGDSFieldUnlockNotify.class, emu.grasscutter.net.proto.GCGDSFieldUnlockNotifyOuterClass.GCGDSFieldUnlockNotify.Builder.class);
     }
 
-    public static final int FIELD_ID_FIELD_NUMBER = 13;
+    public static final int FIELD_ID_FIELD_NUMBER = 7;
     private int fieldId_;
     /**
-     * <code>uint32 field_id = 13;</code>
+     * <code>uint32 field_id = 7;</code>
      * @return The fieldId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (fieldId_ != 0) {
-        output.writeUInt32(13, fieldId_);
+        output.writeUInt32(7, fieldId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
       size = 0;
       if (fieldId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, fieldId_);
+          .computeUInt32Size(7, fieldId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7845
-     * Obf: PDIGPHKJHIC
+     * CmdId: 3674
+     * Obf: HIGKKKJFAFM
      * </pre>
      *
      * Protobuf type {@code GCGDSFieldUnlockNotify}
@@ -431,7 +431,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
 
       private int fieldId_ ;
       /**
-       * <code>uint32 field_id = 13;</code>
+       * <code>uint32 field_id = 7;</code>
        * @return The fieldId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
         return fieldId_;
       }
       /**
-       * <code>uint32 field_id = 13;</code>
+       * <code>uint32 field_id = 7;</code>
        * @param value The fieldId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 field_id = 13;</code>
+       * <code>uint32 field_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearFieldId() {
@@ -527,7 +527,7 @@ public final class GCGDSFieldUnlockNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GCGDSFieldUnlockNotify.proto\"*\n\026GCGDSF" +
-      "ieldUnlockNotify\022\020\n\010field_id\030\r \001(\rB\033\n\031em" +
+      "ieldUnlockNotify\022\020\n\010field_id\030\007 \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

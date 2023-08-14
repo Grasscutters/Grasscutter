@@ -19,47 +19,47 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 11;</code>
+     * <code>.Vector pos = 3;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>.Vector pos = 3;</code>
+     * @return The pos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+    /**
+     * <code>.Vector pos = 3;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+
+    /**
+     * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.Vector pos = 5;</code>
-     * @return Whether the pos field is set.
+     * <code>uint32 state_hash = 9;</code>
+     * @return The stateHash.
      */
-    boolean hasPos();
-    /**
-     * <code>.Vector pos = 5;</code>
-     * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
-    /**
-     * <code>.Vector pos = 5;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+    int getStateHash();
 
     /**
-     * <code>uint32 IBEEKINNPFA = 12;</code>
-     * @return The iBEEKINNPFA.
+     * <code>uint32 normalized_time_compact = 7;</code>
+     * @return The normalizedTimeCompact.
      */
-    int getIBEEKINNPFA();
+    int getNormalizedTimeCompact();
 
     /**
-     * <code>uint32 NLMICFIEANI = 10;</code>
-     * @return The nLMICFIEANI.
-     */
-    int getNLMICFIEANI();
-
-    /**
-     * <code>int32 face_angle_compact = 14;</code>
+     * <code>int32 face_angle_compact = 8;</code>
      * @return The faceAngleCompact.
      */
     int getFaceAngleCompact();
   }
   /**
    * <pre>
-   * Obf: FJINHACIPMN
+   * Obf: MLJBHICOBMH
    * </pre>
    *
    * Protobuf type {@code EvtSyncEntityPositionInfo}
@@ -106,7 +106,12 @@ public final class EvtSyncEntityPositionInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 16: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 26: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -119,24 +124,19 @@ public final class EvtSyncEntityPositionInfoOuterClass {
 
               break;
             }
-            case 80: {
+            case 56: {
 
-              nLMICFIEANI_ = input.readUInt32();
+              normalizedTimeCompact_ = input.readUInt32();
               break;
             }
-            case 88: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              iBEEKINNPFA_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 64: {
 
               faceAngleCompact_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              stateHash_ = input.readUInt32();
               break;
             }
             default: {
@@ -171,21 +171,10 @@ public final class EvtSyncEntityPositionInfoOuterClass {
               emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo.class, emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 11;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 11;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int POS_FIELD_NUMBER = 5;
+    public static final int POS_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
-     * <code>.Vector pos = 5;</code>
+     * <code>.Vector pos = 3;</code>
      * @return Whether the pos field is set.
      */
     @java.lang.Override
@@ -193,7 +182,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       return pos_ != null;
     }
     /**
-     * <code>.Vector pos = 5;</code>
+     * <code>.Vector pos = 3;</code>
      * @return The pos.
      */
     @java.lang.Override
@@ -201,39 +190,50 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
     /**
-     * <code>.Vector pos = 5;</code>
+     * <code>.Vector pos = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
       return getPos();
     }
 
-    public static final int IBEEKINNPFA_FIELD_NUMBER = 12;
-    private int iBEEKINNPFA_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 2;
+    private int entityId_;
     /**
-     * <code>uint32 IBEEKINNPFA = 12;</code>
-     * @return The iBEEKINNPFA.
+     * <code>uint32 entity_id = 2;</code>
+     * @return The entityId.
      */
     @java.lang.Override
-    public int getIBEEKINNPFA() {
-      return iBEEKINNPFA_;
+    public int getEntityId() {
+      return entityId_;
     }
 
-    public static final int NLMICFIEANI_FIELD_NUMBER = 10;
-    private int nLMICFIEANI_;
+    public static final int STATE_HASH_FIELD_NUMBER = 9;
+    private int stateHash_;
     /**
-     * <code>uint32 NLMICFIEANI = 10;</code>
-     * @return The nLMICFIEANI.
+     * <code>uint32 state_hash = 9;</code>
+     * @return The stateHash.
      */
     @java.lang.Override
-    public int getNLMICFIEANI() {
-      return nLMICFIEANI_;
+    public int getStateHash() {
+      return stateHash_;
     }
 
-    public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 14;
+    public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 7;
+    private int normalizedTimeCompact_;
+    /**
+     * <code>uint32 normalized_time_compact = 7;</code>
+     * @return The normalizedTimeCompact.
+     */
+    @java.lang.Override
+    public int getNormalizedTimeCompact() {
+      return normalizedTimeCompact_;
+    }
+
+    public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 8;
     private int faceAngleCompact_;
     /**
-     * <code>int32 face_angle_compact = 14;</code>
+     * <code>int32 face_angle_compact = 8;</code>
      * @return The faceAngleCompact.
      */
     @java.lang.Override
@@ -255,20 +255,20 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pos_ != null) {
-        output.writeMessage(5, getPos());
-      }
-      if (nLMICFIEANI_ != 0) {
-        output.writeUInt32(10, nLMICFIEANI_);
-      }
       if (entityId_ != 0) {
-        output.writeUInt32(11, entityId_);
+        output.writeUInt32(2, entityId_);
       }
-      if (iBEEKINNPFA_ != 0) {
-        output.writeUInt32(12, iBEEKINNPFA_);
+      if (pos_ != null) {
+        output.writeMessage(3, getPos());
+      }
+      if (normalizedTimeCompact_ != 0) {
+        output.writeUInt32(7, normalizedTimeCompact_);
       }
       if (faceAngleCompact_ != 0) {
-        output.writeInt32(14, faceAngleCompact_);
+        output.writeInt32(8, faceAngleCompact_);
+      }
+      if (stateHash_ != 0) {
+        output.writeUInt32(9, stateHash_);
       }
       unknownFields.writeTo(output);
     }
@@ -279,25 +279,25 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pos_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getPos());
-      }
-      if (nLMICFIEANI_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, nLMICFIEANI_);
-      }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, entityId_);
+          .computeUInt32Size(2, entityId_);
       }
-      if (iBEEKINNPFA_ != 0) {
+      if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, iBEEKINNPFA_);
+          .computeMessageSize(3, getPos());
+      }
+      if (normalizedTimeCompact_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, normalizedTimeCompact_);
       }
       if (faceAngleCompact_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, faceAngleCompact_);
+          .computeInt32Size(8, faceAngleCompact_);
+      }
+      if (stateHash_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, stateHash_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -314,17 +314,17 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       }
       emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo other = (emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (getIBEEKINNPFA()
-          != other.getIBEEKINNPFA()) return false;
-      if (getNLMICFIEANI()
-          != other.getNLMICFIEANI()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
+      if (getStateHash()
+          != other.getStateHash()) return false;
+      if (getNormalizedTimeCompact()
+          != other.getNormalizedTimeCompact()) return false;
       if (getFaceAngleCompact()
           != other.getFaceAngleCompact()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -338,16 +338,16 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + IBEEKINNPFA_FIELD_NUMBER;
-      hash = (53 * hash) + getIBEEKINNPFA();
-      hash = (37 * hash) + NLMICFIEANI_FIELD_NUMBER;
-      hash = (53 * hash) + getNLMICFIEANI();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + STATE_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getStateHash();
+      hash = (37 * hash) + NORMALIZED_TIME_COMPACT_FIELD_NUMBER;
+      hash = (53 * hash) + getNormalizedTimeCompact();
       hash = (37 * hash) + FACE_ANGLE_COMPACT_FIELD_NUMBER;
       hash = (53 * hash) + getFaceAngleCompact();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -447,7 +447,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: FJINHACIPMN
+     * Obf: MLJBHICOBMH
      * </pre>
      *
      * Protobuf type {@code EvtSyncEntityPositionInfo}
@@ -487,17 +487,17 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         if (posBuilder_ == null) {
           pos_ = null;
         } else {
           pos_ = null;
           posBuilder_ = null;
         }
-        iBEEKINNPFA_ = 0;
+        entityId_ = 0;
 
-        nLMICFIEANI_ = 0;
+        stateHash_ = 0;
+
+        normalizedTimeCompact_ = 0;
 
         faceAngleCompact_ = 0;
 
@@ -527,14 +527,14 @@ public final class EvtSyncEntityPositionInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo buildPartial() {
         emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo result = new emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo(this);
-        result.entityId_ = entityId_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
-        result.iBEEKINNPFA_ = iBEEKINNPFA_;
-        result.nLMICFIEANI_ = nLMICFIEANI_;
+        result.entityId_ = entityId_;
+        result.stateHash_ = stateHash_;
+        result.normalizedTimeCompact_ = normalizedTimeCompact_;
         result.faceAngleCompact_ = faceAngleCompact_;
         onBuilt();
         return result;
@@ -584,17 +584,17 @@ public final class EvtSyncEntityPositionInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo other) {
         if (other == emu.grasscutter.net.proto.EvtSyncEntityPositionInfoOuterClass.EvtSyncEntityPositionInfo.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        if (other.getIBEEKINNPFA() != 0) {
-          setIBEEKINNPFA(other.getIBEEKINNPFA());
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
-        if (other.getNLMICFIEANI() != 0) {
-          setNLMICFIEANI(other.getNLMICFIEANI());
+        if (other.getStateHash() != 0) {
+          setStateHash(other.getStateHash());
+        }
+        if (other.getNormalizedTimeCompact() != 0) {
+          setNormalizedTimeCompact(other.getNormalizedTimeCompact());
         }
         if (other.getFaceAngleCompact() != 0) {
           setFaceAngleCompact(other.getFaceAngleCompact());
@@ -628,49 +628,18 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 11;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 11;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return posBuilder_ != null || pos_ != null;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -681,7 +650,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -697,7 +666,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -711,7 +680,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -729,7 +698,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public Builder clearPos() {
         if (posBuilder_ == null) {
@@ -743,7 +712,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         
@@ -751,7 +720,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return getPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -762,7 +731,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         }
       }
       /**
-       * <code>.Vector pos = 5;</code>
+       * <code>.Vector pos = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -778,71 +747,102 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return posBuilder_;
       }
 
-      private int iBEEKINNPFA_ ;
+      private int entityId_ ;
       /**
-       * <code>uint32 IBEEKINNPFA = 12;</code>
-       * @return The iBEEKINNPFA.
+       * <code>uint32 entity_id = 2;</code>
+       * @return The entityId.
        */
       @java.lang.Override
-      public int getIBEEKINNPFA() {
-        return iBEEKINNPFA_;
+      public int getEntityId() {
+        return entityId_;
       }
       /**
-       * <code>uint32 IBEEKINNPFA = 12;</code>
-       * @param value The iBEEKINNPFA to set.
+       * <code>uint32 entity_id = 2;</code>
+       * @param value The entityId to set.
        * @return This builder for chaining.
        */
-      public Builder setIBEEKINNPFA(int value) {
+      public Builder setEntityId(int value) {
         
-        iBEEKINNPFA_ = value;
+        entityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IBEEKINNPFA = 12;</code>
+       * <code>uint32 entity_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIBEEKINNPFA() {
+      public Builder clearEntityId() {
         
-        iBEEKINNPFA_ = 0;
+        entityId_ = 0;
         onChanged();
         return this;
       }
 
-      private int nLMICFIEANI_ ;
+      private int stateHash_ ;
       /**
-       * <code>uint32 NLMICFIEANI = 10;</code>
-       * @return The nLMICFIEANI.
+       * <code>uint32 state_hash = 9;</code>
+       * @return The stateHash.
        */
       @java.lang.Override
-      public int getNLMICFIEANI() {
-        return nLMICFIEANI_;
+      public int getStateHash() {
+        return stateHash_;
       }
       /**
-       * <code>uint32 NLMICFIEANI = 10;</code>
-       * @param value The nLMICFIEANI to set.
+       * <code>uint32 state_hash = 9;</code>
+       * @param value The stateHash to set.
        * @return This builder for chaining.
        */
-      public Builder setNLMICFIEANI(int value) {
+      public Builder setStateHash(int value) {
         
-        nLMICFIEANI_ = value;
+        stateHash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NLMICFIEANI = 10;</code>
+       * <code>uint32 state_hash = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNLMICFIEANI() {
+      public Builder clearStateHash() {
         
-        nLMICFIEANI_ = 0;
+        stateHash_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int normalizedTimeCompact_ ;
+      /**
+       * <code>uint32 normalized_time_compact = 7;</code>
+       * @return The normalizedTimeCompact.
+       */
+      @java.lang.Override
+      public int getNormalizedTimeCompact() {
+        return normalizedTimeCompact_;
+      }
+      /**
+       * <code>uint32 normalized_time_compact = 7;</code>
+       * @param value The normalizedTimeCompact to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNormalizedTimeCompact(int value) {
+        
+        normalizedTimeCompact_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 normalized_time_compact = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNormalizedTimeCompact() {
+        
+        normalizedTimeCompact_ = 0;
         onChanged();
         return this;
       }
 
       private int faceAngleCompact_ ;
       /**
-       * <code>int32 face_angle_compact = 14;</code>
+       * <code>int32 face_angle_compact = 8;</code>
        * @return The faceAngleCompact.
        */
       @java.lang.Override
@@ -850,7 +850,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return faceAngleCompact_;
       }
       /**
-       * <code>int32 face_angle_compact = 14;</code>
+       * <code>int32 face_angle_compact = 8;</code>
        * @param value The faceAngleCompact to set.
        * @return This builder for chaining.
        */
@@ -861,7 +861,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
         return this;
       }
       /**
-       * <code>int32 face_angle_compact = 14;</code>
+       * <code>int32 face_angle_compact = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearFaceAngleCompact() {
@@ -938,11 +938,11 @@ public final class EvtSyncEntityPositionInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037EvtSyncEntityPositionInfo.proto\032\014Vecto" +
-      "r.proto\"\212\001\n\031EvtSyncEntityPositionInfo\022\021\n" +
-      "\tentity_id\030\013 \001(\r\022\024\n\003pos\030\005 \001(\0132\007.Vector\022\023" +
-      "\n\013IBEEKINNPFA\030\014 \001(\r\022\023\n\013NLMICFIEANI\030\n \001(\r" +
-      "\022\032\n\022face_angle_compact\030\016 \001(\005B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "r.proto\"\225\001\n\031EvtSyncEntityPositionInfo\022\024\n" +
+      "\003pos\030\003 \001(\0132\007.Vector\022\021\n\tentity_id\030\002 \001(\r\022\022" +
+      "\n\nstate_hash\030\t \001(\r\022\037\n\027normalized_time_co" +
+      "mpact\030\007 \001(\r\022\032\n\022face_angle_compact\030\010 \001(\005B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -954,7 +954,7 @@ public final class EvtSyncEntityPositionInfoOuterClass {
     internal_static_EvtSyncEntityPositionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtSyncEntityPositionInfo_descriptor,
-        new java.lang.String[] { "EntityId", "Pos", "IBEEKINNPFA", "NLMICFIEANI", "FaceAngleCompact", });
+        new java.lang.String[] { "Pos", "EntityId", "StateHash", "NormalizedTimeCompact", "FaceAngleCompact", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

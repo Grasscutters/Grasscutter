@@ -19,38 +19,38 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>uint32 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    int getTimestamp();
+
+    /**
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> 
         getEngagedPlayerScoreListList();
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore getEngagedPlayerScoreList(int index);
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     int getEngagedPlayerScoreListCount();
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder> 
         getEngagedPlayerScoreListOrBuilderList();
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder getEngagedPlayerScoreListOrBuilder(
         int index);
-
-    /**
-     * <code>uint32 timestamp = 5;</code>
-     * @return The timestamp.
-     */
-    int getTimestamp();
   }
   /**
    * <pre>
-   * Obf: PAJGLJGGGNO
+   * Obf: HIKDFFBMMHO
    * </pre>
    *
    * Protobuf type {@code HomeSeekFurnitureOneRecord}
@@ -99,12 +99,12 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 32: {
 
               timestamp_ = input.readUInt32();
               break;
             }
-            case 106: {
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 engagedPlayerScoreList_ = new java.util.ArrayList<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore>();
                 mutable_bitField0_ |= 0x00000001;
@@ -148,17 +148,28 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
               emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.class, emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder.class);
     }
 
-    public static final int ENGAGED_PLAYER_SCORE_LIST_FIELD_NUMBER = 13;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private int timestamp_;
+    /**
+     * <code>uint32 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public int getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int ENGAGED_PLAYER_SCORE_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> engagedPlayerScoreList_;
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> getEngagedPlayerScoreListList() {
       return engagedPlayerScoreList_;
     }
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder> 
@@ -166,37 +177,26 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       return engagedPlayerScoreList_;
     }
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     @java.lang.Override
     public int getEngagedPlayerScoreListCount() {
       return engagedPlayerScoreList_.size();
     }
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore getEngagedPlayerScoreList(int index) {
       return engagedPlayerScoreList_.get(index);
     }
     /**
-     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+     * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder getEngagedPlayerScoreListOrBuilder(
         int index) {
       return engagedPlayerScoreList_.get(index);
-    }
-
-    public static final int TIMESTAMP_FIELD_NUMBER = 5;
-    private int timestamp_;
-    /**
-     * <code>uint32 timestamp = 5;</code>
-     * @return The timestamp.
-     */
-    @java.lang.Override
-    public int getTimestamp() {
-      return timestamp_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -214,10 +214,10 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (timestamp_ != 0) {
-        output.writeUInt32(5, timestamp_);
+        output.writeUInt32(4, timestamp_);
       }
       for (int i = 0; i < engagedPlayerScoreList_.size(); i++) {
-        output.writeMessage(13, engagedPlayerScoreList_.get(i));
+        output.writeMessage(6, engagedPlayerScoreList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -230,11 +230,11 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       size = 0;
       if (timestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, timestamp_);
+          .computeUInt32Size(4, timestamp_);
       }
       for (int i = 0; i < engagedPlayerScoreList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, engagedPlayerScoreList_.get(i));
+          .computeMessageSize(6, engagedPlayerScoreList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -251,10 +251,10 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       }
       emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord other = (emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord) obj;
 
-      if (!getEngagedPlayerScoreListList()
-          .equals(other.getEngagedPlayerScoreListList())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (!getEngagedPlayerScoreListList()
+          .equals(other.getEngagedPlayerScoreListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -266,12 +266,12 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestamp();
       if (getEngagedPlayerScoreListCount() > 0) {
         hash = (37 * hash) + ENGAGED_PLAYER_SCORE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEngagedPlayerScoreListList().hashCode();
       }
-      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
-      hash = (53 * hash) + getTimestamp();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -369,7 +369,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
     }
     /**
      * <pre>
-     * Obf: PAJGLJGGGNO
+     * Obf: HIKDFFBMMHO
      * </pre>
      *
      * Protobuf type {@code HomeSeekFurnitureOneRecord}
@@ -410,14 +410,14 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        timestamp_ = 0;
+
         if (engagedPlayerScoreListBuilder_ == null) {
           engagedPlayerScoreList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           engagedPlayerScoreListBuilder_.clear();
         }
-        timestamp_ = 0;
-
         return this;
       }
 
@@ -445,6 +445,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       public emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord buildPartial() {
         emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord result = new emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord(this);
         int from_bitField0_ = bitField0_;
+        result.timestamp_ = timestamp_;
         if (engagedPlayerScoreListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             engagedPlayerScoreList_ = java.util.Collections.unmodifiableList(engagedPlayerScoreList_);
@@ -454,7 +455,6 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         } else {
           result.engagedPlayerScoreList_ = engagedPlayerScoreListBuilder_.build();
         }
-        result.timestamp_ = timestamp_;
         onBuilt();
         return result;
       }
@@ -503,6 +503,9 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord other) {
         if (other == emu.grasscutter.net.proto.HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.getDefaultInstance()) return this;
+        if (other.getTimestamp() != 0) {
+          setTimestamp(other.getTimestamp());
+        }
         if (engagedPlayerScoreListBuilder_ == null) {
           if (!other.engagedPlayerScoreList_.isEmpty()) {
             if (engagedPlayerScoreList_.isEmpty()) {
@@ -528,9 +531,6 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
               engagedPlayerScoreListBuilder_.addAllMessages(other.engagedPlayerScoreList_);
             }
           }
-        }
-        if (other.getTimestamp() != 0) {
-          setTimestamp(other.getTimestamp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -562,6 +562,37 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
       }
       private int bitField0_;
 
+      private int timestamp_ ;
+      /**
+       * <code>uint32 timestamp = 4;</code>
+       * @return The timestamp.
+       */
+      @java.lang.Override
+      public int getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>uint32 timestamp = 4;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(int value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 timestamp = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> engagedPlayerScoreList_ =
         java.util.Collections.emptyList();
       private void ensureEngagedPlayerScoreListIsMutable() {
@@ -575,7 +606,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
           emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder> engagedPlayerScoreListBuilder_;
 
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> getEngagedPlayerScoreListList() {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -585,7 +616,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public int getEngagedPlayerScoreListCount() {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -595,7 +626,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore getEngagedPlayerScoreList(int index) {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -605,7 +636,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder setEngagedPlayerScoreList(
           int index, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore value) {
@@ -622,7 +653,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder setEngagedPlayerScoreList(
           int index, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder builderForValue) {
@@ -636,7 +667,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder addEngagedPlayerScoreList(emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore value) {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -652,7 +683,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder addEngagedPlayerScoreList(
           int index, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore value) {
@@ -669,7 +700,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder addEngagedPlayerScoreList(
           emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder builderForValue) {
@@ -683,7 +714,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder addEngagedPlayerScoreList(
           int index, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder builderForValue) {
@@ -697,7 +728,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder addAllEngagedPlayerScoreList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore> values) {
@@ -712,7 +743,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder clearEngagedPlayerScoreList() {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -725,7 +756,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public Builder removeEngagedPlayerScoreList(int index) {
         if (engagedPlayerScoreListBuilder_ == null) {
@@ -738,14 +769,14 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         return this;
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder getEngagedPlayerScoreListBuilder(
           int index) {
         return getEngagedPlayerScoreListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder getEngagedPlayerScoreListOrBuilder(
           int index) {
@@ -755,7 +786,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScoreOrBuilder> 
            getEngagedPlayerScoreListOrBuilderList() {
@@ -766,14 +797,14 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
         }
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder addEngagedPlayerScoreListBuilder() {
         return getEngagedPlayerScoreListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder addEngagedPlayerScoreListBuilder(
           int index) {
@@ -781,7 +812,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
             index, emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.getDefaultInstance());
       }
       /**
-       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 13;</code>
+       * <code>repeated .HomeSeekFurniturePlayerScore engaged_player_score_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.HomeSeekFurniturePlayerScore.Builder> 
            getEngagedPlayerScoreListBuilderList() {
@@ -800,37 +831,6 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
           engagedPlayerScoreList_ = null;
         }
         return engagedPlayerScoreListBuilder_;
-      }
-
-      private int timestamp_ ;
-      /**
-       * <code>uint32 timestamp = 5;</code>
-       * @return The timestamp.
-       */
-      @java.lang.Override
-      public int getTimestamp() {
-        return timestamp_;
-      }
-      /**
-       * <code>uint32 timestamp = 5;</code>
-       * @param value The timestamp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTimestamp(int value) {
-        
-        timestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 timestamp = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTimestamp() {
-        
-        timestamp_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -901,9 +901,9 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
     java.lang.String[] descriptorData = {
       "\n HomeSeekFurnitureOneRecord.proto\032\"Home" +
       "SeekFurniturePlayerScore.proto\"q\n\032HomeSe" +
-      "ekFurnitureOneRecord\022@\n\031engaged_player_s" +
-      "core_list\030\r \003(\0132\035.HomeSeekFurniturePlaye" +
-      "rScore\022\021\n\ttimestamp\030\005 \001(\rB\033\n\031emu.grasscu" +
+      "ekFurnitureOneRecord\022\021\n\ttimestamp\030\004 \001(\r\022" +
+      "@\n\031engaged_player_score_list\030\006 \003(\0132\035.Hom" +
+      "eSeekFurniturePlayerScoreB\033\n\031emu.grasscu" +
       "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -916,7 +916,7 @@ public final class HomeSeekFurnitureOneRecordOuterClass {
     internal_static_HomeSeekFurnitureOneRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeSeekFurnitureOneRecord_descriptor,
-        new java.lang.String[] { "EngagedPlayerScoreList", "Timestamp", });
+        new java.lang.String[] { "Timestamp", "EngagedPlayerScoreList", });
     emu.grasscutter.net.proto.HomeSeekFurniturePlayerScoreOuterClass.getDescriptor();
   }
 

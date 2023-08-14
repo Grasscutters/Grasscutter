@@ -19,27 +19,27 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 15;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
-     * <code>uint32 mp_play_id = 12;</code>
+     * <code>uint32 mp_play_id = 5;</code>
      * @return The mpPlayId.
      */
     int getMpPlayId();
 
     /**
-     * <code>bool is_agree = 6;</code>
+     * <code>uint32 uid = 7;</code>
+     * @return The uid.
+     */
+    int getUid();
+
+    /**
+     * <code>bool is_agree = 3;</code>
      * @return The isAgree.
      */
     boolean getIsAgree();
   }
   /**
    * <pre>
-   * CmdId: 1849
-   * Obf: ONMMIKFGKGC
+   * CmdId: 25876
+   * Obf: KEDEKBKBCNK
    * </pre>
    *
    * Protobuf type {@code MpPlayGuestReplyNotify}
@@ -86,17 +86,17 @@ public final class MpPlayGuestReplyNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 24: {
 
               isAgree_ = input.readBool();
               break;
             }
-            case 96: {
+            case 40: {
 
               mpPlayId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
 
               uid_ = input.readUInt32();
               break;
@@ -133,21 +133,10 @@ public final class MpPlayGuestReplyNotifyOuterClass {
               emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify.class, emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 15;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 15;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
-    public static final int MP_PLAY_ID_FIELD_NUMBER = 12;
+    public static final int MP_PLAY_ID_FIELD_NUMBER = 5;
     private int mpPlayId_;
     /**
-     * <code>uint32 mp_play_id = 12;</code>
+     * <code>uint32 mp_play_id = 5;</code>
      * @return The mpPlayId.
      */
     @java.lang.Override
@@ -155,10 +144,21 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       return mpPlayId_;
     }
 
-    public static final int IS_AGREE_FIELD_NUMBER = 6;
+    public static final int UID_FIELD_NUMBER = 7;
+    private int uid_;
+    /**
+     * <code>uint32 uid = 7;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
+    }
+
+    public static final int IS_AGREE_FIELD_NUMBER = 3;
     private boolean isAgree_;
     /**
-     * <code>bool is_agree = 6;</code>
+     * <code>bool is_agree = 3;</code>
      * @return The isAgree.
      */
     @java.lang.Override
@@ -181,13 +181,13 @@ public final class MpPlayGuestReplyNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isAgree_ != false) {
-        output.writeBool(6, isAgree_);
+        output.writeBool(3, isAgree_);
       }
       if (mpPlayId_ != 0) {
-        output.writeUInt32(12, mpPlayId_);
+        output.writeUInt32(5, mpPlayId_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(15, uid_);
+        output.writeUInt32(7, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -200,15 +200,15 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       size = 0;
       if (isAgree_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isAgree_);
+          .computeBoolSize(3, isAgree_);
       }
       if (mpPlayId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, mpPlayId_);
+          .computeUInt32Size(5, mpPlayId_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, uid_);
+          .computeUInt32Size(7, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,10 +225,10 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       }
       emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify other = (emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify) obj;
 
-      if (getUid()
-          != other.getUid()) return false;
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (getIsAgree()
           != other.getIsAgree()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -242,10 +242,10 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       hash = (37 * hash) + IS_AGREE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgree());
@@ -346,8 +346,8 @@ public final class MpPlayGuestReplyNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1849
-     * Obf: ONMMIKFGKGC
+     * CmdId: 25876
+     * Obf: KEDEKBKBCNK
      * </pre>
      *
      * Protobuf type {@code MpPlayGuestReplyNotify}
@@ -387,9 +387,9 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uid_ = 0;
-
         mpPlayId_ = 0;
+
+        uid_ = 0;
 
         isAgree_ = false;
 
@@ -419,8 +419,8 @@ public final class MpPlayGuestReplyNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify buildPartial() {
         emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify result = new emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify(this);
-        result.uid_ = uid_;
         result.mpPlayId_ = mpPlayId_;
+        result.uid_ = uid_;
         result.isAgree_ = isAgree_;
         onBuilt();
         return result;
@@ -470,11 +470,11 @@ public final class MpPlayGuestReplyNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify other) {
         if (other == emu.grasscutter.net.proto.MpPlayGuestReplyNotifyOuterClass.MpPlayGuestReplyNotify.getDefaultInstance()) return this;
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
-        }
         if (other.getMpPlayId() != 0) {
           setMpPlayId(other.getMpPlayId());
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         if (other.getIsAgree() != false) {
           setIsAgree(other.getIsAgree());
@@ -508,40 +508,9 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return this;
       }
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 15;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 15;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int mpPlayId_ ;
       /**
-       * <code>uint32 mp_play_id = 12;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @return The mpPlayId.
        */
       @java.lang.Override
@@ -549,7 +518,7 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return mpPlayId_;
       }
       /**
-       * <code>uint32 mp_play_id = 12;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @param value The mpPlayId to set.
        * @return This builder for chaining.
        */
@@ -560,7 +529,7 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 mp_play_id = 12;</code>
+       * <code>uint32 mp_play_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
@@ -570,9 +539,40 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return this;
       }
 
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 7;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 7;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isAgree_ ;
       /**
-       * <code>bool is_agree = 6;</code>
+       * <code>bool is_agree = 3;</code>
        * @return The isAgree.
        */
       @java.lang.Override
@@ -580,7 +580,7 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return isAgree_;
       }
       /**
-       * <code>bool is_agree = 6;</code>
+       * <code>bool is_agree = 3;</code>
        * @param value The isAgree to set.
        * @return This builder for chaining.
        */
@@ -591,7 +591,7 @@ public final class MpPlayGuestReplyNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_agree = 6;</code>
+       * <code>bool is_agree = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsAgree() {
@@ -668,8 +668,8 @@ public final class MpPlayGuestReplyNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034MpPlayGuestReplyNotify.proto\"K\n\026MpPlay" +
-      "GuestReplyNotify\022\013\n\003uid\030\017 \001(\r\022\022\n\nmp_play" +
-      "_id\030\014 \001(\r\022\020\n\010is_agree\030\006 \001(\010B\033\n\031emu.grass" +
+      "GuestReplyNotify\022\022\n\nmp_play_id\030\005 \001(\r\022\013\n\003" +
+      "uid\030\007 \001(\r\022\020\n\010is_agree\030\003 \001(\010B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -681,7 +681,7 @@ public final class MpPlayGuestReplyNotifyOuterClass {
     internal_static_MpPlayGuestReplyNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MpPlayGuestReplyNotify_descriptor,
-        new java.lang.String[] { "Uid", "MpPlayId", "IsAgree", });
+        new java.lang.String[] { "MpPlayId", "Uid", "IsAgree", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

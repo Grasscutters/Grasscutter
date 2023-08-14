@@ -19,40 +19,40 @@ public final class FleurFairBossSettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cost_time = 8;</code>
-     * @return The costTime.
-     */
-    int getCostTime();
-
-    /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> 
         getStatInfoListList();
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo getStatInfoList(int index);
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     int getStatInfoListCount();
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder> 
         getStatInfoListOrBuilderList();
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder getStatInfoListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 energy = 7;</code>
+     * <code>uint32 energy = 8;</code>
      * @return The energy.
      */
     int getEnergy();
+
+    /**
+     * <code>uint32 reward_token_num = 10;</code>
+     * @return The rewardTokenNum.
+     */
+    int getRewardTokenNum();
 
     /**
      * <code>bool is_success = 5;</code>
@@ -61,14 +61,14 @@ public final class FleurFairBossSettleInfoOuterClass {
     boolean getIsSuccess();
 
     /**
-     * <code>uint32 reward_token_num = 6;</code>
-     * @return The rewardTokenNum.
+     * <code>uint32 cost_time = 6;</code>
+     * @return The costTime.
      */
-    int getRewardTokenNum();
+    int getCostTime();
   }
   /**
    * <pre>
-   * Obf: GHACMDAFIFI
+   * Obf: BCMAOMLGLBJ
    * </pre>
    *
    * Protobuf type {@code FleurFairBossSettleInfo}
@@ -124,26 +124,26 @@ public final class FleurFairBossSettleInfoOuterClass {
             }
             case 48: {
 
-              rewardTokenNum_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              energy_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
               costTime_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 statInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               statInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              energy_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              rewardTokenNum_ = input.readUInt32();
               break;
             }
             default: {
@@ -181,28 +181,17 @@ public final class FleurFairBossSettleInfoOuterClass {
               emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.class, emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.Builder.class);
     }
 
-    public static final int COST_TIME_FIELD_NUMBER = 8;
-    private int costTime_;
-    /**
-     * <code>uint32 cost_time = 8;</code>
-     * @return The costTime.
-     */
-    @java.lang.Override
-    public int getCostTime() {
-      return costTime_;
-    }
-
-    public static final int STAT_INFO_LIST_FIELD_NUMBER = 14;
+    public static final int STAT_INFO_LIST_FIELD_NUMBER = 7;
     private java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> statInfoList_;
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> getStatInfoListList() {
       return statInfoList_;
     }
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder> 
@@ -210,21 +199,21 @@ public final class FleurFairBossSettleInfoOuterClass {
       return statInfoList_;
     }
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     @java.lang.Override
     public int getStatInfoListCount() {
       return statInfoList_.size();
     }
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo getStatInfoList(int index) {
       return statInfoList_.get(index);
     }
     /**
-     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+     * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder getStatInfoListOrBuilder(
@@ -232,15 +221,26 @@ public final class FleurFairBossSettleInfoOuterClass {
       return statInfoList_.get(index);
     }
 
-    public static final int ENERGY_FIELD_NUMBER = 7;
+    public static final int ENERGY_FIELD_NUMBER = 8;
     private int energy_;
     /**
-     * <code>uint32 energy = 7;</code>
+     * <code>uint32 energy = 8;</code>
      * @return The energy.
      */
     @java.lang.Override
     public int getEnergy() {
       return energy_;
+    }
+
+    public static final int REWARD_TOKEN_NUM_FIELD_NUMBER = 10;
+    private int rewardTokenNum_;
+    /**
+     * <code>uint32 reward_token_num = 10;</code>
+     * @return The rewardTokenNum.
+     */
+    @java.lang.Override
+    public int getRewardTokenNum() {
+      return rewardTokenNum_;
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 5;
@@ -254,15 +254,15 @@ public final class FleurFairBossSettleInfoOuterClass {
       return isSuccess_;
     }
 
-    public static final int REWARD_TOKEN_NUM_FIELD_NUMBER = 6;
-    private int rewardTokenNum_;
+    public static final int COST_TIME_FIELD_NUMBER = 6;
+    private int costTime_;
     /**
-     * <code>uint32 reward_token_num = 6;</code>
-     * @return The rewardTokenNum.
+     * <code>uint32 cost_time = 6;</code>
+     * @return The costTime.
      */
     @java.lang.Override
-    public int getRewardTokenNum() {
-      return rewardTokenNum_;
+    public int getCostTime() {
+      return costTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -282,17 +282,17 @@ public final class FleurFairBossSettleInfoOuterClass {
       if (isSuccess_ != false) {
         output.writeBool(5, isSuccess_);
       }
-      if (rewardTokenNum_ != 0) {
-        output.writeUInt32(6, rewardTokenNum_);
-      }
-      if (energy_ != 0) {
-        output.writeUInt32(7, energy_);
-      }
       if (costTime_ != 0) {
-        output.writeUInt32(8, costTime_);
+        output.writeUInt32(6, costTime_);
       }
       for (int i = 0; i < statInfoList_.size(); i++) {
-        output.writeMessage(14, statInfoList_.get(i));
+        output.writeMessage(7, statInfoList_.get(i));
+      }
+      if (energy_ != 0) {
+        output.writeUInt32(8, energy_);
+      }
+      if (rewardTokenNum_ != 0) {
+        output.writeUInt32(10, rewardTokenNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -307,21 +307,21 @@ public final class FleurFairBossSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, isSuccess_);
       }
-      if (rewardTokenNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, rewardTokenNum_);
-      }
-      if (energy_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, energy_);
-      }
       if (costTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, costTime_);
+          .computeUInt32Size(6, costTime_);
       }
       for (int i = 0; i < statInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, statInfoList_.get(i));
+          .computeMessageSize(7, statInfoList_.get(i));
+      }
+      if (energy_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, energy_);
+      }
+      if (rewardTokenNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, rewardTokenNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -338,16 +338,16 @@ public final class FleurFairBossSettleInfoOuterClass {
       }
       emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo other = (emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) obj;
 
-      if (getCostTime()
-          != other.getCostTime()) return false;
       if (!getStatInfoListList()
           .equals(other.getStatInfoListList())) return false;
       if (getEnergy()
           != other.getEnergy()) return false;
-      if (getIsSuccess()
-          != other.getIsSuccess()) return false;
       if (getRewardTokenNum()
           != other.getRewardTokenNum()) return false;
+      if (getIsSuccess()
+          != other.getIsSuccess()) return false;
+      if (getCostTime()
+          != other.getCostTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -359,19 +359,19 @@ public final class FleurFairBossSettleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCostTime();
       if (getStatInfoListCount() > 0) {
         hash = (37 * hash) + STAT_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStatInfoListList().hashCode();
       }
       hash = (37 * hash) + ENERGY_FIELD_NUMBER;
       hash = (53 * hash) + getEnergy();
+      hash = (37 * hash) + REWARD_TOKEN_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardTokenNum();
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuccess());
-      hash = (37 * hash) + REWARD_TOKEN_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardTokenNum();
+      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCostTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -469,7 +469,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: GHACMDAFIFI
+     * Obf: BCMAOMLGLBJ
      * </pre>
      *
      * Protobuf type {@code FleurFairBossSettleInfo}
@@ -510,8 +510,6 @@ public final class FleurFairBossSettleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        costTime_ = 0;
-
         if (statInfoListBuilder_ == null) {
           statInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -520,9 +518,11 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
         energy_ = 0;
 
+        rewardTokenNum_ = 0;
+
         isSuccess_ = false;
 
-        rewardTokenNum_ = 0;
+        costTime_ = 0;
 
         return this;
       }
@@ -551,7 +551,6 @@ public final class FleurFairBossSettleInfoOuterClass {
       public emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo buildPartial() {
         emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo result = new emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo(this);
         int from_bitField0_ = bitField0_;
-        result.costTime_ = costTime_;
         if (statInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             statInfoList_ = java.util.Collections.unmodifiableList(statInfoList_);
@@ -562,8 +561,9 @@ public final class FleurFairBossSettleInfoOuterClass {
           result.statInfoList_ = statInfoListBuilder_.build();
         }
         result.energy_ = energy_;
-        result.isSuccess_ = isSuccess_;
         result.rewardTokenNum_ = rewardTokenNum_;
+        result.isSuccess_ = isSuccess_;
+        result.costTime_ = costTime_;
         onBuilt();
         return result;
       }
@@ -612,9 +612,6 @@ public final class FleurFairBossSettleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo other) {
         if (other == emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.getDefaultInstance()) return this;
-        if (other.getCostTime() != 0) {
-          setCostTime(other.getCostTime());
-        }
         if (statInfoListBuilder_ == null) {
           if (!other.statInfoList_.isEmpty()) {
             if (statInfoList_.isEmpty()) {
@@ -644,11 +641,14 @@ public final class FleurFairBossSettleInfoOuterClass {
         if (other.getEnergy() != 0) {
           setEnergy(other.getEnergy());
         }
+        if (other.getRewardTokenNum() != 0) {
+          setRewardTokenNum(other.getRewardTokenNum());
+        }
         if (other.getIsSuccess() != false) {
           setIsSuccess(other.getIsSuccess());
         }
-        if (other.getRewardTokenNum() != 0) {
-          setRewardTokenNum(other.getRewardTokenNum());
+        if (other.getCostTime() != 0) {
+          setCostTime(other.getCostTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -680,37 +680,6 @@ public final class FleurFairBossSettleInfoOuterClass {
       }
       private int bitField0_;
 
-      private int costTime_ ;
-      /**
-       * <code>uint32 cost_time = 8;</code>
-       * @return The costTime.
-       */
-      @java.lang.Override
-      public int getCostTime() {
-        return costTime_;
-      }
-      /**
-       * <code>uint32 cost_time = 8;</code>
-       * @param value The costTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCostTime(int value) {
-        
-        costTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cost_time = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCostTime() {
-        
-        costTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> statInfoList_ =
         java.util.Collections.emptyList();
       private void ensureStatInfoListIsMutable() {
@@ -724,7 +693,7 @@ public final class FleurFairBossSettleInfoOuterClass {
           emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder> statInfoListBuilder_;
 
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> getStatInfoListList() {
         if (statInfoListBuilder_ == null) {
@@ -734,7 +703,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public int getStatInfoListCount() {
         if (statInfoListBuilder_ == null) {
@@ -744,7 +713,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo getStatInfoList(int index) {
         if (statInfoListBuilder_ == null) {
@@ -754,7 +723,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder setStatInfoList(
           int index, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo value) {
@@ -771,7 +740,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder setStatInfoList(
           int index, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder builderForValue) {
@@ -785,7 +754,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder addStatInfoList(emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo value) {
         if (statInfoListBuilder_ == null) {
@@ -801,7 +770,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder addStatInfoList(
           int index, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo value) {
@@ -818,7 +787,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder addStatInfoList(
           emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder builderForValue) {
@@ -832,7 +801,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder addStatInfoList(
           int index, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder builderForValue) {
@@ -846,7 +815,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder addAllStatInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> values) {
@@ -861,7 +830,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder clearStatInfoList() {
         if (statInfoListBuilder_ == null) {
@@ -874,7 +843,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public Builder removeStatInfoList(int index) {
         if (statInfoListBuilder_ == null) {
@@ -887,14 +856,14 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder getStatInfoListBuilder(
           int index) {
         return getStatInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder getStatInfoListOrBuilder(
           int index) {
@@ -904,7 +873,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder> 
            getStatInfoListOrBuilderList() {
@@ -915,14 +884,14 @@ public final class FleurFairBossSettleInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder addStatInfoListBuilder() {
         return getStatInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder addStatInfoListBuilder(
           int index) {
@@ -930,7 +899,7 @@ public final class FleurFairBossSettleInfoOuterClass {
             index, emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 14;</code>
+       * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder> 
            getStatInfoListBuilderList() {
@@ -953,7 +922,7 @@ public final class FleurFairBossSettleInfoOuterClass {
 
       private int energy_ ;
       /**
-       * <code>uint32 energy = 7;</code>
+       * <code>uint32 energy = 8;</code>
        * @return The energy.
        */
       @java.lang.Override
@@ -961,7 +930,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         return energy_;
       }
       /**
-       * <code>uint32 energy = 7;</code>
+       * <code>uint32 energy = 8;</code>
        * @param value The energy to set.
        * @return This builder for chaining.
        */
@@ -972,12 +941,43 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 energy = 7;</code>
+       * <code>uint32 energy = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnergy() {
         
         energy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rewardTokenNum_ ;
+      /**
+       * <code>uint32 reward_token_num = 10;</code>
+       * @return The rewardTokenNum.
+       */
+      @java.lang.Override
+      public int getRewardTokenNum() {
+        return rewardTokenNum_;
+      }
+      /**
+       * <code>uint32 reward_token_num = 10;</code>
+       * @param value The rewardTokenNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardTokenNum(int value) {
+        
+        rewardTokenNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_token_num = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardTokenNum() {
+        
+        rewardTokenNum_ = 0;
         onChanged();
         return this;
       }
@@ -1013,33 +1013,33 @@ public final class FleurFairBossSettleInfoOuterClass {
         return this;
       }
 
-      private int rewardTokenNum_ ;
+      private int costTime_ ;
       /**
-       * <code>uint32 reward_token_num = 6;</code>
-       * @return The rewardTokenNum.
+       * <code>uint32 cost_time = 6;</code>
+       * @return The costTime.
        */
       @java.lang.Override
-      public int getRewardTokenNum() {
-        return rewardTokenNum_;
+      public int getCostTime() {
+        return costTime_;
       }
       /**
-       * <code>uint32 reward_token_num = 6;</code>
-       * @param value The rewardTokenNum to set.
+       * <code>uint32 cost_time = 6;</code>
+       * @param value The costTime to set.
        * @return This builder for chaining.
        */
-      public Builder setRewardTokenNum(int value) {
+      public Builder setCostTime(int value) {
         
-        rewardTokenNum_ = value;
+        costTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 reward_token_num = 6;</code>
+       * <code>uint32 cost_time = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRewardTokenNum() {
+      public Builder clearCostTime() {
         
-        rewardTokenNum_ = 0;
+        costTime_ = 0;
         onChanged();
         return this;
       }
@@ -1112,10 +1112,10 @@ public final class FleurFairBossSettleInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035FleurFairBossSettleInfo.proto\032\035FleurFa" +
       "irPlayerStatInfo.proto\"\234\001\n\027FleurFairBoss" +
-      "SettleInfo\022\021\n\tcost_time\030\010 \001(\r\0220\n\016stat_in" +
-      "fo_list\030\016 \003(\0132\030.FleurFairPlayerStatInfo\022" +
-      "\016\n\006energy\030\007 \001(\r\022\022\n\nis_success\030\005 \001(\010\022\030\n\020r" +
-      "eward_token_num\030\006 \001(\rB\033\n\031emu.grasscutter" +
+      "SettleInfo\0220\n\016stat_info_list\030\007 \003(\0132\030.Fle" +
+      "urFairPlayerStatInfo\022\016\n\006energy\030\010 \001(\r\022\030\n\020" +
+      "reward_token_num\030\n \001(\r\022\022\n\nis_success\030\005 \001" +
+      "(\010\022\021\n\tcost_time\030\006 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -1128,7 +1128,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     internal_static_FleurFairBossSettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FleurFairBossSettleInfo_descriptor,
-        new java.lang.String[] { "CostTime", "StatInfoList", "Energy", "IsSuccess", "RewardTokenNum", });
+        new java.lang.String[] { "StatInfoList", "Energy", "RewardTokenNum", "IsSuccess", "CostTime", });
     emu.grasscutter.net.proto.FleurFairPlayerStatInfoOuterClass.getDescriptor();
   }
 

@@ -19,23 +19,23 @@ public final class FleurFairStageSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_type = 8;</code>
+     * <code>uint32 stage_type = 12;</code>
      * @return The stageType.
      */
     int getStageType();
 
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      * @return Whether the gallerySettleInfo field is set.
      */
     boolean hasGallerySettleInfo();
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      * @return The gallerySettleInfo.
      */
     emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo getGallerySettleInfo();
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      */
     emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder getGallerySettleInfoOrBuilder();
 
@@ -58,8 +58,8 @@ public final class FleurFairStageSettleNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5349
-   * Obf: OBBJIFHGAEK
+   * CmdId: 23852
+   * Obf: OPDHCFCGAEK
    * </pre>
    *
    * Protobuf type {@code FleurFairStageSettleNotify}
@@ -106,9 +106,14 @@ public final class FleurFairStageSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 96: {
+
+              stageType_ = input.readUInt32();
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder subBuilder = null;
-              if (detailCase_ == 7) {
+              if (detailCase_ == 13) {
                 subBuilder = ((emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_).toBuilder();
               }
               detail_ =
@@ -117,12 +122,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
                 detail_ = subBuilder.buildPartial();
               }
-              detailCase_ = 7;
-              break;
-            }
-            case 64: {
-
-              stageType_ = input.readUInt32();
+              detailCase_ = 13;
               break;
             }
             case 114: {
@@ -176,7 +176,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
     public enum DetailCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      GALLERY_SETTLE_INFO(7),
+      GALLERY_SETTLE_INFO(13),
       BOSS_SETTLE_INFO(14),
       DETAIL_NOT_SET(0);
       private final int value;
@@ -195,7 +195,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
 
       public static DetailCase forNumber(int value) {
         switch (value) {
-          case 7: return GALLERY_SETTLE_INFO;
+          case 13: return GALLERY_SETTLE_INFO;
           case 14: return BOSS_SETTLE_INFO;
           case 0: return DETAIL_NOT_SET;
           default: return null;
@@ -212,10 +212,10 @@ public final class FleurFairStageSettleNotifyOuterClass {
           detailCase_);
     }
 
-    public static final int STAGE_TYPE_FIELD_NUMBER = 8;
+    public static final int STAGE_TYPE_FIELD_NUMBER = 12;
     private int stageType_;
     /**
-     * <code>uint32 stage_type = 8;</code>
+     * <code>uint32 stage_type = 12;</code>
      * @return The stageType.
      */
     @java.lang.Override
@@ -223,32 +223,32 @@ public final class FleurFairStageSettleNotifyOuterClass {
       return stageType_;
     }
 
-    public static final int GALLERY_SETTLE_INFO_FIELD_NUMBER = 7;
+    public static final int GALLERY_SETTLE_INFO_FIELD_NUMBER = 13;
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      * @return Whether the gallerySettleInfo field is set.
      */
     @java.lang.Override
     public boolean hasGallerySettleInfo() {
-      return detailCase_ == 7;
+      return detailCase_ == 13;
     }
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      * @return The gallerySettleInfo.
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo getGallerySettleInfo() {
-      if (detailCase_ == 7) {
+      if (detailCase_ == 13) {
          return (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_;
       }
       return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
     }
     /**
-     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+     * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder getGallerySettleInfoOrBuilder() {
-      if (detailCase_ == 7) {
+      if (detailCase_ == 13) {
          return (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_;
       }
       return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
@@ -299,11 +299,11 @@ public final class FleurFairStageSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (detailCase_ == 7) {
-        output.writeMessage(7, (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
-      }
       if (stageType_ != 0) {
-        output.writeUInt32(8, stageType_);
+        output.writeUInt32(12, stageType_);
+      }
+      if (detailCase_ == 13) {
+        output.writeMessage(13, (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
       }
       if (detailCase_ == 14) {
         output.writeMessage(14, (emu.grasscutter.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) detail_);
@@ -317,13 +317,13 @@ public final class FleurFairStageSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (detailCase_ == 7) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
-      }
       if (stageType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, stageType_);
+          .computeUInt32Size(12, stageType_);
+      }
+      if (detailCase_ == 13) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_);
       }
       if (detailCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
@@ -348,7 +348,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
           != other.getStageType()) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
-        case 7:
+        case 13:
           if (!getGallerySettleInfo()
               .equals(other.getGallerySettleInfo())) return false;
           break;
@@ -373,7 +373,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       hash = (37 * hash) + STAGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getStageType();
       switch (detailCase_) {
-        case 7:
+        case 13:
           hash = (37 * hash) + GALLERY_SETTLE_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getGallerySettleInfo().hashCode();
           break;
@@ -481,8 +481,8 @@ public final class FleurFairStageSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5349
-     * Obf: OBBJIFHGAEK
+     * CmdId: 23852
+     * Obf: OPDHCFCGAEK
      * </pre>
      *
      * Protobuf type {@code FleurFairStageSettleNotify}
@@ -553,7 +553,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
       public emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify buildPartial() {
         emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify result = new emu.grasscutter.net.proto.FleurFairStageSettleNotifyOuterClass.FleurFairStageSettleNotify(this);
         result.stageType_ = stageType_;
-        if (detailCase_ == 7) {
+        if (detailCase_ == 13) {
           if (gallerySettleInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
@@ -678,7 +678,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
 
       private int stageType_ ;
       /**
-       * <code>uint32 stage_type = 8;</code>
+       * <code>uint32 stage_type = 12;</code>
        * @return The stageType.
        */
       @java.lang.Override
@@ -686,7 +686,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         return stageType_;
       }
       /**
-       * <code>uint32 stage_type = 8;</code>
+       * <code>uint32 stage_type = 12;</code>
        * @param value The stageType to set.
        * @return This builder for chaining.
        */
@@ -697,7 +697,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_type = 8;</code>
+       * <code>uint32 stage_type = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
@@ -710,33 +710,33 @@ public final class FleurFairStageSettleNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder> gallerySettleInfoBuilder_;
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        * @return Whether the gallerySettleInfo field is set.
        */
       @java.lang.Override
       public boolean hasGallerySettleInfo() {
-        return detailCase_ == 7;
+        return detailCase_ == 13;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        * @return The gallerySettleInfo.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo getGallerySettleInfo() {
         if (gallerySettleInfoBuilder_ == null) {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             return (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_;
           }
           return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
         } else {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             return gallerySettleInfoBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public Builder setGallerySettleInfo(emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo value) {
         if (gallerySettleInfoBuilder_ == null) {
@@ -748,11 +748,11 @@ public final class FleurFairStageSettleNotifyOuterClass {
         } else {
           gallerySettleInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 7;
+        detailCase_ = 13;
         return this;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public Builder setGallerySettleInfo(
           emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder builderForValue) {
@@ -762,15 +762,15 @@ public final class FleurFairStageSettleNotifyOuterClass {
         } else {
           gallerySettleInfoBuilder_.setMessage(builderForValue.build());
         }
-        detailCase_ = 7;
+        detailCase_ = 13;
         return this;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public Builder mergeGallerySettleInfo(emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo value) {
         if (gallerySettleInfoBuilder_ == null) {
-          if (detailCase_ == 7 &&
+          if (detailCase_ == 13 &&
               detail_ != emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance()) {
             detail_ = emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.newBuilder((emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_)
                 .mergeFrom(value).buildPartial();
@@ -779,26 +779,26 @@ public final class FleurFairStageSettleNotifyOuterClass {
           }
           onChanged();
         } else {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             gallerySettleInfoBuilder_.mergeFrom(value);
           }
           gallerySettleInfoBuilder_.setMessage(value);
         }
-        detailCase_ = 7;
+        detailCase_ = 13;
         return this;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public Builder clearGallerySettleInfo() {
         if (gallerySettleInfoBuilder_ == null) {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             detailCase_ = 0;
             detail_ = null;
             onChanged();
           }
         } else {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             detailCase_ = 0;
             detail_ = null;
           }
@@ -807,33 +807,33 @@ public final class FleurFairStageSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder getGallerySettleInfoBuilder() {
         return getGallerySettleInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder getGallerySettleInfoOrBuilder() {
-        if ((detailCase_ == 7) && (gallerySettleInfoBuilder_ != null)) {
+        if ((detailCase_ == 13) && (gallerySettleInfoBuilder_ != null)) {
           return gallerySettleInfoBuilder_.getMessageOrBuilder();
         } else {
-          if (detailCase_ == 7) {
+          if (detailCase_ == 13) {
             return (emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) detail_;
           }
           return emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
         }
       }
       /**
-       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 7;</code>
+       * <code>.FleurFairGallerySettleInfo gallery_settle_info = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.Builder, emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfoOrBuilder> 
           getGallerySettleInfoFieldBuilder() {
         if (gallerySettleInfoBuilder_ == null) {
-          if (!(detailCase_ == 7)) {
+          if (!(detailCase_ == 13)) {
             detail_ = emu.grasscutter.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.getDefaultInstance();
           }
           gallerySettleInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -843,7 +843,7 @@ public final class FleurFairStageSettleNotifyOuterClass {
                   isClean());
           detail_ = null;
         }
-        detailCase_ = 7;
+        detailCase_ = 13;
         onChanged();;
         return gallerySettleInfoBuilder_;
       }
@@ -1058,8 +1058,8 @@ public final class FleurFairStageSettleNotifyOuterClass {
       "\n FleurFairStageSettleNotify.proto\032 Fleu" +
       "rFairGallerySettleInfo.proto\032\035FleurFairB" +
       "ossSettleInfo.proto\"\254\001\n\032FleurFairStageSe" +
-      "ttleNotify\022\022\n\nstage_type\030\010 \001(\r\022:\n\023galler" +
-      "y_settle_info\030\007 \001(\0132\033.FleurFairGallerySe" +
+      "ttleNotify\022\022\n\nstage_type\030\014 \001(\r\022:\n\023galler" +
+      "y_settle_info\030\r \001(\0132\033.FleurFairGallerySe" +
       "ttleInfoH\000\0224\n\020boss_settle_info\030\016 \001(\0132\030.F" +
       "leurFairBossSettleInfoH\000B\010\n\006detailB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"

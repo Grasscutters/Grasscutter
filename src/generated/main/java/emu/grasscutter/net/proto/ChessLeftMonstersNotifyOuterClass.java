@@ -19,15 +19,15 @@ public final class ChessLeftMonstersNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 left_monsters = 15;</code>
+     * <code>uint32 left_monsters = 9;</code>
      * @return The leftMonsters.
      */
     int getLeftMonsters();
   }
   /**
    * <pre>
-   * CmdId: 5339
-   * Obf: NOEEKCJLHGP
+   * CmdId: 23974
+   * Obf: ADEJFKGDNLO
    * </pre>
    *
    * Protobuf type {@code ChessLeftMonstersNotify}
@@ -74,7 +74,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 72: {
 
               leftMonsters_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ChessLeftMonstersNotifyOuterClass {
               emu.grasscutter.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify.class, emu.grasscutter.net.proto.ChessLeftMonstersNotifyOuterClass.ChessLeftMonstersNotify.Builder.class);
     }
 
-    public static final int LEFT_MONSTERS_FIELD_NUMBER = 15;
+    public static final int LEFT_MONSTERS_FIELD_NUMBER = 9;
     private int leftMonsters_;
     /**
-     * <code>uint32 left_monsters = 15;</code>
+     * <code>uint32 left_monsters = 9;</code>
      * @return The leftMonsters.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (leftMonsters_ != 0) {
-        output.writeUInt32(15, leftMonsters_);
+        output.writeUInt32(9, leftMonsters_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
       size = 0;
       if (leftMonsters_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, leftMonsters_);
+          .computeUInt32Size(9, leftMonsters_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ChessLeftMonstersNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5339
-     * Obf: NOEEKCJLHGP
+     * CmdId: 23974
+     * Obf: ADEJFKGDNLO
      * </pre>
      *
      * Protobuf type {@code ChessLeftMonstersNotify}
@@ -431,7 +431,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
 
       private int leftMonsters_ ;
       /**
-       * <code>uint32 left_monsters = 15;</code>
+       * <code>uint32 left_monsters = 9;</code>
        * @return The leftMonsters.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
         return leftMonsters_;
       }
       /**
-       * <code>uint32 left_monsters = 15;</code>
+       * <code>uint32 left_monsters = 9;</code>
        * @param value The leftMonsters to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 left_monsters = 15;</code>
+       * <code>uint32 left_monsters = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeftMonsters() {
@@ -527,7 +527,7 @@ public final class ChessLeftMonstersNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ChessLeftMonstersNotify.proto\"0\n\027Chess" +
-      "LeftMonstersNotify\022\025\n\rleft_monsters\030\017 \001(" +
+      "LeftMonstersNotify\022\025\n\rleft_monsters\030\t \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

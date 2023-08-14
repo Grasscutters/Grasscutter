@@ -19,49 +19,49 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 used_time = 3;</code>
+     * <code>uint32 used_time = 1;</code>
      * @return The usedTime.
      */
     int getUsedTime();
 
     /**
-     * <code>uint32 gallery_id = 11;</code>
-     * @return The galleryId.
-     */
-    int getGalleryId();
-
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The enum numeric value on the wire for reason.
-     */
-    int getReasonValue();
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The reason.
-     */
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason();
-
-    /**
-     * <code>uint32 param2 = 9;</code>
-     * @return The param2.
-     */
-    int getParam2();
-
-    /**
-     * <code>uint32 param3 = 10;</code>
+     * <code>uint32 param3 = 2;</code>
      * @return The param3.
      */
     int getParam3();
 
     /**
-     * <code>uint32 param1 = 2;</code>
+     * <code>uint32 param2 = 12;</code>
+     * @return The param2.
+     */
+    int getParam2();
+
+    /**
+     * <code>uint32 gallery_id = 4;</code>
+     * @return The galleryId.
+     */
+    int getGalleryId();
+
+    /**
+     * <code>uint32 param1 = 13;</code>
      * @return The param1.
      */
     int getParam1();
+
+    /**
+     * <code>.KDHIAEFLGFM reason = 14;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+    /**
+     * <code>.KDHIAEFLGFM reason = 14;</code>
+     * @return The reason.
+     */
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason();
   }
   /**
    * <pre>
-   * Obf: JFOAKAHBIHD
+   * Obf: DJOLCFBNNAP
    * </pre>
    *
    * Protobuf type {@code SummerTimeV2BoatGallerySettleInfo}
@@ -109,35 +109,35 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              param1_ = input.readUInt32();
-              break;
-            }
-            case 24: {
+            case 8: {
 
               usedTime_ = input.readUInt32();
               break;
             }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 72: {
-
-              param2_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 16: {
 
               param3_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 32: {
 
               galleryId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              param2_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              param1_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+
+              reason_ = rawValue;
               break;
             }
             default: {
@@ -172,10 +172,10 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
               emu.grasscutter.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo.class, emu.grasscutter.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo.Builder.class);
     }
 
-    public static final int USED_TIME_FIELD_NUMBER = 3;
+    public static final int USED_TIME_FIELD_NUMBER = 1;
     private int usedTime_;
     /**
-     * <code>uint32 used_time = 3;</code>
+     * <code>uint32 used_time = 1;</code>
      * @return The usedTime.
      */
     @java.lang.Override
@@ -183,51 +183,10 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       return usedTime_;
     }
 
-    public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_;
-    /**
-     * <code>uint32 gallery_id = 11;</code>
-     * @return The galleryId.
-     */
-    @java.lang.Override
-    public int getGalleryId() {
-      return galleryId_;
-    }
-
-    public static final int REASON_FIELD_NUMBER = 5;
-    private int reason_;
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The enum numeric value on the wire for reason.
-     */
-    @java.lang.Override public int getReasonValue() {
-      return reason_;
-    }
-    /**
-     * <code>.HDDANIDHCMI reason = 5;</code>
-     * @return The reason.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-      return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
-    }
-
-    public static final int PARAM2_FIELD_NUMBER = 9;
-    private int param2_;
-    /**
-     * <code>uint32 param2 = 9;</code>
-     * @return The param2.
-     */
-    @java.lang.Override
-    public int getParam2() {
-      return param2_;
-    }
-
-    public static final int PARAM3_FIELD_NUMBER = 10;
+    public static final int PARAM3_FIELD_NUMBER = 2;
     private int param3_;
     /**
-     * <code>uint32 param3 = 10;</code>
+     * <code>uint32 param3 = 2;</code>
      * @return The param3.
      */
     @java.lang.Override
@@ -235,15 +194,56 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       return param3_;
     }
 
-    public static final int PARAM1_FIELD_NUMBER = 2;
+    public static final int PARAM2_FIELD_NUMBER = 12;
+    private int param2_;
+    /**
+     * <code>uint32 param2 = 12;</code>
+     * @return The param2.
+     */
+    @java.lang.Override
+    public int getParam2() {
+      return param2_;
+    }
+
+    public static final int GALLERY_ID_FIELD_NUMBER = 4;
+    private int galleryId_;
+    /**
+     * <code>uint32 gallery_id = 4;</code>
+     * @return The galleryId.
+     */
+    @java.lang.Override
+    public int getGalleryId() {
+      return galleryId_;
+    }
+
+    public static final int PARAM1_FIELD_NUMBER = 13;
     private int param1_;
     /**
-     * <code>uint32 param1 = 2;</code>
+     * <code>uint32 param1 = 13;</code>
      * @return The param1.
      */
     @java.lang.Override
     public int getParam1() {
       return param1_;
+    }
+
+    public static final int REASON_FIELD_NUMBER = 14;
+    private int reason_;
+    /**
+     * <code>.KDHIAEFLGFM reason = 14;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override public int getReasonValue() {
+      return reason_;
+    }
+    /**
+     * <code>.KDHIAEFLGFM reason = 14;</code>
+     * @return The reason.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+      return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -260,23 +260,23 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (param1_ != 0) {
-        output.writeUInt32(2, param1_);
-      }
       if (usedTime_ != 0) {
-        output.writeUInt32(3, usedTime_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        output.writeEnum(5, reason_);
-      }
-      if (param2_ != 0) {
-        output.writeUInt32(9, param2_);
+        output.writeUInt32(1, usedTime_);
       }
       if (param3_ != 0) {
-        output.writeUInt32(10, param3_);
+        output.writeUInt32(2, param3_);
       }
       if (galleryId_ != 0) {
-        output.writeUInt32(11, galleryId_);
+        output.writeUInt32(4, galleryId_);
+      }
+      if (param2_ != 0) {
+        output.writeUInt32(12, param2_);
+      }
+      if (param1_ != 0) {
+        output.writeUInt32(13, param1_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        output.writeEnum(14, reason_);
       }
       unknownFields.writeTo(output);
     }
@@ -287,29 +287,29 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (param1_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, param1_);
-      }
       if (usedTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, usedTime_);
-      }
-      if (reason_ != emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.HDDANIDHCMI_GalleryStopNone.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, reason_);
-      }
-      if (param2_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, param2_);
+          .computeUInt32Size(1, usedTime_);
       }
       if (param3_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, param3_);
+          .computeUInt32Size(2, param3_);
       }
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, galleryId_);
+          .computeUInt32Size(4, galleryId_);
+      }
+      if (param2_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, param2_);
+      }
+      if (param1_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, param1_);
+      }
+      if (reason_ != emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.KDHIAEFLGFM_GalleryStopNone.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(14, reason_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -328,15 +328,15 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
 
       if (getUsedTime()
           != other.getUsedTime()) return false;
-      if (getGalleryId()
-          != other.getGalleryId()) return false;
-      if (reason_ != other.reason_) return false;
-      if (getParam2()
-          != other.getParam2()) return false;
       if (getParam3()
           != other.getParam3()) return false;
+      if (getParam2()
+          != other.getParam2()) return false;
+      if (getGalleryId()
+          != other.getGalleryId()) return false;
       if (getParam1()
           != other.getParam1()) return false;
+      if (reason_ != other.reason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -350,16 +350,16 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USED_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUsedTime();
-      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGalleryId();
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + reason_;
-      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
-      hash = (53 * hash) + getParam2();
       hash = (37 * hash) + PARAM3_FIELD_NUMBER;
       hash = (53 * hash) + getParam3();
+      hash = (37 * hash) + PARAM2_FIELD_NUMBER;
+      hash = (53 * hash) + getParam2();
+      hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + PARAM1_FIELD_NUMBER;
       hash = (53 * hash) + getParam1();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -457,7 +457,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: JFOAKAHBIHD
+     * Obf: DJOLCFBNNAP
      * </pre>
      *
      * Protobuf type {@code SummerTimeV2BoatGallerySettleInfo}
@@ -499,15 +499,15 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         super.clear();
         usedTime_ = 0;
 
-        galleryId_ = 0;
-
-        reason_ = 0;
+        param3_ = 0;
 
         param2_ = 0;
 
-        param3_ = 0;
+        galleryId_ = 0;
 
         param1_ = 0;
+
+        reason_ = 0;
 
         return this;
       }
@@ -536,11 +536,11 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public emu.grasscutter.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo buildPartial() {
         emu.grasscutter.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo result = new emu.grasscutter.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo(this);
         result.usedTime_ = usedTime_;
-        result.galleryId_ = galleryId_;
-        result.reason_ = reason_;
-        result.param2_ = param2_;
         result.param3_ = param3_;
+        result.param2_ = param2_;
+        result.galleryId_ = galleryId_;
         result.param1_ = param1_;
+        result.reason_ = reason_;
         onBuilt();
         return result;
       }
@@ -592,20 +592,20 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         if (other.getUsedTime() != 0) {
           setUsedTime(other.getUsedTime());
         }
-        if (other.getGalleryId() != 0) {
-          setGalleryId(other.getGalleryId());
-        }
-        if (other.reason_ != 0) {
-          setReasonValue(other.getReasonValue());
+        if (other.getParam3() != 0) {
+          setParam3(other.getParam3());
         }
         if (other.getParam2() != 0) {
           setParam2(other.getParam2());
         }
-        if (other.getParam3() != 0) {
-          setParam3(other.getParam3());
+        if (other.getGalleryId() != 0) {
+          setGalleryId(other.getGalleryId());
         }
         if (other.getParam1() != 0) {
           setParam1(other.getParam1());
+        }
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -638,7 +638,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
 
       private int usedTime_ ;
       /**
-       * <code>uint32 used_time = 3;</code>
+       * <code>uint32 used_time = 1;</code>
        * @return The usedTime.
        */
       @java.lang.Override
@@ -646,7 +646,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return usedTime_;
       }
       /**
-       * <code>uint32 used_time = 3;</code>
+       * <code>uint32 used_time = 1;</code>
        * @param value The usedTime to set.
        * @return This builder for chaining.
        */
@@ -657,7 +657,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 used_time = 3;</code>
+       * <code>uint32 used_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUsedTime() {
@@ -667,125 +667,9 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return this;
       }
 
-      private int galleryId_ ;
-      /**
-       * <code>uint32 gallery_id = 11;</code>
-       * @return The galleryId.
-       */
-      @java.lang.Override
-      public int getGalleryId() {
-        return galleryId_;
-      }
-      /**
-       * <code>uint32 gallery_id = 11;</code>
-       * @param value The galleryId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGalleryId(int value) {
-        
-        galleryId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gallery_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGalleryId() {
-        
-        galleryId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int reason_ = 0;
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @return The enum numeric value on the wire for reason.
-       */
-      @java.lang.Override public int getReasonValue() {
-        return reason_;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @param value The enum numeric value on the wire for reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReasonValue(int value) {
-        
-        reason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @return The reason.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI getReason() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI result = emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.valueOf(reason_);
-        return result == null ? emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @param value The reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReason(emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.HDDANIDHCMI value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        reason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.HDDANIDHCMI reason = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReason() {
-        
-        reason_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int param2_ ;
-      /**
-       * <code>uint32 param2 = 9;</code>
-       * @return The param2.
-       */
-      @java.lang.Override
-      public int getParam2() {
-        return param2_;
-      }
-      /**
-       * <code>uint32 param2 = 9;</code>
-       * @param value The param2 to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam2(int value) {
-        
-        param2_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param2 = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam2() {
-        
-        param2_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int param3_ ;
       /**
-       * <code>uint32 param3 = 10;</code>
+       * <code>uint32 param3 = 2;</code>
        * @return The param3.
        */
       @java.lang.Override
@@ -793,7 +677,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return param3_;
       }
       /**
-       * <code>uint32 param3 = 10;</code>
+       * <code>uint32 param3 = 2;</code>
        * @param value The param3 to set.
        * @return This builder for chaining.
        */
@@ -804,7 +688,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param3 = 10;</code>
+       * <code>uint32 param3 = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
@@ -814,9 +698,71 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return this;
       }
 
+      private int param2_ ;
+      /**
+       * <code>uint32 param2 = 12;</code>
+       * @return The param2.
+       */
+      @java.lang.Override
+      public int getParam2() {
+        return param2_;
+      }
+      /**
+       * <code>uint32 param2 = 12;</code>
+       * @param value The param2 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam2(int value) {
+        
+        param2_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param2 = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam2() {
+        
+        param2_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int galleryId_ ;
+      /**
+       * <code>uint32 gallery_id = 4;</code>
+       * @return The galleryId.
+       */
+      @java.lang.Override
+      public int getGalleryId() {
+        return galleryId_;
+      }
+      /**
+       * <code>uint32 gallery_id = 4;</code>
+       * @param value The galleryId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGalleryId(int value) {
+        
+        galleryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gallery_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGalleryId() {
+        
+        galleryId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int param1_ ;
       /**
-       * <code>uint32 param1 = 2;</code>
+       * <code>uint32 param1 = 13;</code>
        * @return The param1.
        */
       @java.lang.Override
@@ -824,7 +770,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return param1_;
       }
       /**
-       * <code>uint32 param1 = 2;</code>
+       * <code>uint32 param1 = 13;</code>
        * @param value The param1 to set.
        * @return This builder for chaining.
        */
@@ -835,12 +781,66 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 param1 = 2;</code>
+       * <code>uint32 param1 = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
         
         param1_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reason_ = 0;
+      /**
+       * <code>.KDHIAEFLGFM reason = 14;</code>
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override public int getReasonValue() {
+        return reason_;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 14;</code>
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        
+        reason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 14;</code>
+       * @return The reason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM getReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM result = emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.valueOf(reason_);
+        return result == null ? emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 14;</code>
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.KDHIAEFLGFM value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.KDHIAEFLGFM reason = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        
+        reason_ = 0;
         onChanged();
         return this;
       }
@@ -912,25 +912,25 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'SummerTimeV2BoatGallerySettleInfo.prot" +
-      "o\032\021HDDANIDHCMI.proto\"\230\001\n!SummerTimeV2Boa" +
-      "tGallerySettleInfo\022\021\n\tused_time\030\003 \001(\r\022\022\n" +
-      "\ngallery_id\030\013 \001(\r\022\034\n\006reason\030\005 \001(\0162\014.HDDA" +
-      "NIDHCMI\022\016\n\006param2\030\t \001(\r\022\016\n\006param3\030\n \001(\r\022" +
-      "\016\n\006param1\030\002 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "o\032\021KDHIAEFLGFM.proto\"\230\001\n!SummerTimeV2Boa" +
+      "tGallerySettleInfo\022\021\n\tused_time\030\001 \001(\r\022\016\n" +
+      "\006param3\030\002 \001(\r\022\016\n\006param2\030\014 \001(\r\022\022\n\ngallery" +
+      "_id\030\004 \001(\r\022\016\n\006param1\030\r \001(\r\022\034\n\006reason\030\016 \001(" +
+      "\0162\014.KDHIAEFLGFMB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor(),
         });
     internal_static_SummerTimeV2BoatGallerySettleInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_SummerTimeV2BoatGallerySettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SummerTimeV2BoatGallerySettleInfo_descriptor,
-        new java.lang.String[] { "UsedTime", "GalleryId", "Reason", "Param2", "Param3", "Param1", });
-    emu.grasscutter.net.proto.HDDANIDHCMIOuterClass.getDescriptor();
+        new java.lang.String[] { "UsedTime", "Param3", "Param2", "GalleryId", "Param1", "Reason", });
+    emu.grasscutter.net.proto.KDHIAEFLGFMOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

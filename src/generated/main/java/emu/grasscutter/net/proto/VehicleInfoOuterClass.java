@@ -56,7 +56,7 @@ public final class VehicleInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: AIJLDNNMBEG
+   * Obf: ICCEPDBOFHC
    * </pre>
    *
    * Protobuf type {@code VehicleInfo}
@@ -404,7 +404,7 @@ public final class VehicleInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: AIJLDNNMBEG
+     * Obf: ICCEPDBOFHC
      * </pre>
      *
      * Protobuf type {@code VehicleInfo}

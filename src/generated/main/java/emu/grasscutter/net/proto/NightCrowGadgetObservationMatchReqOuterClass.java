@@ -19,21 +19,21 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_gadget_state = 13;</code>
-     * @return The targetGadgetState.
-     */
-    int getTargetGadgetState();
-
-    /**
-     * <code>uint32 gadget_entity_id = 14;</code>
+     * <code>uint32 gadget_entity_id = 11;</code>
      * @return The gadgetEntityId.
      */
     int getGadgetEntityId();
+
+    /**
+     * <code>uint32 target_gadget_state = 1;</code>
+     * @return The targetGadgetState.
+     */
+    int getTargetGadgetState();
   }
   /**
    * <pre>
-   * CmdId: 846
-   * Obf: HPGAIHKJJJI
+   * CmdId: 8693
+   * Obf: HDEBHIGAOLL
    * </pre>
    *
    * Protobuf type {@code NightCrowGadgetObservationMatchReq}
@@ -80,12 +80,12 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 8: {
 
               targetGadgetState_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 88: {
 
               gadgetEntityId_ = input.readUInt32();
               break;
@@ -122,26 +122,26 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
               emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq.class, emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq.Builder.class);
     }
 
-    public static final int TARGET_GADGET_STATE_FIELD_NUMBER = 13;
-    private int targetGadgetState_;
-    /**
-     * <code>uint32 target_gadget_state = 13;</code>
-     * @return The targetGadgetState.
-     */
-    @java.lang.Override
-    public int getTargetGadgetState() {
-      return targetGadgetState_;
-    }
-
-    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 14;
+    public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 11;
     private int gadgetEntityId_;
     /**
-     * <code>uint32 gadget_entity_id = 14;</code>
+     * <code>uint32 gadget_entity_id = 11;</code>
      * @return The gadgetEntityId.
      */
     @java.lang.Override
     public int getGadgetEntityId() {
       return gadgetEntityId_;
+    }
+
+    public static final int TARGET_GADGET_STATE_FIELD_NUMBER = 1;
+    private int targetGadgetState_;
+    /**
+     * <code>uint32 target_gadget_state = 1;</code>
+     * @return The targetGadgetState.
+     */
+    @java.lang.Override
+    public int getTargetGadgetState() {
+      return targetGadgetState_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (targetGadgetState_ != 0) {
-        output.writeUInt32(13, targetGadgetState_);
+        output.writeUInt32(1, targetGadgetState_);
       }
       if (gadgetEntityId_ != 0) {
-        output.writeUInt32(14, gadgetEntityId_);
+        output.writeUInt32(11, gadgetEntityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       size = 0;
       if (targetGadgetState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, targetGadgetState_);
+          .computeUInt32Size(1, targetGadgetState_);
       }
       if (gadgetEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, gadgetEntityId_);
+          .computeUInt32Size(11, gadgetEntityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       }
       emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq other = (emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq) obj;
 
-      if (getTargetGadgetState()
-          != other.getTargetGadgetState()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
+      if (getTargetGadgetState()
+          != other.getTargetGadgetState()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TARGET_GADGET_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getTargetGadgetState();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
+      hash = (37 * hash) + TARGET_GADGET_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetGadgetState();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 846
-     * Obf: HPGAIHKJJJI
+     * CmdId: 8693
+     * Obf: HDEBHIGAOLL
      * </pre>
      *
      * Protobuf type {@code NightCrowGadgetObservationMatchReq}
@@ -353,9 +353,9 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        targetGadgetState_ = 0;
-
         gadgetEntityId_ = 0;
+
+        targetGadgetState_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq buildPartial() {
         emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq result = new emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq(this);
-        result.targetGadgetState_ = targetGadgetState_;
         result.gadgetEntityId_ = gadgetEntityId_;
+        result.targetGadgetState_ = targetGadgetState_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq other) {
         if (other == emu.grasscutter.net.proto.NightCrowGadgetObservationMatchReqOuterClass.NightCrowGadgetObservationMatchReq.getDefaultInstance()) return this;
-        if (other.getTargetGadgetState() != 0) {
-          setTargetGadgetState(other.getTargetGadgetState());
-        }
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
+        }
+        if (other.getTargetGadgetState() != 0) {
+          setTargetGadgetState(other.getTargetGadgetState());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
         return this;
       }
 
-      private int targetGadgetState_ ;
-      /**
-       * <code>uint32 target_gadget_state = 13;</code>
-       * @return The targetGadgetState.
-       */
-      @java.lang.Override
-      public int getTargetGadgetState() {
-        return targetGadgetState_;
-      }
-      /**
-       * <code>uint32 target_gadget_state = 13;</code>
-       * @param value The targetGadgetState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetGadgetState(int value) {
-        
-        targetGadgetState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 target_gadget_state = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetGadgetState() {
-        
-        targetGadgetState_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int gadgetEntityId_ ;
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @return The gadgetEntityId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
         return gadgetEntityId_;
       }
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @param value The gadgetEntityId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gadget_entity_id = 14;</code>
+       * <code>uint32 gadget_entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
         
         gadgetEntityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int targetGadgetState_ ;
+      /**
+       * <code>uint32 target_gadget_state = 1;</code>
+       * @return The targetGadgetState.
+       */
+      @java.lang.Override
+      public int getTargetGadgetState() {
+        return targetGadgetState_;
+      }
+      /**
+       * <code>uint32 target_gadget_state = 1;</code>
+       * @param value The targetGadgetState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetGadgetState(int value) {
+        
+        targetGadgetState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 target_gadget_state = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetGadgetState() {
+        
+        targetGadgetState_ = 0;
         onChanged();
         return this;
       }
@@ -598,8 +598,8 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n(NightCrowGadgetObservationMatchReq.pro" +
       "to\"[\n\"NightCrowGadgetObservationMatchReq" +
-      "\022\033\n\023target_gadget_state\030\r \001(\r\022\030\n\020gadget_" +
-      "entity_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "\022\030\n\020gadget_entity_id\030\013 \001(\r\022\033\n\023target_gad" +
+      "get_state\030\001 \001(\rB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -611,7 +611,7 @@ public final class NightCrowGadgetObservationMatchReqOuterClass {
     internal_static_NightCrowGadgetObservationMatchReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NightCrowGadgetObservationMatchReq_descriptor,
-        new java.lang.String[] { "TargetGadgetState", "GadgetEntityId", });
+        new java.lang.String[] { "GadgetEntityId", "TargetGadgetState", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

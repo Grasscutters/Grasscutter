@@ -19,21 +19,21 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 gallery_id = 2;</code>
+     * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
      */
     int getGalleryId();
+
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8166
-   * Obf: KLELJLCDPHF
+   * CmdId: 22752
+   * Obf: CNEFGJEHJCP
    * </pre>
    *
    * Protobuf type {@code SummerTimeV2RestartBoatGalleryRsp}
@@ -80,12 +80,12 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 64: {
 
               galleryId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 104: {
 
               retcode_ = input.readInt32();
               break;
@@ -122,26 +122,26 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
               emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp.class, emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 6;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int GALLERY_ID_FIELD_NUMBER = 2;
+    public static final int GALLERY_ID_FIELD_NUMBER = 8;
     private int galleryId_;
     /**
-     * <code>uint32 gallery_id = 2;</code>
+     * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
      */
     @java.lang.Override
     public int getGalleryId() {
       return galleryId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 13;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 13;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -159,10 +159,10 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (galleryId_ != 0) {
-        output.writeUInt32(2, galleryId_);
+        output.writeUInt32(8, galleryId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(13, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       size = 0;
       if (galleryId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, galleryId_);
+          .computeUInt32Size(8, galleryId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(13, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -196,10 +196,10 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       }
       emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp other = (emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -211,10 +211,10 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,8 +312,8 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8166
-     * Obf: KLELJLCDPHF
+     * CmdId: 22752
+     * Obf: CNEFGJEHJCP
      * </pre>
      *
      * Protobuf type {@code SummerTimeV2RestartBoatGalleryRsp}
@@ -353,9 +353,9 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         galleryId_ = 0;
+
+        retcode_ = 0;
 
         return this;
       }
@@ -383,8 +383,8 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp buildPartial() {
         emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp result = new emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp(this);
-        result.retcode_ = retcode_;
         result.galleryId_ = galleryId_;
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -433,11 +433,11 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp other) {
         if (other == emu.grasscutter.net.proto.SummerTimeV2RestartBoatGalleryRspOuterClass.SummerTimeV2RestartBoatGalleryRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -468,40 +468,9 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
         return this;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int galleryId_ ;
       /**
-       * <code>uint32 gallery_id = 2;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @return The galleryId.
        */
       @java.lang.Override
@@ -509,7 +478,7 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
         return galleryId_;
       }
       /**
-       * <code>uint32 gallery_id = 2;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @param value The galleryId to set.
        * @return This builder for chaining.
        */
@@ -520,12 +489,43 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 gallery_id = 2;</code>
+       * <code>uint32 gallery_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
         
         galleryId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
         onChanged();
         return this;
       }
@@ -597,8 +597,8 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'SummerTimeV2RestartBoatGalleryRsp.prot" +
-      "o\"H\n!SummerTimeV2RestartBoatGalleryRsp\022\017" +
-      "\n\007retcode\030\006 \001(\005\022\022\n\ngallery_id\030\002 \001(\rB\033\n\031e" +
+      "o\"H\n!SummerTimeV2RestartBoatGalleryRsp\022\022" +
+      "\n\ngallery_id\030\010 \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -610,7 +610,7 @@ public final class SummerTimeV2RestartBoatGalleryRspOuterClass {
     internal_static_SummerTimeV2RestartBoatGalleryRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SummerTimeV2RestartBoatGalleryRsp_descriptor,
-        new java.lang.String[] { "Retcode", "GalleryId", });
+        new java.lang.String[] { "GalleryId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

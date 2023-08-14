@@ -26,8 +26,8 @@ public final class CoinCollectInterruptPlayReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24014
-   * Obf: HHLKLFILMDB
+   * CmdId: 9799
+   * Obf: FHDOGKHBAPC
    * </pre>
    *
    * Protobuf type {@code CoinCollectInterruptPlayReq}
@@ -279,8 +279,8 @@ public final class CoinCollectInterruptPlayReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24014
-     * Obf: HHLKLFILMDB
+     * CmdId: 9799
+     * Obf: FHDOGKHBAPC
      * </pre>
      *
      * Protobuf type {@code CoinCollectInterruptPlayReq}

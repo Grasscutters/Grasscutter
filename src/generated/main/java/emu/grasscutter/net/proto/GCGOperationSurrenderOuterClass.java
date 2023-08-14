@@ -20,7 +20,7 @@ public final class GCGOperationSurrenderOuterClass {
   }
   /**
    * <pre>
-   * Obf: MLDMPOEHPLN
+   * Obf: BGEEMCOJKPG
    * </pre>
    *
    * Protobuf type {@code GCGOperationSurrender}
@@ -245,7 +245,7 @@ public final class GCGOperationSurrenderOuterClass {
     }
     /**
      * <pre>
-     * Obf: MLDMPOEHPLN
+     * Obf: BGEEMCOJKPG
      * </pre>
      *
      * Protobuf type {@code GCGOperationSurrender}

@@ -19,30 +19,30 @@ public final class VintageDecorateBoothReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>uint32 entity_id = 4;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      * @return Whether the combinationInfo field is set.
      */
     boolean hasCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      * @return The combinationInfo.
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo();
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      */
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder();
-
-    /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
   }
   /**
    * <pre>
-   * CmdId: 24321
-   * Obf: DHGHMOFNLHJ
+   * CmdId: 4197
+   * Obf: GOBHLJKBFNJ
    * </pre>
    *
    * Protobuf type {@code VintageDecorateBoothReq}
@@ -89,7 +89,7 @@ public final class VintageDecorateBoothReqOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 18: {
               emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder = null;
               if (combinationInfo_ != null) {
                 subBuilder = combinationInfo_.toBuilder();
@@ -102,7 +102,7 @@ public final class VintageDecorateBoothReqOuterClass {
 
               break;
             }
-            case 80: {
+            case 32: {
 
               entityId_ = input.readUInt32();
               break;
@@ -139,10 +139,21 @@ public final class VintageDecorateBoothReqOuterClass {
               emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq.class, emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq.Builder.class);
     }
 
-    public static final int COMBINATION_INFO_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 4;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 4;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int COMBINATION_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      * @return Whether the combinationInfo field is set.
      */
     @java.lang.Override
@@ -150,7 +161,7 @@ public final class VintageDecorateBoothReqOuterClass {
       return combinationInfo_ != null;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      * @return The combinationInfo.
      */
     @java.lang.Override
@@ -158,22 +169,11 @@ public final class VintageDecorateBoothReqOuterClass {
       return combinationInfo_ == null ? emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.getDefaultInstance() : combinationInfo_;
     }
     /**
-     * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+     * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
       return getCombinationInfo();
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 10;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +191,10 @@ public final class VintageDecorateBoothReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (combinationInfo_ != null) {
-        output.writeMessage(3, getCombinationInfo());
+        output.writeMessage(2, getCombinationInfo());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
+        output.writeUInt32(4, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -207,11 +207,11 @@ public final class VintageDecorateBoothReqOuterClass {
       size = 0;
       if (combinationInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getCombinationInfo());
+          .computeMessageSize(2, getCombinationInfo());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
+          .computeUInt32Size(4, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -228,13 +228,13 @@ public final class VintageDecorateBoothReqOuterClass {
       }
       emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq other = (emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq) obj;
 
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (hasCombinationInfo() != other.hasCombinationInfo()) return false;
       if (hasCombinationInfo()) {
         if (!getCombinationInfo()
             .equals(other.getCombinationInfo())) return false;
       }
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -246,12 +246,12 @@ public final class VintageDecorateBoothReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       if (hasCombinationInfo()) {
         hash = (37 * hash) + COMBINATION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCombinationInfo().hashCode();
       }
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -349,8 +349,8 @@ public final class VintageDecorateBoothReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24321
-     * Obf: DHGHMOFNLHJ
+     * CmdId: 4197
+     * Obf: GOBHLJKBFNJ
      * </pre>
      *
      * Protobuf type {@code VintageDecorateBoothReq}
@@ -390,14 +390,14 @@ public final class VintageDecorateBoothReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        entityId_ = 0;
+
         if (combinationInfoBuilder_ == null) {
           combinationInfo_ = null;
         } else {
           combinationInfo_ = null;
           combinationInfoBuilder_ = null;
         }
-        entityId_ = 0;
-
         return this;
       }
 
@@ -424,12 +424,12 @@ public final class VintageDecorateBoothReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq buildPartial() {
         emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq result = new emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq(this);
+        result.entityId_ = entityId_;
         if (combinationInfoBuilder_ == null) {
           result.combinationInfo_ = combinationInfo_;
         } else {
           result.combinationInfo_ = combinationInfoBuilder_.build();
         }
-        result.entityId_ = entityId_;
         onBuilt();
         return result;
       }
@@ -478,11 +478,11 @@ public final class VintageDecorateBoothReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq other) {
         if (other == emu.grasscutter.net.proto.VintageDecorateBoothReqOuterClass.VintageDecorateBoothReq.getDefaultInstance()) return this;
-        if (other.hasCombinationInfo()) {
-          mergeCombinationInfo(other.getCombinationInfo());
-        }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
+        }
+        if (other.hasCombinationInfo()) {
+          mergeCombinationInfo(other.getCombinationInfo());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -513,18 +513,49 @@ public final class VintageDecorateBoothReqOuterClass {
         return this;
       }
 
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 4;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 4;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo combinationInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> combinationInfoBuilder_;
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        * @return Whether the combinationInfo field is set.
        */
       public boolean hasCombinationInfo() {
         return combinationInfoBuilder_ != null || combinationInfo_ != null;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        * @return The combinationInfo.
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo getCombinationInfo() {
@@ -535,7 +566,7 @@ public final class VintageDecorateBoothReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public Builder setCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -551,7 +582,7 @@ public final class VintageDecorateBoothReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public Builder setCombinationInfo(
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder builderForValue) {
@@ -565,7 +596,7 @@ public final class VintageDecorateBoothReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public Builder mergeCombinationInfo(emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo value) {
         if (combinationInfoBuilder_ == null) {
@@ -583,7 +614,7 @@ public final class VintageDecorateBoothReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public Builder clearCombinationInfo() {
         if (combinationInfoBuilder_ == null) {
@@ -597,7 +628,7 @@ public final class VintageDecorateBoothReqOuterClass {
         return this;
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder getCombinationInfoBuilder() {
         
@@ -605,7 +636,7 @@ public final class VintageDecorateBoothReqOuterClass {
         return getCombinationInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       public emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder getCombinationInfoOrBuilder() {
         if (combinationInfoBuilder_ != null) {
@@ -616,7 +647,7 @@ public final class VintageDecorateBoothReqOuterClass {
         }
       }
       /**
-       * <code>.CustomGadgetTreeInfo combination_info = 3;</code>
+       * <code>.CustomGadgetTreeInfo combination_info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder, emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfoOrBuilder> 
@@ -630,37 +661,6 @@ public final class VintageDecorateBoothReqOuterClass {
           combinationInfo_ = null;
         }
         return combinationInfoBuilder_;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -731,8 +731,8 @@ public final class VintageDecorateBoothReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035VintageDecorateBoothReq.proto\032\032CustomG" +
       "adgetTreeInfo.proto\"]\n\027VintageDecorateBo" +
-      "othReq\022/\n\020combination_info\030\003 \001(\0132\025.Custo" +
-      "mGadgetTreeInfo\022\021\n\tentity_id\030\n \001(\rB\033\n\031em" +
+      "othReq\022\021\n\tentity_id\030\004 \001(\r\022/\n\020combination" +
+      "_info\030\002 \001(\0132\025.CustomGadgetTreeInfoB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -745,7 +745,7 @@ public final class VintageDecorateBoothReqOuterClass {
     internal_static_VintageDecorateBoothReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VintageDecorateBoothReq_descriptor,
-        new java.lang.String[] { "CombinationInfo", "EntityId", });
+        new java.lang.String[] { "EntityId", "CombinationInfo", });
     emu.grasscutter.net.proto.CustomGadgetTreeInfoOuterClass.getDescriptor();
   }
 

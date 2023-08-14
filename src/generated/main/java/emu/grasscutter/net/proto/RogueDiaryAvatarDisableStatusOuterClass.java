@@ -16,7 +16,7 @@ public final class RogueDiaryAvatarDisableStatusOuterClass {
   }
   /**
    * <pre>
-   * Obf: KGJFEPEIOKM
+   * Obf: LPHEHBBIBOG
    * </pre>
    *
    * Protobuf enum {@code RogueDiaryAvatarDisableStatus}

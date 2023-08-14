@@ -19,15 +19,15 @@ public final class ExpeditionTakeRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 path_id = 11;</code>
+     * <code>uint32 path_id = 12;</code>
      * @return The pathId.
      */
     int getPathId();
   }
   /**
    * <pre>
-   * CmdId: 2102
-   * Obf: LFOGAJJHFGM
+   * CmdId: 20264
+   * Obf: BPNLNJGJNOE
    * </pre>
    *
    * Protobuf type {@code ExpeditionTakeRewardReq}
@@ -74,7 +74,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 96: {
 
               pathId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class ExpeditionTakeRewardReqOuterClass {
               emu.grasscutter.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq.class, emu.grasscutter.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq.Builder.class);
     }
 
-    public static final int PATH_ID_FIELD_NUMBER = 11;
+    public static final int PATH_ID_FIELD_NUMBER = 12;
     private int pathId_;
     /**
-     * <code>uint32 path_id = 11;</code>
+     * <code>uint32 path_id = 12;</code>
      * @return The pathId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (pathId_ != 0) {
-        output.writeUInt32(11, pathId_);
+        output.writeUInt32(12, pathId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
       size = 0;
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, pathId_);
+          .computeUInt32Size(12, pathId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class ExpeditionTakeRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2102
-     * Obf: LFOGAJJHFGM
+     * CmdId: 20264
+     * Obf: BPNLNJGJNOE
      * </pre>
      *
      * Protobuf type {@code ExpeditionTakeRewardReq}
@@ -431,7 +431,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
 
       private int pathId_ ;
       /**
-       * <code>uint32 path_id = 11;</code>
+       * <code>uint32 path_id = 12;</code>
        * @return The pathId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
         return pathId_;
       }
       /**
-       * <code>uint32 path_id = 11;</code>
+       * <code>uint32 path_id = 12;</code>
        * @param value The pathId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 path_id = 11;</code>
+       * <code>uint32 path_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearPathId() {
@@ -527,7 +527,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ExpeditionTakeRewardReq.proto\"*\n\027Exped" +
-      "itionTakeRewardReq\022\017\n\007path_id\030\013 \001(\rB\033\n\031e" +
+      "itionTakeRewardReq\022\017\n\007path_id\030\014 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

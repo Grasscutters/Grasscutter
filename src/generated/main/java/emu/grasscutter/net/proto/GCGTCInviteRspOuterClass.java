@@ -19,21 +19,21 @@ public final class GCGTCInviteRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>uint32 character_id = 4;</code>
+     * <code>uint32 character_id = 9;</code>
      * @return The characterId.
      */
     int getCharacterId();
   }
   /**
    * <pre>
-   * CmdId: 7364
-   * Obf: CAMBLPFGINK
+   * CmdId: 8825
+   * Obf: EBMIGOCBEFN
    * </pre>
    *
    * Protobuf type {@code GCGTCInviteRsp}
@@ -80,14 +80,14 @@ public final class GCGTCInviteRspOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              characterId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
+            case 16: {
 
               retcode_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              characterId_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class GCGTCInviteRspOuterClass {
               emu.grasscutter.net.proto.GCGTCInviteRspOuterClass.GCGTCInviteRsp.class, emu.grasscutter.net.proto.GCGTCInviteRspOuterClass.GCGTCInviteRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class GCGTCInviteRspOuterClass {
       return retcode_;
     }
 
-    public static final int CHARACTER_ID_FIELD_NUMBER = 4;
+    public static final int CHARACTER_ID_FIELD_NUMBER = 9;
     private int characterId_;
     /**
-     * <code>uint32 character_id = 4;</code>
+     * <code>uint32 character_id = 9;</code>
      * @return The characterId.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class GCGTCInviteRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (characterId_ != 0) {
-        output.writeUInt32(4, characterId_);
-      }
       if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
+        output.writeInt32(2, retcode_);
+      }
+      if (characterId_ != 0) {
+        output.writeUInt32(9, characterId_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class GCGTCInviteRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (characterId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, characterId_);
-      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
+          .computeInt32Size(2, retcode_);
+      }
+      if (characterId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, characterId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class GCGTCInviteRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7364
-     * Obf: CAMBLPFGINK
+     * CmdId: 8825
+     * Obf: EBMIGOCBEFN
      * </pre>
      *
      * Protobuf type {@code GCGTCInviteRsp}
@@ -470,7 +470,7 @@ public final class GCGTCInviteRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class GCGTCInviteRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class GCGTCInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -501,7 +501,7 @@ public final class GCGTCInviteRspOuterClass {
 
       private int characterId_ ;
       /**
-       * <code>uint32 character_id = 4;</code>
+       * <code>uint32 character_id = 9;</code>
        * @return The characterId.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class GCGTCInviteRspOuterClass {
         return characterId_;
       }
       /**
-       * <code>uint32 character_id = 4;</code>
+       * <code>uint32 character_id = 9;</code>
        * @param value The characterId to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class GCGTCInviteRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 character_id = 4;</code>
+       * <code>uint32 character_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearCharacterId() {
@@ -597,7 +597,7 @@ public final class GCGTCInviteRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GCGTCInviteRsp.proto\"7\n\016GCGTCInviteRsp" +
-      "\022\017\n\007retcode\030\006 \001(\005\022\024\n\014character_id\030\004 \001(\rB" +
+      "\022\017\n\007retcode\030\002 \001(\005\022\024\n\014character_id\030\t \001(\rB" +
       "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

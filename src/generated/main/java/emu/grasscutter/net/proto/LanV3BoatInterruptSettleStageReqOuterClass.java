@@ -20,8 +20,8 @@ public final class LanV3BoatInterruptSettleStageReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 23111
-   * Obf: EFBPHICBIKE
+   * CmdId: 24666
+   * Obf: NPODMHKIKBB
    * </pre>
    *
    * Protobuf type {@code LanV3BoatInterruptSettleStageReq}
@@ -246,8 +246,8 @@ public final class LanV3BoatInterruptSettleStageReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23111
-     * Obf: EFBPHICBIKE
+     * CmdId: 24666
+     * Obf: NPODMHKIKBB
      * </pre>
      *
      * Protobuf type {@code LanV3BoatInterruptSettleStageReq}

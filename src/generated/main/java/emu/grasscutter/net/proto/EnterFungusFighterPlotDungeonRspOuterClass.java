@@ -19,38 +19,38 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 dungeon_id = 9;</code>
-     * @return The dungeonId.
-     */
-    int getDungeonId();
-
-    /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @return A list containing the fungusIdList.
      */
     java.util.List<java.lang.Integer> getFungusIdListList();
     /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @return The count of fungusIdList.
      */
     int getFungusIdListCount();
     /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @param index The index of the element to return.
      * @return The fungusIdList at the given index.
      */
     int getFungusIdList(int index);
 
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>uint32 dungeon_id = 2;</code>
+     * @return The dungeonId.
+     */
+    int getDungeonId();
+
+    /**
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 22991
-   * Obf: EDFNINHFKJP
+   * CmdId: 8831
+   * Obf: JMNIMPHGFHP
    * </pre>
    *
    * Protobuf type {@code EnterFungusFighterPlotDungeonRsp}
@@ -101,10 +101,15 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
               break;
             case 16: {
 
+              dungeonId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
               retcode_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fungusIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +117,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
               fungusIdList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -123,11 +128,6 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
                 fungusIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 72: {
-
-              dungeonId_ = input.readUInt32();
               break;
             }
             default: {
@@ -165,21 +165,10 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
               emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp.class, emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp.Builder.class);
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 9;
-    private int dungeonId_;
-    /**
-     * <code>uint32 dungeon_id = 9;</code>
-     * @return The dungeonId.
-     */
-    @java.lang.Override
-    public int getDungeonId() {
-      return dungeonId_;
-    }
-
-    public static final int FUNGUS_ID_LIST_FIELD_NUMBER = 5;
+    public static final int FUNGUS_ID_LIST_FIELD_NUMBER = 9;
     private com.google.protobuf.Internal.IntList fungusIdList_;
     /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @return A list containing the fungusIdList.
      */
     @java.lang.Override
@@ -188,14 +177,14 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       return fungusIdList_;
     }
     /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @return The count of fungusIdList.
      */
     public int getFungusIdListCount() {
       return fungusIdList_.size();
     }
     /**
-     * <code>repeated uint32 fungus_id_list = 5;</code>
+     * <code>repeated uint32 fungus_id_list = 9;</code>
      * @param index The index of the element to return.
      * @return The fungusIdList at the given index.
      */
@@ -204,10 +193,21 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
     }
     private int fungusIdListMemoizedSerializedSize = -1;
 
-    public static final int RETCODE_FIELD_NUMBER = 2;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 2;
+    private int dungeonId_;
+    /**
+     * <code>uint32 dungeon_id = 2;</code>
+     * @return The dungeonId.
+     */
+    @java.lang.Override
+    public int getDungeonId() {
+      return dungeonId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 6;
     private int retcode_;
     /**
-     * <code>int32 retcode = 2;</code>
+     * <code>int32 retcode = 6;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -230,18 +230,18 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (dungeonId_ != 0) {
+        output.writeUInt32(2, dungeonId_);
+      }
       if (retcode_ != 0) {
-        output.writeInt32(2, retcode_);
+        output.writeInt32(6, retcode_);
       }
       if (getFungusIdListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(fungusIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < fungusIdList_.size(); i++) {
         output.writeUInt32NoTag(fungusIdList_.getInt(i));
-      }
-      if (dungeonId_ != 0) {
-        output.writeUInt32(9, dungeonId_);
       }
       unknownFields.writeTo(output);
     }
@@ -252,9 +252,13 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (dungeonId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, dungeonId_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, retcode_);
+          .computeInt32Size(6, retcode_);
       }
       {
         int dataSize = 0;
@@ -269,10 +273,6 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         fungusIdListMemoizedSerializedSize = dataSize;
-      }
-      if (dungeonId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, dungeonId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -289,10 +289,10 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       }
       emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp other = (emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp) obj;
 
-      if (getDungeonId()
-          != other.getDungeonId()) return false;
       if (!getFungusIdListList()
           .equals(other.getFungusIdListList())) return false;
+      if (getDungeonId()
+          != other.getDungeonId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -306,12 +306,12 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
       if (getFungusIdListCount() > 0) {
         hash = (37 * hash) + FUNGUS_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFungusIdListList().hashCode();
       }
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -411,8 +411,8 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 22991
-     * Obf: EDFNINHFKJP
+     * CmdId: 8831
+     * Obf: JMNIMPHGFHP
      * </pre>
      *
      * Protobuf type {@code EnterFungusFighterPlotDungeonRsp}
@@ -452,10 +452,10 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dungeonId_ = 0;
-
         fungusIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        dungeonId_ = 0;
+
         retcode_ = 0;
 
         return this;
@@ -485,12 +485,12 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       public emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp buildPartial() {
         emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp result = new emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp(this);
         int from_bitField0_ = bitField0_;
-        result.dungeonId_ = dungeonId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           fungusIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fungusIdList_ = fungusIdList_;
+        result.dungeonId_ = dungeonId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -540,9 +540,6 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp other) {
         if (other == emu.grasscutter.net.proto.EnterFungusFighterPlotDungeonRspOuterClass.EnterFungusFighterPlotDungeonRsp.getDefaultInstance()) return this;
-        if (other.getDungeonId() != 0) {
-          setDungeonId(other.getDungeonId());
-        }
         if (!other.fungusIdList_.isEmpty()) {
           if (fungusIdList_.isEmpty()) {
             fungusIdList_ = other.fungusIdList_;
@@ -552,6 +549,9 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
             fungusIdList_.addAll(other.fungusIdList_);
           }
           onChanged();
+        }
+        if (other.getDungeonId() != 0) {
+          setDungeonId(other.getDungeonId());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
@@ -586,37 +586,6 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
       }
       private int bitField0_;
 
-      private int dungeonId_ ;
-      /**
-       * <code>uint32 dungeon_id = 9;</code>
-       * @return The dungeonId.
-       */
-      @java.lang.Override
-      public int getDungeonId() {
-        return dungeonId_;
-      }
-      /**
-       * <code>uint32 dungeon_id = 9;</code>
-       * @param value The dungeonId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonId(int value) {
-        
-        dungeonId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dungeon_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonId() {
-        
-        dungeonId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList fungusIdList_ = emptyIntList();
       private void ensureFungusIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -625,7 +594,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @return A list containing the fungusIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -634,14 +603,14 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
                  java.util.Collections.unmodifiableList(fungusIdList_) : fungusIdList_;
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @return The count of fungusIdList.
        */
       public int getFungusIdListCount() {
         return fungusIdList_.size();
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @param index The index of the element to return.
        * @return The fungusIdList at the given index.
        */
@@ -649,7 +618,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return fungusIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @param index The index to set the value at.
        * @param value The fungusIdList to set.
        * @return This builder for chaining.
@@ -662,7 +631,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @param value The fungusIdList to add.
        * @return This builder for chaining.
        */
@@ -673,7 +642,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @param values The fungusIdList to add.
        * @return This builder for chaining.
        */
@@ -686,7 +655,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 fungus_id_list = 5;</code>
+       * <code>repeated uint32 fungus_id_list = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearFungusIdList() {
@@ -696,9 +665,40 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return this;
       }
 
+      private int dungeonId_ ;
+      /**
+       * <code>uint32 dungeon_id = 2;</code>
+       * @return The dungeonId.
+       */
+      @java.lang.Override
+      public int getDungeonId() {
+        return dungeonId_;
+      }
+      /**
+       * <code>uint32 dungeon_id = 2;</code>
+       * @param value The dungeonId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDungeonId(int value) {
+        
+        dungeonId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dungeon_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDungeonId() {
+        
+        dungeonId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 6;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -706,7 +706,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 6;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -717,7 +717,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 2;</code>
+       * <code>int32 retcode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -794,9 +794,9 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n&EnterFungusFighterPlotDungeonRsp.proto" +
-      "\"_\n EnterFungusFighterPlotDungeonRsp\022\022\n\n" +
-      "dungeon_id\030\t \001(\r\022\026\n\016fungus_id_list\030\005 \003(\r" +
-      "\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter.net" +
+      "\"_\n EnterFungusFighterPlotDungeonRsp\022\026\n\016" +
+      "fungus_id_list\030\t \003(\r\022\022\n\ndungeon_id\030\002 \001(\r" +
+      "\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -808,7 +808,7 @@ public final class EnterFungusFighterPlotDungeonRspOuterClass {
     internal_static_EnterFungusFighterPlotDungeonRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EnterFungusFighterPlotDungeonRsp_descriptor,
-        new java.lang.String[] { "DungeonId", "FungusIdList", "Retcode", });
+        new java.lang.String[] { "FungusIdList", "DungeonId", "Retcode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

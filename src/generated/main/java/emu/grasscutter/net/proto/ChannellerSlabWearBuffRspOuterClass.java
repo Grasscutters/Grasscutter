@@ -19,33 +19,33 @@ public final class ChannellerSlabWearBuffRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>bool is_mp = 15;</code>
+     * <code>bool is_mp = 10;</code>
      * @return The isMp.
      */
     boolean getIsMp();
 
     /**
-     * <code>uint32 slot_id = 1;</code>
+     * <code>uint32 slot_id = 7;</code>
      * @return The slotId.
      */
     int getSlotId();
 
     /**
-     * <code>uint32 buff_id = 13;</code>
+     * <code>uint32 buff_id = 14;</code>
      * @return The buffId.
      */
     int getBuffId();
   }
   /**
    * <pre>
-   * CmdId: 8697
-   * Obf: LAALDNPCKPH
+   * CmdId: 21705
+   * Obf: HKDOFMOJGID
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabWearBuffRsp}
@@ -92,24 +92,24 @@ public final class ChannellerSlabWearBuffRspOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 56: {
 
               slotId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 80: {
 
-              buffId_ = input.readUInt32();
+              isMp_ = input.readBool();
               break;
             }
-            case 112: {
+            case 88: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
-              isMp_ = input.readBool();
+              buffId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,10 +144,10 @@ public final class ChannellerSlabWearBuffRspOuterClass {
               emu.grasscutter.net.proto.ChannellerSlabWearBuffRspOuterClass.ChannellerSlabWearBuffRsp.class, emu.grasscutter.net.proto.ChannellerSlabWearBuffRspOuterClass.ChannellerSlabWearBuffRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 14;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 14;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -155,10 +155,10 @@ public final class ChannellerSlabWearBuffRspOuterClass {
       return retcode_;
     }
 
-    public static final int IS_MP_FIELD_NUMBER = 15;
+    public static final int IS_MP_FIELD_NUMBER = 10;
     private boolean isMp_;
     /**
-     * <code>bool is_mp = 15;</code>
+     * <code>bool is_mp = 10;</code>
      * @return The isMp.
      */
     @java.lang.Override
@@ -166,10 +166,10 @@ public final class ChannellerSlabWearBuffRspOuterClass {
       return isMp_;
     }
 
-    public static final int SLOT_ID_FIELD_NUMBER = 1;
+    public static final int SLOT_ID_FIELD_NUMBER = 7;
     private int slotId_;
     /**
-     * <code>uint32 slot_id = 1;</code>
+     * <code>uint32 slot_id = 7;</code>
      * @return The slotId.
      */
     @java.lang.Override
@@ -177,10 +177,10 @@ public final class ChannellerSlabWearBuffRspOuterClass {
       return slotId_;
     }
 
-    public static final int BUFF_ID_FIELD_NUMBER = 13;
+    public static final int BUFF_ID_FIELD_NUMBER = 14;
     private int buffId_;
     /**
-     * <code>uint32 buff_id = 13;</code>
+     * <code>uint32 buff_id = 14;</code>
      * @return The buffId.
      */
     @java.lang.Override
@@ -203,16 +203,16 @@ public final class ChannellerSlabWearBuffRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (slotId_ != 0) {
-        output.writeUInt32(1, slotId_);
-      }
-      if (buffId_ != 0) {
-        output.writeUInt32(13, buffId_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(14, retcode_);
+        output.writeUInt32(7, slotId_);
       }
       if (isMp_ != false) {
-        output.writeBool(15, isMp_);
+        output.writeBool(10, isMp_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(11, retcode_);
+      }
+      if (buffId_ != 0) {
+        output.writeUInt32(14, buffId_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,19 +225,19 @@ public final class ChannellerSlabWearBuffRspOuterClass {
       size = 0;
       if (slotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, slotId_);
-      }
-      if (buffId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, buffId_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, retcode_);
+          .computeUInt32Size(7, slotId_);
       }
       if (isMp_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isMp_);
+          .computeBoolSize(10, isMp_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, retcode_);
+      }
+      if (buffId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, buffId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -379,8 +379,8 @@ public final class ChannellerSlabWearBuffRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8697
-     * Obf: LAALDNPCKPH
+     * CmdId: 21705
+     * Obf: HKDOFMOJGID
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabWearBuffRsp}
@@ -549,7 +549,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 11;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -557,7 +557,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -568,7 +568,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 14;</code>
+       * <code>int32 retcode = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -580,7 +580,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
 
       private boolean isMp_ ;
       /**
-       * <code>bool is_mp = 15;</code>
+       * <code>bool is_mp = 10;</code>
        * @return The isMp.
        */
       @java.lang.Override
@@ -588,7 +588,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return isMp_;
       }
       /**
-       * <code>bool is_mp = 15;</code>
+       * <code>bool is_mp = 10;</code>
        * @param value The isMp to set.
        * @return This builder for chaining.
        */
@@ -599,7 +599,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_mp = 15;</code>
+       * <code>bool is_mp = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsMp() {
@@ -611,7 +611,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
 
       private int slotId_ ;
       /**
-       * <code>uint32 slot_id = 1;</code>
+       * <code>uint32 slot_id = 7;</code>
        * @return The slotId.
        */
       @java.lang.Override
@@ -619,7 +619,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return slotId_;
       }
       /**
-       * <code>uint32 slot_id = 1;</code>
+       * <code>uint32 slot_id = 7;</code>
        * @param value The slotId to set.
        * @return This builder for chaining.
        */
@@ -630,7 +630,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 slot_id = 1;</code>
+       * <code>uint32 slot_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSlotId() {
@@ -642,7 +642,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
 
       private int buffId_ ;
       /**
-       * <code>uint32 buff_id = 13;</code>
+       * <code>uint32 buff_id = 14;</code>
        * @return The buffId.
        */
       @java.lang.Override
@@ -650,7 +650,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return buffId_;
       }
       /**
-       * <code>uint32 buff_id = 13;</code>
+       * <code>uint32 buff_id = 14;</code>
        * @param value The buffId to set.
        * @return This builder for chaining.
        */
@@ -661,7 +661,7 @@ public final class ChannellerSlabWearBuffRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 buff_id = 13;</code>
+       * <code>uint32 buff_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearBuffId() {
@@ -738,9 +738,9 @@ public final class ChannellerSlabWearBuffRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037ChannellerSlabWearBuffRsp.proto\"]\n\031Cha" +
-      "nnellerSlabWearBuffRsp\022\017\n\007retcode\030\016 \001(\005\022" +
-      "\r\n\005is_mp\030\017 \001(\010\022\017\n\007slot_id\030\001 \001(\r\022\017\n\007buff_" +
-      "id\030\r \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "nnellerSlabWearBuffRsp\022\017\n\007retcode\030\013 \001(\005\022" +
+      "\r\n\005is_mp\030\n \001(\010\022\017\n\007slot_id\030\007 \001(\r\022\017\n\007buff_" +
+      "id\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

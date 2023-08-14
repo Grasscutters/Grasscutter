@@ -32,8 +32,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1801
-   * Obf: MMPEGBPFHDD
+   * CmdId: 3109
+   * Obf: OLKAAOBEPHK
    * </pre>
    *
    * Protobuf type {@code PSPlayerApplyEnterMpReq}
@@ -313,8 +313,8 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1801
-     * Obf: MMPEGBPFHDD
+     * CmdId: 3109
+     * Obf: OLKAAOBEPHK
      * </pre>
      *
      * Protobuf type {@code PSPlayerApplyEnterMpReq}

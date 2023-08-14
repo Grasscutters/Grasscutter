@@ -32,7 +32,7 @@ public final class ForceUpdateInfoOuterClass {
   }
   /**
    * <pre>
-   * Obf: BFFAMAJFAIO
+   * Obf: EBNFKOBKCHA
    * </pre>
    *
    * Protobuf type {@code ForceUpdateInfo}
@@ -312,7 +312,7 @@ public final class ForceUpdateInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: BFFAMAJFAIO
+     * Obf: EBNFKOBKCHA
      * </pre>
      *
      * Protobuf type {@code ForceUpdateInfo}

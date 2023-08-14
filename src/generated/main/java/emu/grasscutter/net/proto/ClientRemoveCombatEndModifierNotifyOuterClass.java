@@ -19,17 +19,17 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @return A list containing the combatEndTypeList.
      */
     java.util.List<java.lang.Integer> getCombatEndTypeListList();
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @return The count of combatEndTypeList.
      */
     int getCombatEndTypeListCount();
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @param index The index of the element to return.
      * @return The combatEndTypeList at the given index.
      */
@@ -37,8 +37,8 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 1128
-   * Obf: MPFJCFHIFJD
+   * CmdId: 2142
+   * Obf: JLGEPALKDBL
    * </pre>
    *
    * Protobuf type {@code ClientRemoveCombatEndModifierNotify}
@@ -87,7 +87,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 combatEndTypeList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -95,7 +95,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
               combatEndTypeList_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -143,10 +143,10 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
               emu.grasscutter.net.proto.ClientRemoveCombatEndModifierNotifyOuterClass.ClientRemoveCombatEndModifierNotify.class, emu.grasscutter.net.proto.ClientRemoveCombatEndModifierNotifyOuterClass.ClientRemoveCombatEndModifierNotify.Builder.class);
     }
 
-    public static final int COMBAT_END_TYPE_LIST_FIELD_NUMBER = 7;
+    public static final int COMBAT_END_TYPE_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList combatEndTypeList_;
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @return A list containing the combatEndTypeList.
      */
     @java.lang.Override
@@ -155,14 +155,14 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
       return combatEndTypeList_;
     }
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @return The count of combatEndTypeList.
      */
     public int getCombatEndTypeListCount() {
       return combatEndTypeList_.size();
     }
     /**
-     * <code>repeated uint32 combat_end_type_list = 7;</code>
+     * <code>repeated uint32 combat_end_type_list = 6;</code>
      * @param index The index of the element to return.
      * @return The combatEndTypeList at the given index.
      */
@@ -187,7 +187,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getCombatEndTypeListList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(combatEndTypeListMemoizedSerializedSize);
       }
       for (int i = 0; i < combatEndTypeList_.size(); i++) {
@@ -345,8 +345,8 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1128
-     * Obf: MPFJCFHIFJD
+     * CmdId: 2142
+     * Obf: JLGEPALKDBL
      * </pre>
      *
      * Protobuf type {@code ClientRemoveCombatEndModifierNotify}
@@ -516,7 +516,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @return A list containing the combatEndTypeList.
        */
       public java.util.List<java.lang.Integer>
@@ -525,14 +525,14 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
                  java.util.Collections.unmodifiableList(combatEndTypeList_) : combatEndTypeList_;
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @return The count of combatEndTypeList.
        */
       public int getCombatEndTypeListCount() {
         return combatEndTypeList_.size();
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @param index The index of the element to return.
        * @return The combatEndTypeList at the given index.
        */
@@ -540,7 +540,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
         return combatEndTypeList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The combatEndTypeList to set.
        * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @param value The combatEndTypeList to add.
        * @return This builder for chaining.
        */
@@ -564,7 +564,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @param values The combatEndTypeList to add.
        * @return This builder for chaining.
        */
@@ -577,7 +577,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 combat_end_type_list = 7;</code>
+       * <code>repeated uint32 combat_end_type_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCombatEndTypeList() {
@@ -655,7 +655,7 @@ public final class ClientRemoveCombatEndModifierNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n)ClientRemoveCombatEndModifierNotify.pr" +
       "oto\"C\n#ClientRemoveCombatEndModifierNoti" +
-      "fy\022\034\n\024combat_end_type_list\030\007 \003(\rB\033\n\031emu." +
+      "fy\022\034\n\024combat_end_type_list\030\006 \003(\rB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

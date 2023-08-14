@@ -19,21 +19,21 @@ public final class SealBattleEndNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 seal_entity_id = 11;</code>
+     * <code>uint32 seal_entity_id = 7;</code>
      * @return The sealEntityId.
      */
     int getSealEntityId();
 
     /**
-     * <code>bool is_win = 7;</code>
+     * <code>bool is_win = 13;</code>
      * @return The isWin.
      */
     boolean getIsWin();
   }
   /**
    * <pre>
-   * CmdId: 240
-   * Obf: OPMJPGCGNGC
+   * CmdId: 570
+   * Obf: FAMNMDPHAAG
    * </pre>
    *
    * Protobuf type {@code SealBattleEndNotify}
@@ -82,12 +82,12 @@ public final class SealBattleEndNotifyOuterClass {
               break;
             case 56: {
 
-              isWin_ = input.readBool();
+              sealEntityId_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 104: {
 
-              sealEntityId_ = input.readUInt32();
+              isWin_ = input.readBool();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class SealBattleEndNotifyOuterClass {
               emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.class, emu.grasscutter.net.proto.SealBattleEndNotifyOuterClass.SealBattleEndNotify.Builder.class);
     }
 
-    public static final int SEAL_ENTITY_ID_FIELD_NUMBER = 11;
+    public static final int SEAL_ENTITY_ID_FIELD_NUMBER = 7;
     private int sealEntityId_;
     /**
-     * <code>uint32 seal_entity_id = 11;</code>
+     * <code>uint32 seal_entity_id = 7;</code>
      * @return The sealEntityId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class SealBattleEndNotifyOuterClass {
       return sealEntityId_;
     }
 
-    public static final int IS_WIN_FIELD_NUMBER = 7;
+    public static final int IS_WIN_FIELD_NUMBER = 13;
     private boolean isWin_;
     /**
-     * <code>bool is_win = 7;</code>
+     * <code>bool is_win = 13;</code>
      * @return The isWin.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class SealBattleEndNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isWin_ != false) {
-        output.writeBool(7, isWin_);
-      }
       if (sealEntityId_ != 0) {
-        output.writeUInt32(11, sealEntityId_);
+        output.writeUInt32(7, sealEntityId_);
+      }
+      if (isWin_ != false) {
+        output.writeBool(13, isWin_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class SealBattleEndNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isWin_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isWin_);
-      }
       if (sealEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, sealEntityId_);
+          .computeUInt32Size(7, sealEntityId_);
+      }
+      if (isWin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, isWin_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,8 +313,8 @@ public final class SealBattleEndNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 240
-     * Obf: OPMJPGCGNGC
+     * CmdId: 570
+     * Obf: FAMNMDPHAAG
      * </pre>
      *
      * Protobuf type {@code SealBattleEndNotify}
@@ -471,7 +471,7 @@ public final class SealBattleEndNotifyOuterClass {
 
       private int sealEntityId_ ;
       /**
-       * <code>uint32 seal_entity_id = 11;</code>
+       * <code>uint32 seal_entity_id = 7;</code>
        * @return The sealEntityId.
        */
       @java.lang.Override
@@ -479,7 +479,7 @@ public final class SealBattleEndNotifyOuterClass {
         return sealEntityId_;
       }
       /**
-       * <code>uint32 seal_entity_id = 11;</code>
+       * <code>uint32 seal_entity_id = 7;</code>
        * @param value The sealEntityId to set.
        * @return This builder for chaining.
        */
@@ -490,7 +490,7 @@ public final class SealBattleEndNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 seal_entity_id = 11;</code>
+       * <code>uint32 seal_entity_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSealEntityId() {
@@ -502,7 +502,7 @@ public final class SealBattleEndNotifyOuterClass {
 
       private boolean isWin_ ;
       /**
-       * <code>bool is_win = 7;</code>
+       * <code>bool is_win = 13;</code>
        * @return The isWin.
        */
       @java.lang.Override
@@ -510,7 +510,7 @@ public final class SealBattleEndNotifyOuterClass {
         return isWin_;
       }
       /**
-       * <code>bool is_win = 7;</code>
+       * <code>bool is_win = 13;</code>
        * @param value The isWin to set.
        * @return This builder for chaining.
        */
@@ -521,7 +521,7 @@ public final class SealBattleEndNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_win = 7;</code>
+       * <code>bool is_win = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsWin() {
@@ -598,8 +598,8 @@ public final class SealBattleEndNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031SealBattleEndNotify.proto\"=\n\023SealBattl" +
-      "eEndNotify\022\026\n\016seal_entity_id\030\013 \001(\r\022\016\n\006is" +
-      "_win\030\007 \001(\010B\033\n\031emu.grasscutter.net.protob" +
+      "eEndNotify\022\026\n\016seal_entity_id\030\007 \001(\r\022\016\n\006is" +
+      "_win\030\r \001(\010B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,15 +19,15 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 crystal_skill_id = 11;</code>
+     * <code>uint32 crystal_skill_id = 15;</code>
      * @return The crystalSkillId.
      */
     int getCrystalSkillId();
   }
   /**
    * <pre>
-   * CmdId: 8812
-   * Obf: FENBGOPCLKD
+   * CmdId: 21288
+   * Obf: ABIGOEFJALM
    * </pre>
    *
    * Protobuf type {@code MichiaeMatsuriUnlockCrystalSkillReq}
@@ -74,7 +74,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 120: {
 
               crystalSkillId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillReqOuterClass.MichiaeMatsuriUnlockCrystalSkillReq.class, emu.grasscutter.net.proto.MichiaeMatsuriUnlockCrystalSkillReqOuterClass.MichiaeMatsuriUnlockCrystalSkillReq.Builder.class);
     }
 
-    public static final int CRYSTAL_SKILL_ID_FIELD_NUMBER = 11;
+    public static final int CRYSTAL_SKILL_ID_FIELD_NUMBER = 15;
     private int crystalSkillId_;
     /**
-     * <code>uint32 crystal_skill_id = 11;</code>
+     * <code>uint32 crystal_skill_id = 15;</code>
      * @return The crystalSkillId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (crystalSkillId_ != 0) {
-        output.writeUInt32(11, crystalSkillId_);
+        output.writeUInt32(15, crystalSkillId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
       size = 0;
       if (crystalSkillId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, crystalSkillId_);
+          .computeUInt32Size(15, crystalSkillId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8812
-     * Obf: FENBGOPCLKD
+     * CmdId: 21288
+     * Obf: ABIGOEFJALM
      * </pre>
      *
      * Protobuf type {@code MichiaeMatsuriUnlockCrystalSkillReq}
@@ -431,7 +431,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
 
       private int crystalSkillId_ ;
       /**
-       * <code>uint32 crystal_skill_id = 11;</code>
+       * <code>uint32 crystal_skill_id = 15;</code>
        * @return The crystalSkillId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
         return crystalSkillId_;
       }
       /**
-       * <code>uint32 crystal_skill_id = 11;</code>
+       * <code>uint32 crystal_skill_id = 15;</code>
        * @param value The crystalSkillId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 crystal_skill_id = 11;</code>
+       * <code>uint32 crystal_skill_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCrystalSkillId() {
@@ -528,7 +528,7 @@ public final class MichiaeMatsuriUnlockCrystalSkillReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n)MichiaeMatsuriUnlockCrystalSkillReq.pr" +
       "oto\"?\n#MichiaeMatsuriUnlockCrystalSkillR" +
-      "eq\022\030\n\020crystal_skill_id\030\013 \001(\rB\033\n\031emu.gras" +
+      "eq\022\030\n\020crystal_skill_id\030\017 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

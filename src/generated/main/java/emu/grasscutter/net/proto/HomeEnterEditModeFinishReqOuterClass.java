@@ -20,8 +20,8 @@ public final class HomeEnterEditModeFinishReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 4537
-   * Obf: HKHAGDJPLEP
+   * CmdId: 4149
+   * Obf: NCEKAKPOPHC
    * </pre>
    *
    * Protobuf type {@code HomeEnterEditModeFinishReq}
@@ -246,8 +246,8 @@ public final class HomeEnterEditModeFinishReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 4537
-     * Obf: HKHAGDJPLEP
+     * CmdId: 4149
+     * Obf: NCEKAKPOPHC
      * </pre>
      *
      * Protobuf type {@code HomeEnterEditModeFinishReq}

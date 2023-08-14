@@ -19,33 +19,33 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     java.util.List<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo> 
         getChestInfoListList();
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo getChestInfoList(int index);
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     int getChestInfoListCount();
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder> 
         getChestInfoListOrBuilderList();
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder getChestInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 859
-   * Obf: GOOBLMIJGFH
+   * CmdId: 22407
+   * Obf: IPMPIFNCLNK
    * </pre>
    *
    * Protobuf type {@code DeshretObeliskChestInfoNotify}
@@ -94,7 +94,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 106: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chestInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
               emu.grasscutter.net.proto.DeshretObeliskChestInfoNotifyOuterClass.DeshretObeliskChestInfoNotify.class, emu.grasscutter.net.proto.DeshretObeliskChestInfoNotifyOuterClass.DeshretObeliskChestInfoNotify.Builder.class);
     }
 
-    public static final int CHEST_INFO_LIST_FIELD_NUMBER = 7;
+    public static final int CHEST_INFO_LIST_FIELD_NUMBER = 13;
     private java.util.List<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo> chestInfoList_;
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo> getChestInfoListList() {
       return chestInfoList_;
     }
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder> 
@@ -156,21 +156,21 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
       return chestInfoList_;
     }
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     @java.lang.Override
     public int getChestInfoListCount() {
       return chestInfoList_.size();
     }
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo getChestInfoList(int index) {
       return chestInfoList_.get(index);
     }
     /**
-     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+     * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder getChestInfoListOrBuilder(
@@ -193,7 +193,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < chestInfoList_.size(); i++) {
-        output.writeMessage(7, chestInfoList_.get(i));
+        output.writeMessage(13, chestInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
       size = 0;
       for (int i = 0; i < chestInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, chestInfoList_.get(i));
+          .computeMessageSize(13, chestInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 859
-     * Obf: GOOBLMIJGFH
+     * CmdId: 22407
+     * Obf: IPMPIFNCLNK
      * </pre>
      *
      * Protobuf type {@code DeshretObeliskChestInfoNotify}
@@ -538,7 +538,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
           emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder> chestInfoListBuilder_;
 
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo> getChestInfoListList() {
         if (chestInfoListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public int getChestInfoListCount() {
         if (chestInfoListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo getChestInfoList(int index) {
         if (chestInfoListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder setChestInfoList(
           int index, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo value) {
@@ -585,7 +585,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder setChestInfoList(
           int index, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder addChestInfoList(emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo value) {
         if (chestInfoListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder addChestInfoList(
           int index, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo value) {
@@ -632,7 +632,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder addChestInfoList(
           emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder addChestInfoList(
           int index, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder addAllChestInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo> values) {
@@ -675,7 +675,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder clearChestInfoList() {
         if (chestInfoListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public Builder removeChestInfoList(int index) {
         if (chestInfoListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder getChestInfoListBuilder(
           int index) {
         return getChestInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder getChestInfoListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfoOrBuilder> 
            getChestInfoListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder addChestInfoListBuilder() {
         return getChestInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder addChestInfoListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
             index, emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 7;</code>
+       * <code>repeated .DeshretObeliskChestInfo chest_info_list = 13;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DeshretObeliskChestInfoOuterClass.DeshretObeliskChestInfo.Builder> 
            getChestInfoListBuilderList() {
@@ -834,7 +834,7 @@ public final class DeshretObeliskChestInfoNotifyOuterClass {
       "\n#DeshretObeliskChestInfoNotify.proto\032\035D" +
       "eshretObeliskChestInfo.proto\"R\n\035DeshretO" +
       "beliskChestInfoNotify\0221\n\017chest_info_list" +
-      "\030\007 \003(\0132\030.DeshretObeliskChestInfoB\033\n\031emu." +
+      "\030\r \003(\0132\030.DeshretObeliskChestInfoB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

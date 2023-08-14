@@ -20,8 +20,8 @@ public final class RetryCurRogueDiaryDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8074
-   * Obf: KPOFJOHGPCB
+   * CmdId: 9419
+   * Obf: GOIMDLOHIDB
    * </pre>
    *
    * Protobuf type {@code RetryCurRogueDiaryDungeonReq}
@@ -246,8 +246,8 @@ public final class RetryCurRogueDiaryDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8074
-     * Obf: KPOFJOHGPCB
+     * CmdId: 9419
+     * Obf: GOIMDLOHIDB
      * </pre>
      *
      * Protobuf type {@code RetryCurRogueDiaryDungeonReq}

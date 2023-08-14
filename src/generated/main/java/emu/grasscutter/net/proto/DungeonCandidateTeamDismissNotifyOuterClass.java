@@ -19,26 +19,26 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 player_uid = 9;</code>
-     * @return The playerUid.
-     */
-    int getPlayerUid();
-
-    /**
-     * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+     * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
     /**
-     * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+     * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
      * @return The reason.
      */
     emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason getReason();
+
+    /**
+     * <code>uint32 player_uid = 14;</code>
+     * @return The playerUid.
+     */
+    int getPlayerUid();
   }
   /**
    * <pre>
-   * CmdId: 936
-   * Obf: PNCMAJFHICH
+   * CmdId: 9931
+   * Obf: JGHDDECCJPG
    * </pre>
    *
    * Protobuf type {@code DungeonCandidateTeamDismissNotify}
@@ -86,13 +86,13 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 88: {
               int rawValue = input.readEnum();
 
               reason_ = rawValue;
               break;
             }
-            case 72: {
+            case 112: {
 
               playerUid_ = input.readUInt32();
               break;
@@ -129,34 +129,34 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
               emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify.class, emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify.Builder.class);
     }
 
-    public static final int PLAYER_UID_FIELD_NUMBER = 9;
-    private int playerUid_;
-    /**
-     * <code>uint32 player_uid = 9;</code>
-     * @return The playerUid.
-     */
-    @java.lang.Override
-    public int getPlayerUid() {
-      return playerUid_;
-    }
-
-    public static final int REASON_FIELD_NUMBER = 7;
+    public static final int REASON_FIELD_NUMBER = 11;
     private int reason_;
     /**
-     * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+     * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
      * @return The enum numeric value on the wire for reason.
      */
     @java.lang.Override public int getReasonValue() {
       return reason_;
     }
     /**
-     * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+     * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
      * @return The reason.
      */
     @java.lang.Override public emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason getReason() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason result = emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason.valueOf(reason_);
       return result == null ? emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason.UNRECOGNIZED : result;
+    }
+
+    public static final int PLAYER_UID_FIELD_NUMBER = 14;
+    private int playerUid_;
+    /**
+     * <code>uint32 player_uid = 14;</code>
+     * @return The playerUid.
+     */
+    @java.lang.Override
+    public int getPlayerUid() {
+      return playerUid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -174,10 +174,10 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (reason_ != emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason.DUNGEON_CANDIDATE_TPDR_NORMAL.getNumber()) {
-        output.writeEnum(7, reason_);
+        output.writeEnum(11, reason_);
       }
       if (playerUid_ != 0) {
-        output.writeUInt32(9, playerUid_);
+        output.writeUInt32(14, playerUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -190,11 +190,11 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       size = 0;
       if (reason_ != emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason.DUNGEON_CANDIDATE_TPDR_NORMAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, reason_);
+          .computeEnumSize(11, reason_);
       }
       if (playerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, playerUid_);
+          .computeUInt32Size(14, playerUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -211,9 +211,9 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       }
       emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify other = (emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify) obj;
 
+      if (reason_ != other.reason_) return false;
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
-      if (reason_ != other.reason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -225,10 +225,10 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayerUid();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
+      hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getPlayerUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -326,8 +326,8 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 936
-     * Obf: PNCMAJFHICH
+     * CmdId: 9931
+     * Obf: JGHDDECCJPG
      * </pre>
      *
      * Protobuf type {@code DungeonCandidateTeamDismissNotify}
@@ -367,9 +367,9 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        playerUid_ = 0;
-
         reason_ = 0;
+
+        playerUid_ = 0;
 
         return this;
       }
@@ -397,8 +397,8 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify buildPartial() {
         emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify result = new emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify(this);
-        result.playerUid_ = playerUid_;
         result.reason_ = reason_;
+        result.playerUid_ = playerUid_;
         onBuilt();
         return result;
       }
@@ -447,11 +447,11 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify other) {
         if (other == emu.grasscutter.net.proto.DungeonCandidateTeamDismissNotifyOuterClass.DungeonCandidateTeamDismissNotify.getDefaultInstance()) return this;
-        if (other.getPlayerUid() != 0) {
-          setPlayerUid(other.getPlayerUid());
-        }
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
+        }
+        if (other.getPlayerUid() != 0) {
+          setPlayerUid(other.getPlayerUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -482,47 +482,16 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
         return this;
       }
 
-      private int playerUid_ ;
-      /**
-       * <code>uint32 player_uid = 9;</code>
-       * @return The playerUid.
-       */
-      @java.lang.Override
-      public int getPlayerUid() {
-        return playerUid_;
-      }
-      /**
-       * <code>uint32 player_uid = 9;</code>
-       * @param value The playerUid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPlayerUid(int value) {
-        
-        playerUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 player_uid = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPlayerUid() {
-        
-        playerUid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int reason_ = 0;
       /**
-       * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+       * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
        * @return The enum numeric value on the wire for reason.
        */
       @java.lang.Override public int getReasonValue() {
         return reason_;
       }
       /**
-       * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+       * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
        * @param value The enum numeric value on the wire for reason to set.
        * @return This builder for chaining.
        */
@@ -533,7 +502,7 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+       * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
        * @return The reason.
        */
       @java.lang.Override
@@ -543,7 +512,7 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
         return result == null ? emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.DungeonCandidateTeamDismissReason.UNRECOGNIZED : result;
       }
       /**
-       * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+       * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
        * @param value The reason to set.
        * @return This builder for chaining.
        */
@@ -557,12 +526,43 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.DungeonCandidateTeamDismissReason reason = 7;</code>
+       * <code>.DungeonCandidateTeamDismissReason reason = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearReason() {
         
         reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int playerUid_ ;
+      /**
+       * <code>uint32 player_uid = 14;</code>
+       * @return The playerUid.
+       */
+      @java.lang.Override
+      public int getPlayerUid() {
+        return playerUid_;
+      }
+      /**
+       * <code>uint32 player_uid = 14;</code>
+       * @param value The playerUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlayerUid(int value) {
+        
+        playerUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 player_uid = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlayerUid() {
+        
+        playerUid_ = 0;
         onChanged();
         return this;
       }
@@ -636,8 +636,8 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
       "\n\'DungeonCandidateTeamDismissNotify.prot" +
       "o\032\'DungeonCandidateTeamDismissReason.pro" +
       "to\"k\n!DungeonCandidateTeamDismissNotify\022" +
-      "\022\n\nplayer_uid\030\t \001(\r\0222\n\006reason\030\007 \001(\0162\".Du" +
-      "ngeonCandidateTeamDismissReasonB\033\n\031emu.g" +
+      "2\n\006reason\030\013 \001(\0162\".DungeonCandidateTeamDi" +
+      "smissReason\022\022\n\nplayer_uid\030\016 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -650,7 +650,7 @@ public final class DungeonCandidateTeamDismissNotifyOuterClass {
     internal_static_DungeonCandidateTeamDismissNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonCandidateTeamDismissNotify_descriptor,
-        new java.lang.String[] { "PlayerUid", "Reason", });
+        new java.lang.String[] { "Reason", "PlayerUid", });
     emu.grasscutter.net.proto.DungeonCandidateTeamDismissReasonOuterClass.getDescriptor();
   }
 

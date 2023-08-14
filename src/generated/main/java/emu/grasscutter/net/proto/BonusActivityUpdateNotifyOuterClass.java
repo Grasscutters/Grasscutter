@@ -19,33 +19,33 @@ public final class BonusActivityUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> 
         getBonusActivityInfoListList();
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index);
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     int getBonusActivityInfoListCount();
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
         getBonusActivityInfoListOrBuilderList();
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 2564
-   * Obf: KOKOGPAPCKA
+   * CmdId: 28781
+   * Obf: CCPKAKDJGBN
    * </pre>
    *
    * Protobuf type {@code BonusActivityUpdateNotify}
@@ -94,7 +94,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bonusActivityInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class BonusActivityUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.BonusActivityUpdateNotifyOuterClass.BonusActivityUpdateNotify.class, emu.grasscutter.net.proto.BonusActivityUpdateNotifyOuterClass.BonusActivityUpdateNotify.Builder.class);
     }
 
-    public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 8;
+    public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_;
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
       return bonusActivityInfoList_;
     }
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
@@ -156,21 +156,21 @@ public final class BonusActivityUpdateNotifyOuterClass {
       return bonusActivityInfoList_;
     }
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     @java.lang.Override
     public int getBonusActivityInfoListCount() {
       return bonusActivityInfoList_.size();
     }
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
       return bonusActivityInfoList_.get(index);
     }
     /**
-     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+     * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
@@ -193,7 +193,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < bonusActivityInfoList_.size(); i++) {
-        output.writeMessage(8, bonusActivityInfoList_.get(i));
+        output.writeMessage(14, bonusActivityInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
       size = 0;
       for (int i = 0; i < bonusActivityInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, bonusActivityInfoList_.get(i));
+          .computeMessageSize(14, bonusActivityInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class BonusActivityUpdateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2564
-     * Obf: KOKOGPAPCKA
+     * CmdId: 28781
+     * Obf: CCPKAKDJGBN
      * </pre>
      *
      * Protobuf type {@code BonusActivityUpdateNotify}
@@ -538,7 +538,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
           emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> bonusActivityInfoListBuilder_;
 
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public int getBonusActivityInfoListCount() {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int index) {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder setBonusActivityInfoList(
           int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
@@ -585,7 +585,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder setBonusActivityInfoList(
           int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder addBonusActivityInfoList(emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder addBonusActivityInfoList(
           int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
@@ -632,7 +632,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder addBonusActivityInfoList(
           emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder addBonusActivityInfoList(
           int index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder addAllBonusActivityInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo> values) {
@@ -675,7 +675,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder clearBonusActivityInfoList() {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public Builder removeBonusActivityInfoList(int index) {
         if (bonusActivityInfoListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class BonusActivityUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder getBonusActivityInfoListBuilder(
           int index) {
         return getBonusActivityInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> 
            getBonusActivityInfoListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class BonusActivityUpdateNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder() {
         return getBonusActivityInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder addBonusActivityInfoListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
             index, emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 8;</code>
+       * <code>repeated .BonusActivityInfo bonus_activity_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder> 
            getBonusActivityInfoListBuilderList() {
@@ -833,7 +833,7 @@ public final class BonusActivityUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037BonusActivityUpdateNotify.proto\032\027Bonus" +
       "ActivityInfo.proto\"Q\n\031BonusActivityUpdat" +
-      "eNotify\0224\n\030bonus_activity_info_list\030\010 \003(" +
+      "eNotify\0224\n\030bonus_activity_info_list\030\016 \003(" +
       "\0132\022.BonusActivityInfoB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };

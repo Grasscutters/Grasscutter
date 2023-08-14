@@ -19,15 +19,15 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 21478
-   * Obf: COJIMDIKHLP
+   * CmdId: 4572
+   * Obf: DKHMKIJPFDC
    * </pre>
    *
    * Protobuf type {@code FungusFighterUseBackupFungusRsp}
@@ -74,7 +74,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 8: {
 
               retcode_ = input.readInt32();
               break;
@@ -111,10 +111,10 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
               emu.grasscutter.net.proto.FungusFighterUseBackupFungusRspOuterClass.FungusFighterUseBackupFungusRsp.class, emu.grasscutter.net.proto.FungusFighterUseBackupFungusRspOuterClass.FungusFighterUseBackupFungusRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 11;
+    public static final int RETCODE_FIELD_NUMBER = 1;
     private int retcode_;
     /**
-     * <code>int32 retcode = 11;</code>
+     * <code>int32 retcode = 1;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(11, retcode_);
+        output.writeInt32(1, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, retcode_);
+          .computeInt32Size(1, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21478
-     * Obf: COJIMDIKHLP
+     * CmdId: 4572
+     * Obf: DKHMKIJPFDC
      * </pre>
      *
      * Protobuf type {@code FungusFighterUseBackupFungusRsp}
@@ -431,7 +431,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 11;</code>
+       * <code>int32 retcode = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -528,7 +528,7 @@ public final class FungusFighterUseBackupFungusRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n%FungusFighterUseBackupFungusRsp.proto\"" +
       "2\n\037FungusFighterUseBackupFungusRsp\022\017\n\007re" +
-      "tcode\030\013 \001(\005B\033\n\031emu.grasscutter.net.proto" +
+      "tcode\030\001 \001(\005B\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

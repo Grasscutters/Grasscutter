@@ -19,27 +19,27 @@ public final class DuelHeartSettleNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_succ = 13;</code>
-     * @return The isSucc.
+     * <code>uint32 cost_time = 11;</code>
+     * @return The costTime.
      */
-    boolean getIsSucc();
+    int getCostTime();
 
     /**
-     * <code>bool is_new_record = 15;</code>
+     * <code>bool is_new_record = 1;</code>
      * @return The isNewRecord.
      */
     boolean getIsNewRecord();
 
     /**
-     * <code>uint32 cost_time = 5;</code>
-     * @return The costTime.
+     * <code>bool is_succ = 14;</code>
+     * @return The isSucc.
      */
-    int getCostTime();
+    boolean getIsSucc();
   }
   /**
    * <pre>
-   * CmdId: 20333
-   * Obf: BJPKKCENFCA
+   * CmdId: 28003
+   * Obf: MOLIDPFOGML
    * </pre>
    *
    * Protobuf type {@code DuelHeartSettleNotify}
@@ -86,19 +86,19 @@ public final class DuelHeartSettleNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 8: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 88: {
 
               costTime_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
               isSucc_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              isNewRecord_ = input.readBool();
               break;
             }
             default: {
@@ -133,21 +133,21 @@ public final class DuelHeartSettleNotifyOuterClass {
               emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify.class, emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify.Builder.class);
     }
 
-    public static final int IS_SUCC_FIELD_NUMBER = 13;
-    private boolean isSucc_;
+    public static final int COST_TIME_FIELD_NUMBER = 11;
+    private int costTime_;
     /**
-     * <code>bool is_succ = 13;</code>
-     * @return The isSucc.
+     * <code>uint32 cost_time = 11;</code>
+     * @return The costTime.
      */
     @java.lang.Override
-    public boolean getIsSucc() {
-      return isSucc_;
+    public int getCostTime() {
+      return costTime_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 15;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 1;
     private boolean isNewRecord_;
     /**
-     * <code>bool is_new_record = 15;</code>
+     * <code>bool is_new_record = 1;</code>
      * @return The isNewRecord.
      */
     @java.lang.Override
@@ -155,15 +155,15 @@ public final class DuelHeartSettleNotifyOuterClass {
       return isNewRecord_;
     }
 
-    public static final int COST_TIME_FIELD_NUMBER = 5;
-    private int costTime_;
+    public static final int IS_SUCC_FIELD_NUMBER = 14;
+    private boolean isSucc_;
     /**
-     * <code>uint32 cost_time = 5;</code>
-     * @return The costTime.
+     * <code>bool is_succ = 14;</code>
+     * @return The isSucc.
      */
     @java.lang.Override
-    public int getCostTime() {
-      return costTime_;
+    public boolean getIsSucc() {
+      return isSucc_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -180,14 +180,14 @@ public final class DuelHeartSettleNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (isNewRecord_ != false) {
+        output.writeBool(1, isNewRecord_);
+      }
       if (costTime_ != 0) {
-        output.writeUInt32(5, costTime_);
+        output.writeUInt32(11, costTime_);
       }
       if (isSucc_ != false) {
-        output.writeBool(13, isSucc_);
-      }
-      if (isNewRecord_ != false) {
-        output.writeBool(15, isNewRecord_);
+        output.writeBool(14, isSucc_);
       }
       unknownFields.writeTo(output);
     }
@@ -198,17 +198,17 @@ public final class DuelHeartSettleNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, isNewRecord_);
+      }
       if (costTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, costTime_);
+          .computeUInt32Size(11, costTime_);
       }
       if (isSucc_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isSucc_);
-      }
-      if (isNewRecord_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isNewRecord_);
+          .computeBoolSize(14, isSucc_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -225,12 +225,12 @@ public final class DuelHeartSettleNotifyOuterClass {
       }
       emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify other = (emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify) obj;
 
-      if (getIsSucc()
-          != other.getIsSucc()) return false;
-      if (getIsNewRecord()
-          != other.getIsNewRecord()) return false;
       if (getCostTime()
           != other.getCostTime()) return false;
+      if (getIsNewRecord()
+          != other.getIsNewRecord()) return false;
+      if (getIsSucc()
+          != other.getIsSucc()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -242,14 +242,14 @@ public final class DuelHeartSettleNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsSucc());
+      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCostTime();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getCostTime();
+      hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSucc());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -347,8 +347,8 @@ public final class DuelHeartSettleNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20333
-     * Obf: BJPKKCENFCA
+     * CmdId: 28003
+     * Obf: MOLIDPFOGML
      * </pre>
      *
      * Protobuf type {@code DuelHeartSettleNotify}
@@ -388,11 +388,11 @@ public final class DuelHeartSettleNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isSucc_ = false;
+        costTime_ = 0;
 
         isNewRecord_ = false;
 
-        costTime_ = 0;
+        isSucc_ = false;
 
         return this;
       }
@@ -420,9 +420,9 @@ public final class DuelHeartSettleNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify buildPartial() {
         emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify result = new emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify(this);
-        result.isSucc_ = isSucc_;
-        result.isNewRecord_ = isNewRecord_;
         result.costTime_ = costTime_;
+        result.isNewRecord_ = isNewRecord_;
+        result.isSucc_ = isSucc_;
         onBuilt();
         return result;
       }
@@ -471,14 +471,14 @@ public final class DuelHeartSettleNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify other) {
         if (other == emu.grasscutter.net.proto.DuelHeartSettleNotifyOuterClass.DuelHeartSettleNotify.getDefaultInstance()) return this;
-        if (other.getIsSucc() != false) {
-          setIsSucc(other.getIsSucc());
+        if (other.getCostTime() != 0) {
+          setCostTime(other.getCostTime());
         }
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        if (other.getCostTime() != 0) {
-          setCostTime(other.getCostTime());
+        if (other.getIsSucc() != false) {
+          setIsSucc(other.getIsSucc());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -509,71 +509,9 @@ public final class DuelHeartSettleNotifyOuterClass {
         return this;
       }
 
-      private boolean isSucc_ ;
-      /**
-       * <code>bool is_succ = 13;</code>
-       * @return The isSucc.
-       */
-      @java.lang.Override
-      public boolean getIsSucc() {
-        return isSucc_;
-      }
-      /**
-       * <code>bool is_succ = 13;</code>
-       * @param value The isSucc to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsSucc(boolean value) {
-        
-        isSucc_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_succ = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsSucc() {
-        
-        isSucc_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isNewRecord_ ;
-      /**
-       * <code>bool is_new_record = 15;</code>
-       * @return The isNewRecord.
-       */
-      @java.lang.Override
-      public boolean getIsNewRecord() {
-        return isNewRecord_;
-      }
-      /**
-       * <code>bool is_new_record = 15;</code>
-       * @param value The isNewRecord to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsNewRecord(boolean value) {
-        
-        isNewRecord_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_new_record = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsNewRecord() {
-        
-        isNewRecord_ = false;
-        onChanged();
-        return this;
-      }
-
       private int costTime_ ;
       /**
-       * <code>uint32 cost_time = 5;</code>
+       * <code>uint32 cost_time = 11;</code>
        * @return The costTime.
        */
       @java.lang.Override
@@ -581,7 +519,7 @@ public final class DuelHeartSettleNotifyOuterClass {
         return costTime_;
       }
       /**
-       * <code>uint32 cost_time = 5;</code>
+       * <code>uint32 cost_time = 11;</code>
        * @param value The costTime to set.
        * @return This builder for chaining.
        */
@@ -592,12 +530,74 @@ public final class DuelHeartSettleNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cost_time = 5;</code>
+       * <code>uint32 cost_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostTime() {
         
         costTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isNewRecord_ ;
+      /**
+       * <code>bool is_new_record = 1;</code>
+       * @return The isNewRecord.
+       */
+      @java.lang.Override
+      public boolean getIsNewRecord() {
+        return isNewRecord_;
+      }
+      /**
+       * <code>bool is_new_record = 1;</code>
+       * @param value The isNewRecord to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsNewRecord(boolean value) {
+        
+        isNewRecord_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_new_record = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsNewRecord() {
+        
+        isNewRecord_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isSucc_ ;
+      /**
+       * <code>bool is_succ = 14;</code>
+       * @return The isSucc.
+       */
+      @java.lang.Override
+      public boolean getIsSucc() {
+        return isSucc_;
+      }
+      /**
+       * <code>bool is_succ = 14;</code>
+       * @param value The isSucc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSucc(boolean value) {
+        
+        isSucc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_succ = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSucc() {
+        
+        isSucc_ = false;
         onChanged();
         return this;
       }
@@ -669,8 +669,8 @@ public final class DuelHeartSettleNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033DuelHeartSettleNotify.proto\"R\n\025DuelHea" +
-      "rtSettleNotify\022\017\n\007is_succ\030\r \001(\010\022\025\n\ris_ne" +
-      "w_record\030\017 \001(\010\022\021\n\tcost_time\030\005 \001(\rB\033\n\031emu" +
+      "rtSettleNotify\022\021\n\tcost_time\030\013 \001(\r\022\025\n\ris_" +
+      "new_record\030\001 \001(\010\022\017\n\007is_succ\030\016 \001(\010B\033\n\031emu" +
       ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -682,7 +682,7 @@ public final class DuelHeartSettleNotifyOuterClass {
     internal_static_DuelHeartSettleNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DuelHeartSettleNotify_descriptor,
-        new java.lang.String[] { "IsSucc", "IsNewRecord", "CostTime", });
+        new java.lang.String[] { "CostTime", "IsNewRecord", "IsSucc", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

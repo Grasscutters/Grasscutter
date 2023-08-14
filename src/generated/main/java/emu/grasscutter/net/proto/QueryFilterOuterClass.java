@@ -19,20 +19,20 @@ public final class QueryFilterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 DHGFHBFCGOL = 10;</code>
-     * @return The dHGFHBFCGOL.
+     * <code>int32 JKLHOJOCLJD = 10;</code>
+     * @return The jKLHOJOCLJD.
      */
-    int getDHGFHBFCGOL();
+    int getJKLHOJOCLJD();
 
     /**
-     * <code>int32 HFJNAAGCKFJ = 3;</code>
-     * @return The hFJNAAGCKFJ.
+     * <code>int32 JOJGNGIGNDB = 6;</code>
+     * @return The jOJGNGIGNDB.
      */
-    int getHFJNAAGCKFJ();
+    int getJOJGNGIGNDB();
   }
   /**
    * <pre>
-   * Obf: FOFMOHPPKPO
+   * Obf: JGKDEPOMBFP
    * </pre>
    *
    * Protobuf type {@code QueryFilter}
@@ -79,14 +79,14 @@ public final class QueryFilterOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
-              hFJNAAGCKFJ_ = input.readInt32();
+              jOJGNGIGNDB_ = input.readInt32();
               break;
             }
             case 80: {
 
-              dHGFHBFCGOL_ = input.readInt32();
+              jKLHOJOCLJD_ = input.readInt32();
               break;
             }
             default: {
@@ -121,26 +121,26 @@ public final class QueryFilterOuterClass {
               emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.class, emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.Builder.class);
     }
 
-    public static final int DHGFHBFCGOL_FIELD_NUMBER = 10;
-    private int dHGFHBFCGOL_;
+    public static final int JKLHOJOCLJD_FIELD_NUMBER = 10;
+    private int jKLHOJOCLJD_;
     /**
-     * <code>int32 DHGFHBFCGOL = 10;</code>
-     * @return The dHGFHBFCGOL.
+     * <code>int32 JKLHOJOCLJD = 10;</code>
+     * @return The jKLHOJOCLJD.
      */
     @java.lang.Override
-    public int getDHGFHBFCGOL() {
-      return dHGFHBFCGOL_;
+    public int getJKLHOJOCLJD() {
+      return jKLHOJOCLJD_;
     }
 
-    public static final int HFJNAAGCKFJ_FIELD_NUMBER = 3;
-    private int hFJNAAGCKFJ_;
+    public static final int JOJGNGIGNDB_FIELD_NUMBER = 6;
+    private int jOJGNGIGNDB_;
     /**
-     * <code>int32 HFJNAAGCKFJ = 3;</code>
-     * @return The hFJNAAGCKFJ.
+     * <code>int32 JOJGNGIGNDB = 6;</code>
+     * @return The jOJGNGIGNDB.
      */
     @java.lang.Override
-    public int getHFJNAAGCKFJ() {
-      return hFJNAAGCKFJ_;
+    public int getJOJGNGIGNDB() {
+      return jOJGNGIGNDB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,11 +157,11 @@ public final class QueryFilterOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hFJNAAGCKFJ_ != 0) {
-        output.writeInt32(3, hFJNAAGCKFJ_);
+      if (jOJGNGIGNDB_ != 0) {
+        output.writeInt32(6, jOJGNGIGNDB_);
       }
-      if (dHGFHBFCGOL_ != 0) {
-        output.writeInt32(10, dHGFHBFCGOL_);
+      if (jKLHOJOCLJD_ != 0) {
+        output.writeInt32(10, jKLHOJOCLJD_);
       }
       unknownFields.writeTo(output);
     }
@@ -172,13 +172,13 @@ public final class QueryFilterOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hFJNAAGCKFJ_ != 0) {
+      if (jOJGNGIGNDB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, hFJNAAGCKFJ_);
+          .computeInt32Size(6, jOJGNGIGNDB_);
       }
-      if (dHGFHBFCGOL_ != 0) {
+      if (jKLHOJOCLJD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, dHGFHBFCGOL_);
+          .computeInt32Size(10, jKLHOJOCLJD_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -195,10 +195,10 @@ public final class QueryFilterOuterClass {
       }
       emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter other = (emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter) obj;
 
-      if (getDHGFHBFCGOL()
-          != other.getDHGFHBFCGOL()) return false;
-      if (getHFJNAAGCKFJ()
-          != other.getHFJNAAGCKFJ()) return false;
+      if (getJKLHOJOCLJD()
+          != other.getJKLHOJOCLJD()) return false;
+      if (getJOJGNGIGNDB()
+          != other.getJOJGNGIGNDB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -210,10 +210,10 @@ public final class QueryFilterOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DHGFHBFCGOL_FIELD_NUMBER;
-      hash = (53 * hash) + getDHGFHBFCGOL();
-      hash = (37 * hash) + HFJNAAGCKFJ_FIELD_NUMBER;
-      hash = (53 * hash) + getHFJNAAGCKFJ();
+      hash = (37 * hash) + JKLHOJOCLJD_FIELD_NUMBER;
+      hash = (53 * hash) + getJKLHOJOCLJD();
+      hash = (37 * hash) + JOJGNGIGNDB_FIELD_NUMBER;
+      hash = (53 * hash) + getJOJGNGIGNDB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,7 +311,7 @@ public final class QueryFilterOuterClass {
     }
     /**
      * <pre>
-     * Obf: FOFMOHPPKPO
+     * Obf: JGKDEPOMBFP
      * </pre>
      *
      * Protobuf type {@code QueryFilter}
@@ -351,9 +351,9 @@ public final class QueryFilterOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dHGFHBFCGOL_ = 0;
+        jKLHOJOCLJD_ = 0;
 
-        hFJNAAGCKFJ_ = 0;
+        jOJGNGIGNDB_ = 0;
 
         return this;
       }
@@ -381,8 +381,8 @@ public final class QueryFilterOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter buildPartial() {
         emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter result = new emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter(this);
-        result.dHGFHBFCGOL_ = dHGFHBFCGOL_;
-        result.hFJNAAGCKFJ_ = hFJNAAGCKFJ_;
+        result.jKLHOJOCLJD_ = jKLHOJOCLJD_;
+        result.jOJGNGIGNDB_ = jOJGNGIGNDB_;
         onBuilt();
         return result;
       }
@@ -431,11 +431,11 @@ public final class QueryFilterOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter other) {
         if (other == emu.grasscutter.net.proto.QueryFilterOuterClass.QueryFilter.getDefaultInstance()) return this;
-        if (other.getDHGFHBFCGOL() != 0) {
-          setDHGFHBFCGOL(other.getDHGFHBFCGOL());
+        if (other.getJKLHOJOCLJD() != 0) {
+          setJKLHOJOCLJD(other.getJKLHOJOCLJD());
         }
-        if (other.getHFJNAAGCKFJ() != 0) {
-          setHFJNAAGCKFJ(other.getHFJNAAGCKFJ());
+        if (other.getJOJGNGIGNDB() != 0) {
+          setJOJGNGIGNDB(other.getJOJGNGIGNDB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -466,64 +466,64 @@ public final class QueryFilterOuterClass {
         return this;
       }
 
-      private int dHGFHBFCGOL_ ;
+      private int jKLHOJOCLJD_ ;
       /**
-       * <code>int32 DHGFHBFCGOL = 10;</code>
-       * @return The dHGFHBFCGOL.
+       * <code>int32 JKLHOJOCLJD = 10;</code>
+       * @return The jKLHOJOCLJD.
        */
       @java.lang.Override
-      public int getDHGFHBFCGOL() {
-        return dHGFHBFCGOL_;
+      public int getJKLHOJOCLJD() {
+        return jKLHOJOCLJD_;
       }
       /**
-       * <code>int32 DHGFHBFCGOL = 10;</code>
-       * @param value The dHGFHBFCGOL to set.
+       * <code>int32 JKLHOJOCLJD = 10;</code>
+       * @param value The jKLHOJOCLJD to set.
        * @return This builder for chaining.
        */
-      public Builder setDHGFHBFCGOL(int value) {
+      public Builder setJKLHOJOCLJD(int value) {
         
-        dHGFHBFCGOL_ = value;
+        jKLHOJOCLJD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 DHGFHBFCGOL = 10;</code>
+       * <code>int32 JKLHOJOCLJD = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDHGFHBFCGOL() {
+      public Builder clearJKLHOJOCLJD() {
         
-        dHGFHBFCGOL_ = 0;
+        jKLHOJOCLJD_ = 0;
         onChanged();
         return this;
       }
 
-      private int hFJNAAGCKFJ_ ;
+      private int jOJGNGIGNDB_ ;
       /**
-       * <code>int32 HFJNAAGCKFJ = 3;</code>
-       * @return The hFJNAAGCKFJ.
+       * <code>int32 JOJGNGIGNDB = 6;</code>
+       * @return The jOJGNGIGNDB.
        */
       @java.lang.Override
-      public int getHFJNAAGCKFJ() {
-        return hFJNAAGCKFJ_;
+      public int getJOJGNGIGNDB() {
+        return jOJGNGIGNDB_;
       }
       /**
-       * <code>int32 HFJNAAGCKFJ = 3;</code>
-       * @param value The hFJNAAGCKFJ to set.
+       * <code>int32 JOJGNGIGNDB = 6;</code>
+       * @param value The jOJGNGIGNDB to set.
        * @return This builder for chaining.
        */
-      public Builder setHFJNAAGCKFJ(int value) {
+      public Builder setJOJGNGIGNDB(int value) {
         
-        hFJNAAGCKFJ_ = value;
+        jOJGNGIGNDB_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 HFJNAAGCKFJ = 3;</code>
+       * <code>int32 JOJGNGIGNDB = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHFJNAAGCKFJ() {
+      public Builder clearJOJGNGIGNDB() {
         
-        hFJNAAGCKFJ_ = 0;
+        jOJGNGIGNDB_ = 0;
         onChanged();
         return this;
       }
@@ -594,8 +594,8 @@ public final class QueryFilterOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021QueryFilter.proto\"7\n\013QueryFilter\022\023\n\013DH" +
-      "GFHBFCGOL\030\n \001(\005\022\023\n\013HFJNAAGCKFJ\030\003 \001(\005B\033\n\031" +
+      "\n\021QueryFilter.proto\"7\n\013QueryFilter\022\023\n\013JK" +
+      "LHOJOCLJD\030\n \001(\005\022\023\n\013JOJGNGIGNDB\030\006 \001(\005B\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -607,7 +607,7 @@ public final class QueryFilterOuterClass {
     internal_static_QueryFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryFilter_descriptor,
-        new java.lang.String[] { "DHGFHBFCGOL", "HFJNAAGCKFJ", });
+        new java.lang.String[] { "JKLHOJOCLJD", "JOJGNGIGNDB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

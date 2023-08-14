@@ -20,8 +20,8 @@ public final class GetOpActivityInfoReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 5175
-   * Obf: OLCKDAPDJJF
+   * CmdId: 25823
+   * Obf: FGMBOCEJFKB
    * </pre>
    *
    * Protobuf type {@code GetOpActivityInfoReq}
@@ -246,8 +246,8 @@ public final class GetOpActivityInfoReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5175
-     * Obf: OLCKDAPDJJF
+     * CmdId: 25823
+     * Obf: FGMBOCEJFKB
      * </pre>
      *
      * Protobuf type {@code GetOpActivityInfoReq}

@@ -19,21 +19,21 @@ public final class SalesmanTakeRewardReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 schedule_id = 7;</code>
+     * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
 
     /**
-     * <code>uint32 position = 1;</code>
+     * <code>uint32 position = 6;</code>
      * @return The position.
      */
     int getPosition();
   }
   /**
    * <pre>
-   * CmdId: 2046
-   * Obf: FOKIOLNEMFE
+   * CmdId: 27922
+   * Obf: EJKEKPFIDPE
    * </pre>
    *
    * Protobuf type {@code SalesmanTakeRewardReq}
@@ -82,12 +82,12 @@ public final class SalesmanTakeRewardReqOuterClass {
               break;
             case 8: {
 
-              position_ = input.readUInt32();
+              scheduleId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 48: {
 
-              scheduleId_ = input.readUInt32();
+              position_ = input.readUInt32();
               break;
             }
             default: {
@@ -122,10 +122,10 @@ public final class SalesmanTakeRewardReqOuterClass {
               emu.grasscutter.net.proto.SalesmanTakeRewardReqOuterClass.SalesmanTakeRewardReq.class, emu.grasscutter.net.proto.SalesmanTakeRewardReqOuterClass.SalesmanTakeRewardReq.Builder.class);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 7;</code>
+     * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class SalesmanTakeRewardReqOuterClass {
       return scheduleId_;
     }
 
-    public static final int POSITION_FIELD_NUMBER = 1;
+    public static final int POSITION_FIELD_NUMBER = 6;
     private int position_;
     /**
-     * <code>uint32 position = 1;</code>
+     * <code>uint32 position = 6;</code>
      * @return The position.
      */
     @java.lang.Override
@@ -158,11 +158,11 @@ public final class SalesmanTakeRewardReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (position_ != 0) {
-        output.writeUInt32(1, position_);
-      }
       if (scheduleId_ != 0) {
-        output.writeUInt32(7, scheduleId_);
+        output.writeUInt32(1, scheduleId_);
+      }
+      if (position_ != 0) {
+        output.writeUInt32(6, position_);
       }
       unknownFields.writeTo(output);
     }
@@ -173,13 +173,13 @@ public final class SalesmanTakeRewardReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (position_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, position_);
-      }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, scheduleId_);
+          .computeUInt32Size(1, scheduleId_);
+      }
+      if (position_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, position_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class SalesmanTakeRewardReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2046
-     * Obf: FOKIOLNEMFE
+     * CmdId: 27922
+     * Obf: EJKEKPFIDPE
      * </pre>
      *
      * Protobuf type {@code SalesmanTakeRewardReq}
@@ -470,7 +470,7 @@ public final class SalesmanTakeRewardReqOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 7;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class SalesmanTakeRewardReqOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 7;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class SalesmanTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 7;</code>
+       * <code>uint32 schedule_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -501,7 +501,7 @@ public final class SalesmanTakeRewardReqOuterClass {
 
       private int position_ ;
       /**
-       * <code>uint32 position = 1;</code>
+       * <code>uint32 position = 6;</code>
        * @return The position.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class SalesmanTakeRewardReqOuterClass {
         return position_;
       }
       /**
-       * <code>uint32 position = 1;</code>
+       * <code>uint32 position = 6;</code>
        * @param value The position to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class SalesmanTakeRewardReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 position = 1;</code>
+       * <code>uint32 position = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPosition() {
@@ -597,8 +597,8 @@ public final class SalesmanTakeRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SalesmanTakeRewardReq.proto\">\n\025Salesma" +
-      "nTakeRewardReq\022\023\n\013schedule_id\030\007 \001(\r\022\020\n\010p" +
-      "osition\030\001 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "nTakeRewardReq\022\023\n\013schedule_id\030\001 \001(\r\022\020\n\010p" +
+      "osition\030\006 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

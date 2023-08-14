@@ -19,15 +19,15 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_id = 15;</code>
+     * <code>uint32 trial_id = 14;</code>
      * @return The trialId.
      */
     int getTrialId();
   }
   /**
    * <pre>
-   * CmdId: 8956
-   * Obf: KBEFHHEOABA
+   * CmdId: 28736
+   * Obf: CPJLGNLKLHB
    * </pre>
    *
    * Protobuf type {@code MistTrialGetChallengeMissionReq}
@@ -74,7 +74,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
             case 0:
               done = true;
               break;
-            case 120: {
+            case 112: {
 
               trialId_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
               emu.grasscutter.net.proto.MistTrialGetChallengeMissionReqOuterClass.MistTrialGetChallengeMissionReq.class, emu.grasscutter.net.proto.MistTrialGetChallengeMissionReqOuterClass.MistTrialGetChallengeMissionReq.Builder.class);
     }
 
-    public static final int TRIAL_ID_FIELD_NUMBER = 15;
+    public static final int TRIAL_ID_FIELD_NUMBER = 14;
     private int trialId_;
     /**
-     * <code>uint32 trial_id = 15;</code>
+     * <code>uint32 trial_id = 14;</code>
      * @return The trialId.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialId_ != 0) {
-        output.writeUInt32(15, trialId_);
+        output.writeUInt32(14, trialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
       size = 0;
       if (trialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, trialId_);
+          .computeUInt32Size(14, trialId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8956
-     * Obf: KBEFHHEOABA
+     * CmdId: 28736
+     * Obf: CPJLGNLKLHB
      * </pre>
      *
      * Protobuf type {@code MistTrialGetChallengeMissionReq}
@@ -431,7 +431,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
 
       private int trialId_ ;
       /**
-       * <code>uint32 trial_id = 15;</code>
+       * <code>uint32 trial_id = 14;</code>
        * @return The trialId.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
         return trialId_;
       }
       /**
-       * <code>uint32 trial_id = 15;</code>
+       * <code>uint32 trial_id = 14;</code>
        * @param value The trialId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_id = 15;</code>
+       * <code>uint32 trial_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialId() {
@@ -528,7 +528,7 @@ public final class MistTrialGetChallengeMissionReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n%MistTrialGetChallengeMissionReq.proto\"" +
       "3\n\037MistTrialGetChallengeMissionReq\022\020\n\010tr" +
-      "ial_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "ial_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.prot" +
       "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

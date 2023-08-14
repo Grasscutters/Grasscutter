@@ -26,8 +26,8 @@ public final class ActivityAcceptAllGiveGiftReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 8507
-   * Obf: ONKFBHGPPNL
+   * CmdId: 26297
+   * Obf: KOKMEDHANGC
    * </pre>
    *
    * Protobuf type {@code ActivityAcceptAllGiveGiftReq}
@@ -279,8 +279,8 @@ public final class ActivityAcceptAllGiveGiftReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8507
-     * Obf: ONKFBHGPPNL
+     * CmdId: 26297
+     * Obf: KOKMEDHANGC
      * </pre>
      *
      * Protobuf type {@code ActivityAcceptAllGiveGiftReq}

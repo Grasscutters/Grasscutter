@@ -26,8 +26,8 @@ public final class VintageHuntingStartGalleryRspOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 20075
-   * Obf: IJNJCMHHFEL
+   * CmdId: 20765
+   * Obf: JOPNAAOPCIL
    * </pre>
    *
    * Protobuf type {@code VintageHuntingStartGalleryRsp}
@@ -279,8 +279,8 @@ public final class VintageHuntingStartGalleryRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 20075
-     * Obf: IJNJCMHHFEL
+     * CmdId: 20765
+     * Obf: JOPNAAOPCIL
      * </pre>
      *
      * Protobuf type {@code VintageHuntingStartGalleryRsp}

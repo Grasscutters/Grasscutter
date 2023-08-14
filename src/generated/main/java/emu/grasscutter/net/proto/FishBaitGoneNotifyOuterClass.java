@@ -19,15 +19,15 @@ public final class FishBaitGoneNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 7;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
    * <pre>
-   * CmdId: 5813
-   * Obf: PHODOIPNOCK
+   * CmdId: 3285
+   * Obf: LAPCILJDCDH
    * </pre>
    *
    * Protobuf type {@code FishBaitGoneNotify}
@@ -74,7 +74,7 @@ public final class FishBaitGoneNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 56: {
 
               uid_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class FishBaitGoneNotifyOuterClass {
               emu.grasscutter.net.proto.FishBaitGoneNotifyOuterClass.FishBaitGoneNotify.class, emu.grasscutter.net.proto.FishBaitGoneNotifyOuterClass.FishBaitGoneNotify.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 1;
+    public static final int UID_FIELD_NUMBER = 7;
     private int uid_;
     /**
-     * <code>uint32 uid = 1;</code>
+     * <code>uint32 uid = 7;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class FishBaitGoneNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (uid_ != 0) {
-        output.writeUInt32(1, uid_);
+        output.writeUInt32(7, uid_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class FishBaitGoneNotifyOuterClass {
       size = 0;
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, uid_);
+          .computeUInt32Size(7, uid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class FishBaitGoneNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5813
-     * Obf: PHODOIPNOCK
+     * CmdId: 3285
+     * Obf: LAPCILJDCDH
      * </pre>
      *
      * Protobuf type {@code FishBaitGoneNotify}
@@ -431,7 +431,7 @@ public final class FishBaitGoneNotifyOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 7;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class FishBaitGoneNotifyOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 7;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class FishBaitGoneNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 1;</code>
+       * <code>uint32 uid = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -527,7 +527,7 @@ public final class FishBaitGoneNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030FishBaitGoneNotify.proto\"!\n\022FishBaitGo" +
-      "neNotify\022\013\n\003uid\030\001 \001(\rB\033\n\031emu.grasscutter" +
+      "neNotify\022\013\n\003uid\030\007 \001(\rB\033\n\031emu.grasscutter" +
       ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

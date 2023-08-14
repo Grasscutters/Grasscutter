@@ -19,33 +19,33 @@ public final class GetAuthkeyReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string auth_appid = 5;</code>
+     * <code>uint32 PGANJHDNINM = 7;</code>
+     * @return The pGANJHDNINM.
+     */
+    int getPGANJHDNINM();
+
+    /**
+     * <code>string auth_appid = 2;</code>
      * @return The authAppid.
      */
     java.lang.String getAuthAppid();
     /**
-     * <code>string auth_appid = 5;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The bytes for authAppid.
      */
     com.google.protobuf.ByteString
         getAuthAppidBytes();
 
     /**
-     * <code>uint32 MLKKOEBHEEI = 13;</code>
-     * @return The mLKKOEBHEEI.
+     * <code>uint32 BIGHJAIBJJK = 14;</code>
+     * @return The bIGHJAIBJJK.
      */
-    int getMLKKOEBHEEI();
-
-    /**
-     * <code>uint32 GALOPIFDMON = 15;</code>
-     * @return The gALOPIFDMON.
-     */
-    int getGALOPIFDMON();
+    int getBIGHJAIBJJK();
   }
   /**
    * <pre>
-   * CmdId: 1435
-   * Obf: OOLIOKGGLBO
+   * CmdId: 27875
+   * Obf: DCPMJKGKCGE
    * </pre>
    *
    * Protobuf type {@code GetAuthkeyReq}
@@ -93,20 +93,20 @@ public final class GetAuthkeyReqOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               authAppid_ = s;
               break;
             }
-            case 104: {
+            case 56: {
 
-              mLKKOEBHEEI_ = input.readUInt32();
+              pGANJHDNINM_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
-              gALOPIFDMON_ = input.readUInt32();
+              bIGHJAIBJJK_ = input.readUInt32();
               break;
             }
             default: {
@@ -141,10 +141,21 @@ public final class GetAuthkeyReqOuterClass {
               emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.class, emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.Builder.class);
     }
 
-    public static final int AUTH_APPID_FIELD_NUMBER = 5;
+    public static final int PGANJHDNINM_FIELD_NUMBER = 7;
+    private int pGANJHDNINM_;
+    /**
+     * <code>uint32 PGANJHDNINM = 7;</code>
+     * @return The pGANJHDNINM.
+     */
+    @java.lang.Override
+    public int getPGANJHDNINM() {
+      return pGANJHDNINM_;
+    }
+
+    public static final int AUTH_APPID_FIELD_NUMBER = 2;
     private volatile java.lang.Object authAppid_;
     /**
-     * <code>string auth_appid = 5;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The authAppid.
      */
     @java.lang.Override
@@ -161,7 +172,7 @@ public final class GetAuthkeyReqOuterClass {
       }
     }
     /**
-     * <code>string auth_appid = 5;</code>
+     * <code>string auth_appid = 2;</code>
      * @return The bytes for authAppid.
      */
     @java.lang.Override
@@ -179,26 +190,15 @@ public final class GetAuthkeyReqOuterClass {
       }
     }
 
-    public static final int MLKKOEBHEEI_FIELD_NUMBER = 13;
-    private int mLKKOEBHEEI_;
+    public static final int BIGHJAIBJJK_FIELD_NUMBER = 14;
+    private int bIGHJAIBJJK_;
     /**
-     * <code>uint32 MLKKOEBHEEI = 13;</code>
-     * @return The mLKKOEBHEEI.
+     * <code>uint32 BIGHJAIBJJK = 14;</code>
+     * @return The bIGHJAIBJJK.
      */
     @java.lang.Override
-    public int getMLKKOEBHEEI() {
-      return mLKKOEBHEEI_;
-    }
-
-    public static final int GALOPIFDMON_FIELD_NUMBER = 15;
-    private int gALOPIFDMON_;
-    /**
-     * <code>uint32 GALOPIFDMON = 15;</code>
-     * @return The gALOPIFDMON.
-     */
-    @java.lang.Override
-    public int getGALOPIFDMON() {
-      return gALOPIFDMON_;
+    public int getBIGHJAIBJJK() {
+      return bIGHJAIBJJK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -216,13 +216,13 @@ public final class GetAuthkeyReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, authAppid_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, authAppid_);
       }
-      if (mLKKOEBHEEI_ != 0) {
-        output.writeUInt32(13, mLKKOEBHEEI_);
+      if (pGANJHDNINM_ != 0) {
+        output.writeUInt32(7, pGANJHDNINM_);
       }
-      if (gALOPIFDMON_ != 0) {
-        output.writeUInt32(15, gALOPIFDMON_);
+      if (bIGHJAIBJJK_ != 0) {
+        output.writeUInt32(14, bIGHJAIBJJK_);
       }
       unknownFields.writeTo(output);
     }
@@ -234,15 +234,15 @@ public final class GetAuthkeyReqOuterClass {
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authAppid_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, authAppid_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, authAppid_);
       }
-      if (mLKKOEBHEEI_ != 0) {
+      if (pGANJHDNINM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, mLKKOEBHEEI_);
+          .computeUInt32Size(7, pGANJHDNINM_);
       }
-      if (gALOPIFDMON_ != 0) {
+      if (bIGHJAIBJJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, gALOPIFDMON_);
+          .computeUInt32Size(14, bIGHJAIBJJK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -259,12 +259,12 @@ public final class GetAuthkeyReqOuterClass {
       }
       emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq other = (emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq) obj;
 
+      if (getPGANJHDNINM()
+          != other.getPGANJHDNINM()) return false;
       if (!getAuthAppid()
           .equals(other.getAuthAppid())) return false;
-      if (getMLKKOEBHEEI()
-          != other.getMLKKOEBHEEI()) return false;
-      if (getGALOPIFDMON()
-          != other.getGALOPIFDMON()) return false;
+      if (getBIGHJAIBJJK()
+          != other.getBIGHJAIBJJK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -276,12 +276,12 @@ public final class GetAuthkeyReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PGANJHDNINM_FIELD_NUMBER;
+      hash = (53 * hash) + getPGANJHDNINM();
       hash = (37 * hash) + AUTH_APPID_FIELD_NUMBER;
       hash = (53 * hash) + getAuthAppid().hashCode();
-      hash = (37 * hash) + MLKKOEBHEEI_FIELD_NUMBER;
-      hash = (53 * hash) + getMLKKOEBHEEI();
-      hash = (37 * hash) + GALOPIFDMON_FIELD_NUMBER;
-      hash = (53 * hash) + getGALOPIFDMON();
+      hash = (37 * hash) + BIGHJAIBJJK_FIELD_NUMBER;
+      hash = (53 * hash) + getBIGHJAIBJJK();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,8 +379,8 @@ public final class GetAuthkeyReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1435
-     * Obf: OOLIOKGGLBO
+     * CmdId: 27875
+     * Obf: DCPMJKGKCGE
      * </pre>
      *
      * Protobuf type {@code GetAuthkeyReq}
@@ -420,11 +420,11 @@ public final class GetAuthkeyReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        pGANJHDNINM_ = 0;
+
         authAppid_ = "";
 
-        mLKKOEBHEEI_ = 0;
-
-        gALOPIFDMON_ = 0;
+        bIGHJAIBJJK_ = 0;
 
         return this;
       }
@@ -452,9 +452,9 @@ public final class GetAuthkeyReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq buildPartial() {
         emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq result = new emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq(this);
+        result.pGANJHDNINM_ = pGANJHDNINM_;
         result.authAppid_ = authAppid_;
-        result.mLKKOEBHEEI_ = mLKKOEBHEEI_;
-        result.gALOPIFDMON_ = gALOPIFDMON_;
+        result.bIGHJAIBJJK_ = bIGHJAIBJJK_;
         onBuilt();
         return result;
       }
@@ -503,15 +503,15 @@ public final class GetAuthkeyReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq other) {
         if (other == emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.getDefaultInstance()) return this;
+        if (other.getPGANJHDNINM() != 0) {
+          setPGANJHDNINM(other.getPGANJHDNINM());
+        }
         if (!other.getAuthAppid().isEmpty()) {
           authAppid_ = other.authAppid_;
           onChanged();
         }
-        if (other.getMLKKOEBHEEI() != 0) {
-          setMLKKOEBHEEI(other.getMLKKOEBHEEI());
-        }
-        if (other.getGALOPIFDMON() != 0) {
-          setGALOPIFDMON(other.getGALOPIFDMON());
+        if (other.getBIGHJAIBJJK() != 0) {
+          setBIGHJAIBJJK(other.getBIGHJAIBJJK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -542,9 +542,40 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
 
+      private int pGANJHDNINM_ ;
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @return The pGANJHDNINM.
+       */
+      @java.lang.Override
+      public int getPGANJHDNINM() {
+        return pGANJHDNINM_;
+      }
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @param value The pGANJHDNINM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPGANJHDNINM(int value) {
+        
+        pGANJHDNINM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PGANJHDNINM = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPGANJHDNINM() {
+        
+        pGANJHDNINM_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object authAppid_ = "";
       /**
-       * <code>string auth_appid = 5;</code>
+       * <code>string auth_appid = 2;</code>
        * @return The authAppid.
        */
       public java.lang.String getAuthAppid() {
@@ -560,7 +591,7 @@ public final class GetAuthkeyReqOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 5;</code>
+       * <code>string auth_appid = 2;</code>
        * @return The bytes for authAppid.
        */
       public com.google.protobuf.ByteString
@@ -577,7 +608,7 @@ public final class GetAuthkeyReqOuterClass {
         }
       }
       /**
-       * <code>string auth_appid = 5;</code>
+       * <code>string auth_appid = 2;</code>
        * @param value The authAppid to set.
        * @return This builder for chaining.
        */
@@ -592,7 +623,7 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 5;</code>
+       * <code>string auth_appid = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthAppid() {
@@ -602,7 +633,7 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
       /**
-       * <code>string auth_appid = 5;</code>
+       * <code>string auth_appid = 2;</code>
        * @param value The bytes for authAppid to set.
        * @return This builder for chaining.
        */
@@ -618,64 +649,33 @@ public final class GetAuthkeyReqOuterClass {
         return this;
       }
 
-      private int mLKKOEBHEEI_ ;
+      private int bIGHJAIBJJK_ ;
       /**
-       * <code>uint32 MLKKOEBHEEI = 13;</code>
-       * @return The mLKKOEBHEEI.
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
+       * @return The bIGHJAIBJJK.
        */
       @java.lang.Override
-      public int getMLKKOEBHEEI() {
-        return mLKKOEBHEEI_;
+      public int getBIGHJAIBJJK() {
+        return bIGHJAIBJJK_;
       }
       /**
-       * <code>uint32 MLKKOEBHEEI = 13;</code>
-       * @param value The mLKKOEBHEEI to set.
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
+       * @param value The bIGHJAIBJJK to set.
        * @return This builder for chaining.
        */
-      public Builder setMLKKOEBHEEI(int value) {
+      public Builder setBIGHJAIBJJK(int value) {
         
-        mLKKOEBHEEI_ = value;
+        bIGHJAIBJJK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MLKKOEBHEEI = 13;</code>
+       * <code>uint32 BIGHJAIBJJK = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMLKKOEBHEEI() {
+      public Builder clearBIGHJAIBJJK() {
         
-        mLKKOEBHEEI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gALOPIFDMON_ ;
-      /**
-       * <code>uint32 GALOPIFDMON = 15;</code>
-       * @return The gALOPIFDMON.
-       */
-      @java.lang.Override
-      public int getGALOPIFDMON() {
-        return gALOPIFDMON_;
-      }
-      /**
-       * <code>uint32 GALOPIFDMON = 15;</code>
-       * @param value The gALOPIFDMON to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGALOPIFDMON(int value) {
-        
-        gALOPIFDMON_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GALOPIFDMON = 15;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGALOPIFDMON() {
-        
-        gALOPIFDMON_ = 0;
+        bIGHJAIBJJK_ = 0;
         onChanged();
         return this;
       }
@@ -746,9 +746,9 @@ public final class GetAuthkeyReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023GetAuthkeyReq.proto\"M\n\rGetAuthkeyReq\022\022" +
-      "\n\nauth_appid\030\005 \001(\t\022\023\n\013MLKKOEBHEEI\030\r \001(\r\022" +
-      "\023\n\013GALOPIFDMON\030\017 \001(\rB\033\n\031emu.grasscutter." +
+      "\n\023GetAuthkeyReq.proto\"M\n\rGetAuthkeyReq\022\023" +
+      "\n\013PGANJHDNINM\030\007 \001(\r\022\022\n\nauth_appid\030\002 \001(\t\022" +
+      "\023\n\013BIGHJAIBJJK\030\016 \001(\rB\033\n\031emu.grasscutter." +
       "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -760,7 +760,7 @@ public final class GetAuthkeyReqOuterClass {
     internal_static_GetAuthkeyReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAuthkeyReq_descriptor,
-        new java.lang.String[] { "AuthAppid", "MLKKOEBHEEI", "GALOPIFDMON", });
+        new java.lang.String[] { "PGANJHDNINM", "AuthAppid", "BIGHJAIBJJK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

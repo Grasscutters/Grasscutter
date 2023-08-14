@@ -19,32 +19,32 @@ public final class CustomDungeonSocialOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 win_num = 9;</code>
-     * @return The winNum.
+     * <code>uint32 DKDJDMMPICM = 13;</code>
+     * @return The dKDJDMMPICM.
      */
-    int getWinNum();
+    int getDKDJDMMPICM();
 
     /**
-     * <code>uint32 store_num = 10;</code>
-     * @return The storeNum.
+     * <code>uint32 OPCLKCLOEJG = 4;</code>
+     * @return The oPCLKCLOEJG.
      */
-    int getStoreNum();
+    int getOPCLKCLOEJG();
 
     /**
-     * <code>uint32 like_num = 7;</code>
-     * @return The likeNum.
+     * <code>uint32 AGFMPAJMBMF = 2;</code>
+     * @return The aGFMPAJMBMF.
      */
-    int getLikeNum();
+    int getAGFMPAJMBMF();
 
     /**
-     * <code>uint32 play_num = 11;</code>
-     * @return The playNum.
+     * <code>uint32 GLBMLFCKMHP = 7;</code>
+     * @return The gLBMLFCKMHP.
      */
-    int getPlayNum();
+    int getGLBMLFCKMHP();
   }
   /**
    * <pre>
-   * Obf: FBHKENMMCIP
+   * Obf: DDALIIIJCDF
    * </pre>
    *
    * Protobuf type {@code CustomDungeonSocial}
@@ -91,24 +91,24 @@ public final class CustomDungeonSocialOuterClass {
             case 0:
               done = true;
               break;
+            case 16: {
+
+              aGFMPAJMBMF_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              oPCLKCLOEJG_ = input.readUInt32();
+              break;
+            }
             case 56: {
 
-              likeNum_ = input.readUInt32();
+              gLBMLFCKMHP_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 104: {
 
-              winNum_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              storeNum_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              playNum_ = input.readUInt32();
+              dKDJDMMPICM_ = input.readUInt32();
               break;
             }
             default: {
@@ -143,48 +143,48 @@ public final class CustomDungeonSocialOuterClass {
               emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.class, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder.class);
     }
 
-    public static final int WIN_NUM_FIELD_NUMBER = 9;
-    private int winNum_;
+    public static final int DKDJDMMPICM_FIELD_NUMBER = 13;
+    private int dKDJDMMPICM_;
     /**
-     * <code>uint32 win_num = 9;</code>
-     * @return The winNum.
+     * <code>uint32 DKDJDMMPICM = 13;</code>
+     * @return The dKDJDMMPICM.
      */
     @java.lang.Override
-    public int getWinNum() {
-      return winNum_;
+    public int getDKDJDMMPICM() {
+      return dKDJDMMPICM_;
     }
 
-    public static final int STORE_NUM_FIELD_NUMBER = 10;
-    private int storeNum_;
+    public static final int OPCLKCLOEJG_FIELD_NUMBER = 4;
+    private int oPCLKCLOEJG_;
     /**
-     * <code>uint32 store_num = 10;</code>
-     * @return The storeNum.
+     * <code>uint32 OPCLKCLOEJG = 4;</code>
+     * @return The oPCLKCLOEJG.
      */
     @java.lang.Override
-    public int getStoreNum() {
-      return storeNum_;
+    public int getOPCLKCLOEJG() {
+      return oPCLKCLOEJG_;
     }
 
-    public static final int LIKE_NUM_FIELD_NUMBER = 7;
-    private int likeNum_;
+    public static final int AGFMPAJMBMF_FIELD_NUMBER = 2;
+    private int aGFMPAJMBMF_;
     /**
-     * <code>uint32 like_num = 7;</code>
-     * @return The likeNum.
+     * <code>uint32 AGFMPAJMBMF = 2;</code>
+     * @return The aGFMPAJMBMF.
      */
     @java.lang.Override
-    public int getLikeNum() {
-      return likeNum_;
+    public int getAGFMPAJMBMF() {
+      return aGFMPAJMBMF_;
     }
 
-    public static final int PLAY_NUM_FIELD_NUMBER = 11;
-    private int playNum_;
+    public static final int GLBMLFCKMHP_FIELD_NUMBER = 7;
+    private int gLBMLFCKMHP_;
     /**
-     * <code>uint32 play_num = 11;</code>
-     * @return The playNum.
+     * <code>uint32 GLBMLFCKMHP = 7;</code>
+     * @return The gLBMLFCKMHP.
      */
     @java.lang.Override
-    public int getPlayNum() {
-      return playNum_;
+    public int getGLBMLFCKMHP() {
+      return gLBMLFCKMHP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class CustomDungeonSocialOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (likeNum_ != 0) {
-        output.writeUInt32(7, likeNum_);
+      if (aGFMPAJMBMF_ != 0) {
+        output.writeUInt32(2, aGFMPAJMBMF_);
       }
-      if (winNum_ != 0) {
-        output.writeUInt32(9, winNum_);
+      if (oPCLKCLOEJG_ != 0) {
+        output.writeUInt32(4, oPCLKCLOEJG_);
       }
-      if (storeNum_ != 0) {
-        output.writeUInt32(10, storeNum_);
+      if (gLBMLFCKMHP_ != 0) {
+        output.writeUInt32(7, gLBMLFCKMHP_);
       }
-      if (playNum_ != 0) {
-        output.writeUInt32(11, playNum_);
+      if (dKDJDMMPICM_ != 0) {
+        output.writeUInt32(13, dKDJDMMPICM_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class CustomDungeonSocialOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (likeNum_ != 0) {
+      if (aGFMPAJMBMF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, likeNum_);
+          .computeUInt32Size(2, aGFMPAJMBMF_);
       }
-      if (winNum_ != 0) {
+      if (oPCLKCLOEJG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, winNum_);
+          .computeUInt32Size(4, oPCLKCLOEJG_);
       }
-      if (storeNum_ != 0) {
+      if (gLBMLFCKMHP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, storeNum_);
+          .computeUInt32Size(7, gLBMLFCKMHP_);
       }
-      if (playNum_ != 0) {
+      if (dKDJDMMPICM_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, playNum_);
+          .computeUInt32Size(13, dKDJDMMPICM_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class CustomDungeonSocialOuterClass {
       }
       emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial other = (emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial) obj;
 
-      if (getWinNum()
-          != other.getWinNum()) return false;
-      if (getStoreNum()
-          != other.getStoreNum()) return false;
-      if (getLikeNum()
-          != other.getLikeNum()) return false;
-      if (getPlayNum()
-          != other.getPlayNum()) return false;
+      if (getDKDJDMMPICM()
+          != other.getDKDJDMMPICM()) return false;
+      if (getOPCLKCLOEJG()
+          != other.getOPCLKCLOEJG()) return false;
+      if (getAGFMPAJMBMF()
+          != other.getAGFMPAJMBMF()) return false;
+      if (getGLBMLFCKMHP()
+          != other.getGLBMLFCKMHP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,14 +272,14 @@ public final class CustomDungeonSocialOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + WIN_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getWinNum();
-      hash = (37 * hash) + STORE_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getStoreNum();
-      hash = (37 * hash) + LIKE_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getLikeNum();
-      hash = (37 * hash) + PLAY_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getPlayNum();
+      hash = (37 * hash) + DKDJDMMPICM_FIELD_NUMBER;
+      hash = (53 * hash) + getDKDJDMMPICM();
+      hash = (37 * hash) + OPCLKCLOEJG_FIELD_NUMBER;
+      hash = (53 * hash) + getOPCLKCLOEJG();
+      hash = (37 * hash) + AGFMPAJMBMF_FIELD_NUMBER;
+      hash = (53 * hash) + getAGFMPAJMBMF();
+      hash = (37 * hash) + GLBMLFCKMHP_FIELD_NUMBER;
+      hash = (53 * hash) + getGLBMLFCKMHP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -377,7 +377,7 @@ public final class CustomDungeonSocialOuterClass {
     }
     /**
      * <pre>
-     * Obf: FBHKENMMCIP
+     * Obf: DDALIIIJCDF
      * </pre>
      *
      * Protobuf type {@code CustomDungeonSocial}
@@ -417,13 +417,13 @@ public final class CustomDungeonSocialOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        winNum_ = 0;
+        dKDJDMMPICM_ = 0;
 
-        storeNum_ = 0;
+        oPCLKCLOEJG_ = 0;
 
-        likeNum_ = 0;
+        aGFMPAJMBMF_ = 0;
 
-        playNum_ = 0;
+        gLBMLFCKMHP_ = 0;
 
         return this;
       }
@@ -451,10 +451,10 @@ public final class CustomDungeonSocialOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial buildPartial() {
         emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial result = new emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial(this);
-        result.winNum_ = winNum_;
-        result.storeNum_ = storeNum_;
-        result.likeNum_ = likeNum_;
-        result.playNum_ = playNum_;
+        result.dKDJDMMPICM_ = dKDJDMMPICM_;
+        result.oPCLKCLOEJG_ = oPCLKCLOEJG_;
+        result.aGFMPAJMBMF_ = aGFMPAJMBMF_;
+        result.gLBMLFCKMHP_ = gLBMLFCKMHP_;
         onBuilt();
         return result;
       }
@@ -503,17 +503,17 @@ public final class CustomDungeonSocialOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial other) {
         if (other == emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance()) return this;
-        if (other.getWinNum() != 0) {
-          setWinNum(other.getWinNum());
+        if (other.getDKDJDMMPICM() != 0) {
+          setDKDJDMMPICM(other.getDKDJDMMPICM());
         }
-        if (other.getStoreNum() != 0) {
-          setStoreNum(other.getStoreNum());
+        if (other.getOPCLKCLOEJG() != 0) {
+          setOPCLKCLOEJG(other.getOPCLKCLOEJG());
         }
-        if (other.getLikeNum() != 0) {
-          setLikeNum(other.getLikeNum());
+        if (other.getAGFMPAJMBMF() != 0) {
+          setAGFMPAJMBMF(other.getAGFMPAJMBMF());
         }
-        if (other.getPlayNum() != 0) {
-          setPlayNum(other.getPlayNum());
+        if (other.getGLBMLFCKMHP() != 0) {
+          setGLBMLFCKMHP(other.getGLBMLFCKMHP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -544,126 +544,126 @@ public final class CustomDungeonSocialOuterClass {
         return this;
       }
 
-      private int winNum_ ;
+      private int dKDJDMMPICM_ ;
       /**
-       * <code>uint32 win_num = 9;</code>
-       * @return The winNum.
+       * <code>uint32 DKDJDMMPICM = 13;</code>
+       * @return The dKDJDMMPICM.
        */
       @java.lang.Override
-      public int getWinNum() {
-        return winNum_;
+      public int getDKDJDMMPICM() {
+        return dKDJDMMPICM_;
       }
       /**
-       * <code>uint32 win_num = 9;</code>
-       * @param value The winNum to set.
+       * <code>uint32 DKDJDMMPICM = 13;</code>
+       * @param value The dKDJDMMPICM to set.
        * @return This builder for chaining.
        */
-      public Builder setWinNum(int value) {
+      public Builder setDKDJDMMPICM(int value) {
         
-        winNum_ = value;
+        dKDJDMMPICM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 win_num = 9;</code>
+       * <code>uint32 DKDJDMMPICM = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearWinNum() {
+      public Builder clearDKDJDMMPICM() {
         
-        winNum_ = 0;
+        dKDJDMMPICM_ = 0;
         onChanged();
         return this;
       }
 
-      private int storeNum_ ;
+      private int oPCLKCLOEJG_ ;
       /**
-       * <code>uint32 store_num = 10;</code>
-       * @return The storeNum.
+       * <code>uint32 OPCLKCLOEJG = 4;</code>
+       * @return The oPCLKCLOEJG.
        */
       @java.lang.Override
-      public int getStoreNum() {
-        return storeNum_;
+      public int getOPCLKCLOEJG() {
+        return oPCLKCLOEJG_;
       }
       /**
-       * <code>uint32 store_num = 10;</code>
-       * @param value The storeNum to set.
+       * <code>uint32 OPCLKCLOEJG = 4;</code>
+       * @param value The oPCLKCLOEJG to set.
        * @return This builder for chaining.
        */
-      public Builder setStoreNum(int value) {
+      public Builder setOPCLKCLOEJG(int value) {
         
-        storeNum_ = value;
+        oPCLKCLOEJG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 store_num = 10;</code>
+       * <code>uint32 OPCLKCLOEJG = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStoreNum() {
+      public Builder clearOPCLKCLOEJG() {
         
-        storeNum_ = 0;
+        oPCLKCLOEJG_ = 0;
         onChanged();
         return this;
       }
 
-      private int likeNum_ ;
+      private int aGFMPAJMBMF_ ;
       /**
-       * <code>uint32 like_num = 7;</code>
-       * @return The likeNum.
+       * <code>uint32 AGFMPAJMBMF = 2;</code>
+       * @return The aGFMPAJMBMF.
        */
       @java.lang.Override
-      public int getLikeNum() {
-        return likeNum_;
+      public int getAGFMPAJMBMF() {
+        return aGFMPAJMBMF_;
       }
       /**
-       * <code>uint32 like_num = 7;</code>
-       * @param value The likeNum to set.
+       * <code>uint32 AGFMPAJMBMF = 2;</code>
+       * @param value The aGFMPAJMBMF to set.
        * @return This builder for chaining.
        */
-      public Builder setLikeNum(int value) {
+      public Builder setAGFMPAJMBMF(int value) {
         
-        likeNum_ = value;
+        aGFMPAJMBMF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 like_num = 7;</code>
+       * <code>uint32 AGFMPAJMBMF = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLikeNum() {
+      public Builder clearAGFMPAJMBMF() {
         
-        likeNum_ = 0;
+        aGFMPAJMBMF_ = 0;
         onChanged();
         return this;
       }
 
-      private int playNum_ ;
+      private int gLBMLFCKMHP_ ;
       /**
-       * <code>uint32 play_num = 11;</code>
-       * @return The playNum.
+       * <code>uint32 GLBMLFCKMHP = 7;</code>
+       * @return The gLBMLFCKMHP.
        */
       @java.lang.Override
-      public int getPlayNum() {
-        return playNum_;
+      public int getGLBMLFCKMHP() {
+        return gLBMLFCKMHP_;
       }
       /**
-       * <code>uint32 play_num = 11;</code>
-       * @param value The playNum to set.
+       * <code>uint32 GLBMLFCKMHP = 7;</code>
+       * @param value The gLBMLFCKMHP to set.
        * @return This builder for chaining.
        */
-      public Builder setPlayNum(int value) {
+      public Builder setGLBMLFCKMHP(int value) {
         
-        playNum_ = value;
+        gLBMLFCKMHP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 play_num = 11;</code>
+       * <code>uint32 GLBMLFCKMHP = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPlayNum() {
+      public Builder clearGLBMLFCKMHP() {
         
-        playNum_ = 0;
+        gLBMLFCKMHP_ = 0;
         onChanged();
         return this;
       }
@@ -734,10 +734,11 @@ public final class CustomDungeonSocialOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031CustomDungeonSocial.proto\"]\n\023CustomDun" +
-      "geonSocial\022\017\n\007win_num\030\t \001(\r\022\021\n\tstore_num" +
-      "\030\n \001(\r\022\020\n\010like_num\030\007 \001(\r\022\020\n\010play_num\030\013 \001" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\031CustomDungeonSocial.proto\"i\n\023CustomDun" +
+      "geonSocial\022\023\n\013DKDJDMMPICM\030\r \001(\r\022\023\n\013OPCLK" +
+      "CLOEJG\030\004 \001(\r\022\023\n\013AGFMPAJMBMF\030\002 \001(\r\022\023\n\013GLB" +
+      "MLFCKMHP\030\007 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -748,7 +749,7 @@ public final class CustomDungeonSocialOuterClass {
     internal_static_CustomDungeonSocial_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CustomDungeonSocial_descriptor,
-        new java.lang.String[] { "WinNum", "StoreNum", "LikeNum", "PlayNum", });
+        new java.lang.String[] { "DKDJDMMPICM", "OPCLKCLOEJG", "AGFMPAJMBMF", "GLBMLFCKMHP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

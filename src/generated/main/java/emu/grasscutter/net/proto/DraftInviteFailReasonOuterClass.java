@@ -16,7 +16,7 @@ public final class DraftInviteFailReasonOuterClass {
   }
   /**
    * <pre>
-   * Obf: KGMFIEKKAPP
+   * Obf: ABGFENJLAMG
    * </pre>
    *
    * Protobuf enum {@code DraftInviteFailReason}
@@ -47,6 +47,10 @@ public final class DraftInviteFailReasonOuterClass {
      * <code>DRAFT_PLAY_LIMIT_NOT_MEET = 5;</code>
      */
     DRAFT_PLAY_LIMIT_NOT_MEET(5),
+    /**
+     * <code>LNILPEDBCDB_DraftActivityConfigNotFound = 6;</code>
+     */
+    LNILPEDBCDB_DraftActivityConfigNotFound(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -74,6 +78,10 @@ public final class DraftInviteFailReasonOuterClass {
      * <code>DRAFT_PLAY_LIMIT_NOT_MEET = 5;</code>
      */
     public static final int DRAFT_PLAY_LIMIT_NOT_MEET_VALUE = 5;
+    /**
+     * <code>LNILPEDBCDB_DraftActivityConfigNotFound = 6;</code>
+     */
+    public static final int LNILPEDBCDB_DraftActivityConfigNotFound_VALUE = 6;
 
 
     public final int getNumber() {
@@ -106,6 +114,7 @@ public final class DraftInviteFailReasonOuterClass {
         case 3: return DRAFT_SCENE_NOT_MEET;
         case 4: return DRAFT_WORLD_NOT_MEET;
         case 5: return DRAFT_PLAY_LIMIT_NOT_MEET;
+        case 6: return LNILPEDBCDB_DraftActivityConfigNotFound;
         default: return null;
       }
     }
@@ -171,13 +180,14 @@ public final class DraftInviteFailReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033DraftInviteFailReason.proto*\301\001\n\025DraftI" +
+      "\n\033DraftInviteFailReason.proto*\356\001\n\025DraftI" +
       "nviteFailReason\022\026\n\022DRAFT_FAIL_UNKNOWN\020\000\022" +
       "\033\n\027DRAFT_ACTIVITY_NOT_OPEN\020\001\022 \n\034DRAFT_AC" +
       "TIVITY_PLAY_NOT_OPEN\020\002\022\030\n\024DRAFT_SCENE_NO" +
       "T_MEET\020\003\022\030\n\024DRAFT_WORLD_NOT_MEET\020\004\022\035\n\031DR" +
-      "AFT_PLAY_LIMIT_NOT_MEET\020\005B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "AFT_PLAY_LIMIT_NOT_MEET\020\005\022+\n\'LNILPEDBCDB" +
+      "_DraftActivityConfigNotFound\020\006B\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

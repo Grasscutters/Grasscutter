@@ -19,21 +19,21 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_index = 8;</code>
+     * <code>uint32 reward_index = 6;</code>
      * @return The rewardIndex.
      */
     int getRewardIndex();
 
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8152
-   * Obf: EHCGOOAJJGL
+   * CmdId: 23768
+   * Obf: AKMGMLDBJFL
    * </pre>
    *
    * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardRsp}
@@ -80,12 +80,12 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 40: {
 
               retcode_ = input.readInt32();
               break;
             }
-            case 64: {
+            case 48: {
 
               rewardIndex_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
               emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.class, emu.grasscutter.net.proto.ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass.ChannellerSlabLoopDungeonTakeScoreRewardRsp.Builder.class);
     }
 
-    public static final int REWARD_INDEX_FIELD_NUMBER = 8;
+    public static final int REWARD_INDEX_FIELD_NUMBER = 6;
     private int rewardIndex_;
     /**
-     * <code>uint32 reward_index = 8;</code>
+     * <code>uint32 reward_index = 6;</code>
      * @return The rewardIndex.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       return rewardIndex_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 7;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_;
     /**
-     * <code>int32 retcode = 7;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (retcode_ != 0) {
-        output.writeInt32(7, retcode_);
+        output.writeInt32(5, retcode_);
       }
       if (rewardIndex_ != 0) {
-        output.writeUInt32(8, rewardIndex_);
+        output.writeUInt32(6, rewardIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
       size = 0;
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, retcode_);
+          .computeInt32Size(5, retcode_);
       }
       if (rewardIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, rewardIndex_);
+          .computeUInt32Size(6, rewardIndex_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8152
-     * Obf: EHCGOOAJJGL
+     * CmdId: 23768
+     * Obf: AKMGMLDBJFL
      * </pre>
      *
      * Protobuf type {@code ChannellerSlabLoopDungeonTakeScoreRewardRsp}
@@ -470,7 +470,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
 
       private int rewardIndex_ ;
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 6;</code>
        * @return The rewardIndex.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
         return rewardIndex_;
       }
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 6;</code>
        * @param value The rewardIndex to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 reward_index = 8;</code>
+       * <code>uint32 reward_index = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
@@ -501,7 +501,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 7;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -598,8 +598,8 @@ public final class ChannellerSlabLoopDungeonTakeScoreRewardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n1ChannellerSlabLoopDungeonTakeScoreRewa" +
       "rdRsp.proto\"T\n+ChannellerSlabLoopDungeon" +
-      "TakeScoreRewardRsp\022\024\n\014reward_index\030\010 \001(\r" +
-      "\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu.grasscutter.net" +
+      "TakeScoreRewardRsp\022\024\n\014reward_index\030\006 \001(\r" +
+      "\022\017\n\007retcode\030\005 \001(\005B\033\n\031emu.grasscutter.net" +
       ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,24 +19,24 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      * @return Whether the scheduleInfo field is set.
      */
     boolean hasScheduleInfo();
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      * @return The scheduleInfo.
      */
     emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo getScheduleInfo();
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      */
     emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfoOrBuilder getScheduleInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 2755
-   * Obf: ODEKGEDHGLM
+   * CmdId: 7500
+   * Obf: JJJEOLDJBON
    * </pre>
    *
    * Protobuf type {@code WorldOwnerBlossomScheduleInfoNotify}
@@ -83,7 +83,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 90: {
               emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.Builder subBuilder = null;
               if (scheduleInfo_ != null) {
                 subBuilder = scheduleInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
               emu.grasscutter.net.proto.WorldOwnerBlossomScheduleInfoNotifyOuterClass.WorldOwnerBlossomScheduleInfoNotify.class, emu.grasscutter.net.proto.WorldOwnerBlossomScheduleInfoNotifyOuterClass.WorldOwnerBlossomScheduleInfoNotify.Builder.class);
     }
 
-    public static final int SCHEDULE_INFO_FIELD_NUMBER = 1;
+    public static final int SCHEDULE_INFO_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo scheduleInfo_;
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      * @return Whether the scheduleInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       return scheduleInfo_ != null;
     }
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      * @return The scheduleInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       return scheduleInfo_ == null ? emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.getDefaultInstance() : scheduleInfo_;
     }
     /**
-     * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+     * <code>.BlossomScheduleInfo schedule_info = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfoOrBuilder getScheduleInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (scheduleInfo_ != null) {
-        output.writeMessage(1, getScheduleInfo());
+        output.writeMessage(11, getScheduleInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       size = 0;
       if (scheduleInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getScheduleInfo());
+          .computeMessageSize(11, getScheduleInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2755
-     * Obf: ODEKGEDHGLM
+     * CmdId: 7500
+     * Obf: JJJEOLDJBON
      * </pre>
      *
      * Protobuf type {@code WorldOwnerBlossomScheduleInfoNotify}
@@ -478,14 +478,14 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo, emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.Builder, emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfoOrBuilder> scheduleInfoBuilder_;
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        * @return Whether the scheduleInfo field is set.
        */
       public boolean hasScheduleInfo() {
         return scheduleInfoBuilder_ != null || scheduleInfo_ != null;
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        * @return The scheduleInfo.
        */
       public emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo getScheduleInfo() {
@@ -496,7 +496,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public Builder setScheduleInfo(emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo value) {
         if (scheduleInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public Builder setScheduleInfo(
           emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public Builder mergeScheduleInfo(emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo value) {
         if (scheduleInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public Builder clearScheduleInfo() {
         if (scheduleInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.Builder getScheduleInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         return getScheduleInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       public emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfoOrBuilder getScheduleInfoOrBuilder() {
         if (scheduleInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
         }
       }
       /**
-       * <code>.BlossomScheduleInfo schedule_info = 1;</code>
+       * <code>.BlossomScheduleInfo schedule_info = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo, emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfo.Builder, emu.grasscutter.net.proto.BlossomScheduleInfoOuterClass.BlossomScheduleInfoOrBuilder> 
@@ -662,7 +662,7 @@ public final class WorldOwnerBlossomScheduleInfoNotifyOuterClass {
       "\n)WorldOwnerBlossomScheduleInfoNotify.pr" +
       "oto\032\031BlossomScheduleInfo.proto\"R\n#WorldO" +
       "wnerBlossomScheduleInfoNotify\022+\n\rschedul" +
-      "e_info\030\001 \001(\0132\024.BlossomScheduleInfoB\033\n\031em" +
+      "e_info\030\013 \001(\0132\024.BlossomScheduleInfoB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -19,32 +19,32 @@ public final class ItemHintOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 item_id = 5;</code>
-     * @return The itemId.
-     */
-    int getItemId();
-
-    /**
-     * <code>uint32 count = 10;</code>
+     * <code>uint32 count = 7;</code>
      * @return The count.
      */
     int getCount();
 
     /**
-     * <code>bool is_new = 12;</code>
-     * @return The isNew.
+     * <code>uint32 item_id = 9;</code>
+     * @return The itemId.
      */
-    boolean getIsNew();
+    int getItemId();
 
     /**
-     * <code>uint64 guid = 2;</code>
+     * <code>uint64 guid = 14;</code>
      * @return The guid.
      */
     long getGuid();
+
+    /**
+     * <code>bool is_new = 8;</code>
+     * @return The isNew.
+     */
+    boolean getIsNew();
   }
   /**
    * <pre>
-   * Obf: GIFBLICPKMI
+   * Obf: OLBNAADPLKJ
    * </pre>
    *
    * Protobuf type {@code ItemHint}
@@ -91,24 +91,24 @@ public final class ItemHintOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              guid_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 56: {
 
               count_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 64: {
 
               isNew_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              itemId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              guid_ = input.readUInt64();
               break;
             }
             default: {
@@ -143,21 +143,10 @@ public final class ItemHintOuterClass {
               emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.class, emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.Builder.class);
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 5;
-    private int itemId_;
-    /**
-     * <code>uint32 item_id = 5;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
-    }
-
-    public static final int COUNT_FIELD_NUMBER = 10;
+    public static final int COUNT_FIELD_NUMBER = 7;
     private int count_;
     /**
-     * <code>uint32 count = 10;</code>
+     * <code>uint32 count = 7;</code>
      * @return The count.
      */
     @java.lang.Override
@@ -165,26 +154,37 @@ public final class ItemHintOuterClass {
       return count_;
     }
 
-    public static final int IS_NEW_FIELD_NUMBER = 12;
-    private boolean isNew_;
+    public static final int ITEM_ID_FIELD_NUMBER = 9;
+    private int itemId_;
     /**
-     * <code>bool is_new = 12;</code>
-     * @return The isNew.
+     * <code>uint32 item_id = 9;</code>
+     * @return The itemId.
      */
     @java.lang.Override
-    public boolean getIsNew() {
-      return isNew_;
+    public int getItemId() {
+      return itemId_;
     }
 
-    public static final int GUID_FIELD_NUMBER = 2;
+    public static final int GUID_FIELD_NUMBER = 14;
     private long guid_;
     /**
-     * <code>uint64 guid = 2;</code>
+     * <code>uint64 guid = 14;</code>
      * @return The guid.
      */
     @java.lang.Override
     public long getGuid() {
       return guid_;
+    }
+
+    public static final int IS_NEW_FIELD_NUMBER = 8;
+    private boolean isNew_;
+    /**
+     * <code>bool is_new = 8;</code>
+     * @return The isNew.
+     */
+    @java.lang.Override
+    public boolean getIsNew() {
+      return isNew_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,17 +201,17 @@ public final class ItemHintOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (guid_ != 0L) {
-        output.writeUInt64(2, guid_);
-      }
-      if (itemId_ != 0) {
-        output.writeUInt32(5, itemId_);
-      }
       if (count_ != 0) {
-        output.writeUInt32(10, count_);
+        output.writeUInt32(7, count_);
       }
       if (isNew_ != false) {
-        output.writeBool(12, isNew_);
+        output.writeBool(8, isNew_);
+      }
+      if (itemId_ != 0) {
+        output.writeUInt32(9, itemId_);
+      }
+      if (guid_ != 0L) {
+        output.writeUInt64(14, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -222,21 +222,21 @@ public final class ItemHintOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (guid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, guid_);
-      }
-      if (itemId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, itemId_);
-      }
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, count_);
+          .computeUInt32Size(7, count_);
       }
       if (isNew_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isNew_);
+          .computeBoolSize(8, isNew_);
+      }
+      if (itemId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, itemId_);
+      }
+      if (guid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(14, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -253,14 +253,14 @@ public final class ItemHintOuterClass {
       }
       emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint other = (emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint) obj;
 
-      if (getItemId()
-          != other.getItemId()) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (getIsNew()
-          != other.getIsNew()) return false;
+      if (getItemId()
+          != other.getItemId()) return false;
       if (getGuid()
           != other.getGuid()) return false;
+      if (getIsNew()
+          != other.getIsNew()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,16 +272,16 @@ public final class ItemHintOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getItemId();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
-      hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsNew());
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGuid());
+      hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsNew());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -379,7 +379,7 @@ public final class ItemHintOuterClass {
     }
     /**
      * <pre>
-     * Obf: GIFBLICPKMI
+     * Obf: OLBNAADPLKJ
      * </pre>
      *
      * Protobuf type {@code ItemHint}
@@ -419,13 +419,13 @@ public final class ItemHintOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        itemId_ = 0;
-
         count_ = 0;
 
-        isNew_ = false;
+        itemId_ = 0;
 
         guid_ = 0L;
+
+        isNew_ = false;
 
         return this;
       }
@@ -453,10 +453,10 @@ public final class ItemHintOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint buildPartial() {
         emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint result = new emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint(this);
-        result.itemId_ = itemId_;
         result.count_ = count_;
-        result.isNew_ = isNew_;
+        result.itemId_ = itemId_;
         result.guid_ = guid_;
+        result.isNew_ = isNew_;
         onBuilt();
         return result;
       }
@@ -505,17 +505,17 @@ public final class ItemHintOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint other) {
         if (other == emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.getDefaultInstance()) return this;
-        if (other.getItemId() != 0) {
-          setItemId(other.getItemId());
-        }
         if (other.getCount() != 0) {
           setCount(other.getCount());
         }
-        if (other.getIsNew() != false) {
-          setIsNew(other.getIsNew());
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
         }
         if (other.getGuid() != 0L) {
           setGuid(other.getGuid());
+        }
+        if (other.getIsNew() != false) {
+          setIsNew(other.getIsNew());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -546,40 +546,9 @@ public final class ItemHintOuterClass {
         return this;
       }
 
-      private int itemId_ ;
-      /**
-       * <code>uint32 item_id = 5;</code>
-       * @return The itemId.
-       */
-      @java.lang.Override
-      public int getItemId() {
-        return itemId_;
-      }
-      /**
-       * <code>uint32 item_id = 5;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int count_ ;
       /**
-       * <code>uint32 count = 10;</code>
+       * <code>uint32 count = 7;</code>
        * @return The count.
        */
       @java.lang.Override
@@ -587,7 +556,7 @@ public final class ItemHintOuterClass {
         return count_;
       }
       /**
-       * <code>uint32 count = 10;</code>
+       * <code>uint32 count = 7;</code>
        * @param value The count to set.
        * @return This builder for chaining.
        */
@@ -598,7 +567,7 @@ public final class ItemHintOuterClass {
         return this;
       }
       /**
-       * <code>uint32 count = 10;</code>
+       * <code>uint32 count = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCount() {
@@ -608,40 +577,40 @@ public final class ItemHintOuterClass {
         return this;
       }
 
-      private boolean isNew_ ;
+      private int itemId_ ;
       /**
-       * <code>bool is_new = 12;</code>
-       * @return The isNew.
+       * <code>uint32 item_id = 9;</code>
+       * @return The itemId.
        */
       @java.lang.Override
-      public boolean getIsNew() {
-        return isNew_;
+      public int getItemId() {
+        return itemId_;
       }
       /**
-       * <code>bool is_new = 12;</code>
-       * @param value The isNew to set.
+       * <code>uint32 item_id = 9;</code>
+       * @param value The itemId to set.
        * @return This builder for chaining.
        */
-      public Builder setIsNew(boolean value) {
+      public Builder setItemId(int value) {
         
-        isNew_ = value;
+        itemId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_new = 12;</code>
+       * <code>uint32 item_id = 9;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsNew() {
+      public Builder clearItemId() {
         
-        isNew_ = false;
+        itemId_ = 0;
         onChanged();
         return this;
       }
 
       private long guid_ ;
       /**
-       * <code>uint64 guid = 2;</code>
+       * <code>uint64 guid = 14;</code>
        * @return The guid.
        */
       @java.lang.Override
@@ -649,7 +618,7 @@ public final class ItemHintOuterClass {
         return guid_;
       }
       /**
-       * <code>uint64 guid = 2;</code>
+       * <code>uint64 guid = 14;</code>
        * @param value The guid to set.
        * @return This builder for chaining.
        */
@@ -660,12 +629,43 @@ public final class ItemHintOuterClass {
         return this;
       }
       /**
-       * <code>uint64 guid = 2;</code>
+       * <code>uint64 guid = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
         
         guid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean isNew_ ;
+      /**
+       * <code>bool is_new = 8;</code>
+       * @return The isNew.
+       */
+      @java.lang.Override
+      public boolean getIsNew() {
+        return isNew_;
+      }
+      /**
+       * <code>bool is_new = 8;</code>
+       * @param value The isNew to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsNew(boolean value) {
+        
+        isNew_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_new = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsNew() {
+        
+        isNew_ = false;
         onChanged();
         return this;
       }
@@ -736,9 +736,9 @@ public final class ItemHintOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016ItemHint.proto\"H\n\010ItemHint\022\017\n\007item_id\030" +
-      "\005 \001(\r\022\r\n\005count\030\n \001(\r\022\016\n\006is_new\030\014 \001(\010\022\014\n\004" +
-      "guid\030\002 \001(\004B\033\n\031emu.grasscutter.net.protob" +
+      "\n\016ItemHint.proto\"H\n\010ItemHint\022\r\n\005count\030\007 " +
+      "\001(\r\022\017\n\007item_id\030\t \001(\r\022\014\n\004guid\030\016 \001(\004\022\016\n\006is" +
+      "_new\030\010 \001(\010B\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -750,7 +750,7 @@ public final class ItemHintOuterClass {
     internal_static_ItemHint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ItemHint_descriptor,
-        new java.lang.String[] { "ItemId", "Count", "IsNew", "Guid", });
+        new java.lang.String[] { "Count", "ItemId", "Guid", "IsNew", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

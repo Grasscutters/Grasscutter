@@ -19,33 +19,33 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> 
         getReserveAvatarListList();
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar getReserveAvatarList(int index);
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     int getReserveAvatarListCount();
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder> 
         getReserveAvatarListOrBuilderList();
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder getReserveAvatarListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 8180
-   * Obf: JCICBGEKHEO
+   * CmdId: 7857
+   * Obf: KFBLIBMDEMC
    * </pre>
    *
    * Protobuf type {@code ReserveRogueDiaryAvatarReq}
@@ -94,7 +94,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 reserveAvatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar>();
                 mutable_bitField0_ |= 0x00000001;
@@ -138,17 +138,17 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
               emu.grasscutter.net.proto.ReserveRogueDiaryAvatarReqOuterClass.ReserveRogueDiaryAvatarReq.class, emu.grasscutter.net.proto.ReserveRogueDiaryAvatarReqOuterClass.ReserveRogueDiaryAvatarReq.Builder.class);
     }
 
-    public static final int RESERVE_AVATAR_LIST_FIELD_NUMBER = 12;
+    public static final int RESERVE_AVATAR_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> reserveAvatarList_;
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> getReserveAvatarListList() {
       return reserveAvatarList_;
     }
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder> 
@@ -156,21 +156,21 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
       return reserveAvatarList_;
     }
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     @java.lang.Override
     public int getReserveAvatarListCount() {
       return reserveAvatarList_.size();
     }
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar getReserveAvatarList(int index) {
       return reserveAvatarList_.get(index);
     }
     /**
-     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+     * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder getReserveAvatarListOrBuilder(
@@ -193,7 +193,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < reserveAvatarList_.size(); i++) {
-        output.writeMessage(12, reserveAvatarList_.get(i));
+        output.writeMessage(11, reserveAvatarList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -206,7 +206,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
       size = 0;
       for (int i = 0; i < reserveAvatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, reserveAvatarList_.get(i));
+          .computeMessageSize(11, reserveAvatarList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -337,8 +337,8 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8180
-     * Obf: JCICBGEKHEO
+     * CmdId: 7857
+     * Obf: KFBLIBMDEMC
      * </pre>
      *
      * Protobuf type {@code ReserveRogueDiaryAvatarReq}
@@ -538,7 +538,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
           emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder> reserveAvatarListBuilder_;
 
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> getReserveAvatarListList() {
         if (reserveAvatarListBuilder_ == null) {
@@ -548,7 +548,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public int getReserveAvatarListCount() {
         if (reserveAvatarListBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar getReserveAvatarList(int index) {
         if (reserveAvatarListBuilder_ == null) {
@@ -568,7 +568,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder setReserveAvatarList(
           int index, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar value) {
@@ -585,7 +585,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder setReserveAvatarList(
           int index, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder builderForValue) {
@@ -599,7 +599,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder addReserveAvatarList(emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar value) {
         if (reserveAvatarListBuilder_ == null) {
@@ -615,7 +615,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder addReserveAvatarList(
           int index, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar value) {
@@ -632,7 +632,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder addReserveAvatarList(
           emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder builderForValue) {
@@ -646,7 +646,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder addReserveAvatarList(
           int index, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder builderForValue) {
@@ -660,7 +660,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder addAllReserveAvatarList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar> values) {
@@ -675,7 +675,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder clearReserveAvatarList() {
         if (reserveAvatarListBuilder_ == null) {
@@ -688,7 +688,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public Builder removeReserveAvatarList(int index) {
         if (reserveAvatarListBuilder_ == null) {
@@ -701,14 +701,14 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder getReserveAvatarListBuilder(
           int index) {
         return getReserveAvatarListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder getReserveAvatarListOrBuilder(
           int index) {
@@ -718,7 +718,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatarOrBuilder> 
            getReserveAvatarListOrBuilderList() {
@@ -729,14 +729,14 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
         }
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder addReserveAvatarListBuilder() {
         return getReserveAvatarListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.getDefaultInstance());
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder addReserveAvatarListBuilder(
           int index) {
@@ -744,7 +744,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
             index, emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.getDefaultInstance());
       }
       /**
-       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 12;</code>
+       * <code>repeated .RogueDiaryAvatar reserve_avatar_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.Builder> 
            getReserveAvatarListBuilderList() {
@@ -833,7 +833,7 @@ public final class ReserveRogueDiaryAvatarReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n ReserveRogueDiaryAvatarReq.proto\032\026Rogu" +
       "eDiaryAvatar.proto\"L\n\032ReserveRogueDiaryA" +
-      "vatarReq\022.\n\023reserve_avatar_list\030\014 \003(\0132\021." +
+      "vatarReq\022.\n\023reserve_avatar_list\030\013 \003(\0132\021." +
       "RogueDiaryAvatarB\033\n\031emu.grasscutter.net." +
       "protob\006proto3"
     };

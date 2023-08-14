@@ -19,15 +19,15 @@ public final class GCGResourceStateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_complete = 13;</code>
+     * <code>bool is_complete = 3;</code>
      * @return The isComplete.
      */
     boolean getIsComplete();
   }
   /**
    * <pre>
-   * CmdId: 7970
-   * Obf: IKCDLHONJEL
+   * CmdId: 27463
+   * Obf: JJKPENMIJDF
    * </pre>
    *
    * Protobuf type {@code GCGResourceStateNotify}
@@ -74,7 +74,7 @@ public final class GCGResourceStateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 24: {
 
               isComplete_ = input.readBool();
               break;
@@ -111,10 +111,10 @@ public final class GCGResourceStateNotifyOuterClass {
               emu.grasscutter.net.proto.GCGResourceStateNotifyOuterClass.GCGResourceStateNotify.class, emu.grasscutter.net.proto.GCGResourceStateNotifyOuterClass.GCGResourceStateNotify.Builder.class);
     }
 
-    public static final int IS_COMPLETE_FIELD_NUMBER = 13;
+    public static final int IS_COMPLETE_FIELD_NUMBER = 3;
     private boolean isComplete_;
     /**
-     * <code>bool is_complete = 13;</code>
+     * <code>bool is_complete = 3;</code>
      * @return The isComplete.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class GCGResourceStateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isComplete_ != false) {
-        output.writeBool(13, isComplete_);
+        output.writeBool(3, isComplete_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class GCGResourceStateNotifyOuterClass {
       size = 0;
       if (isComplete_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isComplete_);
+          .computeBoolSize(3, isComplete_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -280,8 +280,8 @@ public final class GCGResourceStateNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7970
-     * Obf: IKCDLHONJEL
+     * CmdId: 27463
+     * Obf: JJKPENMIJDF
      * </pre>
      *
      * Protobuf type {@code GCGResourceStateNotify}
@@ -432,7 +432,7 @@ public final class GCGResourceStateNotifyOuterClass {
 
       private boolean isComplete_ ;
       /**
-       * <code>bool is_complete = 13;</code>
+       * <code>bool is_complete = 3;</code>
        * @return The isComplete.
        */
       @java.lang.Override
@@ -440,7 +440,7 @@ public final class GCGResourceStateNotifyOuterClass {
         return isComplete_;
       }
       /**
-       * <code>bool is_complete = 13;</code>
+       * <code>bool is_complete = 3;</code>
        * @param value The isComplete to set.
        * @return This builder for chaining.
        */
@@ -451,7 +451,7 @@ public final class GCGResourceStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>bool is_complete = 13;</code>
+       * <code>bool is_complete = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsComplete() {
@@ -528,7 +528,7 @@ public final class GCGResourceStateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034GCGResourceStateNotify.proto\"-\n\026GCGRes" +
-      "ourceStateNotify\022\023\n\013is_complete\030\r \001(\010B\033\n" +
+      "ourceStateNotify\022\023\n\013is_complete\030\003 \001(\010B\033\n" +
       "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

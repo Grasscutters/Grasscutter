@@ -26,8 +26,8 @@ public final class MuqadasPotionActivityEnterDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 23650
-   * Obf: KAAKLCCBPAG
+   * CmdId: 24954
+   * Obf: JPDOONMLGPK
    * </pre>
    *
    * Protobuf type {@code MuqadasPotionActivityEnterDungeonReq}
@@ -279,8 +279,8 @@ public final class MuqadasPotionActivityEnterDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23650
-     * Obf: KAAKLCCBPAG
+     * CmdId: 24954
+     * Obf: JPDOONMLGPK
      * </pre>
      *
      * Protobuf type {@code MuqadasPotionActivityEnterDungeonReq}

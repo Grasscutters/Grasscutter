@@ -20,8 +20,8 @@ public final class DuelHeartRestartDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 21392
-   * Obf: KBDIDJCPDKJ
+   * CmdId: 20474
+   * Obf: JBIEBFNCMLG
    * </pre>
    *
    * Protobuf type {@code DuelHeartRestartDungeonReq}
@@ -246,8 +246,8 @@ public final class DuelHeartRestartDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 21392
-     * Obf: KBDIDJCPDKJ
+     * CmdId: 20474
+     * Obf: JBIEBFNCMLG
      * </pre>
      *
      * Protobuf type {@code DuelHeartRestartDungeonReq}

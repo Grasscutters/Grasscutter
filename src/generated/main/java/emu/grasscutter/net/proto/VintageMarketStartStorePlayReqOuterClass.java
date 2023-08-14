@@ -19,15 +19,15 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 store_round = 4;</code>
+     * <code>uint32 store_round = 1;</code>
      * @return The storeRound.
      */
     int getStoreRound();
   }
   /**
    * <pre>
-   * CmdId: 24449
-   * Obf: CLACJNIMEFP
+   * CmdId: 6681
+   * Obf: FNJPMMKFLFC
    * </pre>
    *
    * Protobuf type {@code VintageMarketStartStorePlayReq}
@@ -74,7 +74,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 8: {
 
               storeRound_ = input.readUInt32();
               break;
@@ -111,10 +111,10 @@ public final class VintageMarketStartStorePlayReqOuterClass {
               emu.grasscutter.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq.class, emu.grasscutter.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq.Builder.class);
     }
 
-    public static final int STORE_ROUND_FIELD_NUMBER = 4;
+    public static final int STORE_ROUND_FIELD_NUMBER = 1;
     private int storeRound_;
     /**
-     * <code>uint32 store_round = 4;</code>
+     * <code>uint32 store_round = 1;</code>
      * @return The storeRound.
      */
     @java.lang.Override
@@ -137,7 +137,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (storeRound_ != 0) {
-        output.writeUInt32(4, storeRound_);
+        output.writeUInt32(1, storeRound_);
       }
       unknownFields.writeTo(output);
     }
@@ -150,7 +150,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       size = 0;
       if (storeRound_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, storeRound_);
+          .computeUInt32Size(1, storeRound_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,8 +279,8 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24449
-     * Obf: CLACJNIMEFP
+     * CmdId: 6681
+     * Obf: FNJPMMKFLFC
      * </pre>
      *
      * Protobuf type {@code VintageMarketStartStorePlayReq}
@@ -431,7 +431,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
 
       private int storeRound_ ;
       /**
-       * <code>uint32 store_round = 4;</code>
+       * <code>uint32 store_round = 1;</code>
        * @return The storeRound.
        */
       @java.lang.Override
@@ -439,7 +439,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
         return storeRound_;
       }
       /**
-       * <code>uint32 store_round = 4;</code>
+       * <code>uint32 store_round = 1;</code>
        * @param value The storeRound to set.
        * @return This builder for chaining.
        */
@@ -450,7 +450,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 store_round = 4;</code>
+       * <code>uint32 store_round = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStoreRound() {
@@ -528,7 +528,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n$VintageMarketStartStorePlayReq.proto\"5" +
       "\n\036VintageMarketStartStorePlayReq\022\023\n\013stor" +
-      "e_round\030\004 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "e_round\030\001 \001(\rB\033\n\031emu.grasscutter.net.pro" +
       "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

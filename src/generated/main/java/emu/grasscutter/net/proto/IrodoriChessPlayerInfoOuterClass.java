@@ -19,26 +19,26 @@ public final class IrodoriChessPlayerInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 7;</code>
+     * <code>uint32 uid = 11;</code>
      * @return The uid.
      */
     int getUid();
 
     /**
-     * <code>uint32 GPBHPHDEJLI = 2;</code>
-     * @return The gPBHPHDEJLI.
+     * <code>uint32 ALNKBIFEJHG = 6;</code>
+     * @return The aLNKBIFEJHG.
      */
-    int getGPBHPHDEJLI();
+    int getALNKBIFEJHG();
 
     /**
-     * <code>uint32 DHOCBFFKAEN = 3;</code>
-     * @return The dHOCBFFKAEN.
+     * <code>uint32 BPPCDLMFKCP = 12;</code>
+     * @return The bPPCDLMFKCP.
      */
-    int getDHOCBFFKAEN();
+    int getBPPCDLMFKCP();
   }
   /**
    * <pre>
-   * Obf: MGCABBFFCLE
+   * Obf: MMBAOMNDHLH
    * </pre>
    *
    * Protobuf type {@code IrodoriChessPlayerInfo}
@@ -85,19 +85,19 @@ public final class IrodoriChessPlayerInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
-              gPBHPHDEJLI_ = input.readUInt32();
+              aLNKBIFEJHG_ = input.readUInt32();
               break;
             }
-            case 24: {
-
-              dHOCBFFKAEN_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 88: {
 
               uid_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              bPPCDLMFKCP_ = input.readUInt32();
               break;
             }
             default: {
@@ -132,10 +132,10 @@ public final class IrodoriChessPlayerInfoOuterClass {
               emu.grasscutter.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo.class, emu.grasscutter.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 7;
+    public static final int UID_FIELD_NUMBER = 11;
     private int uid_;
     /**
-     * <code>uint32 uid = 7;</code>
+     * <code>uint32 uid = 11;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -143,26 +143,26 @@ public final class IrodoriChessPlayerInfoOuterClass {
       return uid_;
     }
 
-    public static final int GPBHPHDEJLI_FIELD_NUMBER = 2;
-    private int gPBHPHDEJLI_;
+    public static final int ALNKBIFEJHG_FIELD_NUMBER = 6;
+    private int aLNKBIFEJHG_;
     /**
-     * <code>uint32 GPBHPHDEJLI = 2;</code>
-     * @return The gPBHPHDEJLI.
+     * <code>uint32 ALNKBIFEJHG = 6;</code>
+     * @return The aLNKBIFEJHG.
      */
     @java.lang.Override
-    public int getGPBHPHDEJLI() {
-      return gPBHPHDEJLI_;
+    public int getALNKBIFEJHG() {
+      return aLNKBIFEJHG_;
     }
 
-    public static final int DHOCBFFKAEN_FIELD_NUMBER = 3;
-    private int dHOCBFFKAEN_;
+    public static final int BPPCDLMFKCP_FIELD_NUMBER = 12;
+    private int bPPCDLMFKCP_;
     /**
-     * <code>uint32 DHOCBFFKAEN = 3;</code>
-     * @return The dHOCBFFKAEN.
+     * <code>uint32 BPPCDLMFKCP = 12;</code>
+     * @return The bPPCDLMFKCP.
      */
     @java.lang.Override
-    public int getDHOCBFFKAEN() {
-      return dHOCBFFKAEN_;
+    public int getBPPCDLMFKCP() {
+      return bPPCDLMFKCP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -179,14 +179,14 @@ public final class IrodoriChessPlayerInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (gPBHPHDEJLI_ != 0) {
-        output.writeUInt32(2, gPBHPHDEJLI_);
-      }
-      if (dHOCBFFKAEN_ != 0) {
-        output.writeUInt32(3, dHOCBFFKAEN_);
+      if (aLNKBIFEJHG_ != 0) {
+        output.writeUInt32(6, aLNKBIFEJHG_);
       }
       if (uid_ != 0) {
-        output.writeUInt32(7, uid_);
+        output.writeUInt32(11, uid_);
+      }
+      if (bPPCDLMFKCP_ != 0) {
+        output.writeUInt32(12, bPPCDLMFKCP_);
       }
       unknownFields.writeTo(output);
     }
@@ -197,17 +197,17 @@ public final class IrodoriChessPlayerInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (gPBHPHDEJLI_ != 0) {
+      if (aLNKBIFEJHG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, gPBHPHDEJLI_);
-      }
-      if (dHOCBFFKAEN_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, dHOCBFFKAEN_);
+          .computeUInt32Size(6, aLNKBIFEJHG_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, uid_);
+          .computeUInt32Size(11, uid_);
+      }
+      if (bPPCDLMFKCP_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, bPPCDLMFKCP_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -226,10 +226,10 @@ public final class IrodoriChessPlayerInfoOuterClass {
 
       if (getUid()
           != other.getUid()) return false;
-      if (getGPBHPHDEJLI()
-          != other.getGPBHPHDEJLI()) return false;
-      if (getDHOCBFFKAEN()
-          != other.getDHOCBFFKAEN()) return false;
+      if (getALNKBIFEJHG()
+          != other.getALNKBIFEJHG()) return false;
+      if (getBPPCDLMFKCP()
+          != other.getBPPCDLMFKCP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -243,10 +243,10 @@ public final class IrodoriChessPlayerInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (37 * hash) + GPBHPHDEJLI_FIELD_NUMBER;
-      hash = (53 * hash) + getGPBHPHDEJLI();
-      hash = (37 * hash) + DHOCBFFKAEN_FIELD_NUMBER;
-      hash = (53 * hash) + getDHOCBFFKAEN();
+      hash = (37 * hash) + ALNKBIFEJHG_FIELD_NUMBER;
+      hash = (53 * hash) + getALNKBIFEJHG();
+      hash = (37 * hash) + BPPCDLMFKCP_FIELD_NUMBER;
+      hash = (53 * hash) + getBPPCDLMFKCP();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -344,7 +344,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: MGCABBFFCLE
+     * Obf: MMBAOMNDHLH
      * </pre>
      *
      * Protobuf type {@code IrodoriChessPlayerInfo}
@@ -386,9 +386,9 @@ public final class IrodoriChessPlayerInfoOuterClass {
         super.clear();
         uid_ = 0;
 
-        gPBHPHDEJLI_ = 0;
+        aLNKBIFEJHG_ = 0;
 
-        dHOCBFFKAEN_ = 0;
+        bPPCDLMFKCP_ = 0;
 
         return this;
       }
@@ -417,8 +417,8 @@ public final class IrodoriChessPlayerInfoOuterClass {
       public emu.grasscutter.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo buildPartial() {
         emu.grasscutter.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo result = new emu.grasscutter.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo(this);
         result.uid_ = uid_;
-        result.gPBHPHDEJLI_ = gPBHPHDEJLI_;
-        result.dHOCBFFKAEN_ = dHOCBFFKAEN_;
+        result.aLNKBIFEJHG_ = aLNKBIFEJHG_;
+        result.bPPCDLMFKCP_ = bPPCDLMFKCP_;
         onBuilt();
         return result;
       }
@@ -470,11 +470,11 @@ public final class IrodoriChessPlayerInfoOuterClass {
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        if (other.getGPBHPHDEJLI() != 0) {
-          setGPBHPHDEJLI(other.getGPBHPHDEJLI());
+        if (other.getALNKBIFEJHG() != 0) {
+          setALNKBIFEJHG(other.getALNKBIFEJHG());
         }
-        if (other.getDHOCBFFKAEN() != 0) {
-          setDHOCBFFKAEN(other.getDHOCBFFKAEN());
+        if (other.getBPPCDLMFKCP() != 0) {
+          setBPPCDLMFKCP(other.getBPPCDLMFKCP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -507,7 +507,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
 
       private int uid_ ;
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 11;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -515,7 +515,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 11;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -526,7 +526,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 7;</code>
+       * <code>uint32 uid = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -536,64 +536,64 @@ public final class IrodoriChessPlayerInfoOuterClass {
         return this;
       }
 
-      private int gPBHPHDEJLI_ ;
+      private int aLNKBIFEJHG_ ;
       /**
-       * <code>uint32 GPBHPHDEJLI = 2;</code>
-       * @return The gPBHPHDEJLI.
+       * <code>uint32 ALNKBIFEJHG = 6;</code>
+       * @return The aLNKBIFEJHG.
        */
       @java.lang.Override
-      public int getGPBHPHDEJLI() {
-        return gPBHPHDEJLI_;
+      public int getALNKBIFEJHG() {
+        return aLNKBIFEJHG_;
       }
       /**
-       * <code>uint32 GPBHPHDEJLI = 2;</code>
-       * @param value The gPBHPHDEJLI to set.
+       * <code>uint32 ALNKBIFEJHG = 6;</code>
+       * @param value The aLNKBIFEJHG to set.
        * @return This builder for chaining.
        */
-      public Builder setGPBHPHDEJLI(int value) {
+      public Builder setALNKBIFEJHG(int value) {
         
-        gPBHPHDEJLI_ = value;
+        aLNKBIFEJHG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 GPBHPHDEJLI = 2;</code>
+       * <code>uint32 ALNKBIFEJHG = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGPBHPHDEJLI() {
+      public Builder clearALNKBIFEJHG() {
         
-        gPBHPHDEJLI_ = 0;
+        aLNKBIFEJHG_ = 0;
         onChanged();
         return this;
       }
 
-      private int dHOCBFFKAEN_ ;
+      private int bPPCDLMFKCP_ ;
       /**
-       * <code>uint32 DHOCBFFKAEN = 3;</code>
-       * @return The dHOCBFFKAEN.
+       * <code>uint32 BPPCDLMFKCP = 12;</code>
+       * @return The bPPCDLMFKCP.
        */
       @java.lang.Override
-      public int getDHOCBFFKAEN() {
-        return dHOCBFFKAEN_;
+      public int getBPPCDLMFKCP() {
+        return bPPCDLMFKCP_;
       }
       /**
-       * <code>uint32 DHOCBFFKAEN = 3;</code>
-       * @param value The dHOCBFFKAEN to set.
+       * <code>uint32 BPPCDLMFKCP = 12;</code>
+       * @param value The bPPCDLMFKCP to set.
        * @return This builder for chaining.
        */
-      public Builder setDHOCBFFKAEN(int value) {
+      public Builder setBPPCDLMFKCP(int value) {
         
-        dHOCBFFKAEN_ = value;
+        bPPCDLMFKCP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DHOCBFFKAEN = 3;</code>
+       * <code>uint32 BPPCDLMFKCP = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDHOCBFFKAEN() {
+      public Builder clearBPPCDLMFKCP() {
         
-        dHOCBFFKAEN_ = 0;
+        bPPCDLMFKCP_ = 0;
         onChanged();
         return this;
       }
@@ -665,8 +665,8 @@ public final class IrodoriChessPlayerInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034IrodoriChessPlayerInfo.proto\"O\n\026Irodor" +
-      "iChessPlayerInfo\022\013\n\003uid\030\007 \001(\r\022\023\n\013GPBHPHD" +
-      "EJLI\030\002 \001(\r\022\023\n\013DHOCBFFKAEN\030\003 \001(\rB\033\n\031emu.g" +
+      "iChessPlayerInfo\022\013\n\003uid\030\013 \001(\r\022\023\n\013ALNKBIF" +
+      "EJHG\030\006 \001(\r\022\023\n\013BPPCDLMFKCP\030\014 \001(\rB\033\n\031emu.g" +
       "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -678,7 +678,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     internal_static_IrodoriChessPlayerInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IrodoriChessPlayerInfo_descriptor,
-        new java.lang.String[] { "Uid", "GPBHPHDEJLI", "DHOCBFFKAEN", });
+        new java.lang.String[] { "Uid", "ALNKBIFEJHG", "BPPCDLMFKCP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

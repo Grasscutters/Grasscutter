@@ -20,8 +20,8 @@ public final class ForceDragBackTransferNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 3439
-   * Obf: HPBKAFCAHOJ
+   * CmdId: 5469
+   * Obf: JHMDCJHOOEA
    * </pre>
    *
    * Protobuf type {@code ForceDragBackTransferNotify}
@@ -246,8 +246,8 @@ public final class ForceDragBackTransferNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 3439
-     * Obf: HPBKAFCAHOJ
+     * CmdId: 5469
+     * Obf: JHMDCJHOOEA
      * </pre>
      *
      * Protobuf type {@code ForceDragBackTransferNotify}

@@ -19,32 +19,32 @@ public final class ActivityReadPushTipsReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 6;</code>
-     * @return The activityId.
-     */
-    int getActivityId();
-
-    /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @return A list containing the activityPushTipsIdList.
      */
     java.util.List<java.lang.Integer> getActivityPushTipsIdListList();
     /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @return The count of activityPushTipsIdList.
      */
     int getActivityPushTipsIdListCount();
     /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The activityPushTipsIdList at the given index.
      */
     int getActivityPushTipsIdList(int index);
+
+    /**
+     * <code>uint32 activity_id = 14;</code>
+     * @return The activityId.
+     */
+    int getActivityId();
   }
   /**
    * <pre>
-   * CmdId: 8425
-   * Obf: HFFKMAKLCDP
+   * CmdId: 4848
+   * Obf: CPNJIBMOFJO
    * </pre>
    *
    * Protobuf type {@code ActivityReadPushTipsReq}
@@ -93,12 +93,7 @@ public final class ActivityReadPushTipsReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 activityPushTipsIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -106,7 +101,7 @@ public final class ActivityReadPushTipsReqOuterClass {
               activityPushTipsIdList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -117,6 +112,11 @@ public final class ActivityReadPushTipsReqOuterClass {
                 activityPushTipsIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 112: {
+
+              activityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -154,21 +154,10 @@ public final class ActivityReadPushTipsReqOuterClass {
               emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq.class, emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 6;
-    private int activityId_;
-    /**
-     * <code>uint32 activity_id = 6;</code>
-     * @return The activityId.
-     */
-    @java.lang.Override
-    public int getActivityId() {
-      return activityId_;
-    }
-
-    public static final int ACTIVITY_PUSH_TIPS_ID_LIST_FIELD_NUMBER = 15;
+    public static final int ACTIVITY_PUSH_TIPS_ID_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList activityPushTipsIdList_;
     /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @return A list containing the activityPushTipsIdList.
      */
     @java.lang.Override
@@ -177,14 +166,14 @@ public final class ActivityReadPushTipsReqOuterClass {
       return activityPushTipsIdList_;
     }
     /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @return The count of activityPushTipsIdList.
      */
     public int getActivityPushTipsIdListCount() {
       return activityPushTipsIdList_.size();
     }
     /**
-     * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+     * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
      * @param index The index of the element to return.
      * @return The activityPushTipsIdList at the given index.
      */
@@ -192,6 +181,17 @@ public final class ActivityReadPushTipsReqOuterClass {
       return activityPushTipsIdList_.getInt(index);
     }
     private int activityPushTipsIdListMemoizedSerializedSize = -1;
+
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 14;
+    private int activityId_;
+    /**
+     * <code>uint32 activity_id = 14;</code>
+     * @return The activityId.
+     */
+    @java.lang.Override
+    public int getActivityId() {
+      return activityId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -208,15 +208,15 @@ public final class ActivityReadPushTipsReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (activityId_ != 0) {
-        output.writeUInt32(6, activityId_);
-      }
       if (getActivityPushTipsIdListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(activityPushTipsIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < activityPushTipsIdList_.size(); i++) {
         output.writeUInt32NoTag(activityPushTipsIdList_.getInt(i));
+      }
+      if (activityId_ != 0) {
+        output.writeUInt32(14, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -227,10 +227,6 @@ public final class ActivityReadPushTipsReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, activityId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < activityPushTipsIdList_.size(); i++) {
@@ -244,6 +240,10 @@ public final class ActivityReadPushTipsReqOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         activityPushTipsIdListMemoizedSerializedSize = dataSize;
+      }
+      if (activityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -260,10 +260,10 @@ public final class ActivityReadPushTipsReqOuterClass {
       }
       emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq other = (emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq) obj;
 
-      if (getActivityId()
-          != other.getActivityId()) return false;
       if (!getActivityPushTipsIdListList()
           .equals(other.getActivityPushTipsIdListList())) return false;
+      if (getActivityId()
+          != other.getActivityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -275,12 +275,12 @@ public final class ActivityReadPushTipsReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getActivityId();
       if (getActivityPushTipsIdListCount() > 0) {
         hash = (37 * hash) + ACTIVITY_PUSH_TIPS_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getActivityPushTipsIdListList().hashCode();
       }
+      hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getActivityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -378,8 +378,8 @@ public final class ActivityReadPushTipsReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8425
-     * Obf: HFFKMAKLCDP
+     * CmdId: 4848
+     * Obf: CPNJIBMOFJO
      * </pre>
      *
      * Protobuf type {@code ActivityReadPushTipsReq}
@@ -419,10 +419,10 @@ public final class ActivityReadPushTipsReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        activityId_ = 0;
-
         activityPushTipsIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        activityId_ = 0;
+
         return this;
       }
 
@@ -450,12 +450,12 @@ public final class ActivityReadPushTipsReqOuterClass {
       public emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq buildPartial() {
         emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq result = new emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq(this);
         int from_bitField0_ = bitField0_;
-        result.activityId_ = activityId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           activityPushTipsIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.activityPushTipsIdList_ = activityPushTipsIdList_;
+        result.activityId_ = activityId_;
         onBuilt();
         return result;
       }
@@ -504,9 +504,6 @@ public final class ActivityReadPushTipsReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq other) {
         if (other == emu.grasscutter.net.proto.ActivityReadPushTipsReqOuterClass.ActivityReadPushTipsReq.getDefaultInstance()) return this;
-        if (other.getActivityId() != 0) {
-          setActivityId(other.getActivityId());
-        }
         if (!other.activityPushTipsIdList_.isEmpty()) {
           if (activityPushTipsIdList_.isEmpty()) {
             activityPushTipsIdList_ = other.activityPushTipsIdList_;
@@ -516,6 +513,9 @@ public final class ActivityReadPushTipsReqOuterClass {
             activityPushTipsIdList_.addAll(other.activityPushTipsIdList_);
           }
           onChanged();
+        }
+        if (other.getActivityId() != 0) {
+          setActivityId(other.getActivityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -547,37 +547,6 @@ public final class ActivityReadPushTipsReqOuterClass {
       }
       private int bitField0_;
 
-      private int activityId_ ;
-      /**
-       * <code>uint32 activity_id = 6;</code>
-       * @return The activityId.
-       */
-      @java.lang.Override
-      public int getActivityId() {
-        return activityId_;
-      }
-      /**
-       * <code>uint32 activity_id = 6;</code>
-       * @param value The activityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setActivityId(int value) {
-        
-        activityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 activity_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearActivityId() {
-        
-        activityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList activityPushTipsIdList_ = emptyIntList();
       private void ensureActivityPushTipsIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -586,7 +555,7 @@ public final class ActivityReadPushTipsReqOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @return A list containing the activityPushTipsIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -595,14 +564,14 @@ public final class ActivityReadPushTipsReqOuterClass {
                  java.util.Collections.unmodifiableList(activityPushTipsIdList_) : activityPushTipsIdList_;
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @return The count of activityPushTipsIdList.
        */
       public int getActivityPushTipsIdListCount() {
         return activityPushTipsIdList_.size();
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @param index The index of the element to return.
        * @return The activityPushTipsIdList at the given index.
        */
@@ -610,7 +579,7 @@ public final class ActivityReadPushTipsReqOuterClass {
         return activityPushTipsIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The activityPushTipsIdList to set.
        * @return This builder for chaining.
@@ -623,7 +592,7 @@ public final class ActivityReadPushTipsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @param value The activityPushTipsIdList to add.
        * @return This builder for chaining.
        */
@@ -634,7 +603,7 @@ public final class ActivityReadPushTipsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @param values The activityPushTipsIdList to add.
        * @return This builder for chaining.
        */
@@ -647,12 +616,43 @@ public final class ActivityReadPushTipsReqOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 activity_push_tips_id_list = 15;</code>
+       * <code>repeated uint32 activity_push_tips_id_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityPushTipsIdList() {
         activityPushTipsIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int activityId_ ;
+      /**
+       * <code>uint32 activity_id = 14;</code>
+       * @return The activityId.
+       */
+      @java.lang.Override
+      public int getActivityId() {
+        return activityId_;
+      }
+      /**
+       * <code>uint32 activity_id = 14;</code>
+       * @param value The activityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setActivityId(int value) {
+        
+        activityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 activity_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearActivityId() {
+        
+        activityId_ = 0;
         onChanged();
         return this;
       }
@@ -724,8 +724,8 @@ public final class ActivityReadPushTipsReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ActivityReadPushTipsReq.proto\"R\n\027Activ" +
-      "ityReadPushTipsReq\022\023\n\013activity_id\030\006 \001(\r\022" +
-      "\"\n\032activity_push_tips_id_list\030\017 \003(\rB\033\n\031e" +
+      "ityReadPushTipsReq\022\"\n\032activity_push_tips" +
+      "_id_list\030\013 \003(\r\022\023\n\013activity_id\030\016 \001(\rB\033\n\031e" +
       "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -737,7 +737,7 @@ public final class ActivityReadPushTipsReqOuterClass {
     internal_static_ActivityReadPushTipsReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityReadPushTipsReq_descriptor,
-        new java.lang.String[] { "ActivityId", "ActivityPushTipsIdList", });
+        new java.lang.String[] { "ActivityPushTipsIdList", "ActivityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

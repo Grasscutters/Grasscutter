@@ -20,8 +20,8 @@ public final class TreasureMapGuideTaskDoneNotifyOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 2020
-   * Obf: JIJMOEPDNAF
+   * CmdId: 1567
+   * Obf: HKPFGBDPCLI
    * </pre>
    *
    * Protobuf type {@code TreasureMapGuideTaskDoneNotify}
@@ -246,8 +246,8 @@ public final class TreasureMapGuideTaskDoneNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2020
-     * Obf: JIJMOEPDNAF
+     * CmdId: 1567
+     * Obf: HKPFGBDPCLI
      * </pre>
      *
      * Protobuf type {@code TreasureMapGuideTaskDoneNotify}

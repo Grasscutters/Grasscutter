@@ -20,8 +20,8 @@ public final class MuqadasPotionRestartDungeonReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 23190
-   * Obf: HAMOPJJLKCB
+   * CmdId: 7410
+   * Obf: IAIGMKGLFGE
    * </pre>
    *
    * Protobuf type {@code MuqadasPotionRestartDungeonReq}
@@ -246,8 +246,8 @@ public final class MuqadasPotionRestartDungeonReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23190
-     * Obf: HAMOPJJLKCB
+     * CmdId: 7410
+     * Obf: IAIGMKGLFGE
      * </pre>
      *
      * Protobuf type {@code MuqadasPotionRestartDungeonReq}

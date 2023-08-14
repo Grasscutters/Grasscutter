@@ -19,21 +19,21 @@ public final class FishPoolDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>uint32 today_fish_num = 1;</code>
+     * <code>uint32 today_fish_num = 8;</code>
      * @return The todayFishNum.
      */
     int getTodayFishNum();
   }
   /**
    * <pre>
-   * CmdId: 5815
-   * Obf: IBGNCOIBEFF
+   * CmdId: 27962
+   * Obf: AOIPEJKPGCJ
    * </pre>
    *
    * Protobuf type {@code FishPoolDataNotify}
@@ -80,12 +80,12 @@ public final class FishPoolDataNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 64: {
 
               todayFishNum_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
 
               entityId_ = input.readUInt32();
               break;
@@ -122,10 +122,10 @@ public final class FishPoolDataNotifyOuterClass {
               emu.grasscutter.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify.class, emu.grasscutter.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 3;
+    public static final int ENTITY_ID_FIELD_NUMBER = 11;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 3;</code>
+     * <code>uint32 entity_id = 11;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -133,10 +133,10 @@ public final class FishPoolDataNotifyOuterClass {
       return entityId_;
     }
 
-    public static final int TODAY_FISH_NUM_FIELD_NUMBER = 1;
+    public static final int TODAY_FISH_NUM_FIELD_NUMBER = 8;
     private int todayFishNum_;
     /**
-     * <code>uint32 today_fish_num = 1;</code>
+     * <code>uint32 today_fish_num = 8;</code>
      * @return The todayFishNum.
      */
     @java.lang.Override
@@ -159,10 +159,10 @@ public final class FishPoolDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (todayFishNum_ != 0) {
-        output.writeUInt32(1, todayFishNum_);
+        output.writeUInt32(8, todayFishNum_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(3, entityId_);
+        output.writeUInt32(11, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class FishPoolDataNotifyOuterClass {
       size = 0;
       if (todayFishNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, todayFishNum_);
+          .computeUInt32Size(8, todayFishNum_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, entityId_);
+          .computeUInt32Size(11, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class FishPoolDataNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 5815
-     * Obf: IBGNCOIBEFF
+     * CmdId: 27962
+     * Obf: AOIPEJKPGCJ
      * </pre>
      *
      * Protobuf type {@code FishPoolDataNotify}
@@ -470,7 +470,7 @@ public final class FishPoolDataNotifyOuterClass {
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -478,7 +478,7 @@ public final class FishPoolDataNotifyOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -489,7 +489,7 @@ public final class FishPoolDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 3;</code>
+       * <code>uint32 entity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -501,7 +501,7 @@ public final class FishPoolDataNotifyOuterClass {
 
       private int todayFishNum_ ;
       /**
-       * <code>uint32 today_fish_num = 1;</code>
+       * <code>uint32 today_fish_num = 8;</code>
        * @return The todayFishNum.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class FishPoolDataNotifyOuterClass {
         return todayFishNum_;
       }
       /**
-       * <code>uint32 today_fish_num = 1;</code>
+       * <code>uint32 today_fish_num = 8;</code>
        * @param value The todayFishNum to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class FishPoolDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 today_fish_num = 1;</code>
+       * <code>uint32 today_fish_num = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTodayFishNum() {
@@ -597,8 +597,8 @@ public final class FishPoolDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030FishPoolDataNotify.proto\"?\n\022FishPoolDa" +
-      "taNotify\022\021\n\tentity_id\030\003 \001(\r\022\026\n\016today_fis" +
-      "h_num\030\001 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "taNotify\022\021\n\tentity_id\030\013 \001(\r\022\026\n\016today_fis" +
+      "h_num\030\010 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

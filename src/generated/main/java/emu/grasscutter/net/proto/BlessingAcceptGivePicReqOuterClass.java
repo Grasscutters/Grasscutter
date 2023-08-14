@@ -25,15 +25,15 @@ public final class BlessingAcceptGivePicReqOuterClass {
     int getUid();
 
     /**
-     * <code>uint32 index = 15;</code>
+     * <code>uint32 index = 7;</code>
      * @return The index.
      */
     int getIndex();
   }
   /**
    * <pre>
-   * CmdId: 2132
-   * Obf: OCOOFMPCFPB
+   * CmdId: 1596
+   * Obf: OIOCLCKGFJI
    * </pre>
    *
    * Protobuf type {@code BlessingAcceptGivePicReq}
@@ -85,7 +85,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
               uid_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 56: {
 
               index_ = input.readUInt32();
               break;
@@ -133,10 +133,10 @@ public final class BlessingAcceptGivePicReqOuterClass {
       return uid_;
     }
 
-    public static final int INDEX_FIELD_NUMBER = 15;
+    public static final int INDEX_FIELD_NUMBER = 7;
     private int index_;
     /**
-     * <code>uint32 index = 15;</code>
+     * <code>uint32 index = 7;</code>
      * @return The index.
      */
     @java.lang.Override
@@ -162,7 +162,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
         output.writeUInt32(2, uid_);
       }
       if (index_ != 0) {
-        output.writeUInt32(15, index_);
+        output.writeUInt32(7, index_);
       }
       unknownFields.writeTo(output);
     }
@@ -179,7 +179,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
       }
       if (index_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, index_);
+          .computeUInt32Size(7, index_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -312,8 +312,8 @@ public final class BlessingAcceptGivePicReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 2132
-     * Obf: OCOOFMPCFPB
+     * CmdId: 1596
+     * Obf: OIOCLCKGFJI
      * </pre>
      *
      * Protobuf type {@code BlessingAcceptGivePicReq}
@@ -501,7 +501,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
 
       private int index_ ;
       /**
-       * <code>uint32 index = 15;</code>
+       * <code>uint32 index = 7;</code>
        * @return The index.
        */
       @java.lang.Override
@@ -509,7 +509,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
         return index_;
       }
       /**
-       * <code>uint32 index = 15;</code>
+       * <code>uint32 index = 7;</code>
        * @param value The index to set.
        * @return This builder for chaining.
        */
@@ -520,7 +520,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 index = 15;</code>
+       * <code>uint32 index = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
@@ -598,7 +598,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036BlessingAcceptGivePicReq.proto\"6\n\030Bles" +
       "singAcceptGivePicReq\022\013\n\003uid\030\002 \001(\r\022\r\n\005ind" +
-      "ex\030\017 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "ex\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
       "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

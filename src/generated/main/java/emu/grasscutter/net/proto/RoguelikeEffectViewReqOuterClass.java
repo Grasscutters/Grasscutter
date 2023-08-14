@@ -19,43 +19,43 @@ public final class RoguelikeEffectViewReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-     * @return A list containing the bJBPCJDCIDI.
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+     * @return A list containing the gMMCJDAIPBO.
      */
-    java.util.List<java.lang.Integer> getBJBPCJDCIDIList();
+    java.util.List<java.lang.Integer> getGMMCJDAIPBOList();
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-     * @return The count of bJBPCJDCIDI.
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+     * @return The count of gMMCJDAIPBO.
      */
-    int getBJBPCJDCIDICount();
+    int getGMMCJDAIPBOCount();
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
      * @param index The index of the element to return.
-     * @return The bJBPCJDCIDI at the given index.
+     * @return The gMMCJDAIPBO at the given index.
      */
-    int getBJBPCJDCIDI(int index);
+    int getGMMCJDAIPBO(int index);
 
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-     * @return A list containing the nEPOEDIHJJH.
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+     * @return A list containing the fNABJPMKHPI.
      */
-    java.util.List<java.lang.Integer> getNEPOEDIHJJHList();
+    java.util.List<java.lang.Integer> getFNABJPMKHPIList();
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-     * @return The count of nEPOEDIHJJH.
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+     * @return The count of fNABJPMKHPI.
      */
-    int getNEPOEDIHJJHCount();
+    int getFNABJPMKHPICount();
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
      * @param index The index of the element to return.
-     * @return The nEPOEDIHJJH at the given index.
+     * @return The fNABJPMKHPI at the given index.
      */
-    int getNEPOEDIHJJH(int index);
+    int getFNABJPMKHPI(int index);
   }
   /**
    * <pre>
-   * CmdId: 8105
-   * Obf: HIBIPBLJMJL
+   * CmdId: 24896
+   * Obf: ENNDBBGDALI
    * </pre>
    *
    * Protobuf type {@code RoguelikeEffectViewReq}
@@ -70,8 +70,8 @@ public final class RoguelikeEffectViewReqOuterClass {
       super(builder);
     }
     private RoguelikeEffectViewReq() {
-      bJBPCJDCIDI_ = emptyIntList();
-      nEPOEDIHJJH_ = emptyIntList();
+      gMMCJDAIPBO_ = emptyIntList();
+      fNABJPMKHPI_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -105,44 +105,44 @@ public final class RoguelikeEffectViewReqOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nEPOEDIHJJH_ = newIntList();
+                fNABJPMKHPI_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              nEPOEDIHJJH_.addInt(input.readUInt32());
+              fNABJPMKHPI_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                nEPOEDIHJJH_ = newIntList();
+                fNABJPMKHPI_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                nEPOEDIHJJH_.addInt(input.readUInt32());
+                fNABJPMKHPI_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
             }
-            case 112: {
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bJBPCJDCIDI_ = newIntList();
+                gMMCJDAIPBO_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              bJBPCJDCIDI_.addInt(input.readUInt32());
+              gMMCJDAIPBO_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                bJBPCJDCIDI_ = newIntList();
+                gMMCJDAIPBO_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                bJBPCJDCIDI_.addInt(input.readUInt32());
+                gMMCJDAIPBO_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -163,10 +163,10 @@ public final class RoguelikeEffectViewReqOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nEPOEDIHJJH_.makeImmutable(); // C
+          fNABJPMKHPI_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bJBPCJDCIDI_.makeImmutable(); // C
+          gMMCJDAIPBO_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -185,61 +185,61 @@ public final class RoguelikeEffectViewReqOuterClass {
               emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq.class, emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq.Builder.class);
     }
 
-    public static final int BJBPCJDCIDI_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.IntList bJBPCJDCIDI_;
+    public static final int GMMCJDAIPBO_FIELD_NUMBER = 13;
+    private com.google.protobuf.Internal.IntList gMMCJDAIPBO_;
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-     * @return A list containing the bJBPCJDCIDI.
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+     * @return A list containing the gMMCJDAIPBO.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getBJBPCJDCIDIList() {
-      return bJBPCJDCIDI_;
+        getGMMCJDAIPBOList() {
+      return gMMCJDAIPBO_;
     }
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-     * @return The count of bJBPCJDCIDI.
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+     * @return The count of gMMCJDAIPBO.
      */
-    public int getBJBPCJDCIDICount() {
-      return bJBPCJDCIDI_.size();
+    public int getGMMCJDAIPBOCount() {
+      return gMMCJDAIPBO_.size();
     }
     /**
-     * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
+     * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
      * @param index The index of the element to return.
-     * @return The bJBPCJDCIDI at the given index.
+     * @return The gMMCJDAIPBO at the given index.
      */
-    public int getBJBPCJDCIDI(int index) {
-      return bJBPCJDCIDI_.getInt(index);
+    public int getGMMCJDAIPBO(int index) {
+      return gMMCJDAIPBO_.getInt(index);
     }
-    private int bJBPCJDCIDIMemoizedSerializedSize = -1;
+    private int gMMCJDAIPBOMemoizedSerializedSize = -1;
 
-    public static final int NEPOEDIHJJH_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.IntList nEPOEDIHJJH_;
+    public static final int FNABJPMKHPI_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList fNABJPMKHPI_;
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-     * @return A list containing the nEPOEDIHJJH.
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+     * @return A list containing the fNABJPMKHPI.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getNEPOEDIHJJHList() {
-      return nEPOEDIHJJH_;
+        getFNABJPMKHPIList() {
+      return fNABJPMKHPI_;
     }
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-     * @return The count of nEPOEDIHJJH.
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+     * @return The count of fNABJPMKHPI.
      */
-    public int getNEPOEDIHJJHCount() {
-      return nEPOEDIHJJH_.size();
+    public int getFNABJPMKHPICount() {
+      return fNABJPMKHPI_.size();
     }
     /**
-     * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
+     * <code>repeated uint32 FNABJPMKHPI = 3;</code>
      * @param index The index of the element to return.
-     * @return The nEPOEDIHJJH at the given index.
+     * @return The fNABJPMKHPI at the given index.
      */
-    public int getNEPOEDIHJJH(int index) {
-      return nEPOEDIHJJH_.getInt(index);
+    public int getFNABJPMKHPI(int index) {
+      return fNABJPMKHPI_.getInt(index);
     }
-    private int nEPOEDIHJJHMemoizedSerializedSize = -1;
+    private int fNABJPMKHPIMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -256,19 +256,19 @@ public final class RoguelikeEffectViewReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getNEPOEDIHJJHList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(nEPOEDIHJJHMemoizedSerializedSize);
+      if (getFNABJPMKHPIList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(fNABJPMKHPIMemoizedSerializedSize);
       }
-      for (int i = 0; i < nEPOEDIHJJH_.size(); i++) {
-        output.writeUInt32NoTag(nEPOEDIHJJH_.getInt(i));
+      for (int i = 0; i < fNABJPMKHPI_.size(); i++) {
+        output.writeUInt32NoTag(fNABJPMKHPI_.getInt(i));
       }
-      if (getBJBPCJDCIDIList().size() > 0) {
-        output.writeUInt32NoTag(114);
-        output.writeUInt32NoTag(bJBPCJDCIDIMemoizedSerializedSize);
+      if (getGMMCJDAIPBOList().size() > 0) {
+        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(gMMCJDAIPBOMemoizedSerializedSize);
       }
-      for (int i = 0; i < bJBPCJDCIDI_.size(); i++) {
-        output.writeUInt32NoTag(bJBPCJDCIDI_.getInt(i));
+      for (int i = 0; i < gMMCJDAIPBO_.size(); i++) {
+        output.writeUInt32NoTag(gMMCJDAIPBO_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -281,31 +281,31 @@ public final class RoguelikeEffectViewReqOuterClass {
       size = 0;
       {
         int dataSize = 0;
-        for (int i = 0; i < nEPOEDIHJJH_.size(); i++) {
+        for (int i = 0; i < fNABJPMKHPI_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(nEPOEDIHJJH_.getInt(i));
+            .computeUInt32SizeNoTag(fNABJPMKHPI_.getInt(i));
         }
         size += dataSize;
-        if (!getNEPOEDIHJJHList().isEmpty()) {
+        if (!getFNABJPMKHPIList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        nEPOEDIHJJHMemoizedSerializedSize = dataSize;
+        fNABJPMKHPIMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < bJBPCJDCIDI_.size(); i++) {
+        for (int i = 0; i < gMMCJDAIPBO_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(bJBPCJDCIDI_.getInt(i));
+            .computeUInt32SizeNoTag(gMMCJDAIPBO_.getInt(i));
         }
         size += dataSize;
-        if (!getBJBPCJDCIDIList().isEmpty()) {
+        if (!getGMMCJDAIPBOList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        bJBPCJDCIDIMemoizedSerializedSize = dataSize;
+        gMMCJDAIPBOMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -322,10 +322,10 @@ public final class RoguelikeEffectViewReqOuterClass {
       }
       emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq other = (emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq) obj;
 
-      if (!getBJBPCJDCIDIList()
-          .equals(other.getBJBPCJDCIDIList())) return false;
-      if (!getNEPOEDIHJJHList()
-          .equals(other.getNEPOEDIHJJHList())) return false;
+      if (!getGMMCJDAIPBOList()
+          .equals(other.getGMMCJDAIPBOList())) return false;
+      if (!getFNABJPMKHPIList()
+          .equals(other.getFNABJPMKHPIList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -337,13 +337,13 @@ public final class RoguelikeEffectViewReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getBJBPCJDCIDICount() > 0) {
-        hash = (37 * hash) + BJBPCJDCIDI_FIELD_NUMBER;
-        hash = (53 * hash) + getBJBPCJDCIDIList().hashCode();
+      if (getGMMCJDAIPBOCount() > 0) {
+        hash = (37 * hash) + GMMCJDAIPBO_FIELD_NUMBER;
+        hash = (53 * hash) + getGMMCJDAIPBOList().hashCode();
       }
-      if (getNEPOEDIHJJHCount() > 0) {
-        hash = (37 * hash) + NEPOEDIHJJH_FIELD_NUMBER;
-        hash = (53 * hash) + getNEPOEDIHJJHList().hashCode();
+      if (getFNABJPMKHPICount() > 0) {
+        hash = (37 * hash) + FNABJPMKHPI_FIELD_NUMBER;
+        hash = (53 * hash) + getFNABJPMKHPIList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -442,8 +442,8 @@ public final class RoguelikeEffectViewReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8105
-     * Obf: HIBIPBLJMJL
+     * CmdId: 24896
+     * Obf: ENNDBBGDALI
      * </pre>
      *
      * Protobuf type {@code RoguelikeEffectViewReq}
@@ -483,9 +483,9 @@ public final class RoguelikeEffectViewReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bJBPCJDCIDI_ = emptyIntList();
+        gMMCJDAIPBO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        nEPOEDIHJJH_ = emptyIntList();
+        fNABJPMKHPI_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
@@ -515,15 +515,15 @@ public final class RoguelikeEffectViewReqOuterClass {
         emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq result = new emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          bJBPCJDCIDI_.makeImmutable();
+          gMMCJDAIPBO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.bJBPCJDCIDI_ = bJBPCJDCIDI_;
+        result.gMMCJDAIPBO_ = gMMCJDAIPBO_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          nEPOEDIHJJH_.makeImmutable();
+          fNABJPMKHPI_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.nEPOEDIHJJH_ = nEPOEDIHJJH_;
+        result.fNABJPMKHPI_ = fNABJPMKHPI_;
         onBuilt();
         return result;
       }
@@ -572,23 +572,23 @@ public final class RoguelikeEffectViewReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq other) {
         if (other == emu.grasscutter.net.proto.RoguelikeEffectViewReqOuterClass.RoguelikeEffectViewReq.getDefaultInstance()) return this;
-        if (!other.bJBPCJDCIDI_.isEmpty()) {
-          if (bJBPCJDCIDI_.isEmpty()) {
-            bJBPCJDCIDI_ = other.bJBPCJDCIDI_;
+        if (!other.gMMCJDAIPBO_.isEmpty()) {
+          if (gMMCJDAIPBO_.isEmpty()) {
+            gMMCJDAIPBO_ = other.gMMCJDAIPBO_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureBJBPCJDCIDIIsMutable();
-            bJBPCJDCIDI_.addAll(other.bJBPCJDCIDI_);
+            ensureGMMCJDAIPBOIsMutable();
+            gMMCJDAIPBO_.addAll(other.gMMCJDAIPBO_);
           }
           onChanged();
         }
-        if (!other.nEPOEDIHJJH_.isEmpty()) {
-          if (nEPOEDIHJJH_.isEmpty()) {
-            nEPOEDIHJJH_ = other.nEPOEDIHJJH_;
+        if (!other.fNABJPMKHPI_.isEmpty()) {
+          if (fNABJPMKHPI_.isEmpty()) {
+            fNABJPMKHPI_ = other.fNABJPMKHPI_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureNEPOEDIHJJHIsMutable();
-            nEPOEDIHJJH_.addAll(other.nEPOEDIHJJH_);
+            ensureFNABJPMKHPIIsMutable();
+            fNABJPMKHPI_.addAll(other.fNABJPMKHPI_);
           }
           onChanged();
         }
@@ -622,159 +622,159 @@ public final class RoguelikeEffectViewReqOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList bJBPCJDCIDI_ = emptyIntList();
-      private void ensureBJBPCJDCIDIIsMutable() {
+      private com.google.protobuf.Internal.IntList gMMCJDAIPBO_ = emptyIntList();
+      private void ensureGMMCJDAIPBOIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          bJBPCJDCIDI_ = mutableCopy(bJBPCJDCIDI_);
+          gMMCJDAIPBO_ = mutableCopy(gMMCJDAIPBO_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-       * @return A list containing the bJBPCJDCIDI.
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+       * @return A list containing the gMMCJDAIPBO.
        */
       public java.util.List<java.lang.Integer>
-          getBJBPCJDCIDIList() {
+          getGMMCJDAIPBOList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(bJBPCJDCIDI_) : bJBPCJDCIDI_;
+                 java.util.Collections.unmodifiableList(gMMCJDAIPBO_) : gMMCJDAIPBO_;
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-       * @return The count of bJBPCJDCIDI.
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+       * @return The count of gMMCJDAIPBO.
        */
-      public int getBJBPCJDCIDICount() {
-        return bJBPCJDCIDI_.size();
+      public int getGMMCJDAIPBOCount() {
+        return gMMCJDAIPBO_.size();
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
        * @param index The index of the element to return.
-       * @return The bJBPCJDCIDI at the given index.
+       * @return The gMMCJDAIPBO at the given index.
        */
-      public int getBJBPCJDCIDI(int index) {
-        return bJBPCJDCIDI_.getInt(index);
+      public int getGMMCJDAIPBO(int index) {
+        return gMMCJDAIPBO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
        * @param index The index to set the value at.
-       * @param value The bJBPCJDCIDI to set.
+       * @param value The gMMCJDAIPBO to set.
        * @return This builder for chaining.
        */
-      public Builder setBJBPCJDCIDI(
+      public Builder setGMMCJDAIPBO(
           int index, int value) {
-        ensureBJBPCJDCIDIIsMutable();
-        bJBPCJDCIDI_.setInt(index, value);
+        ensureGMMCJDAIPBOIsMutable();
+        gMMCJDAIPBO_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-       * @param value The bJBPCJDCIDI to add.
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+       * @param value The gMMCJDAIPBO to add.
        * @return This builder for chaining.
        */
-      public Builder addBJBPCJDCIDI(int value) {
-        ensureBJBPCJDCIDIIsMutable();
-        bJBPCJDCIDI_.addInt(value);
+      public Builder addGMMCJDAIPBO(int value) {
+        ensureGMMCJDAIPBOIsMutable();
+        gMMCJDAIPBO_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
-       * @param values The bJBPCJDCIDI to add.
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
+       * @param values The gMMCJDAIPBO to add.
        * @return This builder for chaining.
        */
-      public Builder addAllBJBPCJDCIDI(
+      public Builder addAllGMMCJDAIPBO(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureBJBPCJDCIDIIsMutable();
+        ensureGMMCJDAIPBOIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, bJBPCJDCIDI_);
+            values, gMMCJDAIPBO_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 BJBPCJDCIDI = 14;</code>
+       * <code>repeated uint32 GMMCJDAIPBO = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBJBPCJDCIDI() {
-        bJBPCJDCIDI_ = emptyIntList();
+      public Builder clearGMMCJDAIPBO() {
+        gMMCJDAIPBO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList nEPOEDIHJJH_ = emptyIntList();
-      private void ensureNEPOEDIHJJHIsMutable() {
+      private com.google.protobuf.Internal.IntList fNABJPMKHPI_ = emptyIntList();
+      private void ensureFNABJPMKHPIIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          nEPOEDIHJJH_ = mutableCopy(nEPOEDIHJJH_);
+          fNABJPMKHPI_ = mutableCopy(fNABJPMKHPI_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-       * @return A list containing the nEPOEDIHJJH.
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+       * @return A list containing the fNABJPMKHPI.
        */
       public java.util.List<java.lang.Integer>
-          getNEPOEDIHJJHList() {
+          getFNABJPMKHPIList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(nEPOEDIHJJH_) : nEPOEDIHJJH_;
+                 java.util.Collections.unmodifiableList(fNABJPMKHPI_) : fNABJPMKHPI_;
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-       * @return The count of nEPOEDIHJJH.
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+       * @return The count of fNABJPMKHPI.
        */
-      public int getNEPOEDIHJJHCount() {
-        return nEPOEDIHJJH_.size();
+      public int getFNABJPMKHPICount() {
+        return fNABJPMKHPI_.size();
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
        * @param index The index of the element to return.
-       * @return The nEPOEDIHJJH at the given index.
+       * @return The fNABJPMKHPI at the given index.
        */
-      public int getNEPOEDIHJJH(int index) {
-        return nEPOEDIHJJH_.getInt(index);
+      public int getFNABJPMKHPI(int index) {
+        return fNABJPMKHPI_.getInt(index);
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
        * @param index The index to set the value at.
-       * @param value The nEPOEDIHJJH to set.
+       * @param value The fNABJPMKHPI to set.
        * @return This builder for chaining.
        */
-      public Builder setNEPOEDIHJJH(
+      public Builder setFNABJPMKHPI(
           int index, int value) {
-        ensureNEPOEDIHJJHIsMutable();
-        nEPOEDIHJJH_.setInt(index, value);
+        ensureFNABJPMKHPIIsMutable();
+        fNABJPMKHPI_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-       * @param value The nEPOEDIHJJH to add.
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+       * @param value The fNABJPMKHPI to add.
        * @return This builder for chaining.
        */
-      public Builder addNEPOEDIHJJH(int value) {
-        ensureNEPOEDIHJJHIsMutable();
-        nEPOEDIHJJH_.addInt(value);
+      public Builder addFNABJPMKHPI(int value) {
+        ensureFNABJPMKHPIIsMutable();
+        fNABJPMKHPI_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
-       * @param values The nEPOEDIHJJH to add.
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
+       * @param values The fNABJPMKHPI to add.
        * @return This builder for chaining.
        */
-      public Builder addAllNEPOEDIHJJH(
+      public Builder addAllFNABJPMKHPI(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNEPOEDIHJJHIsMutable();
+        ensureFNABJPMKHPIIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nEPOEDIHJJH_);
+            values, fNABJPMKHPI_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NEPOEDIHJJH = 6;</code>
+       * <code>repeated uint32 FNABJPMKHPI = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNEPOEDIHJJH() {
-        nEPOEDIHJJH_ = emptyIntList();
+      public Builder clearFNABJPMKHPI() {
+        fNABJPMKHPI_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -847,8 +847,8 @@ public final class RoguelikeEffectViewReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034RoguelikeEffectViewReq.proto\"B\n\026Roguel" +
-      "ikeEffectViewReq\022\023\n\013BJBPCJDCIDI\030\016 \003(\r\022\023\n" +
-      "\013NEPOEDIHJJH\030\006 \003(\rB\033\n\031emu.grasscutter.ne" +
+      "ikeEffectViewReq\022\023\n\013GMMCJDAIPBO\030\r \003(\r\022\023\n" +
+      "\013FNABJPMKHPI\030\003 \003(\rB\033\n\031emu.grasscutter.ne" +
       "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -860,7 +860,7 @@ public final class RoguelikeEffectViewReqOuterClass {
     internal_static_RoguelikeEffectViewReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RoguelikeEffectViewReq_descriptor,
-        new java.lang.String[] { "BJBPCJDCIDI", "NEPOEDIHJJH", });
+        new java.lang.String[] { "GMMCJDAIPBO", "FNABJPMKHPI", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,20 +19,20 @@ public final class PlayerRoutineInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 routine_type = 2;</code>
+     * <code>uint32 routine_type = 1;</code>
      * @return The routineType.
      */
     int getRoutineType();
 
     /**
-     * <code>uint32 finished_num = 4;</code>
+     * <code>uint32 finished_num = 5;</code>
      * @return The finishedNum.
      */
     int getFinishedNum();
   }
   /**
    * <pre>
-   * Obf: CIDDDIHEFHF
+   * Obf: NGOMHLGCDCA
    * </pre>
    *
    * Protobuf type {@code PlayerRoutineInfo}
@@ -79,12 +79,12 @@ public final class PlayerRoutineInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               routineType_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 40: {
 
               finishedNum_ = input.readUInt32();
               break;
@@ -121,10 +121,10 @@ public final class PlayerRoutineInfoOuterClass {
               emu.grasscutter.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo.class, emu.grasscutter.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo.Builder.class);
     }
 
-    public static final int ROUTINE_TYPE_FIELD_NUMBER = 2;
+    public static final int ROUTINE_TYPE_FIELD_NUMBER = 1;
     private int routineType_;
     /**
-     * <code>uint32 routine_type = 2;</code>
+     * <code>uint32 routine_type = 1;</code>
      * @return The routineType.
      */
     @java.lang.Override
@@ -132,10 +132,10 @@ public final class PlayerRoutineInfoOuterClass {
       return routineType_;
     }
 
-    public static final int FINISHED_NUM_FIELD_NUMBER = 4;
+    public static final int FINISHED_NUM_FIELD_NUMBER = 5;
     private int finishedNum_;
     /**
-     * <code>uint32 finished_num = 4;</code>
+     * <code>uint32 finished_num = 5;</code>
      * @return The finishedNum.
      */
     @java.lang.Override
@@ -158,10 +158,10 @@ public final class PlayerRoutineInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (routineType_ != 0) {
-        output.writeUInt32(2, routineType_);
+        output.writeUInt32(1, routineType_);
       }
       if (finishedNum_ != 0) {
-        output.writeUInt32(4, finishedNum_);
+        output.writeUInt32(5, finishedNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,11 +174,11 @@ public final class PlayerRoutineInfoOuterClass {
       size = 0;
       if (routineType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, routineType_);
+          .computeUInt32Size(1, routineType_);
       }
       if (finishedNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, finishedNum_);
+          .computeUInt32Size(5, finishedNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -311,7 +311,7 @@ public final class PlayerRoutineInfoOuterClass {
     }
     /**
      * <pre>
-     * Obf: CIDDDIHEFHF
+     * Obf: NGOMHLGCDCA
      * </pre>
      *
      * Protobuf type {@code PlayerRoutineInfo}
@@ -468,7 +468,7 @@ public final class PlayerRoutineInfoOuterClass {
 
       private int routineType_ ;
       /**
-       * <code>uint32 routine_type = 2;</code>
+       * <code>uint32 routine_type = 1;</code>
        * @return The routineType.
        */
       @java.lang.Override
@@ -476,7 +476,7 @@ public final class PlayerRoutineInfoOuterClass {
         return routineType_;
       }
       /**
-       * <code>uint32 routine_type = 2;</code>
+       * <code>uint32 routine_type = 1;</code>
        * @param value The routineType to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class PlayerRoutineInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 routine_type = 2;</code>
+       * <code>uint32 routine_type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRoutineType() {
@@ -499,7 +499,7 @@ public final class PlayerRoutineInfoOuterClass {
 
       private int finishedNum_ ;
       /**
-       * <code>uint32 finished_num = 4;</code>
+       * <code>uint32 finished_num = 5;</code>
        * @return The finishedNum.
        */
       @java.lang.Override
@@ -507,7 +507,7 @@ public final class PlayerRoutineInfoOuterClass {
         return finishedNum_;
       }
       /**
-       * <code>uint32 finished_num = 4;</code>
+       * <code>uint32 finished_num = 5;</code>
        * @param value The finishedNum to set.
        * @return This builder for chaining.
        */
@@ -518,7 +518,7 @@ public final class PlayerRoutineInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 finished_num = 4;</code>
+       * <code>uint32 finished_num = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearFinishedNum() {
@@ -595,8 +595,8 @@ public final class PlayerRoutineInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027PlayerRoutineInfo.proto\"?\n\021PlayerRouti" +
-      "neInfo\022\024\n\014routine_type\030\002 \001(\r\022\024\n\014finished" +
-      "_num\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "neInfo\022\024\n\014routine_type\030\001 \001(\r\022\024\n\014finished" +
+      "_num\030\005 \001(\rB\033\n\031emu.grasscutter.net.protob" +
       "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

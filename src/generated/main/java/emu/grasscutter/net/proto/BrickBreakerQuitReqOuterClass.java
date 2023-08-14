@@ -20,8 +20,8 @@ public final class BrickBreakerQuitReqOuterClass {
   }
   /**
    * <pre>
-   * CmdId: 24426
-   * Obf: AOGCFHCNMIM
+   * CmdId: 2184
+   * Obf: FAGOMNKEJHG
    * </pre>
    *
    * Protobuf type {@code BrickBreakerQuitReq}
@@ -246,8 +246,8 @@ public final class BrickBreakerQuitReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 24426
-     * Obf: AOGCFHCNMIM
+     * CmdId: 2184
+     * Obf: FAGOMNKEJHG
      * </pre>
      *
      * Protobuf type {@code BrickBreakerQuitReq}

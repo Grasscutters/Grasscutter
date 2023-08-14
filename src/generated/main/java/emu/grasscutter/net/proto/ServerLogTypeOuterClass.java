@@ -16,7 +16,7 @@ public final class ServerLogTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: EBGEGNIBCPC
+   * Obf: DEJFCBNPEJO
    * </pre>
    *
    * Protobuf enum {@code ServerLogType}

@@ -16,7 +16,7 @@ public final class RogueEliteCellDifficultyTypeOuterClass {
   }
   /**
    * <pre>
-   * Obf: JGPBHHPGMHC
+   * Obf: ICMLDBMKFPC
    * </pre>
    *
    * Protobuf enum {@code RogueEliteCellDifficultyType}

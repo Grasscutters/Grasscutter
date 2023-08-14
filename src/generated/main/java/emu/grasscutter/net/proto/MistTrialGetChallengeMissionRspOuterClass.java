@@ -19,6 +19,12 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 trial_id = 1;</code>
+     * @return The trialId.
+     */
+    int getTrialId();
+
+    /**
      * <code>repeated .MistTrialMissionInfo mission_info_list = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo> 
@@ -43,21 +49,15 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         int index);
 
     /**
-     * <code>uint32 trial_id = 11;</code>
-     * @return The trialId.
-     */
-    int getTrialId();
-
-    /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
    * <pre>
-   * CmdId: 8668
-   * Obf: PEFLPJCGOEG
+   * CmdId: 23092
+   * Obf: BAFLEOPDPDH
    * </pre>
    *
    * Protobuf type {@code MistTrialGetChallengeMissionRsp}
@@ -106,6 +106,16 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              trialId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 missionInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo>();
@@ -113,16 +123,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
               }
               missionInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              trialId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -158,6 +158,17 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       return emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.internal_static_MistTrialGetChallengeMissionRsp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp.class, emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp.Builder.class);
+    }
+
+    public static final int TRIAL_ID_FIELD_NUMBER = 1;
+    private int trialId_;
+    /**
+     * <code>uint32 trial_id = 1;</code>
+     * @return The trialId.
+     */
+    @java.lang.Override
+    public int getTrialId() {
+      return trialId_;
     }
 
     public static final int MISSION_INFO_LIST_FIELD_NUMBER = 5;
@@ -200,21 +211,10 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       return missionInfoList_.get(index);
     }
 
-    public static final int TRIAL_ID_FIELD_NUMBER = 11;
-    private int trialId_;
-    /**
-     * <code>uint32 trial_id = 11;</code>
-     * @return The trialId.
-     */
-    @java.lang.Override
-    public int getTrialId() {
-      return trialId_;
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 12;
+    public static final int RETCODE_FIELD_NUMBER = 3;
     private int retcode_;
     /**
-     * <code>int32 retcode = 12;</code>
+     * <code>int32 retcode = 3;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -236,14 +236,14 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < missionInfoList_.size(); i++) {
-        output.writeMessage(5, missionInfoList_.get(i));
-      }
       if (trialId_ != 0) {
-        output.writeUInt32(11, trialId_);
+        output.writeUInt32(1, trialId_);
       }
       if (retcode_ != 0) {
-        output.writeInt32(12, retcode_);
+        output.writeInt32(3, retcode_);
+      }
+      for (int i = 0; i < missionInfoList_.size(); i++) {
+        output.writeMessage(5, missionInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -254,17 +254,17 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < missionInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, missionInfoList_.get(i));
-      }
       if (trialId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, trialId_);
+          .computeUInt32Size(1, trialId_);
       }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, retcode_);
+          .computeInt32Size(3, retcode_);
+      }
+      for (int i = 0; i < missionInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, missionInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -281,10 +281,10 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       }
       emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp other = (emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp) obj;
 
-      if (!getMissionInfoListList()
-          .equals(other.getMissionInfoListList())) return false;
       if (getTrialId()
           != other.getTrialId()) return false;
+      if (!getMissionInfoListList()
+          .equals(other.getMissionInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -298,12 +298,12 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTrialId();
       if (getMissionInfoListCount() > 0) {
         hash = (37 * hash) + MISSION_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMissionInfoListList().hashCode();
       }
-      hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTrialId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -403,8 +403,8 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 8668
-     * Obf: PEFLPJCGOEG
+     * CmdId: 23092
+     * Obf: BAFLEOPDPDH
      * </pre>
      *
      * Protobuf type {@code MistTrialGetChallengeMissionRsp}
@@ -445,14 +445,14 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        trialId_ = 0;
+
         if (missionInfoListBuilder_ == null) {
           missionInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           missionInfoListBuilder_.clear();
         }
-        trialId_ = 0;
-
         retcode_ = 0;
 
         return this;
@@ -482,6 +482,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
       public emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp buildPartial() {
         emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp result = new emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp(this);
         int from_bitField0_ = bitField0_;
+        result.trialId_ = trialId_;
         if (missionInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             missionInfoList_ = java.util.Collections.unmodifiableList(missionInfoList_);
@@ -491,7 +492,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         } else {
           result.missionInfoList_ = missionInfoListBuilder_.build();
         }
-        result.trialId_ = trialId_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -541,6 +541,9 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp other) {
         if (other == emu.grasscutter.net.proto.MistTrialGetChallengeMissionRspOuterClass.MistTrialGetChallengeMissionRsp.getDefaultInstance()) return this;
+        if (other.getTrialId() != 0) {
+          setTrialId(other.getTrialId());
+        }
         if (missionInfoListBuilder_ == null) {
           if (!other.missionInfoList_.isEmpty()) {
             if (missionInfoList_.isEmpty()) {
@@ -566,9 +569,6 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
               missionInfoListBuilder_.addAllMessages(other.missionInfoList_);
             }
           }
-        }
-        if (other.getTrialId() != 0) {
-          setTrialId(other.getTrialId());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
@@ -602,6 +602,37 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         return this;
       }
       private int bitField0_;
+
+      private int trialId_ ;
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @return The trialId.
+       */
+      @java.lang.Override
+      public int getTrialId() {
+        return trialId_;
+      }
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @param value The trialId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialId(int value) {
+        
+        trialId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 trial_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrialId() {
+        
+        trialId_ = 0;
+        onChanged();
+        return this;
+      }
 
       private java.util.List<emu.grasscutter.net.proto.MistTrialMissionInfoOuterClass.MistTrialMissionInfo> missionInfoList_ =
         java.util.Collections.emptyList();
@@ -843,40 +874,9 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         return missionInfoListBuilder_;
       }
 
-      private int trialId_ ;
-      /**
-       * <code>uint32 trial_id = 11;</code>
-       * @return The trialId.
-       */
-      @java.lang.Override
-      public int getTrialId() {
-        return trialId_;
-      }
-      /**
-       * <code>uint32 trial_id = 11;</code>
-       * @param value The trialId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTrialId(int value) {
-        
-        trialId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 trial_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTrialId() {
-        
-        trialId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -884,7 +884,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -895,7 +895,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 12;</code>
+       * <code>int32 retcode = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -973,9 +973,9 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n%MistTrialGetChallengeMissionRsp.proto\032" +
       "\032MistTrialMissionInfo.proto\"v\n\037MistTrial" +
-      "GetChallengeMissionRsp\0220\n\021mission_info_l" +
-      "ist\030\005 \003(\0132\025.MistTrialMissionInfo\022\020\n\010tria" +
-      "l_id\030\013 \001(\r\022\017\n\007retcode\030\014 \001(\005B\033\n\031emu.grass" +
+      "GetChallengeMissionRsp\022\020\n\010trial_id\030\001 \001(\r" +
+      "\0220\n\021mission_info_list\030\005 \003(\0132\025.MistTrialM" +
+      "issionInfo\022\017\n\007retcode\030\003 \001(\005B\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -988,7 +988,7 @@ public final class MistTrialGetChallengeMissionRspOuterClass {
     internal_static_MistTrialGetChallengeMissionRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MistTrialGetChallengeMissionRsp_descriptor,
-        new java.lang.String[] { "MissionInfoList", "TrialId", "Retcode", });
+        new java.lang.String[] { "TrialId", "MissionInfoList", "Retcode", });
     emu.grasscutter.net.proto.MistTrialMissionInfoOuterClass.getDescriptor();
   }
 

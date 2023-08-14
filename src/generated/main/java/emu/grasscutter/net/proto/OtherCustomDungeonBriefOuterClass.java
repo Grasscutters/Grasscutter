@@ -19,121 +19,121 @@ public final class OtherCustomDungeonBriefOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     * @return Whether the social field is set.
-     */
-    boolean hasSocial();
-    /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     * @return The social.
-     */
-    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial();
-    /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     */
-    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder();
-
-    /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      * @return Whether the setting field is set.
      */
     boolean hasSetting();
     /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      * @return The setting.
      */
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting getSetting();
     /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      */
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder();
 
     /**
-     * <code>bool HKNCBLBMNBC = 14;</code>
-     * @return The hKNCBLBMNBC.
-     */
-    boolean getHKNCBLBMNBC();
-
-    /**
-     * <code>uint64 dungeon_guid = 9;</code>
-     * @return The dungeonGuid.
-     */
-    long getDungeonGuid();
-
-    /**
-     * <code>uint32 battle_min_cost_time = 5;</code>
-     * @return The battleMinCostTime.
-     */
-    int getBattleMinCostTime();
-
-    /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @return A list containing the tagList.
      */
     java.util.List<java.lang.Integer> getTagListList();
     /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @return The count of tagList.
      */
     int getTagListCount();
     /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tagList at the given index.
      */
     int getTagList(int index);
 
     /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     * @return Whether the abstract field is set.
+     * <code>uint64 dungeon_guid = 6;</code>
+     * @return The dungeonGuid.
      */
-    boolean hasAbstract();
-    /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     * @return The abstract.
-     */
-    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract();
-    /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     */
-    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder();
+    long getDungeonGuid();
 
     /**
-     * <code>bool is_psn_platform = 3;</code>
-     * @return The isPsnPlatform.
+     * <code>bool is_adventure_dungeon = 2;</code>
+     * @return The isAdventureDungeon.
      */
-    boolean getIsPsnPlatform();
+    boolean getIsAdventureDungeon();
 
     /**
-     * <code>uint32 dungeon_id = 1;</code>
+     * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
      */
     int getDungeonId();
 
     /**
-     * <code>bool BILNJJLBHIC = 11;</code>
-     * @return The bILNJJLBHIC.
+     * <code>bool is_psn_platform = 10;</code>
+     * @return The isPsnPlatform.
      */
-    boolean getBILNJJLBHIC();
+    boolean getIsPsnPlatform();
 
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>uint32 battle_min_cost_time = 3;</code>
+     * @return The battleMinCostTime.
+     */
+    int getBattleMinCostTime();
+
+    /**
+     * <code>.SocialDetail creator_detail = 9;</code>
      * @return Whether the creatorDetail field is set.
      */
     boolean hasCreatorDetail();
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>.SocialDetail creator_detail = 9;</code>
      * @return The creatorDetail.
      */
     emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail getCreatorDetail();
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>.SocialDetail creator_detail = 9;</code>
      */
     emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getCreatorDetailOrBuilder();
+
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     * @return Whether the abstract field is set.
+     */
+    boolean hasAbstract();
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     * @return The abstract.
+     */
+    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract();
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     */
+    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder();
+
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     * @return Whether the social field is set.
+     */
+    boolean hasSocial();
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     * @return The social.
+     */
+    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial();
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     */
+    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder();
+
+    /**
+     * <code>bool is_stored = 5;</code>
+     * @return The isStored.
+     */
+    boolean getIsStored();
   }
   /**
    * <pre>
-   * Obf: HMOAEGIHIGA
+   * Obf: HKCCDHPNEEE
    * </pre>
    *
    * Protobuf type {@code OtherCustomDungeonBrief}
@@ -182,71 +182,32 @@ public final class OtherCustomDungeonBriefOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder subBuilder = null;
-              if (social_ != null) {
-                subBuilder = social_.toBuilder();
-              }
-              social_ = input.readMessage(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(social_);
-                social_ = subBuilder.buildPartial();
-              }
-
+              isAdventureDungeon_ = input.readBool();
               break;
             }
             case 24: {
 
-              isPsnPlatform_ = input.readBool();
+              battleMinCostTime_ = input.readUInt32();
               break;
             }
-            case 34: {
-              emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder subBuilder = null;
-              if (creatorDetail_ != null) {
-                subBuilder = creatorDetail_.toBuilder();
-              }
-              creatorDetail_ = input.readMessage(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(creatorDetail_);
-                creatorDetail_ = subBuilder.buildPartial();
-              }
+            case 32: {
 
+              dungeonId_ = input.readUInt32();
               break;
             }
             case 40: {
 
-              battleMinCostTime_ = input.readUInt32();
+              isStored_ = input.readBool();
               break;
             }
-            case 72: {
+            case 48: {
 
               dungeonGuid_ = input.readUInt64();
               break;
             }
-            case 82: {
-              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder subBuilder = null;
-              if (abstract_ != null) {
-                subBuilder = abstract_.toBuilder();
-              }
-              abstract_ = input.readMessage(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abstract_);
-                abstract_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              bILNJJLBHIC_ = input.readBool();
-              break;
-            }
-            case 106: {
+            case 58: {
               emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder subBuilder = null;
               if (setting_ != null) {
                 subBuilder = setting_.toBuilder();
@@ -259,12 +220,38 @@ public final class OtherCustomDungeonBriefOuterClass {
 
               break;
             }
-            case 112: {
+            case 66: {
+              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder subBuilder = null;
+              if (abstract_ != null) {
+                subBuilder = abstract_.toBuilder();
+              }
+              abstract_ = input.readMessage(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(abstract_);
+                abstract_ = subBuilder.buildPartial();
+              }
 
-              hKNCBLBMNBC_ = input.readBool();
               break;
             }
-            case 120: {
+            case 74: {
+              emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder subBuilder = null;
+              if (creatorDetail_ != null) {
+                subBuilder = creatorDetail_.toBuilder();
+              }
+              creatorDetail_ = input.readMessage(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(creatorDetail_);
+                creatorDetail_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              isPsnPlatform_ = input.readBool();
+              break;
+            }
+            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tagList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -272,7 +259,7 @@ public final class OtherCustomDungeonBriefOuterClass {
               tagList_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -283,6 +270,19 @@ public final class OtherCustomDungeonBriefOuterClass {
                 tagList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 114: {
+              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder subBuilder = null;
+              if (social_ != null) {
+                subBuilder = social_.toBuilder();
+              }
+              social_ = input.readMessage(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(social_);
+                social_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -320,36 +320,10 @@ public final class OtherCustomDungeonBriefOuterClass {
               emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.class, emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.Builder.class);
     }
 
-    public static final int SOCIAL_FIELD_NUMBER = 2;
-    private emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial social_;
-    /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     * @return Whether the social field is set.
-     */
-    @java.lang.Override
-    public boolean hasSocial() {
-      return social_ != null;
-    }
-    /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     * @return The social.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial() {
-      return social_ == null ? emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
-    }
-    /**
-     * <code>.CustomDungeonSocial social = 2;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder() {
-      return getSocial();
-    }
-
-    public static final int SETTING_FIELD_NUMBER = 13;
+    public static final int SETTING_FIELD_NUMBER = 7;
     private emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting setting_;
     /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      * @return Whether the setting field is set.
      */
     @java.lang.Override
@@ -357,7 +331,7 @@ public final class OtherCustomDungeonBriefOuterClass {
       return setting_ != null;
     }
     /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      * @return The setting.
      */
     @java.lang.Override
@@ -365,50 +339,17 @@ public final class OtherCustomDungeonBriefOuterClass {
       return setting_ == null ? emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.getDefaultInstance() : setting_;
     }
     /**
-     * <code>.CustomDungeonSetting setting = 13;</code>
+     * <code>.CustomDungeonSetting setting = 7;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder() {
       return getSetting();
     }
 
-    public static final int HKNCBLBMNBC_FIELD_NUMBER = 14;
-    private boolean hKNCBLBMNBC_;
-    /**
-     * <code>bool HKNCBLBMNBC = 14;</code>
-     * @return The hKNCBLBMNBC.
-     */
-    @java.lang.Override
-    public boolean getHKNCBLBMNBC() {
-      return hKNCBLBMNBC_;
-    }
-
-    public static final int DUNGEON_GUID_FIELD_NUMBER = 9;
-    private long dungeonGuid_;
-    /**
-     * <code>uint64 dungeon_guid = 9;</code>
-     * @return The dungeonGuid.
-     */
-    @java.lang.Override
-    public long getDungeonGuid() {
-      return dungeonGuid_;
-    }
-
-    public static final int BATTLE_MIN_COST_TIME_FIELD_NUMBER = 5;
-    private int battleMinCostTime_;
-    /**
-     * <code>uint32 battle_min_cost_time = 5;</code>
-     * @return The battleMinCostTime.
-     */
-    @java.lang.Override
-    public int getBattleMinCostTime() {
-      return battleMinCostTime_;
-    }
-
-    public static final int TAG_LIST_FIELD_NUMBER = 15;
+    public static final int TAG_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList tagList_;
     /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @return A list containing the tagList.
      */
     @java.lang.Override
@@ -417,14 +358,14 @@ public final class OtherCustomDungeonBriefOuterClass {
       return tagList_;
     }
     /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @return The count of tagList.
      */
     public int getTagListCount() {
       return tagList_.size();
     }
     /**
-     * <code>repeated uint32 tag_list = 15;</code>
+     * <code>repeated uint32 tag_list = 13;</code>
      * @param index The index of the element to return.
      * @return The tagList at the given index.
      */
@@ -433,47 +374,32 @@ public final class OtherCustomDungeonBriefOuterClass {
     }
     private int tagListMemoizedSerializedSize = -1;
 
-    public static final int ABSTRACT_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract abstract_;
+    public static final int DUNGEON_GUID_FIELD_NUMBER = 6;
+    private long dungeonGuid_;
     /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     * @return Whether the abstract field is set.
+     * <code>uint64 dungeon_guid = 6;</code>
+     * @return The dungeonGuid.
      */
     @java.lang.Override
-    public boolean hasAbstract() {
-      return abstract_ != null;
-    }
-    /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     * @return The abstract.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract() {
-      return abstract_ == null ? emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
-    }
-    /**
-     * <code>.CustomDungeonAbstract abstract = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder() {
-      return getAbstract();
+    public long getDungeonGuid() {
+      return dungeonGuid_;
     }
 
-    public static final int IS_PSN_PLATFORM_FIELD_NUMBER = 3;
-    private boolean isPsnPlatform_;
+    public static final int IS_ADVENTURE_DUNGEON_FIELD_NUMBER = 2;
+    private boolean isAdventureDungeon_;
     /**
-     * <code>bool is_psn_platform = 3;</code>
-     * @return The isPsnPlatform.
+     * <code>bool is_adventure_dungeon = 2;</code>
+     * @return The isAdventureDungeon.
      */
     @java.lang.Override
-    public boolean getIsPsnPlatform() {
-      return isPsnPlatform_;
+    public boolean getIsAdventureDungeon() {
+      return isAdventureDungeon_;
     }
 
-    public static final int DUNGEON_ID_FIELD_NUMBER = 1;
+    public static final int DUNGEON_ID_FIELD_NUMBER = 4;
     private int dungeonId_;
     /**
-     * <code>uint32 dungeon_id = 1;</code>
+     * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
      */
     @java.lang.Override
@@ -481,21 +407,32 @@ public final class OtherCustomDungeonBriefOuterClass {
       return dungeonId_;
     }
 
-    public static final int BILNJJLBHIC_FIELD_NUMBER = 11;
-    private boolean bILNJJLBHIC_;
+    public static final int IS_PSN_PLATFORM_FIELD_NUMBER = 10;
+    private boolean isPsnPlatform_;
     /**
-     * <code>bool BILNJJLBHIC = 11;</code>
-     * @return The bILNJJLBHIC.
+     * <code>bool is_psn_platform = 10;</code>
+     * @return The isPsnPlatform.
      */
     @java.lang.Override
-    public boolean getBILNJJLBHIC() {
-      return bILNJJLBHIC_;
+    public boolean getIsPsnPlatform() {
+      return isPsnPlatform_;
     }
 
-    public static final int CREATOR_DETAIL_FIELD_NUMBER = 4;
+    public static final int BATTLE_MIN_COST_TIME_FIELD_NUMBER = 3;
+    private int battleMinCostTime_;
+    /**
+     * <code>uint32 battle_min_cost_time = 3;</code>
+     * @return The battleMinCostTime.
+     */
+    @java.lang.Override
+    public int getBattleMinCostTime() {
+      return battleMinCostTime_;
+    }
+
+    public static final int CREATOR_DETAIL_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail creatorDetail_;
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>.SocialDetail creator_detail = 9;</code>
      * @return Whether the creatorDetail field is set.
      */
     @java.lang.Override
@@ -503,7 +440,7 @@ public final class OtherCustomDungeonBriefOuterClass {
       return creatorDetail_ != null;
     }
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>.SocialDetail creator_detail = 9;</code>
      * @return The creatorDetail.
      */
     @java.lang.Override
@@ -511,11 +448,74 @@ public final class OtherCustomDungeonBriefOuterClass {
       return creatorDetail_ == null ? emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.getDefaultInstance() : creatorDetail_;
     }
     /**
-     * <code>.SocialDetail creator_detail = 4;</code>
+     * <code>.SocialDetail creator_detail = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getCreatorDetailOrBuilder() {
       return getCreatorDetail();
+    }
+
+    public static final int ABSTRACT_FIELD_NUMBER = 8;
+    private emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract abstract_;
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     * @return Whether the abstract field is set.
+     */
+    @java.lang.Override
+    public boolean hasAbstract() {
+      return abstract_ != null;
+    }
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     * @return The abstract.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract() {
+      return abstract_ == null ? emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
+    }
+    /**
+     * <code>.CustomDungeonAbstract abstract = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder() {
+      return getAbstract();
+    }
+
+    public static final int SOCIAL_FIELD_NUMBER = 14;
+    private emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial social_;
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     * @return Whether the social field is set.
+     */
+    @java.lang.Override
+    public boolean hasSocial() {
+      return social_ != null;
+    }
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     * @return The social.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial() {
+      return social_ == null ? emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
+    }
+    /**
+     * <code>.CustomDungeonSocial social = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder() {
+      return getSocial();
+    }
+
+    public static final int IS_STORED_FIELD_NUMBER = 5;
+    private boolean isStored_;
+    /**
+     * <code>bool is_stored = 5;</code>
+     * @return The isStored.
+     */
+    @java.lang.Override
+    public boolean getIsStored() {
+      return isStored_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -533,42 +533,42 @@ public final class OtherCustomDungeonBriefOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (dungeonId_ != 0) {
-        output.writeUInt32(1, dungeonId_);
-      }
-      if (social_ != null) {
-        output.writeMessage(2, getSocial());
-      }
-      if (isPsnPlatform_ != false) {
-        output.writeBool(3, isPsnPlatform_);
-      }
-      if (creatorDetail_ != null) {
-        output.writeMessage(4, getCreatorDetail());
+      if (isAdventureDungeon_ != false) {
+        output.writeBool(2, isAdventureDungeon_);
       }
       if (battleMinCostTime_ != 0) {
-        output.writeUInt32(5, battleMinCostTime_);
+        output.writeUInt32(3, battleMinCostTime_);
+      }
+      if (dungeonId_ != 0) {
+        output.writeUInt32(4, dungeonId_);
+      }
+      if (isStored_ != false) {
+        output.writeBool(5, isStored_);
       }
       if (dungeonGuid_ != 0L) {
-        output.writeUInt64(9, dungeonGuid_);
-      }
-      if (abstract_ != null) {
-        output.writeMessage(10, getAbstract());
-      }
-      if (bILNJJLBHIC_ != false) {
-        output.writeBool(11, bILNJJLBHIC_);
+        output.writeUInt64(6, dungeonGuid_);
       }
       if (setting_ != null) {
-        output.writeMessage(13, getSetting());
+        output.writeMessage(7, getSetting());
       }
-      if (hKNCBLBMNBC_ != false) {
-        output.writeBool(14, hKNCBLBMNBC_);
+      if (abstract_ != null) {
+        output.writeMessage(8, getAbstract());
+      }
+      if (creatorDetail_ != null) {
+        output.writeMessage(9, getCreatorDetail());
+      }
+      if (isPsnPlatform_ != false) {
+        output.writeBool(10, isPsnPlatform_);
       }
       if (getTagListList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(tagListMemoizedSerializedSize);
       }
       for (int i = 0; i < tagList_.size(); i++) {
         output.writeUInt32NoTag(tagList_.getInt(i));
+      }
+      if (social_ != null) {
+        output.writeMessage(14, getSocial());
       }
       unknownFields.writeTo(output);
     }
@@ -579,45 +579,41 @@ public final class OtherCustomDungeonBriefOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dungeonId_ != 0) {
+      if (isAdventureDungeon_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dungeonId_);
-      }
-      if (social_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSocial());
-      }
-      if (isPsnPlatform_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isPsnPlatform_);
-      }
-      if (creatorDetail_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getCreatorDetail());
+          .computeBoolSize(2, isAdventureDungeon_);
       }
       if (battleMinCostTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, battleMinCostTime_);
+          .computeUInt32Size(3, battleMinCostTime_);
+      }
+      if (dungeonId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, dungeonId_);
+      }
+      if (isStored_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, isStored_);
       }
       if (dungeonGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(9, dungeonGuid_);
-      }
-      if (abstract_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getAbstract());
-      }
-      if (bILNJJLBHIC_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, bILNJJLBHIC_);
+          .computeUInt64Size(6, dungeonGuid_);
       }
       if (setting_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getSetting());
+          .computeMessageSize(7, getSetting());
       }
-      if (hKNCBLBMNBC_ != false) {
+      if (abstract_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, hKNCBLBMNBC_);
+          .computeMessageSize(8, getAbstract());
+      }
+      if (creatorDetail_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getCreatorDetail());
+      }
+      if (isPsnPlatform_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isPsnPlatform_);
       }
       {
         int dataSize = 0;
@@ -632,6 +628,10 @@ public final class OtherCustomDungeonBriefOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         tagListMemoizedSerializedSize = dataSize;
+      }
+      if (social_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getSocial());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -648,40 +648,40 @@ public final class OtherCustomDungeonBriefOuterClass {
       }
       emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief other = (emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief) obj;
 
-      if (hasSocial() != other.hasSocial()) return false;
-      if (hasSocial()) {
-        if (!getSocial()
-            .equals(other.getSocial())) return false;
-      }
       if (hasSetting() != other.hasSetting()) return false;
       if (hasSetting()) {
         if (!getSetting()
             .equals(other.getSetting())) return false;
       }
-      if (getHKNCBLBMNBC()
-          != other.getHKNCBLBMNBC()) return false;
-      if (getDungeonGuid()
-          != other.getDungeonGuid()) return false;
-      if (getBattleMinCostTime()
-          != other.getBattleMinCostTime()) return false;
       if (!getTagListList()
           .equals(other.getTagListList())) return false;
-      if (hasAbstract() != other.hasAbstract()) return false;
-      if (hasAbstract()) {
-        if (!getAbstract()
-            .equals(other.getAbstract())) return false;
-      }
-      if (getIsPsnPlatform()
-          != other.getIsPsnPlatform()) return false;
+      if (getDungeonGuid()
+          != other.getDungeonGuid()) return false;
+      if (getIsAdventureDungeon()
+          != other.getIsAdventureDungeon()) return false;
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (getBILNJJLBHIC()
-          != other.getBILNJJLBHIC()) return false;
+      if (getIsPsnPlatform()
+          != other.getIsPsnPlatform()) return false;
+      if (getBattleMinCostTime()
+          != other.getBattleMinCostTime()) return false;
       if (hasCreatorDetail() != other.hasCreatorDetail()) return false;
       if (hasCreatorDetail()) {
         if (!getCreatorDetail()
             .equals(other.getCreatorDetail())) return false;
       }
+      if (hasAbstract() != other.hasAbstract()) return false;
+      if (hasAbstract()) {
+        if (!getAbstract()
+            .equals(other.getAbstract())) return false;
+      }
+      if (hasSocial() != other.hasSocial()) return false;
+      if (hasSocial()) {
+        if (!getSocial()
+            .equals(other.getSocial())) return false;
+      }
+      if (getIsStored()
+          != other.getIsStored()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -693,42 +693,42 @@ public final class OtherCustomDungeonBriefOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSocial()) {
-        hash = (37 * hash) + SOCIAL_FIELD_NUMBER;
-        hash = (53 * hash) + getSocial().hashCode();
-      }
       if (hasSetting()) {
         hash = (37 * hash) + SETTING_FIELD_NUMBER;
         hash = (53 * hash) + getSetting().hashCode();
       }
-      hash = (37 * hash) + HKNCBLBMNBC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getHKNCBLBMNBC());
-      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDungeonGuid());
-      hash = (37 * hash) + BATTLE_MIN_COST_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getBattleMinCostTime();
       if (getTagListCount() > 0) {
         hash = (37 * hash) + TAG_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTagListList().hashCode();
+      }
+      hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getDungeonGuid());
+      hash = (37 * hash) + IS_ADVENTURE_DUNGEON_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAdventureDungeon());
+      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDungeonId();
+      hash = (37 * hash) + IS_PSN_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPsnPlatform());
+      hash = (37 * hash) + BATTLE_MIN_COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBattleMinCostTime();
+      if (hasCreatorDetail()) {
+        hash = (37 * hash) + CREATOR_DETAIL_FIELD_NUMBER;
+        hash = (53 * hash) + getCreatorDetail().hashCode();
       }
       if (hasAbstract()) {
         hash = (37 * hash) + ABSTRACT_FIELD_NUMBER;
         hash = (53 * hash) + getAbstract().hashCode();
       }
-      hash = (37 * hash) + IS_PSN_PLATFORM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsPsnPlatform());
-      hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDungeonId();
-      hash = (37 * hash) + BILNJJLBHIC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBILNJJLBHIC());
-      if (hasCreatorDetail()) {
-        hash = (37 * hash) + CREATOR_DETAIL_FIELD_NUMBER;
-        hash = (53 * hash) + getCreatorDetail().hashCode();
+      if (hasSocial()) {
+        hash = (37 * hash) + SOCIAL_FIELD_NUMBER;
+        hash = (53 * hash) + getSocial().hashCode();
       }
+      hash = (37 * hash) + IS_STORED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsStored());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -826,7 +826,7 @@ public final class OtherCustomDungeonBriefOuterClass {
     }
     /**
      * <pre>
-     * Obf: HMOAEGIHIGA
+     * Obf: HKCCDHPNEEE
      * </pre>
      *
      * Protobuf type {@code OtherCustomDungeonBrief}
@@ -866,37 +866,23 @@ public final class OtherCustomDungeonBriefOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (socialBuilder_ == null) {
-          social_ = null;
-        } else {
-          social_ = null;
-          socialBuilder_ = null;
-        }
         if (settingBuilder_ == null) {
           setting_ = null;
         } else {
           setting_ = null;
           settingBuilder_ = null;
         }
-        hKNCBLBMNBC_ = false;
-
-        dungeonGuid_ = 0L;
-
-        battleMinCostTime_ = 0;
-
         tagList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (abstractBuilder_ == null) {
-          abstract_ = null;
-        } else {
-          abstract_ = null;
-          abstractBuilder_ = null;
-        }
-        isPsnPlatform_ = false;
+        dungeonGuid_ = 0L;
+
+        isAdventureDungeon_ = false;
 
         dungeonId_ = 0;
 
-        bILNJJLBHIC_ = false;
+        isPsnPlatform_ = false;
+
+        battleMinCostTime_ = 0;
 
         if (creatorDetailBuilder_ == null) {
           creatorDetail_ = null;
@@ -904,6 +890,20 @@ public final class OtherCustomDungeonBriefOuterClass {
           creatorDetail_ = null;
           creatorDetailBuilder_ = null;
         }
+        if (abstractBuilder_ == null) {
+          abstract_ = null;
+        } else {
+          abstract_ = null;
+          abstractBuilder_ = null;
+        }
+        if (socialBuilder_ == null) {
+          social_ = null;
+        } else {
+          social_ = null;
+          socialBuilder_ = null;
+        }
+        isStored_ = false;
+
         return this;
       }
 
@@ -931,37 +931,37 @@ public final class OtherCustomDungeonBriefOuterClass {
       public emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief buildPartial() {
         emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief result = new emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief(this);
         int from_bitField0_ = bitField0_;
-        if (socialBuilder_ == null) {
-          result.social_ = social_;
-        } else {
-          result.social_ = socialBuilder_.build();
-        }
         if (settingBuilder_ == null) {
           result.setting_ = setting_;
         } else {
           result.setting_ = settingBuilder_.build();
         }
-        result.hKNCBLBMNBC_ = hKNCBLBMNBC_;
-        result.dungeonGuid_ = dungeonGuid_;
-        result.battleMinCostTime_ = battleMinCostTime_;
         if (((bitField0_ & 0x00000001) != 0)) {
           tagList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tagList_ = tagList_;
-        if (abstractBuilder_ == null) {
-          result.abstract_ = abstract_;
-        } else {
-          result.abstract_ = abstractBuilder_.build();
-        }
-        result.isPsnPlatform_ = isPsnPlatform_;
+        result.dungeonGuid_ = dungeonGuid_;
+        result.isAdventureDungeon_ = isAdventureDungeon_;
         result.dungeonId_ = dungeonId_;
-        result.bILNJJLBHIC_ = bILNJJLBHIC_;
+        result.isPsnPlatform_ = isPsnPlatform_;
+        result.battleMinCostTime_ = battleMinCostTime_;
         if (creatorDetailBuilder_ == null) {
           result.creatorDetail_ = creatorDetail_;
         } else {
           result.creatorDetail_ = creatorDetailBuilder_.build();
         }
+        if (abstractBuilder_ == null) {
+          result.abstract_ = abstract_;
+        } else {
+          result.abstract_ = abstractBuilder_.build();
+        }
+        if (socialBuilder_ == null) {
+          result.social_ = social_;
+        } else {
+          result.social_ = socialBuilder_.build();
+        }
+        result.isStored_ = isStored_;
         onBuilt();
         return result;
       }
@@ -1010,20 +1010,8 @@ public final class OtherCustomDungeonBriefOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief other) {
         if (other == emu.grasscutter.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.getDefaultInstance()) return this;
-        if (other.hasSocial()) {
-          mergeSocial(other.getSocial());
-        }
         if (other.hasSetting()) {
           mergeSetting(other.getSetting());
-        }
-        if (other.getHKNCBLBMNBC() != false) {
-          setHKNCBLBMNBC(other.getHKNCBLBMNBC());
-        }
-        if (other.getDungeonGuid() != 0L) {
-          setDungeonGuid(other.getDungeonGuid());
-        }
-        if (other.getBattleMinCostTime() != 0) {
-          setBattleMinCostTime(other.getBattleMinCostTime());
         }
         if (!other.tagList_.isEmpty()) {
           if (tagList_.isEmpty()) {
@@ -1035,20 +1023,32 @@ public final class OtherCustomDungeonBriefOuterClass {
           }
           onChanged();
         }
-        if (other.hasAbstract()) {
-          mergeAbstract(other.getAbstract());
+        if (other.getDungeonGuid() != 0L) {
+          setDungeonGuid(other.getDungeonGuid());
         }
-        if (other.getIsPsnPlatform() != false) {
-          setIsPsnPlatform(other.getIsPsnPlatform());
+        if (other.getIsAdventureDungeon() != false) {
+          setIsAdventureDungeon(other.getIsAdventureDungeon());
         }
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        if (other.getBILNJJLBHIC() != false) {
-          setBILNJJLBHIC(other.getBILNJJLBHIC());
+        if (other.getIsPsnPlatform() != false) {
+          setIsPsnPlatform(other.getIsPsnPlatform());
+        }
+        if (other.getBattleMinCostTime() != 0) {
+          setBattleMinCostTime(other.getBattleMinCostTime());
         }
         if (other.hasCreatorDetail()) {
           mergeCreatorDetail(other.getCreatorDetail());
+        }
+        if (other.hasAbstract()) {
+          mergeAbstract(other.getAbstract());
+        }
+        if (other.hasSocial()) {
+          mergeSocial(other.getSocial());
+        }
+        if (other.getIsStored() != false) {
+          setIsStored(other.getIsStored());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1080,137 +1080,18 @@ public final class OtherCustomDungeonBriefOuterClass {
       }
       private int bitField0_;
 
-      private emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial social_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder> socialBuilder_;
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       * @return Whether the social field is set.
-       */
-      public boolean hasSocial() {
-        return socialBuilder_ != null || social_ != null;
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       * @return The social.
-       */
-      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial() {
-        if (socialBuilder_ == null) {
-          return social_ == null ? emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
-        } else {
-          return socialBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public Builder setSocial(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial value) {
-        if (socialBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          social_ = value;
-          onChanged();
-        } else {
-          socialBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public Builder setSocial(
-          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder builderForValue) {
-        if (socialBuilder_ == null) {
-          social_ = builderForValue.build();
-          onChanged();
-        } else {
-          socialBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public Builder mergeSocial(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial value) {
-        if (socialBuilder_ == null) {
-          if (social_ != null) {
-            social_ =
-              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.newBuilder(social_).mergeFrom(value).buildPartial();
-          } else {
-            social_ = value;
-          }
-          onChanged();
-        } else {
-          socialBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public Builder clearSocial() {
-        if (socialBuilder_ == null) {
-          social_ = null;
-          onChanged();
-        } else {
-          social_ = null;
-          socialBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder getSocialBuilder() {
-        
-        onChanged();
-        return getSocialFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder() {
-        if (socialBuilder_ != null) {
-          return socialBuilder_.getMessageOrBuilder();
-        } else {
-          return social_ == null ?
-              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
-        }
-      }
-      /**
-       * <code>.CustomDungeonSocial social = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder> 
-          getSocialFieldBuilder() {
-        if (socialBuilder_ == null) {
-          socialBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder>(
-                  getSocial(),
-                  getParentForChildren(),
-                  isClean());
-          social_ = null;
-        }
-        return socialBuilder_;
-      }
-
       private emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting setting_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder> settingBuilder_;
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        * @return Whether the setting field is set.
        */
       public boolean hasSetting() {
         return settingBuilder_ != null || setting_ != null;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        * @return The setting.
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting getSetting() {
@@ -1221,7 +1102,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public Builder setSetting(emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting value) {
         if (settingBuilder_ == null) {
@@ -1237,7 +1118,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public Builder setSetting(
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder builderForValue) {
@@ -1251,7 +1132,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public Builder mergeSetting(emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting value) {
         if (settingBuilder_ == null) {
@@ -1269,7 +1150,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public Builder clearSetting() {
         if (settingBuilder_ == null) {
@@ -1283,7 +1164,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder getSettingBuilder() {
         
@@ -1291,7 +1172,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return getSettingFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder getSettingOrBuilder() {
         if (settingBuilder_ != null) {
@@ -1302,7 +1183,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         }
       }
       /**
-       * <code>.CustomDungeonSetting setting = 13;</code>
+       * <code>.CustomDungeonSetting setting = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSettingOrBuilder> 
@@ -1318,99 +1199,6 @@ public final class OtherCustomDungeonBriefOuterClass {
         return settingBuilder_;
       }
 
-      private boolean hKNCBLBMNBC_ ;
-      /**
-       * <code>bool HKNCBLBMNBC = 14;</code>
-       * @return The hKNCBLBMNBC.
-       */
-      @java.lang.Override
-      public boolean getHKNCBLBMNBC() {
-        return hKNCBLBMNBC_;
-      }
-      /**
-       * <code>bool HKNCBLBMNBC = 14;</code>
-       * @param value The hKNCBLBMNBC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHKNCBLBMNBC(boolean value) {
-        
-        hKNCBLBMNBC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool HKNCBLBMNBC = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHKNCBLBMNBC() {
-        
-        hKNCBLBMNBC_ = false;
-        onChanged();
-        return this;
-      }
-
-      private long dungeonGuid_ ;
-      /**
-       * <code>uint64 dungeon_guid = 9;</code>
-       * @return The dungeonGuid.
-       */
-      @java.lang.Override
-      public long getDungeonGuid() {
-        return dungeonGuid_;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 9;</code>
-       * @param value The dungeonGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDungeonGuid(long value) {
-        
-        dungeonGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 dungeon_guid = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDungeonGuid() {
-        
-        dungeonGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int battleMinCostTime_ ;
-      /**
-       * <code>uint32 battle_min_cost_time = 5;</code>
-       * @return The battleMinCostTime.
-       */
-      @java.lang.Override
-      public int getBattleMinCostTime() {
-        return battleMinCostTime_;
-      }
-      /**
-       * <code>uint32 battle_min_cost_time = 5;</code>
-       * @param value The battleMinCostTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBattleMinCostTime(int value) {
-        
-        battleMinCostTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 battle_min_cost_time = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBattleMinCostTime() {
-        
-        battleMinCostTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList tagList_ = emptyIntList();
       private void ensureTagListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1419,7 +1207,7 @@ public final class OtherCustomDungeonBriefOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @return A list containing the tagList.
        */
       public java.util.List<java.lang.Integer>
@@ -1428,14 +1216,14 @@ public final class OtherCustomDungeonBriefOuterClass {
                  java.util.Collections.unmodifiableList(tagList_) : tagList_;
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @return The count of tagList.
        */
       public int getTagListCount() {
         return tagList_.size();
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @param index The index of the element to return.
        * @return The tagList at the given index.
        */
@@ -1443,7 +1231,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return tagList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @param index The index to set the value at.
        * @param value The tagList to set.
        * @return This builder for chaining.
@@ -1456,7 +1244,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @param value The tagList to add.
        * @return This builder for chaining.
        */
@@ -1467,7 +1255,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @param values The tagList to add.
        * @return This builder for chaining.
        */
@@ -1480,7 +1268,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 tag_list = 15;</code>
+       * <code>repeated uint32 tag_list = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearTagList() {
@@ -1490,159 +1278,71 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract abstract_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder> abstractBuilder_;
+      private long dungeonGuid_ ;
       /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       * @return Whether the abstract field is set.
-       */
-      public boolean hasAbstract() {
-        return abstractBuilder_ != null || abstract_ != null;
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       * @return The abstract.
-       */
-      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract() {
-        if (abstractBuilder_ == null) {
-          return abstract_ == null ? emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
-        } else {
-          return abstractBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public Builder setAbstract(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract value) {
-        if (abstractBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          abstract_ = value;
-          onChanged();
-        } else {
-          abstractBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public Builder setAbstract(
-          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder builderForValue) {
-        if (abstractBuilder_ == null) {
-          abstract_ = builderForValue.build();
-          onChanged();
-        } else {
-          abstractBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public Builder mergeAbstract(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract value) {
-        if (abstractBuilder_ == null) {
-          if (abstract_ != null) {
-            abstract_ =
-              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.newBuilder(abstract_).mergeFrom(value).buildPartial();
-          } else {
-            abstract_ = value;
-          }
-          onChanged();
-        } else {
-          abstractBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public Builder clearAbstract() {
-        if (abstractBuilder_ == null) {
-          abstract_ = null;
-          onChanged();
-        } else {
-          abstract_ = null;
-          abstractBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder getAbstractBuilder() {
-        
-        onChanged();
-        return getAbstractFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder() {
-        if (abstractBuilder_ != null) {
-          return abstractBuilder_.getMessageOrBuilder();
-        } else {
-          return abstract_ == null ?
-              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
-        }
-      }
-      /**
-       * <code>.CustomDungeonAbstract abstract = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder> 
-          getAbstractFieldBuilder() {
-        if (abstractBuilder_ == null) {
-          abstractBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder>(
-                  getAbstract(),
-                  getParentForChildren(),
-                  isClean());
-          abstract_ = null;
-        }
-        return abstractBuilder_;
-      }
-
-      private boolean isPsnPlatform_ ;
-      /**
-       * <code>bool is_psn_platform = 3;</code>
-       * @return The isPsnPlatform.
+       * <code>uint64 dungeon_guid = 6;</code>
+       * @return The dungeonGuid.
        */
       @java.lang.Override
-      public boolean getIsPsnPlatform() {
-        return isPsnPlatform_;
+      public long getDungeonGuid() {
+        return dungeonGuid_;
       }
       /**
-       * <code>bool is_psn_platform = 3;</code>
-       * @param value The isPsnPlatform to set.
+       * <code>uint64 dungeon_guid = 6;</code>
+       * @param value The dungeonGuid to set.
        * @return This builder for chaining.
        */
-      public Builder setIsPsnPlatform(boolean value) {
+      public Builder setDungeonGuid(long value) {
         
-        isPsnPlatform_ = value;
+        dungeonGuid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_psn_platform = 3;</code>
+       * <code>uint64 dungeon_guid = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsPsnPlatform() {
+      public Builder clearDungeonGuid() {
         
-        isPsnPlatform_ = false;
+        dungeonGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean isAdventureDungeon_ ;
+      /**
+       * <code>bool is_adventure_dungeon = 2;</code>
+       * @return The isAdventureDungeon.
+       */
+      @java.lang.Override
+      public boolean getIsAdventureDungeon() {
+        return isAdventureDungeon_;
+      }
+      /**
+       * <code>bool is_adventure_dungeon = 2;</code>
+       * @param value The isAdventureDungeon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAdventureDungeon(boolean value) {
+        
+        isAdventureDungeon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_adventure_dungeon = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAdventureDungeon() {
+        
+        isAdventureDungeon_ = false;
         onChanged();
         return this;
       }
 
       private int dungeonId_ ;
       /**
-       * <code>uint32 dungeon_id = 1;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @return The dungeonId.
        */
       @java.lang.Override
@@ -1650,7 +1350,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return dungeonId_;
       }
       /**
-       * <code>uint32 dungeon_id = 1;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @param value The dungeonId to set.
        * @return This builder for chaining.
        */
@@ -1661,7 +1361,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>uint32 dungeon_id = 1;</code>
+       * <code>uint32 dungeon_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
@@ -1671,33 +1371,64 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
 
-      private boolean bILNJJLBHIC_ ;
+      private boolean isPsnPlatform_ ;
       /**
-       * <code>bool BILNJJLBHIC = 11;</code>
-       * @return The bILNJJLBHIC.
+       * <code>bool is_psn_platform = 10;</code>
+       * @return The isPsnPlatform.
        */
       @java.lang.Override
-      public boolean getBILNJJLBHIC() {
-        return bILNJJLBHIC_;
+      public boolean getIsPsnPlatform() {
+        return isPsnPlatform_;
       }
       /**
-       * <code>bool BILNJJLBHIC = 11;</code>
-       * @param value The bILNJJLBHIC to set.
+       * <code>bool is_psn_platform = 10;</code>
+       * @param value The isPsnPlatform to set.
        * @return This builder for chaining.
        */
-      public Builder setBILNJJLBHIC(boolean value) {
+      public Builder setIsPsnPlatform(boolean value) {
         
-        bILNJJLBHIC_ = value;
+        isPsnPlatform_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BILNJJLBHIC = 11;</code>
+       * <code>bool is_psn_platform = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBILNJJLBHIC() {
+      public Builder clearIsPsnPlatform() {
         
-        bILNJJLBHIC_ = false;
+        isPsnPlatform_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int battleMinCostTime_ ;
+      /**
+       * <code>uint32 battle_min_cost_time = 3;</code>
+       * @return The battleMinCostTime.
+       */
+      @java.lang.Override
+      public int getBattleMinCostTime() {
+        return battleMinCostTime_;
+      }
+      /**
+       * <code>uint32 battle_min_cost_time = 3;</code>
+       * @param value The battleMinCostTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBattleMinCostTime(int value) {
+        
+        battleMinCostTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 battle_min_cost_time = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBattleMinCostTime() {
+        
+        battleMinCostTime_ = 0;
         onChanged();
         return this;
       }
@@ -1706,14 +1437,14 @@ public final class OtherCustomDungeonBriefOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder> creatorDetailBuilder_;
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        * @return Whether the creatorDetail field is set.
        */
       public boolean hasCreatorDetail() {
         return creatorDetailBuilder_ != null || creatorDetail_ != null;
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        * @return The creatorDetail.
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail getCreatorDetail() {
@@ -1724,7 +1455,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         }
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public Builder setCreatorDetail(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail value) {
         if (creatorDetailBuilder_ == null) {
@@ -1740,7 +1471,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public Builder setCreatorDetail(
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder builderForValue) {
@@ -1754,7 +1485,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public Builder mergeCreatorDetail(emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail value) {
         if (creatorDetailBuilder_ == null) {
@@ -1772,7 +1503,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public Builder clearCreatorDetail() {
         if (creatorDetailBuilder_ == null) {
@@ -1786,7 +1517,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return this;
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder getCreatorDetailBuilder() {
         
@@ -1794,7 +1525,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         return getCreatorDetailFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       public emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getCreatorDetailOrBuilder() {
         if (creatorDetailBuilder_ != null) {
@@ -1805,7 +1536,7 @@ public final class OtherCustomDungeonBriefOuterClass {
         }
       }
       /**
-       * <code>.SocialDetail creator_detail = 4;</code>
+       * <code>.SocialDetail creator_detail = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.Builder, emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder> 
@@ -1819,6 +1550,275 @@ public final class OtherCustomDungeonBriefOuterClass {
           creatorDetail_ = null;
         }
         return creatorDetailBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract abstract_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder> abstractBuilder_;
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       * @return Whether the abstract field is set.
+       */
+      public boolean hasAbstract() {
+        return abstractBuilder_ != null || abstract_ != null;
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       * @return The abstract.
+       */
+      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract getAbstract() {
+        if (abstractBuilder_ == null) {
+          return abstract_ == null ? emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
+        } else {
+          return abstractBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public Builder setAbstract(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract value) {
+        if (abstractBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          abstract_ = value;
+          onChanged();
+        } else {
+          abstractBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public Builder setAbstract(
+          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder builderForValue) {
+        if (abstractBuilder_ == null) {
+          abstract_ = builderForValue.build();
+          onChanged();
+        } else {
+          abstractBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public Builder mergeAbstract(emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract value) {
+        if (abstractBuilder_ == null) {
+          if (abstract_ != null) {
+            abstract_ =
+              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.newBuilder(abstract_).mergeFrom(value).buildPartial();
+          } else {
+            abstract_ = value;
+          }
+          onChanged();
+        } else {
+          abstractBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public Builder clearAbstract() {
+        if (abstractBuilder_ == null) {
+          abstract_ = null;
+          onChanged();
+        } else {
+          abstract_ = null;
+          abstractBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder getAbstractBuilder() {
+        
+        onChanged();
+        return getAbstractFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      public emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder getAbstractOrBuilder() {
+        if (abstractBuilder_ != null) {
+          return abstractBuilder_.getMessageOrBuilder();
+        } else {
+          return abstract_ == null ?
+              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.getDefaultInstance() : abstract_;
+        }
+      }
+      /**
+       * <code>.CustomDungeonAbstract abstract = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder> 
+          getAbstractFieldBuilder() {
+        if (abstractBuilder_ == null) {
+          abstractBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.Builder, emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstractOrBuilder>(
+                  getAbstract(),
+                  getParentForChildren(),
+                  isClean());
+          abstract_ = null;
+        }
+        return abstractBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial social_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder> socialBuilder_;
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       * @return Whether the social field is set.
+       */
+      public boolean hasSocial() {
+        return socialBuilder_ != null || social_ != null;
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       * @return The social.
+       */
+      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial getSocial() {
+        if (socialBuilder_ == null) {
+          return social_ == null ? emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
+        } else {
+          return socialBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public Builder setSocial(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial value) {
+        if (socialBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          social_ = value;
+          onChanged();
+        } else {
+          socialBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public Builder setSocial(
+          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder builderForValue) {
+        if (socialBuilder_ == null) {
+          social_ = builderForValue.build();
+          onChanged();
+        } else {
+          socialBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public Builder mergeSocial(emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial value) {
+        if (socialBuilder_ == null) {
+          if (social_ != null) {
+            social_ =
+              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.newBuilder(social_).mergeFrom(value).buildPartial();
+          } else {
+            social_ = value;
+          }
+          onChanged();
+        } else {
+          socialBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public Builder clearSocial() {
+        if (socialBuilder_ == null) {
+          social_ = null;
+          onChanged();
+        } else {
+          social_ = null;
+          socialBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder getSocialBuilder() {
+        
+        onChanged();
+        return getSocialFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      public emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder getSocialOrBuilder() {
+        if (socialBuilder_ != null) {
+          return socialBuilder_.getMessageOrBuilder();
+        } else {
+          return social_ == null ?
+              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.getDefaultInstance() : social_;
+        }
+      }
+      /**
+       * <code>.CustomDungeonSocial social = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder> 
+          getSocialFieldBuilder() {
+        if (socialBuilder_ == null) {
+          socialBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.Builder, emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocialOrBuilder>(
+                  getSocial(),
+                  getParentForChildren(),
+                  isClean());
+          social_ = null;
+        }
+        return socialBuilder_;
+      }
+
+      private boolean isStored_ ;
+      /**
+       * <code>bool is_stored = 5;</code>
+       * @return The isStored.
+       */
+      @java.lang.Override
+      public boolean getIsStored() {
+        return isStored_;
+      }
+      /**
+       * <code>bool is_stored = 5;</code>
+       * @param value The isStored to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsStored(boolean value) {
+        
+        isStored_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_stored = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsStored() {
+        
+        isStored_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1887,38 +1887,39 @@ public final class OtherCustomDungeonBriefOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\035OtherCustomDungeonBrief.proto\032\031CustomD" +
-      "ungeonSocial.proto\032\032CustomDungeonSetting" +
-      ".proto\032\033CustomDungeonAbstract.proto\032\022Soc" +
-      "ialDetail.proto\"\325\002\n\027OtherCustomDungeonBr" +
-      "ief\022$\n\006social\030\002 \001(\0132\024.CustomDungeonSocia" +
-      "l\022&\n\007setting\030\r \001(\0132\025.CustomDungeonSettin" +
-      "g\022\023\n\013HKNCBLBMNBC\030\016 \001(\010\022\024\n\014dungeon_guid\030\t" +
-      " \001(\004\022\034\n\024battle_min_cost_time\030\005 \001(\r\022\020\n\010ta" +
-      "g_list\030\017 \003(\r\022(\n\010abstract\030\n \001(\0132\026.CustomD" +
-      "ungeonAbstract\022\027\n\017is_psn_platform\030\003 \001(\010\022" +
-      "\022\n\ndungeon_id\030\001 \001(\r\022\023\n\013BILNJJLBHIC\030\013 \001(\010" +
-      "\022%\n\016creator_detail\030\004 \001(\0132\r.SocialDetailB" +
-      "\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\035OtherCustomDungeonBrief.proto\032\032CustomD" +
+      "ungeonSetting.proto\032\022SocialDetail.proto\032" +
+      "\033CustomDungeonAbstract.proto\032\031CustomDung" +
+      "eonSocial.proto\"\334\002\n\027OtherCustomDungeonBr" +
+      "ief\022&\n\007setting\030\007 \001(\0132\025.CustomDungeonSett" +
+      "ing\022\020\n\010tag_list\030\r \003(\r\022\024\n\014dungeon_guid\030\006 " +
+      "\001(\004\022\034\n\024is_adventure_dungeon\030\002 \001(\010\022\022\n\ndun" +
+      "geon_id\030\004 \001(\r\022\027\n\017is_psn_platform\030\n \001(\010\022\034" +
+      "\n\024battle_min_cost_time\030\003 \001(\r\022%\n\016creator_" +
+      "detail\030\t \001(\0132\r.SocialDetail\022(\n\010abstract\030" +
+      "\010 \001(\0132\026.CustomDungeonAbstract\022$\n\006social\030" +
+      "\016 \001(\0132\024.CustomDungeonSocial\022\021\n\tis_stored" +
+      "\030\005 \001(\010B\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SocialDetailOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.getDescriptor(),
         });
     internal_static_OtherCustomDungeonBrief_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_OtherCustomDungeonBrief_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OtherCustomDungeonBrief_descriptor,
-        new java.lang.String[] { "Social", "Setting", "HKNCBLBMNBC", "DungeonGuid", "BattleMinCostTime", "TagList", "Abstract", "IsPsnPlatform", "DungeonId", "BILNJJLBHIC", "CreatorDetail", });
-    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.getDescriptor();
+        new java.lang.String[] { "Setting", "TagList", "DungeonGuid", "IsAdventureDungeon", "DungeonId", "IsPsnPlatform", "BattleMinCostTime", "CreatorDetail", "Abstract", "Social", "IsStored", });
     emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialDetailOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CustomDungeonAbstractOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CustomDungeonSocialOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

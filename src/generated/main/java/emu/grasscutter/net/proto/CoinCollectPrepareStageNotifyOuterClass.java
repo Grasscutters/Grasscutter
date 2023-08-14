@@ -19,24 +19,24 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      * @return Whether the coinCollectInfo field is set.
      */
     boolean hasCoinCollectInfo();
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      * @return The coinCollectInfo.
      */
     emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo getCoinCollectInfo();
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      */
     emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder();
   }
   /**
    * <pre>
-   * CmdId: 6455
-   * Obf: LALGGEHKIAE
+   * CmdId: 2218
+   * Obf: FLHCCOOELDD
    * </pre>
    *
    * Protobuf type {@code CoinCollectPrepareStageNotify}
@@ -83,7 +83,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 58: {
+            case 98: {
               emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder subBuilder = null;
               if (coinCollectInfo_ != null) {
                 subBuilder = coinCollectInfo_.toBuilder();
@@ -128,10 +128,10 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
               emu.grasscutter.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify.class, emu.grasscutter.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify.Builder.class);
     }
 
-    public static final int COIN_COLLECT_INFO_FIELD_NUMBER = 7;
+    public static final int COIN_COLLECT_INFO_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo coinCollectInfo_;
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      * @return Whether the coinCollectInfo field is set.
      */
     @java.lang.Override
@@ -139,7 +139,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       return coinCollectInfo_ != null;
     }
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      * @return The coinCollectInfo.
      */
     @java.lang.Override
@@ -147,7 +147,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       return coinCollectInfo_ == null ? emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance() : coinCollectInfo_;
     }
     /**
-     * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+     * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder() {
@@ -169,7 +169,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (coinCollectInfo_ != null) {
-        output.writeMessage(7, getCoinCollectInfo());
+        output.writeMessage(12, getCoinCollectInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -182,7 +182,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       size = 0;
       if (coinCollectInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getCoinCollectInfo());
+          .computeMessageSize(12, getCoinCollectInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -316,8 +316,8 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 6455
-     * Obf: LALGGEHKIAE
+     * CmdId: 2218
+     * Obf: FLHCCOOELDD
      * </pre>
      *
      * Protobuf type {@code CoinCollectPrepareStageNotify}
@@ -478,14 +478,14 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder> coinCollectInfoBuilder_;
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        * @return Whether the coinCollectInfo field is set.
        */
       public boolean hasCoinCollectInfo() {
         return coinCollectInfoBuilder_ != null || coinCollectInfo_ != null;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        * @return The coinCollectInfo.
        */
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo getCoinCollectInfo() {
@@ -496,7 +496,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         }
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public Builder setCoinCollectInfo(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo value) {
         if (coinCollectInfoBuilder_ == null) {
@@ -512,7 +512,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public Builder setCoinCollectInfo(
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder builderForValue) {
@@ -526,7 +526,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public Builder mergeCoinCollectInfo(emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo value) {
         if (coinCollectInfoBuilder_ == null) {
@@ -544,7 +544,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public Builder clearCoinCollectInfo() {
         if (coinCollectInfoBuilder_ == null) {
@@ -558,7 +558,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder getCoinCollectInfoBuilder() {
         
@@ -566,7 +566,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         return getCoinCollectInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       public emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder() {
         if (coinCollectInfoBuilder_ != null) {
@@ -577,7 +577,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         }
       }
       /**
-       * <code>.CoinCollectStageInfo coin_collect_info = 7;</code>
+       * <code>.CoinCollectStageInfo coin_collect_info = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder, emu.grasscutter.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder> 
@@ -662,7 +662,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       "\n#CoinCollectPrepareStageNotify.proto\032\032C" +
       "oinCollectStageInfo.proto\"Q\n\035CoinCollect" +
       "PrepareStageNotify\0220\n\021coin_collect_info\030" +
-      "\007 \001(\0132\025.CoinCollectStageInfoB\033\n\031emu.gras" +
+      "\014 \001(\0132\025.CoinCollectStageInfoB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
