@@ -6,7 +6,7 @@ import emu.grasscutter.utils.Utils;
 import java.util.Arrays;
 
 public final class GameConstants {
-    public static String VERSION = "3.7.0";
+    public static String VERSION = "4.0.0";
     public static boolean DEBUG = false;
 
     public static final int DEFAULT_TEAMS = 4;

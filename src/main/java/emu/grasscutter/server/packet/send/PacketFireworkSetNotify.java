@@ -1,19 +1,14 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.FireworkSetDataOuterClass;
-import emu.grasscutter.net.proto.FireworkSetNotifyOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.FireworksReformDataNotifyOuterClass.FireworksReformDataNotify;
+import emu.grasscutter.net.proto.FireworksReformDataOuterClass.FireworksReformData;
 
 public class PacketFireworkSetNotify extends BasePacket {
 
-    public PacketFireworkSetNotify(FireworkSetDataOuterClass.FireworkSetData notify) {
+    public PacketFireworkSetNotify(FireworksReformData data) {
         super(PacketOpcodes.FireworkSetNotify);
 
-        var proto = FireworkSetNotifyOuterClass.FireworkSetNotify.newBuilder();
-
-        proto.setCode(1).addData(notify);
-
-        setData(proto.build());
+        this.setData(FireworksReformDataNotify.newBuilder().addFireworksReformDataList(data));
     }
 }

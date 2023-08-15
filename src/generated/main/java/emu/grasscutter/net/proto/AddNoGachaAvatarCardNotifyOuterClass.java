@@ -19,10 +19,10 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MGBKMNHIFOE = 15;</code>
-     * @return The mGBKMNHIFOE.
+     * <code>uint32 initial_level = 15;</code>
+     * @return The initialLevel.
      */
-    int getMGBKMNHIFOE();
+    int getInitialLevel();
 
     /**
      * <code>uint32 avatar_id = 14;</code>
@@ -73,10 +73,10 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         int index);
 
     /**
-     * <code>uint32 CBBMIOFHCIC = 8;</code>
-     * @return The cBBMIOFHCIC.
+     * <code>uint32 initial_promote_level = 8;</code>
+     * @return The initialPromoteLevel.
      */
-    int getCBBMIOFHCIC();
+    int getInitialPromoteLevel();
   }
   /**
    * <pre>
@@ -146,7 +146,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
             }
             case 64: {
 
-              cBBMIOFHCIC_ = input.readUInt32();
+              initialPromoteLevel_ = input.readUInt32();
               break;
             }
             case 72: {
@@ -166,7 +166,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
             }
             case 120: {
 
-              mGBKMNHIFOE_ = input.readUInt32();
+              initialLevel_ = input.readUInt32();
               break;
             }
             default: {
@@ -204,15 +204,15 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
               emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify.class, emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify.Builder.class);
     }
 
-    public static final int MGBKMNHIFOE_FIELD_NUMBER = 15;
-    private int mGBKMNHIFOE_;
+    public static final int INITIAL_LEVEL_FIELD_NUMBER = 15;
+    private int initialLevel_;
     /**
-     * <code>uint32 MGBKMNHIFOE = 15;</code>
-     * @return The mGBKMNHIFOE.
+     * <code>uint32 initial_level = 15;</code>
+     * @return The initialLevel.
      */
     @java.lang.Override
-    public int getMGBKMNHIFOE() {
-      return mGBKMNHIFOE_;
+    public int getInitialLevel() {
+      return initialLevel_;
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 14;
@@ -299,15 +299,15 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       return transferItemList_.get(index);
     }
 
-    public static final int CBBMIOFHCIC_FIELD_NUMBER = 8;
-    private int cBBMIOFHCIC_;
+    public static final int INITIAL_PROMOTE_LEVEL_FIELD_NUMBER = 8;
+    private int initialPromoteLevel_;
     /**
-     * <code>uint32 CBBMIOFHCIC = 8;</code>
-     * @return The cBBMIOFHCIC.
+     * <code>uint32 initial_promote_level = 8;</code>
+     * @return The initialPromoteLevel.
      */
     @java.lang.Override
-    public int getCBBMIOFHCIC() {
-      return cBBMIOFHCIC_;
+    public int getInitialPromoteLevel() {
+      return initialPromoteLevel_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -330,8 +330,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       for (int i = 0; i < transferItemList_.size(); i++) {
         output.writeMessage(2, transferItemList_.get(i));
       }
-      if (cBBMIOFHCIC_ != 0) {
-        output.writeUInt32(8, cBBMIOFHCIC_);
+      if (initialPromoteLevel_ != 0) {
+        output.writeUInt32(8, initialPromoteLevel_);
       }
       if (isTransferToItem_ != false) {
         output.writeBool(9, isTransferToItem_);
@@ -342,8 +342,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       if (avatarId_ != 0) {
         output.writeUInt32(14, avatarId_);
       }
-      if (mGBKMNHIFOE_ != 0) {
-        output.writeUInt32(15, mGBKMNHIFOE_);
+      if (initialLevel_ != 0) {
+        output.writeUInt32(15, initialLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -362,9 +362,9 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, transferItemList_.get(i));
       }
-      if (cBBMIOFHCIC_ != 0) {
+      if (initialPromoteLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, cBBMIOFHCIC_);
+          .computeUInt32Size(8, initialPromoteLevel_);
       }
       if (isTransferToItem_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -378,9 +378,9 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, avatarId_);
       }
-      if (mGBKMNHIFOE_ != 0) {
+      if (initialLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, mGBKMNHIFOE_);
+          .computeUInt32Size(15, initialLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -397,8 +397,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify other = (emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify) obj;
 
-      if (getMGBKMNHIFOE()
-          != other.getMGBKMNHIFOE()) return false;
+      if (getInitialLevel()
+          != other.getInitialLevel()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
       if (getReason()
@@ -409,8 +409,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           != other.getItemId()) return false;
       if (!getTransferItemListList()
           .equals(other.getTransferItemListList())) return false;
-      if (getCBBMIOFHCIC()
-          != other.getCBBMIOFHCIC()) return false;
+      if (getInitialPromoteLevel()
+          != other.getInitialPromoteLevel()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -422,8 +422,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MGBKMNHIFOE_FIELD_NUMBER;
-      hash = (53 * hash) + getMGBKMNHIFOE();
+      hash = (37 * hash) + INITIAL_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getInitialLevel();
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
@@ -437,8 +437,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         hash = (37 * hash) + TRANSFER_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTransferItemListList().hashCode();
       }
-      hash = (37 * hash) + CBBMIOFHCIC_FIELD_NUMBER;
-      hash = (53 * hash) + getCBBMIOFHCIC();
+      hash = (37 * hash) + INITIAL_PROMOTE_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getInitialPromoteLevel();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -578,7 +578,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mGBKMNHIFOE_ = 0;
+        initialLevel_ = 0;
 
         avatarId_ = 0;
 
@@ -594,7 +594,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         } else {
           transferItemListBuilder_.clear();
         }
-        cBBMIOFHCIC_ = 0;
+        initialPromoteLevel_ = 0;
 
         return this;
       }
@@ -623,7 +623,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify buildPartial() {
         emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify result = new emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify(this);
         int from_bitField0_ = bitField0_;
-        result.mGBKMNHIFOE_ = mGBKMNHIFOE_;
+        result.initialLevel_ = initialLevel_;
         result.avatarId_ = avatarId_;
         result.reason_ = reason_;
         result.isTransferToItem_ = isTransferToItem_;
@@ -637,7 +637,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         } else {
           result.transferItemList_ = transferItemListBuilder_.build();
         }
-        result.cBBMIOFHCIC_ = cBBMIOFHCIC_;
+        result.initialPromoteLevel_ = initialPromoteLevel_;
         onBuilt();
         return result;
       }
@@ -686,8 +686,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify other) {
         if (other == emu.grasscutter.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify.getDefaultInstance()) return this;
-        if (other.getMGBKMNHIFOE() != 0) {
-          setMGBKMNHIFOE(other.getMGBKMNHIFOE());
+        if (other.getInitialLevel() != 0) {
+          setInitialLevel(other.getInitialLevel());
         }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
@@ -727,8 +727,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
             }
           }
         }
-        if (other.getCBBMIOFHCIC() != 0) {
-          setCBBMIOFHCIC(other.getCBBMIOFHCIC());
+        if (other.getInitialPromoteLevel() != 0) {
+          setInitialPromoteLevel(other.getInitialPromoteLevel());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -760,33 +760,33 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       }
       private int bitField0_;
 
-      private int mGBKMNHIFOE_ ;
+      private int initialLevel_ ;
       /**
-       * <code>uint32 MGBKMNHIFOE = 15;</code>
-       * @return The mGBKMNHIFOE.
+       * <code>uint32 initial_level = 15;</code>
+       * @return The initialLevel.
        */
       @java.lang.Override
-      public int getMGBKMNHIFOE() {
-        return mGBKMNHIFOE_;
+      public int getInitialLevel() {
+        return initialLevel_;
       }
       /**
-       * <code>uint32 MGBKMNHIFOE = 15;</code>
-       * @param value The mGBKMNHIFOE to set.
+       * <code>uint32 initial_level = 15;</code>
+       * @param value The initialLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setMGBKMNHIFOE(int value) {
+      public Builder setInitialLevel(int value) {
         
-        mGBKMNHIFOE_ = value;
+        initialLevel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MGBKMNHIFOE = 15;</code>
+       * <code>uint32 initial_level = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMGBKMNHIFOE() {
+      public Builder clearInitialLevel() {
         
-        mGBKMNHIFOE_ = 0;
+        initialLevel_ = 0;
         onChanged();
         return this;
       }
@@ -1155,33 +1155,33 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         return transferItemListBuilder_;
       }
 
-      private int cBBMIOFHCIC_ ;
+      private int initialPromoteLevel_ ;
       /**
-       * <code>uint32 CBBMIOFHCIC = 8;</code>
-       * @return The cBBMIOFHCIC.
+       * <code>uint32 initial_promote_level = 8;</code>
+       * @return The initialPromoteLevel.
        */
       @java.lang.Override
-      public int getCBBMIOFHCIC() {
-        return cBBMIOFHCIC_;
+      public int getInitialPromoteLevel() {
+        return initialPromoteLevel_;
       }
       /**
-       * <code>uint32 CBBMIOFHCIC = 8;</code>
-       * @param value The cBBMIOFHCIC to set.
+       * <code>uint32 initial_promote_level = 8;</code>
+       * @param value The initialPromoteLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setCBBMIOFHCIC(int value) {
+      public Builder setInitialPromoteLevel(int value) {
         
-        cBBMIOFHCIC_ = value;
+        initialPromoteLevel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CBBMIOFHCIC = 8;</code>
+       * <code>uint32 initial_promote_level = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCBBMIOFHCIC() {
+      public Builder clearInitialPromoteLevel() {
         
-        cBBMIOFHCIC_ = 0;
+        initialPromoteLevel_ = 0;
         onChanged();
         return this;
       }
@@ -1253,14 +1253,14 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n AddNoGachaAvatarCardNotify.proto\032&AddN" +
-      "oGachaAvatarCardTransferItem.proto\"\326\001\n\032A" +
-      "ddNoGachaAvatarCardNotify\022\023\n\013MGBKMNHIFOE" +
-      "\030\017 \001(\r\022\021\n\tavatar_id\030\016 \001(\r\022\016\n\006reason\030\014 \001(" +
-      "\r\022\033\n\023is_transfer_to_item\030\t \001(\010\022\017\n\007item_i" +
-      "d\030\001 \001(\r\022=\n\022transfer_item_list\030\002 \003(\0132!.Ad" +
-      "dNoGachaAvatarCardTransferItem\022\023\n\013CBBMIO" +
-      "FHCIC\030\010 \001(\rB\033\n\031emu.grasscutter.net.proto" +
-      "b\006proto3"
+      "oGachaAvatarCardTransferItem.proto\"\342\001\n\032A" +
+      "ddNoGachaAvatarCardNotify\022\025\n\rinitial_lev" +
+      "el\030\017 \001(\r\022\021\n\tavatar_id\030\016 \001(\r\022\016\n\006reason\030\014 " +
+      "\001(\r\022\033\n\023is_transfer_to_item\030\t \001(\010\022\017\n\007item" +
+      "_id\030\001 \001(\r\022=\n\022transfer_item_list\030\002 \003(\0132!." +
+      "AddNoGachaAvatarCardTransferItem\022\035\n\025init" +
+      "ial_promote_level\030\010 \001(\rB\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1272,7 +1272,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     internal_static_AddNoGachaAvatarCardNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AddNoGachaAvatarCardNotify_descriptor,
-        new java.lang.String[] { "MGBKMNHIFOE", "AvatarId", "Reason", "IsTransferToItem", "ItemId", "TransferItemList", "CBBMIOFHCIC", });
+        new java.lang.String[] { "InitialLevel", "AvatarId", "Reason", "IsTransferToItem", "ItemId", "TransferItemList", "InitialPromoteLevel", });
     emu.grasscutter.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.getDescriptor();
   }
 

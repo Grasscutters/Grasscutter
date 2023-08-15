@@ -46,10 +46,10 @@ public final class SceneTeamAvatarOuterClass {
     int getPlayerUid();
 
     /**
-     * <code>bool GNPKDDJADKH = 15;</code>
-     * @return The gNPKDDJADKH.
+     * <code>bool is_on_scene = 15;</code>
+     * @return The isOnScene.
      */
-    boolean getGNPKDDJADKH();
+    boolean getIsOnScene();
 
     /**
      * <code>.AbilitySyncStateInfo weapon_ability_info = 11;</code>
@@ -175,16 +175,16 @@ public final class SceneTeamAvatarOuterClass {
     emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfoOrBuilder getSceneAvatarInfoOrBuilder();
 
     /**
-     * <code>bool NIFBCGDKCNF = 1765;</code>
-     * @return The nIFBCGDKCNF.
+     * <code>bool is_player_cur_avatar = 1765;</code>
+     * @return The isPlayerCurAvatar.
      */
-    boolean getNIFBCGDKCNF();
+    boolean getIsPlayerCurAvatar();
 
     /**
-     * <code>bool BJHAOMGBCLC = 13;</code>
-     * @return The bJHAOMGBCLC.
+     * <code>bool is_reconnect = 13;</code>
+     * @return The isReconnect.
      */
-    boolean getBJHAOMGBCLC();
+    boolean getIsReconnect();
   }
   /**
    * <pre>
@@ -343,7 +343,7 @@ public final class SceneTeamAvatarOuterClass {
             }
             case 104: {
 
-              bJHAOMGBCLC_ = input.readBool();
+              isReconnect_ = input.readBool();
               break;
             }
             case 114: {
@@ -361,12 +361,12 @@ public final class SceneTeamAvatarOuterClass {
             }
             case 120: {
 
-              gNPKDDJADKH_ = input.readBool();
+              isOnScene_ = input.readBool();
               break;
             }
             case 14120: {
 
-              nIFBCGDKCNF_ = input.readBool();
+              isPlayerCurAvatar_ = input.readBool();
               break;
             }
             default: {
@@ -452,15 +452,15 @@ public final class SceneTeamAvatarOuterClass {
       return playerUid_;
     }
 
-    public static final int GNPKDDJADKH_FIELD_NUMBER = 15;
-    private boolean gNPKDDJADKH_;
+    public static final int IS_ON_SCENE_FIELD_NUMBER = 15;
+    private boolean isOnScene_;
     /**
-     * <code>bool GNPKDDJADKH = 15;</code>
-     * @return The gNPKDDJADKH.
+     * <code>bool is_on_scene = 15;</code>
+     * @return The isOnScene.
      */
     @java.lang.Override
-    public boolean getGNPKDDJADKH() {
-      return gNPKDDJADKH_;
+    public boolean getIsOnScene() {
+      return isOnScene_;
     }
 
     public static final int WEAPON_ABILITY_INFO_FIELD_NUMBER = 11;
@@ -677,26 +677,26 @@ public final class SceneTeamAvatarOuterClass {
       return getSceneAvatarInfo();
     }
 
-    public static final int NIFBCGDKCNF_FIELD_NUMBER = 1765;
-    private boolean nIFBCGDKCNF_;
+    public static final int IS_PLAYER_CUR_AVATAR_FIELD_NUMBER = 1765;
+    private boolean isPlayerCurAvatar_;
     /**
-     * <code>bool NIFBCGDKCNF = 1765;</code>
-     * @return The nIFBCGDKCNF.
+     * <code>bool is_player_cur_avatar = 1765;</code>
+     * @return The isPlayerCurAvatar.
      */
     @java.lang.Override
-    public boolean getNIFBCGDKCNF() {
-      return nIFBCGDKCNF_;
+    public boolean getIsPlayerCurAvatar() {
+      return isPlayerCurAvatar_;
     }
 
-    public static final int BJHAOMGBCLC_FIELD_NUMBER = 13;
-    private boolean bJHAOMGBCLC_;
+    public static final int IS_RECONNECT_FIELD_NUMBER = 13;
+    private boolean isReconnect_;
     /**
-     * <code>bool BJHAOMGBCLC = 13;</code>
-     * @return The bJHAOMGBCLC.
+     * <code>bool is_reconnect = 13;</code>
+     * @return The isReconnect.
      */
     @java.lang.Override
-    public boolean getBJHAOMGBCLC() {
-      return bJHAOMGBCLC_;
+    public boolean getIsReconnect() {
+      return isReconnect_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -749,17 +749,17 @@ public final class SceneTeamAvatarOuterClass {
       if (avatarGuid_ != 0L) {
         output.writeUInt64(12, avatarGuid_);
       }
-      if (bJHAOMGBCLC_ != false) {
-        output.writeBool(13, bJHAOMGBCLC_);
+      if (isReconnect_ != false) {
+        output.writeBool(13, isReconnect_);
       }
       if (sceneAvatarInfo_ != null) {
         output.writeMessage(14, getSceneAvatarInfo());
       }
-      if (gNPKDDJADKH_ != false) {
-        output.writeBool(15, gNPKDDJADKH_);
+      if (isOnScene_ != false) {
+        output.writeBool(15, isOnScene_);
       }
-      if (nIFBCGDKCNF_ != false) {
-        output.writeBool(1765, nIFBCGDKCNF_);
+      if (isPlayerCurAvatar_ != false) {
+        output.writeBool(1765, isPlayerCurAvatar_);
       }
       unknownFields.writeTo(output);
     }
@@ -818,21 +818,21 @@ public final class SceneTeamAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, avatarGuid_);
       }
-      if (bJHAOMGBCLC_ != false) {
+      if (isReconnect_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, bJHAOMGBCLC_);
+          .computeBoolSize(13, isReconnect_);
       }
       if (sceneAvatarInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getSceneAvatarInfo());
       }
-      if (gNPKDDJADKH_ != false) {
+      if (isOnScene_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, gNPKDDJADKH_);
+          .computeBoolSize(15, isOnScene_);
       }
-      if (nIFBCGDKCNF_ != false) {
+      if (isPlayerCurAvatar_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1765, nIFBCGDKCNF_);
+          .computeBoolSize(1765, isPlayerCurAvatar_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -858,8 +858,8 @@ public final class SceneTeamAvatarOuterClass {
           != other.getWeaponEntityId()) return false;
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
-      if (getGNPKDDJADKH()
-          != other.getGNPKDDJADKH()) return false;
+      if (getIsOnScene()
+          != other.getIsOnScene()) return false;
       if (hasWeaponAbilityInfo() != other.hasWeaponAbilityInfo()) return false;
       if (hasWeaponAbilityInfo()) {
         if (!getWeaponAbilityInfo()
@@ -895,10 +895,10 @@ public final class SceneTeamAvatarOuterClass {
         if (!getSceneAvatarInfo()
             .equals(other.getSceneAvatarInfo())) return false;
       }
-      if (getNIFBCGDKCNF()
-          != other.getNIFBCGDKCNF()) return false;
-      if (getBJHAOMGBCLC()
-          != other.getBJHAOMGBCLC()) return false;
+      if (getIsPlayerCurAvatar()
+          != other.getIsPlayerCurAvatar()) return false;
+      if (getIsReconnect()
+          != other.getIsReconnect()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -918,9 +918,9 @@ public final class SceneTeamAvatarOuterClass {
       hash = (53 * hash) + getWeaponEntityId();
       hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerUid();
-      hash = (37 * hash) + GNPKDDJADKH_FIELD_NUMBER;
+      hash = (37 * hash) + IS_ON_SCENE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGNPKDDJADKH());
+          getIsOnScene());
       if (hasWeaponAbilityInfo()) {
         hash = (37 * hash) + WEAPON_ABILITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getWeaponAbilityInfo().hashCode();
@@ -955,12 +955,12 @@ public final class SceneTeamAvatarOuterClass {
         hash = (37 * hash) + SCENE_AVATAR_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getSceneAvatarInfo().hashCode();
       }
-      hash = (37 * hash) + NIFBCGDKCNF_FIELD_NUMBER;
+      hash = (37 * hash) + IS_PLAYER_CUR_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNIFBCGDKCNF());
-      hash = (37 * hash) + BJHAOMGBCLC_FIELD_NUMBER;
+          getIsPlayerCurAvatar());
+      hash = (37 * hash) + IS_RECONNECT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getBJHAOMGBCLC());
+          getIsReconnect());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1109,7 +1109,7 @@ public final class SceneTeamAvatarOuterClass {
 
         playerUid_ = 0;
 
-        gNPKDDJADKH_ = false;
+        isOnScene_ = false;
 
         if (weaponAbilityInfoBuilder_ == null) {
           weaponAbilityInfo_ = null;
@@ -1155,9 +1155,9 @@ public final class SceneTeamAvatarOuterClass {
           sceneAvatarInfo_ = null;
           sceneAvatarInfoBuilder_ = null;
         }
-        nIFBCGDKCNF_ = false;
+        isPlayerCurAvatar_ = false;
 
-        bJHAOMGBCLC_ = false;
+        isReconnect_ = false;
 
         return this;
       }
@@ -1193,7 +1193,7 @@ public final class SceneTeamAvatarOuterClass {
         }
         result.weaponEntityId_ = weaponEntityId_;
         result.playerUid_ = playerUid_;
-        result.gNPKDDJADKH_ = gNPKDDJADKH_;
+        result.isOnScene_ = isOnScene_;
         if (weaponAbilityInfoBuilder_ == null) {
           result.weaponAbilityInfo_ = weaponAbilityInfo_;
         } else {
@@ -1232,8 +1232,8 @@ public final class SceneTeamAvatarOuterClass {
         } else {
           result.sceneAvatarInfo_ = sceneAvatarInfoBuilder_.build();
         }
-        result.nIFBCGDKCNF_ = nIFBCGDKCNF_;
-        result.bJHAOMGBCLC_ = bJHAOMGBCLC_;
+        result.isPlayerCurAvatar_ = isPlayerCurAvatar_;
+        result.isReconnect_ = isReconnect_;
         onBuilt();
         return result;
       }
@@ -1291,8 +1291,8 @@ public final class SceneTeamAvatarOuterClass {
         if (other.getPlayerUid() != 0) {
           setPlayerUid(other.getPlayerUid());
         }
-        if (other.getGNPKDDJADKH() != false) {
-          setGNPKDDJADKH(other.getGNPKDDJADKH());
+        if (other.getIsOnScene() != false) {
+          setIsOnScene(other.getIsOnScene());
         }
         if (other.hasWeaponAbilityInfo()) {
           mergeWeaponAbilityInfo(other.getWeaponAbilityInfo());
@@ -1347,11 +1347,11 @@ public final class SceneTeamAvatarOuterClass {
         if (other.hasSceneAvatarInfo()) {
           mergeSceneAvatarInfo(other.getSceneAvatarInfo());
         }
-        if (other.getNIFBCGDKCNF() != false) {
-          setNIFBCGDKCNF(other.getNIFBCGDKCNF());
+        if (other.getIsPlayerCurAvatar() != false) {
+          setIsPlayerCurAvatar(other.getIsPlayerCurAvatar());
         }
-        if (other.getBJHAOMGBCLC() != false) {
-          setBJHAOMGBCLC(other.getBJHAOMGBCLC());
+        if (other.getIsReconnect() != false) {
+          setIsReconnect(other.getIsReconnect());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1564,33 +1564,33 @@ public final class SceneTeamAvatarOuterClass {
         return this;
       }
 
-      private boolean gNPKDDJADKH_ ;
+      private boolean isOnScene_ ;
       /**
-       * <code>bool GNPKDDJADKH = 15;</code>
-       * @return The gNPKDDJADKH.
+       * <code>bool is_on_scene = 15;</code>
+       * @return The isOnScene.
        */
       @java.lang.Override
-      public boolean getGNPKDDJADKH() {
-        return gNPKDDJADKH_;
+      public boolean getIsOnScene() {
+        return isOnScene_;
       }
       /**
-       * <code>bool GNPKDDJADKH = 15;</code>
-       * @param value The gNPKDDJADKH to set.
+       * <code>bool is_on_scene = 15;</code>
+       * @param value The isOnScene to set.
        * @return This builder for chaining.
        */
-      public Builder setGNPKDDJADKH(boolean value) {
+      public Builder setIsOnScene(boolean value) {
         
-        gNPKDDJADKH_ = value;
+        isOnScene_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool GNPKDDJADKH = 15;</code>
+       * <code>bool is_on_scene = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGNPKDDJADKH() {
+      public Builder clearIsOnScene() {
         
-        gNPKDDJADKH_ = false;
+        isOnScene_ = false;
         onChanged();
         return this;
       }
@@ -2554,64 +2554,64 @@ public final class SceneTeamAvatarOuterClass {
         return sceneAvatarInfoBuilder_;
       }
 
-      private boolean nIFBCGDKCNF_ ;
+      private boolean isPlayerCurAvatar_ ;
       /**
-       * <code>bool NIFBCGDKCNF = 1765;</code>
-       * @return The nIFBCGDKCNF.
+       * <code>bool is_player_cur_avatar = 1765;</code>
+       * @return The isPlayerCurAvatar.
        */
       @java.lang.Override
-      public boolean getNIFBCGDKCNF() {
-        return nIFBCGDKCNF_;
+      public boolean getIsPlayerCurAvatar() {
+        return isPlayerCurAvatar_;
       }
       /**
-       * <code>bool NIFBCGDKCNF = 1765;</code>
-       * @param value The nIFBCGDKCNF to set.
+       * <code>bool is_player_cur_avatar = 1765;</code>
+       * @param value The isPlayerCurAvatar to set.
        * @return This builder for chaining.
        */
-      public Builder setNIFBCGDKCNF(boolean value) {
+      public Builder setIsPlayerCurAvatar(boolean value) {
         
-        nIFBCGDKCNF_ = value;
+        isPlayerCurAvatar_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool NIFBCGDKCNF = 1765;</code>
+       * <code>bool is_player_cur_avatar = 1765;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNIFBCGDKCNF() {
+      public Builder clearIsPlayerCurAvatar() {
         
-        nIFBCGDKCNF_ = false;
+        isPlayerCurAvatar_ = false;
         onChanged();
         return this;
       }
 
-      private boolean bJHAOMGBCLC_ ;
+      private boolean isReconnect_ ;
       /**
-       * <code>bool BJHAOMGBCLC = 13;</code>
-       * @return The bJHAOMGBCLC.
+       * <code>bool is_reconnect = 13;</code>
+       * @return The isReconnect.
        */
       @java.lang.Override
-      public boolean getBJHAOMGBCLC() {
-        return bJHAOMGBCLC_;
+      public boolean getIsReconnect() {
+        return isReconnect_;
       }
       /**
-       * <code>bool BJHAOMGBCLC = 13;</code>
-       * @param value The bJHAOMGBCLC to set.
+       * <code>bool is_reconnect = 13;</code>
+       * @param value The isReconnect to set.
        * @return This builder for chaining.
        */
-      public Builder setBJHAOMGBCLC(boolean value) {
+      public Builder setIsReconnect(boolean value) {
         
-        bJHAOMGBCLC_ = value;
+        isReconnect_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BJHAOMGBCLC = 13;</code>
+       * <code>bool is_reconnect = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBJHAOMGBCLC() {
+      public Builder clearIsReconnect() {
         
-        bJHAOMGBCLC_ = false;
+        isReconnect_ = false;
         onChanged();
         return this;
       }
@@ -2686,10 +2686,10 @@ public final class SceneTeamAvatarOuterClass {
       ".proto\032\032AbilitySyncStateInfo.proto\032\020Serv" +
       "erBuff.proto\032\020AvatarInfo.proto\032\031AbilityC" +
       "ontrolBlock.proto\032\025SceneAvatarInfo.proto" +
-      "\"\216\004\n\017SceneTeamAvatar\022+\n\021scene_entity_inf" +
+      "\"\230\004\n\017SceneTeamAvatar\022+\n\021scene_entity_inf" +
       "o\030\004 \001(\0132\020.SceneEntityInfo\022\030\n\020weapon_enti" +
-      "ty_id\030\010 \001(\r\022\022\n\nplayer_uid\030\003 \001(\r\022\023\n\013GNPKD" +
-      "DJADKH\030\017 \001(\010\0222\n\023weapon_ability_info\030\013 \001(" +
+      "ty_id\030\010 \001(\r\022\022\n\nplayer_uid\030\003 \001(\r\022\023\n\013is_on" +
+      "_scene\030\017 \001(\010\0222\n\023weapon_ability_info\030\013 \001(" +
       "\0132\025.AbilitySyncStateInfo\022%\n\020server_buff_" +
       "list\030\n \003(\0132\013.ServerBuff\0222\n\023avatar_abilit" +
       "y_info\030\007 \001(\0132\025.AbilitySyncStateInfo\022\023\n\013w" +
@@ -2698,9 +2698,9 @@ public final class SceneTeamAvatarOuterClass {
       "guid\030\014 \001(\004\0223\n\025ability_control_block\030\001 \001(" +
       "\0132\024.AbilityControlBlock\022\020\n\010scene_id\030\002 \001(" +
       "\r\022+\n\021scene_avatar_info\030\016 \001(\0132\020.SceneAvat" +
-      "arInfo\022\024\n\013NIFBCGDKCNF\030\345\r \001(\010\022\023\n\013BJHAOMGB" +
-      "CLC\030\r \001(\010B\033\n\031emu.grasscutter.net.protob\006" +
-      "proto3"
+      "arInfo\022\035\n\024is_player_cur_avatar\030\345\r \001(\010\022\024\n" +
+      "\014is_reconnect\030\r \001(\010B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2717,7 +2717,7 @@ public final class SceneTeamAvatarOuterClass {
     internal_static_SceneTeamAvatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneTeamAvatar_descriptor,
-        new java.lang.String[] { "SceneEntityInfo", "WeaponEntityId", "PlayerUid", "GNPKDDJADKH", "WeaponAbilityInfo", "ServerBuffList", "AvatarAbilityInfo", "WeaponGuid", "AvatarInfo", "EntityId", "AvatarGuid", "AbilityControlBlock", "SceneId", "SceneAvatarInfo", "NIFBCGDKCNF", "BJHAOMGBCLC", });
+        new java.lang.String[] { "SceneEntityInfo", "WeaponEntityId", "PlayerUid", "IsOnScene", "WeaponAbilityInfo", "ServerBuffList", "AvatarAbilityInfo", "WeaponGuid", "AvatarInfo", "EntityId", "AvatarGuid", "AbilityControlBlock", "SceneId", "SceneAvatarInfo", "IsPlayerCurAvatar", "IsReconnect", });
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();

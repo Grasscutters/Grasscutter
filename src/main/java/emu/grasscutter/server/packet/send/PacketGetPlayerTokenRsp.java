@@ -27,7 +27,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setChannelId(1)
                         .setCountryCode("US")
                         .setClientVersionRandomKey("c25-314dd05b0b5f")
-                        .setRegPlatform(3)
+                        .setEMFDHANIAHH(3) // setRegPlatform
                         .setClientIpStr(session.getAddress().getAddress().getHostAddress())
                         .build();
 
@@ -46,7 +46,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setRetcode(retcode)
                         .setMsg(msg)
                         .setBlackUidEndTime(blackEndTime)
-                        .setRegPlatform(3)
+                        .setEMFDHANIAHH(3) // setRegPlatform
                         .setCountryCode("US")
                         .setClientIpStr(session.getAddress().getAddress().getHostAddress())
                         .build();
@@ -73,7 +73,7 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
                         .setChannelId(1)
                         .setCountryCode("US")
                         .setClientVersionRandomKey("c25-314dd05b0b5f")
-                        .setRegPlatform(3)
+                        .setEMFDHANIAHH(3) // setRegPlatform
                         .setClientIpStr(session.getAddress().getAddress().getHostAddress())
                         .setServerRandKey(encryptedSeed)
                         .setSign(encryptedSeedSign)

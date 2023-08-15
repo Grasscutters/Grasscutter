@@ -114,10 +114,10 @@ public final class FriendBriefOuterClass {
     int getNameCardId();
 
     /**
-     * <code>uint32 PKANPMBCGGH = 14;</code>
-     * @return The pKANPMBCGGH.
+     * <code>uint32 last_active_time = 14;</code>
+     * @return The lastActiveTime.
      */
-    int getPKANPMBCGGH();
+    int getLastActiveTime();
 
     /**
      * <code>bool is_chat_no_disturb = 15;</code>
@@ -217,10 +217,10 @@ public final class FriendBriefOuterClass {
     emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType getPlatformType();
 
     /**
-     * <code>bool IEAHDCLDOEJ = 28;</code>
-     * @return The iEAHDCLDOEJ.
+     * <code>bool is_game_source = 28;</code>
+     * @return The isGameSource.
      */
-    boolean getIEAHDCLDOEJ();
+    boolean getIsGameSource();
 
     /**
      * <code>bool BJFJJMGENCH = 29;</code>
@@ -352,7 +352,7 @@ public final class FriendBriefOuterClass {
             }
             case 112: {
 
-              pKANPMBCGGH_ = input.readUInt32();
+              lastActiveTime_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -417,7 +417,7 @@ public final class FriendBriefOuterClass {
             }
             case 224: {
 
-              iEAHDCLDOEJ_ = input.readBool();
+              isGameSource_ = input.readBool();
               break;
             }
             case 232: {
@@ -681,15 +681,15 @@ public final class FriendBriefOuterClass {
       return nameCardId_;
     }
 
-    public static final int PKANPMBCGGH_FIELD_NUMBER = 14;
-    private int pKANPMBCGGH_;
+    public static final int LAST_ACTIVE_TIME_FIELD_NUMBER = 14;
+    private int lastActiveTime_;
     /**
-     * <code>uint32 PKANPMBCGGH = 14;</code>
-     * @return The pKANPMBCGGH.
+     * <code>uint32 last_active_time = 14;</code>
+     * @return The lastActiveTime.
      */
     @java.lang.Override
-    public int getPKANPMBCGGH() {
-      return pKANPMBCGGH_;
+    public int getLastActiveTime() {
+      return lastActiveTime_;
     }
 
     public static final int IS_CHAT_NO_DISTURB_FIELD_NUMBER = 15;
@@ -878,15 +878,15 @@ public final class FriendBriefOuterClass {
       return result == null ? emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType.UNRECOGNIZED : result;
     }
 
-    public static final int IEAHDCLDOEJ_FIELD_NUMBER = 28;
-    private boolean iEAHDCLDOEJ_;
+    public static final int IS_GAME_SOURCE_FIELD_NUMBER = 28;
+    private boolean isGameSource_;
     /**
-     * <code>bool IEAHDCLDOEJ = 28;</code>
-     * @return The iEAHDCLDOEJ.
+     * <code>bool is_game_source = 28;</code>
+     * @return The isGameSource.
      */
     @java.lang.Override
-    public boolean getIEAHDCLDOEJ() {
-      return iEAHDCLDOEJ_;
+    public boolean getIsGameSource() {
+      return isGameSource_;
     }
 
     public static final int BJFJJMGENCH_FIELD_NUMBER = 29;
@@ -950,8 +950,8 @@ public final class FriendBriefOuterClass {
       if (nameCardId_ != 0) {
         output.writeUInt32(13, nameCardId_);
       }
-      if (pKANPMBCGGH_ != 0) {
-        output.writeUInt32(14, pKANPMBCGGH_);
+      if (lastActiveTime_ != 0) {
+        output.writeUInt32(14, lastActiveTime_);
       }
       if (isChatNoDisturb_ != false) {
         output.writeBool(15, isChatNoDisturb_);
@@ -980,8 +980,8 @@ public final class FriendBriefOuterClass {
       if (platformType_ != emu.grasscutter.net.proto.PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_EDITOR.getNumber()) {
         output.writeEnum(27, platformType_);
       }
-      if (iEAHDCLDOEJ_ != false) {
-        output.writeBool(28, iEAHDCLDOEJ_);
+      if (isGameSource_ != false) {
+        output.writeBool(28, isGameSource_);
       }
       if (bJFJJMGENCH_ != false) {
         output.writeBool(29, bJFJJMGENCH_);
@@ -1040,9 +1040,9 @@ public final class FriendBriefOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, nameCardId_);
       }
-      if (pKANPMBCGGH_ != 0) {
+      if (lastActiveTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, pKANPMBCGGH_);
+          .computeUInt32Size(14, lastActiveTime_);
       }
       if (isChatNoDisturb_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1079,9 +1079,9 @@ public final class FriendBriefOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(27, platformType_);
       }
-      if (iEAHDCLDOEJ_ != false) {
+      if (isGameSource_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(28, iEAHDCLDOEJ_);
+          .computeBoolSize(28, isGameSource_);
       }
       if (bJFJJMGENCH_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1125,8 +1125,8 @@ public final class FriendBriefOuterClass {
           != other.getNHCJGKFNCFD()) return false;
       if (getNameCardId()
           != other.getNameCardId()) return false;
-      if (getPKANPMBCGGH()
-          != other.getPKANPMBCGGH()) return false;
+      if (getLastActiveTime()
+          != other.getLastActiveTime()) return false;
       if (getIsChatNoDisturb()
           != other.getIsChatNoDisturb()) return false;
       if (getEFMMMOPAPAK()
@@ -1146,8 +1146,8 @@ public final class FriendBriefOuterClass {
       if (getFNCJLBGOBAE()
           != other.getFNCJLBGOBAE()) return false;
       if (platformType_ != other.platformType_) return false;
-      if (getIEAHDCLDOEJ()
-          != other.getIEAHDCLDOEJ()) return false;
+      if (getIsGameSource()
+          != other.getIsGameSource()) return false;
       if (getBJFJJMGENCH()
           != other.getBJFJJMGENCH()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1186,8 +1186,8 @@ public final class FriendBriefOuterClass {
       hash = (53 * hash) + getNHCJGKFNCFD();
       hash = (37 * hash) + NAME_CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNameCardId();
-      hash = (37 * hash) + PKANPMBCGGH_FIELD_NUMBER;
-      hash = (53 * hash) + getPKANPMBCGGH();
+      hash = (37 * hash) + LAST_ACTIVE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastActiveTime();
       hash = (37 * hash) + IS_CHAT_NO_DISTURB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsChatNoDisturb());
@@ -1213,9 +1213,9 @@ public final class FriendBriefOuterClass {
           getFNCJLBGOBAE());
       hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + platformType_;
-      hash = (37 * hash) + IEAHDCLDOEJ_FIELD_NUMBER;
+      hash = (37 * hash) + IS_GAME_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIEAHDCLDOEJ());
+          getIsGameSource());
       hash = (37 * hash) + BJFJJMGENCH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getBJFJJMGENCH());
@@ -1381,7 +1381,7 @@ public final class FriendBriefOuterClass {
 
         nameCardId_ = 0;
 
-        pKANPMBCGGH_ = 0;
+        lastActiveTime_ = 0;
 
         isChatNoDisturb_ = false;
 
@@ -1409,7 +1409,7 @@ public final class FriendBriefOuterClass {
 
         platformType_ = 0;
 
-        iEAHDCLDOEJ_ = false;
+        isGameSource_ = false;
 
         bJFJJMGENCH_ = false;
 
@@ -1452,7 +1452,7 @@ public final class FriendBriefOuterClass {
         result.onlineId_ = onlineId_;
         result.nHCJGKFNCFD_ = nHCJGKFNCFD_;
         result.nameCardId_ = nameCardId_;
-        result.pKANPMBCGGH_ = pKANPMBCGGH_;
+        result.lastActiveTime_ = lastActiveTime_;
         result.isChatNoDisturb_ = isChatNoDisturb_;
         result.eFMMMOPAPAK_ = eFMMMOPAPAK_;
         result.remarkName_ = remarkName_;
@@ -1474,7 +1474,7 @@ public final class FriendBriefOuterClass {
         result.pBFEPMNHMPL_ = pBFEPMNHMPL_;
         result.fNCJLBGOBAE_ = fNCJLBGOBAE_;
         result.platformType_ = platformType_;
-        result.iEAHDCLDOEJ_ = iEAHDCLDOEJ_;
+        result.isGameSource_ = isGameSource_;
         result.bJFJJMGENCH_ = bJFJJMGENCH_;
         onBuilt();
         return result;
@@ -1563,8 +1563,8 @@ public final class FriendBriefOuterClass {
         if (other.getNameCardId() != 0) {
           setNameCardId(other.getNameCardId());
         }
-        if (other.getPKANPMBCGGH() != 0) {
-          setPKANPMBCGGH(other.getPKANPMBCGGH());
+        if (other.getLastActiveTime() != 0) {
+          setLastActiveTime(other.getLastActiveTime());
         }
         if (other.getIsChatNoDisturb() != false) {
           setIsChatNoDisturb(other.getIsChatNoDisturb());
@@ -1617,8 +1617,8 @@ public final class FriendBriefOuterClass {
         if (other.platformType_ != 0) {
           setPlatformTypeValue(other.getPlatformTypeValue());
         }
-        if (other.getIEAHDCLDOEJ() != false) {
-          setIEAHDCLDOEJ(other.getIEAHDCLDOEJ());
+        if (other.getIsGameSource() != false) {
+          setIsGameSource(other.getIsGameSource());
         }
         if (other.getBJFJJMGENCH() != false) {
           setBJFJJMGENCH(other.getBJFJJMGENCH());
@@ -2183,33 +2183,33 @@ public final class FriendBriefOuterClass {
         return this;
       }
 
-      private int pKANPMBCGGH_ ;
+      private int lastActiveTime_ ;
       /**
-       * <code>uint32 PKANPMBCGGH = 14;</code>
-       * @return The pKANPMBCGGH.
+       * <code>uint32 last_active_time = 14;</code>
+       * @return The lastActiveTime.
        */
       @java.lang.Override
-      public int getPKANPMBCGGH() {
-        return pKANPMBCGGH_;
+      public int getLastActiveTime() {
+        return lastActiveTime_;
       }
       /**
-       * <code>uint32 PKANPMBCGGH = 14;</code>
-       * @param value The pKANPMBCGGH to set.
+       * <code>uint32 last_active_time = 14;</code>
+       * @param value The lastActiveTime to set.
        * @return This builder for chaining.
        */
-      public Builder setPKANPMBCGGH(int value) {
+      public Builder setLastActiveTime(int value) {
         
-        pKANPMBCGGH_ = value;
+        lastActiveTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PKANPMBCGGH = 14;</code>
+       * <code>uint32 last_active_time = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPKANPMBCGGH() {
+      public Builder clearLastActiveTime() {
         
-        pKANPMBCGGH_ = 0;
+        lastActiveTime_ = 0;
         onChanged();
         return this;
       }
@@ -2881,33 +2881,33 @@ public final class FriendBriefOuterClass {
         return this;
       }
 
-      private boolean iEAHDCLDOEJ_ ;
+      private boolean isGameSource_ ;
       /**
-       * <code>bool IEAHDCLDOEJ = 28;</code>
-       * @return The iEAHDCLDOEJ.
+       * <code>bool is_game_source = 28;</code>
+       * @return The isGameSource.
        */
       @java.lang.Override
-      public boolean getIEAHDCLDOEJ() {
-        return iEAHDCLDOEJ_;
+      public boolean getIsGameSource() {
+        return isGameSource_;
       }
       /**
-       * <code>bool IEAHDCLDOEJ = 28;</code>
-       * @param value The iEAHDCLDOEJ to set.
+       * <code>bool is_game_source = 28;</code>
+       * @param value The isGameSource to set.
        * @return This builder for chaining.
        */
-      public Builder setIEAHDCLDOEJ(boolean value) {
+      public Builder setIsGameSource(boolean value) {
         
-        iEAHDCLDOEJ_ = value;
+        isGameSource_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool IEAHDCLDOEJ = 28;</code>
+       * <code>bool is_game_source = 28;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIEAHDCLDOEJ() {
+      public Builder clearIsGameSource() {
         
-        iEAHDCLDOEJ_ = false;
+        isGameSource_ = false;
         onChanged();
         return this;
       }
@@ -3012,24 +3012,24 @@ public final class FriendBriefOuterClass {
       "\n\021FriendBrief.proto\032\027FriendOnlineState.p" +
       "roto\032\032SocialShowAvatarInfo.proto\032\033Friend" +
       "EnterHomeOption.proto\032\024ProfilePicture.pr" +
-      "oto\032\022PlatformType.proto\"\372\004\n\013FriendBrief\022" +
+      "oto\032\022PlatformType.proto\"\202\005\n\013FriendBrief\022" +
       "\013\n\003uid\030\001 \001(\r\022\020\n\010nickname\030\002 \001(\t\022\r\n\005level\030" +
       "\003 \001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\023\n\013world_level\030" +
       "\005 \001(\r\022\021\n\tsignature\030\006 \001(\t\022(\n\014online_state" +
       "\030\007 \001(\0162\022.FriendOnlineState\022\r\n\005param\030\010 \001(" +
       "\r\022\034\n\024is_mp_mode_available\030\n \001(\010\022\021\n\tonlin" +
       "e_id\030\013 \001(\t\022\023\n\013NHCJGKFNCFD\030\014 \001(\r\022\024\n\014name_" +
-      "card_id\030\r \001(\r\022\023\n\013PKANPMBCGGH\030\016 \001(\r\022\032\n\022is" +
-      "_chat_no_disturb\030\017 \001(\010\022\023\n\013EFMMMOPAPAK\030\020 " +
-      "\001(\r\022\023\n\013remark_name\030\021 \001(\t\0224\n\025show_avatar_" +
-      "info_list\030\026 \003(\0132\025.SocialShowAvatarInfo\0228" +
-      "\n\030friend_enter_home_option\030\027 \001(\0162\026.Frien" +
-      "dEnterHomeOption\022(\n\017profile_picture\030\030 \001(" +
-      "\0132\017.ProfilePicture\022\023\n\013PBFEPMNHMPL\030\031 \001(\010\022" +
-      "\023\n\013FNCJLBGOBAE\030\032 \001(\010\022$\n\rplatform_type\030\033 " +
-      "\001(\0162\r.PlatformType\022\023\n\013IEAHDCLDOEJ\030\034 \001(\010\022" +
-      "\023\n\013BJFJJMGENCH\030\035 \001(\010B\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "card_id\030\r \001(\r\022\030\n\020last_active_time\030\016 \001(\r\022" +
+      "\032\n\022is_chat_no_disturb\030\017 \001(\010\022\023\n\013EFMMMOPAP" +
+      "AK\030\020 \001(\r\022\023\n\013remark_name\030\021 \001(\t\0224\n\025show_av" +
+      "atar_info_list\030\026 \003(\0132\025.SocialShowAvatarI" +
+      "nfo\0228\n\030friend_enter_home_option\030\027 \001(\0162\026." +
+      "FriendEnterHomeOption\022(\n\017profile_picture" +
+      "\030\030 \001(\0132\017.ProfilePicture\022\023\n\013PBFEPMNHMPL\030\031" +
+      " \001(\010\022\023\n\013FNCJLBGOBAE\030\032 \001(\010\022$\n\rplatform_ty" +
+      "pe\030\033 \001(\0162\r.PlatformType\022\026\n\016is_game_sourc" +
+      "e\030\034 \001(\010\022\023\n\013BJFJJMGENCH\030\035 \001(\010B\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3045,7 +3045,7 @@ public final class FriendBriefOuterClass {
     internal_static_FriendBrief_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FriendBrief_descriptor,
-        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "WorldLevel", "Signature", "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "NHCJGKFNCFD", "NameCardId", "PKANPMBCGGH", "IsChatNoDisturb", "EFMMMOPAPAK", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "PBFEPMNHMPL", "FNCJLBGOBAE", "PlatformType", "IEAHDCLDOEJ", "BJFJJMGENCH", });
+        new java.lang.String[] { "Uid", "Nickname", "Level", "AvatarId", "WorldLevel", "Signature", "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "NHCJGKFNCFD", "NameCardId", "LastActiveTime", "IsChatNoDisturb", "EFMMMOPAPAK", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "PBFEPMNHMPL", "FNCJLBGOBAE", "PlatformType", "IsGameSource", "BJFJJMGENCH", });
     emu.grasscutter.net.proto.FriendOnlineStateOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass.getDescriptor();

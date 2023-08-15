@@ -19,51 +19,51 @@ public final class WidgetCoolDownNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
-        getMPJGKFJBHECList();
+        getNormalCoolDownDataListList();
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getMPJGKFJBHEC(int index);
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index);
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
-    int getMPJGKFJBHECCount();
+    int getNormalCoolDownDataListCount();
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getMPJGKFJBHECOrBuilderList();
+        getNormalCoolDownDataListOrBuilderList();
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getMPJGKFJBHECOrBuilder(
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
-        getPEOHMDJKMKOList();
+        getGroupCoolDownDataListList();
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getPEOHMDJKMKO(int index);
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getGroupCoolDownDataList(int index);
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
-    int getPEOHMDJKMKOCount();
+    int getGroupCoolDownDataListCount();
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getPEOHMDJKMKOOrBuilderList();
+        getGroupCoolDownDataListOrBuilderList();
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getPEOHMDJKMKOOrBuilder(
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getGroupCoolDownDataListOrBuilder(
         int index);
   }
   /**
@@ -84,8 +84,8 @@ public final class WidgetCoolDownNotifyOuterClass {
       super(builder);
     }
     private WidgetCoolDownNotify() {
-      mPJGKFJBHEC_ = java.util.Collections.emptyList();
-      pEOHMDJKMKO_ = java.util.Collections.emptyList();
+      normalCoolDownDataList_ = java.util.Collections.emptyList();
+      groupCoolDownDataList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -121,19 +121,19 @@ public final class WidgetCoolDownNotifyOuterClass {
               break;
             case 58: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mPJGKFJBHEC_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
+                normalCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              mPJGKFJBHEC_.add(
+              normalCoolDownDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
               break;
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                pEOHMDJKMKO_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
+                groupCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              pEOHMDJKMKO_.add(
+              groupCoolDownDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
               break;
             }
@@ -153,10 +153,10 @@ public final class WidgetCoolDownNotifyOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          mPJGKFJBHEC_ = java.util.Collections.unmodifiableList(mPJGKFJBHEC_);
+          normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          pEOHMDJKMKO_ = java.util.Collections.unmodifiableList(pEOHMDJKMKO_);
+          groupCoolDownDataList_ = java.util.Collections.unmodifiableList(groupCoolDownDataList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -175,84 +175,84 @@ public final class WidgetCoolDownNotifyOuterClass {
               emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.class, emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.Builder.class);
     }
 
-    public static final int MPJGKFJBHEC_FIELD_NUMBER = 7;
-    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> mPJGKFJBHEC_;
+    public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 7;
+    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getMPJGKFJBHECList() {
-      return mPJGKFJBHEC_;
+    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+      return normalCoolDownDataList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getMPJGKFJBHECOrBuilderList() {
-      return mPJGKFJBHEC_;
+        getNormalCoolDownDataListOrBuilderList() {
+      return normalCoolDownDataList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     @java.lang.Override
-    public int getMPJGKFJBHECCount() {
-      return mPJGKFJBHEC_.size();
+    public int getNormalCoolDownDataListCount() {
+      return normalCoolDownDataList_.size();
     }
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getMPJGKFJBHEC(int index) {
-      return mPJGKFJBHEC_.get(index);
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+      return normalCoolDownDataList_.get(index);
     }
     /**
-     * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getMPJGKFJBHECOrBuilder(
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
         int index) {
-      return mPJGKFJBHEC_.get(index);
+      return normalCoolDownDataList_.get(index);
     }
 
-    public static final int PEOHMDJKMKO_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> pEOHMDJKMKO_;
+    public static final int GROUP_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 10;
+    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> groupCoolDownDataList_;
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getPEOHMDJKMKOList() {
-      return pEOHMDJKMKO_;
+    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getGroupCoolDownDataListList() {
+      return groupCoolDownDataList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getPEOHMDJKMKOOrBuilderList() {
-      return pEOHMDJKMKO_;
+        getGroupCoolDownDataListOrBuilderList() {
+      return groupCoolDownDataList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     @java.lang.Override
-    public int getPEOHMDJKMKOCount() {
-      return pEOHMDJKMKO_.size();
+    public int getGroupCoolDownDataListCount() {
+      return groupCoolDownDataList_.size();
     }
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getPEOHMDJKMKO(int index) {
-      return pEOHMDJKMKO_.get(index);
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getGroupCoolDownDataList(int index) {
+      return groupCoolDownDataList_.get(index);
     }
     /**
-     * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+     * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getPEOHMDJKMKOOrBuilder(
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getGroupCoolDownDataListOrBuilder(
         int index) {
-      return pEOHMDJKMKO_.get(index);
+      return groupCoolDownDataList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -269,11 +269,11 @@ public final class WidgetCoolDownNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < mPJGKFJBHEC_.size(); i++) {
-        output.writeMessage(7, mPJGKFJBHEC_.get(i));
+      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
+        output.writeMessage(7, normalCoolDownDataList_.get(i));
       }
-      for (int i = 0; i < pEOHMDJKMKO_.size(); i++) {
-        output.writeMessage(10, pEOHMDJKMKO_.get(i));
+      for (int i = 0; i < groupCoolDownDataList_.size(); i++) {
+        output.writeMessage(10, groupCoolDownDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -284,13 +284,13 @@ public final class WidgetCoolDownNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < mPJGKFJBHEC_.size(); i++) {
+      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, mPJGKFJBHEC_.get(i));
+          .computeMessageSize(7, normalCoolDownDataList_.get(i));
       }
-      for (int i = 0; i < pEOHMDJKMKO_.size(); i++) {
+      for (int i = 0; i < groupCoolDownDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, pEOHMDJKMKO_.get(i));
+          .computeMessageSize(10, groupCoolDownDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,10 +307,10 @@ public final class WidgetCoolDownNotifyOuterClass {
       }
       emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify other = (emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify) obj;
 
-      if (!getMPJGKFJBHECList()
-          .equals(other.getMPJGKFJBHECList())) return false;
-      if (!getPEOHMDJKMKOList()
-          .equals(other.getPEOHMDJKMKOList())) return false;
+      if (!getNormalCoolDownDataListList()
+          .equals(other.getNormalCoolDownDataListList())) return false;
+      if (!getGroupCoolDownDataListList()
+          .equals(other.getGroupCoolDownDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -322,13 +322,13 @@ public final class WidgetCoolDownNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getMPJGKFJBHECCount() > 0) {
-        hash = (37 * hash) + MPJGKFJBHEC_FIELD_NUMBER;
-        hash = (53 * hash) + getMPJGKFJBHECList().hashCode();
+      if (getNormalCoolDownDataListCount() > 0) {
+        hash = (37 * hash) + NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getNormalCoolDownDataListList().hashCode();
       }
-      if (getPEOHMDJKMKOCount() > 0) {
-        hash = (37 * hash) + PEOHMDJKMKO_FIELD_NUMBER;
-        hash = (53 * hash) + getPEOHMDJKMKOList().hashCode();
+      if (getGroupCoolDownDataListCount() > 0) {
+        hash = (37 * hash) + GROUP_COOL_DOWN_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupCoolDownDataListList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -463,24 +463,24 @@ public final class WidgetCoolDownNotifyOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMPJGKFJBHECFieldBuilder();
-          getPEOHMDJKMKOFieldBuilder();
+          getNormalCoolDownDataListFieldBuilder();
+          getGroupCoolDownDataListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (mPJGKFJBHECBuilder_ == null) {
-          mPJGKFJBHEC_ = java.util.Collections.emptyList();
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          mPJGKFJBHECBuilder_.clear();
+          normalCoolDownDataListBuilder_.clear();
         }
-        if (pEOHMDJKMKOBuilder_ == null) {
-          pEOHMDJKMKO_ = java.util.Collections.emptyList();
+        if (groupCoolDownDataListBuilder_ == null) {
+          groupCoolDownDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
-          pEOHMDJKMKOBuilder_.clear();
+          groupCoolDownDataListBuilder_.clear();
         }
         return this;
       }
@@ -509,23 +509,23 @@ public final class WidgetCoolDownNotifyOuterClass {
       public emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify buildPartial() {
         emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify result = new emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify(this);
         int from_bitField0_ = bitField0_;
-        if (mPJGKFJBHECBuilder_ == null) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            mPJGKFJBHEC_ = java.util.Collections.unmodifiableList(mPJGKFJBHEC_);
+            normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.mPJGKFJBHEC_ = mPJGKFJBHEC_;
+          result.normalCoolDownDataList_ = normalCoolDownDataList_;
         } else {
-          result.mPJGKFJBHEC_ = mPJGKFJBHECBuilder_.build();
+          result.normalCoolDownDataList_ = normalCoolDownDataListBuilder_.build();
         }
-        if (pEOHMDJKMKOBuilder_ == null) {
+        if (groupCoolDownDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            pEOHMDJKMKO_ = java.util.Collections.unmodifiableList(pEOHMDJKMKO_);
+            groupCoolDownDataList_ = java.util.Collections.unmodifiableList(groupCoolDownDataList_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
-          result.pEOHMDJKMKO_ = pEOHMDJKMKO_;
+          result.groupCoolDownDataList_ = groupCoolDownDataList_;
         } else {
-          result.pEOHMDJKMKO_ = pEOHMDJKMKOBuilder_.build();
+          result.groupCoolDownDataList_ = groupCoolDownDataListBuilder_.build();
         }
         onBuilt();
         return result;
@@ -575,55 +575,55 @@ public final class WidgetCoolDownNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify other) {
         if (other == emu.grasscutter.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.getDefaultInstance()) return this;
-        if (mPJGKFJBHECBuilder_ == null) {
-          if (!other.mPJGKFJBHEC_.isEmpty()) {
-            if (mPJGKFJBHEC_.isEmpty()) {
-              mPJGKFJBHEC_ = other.mPJGKFJBHEC_;
+        if (normalCoolDownDataListBuilder_ == null) {
+          if (!other.normalCoolDownDataList_.isEmpty()) {
+            if (normalCoolDownDataList_.isEmpty()) {
+              normalCoolDownDataList_ = other.normalCoolDownDataList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureMPJGKFJBHECIsMutable();
-              mPJGKFJBHEC_.addAll(other.mPJGKFJBHEC_);
+              ensureNormalCoolDownDataListIsMutable();
+              normalCoolDownDataList_.addAll(other.normalCoolDownDataList_);
             }
             onChanged();
           }
         } else {
-          if (!other.mPJGKFJBHEC_.isEmpty()) {
-            if (mPJGKFJBHECBuilder_.isEmpty()) {
-              mPJGKFJBHECBuilder_.dispose();
-              mPJGKFJBHECBuilder_ = null;
-              mPJGKFJBHEC_ = other.mPJGKFJBHEC_;
+          if (!other.normalCoolDownDataList_.isEmpty()) {
+            if (normalCoolDownDataListBuilder_.isEmpty()) {
+              normalCoolDownDataListBuilder_.dispose();
+              normalCoolDownDataListBuilder_ = null;
+              normalCoolDownDataList_ = other.normalCoolDownDataList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              mPJGKFJBHECBuilder_ = 
+              normalCoolDownDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMPJGKFJBHECFieldBuilder() : null;
+                   getNormalCoolDownDataListFieldBuilder() : null;
             } else {
-              mPJGKFJBHECBuilder_.addAllMessages(other.mPJGKFJBHEC_);
+              normalCoolDownDataListBuilder_.addAllMessages(other.normalCoolDownDataList_);
             }
           }
         }
-        if (pEOHMDJKMKOBuilder_ == null) {
-          if (!other.pEOHMDJKMKO_.isEmpty()) {
-            if (pEOHMDJKMKO_.isEmpty()) {
-              pEOHMDJKMKO_ = other.pEOHMDJKMKO_;
+        if (groupCoolDownDataListBuilder_ == null) {
+          if (!other.groupCoolDownDataList_.isEmpty()) {
+            if (groupCoolDownDataList_.isEmpty()) {
+              groupCoolDownDataList_ = other.groupCoolDownDataList_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensurePEOHMDJKMKOIsMutable();
-              pEOHMDJKMKO_.addAll(other.pEOHMDJKMKO_);
+              ensureGroupCoolDownDataListIsMutable();
+              groupCoolDownDataList_.addAll(other.groupCoolDownDataList_);
             }
             onChanged();
           }
         } else {
-          if (!other.pEOHMDJKMKO_.isEmpty()) {
-            if (pEOHMDJKMKOBuilder_.isEmpty()) {
-              pEOHMDJKMKOBuilder_.dispose();
-              pEOHMDJKMKOBuilder_ = null;
-              pEOHMDJKMKO_ = other.pEOHMDJKMKO_;
+          if (!other.groupCoolDownDataList_.isEmpty()) {
+            if (groupCoolDownDataListBuilder_.isEmpty()) {
+              groupCoolDownDataListBuilder_.dispose();
+              groupCoolDownDataListBuilder_ = null;
+              groupCoolDownDataList_ = other.groupCoolDownDataList_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              pEOHMDJKMKOBuilder_ = 
+              groupCoolDownDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPEOHMDJKMKOFieldBuilder() : null;
+                   getGroupCoolDownDataListFieldBuilder() : null;
             } else {
-              pEOHMDJKMKOBuilder_.addAllMessages(other.pEOHMDJKMKO_);
+              groupCoolDownDataListBuilder_.addAllMessages(other.groupCoolDownDataList_);
             }
           }
         }
@@ -657,484 +657,484 @@ public final class WidgetCoolDownNotifyOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> mPJGKFJBHEC_ =
+      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_ =
         java.util.Collections.emptyList();
-      private void ensureMPJGKFJBHECIsMutable() {
+      private void ensureNormalCoolDownDataListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          mPJGKFJBHEC_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(mPJGKFJBHEC_);
+          normalCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(normalCoolDownDataList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> mPJGKFJBHECBuilder_;
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> normalCoolDownDataListBuilder_;
 
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getMPJGKFJBHECList() {
-        if (mPJGKFJBHECBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(mPJGKFJBHEC_);
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
         } else {
-          return mPJGKFJBHECBuilder_.getMessageList();
+          return normalCoolDownDataListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public int getMPJGKFJBHECCount() {
-        if (mPJGKFJBHECBuilder_ == null) {
-          return mPJGKFJBHEC_.size();
+      public int getNormalCoolDownDataListCount() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.size();
         } else {
-          return mPJGKFJBHECBuilder_.getCount();
+          return normalCoolDownDataListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getMPJGKFJBHEC(int index) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          return mPJGKFJBHEC_.get(index);
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.get(index);
         } else {
-          return mPJGKFJBHECBuilder_.getMessage(index);
+          return normalCoolDownDataListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder setMPJGKFJBHEC(
+      public Builder setNormalCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (mPJGKFJBHECBuilder_ == null) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.set(index, value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.set(index, value);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.setMessage(index, value);
+          normalCoolDownDataListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder setMPJGKFJBHEC(
+      public Builder setNormalCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.set(index, builderForValue.build());
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.setMessage(index, builderForValue.build());
+          normalCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder addMPJGKFJBHEC(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (mPJGKFJBHECBuilder_ == null) {
+      public Builder addNormalCoolDownDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.add(value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(value);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.addMessage(value);
+          normalCoolDownDataListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder addMPJGKFJBHEC(
+      public Builder addNormalCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (mPJGKFJBHECBuilder_ == null) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.add(index, value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(index, value);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.addMessage(index, value);
+          normalCoolDownDataListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder addMPJGKFJBHEC(
+      public Builder addNormalCoolDownDataList(
           emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.add(builderForValue.build());
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(builderForValue.build());
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.addMessage(builderForValue.build());
+          normalCoolDownDataListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder addMPJGKFJBHEC(
+      public Builder addNormalCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.add(index, builderForValue.build());
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.addMessage(index, builderForValue.build());
+          normalCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder addAllMPJGKFJBHEC(
+      public Builder addAllNormalCoolDownDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          ensureMPJGKFJBHECIsMutable();
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, mPJGKFJBHEC_);
+              values, normalCoolDownDataList_);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.addAllMessages(values);
+          normalCoolDownDataListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder clearMPJGKFJBHEC() {
-        if (mPJGKFJBHECBuilder_ == null) {
-          mPJGKFJBHEC_ = java.util.Collections.emptyList();
+      public Builder clearNormalCoolDownDataList() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.clear();
+          normalCoolDownDataListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public Builder removeMPJGKFJBHEC(int index) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          ensureMPJGKFJBHECIsMutable();
-          mPJGKFJBHEC_.remove(index);
+      public Builder removeNormalCoolDownDataList(int index) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.remove(index);
           onChanged();
         } else {
-          mPJGKFJBHECBuilder_.remove(index);
+          normalCoolDownDataListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getMPJGKFJBHECBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getNormalCoolDownDataListBuilder(
           int index) {
-        return getMPJGKFJBHECFieldBuilder().getBuilder(index);
+        return getNormalCoolDownDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getMPJGKFJBHECOrBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
           int index) {
-        if (mPJGKFJBHECBuilder_ == null) {
-          return mPJGKFJBHEC_.get(index);  } else {
-          return mPJGKFJBHECBuilder_.getMessageOrBuilder(index);
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.get(index);  } else {
+          return normalCoolDownDataListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-           getMPJGKFJBHECOrBuilderList() {
-        if (mPJGKFJBHECBuilder_ != null) {
-          return mPJGKFJBHECBuilder_.getMessageOrBuilderList();
+           getNormalCoolDownDataListOrBuilderList() {
+        if (normalCoolDownDataListBuilder_ != null) {
+          return normalCoolDownDataListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(mPJGKFJBHEC_);
+          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addMPJGKFJBHECBuilder() {
-        return getMPJGKFJBHECFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder() {
+        return getNormalCoolDownDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addMPJGKFJBHECBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder(
           int index) {
-        return getMPJGKFJBHECFieldBuilder().addBuilder(
+        return getNormalCoolDownDataListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData MPJGKFJBHEC = 7;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 7;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
-           getMPJGKFJBHECBuilderList() {
-        return getMPJGKFJBHECFieldBuilder().getBuilderList();
+           getNormalCoolDownDataListBuilderList() {
+        return getNormalCoolDownDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-          getMPJGKFJBHECFieldBuilder() {
-        if (mPJGKFJBHECBuilder_ == null) {
-          mPJGKFJBHECBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getNormalCoolDownDataListFieldBuilder() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
-                  mPJGKFJBHEC_,
+                  normalCoolDownDataList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          mPJGKFJBHEC_ = null;
+          normalCoolDownDataList_ = null;
         }
-        return mPJGKFJBHECBuilder_;
+        return normalCoolDownDataListBuilder_;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> pEOHMDJKMKO_ =
+      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> groupCoolDownDataList_ =
         java.util.Collections.emptyList();
-      private void ensurePEOHMDJKMKOIsMutable() {
+      private void ensureGroupCoolDownDataListIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          pEOHMDJKMKO_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(pEOHMDJKMKO_);
+          groupCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(groupCoolDownDataList_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> pEOHMDJKMKOBuilder_;
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> groupCoolDownDataListBuilder_;
 
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getPEOHMDJKMKOList() {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(pEOHMDJKMKO_);
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getGroupCoolDownDataListList() {
+        if (groupCoolDownDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(groupCoolDownDataList_);
         } else {
-          return pEOHMDJKMKOBuilder_.getMessageList();
+          return groupCoolDownDataListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public int getPEOHMDJKMKOCount() {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          return pEOHMDJKMKO_.size();
+      public int getGroupCoolDownDataListCount() {
+        if (groupCoolDownDataListBuilder_ == null) {
+          return groupCoolDownDataList_.size();
         } else {
-          return pEOHMDJKMKOBuilder_.getCount();
+          return groupCoolDownDataListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getPEOHMDJKMKO(int index) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          return pEOHMDJKMKO_.get(index);
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getGroupCoolDownDataList(int index) {
+        if (groupCoolDownDataListBuilder_ == null) {
+          return groupCoolDownDataList_.get(index);
         } else {
-          return pEOHMDJKMKOBuilder_.getMessage(index);
+          return groupCoolDownDataListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder setPEOHMDJKMKO(
+      public Builder setGroupCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (pEOHMDJKMKOBuilder_ == null) {
+        if (groupCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.set(index, value);
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.set(index, value);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.setMessage(index, value);
+          groupCoolDownDataListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder setPEOHMDJKMKO(
+      public Builder setGroupCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.set(index, builderForValue.build());
+        if (groupCoolDownDataListBuilder_ == null) {
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.setMessage(index, builderForValue.build());
+          groupCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder addPEOHMDJKMKO(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (pEOHMDJKMKOBuilder_ == null) {
+      public Builder addGroupCoolDownDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (groupCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.add(value);
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.add(value);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.addMessage(value);
+          groupCoolDownDataListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder addPEOHMDJKMKO(
+      public Builder addGroupCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (pEOHMDJKMKOBuilder_ == null) {
+        if (groupCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.add(index, value);
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.add(index, value);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.addMessage(index, value);
+          groupCoolDownDataListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder addPEOHMDJKMKO(
+      public Builder addGroupCoolDownDataList(
           emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.add(builderForValue.build());
+        if (groupCoolDownDataListBuilder_ == null) {
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.add(builderForValue.build());
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.addMessage(builderForValue.build());
+          groupCoolDownDataListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder addPEOHMDJKMKO(
+      public Builder addGroupCoolDownDataList(
           int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.add(index, builderForValue.build());
+        if (groupCoolDownDataListBuilder_ == null) {
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.addMessage(index, builderForValue.build());
+          groupCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder addAllPEOHMDJKMKO(
+      public Builder addAllGroupCoolDownDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          ensurePEOHMDJKMKOIsMutable();
+        if (groupCoolDownDataListBuilder_ == null) {
+          ensureGroupCoolDownDataListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, pEOHMDJKMKO_);
+              values, groupCoolDownDataList_);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.addAllMessages(values);
+          groupCoolDownDataListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder clearPEOHMDJKMKO() {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          pEOHMDJKMKO_ = java.util.Collections.emptyList();
+      public Builder clearGroupCoolDownDataList() {
+        if (groupCoolDownDataListBuilder_ == null) {
+          groupCoolDownDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.clear();
+          groupCoolDownDataListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public Builder removePEOHMDJKMKO(int index) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          ensurePEOHMDJKMKOIsMutable();
-          pEOHMDJKMKO_.remove(index);
+      public Builder removeGroupCoolDownDataList(int index) {
+        if (groupCoolDownDataListBuilder_ == null) {
+          ensureGroupCoolDownDataListIsMutable();
+          groupCoolDownDataList_.remove(index);
           onChanged();
         } else {
-          pEOHMDJKMKOBuilder_.remove(index);
+          groupCoolDownDataListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getPEOHMDJKMKOBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getGroupCoolDownDataListBuilder(
           int index) {
-        return getPEOHMDJKMKOFieldBuilder().getBuilder(index);
+        return getGroupCoolDownDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getPEOHMDJKMKOOrBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getGroupCoolDownDataListOrBuilder(
           int index) {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          return pEOHMDJKMKO_.get(index);  } else {
-          return pEOHMDJKMKOBuilder_.getMessageOrBuilder(index);
+        if (groupCoolDownDataListBuilder_ == null) {
+          return groupCoolDownDataList_.get(index);  } else {
+          return groupCoolDownDataListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-           getPEOHMDJKMKOOrBuilderList() {
-        if (pEOHMDJKMKOBuilder_ != null) {
-          return pEOHMDJKMKOBuilder_.getMessageOrBuilderList();
+           getGroupCoolDownDataListOrBuilderList() {
+        if (groupCoolDownDataListBuilder_ != null) {
+          return groupCoolDownDataListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(pEOHMDJKMKO_);
+          return java.util.Collections.unmodifiableList(groupCoolDownDataList_);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addPEOHMDJKMKOBuilder() {
-        return getPEOHMDJKMKOFieldBuilder().addBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addGroupCoolDownDataListBuilder() {
+        return getGroupCoolDownDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addPEOHMDJKMKOBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addGroupCoolDownDataListBuilder(
           int index) {
-        return getPEOHMDJKMKOFieldBuilder().addBuilder(
+        return getGroupCoolDownDataListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData PEOHMDJKMKO = 10;</code>
+       * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
-           getPEOHMDJKMKOBuilderList() {
-        return getPEOHMDJKMKOFieldBuilder().getBuilderList();
+           getGroupCoolDownDataListBuilderList() {
+        return getGroupCoolDownDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-          getPEOHMDJKMKOFieldBuilder() {
-        if (pEOHMDJKMKOBuilder_ == null) {
-          pEOHMDJKMKOBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getGroupCoolDownDataListFieldBuilder() {
+        if (groupCoolDownDataListBuilder_ == null) {
+          groupCoolDownDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
-                  pEOHMDJKMKO_,
+                  groupCoolDownDataList_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          pEOHMDJKMKO_ = null;
+          groupCoolDownDataList_ = null;
         }
-        return pEOHMDJKMKOBuilder_;
+        return groupCoolDownDataListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1204,10 +1204,11 @@ public final class WidgetCoolDownNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032WidgetCoolDownNotify.proto\032\030WidgetCool" +
-      "DownData.proto\"j\n\024WidgetCoolDownNotify\022(" +
-      "\n\013MPJGKFJBHEC\030\007 \003(\0132\023.WidgetCoolDownData" +
-      "\022(\n\013PEOHMDJKMKO\030\n \003(\0132\023.WidgetCoolDownDa" +
-      "taB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "DownData.proto\"\207\001\n\024WidgetCoolDownNotify\022" +
+      "7\n\032normal_cool_down_data_list\030\007 \003(\0132\023.Wi" +
+      "dgetCoolDownData\0226\n\031group_cool_down_data" +
+      "_list\030\n \003(\0132\023.WidgetCoolDownDataB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1219,7 +1220,7 @@ public final class WidgetCoolDownNotifyOuterClass {
     internal_static_WidgetCoolDownNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WidgetCoolDownNotify_descriptor,
-        new java.lang.String[] { "MPJGKFJBHEC", "PEOHMDJKMKO", });
+        new java.lang.String[] { "NormalCoolDownDataList", "GroupCoolDownDataList", });
     emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.getDescriptor();
   }
 

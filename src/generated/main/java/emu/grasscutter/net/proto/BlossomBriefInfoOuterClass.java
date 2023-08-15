@@ -43,10 +43,10 @@ public final class BlossomBriefInfoOuterClass {
     int getCircleCampId();
 
     /**
-     * <code>uint32 BGNHKCLIPCF = 12;</code>
-     * @return The bGNHKCLIPCF.
+     * <code>uint32 monster_level = 12;</code>
+     * @return The monsterLevel.
      */
-    int getBGNHKCLIPCF();
+    int getMonsterLevel();
 
     /**
      * <code>uint32 HJMMAOMEHOL = 8;</code>
@@ -179,7 +179,7 @@ public final class BlossomBriefInfoOuterClass {
             }
             case 96: {
 
-              bGNHKCLIPCF_ = input.readUInt32();
+              monsterLevel_ = input.readUInt32();
               break;
             }
             case 104: {
@@ -281,15 +281,15 @@ public final class BlossomBriefInfoOuterClass {
       return circleCampId_;
     }
 
-    public static final int BGNHKCLIPCF_FIELD_NUMBER = 12;
-    private int bGNHKCLIPCF_;
+    public static final int MONSTER_LEVEL_FIELD_NUMBER = 12;
+    private int monsterLevel_;
     /**
-     * <code>uint32 BGNHKCLIPCF = 12;</code>
-     * @return The bGNHKCLIPCF.
+     * <code>uint32 monster_level = 12;</code>
+     * @return The monsterLevel.
      */
     @java.lang.Override
-    public int getBGNHKCLIPCF() {
-      return bGNHKCLIPCF_;
+    public int getMonsterLevel() {
+      return monsterLevel_;
     }
 
     public static final int HJMMAOMEHOL_FIELD_NUMBER = 8;
@@ -408,8 +408,8 @@ public final class BlossomBriefInfoOuterClass {
       if (refreshId_ != 0) {
         output.writeUInt32(11, refreshId_);
       }
-      if (bGNHKCLIPCF_ != 0) {
-        output.writeUInt32(12, bGNHKCLIPCF_);
+      if (monsterLevel_ != 0) {
+        output.writeUInt32(12, monsterLevel_);
       }
       if (sceneId_ != 0) {
         output.writeUInt32(13, sceneId_);
@@ -457,9 +457,9 @@ public final class BlossomBriefInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, refreshId_);
       }
-      if (bGNHKCLIPCF_ != 0) {
+      if (monsterLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, bGNHKCLIPCF_);
+          .computeUInt32Size(12, monsterLevel_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -496,8 +496,8 @@ public final class BlossomBriefInfoOuterClass {
           != other.getResin()) return false;
       if (getCircleCampId()
           != other.getCircleCampId()) return false;
-      if (getBGNHKCLIPCF()
-          != other.getBGNHKCLIPCF()) return false;
+      if (getMonsterLevel()
+          != other.getMonsterLevel()) return false;
       if (getHJMMAOMEHOL()
           != other.getHJMMAOMEHOL()) return false;
       if (getSceneId()
@@ -533,8 +533,8 @@ public final class BlossomBriefInfoOuterClass {
       hash = (53 * hash) + getResin();
       hash = (37 * hash) + CIRCLE_CAMP_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCircleCampId();
-      hash = (37 * hash) + BGNHKCLIPCF_FIELD_NUMBER;
-      hash = (53 * hash) + getBGNHKCLIPCF();
+      hash = (37 * hash) + MONSTER_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getMonsterLevel();
       hash = (37 * hash) + HJMMAOMEHOL_FIELD_NUMBER;
       hash = (53 * hash) + getHJMMAOMEHOL();
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
@@ -694,7 +694,7 @@ public final class BlossomBriefInfoOuterClass {
 
         circleCampId_ = 0;
 
-        bGNHKCLIPCF_ = 0;
+        monsterLevel_ = 0;
 
         hJMMAOMEHOL_ = 0;
 
@@ -742,7 +742,7 @@ public final class BlossomBriefInfoOuterClass {
         result.isGuideOpened_ = isGuideOpened_;
         result.resin_ = resin_;
         result.circleCampId_ = circleCampId_;
-        result.bGNHKCLIPCF_ = bGNHKCLIPCF_;
+        result.monsterLevel_ = monsterLevel_;
         result.hJMMAOMEHOL_ = hJMMAOMEHOL_;
         result.sceneId_ = sceneId_;
         result.refreshId_ = refreshId_;
@@ -813,8 +813,8 @@ public final class BlossomBriefInfoOuterClass {
         if (other.getCircleCampId() != 0) {
           setCircleCampId(other.getCircleCampId());
         }
-        if (other.getBGNHKCLIPCF() != 0) {
-          setBGNHKCLIPCF(other.getBGNHKCLIPCF());
+        if (other.getMonsterLevel() != 0) {
+          setMonsterLevel(other.getMonsterLevel());
         }
         if (other.getHJMMAOMEHOL() != 0) {
           setHJMMAOMEHOL(other.getHJMMAOMEHOL());
@@ -987,33 +987,33 @@ public final class BlossomBriefInfoOuterClass {
         return this;
       }
 
-      private int bGNHKCLIPCF_ ;
+      private int monsterLevel_ ;
       /**
-       * <code>uint32 BGNHKCLIPCF = 12;</code>
-       * @return The bGNHKCLIPCF.
+       * <code>uint32 monster_level = 12;</code>
+       * @return The monsterLevel.
        */
       @java.lang.Override
-      public int getBGNHKCLIPCF() {
-        return bGNHKCLIPCF_;
+      public int getMonsterLevel() {
+        return monsterLevel_;
       }
       /**
-       * <code>uint32 BGNHKCLIPCF = 12;</code>
-       * @param value The bGNHKCLIPCF to set.
+       * <code>uint32 monster_level = 12;</code>
+       * @param value The monsterLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setBGNHKCLIPCF(int value) {
+      public Builder setMonsterLevel(int value) {
         
-        bGNHKCLIPCF_ = value;
+        monsterLevel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 BGNHKCLIPCF = 12;</code>
+       * <code>uint32 monster_level = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBGNHKCLIPCF() {
+      public Builder clearMonsterLevel() {
         
-        bGNHKCLIPCF_ = 0;
+        monsterLevel_ = 0;
         onChanged();
         return this;
       }
@@ -1358,14 +1358,14 @@ public final class BlossomBriefInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026BlossomBriefInfo.proto\032\014Vector.proto\"\353" +
+      "\n\026BlossomBriefInfo.proto\032\014Vector.proto\"\355" +
       "\001\n\020BlossomBriefInfo\022\r\n\005state\030\n \001(\r\022\027\n\017is" +
       "_guide_opened\030\005 \001(\010\022\r\n\005resin\030\002 \001(\r\022\026\n\016ci" +
-      "rcle_camp_id\030\016 \001(\r\022\023\n\013BGNHKCLIPCF\030\014 \001(\r\022" +
-      "\023\n\013HJMMAOMEHOL\030\010 \001(\r\022\020\n\010scene_id\030\r \001(\r\022\022" +
-      "\n\nrefresh_id\030\013 \001(\r\022\021\n\treward_id\030\007 \001(\r\022\024\n" +
-      "\003pos\030\017 \001(\0132\007.Vector\022\017\n\007city_id\030\004 \001(\rB\033\n\031" +
-      "emu.grasscutter.net.protob\006proto3"
+      "rcle_camp_id\030\016 \001(\r\022\025\n\rmonster_level\030\014 \001(" +
+      "\r\022\023\n\013HJMMAOMEHOL\030\010 \001(\r\022\020\n\010scene_id\030\r \001(\r" +
+      "\022\022\n\nrefresh_id\030\013 \001(\r\022\021\n\treward_id\030\007 \001(\r\022" +
+      "\024\n\003pos\030\017 \001(\0132\007.Vector\022\017\n\007city_id\030\004 \001(\rB\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1377,7 +1377,7 @@ public final class BlossomBriefInfoOuterClass {
     internal_static_BlossomBriefInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BlossomBriefInfo_descriptor,
-        new java.lang.String[] { "State", "IsGuideOpened", "Resin", "CircleCampId", "BGNHKCLIPCF", "HJMMAOMEHOL", "SceneId", "RefreshId", "RewardId", "Pos", "CityId", });
+        new java.lang.String[] { "State", "IsGuideOpened", "Resin", "CircleCampId", "MonsterLevel", "HJMMAOMEHOL", "SceneId", "RefreshId", "RewardId", "Pos", "CityId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

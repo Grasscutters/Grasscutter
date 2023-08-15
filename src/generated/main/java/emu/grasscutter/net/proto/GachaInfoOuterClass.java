@@ -97,21 +97,21 @@ public final class GachaInfoOuterClass {
     int getGachaSortId();
 
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-     * @return A list containing the fFMOBAAKKBH.
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+     * @return A list containing the displayUp4ItemList.
      */
-    java.util.List<java.lang.Integer> getFFMOBAAKKBHList();
+    java.util.List<java.lang.Integer> getDisplayUp4ItemListList();
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-     * @return The count of fFMOBAAKKBH.
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+     * @return The count of displayUp4ItemList.
      */
-    int getFFMOBAAKKBHCount();
+    int getDisplayUp4ItemListCount();
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
      * @param index The index of the element to return.
-     * @return The fFMOBAAKKBH at the given index.
+     * @return The displayUp4ItemList at the given index.
      */
-    int getFFMOBAAKKBH(int index);
+    int getDisplayUp4ItemList(int index);
 
     /**
      * <code>string gachaRecordUrlOversea = 1181;</code>
@@ -180,21 +180,21 @@ public final class GachaInfoOuterClass {
         getTitleTextmapBytes();
 
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-     * @return A list containing the oCIHCEACNNF.
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+     * @return A list containing the displayUp5ItemList.
      */
-    java.util.List<java.lang.Integer> getOCIHCEACNNFList();
+    java.util.List<java.lang.Integer> getDisplayUp5ItemListList();
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-     * @return The count of oCIHCEACNNF.
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+     * @return The count of displayUp5ItemList.
      */
-    int getOCIHCEACNNFCount();
+    int getDisplayUp5ItemListCount();
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
      * @param index The index of the element to return.
-     * @return The oCIHCEACNNF at the given index.
+     * @return The displayUp5ItemList at the given index.
      */
-    int getOCIHCEACNNF(int index);
+    int getDisplayUp5ItemList(int index);
 
     /**
      * <code>uint32 gachaTimesLimit = 14;</code>
@@ -274,12 +274,12 @@ public final class GachaInfoOuterClass {
     }
     private GachaInfo() {
       gachaPrefabPath_ = "";
-      fFMOBAAKKBH_ = emptyIntList();
+      displayUp4ItemList_ = emptyIntList();
       gachaRecordUrlOversea_ = "";
       gachaProbUrlOversea_ = "";
       gachaPreviewPrefabPath_ = "";
       titleTextmap_ = "";
-      oCIHCEACNNF_ = emptyIntList();
+      displayUp5ItemList_ = emptyIntList();
       gachaRecordUrl_ = "";
       gachaUpInfoList_ = java.util.Collections.emptyList();
       gachaProbUrl_ = "";
@@ -425,21 +425,21 @@ public final class GachaInfoOuterClass {
             }
             case 10280: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fFMOBAAKKBH_ = newIntList();
+                displayUp4ItemList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              fFMOBAAKKBH_.addInt(input.readUInt32());
+              displayUp4ItemList_.addInt(input.readUInt32());
               break;
             }
             case 10282: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                fFMOBAAKKBH_ = newIntList();
+                displayUp4ItemList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
-                fFMOBAAKKBH_.addInt(input.readUInt32());
+                displayUp4ItemList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -470,21 +470,21 @@ public final class GachaInfoOuterClass {
             }
             case 14648: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                oCIHCEACNNF_ = newIntList();
+                displayUp5ItemList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
-              oCIHCEACNNF_.addInt(input.readUInt32());
+              displayUp5ItemList_.addInt(input.readUInt32());
               break;
             }
             case 14650: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                oCIHCEACNNF_ = newIntList();
+                displayUp5ItemList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
-                oCIHCEACNNF_.addInt(input.readUInt32());
+                displayUp5ItemList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -505,13 +505,13 @@ public final class GachaInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fFMOBAAKKBH_.makeImmutable(); // C
+          displayUp4ItemList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           gachaUpInfoList_ = java.util.Collections.unmodifiableList(gachaUpInfoList_);
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          oCIHCEACNNF_.makeImmutable(); // C
+          displayUp5ItemList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -689,33 +689,33 @@ public final class GachaInfoOuterClass {
       return gachaSortId_;
     }
 
-    public static final int FFMOBAAKKBH_FIELD_NUMBER = 1285;
-    private com.google.protobuf.Internal.IntList fFMOBAAKKBH_;
+    public static final int DISPLAYUP4ITEMLIST_FIELD_NUMBER = 1285;
+    private com.google.protobuf.Internal.IntList displayUp4ItemList_;
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-     * @return A list containing the fFMOBAAKKBH.
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+     * @return A list containing the displayUp4ItemList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getFFMOBAAKKBHList() {
-      return fFMOBAAKKBH_;
+        getDisplayUp4ItemListList() {
+      return displayUp4ItemList_;
     }
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-     * @return The count of fFMOBAAKKBH.
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+     * @return The count of displayUp4ItemList.
      */
-    public int getFFMOBAAKKBHCount() {
-      return fFMOBAAKKBH_.size();
+    public int getDisplayUp4ItemListCount() {
+      return displayUp4ItemList_.size();
     }
     /**
-     * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
+     * <code>repeated uint32 displayUp4ItemList = 1285;</code>
      * @param index The index of the element to return.
-     * @return The fFMOBAAKKBH at the given index.
+     * @return The displayUp4ItemList at the given index.
      */
-    public int getFFMOBAAKKBH(int index) {
-      return fFMOBAAKKBH_.getInt(index);
+    public int getDisplayUp4ItemList(int index) {
+      return displayUp4ItemList_.getInt(index);
     }
-    private int fFMOBAAKKBHMemoizedSerializedSize = -1;
+    private int displayUp4ItemListMemoizedSerializedSize = -1;
 
     public static final int GACHARECORDURLOVERSEA_FIELD_NUMBER = 1181;
     private volatile java.lang.Object gachaRecordUrlOversea_;
@@ -902,33 +902,33 @@ public final class GachaInfoOuterClass {
       }
     }
 
-    public static final int OCIHCEACNNF_FIELD_NUMBER = 1831;
-    private com.google.protobuf.Internal.IntList oCIHCEACNNF_;
+    public static final int DISPLAYUP5ITEMLIST_FIELD_NUMBER = 1831;
+    private com.google.protobuf.Internal.IntList displayUp5ItemList_;
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-     * @return A list containing the oCIHCEACNNF.
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+     * @return A list containing the displayUp5ItemList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getOCIHCEACNNFList() {
-      return oCIHCEACNNF_;
+        getDisplayUp5ItemListList() {
+      return displayUp5ItemList_;
     }
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-     * @return The count of oCIHCEACNNF.
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+     * @return The count of displayUp5ItemList.
      */
-    public int getOCIHCEACNNFCount() {
-      return oCIHCEACNNF_.size();
+    public int getDisplayUp5ItemListCount() {
+      return displayUp5ItemList_.size();
     }
     /**
-     * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
+     * <code>repeated uint32 displayUp5ItemList = 1831;</code>
      * @param index The index of the element to return.
-     * @return The oCIHCEACNNF at the given index.
+     * @return The displayUp5ItemList at the given index.
      */
-    public int getOCIHCEACNNF(int index) {
-      return oCIHCEACNNF_.getInt(index);
+    public int getDisplayUp5ItemList(int index) {
+      return displayUp5ItemList_.getInt(index);
     }
-    private int oCIHCEACNNFMemoizedSerializedSize = -1;
+    private int displayUp5ItemListMemoizedSerializedSize = -1;
 
     public static final int GACHATIMESLIMIT_FIELD_NUMBER = 14;
     private int gachaTimesLimit_;
@@ -1143,12 +1143,12 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1221, gachaProbUrlOversea_);
       }
-      if (getFFMOBAAKKBHList().size() > 0) {
+      if (getDisplayUp4ItemListList().size() > 0) {
         output.writeUInt32NoTag(10282);
-        output.writeUInt32NoTag(fFMOBAAKKBHMemoizedSerializedSize);
+        output.writeUInt32NoTag(displayUp4ItemListMemoizedSerializedSize);
       }
-      for (int i = 0; i < fFMOBAAKKBH_.size(); i++) {
-        output.writeUInt32NoTag(fFMOBAAKKBH_.getInt(i));
+      for (int i = 0; i < displayUp4ItemList_.size(); i++) {
+        output.writeUInt32NoTag(displayUp4ItemList_.getInt(i));
       }
       if (curScheduleDailyGachaTimes_ != 0) {
         output.writeUInt32(1456, curScheduleDailyGachaTimes_);
@@ -1162,12 +1162,12 @@ public final class GachaInfoOuterClass {
       if (isNewWish_ != false) {
         output.writeBool(1537, isNewWish_);
       }
-      if (getOCIHCEACNNFList().size() > 0) {
+      if (getDisplayUp5ItemListList().size() > 0) {
         output.writeUInt32NoTag(14650);
-        output.writeUInt32NoTag(oCIHCEACNNFMemoizedSerializedSize);
+        output.writeUInt32NoTag(displayUp5ItemListMemoizedSerializedSize);
       }
-      for (int i = 0; i < oCIHCEACNNF_.size(); i++) {
-        output.writeUInt32NoTag(oCIHCEACNNF_.getInt(i));
+      for (int i = 0; i < displayUp5ItemList_.size(); i++) {
+        output.writeUInt32NoTag(displayUp5ItemList_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -1253,17 +1253,17 @@ public final class GachaInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < fFMOBAAKKBH_.size(); i++) {
+        for (int i = 0; i < displayUp4ItemList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(fFMOBAAKKBH_.getInt(i));
+            .computeUInt32SizeNoTag(displayUp4ItemList_.getInt(i));
         }
         size += dataSize;
-        if (!getFFMOBAAKKBHList().isEmpty()) {
+        if (!getDisplayUp4ItemListList().isEmpty()) {
           size += 2;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        fFMOBAAKKBHMemoizedSerializedSize = dataSize;
+        displayUp4ItemListMemoizedSerializedSize = dataSize;
       }
       if (curScheduleDailyGachaTimes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1283,17 +1283,17 @@ public final class GachaInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < oCIHCEACNNF_.size(); i++) {
+        for (int i = 0; i < displayUp5ItemList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(oCIHCEACNNF_.getInt(i));
+            .computeUInt32SizeNoTag(displayUp5ItemList_.getInt(i));
         }
         size += dataSize;
-        if (!getOCIHCEACNNFList().isEmpty()) {
+        if (!getDisplayUp5ItemListList().isEmpty()) {
           size += 2;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        oCIHCEACNNFMemoizedSerializedSize = dataSize;
+        displayUp5ItemListMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1334,8 +1334,8 @@ public final class GachaInfoOuterClass {
           != other.getTenCostItemId()) return false;
       if (getGachaSortId()
           != other.getGachaSortId()) return false;
-      if (!getFFMOBAAKKBHList()
-          .equals(other.getFFMOBAAKKBHList())) return false;
+      if (!getDisplayUp4ItemListList()
+          .equals(other.getDisplayUp4ItemListList())) return false;
       if (!getGachaRecordUrlOversea()
           .equals(other.getGachaRecordUrlOversea())) return false;
       if (!getGachaProbUrlOversea()
@@ -1350,8 +1350,8 @@ public final class GachaInfoOuterClass {
           .equals(other.getGachaPreviewPrefabPath())) return false;
       if (!getTitleTextmap()
           .equals(other.getTitleTextmap())) return false;
-      if (!getOCIHCEACNNFList()
-          .equals(other.getOCIHCEACNNFList())) return false;
+      if (!getDisplayUp5ItemListList()
+          .equals(other.getDisplayUp5ItemListList())) return false;
       if (getGachaTimesLimit()
           != other.getGachaTimesLimit()) return false;
       if (!getGachaRecordUrl()
@@ -1398,9 +1398,9 @@ public final class GachaInfoOuterClass {
       hash = (53 * hash) + getTenCostItemId();
       hash = (37 * hash) + GACHASORTID_FIELD_NUMBER;
       hash = (53 * hash) + getGachaSortId();
-      if (getFFMOBAAKKBHCount() > 0) {
-        hash = (37 * hash) + FFMOBAAKKBH_FIELD_NUMBER;
-        hash = (53 * hash) + getFFMOBAAKKBHList().hashCode();
+      if (getDisplayUp4ItemListCount() > 0) {
+        hash = (37 * hash) + DISPLAYUP4ITEMLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayUp4ItemListList().hashCode();
       }
       hash = (37 * hash) + GACHARECORDURLOVERSEA_FIELD_NUMBER;
       hash = (53 * hash) + getGachaRecordUrlOversea().hashCode();
@@ -1416,9 +1416,9 @@ public final class GachaInfoOuterClass {
       hash = (53 * hash) + getGachaPreviewPrefabPath().hashCode();
       hash = (37 * hash) + TITLETEXTMAP_FIELD_NUMBER;
       hash = (53 * hash) + getTitleTextmap().hashCode();
-      if (getOCIHCEACNNFCount() > 0) {
-        hash = (37 * hash) + OCIHCEACNNF_FIELD_NUMBER;
-        hash = (53 * hash) + getOCIHCEACNNFList().hashCode();
+      if (getDisplayUp5ItemListCount() > 0) {
+        hash = (37 * hash) + DISPLAYUP5ITEMLIST_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayUp5ItemListList().hashCode();
       }
       hash = (37 * hash) + GACHATIMESLIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getGachaTimesLimit();
@@ -1594,7 +1594,7 @@ public final class GachaInfoOuterClass {
 
         gachaSortId_ = 0;
 
-        fFMOBAAKKBH_ = emptyIntList();
+        displayUp4ItemList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         gachaRecordUrlOversea_ = "";
 
@@ -1610,7 +1610,7 @@ public final class GachaInfoOuterClass {
 
         titleTextmap_ = "";
 
-        oCIHCEACNNF_ = emptyIntList();
+        displayUp5ItemList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         gachaTimesLimit_ = 0;
 
@@ -1666,10 +1666,10 @@ public final class GachaInfoOuterClass {
         result.tenCostItemId_ = tenCostItemId_;
         result.gachaSortId_ = gachaSortId_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          fFMOBAAKKBH_.makeImmutable();
+          displayUp4ItemList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.fFMOBAAKKBH_ = fFMOBAAKKBH_;
+        result.displayUp4ItemList_ = displayUp4ItemList_;
         result.gachaRecordUrlOversea_ = gachaRecordUrlOversea_;
         result.gachaProbUrlOversea_ = gachaProbUrlOversea_;
         result.beginTime_ = beginTime_;
@@ -1678,10 +1678,10 @@ public final class GachaInfoOuterClass {
         result.gachaPreviewPrefabPath_ = gachaPreviewPrefabPath_;
         result.titleTextmap_ = titleTextmap_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          oCIHCEACNNF_.makeImmutable();
+          displayUp5ItemList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.oCIHCEACNNF_ = oCIHCEACNNF_;
+        result.displayUp5ItemList_ = displayUp5ItemList_;
         result.gachaTimesLimit_ = gachaTimesLimit_;
         result.gachaRecordUrl_ = gachaRecordUrl_;
         if (gachaUpInfoListBuilder_ == null) {
@@ -1780,13 +1780,13 @@ public final class GachaInfoOuterClass {
         if (other.getGachaSortId() != 0) {
           setGachaSortId(other.getGachaSortId());
         }
-        if (!other.fFMOBAAKKBH_.isEmpty()) {
-          if (fFMOBAAKKBH_.isEmpty()) {
-            fFMOBAAKKBH_ = other.fFMOBAAKKBH_;
+        if (!other.displayUp4ItemList_.isEmpty()) {
+          if (displayUp4ItemList_.isEmpty()) {
+            displayUp4ItemList_ = other.displayUp4ItemList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureFFMOBAAKKBHIsMutable();
-            fFMOBAAKKBH_.addAll(other.fFMOBAAKKBH_);
+            ensureDisplayUp4ItemListIsMutable();
+            displayUp4ItemList_.addAll(other.displayUp4ItemList_);
           }
           onChanged();
         }
@@ -1815,13 +1815,13 @@ public final class GachaInfoOuterClass {
           titleTextmap_ = other.titleTextmap_;
           onChanged();
         }
-        if (!other.oCIHCEACNNF_.isEmpty()) {
-          if (oCIHCEACNNF_.isEmpty()) {
-            oCIHCEACNNF_ = other.oCIHCEACNNF_;
+        if (!other.displayUp5ItemList_.isEmpty()) {
+          if (displayUp5ItemList_.isEmpty()) {
+            displayUp5ItemList_ = other.displayUp5ItemList_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureOCIHCEACNNFIsMutable();
-            oCIHCEACNNF_.addAll(other.oCIHCEACNNF_);
+            ensureDisplayUp5ItemListIsMutable();
+            displayUp5ItemList_.addAll(other.displayUp5ItemList_);
           }
           onChanged();
         }
@@ -2312,80 +2312,80 @@ public final class GachaInfoOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList fFMOBAAKKBH_ = emptyIntList();
-      private void ensureFFMOBAAKKBHIsMutable() {
+      private com.google.protobuf.Internal.IntList displayUp4ItemList_ = emptyIntList();
+      private void ensureDisplayUp4ItemListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          fFMOBAAKKBH_ = mutableCopy(fFMOBAAKKBH_);
+          displayUp4ItemList_ = mutableCopy(displayUp4ItemList_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-       * @return A list containing the fFMOBAAKKBH.
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+       * @return A list containing the displayUp4ItemList.
        */
       public java.util.List<java.lang.Integer>
-          getFFMOBAAKKBHList() {
+          getDisplayUp4ItemListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(fFMOBAAKKBH_) : fFMOBAAKKBH_;
+                 java.util.Collections.unmodifiableList(displayUp4ItemList_) : displayUp4ItemList_;
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-       * @return The count of fFMOBAAKKBH.
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+       * @return The count of displayUp4ItemList.
        */
-      public int getFFMOBAAKKBHCount() {
-        return fFMOBAAKKBH_.size();
+      public int getDisplayUp4ItemListCount() {
+        return displayUp4ItemList_.size();
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
        * @param index The index of the element to return.
-       * @return The fFMOBAAKKBH at the given index.
+       * @return The displayUp4ItemList at the given index.
        */
-      public int getFFMOBAAKKBH(int index) {
-        return fFMOBAAKKBH_.getInt(index);
+      public int getDisplayUp4ItemList(int index) {
+        return displayUp4ItemList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
        * @param index The index to set the value at.
-       * @param value The fFMOBAAKKBH to set.
+       * @param value The displayUp4ItemList to set.
        * @return This builder for chaining.
        */
-      public Builder setFFMOBAAKKBH(
+      public Builder setDisplayUp4ItemList(
           int index, int value) {
-        ensureFFMOBAAKKBHIsMutable();
-        fFMOBAAKKBH_.setInt(index, value);
+        ensureDisplayUp4ItemListIsMutable();
+        displayUp4ItemList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-       * @param value The fFMOBAAKKBH to add.
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+       * @param value The displayUp4ItemList to add.
        * @return This builder for chaining.
        */
-      public Builder addFFMOBAAKKBH(int value) {
-        ensureFFMOBAAKKBHIsMutable();
-        fFMOBAAKKBH_.addInt(value);
+      public Builder addDisplayUp4ItemList(int value) {
+        ensureDisplayUp4ItemListIsMutable();
+        displayUp4ItemList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
-       * @param values The fFMOBAAKKBH to add.
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
+       * @param values The displayUp4ItemList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllFFMOBAAKKBH(
+      public Builder addAllDisplayUp4ItemList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureFFMOBAAKKBHIsMutable();
+        ensureDisplayUp4ItemListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fFMOBAAKKBH_);
+            values, displayUp4ItemList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 FFMOBAAKKBH = 1285;</code>
+       * <code>repeated uint32 displayUp4ItemList = 1285;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFFMOBAAKKBH() {
-        fFMOBAAKKBH_ = emptyIntList();
+      public Builder clearDisplayUp4ItemList() {
+        displayUp4ItemList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -2788,80 +2788,80 @@ public final class GachaInfoOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList oCIHCEACNNF_ = emptyIntList();
-      private void ensureOCIHCEACNNFIsMutable() {
+      private com.google.protobuf.Internal.IntList displayUp5ItemList_ = emptyIntList();
+      private void ensureDisplayUp5ItemListIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          oCIHCEACNNF_ = mutableCopy(oCIHCEACNNF_);
+          displayUp5ItemList_ = mutableCopy(displayUp5ItemList_);
           bitField0_ |= 0x00000002;
          }
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-       * @return A list containing the oCIHCEACNNF.
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+       * @return A list containing the displayUp5ItemList.
        */
       public java.util.List<java.lang.Integer>
-          getOCIHCEACNNFList() {
+          getDisplayUp5ItemListList() {
         return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(oCIHCEACNNF_) : oCIHCEACNNF_;
+                 java.util.Collections.unmodifiableList(displayUp5ItemList_) : displayUp5ItemList_;
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-       * @return The count of oCIHCEACNNF.
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+       * @return The count of displayUp5ItemList.
        */
-      public int getOCIHCEACNNFCount() {
-        return oCIHCEACNNF_.size();
+      public int getDisplayUp5ItemListCount() {
+        return displayUp5ItemList_.size();
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
        * @param index The index of the element to return.
-       * @return The oCIHCEACNNF at the given index.
+       * @return The displayUp5ItemList at the given index.
        */
-      public int getOCIHCEACNNF(int index) {
-        return oCIHCEACNNF_.getInt(index);
+      public int getDisplayUp5ItemList(int index) {
+        return displayUp5ItemList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
        * @param index The index to set the value at.
-       * @param value The oCIHCEACNNF to set.
+       * @param value The displayUp5ItemList to set.
        * @return This builder for chaining.
        */
-      public Builder setOCIHCEACNNF(
+      public Builder setDisplayUp5ItemList(
           int index, int value) {
-        ensureOCIHCEACNNFIsMutable();
-        oCIHCEACNNF_.setInt(index, value);
+        ensureDisplayUp5ItemListIsMutable();
+        displayUp5ItemList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-       * @param value The oCIHCEACNNF to add.
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+       * @param value The displayUp5ItemList to add.
        * @return This builder for chaining.
        */
-      public Builder addOCIHCEACNNF(int value) {
-        ensureOCIHCEACNNFIsMutable();
-        oCIHCEACNNF_.addInt(value);
+      public Builder addDisplayUp5ItemList(int value) {
+        ensureDisplayUp5ItemListIsMutable();
+        displayUp5ItemList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
-       * @param values The oCIHCEACNNF to add.
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
+       * @param values The displayUp5ItemList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllOCIHCEACNNF(
+      public Builder addAllDisplayUp5ItemList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureOCIHCEACNNFIsMutable();
+        ensureDisplayUp5ItemListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, oCIHCEACNNF_);
+            values, displayUp5ItemList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 OCIHCEACNNF = 1831;</code>
+       * <code>repeated uint32 displayUp5ItemList = 1831;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOCIHCEACNNF() {
-        oCIHCEACNNF_ = emptyIntList();
+      public Builder clearDisplayUp5ItemList() {
+        displayUp5ItemList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
@@ -3387,7 +3387,7 @@ public final class GachaInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017GachaInfo.proto\032\021GachaUpInfo.proto\"\213\005\n" +
+      "\n\017GachaInfo.proto\032\021GachaUpInfo.proto\"\231\005\n" +
       "\tGachaInfo\022\022\n\ncostItemId\030\r \001(\r\022\027\n\017gachaP" +
       "refabPath\030\n \001(\t\022\021\n\tgachaType\030\001 \001(\r\022\030\n\017wi" +
       "shMaxProgress\030\300\007 \001(\r\022#\n\032curScheduleDaily" +
@@ -3395,17 +3395,17 @@ public final class GachaInfoOuterClass {
       "\r\022\024\n\013is_new_wish\030\201\014 \001(\010\022\026\n\016tenCostItemNu" +
       "m\030\010 \001(\r\022\025\n\014wishProgress\030\347\013 \001(\r\022\023\n\013schedu" +
       "le_id\030\005 \001(\r\022\025\n\rtenCostItemId\030\006 \001(\r\022\023\n\013ga" +
-      "chaSortId\030\013 \001(\r\022\024\n\013FFMOBAAKKBH\030\205\n \003(\r\022\036\n" +
-      "\025gachaRecordUrlOversea\030\235\t \001(\t\022\034\n\023gachaPr" +
-      "obUrlOversea\030\305\t \001(\t\022\022\n\nbegin_time\030\003 \001(\r\022" +
-      "\023\n\nwishItemId\030\346\006 \001(\r\022\020\n\010end_time\030\007 \001(\r\022\036" +
-      "\n\026gachaPreviewPrefabPath\030\014 \001(\t\022\025\n\014titleT" +
-      "extmap\030\317\006 \001(\t\022\024\n\013OCIHCEACNNF\030\247\016 \003(\r\022\027\n\017g" +
-      "achaTimesLimit\030\016 \001(\r\022\026\n\016gachaRecordUrl\030\t" +
-      " \001(\t\022)\n\022gacha_up_info_list\030\352\013 \003(\0132\014.Gach" +
-      "aUpInfo\022\023\n\013costItemNum\030\002 \001(\r\022\024\n\014gachaPro" +
-      "bUrl\030\004 \001(\tB\033\n\031emu.grasscutter.net.protob" +
-      "\006proto3"
+      "chaSortId\030\013 \001(\r\022\033\n\022displayUp4ItemList\030\205\n" +
+      " \003(\r\022\036\n\025gachaRecordUrlOversea\030\235\t \001(\t\022\034\n\023" +
+      "gachaProbUrlOversea\030\305\t \001(\t\022\022\n\nbegin_time" +
+      "\030\003 \001(\r\022\023\n\nwishItemId\030\346\006 \001(\r\022\020\n\010end_time\030" +
+      "\007 \001(\r\022\036\n\026gachaPreviewPrefabPath\030\014 \001(\t\022\025\n" +
+      "\014titleTextmap\030\317\006 \001(\t\022\033\n\022displayUp5ItemLi" +
+      "st\030\247\016 \003(\r\022\027\n\017gachaTimesLimit\030\016 \001(\r\022\026\n\016ga" +
+      "chaRecordUrl\030\t \001(\t\022)\n\022gacha_up_info_list" +
+      "\030\352\013 \003(\0132\014.GachaUpInfo\022\023\n\013costItemNum\030\002 \001" +
+      "(\r\022\024\n\014gachaProbUrl\030\004 \001(\tB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3417,7 +3417,7 @@ public final class GachaInfoOuterClass {
     internal_static_GachaInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GachaInfo_descriptor,
-        new java.lang.String[] { "CostItemId", "GachaPrefabPath", "GachaType", "WishMaxProgress", "CurScheduleDailyGachaTimes", "LeftGachaTimes", "IsNewWish", "TenCostItemNum", "WishProgress", "ScheduleId", "TenCostItemId", "GachaSortId", "FFMOBAAKKBH", "GachaRecordUrlOversea", "GachaProbUrlOversea", "BeginTime", "WishItemId", "EndTime", "GachaPreviewPrefabPath", "TitleTextmap", "OCIHCEACNNF", "GachaTimesLimit", "GachaRecordUrl", "GachaUpInfoList", "CostItemNum", "GachaProbUrl", });
+        new java.lang.String[] { "CostItemId", "GachaPrefabPath", "GachaType", "WishMaxProgress", "CurScheduleDailyGachaTimes", "LeftGachaTimes", "IsNewWish", "TenCostItemNum", "WishProgress", "ScheduleId", "TenCostItemId", "GachaSortId", "DisplayUp4ItemList", "GachaRecordUrlOversea", "GachaProbUrlOversea", "BeginTime", "WishItemId", "EndTime", "GachaPreviewPrefabPath", "TitleTextmap", "DisplayUp5ItemList", "GachaTimesLimit", "GachaRecordUrl", "GachaUpInfoList", "CostItemNum", "GachaProbUrl", });
     emu.grasscutter.net.proto.GachaUpInfoOuterClass.getDescriptor();
   }
 

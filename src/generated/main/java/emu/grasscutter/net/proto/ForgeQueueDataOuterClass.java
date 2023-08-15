@@ -19,10 +19,10 @@ public final class ForgeQueueDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 POMGMIIKMGK = 13;</code>
-     * @return The pOMGMIIKMGK.
+     * <code>uint32 queue_id = 13;</code>
+     * @return The queueId.
      */
-    int getPOMGMIIKMGK();
+    int getQueueId();
 
     /**
      * <code>uint32 avatar_id = 8;</code>
@@ -31,28 +31,28 @@ public final class ForgeQueueDataOuterClass {
     int getAvatarId();
 
     /**
-     * <code>uint32 FEAIEFCFKJK = 3;</code>
-     * @return The fEAIEFCFKJK.
+     * <code>uint32 finish_count = 3;</code>
+     * @return The finishCount.
      */
-    int getFEAIEFCFKJK();
+    int getFinishCount();
 
     /**
-     * <code>uint32 MNHMIPIKBIH = 14;</code>
-     * @return The mNHMIPIKBIH.
+     * <code>uint32 unfinish_count = 14;</code>
+     * @return The unfinishCount.
      */
-    int getMNHMIPIKBIH();
+    int getUnfinishCount();
 
     /**
-     * <code>uint32 JAJEGBOFAEE = 11;</code>
-     * @return The jAJEGBOFAEE.
+     * <code>uint32 total_finish_timestamp = 11;</code>
+     * @return The totalFinishTimestamp.
      */
-    int getJAJEGBOFAEE();
+    int getTotalFinishTimestamp();
 
     /**
-     * <code>uint32 DLAMPPPDANO = 4;</code>
-     * @return The dLAMPPPDANO.
+     * <code>uint32 next_finish_timestamp = 4;</code>
+     * @return The nextFinishTimestamp.
      */
-    int getDLAMPPPDANO();
+    int getNextFinishTimestamp();
 
     /**
      * <code>uint32 forge_id = 15;</code>
@@ -111,12 +111,12 @@ public final class ForgeQueueDataOuterClass {
               break;
             case 24: {
 
-              fEAIEFCFKJK_ = input.readUInt32();
+              finishCount_ = input.readUInt32();
               break;
             }
             case 32: {
 
-              dLAMPPPDANO_ = input.readUInt32();
+              nextFinishTimestamp_ = input.readUInt32();
               break;
             }
             case 64: {
@@ -126,17 +126,17 @@ public final class ForgeQueueDataOuterClass {
             }
             case 88: {
 
-              jAJEGBOFAEE_ = input.readUInt32();
+              totalFinishTimestamp_ = input.readUInt32();
               break;
             }
             case 104: {
 
-              pOMGMIIKMGK_ = input.readUInt32();
+              queueId_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              mNHMIPIKBIH_ = input.readUInt32();
+              unfinishCount_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -176,15 +176,15 @@ public final class ForgeQueueDataOuterClass {
               emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.class, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.Builder.class);
     }
 
-    public static final int POMGMIIKMGK_FIELD_NUMBER = 13;
-    private int pOMGMIIKMGK_;
+    public static final int QUEUE_ID_FIELD_NUMBER = 13;
+    private int queueId_;
     /**
-     * <code>uint32 POMGMIIKMGK = 13;</code>
-     * @return The pOMGMIIKMGK.
+     * <code>uint32 queue_id = 13;</code>
+     * @return The queueId.
      */
     @java.lang.Override
-    public int getPOMGMIIKMGK() {
-      return pOMGMIIKMGK_;
+    public int getQueueId() {
+      return queueId_;
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 8;
@@ -198,48 +198,48 @@ public final class ForgeQueueDataOuterClass {
       return avatarId_;
     }
 
-    public static final int FEAIEFCFKJK_FIELD_NUMBER = 3;
-    private int fEAIEFCFKJK_;
+    public static final int FINISH_COUNT_FIELD_NUMBER = 3;
+    private int finishCount_;
     /**
-     * <code>uint32 FEAIEFCFKJK = 3;</code>
-     * @return The fEAIEFCFKJK.
+     * <code>uint32 finish_count = 3;</code>
+     * @return The finishCount.
      */
     @java.lang.Override
-    public int getFEAIEFCFKJK() {
-      return fEAIEFCFKJK_;
+    public int getFinishCount() {
+      return finishCount_;
     }
 
-    public static final int MNHMIPIKBIH_FIELD_NUMBER = 14;
-    private int mNHMIPIKBIH_;
+    public static final int UNFINISH_COUNT_FIELD_NUMBER = 14;
+    private int unfinishCount_;
     /**
-     * <code>uint32 MNHMIPIKBIH = 14;</code>
-     * @return The mNHMIPIKBIH.
+     * <code>uint32 unfinish_count = 14;</code>
+     * @return The unfinishCount.
      */
     @java.lang.Override
-    public int getMNHMIPIKBIH() {
-      return mNHMIPIKBIH_;
+    public int getUnfinishCount() {
+      return unfinishCount_;
     }
 
-    public static final int JAJEGBOFAEE_FIELD_NUMBER = 11;
-    private int jAJEGBOFAEE_;
+    public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 11;
+    private int totalFinishTimestamp_;
     /**
-     * <code>uint32 JAJEGBOFAEE = 11;</code>
-     * @return The jAJEGBOFAEE.
+     * <code>uint32 total_finish_timestamp = 11;</code>
+     * @return The totalFinishTimestamp.
      */
     @java.lang.Override
-    public int getJAJEGBOFAEE() {
-      return jAJEGBOFAEE_;
+    public int getTotalFinishTimestamp() {
+      return totalFinishTimestamp_;
     }
 
-    public static final int DLAMPPPDANO_FIELD_NUMBER = 4;
-    private int dLAMPPPDANO_;
+    public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 4;
+    private int nextFinishTimestamp_;
     /**
-     * <code>uint32 DLAMPPPDANO = 4;</code>
-     * @return The dLAMPPPDANO.
+     * <code>uint32 next_finish_timestamp = 4;</code>
+     * @return The nextFinishTimestamp.
      */
     @java.lang.Override
-    public int getDLAMPPPDANO() {
-      return dLAMPPPDANO_;
+    public int getNextFinishTimestamp() {
+      return nextFinishTimestamp_;
     }
 
     public static final int FORGE_ID_FIELD_NUMBER = 15;
@@ -267,23 +267,23 @@ public final class ForgeQueueDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (fEAIEFCFKJK_ != 0) {
-        output.writeUInt32(3, fEAIEFCFKJK_);
+      if (finishCount_ != 0) {
+        output.writeUInt32(3, finishCount_);
       }
-      if (dLAMPPPDANO_ != 0) {
-        output.writeUInt32(4, dLAMPPPDANO_);
+      if (nextFinishTimestamp_ != 0) {
+        output.writeUInt32(4, nextFinishTimestamp_);
       }
       if (avatarId_ != 0) {
         output.writeUInt32(8, avatarId_);
       }
-      if (jAJEGBOFAEE_ != 0) {
-        output.writeUInt32(11, jAJEGBOFAEE_);
+      if (totalFinishTimestamp_ != 0) {
+        output.writeUInt32(11, totalFinishTimestamp_);
       }
-      if (pOMGMIIKMGK_ != 0) {
-        output.writeUInt32(13, pOMGMIIKMGK_);
+      if (queueId_ != 0) {
+        output.writeUInt32(13, queueId_);
       }
-      if (mNHMIPIKBIH_ != 0) {
-        output.writeUInt32(14, mNHMIPIKBIH_);
+      if (unfinishCount_ != 0) {
+        output.writeUInt32(14, unfinishCount_);
       }
       if (forgeId_ != 0) {
         output.writeUInt32(15, forgeId_);
@@ -297,29 +297,29 @@ public final class ForgeQueueDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fEAIEFCFKJK_ != 0) {
+      if (finishCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, fEAIEFCFKJK_);
+          .computeUInt32Size(3, finishCount_);
       }
-      if (dLAMPPPDANO_ != 0) {
+      if (nextFinishTimestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, dLAMPPPDANO_);
+          .computeUInt32Size(4, nextFinishTimestamp_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, avatarId_);
       }
-      if (jAJEGBOFAEE_ != 0) {
+      if (totalFinishTimestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, jAJEGBOFAEE_);
+          .computeUInt32Size(11, totalFinishTimestamp_);
       }
-      if (pOMGMIIKMGK_ != 0) {
+      if (queueId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, pOMGMIIKMGK_);
+          .computeUInt32Size(13, queueId_);
       }
-      if (mNHMIPIKBIH_ != 0) {
+      if (unfinishCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, mNHMIPIKBIH_);
+          .computeUInt32Size(14, unfinishCount_);
       }
       if (forgeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -340,18 +340,18 @@ public final class ForgeQueueDataOuterClass {
       }
       emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData other = (emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData) obj;
 
-      if (getPOMGMIIKMGK()
-          != other.getPOMGMIIKMGK()) return false;
+      if (getQueueId()
+          != other.getQueueId()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
-      if (getFEAIEFCFKJK()
-          != other.getFEAIEFCFKJK()) return false;
-      if (getMNHMIPIKBIH()
-          != other.getMNHMIPIKBIH()) return false;
-      if (getJAJEGBOFAEE()
-          != other.getJAJEGBOFAEE()) return false;
-      if (getDLAMPPPDANO()
-          != other.getDLAMPPPDANO()) return false;
+      if (getFinishCount()
+          != other.getFinishCount()) return false;
+      if (getUnfinishCount()
+          != other.getUnfinishCount()) return false;
+      if (getTotalFinishTimestamp()
+          != other.getTotalFinishTimestamp()) return false;
+      if (getNextFinishTimestamp()
+          != other.getNextFinishTimestamp()) return false;
       if (getForgeId()
           != other.getForgeId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -365,18 +365,18 @@ public final class ForgeQueueDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POMGMIIKMGK_FIELD_NUMBER;
-      hash = (53 * hash) + getPOMGMIIKMGK();
+      hash = (37 * hash) + QUEUE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQueueId();
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
-      hash = (37 * hash) + FEAIEFCFKJK_FIELD_NUMBER;
-      hash = (53 * hash) + getFEAIEFCFKJK();
-      hash = (37 * hash) + MNHMIPIKBIH_FIELD_NUMBER;
-      hash = (53 * hash) + getMNHMIPIKBIH();
-      hash = (37 * hash) + JAJEGBOFAEE_FIELD_NUMBER;
-      hash = (53 * hash) + getJAJEGBOFAEE();
-      hash = (37 * hash) + DLAMPPPDANO_FIELD_NUMBER;
-      hash = (53 * hash) + getDLAMPPPDANO();
+      hash = (37 * hash) + FINISH_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishCount();
+      hash = (37 * hash) + UNFINISH_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getUnfinishCount();
+      hash = (37 * hash) + TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalFinishTimestamp();
+      hash = (37 * hash) + NEXT_FINISH_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getNextFinishTimestamp();
       hash = (37 * hash) + FORGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getForgeId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -516,17 +516,17 @@ public final class ForgeQueueDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pOMGMIIKMGK_ = 0;
+        queueId_ = 0;
 
         avatarId_ = 0;
 
-        fEAIEFCFKJK_ = 0;
+        finishCount_ = 0;
 
-        mNHMIPIKBIH_ = 0;
+        unfinishCount_ = 0;
 
-        jAJEGBOFAEE_ = 0;
+        totalFinishTimestamp_ = 0;
 
-        dLAMPPPDANO_ = 0;
+        nextFinishTimestamp_ = 0;
 
         forgeId_ = 0;
 
@@ -556,12 +556,12 @@ public final class ForgeQueueDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData buildPartial() {
         emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData result = new emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData(this);
-        result.pOMGMIIKMGK_ = pOMGMIIKMGK_;
+        result.queueId_ = queueId_;
         result.avatarId_ = avatarId_;
-        result.fEAIEFCFKJK_ = fEAIEFCFKJK_;
-        result.mNHMIPIKBIH_ = mNHMIPIKBIH_;
-        result.jAJEGBOFAEE_ = jAJEGBOFAEE_;
-        result.dLAMPPPDANO_ = dLAMPPPDANO_;
+        result.finishCount_ = finishCount_;
+        result.unfinishCount_ = unfinishCount_;
+        result.totalFinishTimestamp_ = totalFinishTimestamp_;
+        result.nextFinishTimestamp_ = nextFinishTimestamp_;
         result.forgeId_ = forgeId_;
         onBuilt();
         return result;
@@ -611,23 +611,23 @@ public final class ForgeQueueDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData other) {
         if (other == emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance()) return this;
-        if (other.getPOMGMIIKMGK() != 0) {
-          setPOMGMIIKMGK(other.getPOMGMIIKMGK());
+        if (other.getQueueId() != 0) {
+          setQueueId(other.getQueueId());
         }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
         }
-        if (other.getFEAIEFCFKJK() != 0) {
-          setFEAIEFCFKJK(other.getFEAIEFCFKJK());
+        if (other.getFinishCount() != 0) {
+          setFinishCount(other.getFinishCount());
         }
-        if (other.getMNHMIPIKBIH() != 0) {
-          setMNHMIPIKBIH(other.getMNHMIPIKBIH());
+        if (other.getUnfinishCount() != 0) {
+          setUnfinishCount(other.getUnfinishCount());
         }
-        if (other.getJAJEGBOFAEE() != 0) {
-          setJAJEGBOFAEE(other.getJAJEGBOFAEE());
+        if (other.getTotalFinishTimestamp() != 0) {
+          setTotalFinishTimestamp(other.getTotalFinishTimestamp());
         }
-        if (other.getDLAMPPPDANO() != 0) {
-          setDLAMPPPDANO(other.getDLAMPPPDANO());
+        if (other.getNextFinishTimestamp() != 0) {
+          setNextFinishTimestamp(other.getNextFinishTimestamp());
         }
         if (other.getForgeId() != 0) {
           setForgeId(other.getForgeId());
@@ -661,33 +661,33 @@ public final class ForgeQueueDataOuterClass {
         return this;
       }
 
-      private int pOMGMIIKMGK_ ;
+      private int queueId_ ;
       /**
-       * <code>uint32 POMGMIIKMGK = 13;</code>
-       * @return The pOMGMIIKMGK.
+       * <code>uint32 queue_id = 13;</code>
+       * @return The queueId.
        */
       @java.lang.Override
-      public int getPOMGMIIKMGK() {
-        return pOMGMIIKMGK_;
+      public int getQueueId() {
+        return queueId_;
       }
       /**
-       * <code>uint32 POMGMIIKMGK = 13;</code>
-       * @param value The pOMGMIIKMGK to set.
+       * <code>uint32 queue_id = 13;</code>
+       * @param value The queueId to set.
        * @return This builder for chaining.
        */
-      public Builder setPOMGMIIKMGK(int value) {
+      public Builder setQueueId(int value) {
         
-        pOMGMIIKMGK_ = value;
+        queueId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 POMGMIIKMGK = 13;</code>
+       * <code>uint32 queue_id = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPOMGMIIKMGK() {
+      public Builder clearQueueId() {
         
-        pOMGMIIKMGK_ = 0;
+        queueId_ = 0;
         onChanged();
         return this;
       }
@@ -723,126 +723,126 @@ public final class ForgeQueueDataOuterClass {
         return this;
       }
 
-      private int fEAIEFCFKJK_ ;
+      private int finishCount_ ;
       /**
-       * <code>uint32 FEAIEFCFKJK = 3;</code>
-       * @return The fEAIEFCFKJK.
+       * <code>uint32 finish_count = 3;</code>
+       * @return The finishCount.
        */
       @java.lang.Override
-      public int getFEAIEFCFKJK() {
-        return fEAIEFCFKJK_;
+      public int getFinishCount() {
+        return finishCount_;
       }
       /**
-       * <code>uint32 FEAIEFCFKJK = 3;</code>
-       * @param value The fEAIEFCFKJK to set.
+       * <code>uint32 finish_count = 3;</code>
+       * @param value The finishCount to set.
        * @return This builder for chaining.
        */
-      public Builder setFEAIEFCFKJK(int value) {
+      public Builder setFinishCount(int value) {
         
-        fEAIEFCFKJK_ = value;
+        finishCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 FEAIEFCFKJK = 3;</code>
+       * <code>uint32 finish_count = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFEAIEFCFKJK() {
+      public Builder clearFinishCount() {
         
-        fEAIEFCFKJK_ = 0;
+        finishCount_ = 0;
         onChanged();
         return this;
       }
 
-      private int mNHMIPIKBIH_ ;
+      private int unfinishCount_ ;
       /**
-       * <code>uint32 MNHMIPIKBIH = 14;</code>
-       * @return The mNHMIPIKBIH.
+       * <code>uint32 unfinish_count = 14;</code>
+       * @return The unfinishCount.
        */
       @java.lang.Override
-      public int getMNHMIPIKBIH() {
-        return mNHMIPIKBIH_;
+      public int getUnfinishCount() {
+        return unfinishCount_;
       }
       /**
-       * <code>uint32 MNHMIPIKBIH = 14;</code>
-       * @param value The mNHMIPIKBIH to set.
+       * <code>uint32 unfinish_count = 14;</code>
+       * @param value The unfinishCount to set.
        * @return This builder for chaining.
        */
-      public Builder setMNHMIPIKBIH(int value) {
+      public Builder setUnfinishCount(int value) {
         
-        mNHMIPIKBIH_ = value;
+        unfinishCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 MNHMIPIKBIH = 14;</code>
+       * <code>uint32 unfinish_count = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMNHMIPIKBIH() {
+      public Builder clearUnfinishCount() {
         
-        mNHMIPIKBIH_ = 0;
+        unfinishCount_ = 0;
         onChanged();
         return this;
       }
 
-      private int jAJEGBOFAEE_ ;
+      private int totalFinishTimestamp_ ;
       /**
-       * <code>uint32 JAJEGBOFAEE = 11;</code>
-       * @return The jAJEGBOFAEE.
+       * <code>uint32 total_finish_timestamp = 11;</code>
+       * @return The totalFinishTimestamp.
        */
       @java.lang.Override
-      public int getJAJEGBOFAEE() {
-        return jAJEGBOFAEE_;
+      public int getTotalFinishTimestamp() {
+        return totalFinishTimestamp_;
       }
       /**
-       * <code>uint32 JAJEGBOFAEE = 11;</code>
-       * @param value The jAJEGBOFAEE to set.
+       * <code>uint32 total_finish_timestamp = 11;</code>
+       * @param value The totalFinishTimestamp to set.
        * @return This builder for chaining.
        */
-      public Builder setJAJEGBOFAEE(int value) {
+      public Builder setTotalFinishTimestamp(int value) {
         
-        jAJEGBOFAEE_ = value;
+        totalFinishTimestamp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 JAJEGBOFAEE = 11;</code>
+       * <code>uint32 total_finish_timestamp = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearJAJEGBOFAEE() {
+      public Builder clearTotalFinishTimestamp() {
         
-        jAJEGBOFAEE_ = 0;
+        totalFinishTimestamp_ = 0;
         onChanged();
         return this;
       }
 
-      private int dLAMPPPDANO_ ;
+      private int nextFinishTimestamp_ ;
       /**
-       * <code>uint32 DLAMPPPDANO = 4;</code>
-       * @return The dLAMPPPDANO.
+       * <code>uint32 next_finish_timestamp = 4;</code>
+       * @return The nextFinishTimestamp.
        */
       @java.lang.Override
-      public int getDLAMPPPDANO() {
-        return dLAMPPPDANO_;
+      public int getNextFinishTimestamp() {
+        return nextFinishTimestamp_;
       }
       /**
-       * <code>uint32 DLAMPPPDANO = 4;</code>
-       * @param value The dLAMPPPDANO to set.
+       * <code>uint32 next_finish_timestamp = 4;</code>
+       * @param value The nextFinishTimestamp to set.
        * @return This builder for chaining.
        */
-      public Builder setDLAMPPPDANO(int value) {
+      public Builder setNextFinishTimestamp(int value) {
         
-        dLAMPPPDANO_ = value;
+        nextFinishTimestamp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 DLAMPPPDANO = 4;</code>
+       * <code>uint32 next_finish_timestamp = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDLAMPPPDANO() {
+      public Builder clearNextFinishTimestamp() {
         
-        dLAMPPPDANO_ = 0;
+        nextFinishTimestamp_ = 0;
         onChanged();
         return this;
       }
@@ -944,12 +944,13 @@ public final class ForgeQueueDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ForgeQueueData.proto\"\236\001\n\016ForgeQueueDat" +
-      "a\022\023\n\013POMGMIIKMGK\030\r \001(\r\022\021\n\tavatar_id\030\010 \001(" +
-      "\r\022\023\n\013FEAIEFCFKJK\030\003 \001(\r\022\023\n\013MNHMIPIKBIH\030\016 " +
-      "\001(\r\022\023\n\013JAJEGBOFAEE\030\013 \001(\r\022\023\n\013DLAMPPPDANO\030" +
-      "\004 \001(\r\022\020\n\010forge_id\030\017 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\n\024ForgeQueueData.proto\"\264\001\n\016ForgeQueueDat" +
+      "a\022\020\n\010queue_id\030\r \001(\r\022\021\n\tavatar_id\030\010 \001(\r\022\024" +
+      "\n\014finish_count\030\003 \001(\r\022\026\n\016unfinish_count\030\016" +
+      " \001(\r\022\036\n\026total_finish_timestamp\030\013 \001(\r\022\035\n\025" +
+      "next_finish_timestamp\030\004 \001(\r\022\020\n\010forge_id\030" +
+      "\017 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -960,7 +961,7 @@ public final class ForgeQueueDataOuterClass {
     internal_static_ForgeQueueData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ForgeQueueData_descriptor,
-        new java.lang.String[] { "POMGMIIKMGK", "AvatarId", "FEAIEFCFKJK", "MNHMIPIKBIH", "JAJEGBOFAEE", "DLAMPPPDANO", "ForgeId", });
+        new java.lang.String[] { "QueueId", "AvatarId", "FinishCount", "UnfinishCount", "TotalFinishTimestamp", "NextFinishTimestamp", "ForgeId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
