@@ -1,84 +1,41 @@
 package emu.grasscutter.game.quest;
 
-import dev.morphia.annotations.Transient;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.binout.MainQuestData;
-import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.quest.enums.*;
-import emu.grasscutter.server.packet.send.PacketFinishedParentQuestUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketQuestGlobalVarNotify;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.net.proto.GivingRecordOuterClass.GivingRecord;
+import emu.grasscutter.server.packet.send.*;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.Getter;
-import lombok.val;
+import lombok.*;
 
 import javax.annotation.Nonnull;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static emu.grasscutter.GameConstants.DEBUG;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-import static emu.grasscutter.config.Configuration.SERVER;
+import static emu.grasscutter.config.Configuration.*;
 
-public class QuestManager extends BasePlayerManager {
+public final class QuestManager extends BasePlayerManager {
     @Getter private final Player player;
+
     @Getter private final Int2ObjectMap<GameMainQuest> mainQuests;
-    @Transient @Getter private final List<Integer> loggedQuests;
+    @Getter private final List<Integer> loggedQuests;
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
 
-    public static final ExecutorService eventExecutor;
-    static {
-        eventExecutor = new ThreadPoolExecutor(4, 4,
-            60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
-            FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
-    }
-    /*
-        On SetPlayerBornDataReq, the server sends FinishedParentQuestNotify, with this exact
-        parentQuestList. Captured on Game version 2.7
-        Note: quest 40063 is already set to finished, with childQuest 4006406's state set to 3
-    */
-
-    private static Set<Integer> newPlayerMainQuests = Set.of(303,318,348,349,350,351,416,500,
-        501,502,503,504,505,506,507,508,509,20000,20507,20509,21004,21005,21010,21011,21016,21017,
-        21020,21021,21025,40063,70121,70124,70511,71010,71012,71013,71015,71016,71017,71555);
-
-    /*
-        On SetPlayerBornDataReq, the server sends ServerCondMeetQuestListUpdateNotify, with this exact
-        addQuestIdList. Captured on Game version 2.7
-        Total of 161...
-     */
-    /*
-    private static Set<Integer> newPlayerServerCondMeetQuestListUpdateNotify = Set.of(3100101, 7104405, 2201601,
-        7100801, 1907002, 7293301, 7193801, 7293401, 7193901, 7091001, 7190501, 7090901, 7190401, 7090801, 7190301,
-        7195301, 7294801, 7195201, 7293001, 7094001, 7193501, 7293501, 7194001, 7293701, 7194201, 7194301, 7293801,
-        7194901, 7194101, 7195001, 7294501, 7294101, 7194601, 7294301, 7194801, 7091301, 7290301, 2102401, 7216801,
-        7190201, 7090701, 7093801, 7193301, 7292801, 7227828, 7093901, 7193401, 7292901, 7093701, 7193201, 7292701,
-        7082402, 7093601, 7292601, 7193101, 2102301, 7093501, 7292501, 7193001, 7093401, 7292401, 7192901, 7093301,
-        7292301, 7192801, 7294201, 7194701, 2100301, 7093201, 7212402, 7292201, 7192701, 7280001, 7293901, 7194401,
-        7093101, 7212302, 7292101, 7192601, 7093001, 7292001, 7192501, 7216001, 7195101, 7294601, 2100900, 7092901,
-        7291901, 7192401, 7092801, 7291801, 7192301, 2101501, 7092701, 7291701, 7192201, 7106401, 2100716, 7091801,
-        7290801, 7191301, 7293201, 7193701, 7094201, 7294001, 7194501, 2102290, 7227829, 7193601, 7094101, 7091401,
-        7290401, 7190901, 7106605, 7291601, 7192101, 7092601, 7291501, 7192001, 7092501, 7291401, 7191901, 7092401,
-        7291301, 7191801, 7092301, 7211402, 7291201, 7191701, 7092201, 7291101, 7191601, 7092101, 7291001, 7191501,
-        7092001, 7290901, 7191401, 7091901, 7290701, 7191201, 7091701, 7290601, 7191101, 7091601, 7290501, 7191001,
-        7091501, 7290201, 7190701, 7091201, 7190601, 7091101, 7190101, 7090601, 7090501, 7090401, 7010701, 7090301,
-        7090201, 7010103, 7090101
-        );
-
-    */
+    public static final ExecutorService eventExecutor
+        = new ThreadPoolExecutor(4, 4,
+        60, TimeUnit.SECONDS, new LinkedBlockingDeque<>(1000),
+        FastThreadLocalThread::new, new ThreadPoolExecutor.AbortPolicy());
 
     public static long getQuestKey(int mainQuestId) {
         QuestEncryptionKey questEncryptionKey = GameData.getMainQuestEncryptionMap().get(mainQuestId);
@@ -134,20 +91,146 @@ public class QuestManager extends BasePlayerManager {
         return GAME_OPTIONS.questing.enabled;
     }
 
-    public void onPlayerBorn() {
-        // TODO scan the quest and start the quest with acceptCond fulfilled
-        // The off send 3 request in that order:
-        // 1. FinishedParentQuestNotify
-        // 2. QuestListNotify
-        // 3. ServerCondMeetQuestListUpdateNotify
+    /**
+     * Attempts to add the giving action.
+     *
+     * @param givingId The giving action ID.
+     * @throws IllegalStateException If the giving action is already active.
+     */
+    public void addGiveItemAction(int givingId)
+        throws IllegalStateException {
+        var progress = this.player.getPlayerProgress();
+        var givings = progress.getItemGivings();
 
-        if (this.isQuestingEnabled()) {
-            this.enableQuests();
+        // Check if the action is already present.
+        if (givings.containsKey(givingId)) {
+            throw new IllegalStateException("Giving action " + givingId + " is already active.");
         }
 
-        // this.getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(newQuests));
-        // this.getPlayer().sendPacket(new PacketQuestListNotify(subQuests));
-        // this.getPlayer().sendPacket(new PacketServerCondMeetQuestListUpdateNotify(newPlayerServerCondMeetQuestListUpdateNotify));
+        // Add the action.
+        givings.put(givingId, ItemGiveRecord.resolve(givingId));
+        // Save the givings.
+        player.save();
+
+        this.sendGivingRecords();
+    }
+
+    /**
+     * Marks a giving action as completed.
+     *
+     * @param givingId The giving action ID.
+     */
+    public void markCompleted(int givingId) {
+        var progress = this.player.getPlayerProgress();
+        var givings = progress.getItemGivings();
+
+        // Check if the action is already present.
+        if (!givings.containsKey(givingId)) {
+            throw new IllegalStateException("Giving action " + givingId + " is not active.");
+        }
+
+        // Mark the action as finished.
+        givings.get(givingId).setFinished(true);
+        // Save the givings.
+        player.save();
+
+        this.sendGivingRecords();
+    }
+
+    /**
+     * Attempts to remove the giving action.
+     *
+     * @param givingId The giving action ID.
+     */
+    public void removeGivingItemAction(int givingId) {
+        var progress = this.player.getPlayerProgress();
+        var givings = progress.getItemGivings();
+
+        // Check if the action is already present.
+        if (!givings.containsKey(givingId)) {
+            throw new IllegalStateException("Giving action " + givingId + " is not active.");
+        }
+
+        // Remove the action.
+        givings.remove(givingId);
+        // Save the givings.
+        player.save();
+
+        this.sendGivingRecords();
+    }
+
+    /**
+     * @return Serialized giving records to be used in a packet.
+     */
+    public Collection<GivingRecord> getGivingRecords() {
+        return this.getPlayer().getPlayerProgress()
+            .getItemGivings().values().stream()
+            .map(ItemGiveRecord::toProto)
+            .toList();
+    }
+
+    /**
+     * Attempts to start the bargain.
+     *
+     * @param bargainId The bargain ID.
+     */
+    public void startBargain(int bargainId) {
+        var progress = this.player.getPlayerProgress();
+        var bargains = progress.getBargains();
+
+        // Check if the bargain is already present.
+        if (bargains.containsKey(bargainId)) {
+            throw new IllegalStateException("Bargain " + bargainId + " is already active.");
+        }
+
+        // Add the action.
+        var bargain = BargainRecord.resolve(bargainId);
+        bargains.put(bargainId, bargain);
+        // Save the bargains.
+        this.player.save();
+
+        // Send the player the start packet.
+        this.player.sendPacket(new PacketBargainStartNotify(bargain));
+    }
+
+    /**
+     * Attempts to stop the bargain.
+     *
+     * @param bargainId The bargain ID.
+     */
+    public void stopBargain(int bargainId) {
+            var progress = this.player.getPlayerProgress();
+        var bargains = progress.getBargains();
+
+        // Check if the bargain is already present.
+        if (!bargains.containsKey(bargainId)) {
+            throw new IllegalStateException("Bargain " + bargainId + " is not active.");
+        }
+
+        // Remove the action.
+        bargains.remove(bargainId);
+        // Save the bargains.
+        this.player.save();
+
+        // Send the player the stop packet.
+        this.player.sendPacket(new PacketBargainTerminateNotify(bargainId));
+    }
+
+    /**
+     * Sends the giving records to the player.
+     */
+    public void sendGivingRecords() {
+        // Send the record to the player.
+        this.player.sendPacket(
+            new PacketGivingRecordNotify(
+                this.getGivingRecords()));
+    }
+
+    public void onPlayerBorn() {
+        if (this.isQuestingEnabled()) {
+            this.enableQuests();
+            this.sendGivingRecords();
+        }
     }
 
     public void onLogin() {

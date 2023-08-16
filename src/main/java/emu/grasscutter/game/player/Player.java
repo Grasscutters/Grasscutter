@@ -160,7 +160,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private transient FriendsList friendsList;
     @Getter private transient MailHandler mailHandler;
     @Getter private transient AbilityManager abilityManager;
-    @Getter @Setter private transient QuestManager questManager;
+    @Getter private transient QuestManager questManager;
     @Getter private transient TowerManager towerManager;
     @Getter private transient SotSManager sotsManager;
     @Getter private transient MapMarksManager mapMarksManager;

@@ -1,7 +1,7 @@
 package emu.grasscutter.game.ability;
 
 import com.google.protobuf.*;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
@@ -19,13 +19,13 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import java.util.HashMap;
-import java.util.concurrent.*;
 import lombok.Getter;
 import org.reflections.Reflections;
 
-public final class AbilityManager extends BasePlayerManager {
+import java.util.HashMap;
+import java.util.concurrent.*;
 
+public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
             new HashMap<>();
     private static final HashMap<AbilityMixinData.Type, AbilityMixinHandler> mixinHandlers =
@@ -91,8 +91,11 @@ public final class AbilityManager extends BasePlayerManager {
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         var handler = actionHandlers.get(action.type);
         if (handler == null || ability == null) {
-            Grasscutter.getLogger()
+            if (DebugConstants.LOG_ABILITIES) {
+                Grasscutter.getLogger()
                     .debug("Could not execute ability action {} at {}", action.type, ability);
+            }
+
             return;
         }
 
@@ -148,7 +151,7 @@ public final class AbilityManager extends BasePlayerManager {
                             invoke.getArgumentType(),
                             invoke.getArgumentTypeValue(),
                             entity.getId());
-        } else {
+        } else if (DebugConstants.LOG_ABILITIES) {
             Grasscutter.getLogger()
                     .debug(
                             "Invoke type of {} ({}) has no entity. (referring to {})",
@@ -375,7 +378,10 @@ public final class AbilityManager extends BasePlayerManager {
 
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
         if (entity == null) {
-            Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
+            if (DebugConstants.LOG_ABILITIES) {
+                Grasscutter.getLogger().debug("Entity not found: {}", invoke.getEntityId());
+            }
+
             return;
         }
 

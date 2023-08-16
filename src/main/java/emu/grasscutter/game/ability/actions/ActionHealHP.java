@@ -1,7 +1,7 @@
 package emu.grasscutter.game.ability.actions;
 
 import com.google.protobuf.ByteString;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.EntityClientGadget;
@@ -22,12 +22,14 @@ public final class ActionHealHP extends AbilityActionHandler {
                     ownerGadget
                             .getScene()
                             .getEntityById(ownerGadget.getOwnerEntityId()); // Caster for EntityClientGadget
-            Grasscutter.getLogger()
-                    .debug(
-                            "Owner {} has top owner {}: {}",
-                            ability.getOwner(),
-                            ownerGadget.getOwnerEntityId(),
-                            owner);
+            if (DebugConstants.LOG_ABILITIES) {
+                Grasscutter.getLogger()
+                        .debug(
+                                "Owner {} has top owner {}: {}",
+                                ability.getOwner(),
+                                ownerGadget.getOwnerEntityId(),
+                                owner);
+            }
         }
 
         if (owner == null) return false;
@@ -76,7 +78,7 @@ public final class ActionHealHP extends AbilityActionHandler {
         amountToRegenerate +=
                 amountByTargetMaxHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 
-        Grasscutter.getLogger().debug(">>> Healing {} without ratios", amountToRegenerate);
+        Grasscutter.getLogger().trace("Healing {} without ratios", amountToRegenerate);
         target.heal(
                 amountToRegenerate * abilityRatio * action.healRatio.get(ability, 1f),
                 action.muteHealEffect);
