@@ -30,7 +30,16 @@ public final class GameConstants {
         "Avatar_Freeze_Duration_Reducer",
         "Avatar_Attack_ReviveEnergy",
         "Avatar_Component_Initializer",
-        "Avatar_FallAnthem_Achievement_Listener"
+        "Avatar_FallAnthem_Achievement_Listener",
+        "GrapplingHookSkill_Ability",
+        "Avatar_PlayerBoy_DiveStamina_Reduction",
+        "Ability_Avatar_Dive_Team",
+        "Ability_Avatar_Dive_SealEcho",
+        "Absorb_SealEcho_Bullet_01",
+        "Absorb_SealEcho_Bullet_02",
+        "Ability_Avatar_Dive_CrabShield",
+        "ActivityAbility_Absorb_Shoot",
+        "SceneAbility_DiveVolume"
     };
     public static final SparseSet ILLEGAL_WEAPONS = new SparseSet("""
         10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,
