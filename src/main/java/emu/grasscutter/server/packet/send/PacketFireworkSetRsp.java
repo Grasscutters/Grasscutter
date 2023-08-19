@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 
 public class PacketFireworkSetRsp extends BasePacket {
     public PacketFireworkSetRsp() {
-        super(PacketOpcodes.FireworkSetRsp);
+        super(PacketOpcodes.ReformFireworksRsp);
 
         this.setData(ReformFireworksRsp.newBuilder().setRetcode(Retcode.RET_SUCC.getNumber()));
     }
