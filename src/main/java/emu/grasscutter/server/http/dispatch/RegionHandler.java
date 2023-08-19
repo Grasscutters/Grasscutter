@@ -106,17 +106,19 @@ public final class RegionHandler implements Router {
         // Determine config settings.
         var hiddenIcons = new JsonArray();
         hiddenIcons.add(40);
-        var showExceptions = GameConstants.DEBUG;
+        var codeSwitch = new JsonArray();
+        codeSwitch.add(3628);
 
         // Create a config object.
         var customConfig = new JsonObject();
         customConfig.addProperty("sdkenv", "2");
         customConfig.addProperty("checkdevice", "false");
         customConfig.addProperty("loadPatch", "false");
-        customConfig.addProperty("showexception", String.valueOf(showExceptions));
+        customConfig.addProperty("showexception",
+            String.valueOf(GameConstants.DEBUG));
         customConfig.addProperty("regionConfig", "pm|fk|add");
         customConfig.addProperty("downloadMode", "0");
-        customConfig.addProperty("codeSwitch", "3628");
+        customConfig.add("codeSwitch", codeSwitch);
         customConfig.add("coverSwitch", hiddenIcons);
 
         // XOR the config with the key.
