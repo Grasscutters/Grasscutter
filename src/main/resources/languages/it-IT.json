@@ -15,11 +15,11 @@
       "keystore": {
         "general_error": "[Dispatch] Errore nel caricamento di keystore!",
         "password_error": "[Dispatch] Impossibile caricare il keystore. Provando password di default keystore...",
-        "no_keystore_error": "[Dispatch] Nessun cert SSL trovato! Ritornando ad un server HTTP.",
+        "no_keystore_error": "[Dispatch] Nessun certificato SSL trovato! Ritornando ad un server HTTP.",
         "default_password": "[Dispatch] La password di default del keystore è stata caricata con successo. Prova ad impostare la password a 123456 in config.json."
       },
       "authentication": {
-        "default_unable_to_verify": "[Authentication] [Autenticazione] Qualcosa ha chiamato metodo VerifyUser che non è disponibile nel gestore di autenticazione predefinito."
+        "default_unable_to_verify": "[Authentication] Qualcosa ha chiamato metodo VerifyUser che non è disponibile nel gestore di autenticazione predefinito."
       },
       "no_commands_error": "I comandi non sono supportati in modalità solo dispatch.",
       "unhandled_request_error": "[Dispatch] Potenziali %s richieste non gestite: %s.",
@@ -85,13 +85,13 @@
       "invalid": {
         "amount": "Importo non valido.",
         "artifactId": "ID manufatto non valido.",
-        "avatarId": "🇺🇸Invalid avatar ID.",
-        "avatarLevel": "🇺🇸Invalid avatarLevel.",
-        "cfgId": "cfg ID invalido.",
+        "avatarId": "ID personaggio non valid.",
+        "avatarLevel": "Livello personaggio non valido.",
+        "cfgId": "ID cfg invalido.",
         "entityId": "ID entità non valido.",
-        "itemId": "ID articolo non valido.",
-        "itemLevel": "ItemLevel non valido.",
-        "itemRefinement": "Raffinamento articolo non valido.",
+        "itemId": "ID oggetto non valido.",
+        "itemLevel": "Livello oggetto non valido.",
+        "itemRefinement": "Raffinamento oggetto non valido.",
         "statValue": "Valore statistica non valido.",
         "value_between": "Valore non valido: %s deve essere compreso tra %s e %s.",
         "playerId": "ID giocatore non valido.",
@@ -106,7 +106,7 @@
       "item_player_exist_error": "Elemento o UID non valido.",
       "player_exist_offline_error": "Il giocatore non è stato trovato o non è online.",
       "argument_error": "Argomenti non validi.",
-      "clear_target": "Obiettivo cancellato.",
+      "clear_target": "Bersaglio cancellato.",
       "set_target": "I comandi successivi avranno come bersaglio @%s per impostazione predefinita.",
       "set_target_online": "@%s è online. Alcuni comandi potrebbero richiedere un bersaglio offline.",
       "set_target_offline": "@%s è offline. Alcuni comandi potrebbero richiedere un bersaglio online.",
@@ -124,9 +124,9 @@
       "invalid": "UID non valido.",
       "exists": "Esiste già un account con questo nome utente e/o UID.",
       "create": "Account creato con UID %s.",
-      "delete": "Account cancellato.",
+      "delete": "Account eliminato.",
       "no_account": "Account non trovato.",
-      "description": "Modifica account utente"
+      "description": "Modifica gli account dell'utente"
     },
     "achievement": {
       "success": {
@@ -151,18 +151,18 @@
       "description": "Invia un annuncio a tutti i giocatori online o gestisci l'annuncio del server"
     },
     "clear": {
-      "weapons": "Armi cancellate per %s.",
-      "artifacts": "Ripuliti artefatti per %s.",
-      "materials": "Materiali cancellati per %s.",
-      "furniture": "Mobili cancellati per %s.",
-      "displays": "Display cancellati per %s.",
-      "virtuals": "Virtuali cancellate per %s.",
-      "everything": "Cancellato tutto per %s.",
-      "description": "Elimina gli oggetti sbloccati non equipaggiati dal tuo inventario. Il valore predefinito è 4* livello 1 raffinamento 1 o inferiore, ma può essere impostato su un livello superiore."
+      "weapons": "Armi rimosse da %s.",
+      "artifacts": "Manufatti rimossi da %s.",
+      "materials": "Materiali rimossi da %s.",
+      "furniture": "Mobili rimossi da %s.",
+      "displays": "Display rimossi da %s.",
+      "virtuals": "Virtuali rimossi da %s.",
+      "everything": "Rimosso tutto da %s.",
+      "description": "Rimuove gli oggetti sbloccati non equipaggiati dal tuo inventario. Il valore predefinito è 4* livello 1 raffinamento 1 o inferiore, ma è possibile impostarlo su un livello superiore."
     },
     "coop": {
-      "success": "Convocato %s nel mondo di %s.",
-      "description": "Forza qualcuno a unirsi al mondo degli altri. Se il bersaglio non è impostato, ti manda comunque in modalità cooperativa."
+      "success": "%s si è unito al mondo di %s.",
+      "description": "Forza un giocatore a unirsi al mondo degli altri. Se il bersaglio non è impostato, lo manda comunque in modalità cooperativa."
     },
     "enter_dungeon": {
       "changed": "Cambiato nel dungeon %s.",
@@ -175,26 +175,26 @@
       "not_found_error": "L'entità non esiste."
     },
     "give": {
-      "usage_relic": "Utilizzo: fornire <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<livello 0-20>]",
-      "illegal_relic": "Questo ID manufatto appartiene a un intervallo nella blacklist, potrebbe non essere quello che volevi.",
+      "usage_relic": "Utilizzo: give <IDmanufatto> [mainPropID] [<appendPropID>[,<volte>]]... [lv<livello 0-20>]",
+      "illegal_relic": "Questo ID manufatto appartiene ad una blacklist, potrebbe non essere quello che volevi.",
       "given": "Dato %s di %s a %s.",
-      "given_with_level_and_refinement": "Dato %s con livello %s, perfezionamento %s %s volte a %s.",
+      "given_with_level_and_refinement": "Dato %s con livello %s, raffinamento %s %s volte a %s.",
       "given_level": "Dato %s con livello %s %s volte a %s.",
-      "given_avatar": "🇺🇸Given %s with level %s to %s.",
-      "giveall_success": "Ha dato tutti gli oggetti con successo.",
+      "given_avatar": "Dato %s con livello %s a %s.",
+      "giveall_success": "Dato tutti gli oggetti con successo.",
       "description": "Dà un oggetto a te o al giocatore specificato. Può anche dare tutte le armi, Avatar e/o materiali, e può costruire manufatti personalizzati."
     },
     "heal": {
       "success": "Tutti i personaggi sono stati curati.",
-      "description": "Guarisce tutti i personaggi della tua squadra attuale"
+      "description": "Cura tutti i personaggi della tua squadra attuale"
     },
     "help": {
       "aliases": "Alias: ",
       "available_commands": "Comandi disponibili: ",
       "tip_need_permission": "Autorizzazione: ",
-      "tip_need_no_permission": "Nessun Elemento",
+      "tip_need_no_permission": "Nessuna",
       "tip_permission_targeted": " (L'autorizzazione %s è richiesta anche per l'uso su altri giocatori)",
-      "warn_player_has_no_permission": "Avviso: non hai il permesso per eseguire questo comando.",
+      "warn_player_has_no_permission": "Avviso: non hai l'autorizzazione per eseguire questo comando.",
       "description": "Invia il messaggio di aiuto o mostra le informazioni su un comando specificato"
     },
     "kick": {
@@ -223,11 +223,11 @@
     },
     "permission": {
       "add": "Autorizzazione aggiunta.",
-      "has_error": "Hanno già questa autorizzazione!",
+      "has_error": "Ha già questa autorizzazione!",
       "remove": "Autorizzazione rimossa.",
-      "not_have_error": "Non hanno questa autorizzazione!",
+      "not_have_error": "Non ha questa autorizzazione!",
       "account_error": "Impossibile trovare l'account.",
-      "description": "Concede o rimuove un'autorizzazione per un utente"
+      "description": "Concede o rimuove un'autorizzazione di un utente"
     },
     "position": {
       "success": "Coordinate: %s, %s, %s\nRotazione:%s, %s, %s\nID scena: %a",
@@ -242,11 +242,11 @@
       "running": "Missione %s è %s (%s).",
       "talking": "Talk %s è %s per la missione principale %s (%s).",
       "state": {
-        "none": "sconosciuta (nessuna)",
-        "unstarted": "incompleta (not cominciata, non completata)",
-        "unfinished": "incompleta (cominciata, non completata)",
-        "finished": "completa (completata)",
-        "failed": "incompleta (completata, ma fallita)",
+        "none": "Sconosciuta (nessuna)",
+        "unstarted": "Incompleta (not cominciata, non completata)",
+        "unfinished": "Incompleta (cominciata, non completata)",
+        "finished": "Completa (completata)",
+        "failed": "Incompleta (completata, ma fallita)",
         "exists": "Missione esistente",
         "not_exists": "Missione non esistente."
       },
@@ -271,19 +271,19 @@
       "description": "Ricarica la configurazione del server"
     },
     "resetConst": {
-      "reset_all": "Ripristina le costellazioni di tutti gli Avatar.",
-      "success": "Le costellazioni per %s sono state reimpostate. Effettua nuovamente il login per vedere le modifiche.",
-      "description": "Reimposta il livello della costellazione sul tuo personaggio attivo corrente, dovrai reloggare dopo aver usato il comando per vedere eventuali modifiche"
+      "reset_all": "Ripristina le costellazioni di tutti i personaggi.",
+      "success": "Le costellazioni di %s sono state reimpostate. Effettua nuovamente il login per vedere le modifiche.",
+      "description": "Reimposta il livello della costellazione del tuo personaggio attivo corrente, dovrai reloggare dopo aver usato il comando per vedere eventuali modifiche"
     },
     "resetShopLimit": {
       "success": "Reset completato.",
       "description": "Reimposta il tempo di aggiornamento del negozio del giocatore bersaglio"
     },
     "sendMail": {
-      "give_usage": "Utilizzo: give <player> <itemID|itemName> [importo] [livello] [raffinamento]",
+      "give_usage": "Utilizzo: give <player> <IDoggetto|Nomeoggetto> [importo] [livello] [raffinamento]",
       "user_not_exist": "L'utente con ID '%s' non esiste.",
       "start_composition": "Composizione iniziale del messaggio.\nPer favore usa '/sendmail <titolo>' per continuare.\nPuoi usare '/sendmail stop' in qualsiasi momento.",
-      "templates": "I modelli di posta saranno presto implementati...",
+      "templates": "I template di posta saranno presto implementati...",
       "invalid_arguments": "Argomenti non validi.",
       "send_cancel": "Invio messaggio annullato.",
       "send_done": "Messaggio inviato all'utente %s!",
@@ -292,13 +292,13 @@
       "please_use": "Per favore usa '/sendmail %s'",
       "set_title": "Titolo del messaggio impostato come '%s'.\nUsa '/sendmail <content>' per continuare.",
       "set_contents": "Contenuto del messaggio impostato come '%s'.\nUsa '/sendmail <sender>' per continuare.",
-      "set_message_sender": "Mittente del messaggio impostato come '%s'.\nUsa '/sendmail <itemID|itemName|finish> [amount] [level]' per continuare.",
+      "set_message_sender": "Mittente del messaggio impostato come '%s'.\nUsa '/sendmail <IDoggetto|Nomeoggetto|finish> [quantità] [livello]' per continuare.",
       "send": "Allegati %s di %s (livello %s) al messaggio.\nContinua ad aggiungere altri elementi o usa '/sendmail finish' per inviare il messaggio.",
       "invalid_arguments_please_use": "Argomenti non validi.\n Utilizza '/sendmail %s'",
       "title": "<titolo>",
       "message": "<messaggio>",
       "sender": "<mittente>",
-      "arguments": "<itemID|itemName|finitura> [importo] [livello]",
+        "arguments": "<IDoggetto|Nomeoggetto|finish> [quantità] [livello]",
       "error": "ERRORE: fase di costruzione %s non valida. Controlla lo stacktrace della console.",
       "description": "Invia posta all'utente specificato. L'utilizzo di questo comando cambia in base al suo stato di composizione"
     },
@@ -326,8 +326,8 @@
     },
     "setStats": {
       "description": "Imposta la proprietà di combattimento per il tuo personaggio attivo corrente\n\tValori per <stat>: hp | maxhp | def | atk | em | er | crate | cdmg | cdr | heal | heali | shield | defi\n\t(cont.) Elemental DMG Bonus: epyro | ecryo | ehydro | egeo | edendro | eelectro | ephys\n\t(cont.) Elemental RES: respyro | rescryo | reshydro | resgeo | resdendro | reselectro | resphys",
-      "locked_to": "%s bloccato su %s.",
-      "locked_for_to": "%s per %s bloccato su %s.",
+      "locked_to": "%s bloccato a %s.",
+      "locked_for_to": "%s per %s bloccato a %s.",
       "unlocked": "%s sbloccato.",
       "unlocked_for": "%s per %s sbloccato."
     },
@@ -355,25 +355,25 @@
       "invalid_usage": "Utilizzo non valido.",
       "invalid_index": "L'indice non è valido.",
       "add_too_much": "Il server ti permette di avere al massimo %s personaggi nella tua squadra.",
-      "failed_to_add_avatar": "🇺🇸Failed to add avatar ID %s.",
+      "failed_to_add_avatar": "Impossibile aggiungere l'ID personaggio %s.",
       "failed_to_parse_index": "Impossibile analizzare l'indice: %s",
       "remove_too_much": "Non puoi rimuovere tutti i tuoi personaggi.",
       "ignore_index": "Indici ignorati: %s",
       "index_out_of_range": "L'indice che hai specificato non è compreso nell'intervallo.",
-      "failed_parse_avatar_id": "🇺🇸Failed to parse avatar ID: %s",
+      "failed_parse_avatar_id": "Analizzazione del personaggio ID: %s",
       "avatar_already_in_team": "🇺🇸Avatar is already in team.",
-      "avatar_not_found": "🇺🇸Avatar %s not found.",
+      "avatar_not_found": "Personaggio %s non trovato.",
       "description": "Modifica manualmente la tua squadra."
     },
     "teleportAll": {
       "success": "Teletrasportati tutti i giocatori nella tua posizione.",
-      "error": "Puoi usare questo comando solo in modalità MP.",
+      "error": "Puoi usare questo comando solo in modalità cooperativa.",
       "description": "Teletrasporta tutti i giocatori del tuo mondo nella tua posizione"
     },
     "teleport": {
       "invalid_position": "Posizione non valida.",
       "exists_error": "La scena specificata non esiste.",
-      "success": "Teletrasportato %s in %s, %s, %s nella scena %s.",
+      "success": "Teletrasportato %s a %s, %s, %s nella scena %s.",
       "description": "Cambia la posizione del giocatore"
     },
     "trialAvatarActivity": {
@@ -390,7 +390,7 @@
     "weather": {
       "success": "Imposta l'ID meteo su %s con il tipo di clima %s.",
       "status": "L'ID meteo attuale è %s con il tipo di clima %s.",
-      "description": "Cambia l'ID meteo e il tipo di clima. Gli ID meteo possono essere trovati in ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nTipi di clima: soleggiato, nuvoloso, pioggia, temporale, neve, nebbia"
+      "description": "Cambia l'ID meteo e il tipo di clima. Gli ID meteo possono essere trovati in ./Resources/ExcelBinOutput/WeatherExcelConfigData.json.\nTipi di clima: sunny (soleggiato), cloudy (nuvoloso), rain (pioggia), thunderstorm (temporale), snow (neve), mist (nebbia)"
     },
     "ban": {
       "success": "Successo.",
@@ -399,8 +399,8 @@
       "description": "Banna un giocatore"
     },
     "unlockall": {
-      "success": "Sbloccato tutti gli stati aperti per %s.",
-      "description": "Sblocca tutti gli stati aperti per un giocatore."
+      "success": "Sbloccato tutti gli open state per %s.",
+      "description": "Sblocca tutti gli open state per un giocatore."
     },
     "unban": {
       "success": "Successo.",
@@ -414,29 +414,29 @@
   "gacha": {
     "details": {
       "title": "Dettagli banner",
-      "available_five_stars": "Articoli disponibili a 5 stelle",
-      "available_four_stars": "Articoli disponibili a 4 stelle",
-      "available_three_stars": "Articoli a 3 stelle disponibili"
+      "available_five_stars": "Oggetti disponibili a 5 stelle",
+      "available_four_stars": "Oggetti disponibili a 4 stelle",
+      "available_three_stars": "Oggetti disponibili a 3 stelle"
     },
     "records": {
       "title": "Cronologia Gacha",
       "date": "Data",
-      "item": "oggetto"
+      "item": "Oggetto"
     }
   },
   "documentation": {
     "handbook": {
       "title": "Manuale GM",
       "title_commands": "Comandi",
-      "title_avatars": "🇺🇸Avatars",
+      "title_avatars": "Personaggi",
       "title_items": "Articoli",
       "title_scenes": "Scene",
       "title_monsters": "Mostri",
       "header_id": "ID",
       "header_command": "Comando",
       "header_description": "Descrizione",
-      "header_avatar": "🇺🇸Avatar",
-      "header_item": "Articolo",
+      "header_avatar": "Personaggio",
+      "header_item": "Oggetto",
       "header_scene": "Scena",
       "header_monster": "Mostro"
     },
