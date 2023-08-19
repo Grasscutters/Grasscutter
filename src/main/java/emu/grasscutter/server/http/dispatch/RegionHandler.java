@@ -1,12 +1,8 @@
 package emu.grasscutter.server.http.dispatch;
 
-import static emu.grasscutter.config.Configuration.*;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
+import com.google.gson.*;
 import com.google.protobuf.ByteString;
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.Grasscutter.ServerRunMode;
 import emu.grasscutter.net.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 import emu.grasscutter.net.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
@@ -14,21 +10,20 @@ import emu.grasscutter.net.proto.RegionInfoOuterClass.RegionInfo;
 import emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo;
-import emu.grasscutter.server.event.dispatch.QueryAllRegionsEvent;
-import emu.grasscutter.server.event.dispatch.QueryCurrentRegionEvent;
+import emu.grasscutter.server.event.dispatch.*;
 import emu.grasscutter.server.http.Router;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
-import emu.grasscutter.utils.Crypto;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+import org.slf4j.Logger;
+
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-import org.slf4j.Logger;
+
+import static emu.grasscutter.config.Configuration.*;
 
 /** Handles requests related to region queries. */
 public final class RegionHandler implements Router {
@@ -121,6 +116,7 @@ public final class RegionHandler implements Router {
         customConfig.addProperty("showexception", String.valueOf(showExceptions));
         customConfig.addProperty("regionConfig", "pm|fk|add");
         customConfig.addProperty("downloadMode", "0");
+        customConfig.addProperty("codeSwitch", "3628");
         customConfig.add("coverSwitch", hiddenIcons);
 
         // XOR the config with the key.
