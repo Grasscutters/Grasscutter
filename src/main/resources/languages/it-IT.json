@@ -298,7 +298,7 @@
       "title": "<titolo>",
       "message": "<messaggio>",
       "sender": "<mittente>",
-        "arguments": "<IDoggetto|Nomeoggetto|finish> [quantità] [livello]",
+      "arguments": "<IDoggetto|Nomeoggetto|finish> [quantità] [livello]",
       "error": "ERRORE: fase di costruzione %s non valida. Controlla lo stacktrace della console.",
       "description": "Invia posta all'utente specificato. L'utilizzo di questo comando cambia in base al suo stato di composizione"
     },
