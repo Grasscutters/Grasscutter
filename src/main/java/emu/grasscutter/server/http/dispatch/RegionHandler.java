@@ -176,7 +176,7 @@ public final class RegionHandler implements Router {
         Logger logger = Grasscutter.getLogger();
         if (ctx.queryParamMap().containsKey("version") && ctx.queryParamMap().containsKey("platform")) {
             String versionName = ctx.queryParam("version");
-            String versionCode = versionName.substring(0,8);
+            String versionCode = versionName.substring(0, 8);
             String platformName = ctx.queryParam("platform");
 
             // Determine the region list to use based on the version and platform.
