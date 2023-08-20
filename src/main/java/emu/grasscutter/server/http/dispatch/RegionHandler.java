@@ -176,13 +176,13 @@ public final class RegionHandler implements Router {
         Logger logger = Grasscutter.getLogger();
         if (ctx.queryParamMap().containsKey("version") && ctx.queryParamMap().containsKey("platform")) {
             String versionName = ctx.queryParam("version");
-            String versionCode = versionName.replaceAll("[/.0-9]*", "");
+            String versionCode = versionName.substring(0,8);
             String platformName = ctx.queryParam("platform");
 
             // Determine the region list to use based on the version and platform.
             if ("CNRELiOS".equals(versionCode)
                     || "CNRELWin".equals(versionCode)
-                    || "CNRELAndroid".equals(versionCode)) {
+                    || "CNRELAnd".equals(versionCode)) {
                 // Use the CN region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponseCN);
                 event.call();
@@ -191,7 +191,7 @@ public final class RegionHandler implements Router {
                 ctx.result(event.getRegionList());
             } else if ("OSRELiOS".equals(versionCode)
                     || "OSRELWin".equals(versionCode)
-                    || "OSRELAndroid".equals(versionCode)) {
+                    || "OSRELAnd".equals(versionCode)) {
                 // Use the OS region list.
                 QueryAllRegionsEvent event = new QueryAllRegionsEvent(regionListResponse);
                 event.call();
