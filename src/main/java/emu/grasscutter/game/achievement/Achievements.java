@@ -318,6 +318,18 @@ public class Achievements {
             this.player = player;
         }
 
+        this.registerNewAchievementsIfExist();
         this.player.sendPacket(new PacketAchievementAllDataNotify(this.player));
+    }
+
+    private void registerNewAchievementsIfExist() {
+        GameData.getAchievementDataMap().values().stream()
+            .filter(AchievementData::isUsed)
+            .filter(a -> !this.achievementList.containsKey(a.getId()))
+            .forEach(a -> {
+                Grasscutter.getLogger().info("Registering a new achievement (id: {})", a.getId());
+                this.achievementList.put(a.getId(), new Achievement(AchievementStatus.UNFINISHED, a.getId(), a.getProgress(), 0, 0));
+            });
+        this.save();
     }
 }
