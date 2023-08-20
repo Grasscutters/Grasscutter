@@ -37,7 +37,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
                                     .setGateserverPort(lr(GAME_INFO.accessPort, GAME_INFO.bindPort))
                                     .build();
 
-                    var regionCache =
+                    regionCache =
                             QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp.newBuilder()
                                     .setRegionInfo(serverRegion)
                                     .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
