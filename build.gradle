@@ -283,7 +283,7 @@ idea {
         // proto files and generated Java files are automatically added as
         // source dirs.
         // If you have additional sources, add them here:
-        sourceDirs += file('/proto/');
+        sourceDirs += file('/proto/')
     }
 }
 
@@ -354,31 +354,31 @@ tasks.register('generateHandbook') {
         println('NPM is not installed. Skipping handbook generation.')
     } else {
         // Check if the handbook resources are present.
-        if (!file('src/handbook/data/commands.json')) {
+        if (!file('src/handbook/data/commands.json').exists()) {
             println('Command data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/avatars.csv')) {
+        if (!file('src/handbook/data/avatars.csv').exists()) {
             println('Avatar data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/entities.csv')) {
+        if (!file('src/handbook/data/entities.csv').exists()) {
             println('Entity data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/items.csv')) {
+        if (!file('src/handbook/data/items.csv').exists()) {
             println('Item data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/mainquests.csv')) {
+        if (!file('src/handbook/data/mainquests.csv').exists()) {
             println('Main quest data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/quests.csv')) {
+        if (!file('src/handbook/data/quests.csv').exists()) {
             println('Quest data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/scenes.csv')) {
+        if (!file('src/handbook/data/scenes.csv').exists()) {
             println('Scene data was not found. Skipping handbook generation.')
             return
         }
