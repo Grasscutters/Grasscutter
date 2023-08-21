@@ -9,6 +9,7 @@ import emu.grasscutter.data.*;
 import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.*;
+import io.github.pixee.security.ObjectInputFilters;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.*;
 import java.io.*;
@@ -284,6 +285,7 @@ public final class Language {
         try (ObjectInputStream file =
                 new ObjectInputStream(
                         new BufferedInputStream(Files.newInputStream(TEXTMAP_CACHE_PATH), 0x100000))) {
+            ObjectInputFilters.enableObjectFilterIfUnprotected(file);
             final int fileVersion = file.readInt();
             if (fileVersion != TEXTMAP_CACHE_VERSION) throw new Exception("Invalid cache version");
             return (Int2ObjectMap<TextStrings>) file.readObject();
