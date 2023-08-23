@@ -1,0 +1,13 @@
+Revert "add assets folder back"
+
+This reverts commit a44eecad2b72c37ebe2a88608909a93786de3afc.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch development
+# Your branch is up to date with 'origin/development'.
+#
+# Changes to be committed:
+#	modified:   src/main/java/emu/grasscutter/utils/lang/Language.java
+#
