@@ -1,5 +1,6 @@
 package emu.grasscutter.data.excels.scene;
 
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import lombok.AccessLevel;
@@ -16,9 +17,10 @@ public final class MapLayerFloorData extends GameResource {
     int id;
     int PJDGAAAGOPO;
     int LCGNJBLMDHA;
-    long NDAGFKELEAP; // prob text map hash.
+    @SerializedName(value = "floorNameTextMapHash", alternate = {"NDAGFKELEAP"})
+    long floorNameTextMapHash;
     CKNDNKLCAHC CKNDNKLCAHC;
-    long BHEMLJCFHPI; // prob desc text map hash.
+    long BHEMLJCFHPI;
 
     public static class CKNDNKLCAHC {
         Unk_Type type;
