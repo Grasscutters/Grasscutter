@@ -4,6 +4,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.scene.SceneTagData;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.MapLayerInfoOuterClass;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.PlayerWorldSceneInfoListNotify;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.PlayerWorldSceneInfo;
 
@@ -36,6 +37,11 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
                     .addSceneTagIdList(153)    // 3.1 event
                     .addSceneTagIdList(1164)   // Desert Arena (XMSM_CWLTop)
                     .addSceneTagIdList(1166)   // Desert Pyramid (CWL_Trans_02)
+                    .setMapLayerInfo(MapLayerInfoOuterClass.MapLayerInfo.newBuilder()
+                        .addAllUnlockedMapLayerIdList(GameData.getMapLayerDataMap().keySet())    // MapLayer Ids
+                        .addAllUnlockedMapLayerFloorIdList(GameData.getMapLayerFloorDataMap().keySet())
+                        .addAllUnlockedMapLayerGroupIdList(GameData.getMapLayerGroupDataMap().keySet())        // will show MapLayer options when hovered over
+                        .build())    //map layer test
                     .build())
                 .addInfoList(PlayerWorldSceneInfo.newBuilder()
                     .setSceneId(4)
