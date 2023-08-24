@@ -437,7 +437,7 @@ public class ScriptLib {
      * Set the actions and triggers to designated group
      */
     public int RefreshGroup(LuaTable table) {
-        logger.debug("[LUA] Call RefreshGroup with {}",
+        logger.info("[LUA] Call RefreshGroup with {}",
             printTable(table));
         // Kill and Respawn?
         int groupId = table.get("group_id").toint();
@@ -1241,6 +1241,11 @@ public class ScriptLib {
         return dungeonManager.activateRespawnPoint(var1) ? 0:2;
     }
 
+    public int[] GetOpeningDungeonListByRosterId(int var1){
+        logger.warn("[LUA] Call unimplemented GetOpeningDungeonListByRosterId with {}", var1);
+        return new int[] {0,0};
+    }
+
     //TODO check
     public int SetWeatherAreaState(int var1, int var2){
         logger.warn("[LUA] Call unimplemented SetWeatherAreaState with {} {}", var1, var2);
@@ -1251,6 +1256,17 @@ public class ScriptLib {
     public int EnterWeatherArea(int var1){
         logger.warn("[LUA] Call unimplemented EnterWeatherArea with {}", var1);
         //TODO implement
+        return 0;
+    }
+
+    public int ModifyClimatePolygonParamTable(int var1, LuaTable var2){
+        logger.warn("[LUA] Call unimplemented ModifyClimatePolygonParamTable with {} {}", var1, printTable(var2));
+        //TODO implement
+        return 0;
+    }
+
+    public int SetEnvironmentEffectState(int var1, String var2, int[] var3, int[] var4){
+        logger.warn("[LUA] Call unimplemented SetEnvironmentEffectState with {} {} {} {}", var1, var2, var3, var4);
         return 0;
     }
 
@@ -1521,6 +1537,16 @@ public class ScriptLib {
         }
 
         return result;
+    }
+
+    public int GetRegionConfigId(LuaTable var1){
+        logger.warn("[LUA] Call untested GetRegionConfigId with {}", printTable(var1));
+        var EntityId = var1.get("region_eid").toint();
+        var entity = getSceneScriptManager().getScene().getScriptManager().getRegionById(EntityId);
+        if (entity == null){
+            return -1;
+        }
+        return entity.getConfigId();
     }
 
     public int GetGameHour(){

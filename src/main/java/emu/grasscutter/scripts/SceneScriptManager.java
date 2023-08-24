@@ -395,7 +395,11 @@ public class SceneScriptManager {
         var instance = cachedSceneGroupsInstances.getOrDefault(groupId, null);
         if (instance == null) {
             instance = DatabaseHelper.loadGroupInstance(groupId, scene.getWorld().getHost());
-            if (instance != null) cachedSceneGroupsInstances.put(groupId, instance);
+            if (instance != null){
+                cachedSceneGroupsInstances.put(groupId, instance);
+                this.cachedSceneGroupsInstances.get(groupId).setCached(false);
+                this.cachedSceneGroupsInstances.get(groupId).setLuaGroup(getGroupById(groupId));
+            }
         }
 
         return instance;
@@ -609,6 +613,8 @@ public class SceneScriptManager {
             var instance = new SceneGroupInstance(group, getScene().getWorld().getHost());
             this.sceneGroupsInstances.put(group.id, instance);
             this.cachedSceneGroupsInstances.put(group.id, instance);
+            this.cachedSceneGroupsInstances.get(group.id).setCached(false);
+            this.cachedSceneGroupsInstances.get(group.id).setLuaGroup(group);
             instance.save(); // Save the instance
         }
 
@@ -652,6 +658,7 @@ public class SceneScriptManager {
             entities.forEach(region::addEntity);
 
             for (var targetId : enterEntities) {
+                if (EntityIdType.toEntityType(targetId >> 24).getValue() == 19) continue;
                 Grasscutter.getLogger()
                         .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
                 this.callEvent(
@@ -669,6 +676,7 @@ public class SceneScriptManager {
             }
 
             for (var targetId : leaveEntities) {
+                if (EntityIdType.toEntityType(targetId >> 24).getValue() == 19) continue;
                 this.callEvent(
                         new ScriptArgs(region.getGroupId(), EventType.EVENT_LEAVE_REGION, region.getConfigId())
                                 .setEventSource(EntityIdType.toEntityType(targetId >> 24).getValue())
@@ -820,9 +828,10 @@ public class SceneScriptManager {
                                 .stream()
                                 .filter(
                                         t ->
-                                                t.getName().substring(13).equals(String.valueOf(params.param1))
-                                                        && (t.getSource().isEmpty()
-                                                                || t.getSource().equals(params.getEventSource())))
+                                                (t.getName().length() <= 12
+                                                        || t.getName().substring(13).equals(String.valueOf(params.param1)))
+                                                                && (t.getSource().isEmpty()
+                                                                        || t.getSource().equals(params.getEventSource())))
                                 .collect(Collectors.toSet());
                         default -> this.getTriggersByEvent(eventType).stream()
                                 .filter(
