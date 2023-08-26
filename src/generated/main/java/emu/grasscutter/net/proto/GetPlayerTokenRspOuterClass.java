@@ -76,10 +76,10 @@ public final class GetPlayerTokenRspOuterClass {
     int getPlatformType();
 
     /**
-     * <code>uint32 EMFDHANIAHH = 1241;</code>
-     * @return The eMFDHANIAHH.
+     * <code>uint32 reg_platform = 1241;</code>
+     * @return The regPlatform.
      */
-    int getEMFDHANIAHH();
+    int getRegPlatform();
 
     /**
      * <code>string account_uid = 3;</code>
@@ -504,7 +504,7 @@ public final class GetPlayerTokenRspOuterClass {
             }
             case 9928: {
 
-              eMFDHANIAHH_ = input.readUInt32();
+              regPlatform_ = input.readUInt32();
               break;
             }
             case 10336: {
@@ -710,15 +710,15 @@ public final class GetPlayerTokenRspOuterClass {
       return platformType_;
     }
 
-    public static final int EMFDHANIAHH_FIELD_NUMBER = 1241;
-    private int eMFDHANIAHH_;
+    public static final int REG_PLATFORM_FIELD_NUMBER = 1241;
+    private int regPlatform_;
     /**
-     * <code>uint32 EMFDHANIAHH = 1241;</code>
-     * @return The eMFDHANIAHH.
+     * <code>uint32 reg_platform = 1241;</code>
+     * @return The regPlatform.
      */
     @java.lang.Override
-    public int getEMFDHANIAHH() {
-      return eMFDHANIAHH_;
+    public int getRegPlatform() {
+      return regPlatform_;
     }
 
     public static final int ACCOUNT_UID_FIELD_NUMBER = 3;
@@ -1357,8 +1357,8 @@ public final class GetPlayerTokenRspOuterClass {
       if (stopServer_ != null) {
         output.writeMessage(875, getStopServer());
       }
-      if (eMFDHANIAHH_ != 0) {
-        output.writeUInt32(1241, eMFDHANIAHH_);
+      if (regPlatform_ != 0) {
+        output.writeUInt32(1241, regPlatform_);
       }
       if (pELBMOHDKHJ_ != false) {
         output.writeBool(1292, pELBMOHDKHJ_);
@@ -1487,9 +1487,9 @@ public final class GetPlayerTokenRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(875, getStopServer());
       }
-      if (eMFDHANIAHH_ != 0) {
+      if (regPlatform_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1241, eMFDHANIAHH_);
+          .computeUInt32Size(1241, regPlatform_);
       }
       if (pELBMOHDKHJ_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1555,8 +1555,8 @@ public final class GetPlayerTokenRspOuterClass {
           != other.getChannelId()) return false;
       if (getPlatformType()
           != other.getPlatformType()) return false;
-      if (getEMFDHANIAHH()
-          != other.getEMFDHANIAHH()) return false;
+      if (getRegPlatform()
+          != other.getRegPlatform()) return false;
       if (!getAccountUid()
           .equals(other.getAccountUid())) return false;
       if (getUid()
@@ -1635,8 +1635,8 @@ public final class GetPlayerTokenRspOuterClass {
       hash = (53 * hash) + getChannelId();
       hash = (37 * hash) + PLATFORM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlatformType();
-      hash = (37 * hash) + EMFDHANIAHH_FIELD_NUMBER;
-      hash = (53 * hash) + getEMFDHANIAHH();
+      hash = (37 * hash) + REG_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getRegPlatform();
       hash = (37 * hash) + ACCOUNT_UID_FIELD_NUMBER;
       hash = (53 * hash) + getAccountUid().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
@@ -1845,7 +1845,7 @@ public final class GetPlayerTokenRspOuterClass {
 
         platformType_ = 0;
 
-        eMFDHANIAHH_ = 0;
+        regPlatform_ = 0;
 
         accountUid_ = "";
 
@@ -1933,7 +1933,7 @@ public final class GetPlayerTokenRspOuterClass {
         }
         result.channelId_ = channelId_;
         result.platformType_ = platformType_;
-        result.eMFDHANIAHH_ = eMFDHANIAHH_;
+        result.regPlatform_ = regPlatform_;
         result.accountUid_ = accountUid_;
         result.uid_ = uid_;
         result.tag_ = tag_;
@@ -2032,8 +2032,8 @@ public final class GetPlayerTokenRspOuterClass {
         if (other.getPlatformType() != 0) {
           setPlatformType(other.getPlatformType());
         }
-        if (other.getEMFDHANIAHH() != 0) {
-          setEMFDHANIAHH(other.getEMFDHANIAHH());
+        if (other.getRegPlatform() != 0) {
+          setRegPlatform(other.getRegPlatform());
         }
         if (!other.getAccountUid().isEmpty()) {
           accountUid_ = other.accountUid_;
@@ -2504,33 +2504,33 @@ public final class GetPlayerTokenRspOuterClass {
         return this;
       }
 
-      private int eMFDHANIAHH_ ;
+      private int regPlatform_ ;
       /**
-       * <code>uint32 EMFDHANIAHH = 1241;</code>
-       * @return The eMFDHANIAHH.
+       * <code>uint32 reg_platform = 1241;</code>
+       * @return The regPlatform.
        */
       @java.lang.Override
-      public int getEMFDHANIAHH() {
-        return eMFDHANIAHH_;
+      public int getRegPlatform() {
+        return regPlatform_;
       }
       /**
-       * <code>uint32 EMFDHANIAHH = 1241;</code>
-       * @param value The eMFDHANIAHH to set.
+       * <code>uint32 reg_platform = 1241;</code>
+       * @param value The regPlatform to set.
        * @return This builder for chaining.
        */
-      public Builder setEMFDHANIAHH(int value) {
+      public Builder setRegPlatform(int value) {
         
-        eMFDHANIAHH_ = value;
+        regPlatform_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 EMFDHANIAHH = 1241;</code>
+       * <code>uint32 reg_platform = 1241;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEMFDHANIAHH() {
+      public Builder clearRegPlatform() {
         
-        eMFDHANIAHH_ = 0;
+        regPlatform_ = 0;
         onChanged();
         return this;
       }
@@ -3850,26 +3850,26 @@ public final class GetPlayerTokenRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GetPlayerTokenRsp.proto\032\024StopServerInf" +
-      "o.proto\"\341\005\n\021GetPlayerTokenRsp\022\024\n\013PELBMOH" +
+      "o.proto\"\342\005\n\021GetPlayerTokenRsp\022\024\n\013PELBMOH" +
       "DKHJ\030\214\n \001(\010\022\024\n\013ILGBPPMFHIF\030\252\017 \001(\010\022\027\n\017sec" +
       "ret_key_seed\030\r \001(\004\022\"\n\031client_version_ran" +
       "dom_key\030\246\005 \001(\t\022%\n\013stop_server\030\353\006 \001(\0132\017.S" +
       "topServerInfo\022\023\n\nchannel_id\030\203\002 \001(\r\022\025\n\rpl" +
-      "atform_type\030\005 \001(\r\022\024\n\013EMFDHANIAHH\030\331\t \001(\r\022" +
-      "\023\n\013account_uid\030\003 \001(\t\022\013\n\003uid\030\007 \001(\r\022\014\n\003tag" +
-      "\030\244\014 \001(\r\022\021\n\010birthday\030\235\013 \001(\t\022\017\n\006key_id\030\214\r " +
-      "\001(\r\022\017\n\007retcode\030\004 \001(\005\022\020\n\010is_guest\030\002 \001(\010\022\"" +
-      "\n\031finish_collection_id_list\030\303\003 \003(\r\022\030\n\017se" +
-      "rver_rand_key\030\205\004 \001(\t\022\033\n\023security_cmd_buf" +
-      "fer\030\017 \001(\014\022\013\n\003msg\030\014 \001(\t\022\034\n\024is_proficient_" +
-      "player\030\010 \001(\010\022\r\n\005token\030\013 \001(\t\022\r\n\004sign\030\212\003 \001" +
-      "(\t\022\025\n\014account_type\030\261\014 \001(\r\022\026\n\016extra_bin_d" +
-      "ata\030\001 \001(\014\022\017\n\006psn_id\030\376\r \001(\t\022\026\n\016sub_channe" +
-      "l_id\030\016 \001(\r\022\022\n\nsecret_key\030\t \001(\t\022\026\n\rclient" +
-      "_ip_str\030\201\017 \001(\t\022\027\n\017blackUidEndTime\030\n \001(\r\022" +
-      "\023\n\013KCFIGJAPNIB\030\006 \001(\r\022\025\n\014country_code\030\204\013 " +
-      "\001(\t\022\026\n\rcloudClientIp\030\374\003 \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "atform_type\030\005 \001(\r\022\025\n\014reg_platform\030\331\t \001(\r" +
+      "\022\023\n\013account_uid\030\003 \001(\t\022\013\n\003uid\030\007 \001(\r\022\014\n\003ta" +
+      "g\030\244\014 \001(\r\022\021\n\010birthday\030\235\013 \001(\t\022\017\n\006key_id\030\214\r" +
+      " \001(\r\022\017\n\007retcode\030\004 \001(\005\022\020\n\010is_guest\030\002 \001(\010\022" +
+      "\"\n\031finish_collection_id_list\030\303\003 \003(\r\022\030\n\017s" +
+      "erver_rand_key\030\205\004 \001(\t\022\033\n\023security_cmd_bu" +
+      "ffer\030\017 \001(\014\022\013\n\003msg\030\014 \001(\t\022\034\n\024is_proficient" +
+      "_player\030\010 \001(\010\022\r\n\005token\030\013 \001(\t\022\r\n\004sign\030\212\003 " +
+      "\001(\t\022\025\n\014account_type\030\261\014 \001(\r\022\026\n\016extra_bin_" +
+      "data\030\001 \001(\014\022\017\n\006psn_id\030\376\r \001(\t\022\026\n\016sub_chann" +
+      "el_id\030\016 \001(\r\022\022\n\nsecret_key\030\t \001(\t\022\026\n\rclien" +
+      "t_ip_str\030\201\017 \001(\t\022\027\n\017blackUidEndTime\030\n \001(\r" +
+      "\022\023\n\013KCFIGJAPNIB\030\006 \001(\r\022\025\n\014country_code\030\204\013" +
+      " \001(\t\022\026\n\rcloudClientIp\030\374\003 \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3881,7 +3881,7 @@ public final class GetPlayerTokenRspOuterClass {
     internal_static_GetPlayerTokenRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetPlayerTokenRsp_descriptor,
-        new java.lang.String[] { "PELBMOHDKHJ", "ILGBPPMFHIF", "SecretKeySeed", "ClientVersionRandomKey", "StopServer", "ChannelId", "PlatformType", "EMFDHANIAHH", "AccountUid", "Uid", "Tag", "Birthday", "KeyId", "Retcode", "IsGuest", "FinishCollectionIdList", "ServerRandKey", "SecurityCmdBuffer", "Msg", "IsProficientPlayer", "Token", "Sign", "AccountType", "ExtraBinData", "PsnId", "SubChannelId", "SecretKey", "ClientIpStr", "BlackUidEndTime", "KCFIGJAPNIB", "CountryCode", "CloudClientIp", });
+        new java.lang.String[] { "PELBMOHDKHJ", "ILGBPPMFHIF", "SecretKeySeed", "ClientVersionRandomKey", "StopServer", "ChannelId", "PlatformType", "RegPlatform", "AccountUid", "Uid", "Tag", "Birthday", "KeyId", "Retcode", "IsGuest", "FinishCollectionIdList", "ServerRandKey", "SecurityCmdBuffer", "Msg", "IsProficientPlayer", "Token", "Sign", "AccountType", "ExtraBinData", "PsnId", "SubChannelId", "SecretKey", "ClientIpStr", "BlackUidEndTime", "KCFIGJAPNIB", "CountryCode", "CloudClientIp", });
     emu.grasscutter.net.proto.StopServerInfoOuterClass.getDescriptor();
   }
 

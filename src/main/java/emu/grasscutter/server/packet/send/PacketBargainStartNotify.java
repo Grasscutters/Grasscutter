@@ -8,8 +8,9 @@ public final class PacketBargainStartNotify extends BasePacket {
     public PacketBargainStartNotify(BargainRecord record) {
         super(PacketOpcodes.BargainStartNotify);
 
-        this.setData(BargainStartNotify.newBuilder()
-            .setBargainId(record.getBargainId())
-            .setSnapshot(record.toSnapshot()));
+        this.setData(
+                BargainStartNotify.newBuilder()
+                        .setBargainId(record.getBargainId())
+                        .setSnapshot(record.toSnapshot()));
     }
 }

@@ -6,7 +6,7 @@ public final class PacketOpcodes {
 
     // Opcodes
     public static final int ACCKLIOPBHN = 205;
-    public static final int ACDCLDJFDFK = 26672;
+    public static final int PlayerEnterMapLayerNotify = 26672;
     public static final int ACOPFPFIJHN = 6465;
     public static final int AEHOGBMFIDK = 21196;
     public static final int AGBOEIBCIHC = 1992;
@@ -185,7 +185,7 @@ public final class PacketOpcodes {
     public static final int BKNAMDDEIKH = 1557;
     public static final int BKOHLDCHKBL = 20475;
     public static final int BLDHOHDIBHB = 27514;
-    public static final int BMODMHEPOFF = 2225;
+    public static final int PlayerEnterChildMapLayerNotify = 2225;
     public static final int BMODNHIFDPI = 7195;
     public static final int BMPHGPCILIK = 22933;
     public static final int BOFOFKKOBNO = 273;

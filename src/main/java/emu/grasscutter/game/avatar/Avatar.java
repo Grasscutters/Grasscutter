@@ -828,11 +828,11 @@ public class Avatar {
                 switch (entry.getExtraTalentIndex()) {
                     case 9 -> this.skillDepot.getEnergySkill(); // Ult skill
                     case 2 -> (this.skillDepot.getSkills().size() >= 2)
-                        ? this.skillDepot.getSkills().get(1)
-                        : 0; // E skill
+                            ? this.skillDepot.getSkills().get(1)
+                            : 0; // E skill
                     case 1 -> (this.skillDepot.getSkills().size() >= 1)
-                        ? this.skillDepot.getSkills().get(0)
-                        : 0; // Normal Attack (Liney)
+                            ? this.skillDepot.getSkills().get(0)
+                            : 0; // Normal Attack (Liney)
                     default -> 0;
                 };
         // Sanity check

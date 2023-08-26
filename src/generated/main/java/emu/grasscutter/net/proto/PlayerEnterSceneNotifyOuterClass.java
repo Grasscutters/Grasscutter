@@ -31,19 +31,19 @@ public final class PlayerEnterSceneNotifyOuterClass {
         getSceneTransactionBytes();
 
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-     * @return Whether the dCGPONECHMM field is set.
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
+     * @return Whether the mapLayerInfo field is set.
      */
-    boolean hasDCGPONECHMM();
+    boolean hasMapLayerInfo();
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-     * @return The dCGPONECHMM.
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
+     * @return The mapLayerInfo.
      */
-    emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH getDCGPONECHMM();
+    emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo getMapLayerInfo();
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
      */
-    emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder getDCGPONECHMMOrBuilder();
+    emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder getMapLayerInfoOrBuilder();
 
     /**
      * <code>bool is_skip_ui = 3;</code>
@@ -339,14 +339,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
               break;
             }
             case 7178: {
-              emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder subBuilder = null;
-              if (dCGPONECHMM_ != null) {
-                subBuilder = dCGPONECHMM_.toBuilder();
+              emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder subBuilder = null;
+              if (mapLayerInfo_ != null) {
+                subBuilder = mapLayerInfo_.toBuilder();
               }
-              dCGPONECHMM_ = input.readMessage(emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.parser(), extensionRegistry);
+              mapLayerInfo_ = input.readMessage(emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(dCGPONECHMM_);
-                dCGPONECHMM_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(mapLayerInfo_);
+                mapLayerInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -445,30 +445,30 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
     }
 
-    public static final int DCGPONECHMM_FIELD_NUMBER = 897;
-    private emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH dCGPONECHMM_;
+    public static final int MAP_LAYER_INFO_FIELD_NUMBER = 897;
+    private emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo mapLayerInfo_;
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-     * @return Whether the dCGPONECHMM field is set.
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
+     * @return Whether the mapLayerInfo field is set.
      */
     @java.lang.Override
-    public boolean hasDCGPONECHMM() {
-      return dCGPONECHMM_ != null;
+    public boolean hasMapLayerInfo() {
+      return mapLayerInfo_ != null;
     }
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-     * @return The dCGPONECHMM.
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
+     * @return The mapLayerInfo.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH getDCGPONECHMM() {
-      return dCGPONECHMM_ == null ? emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.getDefaultInstance() : dCGPONECHMM_;
+    public emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo getMapLayerInfo() {
+      return mapLayerInfo_ == null ? emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.getDefaultInstance() : mapLayerInfo_;
     }
     /**
-     * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+     * <code>.MapLayerInfo map_layer_info = 897;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder getDCGPONECHMMOrBuilder() {
-      return getDCGPONECHMM();
+    public emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder getMapLayerInfoOrBuilder() {
+      return getMapLayerInfo();
     }
 
     public static final int IS_SKIP_UI_FIELD_NUMBER = 3;
@@ -774,8 +774,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
       if (enterReason_ != 0) {
         output.writeUInt32(670, enterReason_);
       }
-      if (dCGPONECHMM_ != null) {
-        output.writeMessage(897, getDCGPONECHMM());
+      if (mapLayerInfo_ != null) {
+        output.writeMessage(897, getMapLayerInfo());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1319, sceneTransaction_);
@@ -864,9 +864,9 @@ public final class PlayerEnterSceneNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(670, enterReason_);
       }
-      if (dCGPONECHMM_ != null) {
+      if (mapLayerInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(897, getDCGPONECHMM());
+          .computeMessageSize(897, getMapLayerInfo());
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sceneTransaction_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1319, sceneTransaction_);
@@ -900,10 +900,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
       if (!getSceneTransaction()
           .equals(other.getSceneTransaction())) return false;
-      if (hasDCGPONECHMM() != other.hasDCGPONECHMM()) return false;
-      if (hasDCGPONECHMM()) {
-        if (!getDCGPONECHMM()
-            .equals(other.getDCGPONECHMM())) return false;
+      if (hasMapLayerInfo() != other.hasMapLayerInfo()) return false;
+      if (hasMapLayerInfo()) {
+        if (!getMapLayerInfo()
+            .equals(other.getMapLayerInfo())) return false;
       }
       if (getIsSkipUi()
           != other.getIsSkipUi()) return false;
@@ -957,9 +957,9 @@ public final class PlayerEnterSceneNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SCENE_TRANSACTION_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTransaction().hashCode();
-      if (hasDCGPONECHMM()) {
-        hash = (37 * hash) + DCGPONECHMM_FIELD_NUMBER;
-        hash = (53 * hash) + getDCGPONECHMM().hashCode();
+      if (hasMapLayerInfo()) {
+        hash = (37 * hash) + MAP_LAYER_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getMapLayerInfo().hashCode();
       }
       hash = (37 * hash) + IS_SKIP_UI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -1144,11 +1144,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
         super.clear();
         sceneTransaction_ = "";
 
-        if (dCGPONECHMMBuilder_ == null) {
-          dCGPONECHMM_ = null;
+        if (mapLayerInfoBuilder_ == null) {
+          mapLayerInfo_ = null;
         } else {
-          dCGPONECHMM_ = null;
-          dCGPONECHMMBuilder_ = null;
+          mapLayerInfo_ = null;
+          mapLayerInfoBuilder_ = null;
         }
         isSkipUi_ = false;
 
@@ -1220,10 +1220,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
         emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify result = new emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify(this);
         int from_bitField0_ = bitField0_;
         result.sceneTransaction_ = sceneTransaction_;
-        if (dCGPONECHMMBuilder_ == null) {
-          result.dCGPONECHMM_ = dCGPONECHMM_;
+        if (mapLayerInfoBuilder_ == null) {
+          result.mapLayerInfo_ = mapLayerInfo_;
         } else {
-          result.dCGPONECHMM_ = dCGPONECHMMBuilder_.build();
+          result.mapLayerInfo_ = mapLayerInfoBuilder_.build();
         }
         result.isSkipUi_ = isSkipUi_;
         result.prevSceneId_ = prevSceneId_;
@@ -1306,8 +1306,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
           sceneTransaction_ = other.sceneTransaction_;
           onChanged();
         }
-        if (other.hasDCGPONECHMM()) {
-          mergeDCGPONECHMM(other.getDCGPONECHMM());
+        if (other.hasMapLayerInfo()) {
+          mergeMapLayerInfo(other.getMapLayerInfo());
         }
         if (other.getIsSkipUi() != false) {
           setIsSkipUi(other.getIsSkipUi());
@@ -1473,123 +1473,123 @@ public final class PlayerEnterSceneNotifyOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH dCGPONECHMM_;
+      private emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo mapLayerInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder> dCGPONECHMMBuilder_;
+          emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder> mapLayerInfoBuilder_;
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-       * @return Whether the dCGPONECHMM field is set.
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
+       * @return Whether the mapLayerInfo field is set.
        */
-      public boolean hasDCGPONECHMM() {
-        return dCGPONECHMMBuilder_ != null || dCGPONECHMM_ != null;
+      public boolean hasMapLayerInfo() {
+        return mapLayerInfoBuilder_ != null || mapLayerInfo_ != null;
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
-       * @return The dCGPONECHMM.
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
+       * @return The mapLayerInfo.
        */
-      public emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH getDCGPONECHMM() {
-        if (dCGPONECHMMBuilder_ == null) {
-          return dCGPONECHMM_ == null ? emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.getDefaultInstance() : dCGPONECHMM_;
+      public emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo getMapLayerInfo() {
+        if (mapLayerInfoBuilder_ == null) {
+          return mapLayerInfo_ == null ? emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.getDefaultInstance() : mapLayerInfo_;
         } else {
-          return dCGPONECHMMBuilder_.getMessage();
+          return mapLayerInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public Builder setDCGPONECHMM(emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH value) {
-        if (dCGPONECHMMBuilder_ == null) {
+      public Builder setMapLayerInfo(emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo value) {
+        if (mapLayerInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          dCGPONECHMM_ = value;
+          mapLayerInfo_ = value;
           onChanged();
         } else {
-          dCGPONECHMMBuilder_.setMessage(value);
+          mapLayerInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public Builder setDCGPONECHMM(
-          emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder builderForValue) {
-        if (dCGPONECHMMBuilder_ == null) {
-          dCGPONECHMM_ = builderForValue.build();
+      public Builder setMapLayerInfo(
+          emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder builderForValue) {
+        if (mapLayerInfoBuilder_ == null) {
+          mapLayerInfo_ = builderForValue.build();
           onChanged();
         } else {
-          dCGPONECHMMBuilder_.setMessage(builderForValue.build());
+          mapLayerInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public Builder mergeDCGPONECHMM(emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH value) {
-        if (dCGPONECHMMBuilder_ == null) {
-          if (dCGPONECHMM_ != null) {
-            dCGPONECHMM_ =
-              emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.newBuilder(dCGPONECHMM_).mergeFrom(value).buildPartial();
+      public Builder mergeMapLayerInfo(emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo value) {
+        if (mapLayerInfoBuilder_ == null) {
+          if (mapLayerInfo_ != null) {
+            mapLayerInfo_ =
+              emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.newBuilder(mapLayerInfo_).mergeFrom(value).buildPartial();
           } else {
-            dCGPONECHMM_ = value;
+            mapLayerInfo_ = value;
           }
           onChanged();
         } else {
-          dCGPONECHMMBuilder_.mergeFrom(value);
+          mapLayerInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public Builder clearDCGPONECHMM() {
-        if (dCGPONECHMMBuilder_ == null) {
-          dCGPONECHMM_ = null;
+      public Builder clearMapLayerInfo() {
+        if (mapLayerInfoBuilder_ == null) {
+          mapLayerInfo_ = null;
           onChanged();
         } else {
-          dCGPONECHMM_ = null;
-          dCGPONECHMMBuilder_ = null;
+          mapLayerInfo_ = null;
+          mapLayerInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder getDCGPONECHMMBuilder() {
+      public emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder getMapLayerInfoBuilder() {
         
         onChanged();
-        return getDCGPONECHMMFieldBuilder().getBuilder();
+        return getMapLayerInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
-      public emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder getDCGPONECHMMOrBuilder() {
-        if (dCGPONECHMMBuilder_ != null) {
-          return dCGPONECHMMBuilder_.getMessageOrBuilder();
+      public emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder getMapLayerInfoOrBuilder() {
+        if (mapLayerInfoBuilder_ != null) {
+          return mapLayerInfoBuilder_.getMessageOrBuilder();
         } else {
-          return dCGPONECHMM_ == null ?
-              emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.getDefaultInstance() : dCGPONECHMM_;
+          return mapLayerInfo_ == null ?
+              emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.getDefaultInstance() : mapLayerInfo_;
         }
       }
       /**
-       * <code>.NHFPBBLCHKH DCGPONECHMM = 897;</code>
+       * <code>.MapLayerInfo map_layer_info = 897;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder> 
-          getDCGPONECHMMFieldBuilder() {
-        if (dCGPONECHMMBuilder_ == null) {
-          dCGPONECHMMBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKH.Builder, emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.NHFPBBLCHKHOrBuilder>(
-                  getDCGPONECHMM(),
+          emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder> 
+          getMapLayerInfoFieldBuilder() {
+        if (mapLayerInfoBuilder_ == null) {
+          mapLayerInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfo.Builder, emu.grasscutter.net.proto.MapLayerInfoOuterClass.MapLayerInfoOrBuilder>(
+                  getMapLayerInfo(),
                   getParentForChildren(),
                   isClean());
-          dCGPONECHMM_ = null;
+          mapLayerInfo_ = null;
         }
-        return dCGPONECHMMBuilder_;
+        return mapLayerInfoBuilder_;
       }
 
       private boolean isSkipUi_ ;
@@ -2432,27 +2432,27 @@ public final class PlayerEnterSceneNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034PlayerEnterSceneNotify.proto\032\021NHFPBBLC" +
-      "HKH.proto\032\014Vector.proto\032\017EnterType.proto" +
-      "\"\360\003\n\026PlayerEnterSceneNotify\022\032\n\021scene_tra" +
-      "nsaction\030\247\n \001(\t\022\"\n\013DCGPONECHMM\030\201\007 \001(\0132\014." +
-      "NHFPBBLCHKH\022\022\n\nis_skip_ui\030\003 \001(\010\022\025\n\rprev_" +
-      "scene_id\030\t \001(\r\022#\n\032is_first_login_enter_s" +
-      "cene\030\244\001 \001(\010\022\022\n\ntarget_uid\030\001 \001(\r\022\031\n\021scene" +
-      "_tag_id_list\030\r \003(\r\022\031\n\010prev_pos\030\014 \001(\0132\007.V" +
-      "ector\022\031\n\021enter_scene_token\030\007 \001(\r\022\023\n\nworl" +
-      "d_type\030\257\n \001(\r\022\030\n\004type\030\006 \001(\0162\n.EnterType\022" +
-      "\025\n\014enter_reason\030\236\005 \001(\r\022\024\n\003pos\030\016 \001(\0132\007.Ve" +
-      "ctor\022\030\n\020scene_begin_time\030\005 \001(\004\022\024\n\013LAJGLC" +
-      "IFKCP\030\234\016 \001(\r\022\023\n\013world_level\030\004 \001(\r\022\022\n\ndun" +
-      "geon_id\030\013 \001(\r\022\020\n\010scene_id\030\n \001(\r\022\032\n\021creat" +
-      "e_player_uid\030\324\r \001(\rB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "\n\034PlayerEnterSceneNotify.proto\032\022MapLayer" +
+      "Info.proto\032\014Vector.proto\032\017EnterType.prot" +
+      "o\"\364\003\n\026PlayerEnterSceneNotify\022\032\n\021scene_tr" +
+      "ansaction\030\247\n \001(\t\022&\n\016map_layer_info\030\201\007 \001(" +
+      "\0132\r.MapLayerInfo\022\022\n\nis_skip_ui\030\003 \001(\010\022\025\n\r" +
+      "prev_scene_id\030\t \001(\r\022#\n\032is_first_login_en" +
+      "ter_scene\030\244\001 \001(\010\022\022\n\ntarget_uid\030\001 \001(\r\022\031\n\021" +
+      "scene_tag_id_list\030\r \003(\r\022\031\n\010prev_pos\030\014 \001(" +
+      "\0132\007.Vector\022\031\n\021enter_scene_token\030\007 \001(\r\022\023\n" +
+      "\nworld_type\030\257\n \001(\r\022\030\n\004type\030\006 \001(\0162\n.Enter" +
+      "Type\022\025\n\014enter_reason\030\236\005 \001(\r\022\024\n\003pos\030\016 \001(\013" +
+      "2\007.Vector\022\030\n\020scene_begin_time\030\005 \001(\004\022\024\n\013L" +
+      "AJGLCIFKCP\030\234\016 \001(\r\022\023\n\013world_level\030\004 \001(\r\022\022" +
+      "\n\ndungeon_id\030\013 \001(\r\022\020\n\010scene_id\030\n \001(\r\022\032\n\021" +
+      "create_player_uid\030\324\r \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MapLayerInfoOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.EnterTypeOuterClass.getDescriptor(),
         });
@@ -2461,8 +2461,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
     internal_static_PlayerEnterSceneNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerEnterSceneNotify_descriptor,
-        new java.lang.String[] { "SceneTransaction", "DCGPONECHMM", "IsSkipUi", "PrevSceneId", "IsFirstLoginEnterScene", "TargetUid", "SceneTagIdList", "PrevPos", "EnterSceneToken", "WorldType", "Type", "EnterReason", "Pos", "SceneBeginTime", "LAJGLCIFKCP", "WorldLevel", "DungeonId", "SceneId", "CreatePlayerUid", });
-    emu.grasscutter.net.proto.NHFPBBLCHKHOuterClass.getDescriptor();
+        new java.lang.String[] { "SceneTransaction", "MapLayerInfo", "IsSkipUi", "PrevSceneId", "IsFirstLoginEnterScene", "TargetUid", "SceneTagIdList", "PrevPos", "EnterSceneToken", "WorldType", "Type", "EnterReason", "Pos", "SceneBeginTime", "LAJGLCIFKCP", "WorldLevel", "DungeonId", "SceneId", "CreatePlayerUid", });
+    emu.grasscutter.net.proto.MapLayerInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EnterTypeOuterClass.getDescriptor();
   }

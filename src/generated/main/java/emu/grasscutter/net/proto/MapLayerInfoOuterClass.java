@@ -70,10 +70,6 @@ public final class MapLayerInfoOuterClass {
     int getUnlockedMapLayerGroupIdList(int index);
   }
   /**
-   * <pre>
-   *obf NHFPBBLCHKH
-   * </pre>
-   *
    * Protobuf type {@code MapLayerInfo}
    */
   public static final class MapLayerInfo extends
@@ -537,10 +533,6 @@ public final class MapLayerInfoOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     *obf NHFPBBLCHKH
-     * </pre>
-     *
      * Protobuf type {@code MapLayerInfo}
      */
     public static final class Builder extends

@@ -1,16 +1,15 @@
 package emu.grasscutter.server.game;
 
+import static emu.grasscutter.config.Configuration.GAME_INFO;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.Grasscutter.ServerDebugMode;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.*;
-import org.reflections.Reflections;
-
 import java.util.Set;
-
-import static emu.grasscutter.config.Configuration.GAME_INFO;
+import org.reflections.Reflections;
 
 @SuppressWarnings("unchecked")
 public class GameServerPacketHandler {

@@ -3,20 +3,16 @@ package emu.grasscutter.game.dungeons.challenge;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.dungeons.challenge.trigger.ChallengeTrigger;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
-import emu.grasscutter.game.entity.EntityGadget;
-import emu.grasscutter.game.entity.EntityMonster;
+import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.scripts.constants.EventType;
-import emu.grasscutter.scripts.data.SceneGroup;
-import emu.grasscutter.scripts.data.SceneTrigger;
-import emu.grasscutter.scripts.data.ScriptArgs;
-import emu.grasscutter.server.packet.send.PacketDungeonChallengeBeginNotify;
-import emu.grasscutter.server.packet.send.PacketDungeonChallengeFinishNotify;
+import emu.grasscutter.scripts.data.*;
+import emu.grasscutter.server.packet.send.*;
+import lombok.*;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Setter
@@ -81,7 +77,7 @@ public class WorldChallenge {
 
     public void start() {
         if (inProgress()) {
-            Grasscutter.getLogger().info("Could not start a in progress challenge.");
+            Grasscutter.getLogger().debug("Could not start a in progress challenge.");
             return;
         }
         this.progress = true;

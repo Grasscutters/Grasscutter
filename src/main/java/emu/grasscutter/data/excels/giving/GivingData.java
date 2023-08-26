@@ -4,9 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.BagTab;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -14,6 +13,7 @@ import java.util.List;
 public final class GivingData extends GameResource {
     @SerializedName(value = "id", alternate = "Id")
     private int id;
+
     private int talkId;
     private int mistakeTalkId;
 
@@ -40,7 +40,9 @@ public final class GivingData extends GameResource {
     }
 
     public enum GiveType {
-        @SerializedName("GIVING_TYPE_QUEST") QUEST,
-        @SerializedName("GIVING_TYPE_GROUP") GROUP
+        @SerializedName("GIVING_TYPE_QUEST")
+        QUEST,
+        @SerializedName("GIVING_TYPE_GROUP")
+        GROUP
     }
 }

@@ -8,10 +8,8 @@ import emu.grasscutter.server.packet.send.PacketGetAllActivatedBargainDataRsp;
 public final class HandlerGetAllActivatedBargainDataReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) {
-        session.send(new PacketGetAllActivatedBargainDataRsp(
-            session.getPlayer()
-                .getPlayerProgress()
-                .getBargains()
-                .values()));
+        session.send(
+                new PacketGetAllActivatedBargainDataRsp(
+                        session.getPlayer().getPlayerProgress().getBargains().values()));
     }
 }

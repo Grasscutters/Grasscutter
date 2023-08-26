@@ -3,9 +3,8 @@ package emu.grasscutter.data.excels.scene;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
-import lombok.Getter;
-
 import java.util.List;
+import lombok.Getter;
 
 @ResourceType(name = "SceneTagConfigData.json")
 @Getter
@@ -15,6 +14,7 @@ public final class SceneTagData extends GameResource {
 
     @SerializedName("DJCOAOBDIHP")
     private boolean idk1;
+
     @SerializedName("LOLNNMPKHIB")
     private boolean idk2;
 

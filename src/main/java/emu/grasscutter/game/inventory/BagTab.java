@@ -1,10 +1,9 @@
 package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.*;
 import java.util.stream.Stream;
+import lombok.*;
 
 @RequiredArgsConstructor
 public enum BagTab {
@@ -24,11 +23,11 @@ public enum BagTab {
 
     static {
         Stream.of(BagTab.values())
-            .forEach(
-                entry -> {
-                    map.put(entry.getValue(), entry);
-                    stringMap.put(entry.name(), entry);
-                });
+                .forEach(
+                        entry -> {
+                            map.put(entry.getValue(), entry);
+                            stringMap.put(entry.name(), entry);
+                        });
     }
 
     @Getter private final int value;

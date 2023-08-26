@@ -141,21 +141,21 @@ public final class ActivityInfoOuterClass {
         int key);
 
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-     * @return A list containing the dCPENBLPKHK.
+     * <code>repeated uint32 meet_cond_list = 12;</code>
+     * @return A list containing the meetCondList.
      */
-    java.util.List<java.lang.Integer> getDCPENBLPKHKList();
+    java.util.List<java.lang.Integer> getMeetCondListList();
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-     * @return The count of dCPENBLPKHK.
+     * <code>repeated uint32 meet_cond_list = 12;</code>
+     * @return The count of meetCondList.
      */
-    int getDCPENBLPKHKCount();
+    int getMeetCondListCount();
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
+     * <code>repeated uint32 meet_cond_list = 12;</code>
      * @param index The index of the element to return.
-     * @return The dCPENBLPKHK at the given index.
+     * @return The meetCondList at the given index.
      */
-    int getDCPENBLPKHK(int index);
+    int getMeetCondList(int index);
 
     /**
      * <code>bool DKJDABCNGBP = 13;</code>
@@ -264,21 +264,21 @@ public final class ActivityInfoOuterClass {
         int key);
 
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
-     * @return A list containing the meetCondList.
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+     * @return A list containing the pHCOMIFAIJD.
      */
-    java.util.List<java.lang.Integer> getMeetCondListList();
+    java.util.List<java.lang.Integer> getPHCOMIFAIJDList();
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
-     * @return The count of meetCondList.
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+     * @return The count of pHCOMIFAIJD.
      */
-    int getMeetCondListCount();
+    int getPHCOMIFAIJDCount();
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
      * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
+     * @return The pHCOMIFAIJD at the given index.
      */
-    int getMeetCondList(int index);
+    int getPHCOMIFAIJD(int index);
 
     /**
      * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 643;</code>
@@ -1601,8 +1601,8 @@ public final class ActivityInfoOuterClass {
       dNMOEAFCDGC_ = emptyIntList();
       watcherInfoList_ = java.util.Collections.emptyList();
       lJLDCLMAMNL_ = emptyIntList();
-      dCPENBLPKHK_ = emptyIntList();
       meetCondList_ = emptyIntList();
+      pHCOMIFAIJD_ = emptyIntList();
       activityPushTipsDataList_ = java.util.Collections.emptyList();
     }
 
@@ -1654,21 +1654,21 @@ public final class ActivityInfoOuterClass {
             }
             case 32: {
               if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                meetCondList_ = newIntList();
+                pHCOMIFAIJD_ = newIntList();
                 mutable_bitField0_ |= 0x00000040;
               }
-              meetCondList_.addInt(input.readUInt32());
+              pHCOMIFAIJD_.addInt(input.readUInt32());
               break;
             }
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000040) != 0) && input.getBytesUntilLimit() > 0) {
-                meetCondList_ = newIntList();
+                pHCOMIFAIJD_ = newIntList();
                 mutable_bitField0_ |= 0x00000040;
               }
               while (input.getBytesUntilLimit() > 0) {
-                meetCondList_.addInt(input.readUInt32());
+                pHCOMIFAIJD_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -1750,21 +1750,21 @@ public final class ActivityInfoOuterClass {
             }
             case 96: {
               if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                dCPENBLPKHK_ = newIntList();
+                meetCondList_ = newIntList();
                 mutable_bitField0_ |= 0x00000010;
               }
-              dCPENBLPKHK_.addInt(input.readUInt32());
+              meetCondList_.addInt(input.readUInt32());
               break;
             }
             case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
-                dCPENBLPKHK_ = newIntList();
+                meetCondList_ = newIntList();
                 mutable_bitField0_ |= 0x00000010;
               }
               while (input.getBytesUntilLimit() > 0) {
-                dCPENBLPKHK_.addInt(input.readUInt32());
+                meetCondList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -3056,13 +3056,13 @@ public final class ActivityInfoOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          meetCondList_.makeImmutable(); // C
+          pHCOMIFAIJD_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
         }
         if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          dCPENBLPKHK_.makeImmutable(); // C
+          meetCondList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           lJLDCLMAMNL_.makeImmutable(); // C
@@ -3543,33 +3543,33 @@ public final class ActivityInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int DCPENBLPKHK_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList dCPENBLPKHK_;
+    public static final int MEET_COND_LIST_FIELD_NUMBER = 12;
+    private com.google.protobuf.Internal.IntList meetCondList_;
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-     * @return A list containing the dCPENBLPKHK.
+     * <code>repeated uint32 meet_cond_list = 12;</code>
+     * @return A list containing the meetCondList.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getDCPENBLPKHKList() {
-      return dCPENBLPKHK_;
+        getMeetCondListList() {
+      return meetCondList_;
     }
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-     * @return The count of dCPENBLPKHK.
+     * <code>repeated uint32 meet_cond_list = 12;</code>
+     * @return The count of meetCondList.
      */
-    public int getDCPENBLPKHKCount() {
-      return dCPENBLPKHK_.size();
+    public int getMeetCondListCount() {
+      return meetCondList_.size();
     }
     /**
-     * <code>repeated uint32 DCPENBLPKHK = 12;</code>
+     * <code>repeated uint32 meet_cond_list = 12;</code>
      * @param index The index of the element to return.
-     * @return The dCPENBLPKHK at the given index.
+     * @return The meetCondList at the given index.
      */
-    public int getDCPENBLPKHK(int index) {
-      return dCPENBLPKHK_.getInt(index);
+    public int getMeetCondList(int index) {
+      return meetCondList_.getInt(index);
     }
-    private int dCPENBLPKHKMemoizedSerializedSize = -1;
+    private int meetCondListMemoizedSerializedSize = -1;
 
     public static final int DKJDABCNGBP_FIELD_NUMBER = 13;
     private boolean dKJDABCNGBP_;
@@ -3784,33 +3784,33 @@ public final class ActivityInfoOuterClass {
       return map.get(key);
     }
 
-    public static final int MEET_COND_LIST_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.IntList meetCondList_;
+    public static final int PHCOMIFAIJD_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.IntList pHCOMIFAIJD_;
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
-     * @return A list containing the meetCondList.
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+     * @return A list containing the pHCOMIFAIJD.
      */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
-        getMeetCondListList() {
-      return meetCondList_;
+        getPHCOMIFAIJDList() {
+      return pHCOMIFAIJD_;
     }
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
-     * @return The count of meetCondList.
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+     * @return The count of pHCOMIFAIJD.
      */
-    public int getMeetCondListCount() {
-      return meetCondList_.size();
+    public int getPHCOMIFAIJDCount() {
+      return pHCOMIFAIJD_.size();
     }
     /**
-     * <code>repeated uint32 meet_cond_list = 4;</code>
+     * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
      * @param index The index of the element to return.
-     * @return The meetCondList at the given index.
+     * @return The pHCOMIFAIJD at the given index.
      */
-    public int getMeetCondList(int index) {
-      return meetCondList_.getInt(index);
+    public int getPHCOMIFAIJD(int index) {
+      return pHCOMIFAIJD_.getInt(index);
     }
-    private int meetCondListMemoizedSerializedSize = -1;
+    private int pHCOMIFAIJDMemoizedSerializedSize = -1;
 
     public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 643;
     private java.util.List<emu.grasscutter.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_;
@@ -6511,12 +6511,12 @@ public final class ActivityInfoOuterClass {
       if (activityId_ != 0) {
         output.writeUInt32(3, activityId_);
       }
-      if (getMeetCondListList().size() > 0) {
+      if (getPHCOMIFAIJDList().size() > 0) {
         output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
+        output.writeUInt32NoTag(pHCOMIFAIJDMemoizedSerializedSize);
       }
-      for (int i = 0; i < meetCondList_.size(); i++) {
-        output.writeUInt32NoTag(meetCondList_.getInt(i));
+      for (int i = 0; i < pHCOMIFAIJD_.size(); i++) {
+        output.writeUInt32NoTag(pHCOMIFAIJD_.getInt(i));
       }
       if (scheduleId_ != 0) {
         output.writeUInt32(5, scheduleId_);
@@ -6539,12 +6539,12 @@ public final class ActivityInfoOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(11, endTime_);
       }
-      if (getDCPENBLPKHKList().size() > 0) {
+      if (getMeetCondListList().size() > 0) {
         output.writeUInt32NoTag(98);
-        output.writeUInt32NoTag(dCPENBLPKHKMemoizedSerializedSize);
+        output.writeUInt32NoTag(meetCondListMemoizedSerializedSize);
       }
-      for (int i = 0; i < dCPENBLPKHK_.size(); i++) {
-        output.writeUInt32NoTag(dCPENBLPKHK_.getInt(i));
+      for (int i = 0; i < meetCondList_.size(); i++) {
+        output.writeUInt32NoTag(meetCondList_.getInt(i));
       }
       if (dKJDABCNGBP_ != false) {
         output.writeBool(13, dKJDABCNGBP_);
@@ -6877,17 +6877,17 @@ public final class ActivityInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < meetCondList_.size(); i++) {
+        for (int i = 0; i < pHCOMIFAIJD_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(meetCondList_.getInt(i));
+            .computeUInt32SizeNoTag(pHCOMIFAIJD_.getInt(i));
         }
         size += dataSize;
-        if (!getMeetCondListList().isEmpty()) {
+        if (!getPHCOMIFAIJDList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        meetCondListMemoizedSerializedSize = dataSize;
+        pHCOMIFAIJDMemoizedSerializedSize = dataSize;
       }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -6919,17 +6919,17 @@ public final class ActivityInfoOuterClass {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < dCPENBLPKHK_.size(); i++) {
+        for (int i = 0; i < meetCondList_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dCPENBLPKHK_.getInt(i));
+            .computeUInt32SizeNoTag(meetCondList_.getInt(i));
         }
         size += dataSize;
-        if (!getDCPENBLPKHKList().isEmpty()) {
+        if (!getMeetCondListList().isEmpty()) {
           size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
-        dCPENBLPKHKMemoizedSerializedSize = dataSize;
+        meetCondListMemoizedSerializedSize = dataSize;
       }
       if (dKJDABCNGBP_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -7388,8 +7388,8 @@ public final class ActivityInfoOuterClass {
           != other.getScheduleId()) return false;
       if (!internalGetActivityCoinMap().equals(
           other.internalGetActivityCoinMap())) return false;
-      if (!getDCPENBLPKHKList()
-          .equals(other.getDCPENBLPKHKList())) return false;
+      if (!getMeetCondListList()
+          .equals(other.getMeetCondListList())) return false;
       if (getDKJDABCNGBP()
           != other.getDKJDABCNGBP()) return false;
       if (getBeginTime()
@@ -7416,8 +7416,8 @@ public final class ActivityInfoOuterClass {
           != other.getEndTime()) return false;
       if (!internalGetWishGiftNumMap().equals(
           other.internalGetWishGiftNumMap())) return false;
-      if (!getMeetCondListList()
-          .equals(other.getMeetCondListList())) return false;
+      if (!getPHCOMIFAIJDList()
+          .equals(other.getPHCOMIFAIJDList())) return false;
       if (!getActivityPushTipsDataListList()
           .equals(other.getActivityPushTipsDataListList())) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
@@ -7804,9 +7804,9 @@ public final class ActivityInfoOuterClass {
         hash = (37 * hash) + ACTIVITY_COIN_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetActivityCoinMap().hashCode();
       }
-      if (getDCPENBLPKHKCount() > 0) {
-        hash = (37 * hash) + DCPENBLPKHK_FIELD_NUMBER;
-        hash = (53 * hash) + getDCPENBLPKHKList().hashCode();
+      if (getMeetCondListCount() > 0) {
+        hash = (37 * hash) + MEET_COND_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getMeetCondListList().hashCode();
       }
       hash = (37 * hash) + DKJDABCNGBP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
@@ -7841,9 +7841,9 @@ public final class ActivityInfoOuterClass {
         hash = (37 * hash) + WISH_GIFT_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetWishGiftNumMap().hashCode();
       }
-      if (getMeetCondListCount() > 0) {
-        hash = (37 * hash) + MEET_COND_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMeetCondListList().hashCode();
+      if (getPHCOMIFAIJDCount() > 0) {
+        hash = (37 * hash) + PHCOMIFAIJD_FIELD_NUMBER;
+        hash = (53 * hash) + getPHCOMIFAIJDList().hashCode();
       }
       if (getActivityPushTipsDataListCount() > 0) {
         hash = (37 * hash) + ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER;
@@ -8379,7 +8379,7 @@ public final class ActivityInfoOuterClass {
         scheduleId_ = 0;
 
         internalGetMutableActivityCoinMap().clear();
-        dCPENBLPKHK_ = emptyIntList();
+        meetCondList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000010);
         dKJDABCNGBP_ = false;
 
@@ -8406,7 +8406,7 @@ public final class ActivityInfoOuterClass {
         endTime_ = 0;
 
         internalGetMutableWishGiftNumMap().clear();
-        meetCondList_ = emptyIntList();
+        pHCOMIFAIJD_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000040);
         if (activityPushTipsDataListBuilder_ == null) {
           activityPushTipsDataList_ = java.util.Collections.emptyList();
@@ -8470,10 +8470,10 @@ public final class ActivityInfoOuterClass {
         result.activityCoinMap_ = internalGetActivityCoinMap();
         result.activityCoinMap_.makeImmutable();
         if (((bitField0_ & 0x00000010) != 0)) {
-          dCPENBLPKHK_.makeImmutable();
+          meetCondList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000010);
         }
-        result.dCPENBLPKHK_ = dCPENBLPKHK_;
+        result.meetCondList_ = meetCondList_;
         result.dKJDABCNGBP_ = dKJDABCNGBP_;
         result.beginTime_ = beginTime_;
         result.iNGFNLLCDOL_ = iNGFNLLCDOL_;
@@ -8489,10 +8489,10 @@ public final class ActivityInfoOuterClass {
         result.wishGiftNumMap_ = internalGetWishGiftNumMap();
         result.wishGiftNumMap_.makeImmutable();
         if (((bitField0_ & 0x00000040) != 0)) {
-          meetCondList_.makeImmutable();
+          pHCOMIFAIJD_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000040);
         }
-        result.meetCondList_ = meetCondList_;
+        result.pHCOMIFAIJD_ = pHCOMIFAIJD_;
         if (activityPushTipsDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000080) != 0)) {
             activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
@@ -9209,13 +9209,13 @@ public final class ActivityInfoOuterClass {
         }
         internalGetMutableActivityCoinMap().mergeFrom(
             other.internalGetActivityCoinMap());
-        if (!other.dCPENBLPKHK_.isEmpty()) {
-          if (dCPENBLPKHK_.isEmpty()) {
-            dCPENBLPKHK_ = other.dCPENBLPKHK_;
+        if (!other.meetCondList_.isEmpty()) {
+          if (meetCondList_.isEmpty()) {
+            meetCondList_ = other.meetCondList_;
             bitField0_ = (bitField0_ & ~0x00000010);
           } else {
-            ensureDCPENBLPKHKIsMutable();
-            dCPENBLPKHK_.addAll(other.dCPENBLPKHK_);
+            ensureMeetCondListIsMutable();
+            meetCondList_.addAll(other.meetCondList_);
           }
           onChanged();
         }
@@ -9257,13 +9257,13 @@ public final class ActivityInfoOuterClass {
         }
         internalGetMutableWishGiftNumMap().mergeFrom(
             other.internalGetWishGiftNumMap());
-        if (!other.meetCondList_.isEmpty()) {
-          if (meetCondList_.isEmpty()) {
-            meetCondList_ = other.meetCondList_;
+        if (!other.pHCOMIFAIJD_.isEmpty()) {
+          if (pHCOMIFAIJD_.isEmpty()) {
+            pHCOMIFAIJD_ = other.pHCOMIFAIJD_;
             bitField0_ = (bitField0_ & ~0x00000040);
           } else {
-            ensureMeetCondListIsMutable();
-            meetCondList_.addAll(other.meetCondList_);
+            ensurePHCOMIFAIJDIsMutable();
+            pHCOMIFAIJD_.addAll(other.pHCOMIFAIJD_);
           }
           onChanged();
         }
@@ -10364,80 +10364,80 @@ public final class ActivityInfoOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList dCPENBLPKHK_ = emptyIntList();
-      private void ensureDCPENBLPKHKIsMutable() {
+      private com.google.protobuf.Internal.IntList meetCondList_ = emptyIntList();
+      private void ensureMeetCondListIsMutable() {
         if (!((bitField0_ & 0x00000010) != 0)) {
-          dCPENBLPKHK_ = mutableCopy(dCPENBLPKHK_);
+          meetCondList_ = mutableCopy(meetCondList_);
           bitField0_ |= 0x00000010;
          }
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-       * @return A list containing the dCPENBLPKHK.
+       * <code>repeated uint32 meet_cond_list = 12;</code>
+       * @return A list containing the meetCondList.
        */
       public java.util.List<java.lang.Integer>
-          getDCPENBLPKHKList() {
+          getMeetCondListList() {
         return ((bitField0_ & 0x00000010) != 0) ?
-                 java.util.Collections.unmodifiableList(dCPENBLPKHK_) : dCPENBLPKHK_;
+                 java.util.Collections.unmodifiableList(meetCondList_) : meetCondList_;
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-       * @return The count of dCPENBLPKHK.
+       * <code>repeated uint32 meet_cond_list = 12;</code>
+       * @return The count of meetCondList.
        */
-      public int getDCPENBLPKHKCount() {
-        return dCPENBLPKHK_.size();
+      public int getMeetCondListCount() {
+        return meetCondList_.size();
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
+       * <code>repeated uint32 meet_cond_list = 12;</code>
        * @param index The index of the element to return.
-       * @return The dCPENBLPKHK at the given index.
+       * @return The meetCondList at the given index.
        */
-      public int getDCPENBLPKHK(int index) {
-        return dCPENBLPKHK_.getInt(index);
+      public int getMeetCondList(int index) {
+        return meetCondList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
+       * <code>repeated uint32 meet_cond_list = 12;</code>
        * @param index The index to set the value at.
-       * @param value The dCPENBLPKHK to set.
+       * @param value The meetCondList to set.
        * @return This builder for chaining.
        */
-      public Builder setDCPENBLPKHK(
+      public Builder setMeetCondList(
           int index, int value) {
-        ensureDCPENBLPKHKIsMutable();
-        dCPENBLPKHK_.setInt(index, value);
+        ensureMeetCondListIsMutable();
+        meetCondList_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-       * @param value The dCPENBLPKHK to add.
+       * <code>repeated uint32 meet_cond_list = 12;</code>
+       * @param value The meetCondList to add.
        * @return This builder for chaining.
        */
-      public Builder addDCPENBLPKHK(int value) {
-        ensureDCPENBLPKHKIsMutable();
-        dCPENBLPKHK_.addInt(value);
+      public Builder addMeetCondList(int value) {
+        ensureMeetCondListIsMutable();
+        meetCondList_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
-       * @param values The dCPENBLPKHK to add.
+       * <code>repeated uint32 meet_cond_list = 12;</code>
+       * @param values The meetCondList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllDCPENBLPKHK(
+      public Builder addAllMeetCondList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureDCPENBLPKHKIsMutable();
+        ensureMeetCondListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, dCPENBLPKHK_);
+            values, meetCondList_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 DCPENBLPKHK = 12;</code>
+       * <code>repeated uint32 meet_cond_list = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDCPENBLPKHK() {
-        dCPENBLPKHK_ = emptyIntList();
+      public Builder clearMeetCondList() {
+        meetCondList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
@@ -10943,80 +10943,80 @@ public final class ActivityInfoOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList meetCondList_ = emptyIntList();
-      private void ensureMeetCondListIsMutable() {
+      private com.google.protobuf.Internal.IntList pHCOMIFAIJD_ = emptyIntList();
+      private void ensurePHCOMIFAIJDIsMutable() {
         if (!((bitField0_ & 0x00000040) != 0)) {
-          meetCondList_ = mutableCopy(meetCondList_);
+          pHCOMIFAIJD_ = mutableCopy(pHCOMIFAIJD_);
           bitField0_ |= 0x00000040;
          }
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
-       * @return A list containing the meetCondList.
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+       * @return A list containing the pHCOMIFAIJD.
        */
       public java.util.List<java.lang.Integer>
-          getMeetCondListList() {
+          getPHCOMIFAIJDList() {
         return ((bitField0_ & 0x00000040) != 0) ?
-                 java.util.Collections.unmodifiableList(meetCondList_) : meetCondList_;
+                 java.util.Collections.unmodifiableList(pHCOMIFAIJD_) : pHCOMIFAIJD_;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
-       * @return The count of meetCondList.
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+       * @return The count of pHCOMIFAIJD.
        */
-      public int getMeetCondListCount() {
-        return meetCondList_.size();
+      public int getPHCOMIFAIJDCount() {
+        return pHCOMIFAIJD_.size();
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
        * @param index The index of the element to return.
-       * @return The meetCondList at the given index.
+       * @return The pHCOMIFAIJD at the given index.
        */
-      public int getMeetCondList(int index) {
-        return meetCondList_.getInt(index);
+      public int getPHCOMIFAIJD(int index) {
+        return pHCOMIFAIJD_.getInt(index);
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
        * @param index The index to set the value at.
-       * @param value The meetCondList to set.
+       * @param value The pHCOMIFAIJD to set.
        * @return This builder for chaining.
        */
-      public Builder setMeetCondList(
+      public Builder setPHCOMIFAIJD(
           int index, int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.setInt(index, value);
+        ensurePHCOMIFAIJDIsMutable();
+        pHCOMIFAIJD_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
-       * @param value The meetCondList to add.
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+       * @param value The pHCOMIFAIJD to add.
        * @return This builder for chaining.
        */
-      public Builder addMeetCondList(int value) {
-        ensureMeetCondListIsMutable();
-        meetCondList_.addInt(value);
+      public Builder addPHCOMIFAIJD(int value) {
+        ensurePHCOMIFAIJDIsMutable();
+        pHCOMIFAIJD_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
-       * @param values The meetCondList to add.
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
+       * @param values The pHCOMIFAIJD to add.
        * @return This builder for chaining.
        */
-      public Builder addAllMeetCondList(
+      public Builder addAllPHCOMIFAIJD(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMeetCondListIsMutable();
+        ensurePHCOMIFAIJDIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, meetCondList_);
+            values, pHCOMIFAIJD_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 meet_cond_list = 4;</code>
+       * <code>repeated uint32 PHCOMIFAIJD = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMeetCondList() {
-        meetCondList_ = emptyIntList();
+      public Builder clearPHCOMIFAIJD() {
+        pHCOMIFAIJD_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
@@ -23399,16 +23399,16 @@ public final class ActivityInfoOuterClass {
       "\010\022\024\n\013LJLDCLMAMNL\030\342\003 \003(\r\022\023\n\013PJJKJGALLGD\030\020" +
       " \001(\010\022\025\n\ractivity_type\030\001 \001(\r\022\023\n\013schedule_" +
       "id\030\005 \001(\r\022>\n\021activity_coin_map\030\232\014 \003(\0132\".A" +
-      "ctivityInfo.ActivityCoinMapEntry\022\023\n\013DCPE" +
-      "NBLPKHK\030\014 \003(\r\022\023\n\013DKJDABCNGBP\030\r \001(\010\022\022\n\nbe" +
-      "gin_time\030\002 \001(\r\022\024\n\013INGFNLLCDOL\030\335\005 \001(\r\022\023\n\013" +
-      "ENNDKMJIMHN\030\017 \001(\010\022\022\n\tcur_score\030\223\014 \001(\r\022\024\n" +
-      "\013BKJNDLLNAML\030\232\016 \001(\010\022\035\n\024first_day_start_t" +
-      "ime\030\322\007 \001(\r\022\024\n\013ABMOPKOIMPA\030\215\004 \001(\010\022\024\n\013FGFG" +
-      "ECAAKJM\030\247\r \001(\r\022\024\n\013GFEMIEBKKKL\030\335\010 \001(\010\022\024\n\013" +
-      "CEFIPNKPEKA\030\355\004 \001(\r\022\020\n\010end_time\030\013 \001(\r\022=\n\021" +
-      "wish_gift_num_map\030\234\007 \003(\0132!.ActivityInfo." +
-      "WishGiftNumMapEntry\022\026\n\016meet_cond_list\030\004 " +
+      "ctivityInfo.ActivityCoinMapEntry\022\026\n\016meet" +
+      "_cond_list\030\014 \003(\r\022\023\n\013DKJDABCNGBP\030\r \001(\010\022\022\n" +
+      "\nbegin_time\030\002 \001(\r\022\024\n\013INGFNLLCDOL\030\335\005 \001(\r\022" +
+      "\023\n\013ENNDKMJIMHN\030\017 \001(\010\022\022\n\tcur_score\030\223\014 \001(\r" +
+      "\022\024\n\013BKJNDLLNAML\030\232\016 \001(\010\022\035\n\024first_day_star" +
+      "t_time\030\322\007 \001(\r\022\024\n\013ABMOPKOIMPA\030\215\004 \001(\010\022\024\n\013F" +
+      "GFGECAAKJM\030\247\r \001(\r\022\024\n\013GFEMIEBKKKL\030\335\010 \001(\010\022" +
+      "\024\n\013CEFIPNKPEKA\030\355\004 \001(\r\022\020\n\010end_time\030\013 \001(\r\022" +
+      "=\n\021wish_gift_num_map\030\234\007 \003(\0132!.ActivityIn" +
+      "fo.WishGiftNumMapEntry\022\023\n\013PHCOMIFAIJD\030\004 " +
       "\003(\r\022<\n\034activity_push_tips_data_list\030\203\005 \003" +
       "(\0132\025.ActivityPushTipsData\0223\n\rsam_lamp_in" +
       "fo\030\n \001(\0132\032.SeaLampActivityDetailInfoH\000\0224" +
@@ -23632,7 +23632,7 @@ public final class ActivityInfoOuterClass {
     internal_static_ActivityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityInfo_descriptor,
-        new java.lang.String[] { "ActivityId", "DNMOEAFCDGC", "WatcherInfoList", "IsFinished", "LJLDCLMAMNL", "PJJKJGALLGD", "ActivityType", "ScheduleId", "ActivityCoinMap", "DCPENBLPKHK", "DKJDABCNGBP", "BeginTime", "INGFNLLCDOL", "ENNDKMJIMHN", "CurScore", "BKJNDLLNAML", "FirstDayStartTime", "ABMOPKOIMPA", "FGFGECAAKJM", "GFEMIEBKKKL", "CEFIPNKPEKA", "EndTime", "WishGiftNumMap", "MeetCondList", "ActivityPushTipsDataList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChallnelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungoenInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "DuelHeartInfo", "SeaLampV3Info", "TeamChainInfo", "ElectroherculesBattleInfo", "GcgFestivalInfo", "FleurFairV2Info", "FungusFighterV2Info", "AkaFesInfo", "SandwormCannonDetailInfo", "SorushTrialInfo", "JourneyInfo", "EffigyChallengeV4Info", "GcgPveInfo", "UgcV2Info", "PenumbraAdventureInfo", "AnimalViewInfo", "ActivityMultiCharacterInfo", "GcgPveInfiniteInfo", "ToyBattleInfo", "PhotoUnderseaInfo", "FontaineGatherInfo", "GcgPvePuzzleInfo", "Detail", });
+        new java.lang.String[] { "ActivityId", "DNMOEAFCDGC", "WatcherInfoList", "IsFinished", "LJLDCLMAMNL", "PJJKJGALLGD", "ActivityType", "ScheduleId", "ActivityCoinMap", "MeetCondList", "DKJDABCNGBP", "BeginTime", "INGFNLLCDOL", "ENNDKMJIMHN", "CurScore", "BKJNDLLNAML", "FirstDayStartTime", "ABMOPKOIMPA", "FGFGECAAKJM", "GFEMIEBKKKL", "CEFIPNKPEKA", "EndTime", "WishGiftNumMap", "PHCOMIFAIJD", "ActivityPushTipsDataList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChallnelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungoenInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "DuelHeartInfo", "SeaLampV3Info", "TeamChainInfo", "ElectroherculesBattleInfo", "GcgFestivalInfo", "FleurFairV2Info", "FungusFighterV2Info", "AkaFesInfo", "SandwormCannonDetailInfo", "SorushTrialInfo", "JourneyInfo", "EffigyChallengeV4Info", "GcgPveInfo", "UgcV2Info", "PenumbraAdventureInfo", "AnimalViewInfo", "ActivityMultiCharacterInfo", "GcgPveInfiniteInfo", "ToyBattleInfo", "PhotoUnderseaInfo", "FontaineGatherInfo", "GcgPvePuzzleInfo", "Detail", });
     internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor =
       internal_static_ActivityInfo_descriptor.getNestedTypes().get(0);
     internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable = new

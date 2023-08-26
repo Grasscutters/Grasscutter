@@ -46,10 +46,10 @@ public final class SceneTeamAvatarOuterClass {
     int getPlayerUid();
 
     /**
-     * <code>bool is_on_scene = 15;</code>
-     * @return The isOnScene.
+     * <code>bool is_reconnect = 15;</code>
+     * @return The isReconnect.
      */
-    boolean getIsOnScene();
+    boolean getIsReconnect();
 
     /**
      * <code>.AbilitySyncStateInfo weapon_ability_info = 11;</code>
@@ -181,10 +181,10 @@ public final class SceneTeamAvatarOuterClass {
     boolean getIsPlayerCurAvatar();
 
     /**
-     * <code>bool is_reconnect = 13;</code>
-     * @return The isReconnect.
+     * <code>bool is_on_scene = 13;</code>
+     * @return The isOnScene.
      */
-    boolean getIsReconnect();
+    boolean getIsOnScene();
   }
   /**
    * <pre>
@@ -343,7 +343,7 @@ public final class SceneTeamAvatarOuterClass {
             }
             case 104: {
 
-              isReconnect_ = input.readBool();
+              isOnScene_ = input.readBool();
               break;
             }
             case 114: {
@@ -361,7 +361,7 @@ public final class SceneTeamAvatarOuterClass {
             }
             case 120: {
 
-              isOnScene_ = input.readBool();
+              isReconnect_ = input.readBool();
               break;
             }
             case 14120: {
@@ -452,15 +452,15 @@ public final class SceneTeamAvatarOuterClass {
       return playerUid_;
     }
 
-    public static final int IS_ON_SCENE_FIELD_NUMBER = 15;
-    private boolean isOnScene_;
+    public static final int IS_RECONNECT_FIELD_NUMBER = 15;
+    private boolean isReconnect_;
     /**
-     * <code>bool is_on_scene = 15;</code>
-     * @return The isOnScene.
+     * <code>bool is_reconnect = 15;</code>
+     * @return The isReconnect.
      */
     @java.lang.Override
-    public boolean getIsOnScene() {
-      return isOnScene_;
+    public boolean getIsReconnect() {
+      return isReconnect_;
     }
 
     public static final int WEAPON_ABILITY_INFO_FIELD_NUMBER = 11;
@@ -688,15 +688,15 @@ public final class SceneTeamAvatarOuterClass {
       return isPlayerCurAvatar_;
     }
 
-    public static final int IS_RECONNECT_FIELD_NUMBER = 13;
-    private boolean isReconnect_;
+    public static final int IS_ON_SCENE_FIELD_NUMBER = 13;
+    private boolean isOnScene_;
     /**
-     * <code>bool is_reconnect = 13;</code>
-     * @return The isReconnect.
+     * <code>bool is_on_scene = 13;</code>
+     * @return The isOnScene.
      */
     @java.lang.Override
-    public boolean getIsReconnect() {
-      return isReconnect_;
+    public boolean getIsOnScene() {
+      return isOnScene_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -749,14 +749,14 @@ public final class SceneTeamAvatarOuterClass {
       if (avatarGuid_ != 0L) {
         output.writeUInt64(12, avatarGuid_);
       }
-      if (isReconnect_ != false) {
-        output.writeBool(13, isReconnect_);
+      if (isOnScene_ != false) {
+        output.writeBool(13, isOnScene_);
       }
       if (sceneAvatarInfo_ != null) {
         output.writeMessage(14, getSceneAvatarInfo());
       }
-      if (isOnScene_ != false) {
-        output.writeBool(15, isOnScene_);
+      if (isReconnect_ != false) {
+        output.writeBool(15, isReconnect_);
       }
       if (isPlayerCurAvatar_ != false) {
         output.writeBool(1765, isPlayerCurAvatar_);
@@ -818,17 +818,17 @@ public final class SceneTeamAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, avatarGuid_);
       }
-      if (isReconnect_ != false) {
+      if (isOnScene_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isReconnect_);
+          .computeBoolSize(13, isOnScene_);
       }
       if (sceneAvatarInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getSceneAvatarInfo());
       }
-      if (isOnScene_ != false) {
+      if (isReconnect_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isOnScene_);
+          .computeBoolSize(15, isReconnect_);
       }
       if (isPlayerCurAvatar_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -858,8 +858,8 @@ public final class SceneTeamAvatarOuterClass {
           != other.getWeaponEntityId()) return false;
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
-      if (getIsOnScene()
-          != other.getIsOnScene()) return false;
+      if (getIsReconnect()
+          != other.getIsReconnect()) return false;
       if (hasWeaponAbilityInfo() != other.hasWeaponAbilityInfo()) return false;
       if (hasWeaponAbilityInfo()) {
         if (!getWeaponAbilityInfo()
@@ -897,8 +897,8 @@ public final class SceneTeamAvatarOuterClass {
       }
       if (getIsPlayerCurAvatar()
           != other.getIsPlayerCurAvatar()) return false;
-      if (getIsReconnect()
-          != other.getIsReconnect()) return false;
+      if (getIsOnScene()
+          != other.getIsOnScene()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -918,9 +918,9 @@ public final class SceneTeamAvatarOuterClass {
       hash = (53 * hash) + getWeaponEntityId();
       hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerUid();
-      hash = (37 * hash) + IS_ON_SCENE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_RECONNECT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOnScene());
+          getIsReconnect());
       if (hasWeaponAbilityInfo()) {
         hash = (37 * hash) + WEAPON_ABILITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getWeaponAbilityInfo().hashCode();
@@ -958,9 +958,9 @@ public final class SceneTeamAvatarOuterClass {
       hash = (37 * hash) + IS_PLAYER_CUR_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsPlayerCurAvatar());
-      hash = (37 * hash) + IS_RECONNECT_FIELD_NUMBER;
+      hash = (37 * hash) + IS_ON_SCENE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsReconnect());
+          getIsOnScene());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1109,7 +1109,7 @@ public final class SceneTeamAvatarOuterClass {
 
         playerUid_ = 0;
 
-        isOnScene_ = false;
+        isReconnect_ = false;
 
         if (weaponAbilityInfoBuilder_ == null) {
           weaponAbilityInfo_ = null;
@@ -1157,7 +1157,7 @@ public final class SceneTeamAvatarOuterClass {
         }
         isPlayerCurAvatar_ = false;
 
-        isReconnect_ = false;
+        isOnScene_ = false;
 
         return this;
       }
@@ -1193,7 +1193,7 @@ public final class SceneTeamAvatarOuterClass {
         }
         result.weaponEntityId_ = weaponEntityId_;
         result.playerUid_ = playerUid_;
-        result.isOnScene_ = isOnScene_;
+        result.isReconnect_ = isReconnect_;
         if (weaponAbilityInfoBuilder_ == null) {
           result.weaponAbilityInfo_ = weaponAbilityInfo_;
         } else {
@@ -1233,7 +1233,7 @@ public final class SceneTeamAvatarOuterClass {
           result.sceneAvatarInfo_ = sceneAvatarInfoBuilder_.build();
         }
         result.isPlayerCurAvatar_ = isPlayerCurAvatar_;
-        result.isReconnect_ = isReconnect_;
+        result.isOnScene_ = isOnScene_;
         onBuilt();
         return result;
       }
@@ -1291,8 +1291,8 @@ public final class SceneTeamAvatarOuterClass {
         if (other.getPlayerUid() != 0) {
           setPlayerUid(other.getPlayerUid());
         }
-        if (other.getIsOnScene() != false) {
-          setIsOnScene(other.getIsOnScene());
+        if (other.getIsReconnect() != false) {
+          setIsReconnect(other.getIsReconnect());
         }
         if (other.hasWeaponAbilityInfo()) {
           mergeWeaponAbilityInfo(other.getWeaponAbilityInfo());
@@ -1350,8 +1350,8 @@ public final class SceneTeamAvatarOuterClass {
         if (other.getIsPlayerCurAvatar() != false) {
           setIsPlayerCurAvatar(other.getIsPlayerCurAvatar());
         }
-        if (other.getIsReconnect() != false) {
-          setIsReconnect(other.getIsReconnect());
+        if (other.getIsOnScene() != false) {
+          setIsOnScene(other.getIsOnScene());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1564,33 +1564,33 @@ public final class SceneTeamAvatarOuterClass {
         return this;
       }
 
-      private boolean isOnScene_ ;
+      private boolean isReconnect_ ;
       /**
-       * <code>bool is_on_scene = 15;</code>
-       * @return The isOnScene.
+       * <code>bool is_reconnect = 15;</code>
+       * @return The isReconnect.
        */
       @java.lang.Override
-      public boolean getIsOnScene() {
-        return isOnScene_;
+      public boolean getIsReconnect() {
+        return isReconnect_;
       }
       /**
-       * <code>bool is_on_scene = 15;</code>
-       * @param value The isOnScene to set.
+       * <code>bool is_reconnect = 15;</code>
+       * @param value The isReconnect to set.
        * @return This builder for chaining.
        */
-      public Builder setIsOnScene(boolean value) {
+      public Builder setIsReconnect(boolean value) {
         
-        isOnScene_ = value;
+        isReconnect_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_on_scene = 15;</code>
+       * <code>bool is_reconnect = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsOnScene() {
+      public Builder clearIsReconnect() {
         
-        isOnScene_ = false;
+        isReconnect_ = false;
         onChanged();
         return this;
       }
@@ -2585,33 +2585,33 @@ public final class SceneTeamAvatarOuterClass {
         return this;
       }
 
-      private boolean isReconnect_ ;
+      private boolean isOnScene_ ;
       /**
-       * <code>bool is_reconnect = 13;</code>
-       * @return The isReconnect.
+       * <code>bool is_on_scene = 13;</code>
+       * @return The isOnScene.
        */
       @java.lang.Override
-      public boolean getIsReconnect() {
-        return isReconnect_;
+      public boolean getIsOnScene() {
+        return isOnScene_;
       }
       /**
-       * <code>bool is_reconnect = 13;</code>
-       * @param value The isReconnect to set.
+       * <code>bool is_on_scene = 13;</code>
+       * @param value The isOnScene to set.
        * @return This builder for chaining.
        */
-      public Builder setIsReconnect(boolean value) {
+      public Builder setIsOnScene(boolean value) {
         
-        isReconnect_ = value;
+        isOnScene_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_reconnect = 13;</code>
+       * <code>bool is_on_scene = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsReconnect() {
+      public Builder clearIsOnScene() {
         
-        isReconnect_ = false;
+        isOnScene_ = false;
         onChanged();
         return this;
       }
@@ -2688,18 +2688,18 @@ public final class SceneTeamAvatarOuterClass {
       "ontrolBlock.proto\032\025SceneAvatarInfo.proto" +
       "\"\230\004\n\017SceneTeamAvatar\022+\n\021scene_entity_inf" +
       "o\030\004 \001(\0132\020.SceneEntityInfo\022\030\n\020weapon_enti" +
-      "ty_id\030\010 \001(\r\022\022\n\nplayer_uid\030\003 \001(\r\022\023\n\013is_on" +
-      "_scene\030\017 \001(\010\0222\n\023weapon_ability_info\030\013 \001(" +
-      "\0132\025.AbilitySyncStateInfo\022%\n\020server_buff_" +
-      "list\030\n \003(\0132\013.ServerBuff\0222\n\023avatar_abilit" +
-      "y_info\030\007 \001(\0132\025.AbilitySyncStateInfo\022\023\n\013w" +
-      "eapon_guid\030\005 \001(\004\022 \n\013avatar_info\030\006 \001(\0132\013." +
-      "AvatarInfo\022\021\n\tentity_id\030\t \001(\r\022\023\n\013avatar_" +
-      "guid\030\014 \001(\004\0223\n\025ability_control_block\030\001 \001(" +
-      "\0132\024.AbilityControlBlock\022\020\n\010scene_id\030\002 \001(" +
-      "\r\022+\n\021scene_avatar_info\030\016 \001(\0132\020.SceneAvat" +
-      "arInfo\022\035\n\024is_player_cur_avatar\030\345\r \001(\010\022\024\n" +
-      "\014is_reconnect\030\r \001(\010B\033\n\031emu.grasscutter.n" +
+      "ty_id\030\010 \001(\r\022\022\n\nplayer_uid\030\003 \001(\r\022\024\n\014is_re" +
+      "connect\030\017 \001(\010\0222\n\023weapon_ability_info\030\013 \001" +
+      "(\0132\025.AbilitySyncStateInfo\022%\n\020server_buff" +
+      "_list\030\n \003(\0132\013.ServerBuff\0222\n\023avatar_abili" +
+      "ty_info\030\007 \001(\0132\025.AbilitySyncStateInfo\022\023\n\013" +
+      "weapon_guid\030\005 \001(\004\022 \n\013avatar_info\030\006 \001(\0132\013" +
+      ".AvatarInfo\022\021\n\tentity_id\030\t \001(\r\022\023\n\013avatar" +
+      "_guid\030\014 \001(\004\0223\n\025ability_control_block\030\001 \001" +
+      "(\0132\024.AbilityControlBlock\022\020\n\010scene_id\030\002 \001" +
+      "(\r\022+\n\021scene_avatar_info\030\016 \001(\0132\020.SceneAva" +
+      "tarInfo\022\035\n\024is_player_cur_avatar\030\345\r \001(\010\022\023" +
+      "\n\013is_on_scene\030\r \001(\010B\033\n\031emu.grasscutter.n" +
       "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -2717,7 +2717,7 @@ public final class SceneTeamAvatarOuterClass {
     internal_static_SceneTeamAvatar_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneTeamAvatar_descriptor,
-        new java.lang.String[] { "SceneEntityInfo", "WeaponEntityId", "PlayerUid", "IsOnScene", "WeaponAbilityInfo", "ServerBuffList", "AvatarAbilityInfo", "WeaponGuid", "AvatarInfo", "EntityId", "AvatarGuid", "AbilityControlBlock", "SceneId", "SceneAvatarInfo", "IsPlayerCurAvatar", "IsReconnect", });
+        new java.lang.String[] { "SceneEntityInfo", "WeaponEntityId", "PlayerUid", "IsReconnect", "WeaponAbilityInfo", "ServerBuffList", "AvatarAbilityInfo", "WeaponGuid", "AvatarInfo", "EntityId", "AvatarGuid", "AbilityControlBlock", "SceneId", "SceneAvatarInfo", "IsPlayerCurAvatar", "IsOnScene", });
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ServerBuffOuterClass.getDescriptor();

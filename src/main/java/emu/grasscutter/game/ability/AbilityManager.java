@@ -19,11 +19,10 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -93,7 +92,7 @@ public final class AbilityManager extends BasePlayerManager {
         if (handler == null || ability == null) {
             if (DebugConstants.LOG_ABILITIES) {
                 Grasscutter.getLogger()
-                    .debug("Could not execute ability action {} at {}", action.type, ability);
+                        .debug("Could not execute ability action {} at {}", action.type, ability);
             }
 
             return;

@@ -1,5 +1,7 @@
 package emu.grasscutter.game.inventory;
 
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -15,12 +17,9 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.longs.*;
-
 import java.util.*;
 import javax.annotation.Nullable;
 import lombok.val;
-
-import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -185,8 +184,8 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     /**
-     * Checks to see if the player has the item in their inventory.
-     * This will succeed if the player has at least the minimum count of the item.
+     * Checks to see if the player has the item in their inventory. This will succeed if the player
+     * has at least the minimum count of the item.
      *
      * @param itemId The item id to check for.
      * @param minCount The minimum count of the item to check for.
@@ -201,30 +200,26 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
      *
      * @param itemId The item id to check for.
      * @param count The count of the item to check for.
-     * @param enforce If true, the player must have the exact amount.
-     *                If false, the player must have at least the amount.
+     * @param enforce If true, the player must have the exact amount. If false, the player must have
+     *     at least the amount.
      * @return True if the player has the item, false otherwise.
      */
     public boolean hasItem(int itemId, int count, boolean enforce) {
         var item = this.getFirstItem(itemId);
         if (item == null) return false;
 
-        return enforce ?
-            item.getCount() == count :
-            item.getCount() >= count;
+        return enforce ? item.getCount() == count : item.getCount() >= count;
     }
 
     /**
-     * Checks to see if the player has the item in their inventory.
-     * This is exact.
+     * Checks to see if the player has the item in their inventory. This is exact.
      *
      * @param items A map of item game IDs to their count.
      * @return True if the player has the items, false otherwise.
      */
     public boolean hasAllItems(Collection<ItemParam> items) {
         for (var item : items) {
-            if (!this.hasItem(item.getItemId(), item.getCount(), true))
-                return false;
+            if (!this.hasItem(item.getItemId(), item.getCount(), true)) return false;
         }
 
         return true;
@@ -530,22 +525,18 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     }
 
     /**
-     * Removes an item from the player's inventory.
-     * This uses the item ID to find the first stack of the item's type.
+     * Removes an item from the player's inventory. This uses the item ID to find the first stack of
+     * the item's type.
      *
      * @param itemId The ID of the item to remove.
      * @param count The amount of items to remove.
      * @return True if the item was removed, false otherwise.
      */
     public synchronized boolean removeItem(int itemId, int count) {
-        var item = this.getItems().values().stream()
-            .filter(i -> i.getItemId() == itemId)
-            .findFirst();
+        var item = this.getItems().values().stream().filter(i -> i.getItemId() == itemId).findFirst();
 
         // Check if the item is in the player's inventory.
-        return item
-            .filter(gameItem -> this.removeItem(gameItem, count))
-            .isPresent();
+        return item.filter(gameItem -> this.removeItem(gameItem, count)).isPresent();
     }
 
     public synchronized boolean removeItem(long guid, int count) {
@@ -566,14 +557,10 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
      * @return True if the item was removed, false otherwise.
      */
     public synchronized boolean removeItemById(int itemId, int count) {
-        var item = this.getItems().values().stream()
-            .filter(i -> i.getItemId() == itemId)
-            .findFirst();
+        var item = this.getItems().values().stream().filter(i -> i.getItemId() == itemId).findFirst();
 
         // Check if the item is in the player's inventory.
-        return item
-            .filter(gameItem -> this.removeItem(gameItem, count))
-            .isPresent();
+        return item.filter(gameItem -> this.removeItem(gameItem, count)).isPresent();
     }
 
     public synchronized boolean removeItem(GameItem item) {

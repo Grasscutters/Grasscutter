@@ -15,8 +15,7 @@ public final class ExecStartBargain extends QuestExecHandler {
 
         try {
             // Start the bargain.
-            quest.getOwner().getQuestManager()
-                .startBargain(bargainId);
+            quest.getOwner().getQuestManager().startBargain(bargainId);
             Grasscutter.getLogger().debug("Bargain {} started.", bargainId);
             return true;
         } catch (RuntimeException ignored) {

@@ -8,7 +8,6 @@ import emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp.Mode;
-
 import java.util.*;
 
 @Opcodes(PacketOpcodes.ItemGivingReq)
@@ -31,7 +30,8 @@ public final class HandlerItemGivingReq extends PacketHandler {
 
                 // Check the items against the resources.
                 var data = GameData.getGivingDataMap().get(giveId);
-                if (data == null) throw new IllegalArgumentException("No giving data found for " + giveId + ".");
+                if (data == null)
+                    throw new IllegalArgumentException("No giving data found for " + giveId + ".");
 
                 switch (data.getGivingMethod()) {
                     case GIVING_METHOD_EXACT -> {
@@ -60,26 +60,28 @@ public final class HandlerItemGivingReq extends PacketHandler {
                         // Resolve potential item IDs.
                         var groupData = GameData.getGivingGroupDataMap();
                         data.getGivingGroupIds().stream()
-                            .map(groupId -> groupData.get((int) groupId))
-                            .filter(Objects::nonNull)
-                            .forEach(group -> {
-                                var itemIds = group.getItemIds();
+                                .map(groupId -> groupData.get((int) groupId))
+                                .filter(Objects::nonNull)
+                                .forEach(
+                                        group -> {
+                                            var itemIds = group.getItemIds();
 
-                                // Match item stacks to the group items.
-                                items.forEach(param -> {
-                                    // Get the item instance.
-                                    var itemInstance = inventory.getFirstItem(param.getItemId());
-                                    if (itemInstance == null) return;
+                                            // Match item stacks to the group items.
+                                            items.forEach(
+                                                    param -> {
+                                                        // Get the item instance.
+                                                        var itemInstance = inventory.getFirstItem(param.getItemId());
+                                                        if (itemInstance == null) return;
 
-                                    // Get the item ID.
-                                    var itemId = itemInstance.getItemId();
-                                    if (!itemIds.contains(itemId)) return;
+                                                        // Get the item ID.
+                                                        var itemId = itemInstance.getItemId();
+                                                        if (!itemIds.contains(itemId)) return;
 
-                                    // Add the item to the given items.
-                                    givenItems.put(itemId, param.getCount());
-                                    matchedGroups.add(group.getId());
-                                });
-                            });
+                                                        // Add the item to the given items.
+                                                        givenItems.put(itemId, param.getCount());
+                                                        matchedGroups.add(group.getId());
+                                                    });
+                                        });
 
                         // Check if the player has any items.
                         if (givenItems.isEmpty() && matchedGroups.isEmpty()) {

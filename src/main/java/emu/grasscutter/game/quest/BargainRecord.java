@@ -13,20 +13,17 @@ import lombok.*;
 @Builder
 public final class BargainRecord {
     /**
-     * Provides an instance of a bargain record.
-     * Uses information from game resources.
+     * Provides an instance of a bargain record. Uses information from game resources.
      *
      * @param bargainId The ID of the bargain.
      * @return An instance of a bargain record.
      */
     public static BargainRecord resolve(int bargainId) {
         var bargainData = GameData.getBargainDataMap().get(bargainId);
-        if (bargainData == null) throw new RuntimeException("No bargain data found for " + bargainId + ".");
+        if (bargainData == null)
+            throw new RuntimeException("No bargain data found for " + bargainId + ".");
 
-        return BargainRecord.builder()
-            .bargainId(bargainId)
-            .build()
-            .determineBase(bargainData);
+        return BargainRecord.builder().bargainId(bargainId).build().determineBase(bargainData);
     }
 
     private int bargainId;
@@ -38,21 +35,17 @@ public final class BargainRecord {
     private boolean finished;
     private BargainResultType result;
 
-    /**
-     * Determines the price of the bargain.
-     */
+    /** Determines the price of the bargain. */
     public BargainRecord determineBase(BargainData data) {
         // Set the expected price.
         var price = data.getExpectedValue();
-        this.setExpectedPrice(Utils.randomRange(
-            price.get(0), price.get(1)));
+        this.setExpectedPrice(Utils.randomRange(price.get(0), price.get(1)));
         // Set the lowest price.
         this.setLowestPrice(price.get(0));
 
         // Set the base mood.
         var mood = data.getRandomMood();
-        this.setCurrentMood(Utils.randomRange(
-            mood.get(0), mood.get(1)));
+        this.setCurrentMood(Utils.randomRange(mood.get(0), mood.get(1)));
 
         return this;
     }
@@ -100,10 +93,10 @@ public final class BargainRecord {
      */
     public BargainSnapshot toSnapshot() {
         return BargainSnapshot.newBuilder()
-            .setBargainId(this.getBargainId())
-            .setCurMood(this.getCurrentMood())
-            .setBALOPACHCDB(this.getExpectedPrice())
-            .setIOCNPJJNHLD(this.getLowestPrice())
-            .build();
+                .setBargainId(this.getBargainId())
+                .setCurMood(this.getCurrentMood())
+                .setBALOPACHCDB(this.getExpectedPrice())
+                .setIOCNPJJNHLD(this.getLowestPrice())
+                .build();
     }
 }

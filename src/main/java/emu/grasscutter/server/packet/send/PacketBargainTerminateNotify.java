@@ -7,7 +7,6 @@ public final class PacketBargainTerminateNotify extends BasePacket {
     public PacketBargainTerminateNotify(int bargainId) {
         super(PacketOpcodes.BargainTerminateNotify);
 
-        this.setData(BargainTerminateNotify.newBuilder()
-            .setBargainId(bargainId));
+        this.setData(BargainTerminateNotify.newBuilder().setBargainId(bargainId));
     }
 }

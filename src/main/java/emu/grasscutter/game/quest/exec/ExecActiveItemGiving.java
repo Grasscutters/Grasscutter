@@ -17,12 +17,12 @@ public final class ExecActiveItemGiving extends QuestExecHandler {
         try {
             questManager.addGiveItemAction(givingId);
 
-            Grasscutter.getLogger().debug("Quest {} added give action {}.",
-                quest.getSubQuestId(), givingId);
+            Grasscutter.getLogger()
+                    .debug("Quest {} added give action {}.", quest.getSubQuestId(), givingId);
             return true;
         } catch (IllegalStateException ignored) {
-            Grasscutter.getLogger().warn("Quest {} attempted to add give action {} twice.",
-                quest.getSubQuestId(), givingId);
+            Grasscutter.getLogger()
+                    .warn("Quest {} attempted to add give action {} twice.", quest.getSubQuestId(), givingId);
             return false;
         }
     }

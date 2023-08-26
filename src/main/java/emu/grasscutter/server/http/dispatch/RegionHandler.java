@@ -1,5 +1,7 @@
 package emu.grasscutter.server.http.dispatch;
 
+import static emu.grasscutter.config.Configuration.*;
+
 import com.google.gson.*;
 import com.google.protobuf.ByteString;
 import emu.grasscutter.*;
@@ -16,14 +18,11 @@ import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
 import emu.grasscutter.utils.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import org.slf4j.Logger;
-
 import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
-
-import static emu.grasscutter.config.Configuration.*;
+import org.slf4j.Logger;
 
 /** Handles requests related to region queries. */
 public final class RegionHandler implements Router {
@@ -114,8 +113,7 @@ public final class RegionHandler implements Router {
         customConfig.addProperty("sdkenv", "2");
         customConfig.addProperty("checkdevice", "false");
         customConfig.addProperty("loadPatch", "false");
-        customConfig.addProperty("showexception",
-            String.valueOf(GameConstants.DEBUG));
+        customConfig.addProperty("showexception", String.valueOf(GameConstants.DEBUG));
         customConfig.addProperty("regionConfig", "pm|fk|add");
         customConfig.addProperty("downloadMode", "0");
         customConfig.add("codeSwitch", codeSwitch);
@@ -254,11 +252,10 @@ public final class RegionHandler implements Router {
 
                 String key_id = ctx.queryParam("key_id");
 
-                if (
-                    versionMajor != GameConstants.VERSION_PARTS[0] ||
-                    versionMinor != GameConstants.VERSION_PARTS[1]
-                    // The 'fix' or 'patch' version is not checked because it is only used
-                    // when miHoYo is desperate and fucks up big time.
+                if (versionMajor != GameConstants.VERSION_PARTS[0]
+                        || versionMinor != GameConstants.VERSION_PARTS[1]
+                // The 'fix' or 'patch' version is not checked because it is only used
+                // when miHoYo is desperate and fucks up big time.
                 ) { // Reject clients when there is a version mismatch
 
                     boolean updateClient = GameConstants.VERSION.compareTo(clientVersion) > 0;

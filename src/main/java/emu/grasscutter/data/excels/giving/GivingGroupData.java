@@ -2,9 +2,8 @@ package emu.grasscutter.data.excels.giving;
 
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -11,8 +11,7 @@ public final class PacketItemGivingRsp extends BasePacket {
     public PacketItemGivingRsp(int value, Mode mode) {
         super(PacketOpcodes.ItemGivingRsp);
 
-        var packet = ItemGivingRsp.newBuilder()
-            .setRetcode(mode == Mode.FAILURE ? 1 : 0);
+        var packet = ItemGivingRsp.newBuilder().setRetcode(mode == Mode.FAILURE ? 1 : 0);
         if (mode == Mode.EXACT_SUCCESS) {
             packet.setGivingId(value);
         } else if (mode == Mode.GROUP_SUCCESS) {

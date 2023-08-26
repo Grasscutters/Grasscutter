@@ -131,10 +131,10 @@ public final class PlayerLoginRspOuterClass {
     boolean getFBFJPEPMAOF();
 
     /**
-     * <code>bool DHMNOPIMOOE = 14;</code>
-     * @return The dHMNOPIMOOE.
+     * <code>bool is_use_ability_hash = 14;</code>
+     * @return The isUseAbilityHash.
      */
-    boolean getDHMNOPIMOOE();
+    boolean getIsUseAbilityHash();
 
     /**
      * <code>bool is_audit = 335;</code>
@@ -203,10 +203,10 @@ public final class PlayerLoginRspOuterClass {
     int getClientSilenceDataVersion();
 
     /**
-     * <code>bool is_use_ability_hash = 2;</code>
-     * @return The isUseAbilityHash.
+     * <code>bool PKKKINOCFMJ = 2;</code>
+     * @return The pKKKINOCFMJ.
      */
-    boolean getIsUseAbilityHash();
+    boolean getPKKKINOCFMJ();
 
     /**
      * <code>int32 retcode = 8;</code>
@@ -486,7 +486,7 @@ public final class PlayerLoginRspOuterClass {
               break;
             case 16: {
 
-              isUseAbilityHash_ = input.readBool();
+              pKKKINOCFMJ_ = input.readBool();
               break;
             }
             case 24: {
@@ -550,7 +550,7 @@ public final class PlayerLoginRspOuterClass {
             }
             case 112: {
 
-              dHMNOPIMOOE_ = input.readBool();
+              isUseAbilityHash_ = input.readBool();
               break;
             }
             case 120: {
@@ -1031,15 +1031,15 @@ public final class PlayerLoginRspOuterClass {
       return fBFJPEPMAOF_;
     }
 
-    public static final int DHMNOPIMOOE_FIELD_NUMBER = 14;
-    private boolean dHMNOPIMOOE_;
+    public static final int IS_USE_ABILITY_HASH_FIELD_NUMBER = 14;
+    private boolean isUseAbilityHash_;
     /**
-     * <code>bool DHMNOPIMOOE = 14;</code>
-     * @return The dHMNOPIMOOE.
+     * <code>bool is_use_ability_hash = 14;</code>
+     * @return The isUseAbilityHash.
      */
     @java.lang.Override
-    public boolean getDHMNOPIMOOE() {
-      return dHMNOPIMOOE_;
+    public boolean getIsUseAbilityHash() {
+      return isUseAbilityHash_;
     }
 
     public static final int IS_AUDIT_FIELD_NUMBER = 335;
@@ -1191,15 +1191,15 @@ public final class PlayerLoginRspOuterClass {
       return clientSilenceDataVersion_;
     }
 
-    public static final int IS_USE_ABILITY_HASH_FIELD_NUMBER = 2;
-    private boolean isUseAbilityHash_;
+    public static final int PKKKINOCFMJ_FIELD_NUMBER = 2;
+    private boolean pKKKINOCFMJ_;
     /**
-     * <code>bool is_use_ability_hash = 2;</code>
-     * @return The isUseAbilityHash.
+     * <code>bool PKKKINOCFMJ = 2;</code>
+     * @return The pKKKINOCFMJ.
      */
     @java.lang.Override
-    public boolean getIsUseAbilityHash() {
-      return isUseAbilityHash_;
+    public boolean getPKKKINOCFMJ() {
+      return pKKKINOCFMJ_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
@@ -1713,8 +1713,8 @@ public final class PlayerLoginRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isUseAbilityHash_ != false) {
-        output.writeBool(2, isUseAbilityHash_);
+      if (pKKKINOCFMJ_ != false) {
+        output.writeBool(2, pKKKINOCFMJ_);
       }
       if (loginRand_ != 0L) {
         output.writeUInt64(3, loginRand_);
@@ -1749,8 +1749,8 @@ public final class PlayerLoginRspOuterClass {
       if (!playerData_.isEmpty()) {
         output.writeBytes(13, playerData_);
       }
-      if (dHMNOPIMOOE_ != false) {
-        output.writeBool(14, dHMNOPIMOOE_);
+      if (isUseAbilityHash_ != false) {
+        output.writeBool(14, isUseAbilityHash_);
       }
       if (fBFJPEPMAOF_ != false) {
         output.writeBool(15, fBFJPEPMAOF_);
@@ -1839,9 +1839,9 @@ public final class PlayerLoginRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isUseAbilityHash_ != false) {
+      if (pKKKINOCFMJ_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isUseAbilityHash_);
+          .computeBoolSize(2, pKKKINOCFMJ_);
       }
       if (loginRand_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -1888,9 +1888,9 @@ public final class PlayerLoginRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(13, playerData_);
       }
-      if (dHMNOPIMOOE_ != false) {
+      if (isUseAbilityHash_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, dHMNOPIMOOE_);
+          .computeBoolSize(14, isUseAbilityHash_);
       }
       if (fBFJPEPMAOF_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -2022,8 +2022,8 @@ public final class PlayerLoginRspOuterClass {
           .equals(other.getShortAbilityHashMapList())) return false;
       if (getFBFJPEPMAOF()
           != other.getFBFJPEPMAOF()) return false;
-      if (getDHMNOPIMOOE()
-          != other.getDHMNOPIMOOE()) return false;
+      if (getIsUseAbilityHash()
+          != other.getIsUseAbilityHash()) return false;
       if (getIsAudit()
           != other.getIsAudit()) return false;
       if (!getClientSilenceMd5()
@@ -2036,8 +2036,8 @@ public final class PlayerLoginRspOuterClass {
           != other.getDNHHIMENOLD()) return false;
       if (getClientSilenceDataVersion()
           != other.getClientSilenceDataVersion()) return false;
-      if (getIsUseAbilityHash()
-          != other.getIsUseAbilityHash()) return false;
+      if (getPKKKINOCFMJ()
+          != other.getPKKKINOCFMJ()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getClientDataVersion()
@@ -2124,9 +2124,9 @@ public final class PlayerLoginRspOuterClass {
       hash = (37 * hash) + FBFJPEPMAOF_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getFBFJPEPMAOF());
-      hash = (37 * hash) + DHMNOPIMOOE_FIELD_NUMBER;
+      hash = (37 * hash) + IS_USE_ABILITY_HASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDHMNOPIMOOE());
+          getIsUseAbilityHash());
       hash = (37 * hash) + IS_AUDIT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAudit());
@@ -2143,9 +2143,9 @@ public final class PlayerLoginRspOuterClass {
           getDNHHIMENOLD());
       hash = (37 * hash) + CLIENT_SILENCE_DATA_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getClientSilenceDataVersion();
-      hash = (37 * hash) + IS_USE_ABILITY_HASH_FIELD_NUMBER;
+      hash = (37 * hash) + PKKKINOCFMJ_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsUseAbilityHash());
+          getPKKKINOCFMJ());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CLIENT_DATA_VERSION_FIELD_NUMBER;
@@ -2385,7 +2385,7 @@ public final class PlayerLoginRspOuterClass {
         }
         fBFJPEPMAOF_ = false;
 
-        dHMNOPIMOOE_ = false;
+        isUseAbilityHash_ = false;
 
         isAudit_ = false;
 
@@ -2403,7 +2403,7 @@ public final class PlayerLoginRspOuterClass {
 
         clientSilenceDataVersion_ = 0;
 
-        isUseAbilityHash_ = false;
+        pKKKINOCFMJ_ = false;
 
         retcode_ = 0;
 
@@ -2501,7 +2501,7 @@ public final class PlayerLoginRspOuterClass {
           result.shortAbilityHashMap_ = shortAbilityHashMapBuilder_.build();
         }
         result.fBFJPEPMAOF_ = fBFJPEPMAOF_;
-        result.dHMNOPIMOOE_ = dHMNOPIMOOE_;
+        result.isUseAbilityHash_ = isUseAbilityHash_;
         result.isAudit_ = isAudit_;
         result.clientSilenceMd5_ = clientSilenceMd5_;
         result.msg_ = msg_;
@@ -2516,7 +2516,7 @@ public final class PlayerLoginRspOuterClass {
         }
         result.dNHHIMENOLD_ = dNHHIMENOLD_;
         result.clientSilenceDataVersion_ = clientSilenceDataVersion_;
-        result.isUseAbilityHash_ = isUseAbilityHash_;
+        result.pKKKINOCFMJ_ = pKKKINOCFMJ_;
         result.retcode_ = retcode_;
         result.clientDataVersion_ = clientDataVersion_;
         result.birthday_ = birthday_;
@@ -2649,8 +2649,8 @@ public final class PlayerLoginRspOuterClass {
         if (other.getFBFJPEPMAOF() != false) {
           setFBFJPEPMAOF(other.getFBFJPEPMAOF());
         }
-        if (other.getDHMNOPIMOOE() != false) {
-          setDHMNOPIMOOE(other.getDHMNOPIMOOE());
+        if (other.getIsUseAbilityHash() != false) {
+          setIsUseAbilityHash(other.getIsUseAbilityHash());
         }
         if (other.getIsAudit() != false) {
           setIsAudit(other.getIsAudit());
@@ -2695,8 +2695,8 @@ public final class PlayerLoginRspOuterClass {
         if (other.getClientSilenceDataVersion() != 0) {
           setClientSilenceDataVersion(other.getClientSilenceDataVersion());
         }
-        if (other.getIsUseAbilityHash() != false) {
-          setIsUseAbilityHash(other.getIsUseAbilityHash());
+        if (other.getPKKKINOCFMJ() != false) {
+          setPKKKINOCFMJ(other.getPKKKINOCFMJ());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
@@ -3468,33 +3468,33 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
 
-      private boolean dHMNOPIMOOE_ ;
+      private boolean isUseAbilityHash_ ;
       /**
-       * <code>bool DHMNOPIMOOE = 14;</code>
-       * @return The dHMNOPIMOOE.
+       * <code>bool is_use_ability_hash = 14;</code>
+       * @return The isUseAbilityHash.
        */
       @java.lang.Override
-      public boolean getDHMNOPIMOOE() {
-        return dHMNOPIMOOE_;
+      public boolean getIsUseAbilityHash() {
+        return isUseAbilityHash_;
       }
       /**
-       * <code>bool DHMNOPIMOOE = 14;</code>
-       * @param value The dHMNOPIMOOE to set.
+       * <code>bool is_use_ability_hash = 14;</code>
+       * @param value The isUseAbilityHash to set.
        * @return This builder for chaining.
        */
-      public Builder setDHMNOPIMOOE(boolean value) {
+      public Builder setIsUseAbilityHash(boolean value) {
         
-        dHMNOPIMOOE_ = value;
+        isUseAbilityHash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool DHMNOPIMOOE = 14;</code>
+       * <code>bool is_use_ability_hash = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDHMNOPIMOOE() {
+      public Builder clearIsUseAbilityHash() {
         
-        dHMNOPIMOOE_ = false;
+        isUseAbilityHash_ = false;
         onChanged();
         return this;
       }
@@ -3984,33 +3984,33 @@ public final class PlayerLoginRspOuterClass {
         return this;
       }
 
-      private boolean isUseAbilityHash_ ;
+      private boolean pKKKINOCFMJ_ ;
       /**
-       * <code>bool is_use_ability_hash = 2;</code>
-       * @return The isUseAbilityHash.
+       * <code>bool PKKKINOCFMJ = 2;</code>
+       * @return The pKKKINOCFMJ.
        */
       @java.lang.Override
-      public boolean getIsUseAbilityHash() {
-        return isUseAbilityHash_;
+      public boolean getPKKKINOCFMJ() {
+        return pKKKINOCFMJ_;
       }
       /**
-       * <code>bool is_use_ability_hash = 2;</code>
-       * @param value The isUseAbilityHash to set.
+       * <code>bool PKKKINOCFMJ = 2;</code>
+       * @param value The pKKKINOCFMJ to set.
        * @return This builder for chaining.
        */
-      public Builder setIsUseAbilityHash(boolean value) {
+      public Builder setPKKKINOCFMJ(boolean value) {
         
-        isUseAbilityHash_ = value;
+        pKKKINOCFMJ_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_use_ability_hash = 2;</code>
+       * <code>bool PKKKINOCFMJ = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsUseAbilityHash() {
+      public Builder clearPKKKINOCFMJ() {
         
-        isUseAbilityHash_ = false;
+        pKKKINOCFMJ_ = false;
         onChanged();
         return this;
       }
@@ -5359,12 +5359,12 @@ public final class PlayerLoginRspOuterClass {
       "d_relogin\030\311\017 \001(\010\022\020\n\010game_biz\030\004 \001(\t\022\031\n\021ab" +
       "ility_hash_code\030\005 \001(\005\0226\n\026short_ability_h" +
       "ash_map\030\335\n \003(\0132\025.ShortAbilityHashPair\022\023\n" +
-      "\013FBFJPEPMAOF\030\017 \001(\010\022\023\n\013DHMNOPIMOOE\030\016 \001(\010\022" +
-      "\021\n\010is_audit\030\317\002 \001(\010\022\033\n\022client_silence_md5" +
-      "\030\220\006 \001(\t\022\013\n\003msg\030+ \001(\t\0223\n\027feature_block_in" +
-      "fo_list\030\333\014 \003(\0132\021.FeatureBlockInfo\022\024\n\013DNH" +
-      "HIMENOLD\030\333\n \001(\010\022#\n\033client_silence_data_v" +
-      "ersion\030\006 \001(\r\022\033\n\023is_use_ability_hash\030\002 \001(" +
+      "\013FBFJPEPMAOF\030\017 \001(\010\022\033\n\023is_use_ability_has" +
+      "h\030\016 \001(\010\022\021\n\010is_audit\030\317\002 \001(\010\022\033\n\022client_sil" +
+      "ence_md5\030\220\006 \001(\t\022\013\n\003msg\030+ \001(\t\0223\n\027feature_" +
+      "block_info_list\030\333\014 \003(\0132\021.FeatureBlockInf" +
+      "o\022\024\n\013DNHHIMENOLD\030\333\n \001(\010\022#\n\033client_silenc" +
+      "e_data_version\030\006 \001(\r\022\023\n\013PKKKINOCFMJ\030\002 \001(" +
       "\010\022\017\n\007retcode\030\010 \001(\005\022\033\n\023client_data_versio" +
       "n\030\014 \001(\r\022\021\n\010birthday\030\230\r \001(\t\022\024\n\013BOKKNHEOKP" +
       "D\030\354\004 \001(\010\022\022\n\ntarget_uid\030\t \001(\r\022:\n\016block_in" +
@@ -5399,7 +5399,7 @@ public final class PlayerLoginRspOuterClass {
     internal_static_PlayerLoginRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerLoginRsp_descriptor,
-        new java.lang.String[] { "ClientVersionSuffix", "AbilityHashMap", "IsTransfer", "TargetHomeOwnerUid", "IsDataNeedRelogin", "GameBiz", "AbilityHashCode", "ShortAbilityHashMap", "FBFJPEPMAOF", "DHMNOPIMOOE", "IsAudit", "ClientSilenceMd5", "Msg", "FeatureBlockInfoList", "DNHHIMENOLD", "ClientSilenceDataVersion", "IsUseAbilityHash", "Retcode", "ClientDataVersion", "Birthday", "BOKKNHEOKPD", "TargetUid", "BlockInfoMap", "GOFGOCDJDND", "NextResourceUrl", "ResVersionConfig", "TotalTickTime", "PlayerData", "ScInfo", "LoginRand", "ENNOCBNIHIK", "CountryCode", "PlayerDataVersion", "ClientSilenceVersionSuffix", "ECKNMCACJKG", "ClientMd5", "NextResVersionConfig", });
+        new java.lang.String[] { "ClientVersionSuffix", "AbilityHashMap", "IsTransfer", "TargetHomeOwnerUid", "IsDataNeedRelogin", "GameBiz", "AbilityHashCode", "ShortAbilityHashMap", "FBFJPEPMAOF", "IsUseAbilityHash", "IsAudit", "ClientSilenceMd5", "Msg", "FeatureBlockInfoList", "DNHHIMENOLD", "ClientSilenceDataVersion", "PKKKINOCFMJ", "Retcode", "ClientDataVersion", "Birthday", "BOKKNHEOKPD", "TargetUid", "BlockInfoMap", "GOFGOCDJDND", "NextResourceUrl", "ResVersionConfig", "TotalTickTime", "PlayerData", "ScInfo", "LoginRand", "ENNOCBNIHIK", "CountryCode", "PlayerDataVersion", "ClientSilenceVersionSuffix", "ECKNMCACJKG", "ClientMd5", "NextResVersionConfig", });
     internal_static_PlayerLoginRsp_AbilityHashMapEntry_descriptor =
       internal_static_PlayerLoginRsp_descriptor.getNestedTypes().get(0);
     internal_static_PlayerLoginRsp_AbilityHashMapEntry_fieldAccessorTable = new

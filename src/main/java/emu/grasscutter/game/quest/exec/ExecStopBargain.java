@@ -15,8 +15,7 @@ public final class ExecStopBargain extends QuestExecHandler {
 
         try {
             // Start the bargain.
-            quest.getOwner().getQuestManager()
-                .stopBargain(bargainId);
+            quest.getOwner().getQuestManager().stopBargain(bargainId);
             Grasscutter.getLogger().debug("Bargain {} stopped.", bargainId);
             return true;
         } catch (RuntimeException ignored) {

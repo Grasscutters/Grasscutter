@@ -3,11 +3,10 @@ package emu.grasscutter.data.excels.scene;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
+import java.util.List;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @ResourceType(name = "MapLayerFloorExcelConfigData.json")
 @Getter
@@ -15,10 +14,15 @@ import java.util.List;
 public final class MapLayerFloorData extends GameResource {
     @Getter(onMethod_ = @Override)
     int id;
+
     int PJDGAAAGOPO;
     int LCGNJBLMDHA;
-    @SerializedName(value = "floorNameTextMapHash", alternate = {"NDAGFKELEAP"})
+
+    @SerializedName(
+            value = "floorNameTextMapHash",
+            alternate = {"NDAGFKELEAP"})
     long floorNameTextMapHash;
+
     CKNDNKLCAHC CKNDNKLCAHC;
     long BHEMLJCFHPI;
 

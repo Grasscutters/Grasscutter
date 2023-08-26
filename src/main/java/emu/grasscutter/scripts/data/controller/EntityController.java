@@ -4,9 +4,8 @@ import emu.grasscutter.*;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.scripts.*;
-import org.luaj.vm2.*;
-
 import javax.script.*;
+import org.luaj.vm2.*;
 
 public class EntityController {
     private transient CompiledScript entityController;
@@ -38,8 +37,11 @@ public class EntityController {
     public int onClientExecuteRequest(GameEntity entity, int param1, int param2, int param3) {
         if (DebugConstants.LOG_LUA_SCRIPTS) {
             Grasscutter.getLogger()
-                .debug(
-                    "Request on {}, {}: {}", entity.getGroupId(), param1, entity.getPosition().toString());
+                    .debug(
+                            "Request on {}, {}: {}",
+                            entity.getGroupId(),
+                            param1,
+                            entity.getPosition().toString());
         }
         LuaValue value =
                 callControllerScriptFunc(

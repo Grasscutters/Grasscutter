@@ -19,10 +19,6 @@ public final class QueryPathRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Obf: LFJGAFPHNNE
-     * </pre>
-     *
      * <code>int32 query_id = 6;</code>
      * @return The queryId.
      */
@@ -59,11 +55,19 @@ public final class QueryPathRspOuterClass {
     int getRetcode();
 
     /**
+     * <pre>
+     * Obf: LFJGAFPHNNE
+     * </pre>
+     *
      * <code>.PathStatusType query_status = 15;</code>
      * @return The enum numeric value on the wire for queryStatus.
      */
     int getQueryStatusValue();
     /**
+     * <pre>
+     * Obf: LFJGAFPHNNE
+     * </pre>
+     *
      * <code>.PathStatusType query_status = 15;</code>
      * @return The queryStatus.
      */
@@ -185,10 +189,6 @@ public final class QueryPathRspOuterClass {
     public static final int QUERY_ID_FIELD_NUMBER = 6;
     private int queryId_;
     /**
-     * <pre>
-     * Obf: LFJGAFPHNNE
-     * </pre>
-     *
      * <code>int32 query_id = 6;</code>
      * @return The queryId.
      */
@@ -251,6 +251,10 @@ public final class QueryPathRspOuterClass {
     public static final int QUERY_STATUS_FIELD_NUMBER = 15;
     private int queryStatus_;
     /**
+     * <pre>
+     * Obf: LFJGAFPHNNE
+     * </pre>
+     *
      * <code>.PathStatusType query_status = 15;</code>
      * @return The enum numeric value on the wire for queryStatus.
      */
@@ -258,6 +262,10 @@ public final class QueryPathRspOuterClass {
       return queryStatus_;
     }
     /**
+     * <pre>
+     * Obf: LFJGAFPHNNE
+     * </pre>
+     *
      * <code>.PathStatusType query_status = 15;</code>
      * @return The queryStatus.
      */
@@ -666,10 +674,6 @@ public final class QueryPathRspOuterClass {
 
       private int queryId_ ;
       /**
-       * <pre>
-       * Obf: LFJGAFPHNNE
-       * </pre>
-       *
        * <code>int32 query_id = 6;</code>
        * @return The queryId.
        */
@@ -678,10 +682,6 @@ public final class QueryPathRspOuterClass {
         return queryId_;
       }
       /**
-       * <pre>
-       * Obf: LFJGAFPHNNE
-       * </pre>
-       *
        * <code>int32 query_id = 6;</code>
        * @param value The queryId to set.
        * @return This builder for chaining.
@@ -693,10 +693,6 @@ public final class QueryPathRspOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Obf: LFJGAFPHNNE
-       * </pre>
-       *
        * <code>int32 query_id = 6;</code>
        * @return This builder for chaining.
        */
@@ -980,6 +976,10 @@ public final class QueryPathRspOuterClass {
 
       private int queryStatus_ = 0;
       /**
+       * <pre>
+       * Obf: LFJGAFPHNNE
+       * </pre>
+       *
        * <code>.PathStatusType query_status = 15;</code>
        * @return The enum numeric value on the wire for queryStatus.
        */
@@ -987,6 +987,10 @@ public final class QueryPathRspOuterClass {
         return queryStatus_;
       }
       /**
+       * <pre>
+       * Obf: LFJGAFPHNNE
+       * </pre>
+       *
        * <code>.PathStatusType query_status = 15;</code>
        * @param value The enum numeric value on the wire for queryStatus to set.
        * @return This builder for chaining.
@@ -998,6 +1002,10 @@ public final class QueryPathRspOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Obf: LFJGAFPHNNE
+       * </pre>
+       *
        * <code>.PathStatusType query_status = 15;</code>
        * @return The queryStatus.
        */
@@ -1008,6 +1016,10 @@ public final class QueryPathRspOuterClass {
         return result == null ? emu.grasscutter.net.proto.PathStatusTypeOuterClass.PathStatusType.UNRECOGNIZED : result;
       }
       /**
+       * <pre>
+       * Obf: LFJGAFPHNNE
+       * </pre>
+       *
        * <code>.PathStatusType query_status = 15;</code>
        * @param value The queryStatus to set.
        * @return This builder for chaining.
@@ -1022,6 +1034,10 @@ public final class QueryPathRspOuterClass {
         return this;
       }
       /**
+       * <pre>
+       * Obf: LFJGAFPHNNE
+       * </pre>
+       *
        * <code>.PathStatusType query_status = 15;</code>
        * @return This builder for chaining.
        */
@@ -1098,8 +1114,8 @@ public final class QueryPathRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022QueryPathRsp.proto\032\014Vector.proto\032\024Path" +
-      "StatusType.proto\"r\n\014QueryPathRsp\022\020\n\010quer" +
+      "\n\022QueryPathRsp.proto\032\024PathStatusType.pro" +
+      "to\032\014Vector.proto\"r\n\014QueryPathRsp\022\020\n\010quer" +
       "y_id\030\006 \001(\005\022\030\n\007corners\030\001 \003(\0132\007.Vector\022\017\n\007" +
       "retcode\030\010 \001(\005\022%\n\014query_status\030\017 \001(\0162\017.Pa" +
       "thStatusTypeB\033\n\031emu.grasscutter.net.prot" +
@@ -1108,8 +1124,8 @@ public final class QueryPathRspOuterClass {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.PathStatusTypeOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VectorOuterClass.getDescriptor(),
         });
     internal_static_QueryPathRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1117,8 +1133,8 @@ public final class QueryPathRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QueryPathRsp_descriptor,
         new java.lang.String[] { "QueryId", "Corners", "Retcode", "QueryStatus", });
-    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
     emu.grasscutter.net.proto.PathStatusTypeOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

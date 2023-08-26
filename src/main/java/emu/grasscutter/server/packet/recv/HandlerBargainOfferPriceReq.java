@@ -9,8 +9,7 @@ import emu.grasscutter.server.packet.send.PacketBargainOfferPriceRsp;
 @Opcodes(PacketOpcodes.BargainOfferPriceReq)
 public final class HandlerBargainOfferPriceReq extends PacketHandler {
     @Override
-    public void handle(GameSession session, byte[] header, byte[] payload)
-        throws Exception {
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var packet = BargainOfferPriceReq.parseFrom(payload);
         var player = session.getPlayer();
 
@@ -27,14 +26,11 @@ public final class HandlerBargainOfferPriceReq extends PacketHandler {
         var questManager = player.getQuestManager();
         switch (result) {
             case BARGAIN_COMPLETE_SUCC -> questManager.queueEvent(
-                QuestContent.QUEST_CONTENT_BARGAIN_SUCC,
-                bargainId, 0);
+                    QuestContent.QUEST_CONTENT_BARGAIN_SUCC, bargainId, 0);
             case BARGAIN_SINGLE_FAIL -> questManager.queueEvent(
-                QuestContent.QUEST_CONTENT_ITEM_LESS_THAN_BARGAIN,
-                bargainId, 0);
+                    QuestContent.QUEST_CONTENT_ITEM_LESS_THAN_BARGAIN, bargainId, 0);
             case BARGAIN_COMPLETE_FAIL -> questManager.queueEvent(
-                QuestContent.QUEST_CONTENT_BARGAIN_FAIL,
-                bargainId, 0);
+                    QuestContent.QUEST_CONTENT_BARGAIN_FAIL, bargainId, 0);
         }
 
         // Return the resulting packet.

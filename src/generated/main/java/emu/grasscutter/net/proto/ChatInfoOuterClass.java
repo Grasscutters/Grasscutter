@@ -225,6 +225,10 @@ public final class ChatInfoOuterClass {
     }
 
     /**
+     * <pre>
+     * Obf: LGDLFPKODMA
+     * </pre>
+     *
      * Protobuf enum {@code ChatInfo.SystemHintType}
      */
     public enum SystemHintType
@@ -352,10 +356,6 @@ public final class ChatInfoOuterClass {
       int getType();
     }
     /**
-     * <pre>
-     * Obf: LGDLFPKODMA
-     * </pre>
-     *
      * Protobuf type {@code ChatInfo.SystemHint}
      */
     public static final class SystemHint extends
@@ -604,10 +604,6 @@ public final class ChatInfoOuterClass {
         return builder;
       }
       /**
-       * <pre>
-       * Obf: LGDLFPKODMA
-       * </pre>
-       *
        * Protobuf type {@code ChatInfo.SystemHint}
        */
       public static final class Builder extends

@@ -5,10 +5,9 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.*;
 
 /** Tracks progress the player made in the world, like obtained items, seen characters and more */
 @Getter

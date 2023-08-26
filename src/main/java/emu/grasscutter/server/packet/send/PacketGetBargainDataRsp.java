@@ -9,16 +9,16 @@ public final class PacketGetBargainDataRsp extends BasePacket {
     public PacketGetBargainDataRsp(Retcode retcode) {
         super(PacketOpcodes.GetBargainDataRsp);
 
-        this.setData(GetBargainDataRsp.newBuilder()
-            .setRetcode(retcode.getNumber()));
+        this.setData(GetBargainDataRsp.newBuilder().setRetcode(retcode.getNumber()));
     }
 
     public PacketGetBargainDataRsp(BargainRecord record) {
         super(PacketOpcodes.GetBargainDataRsp);
 
-        this.setData(GetBargainDataRsp.newBuilder()
-            .setRetcode(Retcode.RET_SUCC.getNumber())
-            .setBargainId(record.getBargainId())
-            .setSnapshot(record.toSnapshot()));
+        this.setData(
+                GetBargainDataRsp.newBuilder()
+                        .setRetcode(Retcode.RET_SUCC.getNumber())
+                        .setBargainId(record.getBargainId())
+                        .setSnapshot(record.toSnapshot()));
     }
 }

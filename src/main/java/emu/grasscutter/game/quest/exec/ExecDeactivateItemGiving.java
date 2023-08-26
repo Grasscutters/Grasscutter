@@ -17,8 +17,11 @@ public final class ExecDeactivateItemGiving extends QuestExecHandler {
             questManager.removeGivingItemAction(givingId);
             return true;
         } catch (IllegalStateException ignored) {
-            Grasscutter.getLogger().warn("Quest {} attempted to remove give action {} twice.",
-                quest.getSubQuestId(), givingId);
+            Grasscutter.getLogger()
+                    .warn(
+                            "Quest {} attempted to remove give action {} twice.",
+                            quest.getSubQuestId(),
+                            givingId);
             return false;
         }
     }

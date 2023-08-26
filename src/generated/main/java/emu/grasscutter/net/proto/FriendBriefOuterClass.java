@@ -2780,7 +2780,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIsGameSource(boolean value) {
-
+        
         isGameSource_ = value;
         onChanged();
         return this;
@@ -2790,7 +2790,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGameSource() {
-
+        
         isGameSource_ = false;
         onChanged();
         return this;
@@ -2811,7 +2811,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIsPsnSource(boolean value) {
-
+        
         isPsnSource_ = value;
         onChanged();
         return this;
@@ -2821,7 +2821,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPsnSource() {
-
+        
         isPsnSource_ = false;
         onChanged();
         return this;
@@ -2896,7 +2896,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIEAHDCLDOEJ(boolean value) {
-
+        
         iEAHDCLDOEJ_ = value;
         onChanged();
         return this;
@@ -2906,7 +2906,7 @@ public final class FriendBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIEAHDCLDOEJ() {
-
+        
         iEAHDCLDOEJ_ = false;
         onChanged();
         return this;
