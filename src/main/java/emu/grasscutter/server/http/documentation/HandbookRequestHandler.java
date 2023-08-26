@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.SceneData;
+import emu.grasscutter.data.excels.scene.SceneData;
 import emu.grasscutter.data.excels.avatar.AvatarData;
 import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.utils.FileUtils;

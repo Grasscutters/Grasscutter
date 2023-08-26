@@ -235,15 +235,15 @@ public final class RegionHandler implements Router {
 
         // Get region data.
         String regionData = "CAESGE5vdCBGb3VuZCB2ZXJzaW9uIGNvbmZpZw==";
-        if (ctx.queryParamMap().values().size() > 0) {
+        if (!ctx.queryParamMap().values().isEmpty()) {
             if (region != null) regionData = region.getBase64();
         }
 
-        String clientVersion = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
-        String[] versionCode = clientVersion.split("\\.");
-        int versionMajor = Integer.parseInt(versionCode[0]);
-        int versionMinor = Integer.parseInt(versionCode[1]);
-        int versionFix = Integer.parseInt(versionCode[2]);
+        var clientVersion = versionName.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
+        var versionCode = clientVersion.split("\\.");
+        var versionMajor = Integer.parseInt(versionCode[0]);
+        var versionMinor = Integer.parseInt(versionCode[1]);
+        var versionFix = Integer.parseInt(versionCode[2]);
 
         if (versionMajor >= 3
                 || (versionMajor == 2 && versionMinor == 7 && versionFix >= 50)
@@ -254,8 +254,12 @@ public final class RegionHandler implements Router {
 
                 String key_id = ctx.queryParam("key_id");
 
-                if (!clientVersion.equals(
-                        GameConstants.VERSION)) { // Reject clients when there is a version mismatch
+                if (
+                    versionMajor != GameConstants.VERSION_PARTS[0] ||
+                    versionMinor != GameConstants.VERSION_PARTS[1]
+                    // The 'fix' or 'patch' version is not checked because it is only used
+                    // when miHoYo is desperate and fucks up big time.
+                ) { // Reject clients when there is a version mismatch
 
                     boolean updateClient = GameConstants.VERSION.compareTo(clientVersion) > 0;
 
@@ -268,7 +272,7 @@ public final class RegionHandler implements Router {
                                             StopServerInfo.newBuilder()
                                                     .setUrl("https://discord.gg/grasscutters")
                                                     .setStopBeginTime((int) Instant.now().getEpochSecond())
-                                                    .setStopEndTime((int) Instant.now().getEpochSecond() * 2)
+                                                    .setStopEndTime((int) Instant.now().getEpochSecond() + 1)
                                                     .setContentMsg(
                                                             updateClient
                                                                     ? "\nVersion mismatch outdated client! \n\nServer version: %s\nClient version: %s"
@@ -279,7 +283,7 @@ public final class RegionHandler implements Router {
                                     .buildPartial();
 
                     Grasscutter.getLogger()
-                            .info(
+                            .debug(
                                     String.format(
                                             "Connection denied for %s due to %s.",
                                             Utils.address(ctx), updateClient ? "outdated client!" : "outdated server!"));
