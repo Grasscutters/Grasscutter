@@ -39,6 +39,7 @@ spotless {
         target fileTree(rootDir) {
             include '**/*.java'
             exclude '**/generated/**/*.*'
+            exclude '.idea/**/*.*'
         }
 
         importOrder('io.grasscutter', '', 'java', 'javax', '\\#java', '\\#') // Configure import order.
@@ -57,7 +58,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'io.grasscutter'
-version = '1.6.3'
+version = '1.7.0'
 
 java {
     withJavadocJar()
@@ -283,7 +284,7 @@ idea {
         // proto files and generated Java files are automatically added as
         // source dirs.
         // If you have additional sources, add them here:
-        sourceDirs += file('/proto/')
+        sourceDirs += file('/proto/');
     }
 }
 
@@ -354,31 +355,31 @@ tasks.register('generateHandbook') {
         println('NPM is not installed. Skipping handbook generation.')
     } else {
         // Check if the handbook resources are present.
-        if (!file('src/handbook/data/commands.json').exists()) {
+        if (!file('src/handbook/data/commands.json')) {
             println('Command data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/avatars.csv').exists()) {
+        if (!file('src/handbook/data/avatars.csv')) {
             println('Avatar data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/entities.csv').exists()) {
+        if (!file('src/handbook/data/entities.csv')) {
             println('Entity data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/items.csv').exists()) {
+        if (!file('src/handbook/data/items.csv')) {
             println('Item data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/mainquests.csv').exists()) {
+        if (!file('src/handbook/data/mainquests.csv')) {
             println('Main quest data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/quests.csv').exists()) {
+        if (!file('src/handbook/data/quests.csv')) {
             println('Quest data was not found. Skipping handbook generation.')
             return
         }
-        if (!file('src/handbook/data/scenes.csv').exists()) {
+        if (!file('src/handbook/data/scenes.csv')) {
             println('Scene data was not found. Skipping handbook generation.')
             return
         }
