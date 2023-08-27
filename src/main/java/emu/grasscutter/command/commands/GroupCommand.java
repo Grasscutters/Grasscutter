@@ -10,7 +10,7 @@ import java.util.List;
 
 @Command(
         label = "group",
-        aliases = {"g"},
+        aliases = {"gr"},
         usage = {"(refresh) [<groupId>] [<suiteId>]"},
         permission = "player.group",
         permissionTargeted = "player.group.others")

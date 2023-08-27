@@ -12,7 +12,7 @@ import lombok.val;
 
 @Command(
         label = "sound",
-        aliases = {"s", "audio"},
+        aliases = {"audio"},
         usage = {"[<audioname>] [<x><y><z>]"},
         permission = "player.sound",
         permissionTargeted = "player.sound.others")
