@@ -32,7 +32,7 @@ public final class InfoCommand implements CommandHandler {
         // TODO: Send to remote server (Grasscutter API) and send dump link.
         CommandHandler.sendMessage(sender, """
             Credits
-            - Slushy Team (akio, azzu, Areha11Fz, tamilp)
+            - Slushy Team (akio, azzu, Areha11Fz, tamil)
             - Yuki (resource minifying & packaging)
             - Dimbreath (dumping most resources)
 
