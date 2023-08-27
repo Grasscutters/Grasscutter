@@ -579,14 +579,20 @@ public class Player implements PlayerHook, FieldFetch {
         this.setOrFetch(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
         this.setOrFetch(PlayerProperty.PROP_IS_FLYABLE,
             withQuesting ? 0 : 1);
+        this.setOrFetch(PlayerProperty.PROP_PLAYER_CAN_DIVE,
+                withQuesting ? 0 : 1);
         this.setOrFetch(PlayerProperty.PROP_IS_TRANSFERABLE, 1);
         this.setOrFetch(PlayerProperty.PROP_MAX_STAMINA,
             withQuesting ? 10000 : 24000);
+        this.setOrFetch(PlayerProperty.PROP_DIVE_MAX_STAMINA,
+                withQuesting ? 10000 : 0);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 160);
 
         // The player's current stamina is always their max stamina.
         this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
             this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
+        this.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA,
+                this.getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA));
     }
 
     /**
@@ -1515,7 +1521,7 @@ public class Player implements PlayerHook, FieldFetch {
         int min = this.getPropertyMin(prop);
         int max = this.getPropertyMax(prop);
         if (min <= value && value <= max) {
-            int currentValue = this.properties.get(prop.getId());
+            int currentValue = this.properties.getOrDefault(prop.getId(), 0);
             this.properties.put(prop.getId(), value);
             if (sendPacket) {
                 // Send property change reasons if needed.

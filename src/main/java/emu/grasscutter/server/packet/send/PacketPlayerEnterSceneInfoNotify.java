@@ -3,9 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.AbilityControlBlockOuterClass;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo;
 import emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo;
 import emu.grasscutter.net.proto.MPLevelEntityInfoOuterClass.MPLevelEntityInfo;
@@ -28,8 +26,7 @@ public class PacketPlayerEnterSceneInfoNotify extends BasePacket {
                 TeamEnterSceneInfo.newBuilder()
                         .setTeamEntityId(player.getTeamManager().getEntity().getId()) // 150995833
                         .setTeamAbilityInfo(empty)
-                        .setAbilityControlBlock(
-                                AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder().build()));
+                        .setAbilityControlBlock(player.getTeamManager().getAbilityControlBlock()));
         proto.setMpLevelEntityInfo(
                 MPLevelEntityInfo.newBuilder()
                         .setEntityId(player.getWorld().getLevelEntityId()) // 184550274

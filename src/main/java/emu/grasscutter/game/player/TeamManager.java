@@ -1,53 +1,48 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import dev.morphia.annotations.*;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.EntityAvatar;
-import emu.grasscutter.game.entity.EntityBaseGadget;
-import emu.grasscutter.game.entity.EntityTeam;
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.EnterReason;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
-import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.*;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
     @Transient private final List<EntityAvatar> avatars;
     @Transient @Getter private final Set<EntityBaseGadget> gadgets;
     @Transient @Getter private final IntSet teamResonances;
-    @Transient @Getter private final IntSet teamResonancesConfig;
+    @Transient
+    @Getter
+    private final IntSet teamResonancesConfig;
+    @Transient
+    @Getter
+    @Setter
+    private Set<String> teamAbilityEmbryos;
     // This needs to be a LinkedHashMap to guarantee insertion order.
-    @Getter private LinkedHashMap<Integer, TeamInfo> teams;
+    @Getter
+    private LinkedHashMap<Integer, TeamInfo> teams;
     private int currentTeamIndex;
     @Getter @Setter private int currentCharacterIndex;
     @Transient @Getter @Setter private TeamInfo mpTeam;
@@ -69,6 +64,7 @@ public final class TeamManager extends BasePlayerDataManager {
         this.gadgets = new HashSet<>();
         this.teamResonances = new IntOpenHashSet();
         this.teamResonancesConfig = new IntOpenHashSet();
+        this.teamAbilityEmbryos = new HashSet<>();
         this.trialAvatars = new HashMap<>();
         this.trialAvatarTeam = new TeamInfo();
     }
@@ -82,6 +78,42 @@ public final class TeamManager extends BasePlayerDataManager {
         for (int i = 1; i <= GameConstants.DEFAULT_TEAMS; i++) {
             this.teams.put(i, new TeamInfo());
         }
+    }
+
+    // Add team ability embryos, NOT to be confused with avatarAbilties.
+    // These should include the ones in LevelEntity (according to levelEntityConfig field in sceneId)
+    // rn only apply to big world defaults, but will fix scaramouch domain circles (BinOutput/LevelEntity/Level_Monster_Nada_setting)
+    public AbilityControlBlockOuterClass.AbilityControlBlock getAbilityControlBlock() {
+        AbilityControlBlockOuterClass.AbilityControlBlock.Builder abilityControlBlock = AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder();
+        int embryoId = 0;
+
+        // add from default
+        if (Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).count() > 0) {
+            List<String> teamAbilties = Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).toList();
+            for (String skill : teamAbilties) {
+                AbilityEmbryoOuterClass.AbilityEmbryo emb = AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
+                    .setAbilityId(++embryoId)
+                    .setAbilityNameHash(Utils.abilityHash(skill))
+                    .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
+                    .build();
+                abilityControlBlock.addAbilityEmbryoList(emb);
+            }
+        }
+
+        // same as avatar ability hash (add frm levelEntityConfig data)
+        if (this.getTeamAbilityEmbryos().size() > 0) {
+            for (String skill : this.getTeamAbilityEmbryos()) {
+                AbilityEmbryoOuterClass.AbilityEmbryo emb = AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
+                    .setAbilityId(++embryoId)
+                    .setAbilityNameHash(Utils.abilityHash(skill))
+                    .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
+                    .build();
+                abilityControlBlock.addAbilityEmbryoList(emb);
+            }
+        }
+
+        // return block to add
+        return abilityControlBlock.build();
     }
 
     public World getWorld() {

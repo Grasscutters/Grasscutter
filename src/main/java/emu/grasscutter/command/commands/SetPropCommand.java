@@ -86,6 +86,12 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("fly", flyable);
         this.props.put("glider", flyable);
         this.props.put("canglide", flyable);
+
+        Prop dive = new Prop("CanDive", PlayerProperty.PROP_PLAYER_CAN_DIVE, PseudoProp.CAN_DIVE);
+        this.props.put("dive", dive);
+        this.props.put("swim", dive);
+        this.props.put("water", dive);
+        this.props.put("candive", dive);
     }
 
     @Override
@@ -129,6 +135,7 @@ public final class SetPropCommand implements CommandHandler {
                     case SET_OPENSTATE -> this.setOpenState(targetPlayer, value, 1);
                     case UNSET_OPENSTATE -> this.setOpenState(targetPlayer, value, 0);
                     case UNLOCK_MAP -> unlockMap(targetPlayer, value);
+                    case CAN_DIVE -> canDive(targetPlayer, value);
                     default -> targetPlayer.setProperty(prop.prop, value);
                 };
 
@@ -219,6 +226,20 @@ public final class SetPropCommand implements CommandHandler {
         return true;
     }
 
+    private boolean canDive(Player targetPlayer, int value) {
+        // allow diving and set max stamina OR not
+        if (value == 0) {
+            targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 0);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 0);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 0);
+        } else {
+            targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 1);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 10000);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 10000);
+        }
+        return true;
+    }
+
     private boolean unlockMap(Player targetPlayer, int value) {
         // Unlock.
         GameData.getScenePointsPerScene()
@@ -270,7 +291,8 @@ public final class SetPropCommand implements CommandHandler {
         SET_OPENSTATE,
         UNSET_OPENSTATE,
         UNLOCK_MAP,
-        IS_FLYABLE
+        IS_FLYABLE,
+        CAN_DIVE
     }
 
     static class Prop {
