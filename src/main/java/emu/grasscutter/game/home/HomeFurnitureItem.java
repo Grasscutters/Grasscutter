@@ -41,7 +41,7 @@ public class HomeFurnitureItem {
                 .furnitureId(homeFurniture.getId())
                 .parentFurnitureIndex(1)
                 .spawnPos(homeFurniture.getPos() == null ? new Position() : homeFurniture.getPos())
-                .spawnRot(homeFurniture.getRot() == null ? new Position() : homeFurniture.getRot())
+                .spawnRot(new Position())
                 .build();
     }
 
