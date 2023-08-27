@@ -1261,10 +1261,9 @@ public class ScriptLib {
         return new int[] {0,0};
     }
 
-    //TODO check
-    public int SetWeatherAreaState(int var1, int var2){
-        logger.warn("[LUA] Call unimplemented SetWeatherAreaState with {} {}", var1, var2);
-        getSceneScriptManager().getScene().getPlayers().forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
+    public int SetWeatherAreaState(int var1, int var2) {
+        this.getSceneScriptManager().getScene().getPlayers()
+            .forEach(p -> p.setWeather(var1, ClimateType.getTypeByValue(var2)));
         return 0;
     }
 
@@ -1285,10 +1284,8 @@ public class ScriptLib {
         return 0;
     }
 
-    //TODO check
     public boolean CheckIsInMpMode(){
-        logger.debug("[LUA] Call CheckIsInMpMode");
-        return getSceneScriptManager().getScene().getWorld().isMultiplayer();
+        return this.getSceneScriptManager().getScene().getWorld().isMultiplayer();
     }
 
     /**
