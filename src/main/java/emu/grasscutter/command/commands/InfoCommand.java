@@ -9,7 +9,7 @@ import emu.grasscutter.tools.Tools;
 
 import java.util.List;
 
-@Command(label = "info", aliases = {"info", "helpme"},
+@Command(label = "info", aliases = {"troubleshoot", "helpme"},
     usage = "/info", targetRequirement = Command.TargetRequirement.NONE)
 public final class InfoCommand implements CommandHandler {
     // This command can use the 'grasscutter.command.troubleshoot' permission to show sensitive information.
