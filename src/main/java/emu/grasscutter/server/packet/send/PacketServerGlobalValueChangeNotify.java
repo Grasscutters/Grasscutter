@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.ServerGlobalValueChangeNotifyOuterClass.ServerG
 import emu.grasscutter.utils.Utils;
 
 public final class PacketServerGlobalValueChangeNotify extends BasePacket {
-    public PacketServerGlobalValueChangeNotify(GameEntity entity, String abilityHash, int value) {
+    public PacketServerGlobalValueChangeNotify(GameEntity entity, String abilityHash, float value) {
         super(PacketOpcodes.ServerGlobalValueChangeNotify);
 
         this.setData(
@@ -17,7 +17,7 @@ public final class PacketServerGlobalValueChangeNotify extends BasePacket {
                         .setKeyHash(Utils.abilityHash(abilityHash)));
     }
 
-    public PacketServerGlobalValueChangeNotify(int entityId, String abilityHash, int value) {
+    public PacketServerGlobalValueChangeNotify(int entityId, String abilityHash, float value) {
         super(PacketOpcodes.ServerGlobalValueChangeNotify);
 
         this.setData(
