@@ -28,10 +28,13 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         // Sanity checks
         int avatarId = req.getAvatarId();
         int startingSkillDepot;
+        int elementlessSkillDepot;
         if (avatarId == GameConstants.MAIN_CHARACTER_MALE) {
             startingSkillDepot = 504;
+            elementlessSkillDepot = 501;
         } else if (avatarId == GameConstants.MAIN_CHARACTER_FEMALE) {
             startingSkillDepot = 704;
+            elementlessSkillDepot = 701;
         } else {
             return;
         }
@@ -56,6 +59,9 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             if (!GAME_OPTIONS.questing.enabled) {
                 mainCharacter.setSkillDepotData(
                         GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
+            } else {
+                mainCharacter.setSkillDepotData(
+                        GameData.getAvatarSkillDepotDataMap().get(elementlessSkillDepot));
             }
 
             // Manually handle adding to team
