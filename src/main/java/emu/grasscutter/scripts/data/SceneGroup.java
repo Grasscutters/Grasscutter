@@ -3,20 +3,12 @@ package emu.grasscutter.scripts.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
+import lombok.*;
+import org.luaj.vm2.*;
+
+import javax.script.*;
+import java.util.*;
 import java.util.stream.Collectors;
-import javax.script.Bindings;
-import javax.script.CompiledScript;
-import javax.script.ScriptException;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import org.luaj.vm2.LuaError;
-import org.luaj.vm2.LuaValue;
 
 @ToString
 @Setter
@@ -105,7 +97,7 @@ public final class SceneGroup {
 
         // Eval script
         try {
-            cs.eval(this.bindings);
+            ScriptLoader.eval(cs, this.bindings);
 
             // Set
             this.monsters =

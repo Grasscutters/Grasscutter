@@ -5,8 +5,10 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.GameEntity;
-import javax.script.Bindings;
+import emu.grasscutter.scripts.ScriptLoader;
 import org.luaj.vm2.LuaFunction;
+
+import javax.script.Bindings;
 
 @AbilityAction(AbilityModifierAction.Type.ServerLuaCall)
 public final class ActionServerLuaCall extends AbilityActionHandler {
@@ -17,6 +19,11 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
         var scriptManager = scene.getScriptManager();
         var functionName = action.funcName;
 
+        // Set the script library's manager.
+        var scriptLib = ScriptLoader.getScriptLib();
+        scriptLib.setCurrentEntity(target);
+        scriptLib.setSceneScriptManager(scriptManager);
+        // Attempt to call the function.
         return switch (action.luaCallType) {
             default -> false;
             case FromGroup -> {
@@ -24,12 +31,18 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
                 var group = scriptManager.getGroupById(groupId);
                 var script = group.getBindings();
 
+                // Set the script library's group.
+                scriptLib.setCurrentGroup(group);
+
                 yield ActionServerLuaCall.callFunction(script, functionName);
             }
             case SpecificGroup -> {
                 var groupId = action.callParamList[0];
                 var group = scriptManager.getGroupById(groupId);
                 var script = group.getBindings();
+
+                // Set the script library's group.
+                scriptLib.setCurrentGroup(group);
 
                 yield ActionServerLuaCall.callFunction(script, functionName);
             }
@@ -51,7 +64,7 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
                 throw new Exception("Function is not a LuaFunction.");
 
             // Attempt to invoke the function.
-            luaFunction.call();
+            luaFunction.call(ScriptLoader.getScriptLibLua());
 
             return true;
         } catch (Exception exception) {

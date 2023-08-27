@@ -472,7 +472,7 @@ public class ScriptLib {
 
     private void printLog(String source, String msg){
         var currentGroup = this.currentGroup.getIfExists();
-        if(currentGroup != null) {
+        if (currentGroup != null) {
             Grasscutter.getLogger().trace("[LUA] {} {} {}", source, currentGroup.id, msg);
         } else {
             Grasscutter.getLogger().trace("[LUA] {} {}", source, msg);
@@ -782,7 +782,7 @@ public class ScriptLib {
         return 1;
     }
 
-    public LuaTable GetSceneUidList(){
+    public LuaTable GetSceneUidList() {
         logger.warn("[LUA] Call unchecked GetSceneUidList");
         //TODO check
         var scriptManager = sceneScriptManager.getIfExists();
@@ -966,10 +966,12 @@ public class ScriptLib {
         var group = this.getCurrentGroup().get();
 
         // Create a new time axis instance.
-        scriptManager.initTimeAxis(new SceneTimeAxis(
+        var timeAxis = new SceneTimeAxis(
                 scriptManager, group.id,
                 identifier, delays[0], shouldLoop
-        ));
+        );
+        scriptManager.initTimeAxis(timeAxis);
+        timeAxis.start();
 
         return 0;
     }

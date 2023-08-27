@@ -1,6 +1,6 @@
 package emu.grasscutter.scripts;
 
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.game.dungeons.challenge.enums.*;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestState;
@@ -8,16 +8,18 @@ import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
-import java.lang.ref.SoftReference;
-import java.nio.file.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import javax.script.*;
 import lombok.Getter;
 import org.luaj.vm2.*;
 import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.script.LuajContext;
+
+import javax.script.*;
+import java.lang.ref.SoftReference;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
@@ -31,6 +33,9 @@ public class ScriptLoader {
             new ConcurrentHashMap<>();
     /** sceneId - SceneMeta */
     private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
+
+    private static final AtomicReference<Bindings> currentBindings
+            = new AtomicReference<>(null);
 
     public static synchronized void init() throws Exception {
         if (sm != null) {
@@ -104,25 +109,54 @@ public class ScriptLoader {
         }
     }
 
+    /**
+     * Performs a smart evaluation.
+     * This allows for 'require' to work.
+     *
+     * @param script The script to evaluate.
+     * @param bindings The bindings to use.
+     * @return The result of the evaluation.
+     */
+    public static Object eval(
+            CompiledScript script,
+            Bindings bindings)
+            throws ScriptException {
+        // Set the current bindings.
+        currentBindings.set(bindings);
+        // Evaluate the script.
+        var result = script.eval(bindings);
+        // Clear the current bindings.
+        currentBindings.set(null);
+
+        return result;
+    }
+
     static final class RequireFunction extends OneArgFunction {
         @Override
         public LuaValue call(LuaValue arg) {
             // Resolve the script path.
             var scriptName = arg.checkjstring();
-            var scriptPath = FileUtils.getScriptPath("Common/" + scriptName + ".lua");
+            var scriptPath = "Common/" + scriptName + ".lua";
 
             // Load & compile the script.
-            var script = ScriptLoader.getScript(scriptPath.toString());
+            var script = ScriptLoader.getScript(scriptPath);
             if (script == null) {
                 return LuaValue.NONE;
             }
 
             // Append the script to the context.
             try {
-                script.eval();
+                var bindings = currentBindings.get();
+                if (bindings != null) {
+                    ScriptLoader.eval(script, bindings);
+                } else {
+                    script.eval();
+                }
             } catch (Exception exception) {
-                Grasscutter.getLogger()
-                        .error("Loading script {} failed! - {}", scriptPath, exception.getLocalizedMessage());
+                if (DebugConstants.LOG_MISSING_LUA_SCRIPTS) {
+                    Grasscutter.getLogger()
+                            .error("Loading script {} failed! - {}", scriptPath, exception.getLocalizedMessage());
+                }
             }
 
             // TODO: What is the proper return value?
