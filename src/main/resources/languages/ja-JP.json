@@ -407,8 +407,8 @@
       "failure": "失敗しました。プレイヤーが見つかりません。",
       "description": "プレイヤーのBANを解除します。"
     },
-    "troubleshoot": {
-      "description": "🇺🇸Generate debugging information for troubleshooting."
+    "info": {
+      "description": "🇺🇸Provides the sender information about the server."
     }
   },
   "gacha": {

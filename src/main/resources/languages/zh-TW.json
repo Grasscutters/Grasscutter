@@ -407,7 +407,7 @@
       "failure": "撤銷停權失敗，玩家帳號不存在。",
       "description": "撤銷停權指定玩家。"
     },
-    "troubleshoot": {
+    "info": {
       "description": "產生疑難排解用的除錯資訊。"
     }
   },

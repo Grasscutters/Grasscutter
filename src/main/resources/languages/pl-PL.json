@@ -407,8 +407,8 @@
       "failure": "Gracz o podanym ID nie istnieje.",
       "description": "Odbanuj podanego gracza."
     },
-    "troubleshoot": {
-      "description": "🇺🇸Generate debugging information for troubleshooting."
+    "info": {
+      "description": "🇺🇸Provides the sender information about the server."
     }
   },
   "gacha": {

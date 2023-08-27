@@ -407,7 +407,7 @@
       "failure": "Échec, joueur introuvable.",
       "description": "Retire le bannissement d'un joueur"
     },
-    "troubleshoot": {
+    "info": {
       "description": "Génère des informations de déboguage pour le dépannage."
     }
   },
