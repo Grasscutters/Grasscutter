@@ -24,6 +24,6 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
         target.getScene().getHost().sendPacket(
             new PacketServerGlobalValueChangeNotify(target, valueKey, value.get(ability)));
 
-        return false;
+        return true;
     }
 }
