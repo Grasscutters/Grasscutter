@@ -91,9 +91,9 @@ public final class AbilityManager extends BasePlayerManager {
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         var handler = actionHandlers.get(action.type);
         if (handler == null || ability == null) {
-            if (DebugConstants.LOG_ABILITIES) {
+            if (DebugConstants.LOG_MISSING_ABILITY_HANDLERS) {
                 Grasscutter.getLogger()
-                        .debug("Could not execute ability action {} at {}", action.type, ability);
+                        .debug("Missing ability action handler for {} (invoker: {}).", action.type, ability);
             }
 
             return;
@@ -103,7 +103,7 @@ public final class AbilityManager extends BasePlayerManager {
                 () -> {
                     if (!handler.execute(ability, action, abilityData, target)) {
                         Grasscutter.getLogger()
-                                .debug("Ability execute action failed for {} at {}.", action.type, ability);
+                            .debug("Ability execute action failed for {} at {}.", action.type, ability);
                     }
                 });
     }
