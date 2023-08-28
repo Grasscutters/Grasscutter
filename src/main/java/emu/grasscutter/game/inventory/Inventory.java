@@ -1,7 +1,5 @@
 package emu.grasscutter.game.inventory;
 
-import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -13,13 +11,17 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.props.ItemUseAction.UseItemParams;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
+import emu.grasscutter.server.event.player.PlayerObtainItemEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.longs.*;
-import java.util.*;
-import javax.annotation.Nullable;
 import lombok.val;
+
+import javax.annotation.Nullable;
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.INVENTORY_LIMITS;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
     private final Long2ObjectMap<GameItem> store;
@@ -121,6 +123,9 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         if (result != null) {
             this.triggerAddItemEvents(result);
             getPlayer().sendPacket(new PacketStoreItemChangeNotify(result));
+
+            // Call PlayerObtainItemEvent.
+            new PlayerObtainItemEvent(this.getPlayer(), item).call();
             return true;
         }
 
