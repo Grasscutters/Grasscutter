@@ -14,6 +14,7 @@ import emu.grasscutter.net.proto.ForgeQueueManipulateReqOuterClass.ForgeQueueMan
 import emu.grasscutter.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType;
 import emu.grasscutter.net.proto.ForgeStartReqOuterClass.ForgeStartReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.server.event.player.PlayerForgeItemEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ForgingManager extends BasePlayerManager {
+public final class ForgingManager extends BasePlayerManager {
 
     public ForgingManager(Player player) {
         super(player);
@@ -186,6 +187,12 @@ public class ForgingManager extends BasePlayerManager {
         int resultId = data.getResultItemId() > 0 ? data.getResultItemId() : data.getShowItemId();
         ItemData resultItemData = GameData.getItemDataMap().get(resultId);
         GameItem addItem = new GameItem(resultItemData, data.getResultItemCount() * finished);
+
+        // Call the PlayerForgeItemEvent.
+        var event = new PlayerForgeItemEvent(this.player, addItem);
+        if (!event.call()) return;
+
+        addItem = event.getItemForged();
         this.player.getInventory().addItem(addItem);
 
         // Battle pass trigger handler
