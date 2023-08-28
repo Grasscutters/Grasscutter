@@ -1,56 +1,39 @@
 package emu.grasscutter.game.player;
 
 import dev.morphia.annotations.*;
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PlayerLevelData;
 import emu.grasscutter.data.excels.world.WeatherData;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.Account;
-import emu.grasscutter.game.CoopRequest;
+import emu.grasscutter.game.*;
 import emu.grasscutter.game.ability.AbilityManager;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.ActivityManager;
-import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.avatar.AvatarStorage;
+import emu.grasscutter.game.avatar.*;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
-import emu.grasscutter.game.friends.FriendsList;
-import emu.grasscutter.game.friends.PlayerProfile;
+import emu.grasscutter.game.friends.*;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
 import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.mail.Mail;
-import emu.grasscutter.game.mail.MailHandler;
-import emu.grasscutter.game.managers.FurnitureManager;
-import emu.grasscutter.game.managers.ResinManager;
-import emu.grasscutter.game.managers.SatiationManager;
-import emu.grasscutter.game.managers.cooking.ActiveCookCompoundData;
-import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
-import emu.grasscutter.game.managers.cooking.CookingManager;
+import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.mail.*;
+import emu.grasscutter.game.managers.*;
+import emu.grasscutter.game.managers.cooking.*;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
-import emu.grasscutter.game.managers.forging.ActiveForgeData;
-import emu.grasscutter.game.managers.forging.ForgingManager;
-import emu.grasscutter.game.managers.mapmark.MapMark;
-import emu.grasscutter.game.managers.mapmark.MapMarksManager;
-import emu.grasscutter.game.managers.SotSManager;
+import emu.grasscutter.game.managers.forging.*;
+import emu.grasscutter.game.managers.mapmark.*;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
-import emu.grasscutter.game.quest.enums.QuestCond;
-import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.talk.TalkManager;
-import emu.grasscutter.game.tower.TowerData;
-import emu.grasscutter.game.tower.TowerManager;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.game.world.World;
+import emu.grasscutter.game.tower.*;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
@@ -58,38 +41,26 @@ import emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
 import emu.grasscutter.net.proto.MpSettingTypeOuterClass.MpSettingType;
 import emu.grasscutter.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo;
-import emu.grasscutter.net.proto.PlayerApplyEnterMpResultNotifyOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo;
-import emu.grasscutter.net.proto.PlayerWorldLocationInfoOuterClass;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.net.proto.ShowAvatarInfoOuterClass;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass;
 import emu.grasscutter.plugin.api.PlayerHook;
 import emu.grasscutter.scripts.data.SceneRegion;
-import emu.grasscutter.server.event.player.PlayerEnterAreaEvent;
-import emu.grasscutter.server.event.player.PlayerJoinEvent;
-import emu.grasscutter.server.event.player.PlayerQuitEvent;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.event.player.*;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.helpers.DateHelper;
 import emu.grasscutter.utils.objects.FieldFetch;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import lombok.Getter;
-import lombok.Setter;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
 
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
@@ -931,6 +902,9 @@ public class Player implements PlayerHook, FieldFetch {
                     this.getTeamManager().addAvatarToCurrentTeam(avatar);
                 }
             }
+
+            // Call PlayerObtainAvatarEvent.
+            new PlayerObtainAvatarEvent(this.getPlayer(), avatar).call();
         } else {
             // Failed adding avatar
         }
