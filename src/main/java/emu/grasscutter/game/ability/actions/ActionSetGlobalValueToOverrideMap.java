@@ -40,8 +40,10 @@ public final class ActionSetGlobalValueToOverrideMap extends AbilityActionHandle
         entity.onAbilityValueUpdate();
 
         // Send a value update packet.
-        entity.getScene().getHost().sendPacket(
-            new PacketServerGlobalValueChangeNotify(entity, globalValueKey, globalValue));
+        entity
+                .getScene()
+                .getHost()
+                .sendPacket(new PacketServerGlobalValueChangeNotify(entity, globalValueKey, globalValue));
 
         return true;
     }

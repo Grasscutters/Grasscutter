@@ -3,7 +3,6 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
-
 import java.util.List;
 
 @Command(
@@ -33,9 +32,10 @@ public final class DebugCommand implements CommandHandler {
 
                 var scene = sender.getScene();
                 var entityId = Integer.parseInt(args.get(0));
-                var entity = args.size() > 1 && args.get(1).equals("config") ?
-                        scene.getEntityByConfigId(entityId) :
-                        scene.getEntityById(entityId);
+                var entity =
+                        args.size() > 1 && args.get(1).equals("config")
+                                ? scene.getEntityByConfigId(entityId)
+                                : scene.getEntityById(entityId);
                 if (entity == null) {
                     sender.dropMessage("Entity not found.");
                     return;
@@ -46,8 +46,12 @@ public final class DebugCommand implements CommandHandler {
                     for (var i = 0; i < abilities.size(); i++) {
                         try {
                             var ability = abilities.get(i);
-                            Grasscutter.getLogger().debug("Ability #{}: {}; Modifiers: {}",
-                                    i, ability.toString(), ability.getModifiers().keySet());
+                            Grasscutter.getLogger()
+                                    .debug(
+                                            "Ability #{}: {}; Modifiers: {}",
+                                            i,
+                                            ability.toString(),
+                                            ability.getModifiers().keySet());
                         } catch (Exception exception) {
                             Grasscutter.getLogger().warn("Failed to print ability #{}.", i, exception);
                         }

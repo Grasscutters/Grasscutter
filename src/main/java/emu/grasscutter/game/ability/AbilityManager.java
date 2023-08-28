@@ -19,11 +19,10 @@ import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -103,7 +102,7 @@ public final class AbilityManager extends BasePlayerManager {
                 () -> {
                     if (!handler.execute(ability, action, abilityData, target)) {
                         Grasscutter.getLogger()
-                            .debug("Ability execute action failed for {} at {}.", action.type, ability);
+                                .debug("Ability execute action failed for {} at {}.", action.type, ability);
                     }
                 });
     }
@@ -182,8 +181,8 @@ public final class AbilityManager extends BasePlayerManager {
             case ABILITY_INVOKE_ARGUMENT_META_SET_KILLED_SETATE -> this.handleKillState(invoke);
             default -> {
                 if (DebugConstants.LOG_MISSING_ABILITIES) {
-                    Grasscutter.getLogger().trace("Missing invoke handler for ability {}.",
-                            invoke.getArgumentType().name());
+                    Grasscutter.getLogger()
+                            .trace("Missing invoke handler for ability {}.", invoke.getArgumentType().name());
                 }
             }
         }

@@ -3,12 +3,11 @@ package emu.grasscutter.scripts.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.ScriptLoader;
-import lombok.*;
-import org.luaj.vm2.*;
-
-import javax.script.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import javax.script.*;
+import lombok.*;
+import org.luaj.vm2.*;
 
 @ToString
 @Setter

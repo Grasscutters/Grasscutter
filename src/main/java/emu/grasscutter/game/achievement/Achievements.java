@@ -10,6 +10,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status;
+import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
 import lombok.*;
 import org.bson.types.ObjectId;
@@ -25,8 +26,7 @@ import java.util.function.IntSupplier;
 public class Achievements {
     private static final IntSupplier currentTimeSecs =
             () -> (int) (System.currentTimeMillis() / 1000L);
-    private static final Achievement INVALID =
-            new Achievement(Status.STATUS_INVALID, -1, 0, 0, 0);
+    private static final Achievement INVALID = new Achievement(Status.STATUS_INVALID, -1, 0, 0, 0);
     @Id private ObjectId id;
     private int uid;
     @Transient private Player player;
@@ -65,8 +65,7 @@ public class Achievements {
                         a -> {
                             map.put(
                                     a.getId(),
-                                    new Achievement(
-                                            Status.STATUS_UNFINISHED, a.getId(), a.getProgress(), 0, 0));
+                                    new Achievement(Status.STATUS_UNFINISHED, a.getId(), a.getProgress(), 0, 0));
                         });
         return map;
     }
@@ -126,10 +125,13 @@ public class Achievements {
     }
 
     private boolean update(Achievement a) {
-        if (a.getStatus() == Status.STATUS_UNFINISHED
-                && a.getCurProgress() >= a.getTotalProgress()) {
+        if (a.getStatus() == Status.STATUS_UNFINISHED && a.getCurProgress() >= a.getTotalProgress()) {
             a.setStatus(Status.STATUS_FINISHED);
             a.setFinishTimestampSec(currentTimeSecs.getAsInt());
+
+            // Call PlayerCompleteAchievementEvent.
+            new PlayerCompleteAchievementEvent(this.player, a).call();
+
             return true;
         } else if (this.isFinished(a.getId()) && a.getCurProgress() < a.getTotalProgress()) {
             a.setStatus(Status.STATUS_UNFINISHED);
@@ -197,8 +199,7 @@ public class Achievements {
 
     public boolean isFinished(int achievementId) {
         var status = this.getStatus(achievementId);
-        return status == Status.STATUS_FINISHED
-                || status == Status.STATUS_REWARD_TAKEN;
+        return status == Status.STATUS_FINISHED || status == Status.STATUS_REWARD_TAKEN;
     }
 
     public void takeReward(List<Integer> ids) {

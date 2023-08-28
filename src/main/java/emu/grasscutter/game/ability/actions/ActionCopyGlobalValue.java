@@ -33,8 +33,10 @@ public final class ActionCopyGlobalValue extends AbilityActionHandler {
         destination.onAbilityValueUpdate();
 
         // Send a value update packet.
-        entity.getScene().getHost().sendPacket(
-            new PacketServerGlobalValueChangeNotify(entity, action.dstKey, value));
+        entity
+                .getScene()
+                .getHost()
+                .sendPacket(new PacketServerGlobalValueChangeNotify(entity, action.dstKey, value));
 
         return true;
     }

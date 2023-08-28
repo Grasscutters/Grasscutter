@@ -1,5 +1,8 @@
 package emu.grasscutter.tools;
 
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.getTextMapKey;
+
 import emu.grasscutter.*;
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.*;
@@ -11,8 +14,6 @@ import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import emu.grasscutter.utils.lang.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -21,9 +22,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.*;
-
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.getTextMapKey;
+import lombok.*;
 
 public final class Tools {
     /**
@@ -422,8 +421,7 @@ public final class Tools {
                                     case "ver" -> resourceInfo.version(value);
                                     case "patches" -> resourceInfo.patches(value);
                                     case "scripts" -> resourceInfo.scripts(ScriptsType.valueOf(value.toUpperCase()));
-                                    case "hasnolocals" -> resourceInfo.hasNoLocals(
-                                            Boolean.parseBoolean(value));
+                                    case "hasnolocals" -> resourceInfo.hasNoLocals(Boolean.parseBoolean(value));
                                     case "hasserverres" -> resourceInfo.hasServerResources(
                                             Boolean.parseBoolean(value));
                                     case "hasscenescriptdata" -> resourceInfo.hasSceneScriptData(

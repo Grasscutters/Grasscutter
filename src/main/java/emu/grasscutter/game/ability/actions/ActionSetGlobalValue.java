@@ -10,7 +10,7 @@ import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 public final class ActionSetGlobalValue extends AbilityActionHandler {
     @Override
     public boolean execute(
-        Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
         // Get the key & value.
         var valueKey = action.key;
         var value = action.ratio;
@@ -21,8 +21,10 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
         target.onAbilityValueUpdate();
 
         // Send a value update packet.
-        target.getScene().getHost().sendPacket(
-            new PacketServerGlobalValueChangeNotify(target, valueKey, value.get(ability)));
+        target
+                .getScene()
+                .getHost()
+                .sendPacket(new PacketServerGlobalValueChangeNotify(target, valueKey, value.get(ability)));
 
         return true;
     }

@@ -1,5 +1,7 @@
 package emu.grasscutter.game.player;
 
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+
 import dev.morphia.annotations.*;
 import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
@@ -21,28 +23,19 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import lombok.*;
-
 import java.util.*;
 import java.util.stream.Stream;
-
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import lombok.*;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
     @Transient private final List<EntityAvatar> avatars;
     @Transient @Getter private final Set<EntityBaseGadget> gadgets;
     @Transient @Getter private final IntSet teamResonances;
-    @Transient
-    @Getter
-    private final IntSet teamResonancesConfig;
-    @Transient
-    @Getter
-    @Setter
-    private Set<String> teamAbilityEmbryos;
+    @Transient @Getter private final IntSet teamResonancesConfig;
+    @Transient @Getter @Setter private Set<String> teamAbilityEmbryos;
     // This needs to be a LinkedHashMap to guarantee insertion order.
-    @Getter
-    private LinkedHashMap<Integer, TeamInfo> teams;
+    @Getter private LinkedHashMap<Integer, TeamInfo> teams;
     private int currentTeamIndex;
     @Getter @Setter private int currentCharacterIndex;
     @Transient @Getter @Setter private TeamInfo mpTeam;
@@ -82,20 +75,24 @@ public final class TeamManager extends BasePlayerDataManager {
 
     // Add team ability embryos, NOT to be confused with avatarAbilties.
     // These should include the ones in LevelEntity (according to levelEntityConfig field in sceneId)
-    // rn only apply to big world defaults, but will fix scaramouch domain circles (BinOutput/LevelEntity/Level_Monster_Nada_setting)
+    // rn only apply to big world defaults, but will fix scaramouch domain circles
+    // (BinOutput/LevelEntity/Level_Monster_Nada_setting)
     public AbilityControlBlockOuterClass.AbilityControlBlock getAbilityControlBlock() {
-        AbilityControlBlockOuterClass.AbilityControlBlock.Builder abilityControlBlock = AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder();
+        AbilityControlBlockOuterClass.AbilityControlBlock.Builder abilityControlBlock =
+                AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder();
         int embryoId = 0;
 
         // add from default
         if (Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).count() > 0) {
-            List<String> teamAbilties = Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).toList();
+            List<String> teamAbilties =
+                    Arrays.stream(GameConstants.DEFAULT_TEAM_ABILITY_STRINGS).toList();
             for (String skill : teamAbilties) {
-                AbilityEmbryoOuterClass.AbilityEmbryo emb = AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
-                    .setAbilityId(++embryoId)
-                    .setAbilityNameHash(Utils.abilityHash(skill))
-                    .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
-                    .build();
+                AbilityEmbryoOuterClass.AbilityEmbryo emb =
+                        AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
+                                .setAbilityId(++embryoId)
+                                .setAbilityNameHash(Utils.abilityHash(skill))
+                                .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
+                                .build();
                 abilityControlBlock.addAbilityEmbryoList(emb);
             }
         }
@@ -103,11 +100,12 @@ public final class TeamManager extends BasePlayerDataManager {
         // same as avatar ability hash (add frm levelEntityConfig data)
         if (this.getTeamAbilityEmbryos().size() > 0) {
             for (String skill : this.getTeamAbilityEmbryos()) {
-                AbilityEmbryoOuterClass.AbilityEmbryo emb = AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
-                    .setAbilityId(++embryoId)
-                    .setAbilityNameHash(Utils.abilityHash(skill))
-                    .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
-                    .build();
+                AbilityEmbryoOuterClass.AbilityEmbryo emb =
+                        AbilityEmbryoOuterClass.AbilityEmbryo.newBuilder()
+                                .setAbilityId(++embryoId)
+                                .setAbilityNameHash(Utils.abilityHash(skill))
+                                .setAbilityOverrideNameHash(GameConstants.DEFAULT_ABILITY_NAME)
+                                .build();
                 abilityControlBlock.addAbilityEmbryoList(emb);
             }
         }

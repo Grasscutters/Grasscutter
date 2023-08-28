@@ -15,11 +15,7 @@ public class Achievement {
     @Setter private int finishTimestampSec;
 
     public Achievement(
-            Status status,
-            int id,
-            int totalProgress,
-            int curProgress,
-            int finishTimestampSec) {
+            Status status, int id, int totalProgress, int curProgress, int finishTimestampSec) {
         this.status = status;
         this.id = id;
         this.totalProgress = totalProgress;

@@ -6,9 +6,8 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.scripts.ScriptLoader;
-import org.luaj.vm2.LuaFunction;
-
 import javax.script.Bindings;
+import org.luaj.vm2.LuaFunction;
 
 @AbilityAction(AbilityModifierAction.Type.ServerLuaCall)
 public final class ActionServerLuaCall extends AbilityActionHandler {

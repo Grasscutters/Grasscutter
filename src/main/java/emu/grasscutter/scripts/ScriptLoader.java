@@ -8,18 +8,17 @@ import emu.grasscutter.scripts.constants.*;
 import emu.grasscutter.scripts.data.SceneMeta;
 import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
-import lombok.Getter;
-import org.luaj.vm2.*;
-import org.luaj.vm2.lib.OneArgFunction;
-import org.luaj.vm2.lib.jse.CoerceJavaToLua;
-import org.luaj.vm2.script.LuajContext;
-
-import javax.script.*;
 import java.lang.ref.SoftReference;
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.script.*;
+import lombok.Getter;
+import org.luaj.vm2.*;
+import org.luaj.vm2.lib.OneArgFunction;
+import org.luaj.vm2.lib.jse.CoerceJavaToLua;
+import org.luaj.vm2.script.LuajContext;
 
 public class ScriptLoader {
     private static ScriptEngineManager sm;
@@ -34,8 +33,7 @@ public class ScriptLoader {
     /** sceneId - SceneMeta */
     private static Map<Integer, SoftReference<SceneMeta>> sceneMetaCache = new ConcurrentHashMap<>();
 
-    private static final AtomicReference<Bindings> currentBindings
-            = new AtomicReference<>(null);
+    private static final AtomicReference<Bindings> currentBindings = new AtomicReference<>(null);
 
     public static synchronized void init() throws Exception {
         if (sm != null) {
@@ -110,17 +108,13 @@ public class ScriptLoader {
     }
 
     /**
-     * Performs a smart evaluation.
-     * This allows for 'require' to work.
+     * Performs a smart evaluation. This allows for 'require' to work.
      *
      * @param script The script to evaluate.
      * @param bindings The bindings to use.
      * @return The result of the evaluation.
      */
-    public static Object eval(
-            CompiledScript script,
-            Bindings bindings)
-            throws ScriptException {
+    public static Object eval(CompiledScript script, Bindings bindings) throws ScriptException {
         // Set the current bindings.
         currentBindings.set(bindings);
         // Evaluate the script.
