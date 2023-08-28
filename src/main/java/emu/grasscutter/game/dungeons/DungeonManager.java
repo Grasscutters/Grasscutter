@@ -18,11 +18,10 @@ import emu.grasscutter.server.event.player.PlayerFinishDungeonEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
-import lombok.*;
-
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.*;
+import javax.annotation.Nullable;
+import lombok.*;
 
 /**
  * TODO handle time limits TODO handle respawn points TODO handle team wipes and respawns TODO check
@@ -282,10 +281,7 @@ public final class DungeonManager {
         this.endDungeon(BaseDungeonResult.DungeonEndReason.COMPLETED);
 
         // Call PlayerFinishDungeonEvent.
-        new PlayerFinishDungeonEvent(
-            this.getScene().getPlayers(),
-            this.getScene(), this
-        ).call();
+        new PlayerFinishDungeonEvent(this.getScene().getPlayers(), this.getScene(), this).call();
     }
 
     public void quitDungeon() {
