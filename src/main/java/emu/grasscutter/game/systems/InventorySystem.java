@@ -441,6 +441,9 @@ public class InventorySystem extends BaseGameSystem {
         // Packets
         player.sendPacket(new PacketStoreItemChangeNotify(weapon));
         player.sendPacket(new PacketWeaponUpgradeRsp(weapon, oldLevel, leftovers));
+
+        // Call PlayerLevelItemEvent.
+        new PlayerLevelItemEvent(player, oldLevel, weapon);
     }
 
     private List<ItemParam> getLeftoverOres(int leftover) {
