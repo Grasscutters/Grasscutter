@@ -1,42 +1,25 @@
 package emu.grasscutter.game.battlepass;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import dev.morphia.annotations.*;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
-import emu.grasscutter.data.excels.BattlePassRewardData;
-import emu.grasscutter.data.excels.ItemData;
-import emu.grasscutter.data.excels.RewardData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.database.DatabaseHelper;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.MaterialType;
-import emu.grasscutter.game.player.BasePlayerDataManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.BattlePassMissionRefreshType;
-import emu.grasscutter.game.props.BattlePassMissionStatus;
-import emu.grasscutter.game.props.ItemUseOp;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.inventory.*;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle;
 import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption;
 import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
-import emu.grasscutter.server.packet.send.PacketBattlePassCurScheduleUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
-import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import emu.grasscutter.server.packet.send.*;
 import lombok.Getter;
 import org.bson.types.ObjectId;
+
+import java.time.*;
+import java.time.temporal.TemporalAdjusters;
+import java.util.*;
 
 @Entity(value = "battlepass", useDiscriminator = false)
 public class BattlePassManager extends BasePlayerDataManager {
@@ -181,7 +164,7 @@ public class BattlePassManager extends BasePlayerDataManager {
             }
         }
 
-        if (updatedMissions.size() > 0) {
+        if (!updatedMissions.isEmpty()) {
             // Save to db
             this.save();
 
@@ -263,8 +246,7 @@ public class BattlePassManager extends BasePlayerDataManager {
         // Get rewards
         List<GameItem> rewardItems = null;
 
-        if (rewardList.size() > 0) {
-
+        if (!rewardList.isEmpty()) {
             rewardItems = new ArrayList<>();
 
             for (var option : rewardList) {

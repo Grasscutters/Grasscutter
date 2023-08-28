@@ -5,6 +5,7 @@ import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.server.event.player.PlayerFinishBattlePassMission;
 import emu.grasscutter.server.game.BaseGameSystem;
 import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
@@ -68,6 +69,8 @@ public class BattlePassSystem extends BaseGameSystem {
 
             if (mission.getProgress() >= data.getProgress()) {
                 mission.setStatus(BattlePassMissionStatus.MISSION_STATUS_FINISHED);
+
+                new PlayerFinishBattlePassMission(player, mission).call();
             }
 
             // Save to db
