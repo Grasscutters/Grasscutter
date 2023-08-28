@@ -17,9 +17,15 @@ public abstract class Event {
         else throw new UnsupportedOperationException("Event is not cancellable.");
     }
 
-    /** Pushes this event to all listeners. */
-    public void call() {
+    /**
+     * Pushes this event to all listeners.
+     *
+     * @return True if execution should continue. False if execution should cancel.
+     */
+    public boolean call() {
         var pluginManager = Grasscutter.getPluginManager();
         if (pluginManager != null) pluginManager.invokeEvent(this);
+
+        return !this.isCanceled();
     }
 }
