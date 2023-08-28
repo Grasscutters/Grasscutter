@@ -258,13 +258,18 @@ public class GachaSystem extends BaseGameSystem {
         // Check against total limit
         PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(banner);
         // Call pre-PlayerWishEvent.
-        var event = new PlayerWishEvent(player, banner, times, new PlayerWishEvent.Pity(
-            gachaInfo.getPity5(), gachaInfo.getPity4(),
-            gachaInfo.getFailedFeaturedItemPulls(4) > 0,
-            banner.hasEpitomized() ?
-                gachaInfo.getFailedChosenItemPulls() >= 2 :
-                gachaInfo.getFailedFeaturedItemPulls(5) > 0
-        ));
+        var event =
+                new PlayerWishEvent(
+                        player,
+                        banner,
+                        times,
+                        new PlayerWishEvent.Pity(
+                                gachaInfo.getPity5(),
+                                gachaInfo.getPity4(),
+                                gachaInfo.getFailedFeaturedItemPulls(4) > 0,
+                                banner.hasEpitomized()
+                                        ? gachaInfo.getFailedChosenItemPulls() >= 2
+                                        : gachaInfo.getFailedFeaturedItemPulls(5) > 0));
         if (!event.call()) {
             player.sendPacket(new PacketDoGachaRsp(Retcode.RET_SVR_ERROR));
             return;
@@ -362,15 +367,13 @@ public class GachaSystem extends BaseGameSystem {
 
             // Create item
             GameItem item = new GameItem(itemData);
-            items.add(new PlayerWishEvent.WishCompute(
-                item, gachaItem, addStardust, addStarglitter, isTransferItem
-            ));
+            items.add(
+                    new PlayerWishEvent.WishCompute(
+                            item, gachaItem, addStardust, addStarglitter, isTransferItem));
         }
 
         // Call post-PlayerWishEvent.
-        event.finish(items.stream()
-            .map(PlayerWishEvent.WishCompute::getItem)
-            .toList());
+        event.finish(items.stream().map(PlayerWishEvent.WishCompute::getItem).toList());
 
         var eventItems = event.getReceivedItems();
         for (var i = 0; i < items.size(); i++) {
@@ -386,11 +389,14 @@ public class GachaSystem extends BaseGameSystem {
 
             if (compute.getAddStardust() > 0) {
                 gachaItem.addTokenItemList(
-                    ItemParam.newBuilder().setItemId(stardustId).setCount(compute.getAddStardust()));
+                        ItemParam.newBuilder().setItemId(stardustId).setCount(compute.getAddStardust()));
             }
             if (compute.getAddStarglitter() > 0) {
                 ItemParam starglitterParam =
-                    ItemParam.newBuilder().setItemId(starglitterId).setCount(compute.getAddStarglitter()).build();
+                        ItemParam.newBuilder()
+                                .setItemId(starglitterId)
+                                .setCount(compute.getAddStarglitter())
+                                .build();
                 if (compute.isTransferItem()) {
                     gachaItem.addTransferItems(GachaTransferItem.newBuilder().setItem(starglitterParam));
                 }

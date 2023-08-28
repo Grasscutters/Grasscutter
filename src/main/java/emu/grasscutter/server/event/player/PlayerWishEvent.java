@@ -19,10 +19,7 @@ public final class PlayerWishEvent extends PlayerEvent implements Cancellable {
 
     private boolean preItems = true;
 
-    public PlayerWishEvent(
-        Player player, GachaBanner banner,
-        int wishCount, Pity pity
-    ) {
+    public PlayerWishEvent(Player player, GachaBanner banner, int wishCount, Pity pity) {
         super(player);
 
         this.banner = banner;
@@ -31,8 +28,7 @@ public final class PlayerWishEvent extends PlayerEvent implements Cancellable {
     }
 
     /**
-     * Should be invoked after items have been generated.
-     * This will recall the event.
+     * Should be invoked after items have been generated. This will recall the event.
      *
      * @param receivedItems The items received.
      */
