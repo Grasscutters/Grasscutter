@@ -1491,11 +1491,28 @@ public class Player implements PlayerHook, FieldFetch {
         }
     }
 
+    /**
+     * Applies a property change to this player.
+     * Checks the value against the property's min and max values for sanity.
+     *
+     * @param prop The property to change.
+     * @param value The new value.
+     * @param sendPacket Whether to send a packet to the client.
+     * @return Whether the property was changed.
+     */
     private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value, boolean sendPacket) {
-        int min = this.getPropertyMin(prop);
-        int max = this.getPropertyMax(prop);
+        var currentValue = this.properties.getOrDefault(prop.getId(), 0);
+
+        // Call PlayerPropertyChangeEvent.
+        var event = new PlayerPropertyChangeEvent(this, prop, currentValue, value);
+        if (!event.call()) return false;
+
+        prop = event.getProperty();
+        value = event.getNewValue();
+
+        var min = this.getPropertyMin(prop);
+        var max = this.getPropertyMax(prop);
         if (min <= value && value <= max) {
-            int currentValue = this.properties.getOrDefault(prop.getId(), 0);
             this.properties.put(prop.getId(), value);
             if (sendPacket) {
                 // Send property change reasons if needed.
