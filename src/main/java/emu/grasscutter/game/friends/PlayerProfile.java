@@ -2,14 +2,15 @@ package emu.grasscutter.game.friends;
 
 import dev.morphia.annotations.AlsoLoad;
 import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+import org.jetbrains.annotations.Nullable;
 
 @Entity
+@Getter
 public class PlayerProfile {
-    @Transient private Player player;
-
     @AlsoLoad("id")
     private int uid;
 
@@ -22,6 +23,8 @@ public class PlayerProfile {
     private int playerLevel;
     private int worldLevel;
     private int lastActiveTime;
+    private boolean isInDuel; // Who implements duel?
+    private boolean isDuelObservable; // Who implements duel?
 
     @Deprecated // Morphia only
     public PlayerProfile() {}
@@ -31,48 +34,11 @@ public class PlayerProfile {
         this.syncWithCharacter(player);
     }
 
-    public int getUid() {
-        return uid;
-    }
-
+    @Nullable
     public Player getPlayer() {
+        var player = Grasscutter.getGameServer().getPlayerByUid(this.getUid());
+        this.syncWithCharacter(player);
         return player;
-    }
-
-    public synchronized void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getNameCard() {
-        return nameCard;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public int getAchievements() {
-        return achievements;
-    }
-
-    public int getPlayerLevel() {
-        return playerLevel;
-    }
-
-    public int getWorldLevel() {
-        return worldLevel;
-    }
-
-    public int getLastActiveTime() {
-        return lastActiveTime;
     }
 
     public void updateLastActiveTime() {

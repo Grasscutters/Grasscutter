@@ -29,6 +29,7 @@ import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.ResinManager;
 import emu.grasscutter.game.managers.SatiationManager;
+import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.cooking.ActiveCookCompoundData;
 import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
 import emu.grasscutter.game.managers.cooking.CookingManager;
@@ -38,7 +39,6 @@ import emu.grasscutter.game.managers.forging.ActiveForgeData;
 import emu.grasscutter.game.managers.forging.ForgingManager;
 import emu.grasscutter.game.managers.mapmark.MapMark;
 import emu.grasscutter.game.managers.mapmark.MapMarksManager;
-import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
@@ -75,7 +75,8 @@ import emu.grasscutter.server.game.GameServer;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.*;
+import emu.grasscutter.utils.DispatchUtils;
+import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.helpers.DateHelper;
 import emu.grasscutter.utils.objects.FieldFetch;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -1437,7 +1438,7 @@ public class Player implements PlayerHook, FieldFetch {
 
         // register
         getServer().registerPlayer(this);
-        getProfile().setPlayer(this); // Set online
+        // getProfile().setPlayer(this); // Set online // redundant
     }
 
     public void onLogout() {
@@ -1457,8 +1458,8 @@ public class Player implements PlayerHook, FieldFetch {
             }
 
             // Status stuff
-            this.getProfile().syncWithCharacter(this);
-            this.getProfile().setPlayer(null); // Set offline
+            // this.getProfile().syncWithCharacter(this); // redundant
+            // this.getProfile().setPlayer(null); // Set offline // redundant
 
             this.getCoopRequests().clear();
 
