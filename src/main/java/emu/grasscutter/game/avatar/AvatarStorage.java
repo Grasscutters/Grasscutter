@@ -157,6 +157,13 @@ public class AvatarStorage extends BasePlayerManager implements Iterable<Avatar>
             // Add to avatar storage
             this.avatars.put(avatar.getAvatarId(), avatar);
             this.avatarsGuid.put(avatar.getGuid(), avatar);
+
+            // Set main character skill depot data, fixes loading with no element every login
+            if ((avatar.getAvatarId() == 10000007) || (avatar.getAvatarId() == 10000005)) {
+                avatar.setSkillDepot(skillDepot);
+                avatar.setSkillDepotData(skillDepot);
+                avatar.save();
+            }
         }
 
         this.setLoaded(true);
