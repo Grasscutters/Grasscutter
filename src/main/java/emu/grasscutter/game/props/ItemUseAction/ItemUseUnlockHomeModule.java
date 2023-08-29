@@ -14,6 +14,7 @@ public class ItemUseUnlockHomeModule extends ItemUseInt {
 
     @Override
     public boolean useItem(UseItemParams params) {
-        return false;
+        params.player.addRealmList(this.i);
+        return true;
     }
 }

@@ -52,7 +52,7 @@ public class HandlerCombatInvocationsNotify extends PacketHandler {
                     // Handle movement
                     EntityMoveInfo moveInfo = EntityMoveInfo.parseFrom(entry.getCombatData());
                     GameEntity entity = session.getPlayer().getScene().getEntityById(moveInfo.getEntityId());
-                    if (entity != null) {
+                    if (entity != null && session.getPlayer().getSceneLoadState() != Player.SceneLoadState.LOADING) {
                         // Move player
                         MotionInfo motionInfo = moveInfo.getMotionInfo();
                         MotionState motionState = motionInfo.getState();
