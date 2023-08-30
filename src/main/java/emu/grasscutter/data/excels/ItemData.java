@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemUseData;
+import emu.grasscutter.game.home.SpecialFurnitureType;
 import emu.grasscutter.game.inventory.EquipType;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.inventory.MaterialType;
@@ -13,10 +14,11 @@ import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.game.props.ItemUseTarget;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import lombok.Getter;
 
 @ResourceType(
         name = {
@@ -86,6 +88,7 @@ public class ItemData extends GameResource {
     private int comfort;
     private List<Integer> furnType;
     private List<Integer> furnitureGadgetID;
+    private SpecialFurnitureType specialFurnitureType = SpecialFurnitureType.NOT_SPECIAL;
 
     @SerializedName(
             value = "roomSceneId",
