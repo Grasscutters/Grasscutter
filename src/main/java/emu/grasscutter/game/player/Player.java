@@ -1438,7 +1438,6 @@ public class Player implements PlayerHook, FieldFetch {
 
         // register
         getServer().registerPlayer(this);
-        // getProfile().setPlayer(this); // Set online // redundant
     }
 
     public void onLogout() {
