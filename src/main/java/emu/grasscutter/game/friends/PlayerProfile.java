@@ -23,8 +23,8 @@ public class PlayerProfile {
     private int playerLevel;
     private int worldLevel;
     private int lastActiveTime;
-    private boolean isInDuel; // Who implements duel?
-    private boolean isDuelObservable; // Who implements duel?
+    private boolean isInDuel = false; // TODO: Implement duels. (TCG)
+    private boolean isDuelObservable = false; // TODO: Implement duels. (TCG)
 
     @Deprecated // Morphia only
     public PlayerProfile() {}
