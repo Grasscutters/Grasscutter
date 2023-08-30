@@ -6,12 +6,13 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Entity
 @Data
@@ -64,10 +65,14 @@ public class HomeSceneItem {
     }
 
     public int getRoomSceneId() {
-        if (mainHouse == null || mainHouse.getAsItem() == null) {
+        if (this.isRoom()) {
             return 0;
         }
         return mainHouse.getAsItem().getRoomSceneId();
+    }
+
+    public boolean isRoom() {
+        return mainHouse == null || mainHouse.getAsItem() == null;
     }
 
     public int calComfort() {
