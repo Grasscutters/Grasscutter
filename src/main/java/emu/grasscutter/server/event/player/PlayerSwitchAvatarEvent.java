@@ -12,9 +12,7 @@ public final class PlayerSwitchAvatarEvent extends PlayerEvent implements Cancel
     private final Avatar previousAvatar;
     @Setter private Avatar newAvatar;
 
-    public PlayerSwitchAvatarEvent(Player player,
-                                   Avatar previousAvatar,
-                                   Avatar newAvatar) {
+    public PlayerSwitchAvatarEvent(Player player, Avatar previousAvatar, Avatar newAvatar) {
         super(player);
 
         this.previousAvatar = previousAvatar;

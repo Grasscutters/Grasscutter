@@ -20,11 +20,10 @@ import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalar
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import lombok.Getter;
-import org.reflections.Reflections;
-
 import java.util.HashMap;
 import java.util.concurrent.*;
+import lombok.Getter;
+import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -276,8 +275,7 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Invoke PlayerUseSkillEvent.
-        var event = new PlayerUseSkillEvent(player,
-            skillData, currentAvatar.getAvatar());
+        var event = new PlayerUseSkillEvent(player, skillData, currentAvatar.getAvatar());
         if (!event.call()) return;
 
         // Check if the skill is an elemental burst.

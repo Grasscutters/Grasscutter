@@ -13,10 +13,8 @@ public final class PlayerNpcTalkEvent extends PlayerEvent implements Cancellable
     private final TalkConfigData talk;
     private final int talkId, npcEntityId;
 
-    public PlayerNpcTalkEvent(Player player,
-                              @Nullable TalkConfigData talk,
-                              int talkId,
-                              int npcEntityId) {
+    public PlayerNpcTalkEvent(
+            Player player, @Nullable TalkConfigData talk, int talkId, int npcEntityId) {
         super(player);
 
         this.talk = talk;
