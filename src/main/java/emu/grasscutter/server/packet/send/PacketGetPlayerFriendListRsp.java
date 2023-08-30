@@ -6,6 +6,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.FriendBriefOuterClass.FriendBrief;
+import emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass.FriendOnlineState;
 import emu.grasscutter.net.proto.GetPlayerFriendListRspOuterClass.GetPlayerFriendListRsp;
 import emu.grasscutter.net.proto.PlatformTypeOuterClass;
@@ -33,6 +34,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
                         .setParam(1)
                         .setIsGameSource(true)
                         .setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
+                        .setFriendEnterHomeOptionValue(FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FRIEND_ENTER_HOME_OPTION_REFUSE_VALUE)
                         .build();
 
         GetPlayerFriendListRsp.Builder proto =

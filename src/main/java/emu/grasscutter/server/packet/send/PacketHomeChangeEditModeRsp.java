@@ -15,4 +15,11 @@ public class PacketHomeChangeEditModeRsp extends BasePacket {
 
         this.setData(proto);
     }
+
+    public PacketHomeChangeEditModeRsp(int retcode) {
+        super(PacketOpcodes.HomeChangeEditModeRsp);
+
+        this.setData(HomeChangeEditModeRspOuterClass.HomeChangeEditModeRsp.newBuilder()
+            .setRetcode(retcode));
+    }
 }

@@ -267,7 +267,7 @@ public final class RegionHandler implements Router {
                                     .setRegionInfo(RegionInfo.newBuilder())
                                     .setStopServer(
                                             StopServerInfo.newBuilder()
-                                                    .setUrl("https://discord.gg/grasscutters")
+                                                    .setUrl("https://discord.gg/T5vZU6UyeG")
                                                     .setStopBeginTime((int) Instant.now().getEpochSecond())
                                                     .setStopEndTime((int) Instant.now().getEpochSecond() + 1)
                                                     .setContentMsg(

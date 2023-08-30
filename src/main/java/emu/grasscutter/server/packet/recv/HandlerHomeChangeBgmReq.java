@@ -20,7 +20,7 @@ public class HandlerHomeChangeBgmReq extends PacketHandler {
         home.getHomeSceneItem(session.getPlayer().getSceneId()).setHomeBgmId(homeBgmId);
         home.save();
 
-        session.send(new PacketHomeChangeBgmNotify(homeBgmId));
+        session.getPlayer().getScene().broadcastPacket(new PacketHomeChangeBgmNotify(homeBgmId));
         session.send(new PacketHomeChangeBgmRsp());
     }
 }

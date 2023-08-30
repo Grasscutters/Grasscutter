@@ -10,7 +10,10 @@ import java.util.stream.Stream;
 import lombok.Getter;
 
 public enum ElementType implements IntValueEnum {
-    None(0, FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY, FightProperty.FIGHT_PROP_MAX_FIRE_ENERGY),
+    None(
+            0,
+            FightProperty.FIGHT_PROP_CUR_WIND_ENERGY,
+            FightProperty.FIGHT_PROP_MAX_WIND_ENERGY),
     Fire(
             1,
             FightProperty.FIGHT_PROP_CUR_FIRE_ENERGY,
@@ -90,7 +93,7 @@ public enum ElementType implements IntValueEnum {
     @Getter private final int configHash;
 
     ElementType(int value, FightProperty curEnergyProp, FightProperty maxEnergyProp) {
-        this(value, curEnergyProp, maxEnergyProp, 0, null, 1);
+        this(value, curEnergyProp, maxEnergyProp, 0, null, 0);
     }
 
     ElementType(
