@@ -1488,7 +1488,6 @@ public class Player implements PlayerHook, FieldFetch {
 
         // register
         getServer().registerPlayer(this);
-        getProfile().setPlayer(this); // Set online
     }
 
     public void onLogout() {
@@ -1509,7 +1508,6 @@ public class Player implements PlayerHook, FieldFetch {
 
             // Status stuff
             this.getProfile().syncWithCharacter(this);
-            this.getProfile().setPlayer(null); // Set offline
 
             this.getCoopRequests().clear();
             this.getEnterHomeRequests().values().forEach(req -> this.expireEnterHomeRequest(req, true));
