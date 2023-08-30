@@ -1458,7 +1458,7 @@ public class Player implements PlayerHook, FieldFetch {
             }
 
             // Status stuff
-            // this.getProfile().syncWithCharacter(this); // redundant
+            this.getProfile().syncWithCharacter(this);
             // this.getProfile().setPlayer(null); // Set offline // redundant
 
             this.getCoopRequests().clear();
