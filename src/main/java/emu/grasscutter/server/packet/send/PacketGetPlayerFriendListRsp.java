@@ -33,8 +33,6 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
                         .setParam(1)
                         .setIsGameSource(true)
                         .setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
-                        .setIsInDuel(true)
-                        .setIsDuelObservable(true)
                         .build();
 
         GetPlayerFriendListRsp.Builder proto =
