@@ -109,6 +109,7 @@ public class Friendship {
                         .setParam(getFriendProfile().getDaysSinceLogin())
                         .setIsGameSource(true)
                         .setPlatformType(PlatformTypeOuterClass.PlatformType.PLATFORM_TYPE_PC)
+                        .setFriendEnterHomeOptionValue(getFriendProfile().getEnterHomeOption())
                         .build();
 
         return proto;

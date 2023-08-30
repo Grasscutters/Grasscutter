@@ -1,7 +1,8 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.*;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.GameDepot;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.data.binout.routes.Route;
 import emu.grasscutter.data.excels.ItemData;
@@ -11,35 +12,44 @@ import emu.grasscutter.data.excels.scene.SceneData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.data.server.Grid;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.dungeons.*;
+import emu.grasscutter.game.dungeons.DungeonManager;
+import emu.grasscutter.game.dungeons.DungeonSettleListener;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.enums.DungeonPassConditionType;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.managers.blossom.BlossomManager;
-import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.TeamInfo;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestGroupSuite;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
-import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.EnterTypeOuterClass;
+import emu.grasscutter.net.proto.SelectWorktopOptionReqOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
-import emu.grasscutter.scripts.*;
+import emu.grasscutter.scripts.SceneIndexManager;
+import emu.grasscutter.scripts.SceneScriptManager;
 import emu.grasscutter.scripts.constants.EventType;
-import emu.grasscutter.scripts.data.*;
+import emu.grasscutter.scripts.data.SceneBlock;
+import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
 import emu.grasscutter.utils.objects.KahnsSort;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
 
 import javax.annotation.Nullable;
 import java.util.*;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public final class Scene {
@@ -259,6 +269,13 @@ public final class Scene {
         for (EntityBaseGadget gadget : player.getTeamManager().getGadgets()) {
             this.removeEntity(gadget);
         }
+
+        // Remove player widget gadgets
+        this.getEntities().values().stream()
+            .filter(gameEntity -> gameEntity instanceof EntityVehicle)
+            .map(gameEntity -> (EntityVehicle) gameEntity)
+            .filter(entityVehicle -> entityVehicle.getOwner().equals(player))
+            .forEach(entityVehicle -> this.removeEntity(entityVehicle, VisionType.VISION_TYPE_REMOVE));
 
         // Deregister scene if not in use
         if (this.getPlayerCount() <= 0 && !this.dontDestroyWhenEmpty) {

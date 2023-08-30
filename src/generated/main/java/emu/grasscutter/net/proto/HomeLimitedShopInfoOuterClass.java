@@ -19,16 +19,16 @@ public final class HomeLimitedShopInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>fixed32 PCECKPDEEBD = 13;</code>
-     * @return The pCECKPDEEBD.
+     * <code>fixed32 end_time = 13;</code>
+     * @return The endTime.
      */
-    int getPCECKPDEEBD();
+    int getEndTime();
 
     /**
-     * <code>fixed32 IMBFLHNJAPD = 6;</code>
-     * @return The iMBFLHNJAPD.
+     * <code>fixed32 start_time = 6;</code>
+     * @return The startTime.
      */
-    int getIMBFLHNJAPD();
+    int getStartTime();
 
     /**
      * <code>fixed32 LMJPHDCDAJK = 15;</code>
@@ -128,7 +128,7 @@ public final class HomeLimitedShopInfoOuterClass {
             }
             case 53: {
 
-              iMBFLHNJAPD_ = input.readFixed32();
+              startTime_ = input.readFixed32();
               break;
             }
             case 58: {
@@ -159,7 +159,7 @@ public final class HomeLimitedShopInfoOuterClass {
             }
             case 109: {
 
-              pCECKPDEEBD_ = input.readFixed32();
+              endTime_ = input.readFixed32();
               break;
             }
             case 125: {
@@ -199,26 +199,26 @@ public final class HomeLimitedShopInfoOuterClass {
               emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.class, emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder.class);
     }
 
-    public static final int PCECKPDEEBD_FIELD_NUMBER = 13;
-    private int pCECKPDEEBD_;
+    public static final int END_TIME_FIELD_NUMBER = 13;
+    private int endTime_;
     /**
-     * <code>fixed32 PCECKPDEEBD = 13;</code>
-     * @return The pCECKPDEEBD.
+     * <code>fixed32 end_time = 13;</code>
+     * @return The endTime.
      */
     @java.lang.Override
-    public int getPCECKPDEEBD() {
-      return pCECKPDEEBD_;
+    public int getEndTime() {
+      return endTime_;
     }
 
-    public static final int IMBFLHNJAPD_FIELD_NUMBER = 6;
-    private int iMBFLHNJAPD_;
+    public static final int START_TIME_FIELD_NUMBER = 6;
+    private int startTime_;
     /**
-     * <code>fixed32 IMBFLHNJAPD = 6;</code>
-     * @return The iMBFLHNJAPD.
+     * <code>fixed32 start_time = 6;</code>
+     * @return The startTime.
      */
     @java.lang.Override
-    public int getIMBFLHNJAPD() {
-      return iMBFLHNJAPD_;
+    public int getStartTime() {
+      return startTime_;
     }
 
     public static final int LMJPHDCDAJK_FIELD_NUMBER = 15;
@@ -312,8 +312,8 @@ public final class HomeLimitedShopInfoOuterClass {
       if (uid_ != 0) {
         output.writeUInt32(2, uid_);
       }
-      if (iMBFLHNJAPD_ != 0) {
-        output.writeFixed32(6, iMBFLHNJAPD_);
+      if (startTime_ != 0) {
+        output.writeFixed32(6, startTime_);
       }
       if (djinnRot_ != null) {
         output.writeMessage(7, getDjinnRot());
@@ -321,8 +321,8 @@ public final class HomeLimitedShopInfoOuterClass {
       if (djinnPos_ != null) {
         output.writeMessage(8, getDjinnPos());
       }
-      if (pCECKPDEEBD_ != 0) {
-        output.writeFixed32(13, pCECKPDEEBD_);
+      if (endTime_ != 0) {
+        output.writeFixed32(13, endTime_);
       }
       if (lMJPHDCDAJK_ != 0) {
         output.writeFixed32(15, lMJPHDCDAJK_);
@@ -340,9 +340,9 @@ public final class HomeLimitedShopInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, uid_);
       }
-      if (iMBFLHNJAPD_ != 0) {
+      if (startTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(6, iMBFLHNJAPD_);
+          .computeFixed32Size(6, startTime_);
       }
       if (djinnRot_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -352,9 +352,9 @@ public final class HomeLimitedShopInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getDjinnPos());
       }
-      if (pCECKPDEEBD_ != 0) {
+      if (endTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(13, pCECKPDEEBD_);
+          .computeFixed32Size(13, endTime_);
       }
       if (lMJPHDCDAJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -375,10 +375,10 @@ public final class HomeLimitedShopInfoOuterClass {
       }
       emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other = (emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) obj;
 
-      if (getPCECKPDEEBD()
-          != other.getPCECKPDEEBD()) return false;
-      if (getIMBFLHNJAPD()
-          != other.getIMBFLHNJAPD()) return false;
+      if (getEndTime()
+          != other.getEndTime()) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
       if (getLMJPHDCDAJK()
           != other.getLMJPHDCDAJK()) return false;
       if (hasDjinnRot() != other.hasDjinnRot()) return false;
@@ -404,10 +404,10 @@ public final class HomeLimitedShopInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PCECKPDEEBD_FIELD_NUMBER;
-      hash = (53 * hash) + getPCECKPDEEBD();
-      hash = (37 * hash) + IMBFLHNJAPD_FIELD_NUMBER;
-      hash = (53 * hash) + getIMBFLHNJAPD();
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime();
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime();
       hash = (37 * hash) + LMJPHDCDAJK_FIELD_NUMBER;
       hash = (53 * hash) + getLMJPHDCDAJK();
       if (hasDjinnRot()) {
@@ -557,9 +557,9 @@ public final class HomeLimitedShopInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pCECKPDEEBD_ = 0;
+        endTime_ = 0;
 
-        iMBFLHNJAPD_ = 0;
+        startTime_ = 0;
 
         lMJPHDCDAJK_ = 0;
 
@@ -603,8 +603,8 @@ public final class HomeLimitedShopInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo buildPartial() {
         emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo result = new emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo(this);
-        result.pCECKPDEEBD_ = pCECKPDEEBD_;
-        result.iMBFLHNJAPD_ = iMBFLHNJAPD_;
+        result.endTime_ = endTime_;
+        result.startTime_ = startTime_;
         result.lMJPHDCDAJK_ = lMJPHDCDAJK_;
         if (djinnRotBuilder_ == null) {
           result.djinnRot_ = djinnRot_;
@@ -665,11 +665,11 @@ public final class HomeLimitedShopInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo other) {
         if (other == emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.getDefaultInstance()) return this;
-        if (other.getPCECKPDEEBD() != 0) {
-          setPCECKPDEEBD(other.getPCECKPDEEBD());
+        if (other.getEndTime() != 0) {
+          setEndTime(other.getEndTime());
         }
-        if (other.getIMBFLHNJAPD() != 0) {
-          setIMBFLHNJAPD(other.getIMBFLHNJAPD());
+        if (other.getStartTime() != 0) {
+          setStartTime(other.getStartTime());
         }
         if (other.getLMJPHDCDAJK() != 0) {
           setLMJPHDCDAJK(other.getLMJPHDCDAJK());
@@ -712,64 +712,64 @@ public final class HomeLimitedShopInfoOuterClass {
         return this;
       }
 
-      private int pCECKPDEEBD_ ;
+      private int endTime_ ;
       /**
-       * <code>fixed32 PCECKPDEEBD = 13;</code>
-       * @return The pCECKPDEEBD.
+       * <code>fixed32 end_time = 13;</code>
+       * @return The endTime.
        */
       @java.lang.Override
-      public int getPCECKPDEEBD() {
-        return pCECKPDEEBD_;
+      public int getEndTime() {
+        return endTime_;
       }
       /**
-       * <code>fixed32 PCECKPDEEBD = 13;</code>
-       * @param value The pCECKPDEEBD to set.
+       * <code>fixed32 end_time = 13;</code>
+       * @param value The endTime to set.
        * @return This builder for chaining.
        */
-      public Builder setPCECKPDEEBD(int value) {
+      public Builder setEndTime(int value) {
         
-        pCECKPDEEBD_ = value;
+        endTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>fixed32 PCECKPDEEBD = 13;</code>
+       * <code>fixed32 end_time = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPCECKPDEEBD() {
+      public Builder clearEndTime() {
         
-        pCECKPDEEBD_ = 0;
+        endTime_ = 0;
         onChanged();
         return this;
       }
 
-      private int iMBFLHNJAPD_ ;
+      private int startTime_ ;
       /**
-       * <code>fixed32 IMBFLHNJAPD = 6;</code>
-       * @return The iMBFLHNJAPD.
+       * <code>fixed32 start_time = 6;</code>
+       * @return The startTime.
        */
       @java.lang.Override
-      public int getIMBFLHNJAPD() {
-        return iMBFLHNJAPD_;
+      public int getStartTime() {
+        return startTime_;
       }
       /**
-       * <code>fixed32 IMBFLHNJAPD = 6;</code>
-       * @param value The iMBFLHNJAPD to set.
+       * <code>fixed32 start_time = 6;</code>
+       * @param value The startTime to set.
        * @return This builder for chaining.
        */
-      public Builder setIMBFLHNJAPD(int value) {
+      public Builder setStartTime(int value) {
         
-        iMBFLHNJAPD_ = value;
+        startTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>fixed32 IMBFLHNJAPD = 6;</code>
+       * <code>fixed32 start_time = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIMBFLHNJAPD() {
+      public Builder clearStartTime() {
         
-        iMBFLHNJAPD_ = 0;
+        startTime_ = 0;
         onChanged();
         return this;
       }
@@ -1141,11 +1141,11 @@ public final class HomeLimitedShopInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031HomeLimitedShopInfo.proto\032\014Vector.prot" +
-      "o\"\231\001\n\023HomeLimitedShopInfo\022\023\n\013PCECKPDEEBD" +
-      "\030\r \001(\007\022\023\n\013IMBFLHNJAPD\030\006 \001(\007\022\023\n\013LMJPHDCDA" +
-      "JK\030\017 \001(\007\022\032\n\tdjinn_rot\030\007 \001(\0132\007.Vector\022\032\n\t" +
-      "djinn_pos\030\010 \001(\0132\007.Vector\022\013\n\003uid\030\002 \001(\rB\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "o\"\225\001\n\023HomeLimitedShopInfo\022\020\n\010end_time\030\r " +
+      "\001(\007\022\022\n\nstart_time\030\006 \001(\007\022\023\n\013LMJPHDCDAJK\030\017" +
+      " \001(\007\022\032\n\tdjinn_rot\030\007 \001(\0132\007.Vector\022\032\n\tdjin" +
+      "n_pos\030\010 \001(\0132\007.Vector\022\013\n\003uid\030\002 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1157,7 +1157,7 @@ public final class HomeLimitedShopInfoOuterClass {
     internal_static_HomeLimitedShopInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeLimitedShopInfo_descriptor,
-        new java.lang.String[] { "PCECKPDEEBD", "IMBFLHNJAPD", "LMJPHDCDAJK", "DjinnRot", "DjinnPos", "Uid", });
+        new java.lang.String[] { "EndTime", "StartTime", "LMJPHDCDAJK", "DjinnRot", "DjinnPos", "Uid", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 
