@@ -36,7 +36,7 @@ public class PlayerProfile {
 
     @Nullable
     public Player getPlayer() {
-        var player = Grasscutter.getGameServer().getPlayerByUid(this.getUid());
+        var player = Grasscutter.getGameServer().getPlayerByUid(this.getUid(), true);
         this.syncWithCharacter(player);
         return player;
     }
@@ -47,10 +47,6 @@ public class PlayerProfile {
 
     public int getDaysSinceLogin() {
         return (int) Math.floor((Utils.getCurrentSeconds() - getLastActiveTime()) / 86400.0);
-    }
-
-    public boolean isOnline() {
-        return this.getPlayer() != null;
     }
 
     public void syncWithCharacter(Player player) {

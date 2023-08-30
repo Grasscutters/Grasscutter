@@ -95,7 +95,7 @@ public class Friendship {
     }
 
     public FriendBrief toProto() {
-        this.getFriendProfile().getPlayer(); // check if player is online and sync player if online.
+        var player = this.getFriendProfile().getPlayer(); // get latest player and sync.
 
         return FriendBrief.newBuilder()
             .setUid(getFriendProfile().getUid())
@@ -106,7 +106,7 @@ public class Friendship {
             .setWorldLevel(getFriendProfile().getWorldLevel())
             .setSignature(getFriendProfile().getSignature())
             .setOnlineState(
-                getFriendProfile().isOnline()
+                player != null && player.isOnline()
                     ? FriendOnlineState.FRIEND_ONLINE_STATE_ONLINE
                     : FriendOnlineState.FRIEND_ONLINE_STATE_DISCONNECT)
             .setIsMpModeAvailable(true)
