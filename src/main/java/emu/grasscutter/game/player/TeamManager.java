@@ -1,7 +1,5 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import dev.morphia.annotations.*;
 import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
@@ -18,14 +16,17 @@ import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
-import emu.grasscutter.server.event.player.PlayerTeamDeathEvent;
+import emu.grasscutter.server.event.player.*;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.*;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
@@ -187,7 +188,7 @@ public final class TeamManager extends BasePlayerDataManager {
 
     public EntityAvatar getCurrentAvatarEntity() {
         // Check if any avatars are equipped.
-        if (this.getActiveTeam().size() == 0) return null;
+        if (this.getActiveTeam().isEmpty()) return null;
 
         if (this.currentCharacterIndex >= this.getActiveTeam().size()) {
             this.currentCharacterIndex = 0; // Reset to the first character.
@@ -424,15 +425,23 @@ public final class TeamManager extends BasePlayerDataManager {
         }
 
         // Check if character changed
-        if (currentEntity != this.getCurrentAvatarEntity()) {
+        var newAvatarEntity = this.getCurrentAvatarEntity();
+        if (currentEntity != null &&
+            newAvatarEntity != null &&
+            currentEntity != newAvatarEntity) {
+            // Call PlayerSwitchAvatarEvent.
+            var event = new PlayerSwitchAvatarEvent(this.getPlayer(),
+                currentEntity.getAvatar(), newAvatarEntity.getAvatar());
+            if (!event.call()) return;
+
             // Remove and Add
-            this.getPlayer().getScene().replaceEntity(currentEntity, this.getCurrentAvatarEntity());
+            this.getPlayer().getScene().replaceEntity(currentEntity, newAvatarEntity);
         }
     }
 
     public synchronized void setupAvatarTeam(int teamId, List<Long> list) {
         // Sanity checks
-        if (list.size() == 0
+        if (list.isEmpty()
                 || list.size() > this.getMaxTeamSize()
                 || this.getPlayer().isInMultiplayer()) {
             return;
@@ -732,10 +741,14 @@ public final class TeamManager extends BasePlayerDataManager {
         this.getPlayer().sendPacket(new PacketChangeTeamNameRsp(teamId, teamName));
     }
 
+    /**
+     * Swaps the current avatar in the scene.
+     *
+     * @param guid The GUID of the avatar to swap to.
+     */
     public synchronized void changeAvatar(long guid) {
         EntityAvatar oldEntity = this.getCurrentAvatarEntity();
-
-        if (guid == oldEntity.getAvatar().getGuid()) {
+        if (oldEntity == null || guid == oldEntity.getAvatar().getGuid()) {
             return;
         }
 
@@ -751,6 +764,13 @@ public final class TeamManager extends BasePlayerDataManager {
         if (index < 0 || newEntity == oldEntity) {
             return;
         }
+
+        // Call PlayerSwitchAvatarEvent.
+        var event = new PlayerSwitchAvatarEvent(this.getPlayer(),
+            oldEntity.getAvatar(), newEntity.getAvatar());
+        if (!event.call()) return;
+
+        newEntity = event.getNewAvatarEntity();
 
         // Set index
         this.setCurrentCharacterIndex(index);
