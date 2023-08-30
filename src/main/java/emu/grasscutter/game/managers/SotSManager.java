@@ -15,6 +15,7 @@ import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
+import emu.grasscutter.server.event.player.PlayerLevelStatueEvent;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLevelupCityRsp;
@@ -303,5 +304,8 @@ public class SotSManager extends BasePlayerManager {
         player.sendPacket(
                 new PacketLevelupCityRsp(
                         sceneId, cityInfo.getLevel(), cityId, cityInfo.getNumCrystal(), areaId, 0));
+
+        // Call PlayerLevelStatueEvent.
+        new PlayerLevelStatueEvent(this.getPlayer(), cityInfo, sceneId, areaId);
     }
 }

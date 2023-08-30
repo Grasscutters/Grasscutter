@@ -18,11 +18,13 @@ import emu.grasscutter.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMeta
 import emu.grasscutter.net.proto.AbilityScalarTypeOuterClass.AbilityScalarType;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
+import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
-import java.util.HashMap;
-import java.util.concurrent.*;
 import lombok.Getter;
 import org.reflections.Reflections;
+
+import java.util.HashMap;
+import java.util.concurrent.*;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -263,7 +265,8 @@ public final class AbilityManager extends BasePlayerManager {
         }
 
         // Check if the caster matches the player.
-        if (player.getTeamManager().getCurrentAvatarEntity().getId() != casterId) {
+        var currentAvatar = player.getTeamManager().getCurrentAvatarEntity();
+        if (currentAvatar == null || currentAvatar.getId() != casterId) {
             return;
         }
 
@@ -271,6 +274,11 @@ public final class AbilityManager extends BasePlayerManager {
         if (skillData == null) {
             return;
         }
+
+        // Invoke PlayerUseSkillEvent.
+        var event = new PlayerUseSkillEvent(player,
+            skillData, currentAvatar.getAvatar());
+        if (!event.call()) return;
 
         // Check if the skill is an elemental burst.
         if (skillData.getCostElemVal() <= 0) {
