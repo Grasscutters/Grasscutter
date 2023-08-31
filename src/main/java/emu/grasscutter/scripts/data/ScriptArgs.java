@@ -1,5 +1,8 @@
 package emu.grasscutter.scripts.data;
 
+import lombok.ToString;
+
+@ToString
 public class ScriptArgs {
     public int param1;
     public int param2;

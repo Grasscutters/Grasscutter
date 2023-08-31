@@ -24,7 +24,7 @@ public final class ActionSetGlobalValueToOverrideMap extends AbilityActionHandle
         var abilityFormula = action.abilityFormula;
 
         if (!entity.getGlobalAbilityValues().containsKey(globalValueKey)) {
-            Grasscutter.getLogger().debug("Action does not contains {} global key", globalValueKey);
+            Grasscutter.getLogger().trace("Action does not contains {} global key", globalValueKey);
             return true;
         }
 

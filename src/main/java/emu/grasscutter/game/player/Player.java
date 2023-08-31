@@ -1545,6 +1545,12 @@ public class Player implements PlayerHook, FieldFetch {
             this.id == otherPlayer.getUid();
     }
 
+    @Override
+    public String toString() {
+        return "Player UID: %s; Nickname: %s; Account: %s"
+                .formatted(this.id, this.nickname, this.account);
+    }
+
     public enum SceneLoadState {
         NONE(0), LOADING(1), INIT(2), LOADED(3);
 
