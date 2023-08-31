@@ -29,9 +29,11 @@ public class ConfigContainer {
      * Version  9 - 'limits' was added for handbook requests.
      * Version 10 - 'trialCostumes' was added for enabling costumes
      *              on trial avatars.
+     * Version 11 - 'server.fastRequire' was added for disabling the new
+     *              Lua script require system if performance is a concern.
      */
     private static int version() {
-        return 10;
+        return 11;
     }
 
     /**

@@ -19,16 +19,16 @@ public final class SealBattleBeginNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 CMPKIKADOJJ = 10;</code>
-     * @return The cMPKIKADOJJ.
+     * <code>uint32 seal_max_progress = 10;</code>
+     * @return The sealMaxProgress.
      */
-    int getCMPKIKADOJJ();
+    int getSealMaxProgress();
 
     /**
-     * <code>uint32 PDKCGAJOEPC = 11;</code>
-     * @return The pDKCGAJOEPC.
+     * <code>uint32 seal_radius = 11;</code>
+     * @return The sealRadius.
      */
-    int getPDKCGAJOEPC();
+    int getSealRadius();
 
     /**
      * <code>.SealBattleType battle_type = 3;</code>
@@ -106,12 +106,12 @@ public final class SealBattleBeginNotifyOuterClass {
             }
             case 80: {
 
-              cMPKIKADOJJ_ = input.readUInt32();
+              sealMaxProgress_ = input.readUInt32();
               break;
             }
             case 88: {
 
-              pDKCGAJOEPC_ = input.readUInt32();
+              sealRadius_ = input.readUInt32();
               break;
             }
             case 96: {
@@ -151,26 +151,26 @@ public final class SealBattleBeginNotifyOuterClass {
               emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify.class, emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify.Builder.class);
     }
 
-    public static final int CMPKIKADOJJ_FIELD_NUMBER = 10;
-    private int cMPKIKADOJJ_;
+    public static final int SEAL_MAX_PROGRESS_FIELD_NUMBER = 10;
+    private int sealMaxProgress_;
     /**
-     * <code>uint32 CMPKIKADOJJ = 10;</code>
-     * @return The cMPKIKADOJJ.
+     * <code>uint32 seal_max_progress = 10;</code>
+     * @return The sealMaxProgress.
      */
     @java.lang.Override
-    public int getCMPKIKADOJJ() {
-      return cMPKIKADOJJ_;
+    public int getSealMaxProgress() {
+      return sealMaxProgress_;
     }
 
-    public static final int PDKCGAJOEPC_FIELD_NUMBER = 11;
-    private int pDKCGAJOEPC_;
+    public static final int SEAL_RADIUS_FIELD_NUMBER = 11;
+    private int sealRadius_;
     /**
-     * <code>uint32 PDKCGAJOEPC = 11;</code>
-     * @return The pDKCGAJOEPC.
+     * <code>uint32 seal_radius = 11;</code>
+     * @return The sealRadius.
      */
     @java.lang.Override
-    public int getPDKCGAJOEPC() {
-      return pDKCGAJOEPC_;
+    public int getSealRadius() {
+      return sealRadius_;
     }
 
     public static final int BATTLE_TYPE_FIELD_NUMBER = 3;
@@ -220,11 +220,11 @@ public final class SealBattleBeginNotifyOuterClass {
       if (battleType_ != emu.grasscutter.net.proto.SealBattleTypeOuterClass.SealBattleType.SEAL_BATTLE_KEEP_ALIVE.getNumber()) {
         output.writeEnum(3, battleType_);
       }
-      if (cMPKIKADOJJ_ != 0) {
-        output.writeUInt32(10, cMPKIKADOJJ_);
+      if (sealMaxProgress_ != 0) {
+        output.writeUInt32(10, sealMaxProgress_);
       }
-      if (pDKCGAJOEPC_ != 0) {
-        output.writeUInt32(11, pDKCGAJOEPC_);
+      if (sealRadius_ != 0) {
+        output.writeUInt32(11, sealRadius_);
       }
       if (sealEntityId_ != 0) {
         output.writeUInt32(12, sealEntityId_);
@@ -242,13 +242,13 @@ public final class SealBattleBeginNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, battleType_);
       }
-      if (cMPKIKADOJJ_ != 0) {
+      if (sealMaxProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, cMPKIKADOJJ_);
+          .computeUInt32Size(10, sealMaxProgress_);
       }
-      if (pDKCGAJOEPC_ != 0) {
+      if (sealRadius_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, pDKCGAJOEPC_);
+          .computeUInt32Size(11, sealRadius_);
       }
       if (sealEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -269,10 +269,10 @@ public final class SealBattleBeginNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify other = (emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify) obj;
 
-      if (getCMPKIKADOJJ()
-          != other.getCMPKIKADOJJ()) return false;
-      if (getPDKCGAJOEPC()
-          != other.getPDKCGAJOEPC()) return false;
+      if (getSealMaxProgress()
+          != other.getSealMaxProgress()) return false;
+      if (getSealRadius()
+          != other.getSealRadius()) return false;
       if (battleType_ != other.battleType_) return false;
       if (getSealEntityId()
           != other.getSealEntityId()) return false;
@@ -287,10 +287,10 @@ public final class SealBattleBeginNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CMPKIKADOJJ_FIELD_NUMBER;
-      hash = (53 * hash) + getCMPKIKADOJJ();
-      hash = (37 * hash) + PDKCGAJOEPC_FIELD_NUMBER;
-      hash = (53 * hash) + getPDKCGAJOEPC();
+      hash = (37 * hash) + SEAL_MAX_PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getSealMaxProgress();
+      hash = (37 * hash) + SEAL_RADIUS_FIELD_NUMBER;
+      hash = (53 * hash) + getSealRadius();
       hash = (37 * hash) + BATTLE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + battleType_;
       hash = (37 * hash) + SEAL_ENTITY_ID_FIELD_NUMBER;
@@ -433,9 +433,9 @@ public final class SealBattleBeginNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cMPKIKADOJJ_ = 0;
+        sealMaxProgress_ = 0;
 
-        pDKCGAJOEPC_ = 0;
+        sealRadius_ = 0;
 
         battleType_ = 0;
 
@@ -467,8 +467,8 @@ public final class SealBattleBeginNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify buildPartial() {
         emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify result = new emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify(this);
-        result.cMPKIKADOJJ_ = cMPKIKADOJJ_;
-        result.pDKCGAJOEPC_ = pDKCGAJOEPC_;
+        result.sealMaxProgress_ = sealMaxProgress_;
+        result.sealRadius_ = sealRadius_;
         result.battleType_ = battleType_;
         result.sealEntityId_ = sealEntityId_;
         onBuilt();
@@ -519,11 +519,11 @@ public final class SealBattleBeginNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify other) {
         if (other == emu.grasscutter.net.proto.SealBattleBeginNotifyOuterClass.SealBattleBeginNotify.getDefaultInstance()) return this;
-        if (other.getCMPKIKADOJJ() != 0) {
-          setCMPKIKADOJJ(other.getCMPKIKADOJJ());
+        if (other.getSealMaxProgress() != 0) {
+          setSealMaxProgress(other.getSealMaxProgress());
         }
-        if (other.getPDKCGAJOEPC() != 0) {
-          setPDKCGAJOEPC(other.getPDKCGAJOEPC());
+        if (other.getSealRadius() != 0) {
+          setSealRadius(other.getSealRadius());
         }
         if (other.battleType_ != 0) {
           setBattleTypeValue(other.getBattleTypeValue());
@@ -560,64 +560,64 @@ public final class SealBattleBeginNotifyOuterClass {
         return this;
       }
 
-      private int cMPKIKADOJJ_ ;
+      private int sealMaxProgress_ ;
       /**
-       * <code>uint32 CMPKIKADOJJ = 10;</code>
-       * @return The cMPKIKADOJJ.
+       * <code>uint32 seal_max_progress = 10;</code>
+       * @return The sealMaxProgress.
        */
       @java.lang.Override
-      public int getCMPKIKADOJJ() {
-        return cMPKIKADOJJ_;
+      public int getSealMaxProgress() {
+        return sealMaxProgress_;
       }
       /**
-       * <code>uint32 CMPKIKADOJJ = 10;</code>
-       * @param value The cMPKIKADOJJ to set.
+       * <code>uint32 seal_max_progress = 10;</code>
+       * @param value The sealMaxProgress to set.
        * @return This builder for chaining.
        */
-      public Builder setCMPKIKADOJJ(int value) {
+      public Builder setSealMaxProgress(int value) {
         
-        cMPKIKADOJJ_ = value;
+        sealMaxProgress_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 CMPKIKADOJJ = 10;</code>
+       * <code>uint32 seal_max_progress = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCMPKIKADOJJ() {
+      public Builder clearSealMaxProgress() {
         
-        cMPKIKADOJJ_ = 0;
+        sealMaxProgress_ = 0;
         onChanged();
         return this;
       }
 
-      private int pDKCGAJOEPC_ ;
+      private int sealRadius_ ;
       /**
-       * <code>uint32 PDKCGAJOEPC = 11;</code>
-       * @return The pDKCGAJOEPC.
+       * <code>uint32 seal_radius = 11;</code>
+       * @return The sealRadius.
        */
       @java.lang.Override
-      public int getPDKCGAJOEPC() {
-        return pDKCGAJOEPC_;
+      public int getSealRadius() {
+        return sealRadius_;
       }
       /**
-       * <code>uint32 PDKCGAJOEPC = 11;</code>
-       * @param value The pDKCGAJOEPC to set.
+       * <code>uint32 seal_radius = 11;</code>
+       * @param value The sealRadius to set.
        * @return This builder for chaining.
        */
-      public Builder setPDKCGAJOEPC(int value) {
+      public Builder setSealRadius(int value) {
         
-        pDKCGAJOEPC_ = value;
+        sealRadius_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PDKCGAJOEPC = 11;</code>
+       * <code>uint32 seal_radius = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPDKCGAJOEPC() {
+      public Builder clearSealRadius() {
         
-        pDKCGAJOEPC_ = 0;
+        sealRadius_ = 0;
         onChanged();
         return this;
       }
@@ -774,11 +774,11 @@ public final class SealBattleBeginNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033SealBattleBeginNotify.proto\032\024SealBattl" +
-      "eType.proto\"\177\n\025SealBattleBeginNotify\022\023\n\013" +
-      "CMPKIKADOJJ\030\n \001(\r\022\023\n\013PDKCGAJOEPC\030\013 \001(\r\022$" +
-      "\n\013battle_type\030\003 \001(\0162\017.SealBattleType\022\026\n\016" +
-      "seal_entity_id\030\014 \001(\rB\033\n\031emu.grasscutter." +
-      "net.protob\006proto3"
+      "eType.proto\"\205\001\n\025SealBattleBeginNotify\022\031\n" +
+      "\021seal_max_progress\030\n \001(\r\022\023\n\013seal_radius\030" +
+      "\013 \001(\r\022$\n\013battle_type\030\003 \001(\0162\017.SealBattleT" +
+      "ype\022\026\n\016seal_entity_id\030\014 \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -790,7 +790,7 @@ public final class SealBattleBeginNotifyOuterClass {
     internal_static_SealBattleBeginNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SealBattleBeginNotify_descriptor,
-        new java.lang.String[] { "CMPKIKADOJJ", "PDKCGAJOEPC", "BattleType", "SealEntityId", });
+        new java.lang.String[] { "SealMaxProgress", "SealRadius", "BattleType", "SealEntityId", });
     emu.grasscutter.net.proto.SealBattleTypeOuterClass.getDescriptor();
   }
 

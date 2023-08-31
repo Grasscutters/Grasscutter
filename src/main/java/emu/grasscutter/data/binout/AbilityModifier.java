@@ -3,11 +3,14 @@ package emu.grasscutter.data.binout;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.common.DynamicFloat;
 import emu.grasscutter.game.props.ElementType;
-import java.io.Serializable;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 public class AbilityModifier implements Serializable {
     private static final long serialVersionUID = -2001232313615923575L;
+
+    public State state;
 
     @SerializedName(
             value = "onAdded",
@@ -341,12 +344,11 @@ public class AbilityModifier implements Serializable {
         public int param2;
         public int param3;
 
+        public String funcName;
         public LuaCallType luaCallType;
 
         @SerializedName("CallParamList")
         public int[] callParamList;
-
-        public String funcName;
 
         public String content;
 
@@ -364,6 +366,20 @@ public class AbilityModifier implements Serializable {
             BigWorldOnly,
             ForceDrop
         }
+    }
+
+    public enum State {
+        LockHP,
+        Invincible,
+        ElementFreeze,
+        ElementPetrifaction,
+        DenyLockOn,
+        Limbo,
+        NoHeal,
+        IgnoreAddEnergy,
+        IsGhostToEnemy,
+        IsGhostToAllied,
+        UnlockFrequencyLimit
     }
 
     // The following should be implemented into DynamicFloat if older resource formats need to be
