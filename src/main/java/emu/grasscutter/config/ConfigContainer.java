@@ -111,6 +111,12 @@ public class ConfigContainer {
         public ServerRunMode runMode = ServerRunMode.HYBRID;
         public boolean logCommands = false;
 
+        /**
+         * If enabled, the 'require' Lua function will load the script's compiled varient into the context. (faster; doesn't work as well)
+         * If disabled, all 'require' calls will be replaced with the referenced script's source. (slower; works better)
+         */
+        public boolean fastRequire = true;
+
         public HTTP http = new HTTP();
         public Game game = new Game();
 

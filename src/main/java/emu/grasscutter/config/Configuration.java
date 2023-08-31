@@ -1,10 +1,11 @@
 package emu.grasscutter.config;
 
-import static emu.grasscutter.Grasscutter.config;
-
 import emu.grasscutter.utils.FileUtils;
+
 import java.nio.file.Path;
 import java.util.Locale;
+
+import static emu.grasscutter.Grasscutter.config;
 
 /**
  * A data container for the server's configuration.
@@ -38,6 +39,7 @@ public final class Configuration extends ConfigContainer {
             config.server.game.gameOptions.inventoryLimits;
     public static final GameOptions.HandbookOptions HANDBOOK =
             config.server.game.gameOptions.handbook;
+    public static final boolean FAST_REQUIRE = config.server.fastRequire;
     private static final String DATA_FOLDER = config.folderStructure.data;
     private static final String PLUGINS_FOLDER = config.folderStructure.plugins;
     private static final String SCRIPTS_FOLDER = config.folderStructure.scripts;
