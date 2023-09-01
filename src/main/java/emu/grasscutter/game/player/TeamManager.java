@@ -1,31 +1,47 @@
 package emu.grasscutter.game.player;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
-import dev.morphia.annotations.*;
-import emu.grasscutter.*;
+import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Transient;
+import emu.grasscutter.GameConstants;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.avatar.AvatarSkillDepotData;
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.entity.*;
-import emu.grasscutter.game.props.*;
-import emu.grasscutter.game.world.*;
-import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.*;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.game.entity.EntityTeam;
+import emu.grasscutter.game.props.ElementType;
+import emu.grasscutter.game.props.EnterReason;
+import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.World;
+import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.AbilityControlBlockOuterClass;
+import emu.grasscutter.net.proto.AbilityEmbryoOuterClass;
 import emu.grasscutter.net.proto.EnterTypeOuterClass.EnterType;
 import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
 import emu.grasscutter.server.event.entity.EntityCreationEvent;
 import emu.grasscutter.server.event.player.*;
 import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.*;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.val;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.*;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 @Entity
 public final class TeamManager extends BasePlayerDataManager {
@@ -350,8 +366,8 @@ public final class TeamManager extends BasePlayerDataManager {
     /** Updates all properties of the active team. */
     public void updateTeamProperties() {
         this.updateTeamResonances(); // Update team resonances.
-        this.getPlayer()
-                .sendPacket(new PacketSceneTeamUpdateNotify(this.getPlayer())); // Notify the player.
+        this.getWorld()
+                .broadcastPacket(new PacketSceneTeamUpdateNotify(this.getPlayer())); // Notify the all players in the world.
 
         // Skill charges packet - Yes, this is official server behavior as of 2.6.0
         this.getActiveTeam().stream()

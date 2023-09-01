@@ -104,6 +104,11 @@ public class MultiplayerSystem extends BaseGameSystem {
     }
 
     public boolean leaveCoop(Player player) {
+        // Make sure player is not in home
+        if (player.getCurHomeWorld().isInHome(player)) {
+            return false;
+        }
+
         // Make sure player's world is multiplayer
         if (!player.getWorld().isMultiplayer()) {
             return false;

@@ -17,15 +17,26 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.friends.*;
 import emu.grasscutter.game.gacha.PlayerGachaInfo;
+import emu.grasscutter.game.home.EnterHomeRequest;
 import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.game.inventory.*;
-import emu.grasscutter.game.mail.*;
-import emu.grasscutter.game.managers.*;
-import emu.grasscutter.game.managers.cooking.*;
+import emu.grasscutter.game.home.HomeWorld;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.Inventory;
+import emu.grasscutter.game.mail.Mail;
+import emu.grasscutter.game.mail.MailHandler;
+import emu.grasscutter.game.managers.FurnitureManager;
+import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.SatiationManager;
+import emu.grasscutter.game.managers.SotSManager;
+import emu.grasscutter.game.managers.cooking.ActiveCookCompoundData;
+import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
+import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.managers.deforestation.DeforestationManager;
 import emu.grasscutter.game.managers.energy.EnergyManager;
-import emu.grasscutter.game.managers.forging.*;
-import emu.grasscutter.game.managers.mapmark.*;
+import emu.grasscutter.game.managers.forging.ActiveForgeData;
+import emu.grasscutter.game.managers.forging.ForgingManager;
+import emu.grasscutter.game.managers.mapmark.MapMark;
+import emu.grasscutter.game.managers.mapmark.MapMarksManager;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.QuestManager;
@@ -47,12 +58,14 @@ import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.plugin.api.PlayerHook;
+import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.scripts.data.SceneRegion;
 import emu.grasscutter.server.event.player.*;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import emu.grasscutter.server.packet.send.*;
-import emu.grasscutter.utils.*;
+import emu.grasscutter.utils.DispatchUtils;
+import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.helpers.DateHelper;
 import emu.grasscutter.utils.objects.FieldFetch;
 import it.unimi.dsi.fastutil.ints.*;
@@ -79,6 +92,8 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private int nameCardId = 210001;
     @Getter private Position position;
     @Getter @Setter private Position prevPos;
+    @Getter @Setter private Position prevPosForHome;
+    @Getter @Setter private int prevScene;
     @Getter private Position rotation;
     @Getter private PlayerBirthday birthday;
     @Getter private PlayerCodex codex;
@@ -87,6 +102,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter @Setter private List<Integer> showNameCardList;
     @Getter private Map<Integer, Integer> properties;
     @Getter @Setter private int currentRealmId;
+    @Getter @Setter private transient boolean isInEditMode;
     @Getter @Setter private int widgetId;
     @Getter @Setter private int sceneId;
     @Getter @Setter private int regionId;
@@ -119,6 +135,8 @@ public class Player implements PlayerHook, FieldFetch {
     @Transient private long nextGuid = 0;
     @Transient @Getter @Setter private int peerId;
     @Transient private World world;  // Synchronized getter and setter
+    @Transient @Getter @Setter private HomeWorld curHomeWorld;
+    @Transient @Getter @Setter private boolean hasSentInitPacketInHome;
     @Transient private Scene scene;  // Synchronized getter and setter
     @Transient @Getter private int weatherId = 0;
     @Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
@@ -173,6 +191,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Transient @Getter @Setter private SceneLoadState sceneLoadState = SceneLoadState.NONE;
     @Transient private boolean hasSentLoginPackets;
     @Transient private long nextSendPlayerLocTime = 0;
+    @Getter private transient final Int2ObjectMap<EnterHomeRequest> enterHomeRequests;
 
     private transient final Int2ObjectMap<CoopRequest> coopRequests;  // Synchronized getter
     @Getter private transient final Queue<AttackResult> attackResults;
@@ -209,6 +228,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.buffManager = new PlayerBuffManager(this);
         this.position = new Position(GameConstants.START_POSITION);
         this.prevPos = new Position();
+        this.prevPosForHome = Position.ZERO;
         this.rotation = new Position(0, 307, 0);
         this.sceneId = 3;
         this.regionId = 1;
@@ -245,6 +265,7 @@ public class Player implements PlayerHook, FieldFetch {
 
         this.attackResults = new LinkedBlockingQueue<>();
         this.coopRequests = new Int2ObjectOpenHashMap<>();
+        this.enterHomeRequests = new Int2ObjectOpenHashMap<>();
         this.combatInvokeHandler = new InvokeHandler(PacketCombatInvocationsNotify.class);
         this.abilityInvokeHandler = new InvokeHandler(PacketAbilityInvocationsNotify.class);
         this.clientAbilityInitFinishHandler = new InvokeHandler(PacketClientAbilityInitFinishNotify.class);
@@ -463,6 +484,18 @@ public class Player implements PlayerHook, FieldFetch {
             return;
         }
         this.seenRealmList.add(seenId);
+    }
+
+    public Optional<GameHome> tryGetHome() {
+        if (this.isOnline()) {
+            return Optional.ofNullable(this.home);
+        }
+
+        if (GameHome.doesHomeExist(this.getUid())) {
+            this.home = GameHome.getByUid(this.getUid());
+        }
+
+        return Optional.ofNullable(this.home);
     }
 
     public int getExpeditionLimit() {
@@ -687,7 +720,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.getQuestManager().forEachActiveQuest(quest -> {
             if (quest.getTriggerData() != null &&
                 quest.getTriggers().containsKey(enterRegionName) &&
-                    region.getGroupId() == quest.getTriggerData().get(enterRegionName).getGroupId()) {
+                region.getGroupId() == quest.getTriggerData().get(enterRegionName).getGroupId()) {
                 // If trigger hasn't been fired yet
                 if (!Boolean.TRUE.equals(quest.getTriggers().put(enterRegionName, true))) {
                     this.getSession().send(new PacketServerCondMeetQuestListUpdateNotify());
@@ -1175,6 +1208,21 @@ public class Player implements PlayerHook, FieldFetch {
         return true;
     }
 
+    private boolean expireEnterHomeRequest(EnterHomeRequest req) {
+        return this.expireEnterHomeRequest(req, false);
+    }
+
+    private boolean expireEnterHomeRequest(EnterHomeRequest req, boolean force) {
+        if (!req.isExpired() && !force) return false;
+        req.getRequester().sendPacket(new PacketPlayerApplyEnterHomeResultNotify(
+            this.getUid(),
+            this.getNickname(),
+            false,
+            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.SYSTEM_JUDGE));
+        req.getRequester().sendPacket(new PacketTryEnterHomeRsp());
+        return true;
+    }
+
     public synchronized void onTick() {
         // Check ping
         if (this.getLastPingTime() > System.currentTimeMillis() + 60000) {
@@ -1183,6 +1231,8 @@ public class Player implements PlayerHook, FieldFetch {
         }
         // Check co-op requests
         this.getCoopRequests().values().removeIf(this::expireCoopRequest);
+        // Check enter-home requests
+        this.getEnterHomeRequests().values().removeIf(this::expireEnterHomeRequest);
         // Handle buff
         this.getBuffManager().onTick();
         // Ping
@@ -1339,6 +1389,16 @@ public class Player implements PlayerHook, FieldFetch {
         }
         */
 
+
+        if (GameHome.HOME_SCENE_IDS.contains(this.getSceneId())) {
+            this.setSceneId(this.prevScene <= 0 ? 3 : this.prevScene); // if the player in home, make the player go back.
+            var pos = this.getPrevPosForHome();
+            if (pos.equals(Position.ZERO)) {
+                pos = ScriptLoader.getSceneMeta(this.getSceneId()).config.born_pos;
+            }
+            this.position.set(pos);
+        }
+
         // Create world
         World world = new World(this);
         world.addPlayer(this);
@@ -1387,7 +1447,10 @@ public class Player implements PlayerHook, FieldFetch {
 
         this.furnitureManager.onLogin();
         // Home
-        home = GameHome.getByUid(getUid());
+        var homeWorld = this.getServer().getHomeWorldOrCreate(this);
+        homeWorld.setHost(this); // synchronize player object if homeWorld already exists in the server.
+        this.home = homeWorld.getHome();
+        this.setCurHomeWorld(homeWorld);
         home.onOwnerLogin(this);
         // Activity
         this.activityManager = new ActivityManager(this);
@@ -1411,7 +1474,6 @@ public class Player implements PlayerHook, FieldFetch {
 
         // register
         getServer().registerPlayer(this);
-        getProfile().setPlayer(this); // Set online
     }
 
     public void onLogout() {
@@ -1432,9 +1494,10 @@ public class Player implements PlayerHook, FieldFetch {
 
             // Status stuff
             this.getProfile().syncWithCharacter(this);
-            this.getProfile().setPlayer(null); // Set offline
 
             this.getCoopRequests().clear();
+            this.getEnterHomeRequests().values().forEach(req -> this.expireEnterHomeRequest(req, true));
+            this.getEnterHomeRequests().clear();
 
             // Save to db
             this.save();

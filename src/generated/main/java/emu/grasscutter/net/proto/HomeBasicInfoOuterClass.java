@@ -43,16 +43,16 @@ public final class HomeBasicInfoOuterClass {
     boolean getIsInEditMode();
 
     /**
-     * <code>uint32 cur_module_id = 13;</code>
-     * @return The curModuleId.
-     */
-    int getCurModuleId();
-
-    /**
-     * <code>uint32 cur_room_scene_id = 8;</code>
+     * <code>uint32 cur_room_scene_id = 13;</code>
      * @return The curRoomSceneId.
      */
     int getCurRoomSceneId();
+
+    /**
+     * <code>uint32 cur_module_id = 8;</code>
+     * @return The curModuleId.
+     */
+    int getCurModuleId();
 
     /**
      * <code>uint64 exp = 10;</code>
@@ -139,7 +139,7 @@ public final class HomeBasicInfoOuterClass {
             }
             case 64: {
 
-              curRoomSceneId_ = input.readUInt32();
+              curModuleId_ = input.readUInt32();
               break;
             }
             case 72: {
@@ -159,7 +159,7 @@ public final class HomeBasicInfoOuterClass {
             }
             case 104: {
 
-              curModuleId_ = input.readUInt32();
+              curRoomSceneId_ = input.readUInt32();
               break;
             }
             case 112: {
@@ -272,26 +272,26 @@ public final class HomeBasicInfoOuterClass {
       return isInEditMode_;
     }
 
-    public static final int CUR_MODULE_ID_FIELD_NUMBER = 13;
-    private int curModuleId_;
-    /**
-     * <code>uint32 cur_module_id = 13;</code>
-     * @return The curModuleId.
-     */
-    @java.lang.Override
-    public int getCurModuleId() {
-      return curModuleId_;
-    }
-
-    public static final int CUR_ROOM_SCENE_ID_FIELD_NUMBER = 8;
+    public static final int CUR_ROOM_SCENE_ID_FIELD_NUMBER = 13;
     private int curRoomSceneId_;
     /**
-     * <code>uint32 cur_room_scene_id = 8;</code>
+     * <code>uint32 cur_room_scene_id = 13;</code>
      * @return The curRoomSceneId.
      */
     @java.lang.Override
     public int getCurRoomSceneId() {
       return curRoomSceneId_;
+    }
+
+    public static final int CUR_MODULE_ID_FIELD_NUMBER = 8;
+    private int curModuleId_;
+    /**
+     * <code>uint32 cur_module_id = 8;</code>
+     * @return The curModuleId.
+     */
+    @java.lang.Override
+    public int getCurModuleId() {
+      return curModuleId_;
     }
 
     public static final int EXP_FIELD_NUMBER = 10;
@@ -359,8 +359,8 @@ public final class HomeBasicInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerNickName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, ownerNickName_);
       }
-      if (curRoomSceneId_ != 0) {
-        output.writeUInt32(8, curRoomSceneId_);
+      if (curModuleId_ != 0) {
+        output.writeUInt32(8, curModuleId_);
       }
       if (isInEditMode_ != false) {
         output.writeBool(9, isInEditMode_);
@@ -371,8 +371,8 @@ public final class HomeBasicInfoOuterClass {
       if (level_ != 0) {
         output.writeUInt32(11, level_);
       }
-      if (curModuleId_ != 0) {
-        output.writeUInt32(13, curModuleId_);
+      if (curRoomSceneId_ != 0) {
+        output.writeUInt32(13, curRoomSceneId_);
       }
       if (homeOwnerUid_ != 0) {
         output.writeUInt32(14, homeOwnerUid_);
@@ -392,9 +392,9 @@ public final class HomeBasicInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerNickName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, ownerNickName_);
       }
-      if (curRoomSceneId_ != 0) {
+      if (curModuleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, curRoomSceneId_);
+          .computeUInt32Size(8, curModuleId_);
       }
       if (isInEditMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -408,9 +408,9 @@ public final class HomeBasicInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, level_);
       }
-      if (curModuleId_ != 0) {
+      if (curRoomSceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, curModuleId_);
+          .computeUInt32Size(13, curRoomSceneId_);
       }
       if (homeOwnerUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -441,10 +441,10 @@ public final class HomeBasicInfoOuterClass {
           .equals(other.getOwnerNickName())) return false;
       if (getIsInEditMode()
           != other.getIsInEditMode()) return false;
-      if (getCurModuleId()
-          != other.getCurModuleId()) return false;
       if (getCurRoomSceneId()
           != other.getCurRoomSceneId()) return false;
+      if (getCurModuleId()
+          != other.getCurModuleId()) return false;
       if (getExp()
           != other.getExp()) return false;
       if (getHomeOwnerUid()
@@ -472,10 +472,10 @@ public final class HomeBasicInfoOuterClass {
       hash = (37 * hash) + IS_IN_EDIT_MODE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInEditMode());
-      hash = (37 * hash) + CUR_MODULE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCurModuleId();
       hash = (37 * hash) + CUR_ROOM_SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurRoomSceneId();
+      hash = (37 * hash) + CUR_MODULE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCurModuleId();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExp());
@@ -628,9 +628,9 @@ public final class HomeBasicInfoOuterClass {
 
         isInEditMode_ = false;
 
-        curModuleId_ = 0;
-
         curRoomSceneId_ = 0;
+
+        curModuleId_ = 0;
 
         exp_ = 0L;
 
@@ -671,8 +671,8 @@ public final class HomeBasicInfoOuterClass {
         result.level_ = level_;
         result.ownerNickName_ = ownerNickName_;
         result.isInEditMode_ = isInEditMode_;
-        result.curModuleId_ = curModuleId_;
         result.curRoomSceneId_ = curRoomSceneId_;
+        result.curModuleId_ = curModuleId_;
         result.exp_ = exp_;
         result.homeOwnerUid_ = homeOwnerUid_;
         if (limitedShopInfoBuilder_ == null) {
@@ -738,11 +738,11 @@ public final class HomeBasicInfoOuterClass {
         if (other.getIsInEditMode() != false) {
           setIsInEditMode(other.getIsInEditMode());
         }
-        if (other.getCurModuleId() != 0) {
-          setCurModuleId(other.getCurModuleId());
-        }
         if (other.getCurRoomSceneId() != 0) {
           setCurRoomSceneId(other.getCurRoomSceneId());
+        }
+        if (other.getCurModuleId() != 0) {
+          setCurModuleId(other.getCurModuleId());
         }
         if (other.getExp() != 0L) {
           setExp(other.getExp());
@@ -920,40 +920,9 @@ public final class HomeBasicInfoOuterClass {
         return this;
       }
 
-      private int curModuleId_ ;
-      /**
-       * <code>uint32 cur_module_id = 13;</code>
-       * @return The curModuleId.
-       */
-      @java.lang.Override
-      public int getCurModuleId() {
-        return curModuleId_;
-      }
-      /**
-       * <code>uint32 cur_module_id = 13;</code>
-       * @param value The curModuleId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurModuleId(int value) {
-        
-        curModuleId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_module_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurModuleId() {
-        
-        curModuleId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int curRoomSceneId_ ;
       /**
-       * <code>uint32 cur_room_scene_id = 8;</code>
+       * <code>uint32 cur_room_scene_id = 13;</code>
        * @return The curRoomSceneId.
        */
       @java.lang.Override
@@ -961,7 +930,7 @@ public final class HomeBasicInfoOuterClass {
         return curRoomSceneId_;
       }
       /**
-       * <code>uint32 cur_room_scene_id = 8;</code>
+       * <code>uint32 cur_room_scene_id = 13;</code>
        * @param value The curRoomSceneId to set.
        * @return This builder for chaining.
        */
@@ -972,12 +941,43 @@ public final class HomeBasicInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_room_scene_id = 8;</code>
+       * <code>uint32 cur_room_scene_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurRoomSceneId() {
         
         curRoomSceneId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int curModuleId_ ;
+      /**
+       * <code>uint32 cur_module_id = 8;</code>
+       * @return The curModuleId.
+       */
+      @java.lang.Override
+      public int getCurModuleId() {
+        return curModuleId_;
+      }
+      /**
+       * <code>uint32 cur_module_id = 8;</code>
+       * @param value The curModuleId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurModuleId(int value) {
+        
+        curModuleId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_module_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurModuleId() {
+        
+        curModuleId_ = 0;
         onChanged();
         return this;
       }
@@ -1232,8 +1232,8 @@ public final class HomeBasicInfoOuterClass {
       "\n\023HomeBasicInfo.proto\032\031HomeLimitedShopIn" +
       "fo.proto\"\330\001\n\rHomeBasicInfo\022\r\n\005level\030\013 \001(" +
       "\r\022\027\n\017owner_nick_name\030\005 \001(\t\022\027\n\017is_in_edit" +
-      "_mode\030\t \001(\010\022\025\n\rcur_module_id\030\r \001(\r\022\031\n\021cu" +
-      "r_room_scene_id\030\010 \001(\r\022\013\n\003exp\030\n \001(\004\022\026\n\016ho" +
+      "_mode\030\t \001(\010\022\031\n\021cur_room_scene_id\030\r \001(\r\022\025" +
+      "\n\rcur_module_id\030\010 \001(\r\022\013\n\003exp\030\n \001(\004\022\026\n\016ho" +
       "me_owner_uid\030\016 \001(\r\022/\n\021limited_shop_info\030" +
       "\017 \001(\0132\024.HomeLimitedShopInfoB\033\n\031emu.grass" +
       "cutter.net.protob\006proto3"
@@ -1248,7 +1248,7 @@ public final class HomeBasicInfoOuterClass {
     internal_static_HomeBasicInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HomeBasicInfo_descriptor,
-        new java.lang.String[] { "Level", "OwnerNickName", "IsInEditMode", "CurModuleId", "CurRoomSceneId", "Exp", "HomeOwnerUid", "LimitedShopInfo", });
+        new java.lang.String[] { "Level", "OwnerNickName", "IsInEditMode", "CurRoomSceneId", "CurModuleId", "Exp", "HomeOwnerUid", "LimitedShopInfo", });
     emu.grasscutter.net.proto.HomeLimitedShopInfoOuterClass.getDescriptor();
   }
 
