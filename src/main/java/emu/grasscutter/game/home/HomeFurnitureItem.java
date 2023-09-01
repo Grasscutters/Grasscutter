@@ -5,8 +5,11 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.*;
-import lombok.*;
+import emu.grasscutter.net.proto.HomeFurnitureDataOuterClass;
+import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,7 +69,7 @@ public class HomeFurnitureItem implements HomeMarkPointProtoFactory {
     }
 
     public ItemData getAsItem() {
-        return GameData.getItemDataMap().get(this.furnitureId);
+        return this.furnitureId == 0 ? null : GameData.getItemDataMap().get(this.furnitureId);
     }
 
     public int getComfort() {
