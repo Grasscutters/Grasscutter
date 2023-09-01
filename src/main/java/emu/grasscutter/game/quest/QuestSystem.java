@@ -2,21 +2,15 @@ package emu.grasscutter.game.quest;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.quest.QuestData;
-import emu.grasscutter.data.excels.quest.QuestData.QuestAcceptCondition;
-import emu.grasscutter.data.excels.quest.QuestData.QuestContentCondition;
-import emu.grasscutter.data.excels.quest.QuestData.QuestExecParam;
+import emu.grasscutter.data.excels.quest.QuestData.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.conditions.BaseCondition;
 import emu.grasscutter.game.quest.content.BaseContent;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.reflections.Reflections;
+import emu.grasscutter.server.game.*;
+import it.unimi.dsi.fastutil.ints.*;
 
-@SuppressWarnings("unchecked")
-public class QuestSystem extends BaseGameSystem {
+public final class QuestSystem extends BaseGameSystem {
     private final Int2ObjectMap<BaseCondition> condHandlers;
     private final Int2ObjectMap<BaseContent> contHandlers;
     private final Int2ObjectMap<QuestExecHandler> execHandlers;
@@ -33,17 +27,15 @@ public class QuestSystem extends BaseGameSystem {
 
     public void registerHandlers() {
         this.registerHandlers(
-                this.condHandlers, "emu.grasscutter.game.quest.conditions", BaseCondition.class);
+                this.condHandlers, BaseCondition.class);
         this.registerHandlers(
-                this.contHandlers, "emu.grasscutter.game.quest.content", BaseContent.class);
+                this.contHandlers, BaseContent.class);
         this.registerHandlers(
-                this.execHandlers, "emu.grasscutter.game.quest.exec", QuestExecHandler.class);
+                this.execHandlers, QuestExecHandler.class);
     }
 
-    public <T> void registerHandlers(Int2ObjectMap<T> map, String packageName, Class<T> clazz) {
-        Reflections reflections = new Reflections(packageName);
-        var handlerClasses = reflections.getSubTypesOf(clazz);
-
+    public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
+        var handlerClasses = Grasscutter.reflector.getSubTypesOf(clazz);
         for (var obj : handlerClasses) {
             this.registerHandler(map, obj);
         }
@@ -51,8 +43,7 @@ public class QuestSystem extends BaseGameSystem {
 
     public <T> void registerHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
         try {
-            int value = 0;
-            if (handlerClass.isAnnotationPresent(QuestValueExec.class)) {
+            int value; if (handlerClass.isAnnotationPresent(QuestValueExec.class)) {
                 QuestValueExec opcode = handlerClass.getAnnotation(QuestValueExec.class);
                 value = opcode.value().getValue();
             } else if (handlerClass.isAnnotationPresent(QuestValueContent.class)) {
@@ -71,7 +62,7 @@ public class QuestSystem extends BaseGameSystem {
 
             map.put(value, handlerClass.getDeclaredConstructor().newInstance());
         } catch (Exception e) {
-            e.printStackTrace();
+            Grasscutter.getLogger().warn("Unable to register handler {}.", handlerClass.getSimpleName(), e);
         }
     }
 

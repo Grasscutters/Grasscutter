@@ -20,10 +20,10 @@ import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalar
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.server.event.player.PlayerUseSkillEvent;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.concurrent.*;
-import lombok.Getter;
-import org.reflections.Reflections;
 
 public final class AbilityManager extends BasePlayerManager {
     private static final HashMap<AbilityModifierAction.Type, AbilityActionHandler> actionHandlers =
@@ -54,8 +54,8 @@ public final class AbilityManager extends BasePlayerManager {
     }
 
     public static void registerHandlers() {
-        Reflections reflections = new Reflections("emu.grasscutter.game.ability.actions");
-        var handlerClassesAction = reflections.getSubTypesOf(AbilityActionHandler.class);
+        var handlerClassesAction = Grasscutter.reflector
+                .getSubTypesOf(AbilityActionHandler.class);
 
         for (var obj : handlerClassesAction) {
             try {
@@ -70,9 +70,8 @@ public final class AbilityManager extends BasePlayerManager {
             }
         }
 
-        reflections = new Reflections("emu.grasscutter.game.ability.mixins");
-        var handlerClassesMixin = reflections.getSubTypesOf(AbilityMixinHandler.class);
-
+        var handlerClassesMixin = Grasscutter.reflector
+                .getSubTypesOf(AbilityMixinHandler.class);
         for (var obj : handlerClassesMixin) {
             try {
                 if (obj.isAnnotationPresent(AbilityAction.class)) {
@@ -413,11 +412,9 @@ public final class AbilityManager extends BasePlayerManager {
 
             if (instancedAbilityData == null) {
                 // search on entity base id
-                if (entity != null) {
-                    if ((head.getInstancedAbilityId() - 1) < entity.getInstancedAbilities().size()) {
-                        instancedAbility = entity.getInstancedAbilities().get(head.getInstancedAbilityId() - 1);
-                        if (instancedAbility != null) instancedAbilityData = instancedAbility.getData();
-                    }
+                if ((head.getInstancedAbilityId() - 1) < entity.getInstancedAbilities().size()) {
+                    instancedAbility = entity.getInstancedAbilities().get(head.getInstancedAbilityId() - 1);
+                    if (instancedAbility != null) instancedAbilityData = instancedAbility.getData();
                 }
             }
 
@@ -581,6 +578,6 @@ public final class AbilityManager extends BasePlayerManager {
 
     public void addAbilityToEntity(GameEntity entity, AbilityData abilityData) {
         var ability = new Ability(abilityData, entity, this.player);
-        entity.getInstancedAbilities().add(ability); // This are in order
+        entity.getInstancedAbilities().add(ability); // This is in order
     }
 }

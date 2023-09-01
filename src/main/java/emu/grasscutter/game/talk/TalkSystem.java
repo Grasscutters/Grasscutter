@@ -4,11 +4,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.TalkConfigData;
 import emu.grasscutter.data.excels.TalkConfigData.TalkExecParam;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import org.reflections.Reflections;
+import emu.grasscutter.server.game.*;
+import it.unimi.dsi.fastutil.ints.*;
 
 public final class TalkSystem extends BaseGameSystem {
     private final Int2ObjectMap<TalkExecHandler> execHandlers = new Int2ObjectOpenHashMap<>();
@@ -16,21 +13,17 @@ public final class TalkSystem extends BaseGameSystem {
     public TalkSystem(GameServer server) {
         super(server);
 
-        this.registerHandlers(
-                this.execHandlers, "emu.grasscutter.game.talk.exec", TalkExecHandler.class);
+        this.registerHandlers(this.execHandlers, TalkExecHandler.class);
     }
 
     /**
      * Registers all handlers with the required conditions.
      *
      * @param map The map to save handlers to.
-     * @param packageName The full package domain.
      * @param clazz The class which handlers should derive from.
      */
-    public <T> void registerHandlers(Int2ObjectMap<T> map, String packageName, Class<T> clazz) {
-        var reflections = new Reflections(packageName);
-        var handlerClasses = reflections.getSubTypesOf(clazz);
-
+    public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
+        var handlerClasses = Grasscutter.reflector.getSubTypesOf(clazz);
         for (var obj : handlerClasses) {
             this.registerTalkHandler(map, obj);
         }

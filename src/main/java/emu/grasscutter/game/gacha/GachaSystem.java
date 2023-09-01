@@ -1,7 +1,5 @@
 package emu.grasscutter.game.gacha;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
-
 import com.sun.nio.file.SensitivityWatchEventModifier;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
@@ -23,10 +21,13 @@ import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketDoGachaRsp;
 import emu.grasscutter.utils.*;
 import it.unimi.dsi.fastutil.ints.*;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.nio.file.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import org.greenrobot.eventbus.Subscribe;
+
+import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 public class GachaSystem extends BaseGameSystem {
     private static final int starglitterId = 221;
@@ -58,9 +59,9 @@ public class GachaSystem extends BaseGameSystem {
         int autoScheduleId = 1000;
         int autoSortId = 9000;
         try {
-            List<GachaBanner> banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
-            if (banners.size() > 0) {
-                for (GachaBanner banner : banners) {
+            var banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
+            if (!banners.isEmpty()) {
+                for (var banner : banners) {
                     banner.onLoad();
                     if (banner.isDeprecated()) {
                         Grasscutter.getLogger()

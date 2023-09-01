@@ -1,49 +1,41 @@
 package emu.grasscutter.game.dungeons;
 
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScenePointEntry;
-import emu.grasscutter.data.excels.dungeon.DungeonData;
-import emu.grasscutter.data.excels.dungeon.DungeonPassConfigData;
+import emu.grasscutter.data.excels.dungeon.*;
 import emu.grasscutter.game.dungeons.handlers.DungeonBaseHandler;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.List;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.val;
-import org.reflections.Reflections;
 
-public class DungeonSystem extends BaseGameSystem {
+import java.util.List;
+
+public final class DungeonSystem extends BaseGameSystem {
     private static final BasicDungeonSettleListener basicDungeonSettleObserver =
             new BasicDungeonSettleListener();
     private final Int2ObjectMap<DungeonBaseHandler> passCondHandlers;
 
     public DungeonSystem(GameServer server) {
         super(server);
+
         this.passCondHandlers = new Int2ObjectOpenHashMap<>();
-        registerHandlers();
+        this.registerHandlers();
     }
 
     public void registerHandlers() {
         this.registerHandlers(
                 this.passCondHandlers,
-                "emu.grasscutter.game.dungeons.pass_condition",
                 DungeonBaseHandler.class);
     }
 
-    public <T> void registerHandlers(Int2ObjectMap<T> map, String packageName, Class<T> clazz) {
-        Reflections reflections = new Reflections(packageName);
-        var handlerClasses = reflections.getSubTypesOf(clazz);
-
+    public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
+        var handlerClasses = Grasscutter.reflector.getSubTypesOf(clazz);
         for (var obj : handlerClasses) {
             this.registerHandler(map, obj);
         }

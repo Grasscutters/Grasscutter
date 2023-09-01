@@ -1,10 +1,10 @@
 package emu.grasscutter;
 
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.utils.objects.SparseSet;
 import emu.grasscutter.utils.Utils;
+import emu.grasscutter.utils.objects.SparseSet;
 
-import java.util.*;
+import java.util.Arrays;
 
 public final class GameConstants {
     public static String VERSION = "4.0.0";

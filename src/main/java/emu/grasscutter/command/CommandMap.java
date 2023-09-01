@@ -1,14 +1,15 @@
 package emu.grasscutter.command;
 
-import static emu.grasscutter.config.Configuration.SERVER;
-
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ExecuteCommandEvent;
 import it.unimi.dsi.fastutil.objects.*;
-import java.util.*;
 import org.reflections.Reflections;
+
+import java.util.*;
+
+import static emu.grasscutter.config.Configuration.SERVER;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
@@ -53,7 +54,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap registerCommand(String label, CommandHandler command) {
-        Grasscutter.getLogger().debug("Registered command: " + label);
+        Grasscutter.getLogger().trace("Registered command: " + label);
         label = label.toLowerCase();
 
         // Get command data.
@@ -76,7 +77,7 @@ public final class CommandMap {
      * @return Instance chaining.
      */
     public CommandMap unregisterCommand(String label) {
-        Grasscutter.getLogger().debug("Unregistered command: " + label);
+        Grasscutter.getLogger().trace("Un-registered command: " + label);
 
         CommandHandler handler = this.commands.get(label);
         if (handler == null) return this;

@@ -3,18 +3,12 @@ package emu.grasscutter.data;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.handlers.GachaHandler;
 import emu.grasscutter.tools.Tools;
-import emu.grasscutter.utils.FileUtils;
-import emu.grasscutter.utils.JsonUtils;
-import emu.grasscutter.utils.TsvUtils;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Map;
+import emu.grasscutter.utils.*;
 import lombok.val;
+
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
 public class DataLoader {
 
@@ -98,7 +92,7 @@ public class DataLoader {
     public static <T> List<T> loadTableToList(String resourcePath, Class<T> classType)
             throws IOException {
         val path = FileUtils.getDataPathTsjJsonTsv(resourcePath);
-        Grasscutter.getLogger().debug("Loading data table from: " + path);
+        Grasscutter.getLogger().trace("Loading data table from: " + path);
         return switch (FileUtils.getFileExtension(path)) {
             case "json" -> JsonUtils.loadToList(path, classType);
             case "tsj" -> TsvUtils.loadTsjToListSetField(path, classType);
