@@ -1,12 +1,11 @@
 package emu.grasscutter.data.excels.reliquary;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.FightProperty;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
-import java.util.List;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
+
+import java.util.List;
 
 @ResourceType(name = "ReliquaryLevelExcelConfigData.json")
 public class ReliquaryLevelData extends GameResource {

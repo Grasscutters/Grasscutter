@@ -1,12 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify;
-import emu.grasscutter.net.proto.LunchBoxDataOuterClass;
-import emu.grasscutter.net.proto.WidgetSlotDataOuterClass;
-import emu.grasscutter.net.proto.WidgetSlotTagOuterClass;
+import emu.grasscutter.net.proto.*;
+
 import java.util.List;
 
 public class PacketAllWidgetDataNotify extends BasePacket {

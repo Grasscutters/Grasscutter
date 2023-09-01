@@ -2,11 +2,9 @@ package emu.grasscutter.game.entity;
 
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.AbilityData;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
-import it.unimi.dsi.fastutil.ints.Int2FloatArrayMap;
-import it.unimi.dsi.fastutil.ints.Int2FloatMap;
+import it.unimi.dsi.fastutil.ints.*;
 
 public class EntityScene extends GameEntity {
 

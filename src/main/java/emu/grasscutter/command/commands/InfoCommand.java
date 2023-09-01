@@ -1,9 +1,7 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.BuildConfig;
-import emu.grasscutter.Grasscutter;
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.*;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.tools.Tools;
 

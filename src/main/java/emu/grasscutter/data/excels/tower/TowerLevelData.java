@@ -1,7 +1,6 @@
 package emu.grasscutter.data.excels.tower;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 
 @ResourceType(name = "TowerLevelExcelConfigData.json")
 public class TowerLevelData extends GameResource {

@@ -7,8 +7,9 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.objects.*;
-import java.util.*;
 import lombok.Getter;
+
+import java.util.*;
 
 public class Ability {
     @Getter private AbilityData data;

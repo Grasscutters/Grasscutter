@@ -1,7 +1,6 @@
 package emu.grasscutter.game.shop;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ShopTable {
     private int shopId;

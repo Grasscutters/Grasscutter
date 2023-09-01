@@ -1,12 +1,11 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.RefreshType;
 import emu.grasscutter.game.world.World;
-import java.util.Arrays;
-import java.util.List;
 import lombok.Getter;
+
+import java.util.*;
 
 @ResourceType(name = "RefreshPolicyExcelConfigData.json")
 public class RefreshPolicyExcelConfigData extends GameResource {

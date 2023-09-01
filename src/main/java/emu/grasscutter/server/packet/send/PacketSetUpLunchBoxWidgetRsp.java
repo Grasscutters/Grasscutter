@@ -1,9 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.LunchBoxDataOuterClass;
-import emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 
 public class PacketSetUpLunchBoxWidgetRsp extends BasePacket {
 

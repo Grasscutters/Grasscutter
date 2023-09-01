@@ -1,7 +1,6 @@
 package emu.grasscutter.database;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
+import dev.morphia.annotations.*;
 
 @Entity(value = "counters", useDiscriminator = false)
 public class DatabaseCounter {

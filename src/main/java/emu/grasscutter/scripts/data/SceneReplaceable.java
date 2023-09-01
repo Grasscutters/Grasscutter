@@ -1,7 +1,6 @@
 package emu.grasscutter.scripts.data;
 
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
 @Setter

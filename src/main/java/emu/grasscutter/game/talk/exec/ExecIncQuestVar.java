@@ -4,9 +4,7 @@ import emu.grasscutter.data.excels.TalkConfigData;
 import emu.grasscutter.data.excels.TalkConfigData.TalkExecParam;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
-import emu.grasscutter.game.talk.TalkExec;
-import emu.grasscutter.game.talk.TalkExecHandler;
-import emu.grasscutter.game.talk.TalkValueExec;
+import emu.grasscutter.game.talk.*;
 
 @TalkValueExec(TalkExec.TALK_EXEC_INC_QUEST_VAR)
 public final class ExecIncQuestVar extends TalkExecHandler {

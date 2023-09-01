@@ -10,12 +10,11 @@ import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.enums.QuestCond;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.utils.helpers.DateHelper;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.util.*;
 import java.util.stream.Collectors;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter

@@ -1,11 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.FurnitureMakeDataOuterClass;
-import emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass;
-import emu.grasscutter.net.proto.ItemParamOuterClass;
-import emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
+
 import java.util.List;
 
 public class PacketTakeFurnitureMakeRsp extends BasePacket {

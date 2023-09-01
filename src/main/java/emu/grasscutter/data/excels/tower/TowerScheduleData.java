@@ -1,7 +1,7 @@
 package emu.grasscutter.data.excels.tower;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
+
 import java.util.List;
 
 @ResourceType(name = "TowerScheduleExcelConfigData.json")

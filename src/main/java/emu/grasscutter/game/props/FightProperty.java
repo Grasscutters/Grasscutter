@@ -1,13 +1,13 @@
 package emu.grasscutter.game.props;
 
-import static java.util.Map.entry;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.Getter;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
-import lombok.Getter;
+
+import static java.util.Map.entry;
 
 public enum FightProperty {
     FIGHT_PROP_NONE(0),

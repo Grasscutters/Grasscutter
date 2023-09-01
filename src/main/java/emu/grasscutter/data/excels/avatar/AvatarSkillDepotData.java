@@ -1,20 +1,16 @@
 package emu.grasscutter.data.excels.avatar;
 
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameDepot;
-import emu.grasscutter.data.GameResource;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceLoader.AvatarConfig;
-import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.ResourceType.LoadPriority;
 import emu.grasscutter.data.binout.AbilityEmbryoEntry;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.IntStream;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
+
+import java.util.*;
+import java.util.stream.IntStream;
 
 @ResourceType(name = "AvatarSkillDepotExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @Getter

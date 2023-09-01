@@ -1,10 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.SceneForceLockNotifyOuterClass.SceneForceLockNotify;
-import java.util.Collection;
 import lombok.val;
+
+import java.util.Collection;
 
 public class PacketSceneForceLockNotify extends BasePacket {
     public PacketSceneForceLockNotify(Collection<Integer> locked) {

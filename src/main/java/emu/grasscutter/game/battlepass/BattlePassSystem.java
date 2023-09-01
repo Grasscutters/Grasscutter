@@ -3,16 +3,12 @@ package emu.grasscutter.game.battlepass;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.BattlePassMissionData;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.BattlePassMissionStatus;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.server.event.player.PlayerFinishBattlePassMission;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
+import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.PacketBattlePassMissionUpdateNotify;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 public class BattlePassSystem extends BaseGameSystem {
     private final Map<WatcherTriggerType, List<BattlePassMissionData>> cachedTriggers;

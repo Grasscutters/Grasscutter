@@ -1,11 +1,8 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.game.home.FurnitureMakeSlotItem;
-import emu.grasscutter.game.home.GameHome;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.FurnitureMakeRspOuterClass;
-import emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass;
+import emu.grasscutter.game.home.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 
 public class PacketFurnitureMakeRsp extends BasePacket {
 

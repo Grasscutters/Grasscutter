@@ -1,9 +1,7 @@
 package emu.grasscutter.game.world;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Transient;
-import lombok.Getter;
-import lombok.Setter;
+import dev.morphia.annotations.*;
+import lombok.*;
 
 @Entity
 public class Location extends Position {

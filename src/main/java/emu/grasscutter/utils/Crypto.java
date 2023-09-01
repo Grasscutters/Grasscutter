@@ -2,20 +2,14 @@ package emu.grasscutter.utils;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.http.objects.QueryCurRegionRspJson;
+
+import javax.crypto.Cipher;
 import java.io.ByteArrayOutputStream;
 import java.nio.file.Path;
-import java.security.KeyFactory;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.SecureRandom;
-import java.security.Signature;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.security.*;
+import java.security.spec.*;
+import java.util.*;
 import java.util.regex.Pattern;
-import javax.crypto.Cipher;
 
 public final class Crypto {
 

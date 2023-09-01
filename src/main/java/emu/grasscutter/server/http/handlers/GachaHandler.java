@@ -1,7 +1,5 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
 import com.google.gson.JsonObject;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
@@ -10,11 +8,14 @@ import emu.grasscutter.server.http.Router;
 import emu.grasscutter.utils.*;
 import io.javalin.Javalin;
 import io.javalin.http.*;
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
-import lombok.Getter;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 /** Handles all gacha-related HTTP requests. */
 public final class GachaHandler implements Router {

@@ -1,8 +1,8 @@
 package emu.grasscutter.data.binout;
 
 import emu.grasscutter.data.ResourceLoader.OpenConfigData;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class OpenConfigEntry {
     private final String name;

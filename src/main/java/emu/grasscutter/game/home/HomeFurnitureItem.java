@@ -5,11 +5,8 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.HomeFurnitureDataOuterClass;
-import emu.grasscutter.net.proto.HomeMarkPointFurnitureDataOuterClass;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import emu.grasscutter.net.proto.*;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.jetbrains.annotations.Nullable;
 

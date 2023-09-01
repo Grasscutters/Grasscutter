@@ -1,14 +1,12 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.utils.lang.Language.translate;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
+
+import static emu.grasscutter.utils.lang.Language.translate;
 
 @Command(
         label = "help",

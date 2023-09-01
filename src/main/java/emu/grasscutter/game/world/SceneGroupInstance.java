@@ -1,19 +1,14 @@
 package emu.grasscutter.game.world;
 
-import dev.morphia.annotations.Entity;
-import dev.morphia.annotations.Id;
-import dev.morphia.annotations.Indexed;
+import dev.morphia.annotations.*;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.scripts.data.SceneGadget;
-import emu.grasscutter.scripts.data.SceneGroup;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import lombok.Getter;
-import lombok.Setter;
+import emu.grasscutter.scripts.data.*;
+import lombok.*;
 import org.bson.types.ObjectId;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Entity(value = "group_instances", useDiscriminator = false)
 public final class SceneGroupInstance {

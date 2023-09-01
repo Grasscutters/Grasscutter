@@ -1,7 +1,6 @@
 package emu.grasscutter.utils.objects;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 /** HTTP request object for handbook controls. */
 @SuppressWarnings("FieldMayBeFinal")

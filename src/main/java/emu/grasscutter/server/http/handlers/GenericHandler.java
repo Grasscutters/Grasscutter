@@ -1,14 +1,12 @@
 package emu.grasscutter.server.http.handlers;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
-
-import emu.grasscutter.GameConstants;
-import emu.grasscutter.Grasscutter;
+import emu.grasscutter.*;
 import emu.grasscutter.server.http.Router;
-import emu.grasscutter.server.http.objects.HttpJsonResponse;
-import emu.grasscutter.server.http.objects.WebStaticVersionResponse;
+import emu.grasscutter.server.http.objects.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
+import static emu.grasscutter.config.Configuration.ACCOUNT;
 
 /** Handles all generic, hard-coded responses. */
 public final class GenericHandler implements Router {

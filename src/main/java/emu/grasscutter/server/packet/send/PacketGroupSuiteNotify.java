@@ -2,11 +2,10 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
 import emu.grasscutter.game.quest.QuestGroupSuite;
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GroupSuiteNotifyOuterClass;
-import java.util.Collection;
-import java.util.List;
+
+import java.util.*;
 
 public class PacketGroupSuiteNotify extends BasePacket {
 

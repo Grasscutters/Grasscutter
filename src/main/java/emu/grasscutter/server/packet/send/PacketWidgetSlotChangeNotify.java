@@ -1,10 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.WidgetSlotChangeNotifyOuterClass;
-import emu.grasscutter.net.proto.WidgetSlotDataOuterClass;
-import emu.grasscutter.net.proto.WidgetSlotOpOuterClass;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.*;
 
 public class PacketWidgetSlotChangeNotify extends BasePacket {
 

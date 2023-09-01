@@ -2,17 +2,13 @@ package emu.grasscutter.plugin.api;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.auth.AuthenticationSystem;
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.command.PermissionHandler;
+import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.http.HttpServer;
-import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.http.*;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 /** Hooks into the {@link GameServer} class, adding convenient ways to do certain things. */

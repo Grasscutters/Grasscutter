@@ -1,13 +1,10 @@
 package emu.grasscutter.game.entity.gadget.platform;
 
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion;
 import emu.grasscutter.net.proto.PlatformInfoOuterClass.PlatformInfo;
 import emu.grasscutter.scripts.data.SceneGadget;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.val;
+import lombok.*;
 
 public abstract class BaseRoute {
     @Getter @Setter private boolean isStarted;

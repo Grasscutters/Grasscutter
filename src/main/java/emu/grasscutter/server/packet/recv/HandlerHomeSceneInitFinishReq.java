@@ -1,13 +1,9 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.OtherPlayerEnterHomeNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
-import emu.grasscutter.server.packet.send.PacketHomeMarkPointNotify;
-import emu.grasscutter.server.packet.send.PacketHomeSceneInitFinishRsp;
-import emu.grasscutter.server.packet.send.PacketOtherPlayerEnterOrLeaveHomeNotify;
+import emu.grasscutter.server.packet.send.*;
 
 @Opcodes(PacketOpcodes.HomeSceneInitFinishReq)
 public class HandlerHomeSceneInitFinishReq extends PacketHandler {

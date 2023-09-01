@@ -4,8 +4,9 @@ import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.inventory.BagTab;
-import java.util.List;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

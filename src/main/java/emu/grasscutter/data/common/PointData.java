@@ -5,10 +5,8 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DailyDungeonData;
 import emu.grasscutter.game.world.Position;
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-import it.unimi.dsi.fastutil.ints.IntList;
-import lombok.Getter;
-import lombok.Setter;
+import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
 
 public final class PointData {
     @Getter @Setter private int id;

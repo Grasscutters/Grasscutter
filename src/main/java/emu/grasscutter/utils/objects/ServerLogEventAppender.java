@@ -4,6 +4,7 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import ch.qos.logback.core.encoder.Encoder;
 import emu.grasscutter.server.event.internal.ServerLogEvent;
+
 import java.nio.charset.StandardCharsets;
 
 public final class ServerLogEventAppender<E> extends AppenderBase<E> {

@@ -1,9 +1,10 @@
 package emu.grasscutter.game.inventory;
 
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import java.util.*;
 import java.util.stream.Stream;
-import lombok.*;
 
 @RequiredArgsConstructor
 public enum BagTab {

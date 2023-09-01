@@ -1,12 +1,9 @@
 package emu.grasscutter.scripts;
 
-import com.github.davidmoten.rtreemulti.Entry;
-import com.github.davidmoten.rtreemulti.RTree;
-import com.github.davidmoten.rtreemulti.geometry.Geometry;
-import com.github.davidmoten.rtreemulti.geometry.Rectangle;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import com.github.davidmoten.rtreemulti.*;
+import com.github.davidmoten.rtreemulti.geometry.*;
+
+import java.util.*;
 import java.util.function.Function;
 
 public class SceneIndexManager {

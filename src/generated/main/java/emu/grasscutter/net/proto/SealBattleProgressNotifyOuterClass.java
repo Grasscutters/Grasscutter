@@ -19,10 +19,10 @@ public final class SealBattleProgressNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 seal_radius = 8;</code>
-     * @return The sealRadius.
+     * <code>uint32 PDKCGAJOEPC = 8;</code>
+     * @return The pDKCGAJOEPC.
      */
-    int getSealRadius();
+    int getPDKCGAJOEPC();
 
     /**
      * <code>uint32 end_time = 2;</code>
@@ -43,10 +43,10 @@ public final class SealBattleProgressNotifyOuterClass {
     int getSealEntityId();
 
     /**
-     * <code>uint32 max_progress = 5;</code>
-     * @return The maxProgress.
+     * <code>uint32 BAEKFBCJFJK = 5;</code>
+     * @return The bAEKFBCJFJK.
      */
-    int getMaxProgress();
+    int getBAEKFBCJFJK();
   }
   /**
    * <pre>
@@ -105,12 +105,12 @@ public final class SealBattleProgressNotifyOuterClass {
             }
             case 40: {
 
-              maxProgress_ = input.readUInt32();
+              bAEKFBCJFJK_ = input.readUInt32();
               break;
             }
             case 64: {
 
-              sealRadius_ = input.readUInt32();
+              pDKCGAJOEPC_ = input.readUInt32();
               break;
             }
             case 112: {
@@ -155,15 +155,15 @@ public final class SealBattleProgressNotifyOuterClass {
               emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify.class, emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify.Builder.class);
     }
 
-    public static final int SEAL_RADIUS_FIELD_NUMBER = 8;
-    private int sealRadius_;
+    public static final int PDKCGAJOEPC_FIELD_NUMBER = 8;
+    private int pDKCGAJOEPC_;
     /**
-     * <code>uint32 seal_radius = 8;</code>
-     * @return The sealRadius.
+     * <code>uint32 PDKCGAJOEPC = 8;</code>
+     * @return The pDKCGAJOEPC.
      */
     @java.lang.Override
-    public int getSealRadius() {
-      return sealRadius_;
+    public int getPDKCGAJOEPC() {
+      return pDKCGAJOEPC_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 2;
@@ -199,15 +199,15 @@ public final class SealBattleProgressNotifyOuterClass {
       return sealEntityId_;
     }
 
-    public static final int MAX_PROGRESS_FIELD_NUMBER = 5;
-    private int maxProgress_;
+    public static final int BAEKFBCJFJK_FIELD_NUMBER = 5;
+    private int bAEKFBCJFJK_;
     /**
-     * <code>uint32 max_progress = 5;</code>
-     * @return The maxProgress.
+     * <code>uint32 BAEKFBCJFJK = 5;</code>
+     * @return The bAEKFBCJFJK.
      */
     @java.lang.Override
-    public int getMaxProgress() {
-      return maxProgress_;
+    public int getBAEKFBCJFJK() {
+      return bAEKFBCJFJK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -227,11 +227,11 @@ public final class SealBattleProgressNotifyOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(2, endTime_);
       }
-      if (maxProgress_ != 0) {
-        output.writeUInt32(5, maxProgress_);
+      if (bAEKFBCJFJK_ != 0) {
+        output.writeUInt32(5, bAEKFBCJFJK_);
       }
-      if (sealRadius_ != 0) {
-        output.writeUInt32(8, sealRadius_);
+      if (pDKCGAJOEPC_ != 0) {
+        output.writeUInt32(8, pDKCGAJOEPC_);
       }
       if (sealEntityId_ != 0) {
         output.writeUInt32(14, sealEntityId_);
@@ -252,13 +252,13 @@ public final class SealBattleProgressNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, endTime_);
       }
-      if (maxProgress_ != 0) {
+      if (bAEKFBCJFJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, maxProgress_);
+          .computeUInt32Size(5, bAEKFBCJFJK_);
       }
-      if (sealRadius_ != 0) {
+      if (pDKCGAJOEPC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, sealRadius_);
+          .computeUInt32Size(8, pDKCGAJOEPC_);
       }
       if (sealEntityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -283,16 +283,16 @@ public final class SealBattleProgressNotifyOuterClass {
       }
       emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify other = (emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify) obj;
 
-      if (getSealRadius()
-          != other.getSealRadius()) return false;
+      if (getPDKCGAJOEPC()
+          != other.getPDKCGAJOEPC()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
       if (getProgress()
           != other.getProgress()) return false;
       if (getSealEntityId()
           != other.getSealEntityId()) return false;
-      if (getMaxProgress()
-          != other.getMaxProgress()) return false;
+      if (getBAEKFBCJFJK()
+          != other.getBAEKFBCJFJK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -304,16 +304,16 @@ public final class SealBattleProgressNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SEAL_RADIUS_FIELD_NUMBER;
-      hash = (53 * hash) + getSealRadius();
+      hash = (37 * hash) + PDKCGAJOEPC_FIELD_NUMBER;
+      hash = (53 * hash) + getPDKCGAJOEPC();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
       hash = (37 * hash) + SEAL_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSealEntityId();
-      hash = (37 * hash) + MAX_PROGRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxProgress();
+      hash = (37 * hash) + BAEKFBCJFJK_FIELD_NUMBER;
+      hash = (53 * hash) + getBAEKFBCJFJK();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -452,7 +452,7 @@ public final class SealBattleProgressNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sealRadius_ = 0;
+        pDKCGAJOEPC_ = 0;
 
         endTime_ = 0;
 
@@ -460,7 +460,7 @@ public final class SealBattleProgressNotifyOuterClass {
 
         sealEntityId_ = 0;
 
-        maxProgress_ = 0;
+        bAEKFBCJFJK_ = 0;
 
         return this;
       }
@@ -488,11 +488,11 @@ public final class SealBattleProgressNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify buildPartial() {
         emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify result = new emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify(this);
-        result.sealRadius_ = sealRadius_;
+        result.pDKCGAJOEPC_ = pDKCGAJOEPC_;
         result.endTime_ = endTime_;
         result.progress_ = progress_;
         result.sealEntityId_ = sealEntityId_;
-        result.maxProgress_ = maxProgress_;
+        result.bAEKFBCJFJK_ = bAEKFBCJFJK_;
         onBuilt();
         return result;
       }
@@ -541,8 +541,8 @@ public final class SealBattleProgressNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify other) {
         if (other == emu.grasscutter.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify.getDefaultInstance()) return this;
-        if (other.getSealRadius() != 0) {
-          setSealRadius(other.getSealRadius());
+        if (other.getPDKCGAJOEPC() != 0) {
+          setPDKCGAJOEPC(other.getPDKCGAJOEPC());
         }
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
@@ -553,8 +553,8 @@ public final class SealBattleProgressNotifyOuterClass {
         if (other.getSealEntityId() != 0) {
           setSealEntityId(other.getSealEntityId());
         }
-        if (other.getMaxProgress() != 0) {
-          setMaxProgress(other.getMaxProgress());
+        if (other.getBAEKFBCJFJK() != 0) {
+          setBAEKFBCJFJK(other.getBAEKFBCJFJK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -585,33 +585,33 @@ public final class SealBattleProgressNotifyOuterClass {
         return this;
       }
 
-      private int sealRadius_ ;
+      private int pDKCGAJOEPC_ ;
       /**
-       * <code>uint32 seal_radius = 8;</code>
-       * @return The sealRadius.
+       * <code>uint32 PDKCGAJOEPC = 8;</code>
+       * @return The pDKCGAJOEPC.
        */
       @java.lang.Override
-      public int getSealRadius() {
-        return sealRadius_;
+      public int getPDKCGAJOEPC() {
+        return pDKCGAJOEPC_;
       }
       /**
-       * <code>uint32 seal_radius = 8;</code>
-       * @param value The sealRadius to set.
+       * <code>uint32 PDKCGAJOEPC = 8;</code>
+       * @param value The pDKCGAJOEPC to set.
        * @return This builder for chaining.
        */
-      public Builder setSealRadius(int value) {
+      public Builder setPDKCGAJOEPC(int value) {
         
-        sealRadius_ = value;
+        pDKCGAJOEPC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 seal_radius = 8;</code>
+       * <code>uint32 PDKCGAJOEPC = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSealRadius() {
+      public Builder clearPDKCGAJOEPC() {
         
-        sealRadius_ = 0;
+        pDKCGAJOEPC_ = 0;
         onChanged();
         return this;
       }
@@ -709,33 +709,33 @@ public final class SealBattleProgressNotifyOuterClass {
         return this;
       }
 
-      private int maxProgress_ ;
+      private int bAEKFBCJFJK_ ;
       /**
-       * <code>uint32 max_progress = 5;</code>
-       * @return The maxProgress.
+       * <code>uint32 BAEKFBCJFJK = 5;</code>
+       * @return The bAEKFBCJFJK.
        */
       @java.lang.Override
-      public int getMaxProgress() {
-        return maxProgress_;
+      public int getBAEKFBCJFJK() {
+        return bAEKFBCJFJK_;
       }
       /**
-       * <code>uint32 max_progress = 5;</code>
-       * @param value The maxProgress to set.
+       * <code>uint32 BAEKFBCJFJK = 5;</code>
+       * @param value The bAEKFBCJFJK to set.
        * @return This builder for chaining.
        */
-      public Builder setMaxProgress(int value) {
+      public Builder setBAEKFBCJFJK(int value) {
         
-        maxProgress_ = value;
+        bAEKFBCJFJK_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 max_progress = 5;</code>
+       * <code>uint32 BAEKFBCJFJK = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMaxProgress() {
+      public Builder clearBAEKFBCJFJK() {
         
-        maxProgress_ = 0;
+        bAEKFBCJFJK_ = 0;
         onChanged();
         return this;
       }
@@ -806,12 +806,11 @@ public final class SealBattleProgressNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036SealBattleProgressNotify.proto\"\201\001\n\030Sea" +
-      "lBattleProgressNotify\022\023\n\013seal_radius\030\010 \001" +
+      "\n\036SealBattleProgressNotify.proto\"\200\001\n\030Sea" +
+      "lBattleProgressNotify\022\023\n\013PDKCGAJOEPC\030\010 \001" +
       "(\r\022\020\n\010end_time\030\002 \001(\r\022\020\n\010progress\030\017 \001(\r\022\026" +
-      "\n\016seal_entity_id\030\016 \001(\r\022\024\n\014max_progress\030\005" +
-      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
-      "3"
+      "\n\016seal_entity_id\030\016 \001(\r\022\023\n\013BAEKFBCJFJK\030\005 " +
+      "\001(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -822,7 +821,7 @@ public final class SealBattleProgressNotifyOuterClass {
     internal_static_SealBattleProgressNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SealBattleProgressNotify_descriptor,
-        new java.lang.String[] { "SealRadius", "EndTime", "Progress", "SealEntityId", "MaxProgress", });
+        new java.lang.String[] { "PDKCGAJOEPC", "EndTime", "Progress", "SealEntityId", "BAEKFBCJFJK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

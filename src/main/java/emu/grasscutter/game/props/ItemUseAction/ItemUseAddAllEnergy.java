@@ -1,7 +1,6 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
-import emu.grasscutter.game.props.ElementType;
-import emu.grasscutter.game.props.ItemUseOp;
+import emu.grasscutter.game.props.*;
 
 public class ItemUseAddAllEnergy extends ItemUseAddEnergy {
     private float energy = 0f;

@@ -1,23 +1,18 @@
 package emu.grasscutter.tools;
 
-import emu.grasscutter.command.Command;
+import emu.grasscutter.command.*;
 import emu.grasscutter.command.Command.TargetRequirement;
-import emu.grasscutter.command.CommandMap;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.ResourceLoader;
+import emu.grasscutter.data.*;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.utils.JsonUtils;
 import emu.grasscutter.utils.lang.Language;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public interface Dumpers {
     // See `src/handbook/data/README.md` for attributions.

@@ -1,8 +1,7 @@
 package emu.grasscutter.game.combine;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.data.DataLoader;
-import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.CombineData;
 import emu.grasscutter.game.inventory.GameItem;
@@ -10,16 +9,12 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
-import emu.grasscutter.server.game.BaseGameSystem;
-import emu.grasscutter.server.game.GameServer;
-import emu.grasscutter.server.packet.send.PacketCombineFormulaDataNotify;
-import emu.grasscutter.server.packet.send.PacketCombineRsp;
-import emu.grasscutter.server.packet.send.PacketReliquaryDecomposeRsp;
+import emu.grasscutter.server.game.*;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.ArrayList;
-import java.util.List;
+import it.unimi.dsi.fastutil.ints.*;
+
+import java.util.*;
 
 public class CombineManger extends BaseGameSystem {
     private static final Int2ObjectMap<List<Integer>> reliquaryDecomposeData =

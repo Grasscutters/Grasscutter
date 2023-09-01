@@ -3,21 +3,16 @@ package emu.grasscutter.utils;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import emu.grasscutter.data.common.DynamicFloat;
-import emu.grasscutter.game.world.GridPosition;
-import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.utils.JsonAdapters.*;
 import emu.grasscutter.utils.objects.JObject;
 import it.unimi.dsi.fastutil.ints.IntList;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+
+import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.*;
+import java.util.*;
 
 public final class JsonUtils {
     static final Gson gson =

@@ -1,8 +1,9 @@
 package emu.grasscutter.data.excels;
 
 import emu.grasscutter.data.*;
-import java.util.List;
 import lombok.Getter;
+
+import java.util.List;
 
 @Getter
 @ResourceType(name = "BargainExcelConfigData.json")

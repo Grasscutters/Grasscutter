@@ -1,15 +1,12 @@
 package emu.grasscutter.game.entity.gadget;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.GatherData;
-import emu.grasscutter.data.excels.ItemData;
+import emu.grasscutter.data.excels.*;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
-import emu.grasscutter.net.proto.InteractTypeOuterClass;
-import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;

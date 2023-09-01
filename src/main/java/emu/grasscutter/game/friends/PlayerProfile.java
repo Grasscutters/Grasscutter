@@ -1,13 +1,8 @@
 package emu.grasscutter.game.friends;
 
-import dev.morphia.annotations.AlsoLoad;
-import dev.morphia.annotations.Entity;
-
+import dev.morphia.annotations.*;
 import emu.grasscutter.Grasscutter;
-
-import dev.morphia.annotations.Transient;
 import emu.grasscutter.game.home.GameHome;
-
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass;
 import emu.grasscutter.utils.Utils;

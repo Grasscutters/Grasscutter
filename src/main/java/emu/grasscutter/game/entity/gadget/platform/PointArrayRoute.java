@@ -1,11 +1,9 @@
 package emu.grasscutter.game.entity.gadget.platform;
 
 import emu.grasscutter.game.world.Position;
-import emu.grasscutter.net.proto.MovingPlatformTypeOuterClass;
-import emu.grasscutter.net.proto.PlatformInfoOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.scripts.data.SceneGadget;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 /** TODO implement point array routes, read from missing resources */
 public class PointArrayRoute extends BaseRoute {

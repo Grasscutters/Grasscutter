@@ -1,9 +1,7 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import lombok.AccessLevel;
-import lombok.Getter;
+import emu.grasscutter.data.*;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @ResourceType(name = "MusicGameBasicConfigData.json")

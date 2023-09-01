@@ -1,8 +1,5 @@
 package emu.grasscutter.tools;
 
-import static emu.grasscutter.utils.FileUtils.getResourcePath;
-import static emu.grasscutter.utils.lang.Language.getTextMapKey;
-
 import emu.grasscutter.*;
 import emu.grasscutter.command.*;
 import emu.grasscutter.data.*;
@@ -14,6 +11,8 @@ import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.lang.Language;
 import emu.grasscutter.utils.lang.Language.TextStrings;
 import it.unimi.dsi.fastutil.ints.*;
+import lombok.*;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -22,7 +21,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.*;
-import lombok.*;
+
+import static emu.grasscutter.utils.FileUtils.getResourcePath;
+import static emu.grasscutter.utils.lang.Language.getTextMapKey;
 
 public final class Tools {
     /**

@@ -1,15 +1,11 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.game.avatar.Avatar;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.PlayerProperty;
-import emu.grasscutter.server.packet.send.PacketAvatarPropNotify;
-import emu.grasscutter.server.packet.send.PacketAvatarSatiationDataNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerGameTimeNotify;
-import emu.grasscutter.server.packet.send.PacketPlayerTimeNotify;
-import java.util.HashMap;
-import java.util.Map;
+import emu.grasscutter.server.packet.send.*;
+
+import java.util.*;
 
 public class SatiationManager extends BasePlayerManager {
 

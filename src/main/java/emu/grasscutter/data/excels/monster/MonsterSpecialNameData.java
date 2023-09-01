@@ -1,10 +1,8 @@
 package emu.grasscutter.data.excels.monster;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @ResourceType(name = "MonsterSpecialNameExcelConfigData.json", loadPriority = LoadPriority.HIGH)
 @EqualsAndHashCode(callSuper = false)

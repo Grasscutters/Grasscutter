@@ -1,7 +1,6 @@
 package emu.grasscutter.data;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.*;
 import java.util.List;
 import java.util.stream.Stream;
 

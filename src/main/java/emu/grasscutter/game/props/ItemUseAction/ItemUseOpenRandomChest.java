@@ -1,8 +1,7 @@
 package emu.grasscutter.game.props.ItemUseAction;
 
 import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ItemUseOp;
+import emu.grasscutter.game.props.*;
 
 public class ItemUseOpenRandomChest extends ItemUseInt {
     public ItemUseOpenRandomChest(String[] useParam) {

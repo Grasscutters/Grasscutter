@@ -1,7 +1,6 @@
 package emu.grasscutter.game.activity.musicgame;
 
-import emu.grasscutter.game.activity.ActivityWatcher;
-import emu.grasscutter.game.activity.ActivityWatcherType;
+import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.props.WatcherTriggerType;
 
 @ActivityWatcherType(WatcherTriggerType.TRIGGER_FLEUR_FAIR_MUSIC_GAME_REACH_SCORE)

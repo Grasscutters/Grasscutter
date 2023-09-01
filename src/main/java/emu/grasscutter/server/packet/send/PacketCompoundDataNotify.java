@@ -1,11 +1,10 @@
 package emu.grasscutter.server.packet.send;
 
-import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.CompoundDataNotifyOuterClass.CompoundDataNotify;
 import emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 
 public class PacketCompoundDataNotify extends BasePacket {
 

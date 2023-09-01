@@ -6,8 +6,9 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.GachaItemOuterClass.GachaItem;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.PlayerEvent;
-import java.util.List;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 public final class PlayerWishEvent extends PlayerEvent implements Cancellable {

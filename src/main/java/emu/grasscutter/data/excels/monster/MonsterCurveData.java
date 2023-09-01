@@ -1,10 +1,9 @@
 package emu.grasscutter.data.excels.monster;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
+import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.CurveInfo;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 import java.util.stream.Stream;
 
 @ResourceType(name = "MonsterCurveExcelConfigData.json")

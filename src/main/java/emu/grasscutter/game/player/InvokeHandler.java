@@ -2,8 +2,8 @@ package emu.grasscutter.game.player;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class InvokeHandler<T> {
     private final List<T> entryListForwardAll;

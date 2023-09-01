@@ -1,10 +1,9 @@
 package emu.grasscutter.game.quest.content;
 
-import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_DESTROY_GADGET;
-
 import emu.grasscutter.data.excels.quest.QuestData;
-import emu.grasscutter.game.quest.GameQuest;
-import emu.grasscutter.game.quest.QuestValueContent;
+import emu.grasscutter.game.quest.*;
+
+import static emu.grasscutter.game.quest.enums.QuestContent.QUEST_CONTENT_DESTROY_GADGET;
 
 @QuestValueContent(QUEST_CONTENT_DESTROY_GADGET)
 public class ContentDestroyGadget extends BaseContent {

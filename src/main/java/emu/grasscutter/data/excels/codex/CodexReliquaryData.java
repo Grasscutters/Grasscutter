@@ -1,10 +1,7 @@
 package emu.grasscutter.data.excels.codex;
 
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import it.unimi.dsi.fastutil.ints.IntCollection;
-import it.unimi.dsi.fastutil.ints.IntList;
+import emu.grasscutter.data.*;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
 
 @ResourceType(name = {"ReliquaryCodexExcelConfigData.json"})

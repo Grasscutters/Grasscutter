@@ -3,8 +3,8 @@ package emu.grasscutter.data.binout;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.AbilityLocalIdGenerator;
 import emu.grasscutter.game.ability.AbilityLocalIdGenerator.ConfigAbilitySubContainerType;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 public class AbilityData {
     public String abilityName;

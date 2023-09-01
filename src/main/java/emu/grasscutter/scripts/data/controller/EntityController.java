@@ -4,9 +4,10 @@ import emu.grasscutter.*;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.scripts.*;
-import java.util.Set;
-import javax.script.*;
 import org.luaj.vm2.*;
+
+import javax.script.*;
+import java.util.Set;
 
 public class EntityController {
     private static final Set<String> SERVER_CALLED = Set.of("OnBeHurt", "OnDie", "OnTimer");

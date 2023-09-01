@@ -1,12 +1,10 @@
 package emu.grasscutter.game.activity.musicgame;
 
-import emu.grasscutter.game.activity.ActivityHandler;
-import emu.grasscutter.game.activity.GameActivity;
-import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
-import emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass;
+import emu.grasscutter.net.proto.*;
 import emu.grasscutter.utils.JsonUtils;
+
 import java.util.stream.Collectors;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_MUSIC_GAME)

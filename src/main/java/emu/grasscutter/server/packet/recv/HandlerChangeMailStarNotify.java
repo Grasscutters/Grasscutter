@@ -1,14 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.game.mail.Mail;
-import emu.grasscutter.net.packet.Opcodes;
-import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ChangeMailStarNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketMailChangeNotify;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 @Opcodes(PacketOpcodes.ChangeMailStarNotify)
 public class HandlerChangeMailStarNotify extends PacketHandler {

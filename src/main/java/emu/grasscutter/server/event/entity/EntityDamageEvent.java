@@ -4,9 +4,9 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ElementType;
 import emu.grasscutter.server.event.Cancellable;
 import emu.grasscutter.server.event.types.EntityEvent;
+import lombok.*;
+
 import javax.annotation.Nullable;
-import lombok.Getter;
-import lombok.Setter;
 
 public final class EntityDamageEvent extends EntityEvent implements Cancellable {
     @Getter @Setter private float damage;

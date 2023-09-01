@@ -1,19 +1,16 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.command.CommandHelpers.*;
-
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
-import emu.grasscutter.game.inventory.GameItem;
-import emu.grasscutter.game.inventory.Inventory;
-import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.command.*;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
-import java.util.List;
-import java.util.Map;
+import lombok.Setter;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import lombok.Setter;
+
+import static emu.grasscutter.command.CommandHelpers.*;
 
 @Command(
         label = "clear",

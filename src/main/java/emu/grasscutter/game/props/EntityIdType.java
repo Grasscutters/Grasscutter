@@ -1,7 +1,6 @@
 package emu.grasscutter.game.props;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public enum EntityIdType {
     AVATAR(0x01),

@@ -3,14 +3,11 @@ package emu.grasscutter.game.managers.deforestation;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.entity.EntityItem;
-import emu.grasscutter.game.player.BasePlayerManager;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.net.proto.HitTreeNotifyOuterClass;
-import emu.grasscutter.net.proto.VectorOuterClass;
-import java.util.ArrayList;
-import java.util.HashMap;
+import emu.grasscutter.game.player.*;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.net.proto.*;
+
+import java.util.*;
 
 public class DeforestationManager extends BasePlayerManager {
     static final int RECORD_EXPIRED_SECONDS = 60 * 5; // 5 min

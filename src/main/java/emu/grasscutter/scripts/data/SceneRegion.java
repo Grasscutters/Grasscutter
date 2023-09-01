@@ -2,9 +2,9 @@ package emu.grasscutter.scripts.data;
 
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.scripts.constants.ScriptRegionShape;
+import lombok.*;
+
 import java.util.List;
-import lombok.EqualsAndHashCode;
-import lombok.Setter;
 
 @Setter
 @EqualsAndHashCode

@@ -1,7 +1,8 @@
 package emu.grasscutter.game.world;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class GroupReplacementData {

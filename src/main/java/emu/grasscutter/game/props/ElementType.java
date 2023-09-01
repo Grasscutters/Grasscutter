@@ -2,12 +2,11 @@ package emu.grasscutter.game.props;
 
 import emu.grasscutter.scripts.constants.IntValueEnum;
 import emu.grasscutter.utils.Utils;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Stream;
+import it.unimi.dsi.fastutil.ints.*;
 import lombok.Getter;
+
+import java.util.*;
+import java.util.stream.Stream;
 
 public enum ElementType implements IntValueEnum {
     None(

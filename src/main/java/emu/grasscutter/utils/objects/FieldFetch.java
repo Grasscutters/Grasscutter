@@ -3,8 +3,9 @@ package emu.grasscutter.utils.objects;
 import com.google.gson.*;
 import emu.grasscutter.server.dispatch.IDispatcher;
 import emu.grasscutter.utils.Utils;
+
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.HashMap;
 
 public interface FieldFetch {
     /**

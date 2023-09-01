@@ -19,23 +19,23 @@ public final class AbilityMetaSetPoseParameterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      * @return Whether the value field is set.
      */
     boolean hasValue();
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      * @return The value.
      */
     emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair getValue();
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      */
     emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder getValueOrBuilder();
   }
   /**
    * <pre>
-   * Obf: FOHAAJOMMPL
+   * Obf: AFDPLNIIALH
    * </pre>
    *
    * Protobuf type {@code AbilityMetaSetPoseParameter}
@@ -82,7 +82,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
             case 0:
               done = true;
               break;
-            case 122: {
+            case 10: {
               emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder subBuilder = null;
               if (value_ != null) {
                 subBuilder = value_.toBuilder();
@@ -127,10 +127,10 @@ public final class AbilityMetaSetPoseParameterOuterClass {
               emu.grasscutter.net.proto.AbilityMetaSetPoseParameterOuterClass.AbilityMetaSetPoseParameter.class, emu.grasscutter.net.proto.AbilityMetaSetPoseParameterOuterClass.AbilityMetaSetPoseParameter.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 15;
+    public static final int VALUE_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair value_;
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      * @return Whether the value field is set.
      */
     @java.lang.Override
@@ -138,7 +138,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
       return value_ != null;
     }
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      * @return The value.
      */
     @java.lang.Override
@@ -146,7 +146,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
       return value_ == null ? emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.getDefaultInstance() : value_;
     }
     /**
-     * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+     * <code>.AnimatorParameterValueInfoPair value = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder getValueOrBuilder() {
@@ -168,7 +168,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (value_ != null) {
-        output.writeMessage(15, getValue());
+        output.writeMessage(1, getValue());
       }
       unknownFields.writeTo(output);
     }
@@ -181,7 +181,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
       size = 0;
       if (value_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getValue());
+          .computeMessageSize(1, getValue());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -315,7 +315,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
     }
     /**
      * <pre>
-     * Obf: FOHAAJOMMPL
+     * Obf: AFDPLNIIALH
      * </pre>
      *
      * Protobuf type {@code AbilityMetaSetPoseParameter}
@@ -476,14 +476,14 @@ public final class AbilityMetaSetPoseParameterOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair, emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder, emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder> valueBuilder_;
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
         return valueBuilder_ != null || value_ != null;
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        * @return The value.
        */
       public emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair getValue() {
@@ -494,7 +494,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         }
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public Builder setValue(emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair value) {
         if (valueBuilder_ == null) {
@@ -510,7 +510,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         return this;
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public Builder setValue(
           emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder builderForValue) {
@@ -524,7 +524,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         return this;
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public Builder mergeValue(emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair value) {
         if (valueBuilder_ == null) {
@@ -542,7 +542,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         return this;
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public Builder clearValue() {
         if (valueBuilder_ == null) {
@@ -556,7 +556,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         return this;
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder getValueBuilder() {
         
@@ -564,7 +564,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         return getValueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       public emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder getValueOrBuilder() {
         if (valueBuilder_ != null) {
@@ -575,7 +575,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
         }
       }
       /**
-       * <code>.AnimatorParameterValueInfoPair value = 15;</code>
+       * <code>.AnimatorParameterValueInfoPair value = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair, emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder, emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder> 
@@ -659,7 +659,7 @@ public final class AbilityMetaSetPoseParameterOuterClass {
     java.lang.String[] descriptorData = {
       "\n!AbilityMetaSetPoseParameter.proto\032$Ani" +
       "matorParameterValueInfoPair.proto\"M\n\033Abi" +
-      "lityMetaSetPoseParameter\022.\n\005value\030\017 \001(\0132" +
+      "lityMetaSetPoseParameter\022.\n\005value\030\001 \001(\0132" +
       "\037.AnimatorParameterValueInfoPairB\033\n\031emu." +
       "grasscutter.net.protob\006proto3"
     };

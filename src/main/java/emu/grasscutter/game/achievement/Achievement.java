@@ -1,7 +1,7 @@
 package emu.grasscutter.game.achievement;
 
 import dev.morphia.annotations.Entity;
-import emu.grasscutter.net.proto.*;
+import emu.grasscutter.net.proto.AchievementOuterClass;
 import emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status;
 import lombok.*;
 

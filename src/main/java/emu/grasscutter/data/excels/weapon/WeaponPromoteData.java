@@ -1,9 +1,8 @@
 package emu.grasscutter.data.excels.weapon;
 
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import emu.grasscutter.data.common.FightPropData;
-import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.*;
+import emu.grasscutter.data.common.*;
+
 import java.util.ArrayList;
 
 @ResourceType(name = "WeaponPromoteExcelConfigData.json")

@@ -3,9 +3,7 @@ package emu.grasscutter.game.talk.exec;
 import emu.grasscutter.data.excels.TalkConfigData;
 import emu.grasscutter.data.excels.TalkConfigData.TalkExecParam;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.talk.TalkExec;
-import emu.grasscutter.game.talk.TalkExecHandler;
-import emu.grasscutter.game.talk.TalkValueExec;
+import emu.grasscutter.game.talk.*;
 
 @TalkValueExec(TalkExec.TALK_EXEC_DEC_QUEST_GLOBAL_VAR)
 public final class ExecDecQuestGlobalVar extends TalkExecHandler {

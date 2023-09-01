@@ -1,7 +1,6 @@
 package emu.grasscutter.task;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.*;
 
 /*
 * So what is cron expression?

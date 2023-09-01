@@ -1,6 +1,6 @@
 package emu.grasscutter.plugin;
 
-import emu.grasscutter.*;
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.event.*;
 import emu.grasscutter.utils.*;
 import lombok.*;

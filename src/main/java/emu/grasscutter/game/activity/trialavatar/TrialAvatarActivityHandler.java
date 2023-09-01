@@ -4,24 +4,18 @@ import com.esotericsoftware.reflectasm.ConstructorAccess;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.RewardData;
-import emu.grasscutter.game.activity.ActivityHandler;
-import emu.grasscutter.game.activity.ActivityWatcher;
-import emu.grasscutter.game.activity.DefaultWatcher;
-import emu.grasscutter.game.activity.GameActivity;
-import emu.grasscutter.game.activity.PlayerActivityData;
+import emu.grasscutter.game.activity.*;
 import emu.grasscutter.game.dungeons.DungeonTrialTeam;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ActionReason;
-import emu.grasscutter.game.props.ActivityType;
-import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.props.*;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo;
 import emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.GrantReason;
-import emu.grasscutter.server.packet.send.PacketActivityInfoNotify;
-import emu.grasscutter.server.packet.send.PacketScenePlayerLocationNotify;
+import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.JsonUtils;
-import java.util.*;
-import java.util.stream.*;
 import lombok.*;
+
+import java.util.*;
+import java.util.stream.Stream;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_TRIAL_AVATAR)
 public class TrialAvatarActivityHandler extends ActivityHandler {

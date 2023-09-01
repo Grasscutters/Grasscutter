@@ -11,14 +11,14 @@ import emu.grasscutter.scripts.serializer.*;
 import emu.grasscutter.utils.FileUtils;
 import lombok.Getter;
 import org.luaj.vm2.*;
-import org.luaj.vm2.lib.*;
+import org.luaj.vm2.lib.OneArgFunction;
 import org.luaj.vm2.lib.jse.CoerceJavaToLua;
 import org.luaj.vm2.script.*;
 
 import javax.script.*;
 import java.io.IOException;
 import java.lang.ref.SoftReference;
-import java.nio.file.*;
+import java.nio.file.Files;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;

@@ -3,9 +3,9 @@ package emu.grasscutter.data.server;
 import com.github.davidmoten.rtreemulti.RTree;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.world.GridPosition;
-import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.scripts.SceneIndexManager;
+
 import java.util.*;
 
 public class Grid {

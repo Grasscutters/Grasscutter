@@ -1,10 +1,7 @@
 package emu.grasscutter.data.excels;
 
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.GameResource;
-import emu.grasscutter.data.ResourceType;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import emu.grasscutter.data.*;
+import lombok.*;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

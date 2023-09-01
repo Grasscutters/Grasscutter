@@ -1,10 +1,8 @@
 package emu.grasscutter.data.binout.routes;
 
 import emu.grasscutter.net.proto.RouteOuterClass;
-import lombok.AccessLevel;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
-import lombok.val;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)

@@ -1,14 +1,14 @@
 package emu.grasscutter.game.entity;
 
 import emu.grasscutter.game.props.EntityIdType;
-import emu.grasscutter.game.world.Position;
-import emu.grasscutter.game.world.Scene;
+import emu.grasscutter.game.world.*;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass;
 import emu.grasscutter.scripts.data.SceneRegion;
 import it.unimi.dsi.fastutil.ints.Int2FloatMap;
+import lombok.Getter;
+
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import lombok.Getter;
 
 @Getter
 public class EntityRegion extends GameEntity {
