@@ -14,6 +14,7 @@ public class MonsterSpecialNameData extends GameResource {
     @SerializedName(value = "specialNameLabId", alternate={"specialNameLabID"})
     private int specialNameLabId;
     private long specialNameTextMapHash;
+    
     @Override
     public int getId() {
         return specialNameId;
