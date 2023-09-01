@@ -83,7 +83,7 @@ public class GameHome {
             this.mainHouseMap = new ConcurrentHashMap<>(); // assign.
         }
 
-        this.getSceneMap().keySet().stream().filter(integer -> integer > 2200).forEach(this.getSceneMap()::remove);
+        this.getSceneMap().values().removeIf(homeSceneItem -> homeSceneItem.getSceneId() > 2200);
 
         this.save();
     }
