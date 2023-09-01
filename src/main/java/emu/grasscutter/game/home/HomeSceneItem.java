@@ -1,14 +1,20 @@
 package emu.grasscutter.game.home;
 
-import dev.morphia.annotations.*;
+import dev.morphia.annotations.Entity;
+import dev.morphia.annotations.Id;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.HomeworldDefaultSaveData;
 import emu.grasscutter.game.world.Position;
 import emu.grasscutter.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import javax.annotation.Nullable;
+import java.util.Collection;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 @Entity
@@ -70,6 +76,21 @@ public class HomeSceneItem {
 
     public boolean isRoom() {
         return mainHouse == null || mainHouse.getAsItem() == null;
+    }
+
+    @Nullable
+    public Position getTeleportPointPos(int guid) {
+        var pos = new AtomicReference<Position>();
+
+        this.getBlockItems().values().stream()
+            .map(HomeBlockItem::getDeployFurnitureList)
+            .flatMap(Collection::stream)
+            .filter(homeFurnitureItem -> homeFurnitureItem.getGuid() == guid)
+            .map(HomeFurnitureItem::getSpawnPos)
+            .findFirst()
+            .ifPresent(pos::set);
+
+        return pos.get();
     }
 
     public int calComfort() {
